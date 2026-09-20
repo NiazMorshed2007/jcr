@@ -1,0 +1,98 @@
+[
+  {
+    "id": "dashboardCRC",
+    "name": "Retrieve CRC Port Usage",
+    "description": "Retrieve CRC Port Usage Get CRC Port usage hour by hour for a specified time period We will report a maximum of one month. GET /v2/metrics/crc",
+    "context": "GET /v2/metrics/crc\nGet CRC Port usage hour by hour for a specified time period We will report a maximum of one month. For example, if \"from\" is set to \"2017-08-05\" and \"to\" is \"2017-10-10\" we will adjust \"from\" to \"2017-09-10\" .\nRequired: from (query) — Start Date; to (query) — End Date"
+  },
+  {
+    "id": "dashboardIM",
+    "name": "Retrieve IM",
+    "description": "Retrieve IM Retrieve metrics of Zoom IM GET /v2/metrics/im",
+    "context": "GET /v2/metrics/im\nRetrieve metrics of Zoom IM\nRequired: from (query) — Start Date; to (query) — End Date\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardMeetingDetail",
+    "name": "Retrieve meeting detail",
+    "description": "Retrieve meeting detail Retrieve live or past meetings detail GET /v2/metrics/meetings/{meetingId}",
+    "context": "GET /v2/metrics/meetings/{meetingId}\nRetrieve live or past meetings detail\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.\nOptional: type (query) — The meeting type"
+  },
+  {
+    "id": "dashboardMeetingParticipantQOS",
+    "name": "Retrieve meeting participant QOS",
+    "description": "Retrieve meeting participant QOS Retrieve live or past meetings participant quality of service GET /v2/metrics/meetings/{meetingId}/participants/{participantId}/qos",
+    "context": "GET /v2/metrics/meetings/{meetingId}/participants/{participantId}/qos\nRetrieve live or past meetings participant quality of service\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.; participantId (path) — Participant ID\nOptional: type (query) — The meeting type"
+  },
+  {
+    "id": "dashboardMeetingParticipants",
+    "name": "Retrieve meeting participants",
+    "description": "Retrieve meeting participants Retrieve live or past meetings participants GET /v2/metrics/meetings/{meetingId}/participants",
+    "context": "GET /v2/metrics/meetings/{meetingId}/participants\nRetrieve live or past meetings participants\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.\nOptional: type (query) — The meeting type; page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardMeetingParticipantShare",
+    "name": "Retrieve sharing/recording details of meeting participant",
+    "description": "Retrieve sharing/recording details of meeting participant Retrieve sharing/recording details of live or past meetings participant GET /v2/metrics/meetings/{meetingId}/participants/sharing",
+    "context": "GET /v2/metrics/meetings/{meetingId}/participants/sharing\nRetrieve sharing/recording details of live or past meetings participant\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.\nOptional: type (query) — The meeting type; page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardMeetingParticipantsQOS",
+    "name": "List meeting participants QOS",
+    "description": "List meeting participants QOS Retrieve list of live or past meetings participants quality of service GET /v2/metrics/meetings/{meetingId}/participants/qos",
+    "context": "GET /v2/metrics/meetings/{meetingId}/participants/qos\nRetrieve list of live or past meetings participants quality of service\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.\nOptional: type (query) — The meeting type; page_size (query) — Number of items returned per page; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardMeetings",
+    "name": "List meetings",
+    "description": "List meetings List live meetings or past meetings for a specified period GET /v2/metrics/meetings",
+    "context": "GET /v2/metrics/meetings\nList live meetings or past meetings for a specified period\nRequired: from (query) — Start Date; to (query) — End Date\nOptional: type (query) — The meeting type; page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardWebinarDetail",
+    "name": "Retrieve webinar detail",
+    "description": "Retrieve webinar detail Retrieve live or past webinars detail GET /v2/metrics/webinars/{webinarId}",
+    "context": "GET /v2/metrics/webinars/{webinarId}\nRetrieve live or past webinars detail\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance.\nOptional: type (query) — The webinar type"
+  },
+  {
+    "id": "dashboardWebinarParticipantQOS",
+    "name": "Retrieve webinar participant QOS",
+    "description": "Retrieve webinar participant QOS Retrieve live or past webinar participant quality of service GET /v2/metrics/webinars/{webinarId}/participants/{participantId}/qos",
+    "context": "GET /v2/metrics/webinars/{webinarId}/participants/{participantId}/qos\nRetrieve live or past webinar participant quality of service\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance.; participantId (path) — Participant ID\nOptional: type (query) — The webinar type"
+  },
+  {
+    "id": "dashboardWebinarParticipants",
+    "name": "Retrieve webinar participants",
+    "description": "Retrieve webinar participants Retrieve live or past webinar participants GET /v2/metrics/webinars/{webinarId}/participants",
+    "context": "GET /v2/metrics/webinars/{webinarId}/participants\nRetrieve live or past webinar participants\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance.\nOptional: type (query) — The webinar type; page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardWebinarParticipantShare",
+    "name": "Retrieve sharing/recording details of webinar participant",
+    "description": "Retrieve sharing/recording details of webinar participant Retrieve sharing/recording details of live or past webinar participant GET /v2/metrics/webinars/{webinarId}/participants/sharing",
+    "context": "GET /v2/metrics/webinars/{webinarId}/participants/sharing\nRetrieve sharing/recording details of live or past webinar participant\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance.\nOptional: type (query) — The webinar type; page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardWebinarParticipantsQOS",
+    "name": "List webinar participant QOS",
+    "description": "List webinar participant QOS Retrieve list of live or past webinar participants quality of service GET /v2/metrics/webinars/{webinarId}/participants/qos",
+    "context": "GET /v2/metrics/webinars/{webinarId}/participants/qos\nRetrieve list of live or past webinar participants quality of service\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance.\nOptional: type (query) — The webinar type; page_size (query) — Number of items returned per page; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardWebinars",
+    "name": "List webinars",
+    "description": "List webinars List live webinars or past webinars for a specified period GET /v2/metrics/webinars",
+    "context": "GET /v2/metrics/webinars\nList live webinars or past webinars for a specified period\nRequired: from (query) — Start Date; to (query) — End Date\nOptional: type (query) — The webinar type; page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "dashboardZoomRoom",
+    "name": "Retrieve Zoom Room",
+    "description": "Retrieve Zoom Room Retrieve zoom room on account GET /v2/metrics/zoomrooms/{zoomroomId}",
+    "context": "GET /v2/metrics/zoomrooms/{zoomroomId}\nRetrieve zoom room on account\nRequired: zoomroomId (path) — The Zoom Room ID; from (query) — Start Date; to (query) — End Date\nOptional: page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "dashboardZoomRooms",
+    "name": "List Zoom Rooms",
+    "description": "List Zoom Rooms List all zoom rooms on account GET /v2/metrics/zoomrooms",
+    "context": "GET /v2/metrics/zoomrooms\nList all zoom rooms on account\nOptional: page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  }
+]

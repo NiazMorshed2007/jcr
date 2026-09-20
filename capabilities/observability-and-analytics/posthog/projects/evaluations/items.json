@@ -1,0 +1,74 @@
+[
+  {
+    "id": "evaluations_backfills_cancel_create",
+    "name": "Stop a running backfill",
+    "description": "Stop a running backfill Stop a running backfill. POST /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/{id}/cancel/\nStop a running backfill. Evaluations already dispatched still finish.\nRequired: evaluation_id (path); id (path) — A UUID string identifying this evaluation backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "evaluations_backfills_create",
+    "name": "Create a backfill: freeze the conditions, count the units, start the walk.",
+    "description": "Create a backfill: freeze the conditions, count the units, start the walk. POST /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/",
+    "context": "POST /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/\nCreate a backfill: freeze the conditions, count the units, start the walk.\nRequired: evaluation_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "evaluations_backfills_estimate_create",
+    "name": "Count what a backfill over the given window would evaluate, without creating one.",
+    "description": "Count what a backfill over the given window would evaluate, without creating one. POST /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/estimate/",
+    "context": "POST /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/estimate/\nCount what a backfill over the given window would evaluate, without creating one.\nRequired: evaluation_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "evaluations_backfills_list",
+    "name": "Historical runs of one evaluation over a closed time window (nested under an evaluation).",
+    "description": "Historical runs of one evaluation over a closed time window (nested under an evaluation). GET /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/",
+    "context": "GET /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/\nHistorical runs of one evaluation over a closed time window (nested under an evaluation).\nRequired: evaluation_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "evaluations_backfills_retrieve",
+    "name": "Historical runs of one evaluation over a closed time window (nested under an evaluation).",
+    "description": "Historical runs of one evaluation over a closed time window (nested under an evaluation). GET /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/{id}/",
+    "context": "GET /api/projects/{project_id}/evaluations/{evaluation_id}/backfills/{id}/\nHistorical runs of one evaluation over a closed time window (nested under an evaluation).\nRequired: evaluation_id (path); id (path) — A UUID string identifying this evaluation backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "evaluations_create",
+    "name": "evaluations_create",
+    "description": "evaluations_create POST /api/projects/{project_id}/evaluations/",
+    "context": "POST /api/projects/{project_id}/evaluations/\nevaluations_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "evaluations_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/evaluations/{id}/",
+    "context": "DELETE /api/projects/{project_id}/evaluations/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A UUID string identifying this evaluation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "evaluations_list",
+    "name": "evaluations_list",
+    "description": "evaluations_list GET /api/projects/{project_id}/evaluations/",
+    "context": "GET /api/projects/{project_id}/evaluations/\nevaluations_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: directory_id (query) — Filter evaluations by directory UUID.; directory_id__isnull (query) — Filter evaluations by whether they are at the top level.; enabled (query) — Filter by enabled status; evaluation_type (query) — Filter by evaluation type * `llm_judge` - LLM as a judge * `hog` - Hog * `sentiment` - Sentiment analysis; id__in (query) — Multiple values may be separated by commas.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Ordering * `created_at` - Created At * `-created_at` - Created At (descending) * `updated_at` - Updated At * `-updated_at` - Updated At (descending) * `name` - Name * `-name` - Name (descending); search (query) — Search in name or description"
+  },
+  {
+    "id": "evaluations_partial_update",
+    "name": "evaluations_partial_update",
+    "description": "evaluations_partial_update PATCH /api/projects/{project_id}/evaluations/{id}/",
+    "context": "PATCH /api/projects/{project_id}/evaluations/{id}/\nevaluations_partial_update\nRequired: id (path) — A UUID string identifying this evaluation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "evaluations_retrieve",
+    "name": "evaluations_retrieve",
+    "description": "evaluations_retrieve GET /api/projects/{project_id}/evaluations/{id}/",
+    "context": "GET /api/projects/{project_id}/evaluations/{id}/\nevaluations_retrieve\nRequired: id (path) — A UUID string identifying this evaluation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "evaluations_test_hog_create",
+    "name": "Test Hog evaluation code against sample events without saving.",
+    "description": "Test Hog evaluation code against sample events without saving. POST /api/projects/{project_id}/evaluations/test_hog/",
+    "context": "POST /api/projects/{project_id}/evaluations/test_hog/\nTest Hog evaluation code against sample events without saving.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "evaluations_update",
+    "name": "evaluations_update",
+    "description": "evaluations_update PUT /api/projects/{project_id}/evaluations/{id}/",
+    "context": "PUT /api/projects/{project_id}/evaluations/{id}/\nevaluations_update\nRequired: id (path) — A UUID string identifying this evaluation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

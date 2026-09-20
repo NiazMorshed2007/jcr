@@ -1,0 +1,26 @@
+[
+  {
+    "id": "origin-ca-create-certificate",
+    "name": "Create Certificate",
+    "description": "Create Certificate Create an Origin CA certificate. POST /client/v4/certificates",
+    "context": "POST /client/v4/certificates\nCreate an Origin CA certificate. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).\nRequired: body (body)"
+  },
+  {
+    "id": "origin-ca-get-certificate",
+    "name": "Get Certificate",
+    "description": "Get Certificate Get an existing Origin CA certificate by its serial number. GET /client/v4/certificates/{certificate_id}",
+    "context": "GET /client/v4/certificates/{certificate_id}\nGet an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).\nRequired: certificate_id (path)"
+  },
+  {
+    "id": "origin-ca-list-certificates",
+    "name": "List Certificates",
+    "description": "List Certificates List all existing Origin CA certificates for a given zone. GET /client/v4/certificates",
+    "context": "GET /client/v4/certificates\nList all existing Origin CA certificates for a given zone. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).\nRequired: zone_id (query)\nOptional: page (query); per_page (query); limit (query); offset (query)"
+  },
+  {
+    "id": "origin-ca-revoke-certificate",
+    "name": "Revoke Certificate",
+    "description": "Revoke Certificate Revoke an existing Origin CA certificate by its serial number. DELETE /client/v4/certificates/{certificate_id}",
+    "context": "DELETE /client/v4/certificates/{certificate_id}\nRevoke an existing Origin CA certificate by its serial number. You can use an Origin CA Key as your User Service Key or an API token when calling this endpoint ([see above](#requests)).\nRequired: certificate_id (path)"
+  }
+]

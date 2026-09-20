@@ -1,0 +1,26 @@
+[
+  {
+    "id": "list-maintenance",
+    "name": "List maintenance runs",
+    "description": "List maintenance runs List scheduled and/or recent maintenance runs for specified resources. GET /v1/maintenance",
+    "context": "GET /v1/maintenance\nList scheduled and/or recent maintenance runs for specified resources.\nOptional: resourceId (query); ownerId (query) — The ID of the workspaces to return resources for; state (query)"
+  },
+  {
+    "id": "retrieve-maintenance",
+    "name": "Retrieve maintenance run",
+    "description": "Retrieve maintenance run Retrieve the maintenance run with the provided ID. GET /v1/maintenance/{maintenanceRunID}",
+    "context": "GET /v1/maintenance/{maintenanceRunID}\nRetrieve the maintenance run with the provided ID.\nRequired: maintenanceRunID (path)"
+  },
+  {
+    "id": "trigger-maintenance",
+    "name": "Trigger maintenance run",
+    "description": "Trigger maintenance run Trigger the scheduled maintenance run with the provided ID. POST /v1/maintenance/{maintenanceRunID}/trigger",
+    "context": "POST /v1/maintenance/{maintenanceRunID}/trigger\nTrigger the scheduled maintenance run with the provided ID. Triggering maintenance is asynchronous. To check whether maintenance has started, use the [Retrieve maintenance run](https://api-docs.render.com/reference/retrieve-maintenance) endpoint. As maintenance progresses, the run's `state` will change from `scheduled` to other values, such as `in_progress` and `succeeded`."
+  },
+  {
+    "id": "update-maintenance",
+    "name": "Update maintenance run",
+    "description": "Update maintenance run Update the maintenance run with the provided ID. PATCH /v1/maintenance/{maintenanceRunID}",
+    "context": "PATCH /v1/maintenance/{maintenanceRunID}\nUpdate the maintenance run with the provided ID. Updates from this endpoint are asynchronous. To check your update's status, use the [Retrieve maintenance run](https://api-docs.render.com/reference/retrieve-maintenance) endpoint.\nRequired: body (body)"
+  }
+]

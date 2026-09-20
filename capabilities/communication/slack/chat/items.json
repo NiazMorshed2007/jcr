@@ -1,0 +1,80 @@
+[
+  {
+    "id": "chat.appendStream",
+    "name": "Appends text to an existing streaming conversation.",
+    "description": "Appends text to an existing streaming conversation. POST /api/chat.appendStream",
+    "context": "POST /api/chat.appendStream\nAppends text to an existing streaming conversation.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.delete",
+    "name": "Deletes a message.",
+    "description": "Deletes a message. POST /api/chat.delete",
+    "context": "POST /api/chat.delete\nDeletes a message.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.deleteScheduledMessage",
+    "name": "Deletes a pending scheduled message from the queue.",
+    "description": "Deletes a pending scheduled message from the queue. POST /api/chat.deleteScheduledMessage",
+    "context": "POST /api/chat.deleteScheduledMessage\nDeletes a pending scheduled message from the queue.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.getPermalink",
+    "name": "Retrieve a permalink URL for a specific extant message.",
+    "description": "Retrieve a permalink URL for a specific extant message. POST /api/chat.getPermalink",
+    "context": "POST /api/chat.getPermalink\nRetrieve a permalink URL for a specific extant message.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.meMessage",
+    "name": "Share a me message into a channel.",
+    "description": "Share a me message into a channel. POST /api/chat.meMessage",
+    "context": "POST /api/chat.meMessage\nShare a me message into a channel.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.postEphemeral",
+    "name": "Sends an ephemeral message to a user in a channel.",
+    "description": "Sends an ephemeral message to a user in a channel. POST /api/chat.postEphemeral",
+    "context": "POST /api/chat.postEphemeral\nSends an ephemeral message to a user in a channel.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.postMessage",
+    "name": "Sends a message to a channel.",
+    "description": "Sends a message to a channel. POST /api/chat.postMessage",
+    "context": "POST /api/chat.postMessage\nSends a message to a channel.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.scheduledMessages.list",
+    "name": "Returns a list of scheduled messages.",
+    "description": "Returns a list of scheduled messages. POST /api/chat.scheduledMessages.list",
+    "context": "POST /api/chat.scheduledMessages.list\nReturns a list of scheduled messages.\nOptional: body (body)"
+  },
+  {
+    "id": "chat.scheduleMessage",
+    "name": "Schedules a message to be sent to a channel.",
+    "description": "Schedules a message to be sent to a channel. POST /api/chat.scheduleMessage",
+    "context": "POST /api/chat.scheduleMessage\nSchedules a message to be sent to a channel.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.startStream",
+    "name": "Starts a new streaming conversation.",
+    "description": "Starts a new streaming conversation. POST /api/chat.startStream",
+    "context": "POST /api/chat.startStream\nStarts a new streaming conversation.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.stopStream",
+    "name": "Stops a streaming conversation.",
+    "description": "Stops a streaming conversation. POST /api/chat.stopStream",
+    "context": "POST /api/chat.stopStream\nStops a streaming conversation.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.unfurl",
+    "name": "Provide custom unfurl behavior for user-posted URLs.",
+    "description": "Provide custom unfurl behavior for user-posted URLs. POST /api/chat.unfurl",
+    "context": "POST /api/chat.unfurl\nProvide custom unfurl behavior for user-posted URLs.\nRequired: body (body)"
+  },
+  {
+    "id": "chat.update",
+    "name": "Updates a message.",
+    "description": "Updates a message. POST /api/chat.update",
+    "context": "POST /api/chat.update\nUpdates a message.\nRequired: body (body)"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "data_color_themes_create",
+    "name": "data_color_themes_create",
+    "description": "data_color_themes_create POST /api/projects/{project_id}/data_color_themes/",
+    "context": "POST /api/projects/{project_id}/data_color_themes/\ndata_color_themes_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_color_themes_destroy",
+    "name": "data_color_themes_destroy",
+    "description": "data_color_themes_destroy DELETE /api/projects/{project_id}/data_color_themes/{id}/",
+    "context": "DELETE /api/projects/{project_id}/data_color_themes/{id}/\ndata_color_themes_destroy\nRequired: id (path) — A unique integer value identifying this data color theme.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_color_themes_list",
+    "name": "data_color_themes_list",
+    "description": "data_color_themes_list GET /api/projects/{project_id}/data_color_themes/",
+    "context": "GET /api/projects/{project_id}/data_color_themes/\ndata_color_themes_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_color_themes_partial_update",
+    "name": "data_color_themes_partial_update",
+    "description": "data_color_themes_partial_update PATCH /api/projects/{project_id}/data_color_themes/{id}/",
+    "context": "PATCH /api/projects/{project_id}/data_color_themes/{id}/\ndata_color_themes_partial_update\nRequired: id (path) — A unique integer value identifying this data color theme.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_color_themes_retrieve",
+    "name": "data_color_themes_retrieve",
+    "description": "data_color_themes_retrieve GET /api/projects/{project_id}/data_color_themes/{id}/",
+    "context": "GET /api/projects/{project_id}/data_color_themes/{id}/\ndata_color_themes_retrieve\nRequired: id (path) — A unique integer value identifying this data color theme.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_color_themes_update",
+    "name": "data_color_themes_update",
+    "description": "data_color_themes_update PUT /api/projects/{project_id}/data_color_themes/{id}/",
+    "context": "PUT /api/projects/{project_id}/data_color_themes/{id}/\ndata_color_themes_update\nRequired: id (path) — A unique integer value identifying this data color theme.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

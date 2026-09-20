@@ -1,0 +1,38 @@
+[
+  {
+    "id": "dlp-document-fingerprints-create",
+    "name": "Creates a new document fingerprint.",
+    "description": "Creates a new document fingerprint. Creates a new document fingerprint for DLP scanning. POST /client/v4/accounts/{account_id}/dlp/document_fingerprints",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/document_fingerprints\nCreates a new document fingerprint for DLP scanning. Document fingerprints detect documents that are structurally similar to the uploaded sample.\nRequired: account_id (path); body (body) — Attributes of the new document fingerprint."
+  },
+  {
+    "id": "dlp-document-fingerprints-delete",
+    "name": "Delete a single document fingerprint.",
+    "description": "Delete a single document fingerprint. Removes a document fingerprint from DLP configuration. DELETE /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}\nRemoves a document fingerprint from DLP configuration. Documents matching this fingerprint will no longer be detected.\nRequired: account_id (path); document_fingerprint_id (path)"
+  },
+  {
+    "id": "dlp-document-fingerprints-read",
+    "name": "Retrieve data about a specific document fingerprint.",
+    "description": "Retrieve data about a specific document fingerprint. Gets a document fingerprint and its latest upload status. GET /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}\nGets a document fingerprint and its latest upload status.\nRequired: account_id (path); document_fingerprint_id (path)"
+  },
+  {
+    "id": "dlp-document-fingerprints-read-all",
+    "name": "Retrieve data about all document fingerprints.",
+    "description": "Retrieve data about all document fingerprints. Lists all document fingerprints configured for DLP scanning in the account. GET /client/v4/accounts/{account_id}/dlp/document_fingerprints",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/document_fingerprints\nLists all document fingerprints configured for DLP scanning in the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-document-fingerprints-update",
+    "name": "Update the attributes of a single document fingerprint.",
+    "description": "Update the attributes of a single document fingerprint. Updates metadata for an existing document fingerprint, such as its name or description. POST /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}\nUpdates metadata for an existing document fingerprint, such as its name or description.\nRequired: account_id (path); document_fingerprint_id (path); body (body) — Attributes of the document fingerprint to update."
+  },
+  {
+    "id": "dlp-document-fingerprints-upload",
+    "name": "Uploads a new version for a document fingerprint.",
+    "description": "Uploads a new version for a document fingerprint. Uploads a new document to create or update a fingerprint. PUT /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}\nUploads a new document to create or update a fingerprint. The document structure is analyzed to enable detection of similar documents.\nRequired: account_id (path); document_fingerprint_id (path); body (body) — File used for document fingerprinting."
+  }
+]

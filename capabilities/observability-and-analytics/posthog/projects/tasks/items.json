@@ -1,0 +1,476 @@
+[
+  {
+    "id": "tasks_active_wizard_run_retrieve",
+    "name": "Get the team's active onboarding wizard cloud run",
+    "description": "Get the team's active onboarding wizard cloud run Returns the most recent onboarding wizard cloud run for the current project when it is still running (or completed within the last day), so the setup-progress FAB can rehydrate after a drop-flow signup that started the run server-side. GET /api/projects/{project_id}/ta…",
+    "context": "GET /api/projects/{project_id}/tasks/active_wizard_run/\nReturns the most recent onboarding wizard cloud run for the current project when it is still running (or completed within the last day), so the setup-progress FAB can rehydrate after a drop-flow signup that started the run server-side. Returns 204 when there is none.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_artifacts_list",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. GET /api/projects/{project_id}/tasks/{id}/artifacts/",
+    "context": "GET /api/projects/{project_id}/tasks/{id}/artifacts/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_comments_list",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. GET /api/projects/{project_id}/tasks/{id}/comments/",
+    "context": "GET /api/projects/{project_id}/tasks/{id}/comments/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: artifact_id (query) — Artifact id returned by the artifacts endpoint.; cursor (query) — Opaque cursor returned by the previous page.; include_resolved (query) — Whether to include resolved comment threads.; limit (query) — Maximum number of root comments to return."
+  },
+  {
+    "id": "tasks_comments_retrieve",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. GET /api/projects/{project_id}/tasks/{id}/comments/{root_comment_id}/",
+    "context": "GET /api/projects/{project_id}/tasks/{id}/comments/{root_comment_id}/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; root_comment_id (path)\nOptional: comment_id (query) — Comment id whose truncated body should continue. Use with content_offset.; content_offset (query) — Byte offset returned as content_next_offset for the selected comment.; cursor (query) — Opaque cursor returned by the previous page.; limit (query) — Maximum number of comments in the thread to return."
+  },
+  {
+    "id": "tasks_config_create",
+    "name": "Set the project-wide default AI run preferences applied to task runs created without an explicit runtime selection",
+    "description": "Set the project-wide default AI run preferences applied to task runs created without an explicit runtime selection Set the project-wide default AI run preferences applied to task runs created without an explicit runtime selection. POST /api/projects/{project_id}/tasks/config/",
+    "context": "POST /api/projects/{project_id}/tasks/config/\nSet the project-wide default AI run preferences applied to task runs created without an explicit runtime selection. Send all fields as null to clear.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_config_list",
+    "name": "Retrieve the project-wide default AI run preferences for task runs.",
+    "description": "Retrieve the project-wide default AI run preferences for task runs. GET /api/projects/{project_id}/tasks/config/",
+    "context": "GET /api/projects/{project_id}/tasks/config/\nRetrieve the project-wide default AI run preferences for task runs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "tasks_create",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. POST /api/projects/{project_id}/tasks/",
+    "context": "POST /api/projects/{project_id}/tasks/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: X-PostHog-Warm-Retry (header) — Retry token from a warm_run_activation_unavailable response; prevents creating a replacement run.; body (body)"
+  },
+  {
+    "id": "tasks_destroy",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. DELETE /api/projects/{project_id}/tasks/{id}/",
+    "context": "DELETE /api/projects/{project_id}/tasks/{id}/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_handoff_create",
+    "name": "Hand a task off to a colleague",
+    "description": "Hand a task off to a colleague Transfer ownership of a task to another member of the project: they take over driving it (steering, archiving, running), and future runs resolve GitHub authorship and notification recipients from them. POST /api/projects/{project_id}/tasks/{id}/handoff/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/handoff/\nTransfer ownership of a task to another member of the project: they take over driving it (steering, archiving, running), and future runs resolve GitHub authorship and notification recipients from them. Only the task's current owner can hand it off. Every run must be finished or canceled, and every sandbox must be shut down first. A task in a private space moves into the recipient's private space; a task in a shared space stays there.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_list",
+    "name": "List tasks",
+    "description": "List tasks Get a list of tasks for the current project, with optional filtering by origin product, stage, organization, repository, created_by, and the workflow (hog_flow_id) that created the task. GET /api/projects/{project_id}/tasks/",
+    "context": "GET /api/projects/{project_id}/tasks/\nGet a list of tasks for the current project, with optional filtering by origin product, stage, organization, repository, created_by, and the workflow (hog_flow_id) that created the task. By default, each row includes description. Pass basic=true for a summary row that omits description and includes description_preview, its first 1000 characters. Use the search parameter to match description text server-side.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: all_team_tasks (query) — Local development only. With ph_debug=true, list all project tasks for debugging. Ignored outside local development.; archived (query) — Filter by archived state. Defaults to excluding archived tasks. Use 'true' to list only archived tasks, 'false' for the default, or 'all' to include both. * `true` - true * `false` - false * `all` - all; basic (query) — With true, return basic list rows for summary surfaces: each row omits the full description and includes description_preview, its first 1000 characters. Defaults to false, which returns full task rows with description. The search parameter still matches description text server-side.; channel (query) — Filter tasks to a channel's feed.; ci_status (query) — Filter tasks by the CI check rollup on their most recent run's pull request, as last observed from GitHub. 'none' means the PR has no checks. * `passing` - passing * `failing` - failing * `pending` - pending * `none` - none; client_provenance (query) — Filter by the client that created the task * `posthog_desktop` - PostHog Desktop; commented_by (query) — Filter to tasks carrying a thread comment written by this user ID.; created_by (query) — Filter by creator user ID; exclude_origin_product (query) — Exclude tasks with this origin product from the results * `onboarding` - Onboarding * `error_tracking` - Error Tracking * `eval_clusters` - Eval Clusters * `user_created` - User Created * `slack` - Slack * `support_queue` - Support Queue * `session_summaries` - Session Summaries * `posthog_ai` - PostHog AI * `experiments` - Experiments * `signal_report` - Signal Report * `signals_scout` - Signals Scout * `scout_suggestions` - Signals Scout Suggestions * `support_reply` - Support Reply * `hogdesk` - HogDesk * `review_hog` - ReviewHog * `image_builder` - Image Builder * `loop` - Loop * `mcp_analytics` - MCP Analytics * `signals_chat` - Signals Chat * `task_analysis` - Task Analysis * `workflow` - Workflow; hog_flow_id (query) — Filter tasks to the runs spawned by this workflow's 'Create AI task' action.; internal (query) — Filter by the internal flag, which controls whether a task is shown by default, not whether it is accessible. Defaults to excluding internal tasks. Use 'all' to include both internal and user-facing tasks, or 'true' to list only internal tasks. All values are available to any team member; access stays governed by task visibility. * `true` - true * `false` - false * `all` - all; limit (query) — Number of results to return per page.; mentions (query) — Filter to tasks whose thread mentions this user ID.; offset (query) — The initial index from which to return the results.; ordering (query) — Sort order. '-last_activity_at' is newest activity first, where activity means a thread message or a run starting, streaming, or finishing. Defaults to '-created_at'. * `-created_at` - -created_at * `-last_activity_at` - -last_activity_at; organization (query) — Filter by repository organization; origin_product (query) — Filter by origin product; pinned (query) — With true, only tasks the requesting user has pinned.; pr_state (query) — Filter tasks by the state of their most recent run's pull request, as last observed from GitHub (webhooks plus the CI follow-up snapshot). * `open` - open * `draft` - draft * `merged` - merged * `closed` - closed; repository (query) — Filter by repository name (can include org/repo format); search (query) — Case-insensitive substring search over task title and description. A numeric value also matches the task number. An empty value disables the filter.; stage (query) — Filter by task run stage; status (query) — Filter tasks by the status of their most recent run. * `not_started` - not_started * `queued` - queued * `in_progress` - in_progress * `completed` - completed * `failed` - failed * `cancelled` - cancelled"
+  },
+  {
+    "id": "tasks_me_config_create",
+    "name": "Set your per-project default AI run preferences; they override the project default wholesale",
+    "description": "Set your per-project default AI run preferences; they override the project default wholesale Set your per-project default AI run preferences; they override the project default wholesale. POST /api/projects/{project_id}/tasks/@me/config/",
+    "context": "POST /api/projects/{project_id}/tasks/@me/config/\nSet your per-project default AI run preferences; they override the project default wholesale. Send all fields as null to clear and inherit the project default.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_me_config_list",
+    "name": "Retrieve your per-project default AI run preferences, plus the resolved defaults a new run will use when no explicit runtime selection is sent (your preference over the project default).",
+    "description": "Retrieve your per-project default AI run preferences, plus the resolved defaults a new run will use when no explicit runtime selection is sent (your preference over the project default). GET /api/projects/{project_id}/tasks/@me/config/",
+    "context": "GET /api/projects/{project_id}/tasks/@me/config/\nRetrieve your per-project default AI run preferences, plus the resolved defaults a new run will use when no explicit runtime selection is sent (your preference over the project default).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "tasks_models_retrieve",
+    "name": "List available models",
+    "description": "List available models Return the models a task run may use, with the reasoning efforts each one supports. GET /api/projects/{project_id}/tasks/models/",
+    "context": "GET /api/projects/{project_id}/tasks/models/\nReturn the models a task run may use, with the reasoning efforts each one supports. Derived from the live LLM gateway catalogue, so a newly released model appears without a client change. An empty list means the gateway is unreachable — clients should fall back to their own default rather than treating it as 'no models exist'.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_partial_update",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. PATCH /api/projects/{project_id}/tasks/{id}/",
+    "context": "PATCH /api/projects/{project_id}/tasks/{id}/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_pin_create",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. POST /api/projects/{project_id}/tasks/{id}/pin/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/pin/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_pinned_retrieve",
+    "name": "List pinned tasks",
+    "description": "List pinned tasks Return the visible tasks pinned by the requester in the current project. GET /api/projects/{project_id}/tasks/pinned/",
+    "context": "GET /api/projects/{project_id}/tasks/pinned/\nReturn the visible tasks pinned by the requester in the current project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_presence_create",
+    "name": "Beacon presence for a device watching this task",
+    "description": "Beacon presence for a device watching this task Idempotent upsert: marks the calling user + `device_id` as actively watching this task for the next ~60 seconds. POST /api/projects/{project_id}/tasks/{id}/presence/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/presence/\nIdempotent upsert: marks the calling user + `device_id` as actively watching this task for the next ~60 seconds. While at least one device for the user has a non-expired presence row for this task, the push fanout will skip ALL of that user's other registered devices for task notifications — the contract is 'if any device is demonstrably watching, suppress the others'. Clients call this every ~30s while the task screen is foregrounded. `device_id` is the UUID of the caller's UserPushToken row.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_presence_destroy",
+    "name": "Beacon presence for a device watching this task",
+    "description": "Beacon presence for a device watching this task Idempotent upsert: marks the calling user + `device_id` as actively watching this task for the next ~60 seconds. DELETE /api/projects/{project_id}/tasks/{id}/presence/",
+    "context": "DELETE /api/projects/{project_id}/tasks/{id}/presence/\nIdempotent upsert: marks the calling user + `device_id` as actively watching this task for the next ~60 seconds. While at least one device for the user has a non-expired presence row for this task, the push fanout will skip ALL of that user's other registered devices for task notifications — the contract is 'if any device is demonstrably watching, suppress the others'. Clients call this every ~30s while the task screen is foregrounded. `device_id` is the UUID of the caller's UserPushToken row.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_repo_routing_rules_create",
+    "name": "Team routing rules that steer agent repo selection (`RepoRoutingRule`)",
+    "description": "Team routing rules that steer agent repo selection (`RepoRoutingRule`) Team routing rules that steer agent repo selection (`RepoRoutingRule`). POST /api/projects/{project_id}/tasks/repo_routing_rules/",
+    "context": "POST /api/projects/{project_id}/tasks/repo_routing_rules/\nTeam routing rules that steer agent repo selection (`RepoRoutingRule`). The same rows the Slack `@PostHog rules` commands manage; the repo selection agent reads them ordered by priority when picking a repository for a task. Rules whose repository is not connected to the project are ignored at selection time, so a stale rule is inert rather than harmful — which is why writes here don't check the connected-repository list (the UI constrains the picker to connected repos anyway).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_repo_routing_rules_destroy",
+    "name": "Team routing rules that steer agent repo selection (`RepoRoutingRule`)",
+    "description": "Team routing rules that steer agent repo selection (`RepoRoutingRule`) Team routing rules that steer agent repo selection (`RepoRoutingRule`). DELETE /api/projects/{project_id}/tasks/repo_routing_rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/tasks/repo_routing_rules/{id}/\nTeam routing rules that steer agent repo selection (`RepoRoutingRule`). The same rows the Slack `@PostHog rules` commands manage; the repo selection agent reads them ordered by priority when picking a repository for a task. Rules whose repository is not connected to the project are ignored at selection time, so a stale rule is inert rather than harmful — which is why writes here don't check the connected-repository list (the UI constrains the picker to connected repos anyway).\nRequired: id (path) — A UUID string identifying this repo routing rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_repo_routing_rules_list",
+    "name": "Team routing rules that steer agent repo selection (`RepoRoutingRule`)",
+    "description": "Team routing rules that steer agent repo selection (`RepoRoutingRule`) Team routing rules that steer agent repo selection (`RepoRoutingRule`). GET /api/projects/{project_id}/tasks/repo_routing_rules/",
+    "context": "GET /api/projects/{project_id}/tasks/repo_routing_rules/\nTeam routing rules that steer agent repo selection (`RepoRoutingRule`). The same rows the Slack `@PostHog rules` commands manage; the repo selection agent reads them ordered by priority when picking a repository for a task. Rules whose repository is not connected to the project are ignored at selection time, so a stale rule is inert rather than harmful — which is why writes here don't check the connected-repository list (the UI constrains the picker to connected repos anyway).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_repo_routing_rules_partial_update",
+    "name": "Team routing rules that steer agent repo selection (`RepoRoutingRule`)",
+    "description": "Team routing rules that steer agent repo selection (`RepoRoutingRule`) Team routing rules that steer agent repo selection (`RepoRoutingRule`). PATCH /api/projects/{project_id}/tasks/repo_routing_rules/{id}/",
+    "context": "PATCH /api/projects/{project_id}/tasks/repo_routing_rules/{id}/\nTeam routing rules that steer agent repo selection (`RepoRoutingRule`). The same rows the Slack `@PostHog rules` commands manage; the repo selection agent reads them ordered by priority when picking a repository for a task. Rules whose repository is not connected to the project are ignored at selection time, so a stale rule is inert rather than harmful — which is why writes here don't check the connected-repository list (the UI constrains the picker to connected repos anyway).\nRequired: id (path) — A UUID string identifying this repo routing rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_repo_routing_rules_retrieve",
+    "name": "Team routing rules that steer agent repo selection (`RepoRoutingRule`)",
+    "description": "Team routing rules that steer agent repo selection (`RepoRoutingRule`) Team routing rules that steer agent repo selection (`RepoRoutingRule`). GET /api/projects/{project_id}/tasks/repo_routing_rules/{id}/",
+    "context": "GET /api/projects/{project_id}/tasks/repo_routing_rules/{id}/\nTeam routing rules that steer agent repo selection (`RepoRoutingRule`). The same rows the Slack `@PostHog rules` commands manage; the repo selection agent reads them ordered by priority when picking a repository for a task. Rules whose repository is not connected to the project are ignored at selection time, so a stale rule is inert rather than harmful — which is why writes here don't check the connected-repository list (the UI constrains the picker to connected repos anyway).\nRequired: id (path) — A UUID string identifying this repo routing rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_repo_routing_rules_update",
+    "name": "Team routing rules that steer agent repo selection (`RepoRoutingRule`)",
+    "description": "Team routing rules that steer agent repo selection (`RepoRoutingRule`) Team routing rules that steer agent repo selection (`RepoRoutingRule`). PUT /api/projects/{project_id}/tasks/repo_routing_rules/{id}/",
+    "context": "PUT /api/projects/{project_id}/tasks/repo_routing_rules/{id}/\nTeam routing rules that steer agent repo selection (`RepoRoutingRule`). The same rows the Slack `@PostHog rules` commands manage; the repo selection agent reads them ordered by priority when picking a repository for a task. Rules whose repository is not connected to the project are ignored at selection time, so a stale rule is inert rather than harmful — which is why writes here don't check the connected-repository list (the UI constrains the picker to connected repos anyway).\nRequired: id (path) — A UUID string identifying this repo routing rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_repositories_retrieve",
+    "name": "List distinct task repositories",
+    "description": "List distinct task repositories Return the set of repositories referenced by non-deleted, non-internal tasks in the current project. GET /api/projects/{project_id}/tasks/repositories/",
+    "context": "GET /api/projects/{project_id}/tasks/repositories/\nReturn the set of repositories referenced by non-deleted, non-internal tasks in the current project. Used to populate repository filter pickers without being constrained by task list pagination.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_repository_readiness_retrieve",
+    "name": "Get repository readiness",
+    "description": "Get repository readiness Get autonomy readiness details for a specific repository in the current project. GET /api/projects/{project_id}/tasks/repository_readiness/",
+    "context": "GET /api/projects/{project_id}/tasks/repository_readiness/\nGet autonomy readiness details for a specific repository in the current project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; repository (query) — Repository in org/repo format\nOptional: refresh (query); window_days (query)"
+  },
+  {
+    "id": "tasks_retrieve",
+    "name": "Get task",
+    "description": "Get task Retrieve a single task by ID. GET /api/projects/{project_id}/tasks/{id}/",
+    "context": "GET /api/projects/{project_id}/tasks/{id}/\nRetrieve a single task by ID.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_run_create",
+    "name": "Run task",
+    "description": "Run task Create a new task run and kick off the workflow. POST /api/projects/{project_id}/tasks/{id}/run/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/run/\nCreate a new task run and kick off the workflow.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: X-PostHog-Warm-Retry (header) — Retry token from a warm_run_activation_unavailable response; prevents creating a replacement run.; body (body)"
+  },
+  {
+    "id": "tasks_runs_analysis_activity_create",
+    "name": "Report an analysis activity",
+    "description": "Report an analysis activity Store one activity record on a task-analysis run. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/analysis-activity/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/analysis-activity/\nStore one activity record on a task-analysis run. Only the run's own task-bound sandbox agent may call it, and only on a task-analysis run. Activities arrive in log order and do not overlap. An exact repeat of a stored activity returns its index without storing it again. The activities list is server-owned: it is not writable through the run update endpoint.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_analyze_create",
+    "name": "Analyze this run",
+    "description": "Analyze this run Create a PostHog-funded analysis task that reviews this run's transcript for inefficiencies and reports findings. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/analyze/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/analyze/\nCreate a PostHog-funded analysis task that reviews this run's transcript for inefficiencies and reports findings. Idempotent per run: if an analysis task already exists for this run, it is returned instead of creating another. The analysis is not billed to the customer.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_append_log_create",
+    "name": "Append log entries",
+    "description": "Append log entries Append one or more log entries to the task run log array POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/append_log/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/append_log/\nAppend one or more log entries to the task run log array\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_create",
+    "name": "Upload artifacts for a task run",
+    "description": "Upload artifacts for a task run Persist task artifacts to S3 and attach them to the run manifest. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/\nPersist task artifacts to S3 and attach them to the run manifest.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_dismiss_create",
+    "name": "Dismiss or restore task run artifacts",
+    "description": "Dismiss or restore task run artifacts Hides artifacts from clients without deleting them from storage, so a file dismissed by mistake can be restored. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/dismiss/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/dismiss/\nHides artifacts from clients without deleting them from storage, so a file dismissed by mistake can be restored.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_download_create",
+    "name": "Download an artifact through the backend",
+    "description": "Download an artifact through the backend Streams artifact content for a task run artifact after validating that it belongs to the run. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/download/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/download/\nStreams artifact content for a task run artifact after validating that it belongs to the run.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_download_retrieve",
+    "name": "Download a task run artifact by id",
+    "description": "Download a task run artifact by id Redirects to a short-lived presigned URL for the artifact, so callers can share a stable link instead of a raw presigned URL. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/{artifact_id}/download/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/{artifact_id}/download/\nRedirects to a short-lived presigned URL for the artifact, so callers can share a stable link instead of a raw presigned URL.\nRequired: artifact_id (path) — Manifest id of the artifact to download; id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_artifacts_finalize_upload_create",
+    "name": "Finalize direct uploads for task run artifacts",
+    "description": "Finalize direct uploads for task run artifacts Verify directly uploaded S3 objects and attach them to the run artifact manifest. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/finalize_upload/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/finalize_upload/\nVerify directly uploaded S3 objects and attach them to the run artifact manifest.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_prepare_upload_create",
+    "name": "Prepare direct uploads for task run artifacts",
+    "description": "Prepare direct uploads for task run artifacts Reserve S3 object keys for task artifacts and return presigned POST forms for direct uploads. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/prepare_upload/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/prepare_upload/\nReserve S3 object keys for task artifacts and return presigned POST forms for direct uploads.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_presign_create",
+    "name": "Generate presigned URL for an artifact",
+    "description": "Generate presigned URL for an artifact Returns a temporary, signed URL that can be used to download a specific artifact. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/presign/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/presign/\nReturns a temporary, signed URL that can be used to download a specific artifact.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_artifacts_references_create",
+    "name": "Register PostHog object references for a task run",
+    "description": "Register PostHog object references for a task run Attach live PostHog object references to the run artifact manifest without uploading files. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/references/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/artifacts/references/\nAttach live PostHog object references to the run artifact manifest without uploading files.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_cancel_create",
+    "name": "Cancel task run",
+    "description": "Cancel task run Stop an active cloud run. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/cancel/\nStop an active cloud run. Interrupts the agent, snapshots interactive sessions for later resume, tears down the sandbox, and marks the run cancelled. Idempotent: cancelling a finished run returns it unchanged.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_clear_conversation_create",
+    "name": "Clear conversation history",
+    "description": "Clear conversation history Record a `/clear` boundary in a finished run's log so the next run in the chain starts with an empty conversation. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/clear_conversation/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/clear_conversation/\nRecord a `/clear` boundary in a finished run's log so the next run in the chain starts with an empty conversation. Its artifacts and visible history are unaffected. Only for a finished run: an active one has an agent that owns the clear, so send `/clear` to it as an ordinary message instead.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_command_create",
+    "name": "Send command to task run",
+    "description": "Send command to task run Queue user_message JSON-RPC commands through the task workflow and forward sandbox control commands to the agent server. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/command/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/command/\nQueue user_message JSON-RPC commands through the task workflow and forward sandbox control commands to the agent server. Supports user_message, cancel, close, permission_response, set_config_option, mcp_response, side_question, native Pi RPC commands, and Pi queue operations. Permission responses return 503 agent_session_not_ready only when rejected before execution; clients may retry that code within a bounded startup wait. HTTP 200 preserves JSON-RPC errors; permission acceptance requires result.resolved=true.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_connection_token_retrieve",
+    "name": "Get sandbox connection token",
+    "description": "Get sandbox connection token Generate a JWT token for direct connection to the sandbox. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/connection_token/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/connection_token/\nGenerate a JWT token for direct connection to the sandbox. Valid for 24 hours.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_create",
+    "name": "Create task run",
+    "description": "Create task run Create a new run for a specific task without starting execution. POST /api/projects/{project_id}/tasks/{task_id}/runs/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/\nCreate a new run for a specific task without starting execution.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_list",
+    "name": "List task runs",
+    "description": "List task runs Get a list of runs for a specific task. GET /api/projects/{project_id}/tasks/{task_id}/runs/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/\nGet a list of runs for a specific task.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "tasks_runs_living_artifacts_chart",
+    "name": "Render an insight chart and attach it as a living artifact",
+    "description": "Render an insight chart and attach it as a living artifact Renders a PostHog insight (ad-hoc query JSON or a saved insight) to a PNG server-side and registers it as a slack_file living artifact in one call. POST /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/chart/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/chart/\nRenders a PostHog insight (ad-hoc query JSON or a saved insight) to a PNG server-side and registers it as a slack_file living artifact in one call. Blocks until the render finishes.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path); task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_living_artifacts_create",
+    "name": "Create a living artifact for a task run",
+    "description": "Create a living artifact for a task run Create a stable, editable artifact handle from direct markdown/text content or an existing run artifact. POST /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/\nCreate a stable, editable artifact handle from direct markdown/text content or an existing run artifact. Slack adapters deliver into the mapped Slack thread; document artifacts use external connector storage when available.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path); task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_living_artifacts_edit",
+    "name": "Edit a living artifact for a task run",
+    "description": "Edit a living artifact for a task run Commit a new version to an existing living artifact handle. POST /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/{id}/edit/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/{id}/edit/\nCommit a new version to an existing living artifact handle.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path); task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_living_artifacts_list",
+    "name": "List living artifacts for a task run",
+    "description": "List living artifacts for a task run Returns stable, versioned artifact handles created by the run's task. GET /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/\nReturns stable, versioned artifact handles created by the run's task.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path); task_id (path)"
+  },
+  {
+    "id": "tasks_runs_living_artifacts_open",
+    "name": "Open a living artifact for a task run",
+    "description": "Open a living artifact for a task run Return a stable living artifact handle and the current content when the adapter supports reads. GET /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/{id}/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{run_id}/living_artifacts/{id}/\nReturn a stable living artifact handle and the current content when the adapter supports reads.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path); task_id (path)"
+  },
+  {
+    "id": "tasks_runs_logs_retrieve",
+    "name": "Get task run logs",
+    "description": "Get task run logs Fetch the logs for a task run as JSONL. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/logs/\nFetch the logs for a task run as JSONL. If the run resumes from another (state.resume_from_run_id), each ancestor's log is concatenated first (oldest ancestor → ... → this run) so resume consumers see a single continuous history.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_partial_update",
+    "name": "Update task run",
+    "description": "Update task run API for managing task runs. PATCH /api/projects/{project_id}/tasks/{task_id}/runs/{id}/",
+    "context": "PATCH /api/projects/{project_id}/tasks/{task_id}/runs/{id}/\nAPI for managing task runs. Each run represents an execution of a task.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_peers_message_create",
+    "name": "Send a message to a peer agent run",
+    "description": "Send a message to a peer agent run Relay a message from this run to a peer agent run. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/peers/{target_run_id}/message/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/peers/{target_run_id}/message/\nRelay a message from this run to a peer agent run. The body is delivered below a server-composed provenance envelope as a queued (non-steer) turn; attachments are copied into the target run's own artifact storage. `accepted` means queued for delivery, never delivered — the sandbox handoff happens later inside the target's workflow.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; target_run_id (path); task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_peers_retrieve",
+    "name": "List peer agent runs",
+    "description": "List peer agent runs Agent runs this run may send messages to: cloud Pi runs of tasks created by the same user, currently in progress or queued. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/peers/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/peers/\nAgent runs this run may send messages to: cloud Pi runs of tasks created by the same user, currently in progress or queued. Discovery and send validation share one visibility policy, so a run can only message what it can list; the per-entry `sendable` flag is the liveness contract.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_preview_retrieve",
+    "name": "Open the dev stack preview for a task run",
+    "description": "Open the dev stack preview for a task run Redirects to the PostHog dev stack running inside this run's sandbox. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/preview/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/preview/\nRedirects to the PostHog dev stack running inside this run's sandbox. A fresh sandbox access token is minted on every request and carried only in the redirect target, so it is never persisted or returned in a response body. When the run has no preview, or its sandbox has stopped, this renders a short HTML page instead.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_relay_message_create",
+    "name": "Relay run message to Slack",
+    "description": "Relay run message to Slack Queue a Slack relay workflow to post a run message into the mapped Slack thread. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/relay_message/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/relay_message/\nQueue a Slack relay workflow to post a run message into the mapped Slack thread.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_runs_resume_in_cloud_create",
+    "name": "Resume task run in cloud",
+    "description": "Resume task run in cloud Resume an existing task run in a cloud sandbox. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/resume_in_cloud/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/resume_in_cloud/\nResume an existing task run in a cloud sandbox. Terminates any existing workflow and starts a new one.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_retrieve",
+    "name": "Get task run",
+    "description": "Get task run Retrieve a single run for a specific task. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/\nRetrieve a single run for a specific task.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_session_logs_retrieve",
+    "name": "Get filtered task run session logs",
+    "description": "Get filtered task run session logs Fetch session log entries for a task run with optional filtering by timestamp, event type, and limit. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/session_logs/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/session_logs/\nFetch session log entries for a task run with optional filtering by timestamp, event type, and limit.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: after (query) — Only return events after this ISO8601 timestamp; event_types (query) — Comma-separated list of event types to include; exclude_types (query) — Comma-separated list of event types to exclude; limit (query) — Maximum number of entries to return (default 1000, max 5000); offset (query) — Zero-based offset into the filtered log entries"
+  },
+  {
+    "id": "tasks_runs_set_output_partial_update",
+    "name": "Set run output",
+    "description": "Set run output Update the output field for a task run (e.g., PR URL, commit SHA, etc.) PATCH /api/projects/{project_id}/tasks/{task_id}/runs/{id}/set_output/",
+    "context": "PATCH /api/projects/{project_id}/tasks/{task_id}/runs/{id}/set_output/\nUpdate the output field for a task run (e.g., PR URL, commit SHA, etc.)\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_set_summary_partial_update",
+    "name": "Set task run summary",
+    "description": "Set task run summary Replace the running summary for a task run. PATCH /api/projects/{project_id}/tasks/{task_id}/runs/{id}/set_summary/",
+    "context": "PATCH /api/projects/{project_id}/tasks/{task_id}/runs/{id}/set_summary/\nReplace the running summary for a task run.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_start_create",
+    "name": "Start task run",
+    "description": "Start task run Start an existing cloud run after any initial run-scoped attachments have been uploaded. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/start/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/start/\nStart an existing cloud run after any initial run-scoped attachments have been uploaded.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_runs_stream_retrieve",
+    "name": "Server-Sent Events stream of task run events",
+    "description": "Server-Sent Events stream of task run events Server-Sent Events stream of task run events. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/stream/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/stream/\nServer-Sent Events stream of task run events. Events carry an `id:` line (a Redis stream id, or a synthetic `log- ` id during backlog replay) usable as a resume cursor. The server caps each connection at 900 seconds: it emits `event: end` with `data: {\"type\": \"rotated\"}` and closes. This does NOT mean the run finished — reconnect with the `Last-Event-ID` header set to the last received event id to resume. Only treat the stream as complete when the run itself reaches a terminal status. Resume guarantees cover mirrored events only: on runs where live mirroring is presence-gated, events produced while no viewer was connected are not in the live stream. Reload the run's session logs to recover the agent's output; run-state and progress frames are not in those logs, so refetch the run itself for its current state. On runs with durable backlog serving, a connection without `Last-Event-ID` first replays history from the run log under synthetic `log- ` event ids, then attaches the live stream, skipping live entries the backlog already covered. Reconnecting with a `log- ` id resumes the backlog replay from that point; reconnecting with a Redis id resumes the live stream, may re-deliver a few events already served as backlog frames, and falls back to a full backlog replay when the resume point was trimmed or the stream expired. Runs whose log exceeds the backlog byte cap skip the replay and serve only the recent live window. When the backlog is temporarily unavailable (a storage read failure, or a worker at its concurrent replay budget), the stream emits an `event: error` frame and closes; reconnect with the same cursor to retry. Treat delivery as at-least-once across reconnects. `?start=latest` consumers must also carry `Last-Event-ID` across reconnects: reconnecting without it re-resolves to the then-current latest event, silently skipping anything published while disconnected. **SDK consumers**: do not call the generated fetch wrapper for this path — it will buffer the entire stream. Use the URL builder (`getTasksRunsStreamRetrieveUrl`) with a streaming `fetch`/`EventSource`-style consumer and the `Last-Event-ID` header instead.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: Last-Event-ID (header) — Resume cursor: the `id:` of the last event received on a previous connection. Events strictly after it are delivered.; start (query) — Set to `latest` to skip the event backlog and only receive events published after connecting."
+  },
+  {
+    "id": "tasks_runs_stream_token_retrieve",
+    "name": "Get task run stream read token",
+    "description": "Get task run stream read token Generate a run-scoped JWT that authorizes reading this task run's live event stream via the agent-proxy. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/stream_token/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/stream_token/\nGenerate a run-scoped JWT that authorizes reading this task run's live event stream via the agent-proxy. A run that keeps only a short live tail in Redis is routed to the proxy only when the client sets resync=true, meaning it rebuilds from the durable run log when the proxy reports a trimmed cursor.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: resync (query) — Set to true when the client can rebuild the run from its durable log after the agent-proxy reports a trimmed stream cursor. Without it, runs that keep only a short live tail in Redis are read from the Django endpoint, which replays the durable backlog itself."
+  },
+  {
+    "id": "tasks_runs_task_session_retrieve",
+    "name": "Get active task session storage access",
+    "description": "Get active task session storage access API for managing task runs. GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/task_session/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/runs/{id}/task_session/\nAPI for managing task runs. Each run represents an execution of a task.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_runs_task_session_sync_create",
+    "name": "Replace the active native task session",
+    "description": "Replace the active native task session API for managing task runs. POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/task_session_sync/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/runs/{id}/task_session_sync/\nAPI for managing task runs. Each run represents an execution of a task.\nRequired: If-Match (header) — Expected current content SHA-256 digest, or none for an empty session; X-Sandbox-ID (header) — Active sandbox identifier; X-Task-Run-Token (header) — Sandbox-scoped task run token; id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_search_retrieve",
+    "name": "Search tasks, pull requests, artifacts, and spaces",
+    "description": "Search tasks, pull requests, artifacts, and spaces API for managing tasks within a project. GET /api/projects/{project_id}/tasks/search/",
+    "context": "GET /api/projects/{project_id}/tasks/search/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; q (query) — Text or exact identifier to search for.\nOptional: limit (query) — Maximum number of results to return."
+  },
+  {
+    "id": "tasks_slack_thread_context_retrieve",
+    "name": "Resolve a Slack thread to its task, runs, and Temporal workflows",
+    "description": "Resolve a Slack thread to its task, runs, and Temporal workflows PostHog-internal debug tool. GET /api/projects/{project_id}/tasks/slack_thread_context/",
+    "context": "GET /api/projects/{project_id}/tasks/slack_thread_context/\nPostHog-internal debug tool. Resolves a Slack permalink to the linked task, its runs, the task-processing and mention-dispatch Temporal workflow ids/URLs, and presigned log URLs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; url (query) — Full Slack permalink to any message in the thread (e.g. https://posthog.slack.com/archives/C…/p1779956938619299). Replies inside the thread are accepted too — the `thread_ts` query param (when present) takes precedence over the in-path message ts."
+  },
+  {
+    "id": "tasks_staged_artifacts_finalize_upload_create",
+    "name": "Finalize staged direct uploads for task attachments",
+    "description": "Finalize staged direct uploads for task attachments Verify staged S3 uploads and cache their metadata so they can be attached to the next run created for this task. POST /api/projects/{project_id}/tasks/{id}/staged_artifacts/finalize_upload/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/staged_artifacts/finalize_upload/\nVerify staged S3 uploads and cache their metadata so they can be attached to the next run created for this task.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_staged_artifacts_prepare_upload_create",
+    "name": "Prepare staged direct uploads for task attachments",
+    "description": "Prepare staged direct uploads for task attachments Reserve S3 object keys for task attachments before creating a new run and return presigned POST forms for direct uploads. POST /api/projects/{project_id}/tasks/{id}/staged_artifacts/prepare_upload/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/staged_artifacts/prepare_upload/\nReserve S3 object keys for task attachments before creating a new run and return presigned POST forms for direct uploads.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tasks_summaries_create",
+    "name": "Fetch task summaries by ID",
+    "description": "Fetch task summaries by ID Returns summary for the requested tasks, including the creator ID and the latest run's ID, status, and environment. POST /api/projects/{project_id}/tasks/summaries/",
+    "context": "POST /api/projects/{project_id}/tasks/summaries/\nReturns summary for the requested tasks, including the creator ID and the latest run's ID, status, and environment.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: limit (query) — Page size for the paginated response.; offset (query) — Offset into the result set for pagination."
+  },
+  {
+    "id": "tasks_thread_messages_create",
+    "name": "Post a thread message",
+    "description": "Post a thread message API for a task's thread — the human-only side conversation around a task. POST /api/projects/{project_id}/tasks/{task_id}/thread_messages/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/thread_messages/\nAPI for a task's thread — the human-only side conversation around a task. Messages reach the agent only via the explicit send_to_agent action, gated to the task author.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_thread_messages_destroy",
+    "name": "Delete own thread message",
+    "description": "Delete own thread message API for a task's thread — the human-only side conversation around a task. DELETE /api/projects/{project_id}/tasks/{task_id}/thread_messages/{id}/",
+    "context": "DELETE /api/projects/{project_id}/tasks/{task_id}/thread_messages/{id}/\nAPI for a task's thread — the human-only side conversation around a task. Messages reach the agent only via the explicit send_to_agent action, gated to the task author.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)"
+  },
+  {
+    "id": "tasks_thread_messages_list",
+    "name": "List thread messages",
+    "description": "List thread messages The task's thread in chronological order. GET /api/projects/{project_id}/tasks/{task_id}/thread_messages/",
+    "context": "GET /api/projects/{project_id}/tasks/{task_id}/thread_messages/\nThe task's thread in chronological order.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "tasks_thread_messages_send_to_agent_create",
+    "name": "Send a thread message to the agent",
+    "description": "Send a thread message to the agent Task author only: forwards the message into the task's latest live run. POST /api/projects/{project_id}/tasks/{task_id}/thread_messages/{id}/send_to_agent/",
+    "context": "POST /api/projects/{project_id}/tasks/{task_id}/thread_messages/{id}/send_to_agent/\nTask author only: forwards the message into the task's latest live run.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; task_id (path); body (body)"
+  },
+  {
+    "id": "tasks_update",
+    "name": "API for managing tasks within a project",
+    "description": "API for managing tasks within a project API for managing tasks within a project. PUT /api/projects/{project_id}/tasks/{id}/",
+    "context": "PUT /api/projects/{project_id}/tasks/{id}/\nAPI for managing tasks within a project. Tasks represent units of work to be performed by an agent.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_usage_retrieve",
+    "name": "Get task usage",
+    "description": "Get task usage Return estimated model and cloud compute costs attributed to a task. GET /api/projects/{project_id}/tasks/{id}/usage/",
+    "context": "GET /api/projects/{project_id}/tasks/{id}/usage/\nReturn estimated model and cloud compute costs attributed to a task.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tasks_warm_create",
+    "name": "Warm a task sandbox",
+    "description": "Warm a task sandbox Warm a full idling Run for a cloud task while the user composes: boot a sandbox, clone the repo, check out the branch, and start the agent, then idle awaiting the first message. POST /api/projects/{project_id}/tasks/warm/",
+    "context": "POST /api/projects/{project_id}/tasks/warm/\nWarm a full idling Run for a cloud task while the user composes: boot a sandbox, clone the repo, check out the branch, and start the agent, then idle awaiting the first message. On submit the normal create+run path transparently reuses and activates this Run; abandoned warms are reaped by the Run's inactivity timeout. Best-effort: returns an empty body when the feature flag is off, the warm pool is full, or the GitHub integration doesn't belong to the team.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "tasks_warm_resume_create",
+    "name": "Warm a resumed task sandbox",
+    "description": "Warm a resumed task sandbox Warm an idling successor for the task's latest terminal Run while the user composes the next message. POST /api/projects/{project_id}/tasks/{id}/warm/",
+    "context": "POST /api/projects/{project_id}/tasks/{id}/warm/\nWarm an idling successor for the task's latest terminal Run while the user composes the next message. The successor restores the prior snapshot when compatible and waits for the normal run endpoint to activate it. Best-effort: returns an empty body when warming is disabled, capped, or the task advanced to another Run.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

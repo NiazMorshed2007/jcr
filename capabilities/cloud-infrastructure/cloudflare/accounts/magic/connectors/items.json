@@ -1,0 +1,86 @@
+[
+  {
+    "id": "mconn-connector-interrupts-create",
+    "name": "Create Interrupt",
+    "description": "Create Interrupt Creates an interrupt for a Magic WAN Connector. POST /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/interrupts",
+    "context": "POST /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/interrupts\nCreates an interrupt for a Magic WAN Connector.\nRequired: account_id (path); connector_id (path); body (body)"
+  },
+  {
+    "id": "mconn-connector-interrupts-list",
+    "name": "List Interrupts",
+    "description": "List Interrupts Lists interrupts for a Magic WAN Connector. GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/interrupts",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/interrupts\nLists interrupts for a Magic WAN Connector.\nRequired: account_id (path); connector_id (path)"
+  },
+  {
+    "id": "mconn-connector-telemetry-events-get",
+    "name": "Get Event",
+    "description": "Get Event Gets Magic WAN Connector Telemetry Event GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}\nGets Magic WAN Connector Telemetry Event\nRequired: account_id (path); connector_id (path); event_t (path); event_n (path)"
+  },
+  {
+    "id": "mconn-connector-telemetry-events-latest-get",
+    "name": "Get latest Events",
+    "description": "Get latest Events Gets latest Magic WAN Connector Telemetry Events GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest\nGets latest Magic WAN Connector Telemetry Events\nRequired: account_id (path); connector_id (path)"
+  },
+  {
+    "id": "mconn-connector-telemetry-events-list",
+    "name": "List Events",
+    "description": "List Events Lists Magic WAN Connector Telemetry Events GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events\nLists Magic WAN Connector Telemetry Events\nRequired: account_id (path); connector_id (path); from (query); to (query)\nOptional: limit (query); cursor (query); k (query) — Filter by event kind"
+  },
+  {
+    "id": "mconn-connector-telemetry-snapshots-get",
+    "name": "Get Snapshot",
+    "description": "Get Snapshot Gets Magic WAN Connector Telemetry Snapshot GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}\nGets Magic WAN Connector Telemetry Snapshot\nRequired: account_id (path); connector_id (path); snapshot_t (path)"
+  },
+  {
+    "id": "mconn-connector-telemetry-snapshots-latest-get",
+    "name": "Get latest Snapshots",
+    "description": "Get latest Snapshots Gets latest Magic WAN Connector Telemetry Snapshots GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest\nGets latest Magic WAN Connector Telemetry Snapshots\nRequired: account_id (path); connector_id (path)"
+  },
+  {
+    "id": "mconn-connector-telemetry-snapshots-list",
+    "name": "List Snapshots",
+    "description": "List Snapshots Lists Magic WAN Connector Telemetry Snapshots GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots\nLists Magic WAN Connector Telemetry Snapshots\nRequired: account_id (path); connector_id (path); from (query); to (query)\nOptional: limit (query); cursor (query)"
+  },
+  {
+    "id": "mconn-connectors-create",
+    "name": "Create Connector",
+    "description": "Create Connector Creates a Magic WAN Connector. POST /client/v4/accounts/{account_id}/magic/connectors",
+    "context": "POST /client/v4/accounts/{account_id}/magic/connectors\nCreates a Magic WAN Connector.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "mconn-connectors-delete",
+    "name": "Delete Connector",
+    "description": "Delete Connector Deletes a Magic WAN Connector. DELETE /client/v4/accounts/{account_id}/magic/connectors/{connector_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/connectors/{connector_id}\nDeletes a Magic WAN Connector.\nRequired: account_id (path); connector_id (path)"
+  },
+  {
+    "id": "mconn-connectors-edit",
+    "name": "Edit Connector",
+    "description": "Edit Connector Edits properties of a Magic WAN Connector. PATCH /client/v4/accounts/{account_id}/magic/connectors/{connector_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/connectors/{connector_id}\nEdits properties of a Magic WAN Connector. May be used to re-provision a license key.\nRequired: account_id (path); connector_id (path); body (body)"
+  },
+  {
+    "id": "mconn-connectors-get",
+    "name": "Get Connector",
+    "description": "Get Connector Gets a Magic WAN Connector. GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors/{connector_id}\nGets a Magic WAN Connector.\nRequired: account_id (path); connector_id (path)"
+  },
+  {
+    "id": "mconn-connectors-list",
+    "name": "List Connectors",
+    "description": "List Connectors Lists Magic WAN Connectors. GET /client/v4/accounts/{account_id}/magic/connectors",
+    "context": "GET /client/v4/accounts/{account_id}/magic/connectors\nLists Magic WAN Connectors.\nRequired: account_id (path)\nOptional: device_type (query) — Filter connectors by device type."
+  },
+  {
+    "id": "mconn-connectors-update",
+    "name": "Update Connector",
+    "description": "Update Connector Updates properties of a Magic WAN Connector. PUT /client/v4/accounts/{account_id}/magic/connectors/{connector_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/connectors/{connector_id}\nUpdates properties of a Magic WAN Connector. May be used to re-provision a license key.\nRequired: account_id (path); connector_id (path); body (body)"
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "canvases_actions_invoke",
+    "name": "Invoke one registered action verb as the viewer",
+    "description": "Invoke one registered action verb as the viewer Invoke one registered action verb as the viewer. POST /api/projects/{project_id}/canvases/{id}/actions/invoke/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/actions/invoke/\nInvoke one registered action verb as the viewer. The canvas must declare the verb in capabilities.posthog.actions (the reviewed permission boundary); the write itself runs with the viewer's own permissions, exactly as if they acted in the app.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_actions_retrieve",
+    "name": "List the action registry: every verb a canvas may declare and invoke.",
+    "description": "List the action registry: every verb a canvas may declare and invoke. GET /api/projects/{project_id}/canvases/actions/",
+    "context": "GET /api/projects/{project_id}/canvases/actions/\nList the action registry: every verb a canvas may declare and invoke.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "canvases_build_action_create",
+    "name": "Apply a lifecycle action (retry, pin, unpin, cancel) to one build.",
+    "description": "Apply a lifecycle action (retry, pin, unpin, cancel) to one build. POST /api/projects/{project_id}/canvases/{id}/builds/action/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/builds/action/\nApply a lifecycle action (retry, pin, unpin, cancel) to one build.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_builds_retrieve",
+    "name": "Read the canvas's build lifecycle: live pointers plus recent builds",
+    "description": "Read the canvas's build lifecycle: live pointers plus recent builds Read the canvas's build lifecycle: live pointers plus recent builds. GET /api/projects/{project_id}/canvases/{id}/builds/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/builds/\nRead the canvas's build lifecycle: live pointers plus recent builds. A publish queues a build; poll this until it is ready (the live pointer advances) or failed (fix the error diagnostics and publish again — the last good build stays live). Send the response's ETag back as If-None-Match to make the poll revalidate without a body.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: scope (query) — \"slim\" returns only what rendering needs — the live build, the head version's builds, and anything still in flight — instead of the full recent-build history. Any other value (or none) returns the full window.; version_id (query) — Include the retained ready build for this historical source version."
+  },
+  {
+    "id": "canvases_connectors_call",
+    "name": "Call one declared connector tool as the viewer",
+    "description": "Call one declared connector tool as the viewer Call one declared connector tool as the viewer. POST /api/projects/{project_id}/canvases/{id}/connectors/call/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/connectors/call/\nCall one declared connector tool as the viewer. The canvas must declare the provider and tool in capabilities.connectors (the reviewed permission boundary); the call runs with the viewer's own connection, so two viewers of the same canvas see their own data.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_connectors_retrieve",
+    "name": "List the connector catalog: every provider and tool a canvas may declare, with the caller's connection state",
+    "description": "List the connector catalog: every provider and tool a canvas may declare, with the caller's connection state List the connector catalog: every provider and tool a canvas may declare, with the caller's connection state. GET /api/projects/{project_id}/canvases/connectors/",
+    "context": "GET /api/projects/{project_id}/canvases/connectors/\nList the connector catalog: every provider and tool a canvas may declare, with the caller's connection state. Authoring agents read this to write ph.connectors.call sites and the matching capabilities.connectors declarations. Sandbox tokens receive only static native tools, with no connection lookup or MCP installation data.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: mcp_hosts (query) — Comma-separated MCP server hosts to include (e.g. 'mcp.calendly.com'). Defaults to every server the caller has connected in the MCP store."
+  },
+  {
+    "id": "canvases_create",
+    "name": "Create a new, empty canvas in a channel; give it source by publishing a project.",
+    "description": "Create a new, empty canvas in a channel; give it source by publishing a project. POST /api/projects/{project_id}/canvases/",
+    "context": "POST /api/projects/{project_id}/canvases/\nCreate a new, empty canvas in a channel; give it source by publishing a project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_destroy",
+    "name": "Canvases: agent-built sandboxed browser apps, filed into channels",
+    "description": "Canvases: agent-built sandboxed browser apps, filed into channels Canvases: agent-built sandboxed browser apps, filed into channels. DELETE /api/projects/{project_id}/canvases/{id}/",
+    "context": "DELETE /api/projects/{project_id}/canvases/{id}/\nCanvases: agent-built sandboxed browser apps, filed into channels. Source is versioned per publish and built server-side; the canvas app renders the published build's artifact from the isolated artifact origin.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "canvases_draft_create",
+    "name": "Stage a complete source project as a draft version and build it, without publishing",
+    "description": "Stage a complete source project as a draft version and build it, without publishing Stage a complete source project as a draft version and build it, without publishing. POST /api/projects/{project_id}/canvases/{id}/draft/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/draft/\nStage a complete source project as a draft version and build it, without publishing. The draft gets the same validation, versioning, and server-side build as a publish, but the canvas's head and live build never move, so nothing changes for viewers. Promote the version with `promote` to make it live. The response reports how the draft's declared capabilities widen the current head's, so growth in access can be reviewed before it ships. No version guard applies: a draft conflicts with nothing.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_drafts_retrieve",
+    "name": "The canvas's staged draft versions, newest first, each with its latest build status",
+    "description": "The canvas's staged draft versions, newest first, each with its latest build status The canvas's staged draft versions, newest first, each with its latest build status. GET /api/projects/{project_id}/canvases/{id}/drafts/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/drafts/\nThe canvas's staged draft versions, newest first, each with its latest build status. A draft is a version that was built but never made the head. Preview one with `source?version_id=`, then make it live with `promote`.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "canvases_edit_create",
+    "name": "Publish per-file edits against the canvas's current source project",
+    "description": "Publish per-file edits against the canvas's current source project Publish per-file edits against the canvas's current source project. POST /api/projects/{project_id}/canvases/{id}/edit/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/edit/\nPublish per-file edits against the canvas's current source project. Diff-aware alternative to sending the complete project: each operation sets a file's content or (content null) deletes it, applied to the head the caller read. `expected_current_version_id` is mandatory here — relative edits against an unverified base could silently merge into someone else's newer work.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_home_create",
+    "name": "Get or provision the caller's home canvas",
+    "description": "Get or provision the caller's home canvas Get or provision the caller's home canvas. POST /api/projects/{project_id}/canvases/home/",
+    "context": "POST /api/projects/{project_id}/canvases/home/\nGet or provision the caller's home canvas. Idempotent: returns the user's existing home canvas, or creates a grid canvas in their personal channel and points their home preference at it. The home surface calls this on open.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "canvases_layout_patch_create",
+    "name": "Apply surgical operations to the grid canvas's current layout",
+    "description": "Apply surgical operations to the grid canvas's current layout Apply surgical operations to the grid canvas's current layout. POST /api/projects/{project_id}/canvases/{id}/layout/patch/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/layout/patch/\nApply surgical operations to the grid canvas's current layout. The default write path for both the editor and agents: add, move, resize, fill, or remove one placement without resending the layout. `expected_current_version_id` is mandatory so an agent filling a box and a user rearranging widgets cannot overwrite each other.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_layout_publish_create",
+    "name": "Publish a complete layout document as the grid canvas's new head version",
+    "description": "Publish a complete layout document as the grid canvas's new head version Publish a complete layout document as the grid canvas's new head version. POST /api/projects/{project_id}/canvases/{id}/layout/publish/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/layout/publish/\nPublish a complete layout document as the grid canvas's new head version. Layout is data, not code: the new version is live immediately, with no build. Validation errors reject the publish (400) and leave the canvas untouched; a stale `expected_current_version_id` is rejected with 409.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_layout_retrieve",
+    "name": "Read a grid canvas's layout document and its `current_version_id`",
+    "description": "Read a grid canvas's layout document and its `current_version_id` Read a grid canvas's layout document and its `current_version_id`. GET /api/projects/{project_id}/canvases/{id}/layout/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/layout/\nRead a grid canvas's layout document and its `current_version_id`. Always call this before editing: pass the returned version id as `expected_current_version_id` on publish/patch so concurrent edits are not overwritten. A grid canvas with no versions yet returns the default empty layout with a null version id.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: include_components (query) — Also return the renderable build (with signed artifact URL) of every component the layout's live placements reference, so a grid renders from this one call.; version_id (query) — Read this historical layout version instead of the head (for version browsing)."
+  },
+  {
+    "id": "canvases_list",
+    "name": "Canvases: agent-built sandboxed browser apps, filed into channels",
+    "description": "Canvases: agent-built sandboxed browser apps, filed into channels Canvases: agent-built sandboxed browser apps, filed into channels. GET /api/projects/{project_id}/canvases/",
+    "context": "GET /api/projects/{project_id}/canvases/\nCanvases: agent-built sandboxed browser apps, filed into channels. Source is versioned per publish and built server-side; the canvas app renders the published build's artifact from the isolated artifact origin.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: channel (query) — Only return canvases in this channel.; kind (query) — Only return canvases of this kind. kind=component lists the component store.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Only return canvases whose name or description contains this text (case-insensitive)."
+  },
+  {
+    "id": "canvases_partial_update",
+    "name": "Update canvas metadata, including the space it belongs to.",
+    "description": "Update canvas metadata, including the space it belongs to. PATCH /api/projects/{project_id}/canvases/{id}/",
+    "context": "PATCH /api/projects/{project_id}/canvases/{id}/\nUpdate canvas metadata, including the space it belongs to.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "canvases_promote_create",
+    "name": "Make a draft version the canvas's live head",
+    "description": "Make a draft version the canvas's live head Make a draft version the canvas's live head. POST /api/projects/{project_id}/canvases/{id}/promote/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/promote/\nMake a draft version the canvas's live head. A draft whose build is ready goes live immediately, with no rebuild; otherwise a fresh build is queued. Returns that build.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_publish_create",
+    "name": "Publish a complete source project as the canvas's new head version",
+    "description": "Publish a complete source project as the canvas's new head version Publish a complete source project as the canvas's new head version. POST /api/projects/{project_id}/canvases/{id}/publish/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/publish/\nPublish a complete source project as the canvas's new head version. Validation errors reject the publish (400) and leave the canvas untouched; a stale `expected_current_version_id` is rejected with 409. A successful publish queues a server-side build.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_publish_current_version_create",
+    "name": "Queue a build for the current source version without changing source or metadata.",
+    "description": "Queue a build for the current source version without changing source or metadata. POST /api/projects/{project_id}/canvases/{id}/publish-current-version/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/publish-current-version/\nQueue a build for the current source version without changing source or metadata.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_report_error_create",
+    "name": "Report a runtime error observed while rendering a canvas build",
+    "description": "Report a runtime error observed while rendering a canvas build Report a runtime error observed while rendering a canvas build. POST /api/projects/{project_id}/canvases/{id}/report_error/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/report_error/\nReport a runtime error observed while rendering a canvas build. Files the report in the authoring task's thread (deduped per build and error type) so the canvas's agent can be asked to fix it. Reports never start an agent run by themselves — dispatch is `request_fix`. Only the error class crosses the server; full messages and stacks stay client-side because rendering sessions can carry viewer data.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_request_agent_create",
+    "name": "Route a viewer-approved change request to the canvas's authoring task.",
+    "description": "Route a viewer-approved change request to the canvas's authoring task. POST /api/projects/{project_id}/canvases/{id}/request_agent/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/request_agent/\nRoute a viewer-approved change request to the canvas's authoring task.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_request_fix_create",
+    "name": "Wake the canvas's authoring agent to fix a failing build or runtime error",
+    "description": "Wake the canvas's authoring agent to fix a failing build or runtime error Wake the canvas's authoring agent to fix a failing build or runtime error. POST /api/projects/{project_id}/canvases/{id}/request_fix/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/request_fix/\nWake the canvas's authoring agent to fix a failing build or runtime error. Starts (or signals) an agent run on the authoring task, instructed to stage the fix as a draft the user reviews and promotes. This is the human-initiated dispatch step behind error reports; it spends agent compute, so it never fires automatically, and only the authoring task's creator may dispatch — the run executes with their credentials.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_retrieve",
+    "name": "Canvases: agent-built sandboxed browser apps, filed into channels",
+    "description": "Canvases: agent-built sandboxed browser apps, filed into channels Canvases: agent-built sandboxed browser apps, filed into channels. GET /api/projects/{project_id}/canvases/{id}/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/\nCanvases: agent-built sandboxed browser apps, filed into channels. Source is versioned per publish and built server-side; the canvas app renders the published build's artifact from the isolated artifact origin.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "canvases_revert_create",
+    "name": "Move the canvas's head back to an existing source version and rebuild it.",
+    "description": "Move the canvas's head back to an existing source version and rebuild it. POST /api/projects/{project_id}/canvases/{id}/revert/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/revert/\nMove the canvas's head back to an existing source version and rebuild it.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_source_retrieve",
+    "name": "Read the canvas's source project and its `current_version_id`",
+    "description": "Read the canvas's source project and its `current_version_id` Read the canvas's source project and its `current_version_id`. GET /api/projects/{project_id}/canvases/{id}/source/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/source/\nRead the canvas's source project and its `current_version_id`. Always call this before editing: edit the returned files, then publish the complete project passing the returned version id as `expected_current_version_id` so concurrent edits are not overwritten. `?version_id=` reads a historical version instead of the head.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: version_id (query) — Read this historical source version instead of the head (for version browsing)."
+  },
+  {
+    "id": "canvases_state_retrieve",
+    "name": "Read the canvas's runtime key-value state (the ph.state store)",
+    "description": "Read the canvas's runtime key-value state (the ph.state store) Read the canvas's runtime key-value state (the ph.state store). GET /api/projects/{project_id}/canvases/{id}/state/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/state/\nRead the canvas's runtime key-value state (the ph.state store). Returns shared entries plus the authenticated user's own user-scoped entries — never another user's.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: key (query) — Only read this exact key.; key_prefix (query) — Only read entries whose key starts with this prefix.; keys_only (query) — True returns a key inventory without stored values.; limit (query) — Maximum entries per page. Omit for the full state. Prefer an inventory and state/value for large values.; offset (query) — Entry offset from next_offset. Keep filters unchanged between pages.; scope (query) — Only read this scope. * `user` - user * `shared` - shared"
+  },
+  {
+    "id": "canvases_state_set",
+    "name": "Write one key of the canvas's runtime state, or delete it with a null value.",
+    "description": "Write one key of the canvas's runtime state, or delete it with a null value. POST /api/projects/{project_id}/canvases/{id}/state/set/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/state/set/\nWrite one key of the canvas's runtime state, or delete it with a null value.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_state_value_retrieve",
+    "name": "Canvases: agent-built sandboxed browser apps, filed into channels",
+    "description": "Canvases: agent-built sandboxed browser apps, filed into channels Canvases: agent-built sandboxed browser apps, filed into channels. GET /api/projects/{project_id}/canvases/{id}/state/value/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/state/value/\nCanvases: agent-built sandboxed browser apps, filed into channels. Source is versioned per publish and built server-side; the canvas app renders the published build's artifact from the isolated artifact origin.\nRequired: id (path) — A UUID string identifying this canvas.; key (query) — Exact key to read.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scope (query) — Scope of the value to read. * `user` - user * `shared` - shared\nOptional: limit (query) — Maximum JSON characters in this response.; offset (query) — Character offset from next_offset.; revision (query) — Revision from the first chunk. Required when offset is greater than zero."
+  },
+  {
+    "id": "canvases_validate_create",
+    "name": "Validate a candidate source project without publishing it",
+    "description": "Validate a candidate source project without publishing it Validate a candidate source project without publishing it. POST /api/projects/{project_id}/canvases/{id}/validate/",
+    "context": "POST /api/projects/{project_id}/canvases/{id}/validate/\nValidate a candidate source project without publishing it. Side-effect free.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "canvases_versions_retrieve",
+    "name": "The canvas's published source-version history, newest first (metadata only)",
+    "description": "The canvas's published source-version history, newest first (metadata only) The canvas's published source-version history, newest first (metadata only). GET /api/projects/{project_id}/canvases/{id}/versions/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/versions/\nThe canvas's published source-version history, newest first (metadata only). Drafts are excluded: they are staged versions that have never been the head, so they are not part of the undo/revert timeline. Fetch a draft's files with `source?version_id=` to preview it before promoting.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "canvases_view_retrieve",
+    "name": "Everything needed to open the canvas, in one round trip",
+    "description": "Everything needed to open the canvas, in one round trip Everything needed to open the canvas, in one round trip. GET /api/projects/{project_id}/canvases/{id}/view/",
+    "context": "GET /api/projects/{project_id}/canvases/{id}/view/\nEverything needed to open the canvas, in one round trip. Returns the record, the live build (with its signed artifact URL), and — only when there is nothing built to render — the head source project (freeform/component) or the layout document (grid). Send the response's ETag back as If-None-Match to revalidate without a body.\nRequired: id (path) — A UUID string identifying this canvas.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

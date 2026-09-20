@@ -1,0 +1,242 @@
+[
+  {
+    "id": "cloudforce-one-priority-delete",
+    "name": "Delete a Priority Intelligence Requirement",
+    "description": "Delete a Priority Intelligence Requirement Deletes a priority intelligence request from Cloudforce One. DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}\nDeletes a priority intelligence request from Cloudforce One.\nRequired: account_id (path); priority_id (path)"
+  },
+  {
+    "id": "cloudforce-one-priority-get",
+    "name": "Get a Priority Intelligence Requirement",
+    "description": "Get a Priority Intelligence Requirement Retrieves a specific priority intelligence request from Cloudforce One. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}\nRetrieves a specific priority intelligence request from Cloudforce One.\nRequired: account_id (path); priority_id (path)"
+  },
+  {
+    "id": "cloudforce-one-priority-list",
+    "name": "List Priority Intelligence Requirements",
+    "description": "List Priority Intelligence Requirements Lists priority intelligence requests in Cloudforce One. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/priority",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/priority\nLists priority intelligence requests in Cloudforce One.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-priority-new",
+    "name": "Create a New Priority Intelligence Requirement",
+    "description": "Create a New Priority Intelligence Requirement Creates a new priority intelligence request in Cloudforce One. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/new",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/new\nCreates a new priority intelligence request in Cloudforce One.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-priority-quota",
+    "name": "Get Priority Intelligence Requirement Quota",
+    "description": "Get Priority Intelligence Requirement Quota Retrieves quota usage for Cloudforce One priority requests. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/quota",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/quota\nRetrieves quota usage for Cloudforce One priority requests.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudforce-one-priority-update",
+    "name": "Update a Priority Intelligence Requirement",
+    "description": "Update a Priority Intelligence Requirement Updates a priority intelligence request in Cloudforce One. PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}\nUpdates a priority intelligence request in Cloudforce One.\nRequired: account_id (path); priority_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-asset-delete",
+    "name": "Delete a Request Asset",
+    "description": "Delete a Request Asset Removes an asset from a Cloudforce One intelligence request. DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}\nRemoves an asset from a Cloudforce One intelligence request.\nRequired: account_id (path); request_id (path); asset_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-asset-get",
+    "name": "Get a Request Asset",
+    "description": "Get a Request Asset Retrieves an asset attached to a Cloudforce One intelligence request. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}\nRetrieves an asset attached to a Cloudforce One intelligence request.\nRequired: account_id (path); request_id (path); asset_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-asset-list",
+    "name": "List Request Assets",
+    "description": "List Request Assets Lists assets attached to a Cloudforce One intelligence request. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset\nLists assets attached to a Cloudforce One intelligence request.\nRequired: account_id (path); request_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-asset-new",
+    "name": "Create a New Request Asset",
+    "description": "Create a New Request Asset Uploads a new asset to a Cloudforce One intelligence request. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new\nUploads a new asset to a Cloudforce One intelligence request.\nRequired: account_id (path); request_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-asset-update",
+    "name": "Update a Request Asset",
+    "description": "Update a Request Asset Updates an asset in a Cloudforce One intelligence request. PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}\nUpdates an asset in a Cloudforce One intelligence request.\nRequired: account_id (path); request_id (path); asset_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-constants",
+    "name": "Get Request Priority, Status, and TLP constants",
+    "description": "Get Request Priority, Status, and TLP constants Retrieves constant values used in Cloudforce One requests, including valid statuses and types. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/constants",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/constants\nRetrieves constant values used in Cloudforce One requests, including valid statuses and types.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-delete",
+    "name": "Delete a Request",
+    "description": "Delete a Request Deletes a Cloudforce One intelligence request and all associated data. DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}\nDeletes a Cloudforce One intelligence request and all associated data.\nRequired: account_id (path); request_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-get",
+    "name": "Get a Request",
+    "description": "Get a Request Retrieves details for a specific Cloudforce One intelligence request. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}\nRetrieves details for a specific Cloudforce One intelligence request.\nRequired: account_id (path); request_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-list",
+    "name": "List Requests",
+    "description": "List Requests Lists Cloudforce One intelligence requests with filtering and pagination. POST /client/v4/accounts/{account_id}/cloudforce-one/requests",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests\nLists Cloudforce One intelligence requests with filtering and pagination.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-message-delete",
+    "name": "Delete a Request Message",
+    "description": "Delete a Request Message Removes a message from a Cloudforce One intelligence request thread. DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}\nRemoves a message from a Cloudforce One intelligence request thread.\nRequired: account_id (path); request_id (path); message_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-message-list",
+    "name": "List Request Messages",
+    "description": "List Request Messages Lists messages in a Cloudforce One intelligence request conversation. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message\nLists messages in a Cloudforce One intelligence request conversation.\nRequired: account_id (path); request_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-message-new",
+    "name": "Create a New Request Message",
+    "description": "Create a New Request Message Adds a message to a Cloudforce One intelligence request conversation. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new\nAdds a message to a Cloudforce One intelligence request conversation.\nRequired: account_id (path); request_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-message-update",
+    "name": "Update a Request Message",
+    "description": "Update a Request Message Updates a message in a Cloudforce One intelligence request thread. PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}\nUpdates a message in a Cloudforce One intelligence request thread.\nRequired: account_id (path); request_id (path); message_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-new",
+    "name": "Create a New Request.",
+    "description": "Create a New Request. Creating a request adds the request into the Cloudforce One queue for analysis. POST /client/v4/accounts/{account_id}/cloudforce-one/requests/new",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/requests/new\nCreating a request adds the request into the Cloudforce One queue for analysis. In addition to the content, a short title, type, priority, and releasability should be provided. If one is not provided, a default will be assigned.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudforce-one-request-quota",
+    "name": "Get Request Quota",
+    "description": "Get Request Quota Retrieves quota usage for Cloudforce One standard requests. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/quota",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/quota\nRetrieves quota usage for Cloudforce One standard requests.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-types",
+    "name": "Get Request Types",
+    "description": "Get Request Types Lists available request types for Cloudforce One intelligence requests. GET /client/v4/accounts/{account_id}/cloudforce-one/requests/types",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/requests/types\nLists available request types for Cloudforce One intelligence requests.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudforce-one-request-update",
+    "name": "Update a Request",
+    "description": "Update a Request Updating a request alters the request in the Cloudforce One queue. PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/requests/{request_id}\nUpdating a request alters the request in the Cloudforce One queue. This API may be used to update any attributes of the request after the initial submission. Only fields that you choose to update need to be add to the request body.\nRequired: account_id (path); request_id (path); body (body)"
+  },
+  {
+    "id": "get_DashboardAssetDownload",
+    "name": "Download asset (Customer)",
+    "description": "Download asset (Customer) Download a file asset from R2 storage. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/{asset_id}/download",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/{asset_id}/download\nDownload a file asset from R2 storage. Customer can only download from their own account.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo; request_id (path) — RFI UUID; asset_id (path) — Asset UUID"
+  },
+  {
+    "id": "get_DashboardAssetList",
+    "name": "List assets in request (Customer)",
+    "description": "List assets in request (Customer) List all file assets for a request. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/list",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/list\nList all file assets for a request. Customer can only list assets from their own account.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo; request_id (path) — RFI UUID"
+  },
+  {
+    "id": "get_DashboardMetadataFieldList",
+    "name": "List metadata fields for an RFI type",
+    "description": "List metadata fields for an RFI type Get custom metadata fields available for the specified project type GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata\nGet custom metadata fields available for the specified project type\nRequired: account_id (path) — Account ID; project_type (path) — Project type\nOptional: request_type (query) — Filter fields to those applicable to this request type. Fields without request type restrictions are always included.; country (query) — Exclude fields restricted for this alpha-2 country code"
+  },
+  {
+    "id": "get_DashboardRequestTypesList",
+    "name": "List visible request types for a project (dashboard)",
+    "description": "List visible request types for a project (dashboard) Returns request types available to dashboard (external) callers. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types\nReturns request types available to dashboard (external) callers. For restricted project types (e.g. legal-response), only the allowlisted subset is returned.\nRequired: account_id (path); project_type (path)"
+  },
+  {
+    "id": "get_LegalResponseAccessCheck",
+    "name": "Check if current user is allowlisted for Legal Response",
+    "description": "Check if current user is allowlisted for Legal Response Returns whether the JWT-authenticated user's email is on the legal-response allowlist. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check\nReturns whether the JWT-authenticated user's email is on the legal-response allowlist. This endpoint is purely informational for UI gating; actual access enforcement is performed by `legalResponseMiddleware` on real legal-response endpoints. Read-only — no Durable Object writes are performed.\nRequired: account_id (path) — Account ID (used for JWT validation only)"
+  },
+  {
+    "id": "get_MessageList",
+    "name": "List messages for an RFI request",
+    "description": "List messages for an RFI request Retrieves the published, non-deleted messages visible to the agent for an RFI request, with pagination. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages\nRetrieves the published, non-deleted messages visible to the agent for an RFI request, with pagination.\nRequired: account_id (path); project_type (path); request_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "get_MessageRead",
+    "name": "Read a single message for an RFI request",
+    "description": "Read a single message for an RFI request Returns the details for a specific message belonging to an RFI request. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}\nReturns the details for a specific message belonging to an RFI request.\nRequired: account_id (path); project_type (path); request_id (path); message_id (path)"
+  },
+  {
+    "id": "get_RequestConstants",
+    "name": "Get request constants",
+    "description": "Get request constants Returns available priorities, statuses, and TLP levels for request workflows GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants\nReturns available priorities, statuses, and TLP levels for request workflows\nRequired: account_id (path) — Account ID; project_type (path) — Project type"
+  },
+  {
+    "id": "get_RequestList",
+    "name": "List RFIs",
+    "description": "List RFIs Retrieves a paginated list of RFIs with filtering and sorting options. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}\nRetrieves a paginated list of RFIs with filtering and sorting options.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type\nOptional: page (query); pageSize (query); status (query); search (query); createdBy (query) — Filter by creator email. NOTE: For the `legal-response` project type this query parameter is **rejected with HTTP 400** — the server derives the filter from the authenticated user's JWT automatically and does not accept a client-supplied value. Requests to `legal-response` with no valid JWT identity are rejected with HTTP 401.; assignee (query); requestType (query); priority (query); tlp (query); id (query); readableId (query); summary (query); accountId (query); metadata (query) — JSON string object of metadata filters. Supports two formats: 1) Simple values for exact match (backward compatible): {\"status\": \"open\"} 2) Operator objects for advanced filtering: {\"identifiers\": {\"operator\": \"contains_line\", \"value\": \"blah.com\"}}. Available operators: 'eq' (exact match, default), 'contains' (substring match), 'contains_line' (match complete line in newline-separated text). Date fields are automatically normalized to YYYY-MM-DD format.; orderBy (query); order (query)"
+  },
+  {
+    "id": "get_RequestQuota",
+    "name": "Get request token quota",
+    "description": "Get request token quota Returns the account's token quota for the current anniversary quarter: total granted, used, remaining, and the quarter/anniversary boundaries. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota\nReturns the account's token quota for the current anniversary quarter: total granted, used, remaining, and the quarter/anniversary boundaries.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type"
+  },
+  {
+    "id": "get_RequestRead",
+    "name": "Get an RFI by ID",
+    "description": "Get an RFI by ID Retrieves a specific RFI by its UUID with related data. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}\nRetrieves a specific RFI by its UUID with related data.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo; request_id (path) — RFI UUID"
+  },
+  {
+    "id": "get_UserGetSelf",
+    "name": "Get current user profile",
+    "description": "Get current user profile Get the current user's profile in a specific RFI project. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/user/me",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/user/me\nGet the current user's profile in a specific RFI project.\nRequired: account_id (path) — Account ID; project_type (path) — RFI project type"
+  },
+  {
+    "id": "post_DashboardAssetUpload",
+    "name": "Upload asset to request (Customer)",
+    "description": "Upload asset to request (Customer) Upload a file asset to R2 storage and associate it with a request. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/upload",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/upload\nUpload a file asset to R2 storage and associate it with a request. Customer can only upload to their own account.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo; request_id (path) — RFI UUID\nOptional: body (body)"
+  },
+  {
+    "id": "post_MessageCreate",
+    "name": "Create a customer follow-on message on an RFI request",
+    "description": "Create a customer follow-on message on an RFI request Creates a customer dashboard message on an RFI request. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/new",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/new\nCreates a customer dashboard message on an RFI request. Messages are always published on send. Workflow-enabled projects require Idempotency-Key and atomically record message activity and any policy transition. For token-billed project types, substantive follow-on messages consume message tokens and are subject to quarterly quota enforcement.\nRequired: account_id (path); project_type (path); request_id (path)\nOptional: Idempotency-Key (header) — Client command key. Required when publishing a message for a workflow-enabled project; trimmed and limited to 255 characters.; body (body)"
+  },
+  {
+    "id": "post_RequestCreate",
+    "name": "Creates a new RFI",
+    "description": "Creates a new RFI Creates a new Request for Information with the specified project type and details. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}\nCreates a new Request for Information with the specified project type and details.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type\nOptional: body (body)"
+  },
+  {
+    "id": "put_MessageUpdate",
+    "name": "Update/publish a message for an RFI request",
+    "description": "Update/publish a message for an RFI request Updates an existing message, typically to publish a draft by setting publish=true. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}\nUpdates an existing message, typically to publish a draft by setting publish=true. Workflow-enabled publication requires Idempotency-Key and atomically records message activity and any policy transition.\nRequired: account_id (path); project_type (path); request_id (path); message_id (path)\nOptional: Idempotency-Key (header) — Client command key. Required when publishing a message for a workflow-enabled project; trimmed and limited to 255 characters.; body (body)"
+  },
+  {
+    "id": "put_RequestUpdate",
+    "name": "Update an RFI",
+    "description": "Update an RFI Updates an existing RFI with the provided fields. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}\nUpdates an existing RFI with the provided fields. Only provided fields will be updated.\nRequired: account_id (path) — Account ID.; project_type (path) — RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo; request_id (path) — RFI UUID\nOptional: body (body)"
+  }
+]

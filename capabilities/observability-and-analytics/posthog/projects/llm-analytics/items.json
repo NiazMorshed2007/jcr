@@ -1,0 +1,356 @@
+[
+  {
+    "id": "llm_analytics_clustering_config_list",
+    "name": "Team-level clustering configuration (event filters for automated pipelines).",
+    "description": "Team-level clustering configuration (event filters for automated pipelines). GET /api/projects/{project_id}/llm_analytics/clustering_config/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/clustering_config/\nTeam-level clustering configuration (event filters for automated pipelines).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_clustering_config_set_event_filters_create",
+    "name": "Team-level clustering configuration (event filters for automated pipelines).",
+    "description": "Team-level clustering configuration (event filters for automated pipelines). POST /api/projects/{project_id}/llm_analytics/clustering_config/set_event_filters/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/clustering_config/set_event_filters/\nTeam-level clustering configuration (event filters for automated pipelines).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_clustering_jobs_create",
+    "name": "CRUD for clustering job configurations (max 10 per team).",
+    "description": "CRUD for clustering job configurations (max 10 per team). POST /api/projects/{project_id}/llm_analytics/clustering_jobs/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/clustering_jobs/\nCRUD for clustering job configurations (max 10 per team).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_clustering_jobs_destroy",
+    "name": "CRUD for clustering job configurations (max 10 per team).",
+    "description": "CRUD for clustering job configurations (max 10 per team). DELETE /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/\nCRUD for clustering job configurations (max 10 per team).\nRequired: id (path) — A UUID string identifying this clustering job.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_clustering_jobs_list",
+    "name": "CRUD for clustering job configurations (max 10 per team).",
+    "description": "CRUD for clustering job configurations (max 10 per team). GET /api/projects/{project_id}/llm_analytics/clustering_jobs/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/clustering_jobs/\nCRUD for clustering job configurations (max 10 per team).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "llm_analytics_clustering_jobs_partial_update",
+    "name": "CRUD for clustering job configurations (max 10 per team).",
+    "description": "CRUD for clustering job configurations (max 10 per team). PATCH /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/\nCRUD for clustering job configurations (max 10 per team).\nRequired: id (path) — A UUID string identifying this clustering job.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_clustering_jobs_retrieve",
+    "name": "CRUD for clustering job configurations (max 10 per team).",
+    "description": "CRUD for clustering job configurations (max 10 per team). GET /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/\nCRUD for clustering job configurations (max 10 per team).\nRequired: id (path) — A UUID string identifying this clustering job.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_clustering_jobs_update",
+    "name": "CRUD for clustering job configurations (max 10 per team).",
+    "description": "CRUD for clustering job configurations (max 10 per team). PUT /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/",
+    "context": "PUT /api/projects/{project_id}/llm_analytics/clustering_jobs/{id}/\nCRUD for clustering job configurations (max 10 per team).\nRequired: id (path) — A UUID string identifying this clustering job.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_clustering_runs_create",
+    "name": "Trigger a new clustering workflow run",
+    "description": "Trigger a new clustering workflow run Trigger a new clustering workflow run. POST /api/projects/{project_id}/llm_analytics/clustering_runs/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/clustering_runs/\nTrigger a new clustering workflow run. This endpoint validates the request parameters and starts a Temporal workflow to perform trace clustering with the specified configuration.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_evaluation_config_retrieve",
+    "name": "Get the evaluation config for this team",
+    "description": "Get the evaluation config for this team GET /api/projects/{project_id}/llm_analytics/evaluation_config/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/evaluation_config/\nGet the evaluation config for this team\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_evaluation_config_set_active_key_create",
+    "name": "Set the active provider key for evaluations",
+    "description": "Set the active provider key for evaluations POST /api/projects/{project_id}/llm_analytics/evaluation_config/set_active_key/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/evaluation_config/set_active_key/\nSet the active provider key for evaluations\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_create",
+    "name": "CRUD for evaluation report configurations + report run history.",
+    "description": "CRUD for evaluation report configurations + report run history. POST /api/projects/{project_id}/llm_analytics/evaluation_reports/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/evaluation_reports/\nCRUD for evaluation report configurations + report run history.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_destroy",
+    "name": "Evaluation report configs are deleted only when their evaluation is deleted",
+    "description": "Evaluation report configs are deleted only when their evaluation is deleted Evaluation report configs are deleted only when their evaluation is deleted. DELETE /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/\nEvaluation report configs are deleted only when their evaluation is deleted. Use PATCH enabled=false to stop delivery.\nRequired: id (path) — A UUID string identifying this evaluation report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_generate_create",
+    "name": "Trigger immediate report generation.",
+    "description": "Trigger immediate report generation. POST /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/generate/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/generate/\nTrigger immediate report generation.\nRequired: id (path) — A UUID string identifying this evaluation report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_list",
+    "name": "CRUD for evaluation report configurations + report run history.",
+    "description": "CRUD for evaluation report configurations + report run history. GET /api/projects/{project_id}/llm_analytics/evaluation_reports/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/evaluation_reports/\nCRUD for evaluation report configurations + report run history.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: evaluation (query) — Only return report configs for this evaluation UUID.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_partial_update",
+    "name": "CRUD for evaluation report configurations + report run history.",
+    "description": "CRUD for evaluation report configurations + report run history. PATCH /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/\nCRUD for evaluation report configurations + report run history.\nRequired: id (path) — A UUID string identifying this evaluation report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_retrieve",
+    "name": "CRUD for evaluation report configurations + report run history.",
+    "description": "CRUD for evaluation report configurations + report run history. GET /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/\nCRUD for evaluation report configurations + report run history.\nRequired: id (path) — A UUID string identifying this evaluation report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_runs_list",
+    "name": "List report runs (history) for this report.",
+    "description": "List report runs (history) for this report. GET /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/runs/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/runs/\nList report runs (history) for this report.\nRequired: id (path) — A UUID string identifying this evaluation report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "llm_analytics_evaluation_reports_update",
+    "name": "CRUD for evaluation report configurations + report run history.",
+    "description": "CRUD for evaluation report configurations + report run history. PUT /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/",
+    "context": "PUT /api/projects/{project_id}/llm_analytics/evaluation_reports/{id}/\nCRUD for evaluation report configurations + report run history.\nRequired: id (path) — A UUID string identifying this evaluation report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_models_retrieve",
+    "name": "List available models, for one provider or for every supported provider.",
+    "description": "List available models, for one provider or for every supported provider. GET /api/projects/{project_id}/llm_analytics/models/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/models/\nList available models, for one provider or for every supported provider.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: key_id (query) — Optional provider key UUID. When supplied, models reachable with that specific key are returned (useful for Azure OpenAI, where the deployment list depends on the configured endpoint). A key belongs to exactly one provider, so `provider` may be omitted alongside it; when both are given they must agree.; provider (query) — LLM provider to list models for. Omit it to list every supported provider and its models in one call."
+  },
+  {
+    "id": "llm_analytics_offline_evaluations_experiment_items_create",
+    "name": "llm_analytics_offline_evaluations_experiment_items_create",
+    "description": "llm_analytics_offline_evaluations_experiment_items_create POST /api/projects/{project_id}/llm_analytics/offline_evaluations/experiment_items/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/offline_evaluations/experiment_items/\nllm_analytics_offline_evaluations_experiment_items_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_parser_recipes_create",
+    "name": "llm_analytics_parser_recipes_create",
+    "description": "llm_analytics_parser_recipes_create POST /api/projects/{project_id}/llm_analytics/parser_recipes/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/parser_recipes/\nllm_analytics_parser_recipes_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_parser_recipes_destroy",
+    "name": "llm_analytics_parser_recipes_destroy",
+    "description": "llm_analytics_parser_recipes_destroy DELETE /api/projects/{project_id}/llm_analytics/parser_recipes/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/parser_recipes/{id}/\nllm_analytics_parser_recipes_destroy\nRequired: id (path) — A UUID string identifying this parser recipe.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_parser_recipes_list",
+    "name": "llm_analytics_parser_recipes_list",
+    "description": "llm_analytics_parser_recipes_list GET /api/projects/{project_id}/llm_analytics/parser_recipes/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/parser_recipes/\nllm_analytics_parser_recipes_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "llm_analytics_parser_recipes_partial_update",
+    "name": "llm_analytics_parser_recipes_partial_update",
+    "description": "llm_analytics_parser_recipes_partial_update PATCH /api/projects/{project_id}/llm_analytics/parser_recipes/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/parser_recipes/{id}/\nllm_analytics_parser_recipes_partial_update\nRequired: id (path) — A UUID string identifying this parser recipe.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_parser_recipes_retrieve",
+    "name": "llm_analytics_parser_recipes_retrieve",
+    "description": "llm_analytics_parser_recipes_retrieve GET /api/projects/{project_id}/llm_analytics/parser_recipes/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/parser_recipes/{id}/\nllm_analytics_parser_recipes_retrieve\nRequired: id (path) — A UUID string identifying this parser recipe.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_provider_key_validations_create",
+    "name": "Validate LLM provider API keys without persisting them",
+    "description": "Validate LLM provider API keys without persisting them POST /api/projects/{project_id}/llm_analytics/provider_key_validations/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/provider_key_validations/\nValidate LLM provider API keys without persisting them\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_provider_keys_create",
+    "name": "llm_analytics_provider_keys_create",
+    "description": "llm_analytics_provider_keys_create POST /api/projects/{project_id}/llm_analytics/provider_keys/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/provider_keys/\nllm_analytics_provider_keys_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_provider_keys_dependent_configs_retrieve",
+    "name": "Get evaluations using this key and alternative keys for replacement.",
+    "description": "Get evaluations using this key and alternative keys for replacement. GET /api/projects/{project_id}/llm_analytics/provider_keys/{id}/dependent_configs/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/provider_keys/{id}/dependent_configs/\nGet evaluations using this key and alternative keys for replacement.\nRequired: id (path) — A UUID string identifying this llm provider key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_provider_keys_destroy",
+    "name": "llm_analytics_provider_keys_destroy",
+    "description": "llm_analytics_provider_keys_destroy DELETE /api/projects/{project_id}/llm_analytics/provider_keys/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/provider_keys/{id}/\nllm_analytics_provider_keys_destroy\nRequired: id (path) — A UUID string identifying this llm provider key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_provider_keys_list",
+    "name": "llm_analytics_provider_keys_list",
+    "description": "llm_analytics_provider_keys_list GET /api/projects/{project_id}/llm_analytics/provider_keys/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/provider_keys/\nllm_analytics_provider_keys_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "llm_analytics_provider_keys_partial_update",
+    "name": "llm_analytics_provider_keys_partial_update",
+    "description": "llm_analytics_provider_keys_partial_update PATCH /api/projects/{project_id}/llm_analytics/provider_keys/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/provider_keys/{id}/\nllm_analytics_provider_keys_partial_update\nRequired: id (path) — A UUID string identifying this llm provider key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_provider_keys_retrieve",
+    "name": "llm_analytics_provider_keys_retrieve",
+    "description": "llm_analytics_provider_keys_retrieve GET /api/projects/{project_id}/llm_analytics/provider_keys/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/provider_keys/{id}/\nllm_analytics_provider_keys_retrieve\nRequired: id (path) — A UUID string identifying this llm provider key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_provider_keys_update",
+    "name": "llm_analytics_provider_keys_update",
+    "description": "llm_analytics_provider_keys_update PUT /api/projects/{project_id}/llm_analytics/provider_keys/{id}/",
+    "context": "PUT /api/projects/{project_id}/llm_analytics/provider_keys/{id}/\nllm_analytics_provider_keys_update\nRequired: id (path) — A UUID string identifying this llm provider key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_provider_keys_validate_create",
+    "name": "llm_analytics_provider_keys_validate_create",
+    "description": "llm_analytics_provider_keys_validate_create POST /api/projects/{project_id}/llm_analytics/provider_keys/{id}/validate/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/provider_keys/{id}/validate/\nllm_analytics_provider_keys_validate_create\nRequired: id (path) — A UUID string identifying this llm provider key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_review_queue_items_create",
+    "name": "llm_analytics_review_queue_items_create",
+    "description": "llm_analytics_review_queue_items_create POST /api/projects/{project_id}/llm_analytics/review_queue_items/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/review_queue_items/\nllm_analytics_review_queue_items_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_review_queue_items_destroy",
+    "name": "llm_analytics_review_queue_items_destroy",
+    "description": "llm_analytics_review_queue_items_destroy DELETE /api/projects/{project_id}/llm_analytics/review_queue_items/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/review_queue_items/{id}/\nllm_analytics_review_queue_items_destroy\nRequired: id (path) — A UUID string identifying this review queue item.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_review_queue_items_list",
+    "name": "llm_analytics_review_queue_items_list",
+    "description": "llm_analytics_review_queue_items_list GET /api/projects/{project_id}/llm_analytics/review_queue_items/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/review_queue_items/\nllm_analytics_review_queue_items_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Order by `created_at` or `updated_at`.; queue_id (query) — Filter by a specific review queue ID.; search (query) — Search pending trace IDs.; trace_id (query) — Filter by an exact trace ID.; trace_id__in (query) — Filter by multiple trace IDs separated by commas."
+  },
+  {
+    "id": "llm_analytics_review_queue_items_partial_update",
+    "name": "llm_analytics_review_queue_items_partial_update",
+    "description": "llm_analytics_review_queue_items_partial_update PATCH /api/projects/{project_id}/llm_analytics/review_queue_items/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/review_queue_items/{id}/\nllm_analytics_review_queue_items_partial_update\nRequired: id (path) — A UUID string identifying this review queue item.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_review_queue_items_retrieve",
+    "name": "llm_analytics_review_queue_items_retrieve",
+    "description": "llm_analytics_review_queue_items_retrieve GET /api/projects/{project_id}/llm_analytics/review_queue_items/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/review_queue_items/{id}/\nllm_analytics_review_queue_items_retrieve\nRequired: id (path) — A UUID string identifying this review queue item.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_review_queues_create",
+    "name": "llm_analytics_review_queues_create",
+    "description": "llm_analytics_review_queues_create POST /api/projects/{project_id}/llm_analytics/review_queues/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/review_queues/\nllm_analytics_review_queues_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_review_queues_destroy",
+    "name": "llm_analytics_review_queues_destroy",
+    "description": "llm_analytics_review_queues_destroy DELETE /api/projects/{project_id}/llm_analytics/review_queues/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/review_queues/{id}/\nllm_analytics_review_queues_destroy\nRequired: id (path) — A UUID string identifying this review queue.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_review_queues_list",
+    "name": "llm_analytics_review_queues_list",
+    "description": "llm_analytics_review_queues_list GET /api/projects/{project_id}/llm_analytics/review_queues/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/review_queues/\nllm_analytics_review_queues_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; name (query); offset (query) — The initial index from which to return the results.; order_by (query) — Order by `name`, `updated_at`, or `created_at`.; search (query) — Search review queue names."
+  },
+  {
+    "id": "llm_analytics_review_queues_partial_update",
+    "name": "llm_analytics_review_queues_partial_update",
+    "description": "llm_analytics_review_queues_partial_update PATCH /api/projects/{project_id}/llm_analytics/review_queues/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/review_queues/{id}/\nllm_analytics_review_queues_partial_update\nRequired: id (path) — A UUID string identifying this review queue.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_review_queues_retrieve",
+    "name": "llm_analytics_review_queues_retrieve",
+    "description": "llm_analytics_review_queues_retrieve GET /api/projects/{project_id}/llm_analytics/review_queues/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/review_queues/{id}/\nllm_analytics_review_queues_retrieve\nRequired: id (path) — A UUID string identifying this review queue.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_score_definitions_create",
+    "name": "llm_analytics_score_definitions_create",
+    "description": "llm_analytics_score_definitions_create POST /api/projects/{project_id}/llm_analytics/score_definitions/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/score_definitions/\nllm_analytics_score_definitions_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_score_definitions_list",
+    "name": "llm_analytics_score_definitions_list",
+    "description": "llm_analytics_score_definitions_list GET /api/projects/{project_id}/llm_analytics/score_definitions/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/score_definitions/\nllm_analytics_score_definitions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: archived (query) — Filter by archived state.; kind (query) — Filter by scorer kind.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Sort by name, kind, created_at, updated_at, or current_version.; search (query) — Search scorers by name or description."
+  },
+  {
+    "id": "llm_analytics_score_definitions_new_version_create",
+    "name": "llm_analytics_score_definitions_new_version_create",
+    "description": "llm_analytics_score_definitions_new_version_create POST /api/projects/{project_id}/llm_analytics/score_definitions/{id}/new_version/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/score_definitions/{id}/new_version/\nllm_analytics_score_definitions_new_version_create\nRequired: id (path) — A UUID string identifying this score definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_score_definitions_partial_update",
+    "name": "llm_analytics_score_definitions_partial_update",
+    "description": "llm_analytics_score_definitions_partial_update PATCH /api/projects/{project_id}/llm_analytics/score_definitions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/score_definitions/{id}/\nllm_analytics_score_definitions_partial_update\nRequired: id (path) — A UUID string identifying this score definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_score_definitions_retrieve",
+    "name": "llm_analytics_score_definitions_retrieve",
+    "description": "llm_analytics_score_definitions_retrieve GET /api/projects/{project_id}/llm_analytics/score_definitions/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/score_definitions/{id}/\nllm_analytics_score_definitions_retrieve\nRequired: id (path) — A UUID string identifying this score definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_summarization_batch_check_create",
+    "name": "Check which traces have cached summaries available",
+    "description": "Check which traces have cached summaries available Check which traces have cached summaries available. POST /api/projects/{project_id}/llm_analytics/summarization/batch_check/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/summarization/batch_check/\nCheck which traces have cached summaries available. This endpoint allows batch checking of multiple trace IDs to see which ones have cached summaries. Returns only the traces that have cached summaries with their titles. **Use Cases:** - Load cached summaries on session view load - Avoid unnecessary LLM calls for already-summarized traces - Display summary previews without generating new summaries\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_summarization_create",
+    "name": "Generate an AI-powered summary of an LLM trace or event",
+    "description": "Generate an AI-powered summary of an LLM trace or event Generate an AI-powered summary of an LLM trace or event. POST /api/projects/{project_id}/llm_analytics/summarization/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/summarization/\nGenerate an AI-powered summary of an LLM trace or event. This endpoint analyzes the provided trace/event, generates a line-numbered text representation, and uses an LLM to create a concise summary with line references. **Two ways to use this endpoint:** 1. **By ID (recommended):** Pass `trace_id` or `generation_id` with an optional `date_from`/`date_to`. The backend fetches the data automatically. `summarize_type` is inferred. 2. **By data:** Pass the full trace/event data blob in `data` with `summarize_type`. This is how the frontend uses it. **Summary Format:** - Title (concise, max 10 words) - Mermaid flow diagram showing the main flow - 3-10 summary bullets with line references - \"Interesting Notes\" section for failures, successes, or unusual patterns - Line references in [L45] or [L45-52] format pointing to relevant sections The response includes the structured summary, the text representation, and metadata.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_text_repr_create",
+    "name": "Generate a human-readable text representation of an LLM trace event",
+    "description": "Generate a human-readable text representation of an LLM trace event Generate a human-readable text representation of an LLM trace event. POST /api/projects/{project_id}/llm_analytics/text_repr/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/text_repr/\nGenerate a human-readable text representation of an LLM trace event. This endpoint converts AI observability events ($ai_generation, $ai_span, $ai_embedding, or $ai_trace) into formatted text representations suitable for display, logging, or analysis. **Supported Event Types:** - `$ai_generation`: Individual LLM API calls with input/output messages - `$ai_span`: Logical spans with state transitions - `$ai_embedding`: Embedding generation events (text input → vector) - `$ai_trace`: Full traces with hierarchical structure **Options:** - `max_length`: Maximum character count (default: 2000000) - `truncated`: Enable middle-content truncation within events (default: true) - `truncate_buffer`: Characters at start/end when truncating (default: 1000) - `include_markers`: Use interactive markers vs plain text indicators (default: true) - Frontend: set true for ` >>` markers - Backend/LLM: set false for `... (X chars truncated) ...` text - `collapsed`: Show summary vs full trace tree (default: false) - `include_hierarchy`: Include tree structure for traces (default: true) - `max_depth`: Maximum depth for hierarchical rendering (default: unlimited) - `tools_collapse_threshold`: Number of tools before auto-collapsing list (default: 5) - Tool lists >5 items show ` >>` marker for frontend - Or `[+] AVAILABLE TOOLS: N` for backend when `include_markers: false` - `include_line_numbers`: Prefix each line with line number like L001:, L010: (default: false) **Use Cases:** - Frontend display: `truncated: true, include_markers: true, include_line_numbers: true` - Backend LLM context (summary): `truncated: true, include_markers: false, collapsed: true` - Backend LLM context (full): `truncated: false` The response includes the formatted text and metadata about the rendering.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_trace_reviews_create",
+    "name": "llm_analytics_trace_reviews_create",
+    "description": "llm_analytics_trace_reviews_create POST /api/projects/{project_id}/llm_analytics/trace_reviews/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/trace_reviews/\nllm_analytics_trace_reviews_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_analytics_trace_reviews_destroy",
+    "name": "llm_analytics_trace_reviews_destroy",
+    "description": "llm_analytics_trace_reviews_destroy DELETE /api/projects/{project_id}/llm_analytics/trace_reviews/{id}/",
+    "context": "DELETE /api/projects/{project_id}/llm_analytics/trace_reviews/{id}/\nllm_analytics_trace_reviews_destroy\nRequired: id (path) — A UUID string identifying this trace review.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_trace_reviews_list",
+    "name": "llm_analytics_trace_reviews_list",
+    "description": "llm_analytics_trace_reviews_list GET /api/projects/{project_id}/llm_analytics/trace_reviews/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/trace_reviews/\nllm_analytics_trace_reviews_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: definition_id (query) — Filter by a stable scorer definition ID.; definition_id__in (query) — Filter by multiple scorer definition IDs separated by commas.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Order by `updated_at` or `created_at`.; search (query) — Search trace IDs and comments.; trace_id (query) — Filter by an exact trace ID.; trace_id__in (query) — Filter by multiple trace IDs separated by commas."
+  },
+  {
+    "id": "llm_analytics_trace_reviews_partial_update",
+    "name": "llm_analytics_trace_reviews_partial_update",
+    "description": "llm_analytics_trace_reviews_partial_update PATCH /api/projects/{project_id}/llm_analytics/trace_reviews/{id}/",
+    "context": "PATCH /api/projects/{project_id}/llm_analytics/trace_reviews/{id}/\nllm_analytics_trace_reviews_partial_update\nRequired: id (path) — A UUID string identifying this trace review.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_analytics_trace_reviews_retrieve",
+    "name": "llm_analytics_trace_reviews_retrieve",
+    "description": "llm_analytics_trace_reviews_retrieve GET /api/projects/{project_id}/llm_analytics/trace_reviews/{id}/",
+    "context": "GET /api/projects/{project_id}/llm_analytics/trace_reviews/{id}/\nllm_analytics_trace_reviews_retrieve\nRequired: id (path) — A UUID string identifying this trace review.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_analytics_translate_create",
+    "name": "Translate text to target language.",
+    "description": "Translate text to target language. POST /api/projects/{project_id}/llm_analytics/translate/",
+    "context": "POST /api/projects/{project_id}/llm_analytics/translate/\nTranslate text to target language.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "archive-zone-security-center-insight",
+    "name": "Archives Zone Security Center Insight",
+    "description": "Archives Zone Security Center Insight Archives a zone-specific Security Center insight, removing it from the active zone insights while preserving historical data. PUT /client/v4/zones/{zone_id}/security-center/insights/{issue_id}/dismiss",
+    "context": "PUT /client/v4/zones/{zone_id}/security-center/insights/{issue_id}/dismiss\nArchives a zone-specific Security Center insight, removing it from the active zone insights while preserving historical data.\nRequired: zone_id (path); issue_id (path); body (body)"
+  },
+  {
+    "id": "delete-security-txt",
+    "name": "Deletes security.txt",
+    "description": "Deletes security.txt Removes the security.txt file configuration for a zone. DELETE /client/v4/zones/{zone_id}/security-center/securitytxt",
+    "context": "DELETE /client/v4/zones/{zone_id}/security-center/securitytxt\nRemoves the security.txt file configuration for a zone. The /.well-known/security.txt endpoint will no longer be served.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-security-center-zone-scans",
+    "name": "Get Recent Zone Scans",
+    "description": "Get Recent Zone Scans Returns the most recent on-demand scans for a specific zone, up to a maximum of 5. GET /client/v4/zones/{zone_id}/security-center/insights/scans",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights/scans\nReturns the most recent on-demand scans for a specific zone, up to a maximum of 5. Each scan includes its ID, start time, and current status. Results include both zone-specific scans and account-wide scans (which cover all zones). Also returns quota information showing how many scans have been used and how many remain in the current 24-hour window.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-security-txt",
+    "name": "Retrieves security.txt",
+    "description": "Retrieves security.txt Retrieves the current security.txt file configuration for a zone, used for security vulnerability reporting. GET /client/v4/zones/{zone_id}/security-center/securitytxt",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/securitytxt\nRetrieves the current security.txt file configuration for a zone, used for security vulnerability reporting.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zone-security-center-audit-log",
+    "name": "Retrieves Zone Audit Log",
+    "description": "Retrieves Zone Audit Log Lists audit log entries for all Security Center insights in a specific zone, showing changes to insight status and classification. GET /client/v4/zones/{zone_id}/security-center/insights/audit-log",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights/audit-log\nLists audit log entries for all Security Center insights in a specific zone, showing changes to insight status and classification.\nRequired: zone_id (path)\nOptional: per_page (query) — Number of results per page.; cursor (query) — Opaque cursor for pagination. Use the cursor value from result_info of the previous response.; field_changed (query) — Filter by the field that was changed.; changed_by (query) — Filter by the actor that made the change.; since (query) — Filter entries changed at or after this timestamp (RFC 3339).; before (query) — Filter entries changed before this timestamp (RFC 3339).; order (query) — Sort order for results. Use 'asc' for oldest first or 'desc' for newest first."
+  },
+  {
+    "id": "get-zone-security-center-insight-counts-by-class",
+    "name": "Retrieves Zone Security Center Insight Counts by Class",
+    "description": "Retrieves Zone Security Center Insight Counts by Class Retrieves zone-specific Security Center insight counts aggregated by classification class. GET /client/v4/zones/{zone_id}/security-center/insights/class",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights/class\nRetrieves zone-specific Security Center insight counts aggregated by classification class.\nRequired: zone_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-zone-security-center-insight-counts-by-severity",
+    "name": "Retrieves Zone Security Center Insight Counts by Severity",
+    "description": "Retrieves Zone Security Center Insight Counts by Severity Retrieves zone-specific Security Center insight counts aggregated by severity level. GET /client/v4/zones/{zone_id}/security-center/insights/severity",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights/severity\nRetrieves zone-specific Security Center insight counts aggregated by severity level.\nRequired: zone_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-zone-security-center-insight-counts-by-type",
+    "name": "Retrieves Zone Security Center Insight Counts by Type",
+    "description": "Retrieves Zone Security Center Insight Counts by Type Retrieves zone-specific Security Center insight counts aggregated by insight type. GET /client/v4/zones/{zone_id}/security-center/insights/type",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights/type\nRetrieves zone-specific Security Center insight counts aggregated by insight type.\nRequired: zone_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-zone-security-center-insights",
+    "name": "Retrieves Zone Security Center Insights",
+    "description": "Retrieves Zone Security Center Insights Lists Security Center insights for a specific zone, showing zone-level security findings. GET /client/v4/zones/{zone_id}/security-center/insights",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights\nLists Security Center insights for a specific zone, showing zone-level security findings.\nRequired: zone_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query); page (query); per_page (query)"
+  },
+  {
+    "id": "get-zone-security-center-issue-audit-log",
+    "name": "Retrieves Zone Issue Audit Log",
+    "description": "Retrieves Zone Issue Audit Log Lists audit log entries for a specific Security Center insight within a zone, showing changes to its status and classification over time. GET /client/v4/zones/{zone_id}/security-center/insights/{issue_id}/audit-log",
+    "context": "GET /client/v4/zones/{zone_id}/security-center/insights/{issue_id}/audit-log\nLists audit log entries for a specific Security Center insight within a zone, showing changes to its status and classification over time.\nRequired: zone_id (path); issue_id (path)\nOptional: per_page (query) — Number of results per page.; cursor (query) — Opaque cursor for pagination. Use the cursor value from result_info of the previous response.; field_changed (query) — Filter by the field that was changed.; changed_by (query) — Filter by the actor that made the change.; since (query) — Filter entries changed at or after this timestamp (RFC 3339).; before (query) — Filter entries changed before this timestamp (RFC 3339).; order (query) — Sort order for results. Use 'asc' for oldest first or 'desc' for newest first."
+  },
+  {
+    "id": "start-security-center-zone-scan",
+    "name": "Start On-Demand Zone Scan",
+    "description": "Start On-Demand Zone Scan Initiates an on-demand security scan for a specific zone. POST /client/v4/zones/{zone_id}/security-center/insights/scans",
+    "context": "POST /client/v4/zones/{zone_id}/security-center/insights/scans\nInitiates an on-demand security scan for a specific zone. Rate limited to 5 scans per account per 24-hour window (shared with account-level scans).\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "update-security-txt",
+    "name": "Updates security.txt",
+    "description": "Updates security.txt Updates the security.txt file configuration for a zone, which provides security researchers with vulnerability reporting information. PUT /client/v4/zones/{zone_id}/security-center/securitytxt",
+    "context": "PUT /client/v4/zones/{zone_id}/security-center/securitytxt\nUpdates the security.txt file configuration for a zone, which provides security researchers with vulnerability reporting information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "update-zone-security-center-insight-classification",
+    "name": "Updates Zone Security Center Insight Classification",
+    "description": "Updates Zone Security Center Insight Classification Updates the user classification for a zone-specific Security Center insight. PATCH /client/v4/zones/{zone_id}/security-center/insights/{issue_id}/classification",
+    "context": "PATCH /client/v4/zones/{zone_id}/security-center/insights/{issue_id}/classification\nUpdates the user classification for a zone-specific Security Center insight. Valid values are 'false_positive' or 'accept_risk'. To reset, set classification to null. Cannot change directly between classification values - must reset to null first.\nRequired: zone_id (path); issue_id (path); body (body)"
+  }
+]

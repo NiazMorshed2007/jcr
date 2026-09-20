@@ -1,0 +1,62 @@
+[
+  {
+    "id": "dlp-data-tag-categories-create",
+    "name": "Creates a new data tag category.",
+    "description": "Creates a new data tag category. Creates a data tag category, optionally from a template. POST /client/v4/accounts/{account_id}/dlp/data_tag_categories",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/data_tag_categories\nCreates a data tag category, optionally from a template.\nRequired: account_id (path); body (body) — Attributes of the new data tag category."
+  },
+  {
+    "id": "dlp-data-tag-categories-delete",
+    "name": "Delete a single data tag category.",
+    "description": "Delete a single data tag category. Deletes a data tag category and its tags. DELETE /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}\nDeletes a data tag category and its tags.\nRequired: account_id (path); category_id (path)"
+  },
+  {
+    "id": "dlp-data-tag-categories-list",
+    "name": "Retrieve all data tag categories in an account",
+    "description": "Retrieve all data tag categories in an account Lists data tag categories configured for the account. GET /client/v4/accounts/{account_id}/dlp/data_tag_categories",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_tag_categories\nLists data tag categories configured for the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-data-tag-categories-read",
+    "name": "Retrieve a specific data tag category.",
+    "description": "Retrieve a specific data tag category. Gets a data tag category and its tags. GET /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}\nGets a data tag category and its tags.\nRequired: account_id (path); category_id (path)"
+  },
+  {
+    "id": "dlp-data-tag-categories-update",
+    "name": "Update the attributes of a single data tag category.",
+    "description": "Update the attributes of a single data tag category. Updates a data tag category and its tags. PUT /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}\nUpdates a data tag category and its tags.\nRequired: account_id (path); category_id (path); body (body) — Attributes of the data tag category to update."
+  },
+  {
+    "id": "dlp-data-tags-create",
+    "name": "Creates a new data tag.",
+    "description": "Creates a new data tag. Creates a data tag in a category. POST /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags\nCreates a data tag in a category.\nRequired: account_id (path); category_id (path); body (body) — Attributes of the new data tag."
+  },
+  {
+    "id": "dlp-data-tags-delete",
+    "name": "Delete a single data tag.",
+    "description": "Delete a single data tag. Deletes a data tag from a category. DELETE /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}\nDeletes a data tag from a category.\nRequired: account_id (path); category_id (path); tag_id (path)"
+  },
+  {
+    "id": "dlp-data-tags-list",
+    "name": "Retrieve all data tags in a data tag category",
+    "description": "Retrieve all data tags in a data tag category Lists data tags in a category. GET /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags\nLists data tags in a category.\nRequired: account_id (path); category_id (path)"
+  },
+  {
+    "id": "dlp-data-tags-read",
+    "name": "Retrieve a specific data tag.",
+    "description": "Retrieve a specific data tag. Gets a data tag from a category. GET /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}\nGets a data tag from a category.\nRequired: account_id (path); category_id (path); tag_id (path)"
+  },
+  {
+    "id": "dlp-data-tags-update",
+    "name": "Update the attributes of a single data tag.",
+    "description": "Update the attributes of a single data tag. Updates a data tag in a category. PUT /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}\nUpdates a data tag in a category.\nRequired: account_id (path); category_id (path); tag_id (path); body (body) — Attributes of the data tag to update."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "createIntegrationStoreDirect",
+    "name": "Create integration store (free and paid plans)",
+    "description": "Create integration store (free and paid plans) Creates an integration store with automatic billing plan handling. POST /v1/storage/stores/integration/direct",
+    "context": "POST /v1/storage/stores/integration/direct\nCreates an integration store with automatic billing plan handling. For free resources, omit `billingPlanId` to auto-discover free plans. For paid resources, provide a `billingPlanId` from the billing plans endpoint.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createStorageStoresBlob",
+    "name": "Create a Blob store",
+    "description": "Create a Blob store POST /storage/stores/blob",
+    "context": "POST /storage/stores/blob\nCreate a Blob store\nOptional: body (body)"
+  },
+  {
+    "id": "deleteStorageStoresBlobById",
+    "name": "Delete a Blob store",
+    "description": "Delete a Blob store DELETE /storage/stores/blob/{id}",
+    "context": "DELETE /storage/stores/blob/{id}\nDelete a Blob store\nRequired: id (path)"
+  },
+  {
+    "id": "getStorageStoresById",
+    "name": "Get a store",
+    "description": "Get a store GET /storage/stores/{id}",
+    "context": "GET /storage/stores/{id}\nGet a store\nRequired: id (path)\nOptional: skip-metadata (query); include-guides (query)"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "streamlit_apps_activate_version_create",
+    "name": "Activate an existing app version",
+    "description": "Activate an existing app version POST /api/projects/{project_id}/streamlit_apps/{short_id}/activate_version/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/{short_id}/activate_version/\nActivate an existing app version\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "streamlit_apps_connect_info_retrieve",
+    "name": "Get iframe connection info for a running app",
+    "description": "Get iframe connection info for a running app GET /api/projects/{project_id}/streamlit_apps/{short_id}/connect_info/",
+    "context": "GET /api/projects/{project_id}/streamlit_apps/{short_id}/connect_info/\nGet iframe connection info for a running app\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_create",
+    "name": "Create a streamlit app",
+    "description": "Create a streamlit app POST /api/projects/{project_id}/streamlit_apps/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/\nCreate a streamlit app\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "streamlit_apps_create_version_from_source_create",
+    "name": "Create an app version from source code",
+    "description": "Create an app version from source code POST /api/projects/{project_id}/streamlit_apps/{short_id}/create_version_from_source/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/{short_id}/create_version_from_source/\nCreate an app version from source code\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "streamlit_apps_destroy",
+    "name": "Delete a streamlit app",
+    "description": "Delete a streamlit app DELETE /api/projects/{project_id}/streamlit_apps/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/streamlit_apps/{short_id}/\nDelete a streamlit app\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_list",
+    "name": "List streamlit apps",
+    "description": "List streamlit apps GET /api/projects/{project_id}/streamlit_apps/",
+    "context": "GET /api/projects/{project_id}/streamlit_apps/\nList streamlit apps\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "streamlit_apps_partial_update",
+    "name": "Partially update a streamlit app",
+    "description": "Partially update a streamlit app PATCH /api/projects/{project_id}/streamlit_apps/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/streamlit_apps/{short_id}/\nPartially update a streamlit app\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "streamlit_apps_restart_create",
+    "name": "Restart the app sandbox",
+    "description": "Restart the app sandbox POST /api/projects/{project_id}/streamlit_apps/{short_id}/restart/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/{short_id}/restart/\nRestart the app sandbox\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_retrieve",
+    "name": "Retrieve a streamlit app",
+    "description": "Retrieve a streamlit app GET /api/projects/{project_id}/streamlit_apps/{short_id}/",
+    "context": "GET /api/projects/{project_id}/streamlit_apps/{short_id}/\nRetrieve a streamlit app\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_start_create",
+    "name": "Start the app sandbox",
+    "description": "Start the app sandbox POST /api/projects/{project_id}/streamlit_apps/{short_id}/start/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/{short_id}/start/\nStart the app sandbox\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_status_retrieve",
+    "name": "Get app sandbox status",
+    "description": "Get app sandbox status GET /api/projects/{project_id}/streamlit_apps/{short_id}/status/",
+    "context": "GET /api/projects/{project_id}/streamlit_apps/{short_id}/status/\nGet app sandbox status\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_stop_create",
+    "name": "Stop the app sandbox",
+    "description": "Stop the app sandbox POST /api/projects/{project_id}/streamlit_apps/{short_id}/stop/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/{short_id}/stop/\nStop the app sandbox\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "streamlit_apps_update",
+    "name": "Update a streamlit app",
+    "description": "Update a streamlit app PUT /api/projects/{project_id}/streamlit_apps/{short_id}/",
+    "context": "PUT /api/projects/{project_id}/streamlit_apps/{short_id}/\nUpdate a streamlit app\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "streamlit_apps_upload_version_create",
+    "name": "Upload a new app version",
+    "description": "Upload a new app version POST /api/projects/{project_id}/streamlit_apps/{short_id}/upload_version/",
+    "context": "POST /api/projects/{project_id}/streamlit_apps/{short_id}/upload_version/\nUpload a new app version\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "streamlit_apps_versions_retrieve",
+    "name": "List app versions",
+    "description": "List app versions GET /api/projects/{project_id}/streamlit_apps/{short_id}/versions/",
+    "context": "GET /api/projects/{project_id}/streamlit_apps/{short_id}/versions/\nList app versions\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  }
+]

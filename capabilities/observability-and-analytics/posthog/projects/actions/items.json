@@ -1,0 +1,50 @@
+[
+  {
+    "id": "actions_bulk_update_tags_create",
+    "name": "Bulk update tags on multiple objects",
+    "description": "Bulk update tags on multiple objects Bulk update tags on multiple objects. POST /api/projects/{project_id}/actions/bulk_update_tags/",
+    "context": "POST /api/projects/{project_id}/actions/bulk_update_tags/\nBulk update tags on multiple objects. PAT access: this action has no ``required_scopes=`` on the decorator — inheriting viewsets must add ``\"bulk_update_tags\"`` to their ``scope_object_write_actions`` list to accept personal API keys. Without that opt-in, ``APIScopePermission`` rejects PAT requests with \"This action does not support personal API key access\". Done per-viewset so granting `` :write`` for one resource doesn't leak access to sibling resources that share this mixin. Accepts: - {\"ids\": [...], \"action\": \"add\"|\"remove\"|\"set\", \"tags\": [\"tag1\", \"tag2\"]} Actions: - \"add\": Add tags to existing tags on each object - \"remove\": Remove specific tags from each object - \"set\": Replace all tags on each object with the provided list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "actions_create",
+    "name": "actions_create",
+    "description": "actions_create POST /api/projects/{project_id}/actions/",
+    "context": "POST /api/projects/{project_id}/actions/\nactions_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "actions_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/actions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/actions/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A unique integer value identifying this action.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "actions_list",
+    "name": "actions_list",
+    "description": "actions_list GET /api/projects/{project_id}/actions/",
+    "context": "GET /api/projects/{project_id}/actions/\nactions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query) — Comma-separated list of creator user ids. Returns only actions created by these users.; format (query); limit (query) — Maximum number of actions to return. Omit to return all.; offset (query) — Number of actions to skip before returning results.; ordering (query) — Field to order by (name, created_at, pinned_at, created_by). Prefix with '-' for descending.; search (query) — Case-insensitive substring match on the action name.; tags (query) — JSON-encoded array of tag names, e.g. [\"billing\",\"beta\"]. Returns actions having any of these tags."
+  },
+  {
+    "id": "actions_partial_update",
+    "name": "actions_partial_update",
+    "description": "actions_partial_update PATCH /api/projects/{project_id}/actions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/actions/{id}/\nactions_partial_update\nRequired: id (path) — A unique integer value identifying this action.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "actions_references_list",
+    "name": "actions_references_list",
+    "description": "actions_references_list GET /api/projects/{project_id}/actions/{id}/references/",
+    "context": "GET /api/projects/{project_id}/actions/{id}/references/\nactions_references_list\nRequired: id (path) — A unique integer value identifying this action.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "actions_retrieve",
+    "name": "actions_retrieve",
+    "description": "actions_retrieve GET /api/projects/{project_id}/actions/{id}/",
+    "context": "GET /api/projects/{project_id}/actions/{id}/\nactions_retrieve\nRequired: id (path) — A unique integer value identifying this action.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "actions_update",
+    "name": "actions_update",
+    "description": "actions_update PUT /api/projects/{project_id}/actions/{id}/",
+    "context": "PUT /api/projects/{project_id}/actions/{id}/\nactions_update\nRequired: id (path) — A unique integer value identifying this action.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  }
+]

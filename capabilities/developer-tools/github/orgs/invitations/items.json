@@ -1,0 +1,26 @@
+[
+  {
+    "id": "orgs%2Fcancel-invitation",
+    "name": "Cancel an organization invitation",
+    "description": "Cancel an organization invitation Cancel an organization invitation. DELETE /orgs/{org}/invitations/{invitation_id}",
+    "context": "DELETE /orgs/{org}/invitations/{invitation_id}\nCancel an organization invitation. In order to cancel an organization invitation, the authenticated user must be an organization owner. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).\nRequired: org (path) — The organization name. The name is not case sensitive.; invitation_id (path) — The unique identifier of the invitation."
+  },
+  {
+    "id": "orgs%2Fcreate-invitation",
+    "name": "Create an organization invitation",
+    "description": "Create an organization invitation Invite people to an organization by using their GitHub user ID or their email address. POST /orgs/{org}/invitations",
+    "context": "POST /orgs/{org}/invitations\nInvite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner. This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\" and \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "orgs%2Flist-invitation-teams",
+    "name": "List organization invitation teams",
+    "description": "List organization invitation teams List all teams associated with an invitation. GET /orgs/{org}/invitations/{invitation_id}/teams",
+    "context": "GET /orgs/{org}/invitations/{invitation_id}/teams\nList all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.\nRequired: org (path) — The organization name. The name is not case sensitive.; invitation_id (path) — The unique identifier of the invitation.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Flist-pending-invitations",
+    "name": "List pending organization invitations",
+    "description": "List pending organization invitations The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. GET /orgs/{org}/invitations",
+    "context": "GET /orgs/{org}/invitations\nThe return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; role (query) — Filter invitations by their member role.; invitation_source (query) — Filter invitations by their invitation source."
+  }
+]

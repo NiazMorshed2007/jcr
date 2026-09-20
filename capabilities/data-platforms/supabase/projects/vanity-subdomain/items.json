@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v1-activate-vanity-subdomain-config",
+    "name": "Activates a vanity subdomain for a project.",
+    "description": "Activates a vanity subdomain for a project. This is an **experimental** endpoint. POST /v1/projects/{ref}/vanity-subdomain/activate",
+    "context": "POST /v1/projects/{ref}/vanity-subdomain/activate\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-check-vanity-subdomain-availability",
+    "name": "Checks vanity subdomain availability",
+    "description": "Checks vanity subdomain availability This is an **experimental** endpoint. POST /v1/projects/{ref}/vanity-subdomain/check-availability",
+    "context": "POST /v1/projects/{ref}/vanity-subdomain/check-availability\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-deactivate-vanity-subdomain-config",
+    "name": "Deletes a project's vanity subdomain configuration",
+    "description": "Deletes a project's vanity subdomain configuration This is an **experimental** endpoint. DELETE /v1/projects/{ref}/vanity-subdomain",
+    "context": "DELETE /v1/projects/{ref}/vanity-subdomain\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-vanity-subdomain-config",
+    "name": "Gets current vanity subdomain config",
+    "description": "Gets current vanity subdomain config This is an **experimental** endpoint. GET /v1/projects/{ref}/vanity-subdomain",
+    "context": "GET /v1/projects/{ref}/vanity-subdomain\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  }
+]

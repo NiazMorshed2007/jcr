@@ -1,0 +1,26 @@
+[
+  {
+    "id": "orgs%2Fblock-user",
+    "name": "Block a user from an organization",
+    "description": "Block a user from an organization Blocks the given user on behalf of the specified organization and returns a 204. PUT /orgs/{org}/blocks/{username}",
+    "context": "PUT /orgs/{org}/blocks/{username}\nBlocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Fcheck-blocked-user",
+    "name": "Check if a user is blocked by an organization",
+    "description": "Check if a user is blocked by an organization Returns a 204 if the given user is blocked by the given organization. GET /orgs/{org}/blocks/{username}",
+    "context": "GET /orgs/{org}/blocks/{username}\nReturns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Flist-blocked-users",
+    "name": "List users blocked by an organization",
+    "description": "List users blocked by an organization List the users blocked by an organization. GET /orgs/{org}/blocks",
+    "context": "GET /orgs/{org}/blocks\nList the users blocked by an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Funblock-user",
+    "name": "Unblock a user from an organization",
+    "description": "Unblock a user from an organization Unblocks the given user on behalf of the specified organization. DELETE /orgs/{org}/blocks/{username}",
+    "context": "DELETE /orgs/{org}/blocks/{username}\nUnblocks the given user on behalf of the specified organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  }
+]

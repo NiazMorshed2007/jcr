@@ -1,0 +1,50 @@
+[
+  {
+    "id": "event_streams_add_account_create",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. POST /api/projects/{project_id}/event_streams/{id}/add_account/",
+    "context": "POST /api/projects/{project_id}/event_streams/{id}/add_account/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: id (path) — A UUID string identifying this event stream.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "event_streams_create",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. POST /api/projects/{project_id}/event_streams/",
+    "context": "POST /api/projects/{project_id}/event_streams/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "event_streams_destroy",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. DELETE /api/projects/{project_id}/event_streams/{id}/",
+    "context": "DELETE /api/projects/{project_id}/event_streams/{id}/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: id (path) — A UUID string identifying this event stream.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "event_streams_list",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. GET /api/projects/{project_id}/event_streams/",
+    "context": "GET /api/projects/{project_id}/event_streams/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "event_streams_partial_update",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. PATCH /api/projects/{project_id}/event_streams/{id}/",
+    "context": "PATCH /api/projects/{project_id}/event_streams/{id}/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: id (path) — A UUID string identifying this event stream.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "event_streams_remove_account_create",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. POST /api/projects/{project_id}/event_streams/{id}/remove_account/",
+    "context": "POST /api/projects/{project_id}/event_streams/{id}/remove_account/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: id (path) — A UUID string identifying this event stream.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "event_streams_send_test_message_create",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. POST /api/projects/{project_id}/event_streams/{id}/send_test_message/",
+    "context": "POST /api/projects/{project_id}/event_streams/{id}/send_test_message/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: id (path) — A UUID string identifying this event stream.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "event_streams_update",
+    "name": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice",
+    "description": "The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice The caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. PUT /api/projects/{project_id}/event_streams/{id}/",
+    "context": "PUT /api/projects/{project_id}/event_streams/{id}/\nThe caller's event stream: a live feed of selected accounts' events posted to a Slack channel of their choice. Per-user — each team member owns at most one stream, and every endpoint is scoped to the caller's own. Delivery runs through a managed CDP destination that is re-provisioned inside the same transaction as every write, so config and delivery can't drift apart.\nRequired: id (path) — A UUID string identifying this event stream.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

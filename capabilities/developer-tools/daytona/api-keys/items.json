@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createApiKey",
+    "name": "Create API key",
+    "description": "Create API key POST /api-keys",
+    "context": "POST /api-keys\nCreate API key\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteApiKey",
+    "name": "Delete API key",
+    "description": "Delete API key DELETE /api-keys/{name}",
+    "context": "DELETE /api-keys/{name}\nDelete API key\nRequired: name (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteApiKeyForUser",
+    "name": "Delete API key for user",
+    "description": "Delete API key for user DELETE /api-keys/{userId}/{name}",
+    "context": "DELETE /api-keys/{userId}/{name}\nDelete API key for user\nRequired: userId (path); name (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getApiKey",
+    "name": "Get API key",
+    "description": "Get API key GET /api-keys/{name}",
+    "context": "GET /api-keys/{name}\nGet API key\nRequired: name (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getCurrentApiKey",
+    "name": "Get current API key's details",
+    "description": "Get current API key's details GET /api-keys/current",
+    "context": "GET /api-keys/current\nGet current API key's details\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "listApiKeys",
+    "name": "List API keys",
+    "description": "List API keys GET /api-keys",
+    "context": "GET /api-keys\nList API keys\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_group_memberships_id",
+    "name": "Remove user from group",
+    "description": "Remove user from group Deletes a specific group membership. DELETE /2.0/group_memberships/{group_membership_id}",
+    "context": "DELETE /2.0/group_memberships/{group_membership_id}\nDeletes a specific group membership. Only admins of this group or users with admin-level permissions will be able to use this API.\nRequired: group_membership_id (path) — The ID of the group membership."
+  },
+  {
+    "id": "get_group_memberships_id",
+    "name": "Get group membership",
+    "description": "Get group membership Retrieves a specific group membership. GET /2.0/group_memberships/{group_membership_id}",
+    "context": "GET /2.0/group_memberships/{group_membership_id}\nRetrieves a specific group membership. Only admins of this group or users with admin-level permissions will be able to use this API.\nRequired: group_membership_id (path) — The ID of the group membership.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "post_group_memberships",
+    "name": "Add user to group",
+    "description": "Add user to group Creates a group membership. POST /2.0/group_memberships",
+    "context": "POST /2.0/group_memberships\nCreates a group membership. Only users with admin-level permissions will be able to use this API.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  },
+  {
+    "id": "put_group_memberships_id",
+    "name": "Update group membership",
+    "description": "Update group membership Updates a user's group membership. PUT /2.0/group_memberships/{group_membership_id}",
+    "context": "PUT /2.0/group_memberships/{group_membership_id}\nUpdates a user's group membership. Only admins of this group or users with admin-level permissions will be able to use this API.\nRequired: group_membership_id (path) — The ID of the group membership.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  }
+]

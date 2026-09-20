@@ -1,0 +1,26 @@
+[
+  {
+    "id": "orgs%2Flist-pat-grant-request-repositories",
+    "name": "List repositories requested to be accessed by a fine-grained personal access token",
+    "description": "List repositories requested to be accessed by a fine-grained personal access token Lists the repositories a fine-grained personal access token request is requesting access to. GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories",
+    "context": "GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories\nLists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; pat_request_id (path) — Unique identifier of the request for access via fine-grained personal access token.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Flist-pat-grant-requests",
+    "name": "List requests to access organization resources with fine-grained personal access tokens",
+    "description": "List requests to access organization resources with fine-grained personal access tokens Lists requests from organization members to access organization resources with a fine-grained personal access token. GET /orgs/{org}/personal-access-token-requests",
+    "context": "GET /orgs/{org}/personal-access-token-requests\nLists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; sort (query) — The property by which to sort the results.; direction (query) — The direction to sort the results by.; owner (query) — A list of owner usernames to use to filter the results.; repository (query) — The name of the repository to use to filter the results.; permission (query) — The permission to use to filter the results.; last_used_before (query) — Only show fine-grained personal access tokens used before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; last_used_after (query) — Only show fine-grained personal access tokens used after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; token_id (query) — The ID of the token"
+  },
+  {
+    "id": "orgs%2Freview-pat-grant-request",
+    "name": "Review a request to access organization resources with a fine-grained personal access token",
+    "description": "Review a request to access organization resources with a fine-grained personal access token Approves or denies a pending request to access organization resources via a fine-grained personal access token. POST /orgs/{org}/personal-access-token-requests/{pat_request_id}",
+    "context": "POST /orgs/{org}/personal-access-token-requests/{pat_request_id}\nApproves or denies a pending request to access organization resources via a fine-grained personal access token. Only GitHub Apps can use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; pat_request_id (path) — Unique identifier of the request for access via fine-grained personal access token.; body (body)"
+  },
+  {
+    "id": "orgs%2Freview-pat-grant-requests-in-bulk",
+    "name": "Review requests to access organization resources with fine-grained personal access tokens",
+    "description": "Review requests to access organization resources with fine-grained personal access tokens Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. POST /orgs/{org}/personal-access-token-requests",
+    "context": "POST /orgs/{org}/personal-access-token-requests\nApproves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  }
+]

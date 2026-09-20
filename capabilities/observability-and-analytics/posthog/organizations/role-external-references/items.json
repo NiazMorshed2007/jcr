@@ -1,0 +1,26 @@
+[
+  {
+    "id": "role_external_references_create",
+    "name": "role_external_references_create",
+    "description": "role_external_references_create POST /api/organizations/{organization_id}/role_external_references/",
+    "context": "POST /api/organizations/{organization_id}/role_external_references/\nrole_external_references_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "role_external_references_destroy",
+    "name": "role_external_references_destroy",
+    "description": "role_external_references_destroy DELETE /api/organizations/{organization_id}/role_external_references/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/role_external_references/{id}/\nrole_external_references_destroy\nRequired: id (path) — A UUID string identifying this role external reference.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "role_external_references_list",
+    "name": "role_external_references_list",
+    "description": "role_external_references_list GET /api/organizations/{organization_id}/role_external_references/",
+    "context": "GET /api/organizations/{organization_id}/role_external_references/\nrole_external_references_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "role_external_references_lookup_retrieve",
+    "name": "role_external_references_lookup_retrieve",
+    "description": "role_external_references_lookup_retrieve GET /api/organizations/{organization_id}/role_external_references/lookup/",
+    "context": "GET /api/organizations/{organization_id}/role_external_references/lookup/\nrole_external_references_lookup_retrieve\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; provider (query) — Integration kind (e.g., github, linear, jira, slack).; provider_organization_id (query) — Provider organization/workspace/site identifier.\nOptional: provider_role_id (query) — Stable provider role identifier.; provider_role_slug (query) — Human-friendly provider role identifier."
+  }
+]

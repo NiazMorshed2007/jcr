@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ArchiveFindingInstance",
+    "name": "Archive a finding",
+    "description": "Archive a finding Archive one or more finding instances. POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/archive",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/archive\nArchive one or more finding instances.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding.\nOptional: body (body)"
+  },
+  {
+    "id": "ChangeFindingSeverity",
+    "name": "Update the severity for a finding",
+    "description": "Update the severity for a finding Update the severity of a Finding. POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/tune_finding_severity",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/tune_finding_severity\nUpdate the severity of a Finding. This will update the `severity_override` field on the Finding payload with the new severity value.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding.; body (body)"
+  },
+  {
+    "id": "CreateContentExport",
+    "name": "Create a content export",
+    "description": "Create a content export Creates a CSV export for content and accepts optional filters in the payload. POST /client/v4/accounts/{account_id}/data-security/posture/content/export",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/content/export\nCreates a CSV export for content and accepts optional filters in the payload.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: body (body)"
+  },
+  {
+    "id": "CreateFindingExportCSV",
+    "name": "Create new findings export request",
+    "description": "Create new findings export request Creates a CSV export for findings and accepts optional filters in the payload. POST /client/v4/accounts/{account_id}/data-security/posture/findings/export",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/export\nCreates a CSV export for findings and accepts optional filters in the payload.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: body (body)"
+  },
+  {
+    "id": "CreateFindingInstancesExportCSV",
+    "name": "Create a finding instances export",
+    "description": "Create a finding instances export Creates a CSV export for Finding instances and accepts optional filters in the payload. POST /client/v4/accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export\nCreates a CSV export for Finding instances and accepts optional filters in the payload. The `storage_namespace_id` path parameter is derived from the finding ID by base64-decoding it (which yields `integration_id:finding_type_id`) and replacing the colon with a hyphen.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; storage_namespace_id (path) — A storage namespace identifier for the finding, used to scope finding instance exports. Constructed by base64-decoding the finding ID (which encodes `integration_id:finding_type_id`) and replacing the colon separator with a hyphen. For example, a finding ID that decodes to `00000000-0000-0000-0000-000000000001:00000000-0000-0000-0000-000000000002` becomes `00000000-0000-0000-0000-000000000001-00000000-0000-0000-0000-000000000002`.\nOptional: body (body)"
+  },
+  {
+    "id": "CreatePolicy",
+    "name": "Create a new policy configuration",
+    "description": "Create a new policy configuration Creates a new policy configuration that defines automated actions to be executed when security findings are detected. POST /client/v4/accounts/{account_id}/data-security/posture/policies",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/policies\nCreates a new policy configuration that defines automated actions to be executed when security findings are detected. A policy can include multiple remediation and/or webhook actions that will be triggered automatically.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; body (body)"
+  },
+  {
+    "id": "CreateRemediationJobs",
+    "name": "Creates remediation jobs",
+    "description": "Creates remediation jobs Create one or more remediation jobs tied to a specific Cloudflare Account. POST /client/v4/accounts/{account_id}/data-security/posture/remediations/jobs",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/remediations/jobs\nCreate one or more remediation jobs tied to a specific Cloudflare Account.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: body (body)"
+  },
+  {
+    "id": "CreateRemediationJobsExportCSV",
+    "name": "Create a remediation jobs export",
+    "description": "Create a remediation jobs export Creates a CSV export for remediation jobs and accepts optional filters in the payload. POST /client/v4/accounts/{account_id}/data-security/posture/remediations/jobs/export",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/remediations/jobs/export\nCreates a CSV export for remediation jobs and accepts optional filters in the payload.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: body (body)"
+  },
+  {
+    "id": "CreateWebhook",
+    "name": "Create a new webhook configuration",
+    "description": "Create a new webhook configuration Creates a new webhook configuration for sending finding notifications to external endpoints. POST /client/v4/accounts/{account_id}/data-security/posture/webhooks",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/webhooks\nCreates a new webhook configuration for sending finding notifications to external endpoints.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; body (body)"
+  },
+  {
+    "id": "CreateWebhookJobs",
+    "name": "Create webhook jobs",
+    "description": "Create webhook jobs Creates webhook jobs to send a finding instance to one or more configured webhooks. POST /client/v4/accounts/{account_id}/data-security/posture/webhooks/jobs",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/webhooks/jobs\nCreates webhook jobs to send a finding instance to one or more configured webhooks.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; body (body)"
+  },
+  {
+    "id": "DeletePolicy",
+    "name": "Delete a policy configuration",
+    "description": "Delete a policy configuration Deletes a policy configuration. DELETE /client/v4/accounts/{account_id}/data-security/posture/policies/{policy_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/data-security/posture/policies/{policy_id}\nDeletes a policy configuration.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; policy_id (path) — A UUID identifying the policy."
+  },
+  {
+    "id": "DeleteWebhook",
+    "name": "Delete a webhook configuration",
+    "description": "Delete a webhook configuration Soft deletes a webhook configuration by its unique identifier. DELETE /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}\nSoft deletes a webhook configuration by its unique identifier. The webhook will be marked as deleted and will no longer be available for use.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; webhook_id (path) — A UUID identifying the webhook configuration."
+  },
+  {
+    "id": "EvaluateExistingWebhook",
+    "name": "Test an existing webhook configuration",
+    "description": "Test an existing webhook configuration Sends a test webhook event using an existing webhook configuration. POST /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}/evaluate",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}/evaluate\nSends a test webhook event using an existing webhook configuration. This allows customers to verify their webhook endpoint is still reachable and properly configured after creating the webhook resource. The test payload includes: - event_type: \"webhook.test\" - timestamp: Current UTC timestamp - message: Test message indicating this is from Cloudflare CASB - data: Object with test: true\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; webhook_id (path) — A UUID identifying the webhook configuration."
+  },
+  {
+    "id": "EvaluateNewWebhook",
+    "name": "Test a webhook configuration before creating it",
+    "description": "Test a webhook configuration before creating it Sends a test webhook event to the specified destination URL to verify the webhook endpoint is reachable and properly configured. POST /client/v4/accounts/{account_id}/data-security/posture/webhooks/evaluate",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/webhooks/evaluate\nSends a test webhook event to the specified destination URL to verify the webhook endpoint is reachable and properly configured. This allows customers to validate their webhook configuration before creating the actual webhook resource. The test payload includes: - event_type: \"webhook.test\" - timestamp: Current UTC timestamp - message: Test message indicating this is from Cloudflare CASB - data: Object with test: true\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; body (body)"
+  },
+  {
+    "id": "GetExportJob",
+    "name": "Get a single export job",
+    "description": "Get a single export job Retrieves a single export job by its unique identifier GET /client/v4/accounts/{account_id}/data-security/posture/exports/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/exports/{id}\nRetrieves a single export job by its unique identifier\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; id (path) — Unique identifier for the export job"
+  },
+  {
+    "id": "GetFinding",
+    "name": "Get a finding type",
+    "description": "Get a finding type Gets a security Finding that has been identified as being problematic. GET /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}\nGets a security Finding that has been identified as being problematic.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding."
+  },
+  {
+    "id": "GetFindingInstance",
+    "name": "Get a finding instance using an instance ID",
+    "description": "Get a finding instance using an instance ID Gets a security Finding instance by id. GET /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/{instance_id}",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/{instance_id}\nGets a security Finding instance by id.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding.; instance_id (path) — A uuid ID identifying this Finding instance."
+  },
+  {
+    "id": "GetFindingType",
+    "name": "Get finding by ID",
+    "description": "Get finding by ID Retrieve a specific finding type by its unique identifier. GET /client/v4/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}\nRetrieve a specific finding type by its unique identifier.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_type_id (path) — A UUID string identifying the finding type."
+  },
+  {
+    "id": "GetPolicyByID",
+    "name": "Get a policy configuration by ID",
+    "description": "Get a policy configuration by ID Retrieves the details of a specific policy configuration, including its associated remediation and webhook actions. GET /client/v4/accounts/{account_id}/data-security/posture/policies/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/policies/{policy_id}\nRetrieves the details of a specific policy configuration, including its associated remediation and webhook actions.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; policy_id (path) — The UUID of the policy configuration to retrieve."
+  },
+  {
+    "id": "GetRemediationTypesForFindingType",
+    "name": "List remediation types for a finding type",
+    "description": "List remediation types for a finding type List all remediation types for a given finding type. GET /client/v4/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}/remediation_types",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}/remediation_types\nList all remediation types for a given finding type. This endpoint supports both cursor and offset pagination. Note that `cursor` and `page` are mutually exclusive.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_type_id (path) — A UUID string identifying the finding type.\nOptional: integration_id (query) — Filter by an integration ID; cursor (query) — A cursor for pagination.; page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page."
+  },
+  {
+    "id": "GetWebhookConfigByID",
+    "name": "Get webhook configuration by ID",
+    "description": "Get webhook configuration by ID Retrieves a specific webhook configuration by its unique identifier. GET /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}\nRetrieves a specific webhook configuration by its unique identifier.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; webhook_id (path) — A UUID identifying the webhook configuration."
+  },
+  {
+    "id": "IgnoreFinding",
+    "name": "Mark a finding as ignored",
+    "description": "Mark a finding as ignored Given a list of findings, mark as ignored. POST /client/v4/accounts/{account_id}/data-security/posture/findings/ignore",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/ignore\nGiven a list of findings, mark as ignored. Does nothing if Finding is already ignored.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; body (body)"
+  },
+  {
+    "id": "ListContentAssets",
+    "name": "List DLP content findings",
+    "description": "List DLP content findings GET /client/v4/accounts/{account_id}/data-security/posture/content",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/content\nList DLP content findings\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: direction (query) — Direction to order results.; dlp_profile_id (query) — Filter by an DLP profile ID; integration_id (query) — Filter by an integration ID; max_affliction_date (query) — Filter to view findings that occurred on or before the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.; min_affliction_date (query) — Filter to view findings that occurred on or after the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.; order (query) — Which field to use when ordering content assets.; page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page.; search (query) — A search term.; vendor (query) — Filter by vendor"
+  },
+  {
+    "id": "ListExportJobs",
+    "name": "List all export jobs",
+    "description": "List all export jobs List all export jobs for a given requestor's organization GET /client/v4/accounts/{account_id}/data-security/posture/exports",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/exports\nList all export jobs for a given requestor's organization\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page.; status (query) — Filter on export job's status"
+  },
+  {
+    "id": "ListFindingInstances",
+    "name": "List instances of a finding",
+    "description": "List instances of a finding Lists all security finding instances for a given security finding. GET /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances\nLists all security finding instances for a given security finding.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding.\nOptional: archived (query) — Archived; cursor (query) — A cursor for pagination. Obtained from the `result_info.cursor` field of a previous response.; direction (query) — Direction to order results.; max_affliction_date (query) — Filter to view findings that occurred on or before the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.; min_affliction_date (query) — Filter to view findings that occurred on or after the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.; order (query) — Which field to use when ordering the Finding's instances. When ordering by 'remediation.status', only the most recent non-stale remediation job is considered. Stale jobs (created before the instance's affliction_date) are treated as having no status for ordering purposes.; page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page.; search (query) — A search term.; remediation_statuses (query) — Filter finding instances by most recent remediation job status. Supports multiple comma-separated values. Use 'none' to filter instances with no remediation jobs or instances where the most recent job is stale. Note: Stale jobs (created before the instance's affliction_date) are ignored for filtering purposes, but are still included in the 'remediations' array with stale=true.; finding_instance_ids (query) — Filter finding instances by an array of finding instance IDs. Supports multiple comma-separated values.; asset_ids (query) — Filter finding instances by an array of asset IDs. Supports multiple comma-separated values."
+  },
+  {
+    "id": "ListFindings",
+    "name": "List posture findings",
+    "description": "List posture findings List all security findings that have been identified as being problematic. GET /client/v4/accounts/{account_id}/data-security/posture/findings",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/findings\nList all security findings that have been identified as being problematic. This will return a list of findings regardless if they have been ignored or not.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: cursor (query) — A cursor for pagination. Obtained from the `result_info.cursor` field of a previous response.; direction (query) — Direction to order results.; ignored (query) — Filter for only the ignored findings. Set to false to only see \"active\" items; integration_id (query) — Filter by an integration ID; max_affliction_date (query) — Filter to view findings that occurred on or before the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.; min_affliction_date (query) — Filter to view findings that occurred on or after the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.; observation (query) — Filter by observation type of the finding; order (query) — Which field to use when ordering the findings.; page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page.; product (query) — Filter by product category of the finding; search (query) — A search term.; severity (query) — Filter by severity; type (query) — Filter by type of the finding; vendor (query) — Filter by vendor; finding_type_ids (query) — A comma separated list of UUIDs identifying the finding type(s)."
+  },
+  {
+    "id": "ListFindingTypes",
+    "name": "List all finding types",
+    "description": "List all finding types List all available finding types with pagination support. GET /client/v4/accounts/{account_id}/data-security/posture/finding_types",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/finding_types\nList all available finding types with pagination support.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page.; vendors (query) — Filter finding types by vendor. Supports multiple comma-separated values. Each value may be either the vendor enum (GOOGLE_WORKSPACE) or the friendly name returned by the read routes (Google Workspace).; search (query) — Filter finding types by name or ID (case-insensitive substring match)."
+  },
+  {
+    "id": "ListPolicies",
+    "name": "List policy configurations",
+    "description": "List policy configurations Returns a list of integration-scoped policy configurations for the given account. GET /client/v4/accounts/{account_id}/data-security/posture/policies",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/policies\nReturns a list of integration-scoped policy configurations for the given account. This endpoint supports cursor based pagination. By default, results are returned in sorted order based on created_at.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: cursor (query) — Cursor for pagination. Obtained from the `result_info.cursor` field of a previous response."
+  },
+  {
+    "id": "ListPolicyLogs",
+    "name": "List policy invocation logs",
+    "description": "List policy invocation logs Returns a list of policy invocation logs for the given account, sourced from ClickHouse via Ready Analytics. GET /client/v4/accounts/{account_id}/data-security/posture/policies/logs",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/policies/logs\nReturns a list of policy invocation logs for the given account, sourced from ClickHouse via Ready Analytics. Each entry represents one execution of a policy against a finding instance, including the actions (remediation jobs and webhooks) it dispatched. Results are scoped to the requesting account's CASB integrations. The `integration_id` query parameter, when supplied, is intersected against the account's integration allowlist; values outside the allowlist are silently dropped. Pagination is offset-based. The response does not include a total row count; clients should treat a result with fewer than `per_page` entries as the end of the list.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: since (query) — Lower bound on the log entry timestamp. Accepts ISO 8601 / RFC3339 or epoch seconds. Defaults to 7 days before `until`. The window between `since` and `until` cannot exceed 180 days.; until (query) — Upper bound on the log entry timestamp. Accepts ISO 8601 / RFC3339 or epoch seconds. Defaults to the current time. Must be greater than or equal to `since`.; integration_id (query) — Comma-separated list of CASB integration IDs to filter by. At most 100 values, each at most 128 characters. Values outside the account's tenancy allowlist are silently ignored. When omitted, results are scoped to the full allowlist.; policy_name (query) — Comma-separated list of policy display names to filter by. At most 100 values, each at most 255 characters.; page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page."
+  },
+  {
+    "id": "ListRemediationJobs",
+    "name": "List remediation jobs",
+    "description": "List remediation jobs List all remediation jobs tied to a specific Cloudflare Account. GET /client/v4/accounts/{account_id}/data-security/posture/remediations/jobs",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/remediations/jobs\nList all remediation jobs tied to a specific Cloudflare Account. Note that `cursor` and `page` are mutually exclusive.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.\nOptional: cursor (query) — A cursor for pagination.; page (query) — A page number within the paginated result set.; per_page (query) — Number of results to return per page.; search (query) — A search term.; min_updated_at (query) — Filter to view remediations updated on or after the min updated datetime. Can be a date-time in ISO 8601 format or an epoch timestamp.; max_updated_at (query) — Filter to view remediations updated on or before the max updated datetime. Can be a date-time in ISO 8601 format or an epoch timestamp.; status (query) — Filter to view remediations with the given status.; triggered_by_actor (query) — Filter remediations by what kind of actor triggered them. Supports multiple comma-separated values.; integration_id (query) — Filter by an integration ID; order (query) — An optional param to sort the results by the given field.; direction (query) — Direction to order results."
+  },
+  {
+    "id": "ListWebhooks",
+    "name": "List webhook configurations",
+    "description": "List webhook configurations Retrieves all webhook configurations for the authenticated account. GET /client/v4/accounts/{account_id}/data-security/posture/webhooks",
+    "context": "GET /client/v4/accounts/{account_id}/data-security/posture/webhooks\nRetrieves all webhook configurations for the authenticated account. Returns an array of webhook configurations that can be used to send finding notifications.\nRequired: account_id (path) — Cloudflare account ID for the user making the request."
+  },
+  {
+    "id": "ResetFindingSeverity",
+    "name": "Reset severity for a finding back to the default",
+    "description": "Reset severity for a finding back to the default If a Finding's severity has been changed, reset it back to default value. POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/reset_finding_severity",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/reset_finding_severity\nIf a Finding's severity has been changed, reset it back to default value. Does nothing if no override exists.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding."
+  },
+  {
+    "id": "UnarchiveFindingInstance",
+    "name": "Remove the archive marking from a finding instance",
+    "description": "Remove the archive marking from a finding instance Remove the archive marking from one or more finding instances. POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/unarchive",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/unarchive\nRemove the archive marking from one or more finding instances.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; finding_id (path) — A base64-encoded ID identifying this Finding.\nOptional: body (body)"
+  },
+  {
+    "id": "UnIgnoreFinding",
+    "name": "Remove ignore marker from a finding",
+    "description": "Remove ignore marker from a finding Ability to un-ignore a Finding if it's previously been ignored. POST /client/v4/accounts/{account_id}/data-security/posture/findings/unignore",
+    "context": "POST /client/v4/accounts/{account_id}/data-security/posture/findings/unignore\nAbility to un-ignore a Finding if it's previously been ignored. Does nothing if the Finding is not ignored.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; body (body)"
+  },
+  {
+    "id": "UpdatePolicy",
+    "name": "Update a policy configuration",
+    "description": "Update a policy configuration Updates an existing policy configuration and replaces its actions. PUT /client/v4/accounts/{account_id}/data-security/posture/policies/{policy_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/data-security/posture/policies/{policy_id}\nUpdates an existing policy configuration and replaces its actions.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; policy_id (path) — Policy configuration ID; body (body)"
+  },
+  {
+    "id": "UpdateWebhook",
+    "name": "Update an existing webhook configuration",
+    "description": "Update an existing webhook configuration Updates an existing webhook configuration with new settings. PUT /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}\nUpdates an existing webhook configuration with new settings.\nRequired: account_id (path) — Cloudflare account ID for the user making the request.; webhook_id (path) — A UUID identifying the webhook configuration.; body (body)"
+  }
+]

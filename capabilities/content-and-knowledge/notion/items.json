@@ -1,0 +1,386 @@
+[
+  {
+    "id": "agent-batch",
+    "name": "Apply many agent operations",
+    "description": "Apply many agent operations POST /v1/agents/batch",
+    "context": "POST /v1/agents/batch\nApply many agent operations\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "cancel-session",
+    "name": "Cancel a session",
+    "description": "Cancel a session POST /v1/sessions/{session_id}/cancel",
+    "context": "POST /v1/sessions/{session_id}/cancel\nCancel a session\nRequired: session_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "complete-file-upload",
+    "name": "Complete a multi-part file upload",
+    "description": "Complete a multi-part file upload POST /v1/file_uploads/{file_upload_id}/complete",
+    "context": "POST /v1/file_uploads/{file_upload_id}/complete\nComplete a multi-part file upload\nRequired: file_upload_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "create-a-comment",
+    "name": "Create a comment",
+    "description": "Create a comment POST /v1/comments",
+    "context": "POST /v1/comments\nCreate a comment\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-a-database",
+    "name": "Create a data source",
+    "description": "Create a data source POST /v1/data_sources",
+    "context": "POST /v1/data_sources\nCreate a data source\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-a-token",
+    "name": "Exchange an authorization code for an access and refresh token",
+    "description": "Exchange an authorization code for an access and refresh token POST /v1/oauth/token",
+    "context": "POST /v1/oauth/token\nExchange an authorization code for an access and refresh token\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-database",
+    "name": "Create a database",
+    "description": "Create a database POST /v1/databases",
+    "context": "POST /v1/databases\nCreate a database\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-file",
+    "name": "Create a file upload",
+    "description": "Create a file upload POST /v1/file_uploads",
+    "context": "POST /v1/file_uploads\nCreate a file upload\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-meeting-note",
+    "name": "Create a meeting note",
+    "description": "Create a meeting note POST /v1/blocks/meeting_notes",
+    "context": "POST /v1/blocks/meeting_notes\nCreate a meeting note\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-view",
+    "name": "Create a view",
+    "description": "Create a view POST /v1/views",
+    "context": "POST /v1/views\nCreate a view\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "create-view-query",
+    "name": "Create a view query",
+    "description": "Create a view query POST /v1/views/{view_id}/queries",
+    "context": "POST /v1/views/{view_id}/queries\nCreate a view query\nRequired: view_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "delete-a-block",
+    "name": "Delete a block",
+    "description": "Delete a block DELETE /v1/blocks/{block_id}",
+    "context": "DELETE /v1/blocks/{block_id}\nDelete a block\nRequired: block_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "delete-a-comment",
+    "name": "Delete a comment",
+    "description": "Delete a comment DELETE /v1/comments/{comment_id}",
+    "context": "DELETE /v1/comments/{comment_id}\nDelete a comment\nRequired: comment_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "delete-agent",
+    "name": "Delete agent",
+    "description": "Delete agent DELETE /v1/agents/{agent_id}",
+    "context": "DELETE /v1/agents/{agent_id}\nDelete agent\nRequired: agent_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "delete-view",
+    "name": "Delete a view",
+    "description": "Delete a view DELETE /v1/views/{view_id}",
+    "context": "DELETE /v1/views/{view_id}\nDelete a view\nRequired: view_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "delete-view-query",
+    "name": "Delete a view query",
+    "description": "Delete a view query DELETE /v1/views/{view_id}/queries/{query_id}",
+    "context": "DELETE /v1/views/{view_id}/queries/{query_id}\nDelete a view query\nRequired: view_id (path); query_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "get-agent",
+    "name": "Get agent",
+    "description": "Get agent GET /v1/agents/{agent_id}",
+    "context": "GET /v1/agents/{agent_id}\nGet agent\nRequired: agent_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: verbose (query)"
+  },
+  {
+    "id": "get-agent-insights",
+    "name": "Get agent insights",
+    "description": "Get agent insights GET /v1/agents/{agent_id}/insights",
+    "context": "GET /v1/agents/{agent_id}/insights\nGet agent insights\nRequired: agent_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_time (query); end_time (query)"
+  },
+  {
+    "id": "get-block-children",
+    "name": "Retrieve block children",
+    "description": "Retrieve block children GET /v1/blocks/{block_id}/children",
+    "context": "GET /v1/blocks/{block_id}/children\nRetrieve block children\nRequired: block_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "get-plugin-directory",
+    "name": "Get a plugin directory",
+    "description": "Get a plugin directory GET /v1/ai/plugins/{id}",
+    "context": "GET /v1/ai/plugins/{id}\nGet a plugin directory\nRequired: id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "get-self",
+    "name": "Retrieve your token's bot user",
+    "description": "Retrieve your token's bot user GET /v1/users/me",
+    "context": "GET /v1/users/me\nRetrieve your token's bot user\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "get-skill-directory",
+    "name": "Get a skill directory",
+    "description": "Get a skill directory GET /v1/ai/skills/{id}",
+    "context": "GET /v1/ai/skills/{id}\nGet a skill directory\nRequired: id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "get-user",
+    "name": "Retrieve a user",
+    "description": "Retrieve a user GET /v1/users/{user_id}",
+    "context": "GET /v1/users/{user_id}\nRetrieve a user\nRequired: user_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "get-users",
+    "name": "List all users",
+    "description": "List all users GET /v1/users",
+    "context": "GET /v1/users\nList all users\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "get-view-query-results",
+    "name": "Get view query results",
+    "description": "Get view query results GET /v1/views/{view_id}/queries/{query_id}",
+    "context": "GET /v1/views/{view_id}/queries/{query_id}\nGet view query results\nRequired: view_id (path); query_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "introspect-token",
+    "name": "Introspect a token",
+    "description": "Introspect a token POST /v1/oauth/introspect",
+    "context": "POST /v1/oauth/introspect\nIntrospect a token\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "list-comments",
+    "name": "List comments",
+    "description": "List comments GET /v1/comments",
+    "context": "GET /v1/comments\nList comments\nRequired: block_id (query); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "list-custom-emojis",
+    "name": "List custom emojis",
+    "description": "List custom emojis GET /v1/custom_emojis",
+    "context": "GET /v1/custom_emojis\nList custom emojis\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_cursor (query); page_size (query); name (query)"
+  },
+  {
+    "id": "list-data-source-templates",
+    "name": "List templates in a data source",
+    "description": "List templates in a data source GET /v1/data_sources/{data_source_id}/templates",
+    "context": "GET /v1/data_sources/{data_source_id}/templates\nList templates in a data source\nRequired: data_source_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: name (query); start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "list-file-uploads",
+    "name": "List file uploads",
+    "description": "List file uploads GET /v1/file_uploads",
+    "context": "GET /v1/file_uploads\nList file uploads\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: status (query); start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "list-skills-plugins",
+    "name": "List skills plugins",
+    "description": "List skills plugins GET /v1/ai/plugins",
+    "context": "GET /v1/ai/plugins\nList skills plugins\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: page_size (query); start_cursor (query)"
+  },
+  {
+    "id": "list-views",
+    "name": "List views",
+    "description": "List views GET /v1/views",
+    "context": "GET /v1/views\nList views\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: database_id (query); data_source_id (query); start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "move-page",
+    "name": "Move a page",
+    "description": "Move a page POST /v1/pages/{page_id}/move",
+    "context": "POST /v1/pages/{page_id}/move\nMove a page\nRequired: page_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "patch-block-children",
+    "name": "Append block children",
+    "description": "Append block children PATCH /v1/blocks/{block_id}/children",
+    "context": "PATCH /v1/blocks/{block_id}/children\nAppend block children\nRequired: block_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "patch-page",
+    "name": "Update page",
+    "description": "Update page PATCH /v1/pages/{page_id}",
+    "context": "PATCH /v1/pages/{page_id}\nUpdate page\nRequired: page_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)\nOptional: filter_properties (query)"
+  },
+  {
+    "id": "post-database-query",
+    "name": "Query a data source",
+    "description": "Query a data source POST /v1/data_sources/{data_source_id}/query",
+    "context": "POST /v1/data_sources/{data_source_id}/query\nQuery a data source\nRequired: data_source_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)\nOptional: filter_properties (query)"
+  },
+  {
+    "id": "post-page",
+    "name": "Create a page",
+    "description": "Create a page POST /v1/pages",
+    "context": "POST /v1/pages\nCreate a page\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)\nOptional: filter_properties (query)"
+  },
+  {
+    "id": "post-search",
+    "name": "Search by title",
+    "description": "Search by title POST /v1/search",
+    "context": "POST /v1/search\nSearch by title\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "query-agents",
+    "name": "Query agents",
+    "description": "Query agents POST /v1/agents/query",
+    "context": "POST /v1/agents/query\nQuery agents\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "query-meeting-notes",
+    "name": "Query meeting notes",
+    "description": "Query meeting notes POST /v1/blocks/meeting_notes/query",
+    "context": "POST /v1/blocks/meeting_notes/query\nQuery meeting notes\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "query-session-events",
+    "name": "Query session events",
+    "description": "Query session events POST /v1/sessions/{session_id}/events/query",
+    "context": "POST /v1/sessions/{session_id}/events/query\nQuery session events\nRequired: session_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "query-sessions",
+    "name": "Query sessions",
+    "description": "Query sessions POST /v1/sessions/query",
+    "context": "POST /v1/sessions/query\nQuery sessions\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "retrieve-a-block",
+    "name": "Retrieve a block",
+    "description": "Retrieve a block GET /v1/blocks/{block_id}",
+    "context": "GET /v1/blocks/{block_id}\nRetrieve a block\nRequired: block_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-a-data-source",
+    "name": "Retrieve a data source",
+    "description": "Retrieve a data source GET /v1/data_sources/{data_source_id}",
+    "context": "GET /v1/data_sources/{data_source_id}\nRetrieve a data source\nRequired: data_source_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-a-page",
+    "name": "Retrieve a page",
+    "description": "Retrieve a page GET /v1/pages/{page_id}",
+    "context": "GET /v1/pages/{page_id}\nRetrieve a page\nRequired: page_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: filter_properties (query)"
+  },
+  {
+    "id": "retrieve-a-page-property",
+    "name": "Retrieve a page property item",
+    "description": "Retrieve a page property item GET /v1/pages/{page_id}/properties/{property_id}",
+    "context": "GET /v1/pages/{page_id}/properties/{property_id}\nRetrieve a page property item\nRequired: page_id (path); property_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: start_cursor (query); page_size (query)"
+  },
+  {
+    "id": "retrieve-a-view",
+    "name": "Retrieve a view",
+    "description": "Retrieve a view GET /v1/views/{view_id}",
+    "context": "GET /v1/views/{view_id}\nRetrieve a view\nRequired: view_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-async-task",
+    "name": "Retrieve an async task",
+    "description": "Retrieve an async task GET /v1/async_tasks/{task_id}",
+    "context": "GET /v1/async_tasks/{task_id}\nRetrieve an async task\nRequired: task_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-comment",
+    "name": "Retrieve a comment",
+    "description": "Retrieve a comment GET /v1/comments/{comment_id}",
+    "context": "GET /v1/comments/{comment_id}\nRetrieve a comment\nRequired: comment_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-database",
+    "name": "Retrieve a database",
+    "description": "Retrieve a database GET /v1/databases/{database_id}",
+    "context": "GET /v1/databases/{database_id}\nRetrieve a database\nRequired: database_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-file-upload",
+    "name": "Retrieve a file upload",
+    "description": "Retrieve a file upload GET /v1/file_uploads/{file_upload_id}",
+    "context": "GET /v1/file_uploads/{file_upload_id}\nRetrieve a file upload\nRequired: file_upload_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "retrieve-page-markdown",
+    "name": "Retrieve a page as markdown",
+    "description": "Retrieve a page as markdown GET /v1/pages/{page_id}/markdown",
+    "context": "GET /v1/pages/{page_id}/markdown\nRetrieve a page as markdown\nRequired: page_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.\nOptional: include_transcript (query)"
+  },
+  {
+    "id": "retrieve-session",
+    "name": "Retrieve a session",
+    "description": "Retrieve a session GET /v1/sessions/{session_id}",
+    "context": "GET /v1/sessions/{session_id}\nRetrieve a session\nRequired: session_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`."
+  },
+  {
+    "id": "revoke-token",
+    "name": "Revoke a token",
+    "description": "Revoke a token POST /v1/oauth/revoke",
+    "context": "POST /v1/oauth/revoke\nRevoke a token\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-a-block",
+    "name": "Update a block",
+    "description": "Update a block PATCH /v1/blocks/{block_id}",
+    "context": "PATCH /v1/blocks/{block_id}\nUpdate a block\nRequired: block_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-a-comment",
+    "name": "Update a comment",
+    "description": "Update a comment PATCH /v1/comments/{comment_id}",
+    "context": "PATCH /v1/comments/{comment_id}\nUpdate a comment\nRequired: comment_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-a-data-source",
+    "name": "Update a data source",
+    "description": "Update a data source PATCH /v1/data_sources/{data_source_id}",
+    "context": "PATCH /v1/data_sources/{data_source_id}\nUpdate a data source\nRequired: data_source_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-a-view",
+    "name": "Update a view",
+    "description": "Update a view PATCH /v1/views/{view_id}",
+    "context": "PATCH /v1/views/{view_id}\nUpdate a view\nRequired: view_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-agent-credit-limit",
+    "name": "Update agent credit limit",
+    "description": "Update agent credit limit PATCH /v1/agents/{agent_id}/credit_limit",
+    "context": "PATCH /v1/agents/{agent_id}/credit_limit\nUpdate agent credit limit\nRequired: agent_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-agent-status",
+    "name": "Update agent status",
+    "description": "Update agent status PATCH /v1/agents/{agent_id}/status",
+    "context": "PATCH /v1/agents/{agent_id}/status\nUpdate agent status\nRequired: agent_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-database",
+    "name": "Update a database",
+    "description": "Update a database PATCH /v1/databases/{database_id}",
+    "context": "PATCH /v1/databases/{database_id}\nUpdate a database\nRequired: database_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-page-markdown",
+    "name": "Update a page's content as markdown",
+    "description": "Update a page's content as markdown PATCH /v1/pages/{page_id}/markdown",
+    "context": "PATCH /v1/pages/{page_id}/markdown\nUpdate a page's content as markdown\nRequired: page_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "update-session",
+    "name": "Update a session",
+    "description": "Update a session POST /v1/sessions",
+    "context": "POST /v1/sessions\nUpdate a session\nRequired: Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  },
+  {
+    "id": "upload-file",
+    "name": "Upload a file",
+    "description": "Upload a file POST /v1/file_uploads/{file_upload_id}/send",
+    "context": "POST /v1/file_uploads/{file_upload_id}/send\nUpload a file\nRequired: file_upload_id (path); Notion-Version (header) — The [API version](/reference/versioning) to use for this request. The latest version is `2026-03-11`.; body (body)"
+  }
+]

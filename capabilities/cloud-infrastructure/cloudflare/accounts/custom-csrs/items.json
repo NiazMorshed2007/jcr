@@ -1,0 +1,26 @@
+[
+  {
+    "id": "custom-csrs-for-an-account-create-custom-csr",
+    "name": "Create Custom CSR",
+    "description": "Create Custom CSR Generate a new custom Certificate Signing Request (CSR) for an account. POST /client/v4/accounts/{account_id}/custom_csrs",
+    "context": "POST /client/v4/accounts/{account_id}/custom_csrs\nGenerate a new custom Certificate Signing Request (CSR) for an account. Cloudflare generates and securely stores the private key associated with the CSR.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "custom-csrs-for-an-account-custom-csr-details",
+    "name": "Custom CSR Details",
+    "description": "Custom CSR Details Retrieve details for a specific custom Certificate Signing Request (CSR). GET /client/v4/accounts/{account_id}/custom_csrs/{custom_csr_id}",
+    "context": "GET /client/v4/accounts/{account_id}/custom_csrs/{custom_csr_id}\nRetrieve details for a specific custom Certificate Signing Request (CSR).\nRequired: custom_csr_id (path); account_id (path)"
+  },
+  {
+    "id": "custom-csrs-for-an-account-delete-custom-csr",
+    "name": "Delete Custom CSR",
+    "description": "Delete Custom CSR Delete a custom Certificate Signing Request (CSR) and its associated private key. DELETE /client/v4/accounts/{account_id}/custom_csrs/{custom_csr_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/custom_csrs/{custom_csr_id}\nDelete a custom Certificate Signing Request (CSR) and its associated private key.\nRequired: custom_csr_id (path); account_id (path)"
+  },
+  {
+    "id": "custom-csrs-for-an-account-list-custom-csrs",
+    "name": "List Custom CSRs",
+    "description": "List Custom CSRs List all custom Certificate Signing Requests (CSRs) for an account. GET /client/v4/accounts/{account_id}/custom_csrs",
+    "context": "GET /client/v4/accounts/{account_id}/custom_csrs\nList all custom Certificate Signing Requests (CSRs) for an account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); order (query); direction (query)"
+  }
+]

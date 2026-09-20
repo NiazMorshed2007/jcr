@@ -1,0 +1,38 @@
+[
+  {
+    "id": "account-billing-create-payment-method",
+    "name": "Create Payment Method",
+    "description": "Create Payment Method Creates a new payment method for an account. POST /client/v4/accounts/{account_id}/payment-methods",
+    "context": "POST /client/v4/accounts/{account_id}/payment-methods\nCreates a new payment method for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-billing-delete-payment-method",
+    "name": "Delete Payment Method",
+    "description": "Delete Payment Method Deletes a payment method from an account. DELETE /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}\nDeletes a payment method from an account.\nRequired: account_id (path); payment_method_id (path) — Payment method identifier."
+  },
+  {
+    "id": "account-billing-get-payment-method",
+    "name": "Get Payment Method",
+    "description": "Get Payment Method Gets a specific payment method for an account. GET /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}",
+    "context": "GET /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}\nGets a specific payment method for an account.\nRequired: account_id (path); payment_method_id (path) — Payment method identifier."
+  },
+  {
+    "id": "account-billing-list-payment-methods",
+    "name": "List Payment Methods",
+    "description": "List Payment Methods Lists all payment methods for an account. GET /client/v4/accounts/{account_id}/payment-methods",
+    "context": "GET /client/v4/accounts/{account_id}/payment-methods\nLists all payment methods for an account.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "account-billing-set-default-payment-method",
+    "name": "Set Default Payment Method",
+    "description": "Set Default Payment Method Sets a payment method as the default for an account. POST /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}/set-as-default",
+    "context": "POST /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}/set-as-default\nSets a payment method as the default for an account.\nRequired: account_id (path); payment_method_id (path) — Payment method identifier."
+  },
+  {
+    "id": "account-billing-update-payment-method",
+    "name": "Update Payment Method",
+    "description": "Update Payment Method Updates a payment method for an account. PUT /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/payment-methods/{payment_method_id}\nUpdates a payment method for an account.\nRequired: account_id (path); payment_method_id (path) — Payment method identifier.; body (body)"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pulse_brief_configs_create",
+    "name": "pulse_brief_configs_create",
+    "description": "pulse_brief_configs_create POST /api/projects/{project_id}/pulse/brief_configs/",
+    "context": "POST /api/projects/{project_id}/pulse/brief_configs/\npulse_brief_configs_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "pulse_brief_configs_destroy",
+    "name": "pulse_brief_configs_destroy",
+    "description": "pulse_brief_configs_destroy DELETE /api/projects/{project_id}/pulse/brief_configs/{id}/",
+    "context": "DELETE /api/projects/{project_id}/pulse/brief_configs/{id}/\npulse_brief_configs_destroy\nRequired: id (path) — A UUID string identifying this brief config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "pulse_brief_configs_list",
+    "name": "pulse_brief_configs_list",
+    "description": "pulse_brief_configs_list GET /api/projects/{project_id}/pulse/brief_configs/",
+    "context": "GET /api/projects/{project_id}/pulse/brief_configs/\npulse_brief_configs_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "pulse_brief_configs_partial_update",
+    "name": "pulse_brief_configs_partial_update",
+    "description": "pulse_brief_configs_partial_update PATCH /api/projects/{project_id}/pulse/brief_configs/{id}/",
+    "context": "PATCH /api/projects/{project_id}/pulse/brief_configs/{id}/\npulse_brief_configs_partial_update\nRequired: id (path) — A UUID string identifying this brief config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "pulse_brief_configs_retrieve",
+    "name": "pulse_brief_configs_retrieve",
+    "description": "pulse_brief_configs_retrieve GET /api/projects/{project_id}/pulse/brief_configs/{id}/",
+    "context": "GET /api/projects/{project_id}/pulse/brief_configs/{id}/\npulse_brief_configs_retrieve\nRequired: id (path) — A UUID string identifying this brief config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "pulse_brief_configs_update",
+    "name": "pulse_brief_configs_update",
+    "description": "pulse_brief_configs_update PUT /api/projects/{project_id}/pulse/brief_configs/{id}/",
+    "context": "PUT /api/projects/{project_id}/pulse/brief_configs/{id}/\npulse_brief_configs_update\nRequired: id (path) — A UUID string identifying this brief config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "pulse_briefs_generate_create",
+    "name": "pulse_briefs_generate_create",
+    "description": "pulse_briefs_generate_create POST /api/projects/{project_id}/pulse/briefs/generate/",
+    "context": "POST /api/projects/{project_id}/pulse/briefs/generate/\npulse_briefs_generate_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "pulse_briefs_list",
+    "name": "pulse_briefs_list",
+    "description": "pulse_briefs_list GET /api/projects/{project_id}/pulse/briefs/",
+    "context": "GET /api/projects/{project_id}/pulse/briefs/\npulse_briefs_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "pulse_briefs_retrieve",
+    "name": "pulse_briefs_retrieve",
+    "description": "pulse_briefs_retrieve GET /api/projects/{project_id}/pulse/briefs/{id}/",
+    "context": "GET /api/projects/{project_id}/pulse/briefs/{id}/\npulse_briefs_retrieve\nRequired: id (path) — A UUID string identifying this product brief.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

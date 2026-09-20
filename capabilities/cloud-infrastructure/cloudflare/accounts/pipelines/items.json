@@ -1,0 +1,116 @@
+[
+  {
+    "id": "deleteV4AccountsByAccount_idPipelinesByPipeline_name_deprecated",
+    "name": "[DEPRECATED] Delete Pipeline",
+    "description": "[DEPRECATED] Delete Pipeline [DEPRECATED] Delete a pipeline. DELETE /client/v4/accounts/{account_id}/pipelines/{pipeline_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pipelines/{pipeline_name}\n[DEPRECATED] Delete a pipeline. Use the new /pipelines/v1/pipelines endpoint instead.\nRequired: account_id (path); pipeline_name (path)"
+  },
+  {
+    "id": "deleteV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id",
+    "name": "Delete Pipeline",
+    "description": "Delete Pipeline Delete Pipeline in Account. DELETE /client/v4/accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}\nDelete Pipeline in Account.\nRequired: account_id (path); pipeline_id (path)"
+  },
+  {
+    "id": "deleteV4AccountsByAccount_idPipelinesV1SinksBySink_id",
+    "name": "Delete Sink",
+    "description": "Delete Sink Delete Sink in Account. DELETE /client/v4/accounts/{account_id}/pipelines/v1/sinks/{sink_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pipelines/v1/sinks/{sink_id}\nDelete Sink in Account.\nRequired: account_id (path); sink_id (path)"
+  },
+  {
+    "id": "deleteV4AccountsByAccount_idPipelinesV1StreamsByStream_id",
+    "name": "Delete Stream",
+    "description": "Delete Stream Delete Stream in Account. DELETE /client/v4/accounts/{account_id}/pipelines/v1/streams/{stream_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pipelines/v1/streams/{stream_id}\nDelete Stream in Account.\nRequired: account_id (path); stream_id (path)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelines_deprecated",
+    "name": "[DEPRECATED] List Pipelines",
+    "description": "[DEPRECATED] List Pipelines [DEPRECATED] List, filter, and paginate pipelines in an account. GET /client/v4/accounts/{account_id}/pipelines",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines\n[DEPRECATED] List, filter, and paginate pipelines in an account. Use the new /pipelines/v1/pipelines endpoint instead.\nRequired: account_id (path)\nOptional: search (query); page (query); per_page (query)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesByPipeline_name_deprecated",
+    "name": "[DEPRECATED] Get Pipeline",
+    "description": "[DEPRECATED] Get Pipeline [DEPRECATED] Get configuration of a pipeline. GET /client/v4/accounts/{account_id}/pipelines/{pipeline_name}",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/{pipeline_name}\n[DEPRECATED] Get configuration of a pipeline. Use the new /pipelines/v1/pipelines endpoint instead.\nRequired: account_id (path); pipeline_name (path)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesV1Pipelines",
+    "name": "List Pipelines",
+    "description": "List Pipelines List/Filter Pipelines in Account. GET /client/v4/accounts/{account_id}/pipelines/v1/pipelines",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/v1/pipelines\nList/Filter Pipelines in Account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); name (query) — Filters pipelines by name (case-insensitive substring)."
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id",
+    "name": "Get Pipeline Details",
+    "description": "Get Pipeline Details Get Pipeline details. GET /client/v4/accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}\nGet Pipeline details.\nRequired: account_id (path); pipeline_id (path)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesV1Sinks",
+    "name": "List Sinks",
+    "description": "List Sinks List/Filter Sinks in Account. GET /client/v4/accounts/{account_id}/pipelines/v1/sinks",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/v1/sinks\nList/Filter Sinks in Account.\nRequired: account_id (path)\nOptional: pipeline_id (query); name (query) — Filters sinks by name (case-insensitive substring).; page (query); per_page (query)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesV1SinksBySink_id",
+    "name": "Get Sink Details",
+    "description": "Get Sink Details Get Sink Details. GET /client/v4/accounts/{account_id}/pipelines/v1/sinks/{sink_id}",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/v1/sinks/{sink_id}\nGet Sink Details.\nRequired: account_id (path); sink_id (path)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesV1Streams",
+    "name": "List Streams",
+    "description": "List Streams List/Filter Streams in Account. GET /client/v4/accounts/{account_id}/pipelines/v1/streams",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/v1/streams\nList/Filter Streams in Account.\nRequired: account_id (path)\nOptional: pipeline_id (query); name (query) — Filters streams by name (case-insensitive substring).; page (query); per_page (query)"
+  },
+  {
+    "id": "getV4AccountsByAccount_idPipelinesV1StreamsByStream_id",
+    "name": "Get Stream Details",
+    "description": "Get Stream Details Get Stream Details. GET /client/v4/accounts/{account_id}/pipelines/v1/streams/{stream_id}",
+    "context": "GET /client/v4/accounts/{account_id}/pipelines/v1/streams/{stream_id}\nGet Stream Details.\nRequired: account_id (path); stream_id (path)"
+  },
+  {
+    "id": "patchV4AccountsByAccount_idPipelinesV1StreamsByStream_id",
+    "name": "Update Stream",
+    "description": "Update Stream Update a Stream. PATCH /client/v4/accounts/{account_id}/pipelines/v1/streams/{stream_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/pipelines/v1/streams/{stream_id}\nUpdate a Stream.\nRequired: account_id (path); stream_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "postV4AccountsByAccount_idPipelines_deprecated",
+    "name": "[DEPRECATED] Create Pipeline",
+    "description": "[DEPRECATED] Create Pipeline [DEPRECATED] Create a new pipeline. POST /client/v4/accounts/{account_id}/pipelines",
+    "context": "POST /client/v4/accounts/{account_id}/pipelines\n[DEPRECATED] Create a new pipeline. Use the new /pipelines/v1/pipelines endpoint instead.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "postV4AccountsByAccount_idPipelinesV1Pipelines",
+    "name": "Create Pipeline",
+    "description": "Create Pipeline Create a new Pipeline. POST /client/v4/accounts/{account_id}/pipelines/v1/pipelines",
+    "context": "POST /client/v4/accounts/{account_id}/pipelines/v1/pipelines\nCreate a new Pipeline.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "postV4AccountsByAccount_idPipelinesV1Sinks",
+    "name": "Create Sink",
+    "description": "Create Sink Create a new Sink. POST /client/v4/accounts/{account_id}/pipelines/v1/sinks",
+    "context": "POST /client/v4/accounts/{account_id}/pipelines/v1/sinks\nCreate a new Sink.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "postV4AccountsByAccount_idPipelinesV1Streams",
+    "name": "Create Stream",
+    "description": "Create Stream Create a new Stream. POST /client/v4/accounts/{account_id}/pipelines/v1/streams",
+    "context": "POST /client/v4/accounts/{account_id}/pipelines/v1/streams\nCreate a new Stream.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "postV4AccountsByAccount_idPipelinesV1Validate_sql",
+    "name": "Validate SQL",
+    "description": "Validate SQL Validates that the Pipelines SQL is correct. POST /client/v4/accounts/{account_id}/pipelines/v1/validate_sql",
+    "context": "POST /client/v4/accounts/{account_id}/pipelines/v1/validate_sql\nValidates that the Pipelines SQL is correct.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "putV4AccountsByAccount_idPipelinesByPipeline_name_deprecated",
+    "name": "[DEPRECATED] Update Pipeline",
+    "description": "[DEPRECATED] Update Pipeline [DEPRECATED] Update an existing pipeline. PUT /client/v4/accounts/{account_id}/pipelines/{pipeline_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/pipelines/{pipeline_name}\n[DEPRECATED] Update an existing pipeline. Use the new /pipelines/v1/pipelines endpoint instead.\nRequired: account_id (path); pipeline_name (path)\nOptional: body (body)"
+  }
+]

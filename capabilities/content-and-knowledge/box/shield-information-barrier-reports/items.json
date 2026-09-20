@@ -1,0 +1,20 @@
+[
+  {
+    "id": "get_shield_information_barrier_reports",
+    "name": "List shield information barrier reports",
+    "description": "List shield information barrier reports Lists shield information barrier reports. GET /2.0/shield_information_barrier_reports",
+    "context": "GET /2.0/shield_information_barrier_reports\nLists shield information barrier reports.\nRequired: shield_information_barrier_id (query) — The ID of the shield information barrier.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_shield_information_barrier_reports_id",
+    "name": "Get shield information barrier report by ID",
+    "description": "Get shield information barrier report by ID Retrieves a shield information barrier report by its ID. GET /2.0/shield_information_barrier_reports/{shield_information_barrier_report_id}",
+    "context": "GET /2.0/shield_information_barrier_reports/{shield_information_barrier_report_id}\nRetrieves a shield information barrier report by its ID.\nRequired: shield_information_barrier_report_id (path) — The ID of the shield information barrier Report."
+  },
+  {
+    "id": "post_shield_information_barrier_reports",
+    "name": "Create shield information barrier report",
+    "description": "Create shield information barrier report Creates a shield information barrier report for a given barrier. POST /2.0/shield_information_barrier_reports",
+    "context": "POST /2.0/shield_information_barrier_reports\nCreates a shield information barrier report for a given barrier.\nOptional: body (body)"
+  }
+]

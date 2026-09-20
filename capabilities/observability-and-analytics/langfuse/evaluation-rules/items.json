@@ -1,0 +1,32 @@
+[
+  {
+    "id": "evaluationRules_create",
+    "name": "Create an evaluation rule using stable evaluator identifiers",
+    "description": "Create an evaluation rule using stable evaluator identifiers Create an evaluation rule using stable evaluator identifiers. POST /api/public/v2/evaluation-rules",
+    "context": "POST /api/public/v2/evaluation-rules\nCreate an evaluation rule using stable evaluator identifiers. An evaluation rule defines **which** incoming observations should be evaluated and how prompt variables should be populated. Key behavior: - rule names are not identifiers and do not need to be unique - rules always use the latest version of each associated evaluator - an enabled rule requires at least one evaluator assignment - omit `sampling` to evaluate every matching observation - omit `filter` to match every incoming observation - `datasetId` is the public filter name for selecting experiment datasets\nRequired: body (body)"
+  },
+  {
+    "id": "evaluationRules_delete",
+    "name": "Delete an evaluation rule",
+    "description": "Delete an evaluation rule Delete an evaluation rule. DELETE /api/public/v2/evaluation-rules/{evaluationRuleId}",
+    "context": "DELETE /api/public/v2/evaluation-rules/{evaluationRuleId}\nDelete an evaluation rule. This removes the live-ingestion rule only. It does not delete associated evaluators or scores already produced by them. Legacy trace and dataset rules can also be deleted. Their evaluators and previously produced scores are preserved.\nRequired: evaluationRuleId (path) — Stable evaluation-rule identifier returned by the evaluation-rule endpoints."
+  },
+  {
+    "id": "evaluationRules_get",
+    "name": "Get one evaluation rule, including a legacy trace or dataset rule, by its stable identifier.",
+    "description": "Get one evaluation rule, including a legacy trace or dataset rule, by its stable identifier. GET /api/public/v2/evaluation-rules/{evaluationRuleId}",
+    "context": "GET /api/public/v2/evaluation-rules/{evaluationRuleId}\nGet one evaluation rule, including a legacy trace or dataset rule, by its stable identifier.\nRequired: evaluationRuleId (path) — Stable evaluation-rule identifier returned by the evaluation-rule endpoints."
+  },
+  {
+    "id": "evaluationRules_list",
+    "name": "List evaluation rules in newest-first creation order",
+    "description": "List evaluation rules in newest-first creation order List evaluation rules in newest-first creation order. GET /api/public/v2/evaluation-rules",
+    "context": "GET /api/public/v2/evaluation-rules\nList evaluation rules in newest-first creation order. This includes legacy trace and dataset rules so they can be inspected and migrated. Treat the cursor as opaque and return it unchanged.\nOptional: limit (query) — Maximum number of items to return. Defaults to `50` and cannot exceed `100`.; cursor (query) — Opaque cursor returned by the previous page."
+  },
+  {
+    "id": "evaluationRules_update",
+    "name": "Update an evaluation rule by its stable identifier",
+    "description": "Update an evaluation rule by its stable identifier Update an evaluation rule by its stable identifier. PATCH /api/public/v2/evaluation-rules/{evaluationRuleId}",
+    "context": "PATCH /api/public/v2/evaluation-rules/{evaluationRuleId}\nUpdate an evaluation rule by its stable identifier. Provide only the fields to change. Providing `evaluatorAssignments` replaces the complete assignment list. Replacing the list with an empty array disables the rule. Setting `enabled=true` is rejected when the resulting assignment list is empty, including when both fields are sent in the same request. Legacy trace and dataset rules follow the existing lifecycle restrictions: they can be deactivated with `enabled=false`, but their name, filters, sampling, and evaluator assignments cannot be changed.\nRequired: evaluationRuleId (path) — Stable evaluation-rule identifier returned by the evaluation-rule endpoints.; body (body)"
+  }
+]

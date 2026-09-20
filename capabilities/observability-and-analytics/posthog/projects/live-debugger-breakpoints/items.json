@@ -1,0 +1,50 @@
+[
+  {
+    "id": "live_debugger_breakpoints_active_retrieve",
+    "name": "Get active breakpoints (External API)",
+    "description": "Get active breakpoints (External API) External API endpoint for client applications to fetch active breakpoints using Project API key. GET /api/projects/{project_id}/live_debugger_breakpoints/active/",
+    "context": "GET /api/projects/{project_id}/live_debugger_breakpoints/active/\nExternal API endpoint for client applications to fetch active breakpoints using Project API key. This endpoint allows external client applications (like Python scripts, Node.js apps, etc.) to fetch the list of active breakpoints so they can instrument their code accordingly. Authentication: Requires a Project API Key in the Authorization header: `Authorization: Bearer phs_ `. You can find your Project API Key in PostHog at: Settings → Project → Project API Key\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: enabled (query) — Only return enabled breakpoints; filename (query) — Filter breakpoints for a specific file; repository (query) — Filter breakpoints for a specific repository (e.g., 'PostHog/posthog')"
+  },
+  {
+    "id": "live_debugger_breakpoints_breakpoint_hits_retrieve",
+    "name": "Get breakpoint hits",
+    "description": "Get breakpoint hits Retrieve breakpoint hit events from ClickHouse with optional filtering and pagination. GET /api/projects/{project_id}/live_debugger_breakpoints/breakpoint_hits/",
+    "context": "GET /api/projects/{project_id}/live_debugger_breakpoints/breakpoint_hits/\nRetrieve breakpoint hit events from ClickHouse with optional filtering and pagination. Returns hit events containing stack traces, local variables, and execution context from your application's runtime. Security: Breakpoint IDs are filtered to only include those belonging to the current team.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: breakpoint_ids (query) — Filter hits for specific breakpoints (repeat parameter for multiple IDs, e.g., ?breakpoint_ids=uuid1&breakpoint_ids=uuid2); limit (query) — Number of hits to return (default: 100, max: 1000); offset (query) — Pagination offset for retrieving additional results (default: 0)"
+  },
+  {
+    "id": "live_debugger_breakpoints_create",
+    "name": "Create, Read, Update and Delete breakpoints for live debugging.",
+    "description": "Create, Read, Update and Delete breakpoints for live debugging. POST /api/projects/{project_id}/live_debugger_breakpoints/",
+    "context": "POST /api/projects/{project_id}/live_debugger_breakpoints/\nCreate, Read, Update and Delete breakpoints for live debugging.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "live_debugger_breakpoints_destroy",
+    "name": "Create, Read, Update and Delete breakpoints for live debugging.",
+    "description": "Create, Read, Update and Delete breakpoints for live debugging. DELETE /api/projects/{project_id}/live_debugger_breakpoints/{id}/",
+    "context": "DELETE /api/projects/{project_id}/live_debugger_breakpoints/{id}/\nCreate, Read, Update and Delete breakpoints for live debugging.\nRequired: id (path) — A UUID string identifying this live debugger breakpoint.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "live_debugger_breakpoints_list",
+    "name": "Create, Read, Update and Delete breakpoints for live debugging.",
+    "description": "Create, Read, Update and Delete breakpoints for live debugging. GET /api/projects/{project_id}/live_debugger_breakpoints/",
+    "context": "GET /api/projects/{project_id}/live_debugger_breakpoints/\nCreate, Read, Update and Delete breakpoints for live debugging.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: filename (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; repository (query)"
+  },
+  {
+    "id": "live_debugger_breakpoints_partial_update",
+    "name": "Create, Read, Update and Delete breakpoints for live debugging.",
+    "description": "Create, Read, Update and Delete breakpoints for live debugging. PATCH /api/projects/{project_id}/live_debugger_breakpoints/{id}/",
+    "context": "PATCH /api/projects/{project_id}/live_debugger_breakpoints/{id}/\nCreate, Read, Update and Delete breakpoints for live debugging.\nRequired: id (path) — A UUID string identifying this live debugger breakpoint.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "live_debugger_breakpoints_retrieve",
+    "name": "Create, Read, Update and Delete breakpoints for live debugging.",
+    "description": "Create, Read, Update and Delete breakpoints for live debugging. GET /api/projects/{project_id}/live_debugger_breakpoints/{id}/",
+    "context": "GET /api/projects/{project_id}/live_debugger_breakpoints/{id}/\nCreate, Read, Update and Delete breakpoints for live debugging.\nRequired: id (path) — A UUID string identifying this live debugger breakpoint.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "live_debugger_breakpoints_update",
+    "name": "Create, Read, Update and Delete breakpoints for live debugging.",
+    "description": "Create, Read, Update and Delete breakpoints for live debugging. PUT /api/projects/{project_id}/live_debugger_breakpoints/{id}/",
+    "context": "PUT /api/projects/{project_id}/live_debugger_breakpoints/{id}/\nCreate, Read, Update and Delete breakpoints for live debugging.\nRequired: id (path) — A UUID string identifying this live debugger breakpoint.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

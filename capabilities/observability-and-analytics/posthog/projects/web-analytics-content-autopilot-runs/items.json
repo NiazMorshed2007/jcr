@@ -1,0 +1,26 @@
+[
+  {
+    "id": "web_analytics_content_autopilot_runs_cancel",
+    "name": "Cancel a content autopilot run",
+    "description": "Cancel a content autopilot run Stops a pending or generating run without creating content writes. POST /api/projects/{project_id}/web_analytics_content_autopilot_runs/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_runs/{id}/cancel/\nStops a pending or generating run without creating content writes.\nRequired: id (path) — A UUID string identifying this content autopilot run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_content_autopilot_runs_list",
+    "name": "web_analytics_content_autopilot_runs_list",
+    "description": "web_analytics_content_autopilot_runs_list GET /api/projects/{project_id}/web_analytics_content_autopilot_runs/",
+    "context": "GET /api/projects/{project_id}/web_analytics_content_autopilot_runs/\nweb_analytics_content_autopilot_runs_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; profile_id (query) — Only return runs for this site profile."
+  },
+  {
+    "id": "web_analytics_content_autopilot_runs_retrieve",
+    "name": "web_analytics_content_autopilot_runs_retrieve",
+    "description": "web_analytics_content_autopilot_runs_retrieve GET /api/projects/{project_id}/web_analytics_content_autopilot_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/web_analytics_content_autopilot_runs/{id}/\nweb_analytics_content_autopilot_runs_retrieve\nRequired: id (path) — A UUID string identifying this content autopilot run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_content_autopilot_runs_start",
+    "name": "Start a content autopilot run",
+    "description": "Start a content autopilot run Captures the current profile and creates one pending on-demand content research run. POST /api/projects/{project_id}/web_analytics_content_autopilot_runs/start/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_runs/start/\nCaptures the current profile and creates one pending on-demand content research run.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

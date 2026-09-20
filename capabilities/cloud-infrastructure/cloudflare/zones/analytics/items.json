@@ -1,0 +1,26 @@
+[
+  {
+    "id": "argo-analytics-for-geolocation-argo-analytics-for-a-zone-at-different-po-ps",
+    "name": "Argo Analytics for a zone at different PoPs",
+    "description": "Argo Analytics for a zone at different PoPs Retrieves Argo Smart Routing analytics broken down by geographic points of presence (PoPs). GET /client/v4/zones/{zone_id}/analytics/latency/colos",
+    "context": "GET /client/v4/zones/{zone_id}/analytics/latency/colos\nRetrieves Argo Smart Routing analytics broken down by geographic points of presence (PoPs). Shows latency improvements and routing efficiency per location.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "argo-analytics-for-zone-argo-analytics-for-a-zone",
+    "name": "Argo Analytics for a zone",
+    "description": "Argo Analytics for a zone Retrieves aggregate Argo Smart Routing analytics for a zone, including latency improvements, bandwidth savings, and routing statistics. GET /client/v4/zones/{zone_id}/analytics/latency",
+    "context": "GET /client/v4/zones/{zone_id}/analytics/latency\nRetrieves aggregate Argo Smart Routing analytics for a zone, including latency improvements, bandwidth savings, and routing statistics.\nRequired: zone_id (path)\nOptional: bins (query)"
+  },
+  {
+    "id": "zone-analytics-(-deprecated)-get-analytics-by-co-locations",
+    "name": "Get analytics by Co-locations",
+    "description": "Get analytics by Co-locations This view provides a breakdown of analytics data by datacenter. GET /client/v4/zones/{zone_identifier}/analytics/colos",
+    "context": "GET /client/v4/zones/{zone_identifier}/analytics/colos\nThis view provides a breakdown of analytics data by datacenter. Note: This is available to Enterprise customers only.\nRequired: zone_identifier (path)\nOptional: until (query); since (query); continuous (query)"
+  },
+  {
+    "id": "zone-analytics-(-deprecated)-get-dashboard",
+    "name": "Get dashboard",
+    "description": "Get dashboard The dashboard view provides both totals and timeseries data for the given zone and time period across the entire Cloudflare network. GET /client/v4/zones/{zone_identifier}/analytics/dashboard",
+    "context": "GET /client/v4/zones/{zone_identifier}/analytics/dashboard\nThe dashboard view provides both totals and timeseries data for the given zone and time period across the entire Cloudflare network.\nRequired: zone_identifier (path)\nOptional: until (query); since (query); continuous (query)"
+  }
+]

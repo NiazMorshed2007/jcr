@@ -1,0 +1,326 @@
+[
+  {
+    "id": "csam-scanner-get-setting",
+    "name": "Get CSAM Scanner setting",
+    "description": "Get CSAM Scanner setting Retrieve the current CSAM Scanner configuration for a zone. GET /client/v4/zones/{zone_id}/settings/csam_scanner_third_party",
+    "context": "GET /client/v4/zones/{zone_id}/settings/csam_scanner_third_party\nRetrieve the current CSAM Scanner configuration for a zone. The notification email is masked by default in responses.\nRequired: zone_id (path) — Identifier for the zone."
+  },
+  {
+    "id": "csam-scanner-update-setting",
+    "name": "Update CSAM Scanner setting",
+    "description": "Update CSAM Scanner setting Update the CSAM Scanner configuration for a zone. PATCH /client/v4/zones/{zone_id}/settings/csam_scanner_third_party",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/csam_scanner_third_party\nUpdate the CSAM Scanner configuration for a zone. Allows enabling or disabling CSAM scanning, updating the notification email, and configuring scanning sources. When a new email is provided, email verification is triggered automatically. The `enabled` field is a toggle; the server may adjust it based on whether the notification email is verified. Returns 403 if the zone or account is locked by Trust & Safety.\nRequired: zone_id (path) — Identifier for the zone.; body (body)"
+  },
+  {
+    "id": "get-zones-zone_identifier-zaraz-config",
+    "name": "Get Zaraz configuration",
+    "description": "Get Zaraz configuration Gets latest Zaraz configuration for a zone. GET /client/v4/zones/{zone_id}/settings/zaraz/config",
+    "context": "GET /client/v4/zones/{zone_id}/settings/zaraz/config\nGets latest Zaraz configuration for a zone. It can be preview or published configuration, whichever was the last updated. Secret variables values will not be included.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_identifier-zaraz-config-history",
+    "name": "Get Zaraz historical configurations by ID(s)",
+    "description": "Get Zaraz historical configurations by ID(s) Gets a history of published Zaraz configurations by ID(s) for a zone. GET /client/v4/zones/{zone_id}/settings/zaraz/history/configs",
+    "context": "GET /client/v4/zones/{zone_id}/settings/zaraz/history/configs\nGets a history of published Zaraz configurations by ID(s) for a zone.\nRequired: zone_id (path); ids (query) — Comma separated list of Zaraz configuration IDs."
+  },
+  {
+    "id": "get-zones-zone_identifier-zaraz-default",
+    "name": "Get default Zaraz configuration",
+    "description": "Get default Zaraz configuration Gets default Zaraz configuration for a zone. GET /client/v4/zones/{zone_id}/settings/zaraz/default",
+    "context": "GET /client/v4/zones/{zone_id}/settings/zaraz/default\nGets default Zaraz configuration for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_identifier-zaraz-export",
+    "name": "Export Zaraz configuration",
+    "description": "Export Zaraz configuration Exports full current published Zaraz configuration for a zone, secret variables included. GET /client/v4/zones/{zone_id}/settings/zaraz/export",
+    "context": "GET /client/v4/zones/{zone_id}/settings/zaraz/export\nExports full current published Zaraz configuration for a zone, secret variables included.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_identifier-zaraz-history",
+    "name": "List Zaraz historical configuration records",
+    "description": "List Zaraz historical configuration records Lists a history of published Zaraz configuration records for a zone. GET /client/v4/zones/{zone_id}/settings/zaraz/history",
+    "context": "GET /client/v4/zones/{zone_id}/settings/zaraz/history\nLists a history of published Zaraz configuration records for a zone.\nRequired: zone_id (path)\nOptional: offset (query) — Ordinal number to start listing the results with. Default value is 0.; limit (query) — Maximum amount of results to list. Default value is 10.; sortField (query) — The field to sort by. Default is updated_at.; sortOrder (query) — Sorting order. Default is DESC."
+  },
+  {
+    "id": "get-zones-zone_identifier-zaraz-workflow",
+    "name": "Get Zaraz workflow",
+    "description": "Get Zaraz workflow Gets Zaraz workflow for a zone. GET /client/v4/zones/{zone_id}/settings/zaraz/workflow",
+    "context": "GET /client/v4/zones/{zone_id}/settings/zaraz/workflow\nGets Zaraz workflow for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "nel-settings-edit",
+    "name": "Edit NEL setting",
+    "description": "Edit NEL setting Updates the Network Error Logging (NEL) setting for a zone. PATCH /client/v4/zones/{zone_id}/settings/nel",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/nel\nUpdates the Network Error Logging (NEL) setting for a zone. Requires the NEL product feature to be enabled for the zone. The setting controls whether browsers report network errors to Cloudflare's NEL endpoint.\nRequired: zone_id (path) — Identifier of the zone.; body (body)"
+  },
+  {
+    "id": "nel-settings-get",
+    "name": "Get NEL setting",
+    "description": "Get NEL setting Fetches the Network Error Logging (NEL) setting for a zone. GET /client/v4/zones/{zone_id}/settings/nel",
+    "context": "GET /client/v4/zones/{zone_id}/settings/nel\nFetches the Network Error Logging (NEL) setting for a zone. NEL allows browsers to report network errors to a configured endpoint. The setting is enabled by default for free and pro zones, and disabled by default for business and enterprise zones unless the NEL product feature is enabled.\nRequired: zone_id (path) — Identifier of the zone."
+  },
+  {
+    "id": "post-zones-zone_identifier-zaraz-publish",
+    "name": "Publish Zaraz preview configuration",
+    "description": "Publish Zaraz preview configuration Publish current Zaraz preview configuration for a zone. POST /client/v4/zones/{zone_id}/settings/zaraz/publish",
+    "context": "POST /client/v4/zones/{zone_id}/settings/zaraz/publish\nPublish current Zaraz preview configuration for a zone.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "put-zones-zone_identifier-zaraz-config",
+    "name": "Update Zaraz configuration",
+    "description": "Update Zaraz configuration Updates Zaraz configuration for a zone. PUT /client/v4/zones/{zone_id}/settings/zaraz/config",
+    "context": "PUT /client/v4/zones/{zone_id}/settings/zaraz/config\nUpdates Zaraz configuration for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "put-zones-zone_identifier-zaraz-history",
+    "name": "Restore Zaraz historical configuration by ID",
+    "description": "Restore Zaraz historical configuration by ID Restores a historical published Zaraz configuration by ID for a zone. PUT /client/v4/zones/{zone_id}/settings/zaraz/history",
+    "context": "PUT /client/v4/zones/{zone_id}/settings/zaraz/history\nRestores a historical published Zaraz configuration by ID for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "put-zones-zone_identifier-zaraz-workflow",
+    "name": "Update Zaraz workflow",
+    "description": "Update Zaraz workflow Updates Zaraz workflow for a zone. PUT /client/v4/zones/{zone_id}/settings/zaraz/workflow",
+    "context": "PUT /client/v4/zones/{zone_id}/settings/zaraz/workflow\nUpdates Zaraz workflow for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "ssl-detector-auto-origin-tls-kex-get-enrollment",
+    "name": "Get Auto-Origin TLS KEX enrollment status for the given zone",
+    "description": "Get Auto-Origin TLS KEX enrollment status for the given zone When enabled, Cloudflare automatically selects the preferred TLS key-exchange algorithm to use when establishing the TLS connection to the zone's origin, picking from the algorithms permitted by the zone's `origin_tls_compliance_modes` setting. GET /client/v…",
+    "context": "GET /client/v4/zones/{zone_id}/settings/auto_origin_tls_kex\nWhen enabled, Cloudflare automatically selects the preferred TLS key-exchange algorithm to use when establishing the TLS connection to the zone's origin, picking from the algorithms permitted by the zone's `origin_tls_compliance_modes` setting. When disabled, the default key-exchange ordering is used.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "ssl-detector-auto-origin-tls-kex-patch-enrollment",
+    "name": "Patch Auto-Origin TLS KEX enrollment status for the given zone",
+    "description": "Patch Auto-Origin TLS KEX enrollment status for the given zone Enable or disable Auto-Origin TLS KEX selection for the zone by sending `{\"enabled\": true}` or `{\"enabled\": false}`. PATCH /client/v4/zones/{zone_id}/settings/auto_origin_tls_kex",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/auto_origin_tls_kex\nEnable or disable Auto-Origin TLS KEX selection for the zone by sending `{\"enabled\": true}` or `{\"enabled\": false}`. When enabled, Cloudflare runs a periodic scan of the zone's origins to determine the preferred key-exchange algorithm and writes that preference to the edge so it is sent first in the TLS ClientHello to the origin.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "ssl-detector-automatic-mode-get-enrollment",
+    "name": "Get Automatic SSL/TLS enrollment status for the given zone",
+    "description": "Get Automatic SSL/TLS enrollment status for the given zone If the system is enabled, the response will include next_scheduled_scan, representing the next time this zone will be scanned and the zone's ssl/tls encryption mode is potentially upgraded by the system. GET /client/v4/zones/{zone_id}/settings/ssl_automatic_mo…",
+    "context": "GET /client/v4/zones/{zone_id}/settings/ssl_automatic_mode\nIf the system is enabled, the response will include next_scheduled_scan, representing the next time this zone will be scanned and the zone's ssl/tls encryption mode is potentially upgraded by the system. If the system is disabled, next_scheduled_scan will not be present in the response body.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "ssl-detector-automatic-mode-patch-enrollment",
+    "name": "Patch Automatic SSL/TLS Enrollment status for given zone",
+    "description": "Patch Automatic SSL/TLS Enrollment status for given zone The automatic system is enabled when this endpoint is hit with value in the request body is set to \"auto\", and disabled when the request body value is set to \"custom\". PATCH /client/v4/zones/{zone_id}/settings/ssl_automatic_mode",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/ssl_automatic_mode\nThe automatic system is enabled when this endpoint is hit with value in the request body is set to \"auto\", and disabled when the request body value is set to \"custom\".\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "web-analytics-get-rum-status",
+    "name": "Get RUM status for a zone",
+    "description": "Get RUM status for a zone Retrieves RUM status for a zone. GET /client/v4/zones/{zone_id}/settings/rum",
+    "context": "GET /client/v4/zones/{zone_id}/settings/rum\nRetrieves RUM status for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "web-analytics-toggle-rum",
+    "name": "Toggle RUM on/off for a zone",
+    "description": "Toggle RUM on/off for a zone Toggles RUM on/off for an existing zone. PATCH /client/v4/zones/{zone_id}/settings/rum",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/rum\nToggles RUM on/off for an existing zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-aegis-setting",
+    "name": "Change aegis setting",
+    "description": "Change aegis setting Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. PATCH /client/v4/zones/{zone_id}/settings/aegis",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/aegis\nAegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-origin-h2-max-streams-setting",
+    "name": "Change Origin H2 Max Streams Setting",
+    "description": "Change Origin H2 Max Streams Setting Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. PATCH /client/v4/zones/{zone_id}/settings/origin_h2_max_streams",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/origin_h2_max_streams\nOrigin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-origin-max-http-version-setting",
+    "name": "Change Origin Max HTTP Version Setting",
+    "description": "Change Origin Max HTTP Version Setting Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. PATCH /client/v4/zones/{zone_id}/settings/origin_max_http_version",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/origin_max_http_version\nOrigin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is \"2\" for all plan types except Enterprise where it is \"1\".\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-origin-tls-compliance-modes-setting",
+    "name": "Change Origin TLS Compliance Modes setting",
+    "description": "Change Origin TLS Compliance Modes setting Update the set of TLS compliance modes for the zone. PATCH /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes\nUpdate the set of TLS compliance modes for the zone. PATCH performs a full replace of the modes list, not a merge — the request body is treated as the complete new list, and any modes not present in it are removed. (To remove a single mode from an existing configuration, send the updated list without it.) The request body must be of the form `{\"value\": [\"fips\", \"pqh\"]}`. Currently supported modes are `fips` and `pqh`; an empty list clears the constraint. Future modes (e.g. `cnsa2`) may be added; clients should treat unknown values as opaque strings. Invalid mode values are rejected with a 4xx response.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-delete-origin-tls-compliance-modes-setting",
+    "name": "Delete Origin TLS Compliance Modes setting",
+    "description": "Delete Origin TLS Compliance Modes setting Delete the Origin TLS Compliance Modes setting for the zone, removing any configured compliance constraint. DELETE /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes",
+    "context": "DELETE /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes\nDelete the Origin TLS Compliance Modes setting for the zone, removing any configured compliance constraint. After deletion, Cloudflare's default behavior applies (no compliance filtering of the key-exchange algorithm list sent to the origin).\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-aegis-setting",
+    "name": "Get aegis setting",
+    "description": "Get aegis setting Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. GET /client/v4/zones/{zone_id}/settings/aegis",
+    "context": "GET /client/v4/zones/{zone_id}/settings/aegis\nAegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-origin-h2-max-streams-setting",
+    "name": "Get Origin H2 Max Streams Setting",
+    "description": "Get Origin H2 Max Streams Setting Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. GET /client/v4/zones/{zone_id}/settings/origin_h2_max_streams",
+    "context": "GET /client/v4/zones/{zone_id}/settings/origin_h2_max_streams\nOrigin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-origin-max-http-version-setting",
+    "name": "Get Origin Max HTTP Version Setting",
+    "description": "Get Origin Max HTTP Version Setting Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. GET /client/v4/zones/{zone_id}/settings/origin_max_http_version",
+    "context": "GET /client/v4/zones/{zone_id}/settings/origin_max_http_version\nOrigin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is \"2\" for all plan types except Enterprise where it is \"1\".\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-origin-tls-compliance-modes-setting",
+    "name": "Get Origin TLS Compliance Modes setting",
+    "description": "Get Origin TLS Compliance Modes setting Origin TLS Compliance Modes constrains the set of TLS key-exchange algorithms Cloudflare may use when establishing the TLS connection to the zone's origin. GET /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes",
+    "context": "GET /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes\nOrigin TLS Compliance Modes constrains the set of TLS key-exchange algorithms Cloudflare may use when establishing the TLS connection to the zone's origin. The value is a list of named compliance modes (currently `fips` and `pqh`). Multiple modes are combined as the intersection of their permitted algorithm lists. An empty list (or no rule configured) means no compliance constraint is applied.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-replace-origin-tls-compliance-modes-setting",
+    "name": "Replace Origin TLS Compliance Modes setting",
+    "description": "Replace Origin TLS Compliance Modes setting Replace the entire set of TLS compliance modes for the zone with the list provided in the request body. PUT /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes",
+    "context": "PUT /client/v4/zones/{zone_id}/settings/origin_tls_compliance_modes\nReplace the entire set of TLS compliance modes for the zone with the list provided in the request body. PUT performs a full replace, not a merge — any modes not present in the request body are removed. The request body must be of the form `{\"value\": [\"fips\", \"pqh\"]}`. Currently supported modes are `fips` and `pqh`; an empty list clears the constraint. Future modes (e.g. `cnsa2`) may be added; clients should treat unknown values as opaque strings. Invalid mode values are rejected with a 4xx response.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-automatic-platform-optimization-setting",
+    "name": "Change Automatic Platform Optimization setting",
+    "description": "Change Automatic Platform Optimization setting Automatic Platform Optimization (APO) for WordPress is a performance feature that serves your WordPress site from Cloudflare's edge network, reducing load times for visitors. PATCH /client/v4/zones/{zone_id}/settings/automatic_platform_optimization",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/automatic_platform_optimization\nAutomatic Platform Optimization (APO) for WordPress is a performance feature that serves your WordPress site from Cloudflare's edge network, reducing load times for visitors. Refer to the APO documentation for more information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-binary-ast-setting",
+    "name": "Change Binary AST setting",
+    "description": "Change Binary AST setting Binary AST is a new binary encoding for JavaScript that enables faster parsing of scripts. PATCH /client/v4/zones/{zone_id}/settings/binary_ast",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/binary_ast\nBinary AST is a new binary encoding for JavaScript that enables faster parsing of scripts. When enabled, Cloudflare will serve a binary-encoded version of JavaScript to compatible browsers.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-fonts-setting",
+    "name": "Change Cloudflare Fonts setting",
+    "description": "Change Cloudflare Fonts setting Enhance your website's font delivery with Cloudflare Fonts. PATCH /client/v4/zones/{zone_id}/settings/fonts",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/fonts\nEnhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain, boost performance, and enhance user privacy. Refer to the Cloudflare Fonts documentation for more information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-google-tag-gateway-config",
+    "name": "Update Google Tag Gateway configuration",
+    "description": "Update Google Tag Gateway configuration Updates the Google Tag Gateway configuration for a zone. PUT /client/v4/zones/{zone_id}/settings/google-tag-gateway/config",
+    "context": "PUT /client/v4/zones/{zone_id}/settings/google-tag-gateway/config\nUpdates the Google Tag Gateway configuration for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-h2-prioritization-setting",
+    "name": "Change HTTP/2 Prioritization setting",
+    "description": "Change HTTP/2 Prioritization setting HTTP/2 Prioritization controls the order in which assets are delivered to browsers. PATCH /client/v4/zones/{zone_id}/settings/h2_prioritization",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/h2_prioritization\nHTTP/2 Prioritization controls the order in which assets are delivered to browsers. Cloudflare's HTTP/2 Prioritization overrides the default browser prioritization order, improving the loading performance of web pages.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-image-resizing-setting",
+    "name": "Change Image Transformations setting",
+    "description": "Change Image Transformations setting Sets the Image Transformations setting for a zone. PATCH /client/v4/zones/{zone_id}/settings/image_resizing",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/image_resizing\nSets the Image Transformations setting for a zone. Accepted values are `off`, `on`, `open`, and `latest`.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-speed-brain-setting",
+    "name": "Change Cloudflare Speed Brain setting",
+    "description": "Change Cloudflare Speed Brain setting Speed Brain lets compatible browsers speculate on content which can be prefetched or preloaded, making website navigation faster. PATCH /client/v4/zones/{zone_id}/settings/speed_brain",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/speed_brain\nSpeed Brain lets compatible browsers speculate on content which can be prefetched or preloaded, making website navigation faster. Refer to the Cloudflare Speed Brain documentation for more information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-transformations-allowed-origins-setting",
+    "name": "Change Image Transformations Allowed Origins setting",
+    "description": "Change Image Transformations Allowed Origins setting Media Transformations Allowed Origins restricts transformations for images and video served through Cloudflare's network to requests originating from specified domains. PATCH /client/v4/zones/{zone_id}/settings/transformations_allowed_origins",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/transformations_allowed_origins\nMedia Transformations Allowed Origins restricts transformations for images and video served through Cloudflare's network to requests originating from specified domains. Refer to the Image Transformations and Video Transformations documentation for more information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-transformations-c2pa-setting",
+    "name": "Change Image Transformations C2PA setting",
+    "description": "Change Image Transformations C2PA setting C2PA (Coalition for Content Provenance and Authenticity) signing adds cryptographic metadata to images processed through Cloudflare Image Transformations, enabling verification of image authenticity and provenance. PATCH /client/v4/zones/{zone_id}/settings/transformations_c2pa",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/transformations_c2pa\nC2PA (Coalition for Content Provenance and Authenticity) signing adds cryptographic metadata to images processed through Cloudflare Image Transformations, enabling verification of image authenticity and provenance.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-change-transformations-config",
+    "name": "Change Transformations configuration",
+    "description": "Change Transformations configuration Updates one or more fields of the combined Transformations configuration for a zone. PATCH /client/v4/zones/{zone_id}/settings/transformations_config",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/transformations_config\nUpdates one or more fields of the combined Transformations configuration for a zone. Omitted fields are left unchanged. The response always returns the full current state of all three sub-settings.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-edit-single-setting",
+    "name": "Edit zone setting",
+    "description": "Edit zone setting Updates a single zone setting by the identifier PATCH /client/v4/zones/{zone_id}/settings/{setting_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings/{setting_id}\nUpdates a single zone setting by the identifier\nRequired: zone_id (path); setting_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-edit-zone-settings-info",
+    "name": "Edit multiple zone settings",
+    "description": "Edit multiple zone settings Edit settings for a zone. PATCH /client/v4/zones/{zone_id}/settings",
+    "context": "PATCH /client/v4/zones/{zone_id}/settings\nEdit settings for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-settings-get-all-zone-settings",
+    "name": "Get all zone settings",
+    "description": "Get all zone settings Available settings for your user in relation to a zone. GET /client/v4/zones/{zone_id}/settings",
+    "context": "GET /client/v4/zones/{zone_id}/settings\nAvailable settings for your user in relation to a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-automatic-platform-optimization-setting",
+    "name": "Get Automatic Platform Optimization setting",
+    "description": "Get Automatic Platform Optimization setting Automatic Platform Optimization (APO) for WordPress is a performance feature that serves your WordPress site from Cloudflare's edge network, reducing load times for visitors. GET /client/v4/zones/{zone_id}/settings/automatic_platform_optimization",
+    "context": "GET /client/v4/zones/{zone_id}/settings/automatic_platform_optimization\nAutomatic Platform Optimization (APO) for WordPress is a performance feature that serves your WordPress site from Cloudflare's edge network, reducing load times for visitors. Refer to the APO documentation for more information.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-binary-ast-setting",
+    "name": "Get Binary AST setting",
+    "description": "Get Binary AST setting Binary AST is a new binary encoding for JavaScript that enables faster parsing of scripts. GET /client/v4/zones/{zone_id}/settings/binary_ast",
+    "context": "GET /client/v4/zones/{zone_id}/settings/binary_ast\nBinary AST is a new binary encoding for JavaScript that enables faster parsing of scripts. When enabled, Cloudflare will serve a binary-encoded version of JavaScript to compatible browsers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-fonts-setting",
+    "name": "Get Cloudflare Fonts setting",
+    "description": "Get Cloudflare Fonts setting Enhance your website's font delivery with Cloudflare Fonts. GET /client/v4/zones/{zone_id}/settings/fonts",
+    "context": "GET /client/v4/zones/{zone_id}/settings/fonts\nEnhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain, boost performance, and enhance user privacy. Refer to the Cloudflare Fonts documentation for more information.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-google-tag-gateway-config",
+    "name": "Get Google Tag Gateway configuration",
+    "description": "Get Google Tag Gateway configuration Gets the Google Tag Gateway configuration for a zone. GET /client/v4/zones/{zone_id}/settings/google-tag-gateway/config",
+    "context": "GET /client/v4/zones/{zone_id}/settings/google-tag-gateway/config\nGets the Google Tag Gateway configuration for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-h2-prioritization-setting",
+    "name": "Get HTTP/2 Prioritization setting",
+    "description": "Get HTTP/2 Prioritization setting HTTP/2 Prioritization controls the order in which assets are delivered to browsers. GET /client/v4/zones/{zone_id}/settings/h2_prioritization",
+    "context": "GET /client/v4/zones/{zone_id}/settings/h2_prioritization\nHTTP/2 Prioritization controls the order in which assets are delivered to browsers. Cloudflare's HTTP/2 Prioritization overrides the default browser prioritization order, improving the loading performance of web pages.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-image-resizing-setting",
+    "name": "Get Image Transformations setting",
+    "description": "Get Image Transformations setting Gets the Image Transformations setting for a zone. GET /client/v4/zones/{zone_id}/settings/image_resizing",
+    "context": "GET /client/v4/zones/{zone_id}/settings/image_resizing\nGets the Image Transformations setting for a zone. Accepted values are `off`, `on`, `open`, and `latest`.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-single-setting",
+    "name": "Get zone setting",
+    "description": "Get zone setting Fetch a single zone setting by name GET /client/v4/zones/{zone_id}/settings/{setting_id}",
+    "context": "GET /client/v4/zones/{zone_id}/settings/{setting_id}\nFetch a single zone setting by name\nRequired: zone_id (path); setting_id (path)"
+  },
+  {
+    "id": "zone-settings-get-speed-brain-setting",
+    "name": "Get Cloudflare Speed Brain setting",
+    "description": "Get Cloudflare Speed Brain setting Speed Brain lets compatible browsers speculate on content which can be prefetched or preloaded, making website navigation faster. GET /client/v4/zones/{zone_id}/settings/speed_brain",
+    "context": "GET /client/v4/zones/{zone_id}/settings/speed_brain\nSpeed Brain lets compatible browsers speculate on content which can be prefetched or preloaded, making website navigation faster. Refer to the Cloudflare Speed Brain documentation for more information.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-transformations-allowed-origins-setting",
+    "name": "Get Image Transformations Allowed Origins setting",
+    "description": "Get Image Transformations Allowed Origins setting Media Transformations Allowed Origins restricts transformations for images and video served through Cloudflare's network to requests originating from specified domains. GET /client/v4/zones/{zone_id}/settings/transformations_allowed_origins",
+    "context": "GET /client/v4/zones/{zone_id}/settings/transformations_allowed_origins\nMedia Transformations Allowed Origins restricts transformations for images and video served through Cloudflare's network to requests originating from specified domains. Refer to the Image Transformations and Video Transformations documentation for more information.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-transformations-c2pa-setting",
+    "name": "Get Image Transformations C2PA setting",
+    "description": "Get Image Transformations C2PA setting C2PA (Coalition for Content Provenance and Authenticity) signing adds cryptographic metadata to images processed through Cloudflare Image Transformations, enabling verification of image authenticity and provenance. GET /client/v4/zones/{zone_id}/settings/transformations_c2pa",
+    "context": "GET /client/v4/zones/{zone_id}/settings/transformations_c2pa\nC2PA (Coalition for Content Provenance and Authenticity) signing adds cryptographic metadata to images processed through Cloudflare Image Transformations, enabling verification of image authenticity and provenance.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-settings-get-transformations-config",
+    "name": "Get Transformations configuration",
+    "description": "Get Transformations configuration Returns the combined Transformations configuration for a zone, including the transformations toggle, allowed origins, and C2PA signing settings in a single response. GET /client/v4/zones/{zone_id}/settings/transformations_config",
+    "context": "GET /client/v4/zones/{zone_id}/settings/transformations_config\nReturns the combined Transformations configuration for a zone, including the transformations toggle, allowed origins, and C2PA signing settings in a single response.\nRequired: zone_id (path)"
+  }
+]

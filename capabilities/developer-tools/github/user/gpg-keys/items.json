@@ -1,0 +1,26 @@
+[
+  {
+    "id": "users%2Fcreate-gpg-key-for-authenticated-user",
+    "name": "Create a GPG key for the authenticated user",
+    "description": "Create a GPG key for the authenticated user Adds a GPG key to the authenticated user's GitHub account. POST /user/gpg_keys",
+    "context": "POST /user/gpg_keys\nAdds a GPG key to the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.\nRequired: body (body)"
+  },
+  {
+    "id": "users%2Fdelete-gpg-key-for-authenticated-user",
+    "name": "Delete a GPG key for the authenticated user",
+    "description": "Delete a GPG key for the authenticated user Removes a GPG key from the authenticated user's GitHub account. DELETE /user/gpg_keys/{gpg_key_id}",
+    "context": "DELETE /user/gpg_keys/{gpg_key_id}\nRemoves a GPG key from the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.\nRequired: gpg_key_id (path) — The unique identifier of the GPG key."
+  },
+  {
+    "id": "users%2Fget-gpg-key-for-authenticated-user",
+    "name": "Get a GPG key for the authenticated user",
+    "description": "Get a GPG key for the authenticated user View extended details for a single GPG key. GET /user/gpg_keys/{gpg_key_id}",
+    "context": "GET /user/gpg_keys/{gpg_key_id}\nView extended details for a single GPG key. OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.\nRequired: gpg_key_id (path) — The unique identifier of the GPG key."
+  },
+  {
+    "id": "users%2Flist-gpg-keys-for-authenticated-user",
+    "name": "List GPG keys for the authenticated user",
+    "description": "List GPG keys for the authenticated user Lists the current user's GPG keys. GET /user/gpg_keys",
+    "context": "GET /user/gpg_keys\nLists the current user's GPG keys. OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

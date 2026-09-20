@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createMicrofrontendsGroupWithApplications",
+    "name": "Create a microfrontends group with applications",
+    "description": "Create a microfrontends group with applications Creates a microfrontends group and attaches multiple projects in a single request. POST /v1/microfrontends/group",
+    "context": "POST /v1/microfrontends/group\nCreates a microfrontends group and attaches multiple projects in a single request.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getMicrofrontendsConfig",
+    "name": "Get microfrontends config for a deployment",
+    "description": "Get microfrontends config for a deployment Get the microfrontends config for a deployment. GET /v1/microfrontends/{deploymentId}/config",
+    "context": "GET /v1/microfrontends/{deploymentId}/config\nGet the microfrontends config for a deployment.\nRequired: deploymentId (path) — The unique deployment identifier\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getMicrofrontendsConfigForProject",
+    "name": "Get microfrontends config for a project",
+    "description": "Get microfrontends config for a project Get the microfrontends config for a project by ID or name. GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config",
+    "context": "GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config\nGet the microfrontends config for a project by ID or name.\nRequired: projectIdOrName (path) — The name or ID of the project\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getMicrofrontendsGroups",
+    "name": "List microfrontends groups",
+    "description": "List microfrontends groups Get the microfrontends group IDs for a team. GET /v1/microfrontends/groups",
+    "context": "GET /v1/microfrontends/groups\nGet the microfrontends group IDs for a team.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getMicrofrontendsInGroup",
+    "name": "List projects in a microfrontends group",
+    "description": "List projects in a microfrontends group Get the microfrontends for a given group ID. GET /v1/microfrontends/groups/{groupId}/projects",
+    "context": "GET /v1/microfrontends/groups/{groupId}/projects\nGet the microfrontends for a given group ID.\nRequired: groupId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

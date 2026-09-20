@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v1-get-network-restrictions",
+    "name": "Gets project's network restrictions",
+    "description": "Gets project's network restrictions This is an **experimental** endpoint. GET /v1/projects/{ref}/network-restrictions",
+    "context": "GET /v1/projects/{ref}/network-restrictions\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-patch-network-restrictions",
+    "name": "Updates project's network restrictions by adding or removing CIDRs",
+    "description": "Updates project's network restrictions by adding or removing CIDRs This is an **experimental** endpoint. PATCH /v1/projects/{ref}/network-restrictions",
+    "context": "PATCH /v1/projects/{ref}/network-restrictions\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Alpha** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-network-restrictions",
+    "name": "Updates project's network restrictions",
+    "description": "Updates project's network restrictions This is an **experimental** endpoint. POST /v1/projects/{ref}/network-restrictions/apply",
+    "context": "POST /v1/projects/{ref}/network-restrictions/apply\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  }
+]

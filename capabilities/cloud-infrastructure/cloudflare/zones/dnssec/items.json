@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dnssec-delete-dnssec-records",
+    "name": "Delete DNSSEC records",
+    "description": "Delete DNSSEC records Delete DNSSEC. DELETE /client/v4/zones/{zone_id}/dnssec",
+    "context": "DELETE /client/v4/zones/{zone_id}/dnssec\nDelete DNSSEC.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dnssec-dnssec-details",
+    "name": "DNSSEC Details",
+    "description": "DNSSEC Details Details about DNSSEC status and configuration. GET /client/v4/zones/{zone_id}/dnssec",
+    "context": "GET /client/v4/zones/{zone_id}/dnssec\nDetails about DNSSEC status and configuration.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dnssec-edit-dnssec-status",
+    "name": "Edit DNSSEC Status",
+    "description": "Edit DNSSEC Status Enable or disable DNSSEC. PATCH /client/v4/zones/{zone_id}/dnssec",
+    "context": "PATCH /client/v4/zones/{zone_id}/dnssec\nEnable or disable DNSSEC.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "dnssec-list-dnssec-zsks",
+    "name": "List DNSSEC ZSKs",
+    "description": "List DNSSEC ZSKs List the Zone Signing Keys (ZSKs) that DNSSEC uses for the zone. GET /client/v4/zones/{zone_id}/dnssec/zsk",
+    "context": "GET /client/v4/zones/{zone_id}/dnssec/zsk\nList the Zone Signing Keys (ZSKs) that DNSSEC uses for the zone.\nRequired: zone_id (path)"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "AddGuestToList",
+    "name": "Add Guest To List",
+    "description": "Add Guest To List Share a List with a guest. POST /api/v2/list/{list_id}/guest/{guest_id}",
+    "context": "POST /api/v2/list/{list_id}/guest/{guest_id}\nShare a List with a guest. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: list_id (path); guest_id (path); body (body)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`."
+  },
+  {
+    "id": "AddTaskToList",
+    "name": "Add Task To List",
+    "description": "Add Task To List Add a task to an additional List. POST /api/v2/list/{list_id}/task/{task_id}",
+    "context": "POST /api/v2/list/{list_id}/task/{task_id}\nAdd a task to an additional List. \\ \\ ***Note:** This endpoint requires the [Tasks in Multiple List ClickApp](https://help.clickup.com/hc/en-us/articles/6309958824727-Tasks-in-Multiple-Lists) to be enabled.*\nRequired: list_id (path); task_id (path)"
+  },
+  {
+    "id": "CreateListComment",
+    "name": "Create List Comment",
+    "description": "Create List Comment Add a comment to a List. POST /api/v2/list/{list_id}/comment",
+    "context": "POST /api/v2/list/{list_id}/comment\nAdd a comment to a List.\nRequired: list_id (path); body (body)"
+  },
+  {
+    "id": "CreateListView",
+    "name": "Create List View",
+    "description": "Create List View Add a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view to a List. POST /api/v2/list/{list_id}/view",
+    "context": "POST /api/v2/list/{list_id}/view\nAdd a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view to a List.\nRequired: list_id (path); body (body)"
+  },
+  {
+    "id": "CreateTask",
+    "name": "Create Task",
+    "description": "Create Task Create a new task.\\ \\ Custom Field values in the request body are only saved when the field is applicable to the task's `custom_item_id`. POST /api/v2/list/{list_id}/task",
+    "context": "POST /api/v2/list/{list_id}/task\nCreate a new task.\\ \\ Custom Field values in the request body are only saved when the field is applicable to the task's `custom_item_id`. Use [Get Custom Fields](ref:getaccessiblecustomfields) and each field's `applied_objects` to determine applicability before creating the task.\nRequired: list_id (path); body (body)"
+  },
+  {
+    "id": "CreateTaskFromTemplate",
+    "name": "Create Task From Template",
+    "description": "Create Task From Template Create a new task using a task template defined in your workspace. POST /api/v2/list/{list_id}/taskTemplate/{template_id}",
+    "context": "POST /api/v2/list/{list_id}/taskTemplate/{template_id}\nCreate a new task using a task template defined in your workspace. Publicly shared templates must be [added to your Workspace](https://help.clickup.com/hc/en-us/articles/6326023965591-Add-a-template-to-your-library) before you can use them with the public API.\nRequired: list_id (path); template_id (path); body (body)"
+  },
+  {
+    "id": "DeleteList",
+    "name": "Delete List",
+    "description": "Delete List Delete a List from your Workspace. DELETE /api/v2/list/{list_id}",
+    "context": "DELETE /api/v2/list/{list_id}\nDelete a List from your Workspace.\nRequired: list_id (path); Content-Type (header)"
+  },
+  {
+    "id": "GetAccessibleCustomFields",
+    "name": "Get List Custom Fields",
+    "description": "Get List Custom Fields View the Custom Fields you have access to in a specific List.\\ \\ Custom Fields scoped to specific custom task types include an `applied_objects` array on each field object. GET /api/v2/list/{list_id}/field",
+    "context": "GET /api/v2/list/{list_id}/field\nView the Custom Fields you have access to in a specific List.\\ \\ Custom Fields scoped to specific custom task types include an `applied_objects` array on each field object. Each entry has `object_type` (`19` for custom task type) and `object_id` (the custom task type ID, matching `custom_item_id` on tasks). Use [Get Custom Task Types](ref:getcustomitems) to resolve IDs to names. Fields without task-type scoping omit `applied_objects`. Workspace-scoped Custom Fields are included when querying a List.\nRequired: list_id (path); Content-Type (header)\nOptional: include_applied_objects (query) — When `true`, includes `applied_objects` on task-type-scoped Custom Fields in the response."
+  },
+  {
+    "id": "GetList",
+    "name": "Get List",
+    "description": "Get List View information about a List. GET /api/v2/list/{list_id}",
+    "context": "GET /api/v2/list/{list_id}\nView information about a List.\nRequired: list_id (path) — The List ID. To find the List ID, right-click the List in your Sidebar, select Copy link, and paste the link in your URL. The last string in the URL is your List ID."
+  },
+  {
+    "id": "GetListComments",
+    "name": "Get List Comments",
+    "description": "Get List Comments View the comments added to a List. GET /api/v2/list/{list_id}/comment",
+    "context": "GET /api/v2/list/{list_id}/comment\nView the comments added to a List. \\ \\ If you do not include the `start` and `start_id` parameters, this endpoint will return the most recent 25 comments.\\ \\ Use the `start` and `start id` parameters of the oldest comment to retrieve the next 25 comments.\nRequired: list_id (path)\nOptional: start (query) — Enter the `date` of a List info comment using Unix time in milliseconds.; start_id (query) — Enter the Comment `id` of a List info comment."
+  },
+  {
+    "id": "GetListMembers",
+    "name": "Get List Members",
+    "description": "Get List Members Get Workspace members who have explicit access to a List. GET /api/v2/list/{list_id}/member",
+    "context": "GET /api/v2/list/{list_id}/member\nGet Workspace members who have explicit access to a List. Responses do not include people with access through a Team, or people with access from the Folder or Space where the List exists.\nRequired: list_id (path)"
+  },
+  {
+    "id": "GetListViews",
+    "name": "Get List Views",
+    "description": "Get List Views View the task and page views available for a List.\\ \\ Views and required views are separate responses. GET /api/v2/list/{list_id}/view",
+    "context": "GET /api/v2/list/{list_id}/view\nView the task and page views available for a List.\\ \\ Views and required views are separate responses.\nRequired: list_id (path)"
+  },
+  {
+    "id": "GetTasks",
+    "name": "Get Tasks",
+    "description": "Get Tasks View the tasks in a List. GET /api/v2/list/{list_id}/task",
+    "context": "GET /api/v2/list/{list_id}/task\nView the tasks in a List. Responses are limited to 100 tasks per page. You can only view task information of tasks you can access. \\ \\ This endpoint only includes tasks where the specified `list_id` is their home List. Tasks added to the `list_id` with a different home List are not included in the response by default. To include tasks that exist in multiple lists, use the `include_timl` parameter. \\ \\ The `time_spent` field displays time tracked in milliseconds, and is only included in the response for tasks with time entries.\\ \\ Each task's `custom_fields` array only includes Custom Fields applicable to that task's `custom_item_id`.\nRequired: list_id (path) — To find the list_id: \\ 1. In the Sidebar, hover over the List and click the **ellipsis ...** menu. \\ 2. Select **Copy link.** \\ 3. Use the copied URL to find the list_id. The list_id is the number that follows /li in the URL.\nOptional: archived (query); include_markdown_description (query) — To return task descriptions in Markdown format, use `?include_markdown_description=true`.; page (query) — Page to fetch (starts at 0).; order_by (query) — Order by a particular field. By default, tasks are ordered by `created`.\\ \\ Options include: `id`, `created`, `updated`, and `due_date`.; reverse (query) — Tasks are displayed in reverse order.; subtasks (query) — Include or exclude subtasks. By default, subtasks are excluded.; statuses (query) — Filter by statuses. To include closed tasks, use the `include_closed` parameter. \\ \\ For example: \\ \\ `?statuses[]=to%20do&statuses[]=in%20progress`; include_closed (query) — Include or excluse closed tasks. By default, they are excluded.\\ \\ To include closed tasks, use `include_closed: true`.; include_timl (query) — Include Tasks in Multiple Lists. By default, tasks that exist in multiple lists are excluded from the response.\\ \\ To include tasks that exist in multiple lists, use `include_timl: true`.; assignees (query) — Filter by Assignees. For example: \\ \\ `?assignees[]=1234&assignees[]=5678`; watchers (query) — Filter by watchers.; tags (query) — Filter by tags. For example: \\ \\ `?tags[]=tag1&tags[]=this%20tag`; due_date_gt (query) — Filter by due date greater than Unix time in milliseconds.; due_date_lt (query) — Filter by due date less than Unix time in milliseconds.; date_created_gt (query) — Filter by date created greater than Unix time in milliseconds.; date_created_lt (query) — Filter by date created less than Unix time in milliseconds.; date_updated_gt (query) — Filter by date updated greater than Unix time in milliseconds.; date_updated_lt (query) — Filter by date updated less than Unix time in milliseconds.; date_done_gt (query) — Filter by date done greater than Unix time in milliseconds.; date_done_lt (query) — Filter by date done less than Unix time in milliseconds.; custom_fields (query) — Include tasks with specific values in one or more Custom Fields. Custom Relationships are included.\\ \\ For example: `?custom_fields=[{\"field_id\":\"abcdefghi12345678\",\"operator\":\"=\",\"value\":\"1234\"},{\"field_id\":\"jklmnop123456\",\"operator\":\"<\",\"value\":\"5\"}]`\\ \\ Only set Custom Field values display in the `value` property of the `custom_fields` parameter. If you want to include tasks with specific values in only one Custom Field, use `custom_field` instead.\\ \\ Learn more about [filtering using Custom Fields.](doc:taskfilters); custom_field (query) — Include tasks with specific values in only one Custom Field. This Custom Field can be a Custom Relationship.; custom_items (query) — Filter by custom task types. For example: \\ \\ `?custom_items[]=0&custom_items[]=1300` \\ \\ Including `0` returns tasks. Including `1` returns Milestones. Including any other number returns the custom task type as defined in your Workspace."
+  },
+  {
+    "id": "RemoveGuestFromList",
+    "name": "Remove Guest From List",
+    "description": "Remove Guest From List Revoke a guest's access to a List.\\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).* DELETE /api/v2/list/{list_id}/guest/{guest_id}",
+    "context": "DELETE /api/v2/list/{list_id}/guest/{guest_id}\nRevoke a guest's access to a List.\\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: list_id (path); guest_id (path)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`."
+  },
+  {
+    "id": "RemoveTaskFromList",
+    "name": "Remove Task From List",
+    "description": "Remove Task From List Remove a task from an additional List. DELETE /api/v2/list/{list_id}/task/{task_id}",
+    "context": "DELETE /api/v2/list/{list_id}/task/{task_id}\nRemove a task from an additional List. You can't remove a task from its home List. \\ \\ ***Note:** This endpoint requires the [Tasks in Multiple List ClickApp](https://help.clickup.com/hc/en-us/articles/6309958824727-Tasks-in-Multiple-Lists) to be enabled.*\nRequired: list_id (path); task_id (path)"
+  },
+  {
+    "id": "UpdateList",
+    "name": "Update List",
+    "description": "Update List Rename a List, update the List Info description, set a due date/time, set the List's priority, set an assignee, set or remove the List color. PUT /api/v2/list/{list_id}",
+    "context": "PUT /api/v2/list/{list_id}\nRename a List, update the List Info description, set a due date/time, set the List's priority, set an assignee, set or remove the List color.\nRequired: list_id (path); body (body)"
+  }
+]

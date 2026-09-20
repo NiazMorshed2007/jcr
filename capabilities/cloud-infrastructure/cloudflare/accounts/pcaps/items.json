@@ -1,0 +1,56 @@
+[
+  {
+    "id": "magic-pcap-collection-add-buckets-for-full-packet-captures",
+    "name": "Add buckets for full packet captures",
+    "description": "Add buckets for full packet captures Adds an AWS or GCP bucket to use with full packet captures. POST /client/v4/accounts/{account_id}/pcaps/ownership",
+    "context": "POST /client/v4/accounts/{account_id}/pcaps/ownership\nAdds an AWS or GCP bucket to use with full packet captures.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-pcap-collection-create-pcap-request",
+    "name": "Create PCAP request",
+    "description": "Create PCAP request Create new PCAP request for account. POST /client/v4/accounts/{account_id}/pcaps",
+    "context": "POST /client/v4/accounts/{account_id}/pcaps\nCreate new PCAP request for account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-pcap-collection-delete-buckets-for-full-packet-captures",
+    "name": "Delete buckets for full packet captures",
+    "description": "Delete buckets for full packet captures Deletes buckets added to the packet captures API. DELETE /client/v4/accounts/{account_id}/pcaps/ownership/{ownership_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pcaps/ownership/{ownership_id}\nDeletes buckets added to the packet captures API.\nRequired: ownership_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-pcap-collection-download-simple-pcap",
+    "name": "Download Simple PCAP",
+    "description": "Download Simple PCAP Download PCAP information into a file. GET /client/v4/accounts/{account_id}/pcaps/{pcap_id}/download",
+    "context": "GET /client/v4/accounts/{account_id}/pcaps/{pcap_id}/download\nDownload PCAP information into a file. Response is a binary PCAP file.\nRequired: pcap_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-pcap-collection-get-pcap-request",
+    "name": "Get PCAP request",
+    "description": "Get PCAP request Get information for a PCAP request by id. GET /client/v4/accounts/{account_id}/pcaps/{pcap_id}",
+    "context": "GET /client/v4/accounts/{account_id}/pcaps/{pcap_id}\nGet information for a PCAP request by id.\nRequired: pcap_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-pcap-collection-list-packet-capture-requests",
+    "name": "List packet capture requests",
+    "description": "List packet capture requests Lists all packet capture requests for an account. GET /client/v4/accounts/{account_id}/pcaps",
+    "context": "GET /client/v4/accounts/{account_id}/pcaps\nLists all packet capture requests for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-pcap-collection-list-pca-ps-bucket-ownership",
+    "name": "List PCAPs Bucket Ownership",
+    "description": "List PCAPs Bucket Ownership List all buckets configured for use with PCAPs API. GET /client/v4/accounts/{account_id}/pcaps/ownership",
+    "context": "GET /client/v4/accounts/{account_id}/pcaps/ownership\nList all buckets configured for use with PCAPs API.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-pcap-collection-stop-full-pcap",
+    "name": "Stop full PCAP",
+    "description": "Stop full PCAP Stop full PCAP. PUT /client/v4/accounts/{account_id}/pcaps/{pcap_id}/stop",
+    "context": "PUT /client/v4/accounts/{account_id}/pcaps/{pcap_id}/stop\nStop full PCAP.\nRequired: pcap_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-pcap-collection-validate-buckets-for-full-packet-captures",
+    "name": "Validate buckets for full packet captures",
+    "description": "Validate buckets for full packet captures Validates buckets added to the packet captures API. POST /client/v4/accounts/{account_id}/pcaps/ownership/validate",
+    "context": "POST /client/v4/accounts/{account_id}/pcaps/ownership/validate\nValidates buckets added to the packet captures API.\nRequired: account_id (path); body (body)"
+  }
+]

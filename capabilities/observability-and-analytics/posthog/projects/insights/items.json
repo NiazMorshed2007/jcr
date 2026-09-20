@@ -1,0 +1,140 @@
+[
+  {
+    "id": "insights_activity_retrieve",
+    "name": "Audit trail for a single insight — every change made to it, by whom, and when",
+    "description": "Audit trail for a single insight — every change made to it, by whom, and when Audit trail for a single insight — every change made to it, by whom, and when. GET /api/projects/{project_id}/insights/{id}/activity/",
+    "context": "GET /api/projects/{project_id}/insights/{id}/activity/\nAudit trail for a single insight — every change made to it, by whom, and when. Use this when you want the change history of a specific insight; use the project-wide activity endpoint for a broader view.\nRequired: id (path) — A unique integer value identifying this insight.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); limit (query) — Page size. Defaults to 10.; page (query) — 1-indexed page number. Defaults to 1."
+  },
+  {
+    "id": "insights_all_activity_retrieve",
+    "name": "Project-wide audit trail across all insights — who created, edited, deleted, or restored insights, what changed (with before/after diffs), and when",
+    "description": "Project-wide audit trail across all insights — who created, edited, deleted, or restored insights, what changed (with before/after diffs), and when Project-wide audit trail across all insights — who created, edited, deleted, or restored insights, what changed (with before/after diffs), and when. GET /api/projects/{pro…",
+    "context": "GET /api/projects/{project_id}/insights/activity/\nProject-wide audit trail across all insights — who created, edited, deleted, or restored insights, what changed (with before/after diffs), and when. Useful for surfacing what people (or agents) have been working on recently.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); limit (query) — Page size. Defaults to 10.; page (query) — 1-indexed page number. Defaults to 1."
+  },
+  {
+    "id": "insights_bulk_delete_create",
+    "name": "Soft-delete insights in bulk by ID",
+    "description": "Soft-delete insights in bulk by ID Soft-delete insights in bulk by ID. POST /api/projects/{project_id}/insights/bulk_delete/",
+    "context": "POST /api/projects/{project_id}/insights/bulk_delete/\nSoft-delete insights in bulk by ID. Mirrors the single-insight delete: sets deleted=True, soft-deletes the insights' dashboard tiles, and removes their linked alerts. Insights the requester cannot edit are skipped and reported in `skipped`. Reversible via the bulk_restore endpoint.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "insights_bulk_restore_create",
+    "name": "Restore soft-deleted insights in bulk by ID — the inverse of bulk_delete",
+    "description": "Restore soft-deleted insights in bulk by ID — the inverse of bulk_delete Restore soft-deleted insights in bulk by ID — the inverse of bulk_delete. POST /api/projects/{project_id}/insights/bulk_restore/",
+    "context": "POST /api/projects/{project_id}/insights/bulk_restore/\nRestore soft-deleted insights in bulk by ID — the inverse of bulk_delete. Sets deleted=False and re-activates the insights' dashboard tiles on dashboards that still exist. Linked alerts are not restored (they are removed on delete). Insights the requester cannot edit are reported in `skipped`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "insights_bulk_set_test_account_filter_create",
+    "name": "Turn 'filter out internal and test users' on or off for every existing insight in the project",
+    "description": "Turn 'filter out internal and test users' on or off for every existing insight in the project Turn 'filter out internal and test users' on or off for every existing insight in the project. POST /api/projects/{project_id}/insights/bulk_set_test_account_filter/",
+    "context": "POST /api/projects/{project_id}/insights/bulk_set_test_account_filter/\nTurn 'filter out internal and test users' on or off for every existing insight in the project. Requires project admin, matching the settings UI that fronts it. The setting of the same name only decides the default for new insights; this applies it to the insights that already exist. Only insights that store a query are changed; insights still holding legacy `filters` are counted in `legacy` and left as they are. Insights with nowhere to put the toggle, such as SQL insights, are left alone, as are insights the requester cannot edit. Dashboards follow their insights unless the dashboard sets its own override. Insights are updated in batches, so a failure part way through leaves the finished batches applied. Retrying is safe and picks up the rest.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "insights_bulk_update_tags_create",
+    "name": "Bulk update tags on multiple objects",
+    "description": "Bulk update tags on multiple objects Bulk update tags on multiple objects. POST /api/projects/{project_id}/insights/bulk_update_tags/",
+    "context": "POST /api/projects/{project_id}/insights/bulk_update_tags/\nBulk update tags on multiple objects. PAT access: this action has no ``required_scopes=`` on the decorator — inheriting viewsets must add ``\"bulk_update_tags\"`` to their ``scope_object_write_actions`` list to accept personal API keys. Without that opt-in, ``APIScopePermission`` rejects PAT requests with \"This action does not support personal API key access\". Done per-viewset so granting `` :write`` for one resource doesn't leak access to sibling resources that share this mixin. Accepts: - {\"ids\": [...], \"action\": \"add\"|\"remove\"|\"set\", \"tags\": [\"tag1\", \"tag2\"]} Actions: - \"add\": Add tags to existing tags on each object - \"remove\": Remove specific tags from each object - \"set\": Replace all tags on each object with the provided list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "insights_cancel_create",
+    "name": "insights_cancel_create",
+    "description": "insights_cancel_create POST /api/projects/{project_id}/insights/cancel/",
+    "context": "POST /api/projects/{project_id}/insights/cancel/\ninsights_cancel_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "insights_create",
+    "name": "insights_create",
+    "description": "insights_create POST /api/projects/{project_id}/insights/",
+    "context": "POST /api/projects/{project_id}/insights/\ninsights_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; body (body)"
+  },
+  {
+    "id": "insights_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/insights/{id}/",
+    "context": "DELETE /api/projects/{project_id}/insights/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — Numeric primary key or 8-character `short_id` (for example `AaVQ8Ijw`) identifying the insight.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "insights_generate_metadata_create",
+    "name": "Generate an AI-suggested name and description for an insight based on its query configuration.",
+    "description": "Generate an AI-suggested name and description for an insight based on its query configuration. POST /api/projects/{project_id}/insights/generate_metadata/",
+    "context": "POST /api/projects/{project_id}/insights/generate_metadata/\nGenerate an AI-suggested name and description for an insight based on its query configuration.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "insights_list",
+    "name": "insights_list",
+    "description": "insights_list GET /api/projects/{project_id}/insights/",
+    "context": "GET /api/projects/{project_id}/insights/\ninsights_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: basic (query) — Return basic insight metadata only (no results, faster).; created_by (query) — JSON-encoded array of user IDs. Only returns insights whose `created_by` is in the list, e.g. `[1,42]`.; created_date_from (query) — Filter by `created_at > created_date_from`. Accepts absolute or relative dates.; created_date_to (query) — Filter by `created_at < created_date_to`. Accepts absolute or relative dates.; dashboards (query) — JSON-encoded array of dashboard IDs. Returns insights attached to every listed dashboard (AND).; date_from (query) — Filter by `last_modified_at > date_from`. Accepts absolute dates (`2025-04-23`) or relative strings (`-7d`, `-1m`).; date_to (query) — Filter by `last_modified_at < date_to`. Accepts absolute dates or relative strings.; favorited (query) — Include this parameter (any value) to restrict results to insights marked as favorited.; format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; insight (query) — Restrict to a single insight type. `JSON` matches non-wrapper query insights; `SQL` matches HogQL queries.; last_viewed_date_from (query) — Filter by `last_viewed_at > last_viewed_date_from`. Accepts absolute or relative dates.; last_viewed_date_to (query) — Filter by `last_viewed_at < last_viewed_date_to`. Accepts absolute or relative dates.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; refresh (query) — Whether to refresh the retrieved insights, how aggressively, and if sync or async: - `'force_cache'` - return cached data or a cache miss; always completes immediately as it never calculates - `'blocking'` - calculate synchronously (returning only when the query is done), UNLESS there are very fresh results in the cache - `'async'` - kick off background calculation (returning immediately with a query status), UNLESS there are very fresh results in the cache - `'lazy_async'` - kick off background calculation, UNLESS there are somewhat fresh results in the cache - `'force_blocking'` - calculate synchronously, even if fresh results are already cached - `'force_async'` - kick off background calculation, even if fresh results are already cached Background calculation can be tracked using the `query_status` response field.; saved (query) — When truthy, restricts results to insights that are saved (or attached to a visible dashboard). When falsy, only unsaved insights.; search (query) — Search term matched across name, derived_name, description, and tag names. Returns exact (case-insensitive substring) matches only; if no exact match exists, returns similar (fuzzy trigram) matches instead. Each result's `search_match_type` is `exact` or `similar`.; short_id (query); tags (query) — JSON-encoded array of tag names. Returns insights with any of the listed tags.; user (query) — Include this parameter (any value) to restrict results to insights created by the authenticated user."
+  },
+  {
+    "id": "insights_my_last_viewed_retrieve",
+    "name": "Returns basic details about the last 5 insights viewed by this user",
+    "description": "Returns basic details about the last 5 insights viewed by this user Returns basic details about the last 5 insights viewed by this user. GET /api/projects/{project_id}/insights/my_last_viewed/",
+    "context": "GET /api/projects/{project_id}/insights/my_last_viewed/\nReturns basic details about the last 5 insights viewed by this user. Most recently viewed first.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "insights_partial_update",
+    "name": "insights_partial_update",
+    "description": "insights_partial_update PATCH /api/projects/{project_id}/insights/{id}/",
+    "context": "PATCH /api/projects/{project_id}/insights/{id}/\ninsights_partial_update\nRequired: id (path) — Numeric primary key or 8-character `short_id` (for example `AaVQ8Ijw`) identifying the insight.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; body (body)"
+  },
+  {
+    "id": "insights_retrieve",
+    "name": "insights_retrieve",
+    "description": "insights_retrieve GET /api/projects/{project_id}/insights/{id}/",
+    "context": "GET /api/projects/{project_id}/insights/{id}/\ninsights_retrieve\nRequired: id (path) — Numeric primary key or 8-character `short_id` (for example `AaVQ8Ijw`) identifying the insight.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: filters_override (query) — Object (or pre-encoded JSON string) to override the insight's filters for this request only (not persisted). Top-level keys replace; nested values are not deep-merged — pass the complete value for any key you override. Accepts the same keys as the dashboard filters schema (e.g., `date_from`, `date_to`, `properties`). Ignored when accessed via a sharing token.; format (query); from_dashboard (query) — Only if loading an insight in the context of a dashboard: The relevant dashboard's ID. When set, the specified dashboard's filters and date range override will be applied.; include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; refresh (query) — Whether to refresh the insight, how aggresively, and if sync or async: - `'force_cache'` - return cached data or a cache miss; always completes immediately as it never calculates - `'blocking'` - calculate synchronously (returning only when the query is done), UNLESS there are very fresh results in the cache - `'async'` - kick off background calculation (returning immediately with a query status), UNLESS there are very fresh results in the cache - `'lazy_async'` - kick off background calculation, UNLESS there are somewhat fresh results in the cache - `'force_blocking'` - calculate synchronously, even if fresh results are already cached - `'force_async'` - kick off background calculation, even if fresh results are already cached Background calculation can be tracked using the `query_status` response field.; variables_override (query) — Object (or pre-encoded JSON string) to override the insight's HogQL variables for this request only (not persisted). Format: {\"<variable_id>\": {\"code_name\": \"<code_name>\", \"variableId\": \"<variable_id>\", \"value\": <new_value>}}. Each entry must include `code_name` — partial entries are silently dropped. The simplest workflow is to call `insight-get` first, copy the matching entry from the response, and mutate `value`. Top-level keys replace; nested values are not deep-merged. Ignored when accessed via a sharing token."
+  },
+  {
+    "id": "insights_sharing_list",
+    "name": "insights_sharing_list",
+    "description": "insights_sharing_list GET /api/projects/{project_id}/insights/{insight_id}/sharing/",
+    "context": "GET /api/projects/{project_id}/insights/{insight_id}/sharing/\ninsights_sharing_list\nRequired: insight_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "insights_sharing_passwords_create",
+    "name": "Create a new password for the sharing configuration.",
+    "description": "Create a new password for the sharing configuration. POST /api/projects/{project_id}/insights/{insight_id}/sharing/passwords/",
+    "context": "POST /api/projects/{project_id}/insights/{insight_id}/sharing/passwords/\nCreate a new password for the sharing configuration.\nRequired: insight_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "insights_sharing_passwords_destroy",
+    "name": "Delete a password from the sharing configuration.",
+    "description": "Delete a password from the sharing configuration. DELETE /api/projects/{project_id}/insights/{insight_id}/sharing/passwords/{password_id}/",
+    "context": "DELETE /api/projects/{project_id}/insights/{insight_id}/sharing/passwords/{password_id}/\nDelete a password from the sharing configuration.\nRequired: insight_id (path); password_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "insights_sharing_refresh_create",
+    "name": "insights_sharing_refresh_create",
+    "description": "insights_sharing_refresh_create POST /api/projects/{project_id}/insights/{insight_id}/sharing/refresh/",
+    "context": "POST /api/projects/{project_id}/insights/{insight_id}/sharing/refresh/\ninsights_sharing_refresh_create\nRequired: insight_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "insights_thresholds_list",
+    "name": "insights_thresholds_list",
+    "description": "insights_thresholds_list GET /api/projects/{project_id}/insights/{insight_id}/thresholds/",
+    "context": "GET /api/projects/{project_id}/insights/{insight_id}/thresholds/\ninsights_thresholds_list\nRequired: insight_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "insights_thresholds_retrieve",
+    "name": "insights_thresholds_retrieve",
+    "description": "insights_thresholds_retrieve GET /api/projects/{project_id}/insights/{insight_id}/thresholds/{id}/",
+    "context": "GET /api/projects/{project_id}/insights/{insight_id}/thresholds/{id}/\ninsights_thresholds_retrieve\nRequired: id (path) — A UUID string identifying this threshold.; insight_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "insights_trending_retrieve",
+    "name": "Returns insights ranked by view count over the last N days (default 7), highest first",
+    "description": "Returns insights ranked by view count over the last N days (default 7), highest first Returns insights ranked by view count over the last N days (default 7), highest first. GET /api/projects/{project_id}/insights/trending/",
+    "context": "GET /api/projects/{project_id}/insights/trending/\nReturns insights ranked by view count over the last N days (default 7), highest first. Each result includes the same metadata as the standard insights list, plus a `view_count` and up to 3 recent `viewers`. Useful for surfacing the most-used insights in a project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: days (query) — Time window in days to compute view counts over. Defaults to 7. Larger windows surface consistently popular insights; smaller windows surface what's hot right now.; format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; limit (query) — Maximum number of insights to return. Defaults to 10. Capped at 100.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "insights_update",
+    "name": "insights_update",
+    "description": "insights_update PUT /api/projects/{project_id}/insights/{id}/",
+    "context": "PUT /api/projects/{project_id}/insights/{id}/\ninsights_update\nRequired: id (path) — Numeric primary key or 8-character `short_id` (for example `AaVQ8Ijw`) identifying the insight.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; body (body)"
+  },
+  {
+    "id": "insights_viewed_create",
+    "name": "Record that the current user has just viewed one or more insights",
+    "description": "Record that the current user has just viewed one or more insights Record that the current user has just viewed one or more insights. POST /api/projects/{project_id}/insights/viewed/",
+    "context": "POST /api/projects/{project_id}/insights/viewed/\nRecord that the current user has just viewed one or more insights. Submitted ids that do not belong to the current project or that point at deleted insights are silently dropped, as are views from impersonated staff-support sessions. Returns 201 on success regardless of how many ids were retained.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  }
+]

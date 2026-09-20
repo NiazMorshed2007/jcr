@@ -1,0 +1,56 @@
+[
+  {
+    "id": "saved_capture_create",
+    "name": "Persist screenshots captured client-side by the on-page toolbar as a completed screenshot heatmap",
+    "description": "Persist screenshots captured client-side by the on-page toolbar as a completed screenshot heatmap Persist screenshots captured client-side by the on-page toolbar as a completed screenshot heatmap. POST /api/projects/{project_id}/saved/capture/",
+    "context": "POST /api/projects/{project_id}/saved/capture/\nPersist screenshots captured client-side by the on-page toolbar as a completed screenshot heatmap. No headless render is enqueued: the toolbar runs in the user's authenticated browser, so this is the path for pages behind a login that Browserless cannot reach. Send one 'image'+'width', or 'images'+'widths' parallel arrays to store several viewport widths on one heatmap (the toolbar re-lays out the page at each width and captures it, matching the widths the server renders). The image bytes are stored and served only through the authenticated content endpoint. The heatmap's data URL is set to the captured URL.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "saved_create",
+    "name": "Create a saved heatmap for a page URL",
+    "description": "Create a saved heatmap for a page URL Create a saved heatmap for a page URL. POST /api/projects/{project_id}/saved/",
+    "context": "POST /api/projects/{project_id}/saved/\nCreate a saved heatmap for a page URL. For type 'screenshot' (the default) this enqueues a headless render of the page at each target width; poll the saved heatmap or its content endpoint until status is 'completed'. Provide 'widths' to control which viewport widths are rendered.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "saved_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/saved/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/saved/{short_id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "saved_list",
+    "name": "List saved heatmaps for the project",
+    "description": "List saved heatmaps for the project List saved heatmaps for the project. GET /api/projects/{project_id}/saved/",
+    "context": "GET /api/projects/{project_id}/saved/\nList saved heatmaps for the project. A saved heatmap pins a page URL and a set of viewport widths, and (for type 'screenshot') renders the page so heatmap data can be overlaid on it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query) — Filter by the creating user's ID.; limit (query) — Maximum saved heatmaps to return.; offset (query) — Number to skip, for pagination.; order (query) — Field to order by, e.g. '-updated_at' (default) or 'created_at'.; search (query) — Case-insensitive substring match on URL or name.; status (query) — Filter by generation status: 'processing', 'completed', or 'failed'.; type (query) — Filter by render mode: 'screenshot', 'iframe', or 'recording'."
+  },
+  {
+    "id": "saved_partial_update",
+    "name": "Update a saved heatmap (e.g",
+    "description": "Update a saved heatmap (e.g Update a saved heatmap (e.g. PATCH /api/projects/{project_id}/saved/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/saved/{short_id}/\nUpdate a saved heatmap (e.g. rename, change widths, or soft-delete via 'deleted'). Changing the URL of a 'screenshot' heatmap triggers a re-render.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "saved_preflight_create",
+    "name": "Check whether a page can back a heatmap",
+    "description": "Check whether a page can back a heatmap Fetch a page URL server-side and report whether it allows being embedded in the live preview iframe, plus the HTTP status it returned. POST /api/projects/{project_id}/saved/preflight/",
+    "context": "POST /api/projects/{project_id}/saved/preflight/\nFetch a page URL server-side and report whether it allows being embedded in the live preview iframe, plus the HTTP status it returned. The live preview loads the customer's site directly in their browser, so a site that sends X-Frame-Options or a restrictive frame-ancestors will never render, and a 4xx or 5xx from the site's own host or CDN leaves an empty frame with no explanation. This endpoint makes both cases explainable. The fetch comes from PostHog's own network rather than from the screenshot renderer, so a host that varies its response by IP or user agent can answer this differently than it answers a screenshot render. Settled verdicts are cached briefly, so repeat checks for the same URL do not refetch it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "saved_prewarm_create",
+    "name": "Speculatively render a screenshot for a page URL ahead of heatmap creation, so it's ready (or closer to ready) by the time the user reaches the generation screen",
+    "description": "Speculatively render a screenshot for a page URL ahead of heatmap creation, so it's ready (or closer to ready) by the time the user reaches the generation screen Speculatively render a screenshot for a page URL ahead of heatmap creation, so it's ready (or closer to ready) by the time the user reaches the generation sc…",
+    "context": "POST /api/projects/{project_id}/saved/prewarm/\nSpeculatively render a screenshot for a page URL ahead of heatmap creation, so it's ready (or closer to ready) by the time the user reaches the generation screen. Renders a single preview width. Idempotent within a short window: returns the existing in-flight or completed prewarm render for the same URL and consent setting if one exists (200), otherwise starts a new one (201). The result is reused when a heatmap is later created for the same URL.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "saved_regenerate_create",
+    "name": "Re-run screenshot generation for a saved heatmap of type 'screenshot'",
+    "description": "Re-run screenshot generation for a saved heatmap of type 'screenshot' Re-run screenshot generation for a saved heatmap of type 'screenshot'. POST /api/projects/{project_id}/saved/{short_id}/regenerate/",
+    "context": "POST /api/projects/{project_id}/saved/{short_id}/regenerate/\nRe-run screenshot generation for a saved heatmap of type 'screenshot'. Clears existing renders and re-renders at every target width; status returns to 'processing'.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "saved_retrieve",
+    "name": "Get a single saved heatmap by its short_id, including per-width render status.",
+    "description": "Get a single saved heatmap by its short_id, including per-width render status. GET /api/projects/{project_id}/saved/{short_id}/",
+    "context": "GET /api/projects/{project_id}/saved/{short_id}/\nGet a single saved heatmap by its short_id, including per-width render status.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  }
+]

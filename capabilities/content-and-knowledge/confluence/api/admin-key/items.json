@@ -1,0 +1,20 @@
+[
+  {
+    "id": "disableAdminKey",
+    "name": "Disable Admin Key",
+    "description": "Disable Admin Key Disables admin key access for the calling user within the site. DELETE /wiki/api/v2/admin-key",
+    "context": "DELETE /wiki/api/v2/admin-key\nDisables admin key access for the calling user within the site. **[Permissions](https://support.atlassian.com/user-management/docs/give-users-admin-permissions/#Centralized-user-management-content) required**: User must be an organization or site admin."
+  },
+  {
+    "id": "enableAdminKey",
+    "name": "Enable Admin Key",
+    "description": "Enable Admin Key Enables admin key access for the calling user within the site. POST /wiki/api/v2/admin-key",
+    "context": "POST /wiki/api/v2/admin-key\nEnables admin key access for the calling user within the site. If an admin key already exists for the user, a new one will be issued with an updated expiration time. **Note:** The `durationInMinutes` field within the request body is optional. If the request body is empty or if the `durationInMinutes` is set to 0 minutes, a new admin key will be issued to the calling user with a default duration of 10 minutes. **[Permissions](https://support.atlassian.com/user-management/docs/give-users-admin-permissions/#Centralized-user-management-content) required**: User must be an organization or site admin.\nOptional: body (body)"
+  },
+  {
+    "id": "getAdminKey",
+    "name": "Get Admin Key",
+    "description": "Get Admin Key Returns information about the admin key if one is currently enabled for the calling user within the site. GET /wiki/api/v2/admin-key",
+    "context": "GET /wiki/api/v2/admin-key\nReturns information about the admin key if one is currently enabled for the calling user within the site. **[Permissions](https://support.atlassian.com/user-management/docs/give-users-admin-permissions/#Centralized-user-management-content) required**: User must be an organization or site admin."
+  }
+]

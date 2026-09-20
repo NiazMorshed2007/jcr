@@ -1,0 +1,44 @@
+[
+  {
+    "id": "publicCreatePrefixBinding",
+    "name": "Create a DLS prefix binding",
+    "description": "Create a DLS prefix binding POST /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings",
+    "context": "POST /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings\nCreate a DLS prefix binding\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "publicDeletePrefixBinding",
+    "name": "Delete a DLS prefix binding",
+    "description": "Delete a DLS prefix binding DELETE /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings/{binding_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings/{binding_id}\nDelete a DLS prefix binding\nRequired: account_id (path); binding_id (path)"
+  },
+  {
+    "id": "publicGetPrefixBinding",
+    "name": "Get a DLS prefix binding",
+    "description": "Get a DLS prefix binding GET /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings/{binding_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings/{binding_id}\nGet a DLS prefix binding\nRequired: account_id (path); binding_id (path)"
+  },
+  {
+    "id": "publicGetRegion",
+    "name": "Get a DLS region",
+    "description": "Get a DLS region GET /client/v4/accounts/{account_id}/dls/regions/{region_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dls/regions/{region_id}\nGet a DLS region\nRequired: account_id (path); region_id (path)"
+  },
+  {
+    "id": "publicListPrefixBindings",
+    "name": "List DLS prefix bindings for an account",
+    "description": "List DLS prefix bindings for an account GET /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings",
+    "context": "GET /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings\nList DLS prefix bindings for an account\nRequired: account_id (path)\nOptional: cursor (query) — Opaque token for cursor-based pagination. Omit for the first page. Pass the value from a previous response to fetch the next page.; per_page (query)"
+  },
+  {
+    "id": "publicListRegions",
+    "name": "List DLS regions for an account",
+    "description": "List DLS regions for an account GET /client/v4/accounts/{account_id}/dls/regions",
+    "context": "GET /client/v4/accounts/{account_id}/dls/regions\nList DLS regions for an account\nRequired: account_id (path)\nOptional: cursor (query) — Opaque token for cursor-based pagination. Omit for the first page. Pass the value from a previous response to fetch the next page.; per_page (query); type (query) — Filter regions by type. Omit to return all regions."
+  },
+  {
+    "id": "publicPatchPrefixBinding",
+    "name": "Update a DLS prefix binding",
+    "description": "Update a DLS prefix binding PATCH /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings/{binding_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/dls/regional_services/prefix_bindings/{binding_id}\nUpdate a DLS prefix binding\nRequired: account_id (path); binding_id (path); body (body)"
+  }
+]

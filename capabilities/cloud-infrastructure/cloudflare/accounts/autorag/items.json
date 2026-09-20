@@ -1,0 +1,44 @@
+[
+  {
+    "id": "autorag-config-ai-search",
+    "name": "AI Search",
+    "description": "AI Search Runs an AI Search query against an AutoRAG. POST /client/v4/accounts/{account_id}/autorag/rags/{id}/ai-search",
+    "context": "POST /client/v4/accounts/{account_id}/autorag/rags/{id}/ai-search\nRuns an AI Search query against an AutoRAG.\nRequired: id (path) — rag id; account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "autorag-config-files",
+    "name": "Files",
+    "description": "Files Lists files indexed by an AutoRAG. GET /client/v4/accounts/{account_id}/autorag/rags/{id}/files",
+    "context": "GET /client/v4/accounts/{account_id}/autorag/rags/{id}/files\nLists files indexed by an AutoRAG.\nRequired: id (path) — rag id; account_id (path)\nOptional: page (query); per_page (query); search (query); status (query)"
+  },
+  {
+    "id": "autorag-config-get-job",
+    "name": "Get a Job Details",
+    "description": "Get a Job Details Returns details for an AutoRAG job. GET /client/v4/accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}\nReturns details for an AutoRAG job.\nRequired: id (path) — rag id; job_id (path); account_id (path)"
+  },
+  {
+    "id": "autorag-config-list-job-logs",
+    "name": "List Job Logs",
+    "description": "List Job Logs Lists logs for an AutoRAG job. GET /client/v4/accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs\nLists logs for an AutoRAG job.\nRequired: id (path) — rag id; job_id (path); account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "autorag-config-list-jobs",
+    "name": "List Jobs",
+    "description": "List Jobs Lists jobs for an AutoRAG. GET /client/v4/accounts/{account_id}/autorag/rags/{id}/jobs",
+    "context": "GET /client/v4/accounts/{account_id}/autorag/rags/{id}/jobs\nLists jobs for an AutoRAG.\nRequired: id (path) — rag id; account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "autorag-config-search",
+    "name": "Search",
+    "description": "Search Searches an AutoRAG. POST /client/v4/accounts/{account_id}/autorag/rags/{id}/search",
+    "context": "POST /client/v4/accounts/{account_id}/autorag/rags/{id}/search\nSearches an AutoRAG.\nRequired: id (path) — rag id; account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "autorag-config-sync",
+    "name": "Sync",
+    "description": "Sync Starts synchronization for an AutoRAG. PATCH /client/v4/accounts/{account_id}/autorag/rags/{id}/sync",
+    "context": "PATCH /client/v4/accounts/{account_id}/autorag/rags/{id}/sync\nStarts synchronization for an AutoRAG.\nRequired: id (path) — rag id; account_id (path)"
+  }
+]

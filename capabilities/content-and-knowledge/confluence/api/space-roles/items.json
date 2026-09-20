@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createSpaceRole",
+    "name": "Create a space role",
+    "description": "Create a space role Create a space role. POST /wiki/api/v2/space-roles",
+    "context": "POST /wiki/api/v2/space-roles\nCreate a space role. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be an organization or site admin. Connect and Forge app users are not authorized to access this resource.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteSpaceRole",
+    "name": "Delete a space role",
+    "description": "Delete a space role Delete a space role Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). DELETE /wiki/api/v2/space-roles/{id}",
+    "context": "DELETE /wiki/api/v2/space-roles/{id}\nDelete a space role Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be an organization or site admin. Connect and Forge app users are not authorized to access this resource.\nRequired: id (path) — Id of the space role"
+  },
+  {
+    "id": "getAvailableSpaceRoles",
+    "name": "Get available space roles",
+    "description": "Get available space roles Retrieves the available space roles. GET /wiki/api/v2/space-roles",
+    "context": "GET /wiki/api/v2/space-roles\nRetrieves the available space roles. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site; if requesting a certain space's roles, permission to view the space.\nOptional: space-id (query) — The space ID for which to filter available space roles; if empty, return all available space roles for the tenant.; role-type (query) — The space role type to filter results by.; principal-id (query) — The principal ID to filter results by. If specified, a principal-type must also be specified. Paired with a `principal-type` of `ACCESS_CLASS`, valid values include [`anonymous-users`, `jsm-project-admins`, `authenticated-users`, `all-licensed-users`, `all-product-admins`]; principal-type (query) — The principal type to filter results by. If specified, a principal-id must also be specified.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of space roles to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaceRolesById",
+    "name": "Get space role by ID",
+    "description": "Get space role by ID Retrieves the space role by ID. GET /wiki/api/v2/space-roles/{id}",
+    "context": "GET /wiki/api/v2/space-roles/{id}\nRetrieves the space role by ID. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site.\nRequired: id (path) — The ID of the space role to retrieve."
+  },
+  {
+    "id": "updateSpaceRole",
+    "name": "Update a space role",
+    "description": "Update a space role Update a space role. PUT /wiki/api/v2/space-roles/{id}",
+    "context": "PUT /wiki/api/v2/space-roles/{id}\nUpdate a space role. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be an organization or site admin. Connect and Forge app users are not authorized to access this resource.\nRequired: id (path) — Id of the space role; body (body)"
+  }
+]

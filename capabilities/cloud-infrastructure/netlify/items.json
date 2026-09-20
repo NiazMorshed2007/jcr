@@ -1,0 +1,44 @@
+[
+  {
+    "id": "deleteSubmission",
+    "name": "deleteSubmission",
+    "description": "deleteSubmission DELETE /api/v1/submissions/{submission_id}",
+    "context": "DELETE /api/v1/submissions/{submission_id}\ndeleteSubmission"
+  },
+  {
+    "id": "listFormSubmission",
+    "name": "listFormSubmission",
+    "description": "listFormSubmission GET /api/v1/submissions/{submission_id}",
+    "context": "GET /api/v1/submissions/{submission_id}\nlistFormSubmission\nOptional: query (query); page (query); per_page (query)"
+  },
+  {
+    "id": "getAIGatewayProviders",
+    "name": "getAIGatewayProviders",
+    "description": "getAIGatewayProviders GET /api/v1/ai-gateway/providers",
+    "context": "GET /api/v1/ai-gateway/providers\ngetAIGatewayProviders"
+  },
+  {
+    "id": "getCurrentUser",
+    "name": "getCurrentUser",
+    "description": "getCurrentUser GET /api/v1/user",
+    "context": "GET /api/v1/user\ngetCurrentUser"
+  },
+  {
+    "id": "listFormSubmissions",
+    "name": "listFormSubmissions",
+    "description": "listFormSubmissions GET /api/v1/forms/{form_id}/submissions",
+    "context": "GET /api/v1/forms/{form_id}/submissions\nlistFormSubmissions\nRequired: form_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "listPaymentMethodsForUser",
+    "name": "listPaymentMethodsForUser",
+    "description": "listPaymentMethodsForUser GET /api/v1/billing/payment_methods",
+    "context": "GET /api/v1/billing/payment_methods\nlistPaymentMethodsForUser"
+  },
+  {
+    "id": "purgeCache",
+    "name": "Purges cached content from Netlify's CDN",
+    "description": "Purges cached content from Netlify's CDN Purges cached content from Netlify's CDN. POST /api/v1/purge",
+    "context": "POST /api/v1/purge\nPurges cached content from Netlify's CDN. Supports purging by Cache-Tag.\nRequired: body (body)"
+  }
+]

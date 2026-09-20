@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createComplianceJobs",
+    "name": "Create Compliance Job",
+    "description": "Create Compliance Job Creates a new Compliance Job for the specified job type. POST /2/compliance/jobs",
+    "context": "POST /2/compliance/jobs\nCreates a new Compliance Job for the specified job type.\nRequired: body (body)\nOptional: compliance_job.fields (query) — A comma separated list of ComplianceJob fields to display."
+  },
+  {
+    "id": "deleteComplianceJobsById",
+    "name": "Cancel Compliance Job",
+    "description": "Cancel Compliance Job Cancels a Compliance Job that has not finished processing; its status becomes failed and a new job of the same type can be created. DELETE /2/compliance/jobs/{id}",
+    "context": "DELETE /2/compliance/jobs/{id}\nCancels a Compliance Job that has not finished processing; its status becomes failed and a new job of the same type can be created.\nRequired: id (path)\nOptional: compliance_job.fields (query) — A comma separated list of ComplianceJob fields to display."
+  },
+  {
+    "id": "downloadComplianceJobResults",
+    "name": "Download Compliance Job Results",
+    "description": "Download Compliance Job Results Downloads the results file of a completed Compliance Job using the signed URL returned at job creation. GET /2/compliance/jobs/{id}/download",
+    "context": "GET /2/compliance/jobs/{id}/download\nDownloads the results file of a completed Compliance Job using the signed URL returned at job creation.\nRequired: id (path); token (query) — Signed download token from the job's download_url.\nOptional: compliance_job.fields (query) — A comma separated list of ComplianceJob fields to display."
+  },
+  {
+    "id": "getComplianceJobs",
+    "name": "Get Compliance Jobs",
+    "description": "Get Compliance Jobs Retrieves a list of Compliance Jobs filtered by job type and optional status. GET /2/compliance/jobs",
+    "context": "GET /2/compliance/jobs\nRetrieves a list of Compliance Jobs filtered by job type and optional status.\nRequired: type (query)\nOptional: status (query); compliance_job.fields (query) — A comma separated list of ComplianceJob fields to display."
+  },
+  {
+    "id": "getComplianceJobsById",
+    "name": "Get Compliance Job by ID",
+    "description": "Get Compliance Job by ID Retrieves details of a specific Compliance Job by its ID. GET /2/compliance/jobs/{id}",
+    "context": "GET /2/compliance/jobs/{id}\nRetrieves details of a specific Compliance Job by its ID.\nRequired: id (path)\nOptional: compliance_job.fields (query) — A comma separated list of ComplianceJob fields to display."
+  },
+  {
+    "id": "uploadComplianceJobSubmission",
+    "name": "Upload Compliance Job Submission",
+    "description": "Upload Compliance Job Submission Uploads the newline-delimited ID file for a Compliance Job using the signed URL returned at job creation. PUT /2/compliance/jobs/{id}/upload",
+    "context": "PUT /2/compliance/jobs/{id}/upload\nUploads the newline-delimited ID file for a Compliance Job using the signed URL returned at job creation.\nRequired: id (path); token (query) — Signed upload token from the job's upload_url.; body (body)\nOptional: compliance_job.fields (query) — A comma separated list of ComplianceJob fields to display."
+  }
+]

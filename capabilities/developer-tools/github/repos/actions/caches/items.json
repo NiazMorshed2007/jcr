@@ -1,0 +1,20 @@
+[
+  {
+    "id": "actions%2Fdelete-actions-cache-by-id",
+    "name": "Delete a GitHub Actions cache for a repository (using a cache ID)",
+    "description": "Delete a GitHub Actions cache for a repository (using a cache ID) Deletes a GitHub Actions cache for a repository, using a cache ID. DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}",
+    "context": "DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}\nDeletes a GitHub Actions cache for a repository, using a cache ID. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; cache_id (path) — The unique identifier of the GitHub Actions cache."
+  },
+  {
+    "id": "actions%2Fdelete-actions-cache-by-key",
+    "name": "Delete GitHub Actions caches for a repository (using a cache key)",
+    "description": "Delete GitHub Actions caches for a repository (using a cache key) Deletes one or more GitHub Actions caches for a repository, using a complete cache key. DELETE /repos/{owner}/{repo}/actions/caches",
+    "context": "DELETE /repos/{owner}/{repo}/actions/caches\nDeletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; key (query) — A key for identifying the cache.\nOptional: ref (query) — The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`."
+  },
+  {
+    "id": "actions%2Fget-actions-cache-list",
+    "name": "List GitHub Actions caches for a repository",
+    "description": "List GitHub Actions caches for a repository Lists the GitHub Actions caches for a repository. GET /repos/{owner}/{repo}/actions/caches",
+    "context": "GET /repos/{owner}/{repo}/actions/caches\nLists the GitHub Actions caches for a repository. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; ref (query) — The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.; key (query) — An explicit key or prefix for identifying the cache; sort (query) — The property to sort the results by. `created_at` means when the cache was created. `last_accessed_at` means when the cache was last accessed. `size_in_bytes` is the size of the cache in bytes.; direction (query) — The direction to sort the results by."
+  }
+]

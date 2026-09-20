@@ -1,0 +1,26 @@
+[
+  {
+    "id": "repos%2Fcreate-autolink",
+    "name": "Create an autolink reference for a repository",
+    "description": "Create an autolink reference for a repository Users with admin access to the repository can create an autolink. POST /repos/{owner}/{repo}/autolinks",
+    "context": "POST /repos/{owner}/{repo}/autolinks\nUsers with admin access to the repository can create an autolink.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fdelete-autolink",
+    "name": "Delete an autolink reference from a repository",
+    "description": "Delete an autolink reference from a repository This deletes a single autolink reference by ID that was configured for the given repository. DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "context": "DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}\nThis deletes a single autolink reference by ID that was configured for the given repository. Information about autolinks are only available to repository administrators.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; autolink_id (path) — The unique identifier of the autolink."
+  },
+  {
+    "id": "repos%2Fget-autolink",
+    "name": "Get an autolink reference of a repository",
+    "description": "Get an autolink reference of a repository This returns a single autolink reference by ID that was configured for the given repository. GET /repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "context": "GET /repos/{owner}/{repo}/autolinks/{autolink_id}\nThis returns a single autolink reference by ID that was configured for the given repository. Information about autolinks are only available to repository administrators.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; autolink_id (path) — The unique identifier of the autolink."
+  },
+  {
+    "id": "repos%2Flist-autolinks",
+    "name": "Get all autolinks of a repository",
+    "description": "Get all autolinks of a repository Gets all autolinks that are configured for a repository. GET /repos/{owner}/{repo}/autolinks",
+    "context": "GET /repos/{owner}/{repo}/autolinks\nGets all autolinks that are configured for a repository. Information about autolinks are only available to repository administrators.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  }
+]

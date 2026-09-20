@@ -1,0 +1,74 @@
+[
+  {
+    "id": "metrics_attribute_values_retrieve",
+    "name": "Observed values for one metric attribute key, most frequent first",
+    "description": "Observed values for one metric attribute key, most frequent first Observed values for one metric attribute key, most frequent first. GET /api/projects/{project_id}/metrics/attribute_values/",
+    "context": "GET /api/projects/{project_id}/metrics/attribute_values/\nObserved values for one metric attribute key, most frequent first. Backs the filter bar's value autocomplete.\nRequired: key (query) — Attribute key to list values for (e.g. 'env'). 'service_name'/'service.name' list service names.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: dateFrom (query) — Lower bound (inclusive) of the window values are suggested from. ISO 8601. Defaults to 7 days ago.; dateTo (query) — Upper bound (exclusive) of the window. ISO 8601. Defaults to now.; limit (query) — Max number of values to return. Defaults to 100; maximum 1000.; value (query) — Substring filter (case-insensitive) applied to values. Named 'value' to match the property-values autocomplete convention."
+  },
+  {
+    "id": "metrics_attributes_retrieve",
+    "name": "Attribute keys ordered by distinct series count, from highest to lowest",
+    "description": "Attribute keys ordered by distinct series count, from highest to lowest Attribute keys ordered by distinct series count, from highest to lowest. GET /api/projects/{project_id}/metrics/attributes/",
+    "context": "GET /api/projects/{project_id}/metrics/attributes/\nAttribute keys ordered by distinct series count, from highest to lowest. `metricName` limits choices to one metric.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: dateFrom (query) — Lower bound (inclusive) of the window keys are suggested from. ISO 8601. Defaults to 7 days ago.; dateTo (query) — Upper bound (exclusive) of the window. ISO 8601. Defaults to now.; limit (query) — Max number of keys to return. Defaults to 100; maximum 1000.; metricName (query) — Exact metric name to limit attribute keys to. Omit to list keys across all metrics.; search (query) — Substring filter (case-insensitive) applied to attribute keys."
+  },
+  {
+    "id": "metrics_characterize_create",
+    "name": "Characterize a metric anomaly: compare an anomaly window against a baseline, find the onset, and rank which label values moved.",
+    "description": "Characterize a metric anomaly: compare an anomaly window against a baseline, find the onset, and rank which label values moved. POST /api/projects/{project_id}/metrics/characterize/",
+    "context": "POST /api/projects/{project_id}/metrics/characterize/\nCharacterize a metric anomaly: compare an anomaly window against a baseline, find the onset, and rank which label values moved.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "metrics_error_spikes_retrieve",
+    "name": "Error Tracking issue spikes detected in a time window — backs the metrics chart's error-spike overlay (PoC)",
+    "description": "Error Tracking issue spikes detected in a time window — backs the metrics chart's error-spike overlay (PoC) Error Tracking issue spikes detected in a time window — backs the metrics chart's error-spike overlay (PoC). GET /api/projects/{project_id}/metrics/error_spikes/",
+    "context": "GET /api/projects/{project_id}/metrics/error_spikes/\nError Tracking issue spikes detected in a time window — backs the metrics chart's error-spike overlay (PoC). Team-wide: not yet scoped to the metric's own service.\nRequired: dateFrom (query) — Lower bound (inclusive) for the spike window. ISO 8601.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: dateTo (query) — Upper bound (exclusive) for the spike window. Defaults to now if omitted."
+  },
+  {
+    "id": "metrics_explain_create",
+    "name": "Take one chart point apart into the series and samples behind it, and recompute it independently so the plotted number can be checked rather than trusted.",
+    "description": "Take one chart point apart into the series and samples behind it, and recompute it independently so the plotted number can be checked rather than trusted. POST /api/projects/{project_id}/metrics/explain/",
+    "context": "POST /api/projects/{project_id}/metrics/explain/\nTake one chart point apart into the series and samples behind it, and recompute it independently so the plotted number can be checked rather than trusted.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "metrics_has_metrics_retrieve",
+    "name": "metrics_has_metrics_retrieve",
+    "description": "metrics_has_metrics_retrieve GET /api/projects/{project_id}/metrics/has_metrics/",
+    "context": "GET /api/projects/{project_id}/metrics/has_metrics/\nmetrics_has_metrics_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "metrics_names_retrieve",
+    "name": "Distinct metric names for the viewer picker, without sparklines or caching.",
+    "description": "Distinct metric names for the viewer picker, without sparklines or caching. GET /api/projects/{project_id}/metrics/names/",
+    "context": "GET /api/projects/{project_id}/metrics/names/\nDistinct metric names for the viewer picker, without sparklines or caching.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Max number of names to return. Defaults to 100; maximum 1000.; service (query) — Comma-separated services to narrow the list to, e.g. `service=web,worker`. Omit for every service. Send it empty to select only series whose sender did not set `service.name`. A service name containing a comma cannot be selected.; value (query) — Substring filter (case-insensitive) applied to metric names."
+  },
+  {
+    "id": "metrics_overview_retrieve",
+    "name": "Ingestion rollup for the overview page: freshness of the newest datapoint plus per-service metric/series counts over the last day.",
+    "description": "Ingestion rollup for the overview page: freshness of the newest datapoint plus per-service metric/series counts over the last day. GET /api/projects/{project_id}/metrics/overview/",
+    "context": "GET /api/projects/{project_id}/metrics/overview/\nIngestion rollup for the overview page: freshness of the newest datapoint plus per-service metric/series counts over the last day.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "metrics_query_create",
+    "name": "metrics_query_create",
+    "description": "metrics_query_create POST /api/projects/{project_id}/metrics/query/",
+    "context": "POST /api/projects/{project_id}/metrics/query/\nmetrics_query_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "metrics_samples_create",
+    "name": "Raw individual emissions for a metric (the events model), newest first — backs the Samples view and the metric->trace pivot.",
+    "description": "Raw individual emissions for a metric (the events model), newest first — backs the Samples view and the metric->trace pivot. POST /api/projects/{project_id}/metrics/samples/",
+    "context": "POST /api/projects/{project_id}/metrics/samples/\nRaw individual emissions for a metric (the events model), newest first — backs the Samples view and the metric->trace pivot.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "metrics_values_create",
+    "name": "Distinct metric names for the team",
+    "description": "Distinct metric names for the team Distinct metric names for the team. POST /api/projects/{project_id}/metrics/values/",
+    "context": "POST /api/projects/{project_id}/metrics/values/\nDistinct metric names for the team. Backs the catalog UI.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "metrics_values_retrieve",
+    "name": "Distinct metric names for the team",
+    "description": "Distinct metric names for the team Distinct metric names for the team. GET /api/projects/{project_id}/metrics/values/",
+    "context": "GET /api/projects/{project_id}/metrics/values/\nDistinct metric names for the team. Backs the catalog UI.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Max number of names to return. Defaults to 100; maximum 1000.; service (query) — Comma-separated services to narrow the list to, e.g. `service=web,worker`. Omit for every service. Send it empty to select only series whose sender did not set `service.name`. A service name containing a comma cannot be selected.; value (query) — Substring filter (case-insensitive) applied to metric names."
+  }
+]

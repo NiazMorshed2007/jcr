@@ -1,0 +1,98 @@
+[
+  {
+    "id": "accounts-logs-explorer-datasets-available-list",
+    "name": "List available account datasets",
+    "description": "List available account datasets Returns all dataset types that this account can create. GET /client/v4/accounts/{account_id}/logs/explorer/datasets/available",
+    "context": "GET /client/v4/accounts/{account_id}/logs/explorer/datasets/available\nReturns all dataset types that this account can create. Each entry includes the dataset schema and timestamp field. The schema shows all possible fields for a dataset. However, not all fields may be available for your account. When creating or updating a dataset, only fields available to your account can be enabled. If you request a field that is not available, you will receive an error.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "accounts-logs-explorer-datasets-create",
+    "name": "Create an account dataset",
+    "description": "Create an account dataset Create a new Log Explorer dataset for the account. POST /client/v4/accounts/{account_id}/logs/explorer/datasets",
+    "context": "POST /client/v4/accounts/{account_id}/logs/explorer/datasets\nCreate a new Log Explorer dataset for the account. List available account datasets to see the dataset types and fields you can use. The `fields` property is optional. If not specified, all available fields will be enabled. For dataset field definitions, see: https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "accounts-logs-explorer-datasets-delete",
+    "name": "Delete an account dataset",
+    "description": "Delete an account dataset Deletes a Log Explorer dataset for the account. DELETE /client/v4/accounts/{account_id}/logs/explorer/datasets/{dataset_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/logs/explorer/datasets/{dataset_id}\nDeletes a Log Explorer dataset for the account. Dataset deletion must not be protected.\nRequired: account_id (path) — Cloudflare account ID.; dataset_id (path) — Log Explorer dataset ID."
+  },
+  {
+    "id": "accounts-logs-explorer-datasets-get",
+    "name": "Get an account dataset",
+    "description": "Get an account dataset Retrieve a single Log Explorer dataset by ID for the account. GET /client/v4/accounts/{account_id}/logs/explorer/datasets/{dataset_id}",
+    "context": "GET /client/v4/accounts/{account_id}/logs/explorer/datasets/{dataset_id}\nRetrieve a single Log Explorer dataset by ID for the account.\nRequired: account_id (path) — Cloudflare account ID.; dataset_id (path) — Log Explorer dataset ID."
+  },
+  {
+    "id": "accounts-logs-explorer-datasets-list",
+    "name": "List account datasets",
+    "description": "List account datasets Returns all Log Explorer datasets configured for the account. GET /client/v4/accounts/{account_id}/logs/explorer/datasets",
+    "context": "GET /client/v4/accounts/{account_id}/logs/explorer/datasets\nReturns all Log Explorer datasets configured for the account. Pass `include_zones=true` to also include zone-level datasets that belong to this account. List responses omit the `fields` property; use the single-dataset endpoint to retrieve field configuration.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: include_zones (query) — Set to true to include zone-scoped datasets belonging to this account."
+  },
+  {
+    "id": "accounts-logs-explorer-datasets-update",
+    "name": "Update an account dataset",
+    "description": "Update an account dataset Updates the enabled state and/or field configuration of an account dataset. PUT /client/v4/accounts/{account_id}/logs/explorer/datasets/{dataset_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/logs/explorer/datasets/{dataset_id}\nUpdates the enabled state and/or field configuration of an account dataset.\nRequired: account_id (path) — Cloudflare account ID.; dataset_id (path) — Log Explorer dataset ID.; body (body)"
+  },
+  {
+    "id": "accounts-logs-explorer-query-get",
+    "name": "Run a log query",
+    "description": "Run a log query Run a SQL query against account-level datasets. GET /client/v4/accounts/{account_id}/logs/explorer/query/sql",
+    "context": "GET /client/v4/accounts/{account_id}/logs/explorer/query/sql\nRun a SQL query against account-level datasets. The SQL query is passed as the `query` query parameter. Because the query appears in the URL, it is subject to gateway and proxy URL-length limits and may be recorded in access logs. This endpoint is deprecated in favour of the POST variant which sends the query in the request body.\nRequired: account_id (path) — Cloudflare account ID.; query (query) — SQL query to execute."
+  },
+  {
+    "id": "accounts-logs-explorer-query-post",
+    "name": "Run a log query",
+    "description": "Run a log query Run a SQL query against account-level datasets. POST /client/v4/accounts/{account_id}/logs/explorer/query/sql",
+    "context": "POST /client/v4/accounts/{account_id}/logs/explorer/query/sql\nRun a SQL query against account-level datasets. Timestamp fields are RFC3339 strings. Filter with: WHERE {timestamp_field} >= now() - INTERVAL '30' DAY WHERE {timestamp_field} >= '2026-04-01T00:00:00Z' WHERE {timestamp_field} BETWEEN '2026-04-01T00:00:00Z' AND '2026-04-30T23:59:59Z' List configured account datasets to see enabled account-level datasets. Zone-level datasets will not appear here. List available account datasets to inspect their schemas and timestamp fields. For more information about the datasets, and the meaning of each field, check out https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "audit-logs-v2-get-account-audit-log-history",
+    "name": "Get resource change history from an account audit log entry (Version 2)",
+    "description": "Get resource change history from an account audit log entry (Version 2) Returns the chronological change history for the resource identified by the given audit log entry. GET /client/v4/accounts/{account_id}/logs/audit/{id}/history",
+    "context": "GET /client/v4/accounts/{account_id}/logs/audit/{id}/history\nReturns the chronological change history for the resource identified by the given audit log entry. The endpoint first locates the source audit log entry by `id` (using `action_time` to narrow the lookup window), derives identifying filters from that entry, and then returns matching audit logs within the `since`/`before` window. The `result_info.history_status` field indicates the quality of the resource identification used: - `exact`: Resource was identified by the resource URI. - `approximate`: Resource was identified without the resource URI. - `unavailable`: The source audit log entry did not contain enough information to identify the resource; an empty result is returned.\nRequired: account_id (path); id (path); action_time (query) — RFC3339 timestamp of the source audit log entry's action time. Used to narrow the source-entry lookup window. Provide the `action.time` value from the audit log identified by `id`.; since (query) — Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.; before (query) — Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.\nOptional: direction (query); limit (query); cursor (query)"
+  },
+  {
+    "id": "audit-logs-v2-get-account-audit-logs",
+    "name": "Get account audit logs (Version 2)",
+    "description": "Get account audit logs (Version 2) Gets a list of audit logs for an account. GET /client/v4/accounts/{account_id}/logs/audit",
+    "context": "GET /client/v4/accounts/{account_id}/logs/audit\nGets a list of audit logs for an account.\nRequired: account_id (path); since (query) — Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.; before (query) — Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.\nOptional: account_name (query); action_result (query); action_type (query); actor_context (query); actor_email (query); actor_id (query); actor_ip_address (query); actor_token_id (query); actor_token_name (query); actor_type (query); audit_log_id (query); id (query); raw_cf_ray_id (query); raw_method (query); raw_status_code (query); raw_uri (query); resource_id (query); resource_product (query); resource_type (query); resource_scope (query); product_category (query); zone_id (query); zone_name (query); account_name.not (query); action_result.not (query); action_type.not (query); actor_context.not (query); actor_email.not (query); actor_id.not (query); actor_ip_address.not (query); actor_token_id.not (query); actor_token_name.not (query); actor_type.not (query); audit_log_id.not (query); id.not (query); raw_cf_ray_id.not (query); raw_method.not (query); raw_status_code.not (query); raw_uri.not (query); resource_id.not (query); resource_product.not (query); resource_type.not (query); resource_scope.not (query); zone_id.not (query); zone_name.not (query); direction (query); limit (query); cursor (query)"
+  },
+  {
+    "id": "audit-logs-v2-list-account-product-categories",
+    "name": "List account audit log product categories (Version 2)",
+    "description": "List account audit log product categories (Version 2) Lists the available audit log product categories and the resource products each one expands to. GET /client/v4/accounts/{account_id}/logs/audit/product_categories",
+    "context": "GET /client/v4/accounts/{account_id}/logs/audit/product_categories\nLists the available audit log product categories and the resource products each one expands to. Use these values with the product_category filter on the account audit logs endpoint.\nRequired: account_id (path)"
+  },
+  {
+    "id": "delete-accounts-account_id-logs-control-cmb-config",
+    "name": "Delete CMB config",
+    "description": "Delete CMB config Deletes CMB config. DELETE /client/v4/accounts/{account_id}/logs/control/cmb/config",
+    "context": "DELETE /client/v4/accounts/{account_id}/logs/control/cmb/config\nDeletes CMB config.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get-accounts-account_id-logs-control-cmb-config",
+    "name": "Get CMB config",
+    "description": "Get CMB config Gets CMB config. GET /client/v4/accounts/{account_id}/logs/control/cmb/config",
+    "context": "GET /client/v4/accounts/{account_id}/logs/control/cmb/config\nGets CMB config.\nRequired: account_id (path)"
+  },
+  {
+    "id": "logpull-list-log-files",
+    "name": "List log files",
+    "description": "List log files Lists R2 objects containing logs matching the provided query parameters. GET /client/v4/accounts/{account_id}/logs/list",
+    "context": "GET /client/v4/accounts/{account_id}/logs/list\nLists R2 objects containing logs matching the provided query parameters.\nRequired: account_id (path) — Cloudflare account ID (32-character hex string).; R2-Access-Key-Id (header); R2-Secret-Access-Key (header); start (query) — Start time in RFC3339 format.; end (query) — End time in RFC3339 format.; bucket (query) — R2 bucket name.\nOptional: prefix (query) — R2 bucket prefix logs are stored under.; limit (query) — Maximum number of results to return."
+  },
+  {
+    "id": "logpull-retrieve-logs",
+    "name": "Retrieve logs",
+    "description": "Retrieve logs Returns logs stored in R2 that match the provided query parameters. GET /client/v4/accounts/{account_id}/logs/retrieve",
+    "context": "GET /client/v4/accounts/{account_id}/logs/retrieve\nReturns logs stored in R2 that match the provided query parameters.\nRequired: account_id (path) — Cloudflare account ID (32-character hex string).; R2-Access-Key-Id (header); R2-Secret-Access-Key (header); start (query) — Start time in RFC3339 format.; end (query) — End time in RFC3339 format.; bucket (query) — R2 bucket name.\nOptional: prefix (query) — R2 bucket prefix logs are stored under."
+  },
+  {
+    "id": "post-accounts-account_id-logs-control-cmb-config",
+    "name": "Update CMB config",
+    "description": "Update CMB config Updates CMB config. POST /client/v4/accounts/{account_id}/logs/control/cmb/config",
+    "context": "POST /client/v4/accounts/{account_id}/logs/control/cmb/config\nUpdates CMB config.\nRequired: account_id (path); body (body)"
+  }
+]

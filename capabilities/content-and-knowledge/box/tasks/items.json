@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_tasks_id",
+    "name": "Remove task",
+    "description": "Remove task Removes a task from a file. DELETE /2.0/tasks/{task_id}",
+    "context": "DELETE /2.0/tasks/{task_id}\nRemoves a task from a file.\nRequired: task_id (path) — The ID of the task."
+  },
+  {
+    "id": "get_tasks_id",
+    "name": "Get task",
+    "description": "Get task Retrieves information about a specific task. GET /2.0/tasks/{task_id}",
+    "context": "GET /2.0/tasks/{task_id}\nRetrieves information about a specific task.\nRequired: task_id (path) — The ID of the task."
+  },
+  {
+    "id": "get_tasks_id_assignments",
+    "name": "List task assignments",
+    "description": "List task assignments Lists all of the assignments for a given task. GET /2.0/tasks/{task_id}/assignments",
+    "context": "GET /2.0/tasks/{task_id}/assignments\nLists all of the assignments for a given task.\nRequired: task_id (path) — The ID of the task."
+  },
+  {
+    "id": "post_tasks",
+    "name": "Create task",
+    "description": "Create task Creates a single task on a file. POST /2.0/tasks",
+    "context": "POST /2.0/tasks\nCreates a single task on a file. This task is not assigned to any user and will need to be assigned separately.\nOptional: body (body)"
+  },
+  {
+    "id": "put_tasks_id",
+    "name": "Update task",
+    "description": "Update task Updates a task. PUT /2.0/tasks/{task_id}",
+    "context": "PUT /2.0/tasks/{task_id}\nUpdates a task. This can be used to update a task's configuration, or to update its completion state.\nRequired: task_id (path) — The ID of the task.\nOptional: body (body)"
+  }
+]

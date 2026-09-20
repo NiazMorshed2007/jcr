@@ -1,0 +1,26 @@
+[
+  {
+    "id": "deleteAllConnections",
+    "name": "Terminate all connections",
+    "description": "Terminate all connections Terminates all active streaming connections for the authenticated application. DELETE /2/connections/all",
+    "context": "DELETE /2/connections/all\nTerminates all active streaming connections for the authenticated application."
+  },
+  {
+    "id": "deleteConnectionsByEndpoint",
+    "name": "Terminate connections by endpoint",
+    "description": "Terminate connections by endpoint Terminates all streaming connections for a specific endpoint ID for the authenticated application. DELETE /2/connections/{endpoint_id}",
+    "context": "DELETE /2/connections/{endpoint_id}\nTerminates all streaming connections for a specific endpoint ID for the authenticated application.\nRequired: endpoint_id (path)"
+  },
+  {
+    "id": "deleteConnectionsByUuids",
+    "name": "Terminate multiple connections",
+    "description": "Terminate multiple connections Terminates multiple streaming connections by their UUIDs for the authenticated application. DELETE /2/connections",
+    "context": "DELETE /2/connections\nTerminates multiple streaming connections by their UUIDs for the authenticated application.\nRequired: body (body)"
+  },
+  {
+    "id": "getConnectionHistory",
+    "name": "Get Connection History",
+    "description": "Get Connection History Returns active and historical streaming connections with disconnect reasons for the authenticated application. GET /2/connections",
+    "context": "GET /2/connections\nReturns active and historical streaming connections with disconnect reasons for the authenticated application.\nOptional: status (query); endpoints (query); max_results (query); pagination_token (query); connection.fields (query) — A comma separated list of Connection fields to display."
+  }
+]

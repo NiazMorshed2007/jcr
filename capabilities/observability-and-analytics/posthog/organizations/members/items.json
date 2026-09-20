@@ -1,0 +1,38 @@
+[
+  {
+    "id": "members_destroy",
+    "name": "members_destroy",
+    "description": "members_destroy DELETE /api/organizations/{organization_id}/members/{user__uuid}/",
+    "context": "DELETE /api/organizations/{organization_id}/members/{user__uuid}/\nmembers_destroy\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; user__uuid (path)"
+  },
+  {
+    "id": "members_github_login_retrieve",
+    "name": "members_github_login_retrieve",
+    "description": "members_github_login_retrieve GET /api/organizations/{organization_id}/members/{user__uuid}/github_login/",
+    "context": "GET /api/organizations/{organization_id}/members/{user__uuid}/github_login/\nmembers_github_login_retrieve\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; user__uuid (path)"
+  },
+  {
+    "id": "members_list",
+    "name": "members_list",
+    "description": "members_list GET /api/organizations/{organization_id}/members/",
+    "context": "GET /api/organizations/{organization_id}/members/\nmembers_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: email_domain (query) — Only return members whose email address is on this domain (case-insensitive).; levels (query) — Comma-separated membership levels to return, e.g. `1,8`. Levels are 1 member, 8 admin, 15 owner.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order (query) — Sort order. Defaults to `-joined_at`.; outside_verified_domains (query) — When `true`, only return members whose email domain is not one of the organization's verified domains — the members who would lose access under verified-domain enforcement.; search (query) — Match against member `first_name`, `last_name`, and `email`. Returns exact (case-insensitive substring) matches only; if no exact match exists, returns similar (fuzzy trigram — typos, prefix-as-you-type) matches instead. Each result's `search_match_type` is `exact` or `similar`. Capped at 200 characters."
+  },
+  {
+    "id": "members_partial_update",
+    "name": "members_partial_update",
+    "description": "members_partial_update PATCH /api/organizations/{organization_id}/members/{user__uuid}/",
+    "context": "PATCH /api/organizations/{organization_id}/members/{user__uuid}/\nmembers_partial_update\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; user__uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "members_scoped_api_keys_retrieve",
+    "name": "members_scoped_api_keys_retrieve",
+    "description": "members_scoped_api_keys_retrieve GET /api/organizations/{organization_id}/members/{user__uuid}/scoped_api_keys/",
+    "context": "GET /api/organizations/{organization_id}/members/{user__uuid}/scoped_api_keys/\nmembers_scoped_api_keys_retrieve\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; user__uuid (path)"
+  },
+  {
+    "id": "members_update",
+    "name": "members_update",
+    "description": "members_update PUT /api/organizations/{organization_id}/members/{user__uuid}/",
+    "context": "PUT /api/organizations/{organization_id}/members/{user__uuid}/\nmembers_update\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; user__uuid (path)\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v1-create-a-branch",
+    "name": "Create a database branch",
+    "description": "Create a database branch Creates a database branch from the specified project. POST /v1/projects/{ref}/branches",
+    "context": "POST /v1/projects/{ref}/branches\nCreates a database branch from the specified project.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-disable-preview-branching",
+    "name": "Disables preview branching",
+    "description": "Disables preview branching Disables preview branching for the specified project DELETE /v1/projects/{ref}/branches",
+    "context": "DELETE /v1/projects/{ref}/branches\nDisables preview branching for the specified project\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-a-branch",
+    "name": "Get a database branch",
+    "description": "Get a database branch Fetches the specified database branch by its name. GET /v1/projects/{ref}/branches/{name}",
+    "context": "GET /v1/projects/{ref}/branches/{name}\nFetches the specified database branch by its name.\nRequired: ref (path) — Project ref; name (path)"
+  },
+  {
+    "id": "v1-list-all-branches",
+    "name": "List all database branches",
+    "description": "List all database branches Returns all database branches of the specified project. GET /v1/projects/{ref}/branches",
+    "context": "GET /v1/projects/{ref}/branches\nReturns all database branches of the specified project.\nRequired: ref (path) — Project ref"
+  }
+]

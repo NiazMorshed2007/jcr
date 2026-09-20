@@ -1,0 +1,176 @@
+[
+  {
+    "id": "createSite",
+    "name": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint",
+    "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint **Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. POST /api/v1/sites",
+    "context": "POST /api/v1/sites\n**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.\nRequired: body (body)\nOptional: configure_dns (query)"
+  },
+  {
+    "id": "createSiteInTeam",
+    "name": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint",
+    "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint **Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. POST /api/v1/{account_slug}/sites",
+    "context": "POST /api/v1/{account_slug}/sites\n**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.\nRequired: account_slug (path)\nOptional: configure_dns (query); body (body)"
+  },
+  {
+    "id": "deleteSite",
+    "name": "deleteSite",
+    "description": "deleteSite DELETE /api/v1/sites/{site_id}",
+    "context": "DELETE /api/v1/sites/{site_id}\ndeleteSite"
+  },
+  {
+    "id": "getSite",
+    "name": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint",
+    "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint **Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. GET /api/v1/sites/{site_id}",
+    "context": "GET /api/v1/sites/{site_id}\n**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.\nOptional: feature_flags (query)"
+  },
+  {
+    "id": "listSites",
+    "name": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint",
+    "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint **Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. GET /api/v1/sites",
+    "context": "GET /api/v1/sites\n**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.\nOptional: name (query); filter (query); page (query); per_page (query)"
+  },
+  {
+    "id": "listSitesForAccount",
+    "name": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint",
+    "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint **Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. GET /api/v1/{account_slug}/sites",
+    "context": "GET /api/v1/{account_slug}/sites\n**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.\nRequired: account_slug (path)\nOptional: name (query); page (query); per_page (query)"
+  },
+  {
+    "id": "updateSite",
+    "name": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint",
+    "description": "**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint **Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. PATCH /api/v1/sites/{site_id}",
+    "context": "PATCH /api/v1/sites/{site_id}\n**Note:** Environment variable keys and values have moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [updateEnvVar](#tag/environmentVariables/operation/updateEnvVar) to update a site's environment variables.\nRequired: body (body)"
+  },
+  {
+    "id": "configureDNSForSite",
+    "name": "configureDNSForSite",
+    "description": "configureDNSForSite PUT /api/v1/sites/{site_id}/dns",
+    "context": "PUT /api/v1/sites/{site_id}/dns\nconfigureDNSForSite"
+  },
+  {
+    "id": "getDNSForSite",
+    "name": "getDNSForSite",
+    "description": "getDNSForSite GET /api/v1/sites/{site_id}/dns",
+    "context": "GET /api/v1/sites/{site_id}/dns\ngetDNSForSite"
+  },
+  {
+    "id": "createSiteBuild",
+    "name": "Runs a build for a site",
+    "description": "Runs a build for a site Runs a build for a site. POST /api/v1/sites/{site_id}/builds",
+    "context": "POST /api/v1/sites/{site_id}/builds\nRuns a build for a site. The build will be scheduled to run at the first opportunity, but it might not start immediately if insufficient account build capacity is available. Files for build can be uploaded as a zipped site using one of these methods: 1. Set Content-Type to 'application/zip' and send the zip file as the raw request body 2. Set Content-Type to 'multipart/form-data' and include the zip file in the 'zip' field\nOptional: branch (query) — If no branch is specified, it is treated as a production deploy If a branch IS specified and matches the main branch, it is also production If a branch is specified and doesn't match the main branch, it is a branch deploy; clear_cache (query) — Whether to clear the build cache before building; image (query) — The build image tag to use for the build; template_id (query) — The build template to use for the build; title (query) — The title of the build; body (body)"
+  },
+  {
+    "id": "listSiteBuilds",
+    "name": "listSiteBuilds",
+    "description": "listSiteBuilds GET /api/v1/sites/{site_id}/builds",
+    "context": "GET /api/v1/sites/{site_id}/builds\nlistSiteBuilds\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "deleteSiteForm",
+    "name": "deleteSiteForm",
+    "description": "deleteSiteForm DELETE /api/v1/sites/{site_id}/forms/{form_id}",
+    "context": "DELETE /api/v1/sites/{site_id}/forms/{form_id}\ndeleteSiteForm\nRequired: site_id (path); form_id (path)"
+  },
+  {
+    "id": "listSiteForms",
+    "name": "listSiteForms",
+    "description": "listSiteForms GET /api/v1/sites/{site_id}/forms",
+    "context": "GET /api/v1/sites/{site_id}/forms\nlistSiteForms\nRequired: site_id (path)"
+  },
+  {
+    "id": "disableSite",
+    "name": "Disables a site, preventing it from serving content",
+    "description": "Disables a site, preventing it from serving content Disables a site, preventing it from serving content. PUT /api/v1/sites/{site_id}/disable",
+    "context": "PUT /api/v1/sites/{site_id}/disable\nDisables a site, preventing it from serving content. The site can be re-enabled later using the enable endpoint.\nRequired: reason (query) — Reason for disabling the site"
+  },
+  {
+    "id": "enableSite",
+    "name": "Re-enables a site that was previously disabled by the user",
+    "description": "Re-enables a site that was previously disabled by the user Re-enables a site that was previously disabled by the user. PUT /api/v1/sites/{site_id}/enable",
+    "context": "PUT /api/v1/sites/{site_id}/enable\nRe-enables a site that was previously disabled by the user. Sites that were disabled for usage exceeded or marked as spam cannot be re-enabled via this endpoint."
+  },
+  {
+    "id": "getAIGatewayToken",
+    "name": "Returns an AI Gateway token for a specific site",
+    "description": "Returns an AI Gateway token for a specific site GET /api/v1/sites/{site_id}/ai-gateway/token",
+    "context": "GET /api/v1/sites/{site_id}/ai-gateway/token\nReturns an AI Gateway token for a specific site"
+  },
+  {
+    "id": "getLatestPluginRuns",
+    "name": "This is an internal-only endpoint.",
+    "description": "This is an internal-only endpoint. GET /api/v1/sites/{site_id}/plugin_runs/latest",
+    "context": "GET /api/v1/sites/{site_id}/plugin_runs/latest\nThis is an internal-only endpoint.\nRequired: site_id (path); packages (query)\nOptional: state (query)"
+  },
+  {
+    "id": "getSiteEnvVars",
+    "name": "Returns all environment variables for a site",
+    "description": "Returns all environment variables for a site Returns all environment variables for a site. GET /api/v1/sites/{site_id}/env",
+    "context": "GET /api/v1/sites/{site_id}/env\nReturns all environment variables for a site. This convenience method behaves the same as `getEnvVars` but doesn't require an `account_id` as input.\nRequired: site_id (path) — Scope response to site_id\nOptional: context_name (query) — Filter by deploy context; scope (query) — Filter by scope"
+  },
+  {
+    "id": "getSiteFileByPathName",
+    "name": "getSiteFileByPathName",
+    "description": "getSiteFileByPathName GET /api/v1/sites/{site_id}/files/{file_path}",
+    "context": "GET /api/v1/sites/{site_id}/files/{file_path}\ngetSiteFileByPathName\nRequired: site_id (path); file_path (path)"
+  },
+  {
+    "id": "listSiteFiles",
+    "name": "listSiteFiles",
+    "description": "listSiteFiles GET /api/v1/sites/{site_id}/files",
+    "context": "GET /api/v1/sites/{site_id}/files\nlistSiteFiles\nRequired: site_id (path)"
+  },
+  {
+    "id": "getSiteMetadata",
+    "name": "getSiteMetadata",
+    "description": "getSiteMetadata GET /api/v1/sites/{site_id}/metadata",
+    "context": "GET /api/v1/sites/{site_id}/metadata\ngetSiteMetadata"
+  },
+  {
+    "id": "updateSiteMetadata",
+    "name": "updateSiteMetadata",
+    "description": "updateSiteMetadata PUT /api/v1/sites/{site_id}/metadata",
+    "context": "PUT /api/v1/sites/{site_id}/metadata\nupdateSiteMetadata\nRequired: body (body)"
+  },
+  {
+    "id": "listServiceInstancesForSite",
+    "name": "listServiceInstancesForSite",
+    "description": "listServiceInstancesForSite GET /api/v1/sites/{site_id}/service-instances",
+    "context": "GET /api/v1/sites/{site_id}/service-instances\nlistServiceInstancesForSite"
+  },
+  {
+    "id": "listSiteDeployedBranches",
+    "name": "listSiteDeployedBranches",
+    "description": "listSiteDeployedBranches GET /api/v1/sites/{site_id}/deployed-branches",
+    "context": "GET /api/v1/sites/{site_id}/deployed-branches\nlistSiteDeployedBranches"
+  },
+  {
+    "id": "listSiteSubmissions",
+    "name": "listSiteSubmissions",
+    "description": "listSiteSubmissions GET /api/v1/sites/{site_id}/submissions",
+    "context": "GET /api/v1/sites/{site_id}/submissions\nlistSiteSubmissions\nRequired: site_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "rollbackSiteDeploy",
+    "name": "rollbackSiteDeploy",
+    "description": "rollbackSiteDeploy PUT /api/v1/sites/{site_id}/rollback",
+    "context": "PUT /api/v1/sites/{site_id}/rollback\nrollbackSiteDeploy"
+  },
+  {
+    "id": "searchSiteFunctions",
+    "name": "searchSiteFunctions",
+    "description": "searchSiteFunctions GET /api/v1/sites/{site_id}/functions",
+    "context": "GET /api/v1/sites/{site_id}/functions\nsearchSiteFunctions\nRequired: site_id (path)\nOptional: filter (query)"
+  },
+  {
+    "id": "unlinkSiteRepo",
+    "name": "[Beta] Unlinks the repo from the site",
+    "description": "[Beta] Unlinks the repo from the site [Beta] Unlinks the repo from the site. PUT /api/v1/sites/{site_id}/unlink_repo",
+    "context": "PUT /api/v1/sites/{site_id}/unlink_repo\n[Beta] Unlinks the repo from the site. This action will also: - Delete associated deploy keys - Delete outgoing webhooks for the repo - Delete the site's build hooks"
+  },
+  {
+    "id": "updatePlugin",
+    "name": "This is an internal-only endpoint.",
+    "description": "This is an internal-only endpoint. PUT /api/v1/sites/{site_id}/plugins/{package}",
+    "context": "PUT /api/v1/sites/{site_id}/plugins/{package}\nThis is an internal-only endpoint.\nRequired: site_id (path); package (path)\nOptional: body (body)"
+  }
+]

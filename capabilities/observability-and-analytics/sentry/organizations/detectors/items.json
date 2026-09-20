@@ -1,0 +1,38 @@
+[
+  {
+    "id": "deleteOrganizationDetector",
+    "name": "Delete a Monitor",
+    "description": "Delete a Monitor Delete a monitor DELETE /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/\nDelete a monitor\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; detector_id (path) — The ID of the monitor you'd like to query."
+  },
+  {
+    "id": "deleteOrganizationDetectors",
+    "name": "Bulk Delete Monitors",
+    "description": "Bulk Delete Monitors Bulk delete Monitors for a given organization DELETE /api/0/organizations/{organization_id_or_slug}/detectors/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/detectors/\nBulk delete Monitors for a given organization\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; query (query) — An optional search query for filtering monitors. Available fields are: - `name` - `type`: e.g. `error`, `metric_issue`, `issue_stream` - `assignee`: email, username, #team, me, none; sortBy (query) — The property to sort results by. If not specified, the results are sorted by id. Available fields are: - `name` - `id` - `type` - `connectedWorkflows` - `latestGroup` - `openIssues` Prefix with `-` to sort in descending order.; id (query) — The ID of the monitor you'd like to query."
+  },
+  {
+    "id": "getOrganizationDetector",
+    "name": "Fetch a Monitor",
+    "description": "Fetch a Monitor Return details on an individual monitor GET /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/\nReturn details on an individual monitor\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; detector_id (path) — The ID of the monitor you'd like to query."
+  },
+  {
+    "id": "listOrganizationDetectors",
+    "name": "Fetch an Organization's Monitors",
+    "description": "Fetch an Organization's Monitors List an Organization's Monitors GET /api/0/organizations/{organization_id_or_slug}/detectors/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/detectors/\nList an Organization's Monitors\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; query (query) — An optional search query for filtering monitors. Available fields are: - `name` - `type`: e.g. `error`, `metric_issue`, `issue_stream` - `assignee`: email, username, #team, me, none; sortBy (query) — The property to sort results by. If not specified, the results are sorted by id. Available fields are: - `name` - `id` - `type` - `connectedWorkflows` - `latestGroup` - `openIssues` Prefix with `-` to sort in descending order.; id (query) — The ID of the monitor you'd like to query.; type (query) — Filter by monitor type(s). Can be specified multiple times.; enabled (query) — Filter by whether monitors are enabled.; per_page (query) — Limit the number of rows to return in the result. Default and maximum allowed is 100.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "updateOrganizationDetector",
+    "name": "Update a Monitor by ID",
+    "description": "Update a Monitor by ID Update an existing monitor PUT /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/detectors/{detector_id}/\nUpdate an existing monitor\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; detector_id (path) — The ID of the monitor you'd like to query.; body (body)"
+  },
+  {
+    "id": "updateOrganizationDetectors",
+    "name": "Mutate an Organization's Monitors",
+    "description": "Mutate an Organization's Monitors Bulk enable or disable an Organization's Monitors PUT /api/0/organizations/{organization_id_or_slug}/detectors/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/detectors/\nBulk enable or disable an Organization's Monitors\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)\nOptional: project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; query (query) — An optional search query for filtering monitors. Available fields are: - `name` - `type`: e.g. `error`, `metric_issue`, `issue_stream` - `assignee`: email, username, #team, me, none; id (query) — The ID of the monitor you'd like to query."
+  }
+]

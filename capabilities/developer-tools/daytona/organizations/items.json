@@ -1,0 +1,224 @@
+[
+  {
+    "id": "acceptOrganizationInvitation",
+    "name": "Accept organization invitation",
+    "description": "Accept organization invitation POST /organizations/invitations/{invitationId}/accept",
+    "context": "POST /organizations/invitations/{invitationId}/accept\nAccept organization invitation\nRequired: invitationId (path) — Invitation ID"
+  },
+  {
+    "id": "cancelOrganizationInvitation",
+    "name": "Cancel organization invitation",
+    "description": "Cancel organization invitation POST /organizations/{organizationId}/invitations/{invitationId}/cancel",
+    "context": "POST /organizations/{organizationId}/invitations/{invitationId}/cancel\nCancel organization invitation\nRequired: organizationId (path) — Organization ID; invitationId (path) — Invitation ID"
+  },
+  {
+    "id": "createOrganization",
+    "name": "Create organization",
+    "description": "Create organization POST /organizations",
+    "context": "POST /organizations\nCreate organization\nRequired: body (body)"
+  },
+  {
+    "id": "createOrganizationIdentityProvider",
+    "name": "Create organization identity provider",
+    "description": "Create organization identity provider POST /organizations/{organizationId}/identity-providers",
+    "context": "POST /organizations/{organizationId}/identity-providers\nCreate organization identity provider\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "createOrganizationInvitation",
+    "name": "Create organization invitation",
+    "description": "Create organization invitation POST /organizations/{organizationId}/invitations",
+    "context": "POST /organizations/{organizationId}/invitations\nCreate organization invitation\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "createOrganizationRole",
+    "name": "Create organization role",
+    "description": "Create organization role POST /organizations/{organizationId}/roles",
+    "context": "POST /organizations/{organizationId}/roles\nCreate organization role\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "declineOrganizationInvitation",
+    "name": "Decline organization invitation",
+    "description": "Decline organization invitation POST /organizations/invitations/{invitationId}/decline",
+    "context": "POST /organizations/invitations/{invitationId}/decline\nDecline organization invitation\nRequired: invitationId (path) — Invitation ID"
+  },
+  {
+    "id": "deleteOrganization",
+    "name": "Delete organization",
+    "description": "Delete organization DELETE /organizations/{organizationId}",
+    "context": "DELETE /organizations/{organizationId}\nDelete organization\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "deleteOrganizationIdentityProvider",
+    "name": "Delete organization identity provider",
+    "description": "Delete organization identity provider DELETE /organizations/{organizationId}/identity-providers/{id}",
+    "context": "DELETE /organizations/{organizationId}/identity-providers/{id}\nDelete organization identity provider\nRequired: organizationId (path) — Organization ID; id (path) — Identity provider ID"
+  },
+  {
+    "id": "deleteOrganizationMember",
+    "name": "Delete organization member",
+    "description": "Delete organization member DELETE /organizations/{organizationId}/users/{userId}",
+    "context": "DELETE /organizations/{organizationId}/users/{userId}\nDelete organization member\nRequired: organizationId (path) — Organization ID; userId (path) — User ID"
+  },
+  {
+    "id": "deleteOrganizationOtelConfig",
+    "name": "Delete organization OpenTelemetry configuration",
+    "description": "Delete organization OpenTelemetry configuration DELETE /organizations/{organizationId}/otel-config",
+    "context": "DELETE /organizations/{organizationId}/otel-config\nDelete organization OpenTelemetry configuration\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "deleteOrganizationRole",
+    "name": "Delete organization role",
+    "description": "Delete organization role DELETE /organizations/{organizationId}/roles/{roleId}",
+    "context": "DELETE /organizations/{organizationId}/roles/{roleId}\nDelete organization role\nRequired: organizationId (path) — Organization ID; roleId (path) — Role ID"
+  },
+  {
+    "id": "generateWorkosAdminPortalLink",
+    "name": "Generate a WorkOS Admin Portal link for configuring SSO or SCIM directory sync",
+    "description": "Generate a WorkOS Admin Portal link for configuring SSO or SCIM directory sync POST /organizations/{organizationId}/identity-providers/workos-admin-portal-link",
+    "context": "POST /organizations/{organizationId}/identity-providers/workos-admin-portal-link\nGenerate a WorkOS Admin Portal link for configuring SSO or SCIM directory sync\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "getGpuCapacity",
+    "name": "Get shared GPU capacity",
+    "description": "Get shared GPU capacity Returns a short-lived observation of the shared GPU fleet. GET /organizations/{organizationId}/gpu-capacity",
+    "context": "GET /organizations/{organizationId}/gpu-capacity\nReturns a short-lived observation of the shared GPU fleet. Organization quotas and entitlements are not applied. Capacity can change immediately and sandbox creation remains authoritative.\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "getOrganization",
+    "name": "Get organization by ID",
+    "description": "Get organization by ID GET /organizations/{organizationId}",
+    "context": "GET /organizations/{organizationId}\nGet organization by ID\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "getOrganizationIdentityProvider",
+    "name": "Get organization identity provider",
+    "description": "Get organization identity provider GET /organizations/{organizationId}/identity-providers/{id}",
+    "context": "GET /organizations/{organizationId}/identity-providers/{id}\nGet organization identity provider\nRequired: organizationId (path) — Organization ID; id (path) — Identity provider ID"
+  },
+  {
+    "id": "getOrganizationInvitationsCountForAuthenticatedUser",
+    "name": "Get count of organization invitations for authenticated user",
+    "description": "Get count of organization invitations for authenticated user GET /organizations/invitations/count",
+    "context": "GET /organizations/invitations/count\nGet count of organization invitations for authenticated user"
+  },
+  {
+    "id": "getOrganizationOtelConfig",
+    "name": "Get organization OTEL config by organization ID",
+    "description": "Get organization OTEL config by organization ID GET /organizations/{organizationId}/otel-config",
+    "context": "GET /organizations/{organizationId}/otel-config\nGet organization OTEL config by organization ID\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "getOrganizationOtelConfigBySandboxAuthToken",
+    "name": "Get organization OTEL config by sandbox auth token",
+    "description": "Get organization OTEL config by sandbox auth token GET /organizations/otel-config/by-sandbox-auth-token/{authToken}",
+    "context": "GET /organizations/otel-config/by-sandbox-auth-token/{authToken}\nGet organization OTEL config by sandbox auth token\nRequired: authToken (path) — Sandbox Auth Token"
+  },
+  {
+    "id": "getOrganizationUsageOverview",
+    "name": "Get organization current usage overview",
+    "description": "Get organization current usage overview GET /organizations/{organizationId}/usage",
+    "context": "GET /organizations/{organizationId}/usage\nGet organization current usage overview\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "getSandboxIdentityBySandboxAuthToken",
+    "name": "Get sandbox identity by sandbox auth token",
+    "description": "Get sandbox identity by sandbox auth token GET /organizations/sandbox-identity/by-sandbox-auth-token/{authToken}",
+    "context": "GET /organizations/sandbox-identity/by-sandbox-auth-token/{authToken}\nGet sandbox identity by sandbox auth token\nRequired: authToken (path) — Sandbox Auth Token"
+  },
+  {
+    "id": "leaveOrganization",
+    "name": "Leave organization",
+    "description": "Leave organization POST /organizations/{organizationId}/leave",
+    "context": "POST /organizations/{organizationId}/leave\nLeave organization\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "listAvailableSandboxClasses",
+    "name": "List available sandbox classes for organization",
+    "description": "List available sandbox classes for organization GET /organizations/{organizationId}/available-sandbox-classes",
+    "context": "GET /organizations/{organizationId}/available-sandbox-classes\nList available sandbox classes for organization\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "listOrganizationIdentityProviders",
+    "name": "List organization identity providers",
+    "description": "List organization identity providers GET /organizations/{organizationId}/identity-providers",
+    "context": "GET /organizations/{organizationId}/identity-providers\nList organization identity providers\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "listOrganizationInvitations",
+    "name": "List pending organization invitations",
+    "description": "List pending organization invitations GET /organizations/{organizationId}/invitations",
+    "context": "GET /organizations/{organizationId}/invitations\nList pending organization invitations\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "listOrganizationInvitationsForAuthenticatedUser",
+    "name": "List organization invitations for authenticated user",
+    "description": "List organization invitations for authenticated user GET /organizations/invitations",
+    "context": "GET /organizations/invitations\nList organization invitations for authenticated user"
+  },
+  {
+    "id": "listOrganizationMembers",
+    "name": "List organization members",
+    "description": "List organization members GET /organizations/{organizationId}/users",
+    "context": "GET /organizations/{organizationId}/users\nList organization members\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "listOrganizationRoles",
+    "name": "List organization roles",
+    "description": "List organization roles GET /organizations/{organizationId}/roles",
+    "context": "GET /organizations/{organizationId}/roles\nList organization roles\nRequired: organizationId (path) — Organization ID"
+  },
+  {
+    "id": "listOrganizations",
+    "name": "List organizations",
+    "description": "List organizations GET /organizations",
+    "context": "GET /organizations\nList organizations"
+  },
+  {
+    "id": "setOrganizationDefaultRegion",
+    "name": "Set default region for organization",
+    "description": "Set default region for organization PATCH /organizations/{organizationId}/default-region",
+    "context": "PATCH /organizations/{organizationId}/default-region\nSet default region for organization\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "testOrganizationIdentityProviderConnection",
+    "name": "Test OIDC identity provider connection",
+    "description": "Test OIDC identity provider connection POST /organizations/{organizationId}/identity-providers/test-connection",
+    "context": "POST /organizations/{organizationId}/identity-providers/test-connection\nTest OIDC identity provider connection\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "updateAccessForOrganizationMember",
+    "name": "Update access for organization member",
+    "description": "Update access for organization member POST /organizations/{organizationId}/users/{userId}/access",
+    "context": "POST /organizations/{organizationId}/users/{userId}/access\nUpdate access for organization member\nRequired: organizationId (path) — Organization ID; userId (path) — User ID; body (body)"
+  },
+  {
+    "id": "updateExperimentalConfig",
+    "name": "Update experimental configuration",
+    "description": "Update experimental configuration PUT /organizations/{organizationId}/experimental-config",
+    "context": "PUT /organizations/{organizationId}/experimental-config\nUpdate experimental configuration\nRequired: organizationId (path) — Organization ID\nOptional: body (body) — Experimental configuration as a JSON object. Set to null to clear the configuration."
+  },
+  {
+    "id": "updateOrganizationIdentityProvider",
+    "name": "Update organization identity provider",
+    "description": "Update organization identity provider PATCH /organizations/{organizationId}/identity-providers/{id}",
+    "context": "PATCH /organizations/{organizationId}/identity-providers/{id}\nUpdate organization identity provider\nRequired: organizationId (path) — Organization ID; id (path) — Identity provider ID; body (body)"
+  },
+  {
+    "id": "updateOrganizationInvitation",
+    "name": "Update organization invitation",
+    "description": "Update organization invitation PUT /organizations/{organizationId}/invitations/{invitationId}",
+    "context": "PUT /organizations/{organizationId}/invitations/{invitationId}\nUpdate organization invitation\nRequired: organizationId (path) — Organization ID; invitationId (path) — Invitation ID; body (body)"
+  },
+  {
+    "id": "updateOrganizationOtelConfig",
+    "name": "Update organization OpenTelemetry configuration",
+    "description": "Update organization OpenTelemetry configuration PUT /organizations/{organizationId}/otel-config",
+    "context": "PUT /organizations/{organizationId}/otel-config\nUpdate organization OpenTelemetry configuration\nRequired: organizationId (path) — Organization ID; body (body)"
+  },
+  {
+    "id": "updateOrganizationRole",
+    "name": "Update organization role",
+    "description": "Update organization role PUT /organizations/{organizationId}/roles/{roleId}",
+    "context": "PUT /organizations/{organizationId}/roles/{roleId}\nUpdate organization role\nRequired: organizationId (path) — Organization ID; roleId (path) — Role ID; body (body)"
+  }
+]

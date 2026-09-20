@@ -1,0 +1,116 @@
+[
+  {
+    "id": "clearSiteDatabaseComputeSettings",
+    "name": "Resets project-level compute settings to tier defaults",
+    "description": "Resets project-level compute settings to tier defaults Resets project-level compute settings to tier defaults. DELETE /api/v1/sites/{site_id}/database/compute/settings",
+    "context": "DELETE /api/v1/sites/{site_id}/database/compute/settings\nResets project-level compute settings to tier defaults. Requires a Pro or higher plan."
+  },
+  {
+    "id": "createSiteDatabase",
+    "name": "Creates a new database for the specified site",
+    "description": "Creates a new database for the specified site Creates a new database for the specified site. POST /api/v1/sites/{site_id}/database",
+    "context": "POST /api/v1/sites/{site_id}/database\nCreates a new database for the specified site. If a database already exists, returns the existing connection string. The database region defaults to the site's functions region if not specified.\nOptional: body (body)"
+  },
+  {
+    "id": "createSiteDatabaseBranch",
+    "name": "Creates a new database branch",
+    "description": "Creates a new database branch Creates a new database branch. POST /api/v1/sites/{site_id}/database/branch",
+    "context": "POST /api/v1/sites/{site_id}/database/branch\nCreates a new database branch. If a branch already exists for the specified branch ID, returns the existing connection string.\nRequired: body (body)"
+  },
+  {
+    "id": "createSiteDatabaseSnapshot",
+    "name": "Creates a point-in-time snapshot of a database branch",
+    "description": "Creates a point-in-time snapshot of a database branch Creates a point-in-time snapshot of a database branch. POST /api/v1/sites/{site_id}/database/snapshot",
+    "context": "POST /api/v1/sites/{site_id}/database/snapshot\nCreates a point-in-time snapshot of a database branch. Defaults to the production branch if no branch name is specified.\nOptional: body (body)"
+  },
+  {
+    "id": "deleteSiteDatabase",
+    "name": "Deletes the database and all associated branches and snapshots for the specified site.",
+    "description": "Deletes the database and all associated branches and snapshots for the specified site. DELETE /api/v1/sites/{site_id}/database",
+    "context": "DELETE /api/v1/sites/{site_id}/database\nDeletes the database and all associated branches and snapshots for the specified site."
+  },
+  {
+    "id": "deleteSiteDatabaseBranch",
+    "name": "Deletes a database branch.",
+    "description": "Deletes a database branch. DELETE /api/v1/sites/{site_id}/database/branch/{branch_id}",
+    "context": "DELETE /api/v1/sites/{site_id}/database/branch/{branch_id}\nDeletes a database branch."
+  },
+  {
+    "id": "deleteSiteDatabaseSnapshot",
+    "name": "Deletes a database snapshot.",
+    "description": "Deletes a database snapshot. DELETE /api/v1/sites/{site_id}/database/snapshot/{snapshot_id}",
+    "context": "DELETE /api/v1/sites/{site_id}/database/snapshot/{snapshot_id}\nDeletes a database snapshot."
+  },
+  {
+    "id": "getSiteDatabase",
+    "name": "Returns the database connection string for the specified site.",
+    "description": "Returns the database connection string for the specified site. GET /api/v1/sites/{site_id}/database",
+    "context": "GET /api/v1/sites/{site_id}/database\nReturns the database connection string for the specified site.\nOptional: role (query) — The database role to use for the connection string. Defaults to netlifydb_owner if not specified."
+  },
+  {
+    "id": "getSiteDatabaseBranch",
+    "name": "Returns the database branch connection string for a specific branch.",
+    "description": "Returns the database branch connection string for a specific branch. GET /api/v1/sites/{site_id}/database/branch/{branch_id}",
+    "context": "GET /api/v1/sites/{site_id}/database/branch/{branch_id}\nReturns the database branch connection string for a specific branch.\nOptional: role (query) — The database role to use for the connection string. Defaults to netlifydb_owner if not specified."
+  },
+  {
+    "id": "getSiteDatabaseComputeSettings",
+    "name": "Returns the project-level compute settings for the database",
+    "description": "Returns the project-level compute settings for the database Returns the project-level compute settings for the database. GET /api/v1/sites/{site_id}/database/compute/settings",
+    "context": "GET /api/v1/sites/{site_id}/database/compute/settings\nReturns the project-level compute settings for the database. Returns effective settings (custom or tier defaults). Requires a Pro or higher plan."
+  },
+  {
+    "id": "getSiteDatabaseMigration",
+    "name": "Returns the contents of a named migration for the specified branch.",
+    "description": "Returns the contents of a named migration for the specified branch. GET /api/v1/sites/{site_id}/database/migrations/{name}",
+    "context": "GET /api/v1/sites/{site_id}/database/migrations/{name}\nReturns the contents of a named migration for the specified branch.\nOptional: branch (query) — The branch ID to look up the migration on. Defaults to the currently published deploy's branch."
+  },
+  {
+    "id": "listSiteDatabaseBranches",
+    "name": "Returns all branches for the site's database with compute status and metadata.",
+    "description": "Returns all branches for the site's database with compute status and metadata. GET /api/v1/sites/{site_id}/database/branches",
+    "context": "GET /api/v1/sites/{site_id}/database/branches\nReturns all branches for the site's database with compute status and metadata."
+  },
+  {
+    "id": "listSiteDatabaseMigrations",
+    "name": "Returns the list of migrations available for the specified branch, indicating which ones have been applied to the database.",
+    "description": "Returns the list of migrations available for the specified branch, indicating which ones have been applied to the database. GET /api/v1/sites/{site_id}/database/migrations",
+    "context": "GET /api/v1/sites/{site_id}/database/migrations\nReturns the list of migrations available for the specified branch, indicating which ones have been applied to the database.\nOptional: branch (query) — The branch ID to list migrations for. Defaults to \"production\" if not specified."
+  },
+  {
+    "id": "listSiteDatabaseSnapshots",
+    "name": "Returns all snapshots for the site's database.",
+    "description": "Returns all snapshots for the site's database. GET /api/v1/sites/{site_id}/database/snapshots",
+    "context": "GET /api/v1/sites/{site_id}/database/snapshots\nReturns all snapshots for the site's database."
+  },
+  {
+    "id": "resetSiteDatabaseBranch",
+    "name": "Resets a non-production database branch by re-forking it from a source branch (defaults to the production branch)",
+    "description": "Resets a non-production database branch by re-forking it from a source branch (defaults to the production branch) Resets a non-production database branch by re-forking it from a source branch (defaults to the production branch). POST /api/v1/sites/{site_id}/database/branch/{branch_id}/reset",
+    "context": "POST /api/v1/sites/{site_id}/database/branch/{branch_id}/reset\nResets a non-production database branch by re-forking it from a source branch (defaults to the production branch). If the target branch is already in sync with the source, returns the existing connection string without performing a reset, unless `force=true` is passed. The production branch cannot be reset.\nOptional: force (query) — If true, resets the branch even when it is already in sync with the source.; role (query) — The database role to use for the returned connection string. Defaults to netlifydb_owner if not specified.; body (body)"
+  },
+  {
+    "id": "restoreSiteDatabaseSnapshot",
+    "name": "Restores a snapshot to a database branch",
+    "description": "Restores a snapshot to a database branch Restores a snapshot to a database branch. POST /api/v1/sites/{site_id}/database/snapshot/{snapshot_id}/restore",
+    "context": "POST /api/v1/sites/{site_id}/database/snapshot/{snapshot_id}/restore\nRestores a snapshot to a database branch. Defaults to the production branch if no branch_name is specified.\nOptional: body (body)"
+  },
+  {
+    "id": "runSiteDatabaseMigrations",
+    "name": "Runs database migrations for the specified deploy",
+    "description": "Runs database migrations for the specified deploy Runs database migrations for the specified deploy. POST /api/v1/sites/{site_id}/database/migrations/{deploy_id}",
+    "context": "POST /api/v1/sites/{site_id}/database/migrations/{deploy_id}\nRuns database migrations for the specified deploy. Finds the deploy and determines the appropriate branch.\nOptional: body (body)"
+  },
+  {
+    "id": "setSiteDatabaseBranchComputeSettings",
+    "name": "Sets compute settings for a specific database branch, overriding project-level settings",
+    "description": "Sets compute settings for a specific database branch, overriding project-level settings Sets compute settings for a specific database branch, overriding project-level settings. PUT /api/v1/sites/{site_id}/database/branch/{branch_id}/compute/settings",
+    "context": "PUT /api/v1/sites/{site_id}/database/branch/{branch_id}/compute/settings\nSets compute settings for a specific database branch, overriding project-level settings. Requires a Pro or higher plan.\nRequired: body (body)"
+  },
+  {
+    "id": "setSiteDatabaseComputeSettings",
+    "name": "Sets project-level compute settings for the database",
+    "description": "Sets project-level compute settings for the database Sets project-level compute settings for the database. PUT /api/v1/sites/{site_id}/database/compute/settings",
+    "context": "PUT /api/v1/sites/{site_id}/database/compute/settings\nSets project-level compute settings for the database. Applied to new branches. Can be overridden per-branch. Requires a Pro or higher plan.\nRequired: body (body)"
+  }
+]

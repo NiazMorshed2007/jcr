@@ -1,0 +1,182 @@
+[
+  {
+    "id": "dashboards_bulk_update_tags_create",
+    "name": "Bulk update tags on multiple objects",
+    "description": "Bulk update tags on multiple objects Bulk update tags on multiple objects. POST /api/projects/{project_id}/dashboards/bulk_update_tags/",
+    "context": "POST /api/projects/{project_id}/dashboards/bulk_update_tags/\nBulk update tags on multiple objects. PAT access: this action has no ``required_scopes=`` on the decorator — inheriting viewsets must add ``\"bulk_update_tags\"`` to their ``scope_object_write_actions`` list to accept personal API keys. Without that opt-in, ``APIScopePermission`` rejects PAT requests with \"This action does not support personal API key access\". Done per-viewset so granting `` :write`` for one resource doesn't leak access to sibling resources that share this mixin. Accepts: - {\"ids\": [...], \"action\": \"add\"|\"remove\"|\"set\", \"tags\": [\"tag1\", \"tag2\"]} Actions: - \"add\": Add tags to existing tags on each object - \"remove\": Remove specific tags from each object - \"set\": Replace all tags on each object with the provided list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_collaborators_create",
+    "name": "dashboards_collaborators_create",
+    "description": "dashboards_collaborators_create POST /api/projects/{project_id}/dashboards/{dashboard_id}/collaborators/",
+    "context": "POST /api/projects/{project_id}/dashboards/{dashboard_id}/collaborators/\ndashboards_collaborators_create\nRequired: dashboard_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "dashboards_collaborators_destroy",
+    "name": "dashboards_collaborators_destroy",
+    "description": "dashboards_collaborators_destroy DELETE /api/projects/{project_id}/dashboards/{dashboard_id}/collaborators/{user__uuid}/",
+    "context": "DELETE /api/projects/{project_id}/dashboards/{dashboard_id}/collaborators/{user__uuid}/\ndashboards_collaborators_destroy\nRequired: dashboard_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; user__uuid (path)"
+  },
+  {
+    "id": "dashboards_collaborators_list",
+    "name": "dashboards_collaborators_list",
+    "description": "dashboards_collaborators_list GET /api/projects/{project_id}/dashboards/{dashboard_id}/collaborators/",
+    "context": "GET /api/projects/{project_id}/dashboards/{dashboard_id}/collaborators/\ndashboards_collaborators_list\nRequired: dashboard_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "dashboards_copy_tile_create",
+    "name": "Copy an existing dashboard tile to another dashboard (insight, text card, or widget tile).",
+    "description": "Copy an existing dashboard tile to another dashboard (insight, text card, or widget tile). POST /api/projects/{project_id}/dashboards/{id}/copy_tile/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/copy_tile/\nCopy an existing dashboard tile to another dashboard (insight, text card, or widget tile).\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_create",
+    "name": "dashboards_create",
+    "description": "dashboards_create POST /api/projects/{project_id}/dashboards/",
+    "context": "POST /api/projects/{project_id}/dashboards/\ndashboards_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; body (body)"
+  },
+  {
+    "id": "dashboards_create_from_template_json_create",
+    "name": "dashboards_create_from_template_json_create",
+    "description": "dashboards_create_from_template_json_create POST /api/projects/{project_id}/dashboards/create_from_template_json/",
+    "context": "POST /api/projects/{project_id}/dashboards/create_from_template_json/\ndashboards_create_from_template_json_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "dashboards_create_text_tile_create",
+    "name": "Add a markdown text tile to a dashboard",
+    "description": "Add a markdown text tile to a dashboard Add a markdown text tile to a dashboard. POST /api/projects/{project_id}/dashboards/{id}/create_text_tile/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/create_text_tile/\nAdd a markdown text tile to a dashboard. Text tiles render as markdown blocks on the dashboard — useful as section headings, dividers, or annotations between insight tiles to give the dashboard structure.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_create_unlisted_dashboard_create",
+    "name": "Creates an unlisted dashboard from template by tag",
+    "description": "Creates an unlisted dashboard from template by tag Creates an unlisted dashboard from template by tag. POST /api/projects/{project_id}/dashboards/create_unlisted_dashboard/",
+    "context": "POST /api/projects/{project_id}/dashboards/create_unlisted_dashboard/\nCreates an unlisted dashboard from template by tag. Enforces uniqueness (one per tag per team). Returns 409 if unlisted dashboard with this tag already exists.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "dashboards_delete_tile",
+    "name": "Soft-delete a single tile from a dashboard",
+    "description": "Soft-delete a single tile from a dashboard Soft-delete a single tile from a dashboard. POST /api/projects/{project_id}/dashboards/{id}/delete_tile/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/delete_tile/\nSoft-delete a single tile from a dashboard. Works for text, insight, and button tiles. The underlying Insight, Text, or ButtonTile object is preserved — only the dashboard tile is hidden. To delete the entire dashboard, use the dashboard delete endpoint instead.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/dashboards/{id}/",
+    "context": "DELETE /api/projects/{project_id}/dashboards/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_list",
+    "name": "dashboards_list",
+    "description": "dashboards_list GET /api/projects/{project_id}/dashboards/",
+    "context": "GET /api/projects/{project_id}/dashboards/\ndashboards_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: exclude_generated (query) — Optional. Exclude dashboards that PostHog generated.; folder (query) — Optional. Return only dashboards filed directly in this project-tree folder, e.g. 'Unfiled/Dashboards'. An empty string matches dashboards at the project root. Nested sub-folders are not included.; format (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; pinned (query) — Optional. Return only pinned dashboards.; search (query) — Optional. Match against dashboard `name`, `description`, and tag names. Returns exact (case-insensitive substring) matches only; if no exact match exists, returns similar (fuzzy trigram — typos, transpositions, prefix-as-you-type) matches instead. Results are then ordered by relevance, then pinned status, then name; each result's `search_match_type` is `exact` or `similar`. When omitted, dashboards are ordered by pinned status then alphabetical name. Capped at 200 characters; longer queries return a 400 error."
+  },
+  {
+    "id": "dashboards_move_tile_create",
+    "name": "dashboards_move_tile_create",
+    "description": "dashboards_move_tile_create POST /api/projects/{project_id}/dashboards/{id}/move_tile/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/move_tile/\ndashboards_move_tile_create\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_move_tile_partial_update",
+    "name": "dashboards_move_tile_partial_update",
+    "description": "dashboards_move_tile_partial_update PATCH /api/projects/{project_id}/dashboards/{id}/move_tile/",
+    "context": "PATCH /api/projects/{project_id}/dashboards/{id}/move_tile/\ndashboards_move_tile_partial_update\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "dashboards_partial_update",
+    "name": "dashboards_partial_update",
+    "description": "dashboards_partial_update PATCH /api/projects/{project_id}/dashboards/{id}/",
+    "context": "PATCH /api/projects/{project_id}/dashboards/{id}/\ndashboards_partial_update\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; body (body)"
+  },
+  {
+    "id": "dashboards_reorder_tiles_create",
+    "name": "dashboards_reorder_tiles_create",
+    "description": "dashboards_reorder_tiles_create POST /api/projects/{project_id}/dashboards/{id}/reorder_tiles/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/reorder_tiles/\ndashboards_reorder_tiles_create\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_retrieve",
+    "name": "dashboards_retrieve",
+    "description": "dashboards_retrieve GET /api/projects/{project_id}/dashboards/{id}/",
+    "context": "GET /api/projects/{project_id}/dashboards/{id}/\ndashboards_retrieve\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: filters_override (query) — Object (or pre-encoded JSON string) to override dashboard filters for this request only (not persisted). Top-level keys replace; nested values are not deep-merged — pass the complete value for any key you override. Accepts the same keys as the dashboard filters schema (e.g., `date_from`, `date_to`, `properties`). Ignored when accessed via a sharing token.; format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; variables_override (query) — Object (or pre-encoded JSON string) to override dashboard variables for this request only (not persisted). Format: {\"<variable_id>\": {\"code_name\": \"<code_name>\", \"variableId\": \"<variable_id>\", \"value\": <new_value>}}. Each entry must include `code_name` — partial entries are silently dropped. The simplest workflow is to call `dashboard-get` first, copy the matching entry from the response, and mutate `value`. Top-level keys replace; nested values are not deep-merged. Ignored when accessed via a sharing token."
+  },
+  {
+    "id": "dashboards_run_insights_retrieve",
+    "name": "Run all insights on a dashboard and return their results.",
+    "description": "Run all insights on a dashboard and return their results. GET /api/projects/{project_id}/dashboards/{id}/run_insights/",
+    "context": "GET /api/projects/{project_id}/dashboards/{id}/run_insights/\nRun all insights on a dashboard and return their results.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: filters_override (query) — Object (or pre-encoded JSON string) to override dashboard filters for this request only (not persisted). Top-level keys replace; nested values are not deep-merged — pass the complete value for any key you override. Accepts the same keys as the dashboard filters schema (e.g., `date_from`, `date_to`, `properties`). Ignored when accessed via a sharing token.; format (query); output_format (query) — 'optimized' (default) returns LLM-friendly formatted text per insight. 'json' returns the raw query result objects.; refresh (query) — Cache behavior. 'force_cache' (default) serves from cache even if stale. 'blocking' uses cache if fresh, otherwise recalculates. 'force_blocking' always recalculates.; variables_override (query) — Object (or pre-encoded JSON string) to override dashboard variables for this request only (not persisted). Format: {\"<variable_id>\": {\"code_name\": \"<code_name>\", \"variableId\": \"<variable_id>\", \"value\": <new_value>}}. Each entry must include `code_name` — partial entries are silently dropped. The simplest workflow is to call `dashboard-get` first, copy the matching entry from the response, and mutate `value`. Top-level keys replace; nested values are not deep-merged. Ignored when accessed via a sharing token."
+  },
+  {
+    "id": "dashboards_run_widgets_retrieve",
+    "name": "dashboards_run_widgets_retrieve",
+    "description": "dashboards_run_widgets_retrieve GET /api/projects/{project_id}/dashboards/{id}/run_widgets/",
+    "context": "GET /api/projects/{project_id}/dashboards/{id}/run_widgets/\ndashboards_run_widgets_retrieve\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; tile_ids (query) — Comma-separated dashboard tile IDs to run widgets for.\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_sharing_list",
+    "name": "dashboards_sharing_list",
+    "description": "dashboards_sharing_list GET /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/",
+    "context": "GET /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/\ndashboards_sharing_list\nRequired: dashboard_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "dashboards_sharing_passwords_create",
+    "name": "Create a new password for the sharing configuration.",
+    "description": "Create a new password for the sharing configuration. POST /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/passwords/",
+    "context": "POST /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/passwords/\nCreate a new password for the sharing configuration.\nRequired: dashboard_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "dashboards_sharing_passwords_destroy",
+    "name": "Delete a password from the sharing configuration.",
+    "description": "Delete a password from the sharing configuration. DELETE /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/passwords/{password_id}/",
+    "context": "DELETE /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/passwords/{password_id}/\nDelete a password from the sharing configuration.\nRequired: dashboard_id (path); password_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "dashboards_sharing_refresh_create",
+    "name": "dashboards_sharing_refresh_create",
+    "description": "dashboards_sharing_refresh_create POST /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/refresh/",
+    "context": "POST /api/projects/{project_id}/dashboards/{dashboard_id}/sharing/refresh/\ndashboards_sharing_refresh_create\nRequired: dashboard_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "dashboards_stream_tiles_retrieve",
+    "name": "Stream dashboard metadata and tiles via Server-Sent Events",
+    "description": "Stream dashboard metadata and tiles via Server-Sent Events Stream dashboard metadata and tiles via Server-Sent Events. GET /api/projects/{project_id}/dashboards/{id}/stream_tiles/",
+    "context": "GET /api/projects/{project_id}/dashboards/{id}/stream_tiles/\nStream dashboard metadata and tiles via Server-Sent Events. Sends metadata first, then tiles as they are rendered.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: filters_override (query) — Object (or pre-encoded JSON string) to override dashboard filters for this request only (not persisted). Top-level keys replace; nested values are not deep-merged — pass the complete value for any key you override. Accepts the same keys as the dashboard filters schema (e.g., `date_from`, `date_to`, `properties`). Ignored when accessed via a sharing token.; format (query); layoutSize (query) — Layout size for tile positioning. 'sm' (default) for standard, 'xs' for mobile. The snake_case alias `layout_size` is also accepted for backward compatibility.; variables_override (query) — Object (or pre-encoded JSON string) to override dashboard variables for this request only (not persisted). Format: {\"<variable_id>\": {\"code_name\": \"<code_name>\", \"variableId\": \"<variable_id>\", \"value\": <new_value>}}. Each entry must include `code_name` — partial entries are silently dropped. The simplest workflow is to call `dashboard-get` first, copy the matching entry from the response, and mutate `value`. Top-level keys replace; nested values are not deep-merged. Ignored when accessed via a sharing token."
+  },
+  {
+    "id": "dashboards_subscribe_nudge_create",
+    "name": "Send the requesting user an in-app notification suggesting they subscribe to this dashboard",
+    "description": "Send the requesting user an in-app notification suggesting they subscribe to this dashboard Send the requesting user an in-app notification suggesting they subscribe to this dashboard. POST /api/projects/{project_id}/dashboards/{id}/subscribe_nudge/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/subscribe_nudge/\nSend the requesting user an in-app notification suggesting they subscribe to this dashboard. Deduplicated server-side: at most one notification per user and dashboard, ever, so repeat calls return 200 with created=false.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_update",
+    "name": "dashboards_update",
+    "description": "dashboards_update PUT /api/projects/{project_id}/dashboards/{id}/",
+    "context": "PUT /api/projects/{project_id}/dashboards/{id}/\ndashboards_update\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_dashboards (query) — Opt in to receiving the deprecated `dashboards` field in insight payloads. Once opt-in enforcement is enabled, API-token callers stop receiving it by default; use `dashboard_tiles` instead.; body (body)"
+  },
+  {
+    "id": "dashboards_update_text_tile_create",
+    "name": "Update the markdown body, layout, or color of an existing text tile on a dashboard.",
+    "description": "Update the markdown body, layout, or color of an existing text tile on a dashboard. POST /api/projects/{project_id}/dashboards/{id}/update_text_tile/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/update_text_tile/\nUpdate the markdown body, layout, or color of an existing text tile on a dashboard.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_update_widgets_batch",
+    "name": "Update the settings of existing widgets in place, atomically — config, name, and description",
+    "description": "Update the settings of existing widgets in place, atomically — config, name, and description Update the settings of existing widgets in place, atomically — config, name, and description. PATCH /api/projects/{project_id}/dashboards/{id}/widgets/batch_update/",
+    "context": "PATCH /api/projects/{project_id}/dashboards/{id}/widgets/batch_update/\nUpdate the settings of existing widgets in place, atomically — config, name, and description. Each entry targets a widget by its tile_id and reuses the same write path as the dashboard PATCH endpoint. The widget_type is immutable. This edits widget settings only (config, name, description); tile placement (layouts, show_description) is a dashboard concern — use the dashboard PATCH endpoint or reorder_tiles for that. All updates succeed or fail together. To add new widgets, use the widgets/batch POST endpoint; to remove one, use delete_tile.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "dashboards_widget_catalog_retrieve",
+    "name": "List registered dashboard widget types and per-type config_schema documentation for agents.",
+    "description": "List registered dashboard widget types and per-type config_schema documentation for agents. GET /api/projects/{project_id}/dashboards/widget_catalog/",
+    "context": "GET /api/projects/{project_id}/dashboards/widget_catalog/\nList registered dashboard widget types and per-type config_schema documentation for agents.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "dashboards_widgets_batch_create",
+    "name": "Add multiple widget tiles to a dashboard in one atomic request.",
+    "description": "Add multiple widget tiles to a dashboard in one atomic request. POST /api/projects/{project_id}/dashboards/{id}/widgets/batch/",
+    "context": "POST /api/projects/{project_id}/dashboards/{id}/widgets/batch/\nAdd multiple widget tiles to a dashboard in one atomic request.\nRequired: id (path) — A unique integer value identifying this dashboard.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  }
+]

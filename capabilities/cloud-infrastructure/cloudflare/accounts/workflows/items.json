@@ -1,0 +1,140 @@
+[
+  {
+    "id": "wor-batch-create-workflow-instance",
+    "name": "Batch create new Workflow instances",
+    "description": "Batch create new Workflow instances Creates multiple workflow instances in a single batch operation. POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/batch",
+    "context": "POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/batch\nCreates multiple workflow instances in a single batch operation.\nRequired: workflow_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-batch-delete-workflow-instances",
+    "name": "Batch delete instances of a workflow",
+    "description": "Batch delete instances of a workflow Deletes multiple workflow instances in a single batch operation. POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/batch/delete",
+    "context": "POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/batch/delete\nDeletes multiple workflow instances in a single batch operation.\nRequired: workflow_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-batch-terminate-workflow-instances",
+    "name": "Batch terminate instances of a workflow",
+    "description": "Batch terminate instances of a workflow Performs a batch termination of multiple workflow instances. POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/batch/terminate",
+    "context": "POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/batch/terminate\nPerforms a batch termination of multiple workflow instances.\nRequired: workflow_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-change-status-workflow-instance",
+    "name": "Change status of instance",
+    "description": "Change status of instance Changes the execution status of a workflow instance (e.g., pause, resume, terminate). PATCH /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/status",
+    "context": "PATCH /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/status\nChanges the execution status of a workflow instance (e.g., pause, resume, terminate).\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; account_id (path); body (body)"
+  },
+  {
+    "id": "wor-create-new-workflow-instance",
+    "name": "Create a new workflow instance",
+    "description": "Create a new workflow instance Creates a new instance of a workflow, starting its execution. POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances",
+    "context": "POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances\nCreates a new instance of a workflow, starting its execution.\nRequired: workflow_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-create-or-modify-workflow",
+    "name": "Create/modify Workflow",
+    "description": "Create/modify Workflow Creates a new workflow or updates an existing workflow definition. PUT /client/v4/accounts/{account_id}/workflows/{workflow_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/workflows/{workflow_name}\nCreates a new workflow or updates an existing workflow definition.\nRequired: workflow_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-create-workflow-instance-subscription-token",
+    "name": "Create a workflow instance event subscription token",
+    "description": "Create a workflow instance event subscription token Creates a short-lived token for connecting to the workflow instance event WebSocket. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/subscribe/token",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/subscribe/token\nCreates a short-lived token for connecting to the workflow instance event WebSocket.\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; account_id (path)"
+  },
+  {
+    "id": "wor-delete-workflow",
+    "name": "Deletes a Workflow",
+    "description": "Deletes a Workflow Deletes a Workflow. DELETE /client/v4/accounts/{account_id}/workflows/{workflow_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workflows/{workflow_name}\nDeletes a Workflow. This only deletes the Workflow and does not delete or modify any Worker associated to this Workflow or bounded to it.\nRequired: workflow_name (path); account_id (path)"
+  },
+  {
+    "id": "wor-delete-workflow-instance",
+    "name": "Delete a workflow instance",
+    "description": "Delete a workflow instance Deletes a workflow instance and its stored state. DELETE /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}\nDeletes a workflow instance and its stored state.\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; account_id (path)"
+  },
+  {
+    "id": "wor-describe-workflow-instance",
+    "name": "Get logs and status from instance",
+    "description": "Get logs and status from instance Retrieves logs and execution status for a specific workflow instance. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}\nRetrieves logs and execution status for a specific workflow instance.\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; account_id (path)\nOptional: simple (query) — When true, omits step details and returns only metadata with step_count.; order (query) — Step ordering: \"asc\" (default, oldest first) or \"desc\" (newest first)."
+  },
+  {
+    "id": "wor-describe-workflow-versions",
+    "name": "Get Workflow version details",
+    "description": "Get Workflow version details Retrieves details for a specific deployed workflow version. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}\nRetrieves details for a specific deployed workflow version.\nRequired: workflow_name (path); version_id (path); account_id (path)"
+  },
+  {
+    "id": "wor-describe-workflow-versions-dag",
+    "name": "Get Workflow version dag",
+    "description": "Get Workflow version dag Retrieves the directed acyclic graph (DAG) representation of a workflow version. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/dag",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/dag\nRetrieves the directed acyclic graph (DAG) representation of a workflow version.\nRequired: workflow_name (path); version_id (path); account_id (path)"
+  },
+  {
+    "id": "wor-describe-workflow-versions-graph",
+    "name": "Get Workflow version graph",
+    "description": "Get Workflow version graph Retrieves the graph visualization of a workflow version. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/graph",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions/{version_id}/graph\nRetrieves the graph visualization of a workflow version.\nRequired: workflow_name (path); version_id (path); account_id (path)"
+  },
+  {
+    "id": "wor-get-workflow-details",
+    "name": "Get Workflow details",
+    "description": "Get Workflow details Retrieves configuration and metadata for a specific workflow. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}\nRetrieves configuration and metadata for a specific workflow.\nRequired: workflow_name (path); account_id (path)"
+  },
+  {
+    "id": "wor-get-workflow-instance-step",
+    "name": "Get full step output from instance",
+    "description": "Get full step output from instance Retrieves the full, untruncated output for a specific step on a workflow instance. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/step",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/step\nRetrieves the full, untruncated output for a specific step on a workflow instance. Returns a flat status-shaped JSON body with step `status` ('running' | 'waiting' | 'complete' | 'errored'), `error` (nullable), and `output` (the step value, or null while running/waiting/errored). When the step returned a ReadableStream from step.do, the response is served as 'application/octet-stream' with the raw bytes as the body instead of JSON. A `status='running'` response with non-null `error` indicates the step is currently retrying after a prior attempt failed.\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; name (query) — Exact step name from the instance logs response, including the generated counter suffix.; type (query) — Step type to disambiguate step.do and waitForEvent entries that share the same name.; account_id (path)\nOptional: attempt (query) — Specific attempt number to retrieve output or error for."
+  },
+  {
+    "id": "wor-get-workflow-settings",
+    "name": "Get account settings",
+    "description": "Get account settings Retrieves account-level Workflows settings, such as the default instance retention. GET /client/v4/accounts/{account_id}/workflows/settings",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/settings\nRetrieves account-level Workflows settings, such as the default instance retention.\nRequired: account_id (path)"
+  },
+  {
+    "id": "wor-list-workflow-instances",
+    "name": "List of workflow instances",
+    "description": "List of workflow instances Lists all instances of a workflow with their execution status. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances\nLists all instances of a workflow with their execution status.\nRequired: workflow_name (path); account_id (path)\nOptional: page (query) — Deprecated: use `cursor` for pagination instead.; per_page (query); cursor (query) — Opaque token for cursor-based pagination. Mutually exclusive with `page`.; direction (query) — Defines the direction for cursor-based pagination.; status (query); date_start (query) — Accepts ISO 8601 with no timezone offsets and in UTC.; date_end (query) — Accepts ISO 8601 with no timezone offsets and in UTC."
+  },
+  {
+    "id": "wor-list-workflow-versions",
+    "name": "List deployed Workflow versions",
+    "description": "List deployed Workflow versions Lists all deployed versions of a workflow. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/versions\nLists all deployed versions of a workflow.\nRequired: workflow_name (path); account_id (path)\nOptional: per_page (query); page (query)"
+  },
+  {
+    "id": "wor-list-workflows",
+    "name": "List all Workflows",
+    "description": "List all Workflows Lists all workflows configured for the account. GET /client/v4/accounts/{account_id}/workflows",
+    "context": "GET /client/v4/accounts/{account_id}/workflows\nLists all workflows configured for the account.\nRequired: account_id (path)\nOptional: per_page (query); page (query); search (query) — Allows filtering workflows` name."
+  },
+  {
+    "id": "wor-send-event-workflow-instance",
+    "name": "Send event to instance",
+    "description": "Send event to instance Sends an event to a running workflow instance to trigger state transitions. POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/events/{event_type}",
+    "context": "POST /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/events/{event_type}\nSends an event to a running workflow instance to trigger state transitions.\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; event_type (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-status-terminate-workflow-instances",
+    "name": "Get status of the job responsible for terminate all instances of a workflow",
+    "description": "Get status of the job responsible for terminate all instances of a workflow Gets the status of a bulk workflow instance termination job. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/terminate",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/terminate\nGets the status of a bulk workflow instance termination job.\nRequired: workflow_name (path); account_id (path)"
+  },
+  {
+    "id": "wor-subscribe-workflow-instance-events",
+    "name": "Subscribe to workflow instance events",
+    "description": "Subscribe to workflow instance events Opens a WebSocket that streams workflow instance events. GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/subscribe",
+    "context": "GET /client/v4/accounts/{account_id}/workflows/{workflow_name}/instances/{instance_id}/subscribe\nOpens a WebSocket that streams workflow instance events.\nRequired: workflow_name (path); instance_id (path) — Instance identifier. User-created instances match `^[a-zA-Z0-9_][a-zA-Z0-9-_]*$` (max 100 characters); cron-triggered instances can use a longer, system-generated id derived from the cron expression.; account_id (path)\nOptional: cursor (query) — Last event ID already received.; filter (query) — Workflow event types to include. Send multiple event types by repeating the filter query parameter."
+  },
+  {
+    "id": "wor-update-workflow-settings",
+    "name": "Update account settings",
+    "description": "Update account settings Updates only the account-level Workflows settings fields present in the request body. PATCH /client/v4/accounts/{account_id}/workflows/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/workflows/settings\nUpdates only the account-level Workflows settings fields present in the request body.\nRequired: account_id (path); body (body)"
+  }
+]

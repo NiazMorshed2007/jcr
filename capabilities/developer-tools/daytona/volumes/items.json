@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createVolume",
+    "name": "Create a new volume",
+    "description": "Create a new volume POST /volumes",
+    "context": "POST /volumes\nCreate a new volume\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteVolume",
+    "name": "Delete volume",
+    "description": "Delete volume DELETE /volumes/{volumeId}",
+    "context": "DELETE /volumes/{volumeId}\nDelete volume\nRequired: volumeId (path) — ID of the volume\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getVolume",
+    "name": "Get volume details",
+    "description": "Get volume details GET /volumes/{volumeId}",
+    "context": "GET /volumes/{volumeId}\nGet volume details\nRequired: volumeId (path) — ID of the volume\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getVolumeByName",
+    "name": "Get volume details by name",
+    "description": "Get volume details by name GET /volumes/by-name/{name}",
+    "context": "GET /volumes/by-name/{name}\nGet volume details by name\nRequired: name (path) — Name of the volume\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "listVolumes",
+    "name": "List all volumes",
+    "description": "List all volumes GET /volumes",
+    "context": "GET /volumes\nList all volumes\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; includeDeleted (query) — Include deleted volumes in the response"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "event_schemas_create",
+    "name": "event_schemas_create",
+    "description": "event_schemas_create POST /api/projects/{project_id}/event_schemas/",
+    "context": "POST /api/projects/{project_id}/event_schemas/\nevent_schemas_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "event_schemas_destroy",
+    "name": "event_schemas_destroy",
+    "description": "event_schemas_destroy DELETE /api/projects/{project_id}/event_schemas/{id}/",
+    "context": "DELETE /api/projects/{project_id}/event_schemas/{id}/\nevent_schemas_destroy\nRequired: id (path) — A UUID string identifying this event schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "event_schemas_list",
+    "name": "event_schemas_list",
+    "description": "event_schemas_list GET /api/projects/{project_id}/event_schemas/",
+    "context": "GET /api/projects/{project_id}/event_schemas/\nevent_schemas_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "event_schemas_partial_update",
+    "name": "event_schemas_partial_update",
+    "description": "event_schemas_partial_update PATCH /api/projects/{project_id}/event_schemas/{id}/",
+    "context": "PATCH /api/projects/{project_id}/event_schemas/{id}/\nevent_schemas_partial_update\nRequired: id (path) — A UUID string identifying this event schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "event_schemas_update",
+    "name": "event_schemas_update",
+    "description": "event_schemas_update PUT /api/projects/{project_id}/event_schemas/{id}/",
+    "context": "PUT /api/projects/{project_id}/event_schemas/{id}/\nevent_schemas_update\nRequired: id (path) — A UUID string identifying this event schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

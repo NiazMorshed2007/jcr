@@ -1,0 +1,80 @@
+[
+  {
+    "id": "marketing_analytics_apply_setup_ops_create",
+    "name": "Apply setup operations",
+    "description": "Apply setup operations Apply one or more setup operations from the setup plan, atomically. POST /api/projects/{project_id}/marketing_analytics/apply_setup_ops/",
+    "context": "POST /api/projects/{project_id}/marketing_analytics/apply_setup_ops/\nApply one or more setup operations from the setup plan, atomically. Either every operation lands or none does — a partially-applied batch has no well-defined undo. Returns `undo_ops`, computed from the pre-change state, which can be POSTed back to reverse the batch. Only send `apply` payloads returned by setup_plan.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "marketing_analytics_conversion_goals_create_create",
+    "name": "Create conversion goal",
+    "description": "Create conversion goal Add one conversion goal to the project. POST /api/projects/{project_id}/marketing_analytics/conversion_goals/create/",
+    "context": "POST /api/projects/{project_id}/marketing_analytics/conversion_goals/create/\nAdd one conversion goal to the project. The server assigns conversion_goal_id and appends the goal to the end of the list, leaving existing goals untouched.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "marketing_analytics_conversion_goals_delete_destroy",
+    "name": "Delete conversion goal",
+    "description": "Delete conversion goal Remove one conversion goal from the project, leaving the others in place. DELETE /api/projects/{project_id}/marketing_analytics/conversion_goals/{conversion_goal_id}/delete/",
+    "context": "DELETE /api/projects/{project_id}/marketing_analytics/conversion_goals/{conversion_goal_id}/delete/\nRemove one conversion goal from the project, leaving the others in place.\nRequired: conversion_goal_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "marketing_analytics_conversion_goals_retrieve",
+    "name": "List conversion goals",
+    "description": "List conversion goals Read the configured conversion goals for the current project — each with its kind, target, last-30d count, integrated vs non-integrated split, and a misconfiguration flag. GET /api/projects/{project_id}/marketing_analytics/conversion_goals/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/conversion_goals/\nRead the configured conversion goals for the current project — each with its kind, target, last-30d count, integrated vs non-integrated split, and a misconfiguration flag. Read-only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "marketing_analytics_conversion_goals_update_partial_update",
+    "name": "Update conversion goal",
+    "description": "Update conversion goal Change one conversion goal in place. PATCH /api/projects/{project_id}/marketing_analytics/conversion_goals/{conversion_goal_id}/update/",
+    "context": "PATCH /api/projects/{project_id}/marketing_analytics/conversion_goals/{conversion_goal_id}/update/\nChange one conversion goal in place. Fields you send are merged into the stored goal, the rest are kept, and the goal keeps its position in the list. Sending a different `kind` replaces the goal instead, since the shapes don't share their fields.\nRequired: conversion_goal_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "marketing_analytics_data_sources_retrieve",
+    "name": "List marketing data sources",
+    "description": "List marketing data sources Check the platform → data-warehouse side of every native marketing integration: connection state, sync recency, row counts, required-table status, and schema-mapping coverage. GET /api/projects/{project_id}/marketing_analytics/data_sources/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/data_sources/\nCheck the platform → data-warehouse side of every native marketing integration: connection state, sync recency, row counts, required-table status, and schema-mapping coverage. Read-only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: source_type (query) — Optional. Restrict to one integration (e.g. 'GoogleAds')."
+  },
+  {
+    "id": "marketing_analytics_diagnose_retrieve",
+    "name": "Diagnose marketing analytics",
+    "description": "Diagnose marketing analytics Aggregate data-source sync health, UTM attribution health, and conversion-goal config into a single per-integration diagnostic with recommended actions. GET /api/projects/{project_id}/marketing_analytics/diagnose/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/diagnose/\nAggregate data-source sync health, UTM attribution health, and conversion-goal config into a single per-integration diagnostic with recommended actions. Read-only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: attribution_lookback_days (query) — Lookback window for attribution health (1-365 days); defaults to 7; include_conversion_goals (query) — Whether to include the conversion-goal summary in the diagnostic; source_type (query) — Optional integration filter"
+  },
+  {
+    "id": "marketing_analytics_explain_conversion_goal_retrieve",
+    "name": "Explain a conversion goal",
+    "description": "Explain a conversion goal Break down a single conversion goal's events over a period by event name, utm_source, and matched integration, with a small sample of events. GET /api/projects/{project_id}/marketing_analytics/explain_conversion_goal/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/explain_conversion_goal/\nBreak down a single conversion goal's events over a period by event name, utm_source, and matched integration, with a small sample of events. Read-only.\nRequired: conversion_goal_id (query) — conversion_goal_id of the goal to explain, as returned by the conversion_goals list endpoint.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: date_from (query) — ISO start; defaults to 30 days ago; date_to (query) — ISO end; defaults to now"
+  },
+  {
+    "id": "marketing_analytics_setup_plan_retrieve",
+    "name": "Get the marketing analytics setup plan",
+    "description": "Get the marketing analytics setup plan Rank everything wrong with a team's marketing analytics setup into concrete suggestions, each carrying the evidence behind it and — where one exists — an `apply` operation to pass straight to apply_setup_ops, plus a `readiness` block saying which capabilities (cost, ROAS, cost pe…",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/setup_plan/\nRank everything wrong with a team's marketing analytics setup into concrete suggestions, each carrying the evidence behind it and — where one exists — an `apply` operation to pass straight to apply_setup_ops, plus a `readiness` block saying which capabilities (cost, ROAS, cost per customer, retention by channel) are unlocked and which suggestion is blocking each. Prefer this over `diagnose` when the question is 'what should I fix next': diagnose explains what is wrong, setup_plan says what to do about it in a form you can act on. Read-only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: date_from (query) — Window for campaign spend and the UTM catalogue, as a relative range (e.g. '-30d'); defaults to -30d; refresh (query) — Re-run every check instead of serving a recent result. Use right after changing something."
+  },
+  {
+    "id": "marketing_analytics_suggest_conversion_goals_retrieve",
+    "name": "Suggest conversion goals",
+    "description": "Suggest conversion goals Rank existing custom events as conversion-goal candidates by volume, UTM-tag coverage, and unique users, excluding system/autocaptured events. GET /api/projects/{project_id}/marketing_analytics/suggest_conversion_goals/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/suggest_conversion_goals/\nRank existing custom events as conversion-goal candidates by volume, UTM-tag coverage, and unique users, excluding system/autocaptured events. Read-only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: min_count (query) — Minimum 30d event count to be a candidate; top_n (query) — Max candidates to return"
+  },
+  {
+    "id": "marketing_analytics_suggest_utm_mappings_retrieve",
+    "name": "Suggest UTM source mappings",
+    "description": "Suggest UTM source mappings Detect unmatched utm_source values from recent events and propose custom_source_mappings entries, alongside the full utm_source catalogue and current mappings. GET /api/projects/{project_id}/marketing_analytics/suggest_utm_mappings/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/suggest_utm_mappings/\nDetect unmatched utm_source values from recent events and propose custom_source_mappings entries, alongside the full utm_source catalogue and current mappings. Read-only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: lookback_days (query) — Days of history to inspect (1-365); defaults to 90; min_event_count (query) — Only suggest for raw values with >= this many events"
+  },
+  {
+    "id": "marketing_analytics_test_mapping_create",
+    "name": "marketing_analytics_test_mapping_create",
+    "description": "marketing_analytics_test_mapping_create POST /api/projects/{project_id}/marketing_analytics/test_mapping/",
+    "context": "POST /api/projects/{project_id}/marketing_analytics/test_mapping/\nmarketing_analytics_test_mapping_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "marketing_analytics_utm_audit_retrieve",
+    "name": "Run UTM audit",
+    "description": "Run UTM audit Cross-reference campaigns with spend from ad platforms against pageview events with UTM parameters to identify tracking issues. GET /api/projects/{project_id}/marketing_analytics/utm_audit/",
+    "context": "GET /api/projects/{project_id}/marketing_analytics/utm_audit/\nCross-reference campaigns with spend from ad platforms against pageview events with UTM parameters to identify tracking issues.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: date_from (query) — Start date for the audit period; date_to (query) — End date for the audit period"
+  }
+]

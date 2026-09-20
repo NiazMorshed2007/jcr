@@ -1,0 +1,26 @@
+[
+  {
+    "id": "createOrganizationForwarding",
+    "name": "Create a Data Forwarder for an Organization",
+    "description": "Create a Data Forwarder for an Organization Creates a new data forwarder for an organization. POST /api/0/organizations/{organization_id_or_slug}/forwarding/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/forwarding/\nCreates a new data forwarder for an organization. Only one data forwarder can be created per provider for a given organization. Project-specific overrides can only be created after creating the data forwarder.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationForwarding",
+    "name": "Delete a Data Forwarder for an Organization",
+    "description": "Delete a Data Forwarder for an Organization Deletes a data forwarder for an organization. DELETE /api/0/organizations/{organization_id_or_slug}/forwarding/{data_forwarder_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/forwarding/{data_forwarder_id}/\nDeletes a data forwarder for an organization. All project-specific overrides will be deleted as well.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; data_forwarder_id (path) — The ID of the data forwarder you'd like to query."
+  },
+  {
+    "id": "listOrganizationForwarding",
+    "name": "Retrieve Data Forwarders for an Organization",
+    "description": "Retrieve Data Forwarders for an Organization Returns a list of data forwarders for an organization. GET /api/0/organizations/{organization_id_or_slug}/forwarding/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/forwarding/\nReturns a list of data forwarders for an organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to."
+  },
+  {
+    "id": "updateOrganizationForwarding",
+    "name": "Update a Data Forwarder for an Organization",
+    "description": "Update a Data Forwarder for an Organization Updates a data forwarder for an organization or update a project-specific override. PUT /api/0/organizations/{organization_id_or_slug}/forwarding/{data_forwarder_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/forwarding/{data_forwarder_id}/\nUpdates a data forwarder for an organization or update a project-specific override. Updates to the data forwarder's configuration require `org:write` permissions, and the entire configuration to be provided, including the `project_ids` field. To configure project-specific overrides, specify only the following fields: - 'project_id': The ID of the project to create/modify the override for. - 'overrides': Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden. - 'is_enabled': To enable/disable the forwarder for events on the specific project. Overrides can be performed with `project:write` permissions on the project being modified.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; data_forwarder_id (path) — The ID of the data forwarder you'd like to query.; body (body)"
+  }
+]

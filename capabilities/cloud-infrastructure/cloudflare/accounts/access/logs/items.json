@@ -1,0 +1,26 @@
+[
+  {
+    "id": "access-authentication-logs-get-access-authentication-logs",
+    "name": "Get Access authentication logs",
+    "description": "Get Access authentication logs Gets a list of Access authentication audit logs for an account. GET /client/v4/accounts/{account_id}/access/logs/access_requests",
+    "context": "GET /client/v4/accounts/{account_id}/access/logs/access_requests\nGets a list of Access authentication audit logs for an account.\nRequired: account_id (path)\nOptional: limit (query) — The maximum number of log entries to retrieve.; direction (query) — The chronological sorting order for the logs.; since (query) — The earliest event timestamp to query.; until (query) — The latest event timestamp to query.; page (query); per_page (query); email (query) — Filter by user email. Match mode is controlled by `emailOp` (preferred) or the legacy `email_exact` flag. - Default (no `emailOp`, `email_exact=false` or unset): substring match — `email=@example.com` returns all events with that domain. - Exact match: set `emailOp=eq` (preferred) or `email_exact=true` — e.g. `email=user@example.com&email_exact=true` returns only that user. - Explicit substring match: set `emailOp=contains` (without `email_exact=true`). When both are set, `email_exact=true` takes precedence and the match is exact. - Exclusion: set `emailOp=neq`. With `email_exact=true` this is an exact-value exclusion; without it, a fuzzy substring exclusion.; email_exact (query) — When true, `email` is matched exactly instead of substring matching.; user_id (query) — Deprecated. Accepted for backward compatibility but no longer applied as a filter. Use `email` instead.; allowedOp (query) — Operator for the `allowed` filter.; country_codeOp (query) — Operator for the `country_code` filter.; app_typeOp (query) — Operator for the `app_type` filter.; app_uidOp (query) — Operator for the `app_uid` filter.; ray_idOp (query) — Operator for the `ray_id` filter.; emailOp (query) — Operator for the `email` filter. `contains` performs a substring (case-sensitive) match. When `email_exact=true` is also set, `email_exact` takes precedence and `contains` is ignored.; idpOp (query) — Operator for the `idp` filter.; non_identityOp (query) — Operator for the `non_identity` filter.; user_idOp (query) — Deprecated. Accepted for backward compatibility but no longer applied as a filter (the `user_id` parameter is itself deprecated).; fields (query) — Comma-separated list of fields to include in the response. When omitted, all fields are returned."
+  },
+  {
+    "id": "access-jit-request-logs-get",
+    "name": "Get an Access JIT request log",
+    "description": "Get an Access JIT request log Gets an account-scoped Access JIT request summary and its lifecycle events in chronological order. GET /client/v4/accounts/{account_id}/access/logs/jit_requests/{knock_request_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/logs/jit_requests/{knock_request_id}\nGets an account-scoped Access JIT request summary and its lifecycle events in chronological order.\nRequired: account_id (path); knock_request_id (path)"
+  },
+  {
+    "id": "access-jit-request-logs-list",
+    "name": "List Access JIT request logs",
+    "description": "List Access JIT request logs Lists account-wide Access JIT request logs reconstructed from request lifecycle events. GET /client/v4/accounts/{account_id}/access/logs/jit_requests",
+    "context": "GET /client/v4/accounts/{account_id}/access/logs/jit_requests\nLists account-wide Access JIT request logs reconstructed from request lifecycle events.\nRequired: account_id (path)\nOptional: page (query); per_page (query); status (query); search (query) — Case-insensitive search over request ID, requester email, application audience, and application hostname.; since (query) — The earliest request timestamp to query. Defaults to 366 days before the current time.; until (query) — The latest request timestamp to query. Defaults to the current time."
+  },
+  {
+    "id": "access-scim-update-logs-list-access-scim-update-logs",
+    "name": "List Access SCIM update logs",
+    "description": "List Access SCIM update logs Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM). GET /client/v4/accounts/{account_id}/access/logs/scim/updates",
+    "context": "GET /client/v4/accounts/{account_id}/access/logs/scim/updates\nLists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).\nRequired: account_id (path); idp_id (query)\nOptional: limit (query); direction (query); since (query); until (query); status (query); resource_type (query); request_method (query); resource_user_email (query); resource_group_name (query); cf_resource_id (query); idp_resource_id (query); page (query); per_page (query)"
+  }
+]

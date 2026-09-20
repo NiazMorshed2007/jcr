@@ -1,0 +1,20 @@
+[
+  {
+    "id": "orgs%2Fget-membership-for-user",
+    "name": "Get organization membership for a user",
+    "description": "Get organization membership for a user In order to get a user's membership with an organization, the authenticated user must be an organization member. GET /orgs/{org}/memberships/{username}",
+    "context": "GET /orgs/{org}/memberships/{username}\nIn order to get a user's membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user's membership status.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Fremove-membership-for-user",
+    "name": "Remove organization membership for a user",
+    "description": "Remove organization membership for a user In order to remove a user's membership with an organization, the authenticated user must be an organization owner. DELETE /orgs/{org}/memberships/{username}",
+    "context": "DELETE /orgs/{org}/memberships/{username}\nIn order to remove a user's membership with an organization, the authenticated user must be an organization owner. If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases. > [!NOTE] > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Fset-membership-for-user",
+    "name": "Set organization membership for a user",
+    "description": "Set organization membership for a user Only authenticated organization owners can add a member to the organization or update the member's role. PUT /orgs/{org}/memberships/{username}",
+    "context": "PUT /orgs/{org}/memberships/{username}\nOnly authenticated organization owners can add a member to the organization or update the member's role. * If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user's [membership status](https://docs.github.com/rest/orgs/members#get-organization-membership-for-a-user) will be `pending` until they accept the invitation. * Authenticated users can _update_ a user's membership by passing the `role` parameter. If the authenticated user changes a member's role to `admin`, the affected user will receive an email notifying them that they've been made an organization owner. If the authenticated user changes an owner's role to `member`, no email will be sent. **Rate limits** To prevent abuse, organization owners are limited to creating 50 organization invitations for an organization within a 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.\nOptional: body (body)"
+  }
+]

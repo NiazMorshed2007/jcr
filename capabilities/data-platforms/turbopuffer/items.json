@@ -1,0 +1,98 @@
+[
+  {
+    "id": "delete_v2_namespaces_namespace",
+    "name": "Delete namespace.",
+    "description": "Delete namespace. DELETE /v2/namespaces/{namespace}",
+    "context": "DELETE /v2/namespaces/{namespace}\nDelete namespace.\nRequired: namespace (path) — The name of the namespace."
+  },
+  {
+    "id": "get_v1_namespaces",
+    "name": "List namespaces.",
+    "description": "List namespaces. GET /v1/namespaces",
+    "context": "GET /v1/namespaces\nList namespaces.\nOptional: cursor (query) — Retrieve the next page of results.; prefix (query) — Retrieve only the namespaces that match the prefix.; page_size (query) — Limit the number of results per page."
+  },
+  {
+    "id": "get_v1_namespaces_namespace_hint_cache_warm",
+    "name": "Signal turbopuffer to prepare for low-latency requests.",
+    "description": "Signal turbopuffer to prepare for low-latency requests. GET /v1/namespaces/{namespace}/hint_cache_warm",
+    "context": "GET /v1/namespaces/{namespace}/hint_cache_warm\nSignal turbopuffer to prepare for low-latency requests.\nRequired: namespace (path) — The name of the namespace."
+  },
+  {
+    "id": "get_v1_namespaces_namespace_operations_token_stainless_overload_pollCopyFrom",
+    "name": "Retrieve the current status of a copy operation.",
+    "description": "Retrieve the current status of a copy operation. GET /v1/namespaces/{namespace}/operations/{token}",
+    "context": "GET /v1/namespaces/{namespace}/operations/{token}\nRetrieve the current status of a copy operation.\nRequired: namespace (path) — The name of the namespace.; token (path) — The operation token obtained when starting the copy."
+  },
+  {
+    "id": "get_v1_namespaces_namespace_schema",
+    "name": "Get namespace schema.",
+    "description": "Get namespace schema. GET /v1/namespaces/{namespace}/schema",
+    "context": "GET /v1/namespaces/{namespace}/schema\nGet namespace schema.\nRequired: namespace (path) — The name of the namespace."
+  },
+  {
+    "id": "get_v2_namespaces_namespace_metadata",
+    "name": "Get metadata about a namespace.",
+    "description": "Get metadata about a namespace. GET /v2/namespaces/{namespace}/metadata",
+    "context": "GET /v2/namespaces/{namespace}/metadata\nGet metadata about a namespace.\nRequired: namespace (path) — The name of the namespace."
+  },
+  {
+    "id": "patch_v1_namespaces_namespace_metadata",
+    "name": "Update metadata configuration for a namespace.",
+    "description": "Update metadata configuration for a namespace. PATCH /v1/namespaces/{namespace}/metadata",
+    "context": "PATCH /v1/namespaces/{namespace}/metadata\nUpdate metadata configuration for a namespace.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v1_namespaces_namespace_debug_recall",
+    "name": "Evaluate recall.",
+    "description": "Evaluate recall. POST /v1/namespaces/{namespace}/_debug/recall",
+    "context": "POST /v1/namespaces/{namespace}/_debug/recall\nEvaluate recall.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v1_namespaces_namespace_schema",
+    "name": "Update namespace schema.",
+    "description": "Update namespace schema. POST /v1/namespaces/{namespace}/schema",
+    "context": "POST /v1/namespaces/{namespace}/schema\nUpdate namespace schema.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace",
+    "name": "Create, update, or delete documents.",
+    "description": "Create, update, or delete documents. POST /v2/namespaces/{namespace}",
+    "context": "POST /v2/namespaces/{namespace}\nCreate, update, or delete documents.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace_async_stainless_overload_startCopyFrom",
+    "name": "Start copying all documents from another namespace into this one",
+    "description": "Start copying all documents from another namespace into this one Start copying all documents from another namespace into this one. POST /v2/namespaces/{namespace}/async",
+    "context": "POST /v2/namespaces/{namespace}/async\nStart copying all documents from another namespace into this one. Returns an operation token without waiting for the copy to finish. Use the token to poll for progress and the result.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace_explain_query",
+    "name": "Explain a query plan.",
+    "description": "Explain a query plan. POST /v2/namespaces/{namespace}/explain_query",
+    "context": "POST /v2/namespaces/{namespace}/explain_query\nExplain a query plan.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace_query",
+    "name": "Query, filter, full-text search and vector search documents.",
+    "description": "Query, filter, full-text search and vector search documents. POST /v2/namespaces/{namespace}/query",
+    "context": "POST /v2/namespaces/{namespace}/query\nQuery, filter, full-text search and vector search documents.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace_query_stainless_overload_multiQuery",
+    "name": "Issue multiple concurrent queries filter or search documents.",
+    "description": "Issue multiple concurrent queries filter or search documents. POST /v2/namespaces/{namespace}/query",
+    "context": "POST /v2/namespaces/{namespace}/query\nIssue multiple concurrent queries filter or search documents.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace_stainless_overload_branchFrom",
+    "name": "Creates an instant, copy-on-write clone of a namespace.",
+    "description": "Creates an instant, copy-on-write clone of a namespace. POST /v2/namespaces/{namespace}",
+    "context": "POST /v2/namespaces/{namespace}\nCreates an instant, copy-on-write clone of a namespace.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  },
+  {
+    "id": "post_v2_namespaces_namespace_stainless_overload_copyFrom",
+    "name": "Copy all documents from another namespace into this one.",
+    "description": "Copy all documents from another namespace into this one. POST /v2/namespaces/{namespace}",
+    "context": "POST /v2/namespaces/{namespace}\nCopy all documents from another namespace into this one.\nRequired: namespace (path) — The name of the namespace.\nOptional: body (body)"
+  }
+]

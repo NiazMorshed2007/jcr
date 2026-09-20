@@ -1,0 +1,20 @@
+[
+  {
+    "id": "interactions%2Fget-restrictions-for-authenticated-user",
+    "name": "Get interaction restrictions for your public repositories",
+    "description": "Get interaction restrictions for your public repositories Shows which type of GitHub user can interact with your public repositories and when the restriction expires. GET /user/interaction-limits",
+    "context": "GET /user/interaction-limits\nShows which type of GitHub user can interact with your public repositories and when the restriction expires."
+  },
+  {
+    "id": "interactions%2Fremove-restrictions-for-authenticated-user",
+    "name": "Remove interaction restrictions from your public repositories",
+    "description": "Remove interaction restrictions from your public repositories Removes any interaction restrictions from your public repositories. DELETE /user/interaction-limits",
+    "context": "DELETE /user/interaction-limits\nRemoves any interaction restrictions from your public repositories."
+  },
+  {
+    "id": "interactions%2Fset-restrictions-for-authenticated-user",
+    "name": "Set interaction restrictions for your public repositories",
+    "description": "Set interaction restrictions for your public repositories Temporarily restricts which type of GitHub user can interact with your public repositories. PUT /user/interaction-limits",
+    "context": "PUT /user/interaction-limits\nTemporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.\nRequired: body (body)"
+  }
+]

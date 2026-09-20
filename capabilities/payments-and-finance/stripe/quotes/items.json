@@ -1,0 +1,62 @@
+[
+  {
+    "id": "GetQuotes",
+    "name": "List all quotes",
+    "description": "List all quotes Returns a list of your quotes. GET /v1/quotes",
+    "context": "GET /v1/quotes\nReturns a list of your quotes.\nOptional: customer (query) — The ID of the customer whose quotes you're retrieving.; customer_account (query) — The ID of the account representing the customer whose quotes you're retrieving.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; status (query) — The status of the quote.; test_clock (query) — Provides a list of quotes that are associated with the specified test clock. The response will not include quotes with test clocks if this and the customer parameter is not set.; body (body)"
+  },
+  {
+    "id": "GetQuotesQuote",
+    "name": "Retrieve a quote",
+    "description": "Retrieve a quote Retrieves the quote with the given ID. GET /v1/quotes/{quote}",
+    "context": "GET /v1/quotes/{quote}\nRetrieves the quote with the given ID.\nRequired: quote (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetQuotesQuoteComputedUpfrontLineItems",
+    "name": "Retrieve a quote's upfront line items",
+    "description": "Retrieve a quote's upfront line items When retrieving a quote, there is an includable computed.upfront.line_items property containing the first handful of those items. GET /v1/quotes/{quote}/computed_upfront_line_items",
+    "context": "GET /v1/quotes/{quote}/computed_upfront_line_items\nWhen retrieving a quote, there is an includable computed.upfront.line_items property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of upfront line items.\nRequired: quote (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetQuotesQuoteLineItems",
+    "name": "Retrieve a quote's line items",
+    "description": "Retrieve a quote's line items When retrieving a quote, there is an includable line_items property containing the first handful of those items. GET /v1/quotes/{quote}/line_items",
+    "context": "GET /v1/quotes/{quote}/line_items\nWhen retrieving a quote, there is an includable line_items property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.\nRequired: quote (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetQuotesQuotePdf",
+    "name": "Download quote PDF",
+    "description": "Download quote PDF Download the PDF for a finalized quote. GET /v1/quotes/{quote}/pdf",
+    "context": "GET /v1/quotes/{quote}/pdf\nDownload the PDF for a finalized quote. Explanation for special handling can be found here\nRequired: quote (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostQuotes",
+    "name": "Create a quote",
+    "description": "Create a quote A quote models prices and services for a customer. POST /v1/quotes",
+    "context": "POST /v1/quotes\nA quote models prices and services for a customer. Default options for header , description , footer , and expires_at can be set in the dashboard via the quote template .\nOptional: body (body)"
+  },
+  {
+    "id": "PostQuotesQuote",
+    "name": "Update a quote",
+    "description": "Update a quote A quote models prices and services for a customer. POST /v1/quotes/{quote}",
+    "context": "POST /v1/quotes/{quote}\nA quote models prices and services for a customer.\nRequired: quote (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostQuotesQuoteAccept",
+    "name": "Accept a quote",
+    "description": "Accept a quote Accepts the specified quote. POST /v1/quotes/{quote}/accept",
+    "context": "POST /v1/quotes/{quote}/accept\nAccepts the specified quote.\nRequired: quote (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostQuotesQuoteCancel",
+    "name": "Cancel a quote",
+    "description": "Cancel a quote Cancels the quote. POST /v1/quotes/{quote}/cancel",
+    "context": "POST /v1/quotes/{quote}/cancel\nCancels the quote.\nRequired: quote (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostQuotesQuoteFinalize",
+    "name": "Finalize a quote",
+    "description": "Finalize a quote Finalizes the quote. POST /v1/quotes/{quote}/finalize",
+    "context": "POST /v1/quotes/{quote}/finalize\nFinalizes the quote.\nRequired: quote (path)\nOptional: body (body)"
+  }
+]

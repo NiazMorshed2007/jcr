@@ -1,0 +1,80 @@
+[
+  {
+    "id": "get-zones-zone_id-logs-control-retention-flag",
+    "name": "Get log retention flag",
+    "description": "Get log retention flag Gets log retention flag for Logpull API. GET /client/v4/zones/{zone_id}/logs/control/retention/flag",
+    "context": "GET /client/v4/zones/{zone_id}/logs/control/retention/flag\nGets log retention flag for Logpull API.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_id-logs-rayids-ray_id",
+    "name": "Get logs RayIDs",
+    "description": "Get logs RayIDs The `/rayids` api route allows lookups by specific rayid. GET /client/v4/zones/{zone_id}/logs/rayids/{ray_id}",
+    "context": "GET /client/v4/zones/{zone_id}/logs/rayids/{ray_id}\nThe `/rayids` api route allows lookups by specific rayid. The rayids route will return zero, one, or more records (ray ids are not unique).\nRequired: zone_id (path); ray_id (path)\nOptional: fields (query); timestamps (query)"
+  },
+  {
+    "id": "get-zones-zone_id-logs-received",
+    "name": "Get logs received",
+    "description": "Get logs received The `/received` api route allows customers to retrieve their edge HTTP logs. GET /client/v4/zones/{zone_id}/logs/received",
+    "context": "GET /client/v4/zones/{zone_id}/logs/received\nThe `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is \"give me all the logs for zone Z for minute M\", where the minute M refers to the time records were received at Cloudflare's central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.\nRequired: zone_id (path); end (query)\nOptional: start (query); fields (query); sample (query); count (query); timestamps (query)"
+  },
+  {
+    "id": "get-zones-zone_id-logs-received-fields",
+    "name": "List fields",
+    "description": "List fields Lists all fields available. GET /client/v4/zones/{zone_id}/logs/received/fields",
+    "context": "GET /client/v4/zones/{zone_id}/logs/received/fields\nLists all fields available. The response is json object with key-value pairs, where keys are field names, and values are descriptions.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "post-zones-zone_id-logs-control-retention-flag",
+    "name": "Update log retention flag",
+    "description": "Update log retention flag Updates log retention flag for Logpull API. POST /client/v4/zones/{zone_id}/logs/control/retention/flag",
+    "context": "POST /client/v4/zones/{zone_id}/logs/control/retention/flag\nUpdates log retention flag for Logpull API.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zones-logs-explorer-datasets-available-list",
+    "name": "List available zone datasets",
+    "description": "List available zone datasets Returns all dataset types that this zone can create. GET /client/v4/zones/{zone_id}/logs/explorer/datasets/available",
+    "context": "GET /client/v4/zones/{zone_id}/logs/explorer/datasets/available\nReturns all dataset types that this zone can create. Each entry includes the dataset schema and timestamp field. The schema shows all possible fields for a dataset. However, not all fields may be available for your account. When creating or updating a dataset, only fields available to your account can be enabled. If you request a field that is not available, you will receive an error.\nRequired: zone_id (path) — Cloudflare zone ID."
+  },
+  {
+    "id": "zones-logs-explorer-datasets-create",
+    "name": "Create a zone dataset",
+    "description": "Create a zone dataset Create a new Log Explorer dataset for the zone. POST /client/v4/zones/{zone_id}/logs/explorer/datasets",
+    "context": "POST /client/v4/zones/{zone_id}/logs/explorer/datasets\nCreate a new Log Explorer dataset for the zone. List available zone datasets to see the dataset types and fields you can use. The `fields` property is optional. If not specified, all available fields will be enabled. For dataset field definitions, see: https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/\nRequired: zone_id (path) — Cloudflare zone ID.; body (body)"
+  },
+  {
+    "id": "zones-logs-explorer-datasets-delete",
+    "name": "Delete a zone dataset",
+    "description": "Delete a zone dataset Deletes a Log Explorer dataset for the zone. DELETE /client/v4/zones/{zone_id}/logs/explorer/datasets/{dataset_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/logs/explorer/datasets/{dataset_id}\nDeletes a Log Explorer dataset for the zone. Dataset deletion must not be protected.\nRequired: zone_id (path) — Cloudflare zone ID.; dataset_id (path) — Log Explorer dataset ID."
+  },
+  {
+    "id": "zones-logs-explorer-datasets-get",
+    "name": "Get a zone dataset",
+    "description": "Get a zone dataset Retrieve a single Log Explorer dataset by ID for the zone. GET /client/v4/zones/{zone_id}/logs/explorer/datasets/{dataset_id}",
+    "context": "GET /client/v4/zones/{zone_id}/logs/explorer/datasets/{dataset_id}\nRetrieve a single Log Explorer dataset by ID for the zone.\nRequired: zone_id (path) — Cloudflare zone ID.; dataset_id (path) — Log Explorer dataset ID."
+  },
+  {
+    "id": "zones-logs-explorer-datasets-list",
+    "name": "List zone datasets",
+    "description": "List zone datasets Returns all Log Explorer datasets configured for the zone. GET /client/v4/zones/{zone_id}/logs/explorer/datasets",
+    "context": "GET /client/v4/zones/{zone_id}/logs/explorer/datasets\nReturns all Log Explorer datasets configured for the zone. List responses omit the `fields` property; use the single-dataset endpoint to retrieve field configuration.\nRequired: zone_id (path) — Cloudflare zone ID."
+  },
+  {
+    "id": "zones-logs-explorer-datasets-update",
+    "name": "Update a zone dataset",
+    "description": "Update a zone dataset Updates the enabled state and/or field configuration of a zone dataset. PUT /client/v4/zones/{zone_id}/logs/explorer/datasets/{dataset_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/logs/explorer/datasets/{dataset_id}\nUpdates the enabled state and/or field configuration of a zone dataset.\nRequired: zone_id (path) — Cloudflare zone ID.; dataset_id (path) — Log Explorer dataset ID.; body (body)"
+  },
+  {
+    "id": "zones-logs-explorer-query-get",
+    "name": "Run a log query",
+    "description": "Run a log query Run a SQL query against zone-level datasets. GET /client/v4/zones/{zone_id}/logs/explorer/query/sql",
+    "context": "GET /client/v4/zones/{zone_id}/logs/explorer/query/sql\nRun a SQL query against zone-level datasets. The SQL query is passed as the `query` query parameter. Because the query appears in the URL, it is subject to gateway and proxy URL-length limits and may be recorded in access logs. This endpoint is deprecated in favour of the POST variant which sends the query in the request body.\nRequired: zone_id (path) — Cloudflare zone ID.; query (query) — SQL query to execute."
+  },
+  {
+    "id": "zones-logs-explorer-query-post",
+    "name": "Run a log query",
+    "description": "Run a log query Run a SQL query against zone-level datasets. POST /client/v4/zones/{zone_id}/logs/explorer/query/sql",
+    "context": "POST /client/v4/zones/{zone_id}/logs/explorer/query/sql\nRun a SQL query against zone-level datasets. Timestamp fields are RFC3339 strings. Filter with: WHERE {timestamp_field} >= now() - INTERVAL '30' DAY WHERE {timestamp_field} >= '2026-04-01T00:00:00Z' WHERE {timestamp_field} BETWEEN '2026-04-01T00:00:00Z' AND '2026-04-30T23:59:59Z' List configured zone datasets to see enabled zone-level datasets. List available zone datasets to inspect their schemas and timestamp fields. For more information about the datasets, and the meaning of each field, check out https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/\nRequired: zone_id (path) — Cloudflare zone ID.; body (body)"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "zero-trust-organization-create-your-zero-trust-organization",
+    "name": "Create your Zero Trust organization",
+    "description": "Create your Zero Trust organization Sets up a Zero Trust organization for your account. POST /client/v4/accounts/{account_id}/access/organizations",
+    "context": "POST /client/v4/accounts/{account_id}/access/organizations\nSets up a Zero Trust organization for your account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-organization-get-your-zero-trust-organization",
+    "name": "Get your Zero Trust organization",
+    "description": "Get your Zero Trust organization Returns the configuration for your Zero Trust organization. GET /client/v4/accounts/{account_id}/access/organizations",
+    "context": "GET /client/v4/accounts/{account_id}/access/organizations\nReturns the configuration for your Zero Trust organization.\nRequired: account_id (path)"
+  },
+  {
+    "id": "zero-trust-organization-get-your-zero-trust-organization-doh-settings",
+    "name": "Get your Zero Trust organization DoH settings",
+    "description": "Get your Zero Trust organization DoH settings Returns the DoH settings for your Zero Trust organization. GET /client/v4/accounts/{account_id}/access/organizations/doh",
+    "context": "GET /client/v4/accounts/{account_id}/access/organizations/doh\nReturns the DoH settings for your Zero Trust organization.\nRequired: account_id (path)"
+  },
+  {
+    "id": "zero-trust-organization-revoke-all-access-tokens-for-a-user",
+    "name": "Revoke all Access tokens for a user",
+    "description": "Revoke all Access tokens for a user Revokes a user's access across all applications. POST /client/v4/accounts/{account_id}/access/organizations/revoke_user",
+    "context": "POST /client/v4/accounts/{account_id}/access/organizations/revoke_user\nRevokes a user's access across all applications.\nRequired: account_id (path); body (body)\nOptional: devices (query) — When set to `true`, all devices associated with the user will be revoked."
+  },
+  {
+    "id": "zero-trust-organization-update-your-zero-trust-organization",
+    "name": "Update your Zero Trust organization",
+    "description": "Update your Zero Trust organization Updates the configuration for your Zero Trust organization. PUT /client/v4/accounts/{account_id}/access/organizations",
+    "context": "PUT /client/v4/accounts/{account_id}/access/organizations\nUpdates the configuration for your Zero Trust organization.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-organization-update-your-zero-trust-organization-doh-settings",
+    "name": "Update your Zero Trust organization DoH settings",
+    "description": "Update your Zero Trust organization DoH settings Updates the DoH settings for your Zero Trust organization. PUT /client/v4/accounts/{account_id}/access/organizations/doh",
+    "context": "PUT /client/v4/accounts/{account_id}/access/organizations/doh\nUpdates the DoH settings for your Zero Trust organization.\nRequired: account_id (path)\nOptional: body (body)"
+  }
+]

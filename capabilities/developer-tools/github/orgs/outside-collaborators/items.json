@@ -1,0 +1,20 @@
+[
+  {
+    "id": "orgs%2Fconvert-member-to-outside-collaborator",
+    "name": "Convert an organization member to outside collaborator",
+    "description": "Convert an organization member to outside collaborator When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. PUT /orgs/{org}/outside_collaborators/{username}",
+    "context": "PUT /orgs/{org}/outside_collaborators/{username}\nWhen an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see \"[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)\". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see \"[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories).\"\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.\nOptional: body (body)"
+  },
+  {
+    "id": "orgs%2Flist-outside-collaborators",
+    "name": "List outside collaborators for an organization",
+    "description": "List outside collaborators for an organization List all users who are outside collaborators of an organization. GET /orgs/{org}/outside_collaborators",
+    "context": "GET /orgs/{org}/outside_collaborators\nList all users who are outside collaborators of an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: filter (query) — Filter the list of outside collaborators. `2fa_disabled` means that only outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned. `2fa_insecure` means that only outside collaborators with [insecure 2FA methods](https://docs.github.com/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization#requiring-secure-methods-of-two-factor-authentication-in-your-organization) will be returned.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fremove-outside-collaborator",
+    "name": "Remove outside collaborator from an organization",
+    "description": "Remove outside collaborator from an organization Removing a user from this list will remove them from all the organization's repositories. DELETE /orgs/{org}/outside_collaborators/{username}",
+    "context": "DELETE /orgs/{org}/outside_collaborators/{username}\nRemoving a user from this list will remove them from all the organization's repositories.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  }
+]

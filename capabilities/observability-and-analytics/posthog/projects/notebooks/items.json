@@ -1,0 +1,236 @@
+[
+  {
+    "id": "notebooks_activity_retrieve",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/activity/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/activity/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_all_activity_retrieve",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/activity/",
+    "context": "GET /api/projects/{project_id}/notebooks/activity/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "notebooks_collab_markdown_save_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/collab/markdown_save/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/collab/markdown_save/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_collab_presence_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/collab/presence/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/collab/presence/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_collab_save_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/collab/save/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/collab/save/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_collab_stream_retrieve",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/collab/stream/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/collab/stream/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/",
+    "context": "POST /api/projects/{project_id}/notebooks/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/notebooks/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/notebooks/{short_id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_kernel_compute_options_retrieve",
+    "name": "Compute rates, presets, and the sizes the kernel config endpoint accepts",
+    "description": "Compute rates, presets, and the sizes the kernel config endpoint accepts Compute rates, presets, and the sizes the kernel config endpoint accepts. GET /api/projects/{project_id}/notebooks/kernel/compute_options/",
+    "context": "GET /api/projects/{project_id}/notebooks/kernel/compute_options/\nCompute rates, presets, and the sizes the kernel config endpoint accepts. Static per region, so a client can fetch it once and price any shape a user picks.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "notebooks_kernel_config_create",
+    "name": "Set the notebook's kernel compute configuration",
+    "description": "Set the notebook's kernel compute configuration Set the notebook's kernel compute configuration. POST /api/projects/{project_id}/notebooks/{short_id}/kernel/config/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/kernel/config/\nSet the notebook's kernel compute configuration. Applies at sandbox provision time: a currently running kernel keeps its resources until restarted.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_kernel_execute_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/kernel/execute/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/kernel/execute/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_kernel_restart_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/kernel/restart/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/kernel/restart/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_kernel_start_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/kernel/start/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/kernel/start/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_kernel_status_retrieve",
+    "name": "Live-checked kernel runtime state for this notebook, its compute configuration, and the catalog of dataframes/tables a cell can currently reference (with column schemas).",
+    "description": "Live-checked kernel runtime state for this notebook, its compute configuration, and the catalog of dataframes/tables a cell can currently reference (with column schemas). GET /api/projects/{project_id}/notebooks/{short_id}/kernel/status/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/kernel/status/\nLive-checked kernel runtime state for this notebook, its compute configuration, and the catalog of dataframes/tables a cell can currently reference (with column schemas).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_kernel_stop_create",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/kernel/stop/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/kernel/stop/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_list",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/",
+    "context": "GET /api/projects/{project_id}/notebooks/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: contains (query) — Filter for notebooks that match a provided filter. Each match pair is separated by a colon, multiple match pairs can be sent separated by a space or a comma; created_by (query) — The UUID of the Notebook's creator; date_from (query) — Filter for notebooks created after this date & time; date_to (query) — Filter for notebooks created before this date & time; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; user (query) — If any value is provided for this parameter, return notebooks created by the logged in user."
+  },
+  {
+    "id": "notebooks_partial_update",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. PATCH /api/projects/{project_id}/notebooks/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/notebooks/{short_id}/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_recording_comments_retrieve",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/recording_comments/",
+    "context": "GET /api/projects/{project_id}/notebooks/recording_comments/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "notebooks_retrieve",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_sharing_list",
+    "name": "notebooks_sharing_list",
+    "description": "notebooks_sharing_list GET /api/projects/{project_id}/notebooks/{notebook_id}/sharing/",
+    "context": "GET /api/projects/{project_id}/notebooks/{notebook_id}/sharing/\nnotebooks_sharing_list\nRequired: notebook_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "notebooks_sharing_passwords_create",
+    "name": "Create a new password for the sharing configuration.",
+    "description": "Create a new password for the sharing configuration. POST /api/projects/{project_id}/notebooks/{notebook_id}/sharing/passwords/",
+    "context": "POST /api/projects/{project_id}/notebooks/{notebook_id}/sharing/passwords/\nCreate a new password for the sharing configuration.\nRequired: notebook_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_sharing_passwords_destroy",
+    "name": "Delete a password from the sharing configuration.",
+    "description": "Delete a password from the sharing configuration. DELETE /api/projects/{project_id}/notebooks/{notebook_id}/sharing/passwords/{password_id}/",
+    "context": "DELETE /api/projects/{project_id}/notebooks/{notebook_id}/sharing/passwords/{password_id}/\nDelete a password from the sharing configuration.\nRequired: notebook_id (path); password_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "notebooks_sharing_refresh_create",
+    "name": "notebooks_sharing_refresh_create",
+    "description": "notebooks_sharing_refresh_create POST /api/projects/{project_id}/notebooks/{notebook_id}/sharing/refresh/",
+    "context": "POST /api/projects/{project_id}/notebooks/{notebook_id}/sharing/refresh/\nnotebooks_sharing_refresh_create\nRequired: notebook_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_sql_v2_run_create",
+    "name": "Dispatch an asynchronous run of a notebook SQL or Python cell",
+    "description": "Dispatch an asynchronous run of a notebook SQL or Python cell Dispatch an asynchronous run of a notebook SQL or Python cell. POST /api/projects/{project_id}/notebooks/{short_id}/sql_v2/run/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/sql_v2/run/\nDispatch an asynchronous run of a notebook SQL or Python cell. Returns a run_id immediately; poll the run result endpoint until the status is terminal. One run at a time per notebook. Python notebooks enable all run types. Generated widgets enable HogQL runs without a connection or kernel.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_sql_v2_runs_interrupt_create",
+    "name": "Stop a running cell",
+    "description": "Stop a running cell Stop a running cell. POST /api/projects/{project_id}/notebooks/{short_id}/sql_v2/runs/{run_id}/interrupt/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/sql_v2/runs/{run_id}/interrupt/\nStop a running cell. Idempotent: interrupting an already-finished run returns its outcome unchanged. Flag-gated (revamped-py-notebooks).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — ID of the run, as returned by the run dispatch endpoint.; short_id (path)"
+  },
+  {
+    "id": "notebooks_sql_v2_runs_retrieve",
+    "name": "Read a run's durable state: its status, and — once done or interrupted — the result envelope (columns, first rows, stdout/stderr, media, error)",
+    "description": "Read a run's durable state: its status, and — once done or interrupted — the result envelope (columns, first rows, stdout/stderr, media, error) Read a run's durable state: its status, and — once done or interrupted — the result envelope (columns, first rows, stdout/stderr, media, error). GET /api/projects/{project_id}…",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/sql_v2/runs/{run_id}/\nRead a run's durable state: its status, and — once done or interrupted — the result envelope (columns, first rows, stdout/stderr, media, error). Poll until terminal. Requires notebook and query read access, including after a notebook feature flag is disabled.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — ID of the run, as returned by the run dispatch endpoint.; short_id (path)"
+  },
+  {
+    "id": "notebooks_sql_v2_state_retrieve",
+    "name": "The full notebook view for agents: title, document source (markdown, or raw content for legacy rich-text notebooks), the notebook's declared variables, every cell with its dependency edges and derived run status (including staleness), and the kernel's runtime state and compute config",
+    "description": "The full notebook view for agents: title, document source (markdown, or raw content for legacy rich-text notebooks), the notebook's declared variables, every cell with its dependency edges and derived run status (including staleness), and the kernel's runtime state and compute config The full notebook view for agents:…",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/sql_v2/state/\nThe full notebook view for agents: title, document source (markdown, or raw content for legacy rich-text notebooks), the notebook's declared variables, every cell with its dependency edges and derived run status (including staleness), and the kernel's runtime state and compute config. Flag-gated (revamped-py-notebooks).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_update",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. PUT /api/projects/{project_id}/notebooks/{short_id}/",
+    "context": "PUT /api/projects/{project_id}/notebooks/{short_id}/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_widget_attach",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/attach/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/attach/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_widget_cancel",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/cancel/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/cancel/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_widget_fork",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/fork/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/fork/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the reusable widget node to fork.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "notebooks_widget_frame",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/frames/{frame_name}/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/frames/{frame_name}/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: frame_name (path) — Allowed dataframe slot requested by the widget.; node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: limit (query); offset (query); run_id (query); version_id (query)"
+  },
+  {
+    "id": "notebooks_widget_generate",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/generate/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/generate/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_widget_pin",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/pin/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/pin/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_widget_publish",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/publish/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/publish/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_widget_revert",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/revert/",
+    "context": "POST /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/revert/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  },
+  {
+    "id": "notebooks_widget_source",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/source/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/source/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: version_id (query) — Immutable widget version whose source should be returned."
+  },
+  {
+    "id": "notebooks_widget_status",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/status/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/status/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Stable identifier of the generated widget node.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "notebooks_widget_versions",
+    "name": "The API for interacting with Notebooks",
+    "description": "The API for interacting with Notebooks The API for interacting with Notebooks. GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/versions/",
+    "context": "GET /api/projects/{project_id}/notebooks/{short_id}/widgets/{node_id}/versions/\nThe API for interacting with Notebooks. This feature is in early access and the API can have breaking changes without announcement.\nRequired: node_id (path) — Widget node identifier.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: limit (query); offset (query)"
+  }
+]

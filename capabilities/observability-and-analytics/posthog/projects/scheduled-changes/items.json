@@ -1,0 +1,38 @@
+[
+  {
+    "id": "scheduled_changes_create",
+    "name": "Create, read, update and delete scheduled changes.",
+    "description": "Create, read, update and delete scheduled changes. POST /api/projects/{project_id}/scheduled_changes/",
+    "context": "POST /api/projects/{project_id}/scheduled_changes/\nCreate, read, update and delete scheduled changes.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "scheduled_changes_destroy",
+    "name": "Create, read, update and delete scheduled changes.",
+    "description": "Create, read, update and delete scheduled changes. DELETE /api/projects/{project_id}/scheduled_changes/{id}/",
+    "context": "DELETE /api/projects/{project_id}/scheduled_changes/{id}/\nCreate, read, update and delete scheduled changes.\nRequired: id (path) — A unique integer value identifying this scheduled change.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "scheduled_changes_list",
+    "name": "Create, read, update and delete scheduled changes.",
+    "description": "Create, read, update and delete scheduled changes. GET /api/projects/{project_id}/scheduled_changes/",
+    "context": "GET /api/projects/{project_id}/scheduled_changes/\nCreate, read, update and delete scheduled changes.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; model_name (query) — Filter by model type. Use \"FeatureFlag\" to see feature flag schedules.; offset (query) — The initial index from which to return the results.; record_id (query) — Filter by the ID of a specific feature flag."
+  },
+  {
+    "id": "scheduled_changes_partial_update",
+    "name": "Create, read, update and delete scheduled changes.",
+    "description": "Create, read, update and delete scheduled changes. PATCH /api/projects/{project_id}/scheduled_changes/{id}/",
+    "context": "PATCH /api/projects/{project_id}/scheduled_changes/{id}/\nCreate, read, update and delete scheduled changes.\nRequired: id (path) — A unique integer value identifying this scheduled change.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "scheduled_changes_retrieve",
+    "name": "Create, read, update and delete scheduled changes.",
+    "description": "Create, read, update and delete scheduled changes. GET /api/projects/{project_id}/scheduled_changes/{id}/",
+    "context": "GET /api/projects/{project_id}/scheduled_changes/{id}/\nCreate, read, update and delete scheduled changes.\nRequired: id (path) — A unique integer value identifying this scheduled change.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "scheduled_changes_update",
+    "name": "Create, read, update and delete scheduled changes.",
+    "description": "Create, read, update and delete scheduled changes. PUT /api/projects/{project_id}/scheduled_changes/{id}/",
+    "context": "PUT /api/projects/{project_id}/scheduled_changes/{id}/\nCreate, read, update and delete scheduled changes.\nRequired: id (path) — A unique integer value identifying this scheduled change.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

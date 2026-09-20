@@ -1,0 +1,62 @@
+[
+  {
+    "id": "session_recordings_bulk_delete_create",
+    "name": "Delete a batch of session recordings by session ID",
+    "description": "Delete a batch of session recordings by session ID Delete a batch of session recordings by session ID. POST /api/projects/{project_id}/session_recordings/bulk_delete/",
+    "context": "POST /api/projects/{project_id}/session_recordings/bulk_delete/\nDelete a batch of session recordings by session ID. Deletion is permanent and cannot be undone. IDs that don't match an existing recording are skipped and counted in `total_requested` but not `deleted_count`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "session_recordings_destroy",
+    "name": "session_recordings_destroy",
+    "description": "session_recordings_destroy DELETE /api/projects/{project_id}/session_recordings/{id}/",
+    "context": "DELETE /api/projects/{project_id}/session_recordings/{id}/\nsession_recordings_destroy\nRequired: id (path) — A UUID string identifying this session recording.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "session_recordings_list",
+    "name": "session_recordings_list",
+    "description": "session_recordings_list GET /api/projects/{project_id}/session_recordings/",
+    "context": "GET /api/projects/{project_id}/session_recordings/\nsession_recordings_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "session_recordings_partial_update",
+    "name": "session_recordings_partial_update",
+    "description": "session_recordings_partial_update PATCH /api/projects/{project_id}/session_recordings/{id}/",
+    "context": "PATCH /api/projects/{project_id}/session_recordings/{id}/\nsession_recordings_partial_update\nRequired: id (path) — A UUID string identifying this session recording.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "session_recordings_retrieve",
+    "name": "session_recordings_retrieve",
+    "description": "session_recordings_retrieve GET /api/projects/{project_id}/session_recordings/{id}/",
+    "context": "GET /api/projects/{project_id}/session_recordings/{id}/\nsession_recordings_retrieve\nRequired: id (path) — A UUID string identifying this session recording.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "session_recordings_sharing_list",
+    "name": "session_recordings_sharing_list",
+    "description": "session_recordings_sharing_list GET /api/projects/{project_id}/session_recordings/{recording_id}/sharing/",
+    "context": "GET /api/projects/{project_id}/session_recordings/{recording_id}/sharing/\nsession_recordings_sharing_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; recording_id (path)"
+  },
+  {
+    "id": "session_recordings_sharing_passwords_create",
+    "name": "Create a new password for the sharing configuration.",
+    "description": "Create a new password for the sharing configuration. POST /api/projects/{project_id}/session_recordings/{recording_id}/sharing/passwords/",
+    "context": "POST /api/projects/{project_id}/session_recordings/{recording_id}/sharing/passwords/\nCreate a new password for the sharing configuration.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; recording_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "session_recordings_sharing_passwords_destroy",
+    "name": "Delete a password from the sharing configuration.",
+    "description": "Delete a password from the sharing configuration. DELETE /api/projects/{project_id}/session_recordings/{recording_id}/sharing/passwords/{password_id}/",
+    "context": "DELETE /api/projects/{project_id}/session_recordings/{recording_id}/sharing/passwords/{password_id}/\nDelete a password from the sharing configuration.\nRequired: password_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; recording_id (path)"
+  },
+  {
+    "id": "session_recordings_sharing_refresh_create",
+    "name": "session_recordings_sharing_refresh_create",
+    "description": "session_recordings_sharing_refresh_create POST /api/projects/{project_id}/session_recordings/{recording_id}/sharing/refresh/",
+    "context": "POST /api/projects/{project_id}/session_recordings/{recording_id}/sharing/refresh/\nsession_recordings_sharing_refresh_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; recording_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "session_recordings_update",
+    "name": "session_recordings_update",
+    "description": "session_recordings_update PUT /api/projects/{project_id}/session_recordings/{id}/",
+    "context": "PUT /api/projects/{project_id}/session_recordings/{id}/\nsession_recordings_update\nRequired: id (path) — A UUID string identifying this session recording.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

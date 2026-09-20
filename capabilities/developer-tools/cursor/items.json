@@ -1,0 +1,110 @@
+[
+  {
+    "id": "archiveAgent",
+    "name": "Archive an agent",
+    "description": "Archive an agent Archive an agent. POST /v1/agents/{id}/archive",
+    "context": "POST /v1/agents/{id}/archive\nArchive an agent. Archived agents remain readable but cannot accept new runs until unarchived.\nRequired: id (path) — Unique identifier for the agent."
+  },
+  {
+    "id": "cancelRun",
+    "name": "Cancel a run",
+    "description": "Cancel a run Cancel the active run for an agent. POST /v1/agents/{id}/runs/{runId}/cancel",
+    "context": "POST /v1/agents/{id}/runs/{runId}/cancel\nCancel the active run for an agent. Cancellation is terminal — the run transitions to `CANCELLED`. Cancelling a run that is already terminal or was never active returns `409 run_not_cancellable`. To continue the conversation, create a new run on the same agent.\nRequired: id (path) — Unique identifier for the agent.; runId (path) — Unique identifier for the run."
+  },
+  {
+    "id": "createAgent",
+    "name": "Create an agent",
+    "description": "Create an agent Create a Cloud Agent and immediately enqueue its initial run. POST /v1/agents",
+    "context": "POST /v1/agents\nCreate a Cloud Agent and immediately enqueue its initial run. The response contains both the durable `agent` and the initial `run`.\nRequired: body (body)"
+  },
+  {
+    "id": "createRun",
+    "name": "Create a run",
+    "description": "Create a run Send a follow-up prompt to an existing active agent. POST /v1/agents/{id}/runs",
+    "context": "POST /v1/agents/{id}/runs\nSend a follow-up prompt to an existing active agent. The new run uses the agent's current conversation and workspace state. Only one run can be active per agent at a time.\nRequired: id (path) — Unique identifier for the agent.; body (body)"
+  },
+  {
+    "id": "createSubToken",
+    "name": "Create A User-Scoped Worker Token",
+    "description": "Create A User-Scoped Worker Token Create a one-hour user-scoped token for a My Machines worker to run as an active team member. POST /v1/sub-tokens",
+    "context": "POST /v1/sub-tokens\nCreate a one-hour user-scoped token for a My Machines worker to run as an active team member. Requires an agent-scoped team service account API key. User-scoped tokens can't mint other user-scoped tokens.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteAgent",
+    "name": "Delete an agent permanently",
+    "description": "Delete an agent permanently Permanently delete an agent. DELETE /v1/agents/{id}",
+    "context": "DELETE /v1/agents/{id}\nPermanently delete an agent. This action is irreversible. Use POST /v1/agents/{id}/archive for reversible removal.\nRequired: id (path) — Unique identifier for the agent."
+  },
+  {
+    "id": "downloadArtifact",
+    "name": "Download an artifact",
+    "description": "Download an artifact Retrieve a temporary 15-minute presigned S3 URL for an artifact. GET /v1/agents/{id}/artifacts/download",
+    "context": "GET /v1/agents/{id}/artifacts/download\nRetrieve a temporary 15-minute presigned S3 URL for an artifact. The `path` query parameter must be a relative path under `artifacts/` returned by GET /v1/agents/{id}/artifacts.\nRequired: id (path) — Unique identifier for the agent.; path (query) — Relative artifact path under `artifacts/`."
+  },
+  {
+    "id": "getAgent",
+    "name": "Get an agent",
+    "description": "Get an agent Retrieve durable metadata for an agent. GET /v1/agents/{id}",
+    "context": "GET /v1/agents/{id}\nRetrieve durable metadata for an agent. Execution status lives on runs.\nRequired: id (path) — Unique identifier for the agent."
+  },
+  {
+    "id": "getAgentUsage",
+    "name": "Get agent usage",
+    "description": "Get agent usage Retrieve token usage for an agent, broken down per run. GET /v1/agents/{id}/usage",
+    "context": "GET /v1/agents/{id}/usage\nRetrieve token usage for an agent, broken down per run. `totalUsage` sums input, output, and cache token counts across every run on the agent, and `runs` lists the same breakdown for each run. Token usage mirrors the `tokenUsage` shape on the team usage events endpoint. This endpoint is in early access. When it isn't enabled for the account it returns `403 feature_unavailable`. An unknown `runId` returns `404 run_not_found`.\nRequired: id (path) — Unique identifier for the agent.\nOptional: runId (query) — Scope usage to a single run. Omit to return usage for every run on the agent."
+  },
+  {
+    "id": "getApiKeyInfo",
+    "name": "API key info",
+    "description": "API key info Retrieve information about the API key being used for authentication. GET /v1/me",
+    "context": "GET /v1/me\nRetrieve information about the API key being used for authentication."
+  },
+  {
+    "id": "getRun",
+    "name": "Get a run",
+    "description": "Get a run Retrieve status and timestamps for a specific run. GET /v1/agents/{id}/runs/{runId}",
+    "context": "GET /v1/agents/{id}/runs/{runId}\nRetrieve status and timestamps for a specific run.\nRequired: id (path) — Unique identifier for the agent.; runId (path) — Unique identifier for the run."
+  },
+  {
+    "id": "listAgents",
+    "name": "List agents",
+    "description": "List agents List agents for the authenticated user, newest first. GET /v1/agents",
+    "context": "GET /v1/agents\nList agents for the authenticated user, newest first.\nOptional: limit (query) — Number of agents to return.; cursor (query) — Pagination cursor from the previous response.; prUrl (query) — Filter agents by GitHub pull request URL.; includeArchived (query) — Whether to include archived agents."
+  },
+  {
+    "id": "listArtifacts",
+    "name": "List artifacts",
+    "description": "List artifacts List artifacts produced by an agent. GET /v1/agents/{id}/artifacts",
+    "context": "GET /v1/agents/{id}/artifacts\nList artifacts produced by an agent. Each artifact's `path` is relative to the workspace's `artifacts/` directory. Pass that `path` to GET /v1/agents/{id}/artifacts/download to obtain a presigned download URL.\nRequired: id (path) — Unique identifier for the agent."
+  },
+  {
+    "id": "listModels",
+    "name": "List models",
+    "description": "List models Returns a recommended set of explicit model IDs you can pass to the `model.id` field on POST /v1/agents. GET /v1/models",
+    "context": "GET /v1/models\nReturns a recommended set of explicit model IDs you can pass to the `model.id` field on POST /v1/agents. To use the configured default model, omit the `model` field from the request body entirely."
+  },
+  {
+    "id": "listRepositories",
+    "name": "List GitHub repositories",
+    "description": "List GitHub repositories List GitHub repositories accessible to the authenticated user through Cursor's GitHub App installation. GET /v1/repositories",
+    "context": "GET /v1/repositories\nList GitHub repositories accessible to the authenticated user through Cursor's GitHub App installation. This endpoint has very strict rate limits (1 request per user per minute, 30 per user per hour) and can take tens of seconds to respond for users with access to many repositories. Cache responses aggressively and handle this information not being available gracefully."
+  },
+  {
+    "id": "listRuns",
+    "name": "List runs",
+    "description": "List runs List runs for an agent, newest first. GET /v1/agents/{id}/runs",
+    "context": "GET /v1/agents/{id}/runs\nList runs for an agent, newest first.\nRequired: id (path) — Unique identifier for the agent.\nOptional: limit (query); cursor (query) — Pagination cursor from the previous response."
+  },
+  {
+    "id": "streamRun",
+    "name": "Stream a run",
+    "description": "Stream a run Stream Server-Sent Events for one run. GET /v1/agents/{id}/runs/{runId}/stream",
+    "context": "GET /v1/agents/{id}/runs/{runId}/stream\nStream Server-Sent Events for one run. Event types are `status`, `assistant`, `thinking`, `tool_call`, `interaction_update`, `heartbeat`, `result`, `error`, and `done`. - `status` carries `{ runId, status }`. It has no `id` line and is replayed at the top of every reconnect. - `result` carries `{ runId, status, text?, durationMs?, git? }`; `text` is the final assistant reply, `durationMs` the wall-clock duration, and `git` mirrors `Run.git`. - `interaction_update` carries the richer SDK-shape update used by the TypeScript SDK and is emitted alongside the simplified events that share the same event id. Use this if you want the full SDK stream; otherwise handle the simplified events and ignore it. Reconnect with the `Last-Event-ID` header to resume after a disconnect; the event ID must belong to the requested run otherwise the endpoint returns `400 invalid_last_event_id`. Responses include the `X-Cursor-Stream-Retention-Seconds` header; after the retention window the endpoint may return `410 stream_expired`. `tool_call` event data uses the `RunStreamToolCallData` schema.\nRequired: id (path) — Unique identifier for the agent.; runId (path) — Unique identifier for the run.\nOptional: Last-Event-ID (header) — Resume from a previously received event ID for this run."
+  },
+  {
+    "id": "unarchiveAgent",
+    "name": "Unarchive an agent",
+    "description": "Unarchive an agent Unarchive an agent so it can accept new runs again. POST /v1/agents/{id}/unarchive",
+    "context": "POST /v1/agents/{id}/unarchive\nUnarchive an agent so it can accept new runs again.\nRequired: id (path) — Unique identifier for the agent."
+  }
+]

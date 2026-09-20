@@ -1,0 +1,74 @@
+[
+  {
+    "id": "slurper-abort-all-jobs",
+    "name": "Abort all jobs",
+    "description": "Abort all jobs Cancels all running R2 Super Slurper migration jobs for the account. PUT /client/v4/accounts/{account_id}/slurper/jobs/abortAll",
+    "context": "PUT /client/v4/accounts/{account_id}/slurper/jobs/abortAll\nCancels all running R2 Super Slurper migration jobs for the account. Any objects in the middle of a transfer will finish, but no new objects will start transferring.\nRequired: account_id (path)"
+  },
+  {
+    "id": "slurper-abort-job",
+    "name": "Abort a job",
+    "description": "Abort a job Cancels a specific R2 Super Slurper migration job. PUT /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/abort",
+    "context": "PUT /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/abort\nCancels a specific R2 Super Slurper migration job. Any objects in the middle of a transfer will finish, but no new objects will start transferring.\nRequired: account_id (path); job_id (path)"
+  },
+  {
+    "id": "slurper-check-source-connectivity",
+    "name": "Check source connectivity",
+    "description": "Check source connectivity Check whether tokens are valid against the source bucket PUT /client/v4/accounts/{account_id}/slurper/source/connectivity-precheck",
+    "context": "PUT /client/v4/accounts/{account_id}/slurper/source/connectivity-precheck\nCheck whether tokens are valid against the source bucket\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "slurper-check-target-connectivity",
+    "name": "Check target connectivity",
+    "description": "Check target connectivity Check whether tokens are valid against the target bucket PUT /client/v4/accounts/{account_id}/slurper/target/connectivity-precheck",
+    "context": "PUT /client/v4/accounts/{account_id}/slurper/target/connectivity-precheck\nCheck whether tokens are valid against the target bucket\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "slurper-create-job",
+    "name": "Create a job",
+    "description": "Create a job Creates a new R2 Super Slurper migration job to transfer objects from a source bucket (e.g. POST /client/v4/accounts/{account_id}/slurper/jobs",
+    "context": "POST /client/v4/accounts/{account_id}/slurper/jobs\nCreates a new R2 Super Slurper migration job to transfer objects from a source bucket (e.g. S3, GCS, R2) to R2.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "slurper-delete-job",
+    "name": "Delete a job",
+    "description": "Delete a job Deletes a completed, aborted, or errored R2 Super Slurper migration job. DELETE /client/v4/accounts/{account_id}/slurper/jobs/{job_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/slurper/jobs/{job_id}\nDeletes a completed, aborted, or errored R2 Super Slurper migration job. Active jobs cannot be deleted.\nRequired: account_id (path); job_id (path)"
+  },
+  {
+    "id": "slurper-get-job",
+    "name": "Get job details",
+    "description": "Get job details Retrieves detailed status and configuration for a specific R2 Super Slurper migration job. GET /client/v4/accounts/{account_id}/slurper/jobs/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/slurper/jobs/{job_id}\nRetrieves detailed status and configuration for a specific R2 Super Slurper migration job.\nRequired: account_id (path); job_id (path)"
+  },
+  {
+    "id": "slurper-get-job-logs",
+    "name": "Get job logs",
+    "description": "Get job logs Gets log entries for an R2 Super Slurper migration job, showing migration status changes, errors, etc. GET /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/logs\nGets log entries for an R2 Super Slurper migration job, showing migration status changes, errors, etc.\nRequired: account_id (path); job_id (path)\nOptional: limit (query); offset (query)"
+  },
+  {
+    "id": "slurper-get-job-progress",
+    "name": "Get job progress",
+    "description": "Get job progress Retrieves current progress metrics for an R2 Super Slurper migration job GET /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/progress",
+    "context": "GET /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/progress\nRetrieves current progress metrics for an R2 Super Slurper migration job\nRequired: account_id (path); job_id (path)"
+  },
+  {
+    "id": "slurper-list-jobs",
+    "name": "List jobs",
+    "description": "List jobs Lists all R2 Super Slurper migration jobs for the account with their status. GET /client/v4/accounts/{account_id}/slurper/jobs",
+    "context": "GET /client/v4/accounts/{account_id}/slurper/jobs\nLists all R2 Super Slurper migration jobs for the account with their status.\nRequired: account_id (path)\nOptional: limit (query); offset (query)"
+  },
+  {
+    "id": "slurper-pause-job",
+    "name": "Pause a job",
+    "description": "Pause a job Pauses a running R2 Super Slurper migration job. PUT /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/pause",
+    "context": "PUT /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/pause\nPauses a running R2 Super Slurper migration job. The job can be resumed later to continue transferring.\nRequired: account_id (path); job_id (path)"
+  },
+  {
+    "id": "slurper-resume-job",
+    "name": "Resume a job",
+    "description": "Resume a job Resumes a paused R2 Super Slurper migration job, continuing the transfer from where it stopped. PUT /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/resume",
+    "context": "PUT /client/v4/accounts/{account_id}/slurper/jobs/{job_id}/resume\nResumes a paused R2 Super Slurper migration job, continuing the transfer from where it stopped.\nRequired: account_id (path); job_id (path)"
+  }
+]

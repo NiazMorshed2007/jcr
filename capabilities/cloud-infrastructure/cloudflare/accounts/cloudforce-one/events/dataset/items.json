@@ -1,0 +1,212 @@
+[
+  {
+    "id": "delete_DatasetDelete",
+    "name": "Delete a dataset",
+    "description": "Delete a dataset Soft-deletes a dataset given a datasetId. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}\nSoft-deletes a dataset given a datasetId.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID to delete"
+  },
+  {
+    "id": "delete_GroupDelete",
+    "name": "Delete a group for an account",
+    "description": "Delete a group for an account DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}\nDelete a group for an account\nRequired: account_id (path) — Account ID.; group_id (path)"
+  },
+  {
+    "id": "delete_GroupMemberDelete",
+    "name": "Delete a group member",
+    "description": "Delete a group member DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}\nDelete a group member\nRequired: account_id (path) — Account ID.; group_id (path); member_id (path)"
+  },
+  {
+    "id": "delete_IndicatorDelete",
+    "name": "Deletes an indicator",
+    "description": "Deletes an indicator Deletes a specific indicator by its UUID. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}\nDeletes a specific indicator by its UUID.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.; indicator_id (path) — Indicator UUID."
+  },
+  {
+    "id": "delete_IndicatorRelationshipDelete",
+    "name": "Delete a relationship",
+    "description": "Delete a relationship Deletes a relationship by UUID. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}\nDeletes a relationship by UUID. Idempotent: returns deleted=false if not found.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; indicator_id (path) — Indicator UUID.; rel_uuid (path) — Relationship UUID."
+  },
+  {
+    "id": "delete_PermissionDelete",
+    "name": "Delete a permission for dataset",
+    "description": "Delete a permission for dataset Delete a permission DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}\nDelete a permission\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; grant_id (path)"
+  },
+  {
+    "id": "get_DatasetList",
+    "name": "Lists all datasets in an account",
+    "description": "Lists all datasets in an account Lists all threat event datasets configured in Cloudforce One. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset\nLists all threat event datasets configured in Cloudforce One.\nRequired: account_id (path) — Account ID.\nOptional: includeDeleted (query) — When true, include soft-deleted datasets in the response. Each item includes a `deletedAt` field (ISO 8601 or null). Default: false."
+  },
+  {
+    "id": "get_DatasetRead",
+    "name": "Reads a dataset",
+    "description": "Reads a dataset Retrieves details for a specific threat event dataset. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}\nRetrieves details for a specific threat event dataset.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID."
+  },
+  {
+    "id": "get_DatasetTagIndicatorsList",
+    "name": "List indicators related to a tag within a dataset (deprecated)",
+    "description": "List indicators related to a tag within a dataset (deprecated) This endpoint is deprecated. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators\nThis endpoint is deprecated. Use GET /:account_id/events/tags/:tag_uuid/indicators with the optional datasetIds query parameter instead. Returns indicators associated with the provided tag UUID within a single dataset's indicator shards, with pagination.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.; dataset_id (path) — Dataset UUID.\nOptional: page (query); pageSize (query); indicatorType (query); relatedEvent (query) — Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter.; search (query) — Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType. Multiple conditions are AND'd together. Max 10 conditions per request."
+  },
+  {
+    "id": "get_EventRead",
+    "name": "Reads an event",
+    "description": "Reads an event Retrieves a specific event by its UUID. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}\nRetrieves a specific event by its UUID.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.; event_id (path) — Event UUID."
+  },
+  {
+    "id": "get_GroupList",
+    "name": "List groups for an account",
+    "description": "List groups for an account GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups\nList groups for an account\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "get_GroupMemberList",
+    "name": "List group members",
+    "description": "List group members GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members\nList group members\nRequired: account_id (path) — Account ID.; group_id (path)"
+  },
+  {
+    "id": "get_GroupRead",
+    "name": "Read a group for an account",
+    "description": "Read a group for an account GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}\nRead a group for an account\nRequired: account_id (path) — Account ID.; group_id (path)"
+  },
+  {
+    "id": "get_IndicatorListLegacy",
+    "name": "Lists indicators",
+    "description": "Lists indicators This method is deprecated. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators\nThis method is deprecated. Please use /events/indicators to retrieve a paginated list of indicators.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.\nOptional: page (query); pageSize (query); name (query) — Filter by indicator value (substring match); indicatorType (query); relatedEvent (query) — Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter."
+  },
+  {
+    "id": "get_IndicatorRead",
+    "name": "Reads an indicator",
+    "description": "Reads an indicator Retrieves a specific indicator by its UUID. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}\nRetrieves a specific indicator by its UUID.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.; indicator_id (path) — Indicator UUID."
+  },
+  {
+    "id": "get_IndicatorRelationshipsList",
+    "name": "List relationships for an indicator",
+    "description": "List relationships for an indicator Returns sparse relationship edges. GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships\nReturns sparse relationship edges. Optionally hydrate related entities via `expand`.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; indicator_id (path) — Indicator UUID.\nOptional: search (query); expand (query); cursor (query); pageSize (query)"
+  },
+  {
+    "id": "get_IndicatorTagsList",
+    "name": "List mirrored tags for an indicator dataset",
+    "description": "List mirrored tags for an indicator dataset Returns all mirrored tags from the indicator dataset (DO mirror table). GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags\nReturns all mirrored tags from the indicator dataset (DO mirror table). No pagination.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID."
+  },
+  {
+    "id": "get_PermissionList",
+    "name": "List permissions for dataset",
+    "description": "List permissions for dataset List permissions GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions\nList permissions\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID."
+  },
+  {
+    "id": "get_TargetIndustryListByDataset",
+    "name": "Lists all target industries for a specific dataset",
+    "description": "Lists all target industries for a specific dataset GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries\nLists all target industries for a specific dataset\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID."
+  },
+  {
+    "id": "patch_DatasetUpdate",
+    "name": "Updates an existing dataset",
+    "description": "Updates an existing dataset Partially updates a threat event dataset in Cloudforce One, modifying specific fields without replacing the entire dataset configuration. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}\nPartially updates a threat event dataset in Cloudforce One, modifying specific fields without replacing the entire dataset configuration.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_IndicatorRelationshipUpdate",
+    "name": "Update a relationship",
+    "description": "Update a relationship Partially updates a relationship by UUID. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}\nPartially updates a relationship by UUID. Only provided fields are changed.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; indicator_id (path) — Indicator UUID.; rel_uuid (path) — Relationship UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_IndicatorUpdate",
+    "name": "Updates an indicator",
+    "description": "Updates an indicator Updates an existing indicator's properties. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}\nUpdates an existing indicator's properties.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.; indicator_id (path) — Indicator UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_DatasetCreate",
+    "name": "Creates a dataset",
+    "description": "Creates a dataset Creates a new threat event dataset in Cloudforce One for organizing related threat events. POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/create\nCreates a new threat event dataset in Cloudforce One for organizing related threat events.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_DatasetUpdate",
+    "name": "Updates an existing dataset",
+    "description": "Updates an existing dataset POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}\nUpdates an existing dataset\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventCopyToNewDS",
+    "name": "Copies specified events from one dataset to another dataset",
+    "description": "Copies specified events from one dataset to another dataset POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy\nCopies specified events from one dataset to another dataset\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.\nOptional: keepRawData (query) — If true, copies raw data to the destination dataset. Default is false (raw data is stripped/not copied).; body (body)"
+  },
+  {
+    "id": "post_EventMoveToNewDS",
+    "name": "Moves specified events from one dataset to another dataset",
+    "description": "Moves specified events from one dataset to another dataset POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move\nMoves specified events from one dataset to another dataset\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.\nOptional: keepRawData (query) — If true, copies raw data to the destination dataset. Default is false (raw data is stripped/not copied). Raw data is always deleted from the source.; body (body)"
+  },
+  {
+    "id": "post_GroupCreate",
+    "name": "Create a group",
+    "description": "Create a group POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups\nCreate a group\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_GroupMemberCreate",
+    "name": "Create a group member",
+    "description": "Create a group member POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members\nCreate a group member\nRequired: account_id (path) — Account ID.; group_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_IndicatorCreate",
+    "name": "Creates a new indicator",
+    "description": "Creates a new indicator Creates a new indicator with the specified type and related datasets. POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create\nCreates a new indicator with the specified type and related datasets.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_IndicatorCreateBulk",
+    "name": "Creates multiple indicators in bulk",
+    "description": "Creates multiple indicators in bulk Creates multiple indicators at once with their respective types and related datasets. POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk\nCreates multiple indicators at once with their respective types and related datasets.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_IndicatorRelationshipCreate",
+    "name": "Create a relationship for an indicator",
+    "description": "Create a relationship for an indicator Creates a new relationship with the indicator as the source entity. POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships\nCreates a new relationship with the indicator as the source entity. Indicator↔indicator relationships are not supported.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; indicator_id (path) — Indicator UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_IndicatorTypeCreate",
+    "name": "Create a new indicator type",
+    "description": "Create a new indicator type Creates a new indicator type and initializes its dedicated Durable Object POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create\nCreates a new indicator type and initializes its dedicated Durable Object\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_PermissionCreate",
+    "name": "Create a permission for dataset",
+    "description": "Create a permission for dataset Create a permission POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions\nCreate a permission\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "put_GroupUpdate",
+    "name": "Update a group",
+    "description": "Update a group PUT /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}\nUpdate a group\nRequired: account_id (path) — Account ID.; group_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "put_PermissionUpdate",
+    "name": "Update a permission for dataset",
+    "description": "Update a permission for dataset Update a permission PUT /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}\nUpdate a permission\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; grant_id (path)\nOptional: body (body)"
+  }
+]

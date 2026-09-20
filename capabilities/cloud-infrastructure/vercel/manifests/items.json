@@ -1,0 +1,20 @@
+[
+  {
+    "id": "deleteByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+    "name": "Delete an image manifest",
+    "description": "Delete an image manifest DELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest. DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}",
+    "context": "DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}\nDELETE /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Reference must be a digest.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; reference (path) — Content-addressable digest (algorithm:hex)."
+  },
+  {
+    "id": "getByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+    "name": "Pull an image manifest",
+    "description": "Pull an image manifest GET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest. GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}",
+    "context": "GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}\nGET /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Fetch a manifest by tag or digest.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; reference (path) — Manifest reference: a tag or digest."
+  },
+  {
+    "id": "replaceByTeamSlugByProjectSlugByRepositoryNameManifestsByReference",
+    "name": "Push an image manifest",
+    "description": "Push an image manifest PUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}",
+    "context": "PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}\nPUT /v2/:teamSlug/:projectSlug/:repositoryName/manifests/:reference Upload an image manifest. The digest is computed from the body and returned in the Docker-Content-Digest header.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; reference (path) — Manifest reference: a tag or digest."
+  }
+]

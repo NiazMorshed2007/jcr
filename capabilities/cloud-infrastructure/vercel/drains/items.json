@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createDrain",
+    "name": "Create a new Drain",
+    "description": "Create a new Drain Create a new Drain with the provided configuration. POST /v1/drains",
+    "context": "POST /v1/drains\nCreate a new Drain with the provided configuration.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteDrain",
+    "name": "Delete a drain",
+    "description": "Delete a drain Delete a specific Drain by passing the drain id in the URL. DELETE /v1/drains/{id}",
+    "context": "DELETE /v1/drains/{id}\nDelete a specific Drain by passing the drain id in the URL.\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDrain",
+    "name": "Find a Drain by id",
+    "description": "Find a Drain by id Get the information for a specific Drain by passing the drain id in the URL. GET /v1/drains/{id}",
+    "context": "GET /v1/drains/{id}\nGet the information for a specific Drain by passing the drain id in the URL.\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDrains",
+    "name": "Retrieve a list of all Drains",
+    "description": "Retrieve a list of all Drains Allows to retrieve the list of Drains of the authenticated team. GET /v1/drains",
+    "context": "GET /v1/drains\nAllows to retrieve the list of Drains of the authenticated team.\nOptional: projectId (query); includeMetadata (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "testDrain",
+    "name": "Validate Drain delivery configuration",
+    "description": "Validate Drain delivery configuration Validate the delivery configuration of a Drain using sample events. POST /v1/drains/test",
+    "context": "POST /v1/drains/test\nValidate the delivery configuration of a Drain using sample events.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateDrain",
+    "name": "Update an existing Drain",
+    "description": "Update an existing Drain Update the configuration of an existing drain. PATCH /v1/drains/{id}",
+    "context": "PATCH /v1/drains/{id}\nUpdate the configuration of an existing drain.\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

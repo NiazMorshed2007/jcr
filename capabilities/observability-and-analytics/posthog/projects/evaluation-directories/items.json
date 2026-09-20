@@ -1,0 +1,32 @@
+[
+  {
+    "id": "evaluation_directories_create",
+    "name": "evaluation_directories_create",
+    "description": "evaluation_directories_create POST /api/projects/{project_id}/evaluation_directories/",
+    "context": "POST /api/projects/{project_id}/evaluation_directories/\nevaluation_directories_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "evaluation_directories_destroy",
+    "name": "evaluation_directories_destroy",
+    "description": "evaluation_directories_destroy DELETE /api/projects/{project_id}/evaluation_directories/{id}/",
+    "context": "DELETE /api/projects/{project_id}/evaluation_directories/{id}/\nevaluation_directories_destroy\nRequired: id (path) — A UUID string identifying this evaluation directory.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "evaluation_directories_list",
+    "name": "evaluation_directories_list",
+    "description": "evaluation_directories_list GET /api/projects/{project_id}/evaluation_directories/",
+    "context": "GET /api/projects/{project_id}/evaluation_directories/\nevaluation_directories_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "evaluation_directories_partial_update",
+    "name": "evaluation_directories_partial_update",
+    "description": "evaluation_directories_partial_update PATCH /api/projects/{project_id}/evaluation_directories/{id}/",
+    "context": "PATCH /api/projects/{project_id}/evaluation_directories/{id}/\nevaluation_directories_partial_update\nRequired: id (path) — A UUID string identifying this evaluation directory.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "evaluation_directories_retrieve",
+    "name": "evaluation_directories_retrieve",
+    "description": "evaluation_directories_retrieve GET /api/projects/{project_id}/evaluation_directories/{id}/",
+    "context": "GET /api/projects/{project_id}/evaluation_directories/{id}/\nevaluation_directories_retrieve\nRequired: id (path) — A UUID string identifying this evaluation directory.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

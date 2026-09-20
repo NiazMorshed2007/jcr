@@ -1,0 +1,26 @@
+[
+  {
+    "id": "access-saml-certificates-get-certificate-set",
+    "name": "Get SAML certificate set",
+    "description": "Get SAML certificate set Retrieves a specific SAML encryption certificate set by its UID, including both current and previous certificates if available. GET /client/v4/accounts/{account_id}/access/saml_certificates/{saml_cert_set_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/saml_certificates/{saml_cert_set_id}\nRetrieves a specific SAML encryption certificate set by its UID, including both current and previous certificates if available.\nRequired: account_id (path); saml_cert_set_id (path) — UID of the SAML certificate set."
+  },
+  {
+    "id": "access-saml-certificates-get-pem",
+    "name": "Download current certificate in PEM format",
+    "description": "Download current certificate in PEM format Downloads the current SAML encryption certificate's public key in PEM format for the specified certificate set. GET /client/v4/accounts/{account_id}/access/saml_certificates/{saml_cert_set_id}/pem",
+    "context": "GET /client/v4/accounts/{account_id}/access/saml_certificates/{saml_cert_set_id}/pem\nDownloads the current SAML encryption certificate's public key in PEM format for the specified certificate set. This endpoint is useful for providing the certificate to Identity Providers for SAML assertion encryption configuration.\nRequired: account_id (path); saml_cert_set_id (path) — UID of the SAML certificate set."
+  },
+  {
+    "id": "access-saml-certificates-list-certificate-sets",
+    "name": "List SAML certificate sets",
+    "description": "List SAML certificate sets Returns a paginated list of the organization's SAML encryption certificate sets. GET /client/v4/accounts/{account_id}/access/saml_certificates",
+    "context": "GET /client/v4/accounts/{account_id}/access/saml_certificates\nReturns a paginated list of the organization's SAML encryption certificate sets. Each certificate set includes the current and (if present) previous certificates.\nRequired: account_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; id (query) — Filter by SAML certificate set UID. Accepts a comma-separated list of UIDs."
+  },
+  {
+    "id": "access-saml-certificates-rotate-certificate",
+    "name": "Rotate SAML certificate",
+    "description": "Rotate SAML certificate Rotates the SAML encryption certificates within the specified certificate set. POST /client/v4/accounts/{account_id}/access/saml_certificates/{saml_cert_set_id}/rotate",
+    "context": "POST /client/v4/accounts/{account_id}/access/saml_certificates/{saml_cert_set_id}/rotate\nRotates the SAML encryption certificates within the specified certificate set. This generates a new certificate and moves the current certificate to the previous slot. If a previous certificate exists, it will be deactivated and removed. This endpoint ensures zero-downtime rotation by maintaining both current and previous certificates during the transition period, allowing IdPs time to update their configurations. Automated rotation happens 30 days before a current certificate's expiration.\nRequired: account_id (path); saml_cert_set_id (path) — UID of the SAML certificate set to rotate."
+  }
+]

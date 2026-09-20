@@ -1,0 +1,182 @@
+[
+  {
+    "id": "createSandboxesByNameForkV2",
+    "name": "Fork a named sandbox",
+    "description": "Fork a named sandbox Forks a named sandbox, creating a new named sandbox from the source's configuration. POST /v2/sandboxes/{name}/fork",
+    "context": "POST /v2/sandboxes/{name}/fork\nForks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source.\nRequired: name (path) — Name of the source sandbox to fork.\nOptional: projectId (query) — The ID of the project the source sandbox belongs to. Required unless authenticating with an OIDC token.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSandboxesByNameForkV3",
+    "name": "Fork a named sandbox",
+    "description": "Fork a named sandbox Forks a named sandbox, creating a new named sandbox from the source's configuration. POST /v3/sandboxes/{name}/fork",
+    "context": "POST /v3/sandboxes/{name}/fork\nForks a named sandbox, creating a new named sandbox from the source's configuration. Resources, timeout, ports, tags, network policy, mounts, Connect network, image, persistence, snapshot settings and — unlike the SDK-side fork — environment variables are copied from the source automatically (`interactive` is not). When the source has a snapshot the fork starts from it; otherwise it starts from the source's runtime/image. Any field provided in the request body overrides the value copied from the source. Unlike v2, when neither the body nor the source provides a value, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot (`keepLastSnapshots: null` disables the limit).\nRequired: name (path) — Name of the source sandbox to fork.\nOptional: projectId (query) — The ID of the project the source sandbox belongs to. Required unless authenticating with an OIDC token.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSandboxesSessionsBySessionIdSnapshotV2",
+    "name": "Create a snapshot",
+    "description": "Create a snapshot Creates a point-in-time snapshot of a running session's filesystem. POST /v2/sandboxes/sessions/{sessionId}/snapshot",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/snapshot\nCreates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created.\nRequired: sessionId (path) — The unique identifier of the session to snapshot.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSandboxesSessionsBySessionIdSnapshotV3",
+    "name": "Create a snapshot",
+    "description": "Create a snapshot Creates a point-in-time snapshot of a running session's filesystem. POST /v3/sandboxes/sessions/{sessionId}/snapshot",
+    "context": "POST /v3/sandboxes/sessions/{sessionId}/snapshot\nCreates a point-in-time snapshot of a running session's filesystem. Snapshots can be used to quickly restore a session to a previous state or to create new sessions with pre-configured environments. The session must be running and able to accept commands for a snapshot to be created. The session will be terminated after the snapshot is created. Unlike v2, snapshots expire after 7 days when neither the request nor the sandbox configuration specifies an expiration.\nRequired: sessionId (path) — The unique identifier of the session to snapshot.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSandboxesV2",
+    "name": "Create a named sandbox",
+    "description": "Create a named sandbox Creates a named sandbox environment. POST /v2/sandboxes",
+    "context": "POST /v2/sandboxes\nCreates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSandboxesV3",
+    "name": "Create a named sandbox",
+    "description": "Create a named sandbox Creates a named sandbox environment. POST /v3/sandboxes",
+    "context": "POST /v3/sandboxes\nCreates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. Unlike v2, this version has no `runtime` parameter: when no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSandboxesV4",
+    "name": "Create a named sandbox",
+    "description": "Create a named sandbox Creates a named sandbox environment. POST /v4/sandboxes",
+    "context": "POST /v4/sandboxes\nCreates a named sandbox environment. Named sandboxes have a unique name within a project and support automatic snapshotting on shutdown. When no `image` is provided (and the sandbox is not restored from a snapshot), the sandbox is created from the default universal image. Unlike v3, snapshots expire after 7 days by default and persistent sandboxes keep only their most recent snapshot unless `keepLastSnapshots` is configured otherwise (or set to `null` to disable the limit).\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSessionDirectory",
+    "name": "Create a directory",
+    "description": "Create a directory Creates a new directory in a session's filesystem. POST /v2/sandboxes/sessions/{sessionId}/fs/mkdir",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/fs/mkdir\nCreates a new directory in a session's filesystem. By default, parent directories are created recursively if they don't exist (similar to `mkdir -p`).\nRequired: sessionId (path) — The unique identifier of the session to create the directory in.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteDrive",
+    "name": "Delete a drive",
+    "description": "Delete a drive Deletes a drive by project and name. DELETE /v2/sandboxes/drives/{name}",
+    "context": "DELETE /v2/sandboxes/drives/{name}\nDeletes a drive by project and name. Attached drives cannot be deleted. Stop or replace the session currently using the drive before retrying deletion. Drives are in private beta. Register your interest to get access: https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta\nRequired: name (path) — Name for the drive. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).\nOptional: projectId (query) — The project ID or name associated with the drive. Required unless using a Vercel OIDC token scoped to a project.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteSandbox",
+    "name": "Delete a sandbox",
+    "description": "Delete a sandbox Deletes a sandbox by name. DELETE /v2/sandboxes/{name}",
+    "context": "DELETE /v2/sandboxes/{name}\nDeletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata.\nRequired: name (path) — The sandbox name to delete.\nOptional: projectId (query) — The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.; deleteOrphanSnapshots (query) — When true, snapshots of the deleted sandbox that are not referenced by any other sandbox are also deleted asynchronously. Defaults to false.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteSessionSnapshot",
+    "name": "Delete a snapshot",
+    "description": "Delete a snapshot Permanently deletes a snapshot and frees its associated storage. DELETE /v2/sandboxes/snapshots/{snapshotId}",
+    "context": "DELETE /v2/sandboxes/snapshots/{snapshotId}\nPermanently deletes a snapshot and frees its associated storage. This action cannot be undone. After deletion, the snapshot can no longer be used to create new sessions.\nRequired: snapshotId (path) — The unique identifier of the snapshot to delete.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "extendSessionTimeout",
+    "name": "Extend session timeout",
+    "description": "Extend session timeout Extends the maximum execution time of a running session. POST /v2/sandboxes/sessions/{sessionId}/extend-timeout",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/extend-timeout\nExtends the maximum execution time of a running session. The session must be active and able to accept commands. The total timeout cannot exceed the maximum allowed limit for your account.\nRequired: sessionId (path) — The unique identifier of the session to extend the timeout for.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getNamedSandbox",
+    "name": "Get a named sandbox",
+    "description": "Get a named sandbox Retrieves a named sandbox by name, including its current sandbox and routes. GET /v2/sandboxes/{name}",
+    "context": "GET /v2/sandboxes/{name}\nRetrieves a named sandbox by name, including its current sandbox and routes. If the sandbox is stopped and resume is true, a new sandbox will be created from the most recent snapshot.\nRequired: name (path) — Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).\nOptional: projectId (query) — The project ID or name (required when not using OIDC token).; resume (query) — Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Defaults to false.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getOrCreateDrive",
+    "name": "Get or create a drive",
+    "description": "Get or create a drive Gets an existing drive by project and name, or creates it when it does not exist. POST /v2/sandboxes/drives/{name}",
+    "context": "POST /v2/sandboxes/drives/{name}\nGets an existing drive by project and name, or creates it when it does not exist. Drives are in private beta. Register your interest to get access: https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta\nRequired: name (path) — Name for the drive. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getSession",
+    "name": "Get a session",
+    "description": "Get a session Retrieves detailed information about a specific session, including its current status, resource configuration, and exposed routes. GET /v2/sandboxes/sessions/{sessionId}",
+    "context": "GET /v2/sandboxes/sessions/{sessionId}\nRetrieves detailed information about a specific session, including its current status, resource configuration, and exposed routes.\nRequired: sessionId (path) — The unique identifier of the session to retrieve.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getSessionCommand",
+    "name": "Get a command",
+    "description": "Get a command Retrieves the current status and details of a command executed in a session. GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}",
+    "context": "GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}\nRetrieves the current status and details of a command executed in a session. Use the `wait` parameter to block until the command finishes execution.\nRequired: sessionId (path) — The unique identifier of the session containing the command.; cmdId (path) — The unique identifier of the command to retrieve.\nOptional: wait (query) — If set to \"true\", the request will block until the command finishes execution. Useful for synchronously waiting for command completion.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getSessionCommandLogs",
+    "name": "Stream command logs",
+    "description": "Stream command logs Streams the output of a command in real-time using newline-delimited JSON (ND-JSON). GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs",
+    "context": "GET /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs\nStreams the output of a command in real-time using newline-delimited JSON (ND-JSON). Each entry includes the output data and stream type. Stream types include `stdout`, `stderr`, and `error` (for stream failures).\nRequired: sessionId (path) — The unique identifier of the session containing the command.; cmdId (path) — The unique identifier of the command to stream logs for.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getSessionSnapshot",
+    "name": "Get a snapshot",
+    "description": "Get a snapshot Retrieves detailed information about a specific snapshot, including its creation time, size, expiration date, and the source session it was created from. GET /v2/sandboxes/snapshots/{snapshotId}",
+    "context": "GET /v2/sandboxes/snapshots/{snapshotId}\nRetrieves detailed information about a specific snapshot, including its creation time, size, expiration date, and the source session it was created from.\nRequired: snapshotId (path) — The unique identifier of the snapshot to retrieve.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "killSessionCommand",
+    "name": "Kill a command",
+    "description": "Kill a command Sends a signal to terminate a running command in a session. POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill\nSends a signal to terminate a running command in a session. The signal can be used to gracefully stop (SIGTERM) or forcefully kill (SIGKILL) the process. The command must still be running for this operation to succeed.\nRequired: cmdId (path) — The unique identifier of the command to terminate.; sessionId (path) — The unique identifier of the session containing the command.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "listDrives",
+    "name": "List drives",
+    "description": "List drives Retrieves a paginated list of drives belonging to a specific project. GET /v2/sandboxes/drives",
+    "context": "GET /v2/sandboxes/drives\nRetrieves a paginated list of drives belonging to a specific project. Drives are in private beta. Register your interest to get access: https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta\nOptional: projectId (query) — The project ID or name associated with the drives. Required unless using a Vercel OIDC token scoped to a project.; limit (query) — Maximum number of drives to return in the response. Used for pagination.; cursor (query) — Opaque pagination cursor from a previous response.; sortBy (query) — Field to sort drives by.; namePrefix (query) — Filter drives whose name starts with this prefix. Only valid when sortBy=name.; sortOrder (query) — Sort direction for results.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listNamedSandboxes",
+    "name": "List sandboxes",
+    "description": "List sandboxes Retrieves a paginated list of named sandboxes belonging to a specific project. GET /v2/sandboxes",
+    "context": "GET /v2/sandboxes\nRetrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.\nOptional: project (query) — The unique identifier or name of the project to list named sandboxes for.; limit (query) — Maximum number of named sandboxes to return in the response. Used for pagination.; sortBy (query) — Field to sort by.; namePrefix (query) — Filter named sandboxes whose name starts with this prefix. Only valid when sortBy=name.; cursor (query) — Opaque pagination cursor from a previous response.; sortOrder (query) — Sort direction. Defaults to desc.; status (query) — Filter named sandboxes by status. Only valid when sortBy is createdAt.; tags (query) — Filter sandboxes by tag. Format: \\\"key:value\\\". Only one tag filter is supported at a time.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listSessionCommands",
+    "name": "List commands",
+    "description": "List commands Retrieves a list of all commands that have been executed in a session, including their current status, exit codes, and execution times, ordered from the most recent to the oldest. GET /v2/sandboxes/sessions/{sessionId}/cmd",
+    "context": "GET /v2/sandboxes/sessions/{sessionId}/cmd\nRetrieves a list of all commands that have been executed in a session, including their current status, exit codes, and execution times, ordered from the most recent to the oldest.\nRequired: sessionId (path) — The unique identifier of the session to list commands for.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listSessions",
+    "name": "List sessions",
+    "description": "List sessions Retrieves a paginated list of sessions belonging to a specific sandbox. GET /v2/sandboxes/sessions",
+    "context": "GET /v2/sandboxes/sessions\nRetrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted by creation time and paginated using an opaque cursor.\nOptional: project (query) — The unique identifier or name of the project to list sessions for.; name (query) — Filter sessions by sandbox name. Only sessions belonging to the specified sandbox are returned.; limit (query) — Maximum number of sessions to return in the response. Used for pagination.; cursor (query) — Opaque pagination cursor from a previous response.; sortOrder (query) — Sort direction for results by creation time.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listSessionSnapshots",
+    "name": "List snapshots",
+    "description": "List snapshots Retrieves a paginated list of snapshots for a specific project. GET /v2/sandboxes/snapshots",
+    "context": "GET /v2/sandboxes/snapshots\nRetrieves a paginated list of snapshots for a specific project.\nOptional: project (query) — The unique identifier or name of the project to list snapshots for.; name (query) — Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).; limit (query) — Maximum number of snapshots to return in the response. Used for pagination.; cursor (query) — Opaque pagination cursor from a previous response.; sortOrder (query) — Sort direction for results by creation time.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "readSessionFile",
+    "name": "Read a file",
+    "description": "Read a file Downloads the contents of a file from a session's filesystem. POST /v2/sandboxes/sessions/{sessionId}/fs/read",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/fs/read\nDownloads the contents of a file from a session's filesystem. The file content is returned as a binary stream with appropriate Content-Disposition headers for file download.\nRequired: sessionId (path) — The unique identifier of the session to read the file from.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "runSessionCommand",
+    "name": "Execute a command",
+    "description": "Execute a command Executes a shell command inside a running session. POST /v2/sandboxes/sessions/{sessionId}/cmd",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/cmd\nExecutes a shell command inside a running session. The command runs asynchronously and returns immediately with a command ID that can be used to track its progress and retrieve its output. Optionally, use the `wait` parameter to stream the command status until completion.\nRequired: sessionId (path) — The unique identifier of the session in which to execute the command.; cmdId (query) — The unique identifier of the command to stream logs for.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "stopSession",
+    "name": "Stop a session",
+    "description": "Stop a session Stops a running session and releases its allocated resources. POST /v2/sandboxes/sessions/{sessionId}/stop",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/stop\nStops a running session and releases its allocated resources. All running processes within the session will be terminated. This action cannot be undone. A stopped session cannot be restarted.\nRequired: sessionId (path) — The unique identifier of the session to stop.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateSandbox",
+    "name": "Update a sandbox",
+    "description": "Update a sandbox Updates the configuration of a sandbox. PATCH /v2/sandboxes/{name}",
+    "context": "PATCH /v2/sandboxes/{name}\nUpdates the configuration of a sandbox. Only the provided fields will be modified; omitted fields remain unchanged.\nRequired: name (path) — The sandbox to update.\nOptional: projectId (query) — The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.; resume (query) — Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Defaults to false.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateSessionNetworkPolicy",
+    "name": "Update network policy",
+    "description": "Update network policy Replaces the network access policy of a running session. POST /v2/sandboxes/sessions/{sessionId}/network-policy",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/network-policy\nReplaces the network access policy of a running session. Use this to control which external hosts the session can communicate with. This is a full replacement. Any previously configured network rules will be overwritten.\nRequired: sessionId (path) — The unique identifier of the session to update the network policy for.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "writeSessionFiles",
+    "name": "Write files",
+    "description": "Write files Uploads and extracts files to a session's filesystem. POST /v2/sandboxes/sessions/{sessionId}/fs/write",
+    "context": "POST /v2/sandboxes/sessions/{sessionId}/fs/write\nUploads and extracts files to a session's filesystem. Files must be uploaded as a gzipped tarball (`.tar.gz`) with the `Content-Type` header set to `application/gzip`. The tarball contents are extracted to the session's working directory, or to a custom directory specified via the `x-cwd` header.\nRequired: sessionId (path) — The unique identifier of the session to write files to.\nOptional: x-cwd (header) — The target directory where the tarball contents will be extracted. If not specified, files are extracted to the sandbox home directory.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

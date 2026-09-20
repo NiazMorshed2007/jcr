@@ -1,0 +1,26 @@
+[
+  {
+    "id": "per-hostname-tls-settings-delete",
+    "name": "Delete TLS setting for hostname",
+    "description": "Delete TLS setting for hostname Delete the tls setting value for the hostname. DELETE /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}",
+    "context": "DELETE /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}\nDelete the tls setting value for the hostname.\nRequired: zone_id (path); setting_id (path); hostname (path)"
+  },
+  {
+    "id": "per-hostname-tls-settings-get",
+    "name": "Get TLS setting for hostname",
+    "description": "Get TLS setting for hostname Get the requested TLS setting for the hostname. GET /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}",
+    "context": "GET /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}\nGet the requested TLS setting for the hostname.\nRequired: zone_id (path); setting_id (path); hostname (path)"
+  },
+  {
+    "id": "per-hostname-tls-settings-list",
+    "name": "List TLS setting for hostnames",
+    "description": "List TLS setting for hostnames List the requested TLS setting for the hostnames under this zone. GET /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}",
+    "context": "GET /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}\nList the requested TLS setting for the hostnames under this zone.\nRequired: zone_id (path); setting_id (path)"
+  },
+  {
+    "id": "per-hostname-tls-settings-put",
+    "name": "Edit TLS setting for hostname",
+    "description": "Edit TLS setting for hostname Update the tls setting value for the hostname. PUT /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}",
+    "context": "PUT /client/v4/zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}\nUpdate the tls setting value for the hostname.\nRequired: zone_id (path); setting_id (path); hostname (path); body (body)"
+  }
+]

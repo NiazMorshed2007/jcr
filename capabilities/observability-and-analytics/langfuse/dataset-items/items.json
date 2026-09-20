@@ -1,0 +1,26 @@
+[
+  {
+    "id": "datasetItems_create",
+    "name": "Create a dataset item",
+    "description": "Create a dataset item POST /api/public/dataset-items",
+    "context": "POST /api/public/dataset-items\nCreate a dataset item\nRequired: body (body)"
+  },
+  {
+    "id": "datasetItems_delete",
+    "name": "Delete a dataset item and all its run items",
+    "description": "Delete a dataset item and all its run items Delete a dataset item and all its run items. DELETE /api/public/dataset-items/{id}",
+    "context": "DELETE /api/public/dataset-items/{id}\nDelete a dataset item and all its run items. This action is irreversible.\nRequired: id (path)"
+  },
+  {
+    "id": "datasetItems_get",
+    "name": "Get a dataset item",
+    "description": "Get a dataset item GET /api/public/dataset-items/{id}",
+    "context": "GET /api/public/dataset-items/{id}\nGet a dataset item\nRequired: id (path)"
+  },
+  {
+    "id": "datasetItems_list",
+    "name": "Get dataset items",
+    "description": "Get dataset items Get dataset items. GET /api/public/dataset-items",
+    "context": "GET /api/public/dataset-items\nGet dataset items. Optionally specify a version to get the items as they existed at that point in time. Note: If version parameter is provided, datasetName must also be provided.\nOptional: datasetName (query); sourceTraceId (query); sourceObservationId (query); version (query) — ISO 8601 timestamp (RFC 3339, Section 5.6) in UTC (e.g., \"2026-01-21T14:35:42Z\"). If provided, returns state of dataset at this timestamp. If not provided, returns the latest version. Requires datasetName to be specified.; page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  }
+]

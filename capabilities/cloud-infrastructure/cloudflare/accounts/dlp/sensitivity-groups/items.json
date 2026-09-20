@@ -1,0 +1,86 @@
+[
+  {
+    "id": "dlp-sensitivity-group-template-read",
+    "name": "Retrieve a specific sensitivity group template.",
+    "description": "Retrieve a specific sensitivity group template. Gets an available sensitivity group template. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/templates/{template_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/templates/{template_id}\nGets an available sensitivity group template.\nRequired: account_id (path); template_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-group-templates-list",
+    "name": "Retrieve all sensitivity group templates in an account",
+    "description": "Retrieve all sensitivity group templates in an account Lists available sensitivity group templates. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/templates",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/templates\nLists available sensitivity group templates.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-groups-create",
+    "name": "Creates a new sensitivity group.",
+    "description": "Creates a new sensitivity group. Creates a sensitivity group, optionally from a template. POST /client/v4/accounts/{account_id}/dlp/sensitivity_groups",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/sensitivity_groups\nCreates a sensitivity group, optionally from a template.\nRequired: account_id (path); body (body) — Attributes of the new sensitivity group."
+  },
+  {
+    "id": "dlp-sensitivity-groups-delete",
+    "name": "Delete a single sensitivity group.",
+    "description": "Delete a single sensitivity group. Deletes a sensitivity group and its levels. DELETE /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}\nDeletes a sensitivity group and its levels.\nRequired: account_id (path); sensitivity_group_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-groups-get-level-order",
+    "name": "Retrieve the ordered list of level IDs for a sensitivity group.",
+    "description": "Retrieve the ordered list of level IDs for a sensitivity group. Gets the current order of sensitivity levels in a group. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order\nGets the current order of sensitivity levels in a group.\nRequired: account_id (path); sensitivity_group_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-groups-list",
+    "name": "Retrieve all sensitivity groups in an account",
+    "description": "Retrieve all sensitivity groups in an account Lists sensitivity groups configured for the account. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups\nLists sensitivity groups configured for the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-groups-put-level-order",
+    "name": "Set the ordering of levels within a sensitivity group.",
+    "description": "Set the ordering of levels within a sensitivity group. Updates the order of sensitivity levels in a group. PUT /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order\nUpdates the order of sensitivity levels in a group.\nRequired: account_id (path); sensitivity_group_id (path); body (body) — Desired ordered list of level IDs."
+  },
+  {
+    "id": "dlp-sensitivity-groups-read",
+    "name": "Retrieve a specific sensitivity group.",
+    "description": "Retrieve a specific sensitivity group. Gets a sensitivity group and its levels. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}\nGets a sensitivity group and its levels.\nRequired: account_id (path); sensitivity_group_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-groups-update",
+    "name": "Update the attributes of a single sensitivity group.",
+    "description": "Update the attributes of a single sensitivity group. Updates a sensitivity group and its levels. PUT /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}\nUpdates a sensitivity group and its levels.\nRequired: account_id (path); sensitivity_group_id (path); body (body) — Attributes of the sensitivity group to update."
+  },
+  {
+    "id": "dlp-sensitivity-levels-create",
+    "name": "Creates a new sensitivity level.",
+    "description": "Creates a new sensitivity level. Creates a sensitivity level in a group. POST /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels\nCreates a sensitivity level in a group.\nRequired: account_id (path); sensitivity_group_id (path); body (body) — Attributes of the new sensitivity level."
+  },
+  {
+    "id": "dlp-sensitivity-levels-delete",
+    "name": "Delete a single sensitivity level.",
+    "description": "Delete a single sensitivity level. Deletes a sensitivity level from a group. DELETE /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}\nDeletes a sensitivity level from a group.\nRequired: account_id (path); sensitivity_group_id (path); sensitivity_level_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-levels-list",
+    "name": "Retrieve all sensitivity levels in a sensitivity group",
+    "description": "Retrieve all sensitivity levels in a sensitivity group Lists sensitivity levels in a sensitivity group. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels\nLists sensitivity levels in a sensitivity group.\nRequired: account_id (path); sensitivity_group_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-levels-read",
+    "name": "Retrieve a specific sensitivity level.",
+    "description": "Retrieve a specific sensitivity level. Gets a sensitivity level from a group. GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}\nGets a sensitivity level from a group.\nRequired: account_id (path); sensitivity_group_id (path); sensitivity_level_id (path)"
+  },
+  {
+    "id": "dlp-sensitivity-levels-update",
+    "name": "Update the attributes of a single sensitivity level.",
+    "description": "Update the attributes of a single sensitivity level. Updates a sensitivity level in a group. PUT /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}\nUpdates a sensitivity level in a group.\nRequired: account_id (path); sensitivity_group_id (path); sensitivity_level_id (path); body (body) — Attributes of the sensitivity level to update."
+  }
+]

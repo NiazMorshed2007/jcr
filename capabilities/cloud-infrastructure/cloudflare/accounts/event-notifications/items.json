@@ -1,0 +1,26 @@
+[
+  {
+    "id": "r2-event-notification-delete-config",
+    "name": "Delete Event Notification Rules",
+    "description": "Delete Event Notification Rules Delete an event notification rule. DELETE /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}\nDelete an event notification rule. **If no body is provided, all rules for specified queue will be deleted**.\nRequired: queue_id (path); bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; body (body)"
+  },
+  {
+    "id": "r2-get-event-notification-config",
+    "name": "Get Event Notification Rule",
+    "description": "Get Event Notification Rule Get a single event notification rule. GET /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}",
+    "context": "GET /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}\nGet a single event notification rule.\nRequired: queue_id (path); bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-event-notification-configs",
+    "name": "List Event Notification Rules",
+    "description": "List Event Notification Rules List all event notification rules for a bucket. GET /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration",
+    "context": "GET /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration\nList all event notification rules for a bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-event-notification-config",
+    "name": "Create Event Notification Rule",
+    "description": "Create Event Notification Rule Create event notification rule. PUT /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}\nCreate event notification rule.\nRequired: queue_id (path); bucket_name (path); account_id (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  }
+]

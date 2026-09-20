@@ -1,0 +1,182 @@
+[
+  {
+    "id": "createPosts",
+    "name": "Create Posts",
+    "description": "Create Posts POST /2/tweets",
+    "context": "POST /2/tweets\nCreate Posts\nRequired: body (body)"
+  },
+  {
+    "id": "createWebhooksStreamLink",
+    "name": "Create stream link",
+    "description": "Create stream link Creates a link to deliver FilteredStream events to the given webhook. POST /2/tweets/search/webhooks/{webhook_id}",
+    "context": "POST /2/tweets/search/webhooks/{webhook_id}\nCreates a link to deliver FilteredStream events to the given webhook.\nRequired: webhook_id (path)"
+  },
+  {
+    "id": "deletePosts",
+    "name": "Delete Posts",
+    "description": "Delete Posts DELETE /2/tweets/{id}",
+    "context": "DELETE /2/tweets/{id}\nDelete Posts\nRequired: id (path)"
+  },
+  {
+    "id": "deleteWebhooksStreamLink",
+    "name": "Delete stream link",
+    "description": "Delete stream link Deletes the link delivering FilteredStream events to the given webhook. DELETE /2/tweets/search/webhooks/{webhook_id}",
+    "context": "DELETE /2/tweets/search/webhooks/{webhook_id}\nDeletes the link delivering FilteredStream events to the given webhook.\nRequired: webhook_id (path)"
+  },
+  {
+    "id": "getPostsAnalytics",
+    "name": "Get Posts Analytics",
+    "description": "Get Posts Analytics GET /2/tweets/analytics",
+    "context": "GET /2/tweets/analytics\nGet Posts Analytics\nRequired: ids (query); start_time (query); end_time (query)\nOptional: granularity (query); analytics.fields (query) — A comma separated list of Analytics fields to display."
+  },
+  {
+    "id": "getPostsById",
+    "name": "Get Posts by ID",
+    "description": "Get Posts by ID GET /2/tweets/{id}",
+    "context": "GET /2/tweets/{id}\nGet Posts by ID\nRequired: id (path)\nOptional: post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getPostsByIds",
+    "name": "Get Posts by IDs",
+    "description": "Get Posts by IDs GET /2/tweets",
+    "context": "GET /2/tweets\nGet Posts by IDs\nRequired: ids (query)\nOptional: post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getPostsCountsAll",
+    "name": "Get Posts Counts All",
+    "description": "Get Posts Counts All At most one of `pagination_token`, `next_token` may be provided. GET /2/tweets/counts/all",
+    "context": "GET /2/tweets/counts/all\nAt most one of `pagination_token`, `next_token` may be provided.\nRequired: query (query)\nOptional: start_time (query); end_time (query); since_id (query); until_id (query); next_token (query) — A base32hex-encoded pagination token.; pagination_token (query) — A base32hex-encoded pagination token.; granularity (query); search_count.fields (query)"
+  },
+  {
+    "id": "getPostsCountsRecent",
+    "name": "Get Posts Counts Recent",
+    "description": "Get Posts Counts Recent At most one of `pagination_token`, `next_token` may be provided. GET /2/tweets/counts/recent",
+    "context": "GET /2/tweets/counts/recent\nAt most one of `pagination_token`, `next_token` may be provided.\nRequired: query (query)\nOptional: start_time (query) — Must be within the last 7 days.; end_time (query); since_id (query); until_id (query); next_token (query) — A base32hex-encoded pagination token.; pagination_token (query) — A base32hex-encoded pagination token.; granularity (query); search_count.fields (query)"
+  },
+  {
+    "id": "getPostsLikingUsers",
+    "name": "Get Posts Liking Users",
+    "description": "Get Posts Liking Users GET /2/tweets/{id}/liking_users",
+    "context": "GET /2/tweets/{id}/liking_users\nGet Posts Liking Users\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getPostsQuotedPosts",
+    "name": "Get Posts Quoted Posts",
+    "description": "Get Posts Quoted Posts GET /2/tweets/{id}/quote_tweets",
+    "context": "GET /2/tweets/{id}/quote_tweets\nGet Posts Quoted Posts\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; exclude (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getPostsRepostedBy",
+    "name": "Get Posts Reposted by",
+    "description": "Get Posts Reposted by GET /2/tweets/{id}/retweeted_by",
+    "context": "GET /2/tweets/{id}/retweeted_by\nGet Posts Reposted by\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getPostsReposts",
+    "name": "Get Posts Reposts",
+    "description": "Get Posts Reposts GET /2/tweets/{id}/retweets",
+    "context": "GET /2/tweets/{id}/retweets\nGet Posts Reposts\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getRuleCounts",
+    "name": "Get Rule Counts",
+    "description": "Get Rule Counts GET /2/tweets/search/stream/rules/counts",
+    "context": "GET /2/tweets/search/stream/rules/counts\nGet Rule Counts\nOptional: rules_count.fields (query)"
+  },
+  {
+    "id": "getRules",
+    "name": "Get filtered-stream rules",
+    "description": "Get filtered-stream rules Returns the active filtered-stream rules for the authenticated app. GET /2/tweets/search/stream/rules",
+    "context": "GET /2/tweets/search/stream/rules\nReturns the active filtered-stream rules for the authenticated app. Provide `ids` to fetch specific rules; omit it to list all rules.\nOptional: ids (query); max_results (query); pagination_token (query) — A base32hex-encoded pagination token."
+  },
+  {
+    "id": "getWebhooksStreamLinks",
+    "name": "Get stream links",
+    "description": "Get stream links Get a list of webhook links associated with a filtered stream ruleset. GET /2/tweets/search/webhooks",
+    "context": "GET /2/tweets/search/webhooks\nGet a list of webhook links associated with a filtered stream ruleset."
+  },
+  {
+    "id": "hidePostsReply",
+    "name": "Hide reply",
+    "description": "Hide reply Hides or unhides a reply to a conversation owned by the authenticated user. PUT /2/tweets/{tweet_id}/hidden",
+    "context": "PUT /2/tweets/{tweet_id}/hidden\nHides or unhides a reply to a conversation owned by the authenticated user.\nRequired: tweet_id (path); body (body)"
+  },
+  {
+    "id": "searchPostsAll",
+    "name": "Search Posts All",
+    "description": "Search Posts All At most one of `start_time`, `since_id` may be provided. GET /2/tweets/search/all",
+    "context": "GET /2/tweets/search/all\nAt most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.\nRequired: query (query)\nOptional: start_time (query); end_time (query); since_id (query); until_id (query); max_results (query); next_token (query) — A base32hex-encoded pagination token.; pagination_token (query) — A base32hex-encoded pagination token.; sort_order (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "searchPostsRecent",
+    "name": "Search Posts Recent",
+    "description": "Search Posts Recent At most one of `start_time`, `since_id` may be provided. GET /2/tweets/search/recent",
+    "context": "GET /2/tweets/search/recent\nAt most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.\nRequired: query (query)\nOptional: max_results (query); next_token (query) — A base32hex-encoded pagination token.; pagination_token (query) — A base32hex-encoded pagination token.; start_time (query) — Must be within the last 7 days.; end_time (query); since_id (query); until_id (query); sort_order (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "streamLabelsCompliance",
+    "name": "Stream Post labels",
+    "description": "Stream Post labels Streams all labeling events applied to Posts. GET /2/tweets/label/stream",
+    "context": "GET /2/tweets/label/stream\nStreams all labeling events applied to Posts.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Post labels will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the Post labels will be provided."
+  },
+  {
+    "id": "streamPosts",
+    "name": "Stream filtered Posts",
+    "description": "Stream filtered Posts Streams Posts in real-time matching the active rule set. GET /2/tweets/search/stream",
+    "context": "GET /2/tweets/search/stream\nStreams Posts in real-time matching the active rule set.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "streamPostsCompliance",
+    "name": "Stream Posts compliance data",
+    "description": "Stream Posts compliance data Streams all compliance data related to Posts. GET /2/tweets/compliance/stream",
+    "context": "GET /2/tweets/compliance/stream\nStreams all compliance data related to Posts.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Post Compliance events will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the Post Compliance events will be provided."
+  },
+  {
+    "id": "streamPostsFirehose",
+    "name": "Stream all Posts",
+    "description": "Stream all Posts Streams all public Posts in real-time. GET /2/tweets/firehose/stream",
+    "context": "GET /2/tweets/firehose/stream\nStreams all public Posts in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided."
+  },
+  {
+    "id": "streamPostsFirehoseEn",
+    "name": "Stream English Posts",
+    "description": "Stream English Posts Streams all public English-language Posts in real-time. GET /2/tweets/firehose/stream/lang/en",
+    "context": "GET /2/tweets/firehose/stream/lang/en\nStreams all public English-language Posts in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided."
+  },
+  {
+    "id": "streamPostsFirehoseJa",
+    "name": "Stream Japanese Posts",
+    "description": "Stream Japanese Posts Streams all public Japanese-language Posts in real-time. GET /2/tweets/firehose/stream/lang/ja",
+    "context": "GET /2/tweets/firehose/stream/lang/ja\nStreams all public Japanese-language Posts in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided."
+  },
+  {
+    "id": "streamPostsFirehoseKo",
+    "name": "Stream Korean Posts",
+    "description": "Stream Korean Posts Streams all public Korean-language Posts in real-time. GET /2/tweets/firehose/stream/lang/ko",
+    "context": "GET /2/tweets/firehose/stream/lang/ko\nStreams all public Korean-language Posts in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided."
+  },
+  {
+    "id": "streamPostsFirehosePt",
+    "name": "Stream Portuguese Posts",
+    "description": "Stream Portuguese Posts Streams all public Portuguese-language Posts in real-time. GET /2/tweets/firehose/stream/lang/pt",
+    "context": "GET /2/tweets/firehose/stream/lang/pt\nStreams all public Portuguese-language Posts in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided."
+  },
+  {
+    "id": "streamPostsSample",
+    "name": "Stream sampled Posts",
+    "description": "Stream sampled Posts Streams a 1% sample of public Posts in real-time. GET /2/tweets/sample/stream",
+    "context": "GET /2/tweets/sample/stream\nStreams a 1% sample of public Posts in real-time.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "streamPostsSample10",
+    "name": "Stream 10% sampled Posts",
+    "description": "Stream 10% sampled Posts Streams a 10% sample of public Posts in real-time. GET /2/tweets/sample10/stream",
+    "context": "GET /2/tweets/sample10/stream\nStreams a 10% sample of public Posts in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; tweet.fields (query) — A comma separated list of Tweet fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; user.fields (query) — A comma separated list of User fields to display.; place.fields (query) — A comma separated list of Place fields to display.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided."
+  },
+  {
+    "id": "updateRules",
+    "name": "Update stream rules",
+    "description": "Update stream rules Adds or deletes rules from the active rule set for the filtered stream. POST /2/tweets/search/stream/rules",
+    "context": "POST /2/tweets/search/stream/rules\nAdds or deletes rules from the active rule set for the filtered stream. Exactly one of `add`, `delete`, or `?delete_all=true` must be specified. Use `?dry_run=true` to validate without committing.\nRequired: body (body)\nOptional: dry_run (query); delete_all (query)"
+  }
+]

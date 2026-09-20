@@ -1,0 +1,62 @@
+[
+  {
+    "id": "datasets_archive",
+    "name": "Archive a dataset",
+    "description": "Archive a dataset Archive a dataset. POST /api/projects/{project_id}/datasets/{id}/archive/",
+    "context": "POST /api/projects/{project_id}/datasets/{id}/archive/\nArchive a dataset. Archived datasets remain readable and reject item mutations.\nRequired: id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "datasets_create",
+    "name": "Create an empty dataset",
+    "description": "Create an empty dataset Create an empty dataset. POST /api/projects/{project_id}/datasets/",
+    "context": "POST /api/projects/{project_id}/datasets/\nCreate an empty dataset. Its first revision is created with its first item.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "datasets_exports_content_retrieve",
+    "name": "Download a completed dataset JSONL export.",
+    "description": "Download a completed dataset JSONL export. GET /api/projects/{project_id}/datasets/{id}/exports/{export_id}/content/",
+    "context": "GET /api/projects/{project_id}/datasets/{id}/exports/{export_id}/content/\nDownload a completed dataset JSONL export.\nRequired: export_id (path); id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "datasets_exports_create",
+    "name": "Create an asynchronous JSONL export pinned to an immutable dataset revision.",
+    "description": "Create an asynchronous JSONL export pinned to an immutable dataset revision. POST /api/projects/{project_id}/datasets/{id}/exports/",
+    "context": "POST /api/projects/{project_id}/datasets/{id}/exports/\nCreate an asynchronous JSONL export pinned to an immutable dataset revision.\nRequired: id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "datasets_exports_retrieve",
+    "name": "Check the status of a dataset export created by the current user.",
+    "description": "Check the status of a dataset export created by the current user. GET /api/projects/{project_id}/datasets/{id}/exports/{export_id}/",
+    "context": "GET /api/projects/{project_id}/datasets/{id}/exports/{export_id}/\nCheck the status of a dataset export created by the current user.\nRequired: export_id (path); id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "datasets_list",
+    "name": "List active datasets by default, or archived datasets when requested.",
+    "description": "List active datasets by default, or archived datasets when requested. GET /api/projects/{project_id}/datasets/",
+    "context": "GET /api/projects/{project_id}/datasets/\nList active datasets by default, or archived datasets when requested.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: archived (query) — Return archived datasets instead of active datasets.; id__in (query) — Filter to these dataset IDs. Repeat the parameter or pass one comma-separated list, up to 100 IDs.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Field and direction used to order results. * `created_at` - created_at * `-created_at` - -created_at * `updated_at` - updated_at * `-updated_at` - -updated_at; search (query) — Search dataset names, descriptions, and metadata."
+  },
+  {
+    "id": "datasets_partial_update",
+    "name": "Update descriptive dataset fields without changing its revision.",
+    "description": "Update descriptive dataset fields without changing its revision. PATCH /api/projects/{project_id}/datasets/{id}/",
+    "context": "PATCH /api/projects/{project_id}/datasets/{id}/\nUpdate descriptive dataset fields without changing its revision.\nRequired: id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "datasets_restore",
+    "name": "Restore an archived dataset without changing its item states.",
+    "description": "Restore an archived dataset without changing its item states. POST /api/projects/{project_id}/datasets/{id}/restore/",
+    "context": "POST /api/projects/{project_id}/datasets/{id}/restore/\nRestore an archived dataset without changing its item states.\nRequired: id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "datasets_retrieve",
+    "name": "Retrieve an active or archived dataset.",
+    "description": "Retrieve an active or archived dataset. GET /api/projects/{project_id}/datasets/{id}/",
+    "context": "GET /api/projects/{project_id}/datasets/{id}/\nRetrieve an active or archived dataset.\nRequired: id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "datasets_revisions_list",
+    "name": "List immutable dataset revisions, newest first.",
+    "description": "List immutable dataset revisions, newest first. GET /api/projects/{project_id}/datasets/{id}/revisions/",
+    "context": "GET /api/projects/{project_id}/datasets/{id}/revisions/\nList immutable dataset revisions, newest first.\nRequired: id (path) — A UUID string identifying this dataset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  }
+]

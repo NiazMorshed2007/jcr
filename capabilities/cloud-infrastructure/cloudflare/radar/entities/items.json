@@ -1,0 +1,56 @@
+[
+  {
+    "id": "radar-get-as-botnet-threat-feed",
+    "name": "Get AS rankings by botnet threat feed activity",
+    "description": "Get AS rankings by botnet threat feed activity Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. GET /client/v4/radar/entities/asns/botnet_threat_feed",
+    "context": "GET /client/v4/radar/entities/asns/botnet_threat_feed\nRetrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.\nOptional: limit (query) — Limits the number of objects returned in the response.; offset (query) — Skips the specified number of objects before fetching the results.; metric (query) — Metric to rank ASNs by.; date (query) — The date to retrieve (YYYY-MM-DD format). If not specified, returns the most recent available data. Note: This is the date the report was generated. The report is generated from information collected from the previous day (e.g., the 2026-02-23 entry contains data from 2026-02-22).; compareDateRange (query) — Relative date range for rank change comparison (e.g., \"1d\", \"7d\", \"30d\").; location (query) — Filters results by location. Specify an alpha-2 location code.; asn (query) — Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.; sortOrder (query) — Sort order.; format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-asns-as-set",
+    "name": "Get IRR AS-SETs that an AS is a member of",
+    "description": "Get IRR AS-SETs that an AS is a member of Retrieves Internet Routing Registry AS-SETs that an AS is a member of. GET /client/v4/radar/entities/asns/{asn}/as_set",
+    "context": "GET /client/v4/radar/entities/asns/{asn}/as_set\nRetrieves Internet Routing Registry AS-SETs that an AS is a member of.\nRequired: asn (path) — Retrieves all AS-SETs that the given AS is a member of.\nOptional: format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-asns-rel",
+    "name": "Get AS-level relationships by ASN",
+    "description": "Get AS-level relationships by ASN Retrieves AS-level relationship for given networks. GET /client/v4/radar/entities/asns/{asn}/rel",
+    "context": "GET /client/v4/radar/entities/asns/{asn}/rel\nRetrieves AS-level relationship for given networks.\nRequired: asn (path) — Retrieves all ASNs with provider-customer or peering relationships with the given ASN.\nOptional: asn2 (query) — Retrieves the AS relationship of ASN2 with respect to the given ASN.; format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-entities-asn-by-id",
+    "name": "Get AS details by ASN",
+    "description": "Get AS details by ASN Retrieves the requested autonomous system information. GET /client/v4/radar/entities/asns/{asn}",
+    "context": "GET /client/v4/radar/entities/asns/{asn}\nRetrieves the requested autonomous system information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this AS). Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).\nRequired: asn (path) — Single Autonomous System Number (ASN) as integer.\nOptional: format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-entities-asn-by-ip",
+    "name": "Get AS details by IP address",
+    "description": "Get AS details by IP address Retrieves the requested autonomous system information based on IP address. GET /client/v4/radar/entities/asns/ip",
+    "context": "GET /client/v4/radar/entities/asns/ip\nRetrieves the requested autonomous system information based on IP address. Population estimates come from APNIC (refer to https://labs.apnic.net/?p=526).\nRequired: ip (query) — IP address.\nOptional: format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-entities-asn-list",
+    "name": "List autonomous systems",
+    "description": "List autonomous systems Retrieves a list of autonomous systems. GET /client/v4/radar/entities/asns",
+    "context": "GET /client/v4/radar/entities/asns\nRetrieves a list of autonomous systems.\nOptional: limit (query) — Limits the number of objects returned in the response.; offset (query) — Skips the specified number of objects before fetching the results.; asn (query) — Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list.; location (query) — Filters results by location. Specify an alpha-2 location code.; orderBy (query) — Specifies the metric to order the ASNs by.; format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-entities-ip",
+    "name": "Get IP address details",
+    "description": "Get IP address details Retrieves IP address information. GET /client/v4/radar/entities/ip",
+    "context": "GET /client/v4/radar/entities/ip\nRetrieves IP address information.\nRequired: ip (query) — IP address.\nOptional: format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-entities-location-by-alpha2",
+    "name": "Get location details",
+    "description": "Get location details Retrieves the requested location information. GET /client/v4/radar/entities/locations/{location}",
+    "context": "GET /client/v4/radar/entities/locations/{location}\nRetrieves the requested location information. (A confidence level below `5` indicates a low level of confidence in the traffic data - normally this happens because Cloudflare has a small amount of traffic from/to this location).\nRequired: location (path) — Location alpha-2 code.\nOptional: format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-entities-locations",
+    "name": "List locations",
+    "description": "List locations Retrieves a list of locations. GET /client/v4/radar/entities/locations",
+    "context": "GET /client/v4/radar/entities/locations\nRetrieves a list of locations.\nOptional: limit (query) — Limits the number of objects returned in the response.; offset (query) — Skips the specified number of objects before fetching the results.; location (query) — Filters results by location. Specify a comma-separated list of alpha-2 location codes.; region (query) — Filters results by region.; subregion (query) — Filters results by subregion.; continent (query) — Filters results by continent code.; format (query) — Format in which results will be returned."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createOrganizationDiscoverSavedQuery",
+    "name": "Create a New Saved Query",
+    "description": "Create a New Saved Query Create a new saved query for the given organization. POST /api/0/organizations/{organization_id_or_slug}/discover/saved/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/discover/saved/\nCreate a new saved query for the given organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationDiscoverSavedQuery",
+    "name": "Delete an Organization's Discover Saved Query",
+    "description": "Delete an Organization's Discover Saved Query Delete a saved query. DELETE /api/0/organizations/{organization_id_or_slug}/discover/saved/{query_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/discover/saved/{query_id}/\nDelete a saved query.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; query_id (path) — The ID of the Discover query you'd like to retrieve."
+  },
+  {
+    "id": "getOrganizationDiscoverSavedQuery",
+    "name": "Retrieve an Organization's Discover Saved Query",
+    "description": "Retrieve an Organization's Discover Saved Query Retrieve a saved query. GET /api/0/organizations/{organization_id_or_slug}/discover/saved/{query_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/discover/saved/{query_id}/\nRetrieve a saved query.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; query_id (path) — The ID of the Discover query you'd like to retrieve."
+  },
+  {
+    "id": "listOrganizationDiscoverSavedQueries",
+    "name": "List an Organization's Discover Saved Queries",
+    "description": "List an Organization's Discover Saved Queries Retrieve a list of saved queries that are associated with the given organization. GET /api/0/organizations/{organization_id_or_slug}/discover/saved/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/discover/saved/\nRetrieve a list of saved queries that are associated with the given organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: per_page (query) — Limit the number of rows to return in the result. Default and maximum allowed is 100.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.; query (query) — The name of the Discover query you'd like to filter by.; sortBy (query) — The property to sort results by. If not specified, the results are sorted by query name. Available fields are: - `name` - `dateCreated` - `dateUpdated` - `mostPopular` - `recentlyViewed` - `myqueries`"
+  },
+  {
+    "id": "updateOrganizationDiscoverSavedQuery",
+    "name": "Edit an Organization's Discover Saved Query",
+    "description": "Edit an Organization's Discover Saved Query Modify a saved query. PUT /api/0/organizations/{organization_id_or_slug}/discover/saved/{query_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/discover/saved/{query_id}/\nModify a saved query.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; query_id (path) — The ID of the Discover query you'd like to retrieve.; body (body)"
+  }
+]

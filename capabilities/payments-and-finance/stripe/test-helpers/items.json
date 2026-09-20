@@ -1,0 +1,266 @@
+[
+  {
+    "id": "DeleteTestHelpersTestClocksTestClock",
+    "name": "Delete a test clock",
+    "description": "Delete a test clock Deletes a test clock. DELETE /v1/test_helpers/test_clocks/{test_clock}",
+    "context": "DELETE /v1/test_helpers/test_clocks/{test_clock}\nDeletes a test clock.\nRequired: test_clock (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetTestHelpersTestClocks",
+    "name": "List all test clocks",
+    "description": "List all test clocks Returns a list of your test clocks. GET /v1/test_helpers/test_clocks",
+    "context": "GET /v1/test_helpers/test_clocks\nReturns a list of your test clocks.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetTestHelpersTestClocksTestClock",
+    "name": "Retrieve a test clock",
+    "description": "Retrieve a test clock Retrieves a test clock. GET /v1/test_helpers/test_clocks/{test_clock}",
+    "context": "GET /v1/test_helpers/test_clocks/{test_clock}\nRetrieves a test clock.\nRequired: test_clock (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostTestHelpersConfirmationTokens",
+    "name": "Create a test Confirmation Token",
+    "description": "Create a test Confirmation Token Creates a test mode Confirmation Token server side for your integration tests. POST /v1/test_helpers/confirmation_tokens",
+    "context": "POST /v1/test_helpers/confirmation_tokens\nCreates a test mode Confirmation Token server side for your integration tests.\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersCustomersCustomerFundCashBalance",
+    "name": "Fund a test mode cash balance",
+    "description": "Fund a test mode cash balance Create an incoming testmode bank transfer POST /v1/test_helpers/customers/{customer}/fund_cash_balance",
+    "context": "POST /v1/test_helpers/customers/{customer}/fund_cash_balance\nCreate an incoming testmode bank transfer\nRequired: customer (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizations",
+    "name": "Create a test-mode authorization",
+    "description": "Create a test-mode authorization Create a test-mode authorization. POST /v1/test_helpers/issuing/authorizations",
+    "context": "POST /v1/test_helpers/issuing/authorizations\nCreate a test-mode authorization.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizationsAuthorizationCapture",
+    "name": "Capture a test-mode authorization",
+    "description": "Capture a test-mode authorization Capture a test-mode authorization. POST /v1/test_helpers/issuing/authorizations/{authorization}/capture",
+    "context": "POST /v1/test_helpers/issuing/authorizations/{authorization}/capture\nCapture a test-mode authorization.\nRequired: authorization (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizationsAuthorizationExpire",
+    "name": "Expire a test-mode authorization",
+    "description": "Expire a test-mode authorization Expire a test-mode Authorization. POST /v1/test_helpers/issuing/authorizations/{authorization}/expire",
+    "context": "POST /v1/test_helpers/issuing/authorizations/{authorization}/expire\nExpire a test-mode Authorization.\nRequired: authorization (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmount",
+    "name": "Finalize a test-mode authorization's amount",
+    "description": "Finalize a test-mode authorization's amount Finalize the amount on an Authorization prior to capture, when the initial authorization was for an estimated amount. POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount",
+    "context": "POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount\nFinalize the amount on an Authorization prior to capture, when the initial authorization was for an estimated amount.\nRequired: authorization (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespond",
+    "name": "Respond to fraud challenge",
+    "description": "Respond to fraud challenge Respond to a fraud challenge on a testmode Issuing authorization, simulating either a confirmation of fraud or a correction of legitimacy. POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond",
+    "context": "POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond\nRespond to a fraud challenge on a testmode Issuing authorization, simulating either a confirmation of fraud or a correction of legitimacy.\nRequired: authorization (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizationsAuthorizationIncrement",
+    "name": "Increment a test-mode authorization",
+    "description": "Increment a test-mode authorization Increment a test-mode Authorization. POST /v1/test_helpers/issuing/authorizations/{authorization}/increment",
+    "context": "POST /v1/test_helpers/issuing/authorizations/{authorization}/increment\nIncrement a test-mode Authorization.\nRequired: authorization (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingAuthorizationsAuthorizationReverse",
+    "name": "Reverse a test-mode authorization",
+    "description": "Reverse a test-mode authorization Reverse a test-mode Authorization. POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse",
+    "context": "POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse\nReverse a test-mode Authorization.\nRequired: authorization (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingCardsCardShippingDeliver",
+    "name": "Deliver a testmode card",
+    "description": "Deliver a testmode card Updates the shipping status of the specified Issuing Card object to delivered . POST /v1/test_helpers/issuing/cards/{card}/shipping/deliver",
+    "context": "POST /v1/test_helpers/issuing/cards/{card}/shipping/deliver\nUpdates the shipping status of the specified Issuing Card object to delivered .\nRequired: card (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingCardsCardShippingFail",
+    "name": "Fail a testmode card",
+    "description": "Fail a testmode card Updates the shipping status of the specified Issuing Card object to failure . POST /v1/test_helpers/issuing/cards/{card}/shipping/fail",
+    "context": "POST /v1/test_helpers/issuing/cards/{card}/shipping/fail\nUpdates the shipping status of the specified Issuing Card object to failure .\nRequired: card (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingCardsCardShippingReturn",
+    "name": "Return a testmode card",
+    "description": "Return a testmode card Updates the shipping status of the specified Issuing Card object to returned . POST /v1/test_helpers/issuing/cards/{card}/shipping/return",
+    "context": "POST /v1/test_helpers/issuing/cards/{card}/shipping/return\nUpdates the shipping status of the specified Issuing Card object to returned .\nRequired: card (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingCardsCardShippingShip",
+    "name": "Ship a testmode card",
+    "description": "Ship a testmode card Updates the shipping status of the specified Issuing Card object to shipped . POST /v1/test_helpers/issuing/cards/{card}/shipping/ship",
+    "context": "POST /v1/test_helpers/issuing/cards/{card}/shipping/ship\nUpdates the shipping status of the specified Issuing Card object to shipped .\nRequired: card (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingCardsCardShippingSubmit",
+    "name": "Submit a testmode card",
+    "description": "Submit a testmode card Updates the shipping status of the specified Issuing Card object to submitted . POST /v1/test_helpers/issuing/cards/{card}/shipping/submit",
+    "context": "POST /v1/test_helpers/issuing/cards/{card}/shipping/submit\nUpdates the shipping status of the specified Issuing Card object to submitted . This method requires Stripe Version ‘2024-09-30.acacia’ or later.\nRequired: card (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignActivate",
+    "name": "Activate a testmode personalization design",
+    "description": "Activate a testmode personalization design Updates the status of the specified testmode personalization design object to active . POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate",
+    "context": "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate\nUpdates the status of the specified testmode personalization design object to active .\nRequired: personalization_design (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignDeactivate",
+    "name": "Deactivate a testmode personalization design",
+    "description": "Deactivate a testmode personalization design Updates the status of the specified testmode personalization design object to inactive . POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate",
+    "context": "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate\nUpdates the status of the specified testmode personalization design object to inactive .\nRequired: personalization_design (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignReject",
+    "name": "Reject a testmode personalization design",
+    "description": "Reject a testmode personalization design Updates the status of the specified testmode personalization design object to rejected . POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject",
+    "context": "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject\nUpdates the status of the specified testmode personalization design object to rejected .\nRequired: personalization_design (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingSettlements",
+    "name": "Create a test-mode settlement",
+    "description": "Create a test-mode settlement Allows the user to create an Issuing settlement. POST /v1/test_helpers/issuing/settlements",
+    "context": "POST /v1/test_helpers/issuing/settlements\nAllows the user to create an Issuing settlement.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingSettlementsSettlementComplete",
+    "name": "Complete a test-mode settlement",
+    "description": "Complete a test-mode settlement Allows the user to mark an Issuing settlement as complete. POST /v1/test_helpers/issuing/settlements/{settlement}/complete",
+    "context": "POST /v1/test_helpers/issuing/settlements/{settlement}/complete\nAllows the user to mark an Issuing settlement as complete.\nRequired: settlement (path) — The settlement token to mark as complete.\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingTransactionsCreateForceCapture",
+    "name": "Create a test-mode force capture",
+    "description": "Create a test-mode force capture Allows the user to capture an arbitrary amount, also known as a forced capture. POST /v1/test_helpers/issuing/transactions/create_force_capture",
+    "context": "POST /v1/test_helpers/issuing/transactions/create_force_capture\nAllows the user to capture an arbitrary amount, also known as a forced capture.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingTransactionsCreateUnlinkedRefund",
+    "name": "Create a test-mode unlinked refund",
+    "description": "Create a test-mode unlinked refund Allows the user to refund an arbitrary amount, also known as a unlinked refund. POST /v1/test_helpers/issuing/transactions/create_unlinked_refund",
+    "context": "POST /v1/test_helpers/issuing/transactions/create_unlinked_refund\nAllows the user to refund an arbitrary amount, also known as a unlinked refund.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTestHelpersIssuingTransactionsTransactionRefund",
+    "name": "Refund a test-mode transaction",
+    "description": "Refund a test-mode transaction Refund a test-mode Transaction. POST /v1/test_helpers/issuing/transactions/{transaction}/refund",
+    "context": "POST /v1/test_helpers/issuing/transactions/{transaction}/refund\nRefund a test-mode Transaction.\nRequired: transaction (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersRefundsRefundExpire",
+    "name": "Expire a pending refund.",
+    "description": "Expire a pending refund. Expire a refund with a status of requires_action . POST /v1/test_helpers/refunds/{refund}/expire",
+    "context": "POST /v1/test_helpers/refunds/{refund}/expire\nExpire a refund with a status of requires_action .\nRequired: refund (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTerminalReadersReaderPresentPaymentMethod",
+    "name": "Simulate presenting a payment method",
+    "description": "Simulate presenting a payment method Presents a payment method on a simulated reader. POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method",
+    "context": "POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method\nPresents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTerminalReadersReaderSucceedInputCollection",
+    "name": "Simulate a successful input collection",
+    "description": "Simulate a successful input collection Use this endpoint to trigger a successful input collection on a simulated reader. POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection",
+    "context": "POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection\nUse this endpoint to trigger a successful input collection on a simulated reader.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTerminalReadersReaderTimeoutInputCollection",
+    "name": "Simulate an input collection timeout",
+    "description": "Simulate an input collection timeout Use this endpoint to complete an input collection with a timeout error on a simulated reader. POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection",
+    "context": "POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection\nUse this endpoint to complete an input collection with a timeout error on a simulated reader.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTestClocks",
+    "name": "Create a test clock",
+    "description": "Create a test clock Creates a new test clock that can be attached to new customers and quotes. POST /v1/test_helpers/test_clocks",
+    "context": "POST /v1/test_helpers/test_clocks\nCreates a new test clock that can be attached to new customers and quotes.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTestClocksTestClockAdvance",
+    "name": "Advance a test clock",
+    "description": "Advance a test clock Starts advancing a test clock to a specified time in the future. POST /v1/test_helpers/test_clocks/{test_clock}/advance",
+    "context": "POST /v1/test_helpers/test_clocks/{test_clock}/advance\nStarts advancing a test clock to a specified time in the future. Advancement is done when status changes to Ready .\nRequired: test_clock (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryInboundTransfersIdFail",
+    "name": "Test mode: Fail an InboundTransfer",
+    "description": "Test mode: Fail an InboundTransfer Transitions a test mode created InboundTransfer to the failed status. POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail",
+    "context": "POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail\nTransitions a test mode created InboundTransfer to the failed status. The InboundTransfer must already be in the processing state.\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryInboundTransfersIdReturn",
+    "name": "Test mode: Return an InboundTransfer",
+    "description": "Test mode: Return an InboundTransfer Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. POST /v1/test_helpers/treasury/inbound_transfers/{id}/return",
+    "context": "POST /v1/test_helpers/treasury/inbound_transfers/{id}/return\nMarks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. The InboundTransfer must already be in the succeeded state.\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryInboundTransfersIdSucceed",
+    "name": "Test mode: Succeed an InboundTransfer",
+    "description": "Test mode: Succeed an InboundTransfer Transitions a test mode created InboundTransfer to the succeeded status. POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed",
+    "context": "POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed\nTransitions a test mode created InboundTransfer to the succeeded status. The InboundTransfer must already be in the processing state.\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundPaymentsId",
+    "name": "Test mode: Update an OutboundPayment",
+    "description": "Test mode: Update an OutboundPayment Updates a test mode created OutboundPayment with tracking details. POST /v1/test_helpers/treasury/outbound_payments/{id}",
+    "context": "POST /v1/test_helpers/treasury/outbound_payments/{id}\nUpdates a test mode created OutboundPayment with tracking details. The OutboundPayment must not be cancelable, and cannot be in the canceled or failed states.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundPaymentsIdFail",
+    "name": "Test mode: Fail an OutboundPayment",
+    "description": "Test mode: Fail an OutboundPayment Transitions a test mode created OutboundPayment to the failed status. POST /v1/test_helpers/treasury/outbound_payments/{id}/fail",
+    "context": "POST /v1/test_helpers/treasury/outbound_payments/{id}/fail\nTransitions a test mode created OutboundPayment to the failed status. The OutboundPayment must already be in the processing state.\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundPaymentsIdPost",
+    "name": "Test mode: Post an OutboundPayment",
+    "description": "Test mode: Post an OutboundPayment Transitions a test mode created OutboundPayment to the posted status. POST /v1/test_helpers/treasury/outbound_payments/{id}/post",
+    "context": "POST /v1/test_helpers/treasury/outbound_payments/{id}/post\nTransitions a test mode created OutboundPayment to the posted status. The OutboundPayment must already be in the processing state.\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundPaymentsIdReturn",
+    "name": "Test mode: Return an OutboundPayment",
+    "description": "Test mode: Return an OutboundPayment Transitions a test mode created OutboundPayment to the returned status. POST /v1/test_helpers/treasury/outbound_payments/{id}/return",
+    "context": "POST /v1/test_helpers/treasury/outbound_payments/{id}/return\nTransitions a test mode created OutboundPayment to the returned status. The OutboundPayment must already be in the processing state.\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundTransfersOutboundTransfer",
+    "name": "Test mode: Update an OutboundTransfer",
+    "description": "Test mode: Update an OutboundTransfer Updates a test mode created OutboundTransfer with tracking details. POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}",
+    "context": "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}\nUpdates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must not be cancelable, and cannot be in the canceled or failed states.\nRequired: outbound_transfer (path); body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundTransfersOutboundTransferFail",
+    "name": "Test mode: Fail an OutboundTransfer",
+    "description": "Test mode: Fail an OutboundTransfer Transitions a test mode created OutboundTransfer to the failed status. POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail",
+    "context": "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail\nTransitions a test mode created OutboundTransfer to the failed status. The OutboundTransfer must already be in the processing state.\nRequired: outbound_transfer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundTransfersOutboundTransferPost",
+    "name": "Test mode: Post an OutboundTransfer",
+    "description": "Test mode: Post an OutboundTransfer Transitions a test mode created OutboundTransfer to the posted status. POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post",
+    "context": "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post\nTransitions a test mode created OutboundTransfer to the posted status. The OutboundTransfer must already be in the processing state.\nRequired: outbound_transfer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturn",
+    "name": "Test mode: Return an OutboundTransfer",
+    "description": "Test mode: Return an OutboundTransfer Transitions a test mode created OutboundTransfer to the returned status. POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return",
+    "context": "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return\nTransitions a test mode created OutboundTransfer to the returned status. The OutboundTransfer must already be in the processing state.\nRequired: outbound_transfer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryReceivedCredits",
+    "name": "Test mode: Create a ReceivedCredit",
+    "description": "Test mode: Create a ReceivedCredit Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. POST /v1/test_helpers/treasury/received_credits",
+    "context": "POST /v1/test_helpers/treasury/received_credits\nUse this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live mode, you can’t directly create ReceivedCredits initiated by third parties.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTestHelpersTreasuryReceivedDebits",
+    "name": "Test mode: Create a ReceivedDebit",
+    "description": "Test mode: Create a ReceivedDebit Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. POST /v1/test_helpers/treasury/received_debits",
+    "context": "POST /v1/test_helpers/treasury/received_debits\nUse this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live mode, you can’t directly create ReceivedDebits initiated by third parties.\nRequired: body (body)"
+  }
+]

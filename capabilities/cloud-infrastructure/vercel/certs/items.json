@@ -1,0 +1,32 @@
+[
+  {
+    "id": "getCertById",
+    "name": "Get cert by id",
+    "description": "Get cert by id GET /v8/certs/{id}",
+    "context": "GET /v8/certs/{id}\nGet cert by id\nRequired: id (path) — The cert id\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getCerts",
+    "name": "Get certs",
+    "description": "Get certs GET /v8/certs",
+    "context": "GET /v8/certs\nGet certs\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "issueCert",
+    "name": "Issue a new cert",
+    "description": "Issue a new cert POST /v8/certs",
+    "context": "POST /v8/certs\nIssue a new cert\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "removeCert",
+    "name": "Remove cert",
+    "description": "Remove cert DELETE /v8/certs/{id}",
+    "context": "DELETE /v8/certs/{id}\nRemove cert\nRequired: id (path) — The cert id to remove\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "uploadCert",
+    "name": "Upload a cert",
+    "description": "Upload a cert PUT /v8/certs",
+    "context": "PUT /v8/certs\nUpload a cert\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

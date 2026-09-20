@@ -1,0 +1,62 @@
+[
+  {
+    "id": "annotationQueues_createQueue",
+    "name": "Create an annotation queue",
+    "description": "Create an annotation queue POST /api/public/annotation-queues",
+    "context": "POST /api/public/annotation-queues\nCreate an annotation queue\nRequired: body (body)"
+  },
+  {
+    "id": "annotationQueues_createQueueAssignment",
+    "name": "Create an assignment for a user to an annotation queue",
+    "description": "Create an assignment for a user to an annotation queue POST /api/public/annotation-queues/{queueId}/assignments",
+    "context": "POST /api/public/annotation-queues/{queueId}/assignments\nCreate an assignment for a user to an annotation queue\nRequired: queueId (path) — The unique identifier of the annotation queue; body (body)"
+  },
+  {
+    "id": "annotationQueues_createQueueItem",
+    "name": "Add an item to an annotation queue",
+    "description": "Add an item to an annotation queue POST /api/public/annotation-queues/{queueId}/items",
+    "context": "POST /api/public/annotation-queues/{queueId}/items\nAdd an item to an annotation queue\nRequired: queueId (path) — The unique identifier of the annotation queue; body (body)"
+  },
+  {
+    "id": "annotationQueues_deleteQueueAssignment",
+    "name": "Delete an assignment for a user to an annotation queue",
+    "description": "Delete an assignment for a user to an annotation queue DELETE /api/public/annotation-queues/{queueId}/assignments",
+    "context": "DELETE /api/public/annotation-queues/{queueId}/assignments\nDelete an assignment for a user to an annotation queue\nRequired: queueId (path) — The unique identifier of the annotation queue; body (body)"
+  },
+  {
+    "id": "annotationQueues_deleteQueueItem",
+    "name": "Remove an item from an annotation queue",
+    "description": "Remove an item from an annotation queue DELETE /api/public/annotation-queues/{queueId}/items/{itemId}",
+    "context": "DELETE /api/public/annotation-queues/{queueId}/items/{itemId}\nRemove an item from an annotation queue\nRequired: queueId (path) — The unique identifier of the annotation queue; itemId (path) — The unique identifier of the annotation queue item"
+  },
+  {
+    "id": "annotationQueues_getQueue",
+    "name": "Get an annotation queue by ID",
+    "description": "Get an annotation queue by ID GET /api/public/annotation-queues/{queueId}",
+    "context": "GET /api/public/annotation-queues/{queueId}\nGet an annotation queue by ID\nRequired: queueId (path) — The unique identifier of the annotation queue"
+  },
+  {
+    "id": "annotationQueues_getQueueItem",
+    "name": "Get a specific item from an annotation queue",
+    "description": "Get a specific item from an annotation queue GET /api/public/annotation-queues/{queueId}/items/{itemId}",
+    "context": "GET /api/public/annotation-queues/{queueId}/items/{itemId}\nGet a specific item from an annotation queue\nRequired: queueId (path) — The unique identifier of the annotation queue; itemId (path) — The unique identifier of the annotation queue item"
+  },
+  {
+    "id": "annotationQueues_listQueueItems",
+    "name": "Get items for a specific annotation queue",
+    "description": "Get items for a specific annotation queue GET /api/public/annotation-queues/{queueId}/items",
+    "context": "GET /api/public/annotation-queues/{queueId}/items\nGet items for a specific annotation queue\nRequired: queueId (path) — The unique identifier of the annotation queue\nOptional: status (query) — Filter by status; page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  },
+  {
+    "id": "annotationQueues_listQueues",
+    "name": "Get all annotation queues",
+    "description": "Get all annotation queues GET /api/public/annotation-queues",
+    "context": "GET /api/public/annotation-queues\nGet all annotation queues\nOptional: page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  },
+  {
+    "id": "annotationQueues_updateQueueItem",
+    "name": "Update an annotation queue item",
+    "description": "Update an annotation queue item PATCH /api/public/annotation-queues/{queueId}/items/{itemId}",
+    "context": "PATCH /api/public/annotation-queues/{queueId}/items/{itemId}\nUpdate an annotation queue item\nRequired: queueId (path) — The unique identifier of the annotation queue; itemId (path) — The unique identifier of the annotation queue item; body (body)"
+  }
+]

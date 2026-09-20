@@ -1,0 +1,38 @@
+[
+  {
+    "id": "bulkAssignSpacePermissionRoles",
+    "name": "Bulk assign space permission roles",
+    "description": "Bulk assign space permission roles Bulk assigns roles for one or more permission combination IDs obtained from the space permission combinations. POST /wiki/api/v2/space-permissions/transition/role-assignments",
+    "context": "POST /wiki/api/v2/space-permissions/transition/role-assignments\nBulk assigns roles for one or more permission combination IDs obtained from the space permission combinations. Supports targeting all spaces, specific spaces, or excluding specific spaces. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be a Confluence administrator.\nRequired: body (body)"
+  },
+  {
+    "id": "bulkRemoveSpacePermissionAccess",
+    "name": "Bulk remove space permission access",
+    "description": "Bulk remove space permission access Bulk removes access for one or more permission combination IDs obtained from the space permission combinations. POST /wiki/api/v2/space-permissions/transition/access-removals",
+    "context": "POST /wiki/api/v2/space-permissions/transition/access-removals\nBulk removes access for one or more permission combination IDs obtained from the space permission combinations. This removes all space permissions for the specified combinations across the targeted spaces. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be a Confluence administrator.\nRequired: body (body)"
+  },
+  {
+    "id": "generateSpacePermissionCombinations",
+    "name": "Generate space permission combinations",
+    "description": "Generate space permission combinations Submits a task to refresh the space permission combinations in the database, which identifies all unique permission combinations across the site. POST /wiki/api/v2/space-permissions/transition/combinations",
+    "context": "POST /wiki/api/v2/space-permissions/transition/combinations\nSubmits a task to refresh the space permission combinations in the database, which identifies all unique permission combinations across the site. This provides permission combination IDs that can be used with the assign-roles and remove-access endpoints. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be a Confluence administrator."
+  },
+  {
+    "id": "getAvailableSpacePermissions",
+    "name": "Get available space permissions",
+    "description": "Get available space permissions Retrieves the available space permissions. GET /wiki/api/v2/space-permissions",
+    "context": "GET /wiki/api/v2/space-permissions\nRetrieves the available space permissions. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of space permissions to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpacePermissionTransitionTaskStatus",
+    "name": "Get space permission transition task status",
+    "description": "Get space permission transition task status Retrieves the status of an async space permission transition task. GET /wiki/api/v2/space-permissions/transition/tasks/{taskId}",
+    "context": "GET /wiki/api/v2/space-permissions/transition/tasks/{taskId}\nRetrieves the status of an async space permission transition task. Use the taskId returned from the generate-combinations, assign-roles, or remove-access endpoints to poll for progress and completion. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be a Confluence administrator.\nRequired: taskId (path) — The ID of the async task, as returned by the generate-combinations, assign-roles, or remove-access endpoints."
+  },
+  {
+    "id": "listSpacePermissionCombinations",
+    "name": "List unassigned space permission combinations",
+    "description": "List unassigned space permission combinations Lists the unique unassigned space permission combinations currently present on the tenant. GET /wiki/api/v2/space-permissions/transition/combinations",
+    "context": "GET /wiki/api/v2/space-permissions/transition/combinations\nLists the unique unassigned space permission combinations currently present on the tenant. Combinations that already map to a space role are filtered out server-side. Each row carries the decoded set of space permissions and the principal types that currently hold the combination — these inform which `principalType` values are valid to include in the matching bulk role-assignments request. Results are always sorted by `principalCount` descending. Sort field and sort order are not configurable; page size is controlled by the `limit` query parameter (default 25, min 1, max 250). Use the `cursor` field to page through additional results. The `generatedAt` field reflects the last audit run that populated the combinations table — call the generate-combinations endpoint to refresh stale data. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: User must be a Confluence administrator.\nOptional: cursor (query) — Opaque cursor returned from a previous page in the `cursor` field of the response. Omit for the first page.; limit (query) — The maximum number of combinations to return per page. Requests outside the supported range return `400`."
+  }
+]

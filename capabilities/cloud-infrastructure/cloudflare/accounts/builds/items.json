@@ -1,0 +1,188 @@
+[
+  {
+    "id": "cancelBuildByUuid",
+    "name": "Cancel a Workers build",
+    "description": "Cancel a Workers build Cancel a queued or running build. PUT /client/v4/accounts/{account_id}/builds/builds/{build_uuid}/cancel",
+    "context": "PUT /client/v4/accounts/{account_id}/builds/builds/{build_uuid}/cancel\nCancel a queued or running build.\nRequired: account_id (path); build_uuid (path)"
+  },
+  {
+    "id": "createBuildToken",
+    "name": "Create build token",
+    "description": "Create build token Create a new build authentication token POST /client/v4/accounts/{account_id}/builds/tokens",
+    "context": "POST /client/v4/accounts/{account_id}/builds/tokens\nCreate a new build authentication token\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "createDeployHook",
+    "name": "Create a deploy hook",
+    "description": "Create a deploy hook Create an HTTP hook that starts a build for a selected Worker branch. POST /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks",
+    "context": "POST /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks\nCreate an HTTP hook that starts a build for a selected Worker branch.\nRequired: account_id (path); script_name (path) — Human-readable name of the worker.; body (body)"
+  },
+  {
+    "id": "createManualBuild",
+    "name": "Start a Workers build",
+    "description": "Start a Workers build Start a build for a branch or commit using the selected trigger. POST /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/builds",
+    "context": "POST /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/builds\nStart a build for a branch or commit using the selected trigger.\nRequired: account_id (path); trigger_uuid (path); body (body)"
+  },
+  {
+    "id": "createTrigger",
+    "name": "Create a build trigger",
+    "description": "Create a build trigger Create a trigger defining the repository connection, Worker tag, commands, filters, cache setting, and build token. POST /client/v4/accounts/{account_id}/builds/triggers",
+    "context": "POST /client/v4/accounts/{account_id}/builds/triggers\nCreate a trigger defining the repository connection, Worker tag, commands, filters, cache setting, and build token.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "createWorkerBuild",
+    "name": "Create Worker build configuration",
+    "description": "Create Worker build configuration Connect a Worker tag to a repository and production build settings. POST /client/v4/accounts/{account_id}/builds/workers",
+    "context": "POST /client/v4/accounts/{account_id}/builds/workers\nConnect a Worker tag to a repository and production build settings.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "deleteBuildToken",
+    "name": "Delete a build token",
+    "description": "Delete a build token Delete a stored build token owned by the current user. DELETE /client/v4/accounts/{account_id}/builds/tokens/{build_token_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/builds/tokens/{build_token_uuid}\nDelete a stored build token owned by the current user.\nRequired: account_id (path); build_token_uuid (path)"
+  },
+  {
+    "id": "deleteDeployHook",
+    "name": "Delete a deploy hook",
+    "description": "Delete a deploy hook Delete a deploy hook so its UUID can no longer start builds. DELETE /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks/{deploy_hook_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks/{deploy_hook_uuid}\nDelete a deploy hook so its UUID can no longer start builds.\nRequired: account_id (path); script_name (path) — Human-readable name of the worker.; deploy_hook_uuid (path) — Deploy hook UUID"
+  },
+  {
+    "id": "deleteEnvironmentVariable",
+    "name": "Delete a build variable",
+    "description": "Delete a build variable Delete one build-time variable or secret by key. DELETE /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables/{environment_variable_key}",
+    "context": "DELETE /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables/{environment_variable_key}\nDelete one build-time variable or secret by key.\nRequired: account_id (path); trigger_uuid (path); environment_variable_key (path)"
+  },
+  {
+    "id": "deleteRepoConnection",
+    "name": "Delete a repository connection",
+    "description": "Delete a repository connection Delete a saved repository connection. DELETE /client/v4/accounts/{account_id}/builds/repos/connections/{repo_connection_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/builds/repos/connections/{repo_connection_uuid}\nDelete a saved repository connection.\nRequired: account_id (path); repo_connection_uuid (path)"
+  },
+  {
+    "id": "deleteTrigger",
+    "name": "Delete a build trigger",
+    "description": "Delete a build trigger Delete a trigger and cancel its unfinished builds. DELETE /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}\nDelete a trigger and cancel its unfinished builds.\nRequired: account_id (path); trigger_uuid (path)"
+  },
+  {
+    "id": "deleteWorkerBuild",
+    "name": "Delete Worker build configuration",
+    "description": "Delete Worker build configuration Delete build settings and triggers for a Worker tag and cancel unfinished builds. DELETE /client/v4/accounts/{account_id}/builds/workers/{script_tag}",
+    "context": "DELETE /client/v4/accounts/{account_id}/builds/workers/{script_tag}\nDelete build settings and triggers for a Worker tag and cancel unfinished builds. The Worker is not deleted.\nRequired: account_id (path); script_tag (path) — The Worker script tag (external script ID)"
+  },
+  {
+    "id": "getAccountLimits",
+    "name": "Get build-minute availability",
+    "description": "Get build-minute availability Return whether the account's build-minute allowance is exhausted and when it refreshes. GET /client/v4/accounts/{account_id}/builds/account/limits",
+    "context": "GET /client/v4/accounts/{account_id}/builds/account/limits\nReturn whether the account's build-minute allowance is exhausted and when it refreshes.\nRequired: account_id (path)"
+  },
+  {
+    "id": "getBuildByUuid",
+    "name": "Get a Workers build",
+    "description": "Get a Workers build Retrieve status, outcome, timestamps, trigger settings, and source metadata for a build UUID. GET /client/v4/accounts/{account_id}/builds/builds/{build_uuid}",
+    "context": "GET /client/v4/accounts/{account_id}/builds/builds/{build_uuid}\nRetrieve status, outcome, timestamps, trigger settings, and source metadata for a build UUID.\nRequired: account_id (path); build_uuid (path)"
+  },
+  {
+    "id": "getBuildLogs",
+    "name": "Get Workers build logs",
+    "description": "Get Workers build logs Retrieve cursor-paginated log lines for a build UUID. GET /client/v4/accounts/{account_id}/builds/builds/{build_uuid}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/builds/builds/{build_uuid}/logs\nRetrieve cursor-paginated log lines for a build UUID.\nRequired: account_id (path); build_uuid (path)\nOptional: cursor (query)"
+  },
+  {
+    "id": "getBuildsByVersionIds",
+    "name": "Get builds by Worker version",
+    "description": "Get builds by Worker version Retrieve builds associated with one or more Worker version IDs. GET /client/v4/accounts/{account_id}/builds/builds",
+    "context": "GET /client/v4/accounts/{account_id}/builds/builds\nRetrieve builds associated with one or more Worker version IDs.\nRequired: account_id (path); version_ids (query)"
+  },
+  {
+    "id": "getDeployHook",
+    "name": "Get a deploy hook",
+    "description": "Get a deploy hook Retrieve the name, branch, Worker identifier, and timestamps for a deploy hook. GET /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks/{deploy_hook_uuid}",
+    "context": "GET /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks/{deploy_hook_uuid}\nRetrieve the name, branch, Worker identifier, and timestamps for a deploy hook.\nRequired: account_id (path); script_name (path) — Human-readable name of the worker.; deploy_hook_uuid (path) — Deploy hook UUID"
+  },
+  {
+    "id": "getLatestBuildsByScripts",
+    "name": "Get latest builds by script IDs",
+    "description": "Get latest builds by script IDs Retrieve the most recent builds for multiple worker scripts GET /client/v4/accounts/{account_id}/builds/builds/latest",
+    "context": "GET /client/v4/accounts/{account_id}/builds/builds/latest\nRetrieve the most recent builds for multiple worker scripts\nRequired: account_id (path); external_script_ids (query)"
+  },
+  {
+    "id": "getWorkerBuild",
+    "name": "Get Worker build configuration",
+    "description": "Get Worker build configuration Retrieve the repository and production build settings associated with a Worker tag. GET /client/v4/accounts/{account_id}/builds/workers/{script_tag}",
+    "context": "GET /client/v4/accounts/{account_id}/builds/workers/{script_tag}\nRetrieve the repository and production build settings associated with a Worker tag.\nRequired: account_id (path); script_tag (path) — The Worker script tag (external script ID)"
+  },
+  {
+    "id": "getWorkerConfigAutofill",
+    "name": "Get repository configuration autofill",
+    "description": "Get repository configuration autofill Analyze repository for automatic configuration detection GET /client/v4/accounts/{account_id}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill",
+    "context": "GET /client/v4/accounts/{account_id}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill\nAnalyze repository for automatic configuration detection\nRequired: account_id (path); provider_type (path) — SCM provider type; provider_account_id (path); repo_id (path); branch (query)\nOptional: root_directory (query)"
+  },
+  {
+    "id": "listBuildsByScript",
+    "name": "List builds for a Worker",
+    "description": "List builds for a Worker List paginated build records associated with a Worker tag. GET /client/v4/accounts/{account_id}/builds/workers/{external_script_id}/builds",
+    "context": "GET /client/v4/accounts/{account_id}/builds/workers/{external_script_id}/builds\nList paginated build records associated with a Worker tag.\nRequired: account_id (path); external_script_id (path)\nOptional: page (query) — Page number for pagination; per_page (query) — Number of items per page"
+  },
+  {
+    "id": "listBuildTokens",
+    "name": "List build tokens",
+    "description": "List build tokens List metadata for build tokens available to the current user without returning their secrets. GET /client/v4/accounts/{account_id}/builds/tokens",
+    "context": "GET /client/v4/accounts/{account_id}/builds/tokens\nList metadata for build tokens available to the current user without returning their secrets.\nRequired: account_id (path)\nOptional: page (query) — Page number for pagination; per_page (query) — Number of items per page"
+  },
+  {
+    "id": "listDeployHooks",
+    "name": "List deploy hooks",
+    "description": "List deploy hooks List the branch-specific deploy hooks configured for a Worker. GET /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks",
+    "context": "GET /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks\nList the branch-specific deploy hooks configured for a Worker.\nRequired: account_id (path); script_name (path) — Human-readable name of the worker."
+  },
+  {
+    "id": "listEnvironmentVariables",
+    "name": "List build variables",
+    "description": "List build variables List build-time variables configured for a trigger. GET /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables",
+    "context": "GET /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables\nList build-time variables configured for a trigger. Secret values are not returned.\nRequired: account_id (path); trigger_uuid (path)"
+  },
+  {
+    "id": "listTriggersByScript",
+    "name": "List triggers for a Worker",
+    "description": "List triggers for a Worker List trigger UUIDs and build settings associated with a Worker tag. GET /client/v4/accounts/{account_id}/builds/workers/{external_script_id}/triggers",
+    "context": "GET /client/v4/accounts/{account_id}/builds/workers/{external_script_id}/triggers\nList trigger UUIDs and build settings associated with a Worker tag.\nRequired: account_id (path); external_script_id (path)"
+  },
+  {
+    "id": "purgeBuildCache",
+    "name": "Purge a trigger's build cache",
+    "description": "Purge a trigger's build cache Delete cached dependencies and build artifacts associated with a trigger. POST /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/purge_build_cache",
+    "context": "POST /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/purge_build_cache\nDelete cached dependencies and build artifacts associated with a trigger.\nRequired: account_id (path); trigger_uuid (path)"
+  },
+  {
+    "id": "updateDeployHook",
+    "name": "Update a deploy hook",
+    "description": "Update a deploy hook Replace the name and target branch for a deploy hook. PUT /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks/{deploy_hook_uuid}",
+    "context": "PUT /client/v4/accounts/{account_id}/builds/workers/{script_name}/deploy_hooks/{deploy_hook_uuid}\nReplace the name and target branch for a deploy hook.\nRequired: account_id (path); script_name (path) — Human-readable name of the worker.; deploy_hook_uuid (path) — Deploy hook UUID; body (body)"
+  },
+  {
+    "id": "updateTrigger",
+    "name": "Update a build trigger",
+    "description": "Update a build trigger Update commands, cache settings, or branch and path filters for a trigger. PATCH /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}",
+    "context": "PATCH /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}\nUpdate commands, cache settings, or branch and path filters for a trigger.\nRequired: account_id (path); trigger_uuid (path); body (body)"
+  },
+  {
+    "id": "updateWorkerBuild",
+    "name": "Update Worker build configuration",
+    "description": "Update Worker build configuration Update the repository branch or production build settings associated with a Worker tag. PATCH /client/v4/accounts/{account_id}/builds/workers/{script_tag}",
+    "context": "PATCH /client/v4/accounts/{account_id}/builds/workers/{script_tag}\nUpdate the repository branch or production build settings associated with a Worker tag.\nRequired: account_id (path); script_tag (path) — The Worker script tag (external script ID); body (body)"
+  },
+  {
+    "id": "upsertEnvironmentVariables",
+    "name": "Set build variables",
+    "description": "Set build variables Add or replace build-time variables and secrets without changing unspecified keys. PATCH /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables",
+    "context": "PATCH /client/v4/accounts/{account_id}/builds/triggers/{trigger_uuid}/environment_variables\nAdd or replace build-time variables and secrets without changing unspecified keys.\nRequired: account_id (path); trigger_uuid (path); body (body)"
+  },
+  {
+    "id": "upsertRepoConnection",
+    "name": "Create or update a repository connection",
+    "description": "Create or update a repository connection Save the repository connection required by build triggers. PUT /client/v4/accounts/{account_id}/builds/repos/connections",
+    "context": "PUT /client/v4/accounts/{account_id}/builds/repos/connections\nSave the repository connection required by build triggers.\nRequired: account_id (path); body (body)"
+  }
+]

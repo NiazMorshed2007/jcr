@@ -1,0 +1,110 @@
+[
+  {
+    "id": "createEdgeConfig",
+    "name": "Create a Global Config",
+    "description": "Create a Global Config Creates a Global Config. POST /v1/global-config",
+    "context": "POST /v1/global-config\nCreates a Global Config.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createEdgeConfigToken",
+    "name": "Create a Global Config token",
+    "description": "Create a Global Config token Adds a token to an existing Global Config. POST /v1/global-config/{edgeConfigId}/token",
+    "context": "POST /v1/global-config/{edgeConfigId}/token\nAdds a token to an existing Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteEdgeConfig",
+    "name": "Delete a Global Config",
+    "description": "Delete a Global Config Delete a Global Config by id. DELETE /v1/global-config/{edgeConfigId}",
+    "context": "DELETE /v1/global-config/{edgeConfigId}\nDelete a Global Config by id.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteEdgeConfigSchema",
+    "name": "Delete a Global Config's schema",
+    "description": "Delete a Global Config's schema Deletes the schema of existing Global Config. DELETE /v1/global-config/{edgeConfigId}/schema",
+    "context": "DELETE /v1/global-config/{edgeConfigId}/schema\nDeletes the schema of existing Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteEdgeConfigTokens",
+    "name": "Delete one or more Global Config tokens",
+    "description": "Delete one or more Global Config tokens Deletes one or more tokens of an existing Global Config. DELETE /v1/global-config/{edgeConfigId}/tokens",
+    "context": "DELETE /v1/global-config/{edgeConfigId}/tokens\nDeletes one or more tokens of an existing Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getEdgeConfig",
+    "name": "Get a Global Config",
+    "description": "Get a Global Config Returns a Global Config. GET /v1/global-config/{edgeConfigId}",
+    "context": "GET /v1/global-config/{edgeConfigId}\nReturns a Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigBackup",
+    "name": "Get Global Config backup",
+    "description": "Get Global Config backup Retrieves a specific version of a Global Config from backup storage. GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}",
+    "context": "GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}\nRetrieves a specific version of a Global Config from backup storage.\nRequired: edgeConfigId (path); edgeConfigBackupVersionId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigBackups",
+    "name": "Get Global Config backups",
+    "description": "Get Global Config backups Returns backups of a Global Config. GET /v1/global-config/{edgeConfigId}/backups",
+    "context": "GET /v1/global-config/{edgeConfigId}/backups\nReturns backups of a Global Config.\nRequired: edgeConfigId (path)\nOptional: next (query); limit (query); metadata (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigItem",
+    "name": "Get a Global Config item",
+    "description": "Get a Global Config item Returns a specific Global Config Item. GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey}",
+    "context": "GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey}\nReturns a specific Global Config Item.\nRequired: edgeConfigId (path); edgeConfigItemKey (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigItems",
+    "name": "Get Global Config items",
+    "description": "Get Global Config items Returns all items of a Global Config. GET /v1/global-config/{edgeConfigId}/items",
+    "context": "GET /v1/global-config/{edgeConfigId}/items\nReturns all items of a Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigs",
+    "name": "Get Global Configs",
+    "description": "Get Global Configs Returns all Global Configs. GET /v1/global-config",
+    "context": "GET /v1/global-config\nReturns all Global Configs.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigSchema",
+    "name": "Get Global Config schema",
+    "description": "Get Global Config schema Returns the schema of a Global Config. GET /v1/global-config/{edgeConfigId}/schema",
+    "context": "GET /v1/global-config/{edgeConfigId}/schema\nReturns the schema of a Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigToken",
+    "name": "Get Global Config token meta data",
+    "description": "Get Global Config token meta data Return meta data about a Global Config token. GET /v1/global-config/{edgeConfigId}/token/{token}",
+    "context": "GET /v1/global-config/{edgeConfigId}/token/{token}\nReturn meta data about a Global Config token.\nRequired: edgeConfigId (path); token (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getEdgeConfigTokens",
+    "name": "Get all tokens of a Global Config",
+    "description": "Get all tokens of a Global Config Returns all tokens of a Global Config. GET /v1/global-config/{edgeConfigId}/tokens",
+    "context": "GET /v1/global-config/{edgeConfigId}/tokens\nReturns all tokens of a Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "patchEdgeConfigItems",
+    "name": "Update Global Config items in batch",
+    "description": "Update Global Config items in batch Update multiple Global Config Items in batch. PATCH /v1/global-config/{edgeConfigId}/items",
+    "context": "PATCH /v1/global-config/{edgeConfigId}/items\nUpdate multiple Global Config Items in batch.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "patchEdgeConfigSchema",
+    "name": "Update Global Config schema",
+    "description": "Update Global Config schema Update a Global Config's schema. POST /v1/global-config/{edgeConfigId}/schema",
+    "context": "POST /v1/global-config/{edgeConfigId}/schema\nUpdate a Global Config's schema.\nRequired: edgeConfigId (path)\nOptional: dryRun (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "restoreEdgeConfigBackup",
+    "name": "Restore Global Config backup",
+    "description": "Restore Global Config backup Restores a Global Config backup. POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore",
+    "context": "POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore\nRestores a Global Config backup.\nRequired: edgeConfigId (path); edgeConfigBackupVersionId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateEdgeConfig",
+    "name": "Update a Global Config",
+    "description": "Update a Global Config Updates a Global Config. PUT /v1/global-config/{edgeConfigId}",
+    "context": "PUT /v1/global-config/{edgeConfigId}\nUpdates a Global Config.\nRequired: edgeConfigId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

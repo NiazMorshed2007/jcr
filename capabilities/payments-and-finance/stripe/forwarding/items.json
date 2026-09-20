@@ -1,0 +1,20 @@
+[
+  {
+    "id": "GetForwardingRequests",
+    "name": "List all ForwardingRequests",
+    "description": "List all ForwardingRequests Lists all ForwardingRequest objects. GET /v1/forwarding/requests",
+    "context": "GET /v1/forwarding/requests\nLists all ForwardingRequest objects.\nOptional: created (query) — Similar to other List endpoints, filters results based on created timestamp. You can pass gt, gte, lt, and lte timestamp values.; ending_before (query) — A pagination cursor to fetch the previous page of the list. The value must be a ForwardingRequest ID.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A pagination cursor to fetch the next page of the list. The value must be a ForwardingRequest ID.; body (body)"
+  },
+  {
+    "id": "GetForwardingRequestsId",
+    "name": "Retrieve a ForwardingRequest",
+    "description": "Retrieve a ForwardingRequest Retrieves a ForwardingRequest object. GET /v1/forwarding/requests/{id}",
+    "context": "GET /v1/forwarding/requests/{id}\nRetrieves a ForwardingRequest object.\nRequired: id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostForwardingRequests",
+    "name": "Create a ForwardingRequest",
+    "description": "Create a ForwardingRequest Creates a ForwardingRequest object. POST /v1/forwarding/requests",
+    "context": "POST /v1/forwarding/requests\nCreates a ForwardingRequest object.\nRequired: body (body)"
+  }
+]

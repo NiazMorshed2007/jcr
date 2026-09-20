@@ -1,0 +1,32 @@
+[
+  {
+    "id": "BatchUpdate",
+    "name": "Applies one or more updates to the presentation.",
+    "description": "Applies one or more updates to the presentation. Applies one or more updates to the presentation. POST /v1/presentations/{presentationId}:batchUpdate",
+    "context": "POST /v1/presentations/{presentationId}:batchUpdate\nApplies one or more updates to the presentation. Each request is validated before being applied. If any request is not valid, then the entire request will fail and nothing will be applied. Some requests have replies to give you some information about how they are applied. Other requests do not need to return information; these each return an empty reply. The order of replies matches that of the requests. For example, suppose you call batchUpdate with four updates, and only the third one returns information. The response would have two empty replies: the reply to the third request, and another empty reply, in that order. Because other users may be editing the presentation, the presentation might not exactly reflect your changes: your changes may be altered with respect to collaborator changes. If there are no collaborators, the presentation should reflect your changes. In any case, the updates in your request are guaranteed to be applied together atomically.\nRequired: presentationId (path) — The presentation to apply the updates to.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Create",
+    "name": "Creates a blank presentation using the title given in the request.",
+    "description": "Creates a blank presentation using the title given in the request. Creates a blank presentation using the title given in the request. POST /v1/presentations",
+    "context": "POST /v1/presentations\nCreates a blank presentation using the title given in the request. If a `presentationId` is provided, it is used as the ID of the new presentation. Otherwise, a new ID is generated. Other fields in the request, including any provided content, are ignored. Returns the created presentation.\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Get",
+    "name": "Gets the latest version of the specified presentation.",
+    "description": "Gets the latest version of the specified presentation. GET /v1/presentations/{presentationId}",
+    "context": "GET /v1/presentations/{presentationId}\nGets the latest version of the specified presentation.\nRequired: presentationId (path) — The ID of the presentation to retrieve.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PagesGet",
+    "name": "Gets the latest version of the specified page in the presentation.",
+    "description": "Gets the latest version of the specified page in the presentation. GET /v1/presentations/{presentationId}/pages/{pageObjectId}",
+    "context": "GET /v1/presentations/{presentationId}/pages/{pageObjectId}\nGets the latest version of the specified page in the presentation.\nRequired: presentationId (path) — The ID of the presentation to retrieve.; pageObjectId (path) — The object ID of the page to retrieve.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PagesGetThumbnail",
+    "name": "Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image",
+    "description": "Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image. GET /v1/presentations/{presentationId}/pages/{pageObjectId}/thum…",
+    "context": "GET /v1/presentations/{presentationId}/pages/{pageObjectId}/thumbnail\nGenerates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image. This request counts as an [expensive read request](https://developers.google.com/workspace/slides/limits) for quota purposes.\nRequired: presentationId (path) — The ID of the presentation to retrieve.; pageObjectId (path) — The object ID of the page whose thumbnail to retrieve.\nOptional: thumbnailProperties.thumbnailSize (query) — The optional thumbnail image size. If you don't specify the size, the server chooses a default size of the image.; thumbnailProperties.mimeType (query) — The optional mime type of the thumbnail image. If you don't specify the mime type, the mime type defaults to PNG.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

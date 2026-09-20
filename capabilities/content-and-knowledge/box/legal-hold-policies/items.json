@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_legal_hold_policies_id",
+    "name": "Remove legal hold policy",
+    "description": "Remove legal hold policy Delete an existing legal hold policy. DELETE /2.0/legal_hold_policies/{legal_hold_policy_id}",
+    "context": "DELETE /2.0/legal_hold_policies/{legal_hold_policy_id}\nDelete an existing legal hold policy. This is an asynchronous process. The policy will not be fully deleted yet when the response returns.\nRequired: legal_hold_policy_id (path) — The ID of the legal hold policy."
+  },
+  {
+    "id": "get_legal_hold_policies",
+    "name": "List all legal hold policies",
+    "description": "List all legal hold policies Retrieves a list of legal hold policies that belong to an enterprise. GET /2.0/legal_hold_policies",
+    "context": "GET /2.0/legal_hold_policies\nRetrieves a list of legal hold policies that belong to an enterprise.\nOptional: policy_name (query) — Limits results to policies for which the names start with this search term. This is a case-insensitive prefix.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_legal_hold_policies_id",
+    "name": "Get legal hold policy",
+    "description": "Get legal hold policy Retrieve a legal hold policy. GET /2.0/legal_hold_policies/{legal_hold_policy_id}",
+    "context": "GET /2.0/legal_hold_policies/{legal_hold_policy_id}\nRetrieve a legal hold policy.\nRequired: legal_hold_policy_id (path) — The ID of the legal hold policy."
+  },
+  {
+    "id": "post_legal_hold_policies",
+    "name": "Create legal hold policy",
+    "description": "Create legal hold policy Create a new legal hold policy. POST /2.0/legal_hold_policies",
+    "context": "POST /2.0/legal_hold_policies\nCreate a new legal hold policy.\nOptional: body (body)"
+  },
+  {
+    "id": "put_legal_hold_policies_id",
+    "name": "Update legal hold policy",
+    "description": "Update legal hold policy Update legal hold policy. PUT /2.0/legal_hold_policies/{legal_hold_policy_id}",
+    "context": "PUT /2.0/legal_hold_policies/{legal_hold_policy_id}\nUpdate legal hold policy.\nRequired: legal_hold_policy_id (path) — The ID of the legal hold policy.\nOptional: body (body)"
+  }
+]

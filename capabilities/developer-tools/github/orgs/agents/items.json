@@ -1,0 +1,110 @@
+[
+  {
+    "id": "agents%2Fadd-selected-repo-to-org-secret",
+    "name": "Add selected repository to an organization secret",
+    "description": "Add selected repository to an organization secret Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. PUT /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}\nAdds a repository to an organization secret when the `visibility` for repository access is set to `selected`. For more information about setting the visibility, see [Create or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; repository_id (path)"
+  },
+  {
+    "id": "agents%2Fadd-selected-repo-to-org-variable",
+    "name": "Add selected repository to an organization variable",
+    "description": "Add selected repository to an organization variable Adds a repository to an organization agent variable that is available to selected repositories. PUT /orgs/{org}/agents/variables/{name}/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/agents/variables/{name}/repositories/{repository_id}\nAdds a repository to an organization agent variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; repository_id (path)"
+  },
+  {
+    "id": "agents%2Fcreate-or-update-org-secret",
+    "name": "Create or update an organization secret",
+    "description": "Create or update an organization secret Creates or updates an organization secret with an encrypted value. PUT /orgs/{org}/agents/secrets/{secret_name}",
+    "context": "PUT /orgs/{org}/agents/secrets/{secret_name}\nCreates or updates an organization secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see \"[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).\" Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  },
+  {
+    "id": "agents%2Fcreate-org-variable",
+    "name": "Create an organization variable",
+    "description": "Create an organization variable Creates an organization agent variable that you can reference in a GitHub Actions workflow. POST /orgs/{org}/agents/variables",
+    "context": "POST /orgs/{org}/agents/variables\nCreates an organization agent variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "agents%2Fdelete-org-secret",
+    "name": "Delete an organization secret",
+    "description": "Delete an organization secret Deletes a secret in an organization using the secret name. DELETE /orgs/{org}/agents/secrets/{secret_name}",
+    "context": "DELETE /orgs/{org}/agents/secrets/{secret_name}\nDeletes a secret in an organization using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "agents%2Fdelete-org-variable",
+    "name": "Delete an organization variable",
+    "description": "Delete an organization variable Deletes an organization agent variable using the variable name. DELETE /orgs/{org}/agents/variables/{name}",
+    "context": "DELETE /orgs/{org}/agents/variables/{name}\nDeletes an organization agent variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable."
+  },
+  {
+    "id": "agents%2Fget-org-public-key",
+    "name": "Get an organization public key",
+    "description": "Get an organization public key Gets your public key, which you need to encrypt secrets. GET /orgs/{org}/agents/secrets/public-key",
+    "context": "GET /orgs/{org}/agents/secrets/public-key\nGets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "agents%2Fget-org-secret",
+    "name": "Get an organization secret",
+    "description": "Get an organization secret Gets a single organization secret without revealing its encrypted value. GET /orgs/{org}/agents/secrets/{secret_name}",
+    "context": "GET /orgs/{org}/agents/secrets/{secret_name}\nGets a single organization secret without revealing its encrypted value. The authenticated user must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "agents%2Fget-org-variable",
+    "name": "Get an organization variable",
+    "description": "Get an organization variable Gets a specific agent variable in an organization. GET /orgs/{org}/agents/variables/{name}",
+    "context": "GET /orgs/{org}/agents/variables/{name}\nGets a specific agent variable in an organization. The authenticated user must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable."
+  },
+  {
+    "id": "agents%2Flist-org-secrets",
+    "name": "List organization secrets",
+    "description": "List organization secrets Lists all secrets available in an organization without revealing their encrypted values. GET /orgs/{org}/agents/secrets",
+    "context": "GET /orgs/{org}/agents/secrets\nLists all secrets available in an organization without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Flist-org-variables",
+    "name": "List organization variables",
+    "description": "List organization variables Lists all agent variables available in an organization. GET /orgs/{org}/agents/variables",
+    "context": "GET /orgs/{org}/agents/variables\nLists all agent variables available in an organization. Returned variables include their values. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 30). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Flist-selected-repos-for-org-secret",
+    "name": "List selected repositories for an organization secret",
+    "description": "List selected repositories for an organization secret Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. GET /orgs/{org}/agents/secrets/{secret_name}/repositories",
+    "context": "GET /orgs/{org}/agents/secrets/{secret_name}/repositories\nLists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Flist-selected-repos-for-org-variable",
+    "name": "List selected repositories for an organization variable",
+    "description": "List selected repositories for an organization variable Lists all repositories that can access an organization agent variable that is available to selected repositories. GET /orgs/{org}/agents/variables/{name}/repositories",
+    "context": "GET /orgs/{org}/agents/variables/{name}/repositories\nLists all repositories that can access an organization agent variable that is available to selected repositories. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Fremove-selected-repo-from-org-secret",
+    "name": "Remove selected repository from an organization secret",
+    "description": "Remove selected repository from an organization secret Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. DELETE /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}\nRemoves a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; repository_id (path)"
+  },
+  {
+    "id": "agents%2Fremove-selected-repo-from-org-variable",
+    "name": "Remove selected repository from an organization variable",
+    "description": "Remove selected repository from an organization variable Removes a repository from an organization agent variable that is available to selected repositories. DELETE /orgs/{org}/agents/variables/{name}/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/agents/variables/{name}/repositories/{repository_id}\nRemoves a repository from an organization agent variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; repository_id (path)"
+  },
+  {
+    "id": "agents%2Fset-selected-repos-for-org-secret",
+    "name": "Set selected repositories for an organization secret",
+    "description": "Set selected repositories for an organization secret Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. PUT /orgs/{org}/agents/secrets/{secret_name}/repositories",
+    "context": "PUT /orgs/{org}/agents/secrets/{secret_name}/repositories\nReplaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret). Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  },
+  {
+    "id": "agents%2Fset-selected-repos-for-org-variable",
+    "name": "Set selected repositories for an organization variable",
+    "description": "Set selected repositories for an organization variable Replaces all repositories for an organization agent variable that is available to selected repositories. PUT /orgs/{org}/agents/variables/{name}/repositories",
+    "context": "PUT /orgs/{org}/agents/variables/{name}/repositories\nReplaces all repositories for an organization agent variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; body (body)"
+  },
+  {
+    "id": "agents%2Fupdate-org-variable",
+    "name": "Update an organization variable",
+    "description": "Update an organization variable Updates an organization agent variable that you can reference in a GitHub Actions workflow. PATCH /orgs/{org}/agents/variables/{name}",
+    "context": "PATCH /orgs/{org}/agents/variables/{name}\nUpdates an organization agent variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; body (body)"
+  }
+]

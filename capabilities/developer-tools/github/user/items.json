@@ -1,0 +1,98 @@
+[
+  {
+    "id": "users%2Fget-authenticated",
+    "name": "Get the authenticated user",
+    "description": "Get the authenticated user OAuth app tokens and personal access tokens (classic) need the `read:user` scope, or the broader `user` scope, for this endpoint to return the private user response. GET /user",
+    "context": "GET /user\nOAuth app tokens and personal access tokens (classic) need the `read:user` scope, or the broader `user` scope, for this endpoint to return the private user response. The private user response includes additional fields such as `private_gists`, `total_private_repos`, `owned_private_repos`, `disk_usage`, `collaborators`, and `two_factor_authentication`. Tokens without these scopes receive the public user response. The private and public user response types are unrelated to the [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles) setting. A token without scopes still authenticates as the token's owner, so values subject to private profile visibility, such as `followers` and `following`, may differ from an unauthenticated response."
+  },
+  {
+    "id": "users%2Fget-by-id",
+    "name": "Get a user using their ID",
+    "description": "Get a user using their ID Provides publicly available information about someone with a GitHub account. GET /user/{account_id}",
+    "context": "GET /user/{account_id}\nProvides publicly available information about someone with a GitHub account. This method takes their durable user `ID` instead of their `login`, which can change over time. If you are requesting information about an [Enterprise Managed User](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users), or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a `404 Not Found` status. The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication). The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).\nRequired: account_id (path) — account_id parameter"
+  },
+  {
+    "id": "users%2Fupdate-authenticated",
+    "name": "Update the authenticated user",
+    "description": "Update the authenticated user **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API. PATCH /user",
+    "context": "PATCH /user\n**Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.\nOptional: body (body)"
+  },
+  {
+    "id": "activity%2Flist-watched-repos-for-authenticated-user",
+    "name": "List repositories watched by the authenticated user",
+    "description": "List repositories watched by the authenticated user Lists repositories the authenticated user is watching. GET /user/subscriptions",
+    "context": "GET /user/subscriptions\nLists repositories the authenticated user is watching.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "apps%2Flist-subscriptions-for-authenticated-user",
+    "name": "List subscriptions for the authenticated user",
+    "description": "List subscriptions for the authenticated user Lists the active subscriptions for the authenticated user. GET /user/marketplace_purchases",
+    "context": "GET /user/marketplace_purchases\nLists the active subscriptions for the authenticated user.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "apps%2Flist-subscriptions-for-authenticated-user-stubbed",
+    "name": "List subscriptions for the authenticated user (stubbed)",
+    "description": "List subscriptions for the authenticated user (stubbed) Lists the active subscriptions for the authenticated user. GET /user/marketplace_purchases/stubbed",
+    "context": "GET /user/marketplace_purchases/stubbed\nLists the active subscriptions for the authenticated user.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "issues%2Flist-for-authenticated-user",
+    "name": "List user account issues assigned to the authenticated user",
+    "description": "List user account issues assigned to the authenticated user List issues across owned and member repositories assigned to the authenticated user. GET /user/issues",
+    "context": "GET /user/issues\nList issues across owned and member repositories assigned to the authenticated user. > [!NOTE] > GitHub's REST API considers every pull request an issue, but not every issue is a pull request. For this reason, \"Issues\" endpoints may return both issues and pull requests in the response. You can identify pull requests by the `pull_request` key. Be aware that the `id` of a pull request returned from \"Issues\" endpoints will be an _issue id_. To find out the pull request id, use the \"[List pull requests](https://docs.github.com/rest/pulls/pulls#list-pull-requests)\" endpoint. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.\nOptional: filter (query) — Indicates which sorts of issues to return. `assigned` means issues assigned to you. `created` means issues created by you. `mentioned` means issues mentioning you. `subscribed` means issues you're subscribed to updates for. `all` or `repos` means all issues you can see, regardless of participation or creation.; state (query) — Indicates the state of the issues to return.; labels (query) — A list of comma separated label names. Example: `bug,ui,@high`; sort (query) — What to sort results by.; direction (query) — The direction to sort the results by.; since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Flist-for-authenticated-user",
+    "name": "List organizations for the authenticated user",
+    "description": "List organizations for the authenticated user List organizations for the authenticated user. GET /user/orgs",
+    "context": "GET /user/orgs\nList organizations for the authenticated user. For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response. > [!NOTE] > Requests using a fine-grained access token will receive a `200 Success` response with an empty list.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "packages%2Flist-docker-migration-conflicting-packages-for-authenticated-user",
+    "name": "Get list of conflicting packages during Docker migration for authenticated-user",
+    "description": "Get list of conflicting packages during Docker migration for authenticated-user Lists all packages that are owned by the authenticated user within the user's namespace, and that encountered a conflict during a Docker migration. GET /user/docker/conflicts",
+    "context": "GET /user/docker/conflicts\nLists all packages that are owned by the authenticated user within the user's namespace, and that encountered a conflict during a Docker migration. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint."
+  },
+  {
+    "id": "projects%2Fcreate-draft-item-for-authenticated-user",
+    "name": "Create draft item for user owned project",
+    "description": "Create draft item for user owned project Create draft issue item for the specified user owned project. POST /user/{user_id}/projectsV2/{project_number}/drafts",
+    "context": "POST /user/{user_id}/projectsV2/{project_number}/drafts\nCreate draft issue item for the specified user owned project.\nRequired: user_id (path) — The unique identifier of the user.; project_number (path) — The project's number.; body (body) — Details of the draft item to create in the project."
+  },
+  {
+    "id": "repos%2Fcreate-for-authenticated-user",
+    "name": "Create a repository for the authenticated user",
+    "description": "Create a repository for the authenticated user Creates a new repository for the authenticated user. POST /user/repos",
+    "context": "POST /user/repos\nCreates a new repository for the authenticated user. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.\nRequired: body (body)"
+  },
+  {
+    "id": "repos%2Flist-for-authenticated-user",
+    "name": "List repositories for the authenticated user",
+    "description": "List repositories for the authenticated user Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access. GET /user/repos",
+    "context": "GET /user/repos\nLists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access. The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.\nOptional: visibility (query) — Limit results to repositories with the specified visibility.; affiliation (query) — Comma-separated list of values. Can include: * `owner`: Repositories that are owned by the authenticated user. * `collaborator`: Repositories that the user has been added to as a collaborator. * `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.; type (query) — Limit results to repositories of the specified type. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.; sort (query) — The property to sort the results by.; direction (query) — The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; since (query) — Only show repositories updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; before (query) — Only show repositories updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`."
+  },
+  {
+    "id": "teams%2Flist-for-authenticated-user",
+    "name": "List teams for the authenticated user",
+    "description": "List teams for the authenticated user List all of the teams across all of the organizations to which the authenticated user belongs. GET /user/teams",
+    "context": "GET /user/teams\nList all of the teams across all of the organizations to which the authenticated user belongs. OAuth app tokens and personal access tokens (classic) need the `user`, `repo`, or `read:org` scope to use this endpoint. When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-followers-for-authenticated-user",
+    "name": "List followers of the authenticated user",
+    "description": "List followers of the authenticated user Lists the people following the authenticated user. GET /user/followers",
+    "context": "GET /user/followers\nLists the people following the authenticated user.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-public-emails-for-authenticated-user",
+    "name": "List public email addresses for the authenticated user",
+    "description": "List public email addresses for the authenticated user Lists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/rest/users/emails#set-primary-email-visibility-for-the-authenticated-user) endpoint. GET /user/public_emails",
+    "context": "GET /user/public_emails\nLists your publicly visible email address, which you can set with the [Set primary email visibility for the authenticated user](https://docs.github.com/rest/users/emails#set-primary-email-visibility-for-the-authenticated-user) endpoint. OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Fset-primary-email-visibility-for-authenticated-user",
+    "name": "Set primary email visibility for the authenticated user",
+    "description": "Set primary email visibility for the authenticated user Sets the visibility for your primary email addresses. PATCH /user/email/visibility",
+    "context": "PATCH /user/email/visibility\nSets the visibility for your primary email addresses.\nRequired: body (body)"
+  }
+]

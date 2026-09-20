@@ -1,0 +1,32 @@
+[
+  {
+    "id": "DeleteInvoiceitemsInvoiceitem",
+    "name": "Delete an invoice item",
+    "description": "Delete an invoice item Deletes an invoice item, removing it from an invoice. DELETE /v1/invoiceitems/{invoiceitem}",
+    "context": "DELETE /v1/invoiceitems/{invoiceitem}\nDeletes an invoice item, removing it from an invoice. Deleting invoice items is only possible when they’re not attached to invoices, or if it’s attached to a draft invoice.\nRequired: invoiceitem (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetInvoiceitems",
+    "name": "List all invoice items",
+    "description": "List all invoice items Returns a list of your invoice items. GET /v1/invoiceitems",
+    "context": "GET /v1/invoiceitems\nReturns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.\nOptional: created (query) — Only return invoice items that were created during the given date interval.; customer (query) — The identifier of the customer whose invoice items to return. If none is provided, returns all invoice items.; customer_account (query) — The identifier of the account representing the customer whose invoice items to return. If none is provided, returns all invoice items.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; invoice (query) — Only return invoice items belonging to this invoice. If none is provided, all invoice items will be returned. If specifying an invoice, no customer identifier is needed.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; pending (query) — Set to `true` to only show pending invoice items, which are not yet attached to any invoices. Set to `false` to only show invoice items already attached to invoices. If unspecified, no filter is applied.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetInvoiceitemsInvoiceitem",
+    "name": "Retrieve an invoice item",
+    "description": "Retrieve an invoice item Retrieves the invoice item with the given ID. GET /v1/invoiceitems/{invoiceitem}",
+    "context": "GET /v1/invoiceitems/{invoiceitem}\nRetrieves the invoice item with the given ID.\nRequired: invoiceitem (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostInvoiceitems",
+    "name": "Create an invoice item",
+    "description": "Create an invoice item Creates an item to be added to a draft invoice (up to 250 items per invoice). POST /v1/invoiceitems",
+    "context": "POST /v1/invoiceitems\nCreates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.\nOptional: body (body)"
+  },
+  {
+    "id": "PostInvoiceitemsInvoiceitem",
+    "name": "Update an invoice item",
+    "description": "Update an invoice item Updates the amount or description of an invoice item on an upcoming invoice. POST /v1/invoiceitems/{invoiceitem}",
+    "context": "POST /v1/invoiceitems/{invoiceitem}\nUpdates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.\nRequired: invoiceitem (path)\nOptional: body (body)"
+  }
+]

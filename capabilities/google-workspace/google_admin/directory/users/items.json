@@ -1,0 +1,170 @@
+[
+  {
+    "id": "AspsDelete",
+    "name": "Deletes an ASP issued by a user.",
+    "description": "Deletes an ASP issued by a user. DELETE /admin/directory/v1/users/{userKey}/asps/{codeId}",
+    "context": "DELETE /admin/directory/v1/users/{userKey}/asps/{codeId}\nDeletes an ASP issued by a user.\nRequired: codeId (path) — The unique ID of the ASP to be deleted.; userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AspsGet",
+    "name": "Gets information about an ASP issued by a user.",
+    "description": "Gets information about an ASP issued by a user. GET /admin/directory/v1/users/{userKey}/asps/{codeId}",
+    "context": "GET /admin/directory/v1/users/{userKey}/asps/{codeId}\nGets information about an ASP issued by a user.\nRequired: codeId (path) — The unique ID of the ASP.; userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AspsList",
+    "name": "Lists the ASPs issued by a user.",
+    "description": "Lists the ASPs issued by a user. GET /admin/directory/v1/users/{userKey}/asps",
+    "context": "GET /admin/directory/v1/users/{userKey}/asps\nLists the ASPs issued by a user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TokensDelete",
+    "name": "Deletes all access tokens issued by a user for an application.",
+    "description": "Deletes all access tokens issued by a user for an application. DELETE /admin/directory/v1/users/{userKey}/tokens/{clientId}",
+    "context": "DELETE /admin/directory/v1/users/{userKey}/tokens/{clientId}\nDeletes all access tokens issued by a user for an application.\nRequired: clientId (path) — The Client ID of the application the token is issued to.; userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TokensGet",
+    "name": "Gets information about an access token issued by a user.",
+    "description": "Gets information about an access token issued by a user. GET /admin/directory/v1/users/{userKey}/tokens/{clientId}",
+    "context": "GET /admin/directory/v1/users/{userKey}/tokens/{clientId}\nGets information about an access token issued by a user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; clientId (path) — The Client ID of the application the token is issued to.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TokensList",
+    "name": "Returns the set of tokens specified user has issued to 3rd party applications.",
+    "description": "Returns the set of tokens specified user has issued to 3rd party applications. GET /admin/directory/v1/users/{userKey}/tokens",
+    "context": "GET /admin/directory/v1/users/{userKey}/tokens\nReturns the set of tokens specified user has issued to 3rd party applications.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TwoStepVerificationTurnOff",
+    "name": "Turns off 2-Step Verification for user.",
+    "description": "Turns off 2-Step Verification for user. POST /admin/directory/v1/users/{userKey}/twoStepVerification/turnOff",
+    "context": "POST /admin/directory/v1/users/{userKey}/twoStepVerification/turnOff\nTurns off 2-Step Verification for user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersAliasesDelete",
+    "name": "Removes an alias.",
+    "description": "Removes an alias. DELETE /admin/directory/v1/users/{userKey}/aliases/{alias}",
+    "context": "DELETE /admin/directory/v1/users/{userKey}/aliases/{alias}\nRemoves an alias.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; alias (path) — The alias to be removed.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersAliasesInsert",
+    "name": "Adds an alias.",
+    "description": "Adds an alias. POST /admin/directory/v1/users/{userKey}/aliases",
+    "context": "POST /admin/directory/v1/users/{userKey}/aliases\nAdds an alias.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersAliasesList",
+    "name": "Lists all aliases for a user.",
+    "description": "Lists all aliases for a user. GET /admin/directory/v1/users/{userKey}/aliases",
+    "context": "GET /admin/directory/v1/users/{userKey}/aliases\nLists all aliases for a user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: event (query) — Events to watch for.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersAliasesWatch",
+    "name": "Watches for changes in users list.",
+    "description": "Watches for changes in users list. POST /admin/directory/v1/users/{userKey}/aliases/watch",
+    "context": "POST /admin/directory/v1/users/{userKey}/aliases/watch\nWatches for changes in users list.\nRequired: userKey (path) — Email or immutable ID of the user; body (body)\nOptional: event (query) — Events to watch for.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersDelete",
+    "name": "Deletes a user.",
+    "description": "Deletes a user. DELETE /admin/directory/v1/users/{userKey}",
+    "context": "DELETE /admin/directory/v1/users/{userKey}\nDeletes a user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersGet",
+    "name": "Retrieves a user.",
+    "description": "Retrieves a user. GET /admin/directory/v1/users/{userKey}",
+    "context": "GET /admin/directory/v1/users/{userKey}\nRetrieves a user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: viewType (query) — Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](https://developers.google.com/workspace/admin/directory/v1/guides/manage-users#retrieve_users_non_admin).; customFieldMask (query) — A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.; projection (query) — What subset of fields to fetch for this user.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersInsert",
+    "name": "Creates a user.",
+    "description": "Creates a user. Creates a user. POST /admin/directory/v1/users",
+    "context": "POST /admin/directory/v1/users\nCreates a user. Mutate calls immediately following user creation might sometimes fail as the user isn't fully created due to propagation delay in our backends. Check the error details for the \"User creation is not complete\" message to see if this is the case. Retrying the calls after some time can help in this case. If `resolve_conflict_account` is set to `true`, the option selected for [Find and add unmanaged users](https://knowledge.workspace.google.com/admin/users/find-and-add-unmanaged-users) will apply to resolve conflicting accounts: - A `200` response code indicates the user was created (or replaced an existing unmanaged personal account). - A `202` response code means that a conflicting unmanaged personal account exists and was invited to join the organization. - A `409` response code means that a conflicting account exists so the user wasn't created (e.g. based on the option selected to preserve the account, or if the email conflicts with an unmanaged work account or existing managed user). For details on resolving duplicate account errors, see [Resolve duplicate account errors](https://knowledge.workspace.google.com/p/duplicate-account-errors) and [Transfer unmanaged work accounts](https://knowledge.workspace.google.com/p/unmanaged-work-accounts).\nRequired: body (body)\nOptional: resolveConflictAccount (query) — Optional. Applies the option selected for [Find and add unmanaged users](https://knowledge.workspace.google.com/admin/users/find-and-add-unmanaged-users) to resolve conflicting accounts when set to `true`. Default: `false`; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersList",
+    "name": "Retrieves a paginated list of either deleted users or all users in a domain.",
+    "description": "Retrieves a paginated list of either deleted users or all users in a domain. GET /admin/directory/v1/users",
+    "context": "GET /admin/directory/v1/users\nRetrieves a paginated list of either deleted users or all users in a domain.\nOptional: query (query) — Query string for searching user fields. For more information on constructing user queries, see [Search for Users](https://developers.google.com/workspace/admin/directory/v1/guides/search-users).; sortOrder (query) — Whether to return results in ascending or descending order, ignoring case.; customer (query) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all users for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.; customFieldMask (query) — A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.; event (query) — Event on which subscription is intended (if subscribing); orderBy (query) — Property to use for sorting results.; pageToken (query) — Token to specify next page in the list. The page token is only valid for three days.; viewType (query) — Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](https://developers.google.com/workspace/admin/directory/v1/guides/manage-users#retrieve_users_non_admin).; domain (query) — The domain name. Use this field to get users from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.; projection (query) — What subset of fields to fetch for this user.; showDeleted (query) — If set to `true`, retrieves the list of deleted users. (Default: `false`); maxResults (query) — Maximum number of results to return.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersMakeAdmin",
+    "name": "Makes a user a super administrator.",
+    "description": "Makes a user a super administrator. POST /admin/directory/v1/users/{userKey}/makeAdmin",
+    "context": "POST /admin/directory/v1/users/{userKey}/makeAdmin\nMakes a user a super administrator.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersPatch",
+    "name": "Updates a user using patch semantics.",
+    "description": "Updates a user using patch semantics. Updates a user using patch semantics. PATCH /admin/directory/v1/users/{userKey}",
+    "context": "PATCH /admin/directory/v1/users/{userKey}\nUpdates a user using patch semantics. The update method should be used instead, because it also supports patch semantics and has better performance. If you're mapping an external identity to a Google identity, use the [`update`](https://developers.google.com/workspace/admin/directory/v1/reference/users/update) method instead of the `patch` method. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersPhotosDelete",
+    "name": "Removes the user's photo.",
+    "description": "Removes the user's photo. DELETE /admin/directory/v1/users/{userKey}/photos/thumbnail",
+    "context": "DELETE /admin/directory/v1/users/{userKey}/photos/thumbnail\nRemoves the user's photo.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersPhotosGet",
+    "name": "Retrieves the user's photo.",
+    "description": "Retrieves the user's photo. GET /admin/directory/v1/users/{userKey}/photos/thumbnail",
+    "context": "GET /admin/directory/v1/users/{userKey}/photos/thumbnail\nRetrieves the user's photo.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersPhotosPatch",
+    "name": "Adds a photo for the user.",
+    "description": "Adds a photo for the user. Adds a photo for the user. PATCH /admin/directory/v1/users/{userKey}/photos/thumbnail",
+    "context": "PATCH /admin/directory/v1/users/{userKey}/photos/thumbnail\nAdds a photo for the user. This method supports [patch semantics](https://developers.google.com/workspace/admin/directory/v1/guides/performance#patch).\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersPhotosUpdate",
+    "name": "Adds a photo for the user.",
+    "description": "Adds a photo for the user. PUT /admin/directory/v1/users/{userKey}/photos/thumbnail",
+    "context": "PUT /admin/directory/v1/users/{userKey}/photos/thumbnail\nAdds a photo for the user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersSignOut",
+    "name": "Signs a user out of all web and device sessions and reset their sign-in cookies.",
+    "description": "Signs a user out of all web and device sessions and reset their sign-in cookies. Signs a user out of all web and device sessions and reset their sign-in cookies. POST /admin/directory/v1/users/{userKey}/signOut",
+    "context": "POST /admin/directory/v1/users/{userKey}/signOut\nSigns a user out of all web and device sessions and reset their sign-in cookies. User will have to sign in by authenticating again.\nRequired: userKey (path) — Identifies the target user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersUndelete",
+    "name": "Undeletes a deleted user.",
+    "description": "Undeletes a deleted user. POST /admin/directory/v1/users/{userKey}/undelete",
+    "context": "POST /admin/directory/v1/users/{userKey}/undelete\nUndeletes a deleted user.\nRequired: userKey (path) — The immutable id of the user; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersUpdate",
+    "name": "Updates a user.",
+    "description": "Updates a user. Updates a user. PUT /admin/directory/v1/users/{userKey}",
+    "context": "PUT /admin/directory/v1/users/{userKey}\nUpdates a user. This method supports patch semantics, meaning that you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared. For repeating fields that contain arrays, individual items in the array can't be patched piecemeal; they must be supplied in the request body with the desired values for all items. See the [user accounts guide](https://developers.google.com/workspace/admin/directory/v1/guides/manage-users#update_user) for more information.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersWatch",
+    "name": "Watches for changes in users list.",
+    "description": "Watches for changes in users list. POST /admin/directory/v1/users/watch",
+    "context": "POST /admin/directory/v1/users/watch\nWatches for changes in users list.\nRequired: body (body)\nOptional: domain (query) — Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead.\"; viewType (query) — Whether to fetch the administrator-only or domain-wide public view of the user. For more information, see [Retrieve a user as a non-administrator](https://developers.google.com/workspace/admin/directory/v1/guides/manage-users#retrieve_users_non_admin).; sortOrder (query) — Whether to return results in ascending or descending order.; event (query) — Events to watch for.; pageToken (query) — Token to specify next page in the list; customFieldMask (query) — Comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when projection=custom.; query (query) — Query string search. Contains one or more search clauses, each with a field, operator, and value. For complete documentation, go to [Search for users](https://developers.google.com/workspace/admin/directory/v1/guides/search-users).; maxResults (query) — Maximum number of results to return.; orderBy (query) — Column to use for sorting results; showDeleted (query) — If set to true, retrieves the list of deleted users. (Default: false); customer (query) — Immutable ID of the Google Workspace account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.; projection (query) — What subset of fields to fetch for this user.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "VerificationCodesGenerate",
+    "name": "Generates new backup verification codes for the user.",
+    "description": "Generates new backup verification codes for the user. POST /admin/directory/v1/users/{userKey}/verificationCodes/generate",
+    "context": "POST /admin/directory/v1/users/{userKey}/verificationCodes/generate\nGenerates new backup verification codes for the user.\nRequired: userKey (path) — Email or immutable ID of the user\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "VerificationCodesInvalidate",
+    "name": "Invalidates the current backup verification codes for the user.",
+    "description": "Invalidates the current backup verification codes for the user. POST /admin/directory/v1/users/{userKey}/verificationCodes/invalidate",
+    "context": "POST /admin/directory/v1/users/{userKey}/verificationCodes/invalidate\nInvalidates the current backup verification codes for the user.\nRequired: userKey (path) — Email or immutable ID of the user\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "VerificationCodesList",
+    "name": "Returns the current set of valid backup verification codes for the specified user.",
+    "description": "Returns the current set of valid backup verification codes for the specified user. GET /admin/directory/v1/users/{userKey}/verificationCodes",
+    "context": "GET /admin/directory/v1/users/{userKey}/verificationCodes\nReturns the current set of valid backup verification codes for the specified user.\nRequired: userKey (path) — Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

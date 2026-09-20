@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sandbox_create",
+    "name": "API for managing sandbox environments that control network access for task runs.",
+    "description": "API for managing sandbox environments that control network access for task runs. POST /api/projects/{project_id}/sandbox_environments/",
+    "context": "POST /api/projects/{project_id}/sandbox_environments/\nAPI for managing sandbox environments that control network access for task runs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "sandbox_destroy",
+    "name": "API for managing sandbox environments that control network access for task runs.",
+    "description": "API for managing sandbox environments that control network access for task runs. DELETE /api/projects/{project_id}/sandbox_environments/{id}/",
+    "context": "DELETE /api/projects/{project_id}/sandbox_environments/{id}/\nAPI for managing sandbox environments that control network access for task runs.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "sandbox_list",
+    "name": "API for managing sandbox environments that control network access for task runs.",
+    "description": "API for managing sandbox environments that control network access for task runs. GET /api/projects/{project_id}/sandbox_environments/",
+    "context": "GET /api/projects/{project_id}/sandbox_environments/\nAPI for managing sandbox environments that control network access for task runs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "sandbox_partial_update",
+    "name": "API for managing sandbox environments that control network access for task runs.",
+    "description": "API for managing sandbox environments that control network access for task runs. PATCH /api/projects/{project_id}/sandbox_environments/{id}/",
+    "context": "PATCH /api/projects/{project_id}/sandbox_environments/{id}/\nAPI for managing sandbox environments that control network access for task runs.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "sandbox_retrieve",
+    "name": "API for managing sandbox environments that control network access for task runs.",
+    "description": "API for managing sandbox environments that control network access for task runs. GET /api/projects/{project_id}/sandbox_environments/{id}/",
+    "context": "GET /api/projects/{project_id}/sandbox_environments/{id}/\nAPI for managing sandbox environments that control network access for task runs.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

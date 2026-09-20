@@ -1,0 +1,38 @@
+[
+  {
+    "id": "health_issues_list",
+    "name": "List health issues",
+    "description": "List health issues Lists health issues detected across all of this project's PostHog health checks (outdated SDKs, data warehouse sync failures, missing web analytics events, ingestion warnings, and more). GET /api/projects/{project_id}/health_issues/",
+    "context": "GET /api/projects/{project_id}/health_issues/\nLists health issues detected across all of this project's PostHog health checks (outdated SDKs, data warehouse sync failures, missing web analytics events, ingestion warnings, and more). Filter by status, severity, kind, or dismissed state.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: dismissed (query) — Filter by dismissed state. Omit to include both dismissed and non-dismissed issues.; kind (query) — Only return issues from this check kind (e.g. 'sdk_outdated').; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; severity (query) — Only return issues with this severity. One of: 'critical', 'warning', 'info'.; status (query) — Only return issues with this status. One of: 'active', 'resolved'."
+  },
+  {
+    "id": "health_issues_partial_update",
+    "name": "health_issues_partial_update",
+    "description": "health_issues_partial_update PATCH /api/projects/{project_id}/health_issues/{id}/",
+    "context": "PATCH /api/projects/{project_id}/health_issues/{id}/\nhealth_issues_partial_update\nRequired: id (path) — A UUID string identifying this health issue.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "health_issues_refresh_create",
+    "name": "health_issues_refresh_create",
+    "description": "health_issues_refresh_create POST /api/projects/{project_id}/health_issues/refresh/",
+    "context": "POST /api/projects/{project_id}/health_issues/refresh/\nhealth_issues_refresh_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "health_issues_resolve_create",
+    "name": "health_issues_resolve_create",
+    "description": "health_issues_resolve_create POST /api/projects/{project_id}/health_issues/{id}/resolve/",
+    "context": "POST /api/projects/{project_id}/health_issues/{id}/resolve/\nhealth_issues_resolve_create\nRequired: id (path) — A UUID string identifying this health issue.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "health_issues_retrieve",
+    "name": "Get a health issue",
+    "description": "Get a health issue Fetches a single health issue, enriched with the owning check's rendered explanation: a title, a one-line summary of what's wrong, a deep link to the relevant page, and remediation guidance for how to fix it. GET /api/projects/{project_id}/health_issues/{id}/",
+    "context": "GET /api/projects/{project_id}/health_issues/{id}/\nFetches a single health issue, enriched with the owning check's rendered explanation: a title, a one-line summary of what's wrong, a deep link to the relevant page, and remediation guidance for how to fix it.\nRequired: id (path) — A UUID string identifying this health issue.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "health_issues_summary_retrieve",
+    "name": "Summarize active health issues",
+    "description": "Summarize active health issues Returns aggregated counts of active, non-dismissed health issues for the project, split into `unsnoozed` and `snoozed` groups and broken down by severity and by kind within each. GET /api/projects/{project_id}/health_issues/summary/",
+    "context": "GET /api/projects/{project_id}/health_issues/summary/\nReturns aggregated counts of active, non-dismissed health issues for the project, split into `unsnoozed` and `snoozed` groups and broken down by severity and by kind within each. Use for a quick overview of overall project health before drilling in with the list endpoint.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

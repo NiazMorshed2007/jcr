@@ -1,0 +1,86 @@
+[
+  {
+    "id": "GetTaxAssociationsFind",
+    "name": "Find a Tax Association",
+    "description": "Find a Tax Association Finds a tax association object by PaymentIntent id. GET /v1/tax/associations/find",
+    "context": "GET /v1/tax/associations/find\nFinds a tax association object by PaymentIntent id.\nRequired: payment_intent (query) — Valid [PaymentIntent](https://docs.stripe.com/api/payment_intents/object) id\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTaxCalculationsCalculation",
+    "name": "Retrieve a Calculation",
+    "description": "Retrieve a Calculation Retrieves a Tax Calculation object, if the calculation hasn’t expired. GET /v1/tax/calculations/{calculation}",
+    "context": "GET /v1/tax/calculations/{calculation}\nRetrieves a Tax Calculation object, if the calculation hasn’t expired.\nRequired: calculation (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTaxCalculationsCalculationLineItems",
+    "name": "Retrieve a Calculation's line items",
+    "description": "Retrieve a Calculation's line items Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired. GET /v1/tax/calculations/{calculation}/line_items",
+    "context": "GET /v1/tax/calculations/{calculation}/line_items\nRetrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired.\nRequired: calculation (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetTaxRegistrations",
+    "name": "List registrations",
+    "description": "List registrations Returns a list of Tax Registration objects. GET /v1/tax/registrations",
+    "context": "GET /v1/tax/registrations\nReturns a list of Tax Registration objects.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; status (query) — The status of the Tax Registration.; body (body)"
+  },
+  {
+    "id": "GetTaxRegistrationsId",
+    "name": "Retrieve a registration",
+    "description": "Retrieve a registration Returns a Tax Registration object. GET /v1/tax/registrations/{id}",
+    "context": "GET /v1/tax/registrations/{id}\nReturns a Tax Registration object.\nRequired: id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTaxSettings",
+    "name": "Retrieve settings",
+    "description": "Retrieve settings Retrieves Tax Settings for a merchant. GET /v1/tax/settings",
+    "context": "GET /v1/tax/settings\nRetrieves Tax Settings for a merchant.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTaxTransactionsTransaction",
+    "name": "Retrieve a Transaction",
+    "description": "Retrieve a Transaction Retrieves a Tax Transaction object. GET /v1/tax/transactions/{transaction}",
+    "context": "GET /v1/tax/transactions/{transaction}\nRetrieves a Tax Transaction object.\nRequired: transaction (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTaxTransactionsTransactionLineItems",
+    "name": "Retrieve a Transaction's line items",
+    "description": "Retrieve a Transaction's line items Retrieves the line items of a committed standalone transaction as a collection. GET /v1/tax/transactions/{transaction}/line_items",
+    "context": "GET /v1/tax/transactions/{transaction}/line_items\nRetrieves the line items of a committed standalone transaction as a collection.\nRequired: transaction (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "PostTaxCalculations",
+    "name": "Create a Calculation",
+    "description": "Create a Calculation Calculates tax based on the input and returns a Tax Calculation object. POST /v1/tax/calculations",
+    "context": "POST /v1/tax/calculations\nCalculates tax based on the input and returns a Tax Calculation object.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTaxRegistrations",
+    "name": "Create a registration",
+    "description": "Create a registration Creates a new Tax Registration object. POST /v1/tax/registrations",
+    "context": "POST /v1/tax/registrations\nCreates a new Tax Registration object.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTaxRegistrationsId",
+    "name": "Update a registration",
+    "description": "Update a registration Updates an existing Tax Registration object. POST /v1/tax/registrations/{id}",
+    "context": "POST /v1/tax/registrations/{id}\nUpdates an existing Tax Registration object. A registration cannot be deleted after it has been created. If you wish to end a registration you may do so by setting expires_at .\nRequired: id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTaxSettings",
+    "name": "Update settings",
+    "description": "Update settings Updates Tax Settings parameters used in tax calculations. POST /v1/tax/settings",
+    "context": "POST /v1/tax/settings\nUpdates Tax Settings parameters used in tax calculations. All parameters are editable but none can be removed once set.\nOptional: body (body)"
+  },
+  {
+    "id": "PostTaxTransactionsCreateFromCalculation",
+    "name": "Create a Transaction from a Calculation",
+    "description": "Create a Transaction from a Calculation Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. POST /v1/tax/transactions/create_from_calculation",
+    "context": "POST /v1/tax/transactions/create_from_calculation\nCreates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations expire after 90 days.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTaxTransactionsCreateReversal",
+    "name": "Create a reversal Transaction",
+    "description": "Create a reversal Transaction Partially or fully reverses a previously created Transaction . POST /v1/tax/transactions/create_reversal",
+    "context": "POST /v1/tax/transactions/create_reversal\nPartially or fully reverses a previously created Transaction .\nRequired: body (body)"
+  }
+]

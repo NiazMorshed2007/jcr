@@ -1,0 +1,50 @@
+[
+  {
+    "id": "magic-ipsec-tunnels-create-ipsec-tunnels",
+    "name": "Create an IPsec tunnel",
+    "description": "Create an IPsec tunnel Creates a new IPsec tunnel associated with an account. POST /client/v4/accounts/{account_id}/magic/ipsec_tunnels",
+    "context": "POST /client/v4/accounts/{account_id}/magic/ipsec_tunnels\nCreates a new IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-ipsec-tunnels-delete-ipsec-tunnel",
+    "name": "Delete IPsec Tunnel",
+    "description": "Delete IPsec Tunnel Disables and removes a specific static IPsec Tunnel associated with an account. DELETE /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}\nDisables and removes a specific static IPsec Tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: ipsec_tunnel_id (path); account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-ipsec-tunnels-generate-pre-shared-key-(-psk)-for-ipsec-tunnels",
+    "name": "Generate Pre-Shared Key (PSK) for IPsec tunnels",
+    "description": "Generate Pre-Shared Key (PSK) for IPsec tunnels Generates a Pre-Shared Key for a specific IPsec tunnel used in the IKE session. POST /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}/psk_generate",
+    "context": "POST /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}/psk_generate\nGenerates a Pre-Shared Key for a specific IPsec tunnel used in the IKE session. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes. After a PSK is generated, the PSK is immediately persisted to Cloudflare's edge and cannot be retrieved later. Store the PSK in a safe place.\nRequired: ipsec_tunnel_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-ipsec-tunnels-list-ipsec-tunnel-details",
+    "name": "List IPsec tunnel details",
+    "description": "List IPsec tunnel details Lists details for a specific IPsec tunnel. GET /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}\nLists details for a specific IPsec tunnel.\nRequired: ipsec_tunnel_id (path); account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-ipsec-tunnels-list-ipsec-tunnels",
+    "name": "List IPsec tunnels",
+    "description": "List IPsec tunnels Lists IPsec tunnels associated with an account. GET /client/v4/accounts/{account_id}/magic/ipsec_tunnels",
+    "context": "GET /client/v4/accounts/{account_id}/magic/ipsec_tunnels\nLists IPsec tunnels associated with an account.\nRequired: account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-ipsec-tunnels-set-pre-shared-keys-for-ipsec-tunnels",
+    "name": "Set Pre-Shared Keys (PSK) for IPsec tunnels",
+    "description": "Set Pre-Shared Keys (PSK) for IPsec tunnels Sets Pre-Shared Keys for multiple IPsec tunnels associated with an account. POST /client/v4/accounts/{account_id}/magic/ipsec_tunnels/psk",
+    "context": "POST /client/v4/accounts/{account_id}/magic/ipsec_tunnels/psk\nSets Pre-Shared Keys for multiple IPsec tunnels associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes. After PSKs are applied, they are immediately persisted to Cloudflare's edge and cannot be retrieved later. Store the PSKs in a safe place.\nRequired: account_id (path); body (body)\nOptional: validate_only (query) — If `true`, only run validation without persisting changes."
+  },
+  {
+    "id": "magic-ipsec-tunnels-update-ipsec-tunnel",
+    "name": "Update IPsec Tunnel",
+    "description": "Update IPsec Tunnel Updates a specific IPsec tunnel associated with an account. PUT /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}\nUpdates a specific IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: ipsec_tunnel_id (path); account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-ipsec-tunnels-update-multiple-ipsec-tunnels",
+    "name": "Update multiple IPsec tunnels",
+    "description": "Update multiple IPsec tunnels Update multiple IPsec tunnels associated with an account. PUT /client/v4/accounts/{account_id}/magic/ipsec_tunnels",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/ipsec_tunnels\nUpdate multiple IPsec tunnels associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  }
+]

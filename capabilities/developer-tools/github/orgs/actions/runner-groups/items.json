@@ -1,0 +1,86 @@
+[
+  {
+    "id": "actions%2Fadd-repo-access-to-self-hosted-runner-group-in-org",
+    "name": "Add repository access to a self-hosted runner group in an organization",
+    "description": "Add repository access to a self-hosted runner group in an organization Adds a repository to the list of repositories that can access a self-hosted runner group. PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}\nAdds a repository to the list of repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see \"[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization).\" OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "actions%2Fadd-self-hosted-runner-to-group-for-org",
+    "name": "Add a self-hosted runner to a group for an organization",
+    "description": "Add a self-hosted runner to a group for an organization Adds a self-hosted runner to a runner group configured in an organization. PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "context": "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}\nAdds a self-hosted runner to a runner group configured in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; runner_id (path) — Unique identifier of the self-hosted runner."
+  },
+  {
+    "id": "actions%2Fcreate-self-hosted-runner-group-for-org",
+    "name": "Create a self-hosted runner group for an organization",
+    "description": "Create a self-hosted runner group for an organization Creates a new self-hosted runner group for an organization. POST /orgs/{org}/actions/runner-groups",
+    "context": "POST /orgs/{org}/actions/runner-groups\nCreates a new self-hosted runner group for an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fdelete-self-hosted-runner-group-from-org",
+    "name": "Delete a self-hosted runner group from an organization",
+    "description": "Delete a self-hosted runner group from an organization Deletes a self-hosted runner group for an organization. DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "context": "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}\nDeletes a self-hosted runner group for an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group."
+  },
+  {
+    "id": "actions%2Fget-self-hosted-runner-group-for-org",
+    "name": "Get a self-hosted runner group for an organization",
+    "description": "Get a self-hosted runner group for an organization Gets a specific self-hosted runner group for an organization. GET /orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "context": "GET /orgs/{org}/actions/runner-groups/{runner_group_id}\nGets a specific self-hosted runner group for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group."
+  },
+  {
+    "id": "actions%2Flist-github-hosted-runners-in-group-for-org",
+    "name": "List GitHub-hosted runners in a group for an organization",
+    "description": "List GitHub-hosted runners in a group for an organization Lists the GitHub-hosted runners in an organization group. GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners",
+    "context": "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners\nLists the GitHub-hosted runners in an organization group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Flist-repo-access-to-self-hosted-runner-group-in-org",
+    "name": "List repository access to a self-hosted runner group in an organization",
+    "description": "List repository access to a self-hosted runner group in an organization Lists the repositories with access to a self-hosted runner group configured in an organization. GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "context": "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories\nLists the repositories with access to a self-hosted runner group configured in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Flist-self-hosted-runner-groups-for-org",
+    "name": "List self-hosted runner groups for an organization",
+    "description": "List self-hosted runner groups for an organization Lists all self-hosted runner groups configured in an organization and inherited from an enterprise. GET /orgs/{org}/actions/runner-groups",
+    "context": "GET /orgs/{org}/actions/runner-groups\nLists all self-hosted runner groups configured in an organization and inherited from an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; visible_to_repository (query) — Only return runner groups that are allowed to be used by this repository."
+  },
+  {
+    "id": "actions%2Flist-self-hosted-runners-in-group-for-org",
+    "name": "List self-hosted runners in a group for an organization",
+    "description": "List self-hosted runners in a group for an organization Lists self-hosted runners that are in a specific organization group. GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "context": "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners\nLists self-hosted runners that are in a specific organization group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Fremove-repo-access-to-self-hosted-runner-group-in-org",
+    "name": "Remove repository access to a self-hosted runner group in an organization",
+    "description": "Remove repository access to a self-hosted runner group in an organization Removes a repository from the list of selected repositories that can access a self-hosted runner group. DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}\nRemoves a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see \"[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "actions%2Fremove-self-hosted-runner-from-group-for-org",
+    "name": "Remove a self-hosted runner from a group for an organization",
+    "description": "Remove a self-hosted runner from a group for an organization Removes a self-hosted runner from a group configured in an organization. DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "context": "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}\nRemoves a self-hosted runner from a group configured in an organization. The runner is then returned to the default group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; runner_id (path) — Unique identifier of the self-hosted runner."
+  },
+  {
+    "id": "actions%2Fset-repo-access-to-self-hosted-runner-group-in-org",
+    "name": "Set repository access for a self-hosted runner group in an organization",
+    "description": "Set repository access for a self-hosted runner group in an organization Replaces the list of repositories that have access to a self-hosted runner group configured in an organization. PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "context": "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories\nReplaces the list of repositories that have access to a self-hosted runner group configured in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-self-hosted-runners-in-group-for-org",
+    "name": "Set self-hosted runners in a group for an organization",
+    "description": "Set self-hosted runners in a group for an organization Replaces the list of self-hosted runners that are part of an organization runner group. PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "context": "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners\nReplaces the list of self-hosted runners that are part of an organization runner group. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; body (body)"
+  },
+  {
+    "id": "actions%2Fupdate-self-hosted-runner-group-for-org",
+    "name": "Update a self-hosted runner group for an organization",
+    "description": "Update a self-hosted runner group for an organization Updates the `name` and `visibility` of a self-hosted runner group in an organization. PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "context": "PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}\nUpdates the `name` and `visibility` of a self-hosted runner group in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; runner_group_id (path) — Unique identifier of the self-hosted runner group.; body (body)"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "addRepositoryPermission",
+    "name": "Add a repository permission",
+    "description": "Add a repository permission Grant a team access to a VCR repository. POST /v1/vcr/repository/{idOrName}/permissions",
+    "context": "POST /v1/vcr/repository/{idOrName}/permissions\nGrant a team access to a VCR repository. Sharing applies to the whole repository.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "clearRepositoryPermissions",
+    "name": "Clear all repository permissions",
+    "description": "Clear all repository permissions Revoke every team's access to a VCR repository. DELETE /v1/vcr/repository/{idOrName}/permissions/all",
+    "context": "DELETE /v1/vcr/repository/{idOrName}/permissions/all\nRevoke every team's access to a VCR repository. Clearing an unshared repository is a no-op.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createRepository",
+    "name": "Create a repository",
+    "description": "Create a repository Create a container registry repository for a project. POST /v1/vcr/repository",
+    "context": "POST /v1/vcr/repository\nCreate a container registry repository for a project.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteRepository",
+    "name": "Delete a repository",
+    "description": "Delete a repository Schedule a repository for deletion. DELETE /v1/vcr/repository/{idOrName}",
+    "context": "DELETE /v1/vcr/repository/{idOrName}\nSchedule a repository for deletion. The repository is marked so it disappears from list/get immediately; subscriber-vcr reclaims every image (manifests, blobs, tags and rows) and finally deletes the repository row asynchronously via the VcrRepositoryRemoved event.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteRepositoryImage",
+    "name": "Delete a repository image",
+    "description": "Delete a repository image Schedule an image for deletion. DELETE /v1/vcr/repository/{idOrName}/images/{imageId}",
+    "context": "DELETE /v1/vcr/repository/{idOrName}/images/{imageId}\nSchedule an image for deletion. The image is marked so it disappears from list/get immediately; subscriber-vcr reclaims the manifest, blobs, tags and row asynchronously via the VcrManifestRemoved event.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path); imageId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRepository",
+    "name": "Get a repository",
+    "description": "Get a repository Fetch a container registry repository for a project by ID or name. GET /v1/vcr/repository/{idOrName}",
+    "context": "GET /v1/vcr/repository/{idOrName}\nFetch a container registry repository for a project by ID or name.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRepositoryImage",
+    "name": "Get a repository image",
+    "description": "Get a repository image Fetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest}",
+    "context": "GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest}\nFetch an individual image from a repository, including its tags and Dockerfile history entries with discriminated layer details for UI rendering. The image may be addressed by its internal id (`image_...`) or by its manifest digest (`sha256:...`).\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path); imageIdOrDigest (path) — The internal image id (`image_...`) or the image manifest digest (`sha256:...`).\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRepositoryTag",
+    "name": "Get a repository tag",
+    "description": "Get a repository tag Fetch a single tag from a repository, including the backing image's metadata and VHS-readiness status. GET /v1/vcr/repository/{idOrName}/tags/{tag}",
+    "context": "GET /v1/vcr/repository/{idOrName}/tags/{tag}\nFetch a single tag from a repository, including the backing image's metadata and VHS-readiness status.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path); tag (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listRepositories",
+    "name": "List repositories",
+    "description": "List repositories List container registry repositories for a project. GET /v1/vcr/repository",
+    "context": "GET /v1/vcr/repository\nList container registry repositories for a project.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.\nOptional: limit (query); cursor (query) — Opaque pagination cursor returned by a previous list response.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listRepositoryImages",
+    "name": "List repository images",
+    "description": "List repository images List images for a container registry repository, including their tags. GET /v1/vcr/repository/{idOrName}/images",
+    "context": "GET /v1/vcr/repository/{idOrName}/images\nList images for a container registry repository, including their tags.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: limit (query); cursor (query) — Opaque pagination cursor returned by a previous list response.; untagged (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listRepositoryPermissions",
+    "name": "List repository permissions",
+    "description": "List repository permissions List the teams a VCR repository is shared with. GET /v1/vcr/repository/{idOrName}/permissions",
+    "context": "GET /v1/vcr/repository/{idOrName}/permissions\nList the teams a VCR repository is shared with.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: limit (query); cursor (query) — Opaque pagination cursor returned by a previous list response.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listRepositoryTags",
+    "name": "List repository tags",
+    "description": "List repository tags List a repository's tags. GET /v1/vcr/repository/{idOrName}/tags",
+    "context": "GET /v1/vcr/repository/{idOrName}/tags\nList a repository's tags.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: limit (query); cursor (query); sortBy (query) — Field to sort the non-pinned tags by.; sortOrder (query) — Sort direction. Defaults to desc.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "removeRepositoryPermission",
+    "name": "Remove a repository permission",
+    "description": "Remove a repository permission Revoke a team's access to a VCR repository. DELETE /v1/vcr/repository/{idOrName}/permissions",
+    "context": "DELETE /v1/vcr/repository/{idOrName}/permissions\nRevoke a team's access to a VCR repository.\nRequired: projectId (query) — Project ID or name (slug) within the authenticated team. IDs take precedence over names. Missing or empty values return HTTP 400.; idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

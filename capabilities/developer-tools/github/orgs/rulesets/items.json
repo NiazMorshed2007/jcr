@@ -1,0 +1,56 @@
+[
+  {
+    "id": "orgs%2Fget-org-ruleset-history",
+    "name": "Get organization ruleset history",
+    "description": "Get organization ruleset history Get the history of an organization ruleset. GET /orgs/{org}/rulesets/{ruleset_id}/history",
+    "context": "GET /orgs/{org}/rulesets/{ruleset_id}/history\nGet the history of an organization ruleset.\nRequired: org (path) — The organization name. The name is not case sensitive.; ruleset_id (path) — The ID of the ruleset.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fget-org-ruleset-version",
+    "name": "Get organization ruleset version",
+    "description": "Get organization ruleset version Get a version of an organization ruleset. GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}",
+    "context": "GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}\nGet a version of an organization ruleset.\nRequired: org (path) — The organization name. The name is not case sensitive.; ruleset_id (path) — The ID of the ruleset.; version_id (path) — The ID of the version"
+  },
+  {
+    "id": "repos%2Fcreate-org-ruleset",
+    "name": "Create an organization repository ruleset",
+    "description": "Create an organization repository ruleset Create a repository ruleset for an organization. POST /orgs/{org}/rulesets",
+    "context": "POST /orgs/{org}/rulesets\nCreate a repository ruleset for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body) — Request body"
+  },
+  {
+    "id": "repos%2Fdelete-org-ruleset",
+    "name": "Delete an organization repository ruleset",
+    "description": "Delete an organization repository ruleset Delete a ruleset for an organization. DELETE /orgs/{org}/rulesets/{ruleset_id}",
+    "context": "DELETE /orgs/{org}/rulesets/{ruleset_id}\nDelete a ruleset for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; ruleset_id (path) — The ID of the ruleset."
+  },
+  {
+    "id": "repos%2Fget-org-rule-suite",
+    "name": "Get an organization rule suite",
+    "description": "Get an organization rule suite Gets information about a suite of rule evaluations from within an organization. GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}",
+    "context": "GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}\nGets information about a suite of rule evaluations from within an organization. For more information, see \"[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets).\"\nRequired: org (path) — The organization name. The name is not case sensitive.; rule_suite_id (path) — The unique identifier of the rule suite result. To get this ID, you can use [GET /repos/{owner}/{repo}/rulesets/rule-suites](https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites) for repositories and [GET /orgs/{org}/rulesets/rule-suites](https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites) for organizations."
+  },
+  {
+    "id": "repos%2Fget-org-rule-suites",
+    "name": "List organization rule suites",
+    "description": "List organization rule suites Lists suites of rule evaluations at the organization level. GET /orgs/{org}/rulesets/rule-suites",
+    "context": "GET /orgs/{org}/rulesets/rule-suites\nLists suites of rule evaluations at the organization level. For more information, see \"[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets).\"\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: ref (query) — The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.; repository_name (query) — The name of the repository to filter on.; time_period (query) — The time period to filter by. For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for rule suites that occurred in the past 7 days (168 hours).; actor_name (query) — The handle for the GitHub user account to filter on. When specified, only rule evaluations triggered by this actor will be returned.; rule_suite_result (query) — The rule suite results to filter on. When specified, only suites with this result will be returned.; evaluate_status (query) — The evaluate status to filter on. When specified, only rule suites resulting from rulesets with the specified evaluate status will be returned. - `all` - all rule suites will be returned. - `active` - only rule suites resulting from rulesets in active (non-evaluate) mode will be returned. - `evaluate` - only rule suites resulting from rulesets in evaluate mode will be returned.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fget-org-ruleset",
+    "name": "Get an organization repository ruleset",
+    "description": "Get an organization repository ruleset Get a repository ruleset for an organization. GET /orgs/{org}/rulesets/{ruleset_id}",
+    "context": "GET /orgs/{org}/rulesets/{ruleset_id}\nGet a repository ruleset for an organization. **Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user making the API request has write access to the ruleset.\nRequired: org (path) — The organization name. The name is not case sensitive.; ruleset_id (path) — The ID of the ruleset."
+  },
+  {
+    "id": "repos%2Fget-org-rulesets",
+    "name": "Get all organization repository rulesets",
+    "description": "Get all organization repository rulesets Get all the repository rulesets for an organization. GET /orgs/{org}/rulesets",
+    "context": "GET /orgs/{org}/rulesets\nGet all the repository rulesets for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; targets (query) — A comma-separated list of rule targets to filter by. If provided, only rulesets that apply to the specified targets will be returned. For example, `branch,tag,push`."
+  },
+  {
+    "id": "repos%2Fupdate-org-ruleset",
+    "name": "Update an organization repository ruleset",
+    "description": "Update an organization repository ruleset Update a ruleset for an organization. PUT /orgs/{org}/rulesets/{ruleset_id}",
+    "context": "PUT /orgs/{org}/rulesets/{ruleset_id}\nUpdate a ruleset for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; ruleset_id (path) — The ID of the ruleset.\nOptional: body (body) — Request body"
+  }
+]

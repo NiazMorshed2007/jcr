@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_storage_policy_assignments_id",
+    "name": "Unassign storage policy",
+    "description": "Unassign storage policy Delete a storage policy assignment. DELETE /2.0/storage_policy_assignments/{storage_policy_assignment_id}",
+    "context": "DELETE /2.0/storage_policy_assignments/{storage_policy_assignment_id}\nDelete a storage policy assignment. Deleting a storage policy assignment on a user will have the user inherit the enterprise's default storage policy. There is a rate limit for calling this endpoint of only twice per user in a 24 hour time frame.\nRequired: storage_policy_assignment_id (path) — The ID of the storage policy assignment."
+  },
+  {
+    "id": "get_storage_policy_assignments",
+    "name": "List storage policy assignments",
+    "description": "List storage policy assignments Fetches all the storage policy assignment for an enterprise or user. GET /2.0/storage_policy_assignments",
+    "context": "GET /2.0/storage_policy_assignments\nFetches all the storage policy assignment for an enterprise or user.\nRequired: resolved_for_type (query) — The target type to return assignments for.; resolved_for_id (query) — The ID of the user or enterprise to return assignments for.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`."
+  },
+  {
+    "id": "get_storage_policy_assignments_id",
+    "name": "Get storage policy assignment",
+    "description": "Get storage policy assignment Fetches a specific storage policy assignment. GET /2.0/storage_policy_assignments/{storage_policy_assignment_id}",
+    "context": "GET /2.0/storage_policy_assignments/{storage_policy_assignment_id}\nFetches a specific storage policy assignment.\nRequired: storage_policy_assignment_id (path) — The ID of the storage policy assignment."
+  },
+  {
+    "id": "post_storage_policy_assignments",
+    "name": "Assign storage policy",
+    "description": "Assign storage policy Creates a storage policy assignment for an enterprise or user. POST /2.0/storage_policy_assignments",
+    "context": "POST /2.0/storage_policy_assignments\nCreates a storage policy assignment for an enterprise or user.\nOptional: body (body)"
+  },
+  {
+    "id": "put_storage_policy_assignments_id",
+    "name": "Update storage policy assignment",
+    "description": "Update storage policy assignment Updates a specific storage policy assignment. PUT /2.0/storage_policy_assignments/{storage_policy_assignment_id}",
+    "context": "PUT /2.0/storage_policy_assignments/{storage_policy_assignment_id}\nUpdates a specific storage policy assignment.\nRequired: storage_policy_assignment_id (path) — The ID of the storage policy assignment.\nOptional: body (body)"
+  }
+]

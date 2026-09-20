@@ -1,0 +1,68 @@
+[
+  {
+    "id": "custom-hostname-fallback-origin-for-a-zone-delete-fallback-origin-for-custom-hostnames",
+    "name": "Delete Fallback Origin for Custom Hostnames",
+    "description": "Delete Fallback Origin for Custom Hostnames Removes the fallback origin configuration for custom hostnames on a zone. DELETE /client/v4/zones/{zone_id}/custom_hostnames/fallback_origin",
+    "context": "DELETE /client/v4/zones/{zone_id}/custom_hostnames/fallback_origin\nRemoves the fallback origin configuration for custom hostnames on a zone. Custom hostnames without specific origins will no longer have a fallback.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "custom-hostname-fallback-origin-for-a-zone-get-fallback-origin-for-custom-hostnames",
+    "name": "Get Fallback Origin for Custom Hostnames",
+    "description": "Get Fallback Origin for Custom Hostnames Retrieves the current fallback origin configuration for custom hostnames on a zone. GET /client/v4/zones/{zone_id}/custom_hostnames/fallback_origin",
+    "context": "GET /client/v4/zones/{zone_id}/custom_hostnames/fallback_origin\nRetrieves the current fallback origin configuration for custom hostnames on a zone. The fallback origin handles traffic when specific custom hostname origins are unavailable.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "custom-hostname-fallback-origin-for-a-zone-update-fallback-origin-for-custom-hostnames",
+    "name": "Update Fallback Origin for Custom Hostnames",
+    "description": "Update Fallback Origin for Custom Hostnames Updates the fallback origin configuration for custom hostnames on a zone. PUT /client/v4/zones/{zone_id}/custom_hostnames/fallback_origin",
+    "context": "PUT /client/v4/zones/{zone_id}/custom_hostnames/fallback_origin\nUpdates the fallback origin configuration for custom hostnames on a zone. Sets the default origin server for custom hostname traffic.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-create-custom-hostname",
+    "name": "Create Custom Hostname",
+    "description": "Create Custom Hostname Add a new custom hostname and request that an SSL certificate be issued for it. POST /client/v4/zones/{zone_id}/custom_hostnames",
+    "context": "POST /client/v4/zones/{zone_id}/custom_hostnames\nAdd a new custom hostname and request that an SSL certificate be issued for it. One of three validation methods—http, txt, email—should be used, with 'http' recommended if the CNAME is already in place (or will be soon). Specifying 'email' will send an email to the WHOIS contacts on file for the base domain plus hostmaster, postmaster, webmaster, admin, administrator. If http is used and the domain is not already pointing to the Managed CNAME host, the PATCH method must be used once it is (to complete validation). Enable bundling of certificates using the custom_cert_bundle field. The bundling process requires the following condition One certificate in the bundle must use an RSA, and the other must use an ECDSA.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-custom-hostname-details",
+    "name": "Custom Hostname Details",
+    "description": "Custom Hostname Details Retrieves detailed information about a specific custom hostname, including SSL certificate status, ownership verification, and origin configuration. GET /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+    "context": "GET /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}\nRetrieves detailed information about a specific custom hostname, including SSL certificate status, ownership verification, and origin configuration.\nRequired: custom_hostname_id (path); zone_id (path)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-delete_single_certificate_and_key_in_a_custom_hostname",
+    "name": "Delete Single Certificate And Key For Custom Hostname",
+    "description": "Delete Single Certificate And Key For Custom Hostname Delete a single custom certificate from a certificate pack that contains two bundled certificates. DELETE /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}\nDelete a single custom certificate from a certificate pack that contains two bundled certificates. Deletion is subject to the following constraints. You cannot delete a certificate if it is the only remaining certificate in the pack. At least one certificate must remain in the pack.\nRequired: custom_hostname_id (path); certificate_pack_id (path); certificate_id (path); zone_id (path)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-delete-custom-hostname-(-and-any-issued-ssl-certificates)",
+    "name": "Delete Custom Hostname (and any issued SSL certificates)",
+    "description": "Delete Custom Hostname (and any issued SSL certificates) Permanently deletes a custom hostname and revokes any SSL certificates that were issued for it. DELETE /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}\nPermanently deletes a custom hostname and revokes any SSL certificates that were issued for it. This action cannot be undone.\nRequired: custom_hostname_id (path); zone_id (path)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-edit-custom-certificate-custom-hostname",
+    "name": "Replace Custom Certificate and Custom Key In Custom Hostname",
+    "description": "Replace Custom Certificate and Custom Key In Custom Hostname Replace a single custom certificate within a certificate pack that contains two bundled certificates. PUT /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates/{certificate_id}\nReplace a single custom certificate within a certificate pack that contains two bundled certificates. The replacement must adhere to the following constraints. You can only replace an RSA certificate with another RSA certificate or an ECDSA certificate with another ECDSA certificate.\nRequired: custom_hostname_id (path); certificate_pack_id (path); certificate_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-edit-custom-hostname",
+    "name": "Edit Custom Hostname",
+    "description": "Edit Custom Hostname Modify SSL configuration for a custom hostname. PATCH /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/custom_hostnames/{custom_hostname_id}\nModify SSL configuration for a custom hostname. When sent with SSL config that matches existing config, used to indicate that hostname should pass domain control validation (DCV). Can also be used to change validation type, e.g., from 'http' to 'email'. Bundle an existing certificate with another certificate by using the \"custom_cert_bundle\" field. The bundling process supports combining certificates as long as the following condition is met. One certificate must use the RSA algorithm, and the other must use the ECDSA algorithm.\nRequired: custom_hostname_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-get-custom-hostname-quota",
+    "name": "Get Custom Hostname Quota",
+    "description": "Get Custom Hostname Quota Returns custom hostname quota usage for a zone. GET /client/v4/zones/{zone_id}/custom_hostnames/quota",
+    "context": "GET /client/v4/zones/{zone_id}/custom_hostnames/quota\nReturns custom hostname quota usage for a zone. The allocated quota is a soft limit; creating custom hostnames after usage exceeds this limit can still succeed until the hard cap is reached. Use the exceeded and hard_cap fields to track when usage is above the soft limit and when new custom hostname creation will be rejected.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "custom-hostname-for-a-zone-list-custom-hostnames",
+    "name": "List Custom Hostnames",
+    "description": "List Custom Hostnames List, search, sort, and filter all of your custom hostnames. GET /client/v4/zones/{zone_id}/custom_hostnames",
+    "context": "GET /client/v4/zones/{zone_id}/custom_hostnames\nList, search, sort, and filter all of your custom hostnames.\nRequired: zone_id (path)\nOptional: hostname (query); hostname.exact (query); hostname.startsWith (query); hostname.contain (query); id (query); page (query); per_page (query); order (query); direction (query); ssl_status (query); hostname_status (query); certificate_authority (query); wildcard (query); custom_origin_server (query); ssl (query)"
+  }
+]

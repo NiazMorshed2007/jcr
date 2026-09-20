@@ -1,0 +1,32 @@
+[
+  {
+    "id": "m-tls-certificate-management-delete-m-tls-certificate",
+    "name": "Delete mTLS certificate",
+    "description": "Delete mTLS certificate Deletes the mTLS certificate unless the certificate is in use by one or more Cloudflare services. DELETE /client/v4/accounts/{account_id}/mtls_certificates/{mtls_certificate_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/mtls_certificates/{mtls_certificate_id}\nDeletes the mTLS certificate unless the certificate is in use by one or more Cloudflare services.\nRequired: mtls_certificate_id (path); account_id (path)"
+  },
+  {
+    "id": "m-tls-certificate-management-get-m-tls-certificate",
+    "name": "Get mTLS certificate",
+    "description": "Get mTLS certificate Fetches a single mTLS certificate uploaded to your account. GET /client/v4/accounts/{account_id}/mtls_certificates/{mtls_certificate_id}",
+    "context": "GET /client/v4/accounts/{account_id}/mtls_certificates/{mtls_certificate_id}\nFetches a single mTLS certificate uploaded to your account. To get a certificate issued by the Cloudflare managed CA, use the [Client Certificate Details endpoint](/api/resources/client_certificates/methods/get/).\nRequired: mtls_certificate_id (path); account_id (path)"
+  },
+  {
+    "id": "m-tls-certificate-management-list-m-tls-certificate-associations",
+    "name": "List mTLS certificate associations",
+    "description": "List mTLS certificate associations Lists all active associations between the certificate and Cloudflare services. GET /client/v4/accounts/{account_id}/mtls_certificates/{mtls_certificate_id}/associations",
+    "context": "GET /client/v4/accounts/{account_id}/mtls_certificates/{mtls_certificate_id}/associations\nLists all active associations between the certificate and Cloudflare services.\nRequired: mtls_certificate_id (path); account_id (path)"
+  },
+  {
+    "id": "m-tls-certificate-management-list-m-tls-certificates",
+    "name": "List mTLS certificates",
+    "description": "List mTLS certificates Lists all mTLS certificates uploaded to your account, such as Bring Your Own CA (BYO-CA) for mTLS. GET /client/v4/accounts/{account_id}/mtls_certificates",
+    "context": "GET /client/v4/accounts/{account_id}/mtls_certificates\nLists all mTLS certificates uploaded to your account, such as Bring Your Own CA (BYO-CA) for mTLS. To list certificates issued by the Cloudflare managed CA, use the [List Client Certificates endpoint](/api/resources/client_certificates/methods/list/).\nRequired: account_id (path)\nOptional: type (query) — Filters results by certificate type. Multiple types can be comma-separated."
+  },
+  {
+    "id": "m-tls-certificate-management-upload-m-tls-certificate",
+    "name": "Upload mTLS certificate",
+    "description": "Upload mTLS certificate Upload a certificate that you want to use with mTLS-enabled Cloudflare services, such as Bring Your Own CA (BYO-CA) for mTLS. POST /client/v4/accounts/{account_id}/mtls_certificates",
+    "context": "POST /client/v4/accounts/{account_id}/mtls_certificates\nUpload a certificate that you want to use with mTLS-enabled Cloudflare services, such as Bring Your Own CA (BYO-CA) for mTLS. To create certificates issued by the Cloudflare managed CA, use the [Create Client Certificate endpoint](/api/resources/client_certificates/methods/create/).\nRequired: account_id (path); body (body)"
+  }
+]

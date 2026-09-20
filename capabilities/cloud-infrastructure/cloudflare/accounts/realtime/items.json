@@ -1,0 +1,368 @@
+[
+  {
+    "id": "add_participant",
+    "name": "Add a participant",
+    "description": "Add a participant Adds a participant to the given meeting ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants\nAdds a participant to the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. Fetch the meeting ID using the create a meeting API.; body (body)"
+  },
+  {
+    "id": "addWebhook",
+    "name": "Add a webhook",
+    "description": "Add a webhook Adds a new webhook to an App. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks\nAdds a new webhook to an App.\nRequired: account_id (path); app_id (path); body (body)"
+  },
+  {
+    "id": "create_app",
+    "name": "Create App",
+    "description": "Create App Create new app for your account POST /client/v4/accounts/{account_id}/realtime/kit/apps",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/apps\nCreate new app for your account\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "create_meeting",
+    "name": "Create a meeting",
+    "description": "Create a meeting Create a meeting for the given App ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings\nCreate a meeting for the given App ID.\nRequired: account_id (path); app_id (path); body (body) — Create meeting body"
+  },
+  {
+    "id": "CreatePoll",
+    "name": "Create a poll",
+    "description": "Create a poll Creates a new poll in an active session for the given meeting ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/poll",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/poll\nCreates a new poll in an active session for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting; body (body) — Request body for creating a new poll"
+  },
+  {
+    "id": "delete_meeting_participant",
+    "name": "Delete a participant",
+    "description": "Delete a participant Deletes a participant for the given meeting and participant ID. DELETE /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}\nDeletes a participant for the given meeting and participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. You can fetch the meeting ID using the create a meeting API.; participant_id (path) — ID of the participant. You can fetch the participant ID using the add a participant API."
+  },
+  {
+    "id": "delete-presets-preset_id",
+    "name": "Delete a preset",
+    "description": "Delete a preset Deletes a preset using the provided preset ID DELETE /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}\nDeletes a preset using the provided preset ID\nRequired: account_id (path); app_id (path); preset_id (path) — ID of the preset to fetch"
+  },
+  {
+    "id": "deleteWebhook",
+    "name": "Delete a webhook",
+    "description": "Delete a webhook Removes a webhook for the given webhook ID. DELETE /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}\nRemoves a webhook for the given webhook ID.\nRequired: account_id (path); app_id (path); webhook_id (path) — ID of the webhook"
+  },
+  {
+    "id": "edit_participant",
+    "name": "Edit a participant's detail",
+    "description": "Edit a participant's detail Updates a participant's details for the given meeting and participant ID. PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}\nUpdates a participant's details for the given meeting and participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. You can fetch the meeting ID using the create a meeting API.; participant_id (path) — ID of the participant. You can fetch the participant ID using the add a participant API.; body (body)"
+  },
+  {
+    "id": "editWebhook",
+    "name": "Edit a webhook",
+    "description": "Edit a webhook Edits the webhook details for the given webhook ID. PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}\nEdits the webhook details for the given webhook ID.\nRequired: account_id (path); app_id (path); webhook_id (path) — ID of the webhook; body (body)"
+  },
+  {
+    "id": "fetch_all_livestreams",
+    "name": "Fetch all livestreams",
+    "description": "Fetch all livestreams Returns details of livestreams associated with the given App ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams\nReturns details of livestreams associated with the given App ID. It includes livestreams created by your App and RealtimeKit meetings that are livestreamed by your App. If you only want details of livestreams created by your App and not RealtimeKit meetings, you can use the `exclude_meetings` query parameter.\nRequired: account_id (path); app_id (path)\nOptional: exclude_meetings (query) — Exclude the RealtimeKit meetings that are livestreamed.; per_page (query) — Number of results per page.; page_no (query) — The page number from which you want your page search results to be displayed.; status (query) — Specifies the status of the operation.; start_time (query) — Specify the start time range in ISO format to access the live stream.; end_time (query) — Specify the end time range in ISO format to access the live stream.; sort_order (query) — Specifies the sorting order for the results."
+  },
+  {
+    "id": "get_active_recording",
+    "name": "Fetch active recording",
+    "description": "Fetch active recording Returns the active recording details for the given meeting ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/active-recording/{meeting_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/active-recording/{meeting_id}\nReturns the active recording details for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting"
+  },
+  {
+    "id": "get_all_meetings",
+    "name": "Fetch all meetings for an App",
+    "description": "Fetch all meetings for an App Returns all meetings for the given App ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings\nReturns all meetings for the given App ID.\nRequired: account_id (path); app_id (path)\nOptional: page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page; start_time (query) — The start time range for which you want to retrieve the meetings. The time must be specified in ISO format.; end_time (query) — The end time range for which you want to retrieve the meetings. The time must be specified in ISO format.; search (query) — The search query string. You can search using the meeting ID or title.; status (query) — Filter meetings by status."
+  },
+  {
+    "id": "get_all_recordings",
+    "name": "Fetch all recordings for an App",
+    "description": "Fetch all recordings for an App Returns all recordings for an App. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings\nReturns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.\nRequired: account_id (path); app_id (path)\nOptional: meeting_id (query) — ID of a meeting. Optional. Will limit results to only this meeting if passed.; page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page; expired (query) — If passed, only shows expired/non-expired recordings on RealtimeKit's bucket; search (query) — The search query string. You can search using the meeting ID or title.; sort_by (query); sort_order (query); start_time (query) — The start time range for which you want to retrieve the meetings. The time must be specified in ISO format.; end_time (query) — The end time range for which you want to retrieve the meetings. The time must be specified in ISO format.; status (query) — Filter by one or more recording status"
+  },
+  {
+    "id": "get_app",
+    "name": "Fetch app details",
+    "description": "Fetch app details Fetch details for an app in your account. GET /client/v4/accounts/{account_id}/realtime/kit/apps/{app_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/apps/{app_id}\nFetch details for an app in your account.\nRequired: account_id (path); app_id (path)"
+  },
+  {
+    "id": "get_apps",
+    "name": "Fetch all apps",
+    "description": "Fetch all apps Fetch all apps for your account GET /client/v4/accounts/{account_id}/realtime/kit/apps",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/apps\nFetch all apps for your account\nRequired: account_id (path)\nOptional: page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page.; search (query) — Search string that matches apps by name.; sort_order (query) — Sort order for apps by creation time."
+  },
+  {
+    "id": "get_meeting",
+    "name": "Fetch a meeting for an App",
+    "description": "Fetch a meeting for an App Returns a meeting details in an App for the given meeting ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}\nReturns a meeting details in an App for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. Fetch the meeting ID using the create a meeting API.\nOptional: name (query)"
+  },
+  {
+    "id": "get_meeting_participant",
+    "name": "Fetch a participant's detail",
+    "description": "Fetch a participant's detail Returns a participant details for the given meeting and participant ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}\nReturns a participant details for the given meeting and participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. You can fetch the meeting ID using the create a meeting API.; participant_id (path) — ID of the participant. You can fetch the participant ID using the add a participant API."
+  },
+  {
+    "id": "get_meeting_participants",
+    "name": "Fetch all participants of a meeting",
+    "description": "Fetch all participants of a meeting Returns all participants detail for the given meeting ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants\nReturns all participants detail for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. Fetch the meeting ID using the create a meeting API.\nOptional: page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page"
+  },
+  {
+    "id": "get_one_recording",
+    "name": "Fetch details of a recording",
+    "description": "Fetch details of a recording Returns details of a recording for the given recording ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}\nReturns details of a recording for the given recording ID.\nRequired: account_id (path); app_id (path); recording_id (path) — ID of the recording"
+  },
+  {
+    "id": "get-livestream-analytics-complete",
+    "name": "Fetch complete analytics data for your livestreams",
+    "description": "Fetch complete analytics data for your livestreams Returns livestream analytics for the specified time range. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/overall",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/overall\nReturns livestream analytics for the specified time range.\nRequired: account_id (path); app_id (path)\nOptional: start_time (query) — Specify the start time as a Unix timestamp in seconds to access the livestream analytics.; end_time (query) — Specify the end time as a Unix timestamp in seconds to access the livestream analytics.; filters (query) — Optional filters for livestream analytics."
+  },
+  {
+    "id": "get-livestream-analytics-daywise",
+    "name": "Fetch day-wise analytics data for your livestreams",
+    "description": "Fetch day-wise analytics data for your livestreams Returns day-wise livestream analytics for the specified time range. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/daywise",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/daywise\nReturns day-wise livestream analytics for the specified time range.\nRequired: account_id (path); app_id (path)\nOptional: start_time (query) — Specify the start time as a Unix timestamp in seconds to access the livestream analytics.; end_time (query) — Specify the end time as a Unix timestamp in seconds to access the livestream analytics.; filters (query) — Optional filters for livestream analytics."
+  },
+  {
+    "id": "get-org-analytics",
+    "name": "Fetch day-wise session and recording analytics data for an App",
+    "description": "Fetch day-wise session and recording analytics data for an App Returns day-wise session and recording analytics data of an App for the specified time range start_date to end_date. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/analytics/daywise",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/analytics/daywise\nReturns day-wise session and recording analytics data of an App for the specified time range start_date to end_date. If start_date and end_date are not provided, the default time range is set from 30 days ago to the current date.\nRequired: account_id (path); app_id (path)\nOptional: start_date (query) — start date in YYYY-MM-DD format; end_date (query) — end date in YYYY-MM-DD format"
+  },
+  {
+    "id": "get-presets",
+    "name": "Fetch all presets",
+    "description": "Fetch all presets Fetches all the presets belonging to an App. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets\nFetches all the presets belonging to an App.\nRequired: account_id (path); app_id (path)\nOptional: per_page (query) — Number of results per page; page_no (query) — The page number from which you want your page search results to be displayed.; search (query) — Search presets by name."
+  },
+  {
+    "id": "get-presets-preset_id",
+    "name": "Fetch details of a preset",
+    "description": "Fetch details of a preset Fetches details of a preset using the provided preset ID GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}\nFetches details of a preset using the provided preset ID\nRequired: account_id (path); app_id (path); preset_id (path) — ID of the preset to fetch"
+  },
+  {
+    "id": "get-v2-active-livestream-session-details",
+    "name": "Fetch active livestream session details",
+    "description": "Fetch active livestream session details Returns details of all active livestreams for the given livestream ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}/active-livestream-session",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}/active-livestream-session\nReturns details of all active livestreams for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.\nRequired: account_id (path); app_id (path); livestream_id (path)"
+  },
+  {
+    "id": "get-v2-livestream-session-livestream-id",
+    "name": "Fetch livestream details using livestream ID",
+    "description": "Fetch livestream details using livestream ID Returns details of a livestream with sessions for the given livestream ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}\nReturns details of a livestream with sessions for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.\nRequired: account_id (path); app_id (path); livestream_id (path)\nOptional: page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "get-v2-livestreams-livestream-session-id",
+    "name": "Fetch livestream session details using livestream session ID",
+    "description": "Fetch livestream session details using livestream session ID Returns livestream session details for the given livestream session ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams/sessions/{livestream-session-id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/livestreams/sessions/{livestream-session-id}\nReturns livestream session details for the given livestream session ID. Retrieve the `livestream_session_id`using the `Fetch livestream session details using a session ID` API.\nRequired: account_id (path); app_id (path); livestream-session-id (path)"
+  },
+  {
+    "id": "get-v2-livestreamsession-session-meetingId-active-livestream",
+    "name": "Fetch livestream session details using a session ID",
+    "description": "Fetch livestream session details using a session ID Returns livestream session details for the given session ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/livestream-sessions",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/livestream-sessions\nReturns livestream session details for the given session ID. Retreive the session ID using the `Fetch all sessions of an App` API.\nRequired: account_id (path); app_id (path); session_id (path)\nOptional: per_page (query) — Number of results per page.; page_no (query) — The page number from which you want your page search results to be displayed."
+  },
+  {
+    "id": "get-v2-meetings-meetingId-active-livestream",
+    "name": "Fetch active livestreams for a meeting",
+    "description": "Fetch active livestreams for a meeting Returns details of all active livestreams for the given meeting ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream\nReturns details of all active livestreams for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting"
+  },
+  {
+    "id": "GetActiveSession",
+    "name": "Fetch details of an active session",
+    "description": "Fetch details of an active session Returns details of an ongoing active session for the given meeting ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session\nReturns details of an ongoing active session for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting"
+  },
+  {
+    "id": "getAllWebhookEvents",
+    "name": "Fetch all supported webhook events",
+    "description": "Fetch all supported webhook events Returns the list of webhook event names supported by RealtimeKit. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/all",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/all\nReturns the list of webhook event names supported by RealtimeKit.\nRequired: account_id (path); app_id (path)"
+  },
+  {
+    "id": "getAllWebhooks",
+    "name": "Fetch all webhooks details",
+    "description": "Fetch all webhooks details Returns details of all webhooks for an App. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks\nReturns details of all webhooks for an App.\nRequired: account_id (path); app_id (path)"
+  },
+  {
+    "id": "GetParticipantDataFromPeerId",
+    "name": "Fetch details of peer",
+    "description": "Fetch details of peer Returns participant details for the given peer ID along with call statistics. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/peer-report/{peer_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/peer-report/{peer_id}\nReturns participant details for the given peer ID along with call statistics.\nRequired: account_id (path); app_id (path); peer_id (path) — ID of the peer\nOptional: filters (query) — Filter to apply to the peer report.; include_peer_events (query) — if true, response includes all the peer events of participant."
+  },
+  {
+    "id": "GetParticipantDetails",
+    "name": "Fetch details of a participant",
+    "description": "Fetch details of a participant Returns details of the given participant ID for the given session ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants/{participant_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants/{participant_id}\nReturns details of the given participant ID for the given session ID. Use the peer report endpoint to retrieve call statistics.\nRequired: account_id (path); app_id (path); participant_id (path) — ID of the participant; session_id (path) — ID of the session\nOptional: include_peer_events (query) — if true, response includes all the peer events of participant."
+  },
+  {
+    "id": "GetSessionChat",
+    "name": "Fetch all chat messages of a session",
+    "description": "Fetch all chat messages of a session Returns a URL to download all chat messages of the session ID in CSV format. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/chat",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/chat\nReturns a URL to download all chat messages of the session ID in CSV format.\nRequired: account_id (path); app_id (path); session_id (path) — ID of the session"
+  },
+  {
+    "id": "GetSessionDetails",
+    "name": "Fetch details of a session",
+    "description": "Fetch details of a session Returns data of the given session ID including recording details. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}\nReturns data of the given session ID including recording details.\nRequired: account_id (path); app_id (path); session_id (path) — ID of the session\nOptional: include_breakout_rooms (query) — List all breakout rooms"
+  },
+  {
+    "id": "GetSessionParticipants",
+    "name": "Fetch participants list of a session",
+    "description": "Fetch participants list of a session Returns a list of participants for the given session ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/participants\nReturns a list of participants for the given session ID.\nRequired: account_id (path); app_id (path); session_id (path) — ID of the session\nOptional: search (query) — The search query string. You can search using participant ID, custom participant ID, or display name.; page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page.; sort_order (query); sort_by (query); include_peer_events (query) — if true, response includes all the peer events of participants.; view (query) — In breakout room sessions, the view parameter can be set to `raw` for session specific duration for participants or `consolidated` to accumulate breakout room durations."
+  },
+  {
+    "id": "GetSessions",
+    "name": "Fetch all sessions of an App",
+    "description": "Fetch all sessions of an App Returns details of all sessions of an App. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions\nReturns details of all sessions of an App.\nRequired: account_id (path); app_id (path)\nOptional: page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page; sort_by (query); sort_order (query); start_time (query) — The start time range for which you want to retrieve the meetings. The time must be specified in ISO format.; end_time (query) — The end time range for which you want to retrieve the meetings. The time must be specified in ISO format.; participants (query); status (query); search (query) — Search string that matches sessions based on meeting title, meeting ID, and session ID; associated_id (query) — ID of the meeting that sessions should be associated with"
+  },
+  {
+    "id": "GetSessionSummary",
+    "name": "Fetch summary of transcripts for a session",
+    "description": "Fetch summary of transcripts for a session Returns a Summary URL to download the Summary of Transcripts for the session ID as plain text. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary\nReturns a Summary URL to download the Summary of Transcripts for the session ID as plain text.\nRequired: account_id (path); app_id (path); session_id (path)"
+  },
+  {
+    "id": "GetSessionTranscript",
+    "name": "Fetch the complete transcript for a session",
+    "description": "Fetch the complete transcript for a session Returns a URL to download the transcript for the session ID in CSV format. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/transcript",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/transcript\nReturns a URL to download the transcript for the session ID in CSV format.\nRequired: account_id (path); app_id (path); session_id (path) — ID of the session\nOptional: format (query) — Transcript file format to fetch."
+  },
+  {
+    "id": "getWebhook",
+    "name": "Fetch details of a webhook",
+    "description": "Fetch details of a webhook Returns webhook details for the given webhook ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}\nReturns webhook details for the given webhook ID.\nRequired: account_id (path); app_id (path); webhook_id (path) — ID of the webhook"
+  },
+  {
+    "id": "KickAllParticipants",
+    "name": "Kick all participants",
+    "description": "Kick all participants Kicks all participants from an active session for the given meeting ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all\nKicks all participants from an active session for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting"
+  },
+  {
+    "id": "KickPartcipants",
+    "name": "Kick participants from an active session",
+    "description": "Kick participants from an active session Kicks one or more participants from an active session using user ID or custom participant ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick\nKicks one or more participants from an active session using user ID or custom participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting; body (body) — Request body for kicking participants from an active session. At least one of `participant_ids` or `custom_participant_ids` must contain a value."
+  },
+  {
+    "id": "livestream-session-details",
+    "name": "Fetch livestream session details for a meeting",
+    "description": "Fetch livestream session details for a meeting Returns livestream session details for the given meeting ID. GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestream",
+    "context": "GET /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestream\nReturns livestream session details for the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting\nOptional: page_no (query) — The page number from which you want your page search results to be displayed.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "MuteAllParticipants",
+    "name": "Mute all participants",
+    "description": "Mute all participants Mutes all participants of an active session for the given meeting ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute-all",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute-all\nMutes all participants of an active session for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting; body (body) — Request body for muting all participants in an active session."
+  },
+  {
+    "id": "MuteParticipants",
+    "name": "Mute participants of an active session",
+    "description": "Mute participants of an active session Mutes one or more participants from an active session using user ID or custom participant ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/mute\nMutes one or more participants from an active session using user ID or custom participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting; body (body) — Request body for muting participants in an active session. At least one of `participant_ids` or `custom_participant_ids` must contain a value."
+  },
+  {
+    "id": "patch-presets-preset_id",
+    "name": "Update a preset",
+    "description": "Update a preset Update a preset by the provided preset ID PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}\nUpdate a preset by the provided preset ID\nRequired: account_id (path); app_id (path); preset_id (path) — ID of the preset to fetch; body (body)"
+  },
+  {
+    "id": "pause_resume_stop_recording",
+    "name": "Pause/Resume/Stop recording",
+    "description": "Pause/Resume/Stop recording Pause/Resume/Stop a given recording ID. PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/{recording_id}\nPause/Resume/Stop a given recording ID.\nRequired: account_id (path); app_id (path) — A Cloudflare-generated unique identifier for an item.; recording_id (path) — ID of the recording; body (body)"
+  },
+  {
+    "id": "post-presets",
+    "name": "Create a preset",
+    "description": "Create a preset Creates a preset belonging to the current App POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets\nCreates a preset belonging to the current App\nRequired: account_id (path); app_id (path); body (body)"
+  },
+  {
+    "id": "post-sessions-session_id-summary",
+    "name": "Generate summary of Transcripts for the session",
+    "description": "Generate summary of Transcripts for the session Trigger Summary generation of Transcripts for the session ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary\nTrigger Summary generation of Transcripts for the session ID.\nRequired: account_id (path); app_id (path); session_id (path)"
+  },
+  {
+    "id": "put-presets-preset_id",
+    "name": "Replace a preset",
+    "description": "Replace a preset Replace all details for the preset using the provided preset ID. PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/presets/{preset_id}\nReplace all details for the preset using the provided preset ID.\nRequired: account_id (path); app_id (path); preset_id (path) — ID of the preset to replace; body (body)"
+  },
+  {
+    "id": "regenerate_token",
+    "name": "Refresh participant's authentication token",
+    "description": "Refresh participant's authentication token Regenerates participant's authentication token for the given meeting and participant ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}/token",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}/token\nRegenerates participant's authentication token for the given meeting and participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. You can fetch the meeting ID using the create a meeting API.; participant_id (path) — ID of the participant. You can fetch the participant ID using the add a participant API."
+  },
+  {
+    "id": "replace_meeting",
+    "name": "Replace a meeting",
+    "description": "Replace a meeting Replaces all the details for the given meeting ID. PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}\nReplaces all the details for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. Fetch the meeting ID using the create a meeting API.; body (body) — Create meeting body"
+  },
+  {
+    "id": "replace_participant",
+    "name": "Replace a participant's detail",
+    "description": "Replace a participant's detail Replaces a participant's details for the given meeting and participant ID. PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/participants/{participant_id}\nReplaces a participant's details for the given meeting and participant ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. You can fetch the meeting ID using the create a meeting API.; participant_id (path) — ID of the participant. You can fetch the participant ID using the add a participant API.; body (body)"
+  },
+  {
+    "id": "replaceWebhook",
+    "name": "Replace a webhook",
+    "description": "Replace a webhook Replace all details for the given webhook ID. PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/realtime/kit/{app_id}/webhooks/{webhook_id}\nReplace all details for the given webhook ID.\nRequired: account_id (path); app_id (path); webhook_id (path) — ID of the webhook; body (body)"
+  },
+  {
+    "id": "start_recording",
+    "name": "Start recording a meeting",
+    "description": "Start recording a meeting Starts recording a meeting. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings\nStarts recording a meeting. The meeting can be started by an App admin directly, or a participant with permissions to start a recording, based on the type of authorization used.\nRequired: account_id (path); app_id (path); body (body)"
+  },
+  {
+    "id": "start-livestreaming",
+    "name": "Start livestreaming a meeting",
+    "description": "Start livestreaming a meeting Starts livestream of a meeting associated with the given meeting ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestreams",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestreams\nStarts livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting; body (body)"
+  },
+  {
+    "id": "startTrackRecordingForAMeeting",
+    "name": "Start recording participant audio tracks",
+    "description": "Start recording participant audio tracks Starts track recording for a meeting. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/track",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/recordings/track\nStarts track recording for a meeting. Track recording currently records separate participant audio tracks as WebM files in the RealtimeKit bucket. Video track recording is in development. For more information, refer to [Track recording](/realtime/realtimekit/recording-guide/track-recording/).\nRequired: account_id (path); app_id (path); body (body) — Starts audio track recording for an active meeting. Use `layers` only when you need to set a file name prefix. Selective track recording (`user_ids`) is in early beta contact support to use this feature."
+  },
+  {
+    "id": "stop_livestreaming",
+    "name": "Stop livestreaming a meeting",
+    "description": "Stop livestreaming a meeting Stops the active livestream of a meeting associated with the given meeting ID. POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream/stop",
+    "context": "POST /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/active-livestream/stop\nStops the active livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting"
+  },
+  {
+    "id": "update_meeting",
+    "name": "Update a meeting",
+    "description": "Update a meeting Updates a meeting in an App for the given meeting ID. PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}\nUpdates a meeting in an App for the given meeting ID.\nRequired: account_id (path); app_id (path); meeting_id (path) — ID of the meeting. Fetch the meeting ID using the create a meeting API.; body (body) — Update meeting body"
+  }
+]

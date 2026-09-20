@@ -1,0 +1,20 @@
+[
+  {
+    "id": "createTicket",
+    "name": "createTicket",
+    "description": "createTicket POST /api/v1/oauth/tickets",
+    "context": "POST /api/v1/oauth/tickets\ncreateTicket\nRequired: client_id (query)\nOptional: body (body)"
+  },
+  {
+    "id": "exchangeTicket",
+    "name": "exchangeTicket",
+    "description": "exchangeTicket POST /api/v1/oauth/tickets/{ticket_id}/exchange",
+    "context": "POST /api/v1/oauth/tickets/{ticket_id}/exchange\nexchangeTicket\nRequired: ticket_id (path)"
+  },
+  {
+    "id": "showTicket",
+    "name": "showTicket",
+    "description": "showTicket GET /api/v1/oauth/tickets/{ticket_id}",
+    "context": "GET /api/v1/oauth/tickets/{ticket_id}\nshowTicket\nRequired: ticket_id (path)"
+  }
+]

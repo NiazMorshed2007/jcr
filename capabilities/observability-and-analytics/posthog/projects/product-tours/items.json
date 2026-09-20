@@ -1,0 +1,68 @@
+[
+  {
+    "id": "product_tours_create",
+    "name": "Create, read, update, and manage product tours and their targeting.",
+    "description": "Create, read, update, and manage product tours and their targeting. POST /api/projects/{project_id}/product_tours/",
+    "context": "POST /api/projects/{project_id}/product_tours/\nCreate, read, update, and manage product tours and their targeting.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "product_tours_destroy",
+    "name": "Create, read, update, and manage product tours and their targeting.",
+    "description": "Create, read, update, and manage product tours and their targeting. DELETE /api/projects/{project_id}/product_tours/{id}/",
+    "context": "DELETE /api/projects/{project_id}/product_tours/{id}/\nCreate, read, update, and manage product tours and their targeting.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "product_tours_discard_draft_destroy",
+    "name": "Discard draft content.",
+    "description": "Discard draft content. DELETE /api/projects/{project_id}/product_tours/{id}/discard_draft/",
+    "context": "DELETE /api/projects/{project_id}/product_tours/{id}/discard_draft/\nDiscard draft content.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "product_tours_draft_partial_update",
+    "name": "Save draft content (server-side merge)",
+    "description": "Save draft content (server-side merge) Save draft content (server-side merge). PATCH /api/projects/{project_id}/product_tours/{id}/draft/",
+    "context": "PATCH /api/projects/{project_id}/product_tours/{id}/draft/\nSave draft content (server-side merge). No side effects triggered.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "product_tours_draft_status_retrieve",
+    "name": "Lightweight polling endpoint for draft change detection.",
+    "description": "Lightweight polling endpoint for draft change detection. GET /api/projects/{project_id}/product_tours/{id}/draft_status/",
+    "context": "GET /api/projects/{project_id}/product_tours/{id}/draft_status/\nLightweight polling endpoint for draft change detection.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "product_tours_generate_create",
+    "name": "Generate tour step content using AI.",
+    "description": "Generate tour step content using AI. POST /api/projects/{project_id}/product_tours/{id}/generate/",
+    "context": "POST /api/projects/{project_id}/product_tours/{id}/generate/\nGenerate tour step content using AI.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "product_tours_list",
+    "name": "Create, read, update, and manage product tours and their targeting.",
+    "description": "Create, read, update, and manage product tours and their targeting. GET /api/projects/{project_id}/product_tours/",
+    "context": "GET /api/projects/{project_id}/product_tours/\nCreate, read, update, and manage product tours and their targeting.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Match against product tour `name` and `description`. Returns exact (case-insensitive substring) matches only; if no exact match exists, returns similar (fuzzy trigram — typos, prefix-as-you-type) matches instead. Each result's `search_match_type` is `exact` or `similar`."
+  },
+  {
+    "id": "product_tours_partial_update",
+    "name": "Create, read, update, and manage product tours and their targeting.",
+    "description": "Create, read, update, and manage product tours and their targeting. PATCH /api/projects/{project_id}/product_tours/{id}/",
+    "context": "PATCH /api/projects/{project_id}/product_tours/{id}/\nCreate, read, update, and manage product tours and their targeting.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "product_tours_publish_draft_create",
+    "name": "Commit draft to live tour",
+    "description": "Commit draft to live tour Commit draft to live tour. POST /api/projects/{project_id}/product_tours/{id}/publish_draft/",
+    "context": "POST /api/projects/{project_id}/product_tours/{id}/publish_draft/\nCommit draft to live tour. Runs full validation and triggers side effects. Accepts an optional body payload. If provided, merges it into the draft before publishing so the caller can save + publish in a single request.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "product_tours_retrieve",
+    "name": "Create, read, update, and manage product tours and their targeting.",
+    "description": "Create, read, update, and manage product tours and their targeting. GET /api/projects/{project_id}/product_tours/{id}/",
+    "context": "GET /api/projects/{project_id}/product_tours/{id}/\nCreate, read, update, and manage product tours and their targeting.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "product_tours_update",
+    "name": "Create, read, update, and manage product tours and their targeting.",
+    "description": "Create, read, update, and manage product tours and their targeting. PUT /api/projects/{project_id}/product_tours/{id}/",
+    "context": "PUT /api/projects/{project_id}/product_tours/{id}/\nCreate, read, update, and manage product tours and their targeting.\nRequired: id (path) — A UUID string identifying this product tour.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

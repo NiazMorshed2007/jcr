@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v1-get-a-snippet",
+    "name": "Gets a specific SQL snippet",
+    "description": "Gets a specific SQL snippet GET /v1/snippets/{id}",
+    "context": "GET /v1/snippets/{id}\nGets a specific SQL snippet\nRequired: id (path)"
+  },
+  {
+    "id": "v1-list-all-snippets",
+    "name": "Lists SQL snippets for the logged in user",
+    "description": "Lists SQL snippets for the logged in user GET /v1/snippets",
+    "context": "GET /v1/snippets\nLists SQL snippets for the logged in user\nOptional: project_ref (query) — Project ref; cursor (query); limit (query); sort_by (query); sort_order (query)"
+  },
+  {
+    "id": "v1-get-profile",
+    "name": "Gets the user's profile",
+    "description": "Gets the user's profile GET /v1/profile",
+    "context": "GET /v1/profile\nGets the user's profile"
+  }
+]

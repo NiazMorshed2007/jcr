@@ -1,0 +1,20 @@
+[
+  {
+    "id": "tags-zone-delete",
+    "name": "Delete tags from a zone-level resource",
+    "description": "Delete tags from a zone-level resource Removes all tags from a specific zone-level resource. DELETE /client/v4/zones/{zone_id}/tags",
+    "context": "DELETE /client/v4/zones/{zone_id}/tags\nRemoves all tags from a specific zone-level resource.\nRequired: zone_id (path); body (body)\nOptional: If-Match (header) — ETag value for optimistic concurrency control. When provided, the server will verify the current resource ETag matches before applying the write. Returns 412 Precondition Failed if the resource has been modified since the ETag was obtained. Omit this header for unconditional writes."
+  },
+  {
+    "id": "tags-zone-get",
+    "name": "Get tags for a zone-level resource",
+    "description": "Get tags for a zone-level resource Retrieves tags for a specific zone-level resource. GET /client/v4/zones/{zone_id}/tags",
+    "context": "GET /client/v4/zones/{zone_id}/tags\nRetrieves tags for a specific zone-level resource.\nRequired: zone_id (path); resource_id (query) — The ID of the resource to retrieve tags for.; resource_type (query) — The type of the resource.\nOptional: access_application_id (query) — Access application ID identifier. Required for access_application_policy resources."
+  },
+  {
+    "id": "tags-zone-set",
+    "name": "Set tags for a zone-level resource",
+    "description": "Set tags for a zone-level resource Creates or updates tags for a specific zone-level resource. PUT /client/v4/zones/{zone_id}/tags",
+    "context": "PUT /client/v4/zones/{zone_id}/tags\nCreates or updates tags for a specific zone-level resource. Replaces all existing tags for the resource.\nRequired: zone_id (path); body (body)\nOptional: If-Match (header) — ETag value for optimistic concurrency control. When provided, the server will verify the current resource ETag matches before applying the write. Returns 412 Precondition Failed if the resource has been modified since the ETag was obtained. Omit this header for unconditional writes."
+  }
+]

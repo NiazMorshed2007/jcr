@@ -1,0 +1,68 @@
+[
+  {
+    "id": "appendMediaUpload",
+    "name": "Append Media Upload",
+    "description": "Append Media Upload POST /2/media/upload/{id}/append",
+    "context": "POST /2/media/upload/{id}/append\nAppend Media Upload\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "createMediaMetadata",
+    "name": "Create Media metadata",
+    "description": "Create Media metadata Creates metadata for a Media file. POST /2/media/metadata",
+    "context": "POST /2/media/metadata\nCreates metadata for a Media file.\nRequired: body (body)"
+  },
+  {
+    "id": "createMediaSubtitles",
+    "name": "Create Media subtitles",
+    "description": "Create Media subtitles Creates subtitles for a specific Media file. POST /2/media/subtitles",
+    "context": "POST /2/media/subtitles\nCreates subtitles for a specific Media file.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteMediaSubtitles",
+    "name": "Delete Media subtitles",
+    "description": "Delete Media subtitles Deletes subtitles for a specific Media file. DELETE /2/media/subtitles",
+    "context": "DELETE /2/media/subtitles\nDeletes subtitles for a specific Media file.\nRequired: body (body)"
+  },
+  {
+    "id": "finalizeMediaUpload",
+    "name": "Finalize Media upload",
+    "description": "Finalize Media upload Finalizes a Media upload request. POST /2/media/upload/{id}/finalize",
+    "context": "POST /2/media/upload/{id}/finalize\nFinalizes a Media upload request.\nRequired: id (path)"
+  },
+  {
+    "id": "getMediaAnalytics",
+    "name": "Get Media analytics",
+    "description": "Get Media analytics GET /2/media/analytics",
+    "context": "GET /2/media/analytics\nGet Media analytics\nRequired: media_keys (query); start_time (query); end_time (query)\nOptional: granularity (query); media_analytics.fields (query) — A comma separated list of MediaAnalytics fields to display."
+  },
+  {
+    "id": "getMediaByMediaKey",
+    "name": "Get Media by media key",
+    "description": "Get Media by media key GET /2/media/{media_key}",
+    "context": "GET /2/media/{media_key}\nGet Media by media key\nRequired: media_key (path)\nOptional: media.fields (query) — A comma separated list of Media fields to display."
+  },
+  {
+    "id": "getMediaByMediaKeys",
+    "name": "Get Media by media keys",
+    "description": "Get Media by media keys GET /2/media",
+    "context": "GET /2/media\nGet Media by media keys\nRequired: media_keys (query)\nOptional: media.fields (query) — A comma separated list of Media fields to display."
+  },
+  {
+    "id": "getMediaUploadStatus",
+    "name": "Get Media upload status",
+    "description": "Get Media upload status Retrieves the status of a Media upload by its ID. GET /2/media/upload",
+    "context": "GET /2/media/upload\nRetrieves the status of a Media upload by its ID.\nRequired: media_id (query)\nOptional: command (query)"
+  },
+  {
+    "id": "initializeMediaUpload",
+    "name": "Initialize media upload",
+    "description": "Initialize media upload Initializes a media upload. POST /2/media/upload/initialize",
+    "context": "POST /2/media/upload/initialize\nInitializes a media upload.\nRequired: body (body)"
+  },
+  {
+    "id": "mediaUpload",
+    "name": "Upload media",
+    "description": "Upload media Uploads a media file for use in posts, direct messages, or ads. POST /2/media/upload",
+    "context": "POST /2/media/upload\nUploads a media file for use in posts, direct messages, or ads. The response carries the media identifiers, including the media_key used to reference the asset in later calls. The media field carries the file content base64-encoded in JSON bodies (raw bytes in multipart bodies); media_category is tweet_image, tweet_video, or tweet_gif for posts and ads, dm_image/dm_video/dm_gif for DMs, or subtitles. For X Ads accounts, register the returned media_key via create_media_library_item to add it to the account's media library and use it in campaigns.\nRequired: body (body)"
+  }
+]

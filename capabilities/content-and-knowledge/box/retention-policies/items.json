@@ -1,0 +1,38 @@
+[
+  {
+    "id": "delete_retention_policies_id",
+    "name": "Delete retention policy",
+    "description": "Delete retention policy Permanently deletes a retention policy. DELETE /2.0/retention_policies/{retention_policy_id}",
+    "context": "DELETE /2.0/retention_policies/{retention_policy_id}\nPermanently deletes a retention policy.\nRequired: retention_policy_id (path) — The ID of the retention policy."
+  },
+  {
+    "id": "get_retention_policies",
+    "name": "List retention policies",
+    "description": "List retention policies Retrieves all of the retention policies for an enterprise. GET /2.0/retention_policies",
+    "context": "GET /2.0/retention_policies\nRetrieves all of the retention policies for an enterprise.\nOptional: policy_name (query) — Filters results by a case sensitive prefix of the name of retention policies.; policy_type (query) — Filters results by the type of retention policy.; created_by_user_id (query) — Filters results by the ID of the user who created policy.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; limit (query) — The maximum number of items to return per page.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination."
+  },
+  {
+    "id": "get_retention_policies_id",
+    "name": "Get retention policy",
+    "description": "Get retention policy Retrieves a retention policy. GET /2.0/retention_policies/{retention_policy_id}",
+    "context": "GET /2.0/retention_policies/{retention_policy_id}\nRetrieves a retention policy.\nRequired: retention_policy_id (path) — The ID of the retention policy.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_retention_policies_id_assignments",
+    "name": "List retention policy assignments",
+    "description": "List retention policy assignments Returns a list of all retention policy assignments associated with a specified retention policy. GET /2.0/retention_policies/{retention_policy_id}/assignments",
+    "context": "GET /2.0/retention_policies/{retention_policy_id}/assignments\nReturns a list of all retention policy assignments associated with a specified retention policy.\nRequired: retention_policy_id (path) — The ID of the retention policy.\nOptional: type (query) — The type of the retention policy assignment to retrieve.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "post_retention_policies",
+    "name": "Create retention policy",
+    "description": "Create retention policy Creates a retention policy. POST /2.0/retention_policies",
+    "context": "POST /2.0/retention_policies\nCreates a retention policy.\nOptional: body (body)"
+  },
+  {
+    "id": "put_retention_policies_id",
+    "name": "Update retention policy",
+    "description": "Update retention policy Updates a retention policy. PUT /2.0/retention_policies/{retention_policy_id}",
+    "context": "PUT /2.0/retention_policies/{retention_policy_id}\nUpdates a retention policy.\nRequired: retention_policy_id (path) — The ID of the retention policy.\nOptional: body (body)"
+  }
+]

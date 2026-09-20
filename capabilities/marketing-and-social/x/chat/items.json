@@ -1,0 +1,92 @@
+[
+  {
+    "id": "addChatGroupMembers",
+    "name": "Add members to a Chat group conversation",
+    "description": "Add members to a Chat group conversation Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key. POST /2/chat/conversations/{id}/members",
+    "context": "POST /2/chat/conversations/{id}/members\nAdds one or more members to an existing encrypted Chat group conversation, rotating the conversation key.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "addConversationKeys",
+    "name": "Add Conversation Keys",
+    "description": "Add Conversation Keys Adds (initializes or rotates) the encryption keys for a Chat conversation. POST /2/chat/conversations/{id}/keys",
+    "context": "POST /2/chat/conversations/{id}/keys\nAdds (initializes or rotates) the encryption keys for a Chat conversation. Call this before sending messages in a new 1:1 conversation, and again with a newer key version to rotate the conversation key. For 1:1 conversations, provide the recipient's user ID as the conversation id; the server constructs the canonical conversation ID from the authenticated user and recipient. The request body must contain the conversation key version and participant keys (the conversation key encrypted for each participant using their public key).\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "chatMediaDownload",
+    "name": "Download Chat Media",
+    "description": "Download Chat Media Downloads encrypted media bytes from an XChat conversation. GET /2/chat/media/{id}/{media_hash_key}",
+    "context": "GET /2/chat/media/{id}/{media_hash_key}\nDownloads encrypted media bytes from an XChat conversation. The response body contains raw binary bytes.\nRequired: id (path); media_hash_key (path)"
+  },
+  {
+    "id": "chatMediaUploadAppend",
+    "name": "Append Chat Media Upload",
+    "description": "Append Chat Media Upload Appends media data to an XChat upload session. POST /2/chat/media/upload/{id}/append",
+    "context": "POST /2/chat/media/upload/{id}/append\nAppends media data to an XChat upload session.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "chatMediaUploadFinalize",
+    "name": "Finalize Chat Media Upload",
+    "description": "Finalize Chat Media Upload Finalizes an XChat media upload session. POST /2/chat/media/upload/{id}/finalize",
+    "context": "POST /2/chat/media/upload/{id}/finalize\nFinalizes an XChat media upload session.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "chatMediaUploadInitialize",
+    "name": "Initialize Chat Media Upload",
+    "description": "Initialize Chat Media Upload Initializes an XChat media upload session. POST /2/chat/media/upload/initialize",
+    "context": "POST /2/chat/media/upload/initialize\nInitializes an XChat media upload session.\nRequired: body (body)"
+  },
+  {
+    "id": "createChatConversation",
+    "name": "Create Chat Group Conversation",
+    "description": "Create Chat Group Conversation Creates a new encrypted Chat group conversation on behalf of the authenticated user. POST /2/chat/conversations/group",
+    "context": "POST /2/chat/conversations/group\nCreates a new encrypted Chat group conversation on behalf of the authenticated user.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteChatMessages",
+    "name": "Delete Chat messages",
+    "description": "Delete Chat messages Deletes one or more messages from a Chat conversation. POST /2/chat/conversations/{id}/messages/delete",
+    "context": "POST /2/chat/conversations/{id}/messages/delete\nDeletes one or more messages from a Chat conversation. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Delete for all removes a message you sent (or, in groups you administer, any message) for every participant; delete for self removes any message only from your own view.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "getChatConversation",
+    "name": "Get Chat Conversation",
+    "description": "Get Chat Conversation Returns metadata for a Chat conversation including type, muted status, and group details. GET /2/chat/conversations/{id}",
+    "context": "GET /2/chat/conversations/{id}\nReturns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.\nRequired: id (path)\nOptional: chat_conversation.fields (query) — A comma separated list of ChatConversation fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getChatConversationEvents",
+    "name": "Get Chat Conversation Events",
+    "description": "Get Chat Conversation Events Retrieves messages and key change events for a specific Chat conversation with pagination support. GET /2/chat/conversations/{id}/events",
+    "context": "GET /2/chat/conversations/{id}/events\nRetrieves messages and key change events for a specific Chat conversation with pagination support. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query); chat_message_event.fields (query) — A comma separated list of ChatMessageEvent fields to display."
+  },
+  {
+    "id": "getChatConversations",
+    "name": "Get Chat Conversations",
+    "description": "Get Chat Conversations Retrieves a list of Chat conversations for the authenticated user's inbox. GET /2/chat/conversations",
+    "context": "GET /2/chat/conversations\nRetrieves a list of Chat conversations for the authenticated user's inbox.\nOptional: max_results (query); pagination_token (query); chat_conversation.fields (query) — A comma separated list of ChatConversation fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "initializeChatGroup",
+    "name": "Initialize Chat Group",
+    "description": "Initialize Chat Group Initializes a new Chat group conversation and returns a unique conversation ID. POST /2/chat/conversations/group/initialize",
+    "context": "POST /2/chat/conversations/group/initialize\nInitializes a new Chat group conversation and returns a unique conversation ID. Use the returned conversation_id in a subsequent POST /chat/conversations/group call to fully create and configure the group."
+  },
+  {
+    "id": "markChatConversationRead",
+    "name": "Mark Conversation as Read",
+    "description": "Mark Conversation as Read Marks a specific Chat conversation as read on behalf of the authenticated user. POST /2/chat/conversations/{id}/read",
+    "context": "POST /2/chat/conversations/{id}/read\nMarks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "sendChatMessage",
+    "name": "Send Chat Message",
+    "description": "Send Chat Message Sends an encrypted message to a specific Chat conversation. POST /2/chat/conversations/{id}/messages",
+    "context": "POST /2/chat/conversations/{id}/messages\nSends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "sendChatTypingIndicator",
+    "name": "Send Typing Indicator",
+    "description": "Send Typing Indicator Sends a typing indicator to a specific Chat conversation on behalf of the authenticated user. POST /2/chat/conversations/{id}/typing",
+    "context": "POST /2/chat/conversations/{id}/typing\nSends a typing indicator to a specific Chat conversation on behalf of the authenticated user. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.\nRequired: id (path)"
+  }
+]

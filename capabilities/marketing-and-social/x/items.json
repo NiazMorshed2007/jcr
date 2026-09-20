@@ -1,0 +1,74 @@
+[
+  {
+    "id": "articleCreateDraft",
+    "name": "Create draft Article",
+    "description": "Create draft Article Creates a new Article draft that can later be published. POST /2/articles/draft",
+    "context": "POST /2/articles/draft\nCreates a new Article draft that can later be published.\nRequired: body (body)"
+  },
+  {
+    "id": "articlePublish",
+    "name": "Publish Article",
+    "description": "Publish Article Publishes a draft Article, making it publicly visible. POST /2/articles/{article_id}/publish",
+    "context": "POST /2/articles/{article_id}/publish\nPublishes a draft Article, making it publicly visible.\nRequired: article_id (path)"
+  },
+  {
+    "id": "ensureAccount",
+    "name": "Ensure developer account",
+    "description": "Ensure developer account Creates an X Developer Platform account for the authenticated user if they do not already have one, and returns it. POST /2/account",
+    "context": "POST /2/account\nCreates an X Developer Platform account for the authenticated user if they do not already have one, and returns it. Idempotent: when the user already has an account it is returned unchanged with `created` false.\nRequired: body (body)"
+  },
+  {
+    "id": "getDeveloperAccount",
+    "name": "Get developer account",
+    "description": "Get developer account Returns the authenticated user's X Developer Platform account. GET /2/account",
+    "context": "GET /2/account\nReturns the authenticated user's X Developer Platform account. A user without an account gets a resource-not-found error entry."
+  },
+  {
+    "id": "getCommunitiesById",
+    "name": "Get Communities by ID",
+    "description": "Get Communities by ID GET /2/communities/{id}",
+    "context": "GET /2/communities/{id}\nGet Communities by ID\nRequired: id (path)\nOptional: community.fields (query) — A comma separated list of Community fields to display."
+  },
+  {
+    "id": "searchCommunities",
+    "name": "Search Communities",
+    "description": "Search Communities GET /2/communities/search",
+    "context": "GET /2/communities/search\nSearch Communities\nRequired: query (query)\nOptional: max_results (query); next_token (query); pagination_token (query); community.fields (query) — A comma separated list of Community fields to display."
+  },
+  {
+    "id": "getNews",
+    "name": "Get news stories by ID",
+    "description": "Get news stories by ID Retrieves news story by its ID. GET /2/news/{id}",
+    "context": "GET /2/news/{id}\nRetrieves news story by its ID.\nRequired: id (path)\nOptional: news.fields (query) — A comma separated list of News fields to display."
+  },
+  {
+    "id": "searchNews",
+    "name": "Search News",
+    "description": "Search News GET /2/news/search",
+    "context": "GET /2/news/search\nSearch News\nRequired: query (query)\nOptional: max_results (query); max_age_hours (query); news.fields (query) — A comma separated list of News fields to display."
+  },
+  {
+    "id": "getOpenApiSpec",
+    "name": "Get OpenAPI Spec.",
+    "description": "Get OpenAPI Spec. Retrieves the full OpenAPI Specification in JSON format. GET /2/openapi.json",
+    "context": "GET /2/openapi.json\nRetrieves the full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)"
+  },
+  {
+    "id": "getTrendsByWoeid",
+    "name": "Get Trends by Woeid",
+    "description": "Get Trends by Woeid GET /2/trends/by/woeid/{woeid}",
+    "context": "GET /2/trends/by/woeid/{woeid}\nGet Trends by Woeid\nRequired: woeid (path)\nOptional: max_trends (query); trend.fields (query) — A comma separated list of Trend fields to display."
+  },
+  {
+    "id": "getUsage",
+    "name": "Get Usage",
+    "description": "Get Usage GET /2/usage/tweets",
+    "context": "GET /2/usage/tweets\nGet Usage\nOptional: days (query); usage.fields (query) — A comma separated list of Usage fields to display."
+  },
+  {
+    "id": "getUsageCredits",
+    "name": "Get usage credits",
+    "description": "Get usage credits Returns the payer's developer-platform credit balance in USD. GET /2/usage/credits",
+    "context": "GET /2/usage/credits\nReturns the payer's developer-platform credit balance in USD. total_balance is max(0, prepaid_balance + free_balance); prepaid_balance may be negative."
+  }
+]

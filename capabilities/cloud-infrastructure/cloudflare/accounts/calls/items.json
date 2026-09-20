@@ -1,0 +1,62 @@
+[
+  {
+    "id": "calls-apps-create-a-new-app",
+    "name": "Create a new app",
+    "description": "Create a new app Creates a new Cloudflare calls app. POST /client/v4/accounts/{account_id}/calls/apps",
+    "context": "POST /client/v4/accounts/{account_id}/calls/apps\nCreates a new Cloudflare calls app. An app is an unique enviroment where each Session can access all Tracks within the app.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "calls-apps-delete-app",
+    "name": "Delete app",
+    "description": "Delete app Deletes an app from Cloudflare Calls DELETE /client/v4/accounts/{account_id}/calls/apps/{app_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/calls/apps/{app_id}\nDeletes an app from Cloudflare Calls\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "calls-apps-list",
+    "name": "List apps",
+    "description": "List apps Lists all apps in the Cloudflare account GET /client/v4/accounts/{account_id}/calls/apps",
+    "context": "GET /client/v4/accounts/{account_id}/calls/apps\nLists all apps in the Cloudflare account\nRequired: account_id (path)"
+  },
+  {
+    "id": "calls-apps-retrieve-app-details",
+    "name": "Retrieve app details",
+    "description": "Retrieve app details Fetches details for a single Calls app. GET /client/v4/accounts/{account_id}/calls/apps/{app_id}",
+    "context": "GET /client/v4/accounts/{account_id}/calls/apps/{app_id}\nFetches details for a single Calls app.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "calls-apps-update-app-details",
+    "name": "Edit app details",
+    "description": "Edit app details Edit details for a single app. PUT /client/v4/accounts/{account_id}/calls/apps/{app_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/calls/apps/{app_id}\nEdit details for a single app.\nRequired: app_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "calls-delete-turn-key",
+    "name": "Delete TURN key",
+    "description": "Delete TURN key Deletes a TURN key from Cloudflare Calls DELETE /client/v4/accounts/{account_id}/calls/turn_keys/{key_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/calls/turn_keys/{key_id}\nDeletes a TURN key from Cloudflare Calls\nRequired: key_id (path); account_id (path)"
+  },
+  {
+    "id": "calls-retrieve-turn-key-details",
+    "name": "Retrieve TURN key details",
+    "description": "Retrieve TURN key details Fetches details for a single TURN key. GET /client/v4/accounts/{account_id}/calls/turn_keys/{key_id}",
+    "context": "GET /client/v4/accounts/{account_id}/calls/turn_keys/{key_id}\nFetches details for a single TURN key.\nRequired: key_id (path); account_id (path)"
+  },
+  {
+    "id": "calls-turn-key-create",
+    "name": "Create a new TURN key",
+    "description": "Create a new TURN key Creates a new Cloudflare Calls TURN key. POST /client/v4/accounts/{account_id}/calls/turn_keys",
+    "context": "POST /client/v4/accounts/{account_id}/calls/turn_keys\nCreates a new Cloudflare Calls TURN key.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "calls-turn-key-list",
+    "name": "List TURN Keys",
+    "description": "List TURN Keys Lists all TURN keys in the Cloudflare account GET /client/v4/accounts/{account_id}/calls/turn_keys",
+    "context": "GET /client/v4/accounts/{account_id}/calls/turn_keys\nLists all TURN keys in the Cloudflare account\nRequired: account_id (path)"
+  },
+  {
+    "id": "calls-update-turn-key",
+    "name": "Edit TURN key details",
+    "description": "Edit TURN key details Edit details for a single TURN key. PUT /client/v4/accounts/{account_id}/calls/turn_keys/{key_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/calls/turn_keys/{key_id}\nEdit details for a single TURN key.\nRequired: key_id (path); account_id (path); body (body)"
+  }
+]

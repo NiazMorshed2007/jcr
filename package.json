@@ -1,0 +1,61 @@
+{
+  "name": "jcr",
+  "version": "1.0.0",
+  "description": "Jev Capability Resolver: one tool that resolves an agent's request into exact documented capabilities from a recursive tree, with Claude and Codex harnesses to compare it against skills.",
+  "private": true,
+  "type": "module",
+  "author": "Niaz Morshed",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NiazMorshed2007/jcr.git"
+  },
+  "homepage": "https://github.com/NiazMorshed2007/jcr#readme",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "agents",
+    "capabilities",
+    "jev",
+    "claude",
+    "codex",
+    "mcp"
+  ],
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "claude": "tsx src/cli.ts --provider claude",
+    "codex": "tsx src/cli.ts --provider codex",
+    "claude:jcr": "tsx src/cli.ts --provider claude --mode jcr",
+    "codex:jcr": "tsx src/cli.ts --provider codex --mode jcr",
+    "compare": "tsx scripts/compare.ts",
+    "jcr:resolve": "tsx scripts/resolve-jcr.ts",
+    "bench": "tsx scripts/bench.ts",
+    "bench:report": "tsx scripts/bench-report.ts",
+    "capabilities:audit": "tsx scripts/audit-capabilities.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test \"src/**/*.test.ts\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm run format:check && npm test && npm run capabilities:audit",
+    "web:dev": "npm --prefix web run dev",
+    "web:build": "npm --prefix web run build",
+    "web:deploy": "npm --prefix web run deploy",
+    "web:lint": "npm --prefix web run lint",
+    "web:start": "npm --prefix web run start"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.278",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@openai/codex-sdk": "^0.155.1",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "dotenv": "^18.0.1",
+    "openai": "^7.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "prettier": "^3.9.8",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}

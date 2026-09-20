@@ -1,0 +1,44 @@
+[
+  {
+    "id": "oauth-clients-create",
+    "name": "Create OAuth Client",
+    "description": "Create OAuth Client Create a new OAuth client for an account. POST /client/v4/accounts/{account_id}/oauth_clients",
+    "context": "POST /client/v4/accounts/{account_id}/oauth_clients\nCreate a new OAuth client for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "oauth-clients-delete",
+    "name": "Delete OAuth Client",
+    "description": "Delete OAuth Client Delete an OAuth client. DELETE /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}\nDelete an OAuth client.\nRequired: account_id (path); oauth_client_id (path)"
+  },
+  {
+    "id": "oauth-clients-delete-rotated-secret",
+    "name": "Delete Rotated OAuth Client Secret",
+    "description": "Delete Rotated OAuth Client Secret Removes the old client secret after a rotation, keeping only the new one. DELETE /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}/rotate_secret",
+    "context": "DELETE /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}/rotate_secret\nRemoves the old client secret after a rotation, keeping only the new one. Use this after you have updated your client configuration to use the new secret. The `has_rotated_secret` field on the client indicates whether there is an old secret to delete.\nRequired: account_id (path); oauth_client_id (path)"
+  },
+  {
+    "id": "oauth-clients-get",
+    "name": "OAuth Client Details",
+    "description": "OAuth Client Details Get details of a specific OAuth client. GET /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}",
+    "context": "GET /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}\nGet details of a specific OAuth client.\nRequired: account_id (path); oauth_client_id (path)"
+  },
+  {
+    "id": "oauth-clients-list",
+    "name": "List OAuth Clients",
+    "description": "List OAuth Clients List all OAuth clients for an account. GET /client/v4/accounts/{account_id}/oauth_clients",
+    "context": "GET /client/v4/accounts/{account_id}/oauth_clients\nList all OAuth clients for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "oauth-clients-rotate-secret",
+    "name": "Rotate OAuth Client Secret",
+    "description": "Rotate OAuth Client Secret Creates a second client secret so you can update your client configuration before deleting the old one. POST /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}/rotate_secret",
+    "context": "POST /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}/rotate_secret\nCreates a second client secret so you can update your client configuration before deleting the old one. The `has_rotated_secret` field on the client will be set to `true`.\nRequired: account_id (path); oauth_client_id (path)"
+  },
+  {
+    "id": "oauth-clients-update",
+    "name": "Update OAuth Client",
+    "description": "Update OAuth Client Update an existing OAuth client. PATCH /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/oauth_clients/{oauth_client_id}\nUpdate an existing OAuth client. Only include fields you want to update.\nRequired: account_id (path); oauth_client_id (path); body (body)"
+  }
+]

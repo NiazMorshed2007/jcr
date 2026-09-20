@@ -1,0 +1,68 @@
+[
+  {
+    "id": "groups_types_create_detail_dashboard_update",
+    "name": "groups_types_create_detail_dashboard_update",
+    "description": "groups_types_create_detail_dashboard_update PUT /api/projects/{project_id}/groups_types/create_detail_dashboard/",
+    "context": "PUT /api/projects/{project_id}/groups_types/create_detail_dashboard/\ngroups_types_create_detail_dashboard_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "groups_types_destroy",
+    "name": "groups_types_destroy",
+    "description": "groups_types_destroy DELETE /api/projects/{project_id}/groups_types/{group_type_index}/",
+    "context": "DELETE /api/projects/{project_id}/groups_types/{group_type_index}/\ngroups_types_destroy\nRequired: group_type_index (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_types_list",
+    "name": "groups_types_list",
+    "description": "groups_types_list GET /api/projects/{project_id}/groups_types/",
+    "context": "GET /api/projects/{project_id}/groups_types/\ngroups_types_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_types_metrics_create",
+    "name": "groups_types_metrics_create",
+    "description": "groups_types_metrics_create POST /api/projects/{project_id}/groups_types/{group_type_index}/metrics/",
+    "context": "POST /api/projects/{project_id}/groups_types/{group_type_index}/metrics/\ngroups_types_metrics_create\nRequired: group_type_index (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "groups_types_metrics_destroy",
+    "name": "groups_types_metrics_destroy",
+    "description": "groups_types_metrics_destroy DELETE /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/",
+    "context": "DELETE /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/\ngroups_types_metrics_destroy\nRequired: group_type_index (path); id (path) — A UUID string identifying this group usage metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_types_metrics_list",
+    "name": "groups_types_metrics_list",
+    "description": "groups_types_metrics_list GET /api/projects/{project_id}/groups_types/{group_type_index}/metrics/",
+    "context": "GET /api/projects/{project_id}/groups_types/{group_type_index}/metrics/\ngroups_types_metrics_list\nRequired: group_type_index (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "groups_types_metrics_partial_update",
+    "name": "groups_types_metrics_partial_update",
+    "description": "groups_types_metrics_partial_update PATCH /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/",
+    "context": "PATCH /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/\ngroups_types_metrics_partial_update\nRequired: group_type_index (path); id (path) — A UUID string identifying this group usage metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "groups_types_metrics_retrieve",
+    "name": "groups_types_metrics_retrieve",
+    "description": "groups_types_metrics_retrieve GET /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/",
+    "context": "GET /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/\ngroups_types_metrics_retrieve\nRequired: group_type_index (path); id (path) — A UUID string identifying this group usage metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_types_metrics_update",
+    "name": "groups_types_metrics_update",
+    "description": "groups_types_metrics_update PUT /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/",
+    "context": "PUT /api/projects/{project_id}/groups_types/{group_type_index}/metrics/{id}/\ngroups_types_metrics_update\nRequired: group_type_index (path); id (path) — A UUID string identifying this group usage metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "groups_types_set_default_columns_update",
+    "name": "groups_types_set_default_columns_update",
+    "description": "groups_types_set_default_columns_update PUT /api/projects/{project_id}/groups_types/set_default_columns/",
+    "context": "PUT /api/projects/{project_id}/groups_types/set_default_columns/\ngroups_types_set_default_columns_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "groups_types_update_metadata_partial_update",
+    "name": "groups_types_update_metadata_partial_update",
+    "description": "groups_types_update_metadata_partial_update PATCH /api/projects/{project_id}/groups_types/update_metadata/",
+    "context": "PATCH /api/projects/{project_id}/groups_types/update_metadata/\ngroups_types_update_metadata_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

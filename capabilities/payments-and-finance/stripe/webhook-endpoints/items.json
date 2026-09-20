@@ -1,0 +1,32 @@
+[
+  {
+    "id": "DeleteWebhookEndpointsWebhookEndpoint",
+    "name": "Delete a webhook endpoint",
+    "description": "Delete a webhook endpoint You can also delete webhook endpoints via the webhook endpoint management page of the Stripe dashboard. DELETE /v1/webhook_endpoints/{webhook_endpoint}",
+    "context": "DELETE /v1/webhook_endpoints/{webhook_endpoint}\nYou can also delete webhook endpoints via the webhook endpoint management page of the Stripe dashboard.\nRequired: webhook_endpoint (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetWebhookEndpoints",
+    "name": "List all webhook endpoints",
+    "description": "List all webhook endpoints Returns a list of your webhook endpoints. GET /v1/webhook_endpoints",
+    "context": "GET /v1/webhook_endpoints\nReturns a list of your webhook endpoints.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetWebhookEndpointsWebhookEndpoint",
+    "name": "Retrieve a webhook endpoint",
+    "description": "Retrieve a webhook endpoint Retrieves the webhook endpoint with the given ID. GET /v1/webhook_endpoints/{webhook_endpoint}",
+    "context": "GET /v1/webhook_endpoints/{webhook_endpoint}\nRetrieves the webhook endpoint with the given ID.\nRequired: webhook_endpoint (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostWebhookEndpoints",
+    "name": "Create a webhook endpoint",
+    "description": "Create a webhook endpoint A webhook endpoint must have a url and a list of enabled_events . POST /v1/webhook_endpoints",
+    "context": "POST /v1/webhook_endpoints\nA webhook endpoint must have a url and a list of enabled_events . You may optionally specify the Boolean connect parameter. If set to true, then a Connect webhook endpoint that notifies the specified url about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified url only about events from your account is created. You can also create webhook endpoints in the webhooks settings section of the Dashboard.\nRequired: body (body)"
+  },
+  {
+    "id": "PostWebhookEndpointsWebhookEndpoint",
+    "name": "Update a webhook endpoint",
+    "description": "Update a webhook endpoint Updates the webhook endpoint. POST /v1/webhook_endpoints/{webhook_endpoint}",
+    "context": "POST /v1/webhook_endpoints/{webhook_endpoint}\nUpdates the webhook endpoint. You may edit the url , the list of enabled_events , and the status of your endpoint.\nRequired: webhook_endpoint (path)\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_comments_id",
+    "name": "Remove comment",
+    "description": "Remove comment Permanently deletes a comment. DELETE /2.0/comments/{comment_id}",
+    "context": "DELETE /2.0/comments/{comment_id}\nPermanently deletes a comment.\nRequired: comment_id (path) — The ID of the comment."
+  },
+  {
+    "id": "get_comments_id",
+    "name": "Get comment",
+    "description": "Get comment Retrieves the message and metadata for a specific comment, as well as information on the user who created the comment. GET /2.0/comments/{comment_id}",
+    "context": "GET /2.0/comments/{comment_id}\nRetrieves the message and metadata for a specific comment, as well as information on the user who created the comment.\nRequired: comment_id (path) — The ID of the comment.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "post_comments",
+    "name": "Create comment",
+    "description": "Create comment Adds a comment by the user to a specific file, or as a reply to an other comment. POST /2.0/comments",
+    "context": "POST /2.0/comments\nAdds a comment by the user to a specific file, or as a reply to an other comment.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  },
+  {
+    "id": "put_comments_id",
+    "name": "Update comment",
+    "description": "Update comment Update the message of a comment. PUT /2.0/comments/{comment_id}",
+    "context": "PUT /2.0/comments/{comment_id}\nUpdate the message of a comment.\nRequired: comment_id (path) — The ID of the comment.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  }
+]

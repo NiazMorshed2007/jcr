@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_retention_policy_assignments_id",
+    "name": "Remove retention policy assignment",
+    "description": "Remove retention policy assignment Removes a retention policy assignment applied to content. DELETE /2.0/retention_policy_assignments/{retention_policy_assignment_id}",
+    "context": "DELETE /2.0/retention_policy_assignments/{retention_policy_assignment_id}\nRemoves a retention policy assignment applied to content.\nRequired: retention_policy_assignment_id (path) — The ID of the retention policy assignment."
+  },
+  {
+    "id": "get_retention_policy_assignments_id",
+    "name": "Get retention policy assignment",
+    "description": "Get retention policy assignment Retrieves a retention policy assignment. GET /2.0/retention_policy_assignments/{retention_policy_assignment_id}",
+    "context": "GET /2.0/retention_policy_assignments/{retention_policy_assignment_id}\nRetrieves a retention policy assignment.\nRequired: retention_policy_assignment_id (path) — The ID of the retention policy assignment.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_retention_policy_assignments_id_file_versions_under_retention",
+    "name": "Get file versions under retention",
+    "description": "Get file versions under retention Returns a list of file versions under retention for a retention policy assignment. GET /2.0/retention_policy_assignments/{retention_policy_assignment_id}/file_versions_under_retention",
+    "context": "GET /2.0/retention_policy_assignments/{retention_policy_assignment_id}/file_versions_under_retention\nReturns a list of file versions under retention for a retention policy assignment.\nRequired: retention_policy_assignment_id (path) — The ID of the retention policy assignment.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_retention_policy_assignments_id_files_under_retention",
+    "name": "Get files under retention",
+    "description": "Get files under retention Returns a list of files under retention for a retention policy assignment. GET /2.0/retention_policy_assignments/{retention_policy_assignment_id}/files_under_retention",
+    "context": "GET /2.0/retention_policy_assignments/{retention_policy_assignment_id}/files_under_retention\nReturns a list of files under retention for a retention policy assignment.\nRequired: retention_policy_assignment_id (path) — The ID of the retention policy assignment.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "post_retention_policy_assignments",
+    "name": "Assign retention policy",
+    "description": "Assign retention policy Assigns a retention policy to an item. POST /2.0/retention_policy_assignments",
+    "context": "POST /2.0/retention_policy_assignments\nAssigns a retention policy to an item.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dlp-risk-score-behaviors-get",
+    "name": "Get all behaviors and associated configuration",
+    "description": "Get all behaviors and associated configuration Retrieves configured risk score behaviors that define how user actions affect their overall risk score. GET /client/v4/accounts/{account_id}/zt_risk_scoring/behaviors",
+    "context": "GET /client/v4/accounts/{account_id}/zt_risk_scoring/behaviors\nRetrieves configured risk score behaviors that define how user actions affect their overall risk score.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-risk-score-behaviors-put",
+    "name": "Update configuration for risk behaviors",
+    "description": "Update configuration for risk behaviors Updates risk score behavior configurations, defining weights and thresholds for risk calculation. PUT /client/v4/accounts/{account_id}/zt_risk_scoring/behaviors",
+    "context": "PUT /client/v4/accounts/{account_id}/zt_risk_scoring/behaviors\nUpdates risk score behavior configurations, defining weights and thresholds for risk calculation.\nRequired: account_id (path) — Account ID.; body (body) — Behaviors."
+  },
+  {
+    "id": "dlp-risk-score-reset-post",
+    "name": "Clear the risk score for a particular user",
+    "description": "Clear the risk score for a particular user Resets risk scores for specified users, clearing their accumulated risk history. POST /client/v4/accounts/{account_id}/zt_risk_scoring/{user_id}/reset",
+    "context": "POST /client/v4/accounts/{account_id}/zt_risk_scoring/{user_id}/reset\nResets risk scores for specified users, clearing their accumulated risk history.\nRequired: account_id (path); user_id (path)"
+  },
+  {
+    "id": "dlp-risk-score-summary-get",
+    "name": "Get risk score info for all users in the account",
+    "description": "Get risk score info for all users in the account Gets an aggregate summary of risk scores across the account, including distribution and trends. GET /client/v4/accounts/{account_id}/zt_risk_scoring/summary",
+    "context": "GET /client/v4/accounts/{account_id}/zt_risk_scoring/summary\nGets an aggregate summary of risk scores across the account, including distribution and trends.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-risk-score-summary-get-for-user",
+    "name": "Get risk event/score information for a specific user",
+    "description": "Get risk event/score information for a specific user Retrieves the detailed risk score breakdown for a specific user, including contributing factors. GET /client/v4/accounts/{account_id}/zt_risk_scoring/{user_id}",
+    "context": "GET /client/v4/accounts/{account_id}/zt_risk_scoring/{user_id}\nRetrieves the detailed risk score breakdown for a specific user, including contributing factors.\nRequired: account_id (path); user_id (path)"
+  },
+  {
+    "id": "dlp-zt-risk-score-integration-create",
+    "name": "Create new risk score integration.",
+    "description": "Create new risk score integration. Creates a new Zero Trust risk score integration, connecting external risk signals to Cloudflare's risk scoring system. POST /client/v4/accounts/{account_id}/zt_risk_scoring/integrations",
+    "context": "POST /client/v4/accounts/{account_id}/zt_risk_scoring/integrations\nCreates a new Zero Trust risk score integration, connecting external risk signals to Cloudflare's risk scoring system.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "dlp-zt-risk-score-integration-delete",
+    "name": "Delete a risk score integration.",
+    "description": "Delete a risk score integration. Removes a Zero Trust risk score integration, disconnecting the external risk signal source. DELETE /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}\nRemoves a Zero Trust risk score integration, disconnecting the external risk signal source.\nRequired: account_id (path); integration_id (path)"
+  },
+  {
+    "id": "dlp-zt-risk-score-integration-get",
+    "name": "Get risk score integration by id.",
+    "description": "Get risk score integration by id. Gets a Zero Trust risk score integration by ID. GET /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}",
+    "context": "GET /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}\nGets a Zero Trust risk score integration by ID.\nRequired: account_id (path); integration_id (path)"
+  },
+  {
+    "id": "dlp-zt-risk-score-integration-get-by-reference-id",
+    "name": "Get risk score integration by reference id.",
+    "description": "Get risk score integration by reference id. Retrieves a Zero Trust risk score integration using its external reference ID. GET /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}",
+    "context": "GET /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/reference_id/{reference_id}\nRetrieves a Zero Trust risk score integration using its external reference ID.\nRequired: account_id (path); reference_id (path)"
+  },
+  {
+    "id": "dlp-zt-risk-score-integration-list",
+    "name": "List all risk score integrations for the account.",
+    "description": "List all risk score integrations for the account. Lists all configured Zero Trust risk score integrations for the account. GET /client/v4/accounts/{account_id}/zt_risk_scoring/integrations",
+    "context": "GET /client/v4/accounts/{account_id}/zt_risk_scoring/integrations\nLists all configured Zero Trust risk score integrations for the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-zt-risk-score-integration-update",
+    "name": "Update a risk score integration.",
+    "description": "Update a risk score integration. Overwrite the reference_id, tenant_url, and active values with the ones provided. PUT /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/zt_risk_scoring/integrations/{integration_id}\nOverwrite the reference_id, tenant_url, and active values with the ones provided.\nRequired: account_id (path); integration_id (path); body (body)"
+  }
+]

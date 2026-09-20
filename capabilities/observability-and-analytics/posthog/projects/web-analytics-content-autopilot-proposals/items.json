@@ -1,0 +1,38 @@
+[
+  {
+    "id": "web_analytics_content_autopilot_proposals_edit",
+    "name": "Edit a content proposal",
+    "description": "Edit a content proposal Saves reviewed Markdown and its structured package without publishing it. POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/edit/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/edit/\nSaves reviewed Markdown and its structured package without publishing it.\nRequired: id (path) — A UUID string identifying this content autopilot proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_content_autopilot_proposals_export",
+    "name": "Export a content proposal",
+    "description": "Export a content proposal Returns validated Markdown and structured JSON without publishing it. POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/export/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/export/\nReturns validated Markdown and structured JSON without publishing it.\nRequired: id (path) — A UUID string identifying this content autopilot proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_content_autopilot_proposals_list",
+    "name": "web_analytics_content_autopilot_proposals_list",
+    "description": "web_analytics_content_autopilot_proposals_list GET /api/projects/{project_id}/web_analytics_content_autopilot_proposals/",
+    "context": "GET /api/projects/{project_id}/web_analytics_content_autopilot_proposals/\nweb_analytics_content_autopilot_proposals_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; profile_id (query) — Only return proposals for this site profile.; run_id (query) — Only return proposals from this content run."
+  },
+  {
+    "id": "web_analytics_content_autopilot_proposals_regenerate",
+    "name": "Regenerate a content proposal",
+    "description": "Regenerate a content proposal Returns a proposal to generation while keeping its previous result inspectable in history. POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/regenerate/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/regenerate/\nReturns a proposal to generation while keeping its previous result inspectable in history.\nRequired: id (path) — A UUID string identifying this content autopilot proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_content_autopilot_proposals_reject",
+    "name": "Reject a content proposal",
+    "description": "Reject a content proposal Rejects a proposal without changing the public site. POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/reject/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/reject/\nRejects a proposal without changing the public site.\nRequired: id (path) — A UUID string identifying this content autopilot proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_content_autopilot_proposals_retrieve",
+    "name": "web_analytics_content_autopilot_proposals_retrieve",
+    "description": "web_analytics_content_autopilot_proposals_retrieve GET /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/",
+    "context": "GET /api/projects/{project_id}/web_analytics_content_autopilot_proposals/{id}/\nweb_analytics_content_autopilot_proposals_retrieve\nRequired: id (path) — A UUID string identifying this content autopilot proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

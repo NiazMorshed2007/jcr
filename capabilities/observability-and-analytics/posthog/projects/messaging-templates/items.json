@@ -1,0 +1,44 @@
+[
+  {
+    "id": "messaging_templates_create",
+    "name": "messaging_templates_create",
+    "description": "messaging_templates_create POST /api/projects/{project_id}/messaging_templates/",
+    "context": "POST /api/projects/{project_id}/messaging_templates/\nmessaging_templates_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "messaging_templates_design_partial_update",
+    "name": "messaging_templates_design_partial_update",
+    "description": "messaging_templates_design_partial_update PATCH /api/projects/{project_id}/messaging_templates/{id}/design/",
+    "context": "PATCH /api/projects/{project_id}/messaging_templates/{id}/design/\nmessaging_templates_design_partial_update\nRequired: id (path) — A UUID string identifying this message template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "messaging_templates_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/messaging_templates/{id}/",
+    "context": "DELETE /api/projects/{project_id}/messaging_templates/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A UUID string identifying this message template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "messaging_templates_list",
+    "name": "messaging_templates_list",
+    "description": "messaging_templates_list GET /api/projects/{project_id}/messaging_templates/",
+    "context": "GET /api/projects/{project_id}/messaging_templates/\nmessaging_templates_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "messaging_templates_partial_update",
+    "name": "messaging_templates_partial_update",
+    "description": "messaging_templates_partial_update PATCH /api/projects/{project_id}/messaging_templates/{id}/",
+    "context": "PATCH /api/projects/{project_id}/messaging_templates/{id}/\nmessaging_templates_partial_update\nRequired: id (path) — A UUID string identifying this message template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "messaging_templates_retrieve",
+    "name": "messaging_templates_retrieve",
+    "description": "messaging_templates_retrieve GET /api/projects/{project_id}/messaging_templates/{id}/",
+    "context": "GET /api/projects/{project_id}/messaging_templates/{id}/\nmessaging_templates_retrieve\nRequired: id (path) — A UUID string identifying this message template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "messaging_templates_update",
+    "name": "messaging_templates_update",
+    "description": "messaging_templates_update PUT /api/projects/{project_id}/messaging_templates/{id}/",
+    "context": "PUT /api/projects/{project_id}/messaging_templates/{id}/\nmessaging_templates_update\nRequired: id (path) — A UUID string identifying this message template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

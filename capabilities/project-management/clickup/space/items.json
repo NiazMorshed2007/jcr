@@ -1,0 +1,98 @@
+[
+  {
+    "id": "CreateFolder",
+    "name": "Create Folder",
+    "description": "Create Folder Add a new Folder to a Space. POST /api/v2/space/{space_id}/folder",
+    "context": "POST /api/v2/space/{space_id}/folder\nAdd a new Folder to a Space. You can optionally create the Folder as a subfolder within an existing Folder by providing `parent_folder_id` in the request body. Subfolder support must be enabled for the Workspace.\nRequired: space_id (path); body (body)"
+  },
+  {
+    "id": "CreateFolderFromTemplate",
+    "name": "Create Folder from template",
+    "description": "Create Folder from template Create a new Folder using a Folder template within a Space. POST /api/v2/space/{space_id}/folder_template/{template_id}",
+    "context": "POST /api/v2/space/{space_id}/folder_template/{template_id}\nCreate a new Folder using a Folder template within a Space. This endpoint allows you to create a folder with all its nested assets (lists, tasks, etc.) from a predefined template available in your Workspace. Publicly shared templates must be [added to your Workspace](https://help.clickup.com/hc/en-us/articles/6326023965591-Add-a-template-to-your-library) before you can use them with the public API. You can optionally create the Folder as a subfolder within an existing Folder by providing `parent_folder_id` in the request body. Subfolder support must be enabled for the Workspace. This request can be run asynchronously or synchronously via the `return_immediately` parameter.\nRequired: space_id (path) — ID of the Space where the Folder will be created; template_id (path) — ID of the Folder template to use. Template IDs include a `t-` prefix (e.g., `t-7162342`). Retrieve available template IDs using the [Get Folder Templates](#tag/Templates/operation/GetFolderTemplates) endpoint.; body (body)"
+  },
+  {
+    "id": "CreateFolderlessList",
+    "name": "Create Folderless List",
+    "description": "Create Folderless List Add a new List in a Space. POST /api/v2/space/{space_id}/list",
+    "context": "POST /api/v2/space/{space_id}/list\nAdd a new List in a Space.\nRequired: space_id (path); body (body)"
+  },
+  {
+    "id": "CreateSpaceListFromTemplate",
+    "name": "Create List From Template in Space",
+    "description": "Create List From Template in Space Create a new List using a List template within a Space. POST /api/v2/space/{space_id}/list_template/{template_id}",
+    "context": "POST /api/v2/space/{space_id}/list_template/{template_id}\nCreate a new List using a List template within a Space. Publicly shared templates must be [added to your Workspace](https://help.clickup.com/hc/en-us/articles/6326023965591-Add-a-template-to-your-library) before you can use them with the public API. This request can be run asynchronously or synchronously via the `return_immediately` parameter.\nRequired: space_id (path) — ID of the Space where the List will be created; template_id (path) — ID of the List template to use. Template IDs include a `t-` prefix (e.g., `t-15363293`). Retrieve available template IDs using the [Get List Templates](#tag/Templates/operation/GetListTemplates) endpoint.; body (body)"
+  },
+  {
+    "id": "CreateSpaceTag",
+    "name": "Create Space Tag",
+    "description": "Create Space Tag Add a new task Tag to a Space. POST /api/v2/space/{space_id}/tag",
+    "context": "POST /api/v2/space/{space_id}/tag\nAdd a new task Tag to a Space.\nRequired: space_id (path); body (body)"
+  },
+  {
+    "id": "CreateSpaceView",
+    "name": "Create Space View",
+    "description": "Create Space View Add a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view to a Space. POST /api/v2/space/{space_id}/view",
+    "context": "POST /api/v2/space/{space_id}/view\nAdd a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view to a Space.\nRequired: space_id (path); body (body)"
+  },
+  {
+    "id": "DeleteSpace",
+    "name": "Delete Space",
+    "description": "Delete Space Delete a Space from your Workspace. DELETE /api/v2/space/{space_id}",
+    "context": "DELETE /api/v2/space/{space_id}\nDelete a Space from your Workspace.\nRequired: space_id (path)"
+  },
+  {
+    "id": "DeleteSpaceTag",
+    "name": "Delete Space Tag",
+    "description": "Delete Space Tag Delete a task Tag from a Space. DELETE /api/v2/space/{space_id}/tag/{tag_name}",
+    "context": "DELETE /api/v2/space/{space_id}/tag/{tag_name}\nDelete a task Tag from a Space.\nRequired: space_id (path); tag_name (path); body (body)"
+  },
+  {
+    "id": "EditSpaceTag",
+    "name": "Edit Space Tag",
+    "description": "Edit Space Tag Update a task Tag. PUT /api/v2/space/{space_id}/tag/{tag_name}",
+    "context": "PUT /api/v2/space/{space_id}/tag/{tag_name}\nUpdate a task Tag.\nRequired: space_id (path); tag_name (path); body (body)"
+  },
+  {
+    "id": "GetFolderlessLists",
+    "name": "Get Folderless Lists",
+    "description": "Get Folderless Lists View the Lists in a Space that aren't located in a Folder. GET /api/v2/space/{space_id}/list",
+    "context": "GET /api/v2/space/{space_id}/list\nView the Lists in a Space that aren't located in a Folder.\nRequired: space_id (path)\nOptional: archived (query)"
+  },
+  {
+    "id": "GetFolders",
+    "name": "Get Folders",
+    "description": "Get Folders View the Folders in a Space. GET /api/v2/space/{space_id}/folder",
+    "context": "GET /api/v2/space/{space_id}/folder\nView the Folders in a Space. Subfolders are returned in the same flat list as top-level Folders, each with a `parent_folder` field holding the ID of the Folder it is nested inside of. This endpoint does not nest them; to get a Folder's subfolder tree, use [Get Folder](#tag/Folders/operation/GetFolder) with `include_subfolders=true`.\nRequired: space_id (path)\nOptional: archived (query)"
+  },
+  {
+    "id": "GetSpace",
+    "name": "Get Space",
+    "description": "Get Space View the Spaces available in a Workspace. GET /api/v2/space/{space_id}",
+    "context": "GET /api/v2/space/{space_id}\nView the Spaces available in a Workspace.\nRequired: space_id (path)"
+  },
+  {
+    "id": "getSpaceAvailableFields",
+    "name": "Get Space Custom Fields",
+    "description": "Get Space Custom Fields View the Custom Fields you have access to in a specific Space. GET /api/v2/space/{space_id}/field",
+    "context": "GET /api/v2/space/{space_id}/field\nView the Custom Fields you have access to in a specific Space. Get Space Custom Fields only returns Custom Fields created at the Space level. Custom Fields created at the Folder and List level are not included.\\ \\ Custom Fields scoped to specific custom task types include an `applied_objects` array on each field object. Each entry has `object_type` (`19` for custom task type) and `object_id` (the custom task type ID, matching `custom_item_id` on tasks). Use [Get Custom Task Types](ref:getcustomitems) to resolve IDs to names. Fields without task-type scoping omit `applied_objects`. Workspace-scoped Custom Fields are included when querying a Space.\nRequired: space_id (path); Content-Type (header)\nOptional: include_applied_objects (query) — When `true`, includes `applied_objects` on task-type-scoped Custom Fields in the response."
+  },
+  {
+    "id": "GetSpaceTags",
+    "name": "Get Space Tags",
+    "description": "Get Space Tags View the task Tags available in a Space. GET /api/v2/space/{space_id}/tag",
+    "context": "GET /api/v2/space/{space_id}/tag\nView the task Tags available in a Space.\nRequired: space_id (path); Content-Type (header)"
+  },
+  {
+    "id": "GetSpaceViews",
+    "name": "Get Space Views",
+    "description": "Get Space Views View the task and page views available for a Space. GET /api/v2/space/{space_id}/view",
+    "context": "GET /api/v2/space/{space_id}/view\nView the task and page views available for a Space.\nRequired: space_id (path)"
+  },
+  {
+    "id": "UpdateSpace",
+    "name": "Update Space",
+    "description": "Update Space Rename, set the Space color, and enable ClickApps for a Space. PUT /api/v2/space/{space_id}",
+    "context": "PUT /api/v2/space/{space_id}\nRename, set the Space color, and enable ClickApps for a Space.\nRequired: space_id (path); body (body)"
+  }
+]

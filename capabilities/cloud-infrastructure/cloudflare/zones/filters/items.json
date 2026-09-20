@@ -1,0 +1,44 @@
+[
+  {
+    "id": "filters-create-filters",
+    "name": "Create filters",
+    "description": "Create filters Creates one or more filters. POST /client/v4/zones/{zone_id}/filters",
+    "context": "POST /client/v4/zones/{zone_id}/filters\nCreates one or more filters.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "filters-delete-a-filter",
+    "name": "Delete a filter",
+    "description": "Delete a filter Deletes an existing filter. DELETE /client/v4/zones/{zone_id}/filters/{filter_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/filters/{filter_id}\nDeletes an existing filter.\nRequired: filter_id (path); zone_id (path)"
+  },
+  {
+    "id": "filters-delete-filters",
+    "name": "Delete filters",
+    "description": "Delete filters Deletes one or more existing filters. DELETE /client/v4/zones/{zone_id}/filters",
+    "context": "DELETE /client/v4/zones/{zone_id}/filters\nDeletes one or more existing filters.\nRequired: zone_id (path); id (query)"
+  },
+  {
+    "id": "filters-get-a-filter",
+    "name": "Get a filter",
+    "description": "Get a filter Fetches the details of a filter. GET /client/v4/zones/{zone_id}/filters/{filter_id}",
+    "context": "GET /client/v4/zones/{zone_id}/filters/{filter_id}\nFetches the details of a filter.\nRequired: filter_id (path); zone_id (path)"
+  },
+  {
+    "id": "filters-list-filters",
+    "name": "List filters",
+    "description": "List filters Fetches filters in a zone. GET /client/v4/zones/{zone_id}/filters",
+    "context": "GET /client/v4/zones/{zone_id}/filters\nFetches filters in a zone. You can filter the results using several optional parameters.\nRequired: zone_id (path)\nOptional: paused (query); expression (query); description (query); ref (query); page (query); per_page (query); id (query)"
+  },
+  {
+    "id": "filters-update-a-filter",
+    "name": "Update a filter",
+    "description": "Update a filter Updates an existing filter. PUT /client/v4/zones/{zone_id}/filters/{filter_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/filters/{filter_id}\nUpdates an existing filter.\nRequired: filter_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "filters-update-filters",
+    "name": "Update filters",
+    "description": "Update filters Updates one or more existing filters. PUT /client/v4/zones/{zone_id}/filters",
+    "context": "PUT /client/v4/zones/{zone_id}/filters\nUpdates one or more existing filters.\nRequired: zone_id (path); body (body)"
+  }
+]

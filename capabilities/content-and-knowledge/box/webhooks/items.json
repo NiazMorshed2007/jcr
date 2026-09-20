@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_webhooks_id",
+    "name": "Remove webhook",
+    "description": "Remove webhook Deletes a webhook. DELETE /2.0/webhooks/{webhook_id}",
+    "context": "DELETE /2.0/webhooks/{webhook_id}\nDeletes a webhook.\nRequired: webhook_id (path) — The ID of the webhook."
+  },
+  {
+    "id": "get_webhooks",
+    "name": "List all webhooks",
+    "description": "List all webhooks Returns all defined webhooks for the requesting application. GET /2.0/webhooks",
+    "context": "GET /2.0/webhooks\nReturns all defined webhooks for the requesting application. This API only returns webhooks that are applied to files or folders that are owned by the authenticated user. This means that an admin can not see webhooks created by a service account unless the admin has access to those folders, and vice versa.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_webhooks_id",
+    "name": "Get webhook",
+    "description": "Get webhook Retrieves a specific webhook. GET /2.0/webhooks/{webhook_id}",
+    "context": "GET /2.0/webhooks/{webhook_id}\nRetrieves a specific webhook.\nRequired: webhook_id (path) — The ID of the webhook."
+  },
+  {
+    "id": "post_webhooks",
+    "name": "Create webhook",
+    "description": "Create webhook Creates a webhook. POST /2.0/webhooks",
+    "context": "POST /2.0/webhooks\nCreates a webhook.\nOptional: body (body)"
+  },
+  {
+    "id": "put_webhooks_id",
+    "name": "Update webhook",
+    "description": "Update webhook Updates a webhook. PUT /2.0/webhooks/{webhook_id}",
+    "context": "PUT /2.0/webhooks/{webhook_id}\nUpdates a webhook.\nRequired: webhook_id (path) — The ID of the webhook.\nOptional: body (body)"
+  }
+]

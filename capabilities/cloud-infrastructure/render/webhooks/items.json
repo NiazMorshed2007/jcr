@@ -1,0 +1,38 @@
+[
+  {
+    "id": "create-webhook",
+    "name": "Create a webhook",
+    "description": "Create a webhook Create a new webhook. POST /v1/webhooks",
+    "context": "POST /v1/webhooks\nCreate a new webhook.\nRequired: body (body)"
+  },
+  {
+    "id": "delete-webhook",
+    "name": "Delete a webhook",
+    "description": "Delete a webhook Delete the webhook with the provided ID. DELETE /v1/webhooks/{webhookId}",
+    "context": "DELETE /v1/webhooks/{webhookId}\nDelete the webhook with the provided ID.\nRequired: webhookId (path) — Unique identifier for the webhook"
+  },
+  {
+    "id": "list-webhook-events",
+    "name": "List webhook events",
+    "description": "List webhook events Retrieve a list of events that have been sent to this webhook, with optional filtering by timestamp. GET /v1/webhooks/{webhookId}/events",
+    "context": "GET /v1/webhooks/{webhookId}/events\nRetrieve a list of events that have been sent to this webhook, with optional filtering by timestamp.\nOptional: sentBefore (query) — Filter events sent before this time (specified as an ISO 8601 timestamp); sentAfter (query) — Filter for resources sent after a certain time (specified as an ISO 8601 timestamp); limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-webhooks",
+    "name": "List webhooks",
+    "description": "List webhooks GET /v1/webhooks",
+    "context": "GET /v1/webhooks\nList webhooks\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; ownerId (query) — The ID of the workspaces to return resources for"
+  },
+  {
+    "id": "retrieve-webhook",
+    "name": "Retrieve a webhook",
+    "description": "Retrieve a webhook Retrieve the webhook with the provided ID GET /v1/webhooks/{webhookId}",
+    "context": "GET /v1/webhooks/{webhookId}\nRetrieve the webhook with the provided ID\nRequired: webhookId (path) — Unique identifier for the webhook"
+  },
+  {
+    "id": "update-webhook",
+    "name": "Update a webhook",
+    "description": "Update a webhook Update the webhook with the provided ID. PATCH /v1/webhooks/{webhookId}",
+    "context": "PATCH /v1/webhooks/{webhookId}\nUpdate the webhook with the provided ID.\nRequired: webhookId (path) — Unique identifier for the webhook; body (body)"
+  }
+]

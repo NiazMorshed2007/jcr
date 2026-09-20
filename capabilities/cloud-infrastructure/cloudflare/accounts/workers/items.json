@@ -1,0 +1,44 @@
+[
+  {
+    "id": "durable-objects-namespace-list-namespaces",
+    "name": "List Durable Object Namespaces",
+    "description": "List Durable Object Namespaces Returns the Durable Object namespaces owned by an account. GET /client/v4/accounts/{account_id}/workers/durable_objects/namespaces",
+    "context": "GET /client/v4/accounts/{account_id}/workers/durable_objects/namespaces\nReturns the Durable Object namespaces owned by an account.\nRequired: account_id (path)\nOptional: page (query) — Current page.; per_page (query) — Items per-page."
+  },
+  {
+    "id": "durable-objects-namespace-list-objects",
+    "name": "List Objects in a Durable Object namespace",
+    "description": "List Objects in a Durable Object namespace Returns the Durable Objects in a given Durable Object namespace. GET /client/v4/accounts/{account_id}/workers/durable_objects/namespaces/{id}/objects",
+    "context": "GET /client/v4/accounts/{account_id}/workers/durable_objects/namespaces/{id}/objects\nReturns the Durable Objects in a given Durable Object namespace.\nRequired: account_id (path); id (path)\nOptional: limit (query); cursor (query)"
+  },
+  {
+    "id": "worker-account-settings-create-worker-account-settings",
+    "name": "Configure Workers Account Settings",
+    "description": "Configure Workers Account Settings Configure Workers account settings for an account. PUT /client/v4/accounts/{account_id}/workers/account-settings",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/account-settings\nConfigure Workers account settings for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "worker-account-settings-fetch-worker-account-settings",
+    "name": "Fetch Workers Account Settings",
+    "description": "Fetch Workers Account Settings Fetches Workers account settings for an account. GET /client/v4/accounts/{account_id}/workers/account-settings",
+    "context": "GET /client/v4/accounts/{account_id}/workers/account-settings\nFetches Workers account settings for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "worker-assets-upload",
+    "name": "Upload Worker Assets",
+    "description": "Upload Worker Assets Upload Worker assets ahead of creating a Worker version. POST /client/v4/accounts/{account_id}/workers/assets/upload",
+    "context": "POST /client/v4/accounts/{account_id}/workers/assets/upload\nUpload Worker assets ahead of creating a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.\nRequired: account_id (path); base64 (query); body (body)"
+  },
+  {
+    "id": "worker-placement-list-regions",
+    "name": "List Workers Smart Placement Regions",
+    "description": "List Workers Smart Placement Regions Returns a list of available placement regions organized by cloud provider. GET /client/v4/accounts/{account_id}/workers/placement/regions",
+    "context": "GET /client/v4/accounts/{account_id}/workers/placement/regions\nReturns a list of available placement regions organized by cloud provider. These regions can be used to configure Smart Placement for Workers.\nRequired: account_id (path)"
+  },
+  {
+    "id": "worker-script-search-workers",
+    "name": "Search Worker Scripts",
+    "description": "Search Worker Scripts Search for Worker scripts in an account. GET /client/v4/accounts/{account_id}/workers/scripts-search",
+    "context": "GET /client/v4/accounts/{account_id}/workers/scripts-search\nSearch for Worker scripts in an account.\nRequired: account_id (path)\nOptional: name (query); id (query); order_by (query); page (query) — Current page.; per_page (query) — Items per page."
+  }
+]

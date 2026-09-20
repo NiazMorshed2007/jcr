@@ -1,0 +1,38 @@
+[
+  {
+    "id": "GetEntitlementsActiveEntitlements",
+    "name": "List all active entitlements",
+    "description": "List all active entitlements Retrieve a list of active entitlements for a customer GET /v1/entitlements/active_entitlements",
+    "context": "GET /v1/entitlements/active_entitlements\nRetrieve a list of active entitlements for a customer\nRequired: customer (query) — The ID of the customer.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetEntitlementsActiveEntitlementsId",
+    "name": "Retrieve an active entitlement",
+    "description": "Retrieve an active entitlement GET /v1/entitlements/active_entitlements/{id}",
+    "context": "GET /v1/entitlements/active_entitlements/{id}\nRetrieve an active entitlement\nRequired: id (path) — The ID of the entitlement.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetEntitlementsFeatures",
+    "name": "List all features",
+    "description": "List all features Retrieve a list of features GET /v1/entitlements/features",
+    "context": "GET /v1/entitlements/features\nRetrieve a list of features\nOptional: archived (query) — If set, filter results to only include features with the given archive status.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; lookup_key (query) — If set, filter results to only include features with the given lookup_key.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetEntitlementsFeaturesId",
+    "name": "Retrieve a feature",
+    "description": "Retrieve a feature Retrieves a feature GET /v1/entitlements/features/{id}",
+    "context": "GET /v1/entitlements/features/{id}\nRetrieves a feature\nRequired: id (path) — The ID of the feature.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostEntitlementsFeatures",
+    "name": "Create a feature",
+    "description": "Create a feature Creates a feature POST /v1/entitlements/features",
+    "context": "POST /v1/entitlements/features\nCreates a feature\nRequired: body (body)"
+  },
+  {
+    "id": "PostEntitlementsFeaturesId",
+    "name": "Updates a feature",
+    "description": "Updates a feature Update a feature’s metadata or permanently deactivate it. POST /v1/entitlements/features/{id}",
+    "context": "POST /v1/entitlements/features/{id}\nUpdate a feature’s metadata or permanently deactivate it.\nRequired: id (path)\nOptional: body (body)"
+  }
+]

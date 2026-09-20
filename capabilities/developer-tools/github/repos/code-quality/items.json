@@ -1,0 +1,26 @@
+[
+  {
+    "id": "code-quality%2Fget-finding",
+    "name": "Get a code quality finding",
+    "description": "Get a code quality finding Gets a single code quality finding. GET /repos/{owner}/{repo}/code-quality/findings/{finding_number}",
+    "context": "GET /repos/{owner}/{repo}/code-quality/findings/{finding_number}\nGets a single code quality finding. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; finding_number (path) — The number that identifies a finding."
+  },
+  {
+    "id": "code-quality%2Fget-setup",
+    "name": "Get a code quality setup configuration",
+    "description": "Get a code quality setup configuration Gets a code quality setup configuration. GET /repos/{owner}/{repo}/code-quality/setup",
+    "context": "GET /repos/{owner}/{repo}/code-quality/setup\nGets a code quality setup configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "code-quality%2Flist-findings-for-repo",
+    "name": "List code quality findings for a repository",
+    "description": "List code quality findings for a repository Lists code quality findings for a repository. GET /repos/{owner}/{repo}/code-quality/findings",
+    "context": "GET /repos/{owner}/{repo}/code-quality/findings\nLists code quality findings for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; direction (query) — The direction to sort the results by.; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; state (query) — If specified, only code quality findings with this state will be returned."
+  },
+  {
+    "id": "code-quality%2Fupdate-setup",
+    "name": "Update a code quality setup configuration",
+    "description": "Update a code quality setup configuration Updates a code quality setup configuration. PATCH /repos/{owner}/{repo}/code-quality/setup",
+    "context": "PATCH /repos/{owner}/{repo}/code-quality/setup\nUpdates a code quality setup configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  }
+]

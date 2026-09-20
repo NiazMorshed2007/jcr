@@ -1,0 +1,128 @@
+[
+  {
+    "id": "batch_exports_backfills_cancel_create",
+    "name": "Cancel a batch export backfill.",
+    "description": "Cancel a batch export backfill. POST /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/{id}/cancel/\nCancel a batch export backfill.\nRequired: batch_export_id (path); id (path) — A UUID string identifying this batch export backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_backfills_create",
+    "name": "Create a new backfill for a BatchExport.",
+    "description": "Create a new backfill for a BatchExport. POST /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/\nCreate a new backfill for a BatchExport.\nRequired: batch_export_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_backfills_list",
+    "name": "ViewSet for BatchExportBackfill models",
+    "description": "ViewSet for BatchExportBackfill models ViewSet for BatchExportBackfill models. GET /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/\nViewSet for BatchExportBackfill models. Allows creating and reading backfills, but not updating or deleting them.\nRequired: batch_export_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: cursor (query) — The pagination cursor value.; ordering (query) — Which field to use when ordering the results."
+  },
+  {
+    "id": "batch_exports_backfills_retrieve",
+    "name": "ViewSet for BatchExportBackfill models",
+    "description": "ViewSet for BatchExportBackfill models ViewSet for BatchExportBackfill models. GET /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/{id}/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{batch_export_id}/backfills/{id}/\nViewSet for BatchExportBackfill models. Allows creating and reading backfills, but not updating or deleting them.\nRequired: batch_export_id (path); id (path) — A UUID string identifying this batch export backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "batch_exports_create",
+    "name": "batch_exports_create",
+    "description": "batch_exports_create POST /api/projects/{project_id}/batch_exports/",
+    "context": "POST /api/projects/{project_id}/batch_exports/\nbatch_exports_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_destroy",
+    "name": "batch_exports_destroy",
+    "description": "batch_exports_destroy DELETE /api/projects/{project_id}/batch_exports/{id}/",
+    "context": "DELETE /api/projects/{project_id}/batch_exports/{id}/\nbatch_exports_destroy\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "batch_exports_list",
+    "name": "batch_exports_list",
+    "description": "batch_exports_list GET /api/projects/{project_id}/batch_exports/",
+    "context": "GET /api/projects/{project_id}/batch_exports/\nbatch_exports_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "batch_exports_logs_retrieve",
+    "name": "batch_exports_logs_retrieve",
+    "description": "batch_exports_logs_retrieve GET /api/projects/{project_id}/batch_exports/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{id}/logs/\nbatch_exports_logs_retrieve\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "batch_exports_partial_update",
+    "name": "batch_exports_partial_update",
+    "description": "batch_exports_partial_update PATCH /api/projects/{project_id}/batch_exports/{id}/",
+    "context": "PATCH /api/projects/{project_id}/batch_exports/{id}/\nbatch_exports_partial_update\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "batch_exports_pause_create",
+    "name": "Pause a BatchExport.",
+    "description": "Pause a BatchExport. POST /api/projects/{project_id}/batch_exports/{id}/pause/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{id}/pause/\nPause a BatchExport.\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_retrieve",
+    "name": "batch_exports_retrieve",
+    "description": "batch_exports_retrieve GET /api/projects/{project_id}/batch_exports/{id}/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{id}/\nbatch_exports_retrieve\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "batch_exports_run_test_step_create",
+    "name": "batch_exports_run_test_step_create",
+    "description": "batch_exports_run_test_step_create POST /api/projects/{project_id}/batch_exports/{id}/run_test_step/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{id}/run_test_step/\nbatch_exports_run_test_step_create\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_run_test_step_new_create",
+    "name": "batch_exports_run_test_step_new_create",
+    "description": "batch_exports_run_test_step_new_create POST /api/projects/{project_id}/batch_exports/run_test_step_new/",
+    "context": "POST /api/projects/{project_id}/batch_exports/run_test_step_new/\nbatch_exports_run_test_step_new_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_runs_cancel_create",
+    "name": "Cancel a batch export run.",
+    "description": "Cancel a batch export run. POST /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/cancel/\nCancel a batch export run.\nRequired: batch_export_id (path); id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_runs_list",
+    "name": "batch_exports_runs_list",
+    "description": "batch_exports_runs_list GET /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/\nbatch_exports_runs_list\nRequired: batch_export_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return runs created at or after this point. Accepts an ISO-8601 datetime or a relative value like `-7d`. Defaults to `-7d`. Ignored when ordering by `data_interval_start`.; before (query) — Only return runs created at or before this point. Accepts an ISO-8601 datetime or a relative value like `-1d`. Defaults to now. Ignored when ordering by `data_interval_start`.; cursor (query) — The pagination cursor value.; end (query) — Only return runs whose data interval ends at or before this point. Accepts an ISO-8601 datetime or a relative value like `-1d`. Defaults to now. Only applies when ordering by `data_interval_start`.; ordering (query) — Which field to use when ordering the results.; start (query) — Only return runs whose data interval starts at or after this point. Accepts an ISO-8601 datetime or a relative value like `-7d`. Defaults to `-7d`. Only applies when ordering by `data_interval_start`.; status (query) — Only return runs in these statuses. Repeat the parameter to pass more than one status."
+  },
+  {
+    "id": "batch_exports_runs_logs_retrieve",
+    "name": "batch_exports_runs_logs_retrieve",
+    "description": "batch_exports_runs_logs_retrieve GET /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/logs/\nbatch_exports_runs_logs_retrieve\nRequired: batch_export_id (path); id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "batch_exports_runs_retrieve",
+    "name": "batch_exports_runs_retrieve",
+    "description": "batch_exports_runs_retrieve GET /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/",
+    "context": "GET /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/\nbatch_exports_runs_retrieve\nRequired: batch_export_id (path); id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "batch_exports_runs_retry_create",
+    "name": "Retry a batch export run",
+    "description": "Retry a batch export run Retry a batch export run. POST /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/retry/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{batch_export_id}/runs/{id}/retry/\nRetry a batch export run. We use the same underlying mechanism as when backfilling a batch export, as retrying a run is the same as backfilling one run.\nRequired: batch_export_id (path); id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_test_retrieve",
+    "name": "batch_exports_test_retrieve",
+    "description": "batch_exports_test_retrieve GET /api/projects/{project_id}/batch_exports/test/",
+    "context": "GET /api/projects/{project_id}/batch_exports/test/\nbatch_exports_test_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "batch_exports_unpause_create",
+    "name": "Unpause a BatchExport.",
+    "description": "Unpause a BatchExport. POST /api/projects/{project_id}/batch_exports/{id}/unpause/",
+    "context": "POST /api/projects/{project_id}/batch_exports/{id}/unpause/\nUnpause a BatchExport.\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "batch_exports_update",
+    "name": "batch_exports_update",
+    "description": "batch_exports_update PUT /api/projects/{project_id}/batch_exports/{id}/",
+    "context": "PUT /api/projects/{project_id}/batch_exports/{id}/\nbatch_exports_update\nRequired: id (path) — A UUID string identifying this batch export.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

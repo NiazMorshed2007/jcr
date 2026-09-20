@@ -1,0 +1,26 @@
+[
+  {
+    "id": "createWebhook",
+    "name": "Creates a webhook",
+    "description": "Creates a webhook POST /v1/webhooks",
+    "context": "POST /v1/webhooks\nCreates a webhook\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteWebhook",
+    "name": "Deletes a webhook",
+    "description": "Deletes a webhook DELETE /v1/webhooks/{id}",
+    "context": "DELETE /v1/webhooks/{id}\nDeletes a webhook\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getWebhook",
+    "name": "Get a webhook",
+    "description": "Get a webhook GET /v1/webhooks/{id}",
+    "context": "GET /v1/webhooks/{id}\nGet a webhook\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getWebhooks",
+    "name": "Get a list of webhooks",
+    "description": "Get a list of webhooks GET /v1/webhooks",
+    "context": "GET /v1/webhooks\nGet a list of webhooks\nOptional: projectId (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

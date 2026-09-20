@@ -1,0 +1,92 @@
+[
+  {
+    "id": "zero-trust-accounts-get-connectivity-settings",
+    "name": "Get Zero Trust Connectivity Settings",
+    "description": "Get Zero Trust Connectivity Settings Gets the Zero Trust Connectivity Settings for the given account. GET /client/v4/accounts/{account_id}/zerotrust/connectivity_settings",
+    "context": "GET /client/v4/accounts/{account_id}/zerotrust/connectivity_settings\nGets the Zero Trust Connectivity Settings for the given account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "zero-trust-accounts-patch-connectivity-settings",
+    "name": "Updates the Zero Trust Connectivity Settings",
+    "description": "Updates the Zero Trust Connectivity Settings Updates the Zero Trust Connectivity Settings for the given account. PATCH /client/v4/accounts/{account_id}/zerotrust/connectivity_settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/zerotrust/connectivity_settings\nUpdates the Zero Trust Connectivity Settings for the given account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-route-hostname-create",
+    "name": "Create hostname route",
+    "description": "Create hostname route Create a hostname route. POST /client/v4/accounts/{account_id}/zerotrust/routes/hostname",
+    "context": "POST /client/v4/accounts/{account_id}/zerotrust/routes/hostname\nCreate a hostname route.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-route-hostname-delete",
+    "name": "Delete hostname route",
+    "description": "Delete hostname route Delete a hostname route. DELETE /client/v4/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}\nDelete a hostname route.\nRequired: account_id (path); hostname_route_id (path)"
+  },
+  {
+    "id": "zero-trust-networks-route-hostname-get",
+    "name": "Get hostname route",
+    "description": "Get hostname route Get a hostname route. GET /client/v4/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}",
+    "context": "GET /client/v4/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}\nGet a hostname route.\nRequired: account_id (path); hostname_route_id (path)"
+  },
+  {
+    "id": "zero-trust-networks-route-hostname-list",
+    "name": "List hostname routes",
+    "description": "List hostname routes Lists and filters hostname routes in an account. GET /client/v4/accounts/{account_id}/zerotrust/routes/hostname",
+    "context": "GET /client/v4/accounts/{account_id}/zerotrust/routes/hostname\nLists and filters hostname routes in an account.\nRequired: account_id (path)\nOptional: id (query); hostname (query) — If set, only list hostname routes that contain a substring of the given value, the filter is case-insensitive.; tunnel_id (query) — If set, only list hostname routes that point to a specific tunnel.; comment (query); existed_at (query); is_deleted (query); per_page (query); page (query)"
+  },
+  {
+    "id": "zero-trust-networks-route-hostname-update",
+    "name": "Update hostname route",
+    "description": "Update hostname route Updates a hostname route. PATCH /client/v4/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/zerotrust/routes/hostname/{hostname_route_id}\nUpdates a hostname route.\nRequired: account_id (path); hostname_route_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-create-warp",
+    "name": "Create WARP IP subnet",
+    "description": "Create WARP IP subnet Create a WARP IP assignment subnet. POST /client/v4/accounts/{account_id}/zerotrust/subnets/warp",
+    "context": "POST /client/v4/accounts/{account_id}/zerotrust/subnets/warp\nCreate a WARP IP assignment subnet. Currently, only IPv4 subnets can be created. **Network constraints:** - The network must be within one of the following private IP ranges: - `10.0.0.0/8` (RFC 1918) - `172.16.0.0/12` (RFC 1918) - `192.168.0.0/16` (RFC 1918) - `100.64.0.0/10` (RFC 6598 - CGNAT) - The subnet must have a prefix length of `/24` or larger (e.g., `/16`, `/20`, `/24` are valid; `/25`, `/28` are not)\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-delete-warp",
+    "name": "Delete WARP IP subnet",
+    "description": "Delete WARP IP subnet Delete a WARP IP assignment subnet. DELETE /client/v4/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}\nDelete a WARP IP assignment subnet. This operation is idempotent - deleting an already-deleted or non-existent subnet will return success with a null result.\nRequired: account_id (path); subnet_id (path)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-get-initial-resolved-ip",
+    "name": "Get Initial Resolved IP Subnet",
+    "description": "Get Initial Resolved IP Subnet Returns the account's default Initial Resolved IP Subnet for the given address family. GET /client/v4/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}",
+    "context": "GET /client/v4/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}\nReturns the account's default Initial Resolved IP Subnet for the given address family.\nRequired: account_id (path); address_family (path)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-get-warp",
+    "name": "Get WARP IP subnet",
+    "description": "Get WARP IP subnet Get a WARP IP assignment subnet. GET /client/v4/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}",
+    "context": "GET /client/v4/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}\nGet a WARP IP assignment subnet.\nRequired: account_id (path); subnet_id (path)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-update-cloudflare-source",
+    "name": "Update Cloudflare Source Subnet",
+    "description": "Update Cloudflare Source Subnet Updates the Cloudflare Source subnet of the given address family PATCH /client/v4/accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}",
+    "context": "PATCH /client/v4/accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}\nUpdates the Cloudflare Source subnet of the given address family\nRequired: account_id (path); address_family (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-update-initial-resolved-ip",
+    "name": "Update Initial Resolved IP Subnet",
+    "description": "Update Initial Resolved IP Subnet Updates the CIDR for the account's default Initial Resolved IP Subnet of the given address family. PUT /client/v4/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}",
+    "context": "PUT /client/v4/accounts/{account_id}/zerotrust/subnets/initial_resolved_ip/{address_family}\nUpdates the CIDR for the account's default Initial Resolved IP Subnet of the given address family. The new CIDR must not conflict with existing private routes in the account.\nRequired: account_id (path); address_family (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-subnet-update-warp",
+    "name": "Update WARP IP subnet",
+    "description": "Update WARP IP subnet Updates a WARP IP assignment subnet. PATCH /client/v4/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}\nUpdates a WARP IP assignment subnet. **Update constraints:** - The `network` field cannot be modified for WARP subnets. Only `name`, `comment`, and `is_default_network` can be updated. - IPv6 subnets cannot be updated\nRequired: account_id (path); subnet_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-networks-subnets-list",
+    "name": "List Subnets",
+    "description": "List Subnets Lists and filters subnets in an account. GET /client/v4/accounts/{account_id}/zerotrust/subnets",
+    "context": "GET /client/v4/accounts/{account_id}/zerotrust/subnets\nLists and filters subnets in an account.\nRequired: account_id (path)\nOptional: name (query) — If set, only list subnets with the given name; comment (query); network (query); existed_at (query); address_family (query) — If set, only include subnets in the given address family - `v4` or `v6`; is_default_network (query); is_deleted (query); sort_order (query); subnet_types (query); per_page (query); page (query)"
+  }
+]

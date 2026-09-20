@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_webhooks_webhook_id",
+    "name": "Remove an existing webhook",
+    "description": "Remove an existing webhook DELETE /webhooks/{webhook_id}",
+    "context": "DELETE /webhooks/{webhook_id}\nRemove an existing webhook\nRequired: webhook_id (path) — The Webhook ID."
+  },
+  {
+    "id": "get_webhooks",
+    "name": "Retrieve a list of webhooks",
+    "description": "Retrieve a list of webhooks GET /webhooks",
+    "context": "GET /webhooks\nRetrieve a list of webhooks\nOptional: limit (query) — Maximum number of webhooks to return.; after (query) — Pagination cursor to fetch results after this webhook ID. Cannot be used with 'before'.; before (query) — Pagination cursor to fetch results before this webhook ID. Cannot be used with 'after'."
+  },
+  {
+    "id": "get_webhooks_webhook_id",
+    "name": "Retrieve a single webhook",
+    "description": "Retrieve a single webhook GET /webhooks/{webhook_id}",
+    "context": "GET /webhooks/{webhook_id}\nRetrieve a single webhook\nRequired: webhook_id (path) — The Webhook ID."
+  },
+  {
+    "id": "patch_webhooks_webhook_id",
+    "name": "Update an existing webhook",
+    "description": "Update an existing webhook PATCH /webhooks/{webhook_id}",
+    "context": "PATCH /webhooks/{webhook_id}\nUpdate an existing webhook\nRequired: webhook_id (path) — The Webhook ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_webhooks",
+    "name": "Create a new webhook",
+    "description": "Create a new webhook POST /webhooks",
+    "context": "POST /webhooks\nCreate a new webhook\nOptional: body (body)"
+  }
+]

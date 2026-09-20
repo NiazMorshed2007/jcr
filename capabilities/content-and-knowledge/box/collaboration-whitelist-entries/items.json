@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_collaboration_whitelist_entries_id",
+    "name": "Remove domain from list of allowed collaboration domains",
+    "description": "Remove domain from list of allowed collaboration domains Removes a domain from the list of domains that have been deemed safe to create collaborations for within the current enterprise. DELETE /2.0/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}",
+    "context": "DELETE /2.0/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}\nRemoves a domain from the list of domains that have been deemed safe to create collaborations for within the current enterprise.\nRequired: collaboration_whitelist_entry_id (path) — The ID of the entry in the list."
+  },
+  {
+    "id": "get_collaboration_whitelist_entries",
+    "name": "List allowed collaboration domains",
+    "description": "List allowed collaboration domains Returns the list domains that have been deemed safe to create collaborations for within the current enterprise. GET /2.0/collaboration_whitelist_entries",
+    "context": "GET /2.0/collaboration_whitelist_entries\nReturns the list domains that have been deemed safe to create collaborations for within the current enterprise.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_collaboration_whitelist_entries_id",
+    "name": "Get allowed collaboration domain",
+    "description": "Get allowed collaboration domain Returns a domain that has been deemed safe to create collaborations for within the current enterprise. GET /2.0/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}",
+    "context": "GET /2.0/collaboration_whitelist_entries/{collaboration_whitelist_entry_id}\nReturns a domain that has been deemed safe to create collaborations for within the current enterprise.\nRequired: collaboration_whitelist_entry_id (path) — The ID of the entry in the list."
+  },
+  {
+    "id": "post_collaboration_whitelist_entries",
+    "name": "Add domain to list of allowed collaboration domains",
+    "description": "Add domain to list of allowed collaboration domains Creates a new entry in the list of allowed domains to allow collaboration for. POST /2.0/collaboration_whitelist_entries",
+    "context": "POST /2.0/collaboration_whitelist_entries\nCreates a new entry in the list of allowed domains to allow collaboration for.\nOptional: body (body)"
+  }
+]

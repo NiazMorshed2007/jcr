@@ -1,0 +1,86 @@
+[
+  {
+    "id": "createAttachmentProperty",
+    "name": "Create content property for attachment",
+    "description": "Create content property for attachment Creates a new content property for an attachment. POST /wiki/api/v2/attachments/{attachment-id}/properties",
+    "context": "POST /wiki/api/v2/attachments/{attachment-id}/properties\nCreates a new content property for an attachment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the attachment.\nRequired: attachment-id (path) — The ID of the attachment to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deleteAttachment",
+    "name": "Delete attachment",
+    "description": "Delete attachment Delete an attachment by id. DELETE /wiki/api/v2/attachments/{id}",
+    "context": "DELETE /wiki/api/v2/attachments/{id}\nDelete an attachment by id. Deleting an attachment moves the attachment to the trash, where it can be restored later. To permanently delete an attachment (or \"purge\" it), the endpoint must be called on a **trashed** attachment with the following param `purge=true`. **[Permissions](https://support.atlassian.com/confluence-cloud/docs/what-are-confluences-roles/) required**: Permission to view the container of the attachment. Permission to delete attachments in the space. [`manage/content`](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) permission for the space (if attempting to purge). **Note:** To find the display name for each permission ID, call the [Get available space permissions](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) API.\nRequired: id (path) — The ID of the attachment to be deleted.\nOptional: purge (query) — If attempting to purge the attachment."
+  },
+  {
+    "id": "deleteAttachmentPropertyById",
+    "name": "Delete content property for attachment by id",
+    "description": "Delete content property for attachment by id Deletes a content property for an attachment by its id. DELETE /wiki/api/v2/attachments/{attachment-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/attachments/{attachment-id}/properties/{property-id}\nDeletes a content property for an attachment by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to attachment the page.\nRequired: attachment-id (path) — The ID of the attachment the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getAttachmentById",
+    "name": "Get attachment by id",
+    "description": "Get attachment by id Returns a specific attachment. GET /wiki/api/v2/attachments/{id}",
+    "context": "GET /wiki/api/v2/attachments/{id}\nReturns a specific attachment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment's container.\nRequired: id (path) — The ID of the attachment to be returned. If you don't know the attachment's ID, use Get attachments for page/blogpost/custom content.\nOptional: version (query) — Allows you to retrieve a previously published version. Specify the previous version's number to retrieve its details.; include-labels (query) — Includes labels associated with this attachment in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes content properties associated with this attachment in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-operations (query) — Includes operations associated with this attachment in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-versions (query) — Includes versions associated with this attachment in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-version (query) — Includes the current version associated with this attachment in the response. By default this is included and can be omitted by setting the value to `false`.; include-collaborators (query) — Includes collaborators on the attachment."
+  },
+  {
+    "id": "getAttachmentComments",
+    "name": "Get attachment comments",
+    "description": "Get attachment comments Returns the comments of the specific attachment. GET /wiki/api/v2/attachments/{id}/footer-comments",
+    "context": "GET /wiki/api/v2/attachments/{id}/footer-comments\nReturns the comments of the specific attachment. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment and its corresponding containers.\nRequired: id (path) — The ID of the attachment for which comments should be returned.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field.; version (query) — Version number of the attachment to retrieve comments for. If no version provided, retrieves comments for the latest version."
+  },
+  {
+    "id": "getAttachmentContentProperties",
+    "name": "Get content properties for attachment",
+    "description": "Get content properties for attachment Retrieves all Content Properties tied to a specified attachment. GET /wiki/api/v2/attachments/{attachment-id}/properties",
+    "context": "GET /wiki/api/v2/attachments/{attachment-id}/properties\nRetrieves all Content Properties tied to a specified attachment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment.\nRequired: attachment-id (path) — The ID of the attachment for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getAttachmentContentPropertiesById",
+    "name": "Get content property for attachment by id",
+    "description": "Get content property for attachment by id Retrieves a specific Content Property by ID that is attached to a specified attachment. GET /wiki/api/v2/attachments/{attachment-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/attachments/{attachment-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified attachment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment.\nRequired: attachment-id (path) — The ID of the attachment for which content properties should be returned.; property-id (path) — The ID of the content property to be returned"
+  },
+  {
+    "id": "getAttachmentLabels",
+    "name": "Get labels for attachment",
+    "description": "Get labels for attachment Returns the labels of specific attachment. GET /wiki/api/v2/attachments/{id}/labels",
+    "context": "GET /wiki/api/v2/attachments/{id}/labels\nReturns the labels of specific attachment. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the parent content of the attachment and its corresponding space. Only labels that the user has permission to view will be returned.\nRequired: id (path) — The ID of the attachment for which labels should be returned.\nOptional: prefix (query) — Filter the results to labels based on their prefix.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of labels per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getAttachmentOperations",
+    "name": "Get permitted operations for attachment",
+    "description": "Get permitted operations for attachment Returns the permitted operations on specific attachment. GET /wiki/api/v2/attachments/{id}/operations",
+    "context": "GET /wiki/api/v2/attachments/{id}/operations\nReturns the permitted operations on specific attachment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the parent content of the attachment and its corresponding space.\nRequired: id (path) — The ID of the attachment for which operations should be returned."
+  },
+  {
+    "id": "getAttachments",
+    "name": "Get attachments",
+    "description": "Get attachments Returns all attachments. GET /wiki/api/v2/attachments",
+    "context": "GET /wiki/api/v2/attachments\nReturns all attachments. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the container of the attachment.\nOptional: sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; status (query) — Filter the results to attachments based on their status. By default, `current` and `archived` are used.; mediaType (query) — Filters on the mediaType of attachments. Only one may be specified.; filename (query) — Filters on the file-name of attachments. Only one may be specified.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getAttachmentThumbnailById",
+    "name": "Download attachment thumbnail by id",
+    "description": "Download attachment thumbnail by id Redirects the client to a URL that serves an attachment thumbnail's binary data. GET /wiki/api/v2/attachments/{id}/thumbnail/download",
+    "context": "GET /wiki/api/v2/attachments/{id}/thumbnail/download\nRedirects the client to a URL that serves an attachment thumbnail's binary data. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment's container.\nRequired: id (path) — The ID of the attachment to be returned. If you don't know the attachment's ID, use Get attachments for page/blogpost/custom content.\nOptional: version (query) — Allows you to retrieve a previously published version. Specify the previous version's number to retrieve its details.; height (query) — Allows you to define the thumbnail height.; width (query) — Allows you to define the thumbnail width."
+  },
+  {
+    "id": "getAttachmentVersionDetails",
+    "name": "Get version details for attachment version",
+    "description": "Get version details for attachment version Retrieves version details for the specified attachment and version number. GET /wiki/api/v2/attachments/{attachment-id}/versions/{version-number}",
+    "context": "GET /wiki/api/v2/attachments/{attachment-id}/versions/{version-number}\nRetrieves version details for the specified attachment and version number. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment.\nRequired: attachment-id (path) — The ID of the attachment for which version details should be returned.; version-number (path) — The version number of the attachment to be returned."
+  },
+  {
+    "id": "getAttachmentVersions",
+    "name": "Get attachment versions",
+    "description": "Get attachment versions Returns the versions of specific attachment. GET /wiki/api/v2/attachments/{id}/versions",
+    "context": "GET /wiki/api/v2/attachments/{id}/versions\nReturns the versions of specific attachment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the attachment and its corresponding space.\nRequired: id (path) — The ID of the attachment to be queried for its versions. If you don't know the attachment ID, use Get attachments and filter the results.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of versions per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "updateAttachmentPropertyById",
+    "name": "Update content property for attachment by id",
+    "description": "Update content property for attachment by id Update a content property for attachment by its id. PUT /wiki/api/v2/attachments/{attachment-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/attachments/{attachment-id}/properties/{property-id}\nUpdate a content property for attachment by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the attachment.\nRequired: attachment-id (path) — The ID of the attachment the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  }
+]

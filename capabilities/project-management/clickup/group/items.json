@@ -1,0 +1,20 @@
+[
+  {
+    "id": "DeleteTeam",
+    "name": "Delete Group",
+    "description": "Delete Group This endpoint is used to remove a [User Group](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups) from your Workspace.\\ \\ In our API documentation, `team_id` refers to the id of a Workspace, and `group_id` refers to the id of a user group. DELETE /api/v2/group/{group_id}",
+    "context": "DELETE /api/v2/group/{group_id}\nThis endpoint is used to remove a [User Group](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups) from your Workspace.\\ \\ In our API documentation, `team_id` refers to the id of a Workspace, and `group_id` refers to the id of a user group.\nRequired: group_id (path) — User Group ID"
+  },
+  {
+    "id": "GetTeams1",
+    "name": "Get Groups",
+    "description": "Get Groups This endpoint is used to view [User Groups](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups) in your Workspace.\\ \\ In our API documentation, `team_id` refers to the ID of a Workspace, and `group_id` refers to the ID of a User Group. GET /api/v2/group",
+    "context": "GET /api/v2/group\nThis endpoint is used to view [User Groups](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups) in your Workspace.\\ \\ In our API documentation, `team_id` refers to the ID of a Workspace, and `group_id` refers to the ID of a User Group.\nRequired: team_id (query) — Workspace ID. **Note**: For this endpoint, `team_id`` is a required query parameter.\nOptional: group_ids (query) — Enter one or more User Group IDs to retrieve information about specific User Group(s).\\ \\ For example: \\ \\ `?team_id=12456&group_ids=ABC12345&group_ids=DEF98765`"
+  },
+  {
+    "id": "UpdateTeam",
+    "name": "Update Group",
+    "description": "Update Group This endpoint is used to manage [User Groups](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups), which are groups of users within your Workspace.\\ \\ In our API, `team_id` in the path refers to the Workspace ID, and `group_id` refers to the ID of a User Group.\\ \\ **Note:** Addin…",
+    "context": "PUT /api/v2/group/{group_id}\nThis endpoint is used to manage [User Groups](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups), which are groups of users within your Workspace.\\ \\ In our API, `team_id` in the path refers to the Workspace ID, and `group_id` refers to the ID of a User Group.\\ \\ **Note:** Adding a guest with view-only permissions to a User Group automatically converts them to a paid guest.\\ \\ If you don't have any paid guest seats available, a new member seat is automatically added to increase the number of paid guest seats.\\ \\ This incurs a prorated charge based on your billing cycle.\nRequired: group_id (path) — User Group ID; body (body) — The group handle can be updated, which is used to @mention a User Group within the Workspace.\\ \\ Modify Group members by using the \"add\" and \"rem\" parameters with an array of user IDs to include or exclude members."
+  }
+]

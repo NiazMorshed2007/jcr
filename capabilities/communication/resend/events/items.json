@@ -1,0 +1,38 @@
+[
+  {
+    "id": "delete_events_identifier",
+    "name": "Delete an event",
+    "description": "Delete an event DELETE /events/{identifier}",
+    "context": "DELETE /events/{identifier}\nDelete an event\nRequired: identifier (path) — The event ID (UUID) or event name."
+  },
+  {
+    "id": "get_events",
+    "name": "Retrieve a list of events",
+    "description": "Retrieve a list of events GET /events",
+    "context": "GET /events\nRetrieve a list of events\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_events_identifier",
+    "name": "Retrieve a single event",
+    "description": "Retrieve a single event GET /events/{identifier}",
+    "context": "GET /events/{identifier}\nRetrieve a single event\nRequired: identifier (path) — The event ID (UUID) or event name."
+  },
+  {
+    "id": "patch_events_identifier",
+    "name": "Update an event",
+    "description": "Update an event PATCH /events/{identifier}",
+    "context": "PATCH /events/{identifier}\nUpdate an event\nRequired: identifier (path) — The event ID (UUID) or event name.\nOptional: body (body)"
+  },
+  {
+    "id": "post_events",
+    "name": "Create an event",
+    "description": "Create an event POST /events",
+    "context": "POST /events\nCreate an event\nOptional: body (body)"
+  },
+  {
+    "id": "post_events_send",
+    "name": "Send an event",
+    "description": "Send an event POST /events/send",
+    "context": "POST /events/send\nSend an event\nOptional: body (body)"
+  }
+]

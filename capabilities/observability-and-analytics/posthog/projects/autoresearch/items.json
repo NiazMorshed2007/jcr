@@ -1,0 +1,92 @@
+[
+  {
+    "id": "autoresearch_create",
+    "name": "Manage autoresearch prediction pipelines",
+    "description": "Manage autoresearch prediction pipelines Manage autoresearch prediction pipelines. POST /api/projects/{project_id}/autoresearch/",
+    "context": "POST /api/projects/{project_id}/autoresearch/\nManage autoresearch prediction pipelines. A pipeline defines a target event, population, and horizon. The autoresearch training loop finds the best predictive recipe; the inference workflow scores users daily and emits autoresearch_prediction events.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "autoresearch_destroy",
+    "name": "Manage autoresearch prediction pipelines",
+    "description": "Manage autoresearch prediction pipelines Manage autoresearch prediction pipelines. DELETE /api/projects/{project_id}/autoresearch/{id}/",
+    "context": "DELETE /api/projects/{project_id}/autoresearch/{id}/\nManage autoresearch prediction pipelines. A pipeline defines a target event, population, and horizon. The autoresearch training loop finds the best predictive recipe; the inference workflow scores users daily and emits autoresearch_prediction events.\nRequired: id (path) — A UUID string identifying this autoresearch pipeline.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "autoresearch_list",
+    "name": "Manage autoresearch prediction pipelines",
+    "description": "Manage autoresearch prediction pipelines Manage autoresearch prediction pipelines. GET /api/projects/{project_id}/autoresearch/",
+    "context": "GET /api/projects/{project_id}/autoresearch/\nManage autoresearch prediction pipelines. A pipeline defines a target event, population, and horizon. The autoresearch training loop finds the best predictive recipe; the inference workflow scores users daily and emits autoresearch_prediction events.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "autoresearch_models_list",
+    "name": "List and retrieve champion/challenger models for a pipeline",
+    "description": "List and retrieve champion/challenger models for a pipeline List and retrieve champion/challenger models for a pipeline. GET /api/projects/{project_id}/autoresearch/{pipeline_id}/models/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{pipeline_id}/models/\nList and retrieve champion/challenger models for a pipeline. Models are the persisted artifacts produced by training runs. Each model holds a portable recipe (feature SQL, transforms, model class, params) that the daily inference workflow compiles to score users.\nRequired: pipeline_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "autoresearch_models_retrieve",
+    "name": "List and retrieve champion/challenger models for a pipeline",
+    "description": "List and retrieve champion/challenger models for a pipeline List and retrieve champion/challenger models for a pipeline. GET /api/projects/{project_id}/autoresearch/{pipeline_id}/models/{id}/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{pipeline_id}/models/{id}/\nList and retrieve champion/challenger models for a pipeline. Models are the persisted artifacts produced by training runs. Each model holds a portable recipe (feature SQL, transforms, model class, params) that the daily inference workflow compiles to score users.\nRequired: id (path) — A UUID string identifying this autoresearch model.; pipeline_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "autoresearch_partial_update",
+    "name": "Manage autoresearch prediction pipelines",
+    "description": "Manage autoresearch prediction pipelines Manage autoresearch prediction pipelines. PATCH /api/projects/{project_id}/autoresearch/{id}/",
+    "context": "PATCH /api/projects/{project_id}/autoresearch/{id}/\nManage autoresearch prediction pipelines. A pipeline defines a target event, population, and horizon. The autoresearch training loop finds the best predictive recipe; the inference workflow scores users daily and emits autoresearch_prediction events.\nRequired: id (path) — A UUID string identifying this autoresearch pipeline.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "autoresearch_resolve_template_create",
+    "name": "Resolve a template",
+    "description": "Resolve a template Resolve a template key and optional overrides into a concrete pipeline config. POST /api/projects/{project_id}/autoresearch/resolve-template/",
+    "context": "POST /api/projects/{project_id}/autoresearch/resolve-template/\nResolve a template key and optional overrides into a concrete pipeline config. For activity-based templates ('likely_active_soon', 'at_risk_of_inactivity', 'return_after_first_use'), the target event is auto-resolved from your event schema — check resolved_activity_event and activity_event_alternatives, then override if needed. For 'feature_adoption' and 'repeat_key_behavior', supply target_event. After resolving, call autoresearch-validate-create to check volume and warnings, then autoresearch-create to create the pipeline.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "autoresearch_retrieve",
+    "name": "Manage autoresearch prediction pipelines",
+    "description": "Manage autoresearch prediction pipelines Manage autoresearch prediction pipelines. GET /api/projects/{project_id}/autoresearch/{id}/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{id}/\nManage autoresearch prediction pipelines. A pipeline defines a target event, population, and horizon. The autoresearch training loop finds the best predictive recipe; the inference workflow scores users daily and emits autoresearch_prediction events.\nRequired: id (path) — A UUID string identifying this autoresearch pipeline.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "autoresearch_runs_list",
+    "name": "List and retrieve inference and validation runs for a pipeline.",
+    "description": "List and retrieve inference and validation runs for a pipeline. GET /api/projects/{project_id}/autoresearch/{pipeline_id}/runs/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{pipeline_id}/runs/\nList and retrieve inference and validation runs for a pipeline.\nRequired: pipeline_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "autoresearch_runs_retrieve",
+    "name": "List and retrieve inference and validation runs for a pipeline.",
+    "description": "List and retrieve inference and validation runs for a pipeline. GET /api/projects/{project_id}/autoresearch/{pipeline_id}/runs/{id}/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{pipeline_id}/runs/{id}/\nList and retrieve inference and validation runs for a pipeline.\nRequired: id (path) — A UUID string identifying this autoresearch run.; pipeline_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "autoresearch_templates_list",
+    "name": "List available templates",
+    "description": "List available templates Return all built-in autoresearch prediction templates. GET /api/projects/{project_id}/autoresearch/templates/",
+    "context": "GET /api/projects/{project_id}/autoresearch/templates/\nReturn all built-in autoresearch prediction templates. Each entry describes what the template predicts, its default horizon and prediction mode, and whether it requires you to supply a target_event. After choosing a template, call autoresearch-resolve-template-create to get a fully resolved pipeline config ready to pass to autoresearch-create.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "autoresearch_training_runs_list",
+    "name": "List and retrieve training runs for a pipeline",
+    "description": "List and retrieve training runs for a pipeline List and retrieve training runs for a pipeline. GET /api/projects/{project_id}/autoresearch/{pipeline_id}/training_runs/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{pipeline_id}/training_runs/\nList and retrieve training runs for a pipeline. A training run records the agent's search for a model: each iteration's recipe and holdout score, and the summary of the run once it completes.\nRequired: pipeline_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "autoresearch_training_runs_retrieve",
+    "name": "List and retrieve training runs for a pipeline",
+    "description": "List and retrieve training runs for a pipeline List and retrieve training runs for a pipeline. GET /api/projects/{project_id}/autoresearch/{pipeline_id}/training_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/autoresearch/{pipeline_id}/training_runs/{id}/\nList and retrieve training runs for a pipeline. A training run records the agent's search for a model: each iteration's recipe and holdout score, and the summary of the run once it completes.\nRequired: id (path) — A UUID string identifying this autoresearch training run.; pipeline_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "autoresearch_update",
+    "name": "Manage autoresearch prediction pipelines",
+    "description": "Manage autoresearch prediction pipelines Manage autoresearch prediction pipelines. PUT /api/projects/{project_id}/autoresearch/{id}/",
+    "context": "PUT /api/projects/{project_id}/autoresearch/{id}/\nManage autoresearch prediction pipelines. A pipeline defines a target event, population, and horizon. The autoresearch training loop finds the best predictive recipe; the inference workflow scores users daily and emits autoresearch_prediction events.\nRequired: id (path) — A UUID string identifying this autoresearch pipeline.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "autoresearch_validate_create",
+    "name": "Validate a pipeline definition",
+    "description": "Validate a pipeline definition Validate a proposed pipeline's target event and population before creating it. POST /api/projects/{project_id}/autoresearch/validate/",
+    "context": "POST /api/projects/{project_id}/autoresearch/validate/\nValidate a proposed pipeline's target event and population before creating it. Returns volume estimates, base rate, and any warnings. Creation does not enforce the result: 'population_too_large' and 'horizon_exceeds_lookback' mean a training run would fail, and the other 'error' codes mean the data is too thin for a reliable model. Call this before autoresearch-create.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

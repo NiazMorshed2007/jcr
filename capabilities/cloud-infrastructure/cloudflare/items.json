@@ -1,0 +1,62 @@
+[
+  {
+    "id": "billing-get-rate-plan",
+    "name": "Get Rate Plan by Public Key",
+    "description": "Get Rate Plan by Public Key Gets a rate plan's details by its public key (e.g., 'teams_free', 'cf_pro_20_20'). GET /client/v4/billing/rate_plans/{public_key}",
+    "context": "GET /client/v4/billing/rate_plans/{public_key}\nGets a rate plan's details by its public key (e.g., 'teams_free', 'cf_pro_20_20'). This is a public catalog endpoint, so authentication is not enforced and credentials are accepted but not required.\nRequired: public_key (path) — The public key identifier for the rate plan."
+  },
+  {
+    "id": "billing-validate-address",
+    "name": "Validate Billing Address",
+    "description": "Validate Billing Address Validates a billing address and returns validated address suggestions. POST /client/v4/billing/address-validation",
+    "context": "POST /client/v4/billing/address-validation\nValidates a billing address and returns validated address suggestions. Authentication is not enforced to support pre-signup address validation flows, so credentials are accepted but not required.\nRequired: body (body)"
+  },
+  {
+    "id": "cloudflare-ips-cloudflare-ip-details",
+    "name": "Cloudflare/JD Cloud IP Details",
+    "description": "Cloudflare/JD Cloud IP Details Get IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs. GET /client/v4/ips",
+    "context": "GET /client/v4/ips\nGet IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs.\nOptional: networks (query) — Specified as `jdcloud` to list IPs used by JD Cloud data centers."
+  },
+  {
+    "id": "getLive",
+    "name": "Run liveness checks",
+    "description": "Run liveness checks Return a success message after running liveness checks GET /client/v4/live",
+    "context": "GET /client/v4/live\nReturn a success message after running liveness checks"
+  },
+  {
+    "id": "getReady",
+    "name": "Run readiness checks",
+    "description": "Run readiness checks Return a success message after running readiness checks GET /client/v4/ready",
+    "context": "GET /client/v4/ready\nReturn a success message after running readiness checks"
+  },
+  {
+    "id": "getSignedUrl",
+    "name": "Internal route for testing signed URLs",
+    "description": "Internal route for testing signed URLs Internal route for testing signed URLs. GET /client/v4/signed-url",
+    "context": "GET /client/v4/signed-url\nInternal route for testing signed URLs."
+  },
+  {
+    "id": "monolithHealthCheck",
+    "name": "API health check",
+    "description": "API health check Returns the operational health status of the Cloudflare API monolith. GET /client/v4/api/v4/health",
+    "context": "GET /client/v4/api/v4/health\nReturns the operational health status of the Cloudflare API monolith. This is an internal infrastructure health check endpoint and is not intended for customer use. It is permanently exempt from SDK and public docs generation (see x-fern-ignore). Ref: APIOPS-12957."
+  },
+  {
+    "id": "oauth-scopes-list",
+    "name": "List OAuth Scopes",
+    "description": "List OAuth Scopes List all available OAuth scopes. GET /client/v4/oauth/scopes",
+    "context": "GET /client/v4/oauth/scopes\nList all available OAuth scopes. This endpoint requires authentication but has no authorization role requirements."
+  },
+  {
+    "id": "postInternalSubmit",
+    "name": "Internal route for testing URL submissions",
+    "description": "Internal route for testing URL submissions Internal route for testing URL submissions. POST /client/v4/internal/submit",
+    "context": "POST /client/v4/internal/submit\nInternal route for testing URL submissions."
+  },
+  {
+    "id": "triggerDeployHook",
+    "name": "Trigger deploy hook",
+    "description": "Trigger deploy hook Trigger a build using a deploy hook. POST /client/v4/workers/builds/deploy_hooks/{deploy_hook_uuid}",
+    "context": "POST /client/v4/workers/builds/deploy_hooks/{deploy_hook_uuid}\nTrigger a build using a deploy hook. This endpoint does not require authentication - the deploy_hook_uuid acts as a secret token.\nRequired: deploy_hook_uuid (path) — Deploy hook UUID"
+  }
+]

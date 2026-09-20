@@ -1,0 +1,200 @@
+[
+  {
+    "id": "rssArticleBulkMarkRead",
+    "name": "Bulk update Threat Signals article read status",
+    "description": "Bulk update Threat Signals article read status Bulk update Threat Signals article read status. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles\nBulk update Threat Signals article read status.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssArticleContentGet",
+    "name": "Get Threat Signals article content",
+    "description": "Get Threat Signals article content Get Threat Signals article content. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content\nGet Threat Signals article content.\nRequired: account_id (path); article_id (path)\nOptional: format (query)"
+  },
+  {
+    "id": "rssArticleGet",
+    "name": "Get Threat Signals article",
+    "description": "Get Threat Signals article Get Threat Signals article. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}\nGet Threat Signals article.\nRequired: account_id (path); article_id (path)"
+  },
+  {
+    "id": "rssArticleIndicatorList",
+    "name": "List Threat Signals article indicators",
+    "description": "List Threat Signals article indicators List Threat Signals article indicators. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators\nList Threat Signals article indicators.\nRequired: account_id (path)\nOptional: feed_id (query); article_id (query); search (query); per_page (query); sort (query); include_total (query); cursor (query)"
+  },
+  {
+    "id": "rssArticleList",
+    "name": "List Threat Signals articles",
+    "description": "List Threat Signals articles List Threat Signals articles. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles\nList Threat Signals articles.\nRequired: account_id (path)\nOptional: cursor (query) — Opaque cursor from a previous response's `next_cursor`. When provided, pagination, ordering, totals, and article filters come from the cursor. Sending `per_page`, `sort`, `include_total`, or any article filter alongside it returns a 400 `CursorFilterConflictError`.; per_page (query); feed_id (query); article_id (query); read (query); tag_id (query); tag (query); tag_category (query); include_total (query); search (query); published_after (query); published_before (query); fetched_after (query); fetched_before (query); feed_category (query); source_type (query); tag_applied_by (query); sort (query)"
+  },
+  {
+    "id": "rssArticleMarkRead",
+    "name": "Update Threat Signals article read status",
+    "description": "Update Threat Signals article read status Update Threat Signals article read status. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}\nUpdate Threat Signals article read status.\nRequired: account_id (path); article_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssArticleSkillOutputGet",
+    "name": "Get Threat Signals article skill output",
+    "description": "Get Threat Signals article skill output Get Threat Signals article skill output. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output\nGet Threat Signals article skill output.\nRequired: account_id (path); article_id (path); skill_id (path)"
+  },
+  {
+    "id": "rssArticleTagAdd",
+    "name": "Add tag to Threat Signals article",
+    "description": "Add tag to Threat Signals article Add tag to Threat Signals article. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags\nAdd tag to Threat Signals article.\nRequired: account_id (path); article_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssArticleTagDiagnostic",
+    "name": "Diagnose Threat Signals default tag skill",
+    "description": "Diagnose Threat Signals default tag skill Diagnose Threat Signals default tag skill. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic\nDiagnose Threat Signals default tag skill.\nRequired: account_id (path); article_id (path); skill_id (path)"
+  },
+  {
+    "id": "rssArticleTagGenerate",
+    "name": "Generate Threat Signals article AI tags",
+    "description": "Generate Threat Signals article AI tags Generate Threat Signals article AI tags. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag\nGenerate Threat Signals article AI tags.\nRequired: account_id (path); article_id (path)"
+  },
+  {
+    "id": "rssArticleTagRemove",
+    "name": "Remove tag from Threat Signals article",
+    "description": "Remove tag from Threat Signals article Remove tag from Threat Signals article. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}\nRemove tag from Threat Signals article.\nRequired: account_id (path); article_id (path); tag_id (path)"
+  },
+  {
+    "id": "rssCuratedFeedBulkCreate",
+    "name": "Bulk create curated Threat Signals feeds",
+    "description": "Bulk create curated Threat Signals feeds Bulk create curated Threat Signals feeds. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk\nBulk create curated Threat Signals feeds.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssCuratedFeedCreate",
+    "name": "Create curated Threat Signals feed",
+    "description": "Create curated Threat Signals feed Create curated Threat Signals feed. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds\nCreate curated Threat Signals feed.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssCuratedFeedDelete",
+    "name": "Delete curated Threat Signals feed",
+    "description": "Delete curated Threat Signals feed Delete curated Threat Signals feed. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}\nDelete curated Threat Signals feed.\nRequired: account_id (path); curated_feed_id (path)"
+  },
+  {
+    "id": "rssCuratedFeedList",
+    "name": "List curated Threat Signals feeds",
+    "description": "List curated Threat Signals feeds List curated Threat Signals feeds. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds\nList curated Threat Signals feeds.\nRequired: account_id (path)\nOptional: category (query); include_inactive (query)"
+  },
+  {
+    "id": "rssCuratedFeedOptOut",
+    "name": "Opt out of curated Threat Signals feeds",
+    "description": "Opt out of curated Threat Signals feeds Opt out of curated Threat Signals feeds. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out\nOpt out of curated Threat Signals feeds.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssCuratedFeedUpdate",
+    "name": "Update curated Threat Signals feed",
+    "description": "Update curated Threat Signals feed Update curated Threat Signals feed. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}\nUpdate curated Threat Signals feed.\nRequired: account_id (path); curated_feed_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssFeedCreate",
+    "name": "Create Threat Signals feed",
+    "description": "Create Threat Signals feed Create Threat Signals feed. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds\nCreate Threat Signals feed.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssFeedDelete",
+    "name": "Delete Threat Signals feed",
+    "description": "Delete Threat Signals feed Delete Threat Signals feed. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}\nDelete Threat Signals feed.\nRequired: account_id (path); feed_id (path)"
+  },
+  {
+    "id": "rssFeedList",
+    "name": "List Threat Signals feeds",
+    "description": "List Threat Signals feeds List Threat Signals feeds. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds\nList Threat Signals feeds.\nRequired: account_id (path)\nOptional: page (query); per_page (query); limit (query); sort (query); category (query); source_type (query); enabled (query); status (query)"
+  },
+  {
+    "id": "rssFeedPoll",
+    "name": "Trigger Threat Signals feed poll",
+    "description": "Trigger Threat Signals feed poll Trigger Threat Signals feed poll. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll\nTrigger Threat Signals feed poll.\nRequired: account_id (path)\nOptional: feed_id (query)"
+  },
+  {
+    "id": "rssFeedRawGet",
+    "name": "Get Threat Signals feed XML",
+    "description": "Get Threat Signals feed XML Get Threat Signals feed XML. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw\nGet Threat Signals feed XML.\nRequired: account_id (path); feed_id (path)\nOptional: format (query)"
+  },
+  {
+    "id": "rssFeedSkillsGet",
+    "name": "Get Threat Signals feed skills",
+    "description": "Get Threat Signals feed skills Get Threat Signals feed skills. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills\nGet Threat Signals feed skills.\nRequired: account_id (path); feed_id (path)"
+  },
+  {
+    "id": "rssFeedSkillsSet",
+    "name": "Set Threat Signals feed skills",
+    "description": "Set Threat Signals feed skills Set Threat Signals feed skills. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills\nSet Threat Signals feed skills.\nRequired: account_id (path); feed_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssFeedUpdate",
+    "name": "Update Threat Signals feed",
+    "description": "Update Threat Signals feed Update Threat Signals feed. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}\nUpdate Threat Signals feed.\nRequired: account_id (path); feed_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssHealth",
+    "name": "Check Threat Signals service health",
+    "description": "Check Threat Signals service health Check Threat Signals service health. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/health",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/health\nCheck Threat Signals service health.\nRequired: account_id (path)"
+  },
+  {
+    "id": "rssSkillCreate",
+    "name": "Create Threat Signals skill",
+    "description": "Create Threat Signals skill Create Threat Signals skill. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills\nCreate Threat Signals skill.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssSkillDelete",
+    "name": "Delete Threat Signals skill",
+    "description": "Delete Threat Signals skill Delete Threat Signals skill. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}\nDelete Threat Signals skill.\nRequired: account_id (path); skill_id (path)"
+  },
+  {
+    "id": "rssSkillGet",
+    "name": "Get Threat Signals skill",
+    "description": "Get Threat Signals skill Get Threat Signals skill. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}\nGet Threat Signals skill.\nRequired: account_id (path); skill_id (path)"
+  },
+  {
+    "id": "rssSkillList",
+    "name": "List Threat Signals skills",
+    "description": "List Threat Signals skills List Threat Signals skills. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills\nList Threat Signals skills.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "rssSkillTagCategoriesGet",
+    "name": "Get Threat Signals skill tag categories",
+    "description": "Get Threat Signals skill tag categories Get Threat Signals skill tag categories. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories\nGet Threat Signals skill tag categories.\nRequired: account_id (path); skill_id (path)"
+  },
+  {
+    "id": "rssSkillTagCategoriesReplace",
+    "name": "Replace Threat Signals skill tag categories",
+    "description": "Replace Threat Signals skill tag categories Replace Threat Signals skill tag categories. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories\nReplace Threat Signals skill tag categories.\nRequired: account_id (path); skill_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rssSkillUpdate",
+    "name": "Update Threat Signals skill",
+    "description": "Update Threat Signals skill Update Threat Signals skill. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}\nUpdate Threat Signals skill.\nRequired: account_id (path); skill_id (path)\nOptional: body (body)"
+  }
+]

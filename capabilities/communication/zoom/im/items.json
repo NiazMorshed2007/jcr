@@ -1,0 +1,62 @@
+[
+  {
+    "id": "imChatMessages",
+    "name": "Retrieve IM Chat messages",
+    "description": "Retrieve IM Chat messages Retrieve IM Chat messages for a specified period This API only supports oauth2. GET /v2/im/chat/sessions/{sessionId}",
+    "context": "GET /v2/im/chat/sessions/{sessionId}\nRetrieve IM Chat messages for a specified period This API only supports oauth2.\nRequired: sessionId (path) — IM Chat Session ID; from (query) — Start Date; to (query) — End Date\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "imChatSessions",
+    "name": "Retrieve IM Chat sessions",
+    "description": "Retrieve IM Chat sessions Retrieve IM Chat sessions for a specified period This API only supports oauth2. GET /v2/im/chat/sessions",
+    "context": "GET /v2/im/chat/sessions\nRetrieve IM Chat sessions for a specified period This API only supports oauth2.\nRequired: from (query) — Start Date; to (query) — End Date\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "imGroup",
+    "name": "Retrieve an IM Group",
+    "description": "Retrieve an IM Group Retrieve an IM Group under your account GET /v2/im/groups/{groupId}",
+    "context": "GET /v2/im/groups/{groupId}\nRetrieve an IM Group under your account\nRequired: groupId (path) — The group ID"
+  },
+  {
+    "id": "imGroupCreate",
+    "name": "Create an IM Group",
+    "description": "Create an IM Group Create a IM Group under your account POST /v2/im/groups",
+    "context": "POST /v2/im/groups\nCreate a IM Group under your account\nRequired: body (body)"
+  },
+  {
+    "id": "imGroupDelete",
+    "name": "Delete an IM Group",
+    "description": "Delete an IM Group Delete an IM Group under your account DELETE /v2/im/groups/{groupId}",
+    "context": "DELETE /v2/im/groups/{groupId}\nDelete an IM Group under your account\nRequired: groupId (path) — The group ID"
+  },
+  {
+    "id": "imGroupMembers",
+    "name": "List an IM Group's members",
+    "description": "List an IM Group's members List an IM Group's members under your account GET /v2/im/groups/{groupId}/members",
+    "context": "GET /v2/im/groups/{groupId}/members\nList an IM Group's members under your account\nRequired: groupId (path) — The group ID\nOptional: page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "imGroupMembersCreate",
+    "name": "Add IM Group members",
+    "description": "Add IM Group members Add members to an IM Group under your account POST /v2/im/groups/{groupId}/members",
+    "context": "POST /v2/im/groups/{groupId}/members\nAdd members to an IM Group under your account\nRequired: groupId (path) — The group ID; body (body)"
+  },
+  {
+    "id": "imGroupMembersDelete",
+    "name": "Delete an IM Group member",
+    "description": "Delete an IM Group member Delete a member from an IM Group under your account DELETE /v2/im/groups/{groupId}/members/{memberId}",
+    "context": "DELETE /v2/im/groups/{groupId}/members/{memberId}\nDelete a member from an IM Group under your account\nRequired: groupId (path) — The group ID; memberId (path) — The member ID"
+  },
+  {
+    "id": "imGroups",
+    "name": "List IM Groups",
+    "description": "List IM Groups List IM groups under your account GET /v2/im/groups",
+    "context": "GET /v2/im/groups\nList IM groups under your account"
+  },
+  {
+    "id": "imGroupUpdate",
+    "name": "Update an IM Group",
+    "description": "Update an IM Group Update an IM Group under your account PATCH /v2/im/groups/{groupId}",
+    "context": "PATCH /v2/im/groups/{groupId}\nUpdate an IM Group under your account\nRequired: groupId (path) — The group ID; body (body)"
+  }
+]

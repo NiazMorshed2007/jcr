@@ -1,0 +1,200 @@
+[
+  {
+    "id": "catalog-syncs-create",
+    "name": "Create Catalog Sync",
+    "description": "Create Catalog Sync Create a new Catalog Sync (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs\nCreate a new Catalog Sync (Closed Beta).\nRequired: account_id (path); body (body)\nOptional: forwarded (header)"
+  },
+  {
+    "id": "catalog-syncs-delete",
+    "name": "Delete Catalog Sync",
+    "description": "Delete Catalog Sync Delete a Catalog Sync (Closed Beta). DELETE /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}\nDelete a Catalog Sync (Closed Beta).\nRequired: account_id (path); sync_id (path)\nOptional: delete_destination (query)"
+  },
+  {
+    "id": "catalog-syncs-list",
+    "name": "List Catalog Syncs",
+    "description": "List Catalog Syncs List Catalog Syncs (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs\nList Catalog Syncs (Closed Beta).\nRequired: account_id (path)"
+  },
+  {
+    "id": "catalog-syncs-patch",
+    "name": "Patch Catalog Sync",
+    "description": "Patch Catalog Sync Update a Catalog Sync (Closed Beta). PATCH /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}\nUpdate a Catalog Sync (Closed Beta).\nRequired: account_id (path); sync_id (path); body (body)"
+  },
+  {
+    "id": "catalog-syncs-prebuilt-policies-list",
+    "name": "List Prebuilt Policies",
+    "description": "List Prebuilt Policies List prebuilt catalog sync policies (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/prebuilt-policies\nList prebuilt catalog sync policies (Closed Beta).\nRequired: account_id (path)\nOptional: destination_type (query) — Specify type of destination, omit to return all."
+  },
+  {
+    "id": "catalog-syncs-read",
+    "name": "Read Catalog Sync",
+    "description": "Read Catalog Sync Read a Catalog Sync (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}\nRead a Catalog Sync (Closed Beta).\nRequired: account_id (path); sync_id (path)"
+  },
+  {
+    "id": "catalog-syncs-refresh",
+    "name": "Run Catalog Sync",
+    "description": "Run Catalog Sync Refresh a Catalog Sync's destination by running the sync policy against latest resource catalog (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}/refresh",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}/refresh\nRefresh a Catalog Sync's destination by running the sync policy against latest resource catalog (Closed Beta).\nRequired: account_id (path); sync_id (path)"
+  },
+  {
+    "id": "catalog-syncs-update",
+    "name": "Update Catalog Sync",
+    "description": "Update Catalog Sync Update a Catalog Sync (Closed Beta). PUT /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/cloud/catalog-syncs/{sync_id}\nUpdate a Catalog Sync (Closed Beta).\nRequired: account_id (path); sync_id (path); body (body)"
+  },
+  {
+    "id": "onramps-apply",
+    "name": "Apply On-ramp",
+    "description": "Apply On-ramp Apply an On-ramp (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}/apply",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}/apply\nApply an On-ramp (Closed Beta).\nRequired: account_id (path); onramp_id (path)"
+  },
+  {
+    "id": "onramps-create",
+    "name": "Create On-ramp",
+    "description": "Create On-ramp Create a new On-ramp (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/onramps",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/onramps\nCreate a new On-ramp (Closed Beta).\nRequired: account_id (path); body (body)\nOptional: forwarded (header)"
+  },
+  {
+    "id": "onramps-delete",
+    "name": "Delete On-ramp",
+    "description": "Delete On-ramp Delete an On-ramp (Closed Beta). DELETE /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}\nDelete an On-ramp (Closed Beta).\nRequired: account_id (path); onramp_id (path)\nOptional: destroy (query); force (query)"
+  },
+  {
+    "id": "onramps-export",
+    "name": "Export as Terraform",
+    "description": "Export as Terraform Export an On-ramp to terraform ready file(s) (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}/export",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}/export\nExport an On-ramp to terraform ready file(s) (Closed Beta).\nRequired: account_id (path); onramp_id (path)"
+  },
+  {
+    "id": "onramps-list",
+    "name": "List On-ramps",
+    "description": "List On-ramps List On-ramps (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/onramps",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/onramps\nList On-ramps (Closed Beta).\nRequired: account_id (path)\nOptional: order_by (query) — One of [\"updated_at\", \"id\", \"cloud_type\", \"name\"].; desc (query); status (query); vpcs (query)"
+  },
+  {
+    "id": "onramps-mwan-addr-space-patch",
+    "name": "Patch Magic WAN Address Space",
+    "description": "Patch Magic WAN Address Space Update the Magic WAN Address Space (Closed Beta). PATCH /client/v4/accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space\nUpdate the Magic WAN Address Space (Closed Beta).\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "onramps-mwan-addr-space-read",
+    "name": "Read Magic WAN Address Space",
+    "description": "Read Magic WAN Address Space Read the Magic WAN Address Space (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space\nRead the Magic WAN Address Space (Closed Beta).\nRequired: account_id (path)"
+  },
+  {
+    "id": "onramps-mwan-addr-space-update",
+    "name": "Update Magic WAN Address Space",
+    "description": "Update Magic WAN Address Space Update the Magic WAN Address Space (Closed Beta). PUT /client/v4/accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/cloud/onramps/magic_wan_address_space\nUpdate the Magic WAN Address Space (Closed Beta).\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "onramps-patch",
+    "name": "Patch On-ramp",
+    "description": "Patch On-ramp Update an On-ramp (Closed Beta). PATCH /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}\nUpdate an On-ramp (Closed Beta).\nRequired: account_id (path); onramp_id (path); body (body)"
+  },
+  {
+    "id": "onramps-plan",
+    "name": "Plan On-ramp",
+    "description": "Plan On-ramp Plan an On-ramp (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}/plan",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}/plan\nPlan an On-ramp (Closed Beta).\nRequired: account_id (path); onramp_id (path)"
+  },
+  {
+    "id": "onramps-read",
+    "name": "Read On-ramp",
+    "description": "Read On-ramp Read an On-ramp (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}\nRead an On-ramp (Closed Beta).\nRequired: account_id (path); onramp_id (path)\nOptional: status (query); vpcs (query); post_apply_resources (query); planned_resources (query)"
+  },
+  {
+    "id": "onramps-update",
+    "name": "Update On-ramp",
+    "description": "Update On-ramp Update an On-ramp (Closed Beta). PUT /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/cloud/onramps/{onramp_id}\nUpdate an On-ramp (Closed Beta).\nRequired: account_id (path); onramp_id (path); body (body)"
+  },
+  {
+    "id": "providers-create",
+    "name": "Create Cloud Integration",
+    "description": "Create Cloud Integration Create a new Cloud Integration (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/providers",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/providers\nCreate a new Cloud Integration (Closed Beta).\nRequired: account_id (path); body (body)\nOptional: forwarded (header)"
+  },
+  {
+    "id": "providers-delete",
+    "name": "Delete Cloud Integration",
+    "description": "Delete Cloud Integration Delete a Cloud Integration (Closed Beta). DELETE /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}\nDelete a Cloud Integration (Closed Beta).\nRequired: account_id (path); provider_id (path)"
+  },
+  {
+    "id": "providers-discover",
+    "name": "Run Discovery",
+    "description": "Run Discovery Run discovery for a Cloud Integration (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}/discover",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}/discover\nRun discovery for a Cloud Integration (Closed Beta).\nRequired: account_id (path); provider_id (path)\nOptional: v2 (query)"
+  },
+  {
+    "id": "providers-discover-all",
+    "name": "Run Discovery for All Integrations",
+    "description": "Run Discovery for All Integrations Run discovery for all Cloud Integrations in an account (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/providers/discover",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/providers/discover\nRun discovery for all Cloud Integrations in an account (Closed Beta).\nRequired: account_id (path)"
+  },
+  {
+    "id": "providers-initial-setup",
+    "name": "Get Cloud Integration Setup Config",
+    "description": "Get Cloud Integration Setup Config Get initial configuration to complete Cloud Integration setup (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}/initial_setup",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}/initial_setup\nGet initial configuration to complete Cloud Integration setup (Closed Beta).\nRequired: account_id (path); provider_id (path)"
+  },
+  {
+    "id": "providers-list",
+    "name": "List Cloud Integrations",
+    "description": "List Cloud Integrations List Cloud Integrations (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/providers",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/providers\nList Cloud Integrations (Closed Beta).\nRequired: account_id (path)\nOptional: status (query); order_by (query) — One of [\"updated_at\", \"id\", \"cloud_type\", \"name\"].; desc (query); cloudflare (query)"
+  },
+  {
+    "id": "providers-patch",
+    "name": "Patch Cloud Integration",
+    "description": "Patch Cloud Integration Update a Cloud Integration (Closed Beta). PATCH /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}\nUpdate a Cloud Integration (Closed Beta).\nRequired: account_id (path); provider_id (path); body (body)"
+  },
+  {
+    "id": "providers-read",
+    "name": "Read Cloud Integration",
+    "description": "Read Cloud Integration Read a Cloud Integration (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}\nRead a Cloud Integration (Closed Beta).\nRequired: account_id (path); provider_id (path)\nOptional: status (query)"
+  },
+  {
+    "id": "providers-update",
+    "name": "Update Cloud Integration",
+    "description": "Update Cloud Integration Update a Cloud Integration (Closed Beta). PUT /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/cloud/providers/{provider_id}\nUpdate a Cloud Integration (Closed Beta).\nRequired: account_id (path); provider_id (path); body (body)"
+  },
+  {
+    "id": "resources-catalog-export",
+    "name": "Export Resources",
+    "description": "Export Resources Export resources in the Resource Catalog as a JSON file (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/resources/export",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/resources/export\nExport resources in the Resource Catalog as a JSON file (Closed Beta).\nRequired: account_id (path)\nOptional: provider_id (query); resource_type (query); resource_id (query); region (query); resource_group (query); search (query); order_by (query) — One of [\"id\", \"resource_type\", \"region\"].; desc (query); v2 (query)"
+  },
+  {
+    "id": "resources-catalog-list",
+    "name": "List Resources",
+    "description": "List Resources List resources in the Resource Catalog (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/resources",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/resources\nList resources in the Resource Catalog (Closed Beta).\nRequired: account_id (path)\nOptional: provider_id (query); resource_type (query); resource_id (query); region (query); resource_group (query); managed (query); search (query); order_by (query) — One of [\"id\", \"resource_type\", \"region\"].; desc (query); per_page (query); page (query); cloudflare (query); v2 (query)"
+  },
+  {
+    "id": "resources-catalog-policy-preview",
+    "name": "Preview Rego Query",
+    "description": "Preview Rego Query Preview Rego query result against the latest resource catalog (Closed Beta). POST /client/v4/accounts/{account_id}/magic/cloud/resources/policy-preview",
+    "context": "POST /client/v4/accounts/{account_id}/magic/cloud/resources/policy-preview\nPreview Rego query result against the latest resource catalog (Closed Beta).\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "resources-catalog-read",
+    "name": "Read Resource",
+    "description": "Read Resource Read an resource from the Resource Catalog (Closed Beta). GET /client/v4/accounts/{account_id}/magic/cloud/resources/{resource_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cloud/resources/{resource_id}\nRead an resource from the Resource Catalog (Closed Beta).\nRequired: account_id (path); resource_id (path)\nOptional: v2 (query)"
+  }
+]

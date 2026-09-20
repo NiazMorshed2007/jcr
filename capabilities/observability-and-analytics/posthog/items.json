@@ -1,0 +1,74 @@
+[
+  {
+    "id": "code_invites_check_access_retrieve",
+    "name": "Check PostHog Desktop access",
+    "description": "Check PostHog Desktop access Compatibility endpoint for released PostHog Desktop clients. GET /api/code/invites/check-access/",
+    "context": "GET /api/code/invites/check-access/\nCompatibility endpoint for released PostHog Desktop clients."
+  },
+  {
+    "id": "code_sandbox_pricing_list",
+    "name": "Get sandbox compute pricing",
+    "description": "Get sandbox compute pricing Get the current sandbox compute rate card and expired rate-card history. GET /api/code/sandbox-pricing/",
+    "context": "GET /api/code/sandbox-pricing/\nGet the current sandbox compute rate card and expired rate-card history."
+  },
+  {
+    "id": "customer_analytics_external_account_retrieve",
+    "name": "Get an external customer analytics account",
+    "description": "Get an external customer analytics account Fetch one account by external ID with its properties, controlled relationship ownership, tags, active relationship assignments and custom property values. GET /api/customer_analytics/external/account",
+    "context": "GET /api/customer_analytics/external/account\nFetch one account by external ID with its properties, controlled relationship ownership, tags, active relationship assignments and custom property values. Accepts the team secret API token or a project secret API key with the `account:read` scope.\nRequired: external_id (query) — External account key: the group key the account is linked to."
+  },
+  {
+    "id": "customer_analytics_external_accounts_retrieve",
+    "name": "List external customer analytics accounts",
+    "description": "List external customer analytics accounts List tracked accounts with external IDs, lifecycle timestamps, controlled relationship ownership, and active relationship assignments. GET /api/customer_analytics/external/accounts",
+    "context": "GET /api/customer_analytics/external/accounts\nList tracked accounts with external IDs, lifecycle timestamps, controlled relationship ownership, and active relationship assignments. Set `include_ignored=true` to include ignored accounts and `managed_only=true` to read only the accounts customer analytics holds ownership authority for. Requires a project secret API key or personal API key with the `account:read` scope. Personal API keys also require `project_id` and return only accounts the key owner can access.\nOptional: assigned_only (query) — When true, return only accounts with at least one active relationship assignment to a current member of the project's organization.; cursor (query) — Account UUID from `next_cursor` to continue listing from. Omit for the first page.; include_ignored (query) — Include ignored accounts. Ignored accounts are hidden by default.; limit (query) — Maximum number of accounts to return. Values below 1 are clamped to 1; values above 100 are clamped to 100.; managed_only (query) — When true, return only accounts where customer analytics holds authority over at least one controlled relationship, including accounts whose managed relationships are cleared and accounts that are ignored. Authority does not end when an account is ignored, so `include_ignored` is implied.; project_id (query) — Project ID. Required for personal API keys. Project secret API keys use their bound project."
+  },
+  {
+    "id": "llm_analytics_personal_spend_list",
+    "name": "Return a structured personal LLM spend analysis for the requesting user",
+    "description": "Return a structured personal LLM spend analysis for the requesting user Return a structured personal LLM spend analysis for the requesting user. GET /api/llm_analytics/@me/spend/",
+    "context": "GET /api/llm_analytics/@me/spend/\nReturn a structured personal LLM spend analysis for the requesting user. Pass `date_from` / `date_to` (absolute like `2026-04-23` or relative like `-7d`) to bound the window — defaults to the last 30 days, max 90 days. The `product= ` query param is required and scopes the tool / model / day / trace breakdowns to a single product; supported values: posthog_code. `by_product` is always returned for cross-product visibility. `by_day` returns a day-ascending spend series for the scoped product. Pass `bucket_minutes` (5, 15, 30, or 60; the window may span at most 600 buckets) to additionally get `by_bucket`, a time-ascending series with per-bucket cost split into uncached input / output / cache read / cache creation components. Use `refresh=true` to bypass the 5-minute response cache.\nRequired: product (query) — Required `ai_product` key to scope the tool / model / trace breakdowns to a single product. Only the following products are currently supported: posthog_code.\nOptional: bucket_minutes (query) — When set, additionally return a `by_bucket` breakdown: a time-ascending UTC cost series for the scoped product at this bucket size in minutes, with per-bucket cost split into uncached input / output / cache read / cache creation components plus the matching token sums. Supported bucket sizes: 5, 15, 30, 60. The window may span at most 600 buckets of the chosen size (e.g. 50 hours at 5-minute buckets). * `5` - 5 * `15` - 15 * `30` - 30 * `60` - 60; date_from (query) — Start of the spend window. Accepts absolute dates (`2026-04-23`) or relative strings (`-7d`, `-1m`, etc.) — same parser used elsewhere in PostHog. Defaults to `-30d`. The window between `date_from` and `date_to` cannot exceed 90 days.; date_to (query) — End of the spend window. Accepts the same formats as `date_from`. Defaults to `now` when omitted.; limit (query) — Maximum number of rows to return per breakdown (1-200, defaults to 50). Each breakdown returns up to this many rows ordered by cost descending. Per-breakdown `truncated: true` indicates more rows exist beyond the limit.; refresh (query) — If true, bypass the result cache and re-run the underlying queries against ClickHouse."
+  },
+  {
+    "id": "public_hog_function_templates_list",
+    "name": "public_hog_function_templates_list",
+    "description": "public_hog_function_templates_list GET /api/public_hog_function_templates/",
+    "context": "GET /api/public_hog_function_templates/\npublic_hog_function_templates_list\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; template_id (query) — Filter to a specific template by its template_id. Deprecated templates are excluded from list results; use the retrieve endpoint to look up a template by ID regardless of status.; type (query) — Filter by template type (e.g. destination, email, sms_provider, broadcast). Defaults to destination if neither type nor types is provided.; types (query) — Comma-separated list of template types to include (e.g. destination,email,sms_provider)."
+  },
+  {
+    "id": "revoke_leaked_key_create",
+    "name": "Report and revoke a leaked PostHog API key or token",
+    "description": "Report and revoke a leaked PostHog API key or token Public, unauthenticated endpoint for self-service revocation of a leaked PostHog personal API key, project secret API key, or OAuth access/refresh token. POST /api/revoke_leaked_key/",
+    "context": "POST /api/revoke_leaked_key/\nPublic, unauthenticated endpoint for self-service revocation of a leaked PostHog personal API key, project secret API key, or OAuth access/refresh token. If the token matches a real credential, it is revoked immediately and the owner is notified by email. This includes an expired OAuth access token: the paired refresh token it protects may still be live. This endpoint only checks the region it is running on. `\"found\": false` does not guarantee the token is safe. If you're not sure which region issued it, check both: https://app.posthog.com/api/revoke_leaked_key and https://eu.posthog.com/api/revoke_leaked_key.\nRequired: body (body)"
+  },
+  {
+    "id": "user_facet_settings_partial_update",
+    "name": "Replace the authenticated user's custom facets for a product, within the current team",
+    "description": "Replace the authenticated user's custom facets for a product, within the current team Replace the authenticated user's custom facets for a product, within the current team. PATCH /api/user_facet_settings/{uuid}/",
+    "context": "PATCH /api/user_facet_settings/{uuid}/\nReplace the authenticated user's custom facets for a product, within the current team. Pass `@me` as the UUID.\nRequired: product (query) — Which product's custom facets to read or update.; uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "user_facet_settings_retrieve",
+    "name": "Get the authenticated user's custom facets for a product, within the current team",
+    "description": "Get the authenticated user's custom facets for a product, within the current team Get the authenticated user's custom facets for a product, within the current team. GET /api/user_facet_settings/{uuid}/",
+    "context": "GET /api/user_facet_settings/{uuid}/\nGet the authenticated user's custom facets for a product, within the current team. Pass `@me` as the UUID.\nRequired: product (query) — Which product's custom facets to read or update.; uuid (path)"
+  },
+  {
+    "id": "user_home_settings_partial_update",
+    "name": "Update the authenticated user's pinned sidebar tabs and/or homepage for the current team",
+    "description": "Update the authenticated user's pinned sidebar tabs and/or homepage for the current team Update the authenticated user's pinned sidebar tabs and/or homepage for the current team. PATCH /api/user_home_settings/{uuid}/",
+    "context": "PATCH /api/user_home_settings/{uuid}/\nUpdate the authenticated user's pinned sidebar tabs and/or homepage for the current team. Pass `@me` as the UUID. Send `tabs` to replace the pinned tab list, `homepage` to set the home destination (any PostHog URL — dashboard, insight, search results, scene). Either field may be omitted to leave it unchanged; sending `homepage: null` or `{}` clears the homepage.\nRequired: uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "user_home_settings_retrieve",
+    "name": "Get the authenticated user's pinned sidebar tabs and configured homepage for the current team",
+    "description": "Get the authenticated user's pinned sidebar tabs and configured homepage for the current team Get the authenticated user's pinned sidebar tabs and configured homepage for the current team. GET /api/user_home_settings/{uuid}/",
+    "context": "GET /api/user_home_settings/{uuid}/\nGet the authenticated user's pinned sidebar tabs and configured homepage for the current team. Pass `@me` as the UUID.\nRequired: uuid (path)"
+  },
+  {
+    "id": "user_toolbar_entitlements_retrieve",
+    "name": "user_toolbar_entitlements_retrieve",
+    "description": "user_toolbar_entitlements_retrieve GET /api/user/toolbar_entitlements/",
+    "context": "GET /api/user/toolbar_entitlements/\nuser_toolbar_entitlements_retrieve"
+  }
+]

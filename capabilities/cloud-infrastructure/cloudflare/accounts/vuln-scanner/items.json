@@ -1,0 +1,134 @@
+[
+  {
+    "id": "create-credential",
+    "name": "Create credential",
+    "description": "Create credential Creates a new credential within a credential set. POST /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials",
+    "context": "POST /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials\nCreates a new credential within a credential set.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; body (body)"
+  },
+  {
+    "id": "create-credential-set",
+    "name": "Create credential set",
+    "description": "Create credential set Creates a new credential set. POST /client/v4/accounts/{account_id}/vuln_scanner/credential_sets",
+    "context": "POST /client/v4/accounts/{account_id}/vuln_scanner/credential_sets\nCreates a new credential set.\nRequired: account_id (path) — Account identifier.; body (body)"
+  },
+  {
+    "id": "create-scan",
+    "name": "Create scan",
+    "description": "Create scan Creates and starts a new vulnerability scan. POST /client/v4/accounts/{account_id}/vuln_scanner/scans",
+    "context": "POST /client/v4/accounts/{account_id}/vuln_scanner/scans\nCreates and starts a new vulnerability scan. The response may include non-fatal warnings in the `messages` array.\nRequired: account_id (path) — Account identifier.; body (body)"
+  },
+  {
+    "id": "create-target-environment",
+    "name": "Create target environment",
+    "description": "Create target environment Creates a new target environment for the account. POST /client/v4/accounts/{account_id}/vuln_scanner/target_environments",
+    "context": "POST /client/v4/accounts/{account_id}/vuln_scanner/target_environments\nCreates a new target environment for the account.\nRequired: account_id (path) — Account identifier.; body (body)"
+  },
+  {
+    "id": "delete-credential",
+    "name": "Delete credential",
+    "description": "Delete credential Deletes a credential. DELETE /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}\nDeletes a credential.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; credential_id (path) — Credential identifier."
+  },
+  {
+    "id": "delete-credential-set",
+    "name": "Delete credential set",
+    "description": "Delete credential set Deletes a credential set and all of its credentials. DELETE /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}\nDeletes a credential set and all of its credentials.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier."
+  },
+  {
+    "id": "delete-scan",
+    "name": "Delete scan",
+    "description": "Delete scan Deletes a scan and all associated data. DELETE /client/v4/accounts/{account_id}/vuln_scanner/scans/{scan_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/vuln_scanner/scans/{scan_id}\nDeletes a scan and all associated data. Only scans in a terminal state (`finished`, `failed`) may be deleted. Attempting to delete a scan that is still being created or executed (`created`, `scheduled`, `planning`, `running`) returns `400`.\nRequired: account_id (path) — Account identifier.; scan_id (path) — Scan identifier."
+  },
+  {
+    "id": "delete-target-environment",
+    "name": "Delete target environment",
+    "description": "Delete target environment Removes a target environment. DELETE /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}\nRemoves a target environment.\nRequired: account_id (path) — Account identifier.; target_environment_id (path) — Target environment identifier."
+  },
+  {
+    "id": "edit-credential",
+    "name": "Edit credential",
+    "description": "Edit credential Updates a credential with only the provided fields; omitted fields remain unchanged. PATCH /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}\nUpdates a credential with only the provided fields; omitted fields remain unchanged.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; credential_id (path) — Credential identifier.; body (body)"
+  },
+  {
+    "id": "edit-credential-set",
+    "name": "Edit credential set",
+    "description": "Edit credential set Updates a credential set with only the provided fields; omitted fields remain unchanged. PATCH /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}\nUpdates a credential set with only the provided fields; omitted fields remain unchanged.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; body (body)"
+  },
+  {
+    "id": "edit-target-environment",
+    "name": "Edit target environment",
+    "description": "Edit target environment Updates a target environment with only the provided fields; omitted fields remain unchanged. PATCH /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}\nUpdates a target environment with only the provided fields; omitted fields remain unchanged.\nRequired: account_id (path) — Account identifier.; target_environment_id (path) — Target environment identifier.; body (body)"
+  },
+  {
+    "id": "get-credential",
+    "name": "Get credential",
+    "description": "Get credential Returns a single credential by ID. GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}\nReturns a single credential by ID.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; credential_id (path) — Credential identifier."
+  },
+  {
+    "id": "get-credential-set",
+    "name": "Get credential set",
+    "description": "Get credential set Returns a single credential set by ID. GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}\nReturns a single credential set by ID.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier."
+  },
+  {
+    "id": "get-scan",
+    "name": "Get scan",
+    "description": "Get scan Returns a single scan by ID. GET /client/v4/accounts/{account_id}/vuln_scanner/scans/{scan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/scans/{scan_id}\nReturns a single scan by ID.\nRequired: account_id (path) — Account identifier.; scan_id (path) — Scan identifier."
+  },
+  {
+    "id": "get-target-environment",
+    "name": "Get target environment",
+    "description": "Get target environment Returns a single target environment by ID. GET /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}\nReturns a single target environment by ID.\nRequired: account_id (path) — Account identifier.; target_environment_id (path) — Target environment identifier."
+  },
+  {
+    "id": "list-credential-sets",
+    "name": "List credential sets",
+    "description": "List credential sets Returns all credential sets for the account. GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets\nReturns all credential sets for the account.\nRequired: account_id (path) — Account identifier.\nOptional: page (query) — Page number of paginated results.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "list-credentials",
+    "name": "List credentials",
+    "description": "List credentials Returns all credentials within a credential set. GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials\nReturns all credentials within a credential set.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.\nOptional: page (query) — Page number of paginated results.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "list-scans",
+    "name": "List scans",
+    "description": "List scans Returns all scans for the account. GET /client/v4/accounts/{account_id}/vuln_scanner/scans",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/scans\nReturns all scans for the account.\nRequired: account_id (path) — Account identifier.\nOptional: page (query) — Page number of paginated results.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "list-target-environments",
+    "name": "List target environments",
+    "description": "List target environments Returns all target environments for the account. GET /client/v4/accounts/{account_id}/vuln_scanner/target_environments",
+    "context": "GET /client/v4/accounts/{account_id}/vuln_scanner/target_environments\nReturns all target environments for the account.\nRequired: account_id (path) — Account identifier.\nOptional: page (query) — Page number of paginated results.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "update-credential",
+    "name": "Update credential",
+    "description": "Update credential Replaces a credential. PUT /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}/credentials/{credential_id}\nReplaces a credential. All fields must be provided.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; credential_id (path) — Credential identifier.; body (body)"
+  },
+  {
+    "id": "update-credential-set",
+    "name": "Update credential set",
+    "description": "Update credential set Replaces a credential set. PUT /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/vuln_scanner/credential_sets/{credential_set_id}\nReplaces a credential set. All fields must be provided.\nRequired: account_id (path) — Account identifier.; credential_set_id (path) — Credential set identifier.; body (body)"
+  },
+  {
+    "id": "update-target-environment",
+    "name": "Update target environment",
+    "description": "Update target environment Replaces a target environment. PUT /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/vuln_scanner/target_environments/{target_environment_id}\nReplaces a target environment. All fields must be provided.\nRequired: account_id (path) — Account identifier.; target_environment_id (path) — Target environment identifier.; body (body)"
+  }
+]

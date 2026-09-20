@@ -1,0 +1,14 @@
+[
+  {
+    "id": "access-authenticator-device-aaguids-list",
+    "name": "List authenticator device AAGUIDs",
+    "description": "List authenticator device AAGUIDs Returns a list of Authenticator Device AAGUIDs for MFA configuration. GET /client/v4/accounts/{account_id}/access/authenticator_device_aaguids",
+    "context": "GET /client/v4/accounts/{account_id}/access/authenticator_device_aaguids\nReturns a list of Authenticator Device AAGUIDs for MFA configuration.\nRequired: account_id (path)"
+  },
+  {
+    "id": "zero-trust-seats-update-a-user-seat",
+    "name": "Update a user seat",
+    "description": "Update a user seat Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false. PATCH /client/v4/accounts/{account_id}/access/seats",
+    "context": "PATCH /client/v4/accounts/{account_id}/access/seats\nRemoves a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.\nRequired: account_id (path); body (body)"
+  }
+]

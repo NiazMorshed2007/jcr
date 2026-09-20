@@ -1,0 +1,32 @@
+[
+  {
+    "id": "actions%2Fcreate-repo-actions-policy",
+    "name": "Create a repository Actions policy",
+    "description": "Create a repository Actions policy Create an Actions policy for a repository. POST /repos/{owner}/{repo}/actions/policies",
+    "context": "POST /repos/{owner}/{repo}/actions/policies\nCreate an Actions policy for a repository. Omitting `workflow_path` targets all workflows without storing an explicit condition.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body) — Request body"
+  },
+  {
+    "id": "actions%2Fdelete-repo-actions-policy",
+    "name": "Delete a repository Actions policy",
+    "description": "Delete a repository Actions policy Delete an Actions policy for a repository. DELETE /repos/{owner}/{repo}/actions/policies/{policy_id}",
+    "context": "DELETE /repos/{owner}/{repo}/actions/policies/{policy_id}\nDelete an Actions policy for a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; policy_id (path) — The ID of the policy."
+  },
+  {
+    "id": "actions%2Fget-repo-actions-policies",
+    "name": "List repository Actions policies",
+    "description": "List repository Actions policies List all Actions policies for a repository. GET /repos/{owner}/{repo}/actions/policies",
+    "context": "GET /repos/{owner}/{repo}/actions/policies\nList all Actions policies for a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; has_parents (query) — Include policies configured at higher levels that apply to this repository"
+  },
+  {
+    "id": "actions%2Fget-repo-actions-policy",
+    "name": "Get a repository Actions policy",
+    "description": "Get a repository Actions policy Get a specific Actions policy for a repository. GET /repos/{owner}/{repo}/actions/policies/{policy_id}",
+    "context": "GET /repos/{owner}/{repo}/actions/policies/{policy_id}\nGet a specific Actions policy for a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; policy_id (path) — The ID of the policy."
+  },
+  {
+    "id": "actions%2Fupdate-repo-actions-policy",
+    "name": "Update a repository Actions policy",
+    "description": "Update a repository Actions policy Update an Actions policy for a repository. PUT /repos/{owner}/{repo}/actions/policies/{policy_id}",
+    "context": "PUT /repos/{owner}/{repo}/actions/policies/{policy_id}\nUpdate an Actions policy for a repository. Omitting `workflow_path` preserves the policy's existing workflow targeting.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; policy_id (path) — The ID of the policy.; body (body) — Request body"
+  }
+]

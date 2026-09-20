@@ -1,0 +1,32 @@
+[
+  {
+    "id": "magic-account-apps-add-app",
+    "name": "Create a new App",
+    "description": "Create a new App Creates a new App for an account POST /client/v4/accounts/{account_id}/magic/apps",
+    "context": "POST /client/v4/accounts/{account_id}/magic/apps\nCreates a new App for an account\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-account-apps-delete-app",
+    "name": "Delete Account App",
+    "description": "Delete Account App Deletes specific Account App. DELETE /client/v4/accounts/{account_id}/magic/apps/{account_app_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/apps/{account_app_id}\nDeletes specific Account App.\nRequired: account_id (path); account_app_id (path)"
+  },
+  {
+    "id": "magic-account-apps-list-apps",
+    "name": "List Apps",
+    "description": "List Apps Lists Apps associated with an account. GET /client/v4/accounts/{account_id}/magic/apps",
+    "context": "GET /client/v4/accounts/{account_id}/magic/apps\nLists Apps associated with an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-account-apps-patch-app",
+    "name": "Update an App",
+    "description": "Update an App Updates an Account App PATCH /client/v4/accounts/{account_id}/magic/apps/{account_app_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/apps/{account_app_id}\nUpdates an Account App\nRequired: account_id (path); account_app_id (path); body (body)"
+  },
+  {
+    "id": "magic-account-apps-update-app",
+    "name": "Update an App",
+    "description": "Update an App Updates an Account App PUT /client/v4/accounts/{account_id}/magic/apps/{account_app_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/apps/{account_app_id}\nUpdates an Account App\nRequired: account_id (path); account_app_id (path); body (body)"
+  }
+]

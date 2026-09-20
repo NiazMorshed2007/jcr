@@ -1,0 +1,38 @@
+[
+  {
+    "id": "annotations_create",
+    "name": "Create, Read, Update and Delete annotations",
+    "description": "Create, Read, Update and Delete annotations Create, Read, Update and Delete annotations. POST /api/projects/{project_id}/annotations/",
+    "context": "POST /api/projects/{project_id}/annotations/\nCreate, Read, Update and Delete annotations. [See docs](https://posthog.com/docs/data/annotations) for more information on annotations.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "annotations_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/annotations/{id}/",
+    "context": "DELETE /api/projects/{project_id}/annotations/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A unique integer value identifying this annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "annotations_list",
+    "name": "Create, Read, Update and Delete annotations",
+    "description": "Create, Read, Update and Delete annotations Create, Read, Update and Delete annotations. GET /api/projects/{project_id}/annotations/",
+    "context": "GET /api/projects/{project_id}/annotations/\nCreate, Read, Update and Delete annotations. [See docs](https://posthog.com/docs/data/annotations) for more information on annotations.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "annotations_partial_update",
+    "name": "Create, Read, Update and Delete annotations",
+    "description": "Create, Read, Update and Delete annotations Create, Read, Update and Delete annotations. PATCH /api/projects/{project_id}/annotations/{id}/",
+    "context": "PATCH /api/projects/{project_id}/annotations/{id}/\nCreate, Read, Update and Delete annotations. [See docs](https://posthog.com/docs/data/annotations) for more information on annotations.\nRequired: id (path) — A unique integer value identifying this annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "annotations_retrieve",
+    "name": "Create, Read, Update and Delete annotations",
+    "description": "Create, Read, Update and Delete annotations Create, Read, Update and Delete annotations. GET /api/projects/{project_id}/annotations/{id}/",
+    "context": "GET /api/projects/{project_id}/annotations/{id}/\nCreate, Read, Update and Delete annotations. [See docs](https://posthog.com/docs/data/annotations) for more information on annotations.\nRequired: id (path) — A unique integer value identifying this annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "annotations_update",
+    "name": "Create, Read, Update and Delete annotations",
+    "description": "Create, Read, Update and Delete annotations Create, Read, Update and Delete annotations. PUT /api/projects/{project_id}/annotations/{id}/",
+    "context": "PUT /api/projects/{project_id}/annotations/{id}/\nCreate, Read, Update and Delete annotations. [See docs](https://posthog.com/docs/data/annotations) for more information on annotations.\nRequired: id (path) — A unique integer value identifying this annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

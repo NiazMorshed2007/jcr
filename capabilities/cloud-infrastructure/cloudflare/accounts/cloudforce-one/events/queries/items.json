@@ -1,0 +1,38 @@
+[
+  {
+    "id": "delete_EventQueryDelete",
+    "name": "Delete a saved event query",
+    "description": "Delete a saved event query Delete a saved event query by its ID DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}\nDelete a saved event query by its ID\nRequired: account_id (path) — Account ID.; query_id (path) — Event query ID"
+  },
+  {
+    "id": "get_EventQueryList",
+    "name": "List all saved event queries",
+    "description": "List all saved event queries Retrieve all saved event queries for the account GET /client/v4/accounts/{account_id}/cloudforce-one/events/queries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/queries\nRetrieve all saved event queries for the account\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "get_EventQueryRead",
+    "name": "Read a saved event query",
+    "description": "Read a saved event query Retrieve a saved event query by its ID GET /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}\nRetrieve a saved event query by its ID\nRequired: account_id (path) — Account ID.; query_id (path) — Event query ID"
+  },
+  {
+    "id": "patch_EventQueryUpdate",
+    "name": "Update a saved event query",
+    "description": "Update a saved event query Update an existing saved event query by its ID PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}\nUpdate an existing saved event query by its ID\nRequired: account_id (path) — Account ID.; query_id (path) — Event query ID\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventQueryCreate",
+    "name": "Create a saved event query",
+    "description": "Create a saved event query Create a new saved event query for the account POST /client/v4/accounts/{account_id}/cloudforce-one/events/queries/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/queries/create\nCreate a new saved event query for the account\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventQueryUpdate",
+    "name": "Update a saved event query",
+    "description": "Update a saved event query Update an existing saved event query by its ID POST /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/queries/{query_id}\nUpdate an existing saved event query by its ID\nRequired: account_id (path) — Account ID.; query_id (path) — Event query ID\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "orgs%2Fcheck-public-membership-for-user",
+    "name": "Check public organization membership for a user",
+    "description": "Check public organization membership for a user Check if the provided user is a public member of the organization. GET /orgs/{org}/public_members/{username}",
+    "context": "GET /orgs/{org}/public_members/{username}\nCheck if the provided user is a public member of the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Flist-public-members",
+    "name": "List public organization members",
+    "description": "List public organization members Members of an organization can choose to have their membership publicized or not. GET /orgs/{org}/public_members",
+    "context": "GET /orgs/{org}/public_members\nMembers of an organization can choose to have their membership publicized or not.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fremove-public-membership-for-authenticated-user",
+    "name": "Remove public organization membership for the authenticated user",
+    "description": "Remove public organization membership for the authenticated user Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default. DELETE /orgs/{org}/public_members/{username}",
+    "context": "DELETE /orgs/{org}/public_members/{username}\nRemoves the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Fset-public-membership-for-authenticated-user",
+    "name": "Set public organization membership for the authenticated user",
+    "description": "Set public organization membership for the authenticated user The user can publicize their own membership. PUT /orgs/{org}/public_members/{username}",
+    "context": "PUT /orgs/{org}/public_members/{username}\nThe user can publicize their own membership. (A user cannot publicize the membership for another user.) Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).\"\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  }
+]

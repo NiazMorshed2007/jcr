@@ -1,0 +1,20 @@
+[
+  {
+    "id": "access-policy-tests",
+    "name": "Start Access policy test",
+    "description": "Start Access policy test Starts an Access policy test. POST /client/v4/accounts/{account_id}/access/policy-tests",
+    "context": "POST /client/v4/accounts/{account_id}/access/policy-tests\nStarts an Access policy test.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-policy-tests-get-a-user-page",
+    "name": "Get an Access policy test users page",
+    "description": "Get an Access policy test users page Fetches a single page of user results from an Access policy test. GET /client/v4/accounts/{account_id}/access/policy-tests/{policy_test_id}/users",
+    "context": "GET /client/v4/accounts/{account_id}/access/policy-tests/{policy_test_id}/users\nFetches a single page of user results from an Access policy test.\nRequired: account_id (path); policy_test_id (path)\nOptional: page (query); per_page (query); status (query) — Filter users by their policy evaluation status."
+  },
+  {
+    "id": "access-policy-tests-get-an-update",
+    "name": "Get the current status of a given Access policy test",
+    "description": "Get the current status of a given Access policy test Fetches the current status of a given Access policy test. GET /client/v4/accounts/{account_id}/access/policy-tests/{policy_test_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/policy-tests/{policy_test_id}\nFetches the current status of a given Access policy test.\nRequired: account_id (path); policy_test_id (path)"
+  }
+]

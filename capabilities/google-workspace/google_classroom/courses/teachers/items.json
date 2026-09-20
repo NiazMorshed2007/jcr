@@ -1,0 +1,26 @@
+[
+  {
+    "id": "CoursesTeachersCreate",
+    "name": "Creates a teacher of a course.",
+    "description": "Creates a teacher of a course. Creates a teacher of a course. POST /v1/courses/{courseId}/teachers",
+    "context": "POST /v1/courses/{courseId}/teachers\nCreates a teacher of a course. Domain administrators are permitted to [directly add](https://developers.google.com/workspace/classroom/guides/manage-users) users within their domain as teachers to courses within their domain. Non-admin users should send an Invitation instead. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create teachers in this course or for access errors. * `NOT_FOUND` if the requested course ID does not exist. * `FAILED_PRECONDITION` if the requested user's account is disabled, for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * CourseTeacherLimitReached * UserGroupsMembershipLimitReached * InactiveCourseOwner * `ALREADY_EXISTS` if the user is already a teacher or student in the course.\nRequired: courseId (path) — Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesTeachersDelete",
+    "name": "Removes the specified teacher from the specified course.",
+    "description": "Removes the specified teacher from the specified course. Removes the specified teacher from the specified course. DELETE /v1/courses/{courseId}/teachers/{userId}",
+    "context": "DELETE /v1/courses/{courseId}/teachers/{userId}\nRemoves the specified teacher from the specified course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete teachers of this course or for access errors. * `NOT_FOUND` if no teacher of this course has the requested ID or if the course does not exist. * `FAILED_PRECONDITION` if the requested ID belongs to the primary teacher of this course. * `FAILED_PRECONDITION` if the requested ID belongs to the owner of the course Drive folder. * `FAILED_PRECONDITION` if the course no longer has an active owner.\nRequired: userId (path) — Identifier of the teacher to delete. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `\"me\"`, indicating the requesting user; courseId (path) — Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesTeachersGet",
+    "name": "Returns a teacher of a course.",
+    "description": "Returns a teacher of a course. Returns a teacher of a course. GET /v1/courses/{courseId}/teachers/{userId}",
+    "context": "GET /v1/courses/{courseId}/teachers/{userId}\nReturns a teacher of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to view teachers of this course or for access errors. * `NOT_FOUND` if no teacher of this course has the requested ID or if the course does not exist.\nRequired: courseId (path) — Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.; userId (path) — Identifier of the teacher to return. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `\"me\"`, indicating the requesting user\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesTeachersList",
+    "name": "Returns a list of teachers of this course that the requester is permitted to view.",
+    "description": "Returns a list of teachers of this course that the requester is permitted to view. Returns a list of teachers of this course that the requester is permitted to view. GET /v1/courses/{courseId}/teachers",
+    "context": "GET /v1/courses/{courseId}/teachers\nReturns a list of teachers of this course that the requester is permitted to view. This method returns the following error codes: * `NOT_FOUND` if the course does not exist. * `PERMISSION_DENIED` for access errors.\nRequired: courseId (path) — Identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.\nOptional: pageSize (query) — Maximum number of items to return. The default is 30 if unspecified or `0`. The server may return fewer than the specified number of results.; pageToken (query) — nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "user'-s-account-memberships-delete-membership",
+    "name": "Delete Membership",
+    "description": "Delete Membership Remove the associated member from an account. DELETE /client/v4/memberships/{membership_id}",
+    "context": "DELETE /client/v4/memberships/{membership_id}\nRemove the associated member from an account.\nRequired: membership_id (path)"
+  },
+  {
+    "id": "user'-s-account-memberships-list-memberships",
+    "name": "List Memberships",
+    "description": "List Memberships List memberships of accounts the user can access. GET /client/v4/memberships",
+    "context": "GET /client/v4/memberships\nList memberships of accounts the user can access.\nOptional: account.name (query); page (query); per_page (query); order (query); direction (query); name (query); status (query)"
+  },
+  {
+    "id": "user'-s-account-memberships-membership-details",
+    "name": "Membership Details",
+    "description": "Membership Details Get a specific membership. GET /client/v4/memberships/{membership_id}",
+    "context": "GET /client/v4/memberships/{membership_id}\nGet a specific membership.\nRequired: membership_id (path)"
+  },
+  {
+    "id": "user'-s-account-memberships-update-membership",
+    "name": "Update Membership",
+    "description": "Update Membership Accept or reject this account invitation. PUT /client/v4/memberships/{membership_id}",
+    "context": "PUT /client/v4/memberships/{membership_id}\nAccept or reject this account invitation.\nRequired: membership_id (path); body (body)"
+  }
+]

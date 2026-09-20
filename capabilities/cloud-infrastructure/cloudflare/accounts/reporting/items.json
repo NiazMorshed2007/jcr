@@ -1,0 +1,38 @@
+[
+  {
+    "id": "reporting-industry-get",
+    "name": "Get an account industry",
+    "description": "Get an account industry Gets the industry classification for an account. GET /client/v4/accounts/{account_id}/reporting/industry",
+    "context": "GET /client/v4/accounts/{account_id}/reporting/industry\nGets the industry classification for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "reporting-industry-update",
+    "name": "Update an account industry",
+    "description": "Update an account industry Updates the industry classification for an account. PATCH /client/v4/accounts/{account_id}/reporting/industry",
+    "context": "PATCH /client/v4/accounts/{account_id}/reporting/industry\nUpdates the industry classification for an account.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "reporting-policies-get",
+    "name": "Get a reporting policy",
+    "description": "Get a reporting policy Gets a reporting policy by identifier. GET /client/v4/accounts/{account_id}/reporting/policies/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/reporting/policies/{policy_id}\nGets a reporting policy by identifier.\nRequired: policy_id (path); account_id (path)"
+  },
+  {
+    "id": "reporting-policies-list",
+    "name": "List reporting policies",
+    "description": "List reporting policies Lists all reporting policies for an account. GET /client/v4/accounts/{account_id}/reporting/policies",
+    "context": "GET /client/v4/accounts/{account_id}/reporting/policies\nLists all reporting policies for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "reporting-reports-get",
+    "name": "Get a generated report",
+    "description": "Get a generated report Gets a generated report by identifier. GET /client/v4/accounts/{account_id}/reporting/reports/{report_id}",
+    "context": "GET /client/v4/accounts/{account_id}/reporting/reports/{report_id}\nGets a generated report by identifier.\nRequired: account_id (path); report_id (path)"
+  },
+  {
+    "id": "reporting-reports-list",
+    "name": "List generated reports",
+    "description": "List generated reports Lists all generated reports for an account. GET /client/v4/accounts/{account_id}/reporting/reports",
+    "context": "GET /client/v4/accounts/{account_id}/reporting/reports\nLists all generated reports for an account.\nRequired: account_id (path)"
+  }
+]

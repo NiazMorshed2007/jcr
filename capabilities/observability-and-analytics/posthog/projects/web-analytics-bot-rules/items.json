@@ -1,0 +1,20 @@
+[
+  {
+    "id": "web_analytics_bot_rules_create",
+    "name": "Create a custom bot rule",
+    "description": "Create a custom bot rule Add one bot rule to the project. POST /api/projects/{project_id}/web_analytics_bot_rules/",
+    "context": "POST /api/projects/{project_id}/web_analytics_bot_rules/\nAdd one bot rule to the project. A rule combines one or more single-property conditions with AND or OR. A pattern is rejected if it cannot run, because a broken rule would break every query that classifies traffic for the project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_bot_rules_destroy",
+    "name": "Delete a custom bot rule",
+    "description": "Delete a custom bot rule Remove one bot rule by its id. DELETE /api/projects/{project_id}/web_analytics_bot_rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/web_analytics_bot_rules/{id}/\nRemove one bot rule by its id. The built-in bot list is unaffected.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_bot_rules_list",
+    "name": "List custom bot rules",
+    "description": "List custom bot rules The project's own bot rules, in the order they are checked at query time. GET /api/projects/{project_id}/web_analytics_bot_rules/",
+    "context": "GET /api/projects/{project_id}/web_analytics_bot_rules/\nThe project's own bot rules, in the order they are checked at query time.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

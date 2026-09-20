@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pages-assets-check-missing",
+    "name": "Check missing assets",
+    "description": "Check missing assets Check which of the provided file hashes are missing from the Pages asset store. POST /client/v4/pages/assets/check-missing",
+    "context": "POST /client/v4/pages/assets/check-missing\nCheck which of the provided file hashes are missing from the Pages asset store. Returns a list of missing hashes that need to be uploaded. Used as part of the Pages Direct Upload workflow. Authenticate with the JWT obtained from the upload-token endpoint: GET /accounts/{account_id}/pages/projects/{project_name}/upload-token\nRequired: body (body)"
+  },
+  {
+    "id": "pages-assets-upload",
+    "name": "Upload asset",
+    "description": "Upload asset Upload one or more files to the Pages asset store. POST /client/v4/pages/assets/upload",
+    "context": "POST /client/v4/pages/assets/upload\nUpload one or more files to the Pages asset store. Each file is identified by its content hash and is uploaded using the same JSON shape as the Cloudflare KV bulk write API. Used as part of the Pages Direct Upload workflow. Authenticate with the JWT obtained from the upload-token endpoint: GET /accounts/{account_id}/pages/projects/{project_name}/upload-token\nRequired: body (body)"
+  },
+  {
+    "id": "pages-assets-upsert-hashes",
+    "name": "Upsert asset hashes",
+    "description": "Upsert asset hashes Register the provided file hashes as recently uploaded to the Pages asset store. POST /client/v4/pages/assets/upsert-hashes",
+    "context": "POST /client/v4/pages/assets/upsert-hashes\nRegister the provided file hashes as recently uploaded to the Pages asset store. Used as part of the Pages Direct Upload workflow so future deployments can avoid re-uploading files that are already present. Authenticate with the JWT obtained from the upload-token endpoint: GET /accounts/{account_id}/pages/projects/{project_name}/upload-token\nRequired: body (body)"
+  }
+]

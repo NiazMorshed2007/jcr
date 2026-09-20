@@ -1,0 +1,44 @@
+[
+  {
+    "id": "property_definitions_bulk_update_tags_create",
+    "name": "Bulk update tags on multiple objects",
+    "description": "Bulk update tags on multiple objects Bulk update tags on multiple objects. POST /api/projects/{project_id}/property_definitions/bulk_update_tags/",
+    "context": "POST /api/projects/{project_id}/property_definitions/bulk_update_tags/\nBulk update tags on multiple objects. PAT access: this action has no ``required_scopes=`` on the decorator — inheriting viewsets must add ``\"bulk_update_tags\"`` to their ``scope_object_write_actions`` list to accept personal API keys. Without that opt-in, ``APIScopePermission`` rejects PAT requests with \"This action does not support personal API key access\". Done per-viewset so granting `` :write`` for one resource doesn't leak access to sibling resources that share this mixin. Accepts: - {\"ids\": [...], \"action\": \"add\"|\"remove\"|\"set\", \"tags\": [\"tag1\", \"tag2\"]} Actions: - \"add\": Add tags to existing tags on each object - \"remove\": Remove specific tags from each object - \"set\": Replace all tags on each object with the provided list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "property_definitions_destroy",
+    "name": "property_definitions_destroy",
+    "description": "property_definitions_destroy DELETE /api/projects/{project_id}/property_definitions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/property_definitions/{id}/\nproperty_definitions_destroy\nRequired: id (path) — A UUID string identifying this property definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "property_definitions_list",
+    "name": "property_definitions_list",
+    "description": "property_definitions_list GET /api/projects/{project_id}/property_definitions/",
+    "context": "GET /api/projects/{project_id}/property_definitions/\nproperty_definitions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: event_names (query) — If sent, response value will have `is_seen_on_filtered_events` populated. JSON-encoded; exclude_core_properties (query) — Whether to exclude core properties; exclude_hidden (query) — Whether to exclude properties marked as hidden; exclude_restricted (query) — Whether to exclude properties that the current user does not have read access to via field-level access control; excluded_properties (query) — JSON-encoded list of excluded properties; filter_by_event_names (query) — Whether to return only properties for events in `event_names`. Note: this event scoping does not apply to feature flag properties ($feature/*), which are global and not tracked per-event; to retrieve feature flags use is_feature_flag=true instead.; group_type_index (query) — What group type is the property for. Only should be set if `type=group`; is_feature_flag (query) — Whether to return only (or excluding) feature flag properties ($feature/*). Flags are global, not per-event, so they can't be scoped by event_names/filter_by_event_names — pass is_feature_flag=true to list them all.; is_numerical (query) — Whether to return only (or excluding) numerical property definitions; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; properties (query) — Comma-separated list of properties to filter; search (query) — Searches properties by name; type (query) — What property definitions to return * `event` - event * `person` - person * `group` - group * `session` - session; verified (query) — Filter by verified status. True returns only verified, false returns only unverified."
+  },
+  {
+    "id": "property_definitions_partial_update",
+    "name": "property_definitions_partial_update",
+    "description": "property_definitions_partial_update PATCH /api/projects/{project_id}/property_definitions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/property_definitions/{id}/\nproperty_definitions_partial_update\nRequired: id (path) — A UUID string identifying this property definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "property_definitions_retrieve",
+    "name": "property_definitions_retrieve",
+    "description": "property_definitions_retrieve GET /api/projects/{project_id}/property_definitions/{id}/",
+    "context": "GET /api/projects/{project_id}/property_definitions/{id}/\nproperty_definitions_retrieve\nRequired: id (path) — A UUID string identifying this property definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "property_definitions_seen_together_retrieve",
+    "name": "Allows a caller to provide a list of event names and a single property name Returns a map of the event names to a boolean representing whether that property has ever been seen with that event_name",
+    "description": "Allows a caller to provide a list of event names and a single property name Returns a map of the event names to a boolean representing whether that property has ever been seen with that event_name GET /api/projects/{project_id}/property_definitions/seen_together/",
+    "context": "GET /api/projects/{project_id}/property_definitions/seen_together/\nAllows a caller to provide a list of event names and a single property name Returns a map of the event names to a boolean representing whether that property has ever been seen with that event_name\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "property_definitions_update",
+    "name": "property_definitions_update",
+    "description": "property_definitions_update PUT /api/projects/{project_id}/property_definitions/{id}/",
+    "context": "PUT /api/projects/{project_id}/property_definitions/{id}/\nproperty_definitions_update\nRequired: id (path) — A UUID string identifying this property definition.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

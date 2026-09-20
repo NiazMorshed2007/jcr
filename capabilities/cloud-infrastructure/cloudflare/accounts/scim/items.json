@@ -1,0 +1,104 @@
+[
+  {
+    "id": "scim-groups-create",
+    "name": "Create SCIM Group",
+    "description": "Create SCIM Group Creates a new SCIM Group (user group) for the account. POST /client/v4/accounts/{account_id}/scim/v2/Groups",
+    "context": "POST /client/v4/accounts/{account_id}/scim/v2/Groups\nCreates a new SCIM Group (user group) for the account. The `displayName` must not be empty and must not begin with `CF` (reserved for system groups).\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "scim-groups-delete",
+    "name": "Delete SCIM Group",
+    "description": "Delete SCIM Group Deletes a SCIM Group (custom user groups only). DELETE /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}\nDeletes a SCIM Group (custom user groups only). System groups backed by Cloudflare permission groups cannot be deleted via SCIM. Returns 204 No Content on success.\nRequired: account_id (path); group_id (path)"
+  },
+  {
+    "id": "scim-groups-get",
+    "name": "Get SCIM Group",
+    "description": "Get SCIM Group Retrieves a single SCIM Group resource by group ID. GET /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}\nRetrieves a single SCIM Group resource by group ID.\nRequired: account_id (path); group_id (path)"
+  },
+  {
+    "id": "scim-groups-list",
+    "name": "List SCIM Groups",
+    "description": "List SCIM Groups Lists SCIM Group resources for the account. GET /client/v4/accounts/{account_id}/scim/v2/Groups",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/Groups\nLists SCIM Group resources for the account. Returns both system groups (backed by Cloudflare permission groups, prefixed `cloudflare-v1-`) and custom user groups. Supports filtering by `displayName` using SCIM filter syntax.\nRequired: account_id (path)\nOptional: startIndex (query); count (query); filter (query)"
+  },
+  {
+    "id": "scim-groups-patch",
+    "name": "Patch SCIM Group",
+    "description": "Patch SCIM Group Partially updates a SCIM Group via PATCH operations (RFC 7644 Section 3.5.2). PATCH /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}\nPartially updates a SCIM Group via PATCH operations (RFC 7644 Section 3.5.2). Supports add, remove, and replace operations on `members`, `displayName`, and `externalId`. For system groups (prefixed `cloudflare-v1-`), only member management operations are supported.\nRequired: account_id (path); group_id (path); body (body)"
+  },
+  {
+    "id": "scim-groups-put",
+    "name": "Replace SCIM Group",
+    "description": "Replace SCIM Group Replaces the mutable attributes of a SCIM Group (RFC 7644 Section 3.5.1), including its complete member set. PUT /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/scim/v2/Groups/{group_id}\nReplaces the mutable attributes of a SCIM Group (RFC 7644 Section 3.5.1), including its complete member set. Omitting `externalId` clears it, and omitting `members` replaces the member set with an empty list. For system groups (prefixed `cloudflare-v1-`), only the member set is replaced.\nRequired: account_id (path); group_id (path); body (body)"
+  },
+  {
+    "id": "scim-resource-types-get",
+    "name": "Get SCIM Resource Type",
+    "description": "Get SCIM Resource Type Returns a single SCIM resource type by ID (RFC 7643 Section 6). GET /client/v4/accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/ResourceTypes/{resource_type_id}\nReturns a single SCIM resource type by ID (RFC 7643 Section 6). Valid IDs are `User` and `Group`.\nRequired: account_id (path); resource_type_id (path)"
+  },
+  {
+    "id": "scim-resource-types-list",
+    "name": "List SCIM Resource Types",
+    "description": "List SCIM Resource Types Returns the list of SCIM resource types supported by the Cloudflare SCIM service (RFC 7643 Section 6, RFC 7644 Section 4). GET /client/v4/accounts/{account_id}/scim/v2/ResourceTypes",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/ResourceTypes\nReturns the list of SCIM resource types supported by the Cloudflare SCIM service (RFC 7643 Section 6, RFC 7644 Section 4). Clients use this to discover available resource categories (e.g. Users, Groups) and their associated schemas. Query parameters are not supported on this endpoint.\nRequired: account_id (path)"
+  },
+  {
+    "id": "scim-schemas-get",
+    "name": "Get SCIM Schema",
+    "description": "Get SCIM Schema Returns a single SCIM schema definition by schema URI ID (RFC 7643 Section 7). GET /client/v4/accounts/{account_id}/scim/v2/Schemas/{schema_id}",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/Schemas/{schema_id}\nReturns a single SCIM schema definition by schema URI ID (RFC 7643 Section 7). Valid IDs are `urn:ietf:params:scim:schemas:core:2.0:User` and `urn:ietf:params:scim:schemas:core:2.0:Group`.\nRequired: account_id (path); schema_id (path)"
+  },
+  {
+    "id": "scim-schemas-list",
+    "name": "List SCIM Schemas",
+    "description": "List SCIM Schemas Returns the list of SCIM schemas supported by the Cloudflare SCIM service (RFC 7643 Section 7, RFC 7644 Section 4). GET /client/v4/accounts/{account_id}/scim/v2/Schemas",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/Schemas\nReturns the list of SCIM schemas supported by the Cloudflare SCIM service (RFC 7643 Section 7, RFC 7644 Section 4). Clients use this to introspect the attributes of each resource type. Query parameters are not supported on this endpoint.\nRequired: account_id (path)"
+  },
+  {
+    "id": "scim-service-provider-config-get",
+    "name": "Get SCIM Service Provider Config",
+    "description": "Get SCIM Service Provider Config Returns the SCIM 2.0 Service Provider configuration (RFC 7643 Section 5). GET /client/v4/accounts/{account_id}/scim/v2/ServiceProviderConfig",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/ServiceProviderConfig\nReturns the SCIM 2.0 Service Provider configuration (RFC 7643 Section 5). IdPs use this endpoint to auto-configure their SCIM integration with Cloudflare, discovering which optional features (patch, bulk, filter, etc.) are supported.\nRequired: account_id (path)"
+  },
+  {
+    "id": "scim-users-create",
+    "name": "Create SCIM User",
+    "description": "Create SCIM User Provisions a new account member via SCIM. POST /client/v4/accounts/{account_id}/scim/v2/Users",
+    "context": "POST /client/v4/accounts/{account_id}/scim/v2/Users\nProvisions a new account member via SCIM. The `userName` field must be a valid email address and must match the primary email in `emails`. The account must be an Enterprise account with SCIM entitlements enabled.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "scim-users-delete",
+    "name": "Delete SCIM User",
+    "description": "Delete SCIM User Deprovisions a SCIM User by removing their membership from this account (RFC 7644 Section 3.6). DELETE /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}\nDeprovisions a SCIM User by removing their membership from this account (RFC 7644 Section 3.6). This does not delete the global Cloudflare user.\nRequired: account_id (path); user_id (path)"
+  },
+  {
+    "id": "scim-users-get",
+    "name": "Get SCIM User",
+    "description": "Get SCIM User Retrieves a single account member as a SCIM User resource by user tag. GET /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}\nRetrieves a single account member as a SCIM User resource by user tag.\nRequired: account_id (path); user_id (path)"
+  },
+  {
+    "id": "scim-users-list",
+    "name": "List SCIM Users",
+    "description": "List SCIM Users Lists account members as SCIM User resources. GET /client/v4/accounts/{account_id}/scim/v2/Users",
+    "context": "GET /client/v4/accounts/{account_id}/scim/v2/Users\nLists account members as SCIM User resources. Supports optional filtering by `userName` (email) using the SCIM filter syntax (e.g. `userName eq \"user@example.com\"`). Pagination is controlled via `startIndex` and `count` query parameters per RFC 7644 Section 3.4.2.4.\nRequired: account_id (path)\nOptional: startIndex (query); count (query); filter (query)"
+  },
+  {
+    "id": "scim-users-patch",
+    "name": "Patch SCIM User",
+    "description": "Patch SCIM User Partially updates a SCIM User via PATCH operations (RFC 7644 Section 3.5.2). PATCH /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}\nPartially updates a SCIM User via PATCH operations (RFC 7644 Section 3.5.2). Supports updating `userName`, `name.givenName`, `name.familyName`, and `active`. Setting `active: false` deprovisions the user (removes them from the account). For IdP compatibility, `emails[type eq \"work\"].value` is also accepted as an alias for `userName`.\nRequired: account_id (path); user_id (path); body (body)"
+  },
+  {
+    "id": "scim-users-put",
+    "name": "Replace SCIM User",
+    "description": "Replace SCIM User Replaces a SCIM User resource (RFC 7644 Section 3.5.1). PUT /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/scim/v2/Users/{user_id}\nReplaces a SCIM User resource (RFC 7644 Section 3.5.1). Fully replaces the mutable attributes of the user. Supports updating `userName`, `name`, `emails`, and `active`.\nRequired: account_id (path); user_id (path); body (body)"
+  }
+]

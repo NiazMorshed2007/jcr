@@ -1,0 +1,44 @@
+[
+  {
+    "id": "object_media_previews_create",
+    "name": "object_media_previews_create",
+    "description": "object_media_previews_create POST /api/projects/{project_id}/object_media_previews/",
+    "context": "POST /api/projects/{project_id}/object_media_previews/\nobject_media_previews_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "object_media_previews_destroy",
+    "name": "object_media_previews_destroy",
+    "description": "object_media_previews_destroy DELETE /api/projects/{project_id}/object_media_previews/{id}/",
+    "context": "DELETE /api/projects/{project_id}/object_media_previews/{id}/\nobject_media_previews_destroy\nRequired: id (path) — A UUID string identifying this object media preview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "object_media_previews_list",
+    "name": "object_media_previews_list",
+    "description": "object_media_previews_list GET /api/projects/{project_id}/object_media_previews/",
+    "context": "GET /api/projects/{project_id}/object_media_previews/\nobject_media_previews_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "object_media_previews_partial_update",
+    "name": "object_media_previews_partial_update",
+    "description": "object_media_previews_partial_update PATCH /api/projects/{project_id}/object_media_previews/{id}/",
+    "context": "PATCH /api/projects/{project_id}/object_media_previews/{id}/\nobject_media_previews_partial_update\nRequired: id (path) — A UUID string identifying this object media preview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "object_media_previews_preferred_for_event_retrieve",
+    "name": "Get the preferred media preview for an event definition",
+    "description": "Get the preferred media preview for an event definition Get the preferred media preview for an event definition. GET /api/projects/{project_id}/object_media_previews/preferred_for_event/",
+    "context": "GET /api/projects/{project_id}/object_media_previews/preferred_for_event/\nGet the preferred media preview for an event definition. Most recent user-uploaded, then most recent exported asset. Requires event_definition (query param).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "object_media_previews_retrieve",
+    "name": "object_media_previews_retrieve",
+    "description": "object_media_previews_retrieve GET /api/projects/{project_id}/object_media_previews/{id}/",
+    "context": "GET /api/projects/{project_id}/object_media_previews/{id}/\nobject_media_previews_retrieve\nRequired: id (path) — A UUID string identifying this object media preview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "object_media_previews_update",
+    "name": "object_media_previews_update",
+    "description": "object_media_previews_update PUT /api/projects/{project_id}/object_media_previews/{id}/",
+    "context": "PUT /api/projects/{project_id}/object_media_previews/{id}/\nobject_media_previews_update\nRequired: id (path) — A UUID string identifying this object media preview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "actions%2Fadd-custom-labels-to-self-hosted-runner-for-repo",
+    "name": "Add custom labels to a self-hosted runner for a repository",
+    "description": "Add custom labels to a self-hosted runner for a repository Adds custom labels to a self-hosted runner configured in a repository. POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+    "context": "POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels\nAdds custom labels to a self-hosted runner configured in a repository. Authenticated users must have admin access to the organization to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner.; body (body)"
+  },
+  {
+    "id": "actions%2Fcreate-registration-token-for-repo",
+    "name": "Create a registration token for a repository",
+    "description": "Create a registration token for a repository Returns a token that you can pass to the `config` script. POST /repos/{owner}/{repo}/actions/runners/registration-token",
+    "context": "POST /repos/{owner}/{repo}/actions/runners/registration-token\nReturns a token that you can pass to the `config` script. The token expires after one hour. For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner: ``` ./config.sh --url https://github.com/octo-org --token TOKEN ``` Authenticated users must have admin access to the repository to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fcreate-remove-token-for-repo",
+    "name": "Create a remove token for a repository",
+    "description": "Create a remove token for a repository Returns a token that you can pass to the `config` script to remove a self-hosted runner from an repository. POST /repos/{owner}/{repo}/actions/runners/remove-token",
+    "context": "POST /repos/{owner}/{repo}/actions/runners/remove-token\nReturns a token that you can pass to the `config` script to remove a self-hosted runner from an repository. The token expires after one hour. For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization: ``` ./config.sh remove --token TOKEN ``` Authenticated users must have admin access to the repository to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fdelete-self-hosted-runner-from-repo",
+    "name": "Delete a self-hosted runner from a repository",
+    "description": "Delete a self-hosted runner from a repository Forces the removal of a self-hosted runner from a repository. DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "context": "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}\nForces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists. Authenticated users must have admin access to the repository to use this endpoint. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner."
+  },
+  {
+    "id": "actions%2Fgenerate-runner-jitconfig-for-repo",
+    "name": "Create configuration for a just-in-time runner for a repository",
+    "description": "Create configuration for a just-in-time runner for a repository Generates a configuration that can be passed to the runner application at startup. POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig",
+    "context": "POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig\nGenerates a configuration that can be passed to the runner application at startup. The authenticated user must have admin access to the repository. OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fget-runner-version-deprecation-for-repo",
+    "name": "Get runner version end-of-life schedule for a repository",
+    "description": "Get runner version end-of-life schedule for a repository Gets the end-of-life schedule for a specific runner version in a repository. GET /repos/{owner}/{repo}/actions/runners/deprecations/{version}",
+    "context": "GET /repos/{owner}/{repo}/actions/runners/deprecations/{version}\nGets the end-of-life schedule for a specific runner version in a repository. Returns the runner version and the dates when registration and runtime support will end. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; version (path) — The runner version to look up."
+  },
+  {
+    "id": "actions%2Fget-self-hosted-runner-for-repo",
+    "name": "Get a self-hosted runner for a repository",
+    "description": "Get a self-hosted runner for a repository Gets a specific self-hosted runner configured in a repository. GET /repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "context": "GET /repos/{owner}/{repo}/actions/runners/{runner_id}\nGets a specific self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner."
+  },
+  {
+    "id": "actions%2Flist-labels-for-self-hosted-runner-for-repo",
+    "name": "List labels for a self-hosted runner for a repository",
+    "description": "List labels for a self-hosted runner for a repository Lists all labels for a self-hosted runner configured in a repository. GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+    "context": "GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels\nLists all labels for a self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner."
+  },
+  {
+    "id": "actions%2Flist-runner-applications-for-repo",
+    "name": "List runner applications for a repository",
+    "description": "List runner applications for a repository Lists binaries for the runner application that you can download and run. GET /repos/{owner}/{repo}/actions/runners/downloads",
+    "context": "GET /repos/{owner}/{repo}/actions/runners/downloads\nLists binaries for the runner application that you can download and run. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Flist-self-hosted-runners-for-repo",
+    "name": "List self-hosted runners for a repository",
+    "description": "List self-hosted runners for a repository Lists all self-hosted runners configured in a repository. GET /repos/{owner}/{repo}/actions/runners",
+    "context": "GET /repos/{owner}/{repo}/actions/runners\nLists all self-hosted runners configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: name (query) — The name of a self-hosted runner.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Fremove-all-custom-labels-from-self-hosted-runner-for-repo",
+    "name": "Remove all custom labels from a self-hosted runner for a repository",
+    "description": "Remove all custom labels from a self-hosted runner for a repository Remove all custom labels from a self-hosted runner configured in a repository. DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+    "context": "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels\nRemove all custom labels from a self-hosted runner configured in a repository. Returns the remaining read-only labels from the runner. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner."
+  },
+  {
+    "id": "actions%2Fremove-custom-label-from-self-hosted-runner-for-repo",
+    "name": "Remove a custom label from a self-hosted runner for a repository",
+    "description": "Remove a custom label from a self-hosted runner for a repository Remove a custom label from a self-hosted runner configured in a repository. DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}",
+    "context": "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}\nRemove a custom label from a self-hosted runner configured in a repository. Returns the remaining labels from the runner. This endpoint returns a `404 Not Found` status if the custom label is not present on the runner. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner.; name (path) — The name of a self-hosted runner's custom label."
+  },
+  {
+    "id": "actions%2Fset-custom-labels-for-self-hosted-runner-for-repo",
+    "name": "Set custom labels for a self-hosted runner for a repository",
+    "description": "Set custom labels for a self-hosted runner for a repository Remove all previous custom labels and set the new custom labels for a specific self-hosted runner configured in a repository. PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+    "context": "PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels\nRemove all previous custom labels and set the new custom labels for a specific self-hosted runner configured in a repository. Authenticated users must have admin access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; runner_id (path) — Unique identifier of the self-hosted runner.; body (body)"
+  }
+]

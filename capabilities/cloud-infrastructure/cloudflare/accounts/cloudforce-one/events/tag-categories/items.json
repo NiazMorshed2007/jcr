@@ -1,0 +1,20 @@
+[
+  {
+    "id": "delete_TagCategoryDelete",
+    "name": "Deletes a tag category (SoT)",
+    "description": "Deletes a tag category (SoT) Deletes a Source-of-Truth tag category by UUID. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}\nDeletes a Source-of-Truth tag category by UUID.\nRequired: account_id (path) — Account ID.; category_uuid (path) — Tag Category UUID."
+  },
+  {
+    "id": "get_TagCategoryDetail",
+    "name": "Gets a tag category by UUID (SoT)",
+    "description": "Gets a tag category by UUID (SoT) Returns a single Source-of-Truth tag category by UUID, including its full schema. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}\nReturns a single Source-of-Truth tag category by UUID, including its full schema.\nRequired: account_id (path) — Account ID.; category_uuid (path) — Tag Category UUID."
+  },
+  {
+    "id": "patch_TagCategoryUpdate",
+    "name": "Updates a tag category (SoT)",
+    "description": "Updates a tag category (SoT) Updates a Source-of-Truth tag category by UUID. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}\nUpdates a Source-of-Truth tag category by UUID.\nRequired: account_id (path) — Account ID.; category_uuid (path) — Tag Category UUID.\nOptional: body (body)"
+  }
+]

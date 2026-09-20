@@ -1,0 +1,38 @@
+[
+  {
+    "id": "list-owner-audit-logs",
+    "name": "List workspace audit logs",
+    "description": "List workspace audit logs Retrieve audit logs for a specific workspace with optional filtering and pagination. GET /v1/owners/{ownerId}/audit-logs",
+    "context": "GET /v1/owners/{ownerId}/audit-logs\nRetrieve audit logs for a specific workspace with optional filtering and pagination.\nRequired: ownerId (path) — The ID of the workspace to return resources for\nOptional: startTime (query) — Start time for filtering audit logs (ISO 8601 format); endTime (query) — End time for filtering audit logs (ISO 8601 format); cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of audit log items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-owners",
+    "name": "List workspaces",
+    "description": "List workspaces List the workspaces that your API key has access to, optionally filtered by name or owner email address. GET /v1/owners",
+    "context": "GET /v1/owners\nList the workspaces that your API key has access to, optionally filtered by name or owner email address.\nOptional: name (query) — Only return workspaces with one of the provided names. Only exact matches are returned.; email (query) — Only return workspaces owned by one of the provided email addresses.; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "remove-workspace-member",
+    "name": "Remove workspace member",
+    "description": "Remove workspace member Remove a user from the specified workspace. DELETE /v1/owners/{ownerId}/members/{userId}",
+    "context": "DELETE /v1/owners/{ownerId}/members/{userId}\nRemove a user from the specified workspace.\nRequired: ownerId (path) — The ID of the workspace to return resources for; userId (path) — The ID of the user (Render object ID with a `usr-` prefix)."
+  },
+  {
+    "id": "retrieve-owner",
+    "name": "Retrieve workspace",
+    "description": "Retrieve workspace Retrieve the workspace with the provided ID. GET /v1/owners/{ownerId}",
+    "context": "GET /v1/owners/{ownerId}\nRetrieve the workspace with the provided ID. Workspace IDs start with `tea-`. If you provide a user ID (starts with `own-`), this endpoint returns the user's default workspace.\nRequired: ownerId (path) — The ID of the user or team"
+  },
+  {
+    "id": "retrieve-owner-members",
+    "name": "List workspace members",
+    "description": "List workspace members Retrieves the list of users belonging to the workspace with the provided ID. GET /v1/owners/{ownerId}/members",
+    "context": "GET /v1/owners/{ownerId}/members\nRetrieves the list of users belonging to the workspace with the provided ID.\nRequired: ownerId (path) — The ID of the team"
+  },
+  {
+    "id": "update-workspace-member",
+    "name": "Update workspace member role",
+    "description": "Update workspace member role Update the role of an existing workspace member. PATCH /v1/owners/{ownerId}/members/{userId}",
+    "context": "PATCH /v1/owners/{ownerId}/members/{userId}\nUpdate the role of an existing workspace member.\nRequired: ownerId (path) — The ID of the workspace to return resources for; userId (path) — The ID of the user (Render object ID with a `usr-` prefix).; body (body)"
+  }
+]

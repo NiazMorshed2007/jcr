@@ -1,0 +1,26 @@
+[
+  {
+    "id": "error_tracking_stack_frames_batch_get_create",
+    "name": "error_tracking_stack_frames_batch_get_create",
+    "description": "error_tracking_stack_frames_batch_get_create POST /api/projects/{project_id}/error_tracking/stack_frames/batch_get/",
+    "context": "POST /api/projects/{project_id}/error_tracking/stack_frames/batch_get/\nerror_tracking_stack_frames_batch_get_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_stack_frames_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/error_tracking/stack_frames/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/stack_frames/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_stack_frames_list",
+    "name": "error_tracking_stack_frames_list",
+    "description": "error_tracking_stack_frames_list GET /api/projects/{project_id}/error_tracking/stack_frames/",
+    "context": "GET /api/projects/{project_id}/error_tracking/stack_frames/\nerror_tracking_stack_frames_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "error_tracking_stack_frames_retrieve",
+    "name": "error_tracking_stack_frames_retrieve",
+    "description": "error_tracking_stack_frames_retrieve GET /api/projects/{project_id}/error_tracking/stack_frames/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/stack_frames/{id}/\nerror_tracking_stack_frames_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

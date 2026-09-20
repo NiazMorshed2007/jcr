@@ -1,0 +1,38 @@
+[
+  {
+    "id": "custom-origin-trust-store-create",
+    "name": "Upload Custom Origin Trust Store",
+    "description": "Upload Custom Origin Trust Store Upload a root CA certificate to the Custom Origin Trust Store for a Zone. POST /client/v4/zones/{zone_id}/acm/custom_trust_store",
+    "context": "POST /client/v4/zones/{zone_id}/acm/custom_trust_store\nUpload a root CA certificate to the Custom Origin Trust Store for a Zone. Only root CA certificates are accepted.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-origin-trust-store-delete",
+    "name": "Delete Custom Origin Trust Store",
+    "description": "Delete Custom Origin Trust Store Removes a root CA certificate from the custom origin trust store. DELETE /client/v4/zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}\nRemoves a root CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.\nRequired: custom_origin_trust_store_id (path); zone_id (path)"
+  },
+  {
+    "id": "custom-origin-trust-store-details",
+    "name": "Custom Origin Trust Store Details",
+    "description": "Custom Origin Trust Store Details Retrieves details about a specific root CA certificate in the custom origin trust store, including expiration and subject information. GET /client/v4/zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}",
+    "context": "GET /client/v4/zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}\nRetrieves details about a specific root CA certificate in the custom origin trust store, including expiration and subject information.\nRequired: custom_origin_trust_store_id (path); zone_id (path)"
+  },
+  {
+    "id": "custom-origin-trust-store-list-details",
+    "name": "List Custom Origin Trust Store Details",
+    "description": "List Custom Origin Trust Store Details Get Custom Origin Trust Store for a Zone. GET /client/v4/zones/{zone_id}/acm/custom_trust_store",
+    "context": "GET /client/v4/zones/{zone_id}/acm/custom_trust_store\nGet Custom Origin Trust Store for a Zone.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); limit (query); offset (query)"
+  },
+  {
+    "id": "total-tls-enable-or-disable-total-tls",
+    "name": "Enable or Disable Total TLS",
+    "description": "Enable or Disable Total TLS Set Total TLS Settings or disable the feature for a Zone. POST /client/v4/zones/{zone_id}/acm/total_tls",
+    "context": "POST /client/v4/zones/{zone_id}/acm/total_tls\nSet Total TLS Settings or disable the feature for a Zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "total-tls-total-tls-settings-details",
+    "name": "Total TLS Settings Details",
+    "description": "Total TLS Settings Details Get Total TLS Settings for a Zone. GET /client/v4/zones/{zone_id}/acm/total_tls",
+    "context": "GET /client/v4/zones/{zone_id}/acm/total_tls\nGet Total TLS Settings for a Zone.\nRequired: zone_id (path)"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "hog_functions_create",
+    "name": "hog_functions_create",
+    "description": "hog_functions_create POST /api/projects/{project_id}/hog_functions/",
+    "context": "POST /api/projects/{project_id}/hog_functions/\nhog_functions_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/hog_functions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/hog_functions/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_functions_discard_draft_create",
+    "name": "hog_functions_discard_draft_create",
+    "description": "hog_functions_discard_draft_create POST /api/projects/{project_id}/hog_functions/{id}/discard_draft/",
+    "context": "POST /api/projects/{project_id}/hog_functions/{id}/discard_draft/\nhog_functions_discard_draft_create\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_functions_enable_backfills_create",
+    "name": "hog_functions_enable_backfills_create",
+    "description": "hog_functions_enable_backfills_create POST /api/projects/{project_id}/hog_functions/{id}/enable_backfills/",
+    "context": "POST /api/projects/{project_id}/hog_functions/{id}/enable_backfills/\nhog_functions_enable_backfills_create\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_icon_retrieve",
+    "name": "hog_functions_icon_retrieve",
+    "description": "hog_functions_icon_retrieve GET /api/projects/{project_id}/hog_functions/icon/",
+    "context": "GET /api/projects/{project_id}/hog_functions/icon/\nhog_functions_icon_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_functions_icons_retrieve",
+    "name": "hog_functions_icons_retrieve",
+    "description": "hog_functions_icons_retrieve GET /api/projects/{project_id}/hog_functions/icons/",
+    "context": "GET /api/projects/{project_id}/hog_functions/icons/\nhog_functions_icons_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_functions_invocations_create",
+    "name": "hog_functions_invocations_create",
+    "description": "hog_functions_invocations_create POST /api/projects/{project_id}/hog_functions/{id}/invocations/",
+    "context": "POST /api/projects/{project_id}/hog_functions/{id}/invocations/\nhog_functions_invocations_create\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_list",
+    "name": "hog_functions_list",
+    "description": "hog_functions_list GET /api/projects/{project_id}/hog_functions/",
+    "context": "GET /api/projects/{project_id}/hog_functions/\nhog_functions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_at (query); created_by (query); enabled (query); id (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; type (query) — Multiple values may be separated by commas.; updated_at (query)"
+  },
+  {
+    "id": "hog_functions_logs_retrieve",
+    "name": "hog_functions_logs_retrieve",
+    "description": "hog_functions_logs_retrieve GET /api/projects/{project_id}/hog_functions/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/hog_functions/{id}/logs/\nhog_functions_logs_retrieve\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "hog_functions_masked_secrets_retrieve",
+    "name": "Hog functions storing the secret mask in place of a real credential",
+    "description": "Hog functions storing the secret mask in place of a real credential Hog functions storing the secret mask in place of a real credential. GET /api/projects/{project_id}/hog_functions/masked_secrets/",
+    "context": "GET /api/projects/{project_id}/hog_functions/masked_secrets/\nHog functions storing the secret mask in place of a real credential. Such a function authenticates against nothing and fails every send. The original value cannot be restored from our side, so each listed input has to be entered again.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_functions_metrics_retrieve",
+    "name": "hog_functions_metrics_retrieve",
+    "description": "hog_functions_metrics_retrieve GET /api/projects/{project_id}/hog_functions/{id}/metrics/",
+    "context": "GET /api/projects/{project_id}/hog_functions/{id}/metrics/\nhog_functions_metrics_retrieve\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range. Accepts relative formats like '-7d', '-24h' or ISO 8601 timestamps. Defaults to '-7d'.; before (query) — End of the time range. Same format as 'after'. Defaults to now.; breakdown_by (query) — Group the series by metric 'name' or 'kind'. Defaults to 'kind'. * `name` - name * `kind` - kind; instance_id (query) — Filter metrics to a specific execution instance.; interval (query) — Time bucket size for the series. One of: hour, day, week. Defaults to 'day'. * `hour` - hour * `day` - day * `week` - week; kind (query) — Comma-separated metric kinds to filter by, e.g. 'success,failure'.; name (query) — Comma-separated metric names to filter by."
+  },
+  {
+    "id": "hog_functions_metrics_totals_retrieve",
+    "name": "hog_functions_metrics_totals_retrieve",
+    "description": "hog_functions_metrics_totals_retrieve GET /api/projects/{project_id}/hog_functions/{id}/metrics/totals/",
+    "context": "GET /api/projects/{project_id}/hog_functions/{id}/metrics/totals/\nhog_functions_metrics_totals_retrieve\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range. Accepts relative formats like '-7d', '-24h' or ISO 8601 timestamps. Defaults to '-7d'.; before (query) — End of the time range. Same format as 'after'. Defaults to now.; breakdown_by (query) — Group the series by metric 'name' or 'kind'. Defaults to 'kind'. * `name` - name * `kind` - kind; instance_id (query) — Filter metrics to a specific execution instance.; interval (query) — Time bucket size for the series. One of: hour, day, week. Defaults to 'day'. * `hour` - hour * `day` - day * `week` - week; kind (query) — Comma-separated metric kinds to filter by, e.g. 'success,failure'.; name (query) — Comma-separated metric names to filter by."
+  },
+  {
+    "id": "hog_functions_partial_update",
+    "name": "hog_functions_partial_update",
+    "description": "hog_functions_partial_update PATCH /api/projects/{project_id}/hog_functions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/hog_functions/{id}/\nhog_functions_partial_update\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_publish_create",
+    "name": "hog_functions_publish_create",
+    "description": "hog_functions_publish_create POST /api/projects/{project_id}/hog_functions/{id}/publish/",
+    "context": "POST /api/projects/{project_id}/hog_functions/{id}/publish/\nhog_functions_publish_create\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_rearrange_partial_update",
+    "name": "Update the execution order of multiple HogFunctions.",
+    "description": "Update the execution order of multiple HogFunctions. PATCH /api/projects/{project_id}/hog_functions/rearrange/",
+    "context": "PATCH /api/projects/{project_id}/hog_functions/rearrange/\nUpdate the execution order of multiple HogFunctions.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_rerun_create",
+    "name": "Rerun past invocations of this hog function from their stored payloads",
+    "description": "Rerun past invocations of this hog function from their stored payloads Rerun past invocations of this hog function from their stored payloads. POST /api/projects/{project_id}/hog_functions/{id}/rerun/",
+    "context": "POST /api/projects/{project_id}/hog_functions/{id}/rerun/\nRerun past invocations of this hog function from their stored payloads. The CDP worker reads matching rows from the `hog_invocation_results` ClickHouse table, rehydrates the invocation from the stored `invocation_globals`, and re-enqueues onto cyclotron. Each rerun run reuses the original `invocation_id` with `is_retry=1` set on the new lifecycle row so the UI can surface that it was a rerun. Only types a cyclotron worker executes (`TYPES_THAT_CAN_RERUN`) can be rerun: rerun re-enqueues onto the cyclotron hog queue, and other types run elsewhere (source webhooks inline in the cdp-api HTTP handler, transformations during ingestion, `site_*` transpiled to client-side JS). A re-enqueued invocation of one of those would never drain and wedges the partition, so a rerun of a non-rerunnable type is rejected with a 400 here. A disabled function is rejected the same way: the worker skips its invocations, so the rerun could never execute. Because rerun replays historical event/person/group data, it requires `person:read` and `group:read` on top of `hog_function:write`.\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_functions_retrieve",
+    "name": "hog_functions_retrieve",
+    "description": "hog_functions_retrieve GET /api/projects/{project_id}/hog_functions/{id}/",
+    "context": "GET /api/projects/{project_id}/hog_functions/{id}/\nhog_functions_retrieve\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_functions_revisions_list",
+    "name": "hog_functions_revisions_list",
+    "description": "hog_functions_revisions_list GET /api/projects/{project_id}/hog_functions/{id}/revisions/",
+    "context": "GET /api/projects/{project_id}/hog_functions/{id}/revisions/\nhog_functions_revisions_list\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "hog_functions_revisions_restore_create",
+    "name": "hog_functions_revisions_restore_create",
+    "description": "hog_functions_revisions_restore_create POST /api/projects/{project_id}/hog_functions/{id}/revisions/{version}/restore/",
+    "context": "POST /api/projects/{project_id}/hog_functions/{id}/revisions/{version}/restore/\nhog_functions_revisions_restore_create\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; version (path) — Function version to restore.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_functions_revisions_retrieve",
+    "name": "hog_functions_revisions_retrieve",
+    "description": "hog_functions_revisions_retrieve GET /api/projects/{project_id}/hog_functions/{id}/revisions/{version}/",
+    "context": "GET /api/projects/{project_id}/hog_functions/{id}/revisions/{version}/\nhog_functions_revisions_retrieve\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; version (path) — Function version to fetch."
+  },
+  {
+    "id": "hog_functions_update",
+    "name": "hog_functions_update",
+    "description": "hog_functions_update PUT /api/projects/{project_id}/hog_functions/{id}/",
+    "context": "PUT /api/projects/{project_id}/hog_functions/{id}/\nhog_functions_update\nRequired: id (path) — A UUID string identifying this hog function.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

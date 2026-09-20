@@ -1,0 +1,44 @@
+[
+  {
+    "id": "createHookBySiteId",
+    "name": "createHookBySiteId",
+    "description": "createHookBySiteId POST /api/v1/hooks",
+    "context": "POST /api/v1/hooks\ncreateHookBySiteId\nRequired: site_id (query); body (body)"
+  },
+  {
+    "id": "deleteHook",
+    "name": "deleteHook",
+    "description": "deleteHook DELETE /api/v1/hooks/{hook_id}",
+    "context": "DELETE /api/v1/hooks/{hook_id}\ndeleteHook"
+  },
+  {
+    "id": "enableHook",
+    "name": "enableHook",
+    "description": "enableHook POST /api/v1/hooks/{hook_id}/enable",
+    "context": "POST /api/v1/hooks/{hook_id}/enable\nenableHook"
+  },
+  {
+    "id": "getHook",
+    "name": "getHook",
+    "description": "getHook GET /api/v1/hooks/{hook_id}",
+    "context": "GET /api/v1/hooks/{hook_id}\ngetHook"
+  },
+  {
+    "id": "listHooksBySiteId",
+    "name": "listHooksBySiteId",
+    "description": "listHooksBySiteId GET /api/v1/hooks",
+    "context": "GET /api/v1/hooks\nlistHooksBySiteId\nRequired: site_id (query)"
+  },
+  {
+    "id": "listHookTypes",
+    "name": "listHookTypes",
+    "description": "listHookTypes GET /api/v1/hooks/types",
+    "context": "GET /api/v1/hooks/types\nlistHookTypes"
+  },
+  {
+    "id": "updateHook",
+    "name": "updateHook",
+    "description": "updateHook PUT /api/v1/hooks/{hook_id}",
+    "context": "PUT /api/v1/hooks/{hook_id}\nupdateHook\nRequired: body (body)"
+  }
+]

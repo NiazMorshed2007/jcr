@@ -1,0 +1,38 @@
+[
+  {
+    "id": "GetPaymentMethods",
+    "name": "List PaymentMethods",
+    "description": "List PaymentMethods Returns a list of all PaymentMethods. GET /v1/payment_methods",
+    "context": "GET /v1/payment_methods\nReturns a list of all PaymentMethods.\nOptional: allow_redisplay (query) — This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow.; customer (query) — The ID of the customer whose PaymentMethods will be retrieved.; customer_account (query) — The ID of the Account whose PaymentMethods will be retrieved.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; type (query) — Filters the list by the object `type` field. Unfiltered, the list returns all payment method types except `custom`. If your integration expects only one type of payment method in the response, specify that type value in the request to reduce your payload.; body (body)"
+  },
+  {
+    "id": "GetPaymentMethodsPaymentMethod",
+    "name": "Retrieve a PaymentMethod",
+    "description": "Retrieve a PaymentMethod Retrieves a PaymentMethod object attached to the StripeAccount. GET /v1/payment_methods/{payment_method}",
+    "context": "GET /v1/payment_methods/{payment_method}\nRetrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use Retrieve a Customer’s PaymentMethods\nRequired: payment_method (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostPaymentMethods",
+    "name": "Create a PaymentMethod",
+    "description": "Create a PaymentMethod Creates a PaymentMethod object. POST /v1/payment_methods",
+    "context": "POST /v1/payment_methods\nCreates a PaymentMethod object. Read the Stripe.js reference to learn how to create PaymentMethods via Stripe.js. Instead of creating a PaymentMethod directly, we recommend using the PaymentIntents API to accept a payment immediately or the SetupIntent API to collect payment method details ahead of a future payment.\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentMethodsPaymentMethod",
+    "name": "Update a PaymentMethod",
+    "description": "Update a PaymentMethod Updates a PaymentMethod object. POST /v1/payment_methods/{payment_method}",
+    "context": "POST /v1/payment_methods/{payment_method}\nUpdates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.\nRequired: payment_method (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentMethodsPaymentMethodAttach",
+    "name": "Attach a PaymentMethod to a Customer",
+    "description": "Attach a PaymentMethod to a Customer Attaches a PaymentMethod object to a Customer. POST /v1/payment_methods/{payment_method}/attach",
+    "context": "POST /v1/payment_methods/{payment_method}/attach\nAttaches a PaymentMethod object to a Customer. To attach a new PaymentMethod to a customer for future payments, we recommend you use a SetupIntent or a PaymentIntent with setup_future_usage . These approaches will perform any necessary steps to set up the PaymentMethod for future payments. Using the /v1/payment_methods/:id/attach endpoint without first using a SetupIntent or PaymentIntent with setup_future_usage does not optimize the PaymentMethod for future use, which makes later declines and payment friction more likely. See Optimizing cards for future payments for more information about setting up future payments. To use this PaymentMethod as the default for invoice or subscription payments, set invoice_settings.default_payment_method , on the Customer to the PaymentMethod’s ID.\nRequired: payment_method (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentMethodsPaymentMethodDetach",
+    "name": "Detach a PaymentMethod from a Customer",
+    "description": "Detach a PaymentMethod from a Customer Detaches a PaymentMethod object from a Customer. POST /v1/payment_methods/{payment_method}/detach",
+    "context": "POST /v1/payment_methods/{payment_method}/detach\nDetaches a PaymentMethod object from a Customer. Detachment is permanent and irreversible — once detached, a PaymentMethod can no longer be used for payments or re-attached to a Customer.\nRequired: payment_method (path)\nOptional: body (body)"
+  }
+]

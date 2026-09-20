@@ -1,0 +1,38 @@
+[
+  {
+    "id": "activityStream",
+    "name": "Activity Stream",
+    "description": "Activity Stream Stream of X Activities GET /2/activity/stream",
+    "context": "GET /2/activity/stream\nStream of X Activities\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the activities will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the activities will be provided."
+  },
+  {
+    "id": "createActivitySubscription",
+    "name": "Create X activity subscription",
+    "description": "Create X activity subscription Creates a subscription for an X activity event. POST /2/activity/subscriptions",
+    "context": "POST /2/activity/subscriptions\nCreates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, follows.read for subscriptions.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. subscriptions.* events require a user-context token and filter.user_id must identify the authenticated user. Optional filter.qualifiers further narrow supported chat, follow, unfollow, like, and subscriptions events.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteActivitySubscription",
+    "name": "Deletes X activity subscription",
+    "description": "Deletes X activity subscription Deletes a subscription for an X activity event DELETE /2/activity/subscriptions/{subscription_id}",
+    "context": "DELETE /2/activity/subscriptions/{subscription_id}\nDeletes a subscription for an X activity event\nRequired: subscription_id (path)"
+  },
+  {
+    "id": "deleteActivitySubscriptionsByIds",
+    "name": "Delete X activity subscriptions by IDs",
+    "description": "Delete X activity subscriptions by IDs Deletes multiple subscriptions for X activity events by their IDs DELETE /2/activity/subscriptions",
+    "context": "DELETE /2/activity/subscriptions\nDeletes multiple subscriptions for X activity events by their IDs\nRequired: ids (query)"
+  },
+  {
+    "id": "getActivitySubscriptions",
+    "name": "Get X activity subscriptions",
+    "description": "Get X activity subscriptions Get a list of active subscriptions for XAA GET /2/activity/subscriptions",
+    "context": "GET /2/activity/subscriptions\nGet a list of active subscriptions for XAA\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token."
+  },
+  {
+    "id": "updateActivitySubscription",
+    "name": "Update X activity subscription",
+    "description": "Update X activity subscription Updates a subscription for an X activity event PUT /2/activity/subscriptions/{subscription_id}",
+    "context": "PUT /2/activity/subscriptions/{subscription_id}\nUpdates a subscription for an X activity event\nRequired: subscription_id (path); body (body)"
+  }
+]

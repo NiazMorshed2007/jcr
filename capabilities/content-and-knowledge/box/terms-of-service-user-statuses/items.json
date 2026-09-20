@@ -1,0 +1,20 @@
+[
+  {
+    "id": "get_terms_of_service_user_statuses",
+    "name": "List terms of service user statuses",
+    "description": "List terms of service user statuses Retrieves an overview of users and their status for a terms of service, including Whether they have accepted the terms and when. GET /2.0/terms_of_service_user_statuses",
+    "context": "GET /2.0/terms_of_service_user_statuses\nRetrieves an overview of users and their status for a terms of service, including Whether they have accepted the terms and when.\nRequired: tos_id (query) — The ID of the terms of service.\nOptional: user_id (query) — Limits results to the given user ID."
+  },
+  {
+    "id": "post_terms_of_service_user_statuses",
+    "name": "Create terms of service status for new user",
+    "description": "Create terms of service status for new user Sets the status for a terms of service for a user. POST /2.0/terms_of_service_user_statuses",
+    "context": "POST /2.0/terms_of_service_user_statuses\nSets the status for a terms of service for a user.\nOptional: body (body)"
+  },
+  {
+    "id": "put_terms_of_service_user_statuses_id",
+    "name": "Update terms of service status for existing user",
+    "description": "Update terms of service status for existing user Updates the status for a terms of service for a user. PUT /2.0/terms_of_service_user_statuses/{terms_of_service_user_status_id}",
+    "context": "PUT /2.0/terms_of_service_user_statuses/{terms_of_service_user_status_id}\nUpdates the status for a terms of service for a user.\nRequired: terms_of_service_user_status_id (path) — The ID of the terms of service status.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createDirectMessagesByConversationId",
+    "name": "Create Direct Messages by Conversation ID",
+    "description": "Create Direct Messages by Conversation ID POST /2/dm_conversations/{dm_conversation_id}/messages",
+    "context": "POST /2/dm_conversations/{dm_conversation_id}/messages\nCreate Direct Messages by Conversation ID\nRequired: dm_conversation_id (path); body (body)"
+  },
+  {
+    "id": "createDirectMessagesByParticipantId",
+    "name": "Create DM message by participant ID",
+    "description": "Create DM message by participant ID Sends a new direct message to a specific participant by their ID. POST /2/dm_conversations/with/{participant_id}/messages",
+    "context": "POST /2/dm_conversations/with/{participant_id}/messages\nSends a new direct message to a specific participant by their ID.\nRequired: participant_id (path); body (body)"
+  },
+  {
+    "id": "createDirectMessagesConversation",
+    "name": "Create DM conversation",
+    "description": "Create DM conversation Initiates a new direct message conversation with specified participants. POST /2/dm_conversations",
+    "context": "POST /2/dm_conversations\nInitiates a new direct message conversation with specified participants.\nRequired: body (body)"
+  },
+  {
+    "id": "dmConversationsMediaDownload",
+    "name": "Download DM Media",
+    "description": "Download DM Media Downloads media attached to a legacy Direct Message. GET /2/dm_conversations/media/{dm_id}/{media_id}/{resource_id}",
+    "context": "GET /2/dm_conversations/media/{dm_id}/{media_id}/{resource_id}\nDownloads media attached to a legacy Direct Message. The requesting user must be a participant in the conversation containing the specified DM event. The response body contains raw binary bytes.\nRequired: dm_id (path); media_id (path); resource_id (path)"
+  },
+  {
+    "id": "getDirectMessagesEventsByConversationId",
+    "name": "Get Direct Messages Events by Conversation ID",
+    "description": "Get Direct Messages Events by Conversation ID GET /2/dm_conversations/{id}/dm_events",
+    "context": "GET /2/dm_conversations/{id}/dm_events\nGet Direct Messages Events by Conversation ID\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; event_types (query); dm_event.fields (query) — A comma separated list of DmEvent fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; post.fields (query) — A comma separated list of Post fields to display.; media.fields (query) — A comma separated list of Media fields to display."
+  },
+  {
+    "id": "getDirectMessagesEventsByParticipantId",
+    "name": "Get Direct Messages Events by Participant ID",
+    "description": "Get Direct Messages Events by Participant ID GET /2/dm_conversations/with/{participant_id}/dm_events",
+    "context": "GET /2/dm_conversations/with/{participant_id}/dm_events\nGet Direct Messages Events by Participant ID\nRequired: participant_id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; event_types (query); dm_event.fields (query) — A comma separated list of DmEvent fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; post.fields (query) — A comma separated list of Post fields to display.; media.fields (query) — A comma separated list of Media fields to display."
+  }
+]

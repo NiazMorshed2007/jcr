@@ -1,0 +1,392 @@
+[
+  {
+    "id": "environment_vision_quota_retrieve",
+    "name": "environment_vision_quota_retrieve",
+    "description": "environment_vision_quota_retrieve GET /api/projects/{project_id}/vision/quota/",
+    "context": "GET /api/projects/{project_id}/vision/quota/\nenvironment_vision_quota_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "environment_vision_quota_spend_series_retrieve",
+    "name": "environment_vision_quota_spend_series_retrieve",
+    "description": "environment_vision_quota_spend_series_retrieve GET /api/projects/{project_id}/vision/quota/spend_series/",
+    "context": "GET /api/projects/{project_id}/vision/quota/spend_series/\nenvironment_vision_quota_spend_series_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_alerts_create",
+    "name": "vision_alerts_create",
+    "description": "vision_alerts_create POST /api/projects/{project_id}/vision/alerts/",
+    "context": "POST /api/projects/{project_id}/vision/alerts/\nvision_alerts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_alerts_destinations_create",
+    "name": "Create a notification destination for this alert",
+    "description": "Create a notification destination for this alert Create a notification destination for this alert. POST /api/projects/{project_id}/vision/alerts/{id}/destinations/",
+    "context": "POST /api/projects/{project_id}/vision/alerts/{id}/destinations/\nCreate a notification destination for this alert. One HogFunction is created per alert event kind atomically.\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_alerts_destinations_delete_create",
+    "name": "Delete a notification destination by deleting its HogFunction group atomically.",
+    "description": "Delete a notification destination by deleting its HogFunction group atomically. POST /api/projects/{project_id}/vision/alerts/{id}/destinations/delete/",
+    "context": "POST /api/projects/{project_id}/vision/alerts/{id}/destinations/delete/\nDelete a notification destination by deleting its HogFunction group atomically.\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_alerts_destroy",
+    "name": "vision_alerts_destroy",
+    "description": "vision_alerts_destroy DELETE /api/projects/{project_id}/vision/alerts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/vision/alerts/{id}/\nvision_alerts_destroy\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_alerts_events_list",
+    "name": "Paginated event history for this alert, newest first",
+    "description": "Paginated event history for this alert, newest first Paginated event history for this alert, newest first. GET /api/projects/{project_id}/vision/alerts/{id}/events/",
+    "context": "GET /api/projects/{project_id}/vision/alerts/{id}/events/\nPaginated event history for this alert, newest first. Quiet no-op check rows (no state change, no error) are filtered out. Optional `?kind=...` narrows to one kind.\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: kind (query) — Narrow the history to one event kind.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "vision_alerts_list",
+    "name": "vision_alerts_list",
+    "description": "vision_alerts_list GET /api/projects/{project_id}/vision/alerts/",
+    "context": "GET /api/projects/{project_id}/vision/alerts/\nvision_alerts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; scanner_id (query) — Only return alerts on this scanner."
+  },
+  {
+    "id": "vision_alerts_partial_update",
+    "name": "vision_alerts_partial_update",
+    "description": "vision_alerts_partial_update PATCH /api/projects/{project_id}/vision/alerts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/vision/alerts/{id}/\nvision_alerts_partial_update\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "vision_alerts_reset_create",
+    "name": "Reset a broken alert",
+    "description": "Reset a broken alert Reset a broken alert. POST /api/projects/{project_id}/vision/alerts/{id}/reset/",
+    "context": "POST /api/projects/{project_id}/vision/alerts/{id}/reset/\nReset a broken alert. Clears the consecutive-failure counter and schedules an immediate recheck.\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_alerts_retrieve",
+    "name": "vision_alerts_retrieve",
+    "description": "vision_alerts_retrieve GET /api/projects/{project_id}/vision/alerts/{id}/",
+    "context": "GET /api/projects/{project_id}/vision/alerts/{id}/\nvision_alerts_retrieve\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_alerts_update",
+    "name": "vision_alerts_update",
+    "description": "vision_alerts_update PUT /api/projects/{project_id}/vision/alerts/{id}/",
+    "context": "PUT /api/projects/{project_id}/vision/alerts/{id}/\nvision_alerts_update\nRequired: id (path) — A UUID string identifying this vision alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_observations_create_task_create",
+    "name": "Create a PostHog Task from this observation's finding so it can be triaged and fixed",
+    "description": "Create a PostHog Task from this observation's finding so it can be triaged and fixed Create a PostHog Task from this observation's finding so it can be triaged and fixed. POST /api/projects/{project_id}/vision/observations/{id}/create_task/",
+    "context": "POST /api/projects/{project_id}/vision/observations/{id}/create_task/\nCreate a PostHog Task from this observation's finding so it can be triaged and fixed. Title and description are derived from the scanner and its result. Record-only: this does not start the coding agent. Idempotent per observation: once a task exists, repeat calls return its id with a 200 instead of creating a duplicate.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_observations_label_create",
+    "name": "Set or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong",
+    "description": "Set or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong Set or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong. POST /api/projects/{project_id}/vision…",
+    "context": "POST /api/projects/{project_id}/vision/observations/{id}/label/\nSet or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong. One label per observation, shared across the team; these labels feed prompt improvement. Requires editor access to the scanner.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_observations_label_destroy",
+    "name": "Remove the observation's shared label",
+    "description": "Remove the observation's shared label Remove the observation's shared label. DELETE /api/projects/{project_id}/vision/observations/{id}/label/",
+    "context": "DELETE /api/projects/{project_id}/vision/observations/{id}/label/\nRemove the observation's shared label. Requires editor access to the scanner.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_observations_list",
+    "name": "A session's observations across every scanner the caller can read, plus the team-level semantic `search` action, which resolves its own scanner scope instead of this queryset.",
+    "description": "A session's observations across every scanner the caller can read, plus the team-level semantic `search` action, which resolves its own scanner scope instead of this queryset. GET /api/projects/{project_id}/vision/observations/",
+    "context": "GET /api/projects/{project_id}/vision/observations/\nA session's observations across every scanner the caller can read, plus the team-level semantic `search` action, which resolves its own scanner scope instead of this queryset.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; session_id (query) — Session recording id to return observations for.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Sort observations. Plain keys: created_at, started_at, completed_at, status, recording_subject_email. JSONB keys: result_score (scorer), result_verdict (monitor), result_confidence, scanner_version. Prefix with `-` for descending; nullable keys sort nulls last either way."
+  },
+  {
+    "id": "vision_observations_retrieve",
+    "name": "Retrieve one observation",
+    "description": "Retrieve one observation Retrieve one observation. GET /api/projects/{project_id}/vision/observations/{id}/",
+    "context": "GET /api/projects/{project_id}/vision/observations/{id}/\nRetrieve one observation. Any list filters passed along (status, tags, order_by, …) scope the `previous_observation_id`/`next_observation_id` navigation to the matching, identically-ordered set — so prev/next from a filtered table stays within that filtered list.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: backfill_id (query) — Only observations dispatched by this backfill.; date_from (query) — Only observations created at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone.; date_to (query) — Only observations created at or before this time. Accepts ISO 8601, a relative date like `-1d`, or `now` for the current time; omit it to query through the current time. Date-only values include the whole day, interpreted in the project's timezone.; labeled (query) — When true, return only observations that have a shared label (thumbs up or down); when false, only unlabeled observations.; max_score (query) — Filter scorer observations to those scoring at or below this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; min_score (query) — Filter scorer observations to those scoring at or above this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; order_by (query) — Sort observations. Plain keys: created_at, started_at, completed_at, status, recording_subject_email. JSONB keys: result_score (scorer), result_verdict (monitor), result_confidence, scanner_version. Prefix with `-` for descending; nullable keys sort nulls last either way.; recording_subject (query) — Filter to observations whose person email contains this value (case-insensitive).; session_id (query) — Filter to observations of one or more session recordings. Accepts a comma-separated list.; status (query) — Filter by observation status. Accepts a comma-separated list.; tags (query) — Filter classifier observations whose fixed or freeform tags include any of the given values (comma-separated). Matches if the tag appears in either `tags` or `tags_freeform`.; triggered_by (query) — Filter by trigger source (schedule, on_demand, retry, or backfill). Accepts a comma-separated list.; verdict (query) — Filter monitor observations by verdict. Accepts a comma-separated list (e.g. `yes,inconclusive`)."
+  },
+  {
+    "id": "vision_observations_retry_create",
+    "name": "Delete a failed or ineligible observation and re-run its scanner on the same recording",
+    "description": "Delete a failed or ineligible observation and re-run its scanner on the same recording Delete a failed or ineligible observation and re-run its scanner on the same recording. POST /api/projects/{project_id}/vision/observations/{id}/retry/",
+    "context": "POST /api/projects/{project_id}/vision/observations/{id}/retry/\nDelete a failed or ineligible observation and re-run its scanner on the same recording. Returns 202 with the workflow handle.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_observations_search_retrieve",
+    "name": "Rank observations by semantic similarity to the search text, optionally filtered by exact outcome (verdict, score, tags).",
+    "description": "Rank observations by semantic similarity to the search text, optionally filtered by exact outcome (verdict, score, tags). GET /api/projects/{project_id}/vision/observations/search/",
+    "context": "GET /api/projects/{project_id}/vision/observations/search/\nRank observations by semantic similarity to the search text, optionally filtered by exact outcome (verdict, score, tags).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; q (query) — Natural-language description of what to find, e.g. 'users confused by the pricing page'.\nOptional: date_from (query) — Only observations analyzed at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone.; date_to (query) — Only observations analyzed at or before this time. Accepts ISO 8601, a relative date like `-1d`, or `now` for the current time; omit it to query through the current time. Date-only values include the whole day, interpreted in the project's timezone.; limit (query) — Maximum number of results (default 20, at most 50).; max_score (query) — Keep only scorer observations with a score at or below this value.; min_score (query) — Keep only scorer observations with a score at or above this value.; scanner_id (query) — Search a single scanner's observations. Defaults to every scanner you can read.; tags (query) — Comma-separated classifier tags to keep. Matching is case- and format-insensitive. Unlike `verdict`, tags are not validated against a fixed list, so an unknown tag matches nothing.; verdict (query) — Comma-separated monitor verdicts to keep, e.g. `yes,inconclusive`."
+  },
+  {
+    "id": "vision_observations_search_suggestions_retrieve",
+    "name": "Example searches drawn from recent observations, for the Search tab's empty state",
+    "description": "Example searches drawn from recent observations, for the Search tab's empty state Example searches drawn from recent observations, for the Search tab's empty state. GET /api/projects/{project_id}/vision/observations/search_suggestions/",
+    "context": "GET /api/projects/{project_id}/vision/observations/search_suggestions/\nExample searches drawn from recent observations, for the Search tab's empty state. Reads what the scheduled refresher stored; `search_viewed` records the view separately so this GET has no side effect.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: scanner_id (query) — Scope to a single scanner's observations. Defaults to every scanner you can read."
+  },
+  {
+    "id": "vision_observations_search_viewed_create",
+    "name": "Record that the Search tab showed suggestions for this scope",
+    "description": "Record that the Search tab showed suggestions for this scope Record that the Search tab showed suggestions for this scope. POST /api/projects/{project_id}/vision/observations/search_viewed/",
+    "context": "POST /api/projects/{project_id}/vision/observations/search_viewed/\nRecord that the Search tab showed suggestions for this scope. A viewed scanner is what the scheduled refresher keeps up to date, so the stamp lives on a CSRF-protected POST rather than the read.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "vision_observations_signal_reports_list",
+    "name": "The inbox reports this observation's emitted signals were grouped into, newest first.",
+    "description": "The inbox reports this observation's emitted signals were grouped into, newest first. GET /api/projects/{project_id}/vision/observations/{id}/signal_reports/",
+    "context": "GET /api/projects/{project_id}/vision/observations/{id}/signal_reports/\nThe inbox reports this observation's emitted signals were grouped into, newest first.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_observations_viewed_create",
+    "name": "Record that the calling user opened this observation",
+    "description": "Record that the calling user opened this observation Record that the calling user opened this observation. POST /api/projects/{project_id}/vision/observations/{id}/viewed/",
+    "context": "POST /api/projects/{project_id}/vision/observations/{id}/viewed/\nRecord that the calling user opened this observation. Idempotent.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_affected_cohort_create",
+    "name": "Save the users this scanner matched as a static cohort, for surveys, funnels, and retention analysis.",
+    "description": "Save the users this scanner matched as a static cohort, for surveys, funnels, and retention analysis. POST /api/projects/{project_id}/vision/scanners/{id}/affected_cohort/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{id}/affected_cohort/\nSave the users this scanner matched as a static cohort, for surveys, funnels, and retention analysis.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_backfills_cancel_create",
+    "name": "Stop an active backfill; already-dispatched observations finish, nothing new dispatches.",
+    "description": "Stop an active backfill; already-dispatched observations finish, nothing new dispatches. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/{id}/cancel/\nStop an active backfill; already-dispatched observations finish, nothing new dispatches.\nRequired: id (path) — A UUID string identifying this replay scanner backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_backfills_create",
+    "name": "Create a backfill: freeze the scanner config, enumerate the exact candidate set, start the tick schedule",
+    "description": "Create a backfill: freeze the scanner config, enumerate the exact candidate set, start the tick schedule Create a backfill: freeze the scanner config, enumerate the exact candidate set, start the tick schedule. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/\nCreate a backfill: freeze the scanner config, enumerate the exact candidate set, start the tick schedule. The enumeration reruns here rather than trusting the client-confirmed estimate: the count is billing-relevant, so the authoritative value is computed server-side at creation time. New settled sessions between estimate and confirm can nudge total_count slightly.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path); body (body)"
+  },
+  {
+    "id": "vision_scanners_backfills_estimate_create",
+    "name": "Exactly enumerate what a backfill over the given window would dispatch and cost.",
+    "description": "Exactly enumerate what a backfill over the given window would dispatch and cost. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/estimate/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/estimate/\nExactly enumerate what a backfill over the given window would dispatch and cost.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path); body (body)"
+  },
+  {
+    "id": "vision_scanners_backfills_list",
+    "name": "Historical backfills of a scanner over a closed time window (nested under a scanner).",
+    "description": "Historical backfills of a scanner over a closed time window (nested under a scanner). GET /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/\nHistorical backfills of a scanner over a closed time window (nested under a scanner).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "vision_scanners_backfills_resume_create",
+    "name": "Restart a backfill that paused when the monthly quota ran out.",
+    "description": "Restart a backfill that paused when the monthly quota ran out. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/{id}/resume/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/{id}/resume/\nRestart a backfill that paused when the monthly quota ran out.\nRequired: id (path) — A UUID string identifying this replay scanner backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_backfills_retrieve",
+    "name": "Historical backfills of a scanner over a closed time window (nested under a scanner).",
+    "description": "Historical backfills of a scanner over a closed time window (nested under a scanner). GET /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/{id}/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/backfills/{id}/\nHistorical backfills of a scanner over a closed time window (nested under a scanner).\nRequired: id (path) — A UUID string identifying this replay scanner backfill.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_bulk_observe_create",
+    "name": "Apply this scanner to many sessions on demand",
+    "description": "Apply this scanner to many sessions on demand Apply this scanner to many sessions on demand. POST /api/projects/{project_id}/vision/scanners/{id}/bulk_observe/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{id}/bulk_observe/\nApply this scanner to many sessions on demand. Starts as many as fit under the in-flight caps and monthly credit quota, reporting the rest as skipped rather than failing the batch.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_scanners_create",
+    "name": "CRUD for Replay Vision scanners.",
+    "description": "CRUD for Replay Vision scanners. POST /api/projects/{project_id}/vision/scanners/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/\nCRUD for Replay Vision scanners.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_scanners_creators_retrieve",
+    "name": "Distinct creators across the team's scanners — feeds the `Created by` filter dropdown.",
+    "description": "Distinct creators across the team's scanners — feeds the `Created by` filter dropdown. GET /api/projects/{project_id}/vision/scanners/creators/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/creators/\nDistinct creators across the team's scanners — feeds the `Created by` filter dropdown.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_destroy",
+    "name": "CRUD for Replay Vision scanners.",
+    "description": "CRUD for Replay Vision scanners. DELETE /api/projects/{project_id}/vision/scanners/{id}/",
+    "context": "DELETE /api/projects/{project_id}/vision/scanners/{id}/\nCRUD for Replay Vision scanners.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_draft_create",
+    "name": "Draft a full scanner configuration from a natural-language goal, for the goal-based creation flow.",
+    "description": "Draft a full scanner configuration from a natural-language goal, for the goal-based creation flow. POST /api/projects/{project_id}/vision/scanners/draft/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/draft/\nDraft a full scanner configuration from a natural-language goal, for the goal-based creation flow.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_scanners_duplicate_create",
+    "name": "Copy a scanner into a new disabled scanner named \" (copy)\"",
+    "description": "Copy a scanner into a new disabled scanner named \" (copy)\" Copy a scanner into a new disabled scanner named \" (copy)\". POST /api/projects/{project_id}/vision/scanners/{id}/duplicate/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{id}/duplicate/\nCopy a scanner into a new disabled scanner named \" (copy)\". Copies the stored model row rather than the serializer's read representation, so a query that no longer validates survives the copy; duplicating through the create endpoint would silently drop it. Experiment targeting is the exception and follows the read path instead. Unlike create, no digest is provisioned: the copy starts disabled and unreviewed.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_estimate_create",
+    "name": "Estimate the observation volume a proposed scanner would generate, for the pre-save cost preview.",
+    "description": "Estimate the observation volume a proposed scanner would generate, for the pre-save cost preview. POST /api/projects/{project_id}/vision/scanners/estimate/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/estimate/\nEstimate the observation volume a proposed scanner would generate, for the pre-save cost preview.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_impact_retrieve",
+    "name": "Affected sessions and users for this scanner over the trailing window.",
+    "description": "Affected sessions and users for this scanner over the trailing window. GET /api/projects/{project_id}/vision/scanners/{id}/impact/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{id}/impact/\nAffected sessions and users for this scanner over the trailing window.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: max_score (query) — Scorer scanners only: count sessions scoring at or below this value.; min_score (query) — Scorer scanners only: count sessions scoring at or above this value. Scorers require `min_score` and/or `max_score`. Not applicable to other scanner types.; tag (query) — Classifier scanners only, required for them: count sessions carrying this tag (fixed or freeform). Not applicable to other scanner types.; window_days (query) — Trailing window of observations to count. Defaults to 30 days."
+  },
+  {
+    "id": "vision_scanners_inline_scan_create",
+    "name": "Scan named sessions against a prompt without saving a scanner first, for one-off questions",
+    "description": "Scan named sessions against a prompt without saving a scanner first, for one-off questions Scan named sessions against a prompt without saving a scanner first, for one-off questions. POST /api/projects/{project_id}/vision/scanners/inline_scan/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/inline_scan/\nScan named sessions against a prompt without saving a scanner first, for one-off questions. The config resolves to a scanner minted on first use, so asking the same question twice reuses the observations it already has, while a different question about the same session gets its own.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_scanners_list",
+    "name": "CRUD for Replay Vision scanners.",
+    "description": "CRUD for Replay Vision scanners. GET /api/projects/{project_id}/vision/scanners/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/\nCRUD for Replay Vision scanners.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query) — Filter to scanners created by the given user IDs (comma-separated).; emits_signals (query) — Filter to scanners that emit Signals.; enabled (query) — Filter by enabled state. Accepts `enabled`, `disabled`, a comma-separated list of both, or the boolean form `true`/`false`. Omit to list every scanner.; experiment_id (query) — Filter to scanners whose targeting watches the given experiment.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Sort scanners by name, created_at, updated_at, scanner_type, enabled, sampling_rate, created_by, credits_this_month. Prefix with `-` for descending.; scanner_type (query) — Filter by scanner type (monitor, classifier, scorer, summarizer). Accepts a comma-separated list.; search (query) — Case-insensitive substring match across name, description, and the prompt in scanner_config.; tags (query) — Filter to scanners carrying at least one of the given tags (comma-separated)."
+  },
+  {
+    "id": "vision_scanners_observations_create_task_create",
+    "name": "Create a PostHog Task from this observation's finding so it can be triaged and fixed",
+    "description": "Create a PostHog Task from this observation's finding so it can be triaged and fixed Create a PostHog Task from this observation's finding so it can be triaged and fixed. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/create_task/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/create_task/\nCreate a PostHog Task from this observation's finding so it can be triaged and fixed. Title and description are derived from the scanner and its result. Record-only: this does not start the coding agent. Idempotent per observation: once a task exists, repeat calls return its id with a 200 instead of creating a duplicate.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_observations_label_create",
+    "name": "Set or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong",
+    "description": "Set or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong Set or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong. POST /api/projects/{project_id}/vision…",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/label/\nSet or update the observation's shared label: whether the scanner scored the session correctly, plus optional feedback on what it got wrong. One label per observation, shared across the team; these labels feed prompt improvement. Requires editor access to the scanner.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path); body (body)"
+  },
+  {
+    "id": "vision_scanners_observations_label_destroy",
+    "name": "Remove the observation's shared label",
+    "description": "Remove the observation's shared label Remove the observation's shared label. DELETE /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/label/",
+    "context": "DELETE /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/label/\nRemove the observation's shared label. Requires editor access to the scanner.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_observations_list",
+    "name": "Read-only access to observations produced by a scanner.",
+    "description": "Read-only access to observations produced by a scanner. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/\nRead-only access to observations produced by a scanner.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: backfill_id (query) — Only observations dispatched by this backfill.; date_from (query) — Only observations created at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone.; date_to (query) — Only observations created at or before this time. Accepts ISO 8601, a relative date like `-1d`, or `now` for the current time; omit it to query through the current time. Date-only values include the whole day, interpreted in the project's timezone.; labeled (query) — When true, return only observations that have a shared label (thumbs up or down); when false, only unlabeled observations.; limit (query) — Number of results to return per page.; max_score (query) — Filter scorer observations to those scoring at or below this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; min_score (query) — Filter scorer observations to those scoring at or above this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; offset (query) — The initial index from which to return the results.; order_by (query) — Sort observations. Plain keys: created_at, started_at, completed_at, status, recording_subject_email. JSONB keys: result_score (scorer), result_verdict (monitor), result_confidence, scanner_version. Prefix with `-` for descending; nullable keys sort nulls last either way.; recording_subject (query) — Filter to observations whose person email contains this value (case-insensitive).; session_id (query) — Filter to observations of one or more session recordings. Accepts a comma-separated list.; status (query) — Filter by observation status. Accepts a comma-separated list.; tags (query) — Filter classifier observations whose fixed or freeform tags include any of the given values (comma-separated). Matches if the tag appears in either `tags` or `tags_freeform`.; triggered_by (query) — Filter by trigger source (schedule, on_demand, retry, or backfill). Accepts a comma-separated list.; verdict (query) — Filter monitor observations by verdict. Accepts a comma-separated list (e.g. `yes,inconclusive`)."
+  },
+  {
+    "id": "vision_scanners_observations_retrieve",
+    "name": "Retrieve one observation",
+    "description": "Retrieve one observation Retrieve one observation. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/\nRetrieve one observation. Any list filters passed along (status, tags, order_by, …) scope the `previous_observation_id`/`next_observation_id` navigation to the matching, identically-ordered set — so prev/next from a filtered table stays within that filtered list.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: backfill_id (query) — Only observations dispatched by this backfill.; date_from (query) — Only observations created at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone.; date_to (query) — Only observations created at or before this time. Accepts ISO 8601, a relative date like `-1d`, or `now` for the current time; omit it to query through the current time. Date-only values include the whole day, interpreted in the project's timezone.; labeled (query) — When true, return only observations that have a shared label (thumbs up or down); when false, only unlabeled observations.; max_score (query) — Filter scorer observations to those scoring at or below this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; min_score (query) — Filter scorer observations to those scoring at or above this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; order_by (query) — Sort observations. Plain keys: created_at, started_at, completed_at, status, recording_subject_email. JSONB keys: result_score (scorer), result_verdict (monitor), result_confidence, scanner_version. Prefix with `-` for descending; nullable keys sort nulls last either way.; recording_subject (query) — Filter to observations whose person email contains this value (case-insensitive).; session_id (query) — Filter to observations of one or more session recordings. Accepts a comma-separated list.; status (query) — Filter by observation status. Accepts a comma-separated list.; tags (query) — Filter classifier observations whose fixed or freeform tags include any of the given values (comma-separated). Matches if the tag appears in either `tags` or `tags_freeform`.; triggered_by (query) — Filter by trigger source (schedule, on_demand, retry, or backfill). Accepts a comma-separated list.; verdict (query) — Filter monitor observations by verdict. Accepts a comma-separated list (e.g. `yes,inconclusive`)."
+  },
+  {
+    "id": "vision_scanners_observations_retry_create",
+    "name": "Delete a failed or ineligible observation and re-run its scanner on the same recording",
+    "description": "Delete a failed or ineligible observation and re-run its scanner on the same recording Delete a failed or ineligible observation and re-run its scanner on the same recording. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/retry/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/retry/\nDelete a failed or ineligible observation and re-run its scanner on the same recording. Returns 202 with the workflow handle.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_observations_signal_reports_list",
+    "name": "The inbox reports this observation's emitted signals were grouped into, newest first.",
+    "description": "The inbox reports this observation's emitted signals were grouped into, newest first. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/signal_reports/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/signal_reports/\nThe inbox reports this observation's emitted signals were grouped into, newest first.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: backfill_id (query) — Only observations dispatched by this backfill.; date_from (query) — Only observations created at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone.; date_to (query) — Only observations created at or before this time. Accepts ISO 8601, a relative date like `-1d`, or `now` for the current time; omit it to query through the current time. Date-only values include the whole day, interpreted in the project's timezone.; labeled (query) — When true, return only observations that have a shared label (thumbs up or down); when false, only unlabeled observations.; max_score (query) — Filter scorer observations to those scoring at or below this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; min_score (query) — Filter scorer observations to those scoring at or above this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; order_by (query) — Sort observations by created_at, started_at, completed_at, status, recording_subject_email, result_score, result_verdict, result_confidence, or scanner_version. Prefix with `-` for descending. Keys that can be null (started_at, completed_at, recording_subject_email, result_*, scanner_version) sort nulls last regardless of direction.; recording_subject (query) — Filter to observations whose person email contains this value (case-insensitive).; session_id (query) — Filter to observations of one or more session recordings. Accepts a comma-separated list.; status (query) — Filter by observation status. Accepts a comma-separated list.; tags (query) — Filter classifier observations whose fixed or freeform tags include any of the given values (comma-separated). Matches if the tag appears in either `tags` or `tags_freeform`.; triggered_by (query) — Filter by trigger source (schedule, on_demand, retry, or backfill). Accepts a comma-separated list.; verdict (query) — Filter monitor observations by verdict. Accepts a comma-separated list (e.g. `yes,inconclusive`)."
+  },
+  {
+    "id": "vision_scanners_observations_stats_retrieve",
+    "name": "Aggregate counts and per-scanner-type distributions over the filtered observation set",
+    "description": "Aggregate counts and per-scanner-type distributions over the filtered observation set Aggregate counts and per-scanner-type distributions over the filtered observation set. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/stats/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/stats/\nAggregate counts and per-scanner-type distributions over the filtered observation set. Same filters as the list endpoint apply.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: backfill_id (query) — Only observations dispatched by this backfill.; date_from (query) — Only observations created at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone.; date_to (query) — Only observations created at or before this time. Accepts ISO 8601, a relative date like `-1d`, or `now` for the current time; omit it to query through the current time. Date-only values include the whole day, interpreted in the project's timezone.; labeled (query) — When true, return only observations that have a shared label (thumbs up or down); when false, only unlabeled observations.; max_score (query) — Filter scorer observations to those scoring at or below this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; min_score (query) — Filter scorer observations to those scoring at or above this value. Rows with no numeric score (other scanner types, failed or in-flight runs) are excluded.; recent_days (query) — Window size in days for the coverage `recent_sessions` count. Clamped to [1, 365]. Defaults to 14 when omitted.; recording_subject (query) — Filter to observations whose person email contains this value (case-insensitive).; session_id (query) — Filter to observations of one or more session recordings. Accepts a comma-separated list.; status (query) — Filter by observation status. Accepts a comma-separated list.; tags (query) — Filter classifier observations whose fixed or freeform tags include any of the given values (comma-separated). Matches if the tag appears in either `tags` or `tags_freeform`.; triggered_by (query) — Filter by trigger source (schedule, on_demand, retry, or backfill). Accepts a comma-separated list.; verdict (query) — Filter monitor observations by verdict. Accepts a comma-separated list (e.g. `yes,inconclusive`)."
+  },
+  {
+    "id": "vision_scanners_observations_viewed_create",
+    "name": "Record that the calling user opened this observation",
+    "description": "Record that the calling user opened this observation Record that the calling user opened this observation. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/viewed/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/observations/{id}/viewed/\nRecord that the calling user opened this observation. Idempotent.\nRequired: id (path) — A UUID string identifying this replay observation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_observe_create",
+    "name": "Apply this scanner to one specific session, on demand",
+    "description": "Apply this scanner to one specific session, on demand Apply this scanner to one specific session, on demand. POST /api/projects/{project_id}/vision/scanners/{id}/observe/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{id}/observe/\nApply this scanner to one specific session, on demand. Returns 202 with the workflow handle.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_scanners_partial_update",
+    "name": "CRUD for Replay Vision scanners.",
+    "description": "CRUD for Replay Vision scanners. PATCH /api/projects/{project_id}/vision/scanners/{id}/",
+    "context": "PATCH /api/projects/{project_id}/vision/scanners/{id}/\nCRUD for Replay Vision scanners.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_prompt_suggestions_apply_create",
+    "name": "Apply this suggestion: write a config to the scanner (the prompt plus any type-specific config such as classifier tags or the monitor allow_inconclusive flag), bumping the scanner version, and mark the suggestion applied",
+    "description": "Apply this suggestion: write a config to the scanner (the prompt plus any type-specific config such as classifier tags or the monitor allow_inconclusive flag), bumping the scanner version, and mark the suggestion applied Apply this suggestion: write a config to the scanner (the prompt plus any type-specific config suc…",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/{id}/apply/\nApply this suggestion: write a config to the scanner (the prompt plus any type-specific config such as classifier tags or the monitor allow_inconclusive flag), bumping the scanner version, and mark the suggestion applied. Pass `config` to apply an edited subset of the recommendation; omit it to apply the full suggested config. Only the current pending suggestion can be applied. Requires session recording edit access.\nRequired: id (path) — A UUID string identifying this replay scanner prompt suggestion.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_prompt_suggestions_current_retrieve",
+    "name": "The scanner's newest prompt suggestion plus whether it is stale (the ratings changed since it was generated) and how many rated observations are available.",
+    "description": "The scanner's newest prompt suggestion plus whether it is stale (the ratings changed since it was generated) and how many rated observations are available. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/current/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/current/\nThe scanner's newest prompt suggestion plus whether it is stale (the ratings changed since it was generated) and how many rated observations are available.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_prompt_suggestions_dismiss_create",
+    "name": "Dismiss this suggestion without applying it",
+    "description": "Dismiss this suggestion without applying it Dismiss this suggestion without applying it. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/{id}/dismiss/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/{id}/dismiss/\nDismiss this suggestion without applying it. Only the current pending suggestion can be dismissed. Requires editor access to the scanner.\nRequired: id (path) — A UUID string identifying this replay scanner prompt suggestion.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_prompt_suggestions_evaluate_create",
+    "name": "Test this suggestion before applying it: re-run the scanner with the suggested prompt against already-rated sessions in the background and compare each fresh output with the stored one",
+    "description": "Test this suggestion before applying it: re-run the scanner with the suggested prompt against already-rated sessions in the background and compare each fresh output with the stored one Test this suggestion before applying it: re-run the scanner with the suggested prompt against already-rated sessions in the background…",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/{id}/evaluate/\nTest this suggestion before applying it: re-run the scanner with the suggested prompt against already-rated sessions in the background and compare each fresh output with the stored one. Results land on the suggestion's `evaluation` field. Poll `current` while status is running. `session_limit` controls how many rated sessions are re-run (thumbs-down prioritized, up to `evaluation_session_cap`). Each successful re-run charges credits like a normal observation of the same model. The request is refused with 402 when the planned credits exceed what is left for the current billing period, either the org's limit or this scanner's own. Monitor and classifier scanners get a kept/fixed/regressed classification, while scorer and summarizer scanners show the raw before and after output. Requires session recording edit access.\nRequired: id (path) — A UUID string identifying this replay scanner prompt suggestion.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "vision_scanners_prompt_suggestions_generate_create",
+    "name": "Generate a fresh prompt suggestion from the team's current ratings",
+    "description": "Generate a fresh prompt suggestion from the team's current ratings Generate a fresh prompt suggestion from the team's current ratings. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/generate/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/generate/\nGenerate a fresh prompt suggestion from the team's current ratings. The previous pending suggestion becomes history (superseded). Requires at least one rated observation and editor access to the scanner.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_prompt_suggestions_list",
+    "name": "AI prompt-rewrite suggestions for a scanner, generated from the team's thumbs up/down ratings.",
+    "description": "AI prompt-rewrite suggestions for a scanner, generated from the team's thumbs up/down ratings. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/prompt_suggestions/\nAI prompt-rewrite suggestions for a scanner, generated from the team's thumbs up/down ratings.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "vision_scanners_retrieve",
+    "name": "CRUD for Replay Vision scanners.",
+    "description": "CRUD for Replay Vision scanners. GET /api/projects/{project_id}/vision/scanners/{id}/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{id}/\nCRUD for Replay Vision scanners.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_scout_reports_list",
+    "name": "Reports filed by this scanner's scouts, newest first.",
+    "description": "Reports filed by this scanner's scouts, newest first. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/scout_reports/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/scout_reports/\nReports filed by this scanner's scouts, newest first.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_scout_reports_retrieve",
+    "name": "One report filed by this scanner's scouts.",
+    "description": "One report filed by this scanner's scouts. GET /api/projects/{project_id}/vision/scanners/{scanner_id}/scout_reports/{id}/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{scanner_id}/scout_reports/{id}/\nOne report filed by this scanner's scouts.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path)"
+  },
+  {
+    "id": "vision_scanners_scouts_create",
+    "name": "Create a scout that watches this scanner, recorded as belonging to it.",
+    "description": "Create a scout that watches this scanner, recorded as belonging to it. POST /api/projects/{project_id}/vision/scanners/{scanner_id}/scouts/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/{scanner_id}/scouts/\nCreate a scout that watches this scanner, recorded as belonging to it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; scanner_id (path); body (body)"
+  },
+  {
+    "id": "vision_scanners_self_driving_stats_retrieve",
+    "name": "What self-driving did with this scanner's signals: reports contributed to and PRs opened.",
+    "description": "What self-driving did with this scanner's signals: reports contributed to and PRs opened. GET /api/projects/{project_id}/vision/scanners/{id}/self_driving_stats/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/{id}/self_driving_stats/\nWhat self-driving did with this scanner's signals: reports contributed to and PRs opened.\nRequired: id (path) — A UUID string identifying this replay scanner.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_stats_retrieve",
+    "name": "Team-wide scanner counts — independent of list filters, so the overview stays stable.",
+    "description": "Team-wide scanner counts — independent of list filters, so the overview stays stable. GET /api/projects/{project_id}/vision/scanners/stats/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/stats/\nTeam-wide scanner counts — independent of list filters, so the overview stays stable.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "vision_scanners_suggest_tags_create",
+    "name": "Suggest classifier tags grounded in the scanner's own observations and the org's product data.",
+    "description": "Suggest classifier tags grounded in the scanner's own observations and the org's product data. POST /api/projects/{project_id}/vision/scanners/suggest_tags/",
+    "context": "POST /api/projects/{project_id}/vision/scanners/suggest_tags/\nSuggest classifier tags grounded in the scanner's own observations and the org's product data.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "vision_scanners_watch_feed_retrieve",
+    "name": "Succeeded observations in the window worth watching, ranked — feeds the What to watch tab.",
+    "description": "Succeeded observations in the window worth watching, ranked — feeds the What to watch tab. GET /api/projects/{project_id}/vision/scanners/watch_feed/",
+    "context": "GET /api/projects/{project_id}/vision/scanners/watch_feed/\nSucceeded observations in the window worth watching, ranked — feeds the What to watch tab.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: date_from (query) — Only observations created at or after this time. Accepts ISO 8601, a relative date like `-7d`, or `now`; values without an explicit offset are interpreted in the project's timezone. The window between `date_from` and `date_to` may span at most 90 days.; date_to (query) — Only observations created at or before this time. Same formats as `date_from`; omit it to query through the current time.; limit (query) — Feed items to return, at most 50. The feed is bounded, not paginated.; scanner_ids (query) — Comma-separated scanner UUIDs to restrict the feed to. Defaults to every scanner you can read.; scanner_type (query) — Restrict the feed to observations from scanners of this type. * `monitor` - Monitor * `classifier` - Classifier * `scorer` - Scorer * `summarizer` - Summarizer; search (query) — Case-insensitive text to match against the scan's own words (title, summary, reasoning, and the notability sentence) and the scanner's name. Applied before ranking, so it searches the whole window rather than the items that would have surfaced without it.; tags (query) — Comma-separated scanner tags to restrict the feed to. A team with many scanners uses these to follow one area without naming every scanner in it."
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "web_analytics_content_autopilot_profiles_create",
+    "name": "web_analytics_content_autopilot_profiles_create",
+    "description": "web_analytics_content_autopilot_profiles_create POST /api/projects/{project_id}/web_analytics_content_autopilot_profiles/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_profiles/\nweb_analytics_content_autopilot_profiles_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_content_autopilot_profiles_destroy",
+    "name": "web_analytics_content_autopilot_profiles_destroy",
+    "description": "web_analytics_content_autopilot_profiles_destroy DELETE /api/projects/{project_id}/web_analytics_content_autopilot_profiles/{id}/",
+    "context": "DELETE /api/projects/{project_id}/web_analytics_content_autopilot_profiles/{id}/\nweb_analytics_content_autopilot_profiles_destroy\nRequired: id (path) — A UUID string identifying this content autopilot site profile.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_content_autopilot_profiles_discover",
+    "name": "Discover content autopilot site settings",
+    "description": "Discover content autopilot site settings Inspects a public site for its canonical origin, name, and sitemap URLs. POST /api/projects/{project_id}/web_analytics_content_autopilot_profiles/discover/",
+    "context": "POST /api/projects/{project_id}/web_analytics_content_autopilot_profiles/discover/\nInspects a public site for its canonical origin, name, and sitemap URLs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_content_autopilot_profiles_list",
+    "name": "web_analytics_content_autopilot_profiles_list",
+    "description": "web_analytics_content_autopilot_profiles_list GET /api/projects/{project_id}/web_analytics_content_autopilot_profiles/",
+    "context": "GET /api/projects/{project_id}/web_analytics_content_autopilot_profiles/\nweb_analytics_content_autopilot_profiles_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "web_analytics_content_autopilot_profiles_partial_update",
+    "name": "web_analytics_content_autopilot_profiles_partial_update",
+    "description": "web_analytics_content_autopilot_profiles_partial_update PATCH /api/projects/{project_id}/web_analytics_content_autopilot_profiles/{id}/",
+    "context": "PATCH /api/projects/{project_id}/web_analytics_content_autopilot_profiles/{id}/\nweb_analytics_content_autopilot_profiles_partial_update\nRequired: id (path) — A UUID string identifying this content autopilot site profile.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "web_analytics_content_autopilot_profiles_retrieve",
+    "name": "web_analytics_content_autopilot_profiles_retrieve",
+    "description": "web_analytics_content_autopilot_profiles_retrieve GET /api/projects/{project_id}/web_analytics_content_autopilot_profiles/{id}/",
+    "context": "GET /api/projects/{project_id}/web_analytics_content_autopilot_profiles/{id}/\nweb_analytics_content_autopilot_profiles_retrieve\nRequired: id (path) — A UUID string identifying this content autopilot site profile.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

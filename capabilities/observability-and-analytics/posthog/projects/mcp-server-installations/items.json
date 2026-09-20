@@ -1,0 +1,104 @@
+[
+  {
+    "id": "mcp_server_installations_authorize_retrieve",
+    "name": "Start (or re-start) an OAuth flow",
+    "description": "Start (or re-start) an OAuth flow Start (or re-start) an OAuth flow. GET /api/projects/{project_id}/mcp_server_installations/authorize/",
+    "context": "GET /api/projects/{project_id}/mcp_server_installations/authorize/\nStart (or re-start) an OAuth flow. Pass ``template_id`` to (re)connect a catalog template, or ``installation_id`` to reconnect an existing custom install using its cached metadata and per-user DCR creds.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: install_source (query) — * `posthog` - posthog * `posthog-code` - posthog-code; installation_id (query); posthog_code_callback_url (query); return_path (query) — In-app path to land back on after the OAuth round-trip. Must be a same-app relative path.; template_id (query)"
+  },
+  {
+    "id": "mcp_server_installations_available_tools_retrieve",
+    "name": "Every tool the caller can currently reach, across all their connections",
+    "description": "Every tool the caller can currently reach, across all their connections Every tool the caller can currently reach, across all their connections. GET /api/projects/{project_id}/mcp_server_installations/available_tools/",
+    "context": "GET /api/projects/{project_id}/mcp_server_installations/available_tools/\nEvery tool the caller can currently reach, across all their connections. One request instead of one per connection: an agent surface resolving its tool list on each session cannot afford a fan-out. `do_not_use` and removed tools are omitted — an agent should not see what it cannot call — while `needs_approval` tools are listed with their state so the caller can explain the block rather than report the capability as missing.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_server_installations_call_tool_create",
+    "name": "Invoke one tool on a connected MCP server",
+    "description": "Invoke one tool on a connected MCP server Invoke one tool on a connected MCP server. POST /api/projects/{project_id}/mcp_server_installations/{id}/call_tool/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/{id}/call_tool/\nInvoke one tool on a connected MCP server. The request/response shape is plain REST rather than the JSON-RPC envelope `proxy` speaks, because the caller here is an agent surface (the PostHog MCP's `exec`) that wants one tool result, not an MCP transport of its own.\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_server_installations_create",
+    "name": "mcp_server_installations_create",
+    "description": "mcp_server_installations_create POST /api/projects/{project_id}/mcp_server_installations/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/\nmcp_server_installations_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_server_installations_destroy",
+    "name": "mcp_server_installations_destroy",
+    "description": "mcp_server_installations_destroy DELETE /api/projects/{project_id}/mcp_server_installations/{id}/",
+    "context": "DELETE /api/projects/{project_id}/mcp_server_installations/{id}/\nmcp_server_installations_destroy\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_server_installations_install_custom_create",
+    "name": "mcp_server_installations_install_custom_create",
+    "description": "mcp_server_installations_install_custom_create POST /api/projects/{project_id}/mcp_server_installations/install_custom/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/install_custom/\nmcp_server_installations_install_custom_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_server_installations_install_template_create",
+    "name": "mcp_server_installations_install_template_create",
+    "description": "mcp_server_installations_install_template_create POST /api/projects/{project_id}/mcp_server_installations/install_template/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/install_template/\nmcp_server_installations_install_template_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_server_installations_list",
+    "name": "mcp_server_installations_list",
+    "description": "mcp_server_installations_list GET /api/projects/{project_id}/mcp_server_installations/",
+    "context": "GET /api/projects/{project_id}/mcp_server_installations/\nmcp_server_installations_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "mcp_server_installations_partial_update",
+    "name": "mcp_server_installations_partial_update",
+    "description": "mcp_server_installations_partial_update PATCH /api/projects/{project_id}/mcp_server_installations/{id}/",
+    "context": "PATCH /api/projects/{project_id}/mcp_server_installations/{id}/\nmcp_server_installations_partial_update\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_server_installations_proxy_create",
+    "name": "mcp_server_installations_proxy_create",
+    "description": "mcp_server_installations_proxy_create POST /api/projects/{project_id}/mcp_server_installations/{id}/proxy/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/{id}/proxy/\nmcp_server_installations_proxy_create\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_server_installations_retrieve",
+    "name": "mcp_server_installations_retrieve",
+    "description": "mcp_server_installations_retrieve GET /api/projects/{project_id}/mcp_server_installations/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_server_installations/{id}/\nmcp_server_installations_retrieve\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_server_installations_share_create",
+    "name": "Escalate a personal installation to a team-wide shared one",
+    "description": "Escalate a personal installation to a team-wide shared one Escalate a personal installation to a team-wide shared one. POST /api/projects/{project_id}/mcp_server_installations/{id}/share/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/{id}/share/\nEscalate a personal installation to a team-wide shared one. Owner-only AND admin-only: sharing exposes the owner's credential to project members, so it carries the same gate as creating a shared install outright. Agents require separate explicit grants.\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_server_installations_tools_partial_update",
+    "name": "mcp_server_installations_tools_partial_update",
+    "description": "mcp_server_installations_tools_partial_update PATCH /api/projects/{project_id}/mcp_server_installations/{id}/tools/{tool_name}/",
+    "context": "PATCH /api/projects/{project_id}/mcp_server_installations/{id}/tools/{tool_name}/\nmcp_server_installations_tools_partial_update\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; tool_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_server_installations_tools_refresh_create",
+    "name": "mcp_server_installations_tools_refresh_create",
+    "description": "mcp_server_installations_tools_refresh_create POST /api/projects/{project_id}/mcp_server_installations/{id}/tools/refresh/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/{id}/tools/refresh/\nmcp_server_installations_tools_refresh_create\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_server_installations_tools_retrieve",
+    "name": "mcp_server_installations_tools_retrieve",
+    "description": "mcp_server_installations_tools_retrieve GET /api/projects/{project_id}/mcp_server_installations/{id}/tools/",
+    "context": "GET /api/projects/{project_id}/mcp_server_installations/{id}/tools/\nmcp_server_installations_tools_retrieve\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_server_installations_unshare_create",
+    "name": "De-escalate a shared installation back to personal",
+    "description": "De-escalate a shared installation back to personal De-escalate a shared installation back to personal. POST /api/projects/{project_id}/mcp_server_installations/{id}/unshare/",
+    "context": "POST /api/projects/{project_id}/mcp_server_installations/{id}/unshare/\nDe-escalate a shared installation back to personal. Allowed for the credential owner OR a project admin (the reclaim path for shared credentials). The row always stays owned by the ORIGINAL owner — an admin unsharing someone else's install must not capture their credential.\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_server_installations_update",
+    "name": "mcp_server_installations_update",
+    "description": "mcp_server_installations_update PUT /api/projects/{project_id}/mcp_server_installations/{id}/",
+    "context": "PUT /api/projects/{project_id}/mcp_server_installations/{id}/\nmcp_server_installations_update\nRequired: id (path) — A UUID string identifying this mcp server installation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

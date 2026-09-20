@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tenant-level-custom-nameservers-add-tenant-custom-nameserver",
+    "name": "Add Tenant Custom Nameserver",
+    "description": "Add Tenant Custom Nameserver Adds a custom nameserver for a tenant. POST /client/v4/tenants/{tenant_tag}/custom_ns",
+    "context": "POST /client/v4/tenants/{tenant_tag}/custom_ns\nAdds a custom nameserver for a tenant.\nRequired: tenant_tag (path); body (body)"
+  },
+  {
+    "id": "tenant-level-custom-nameservers-delete-tenant-custom-nameserver",
+    "name": "Delete Tenant Custom Nameserver",
+    "description": "Delete Tenant Custom Nameserver Deletes a tenant's custom nameserver. DELETE /client/v4/tenants/{tenant_tag}/custom_ns/{custom_ns_id}",
+    "context": "DELETE /client/v4/tenants/{tenant_tag}/custom_ns/{custom_ns_id}\nDeletes a tenant's custom nameserver.\nRequired: custom_ns_id (path); tenant_tag (path)"
+  },
+  {
+    "id": "tenant-level-custom-nameservers-list-tenant-custom-nameservers",
+    "name": "List Tenant Custom Nameservers",
+    "description": "List Tenant Custom Nameservers Lists a tenant's custom nameservers. GET /client/v4/tenants/{tenant_tag}/custom_ns",
+    "context": "GET /client/v4/tenants/{tenant_tag}/custom_ns\nLists a tenant's custom nameservers.\nRequired: tenant_tag (path)"
+  },
+  {
+    "id": "Tenants_listAccounts",
+    "name": "List tenant accounts",
+    "description": "List tenant accounts List of accounts for the Tenant. GET /client/v4/tenants/{tenant_id}/accounts",
+    "context": "GET /client/v4/tenants/{tenant_id}/accounts\nList of accounts for the Tenant.\nRequired: tenant_id (path)"
+  },
+  {
+    "id": "Tenants_listEntitlements",
+    "name": "List tenant entitlements",
+    "description": "List tenant entitlements List of innate entitlements available for the Tenant. GET /client/v4/tenants/{tenant_id}/entitlements",
+    "context": "GET /client/v4/tenants/{tenant_id}/entitlements\nList of innate entitlements available for the Tenant.\nRequired: tenant_id (path)"
+  },
+  {
+    "id": "Tenants_listMemberships",
+    "name": "List tenant memberships",
+    "description": "List tenant memberships List of active members (Cloudflare users) for the Tenant. GET /client/v4/tenants/{tenant_id}/memberships",
+    "context": "GET /client/v4/tenants/{tenant_id}/memberships\nList of active members (Cloudflare users) for the Tenant.\nRequired: tenant_id (path)"
+  },
+  {
+    "id": "Tenants_retrieveTenant",
+    "name": "Get tenant",
+    "description": "Get tenant Retrieves a Tenant by Tenant ID. GET /client/v4/tenants/{tenant_id}",
+    "context": "GET /client/v4/tenants/{tenant_id}\nRetrieves a Tenant by Tenant ID.\nRequired: tenant_id (path)"
+  },
+  {
+    "id": "Tenants_validAccountTypes",
+    "name": "Get tenant account types",
+    "description": "Get tenant account types List of account types available for the Tenant to provision accounts. GET /client/v4/tenants/{tenant_id}/account_types",
+    "context": "GET /client/v4/tenants/{tenant_id}/account_types\nList of account types available for the Tenant to provision accounts.\nRequired: tenant_id (path)"
+  }
+]

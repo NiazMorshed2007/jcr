@@ -1,0 +1,158 @@
+[
+  {
+    "id": "DeleteTerminalConfigurationsConfiguration",
+    "name": "Delete a Configuration",
+    "description": "Delete a Configuration Deletes a Configuration object. DELETE /v1/terminal/configurations/{configuration}",
+    "context": "DELETE /v1/terminal/configurations/{configuration}\nDeletes a Configuration object.\nRequired: configuration (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteTerminalLocationsLocation",
+    "name": "Delete a Location",
+    "description": "Delete a Location Deletes a Location object. DELETE /v1/terminal/locations/{location}",
+    "context": "DELETE /v1/terminal/locations/{location}\nDeletes a Location object.\nRequired: location (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteTerminalReadersReader",
+    "name": "Delete a Reader",
+    "description": "Delete a Reader Deletes a Reader object. DELETE /v1/terminal/readers/{reader}",
+    "context": "DELETE /v1/terminal/readers/{reader}\nDeletes a Reader object.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetTerminalConfigurations",
+    "name": "List all Configurations",
+    "description": "List all Configurations Returns a list of Configuration objects. GET /v1/terminal/configurations",
+    "context": "GET /v1/terminal/configurations\nReturns a list of Configuration objects.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; is_account_default (query) — if present, only return the account default or non-default configurations.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetTerminalConfigurationsConfiguration",
+    "name": "Retrieve a Configuration",
+    "description": "Retrieve a Configuration Retrieves a Configuration object. GET /v1/terminal/configurations/{configuration}",
+    "context": "GET /v1/terminal/configurations/{configuration}\nRetrieves a Configuration object.\nRequired: configuration (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTerminalLocations",
+    "name": "List all Locations",
+    "description": "List all Locations Returns a list of Location objects. GET /v1/terminal/locations",
+    "context": "GET /v1/terminal/locations\nReturns a list of Location objects.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetTerminalLocationsLocation",
+    "name": "Retrieve a Location",
+    "description": "Retrieve a Location Retrieves a Location object. GET /v1/terminal/locations/{location}",
+    "context": "GET /v1/terminal/locations/{location}\nRetrieves a Location object.\nRequired: location (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetTerminalReaders",
+    "name": "List all Readers",
+    "description": "List all Readers Returns a list of Reader objects. GET /v1/terminal/readers",
+    "context": "GET /v1/terminal/readers\nReturns a list of Reader objects.\nOptional: device_type (query) — Filters readers by device type; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; location (query) — A location ID to filter the response list to only readers at the specific location; serial_number (query) — Filters readers by serial number; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; status (query) — A status filter to filter readers to only offline or online readers; body (body)"
+  },
+  {
+    "id": "GetTerminalReadersReader",
+    "name": "Retrieve a Reader",
+    "description": "Retrieve a Reader Retrieves a Reader object. GET /v1/terminal/readers/{reader}",
+    "context": "GET /v1/terminal/readers/{reader}\nRetrieves a Reader object.\nRequired: reader (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostTerminalConfigurations",
+    "name": "Create a Configuration",
+    "description": "Create a Configuration Creates a new Configuration object. POST /v1/terminal/configurations",
+    "context": "POST /v1/terminal/configurations\nCreates a new Configuration object.\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalConfigurationsConfiguration",
+    "name": "Update a Configuration",
+    "description": "Update a Configuration Updates a new Configuration object. POST /v1/terminal/configurations/{configuration}",
+    "context": "POST /v1/terminal/configurations/{configuration}\nUpdates a new Configuration object.\nRequired: configuration (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalConnectionTokens",
+    "name": "Create a Connection Token",
+    "description": "Create a Connection Token To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. POST /v1/terminal/connection_tokens",
+    "context": "POST /v1/terminal/connection_tokens\nTo connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalLocations",
+    "name": "Create a Location",
+    "description": "Create a Location Creates a new Location object. POST /v1/terminal/locations",
+    "context": "POST /v1/terminal/locations\nCreates a new Location object. For further details, including which address fields are required in each country, see the Manage locations guide.\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalLocationsLocation",
+    "name": "Update a Location",
+    "description": "Update a Location Updates a Location object by setting the values of the parameters passed. POST /v1/terminal/locations/{location}",
+    "context": "POST /v1/terminal/locations/{location}\nUpdates a Location object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.\nRequired: location (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalOnboardingLinks",
+    "name": "Create an Onboarding Link",
+    "description": "Create an Onboarding Link Creates a new OnboardingLink object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone. POST /v1/terminal/onboarding_links",
+    "context": "POST /v1/terminal/onboarding_links\nCreates a new OnboardingLink object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTerminalReaders",
+    "name": "Create a Reader",
+    "description": "Create a Reader Creates a new Reader object. POST /v1/terminal/readers",
+    "context": "POST /v1/terminal/readers\nCreates a new Reader object.\nRequired: body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReader",
+    "name": "Update a Reader",
+    "description": "Update a Reader Updates a Reader object by setting the values of the parameters passed. POST /v1/terminal/readers/{reader}",
+    "context": "POST /v1/terminal/readers/{reader}\nUpdates a Reader object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderCancelAction",
+    "name": "Cancel the current reader action",
+    "description": "Cancel the current reader action Cancels the current reader action. POST /v1/terminal/readers/{reader}/cancel_action",
+    "context": "POST /v1/terminal/readers/{reader}/cancel_action\nCancels the current reader action. See Programmatic Cancellation for more details.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderCollectInputs",
+    "name": "Collect inputs using a Reader",
+    "description": "Collect inputs using a Reader Initiates an input collection flow on a Reader to display input forms and collect information from your customers. POST /v1/terminal/readers/{reader}/collect_inputs",
+    "context": "POST /v1/terminal/readers/{reader}/collect_inputs\nInitiates an input collection flow on a Reader to display input forms and collect information from your customers.\nRequired: reader (path); body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderCollectPaymentMethod",
+    "name": "Hand off a PaymentIntent to a Reader and collect card details",
+    "description": "Hand off a PaymentIntent to a Reader and collect card details Initiates a payment flow on a Reader and updates the PaymentIntent with card details before manual confirmation. POST /v1/terminal/readers/{reader}/collect_payment_method",
+    "context": "POST /v1/terminal/readers/{reader}/collect_payment_method\nInitiates a payment flow on a Reader and updates the PaymentIntent with card details before manual confirmation. See Collecting a Payment method for more details.\nRequired: reader (path); body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderConfirmPaymentIntent",
+    "name": "Confirm a PaymentIntent on the Reader",
+    "description": "Confirm a PaymentIntent on the Reader Finalizes a payment on a Reader. POST /v1/terminal/readers/{reader}/confirm_payment_intent",
+    "context": "POST /v1/terminal/readers/{reader}/confirm_payment_intent\nFinalizes a payment on a Reader. See Confirming a Payment for more details.\nRequired: reader (path); body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderProcessPaymentIntent",
+    "name": "Hand-off a PaymentIntent to a Reader",
+    "description": "Hand-off a PaymentIntent to a Reader Initiates a payment flow on a Reader. POST /v1/terminal/readers/{reader}/process_payment_intent",
+    "context": "POST /v1/terminal/readers/{reader}/process_payment_intent\nInitiates a payment flow on a Reader. See process the payment for more details.\nRequired: reader (path); body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderProcessSetupIntent",
+    "name": "Hand-off a SetupIntent to a Reader",
+    "description": "Hand-off a SetupIntent to a Reader Initiates a SetupIntent flow on a Reader. POST /v1/terminal/readers/{reader}/process_setup_intent",
+    "context": "POST /v1/terminal/readers/{reader}/process_setup_intent\nInitiates a SetupIntent flow on a Reader. See Save directly without charging for more details.\nRequired: reader (path); body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderRefundPayment",
+    "name": "Refund a Charge or a PaymentIntent in-person",
+    "description": "Refund a Charge or a PaymentIntent in-person Initiates an in-person refund on a Reader. POST /v1/terminal/readers/{reader}/refund_payment",
+    "context": "POST /v1/terminal/readers/{reader}/refund_payment\nInitiates an in-person refund on a Reader. See Refund an Interac Payment for more details.\nRequired: reader (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostTerminalReadersReaderSetReaderDisplay",
+    "name": "Set reader display",
+    "description": "Set reader display Sets the reader display to show cart details . POST /v1/terminal/readers/{reader}/set_reader_display",
+    "context": "POST /v1/terminal/readers/{reader}/set_reader_display\nSets the reader display to show cart details .\nRequired: reader (path); body (body)"
+  },
+  {
+    "id": "PostTerminalRefunds",
+    "name": "Create a refund using a Terminal-supported device.",
+    "description": "Create a refund using a Terminal-supported device. Internal endpoint for terminal use to create a refund for a card_present or card charge. POST /v1/terminal/refunds",
+    "context": "POST /v1/terminal/refunds\nInternal endpoint for terminal use to create a refund for a card_present or card charge. You can optionally refund only part of a charge.\nOptional: body (body)"
+  }
+]

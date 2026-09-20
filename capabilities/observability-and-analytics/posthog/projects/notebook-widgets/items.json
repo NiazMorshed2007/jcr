@@ -1,0 +1,68 @@
+[
+  {
+    "id": "reusable_widgets_demo_frame",
+    "name": "reusable_widgets_demo_frame",
+    "description": "reusable_widgets_demo_frame GET /api/projects/{project_id}/notebook_widgets/{id}/frames/{frame_name}/",
+    "context": "GET /api/projects/{project_id}/notebook_widgets/{id}/frames/{frame_name}/\nreusable_widgets_demo_frame\nRequired: frame_name (path) — Logical dataframe slot requested by the widget demo.; id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: version_id (query) — Immutable version whose saved demo data should be returned."
+  },
+  {
+    "id": "reusable_widgets_discard_version",
+    "name": "reusable_widgets_discard_version",
+    "description": "reusable_widgets_discard_version POST /api/projects/{project_id}/notebook_widgets/{id}/discard-version/",
+    "context": "POST /api/projects/{project_id}/notebook_widgets/{id}/discard-version/\nreusable_widgets_discard_version\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "reusable_widgets_generate",
+    "name": "reusable_widgets_generate",
+    "description": "reusable_widgets_generate POST /api/projects/{project_id}/notebook_widgets/{id}/generate/",
+    "context": "POST /api/projects/{project_id}/notebook_widgets/{id}/generate/\nreusable_widgets_generate\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "reusable_widgets_list",
+    "name": "reusable_widgets_list",
+    "description": "reusable_widgets_list GET /api/projects/{project_id}/notebook_widgets/",
+    "context": "GET /api/projects/{project_id}/notebook_widgets/\nreusable_widgets_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query); offset (query); search (query)"
+  },
+  {
+    "id": "reusable_widgets_restore",
+    "name": "reusable_widgets_restore",
+    "description": "reusable_widgets_restore POST /api/projects/{project_id}/notebook_widgets/{id}/restore/",
+    "context": "POST /api/projects/{project_id}/notebook_widgets/{id}/restore/\nreusable_widgets_restore\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "reusable_widgets_retrieve",
+    "name": "reusable_widgets_retrieve",
+    "description": "reusable_widgets_retrieve GET /api/projects/{project_id}/notebook_widgets/{id}/",
+    "context": "GET /api/projects/{project_id}/notebook_widgets/{id}/\nreusable_widgets_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "reusable_widgets_save_version",
+    "name": "reusable_widgets_save_version",
+    "description": "reusable_widgets_save_version POST /api/projects/{project_id}/notebook_widgets/{id}/save-version/",
+    "context": "POST /api/projects/{project_id}/notebook_widgets/{id}/save-version/\nreusable_widgets_save_version\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "reusable_widgets_source",
+    "name": "reusable_widgets_source",
+    "description": "reusable_widgets_source GET /api/projects/{project_id}/notebook_widgets/{id}/source/",
+    "context": "GET /api/projects/{project_id}/notebook_widgets/{id}/source/\nreusable_widgets_source\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: version_id (query) — Immutable reusable widget version whose source should be returned."
+  },
+  {
+    "id": "reusable_widgets_status",
+    "name": "reusable_widgets_status",
+    "description": "reusable_widgets_status GET /api/projects/{project_id}/notebook_widgets/{id}/status/",
+    "context": "GET /api/projects/{project_id}/notebook_widgets/{id}/status/\nreusable_widgets_status\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "reusable_widgets_update_demo_data",
+    "name": "reusable_widgets_update_demo_data",
+    "description": "reusable_widgets_update_demo_data POST /api/projects/{project_id}/notebook_widgets/{id}/demo-data/",
+    "context": "POST /api/projects/{project_id}/notebook_widgets/{id}/demo-data/\nreusable_widgets_update_demo_data\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "reusable_widgets_versions",
+    "name": "reusable_widgets_versions",
+    "description": "reusable_widgets_versions GET /api/projects/{project_id}/notebook_widgets/{id}/versions/",
+    "context": "GET /api/projects/{project_id}/notebook_widgets/{id}/versions/\nreusable_widgets_versions\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum versions to return.; offset (query) — Zero-based version offset."
+  }
+]

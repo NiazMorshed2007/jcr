@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createWorkflow",
+    "name": "Create a workflow",
+    "description": "Create a workflow Create a new workflow service with the specified configuration. POST /v1/workflows",
+    "context": "POST /v1/workflows\nCreate a new workflow service with the specified configuration.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteWorkflow",
+    "name": "Delete workflow",
+    "description": "Delete workflow Delete the workflow service with the provided ID. DELETE /v1/workflows/{workflowId}",
+    "context": "DELETE /v1/workflows/{workflowId}\nDelete the workflow service with the provided ID.\nRequired: workflowId (path) — The ID of the workflow"
+  },
+  {
+    "id": "getWorkflow",
+    "name": "Retrieve workflow",
+    "description": "Retrieve workflow Retrieve the workflow service with the provided ID. GET /v1/workflows/{workflowId}",
+    "context": "GET /v1/workflows/{workflowId}\nRetrieve the workflow service with the provided ID.\nRequired: workflowId (path) — The ID of the workflow"
+  },
+  {
+    "id": "listWorkflows",
+    "name": "List workflows",
+    "description": "List workflows List workflows that match the provided filters. GET /v1/workflows",
+    "context": "GET /v1/workflows\nList workflows that match the provided filters. If no filters are provided, all workflows accessible by the authenticated user are returned.\nOptional: name (query) — Filter by name; ownerId (query) — The ID of the workspaces to return resources for; workflowID (query) — The IDs of the workflows to return resources for; environmentId (query) — Filter for resources that belong to an environment; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "updateWorkflow",
+    "name": "Update workflow",
+    "description": "Update workflow Update the workflow service with the provided ID. PATCH /v1/workflows/{workflowId}",
+    "context": "PATCH /v1/workflows/{workflowId}\nUpdate the workflow service with the provided ID.\nRequired: workflowId (path) — The ID of the workflow; body (body)"
+  }
+]

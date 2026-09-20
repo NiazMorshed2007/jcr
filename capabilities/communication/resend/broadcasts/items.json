@@ -1,0 +1,38 @@
+[
+  {
+    "id": "delete_broadcasts_id",
+    "name": "Remove an existing broadcast that is in the draft status",
+    "description": "Remove an existing broadcast that is in the draft status DELETE /broadcasts/{id}",
+    "context": "DELETE /broadcasts/{id}\nRemove an existing broadcast that is in the draft status\nRequired: id (path) — The Broadcast ID."
+  },
+  {
+    "id": "get_broadcasts",
+    "name": "Retrieve a list of broadcasts",
+    "description": "Retrieve a list of broadcasts GET /broadcasts",
+    "context": "GET /broadcasts\nRetrieve a list of broadcasts\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_broadcasts_id",
+    "name": "Retrieve a single broadcast",
+    "description": "Retrieve a single broadcast GET /broadcasts/{id}",
+    "context": "GET /broadcasts/{id}\nRetrieve a single broadcast\nRequired: id (path) — The Broadcast ID."
+  },
+  {
+    "id": "patch_broadcasts_id",
+    "name": "Update an existing broadcast",
+    "description": "Update an existing broadcast PATCH /broadcasts/{id}",
+    "context": "PATCH /broadcasts/{id}\nUpdate an existing broadcast\nRequired: id (path) — The Broadcast ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_broadcasts",
+    "name": "Create a broadcast",
+    "description": "Create a broadcast POST /broadcasts",
+    "context": "POST /broadcasts\nCreate a broadcast\nOptional: body (body)"
+  },
+  {
+    "id": "post_broadcasts_id_send",
+    "name": "Send or schedule a broadcast",
+    "description": "Send or schedule a broadcast POST /broadcasts/{id}/send",
+    "context": "POST /broadcasts/{id}/send\nSend or schedule a broadcast\nRequired: id (path) — The Broadcast ID.\nOptional: body (body)"
+  }
+]

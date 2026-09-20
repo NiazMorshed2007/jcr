@@ -1,0 +1,26 @@
+[
+  {
+    "id": "GetPromotionCodes",
+    "name": "List all promotion codes",
+    "description": "List all promotion codes Returns a list of your promotion codes. GET /v1/promotion_codes",
+    "context": "GET /v1/promotion_codes\nReturns a list of your promotion codes.\nOptional: active (query) — Filter promotion codes by whether they are active.; code (query) — Only return promotion codes that have this case-insensitive code.; coupon (query) — Only return promotion codes for this coupon.; created (query) — A filter on the list, based on the object `created` field. The value can be a string with an integer Unix timestamp, or it can be a dictionary with a number of different query options.; customer (query) — Only return promotion codes that are restricted to this customer.; customer_account (query) — Only return promotion codes that are restricted to this account representing the customer.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetPromotionCodesPromotionCode",
+    "name": "Retrieve a promotion code",
+    "description": "Retrieve a promotion code Retrieves the promotion code with the given ID. GET /v1/promotion_codes/{promotion_code}",
+    "context": "GET /v1/promotion_codes/{promotion_code}\nRetrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing code use list with the desired code .\nRequired: promotion_code (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostPromotionCodes",
+    "name": "Create a promotion code",
+    "description": "Create a promotion code A promotion code points to an underlying promotion. POST /v1/promotion_codes",
+    "context": "POST /v1/promotion_codes\nA promotion code points to an underlying promotion. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.\nRequired: body (body)"
+  },
+  {
+    "id": "PostPromotionCodesPromotionCode",
+    "name": "Update a promotion code",
+    "description": "Update a promotion code Updates the specified promotion code by setting the values of the parameters passed. POST /v1/promotion_codes/{promotion_code}",
+    "context": "POST /v1/promotion_codes/{promotion_code}\nUpdates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.\nRequired: promotion_code (path)\nOptional: body (body)"
+  }
+]

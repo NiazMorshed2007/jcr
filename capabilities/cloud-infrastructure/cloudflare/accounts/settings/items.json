@@ -1,0 +1,20 @@
+[
+  {
+    "id": "account-settings-change-ut-billing-setting",
+    "name": "Change Unique Transformations billing setting",
+    "description": "Change Unique Transformations billing setting Updates the Unique Transformations billing configuration for an account. PATCH /client/v4/accounts/{account_id}/settings/ut-billing",
+    "context": "PATCH /client/v4/accounts/{account_id}/settings/ut-billing\nUpdates the Unique Transformations billing configuration for an account. When enabled, billing data is directed to the Transformations pipeline. Note: setting the value to \"off\" is not permitted once enabled.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-settings-get-ut-billing-setting",
+    "name": "Get Unique Transformations billing setting",
+    "description": "Get Unique Transformations billing setting Retrieves the Unique Transformations billing configuration for an account. GET /client/v4/accounts/{account_id}/settings/ut-billing",
+    "context": "GET /client/v4/accounts/{account_id}/settings/ut-billing\nRetrieves the Unique Transformations billing configuration for an account. When enabled, billing data is directed to the Transformations pipeline.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-settings-list-transformations",
+    "name": "List Image Resizing configurations for account",
+    "description": "List Image Resizing configurations for account Returns a list of Image Resizing configurations across all zones for the account. GET /client/v4/accounts/{account_id}/settings/transformations",
+    "context": "GET /client/v4/accounts/{account_id}/settings/transformations\nReturns a list of Image Resizing configurations across all zones for the account. This endpoint is useful for retrieving the transformations (image_resizing) state for all zones belonging to an account.\nRequired: account_id (path)"
+  }
+]

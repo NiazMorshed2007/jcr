@@ -1,0 +1,20 @@
+[
+  {
+    "id": "activity%2Fdelete-repo-subscription",
+    "name": "Delete a repository subscription",
+    "description": "Delete a repository subscription This endpoint should only be used to stop watching a repository. DELETE /repos/{owner}/{repo}/subscription",
+    "context": "DELETE /repos/{owner}/{repo}/subscription\nThis endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://docs.github.com/rest/activity/watching#set-a-repository-subscription).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "activity%2Fget-repo-subscription",
+    "name": "Get a repository subscription",
+    "description": "Get a repository subscription Gets information about whether the authenticated user is subscribed to the repository. GET /repos/{owner}/{repo}/subscription",
+    "context": "GET /repos/{owner}/{repo}/subscription\nGets information about whether the authenticated user is subscribed to the repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "activity%2Fset-repo-subscription",
+    "name": "Set a repository subscription",
+    "description": "Set a repository subscription If you would like to watch a repository, set `subscribed` to `true`. PUT /repos/{owner}/{repo}/subscription",
+    "context": "PUT /repos/{owner}/{repo}/subscription\nIf you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/activity/watching#delete-a-repository-subscription) completely.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: body (body)"
+  }
+]

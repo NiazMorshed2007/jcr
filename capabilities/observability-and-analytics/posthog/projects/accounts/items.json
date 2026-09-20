@@ -1,0 +1,146 @@
+[
+  {
+    "id": "accounts_by_external_id_retrieve",
+    "name": "accounts_by_external_id_retrieve",
+    "description": "accounts_by_external_id_retrieve GET /api/projects/{project_id}/accounts/by_external_id/",
+    "context": "GET /api/projects/{project_id}/accounts/by_external_id/\naccounts_by_external_id_retrieve\nRequired: external_id (query) — Exact external account identifier. Leading and trailing whitespace is significant.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_create",
+    "name": "accounts_create",
+    "description": "accounts_create POST /api/projects/{project_id}/accounts/",
+    "context": "POST /api/projects/{project_id}/accounts/\naccounts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "accounts_custom_property_values_create",
+    "name": "accounts_custom_property_values_create",
+    "description": "accounts_custom_property_values_create POST /api/projects/{project_id}/accounts/{account_id}/custom_property_values/",
+    "context": "POST /api/projects/{project_id}/accounts/{account_id}/custom_property_values/\naccounts_custom_property_values_create\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "accounts_custom_property_values_list",
+    "name": "accounts_custom_property_values_list",
+    "description": "accounts_custom_property_values_list GET /api/projects/{project_id}/accounts/{account_id}/custom_property_values/",
+    "context": "GET /api/projects/{project_id}/accounts/{account_id}/custom_property_values/\naccounts_custom_property_values_list\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_destroy",
+    "name": "accounts_destroy",
+    "description": "accounts_destroy DELETE /api/projects/{project_id}/accounts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/accounts/{id}/\naccounts_destroy\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_email_thread_messages_list",
+    "name": "accounts_email_thread_messages_list",
+    "description": "accounts_email_thread_messages_list GET /api/projects/{project_id}/accounts/{id}/email_threads/{thread_id}/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/email_threads/{thread_id}/\naccounts_email_thread_messages_list\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; thread_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "accounts_email_threads_list",
+    "name": "accounts_email_threads_list",
+    "description": "accounts_email_threads_list GET /api/projects/{project_id}/accounts/{id}/email_threads/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/email_threads/\naccounts_email_threads_list\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "accounts_list",
+    "name": "accounts_list",
+    "description": "accounts_list GET /api/projects/{project_id}/accounts/",
+    "context": "GET /api/projects/{project_id}/accounts/\naccounts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: all_roles_unassigned (query) — When true, returns only accounts where no user actively holds any relationship.; include_churned (query) — Include churned accounts. Churned accounts are hidden by default.; include_ignored (query) — Include ignored accounts. Ignored accounts are hidden by default.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; ordering (query) — Sort order. Defaults to '-created_at'.; search (query) — Case-insensitive substring search across account name and external ID. A query holding an email address also matches accounts that list it as a known email, and a query holding a domain matches accounts that own that email domain.; tags (query) — JSON-encoded array of tag names to filter by, e.g. `[\"enterprise\",\"priority\"]`. Returns accounts that have any of the listed tags. Malformed values (not a JSON-encoded list of strings) return a 400."
+  },
+  {
+    "id": "accounts_meetings_list",
+    "name": "accounts_meetings_list",
+    "description": "accounts_meetings_list GET /api/projects/{project_id}/accounts/{id}/meetings/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/meetings/\naccounts_meetings_list\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Filter meetings by title or attendee email/name."
+  },
+  {
+    "id": "accounts_notebooks_create",
+    "name": "accounts_notebooks_create",
+    "description": "accounts_notebooks_create POST /api/projects/{project_id}/accounts/{account_id}/notebooks/",
+    "context": "POST /api/projects/{project_id}/accounts/{account_id}/notebooks/\naccounts_notebooks_create\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "accounts_notebooks_destroy",
+    "name": "accounts_notebooks_destroy",
+    "description": "accounts_notebooks_destroy DELETE /api/projects/{project_id}/accounts/{account_id}/notebooks/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/accounts/{account_id}/notebooks/{short_id}/\naccounts_notebooks_destroy\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "accounts_notebooks_list",
+    "name": "accounts_notebooks_list",
+    "description": "accounts_notebooks_list GET /api/projects/{project_id}/accounts/{account_id}/notebooks/",
+    "context": "GET /api/projects/{project_id}/accounts/{account_id}/notebooks/\naccounts_notebooks_list\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; ordering (query) — Sort by creation date or author. Defaults to '-created_at'.; search (query) — Full-text search across notebook title and content."
+  },
+  {
+    "id": "accounts_notebooks_retrieve",
+    "name": "accounts_notebooks_retrieve",
+    "description": "accounts_notebooks_retrieve GET /api/projects/{project_id}/accounts/{account_id}/notebooks/{short_id}/",
+    "context": "GET /api/projects/{project_id}/accounts/{account_id}/notebooks/{short_id}/\naccounts_notebooks_retrieve\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "accounts_partial_update",
+    "name": "accounts_partial_update",
+    "description": "accounts_partial_update PATCH /api/projects/{project_id}/accounts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/accounts/{id}/\naccounts_partial_update\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "accounts_presence_create",
+    "name": "accounts_presence_create",
+    "description": "accounts_presence_create POST /api/projects/{project_id}/accounts/{id}/presence/",
+    "context": "POST /api/projects/{project_id}/accounts/{id}/presence/\naccounts_presence_create\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_relationships_create",
+    "name": "accounts_relationships_create",
+    "description": "accounts_relationships_create POST /api/projects/{project_id}/accounts/{account_id}/relationships/",
+    "context": "POST /api/projects/{project_id}/accounts/{account_id}/relationships/\naccounts_relationships_create\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "accounts_relationships_destroy",
+    "name": "accounts_relationships_destroy",
+    "description": "accounts_relationships_destroy DELETE /api/projects/{project_id}/accounts/{account_id}/relationships/{id}/",
+    "context": "DELETE /api/projects/{project_id}/accounts/{account_id}/relationships/{id}/\naccounts_relationships_destroy\nRequired: account_id (path) — UUID of the parent account.; id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_relationships_end_create",
+    "name": "accounts_relationships_end_create",
+    "description": "accounts_relationships_end_create POST /api/projects/{project_id}/accounts/{account_id}/relationships/{id}/end/",
+    "context": "POST /api/projects/{project_id}/accounts/{account_id}/relationships/{id}/end/\naccounts_relationships_end_create\nRequired: account_id (path) — UUID of the parent account.; id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_relationships_list",
+    "name": "accounts_relationships_list",
+    "description": "accounts_relationships_list GET /api/projects/{project_id}/accounts/{account_id}/relationships/",
+    "context": "GET /api/projects/{project_id}/accounts/{account_id}/relationships/\naccounts_relationships_list\nRequired: account_id (path) — UUID of the parent account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: include_history (query) — Include ended assignments (the full timeline), not just active ones."
+  },
+  {
+    "id": "accounts_retrieve",
+    "name": "accounts_retrieve",
+    "description": "accounts_retrieve GET /api/projects/{project_id}/accounts/{id}/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/\naccounts_retrieve\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_summaries_list",
+    "name": "accounts_summaries_list",
+    "description": "accounts_summaries_list GET /api/projects/{project_id}/accounts/{id}/summaries/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/summaries/\naccounts_summaries_list\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "accounts_support_ticket_messages_list",
+    "name": "accounts_support_ticket_messages_list",
+    "description": "accounts_support_ticket_messages_list GET /api/projects/{project_id}/accounts/{id}/support_tickets/{ticket_id}/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/support_tickets/{ticket_id}/\naccounts_support_ticket_messages_list\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; ticket_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "accounts_support_tickets_list",
+    "name": "accounts_support_tickets_list",
+    "description": "accounts_support_tickets_list GET /api/projects/{project_id}/accounts/{id}/support_tickets/",
+    "context": "GET /api/projects/{project_id}/accounts/{id}/support_tickets/\naccounts_support_tickets_list\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "accounts_update",
+    "name": "accounts_update",
+    "description": "accounts_update PUT /api/projects/{project_id}/accounts/{id}/",
+    "context": "PUT /api/projects/{project_id}/accounts/{id}/\naccounts_update\nRequired: id (path) — A UUID string identifying this account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

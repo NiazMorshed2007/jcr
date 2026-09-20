@@ -1,0 +1,122 @@
+[
+  {
+    "id": "persons_activity_retrieve",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/{id}/activity/",
+    "context": "GET /api/projects/{project_id}/persons/{id}/activity/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique integer value identifying this person.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "persons_all_activity_retrieve",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/activity/",
+    "context": "GET /api/projects/{project_id}/persons/activity/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "persons_batch_by_distinct_ids_create",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. POST /api/projects/{project_id}/persons/batch_by_distinct_ids/",
+    "context": "POST /api/projects/{project_id}/persons/batch_by_distinct_ids/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_batch_by_uuids_create",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. POST /api/projects/{project_id}/persons/batch_by_uuids/",
+    "context": "POST /api/projects/{project_id}/persons/batch_by_uuids/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_bulk_delete_create",
+    "name": "This endpoint allows you to bulk delete persons, either by the PostHog person IDs or by distinct IDs",
+    "description": "This endpoint allows you to bulk delete persons, either by the PostHog person IDs or by distinct IDs This endpoint allows you to bulk delete persons, either by the PostHog person IDs or by distinct IDs. POST /api/projects/{project_id}/persons/bulk_delete/",
+    "context": "POST /api/projects/{project_id}/persons/bulk_delete/\nThis endpoint allows you to bulk delete persons, either by the PostHog person IDs or by distinct IDs. You can pass in a maximum of 1000 IDs per call. Only events captured before the request will be deleted. Person records are removed in the background shortly after the request returns, so a successful response reports them in `persons_queued_for_deletion` and `persons_deleted` is 0.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_cohorts_retrieve",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/cohorts/",
+    "context": "GET /api/projects/{project_id}/persons/cohorts/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: person_id (query) — The person ID or UUID to get cohorts for.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "persons_delete_property_create",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. POST /api/projects/{project_id}/persons/{id}/delete_property/",
+    "context": "POST /api/projects/{project_id}/persons/{id}/delete_property/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique value identifying this person. Accepts both numeric ID and UUID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "persons_deletion_status_list",
+    "name": "List the status of queued event deletions for persons",
+    "description": "List the status of queued event deletions for persons List the status of queued event deletions for persons. GET /api/projects/{project_id}/persons/deletion_status/",
+    "context": "GET /api/projects/{project_id}/persons/deletion_status/\nList the status of queued event deletions for persons. When you delete a person with `delete_events=true`, an async deletion is queued. Use this endpoint to check whether those deletions are still pending or have been completed.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; person_uuid (query) — Filter by a specific person UUID.; status (query) — Filter by deletion status: 'pending', 'completed', or 'all'."
+  },
+  {
+    "id": "persons_emails_list",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/{id}/emails/",
+    "context": "GET /api/projects/{project_id}/persons/{id}/emails/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique integer value identifying this person.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range, matched on sent time. Relative ('-30d', '-24h') or ISO 8601. Defaults to -30d (the retention window) — bounds the ClickHouse partition scan.; before (query) — End of the time range, matched on sent time. Same format as 'after'. Defaults to now.; format (query); limit (query) — Maximum number of assets to return (1-500, default 50).; offset (query) — Number of assets to skip, for pagination."
+  },
+  {
+    "id": "persons_list",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/",
+    "context": "GET /api/projects/{project_id}/persons/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: client_query_id (query) — Names the ClickHouse query this request runs. Send the same id to `DELETE /api/projects/:project_id/query/:client_query_id/` to stop a search that is still running. Up to 128 characters.; distinct_id (query) — Filter list by distinct id.; email (query) — Filter persons by email (exact match); format (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; properties (query) — Filter Persons by person properties.; search (query) — Search persons by email, name, person ID, or distinct ID. Partial values match. When the term is a complete email address or UUID that exactly matches a distinct ID or person ID, only that person is returned."
+  },
+  {
+    "id": "persons_partial_update",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. PATCH /api/projects/{project_id}/persons/{id}/",
+    "context": "PATCH /api/projects/{project_id}/persons/{id}/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique value identifying this person. Accepts both numeric ID and UUID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_properties_at_time_retrieve",
+    "name": "Get person properties as they existed at a specific point in time",
+    "description": "Get person properties as they existed at a specific point in time Get person properties as they existed at a specific point in time. GET /api/projects/{project_id}/persons/properties_at_time/",
+    "context": "GET /api/projects/{project_id}/persons/properties_at_time/\nGet person properties as they existed at a specific point in time. This endpoint reconstructs person properties by querying ClickHouse events for $set and $set_once operations up to the specified timestamp. Query parameters: - distinct_id: The distinct_id of the person - timestamp: ISO datetime string for the point in time (e.g., \"2023-06-15T14:30:00Z\") - include_set_once: Whether to handle $set_once operations (default: false)\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; timestamp (query) — ISO datetime string for the point in time (e.g., '2023-06-15T14:30:00Z')\nOptional: distinct_id (query) — The distinct_id of the person (mutually exclusive with person_id); format (query); include_set_once (query) — Whether to handle $set_once operations (default: false); person_id (query) — The person_id (UUID) to build properties for (mutually exclusive with distinct_id)"
+  },
+  {
+    "id": "persons_properties_timeline_retrieve",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/{id}/properties_timeline/",
+    "context": "GET /api/projects/{project_id}/persons/{id}/properties_timeline/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique integer value identifying this person.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "persons_push_notifications_list",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/{id}/push_notifications/",
+    "context": "GET /api/projects/{project_id}/persons/{id}/push_notifications/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique integer value identifying this person.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range, matched on sent time. Relative ('-30d', '-24h') or ISO 8601. Defaults to -30d (the retention window) — bounds the ClickHouse partition scan.; before (query) — End of the time range, matched on sent time. Same format as 'after'. Defaults to now.; format (query); limit (query) — Maximum number of assets to return (1-500, default 50).; offset (query) — Number of assets to skip, for pagination."
+  },
+  {
+    "id": "persons_reset_person_distinct_id_create",
+    "name": "Reset a distinct_id for a deleted person",
+    "description": "Reset a distinct_id for a deleted person Reset a distinct_id for a deleted person. POST /api/projects/{project_id}/persons/reset_person_distinct_id/",
+    "context": "POST /api/projects/{project_id}/persons/reset_person_distinct_id/\nReset a distinct_id for a deleted person. This allows the distinct_id to be used again.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_retrieve",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/{id}/",
+    "context": "GET /api/projects/{project_id}/persons/{id}/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique value identifying this person. Accepts both numeric ID and UUID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  },
+  {
+    "id": "persons_split_create",
+    "name": "Split distinct_ids off a merged person",
+    "description": "Split distinct_ids off a merged person Split distinct_ids off a merged person. POST /api/projects/{project_id}/persons/{id}/split/",
+    "context": "POST /api/projects/{project_id}/persons/{id}/split/\nSplit distinct_ids off a merged person. Two mutually exclusive modes: - **`distinct_ids_to_split`** (recommended for surgical edits): moves only the listed distinct_ids off this person onto new single-id persons. The original person keeps every other distinct_id and its properties. - **`main_distinct_id`**: keeps only the specified distinct_id on this person; moves every *other* distinct_id off onto its own new person. If omitted, the first distinct_id is kept. The original person always retains its properties. To clear individual properties afterward, use the `delete_property` endpoint. The split runs asynchronously: a 201 response means the task was enqueued. Newly-created split-off persons get a deterministic UUID derived from `(team_id, distinct_id)`, so they can be located client-side without polling. If you need to delete a split-off person after this call, prefer looking it up by that deterministic UUID rather than by distinct_id, since the latter still resolves to the original merged person until the async task completes.\nRequired: id (path) — A unique value identifying this person. Accepts both numeric ID and UUID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_update",
+    "name": "Only for setting properties on the person",
+    "description": "Only for setting properties on the person Only for setting properties on the person. PUT /api/projects/{project_id}/persons/{id}/",
+    "context": "PUT /api/projects/{project_id}/persons/{id}/\nOnly for setting properties on the person. \"properties\" from the request data will be updated via a \"$set\" event. This means that only the properties listed will be updated, but other properties won't be removed nor updated. If you would like to remove a property use the `delete_property` endpoint.\nRequired: id (path) — A unique value identifying this person. Accepts both numeric ID and UUID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); body (body)"
+  },
+  {
+    "id": "persons_update_property_create",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. POST /api/projects/{project_id}/persons/{id}/update_property/",
+    "context": "POST /api/projects/{project_id}/persons/{id}/update_property/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: id (path) — A unique value identifying this person. Accepts both numeric ID and UUID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: format (query)"
+  },
+  {
+    "id": "persons_values_retrieve",
+    "name": "This endpoint is meant for reading and deleting persons",
+    "description": "This endpoint is meant for reading and deleting persons This endpoint is meant for reading and deleting persons. GET /api/projects/{project_id}/persons/values/",
+    "context": "GET /api/projects/{project_id}/persons/values/\nThis endpoint is meant for reading and deleting persons. To create or update persons, we recommend using the [capture API](https://posthog.com/docs/api/capture), the `$set` and `$unset` [properties](https://posthog.com/docs/product-analytics/user-properties), or one of our SDKs.\nRequired: key (query) — The person property key to get values for (e.g., 'email', 'plan', 'role').; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); value (query) — Optional search string to filter values (case-insensitive substring match)."
+  }
+]

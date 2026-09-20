@@ -1,0 +1,38 @@
+[
+  {
+    "id": "load-balancers-create-load-balancer",
+    "name": "Create Load Balancer",
+    "description": "Create Load Balancer Create a new load balancer. POST /client/v4/zones/{zone_id}/load_balancers",
+    "context": "POST /client/v4/zones/{zone_id}/load_balancers\nCreate a new load balancer.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "load-balancers-delete-load-balancer",
+    "name": "Delete Load Balancer",
+    "description": "Delete Load Balancer Delete a configured load balancer. DELETE /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}\nDelete a configured load balancer.\nRequired: zone_id (path); load_balancer_id (path)"
+  },
+  {
+    "id": "load-balancers-list-load-balancers",
+    "name": "List Load Balancers",
+    "description": "List Load Balancers List configured load balancers. GET /client/v4/zones/{zone_id}/load_balancers",
+    "context": "GET /client/v4/zones/{zone_id}/load_balancers\nList configured load balancers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "load-balancers-load-balancer-details",
+    "name": "Load Balancer Details",
+    "description": "Load Balancer Details Fetch a single configured load balancer. GET /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}",
+    "context": "GET /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}\nFetch a single configured load balancer.\nRequired: zone_id (path); load_balancer_id (path)"
+  },
+  {
+    "id": "load-balancers-patch-load-balancer",
+    "name": "Patch Load Balancer",
+    "description": "Patch Load Balancer Apply changes to an existing load balancer, overwriting the supplied properties. PATCH /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}\nApply changes to an existing load balancer, overwriting the supplied properties.\nRequired: zone_id (path); load_balancer_id (path); body (body)"
+  },
+  {
+    "id": "load-balancers-update-load-balancer",
+    "name": "Update Load Balancer",
+    "description": "Update Load Balancer Update a configured load balancer. PUT /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/load_balancers/{load_balancer_id}\nUpdate a configured load balancer.\nRequired: zone_id (path); load_balancer_id (path); body (body)"
+  }
+]

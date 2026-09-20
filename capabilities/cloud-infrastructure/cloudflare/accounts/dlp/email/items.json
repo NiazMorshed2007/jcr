@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dlp-email-scanner-create-account-mapping",
+    "name": "Create mapping",
+    "description": "Create mapping Creates a mapping between a Cloudflare account and an email provider for DLP email scanning integration. POST /client/v4/accounts/{account_id}/dlp/email/account_mapping",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/email/account_mapping\nCreates a mapping between a Cloudflare account and an email provider for DLP email scanning integration.\nRequired: account_id (path); body (body) — Account mapping."
+  },
+  {
+    "id": "dlp-email-scanner-create-rule",
+    "name": "Create email scanner rule",
+    "description": "Create email scanner rule Creates a new DLP email scanning rule that defines what content patterns to detect in email messages and what actions to take. POST /client/v4/accounts/{account_id}/dlp/email/rules",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/email/rules\nCreates a new DLP email scanning rule that defines what content patterns to detect in email messages and what actions to take.\nRequired: account_id (path); body (body) — Rule description."
+  },
+  {
+    "id": "dlp-email-scanner-delete-rule",
+    "name": "Delete email scanner rule",
+    "description": "Delete email scanner rule Removes a DLP email scanning rule. DELETE /client/v4/accounts/{account_id}/dlp/email/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/email/rules/{rule_id}\nRemoves a DLP email scanning rule. The rule will no longer be applied to email messages.\nRequired: account_id (path); rule_id (path)"
+  },
+  {
+    "id": "dlp-email-scanner-get-account-mapping",
+    "name": "Get mapping",
+    "description": "Get mapping Retrieves the email provider mapping configuration for DLP email scanning. GET /client/v4/accounts/{account_id}/dlp/email/account_mapping",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/email/account_mapping\nRetrieves the email provider mapping configuration for DLP email scanning.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-email-scanner-get-rule",
+    "name": "Get an email scanner rule",
+    "description": "Get an email scanner rule Gets detailed configuration for a specific DLP email scanning rule, including detection patterns and actions. GET /client/v4/accounts/{account_id}/dlp/email/rules/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/email/rules/{rule_id}\nGets detailed configuration for a specific DLP email scanning rule, including detection patterns and actions.\nRequired: account_id (path); rule_id (path)"
+  },
+  {
+    "id": "dlp-email-scanner-list-all-rules",
+    "name": "List all email scanner rules",
+    "description": "List all email scanner rules Lists all email scanner rules for an account. GET /client/v4/accounts/{account_id}/dlp/email/rules",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/email/rules\nLists all email scanner rules for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-email-scanner-update-rule",
+    "name": "Update email scanner rule",
+    "description": "Update email scanner rule Updates a DLP email scanning rule. PUT /client/v4/accounts/{account_id}/dlp/email/rules/{rule_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/email/rules/{rule_id}\nUpdates a DLP email scanning rule.\nRequired: account_id (path); rule_id (path); body (body) — Rule description."
+  },
+  {
+    "id": "dlp-email-scanner-update-rule-priorities",
+    "name": "Update email scanner rule priorities",
+    "description": "Update email scanner rule priorities Reorders DLP email scanning rules by updating their priority values. PATCH /client/v4/accounts/{account_id}/dlp/email/rules",
+    "context": "PATCH /client/v4/accounts/{account_id}/dlp/email/rules\nReorders DLP email scanning rules by updating their priority values. Higher priority rules are evaluated first.\nRequired: account_id (path); body (body) — Rule priorities."
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "id": "add_reference_variable",
+    "name": "Set reference variables on a service.",
+    "description": "Set reference variables on a service. Set reference variables on a service. MCP add_reference_variable",
+    "context": "MCP tool add_reference_variable on the Railway MCP server\nSet reference variables on a service. Each variable value must be a Railway reference expression starting with '${{' (e.g. '${{ Postgres.DATABASE_URL }}').\nRequired: variables (body) — Variables to set, each with a name and a reference value starting with \"${{\".\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "connect_service_source",
+    "name": "Connect an existing Railway service to a GitHub repo or Docker image.",
+    "description": "Connect an existing Railway service to a GitHub repo or Docker image. Connect an existing Railway service to a GitHub repo or Docker image. MCP connect_service_source",
+    "context": "MCP tool connect_service_source on the Railway MCP server\nConnect an existing Railway service to a GitHub repo or Docker image. For GitHub repos, this enables Railway-managed deployment triggers when the project has GitHub App access.\nOptional: branch (body) — Git branch to deploy when source_repo is set. Defaults to the repo default branch when Railway can see it.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service.; source_image (body) — Docker image to connect (e.g. \"nginx:latest\").; source_repo (body) — GitHub repo to connect, in owner/repo format."
+  },
+  {
+    "id": "create_bucket",
+    "name": "Create a new object storage bucket in a Railway environment.",
+    "description": "Create a new object storage bucket in a Railway environment. Create a new object storage bucket in a Railway environment. MCP create_bucket",
+    "context": "MCP tool create_bucket on the Railway MCP server\nCreate a new object storage bucket in a Railway environment. Default region is sjc. Returns the bucket ID and name.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; name (body) — Optional name for the bucket.; project_id (body) — The project ID. If omitted, uses the currently linked project.; region (body) — Region: sjc, iad, ams, or sin (default: sjc)."
+  },
+  {
+    "id": "create_environment",
+    "name": "Create a new environment in a Railway project.",
+    "description": "Create a new environment in a Railway project. Create a new environment in a Railway project. MCP create_environment",
+    "context": "MCP tool create_environment on the Railway MCP server\nCreate a new environment in a Railway project. Optionally fork from an existing environment.\nRequired: name (body) — The name for the new environment.\nOptional: project_id (body) — The project ID. If omitted, uses the currently linked project.; source_environment_id (body) — Source environment ID to fork from."
+  },
+  {
+    "id": "create_project",
+    "name": "Create a new Railway project.",
+    "description": "Create a new Railway project. Create a new Railway project. MCP create_project",
+    "context": "MCP tool create_project on the Railway MCP server\nCreate a new Railway project. Returns the project ID and the default environment ID.\nRequired: name (body) — The name for the new project.\nOptional: description (body) — Optional description for the project.; workspace_id (body) — Workspace ID to create the project in. If omitted, uses the user's personal workspace."
+  },
+  {
+    "id": "create_service",
+    "name": "Create a new service in a Railway project.",
+    "description": "Create a new service in a Railway project. Create a new service in a Railway project. MCP create_service",
+    "context": "MCP tool create_service on the Railway MCP server\nCreate a new service in a Railway project. Optionally connect a GitHub repo or Docker image.\nOptional: branch (body) — Git branch to deploy when source_repo is set. Defaults to the repo default branch when Railway can see it.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; name (body) — Name for the new service.; project_id (body) — The project ID. If omitted, uses the currently linked project.; source_image (body) — Docker image to use (e.g. \"nginx:latest\").; source_repo (body) — GitHub repo to connect (e.g. \"owner/repo\")."
+  },
+  {
+    "id": "create_tcp_proxy",
+    "name": "Create a public TCP proxy for a Railway service application port.",
+    "description": "Create a public TCP proxy for a Railway service application port. Create a public TCP proxy for a Railway service application port. MCP create_tcp_proxy",
+    "context": "MCP tool create_tcp_proxy on the Railway MCP server\nCreate a public TCP proxy for a Railway service application port. Only one TCP proxy is allowed per service instance.\nRequired: application_port (body) — Application port to expose through the TCP proxy.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "create_volume",
+    "name": "Create a persistent volume and attach it to a service at the given mount path.",
+    "description": "Create a persistent volume and attach it to a service at the given mount path. MCP create_volume",
+    "context": "MCP tool create_volume on the Railway MCP server\nCreate a persistent volume and attach it to a service at the given mount path.\nRequired: mount_path (body) — Mount path for the volume (e.g. \"/data\").\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "delete_domain",
+    "name": "Delete a custom or service domain by domain name, URL, or domain ID.",
+    "description": "Delete a custom or service domain by domain name, URL, or domain ID. Delete a custom or service domain by domain name, URL, or domain ID. MCP delete_domain",
+    "context": "MCP tool delete_domain on the Railway MCP server\nDelete a custom or service domain by domain name, URL, or domain ID. This is irreversible. Returns a preview first.\nRequired: domain (body) — Domain name, URL, or domain ID.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "deploy",
+    "name": "Deploy code from a directory to Railway.",
+    "description": "Deploy code from a directory to Railway. Deploy code from a directory to Railway. MCP deploy",
+    "context": "MCP tool deploy on the Railway MCP server\nDeploy code from a directory to Railway. Creates a tarball, uploads it, and starts a deployment. Returns the deployment ID and URLs. Use get_logs to monitor progress.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; message (body) — Message to attach to the deployment.; path (body) — Path to the directory to deploy. Defaults to current directory.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the linked service or backboard auto-creates one."
+  },
+  {
+    "id": "deploy_template",
+    "name": "Deploy a Railway template by its code (e.g.",
+    "description": "Deploy a Railway template by its code (e.g. Deploy a Railway template by its code (e.g. MCP deploy_template",
+    "context": "MCP tool deploy_template on the Railway MCP server\nDeploy a Railway template by its code (e.g. 'postgres', 'redis'). Returns the workflow ID to track deployment progress.\nRequired: template_code (body) — Template code to deploy (e.g. \"postgres\", \"redis\").\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project."
+  },
+  {
+    "id": "disconnect_service_source",
+    "name": "Disconnect an existing Railway service from its current source.",
+    "description": "Disconnect an existing Railway service from its current source. MCP disconnect_service_source",
+    "context": "MCP tool disconnect_service_source on the Railway MCP server\nDisconnect an existing Railway service from its current source.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "docs_fetch",
+    "name": "Fetch the full markdown content of a Railway documentation page.",
+    "description": "Fetch the full markdown content of a Railway documentation page. Fetch the full markdown content of a Railway documentation page. MCP docs_fetch",
+    "context": "MCP tool docs_fetch on the Railway MCP server\nFetch the full markdown content of a Railway documentation page. Accepts a docs URL (e.g. https://docs.railway.com/guides/getting-started) or a slug (e.g. guides/getting-started). Use docs_search first to find the right page.\nRequired: url (body) — The documentation page URL (e.g. \"https://docs.railway.com/guides/getting-started\") or slug (e.g. \"guides/getting-started\")."
+  },
+  {
+    "id": "docs_search",
+    "name": "Search Railway documentation by keyword.",
+    "description": "Search Railway documentation by keyword. Search Railway documentation by keyword. MCP docs_search",
+    "context": "MCP tool docs_search on the Railway MCP server\nSearch Railway documentation by keyword. Returns a list of matching page URLs. Use docs_fetch to read the full content of a specific page.\nRequired: query (body) — Search query to find Railway documentation pages."
+  },
+  {
+    "id": "domain_status",
+    "name": "Show status for a service or custom domain by domain name, URL, or domain ID.",
+    "description": "Show status for a service or custom domain by domain name, URL, or domain ID. Show status for a service or custom domain by domain name, URL, or domain ID. MCP domain_status",
+    "context": "MCP tool domain_status on the Railway MCP server\nShow status for a service or custom domain by domain name, URL, or domain ID. Includes DNS records, verification status, certificate status/errors, sync status, and target port.\nRequired: domain (body) — Domain name, URL, or domain ID.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "environment_status",
+    "name": "Get the deployment status of all services in a Railway environment.",
+    "description": "Get the deployment status of all services in a Railway environment. Get the deployment status of all services in a Railway environment. MCP environment_status",
+    "context": "MCP tool environment_status on the Railway MCP server\nGet the deployment status of all services in a Railway environment. Returns a table of service name, status, replica count, and latest deploy time.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project."
+  },
+  {
+    "id": "generate_domain",
+    "name": "Add a domain to a service.",
+    "description": "Add a domain to a service. Add a domain to a service. MCP generate_domain",
+    "context": "MCP tool generate_domain on the Railway MCP server\nAdd a domain to a service. If 'domain' is provided, creates a custom domain and returns required DNS records. If omitted, generates a Railway service domain (or returns existing domains).\nOptional: domain (body) — Custom domain to add (e.g. \"api.example.com\"). If omitted, generates a Railway service domain.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; port (body) — Target port for the domain.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "get_logs",
+    "name": "Get build, deploy, or HTTP logs for a service's deployment.",
+    "description": "Get build, deploy, or HTTP logs for a service's deployment. Get build, deploy, or HTTP logs for a service's deployment. MCP get_logs",
+    "context": "MCP tool get_logs on the Railway MCP server\nGet build, deploy, or HTTP logs for a service's deployment. Set log_type to 'build', 'deploy', or 'http'. Supports filtering by level/search for build/deploy logs, and method/status/path/request_id for HTTP logs. If no deployment_id is provided, uses the latest deployment.\nOptional: deployment_id (body) — Specific deployment ID to get logs for. If omitted, uses the latest deployment.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; level (body) — Filter by log level: \"error\", \"warn\", or \"info\" (for build/deploy logs).; lines (body) — Number of log lines to return (default: 100).; log_type (body) — Type of logs: \"build\", \"deploy\", or \"http\" (default: \"deploy\").; method (body) — Filter HTTP logs by request method: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS (requires log_type: \"http\").; path (body) — Filter HTTP logs by request path, e.g. \"/api/users\" (requires log_type: \"http\").; project_id (body) — The project ID. If omitted, uses the currently linked project.; request_id (body) — Filter HTTP logs by request ID (requires log_type: \"http\").; search (body) — Search string to filter logs (for build/deploy logs).; service_id (body) — The service ID or name. If omitted, uses the currently linked service.; since (body) — Start time filter. Supports relative (\"30m\", \"2h\", \"1d\") or ISO 8601 format.; status (body) — Filter HTTP logs by status code. Accepts: exact (200), comparison (>=400), or range (500..599) (requires log_type: \"http\").; until (body) — End time filter. Supports relative (\"30m\", \"2h\", \"1d\") or ISO 8601 format."
+  },
+  {
+    "id": "get_service_config",
+    "name": "Get the current configuration of a service instance including source, build config, start command, and variable count.",
+    "description": "Get the current configuration of a service instance including source, build config, start command, and variable count. MCP get_service_config",
+    "context": "MCP tool get_service_config on the Railway MCP server\nGet the current configuration of a service instance including source, build config, start command, and variable count.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "get_tcp_proxy",
+    "name": "Get details for one public TCP proxy by ID, domain, endpoint, proxy port, or application port.",
+    "description": "Get details for one public TCP proxy by ID, domain, endpoint, proxy port, or application port. MCP get_tcp_proxy",
+    "context": "MCP tool get_tcp_proxy on the Railway MCP server\nGet details for one public TCP proxy by ID, domain, endpoint, proxy port, or application port.\nRequired: proxy (body) — TCP proxy ID, domain, endpoint, proxy port, or application port.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "http_error_rate",
+    "name": "Get the HTTP error rate (4xx + 5xx) as a percentage of total requests from recent HTTP logs.",
+    "description": "Get the HTTP error rate (4xx + 5xx) as a percentage of total requests from recent HTTP logs. MCP http_error_rate",
+    "context": "MCP tool http_error_rate on the Railway MCP server\nGet the HTTP error rate (4xx + 5xx) as a percentage of total requests from recent HTTP logs.\nOptional: deployment_id (body) — Specific deployment ID. If omitted, uses the latest deployment.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; lines (body) — Number of log entries to sample (default: 200).; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "http_requests",
+    "name": "Get HTTP request counts grouped by status code bucket (2xx/3xx/4xx/5xx) from recent HTTP logs.",
+    "description": "Get HTTP request counts grouped by status code bucket (2xx/3xx/4xx/5xx) from recent HTTP logs. MCP http_requests",
+    "context": "MCP tool http_requests on the Railway MCP server\nGet HTTP request counts grouped by status code bucket (2xx/3xx/4xx/5xx) from recent HTTP logs.\nOptional: deployment_id (body) — Specific deployment ID. If omitted, uses the latest deployment.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; lines (body) — Number of log entries to sample (default: 200).; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "http_response_time",
+    "name": "Get HTTP response time percentiles (p50/p90/p95/p99) in milliseconds from recent HTTP logs.",
+    "description": "Get HTTP response time percentiles (p50/p90/p95/p99) in milliseconds from recent HTTP logs. MCP http_response_time",
+    "context": "MCP tool http_response_time on the Railway MCP server\nGet HTTP response time percentiles (p50/p90/p95/p99) in milliseconds from recent HTTP logs.\nOptional: deployment_id (body) — Specific deployment ID. If omitted, uses the latest deployment.; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; lines (body) — Number of log entries to sample (default: 200).; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "link_environment",
+    "name": "Switch the linked environment for the current project directory.",
+    "description": "Switch the linked environment for the current project directory. Switch the linked environment for the current project directory. MCP link_environment",
+    "context": "MCP tool link_environment on the Railway MCP server\nSwitch the linked environment for the current project directory. If no environment_id or environment_name is provided, lists available environments. Preserves the existing service link.\nOptional: environment_id (body) — The environment ID to link. If omitted along with environment_name, lists available environments.; environment_name (body) — The environment name to link. Alternative to environment_id."
+  },
+  {
+    "id": "link_service",
+    "name": "Link a service to the current project directory for the CLI.",
+    "description": "Link a service to the current project directory for the CLI. Link a service to the current project directory for the CLI. MCP link_service",
+    "context": "MCP tool link_service on the Railway MCP server\nLink a service to the current project directory for the CLI. If no service_id or service_name is provided, lists available services. Uses a fresh config to write the link.\nOptional: project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID to link. If omitted along with service_name, lists available services.; service_name (body) — The service name to link. Alternative to service_id."
+  },
+  {
+    "id": "list_deployments",
+    "name": "List recent deployments for a service.",
+    "description": "List recent deployments for a service. List recent deployments for a service. MCP list_deployments",
+    "context": "MCP tool list_deployments on the Railway MCP server\nList recent deployments for a service. Returns deployment IDs, status, timestamps, and commit hashes. If no IDs are provided, uses the currently linked project/service/environment.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; limit (body) — Maximum number of deployments to return (default: 20).; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "list_domains",
+    "name": "List service and custom domains for a service.",
+    "description": "List service and custom domains for a service. List service and custom domains for a service. MCP list_domains",
+    "context": "MCP tool list_domains on the Railway MCP server\nList service and custom domains for a service. Returns domain, type, ID, target port, and sync status.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "list_projects",
+    "name": "List all projects in the user's Railway account, grouped by workspace.",
+    "description": "List all projects in the user's Railway account, grouped by workspace. List all projects in the user's Railway account, grouped by workspace. MCP list_projects",
+    "context": "MCP tool list_projects on the Railway MCP server\nList all projects in the user's Railway account, grouped by workspace. Returns project names and IDs."
+  },
+  {
+    "id": "list_services",
+    "name": "List all services in a Railway project.",
+    "description": "List all services in a Railway project. List all services in a Railway project. MCP list_services",
+    "context": "MCP tool list_services on the Railway MCP server\nList all services in a Railway project. If no project_id is provided, uses the currently linked project.\nOptional: project_id (body) — The project ID to use. If omitted, uses the currently linked project."
+  },
+  {
+    "id": "list_tcp_proxies",
+    "name": "List public TCP proxies for a Railway service.",
+    "description": "List public TCP proxies for a Railway service. List public TCP proxies for a Railway service. MCP list_tcp_proxies",
+    "context": "MCP tool list_tcp_proxies on the Railway MCP server\nList public TCP proxies for a Railway service. Returns endpoint, ID, proxy port, application port, and sync status.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "list_variables",
+    "name": "List all environment variables for a service.",
+    "description": "List all environment variables for a service. List all environment variables for a service. MCP list_variables",
+    "context": "MCP tool list_variables on the Railway MCP server\nList all environment variables for a service. Returns KEY=VALUE pairs. If no IDs are provided, uses the currently linked project/service/environment.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "list_workspaces",
+    "name": "List all Railway workspaces available to the current user.",
+    "description": "List all Railway workspaces available to the current user. List all Railway workspaces available to the current user. MCP list_workspaces",
+    "context": "MCP tool list_workspaces on the Railway MCP server\nList all Railway workspaces available to the current user. Returns workspace names, IDs, team IDs, and project counts. Use the workspace ID with create_project."
+  },
+  {
+    "id": "mcp_auth",
+    "name": "Authenticate this MCP server so its tools can be used.",
+    "description": "Authenticate this MCP server so its tools can be used. MCP mcp_auth",
+    "context": "MCP tool mcp_auth on the Railway MCP server\nAuthenticate this MCP server so its tools can be used."
+  },
+  {
+    "id": "private_network_status",
+    "name": "Get private networking status for a service.",
+    "description": "Get private networking status for a service. Get private networking status for a service. MCP private_network_status",
+    "context": "MCP tool private_network_status on the Railway MCP server\nGet private networking status for a service. Returns full hostname, short name, network name/ID, sync status, address family, and private IPs. If network is omitted, returns all private networks in the environment.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; network (body) — Private network name, ID, or DNS name. If omitted, status returns all networks.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "private_network_update",
+    "name": "Update the private networking endpoint name for a service.",
+    "description": "Update the private networking endpoint name for a service. Update the private networking endpoint name for a service. MCP private_network_update",
+    "context": "MCP tool private_network_update on the Railway MCP server\nUpdate the private networking endpoint name for a service. Name must be the short prefix without the .internal suffix. If network is omitted, uses the only private network or the network named railway.\nRequired: name (body) — Endpoint name prefix, without the .internal suffix.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; network (body) — Private network name, ID, or DNS name. If omitted, uses the only network or the network named \"railway\".; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "remove_bucket",
+    "name": "Remove an object storage bucket from a Railway environment.",
+    "description": "Remove an object storage bucket from a Railway environment. Remove an object storage bucket from a Railway environment. MCP remove_bucket",
+    "context": "MCP tool remove_bucket on the Railway MCP server\nRemove an object storage bucket from a Railway environment. This is irreversible. Returns a preview first.\nRequired: bucket_id (body) — The bucket ID to remove.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project."
+  },
+  {
+    "id": "remove_service",
+    "name": "Remove a service from a Railway project.",
+    "description": "Remove a service from a Railway project. Remove a service from a Railway project. MCP remove_service",
+    "context": "MCP tool remove_service on the Railway MCP server\nRemove a service from a Railway project. This is irreversible. Returns a preview first.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "remove_tcp_proxy",
+    "name": "Remove a public TCP proxy by ID, domain, endpoint, proxy port, or application port.",
+    "description": "Remove a public TCP proxy by ID, domain, endpoint, proxy port, or application port. Remove a public TCP proxy by ID, domain, endpoint, proxy port, or application port. MCP remove_tcp_proxy",
+    "context": "MCP tool remove_tcp_proxy on the Railway MCP server\nRemove a public TCP proxy by ID, domain, endpoint, proxy port, or application port. This is irreversible and returns a preview first.\nRequired: proxy (body) — TCP proxy ID, domain, endpoint, proxy port, or application port.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "remove_volume",
+    "name": "Remove a persistent volume by ID.",
+    "description": "Remove a persistent volume by ID. Remove a persistent volume by ID. MCP remove_volume",
+    "context": "MCP tool remove_volume on the Railway MCP server\nRemove a persistent volume by ID. This is irreversible. Returns a preview first.\nRequired: volume_id (body) — The volume ID to remove."
+  },
+  {
+    "id": "retry_domain_certificate",
+    "name": "Retry failed TLS certificate issuance for a custom domain by domain name, URL, or domain ID.",
+    "description": "Retry failed TLS certificate issuance for a custom domain by domain name, URL, or domain ID. Retry failed TLS certificate issuance for a custom domain by domain name, URL, or domain ID. MCP retry_domain_certificate",
+    "context": "MCP tool retry_domain_certificate on the Railway MCP server\nRetry failed TLS certificate issuance for a custom domain by domain name, URL, or domain ID. Custom domains only. Returns updated status after readback.\nRequired: domain (body) — Domain name, URL, or domain ID.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "scale_service",
+    "name": "Scale one service across Railway deploy regions using friendly region names or region IDs.",
+    "description": "Scale one service across Railway deploy regions using friendly region names or region IDs. Scale one service across Railway deploy regions using friendly region names or region IDs. MCP scale_service",
+    "context": "MCP tool scale_service on the Railway MCP server\nScale one service across Railway deploy regions using friendly region names or region IDs. Provide replicas as a map, e.g. {\"eu-west\": 2, \"us-east\": 1}. Maximum 50 total replicas across regions.\nRequired: replicas (body) — Map of friendly region names or region IDs to replica counts, e.g. {\"eu-west\": 2, \"us-east\": 1}. Maximum 50 total replicas across regions.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "search_templates",
+    "name": "Search for Railway templates using Railway's backend-ranked template search.",
+    "description": "Search for Railway templates using Railway's backend-ranked template search. Search for Railway templates using Railway's backend-ranked template search. MCP search_templates",
+    "context": "MCP tool search_templates on the Railway MCP server\nSearch for Railway templates using Railway's backend-ranked template search. Returns matching templates with their codes.\nRequired: query (body) — Search query to send to Railway template search.\nOptional: after (body) — Cursor from pageInfo.endCursor for fetching the next page.; category (body) — Optional template category filter.; limit (body) — Maximum number of templates to return. Defaults to 5.; verified (body) — Optional verification-state filter."
+  },
+  {
+    "id": "service_metrics",
+    "name": "Get CPU and memory (or other) metrics for a service.",
+    "description": "Get CPU and memory (or other) metrics for a service. Get CPU and memory (or other) metrics for a service. MCP service_metrics",
+    "context": "MCP tool service_metrics on the Railway MCP server\nGet CPU and memory (or other) metrics for a service. Returns recent data points and average values for the specified time window.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; hours_back (body) — Number of hours back to query (default: 1).; measurements (body) — Metrics to fetch: CPU_USAGE, MEMORY_USAGE_GB, DISK_USAGE_GB, NETWORK_RX_GB, NETWORK_TX_GB. Defaults to CPU_USAGE and MEMORY_USAGE_GB.; project_id (body) — The project ID. If omitted, uses the currently linked project.; sample_rate_seconds (body) — Sample rate in seconds (default: 60).; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "set_variables",
+    "name": "Set one or more environment variables on a service.",
+    "description": "Set one or more environment variables on a service. Set one or more environment variables on a service. MCP set_variables",
+    "context": "MCP tool set_variables on the Railway MCP server\nSet one or more environment variables on a service. Pass variables as a JSON object mapping names to values. Triggers a redeploy unless skip_deploys is true.\nRequired: variables (body) — Map of variable names to values to set.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service.; skip_deploys (body) — If true, skip triggering redeploys after setting variables."
+  },
+  {
+    "id": "update_domain",
+    "name": "Update a custom or service domain by domain name, URL, or domain ID.",
+    "description": "Update a custom or service domain by domain name, URL, or domain ID. Update a custom or service domain by domain name, URL, or domain ID. MCP update_domain",
+    "context": "MCP tool update_domain on the Railway MCP server\nUpdate a custom or service domain by domain name, URL, or domain ID. Supports target port changes for both domain types and Railway service-domain renames via new_domain. Port must be from 1 to 65535. Returns updated status after readback.\nRequired: domain (body) — Domain name, URL, or domain ID.\nOptional: environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; new_domain (body) — Rename a Railway-provided service domain. Accepts a full service domain or host label.; port (body) — Target port for the domain. Must be from 1 to 65535.; project_id (body) — The project ID. If omitted, uses the currently linked project.; service_id (body) — The service ID or name. If omitted, uses the currently linked service."
+  },
+  {
+    "id": "update_service",
+    "name": "Update service instance settings such as build command, start command, health check, sleep mode, root directory, cron schedule, Dockerfile path, restart policy, pre-deploy command, Railway config file, and watch patterns.",
+    "description": "Update service instance settings such as build command, start command, health check, sleep mode, root directory, cron schedule, Dockerfile path, restart policy, pre-deploy command, Railway config file, and watch patterns. Update service instance settings such as build command, start command, health check, sleep mode,…",
+    "context": "MCP tool update_service on the Railway MCP server\nUpdate service instance settings such as build command, start command, health check, sleep mode, root directory, cron schedule, Dockerfile path, restart policy, pre-deploy command, Railway config file, and watch patterns. Use scale_service for replicas and regions.\nOptional: build_command (body) — Build command override.; cron_schedule (body) — Cron schedule expression (e.g. \"0 */5 * * *\").; dockerfile_path (body) — Path to the Dockerfile (e.g. \"Dockerfile.prod\").; environment_id (body) — The environment ID or name. If omitted, uses the currently linked environment.; health_check_path (body) — Health check path (e.g. \"/health\").; healthcheck_timeout (body) — Health check timeout in milliseconds.; num_replicas (body) — Legacy single-region replica count. Prefer scale_service for replica changes.; pre_deploy_command (body) — Commands to run before deploying (e.g. database migrations).; project_id (body) — The project ID. If omitted, uses the currently linked project.; railway_config_file (body) — Path to the Railway config file.; region (body) — Legacy deploy region ID. Prefer scale_service for region replica changes.; restart_policy_max_retries (body) — Maximum number of restart retries (used with ON_FAILURE restart policy).; restart_policy_type (body) — Restart policy type: \"ALWAYS\", \"ON_FAILURE\", or \"NEVER\".; root_directory (body) — Root directory for the build.; service_id (body) — The service ID or name. If omitted, uses the currently linked service.; sleep_application (body) — Whether to sleep the service when inactive.; start_command (body) — Start command override.; watch_patterns (body) — File watch patterns that trigger deploys."
+  },
+  {
+    "id": "update_volume",
+    "name": "Update a volume's name or mount path.",
+    "description": "Update a volume's name or mount path. Update a volume's name or mount path. MCP update_volume",
+    "context": "MCP tool update_volume on the Railway MCP server\nUpdate a volume's name or mount path. Provide environment_id and service_id when updating mount_path.\nRequired: volume_id (body) — The volume ID to update.\nOptional: environment_id (body) — The environment ID (required when updating mount_path).; mount_path (body) — New mount path.; name (body) — New name for the volume.; service_id (body) — The service ID (used when updating mount_path)."
+  },
+  {
+    "id": "whoami",
+    "name": "Check Railway authentication status and return the current user",
+    "description": "Check Railway authentication status and return the current user MCP whoami",
+    "context": "MCP tool whoami on the Railway MCP server\nCheck Railway authentication status and return the current user"
+  }
+]

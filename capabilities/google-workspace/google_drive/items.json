@@ -1,0 +1,386 @@
+[
+  {
+    "id": "AboutGet",
+    "name": "Gets information about the user, the user's Drive, and system capabilities.",
+    "description": "Gets information about the user, the user's Drive, and system capabilities. Gets information about the user, the user's Drive, and system capabilities. GET /drive/v3/about",
+    "context": "GET /drive/v3/about\nGets information about the user, the user's Drive, and system capabilities. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AccessproposalsGet",
+    "name": "Retrieves an access proposal by ID.",
+    "description": "Retrieves an access proposal by ID. Retrieves an access proposal by ID. GET /drive/v3/files/{fileId}/accessproposals/{proposalId}",
+    "context": "GET /drive/v3/files/{fileId}/accessproposals/{proposalId}\nRetrieves an access proposal by ID. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).\nRequired: proposalId (path) — Required. The ID of the access proposal to resolve.; fileId (path) — Required. The ID of the item the request is on.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AccessproposalsList",
+    "name": "List the access proposals on a file.",
+    "description": "List the access proposals on a file. List the access proposals on a file. GET /drive/v3/files/{fileId}/accessproposals",
+    "context": "GET /drive/v3/files/{fileId}/accessproposals\nList the access proposals on a file. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access). Note: Only approvers are able to list access proposals on a file. If the user isn't an approver, a 403 error is returned.\nRequired: fileId (path) — Required. The ID of the item the request is on.\nOptional: pageToken (query) — Optional. The continuation token on the list of access requests.; pageSize (query) — Optional. The number of results per page.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AccessproposalsResolve",
+    "name": "Approves or denies an access proposal.",
+    "description": "Approves or denies an access proposal. Approves or denies an access proposal. POST /drive/v3/files/{fileId}/accessproposals/{proposalId}:resolve",
+    "context": "POST /drive/v3/files/{fileId}/accessproposals/{proposalId}:resolve\nApproves or denies an access proposal. For more information, see [Manage pending access proposals](https://developers.google.com/workspace/drive/api/guides/pending-access).\nRequired: fileId (path) — Required. The ID of the item the request is on.; proposalId (path) — Required. The ID of the access proposal to resolve.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsApprove",
+    "name": "Approves an approval.",
+    "description": "Approves an approval. Approves an approval. POST /drive/v3/files/{fileId}/approvals/{approvalId}:approve",
+    "context": "POST /drive/v3/files/{fileId}/approvals/{approvalId}:approve\nApproves an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This is used to update the ReviewerResponse of the requesting user with a Response of `APPROVED`. If this is the last required reviewer response, this also completes the approval and sets the approval Status to `APPROVED`.\nRequired: fileId (path) — Required. The ID of the file that the approval is on.; approvalId (path) — Required. The ID of the approval to approve.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsCancel",
+    "name": "Cancels an approval.",
+    "description": "Cancels an approval. Cancels an approval. POST /drive/v3/files/{fileId}/approvals/{approvalId}:cancel",
+    "context": "POST /drive/v3/files/{fileId}/approvals/{approvalId}:cancel\nCancels an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Updates the approval Status to `CANCELLED`. This can be called by any user with the `writer` permission on the file while the approval Status is `IN_PROGRESS`.\nRequired: fileId (path) — Required. The ID of the file that the approval is on.; approvalId (path) — Required. The ID of the approval to cancel.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsComment",
+    "name": "Comments on an approval.",
+    "description": "Comments on an approval. Comments on an approval. POST /drive/v3/files/{fileId}/approvals/{approvalId}:comment",
+    "context": "POST /drive/v3/files/{fileId}/approvals/{approvalId}:comment\nComments on an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This sends a notification to both the initiator and the reviewers. Additionally, a message is also added to the approval activity log.\nRequired: approvalId (path) — Required. The ID of the approval to comment on.; fileId (path) — Required. The ID of the file that the approval is on.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsDecline",
+    "name": "Declines an approval.",
+    "description": "Declines an approval. Declines an approval. POST /drive/v3/files/{fileId}/approvals/{approvalId}:decline",
+    "context": "POST /drive/v3/files/{fileId}/approvals/{approvalId}:decline\nDeclines an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). This is used to update the ReviewerResponse of the requesting user with a Response of `DECLINED`. This also completes the approval and sets the approval Status to `DECLINED`.\nRequired: approvalId (path) — Required. The ID of the approval to decline.; fileId (path) — Required. The ID of the file that the approval is on.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsGet",
+    "name": "Gets an approval by ID.",
+    "description": "Gets an approval by ID. Gets an approval by ID. GET /drive/v3/files/{fileId}/approvals/{approvalId}",
+    "context": "GET /drive/v3/files/{fileId}/approvals/{approvalId}\nGets an approval by ID. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).\nRequired: approvalId (path) — Required. The ID of the approval.; fileId (path) — Required. The ID of the file that the approval is on.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsList",
+    "name": "Lists the approvals on a file.",
+    "description": "Lists the approvals on a file. Lists the approvals on a file. GET /drive/v3/files/{fileId}/approvals",
+    "context": "GET /drive/v3/files/{fileId}/approvals\nLists the approvals on a file. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). By default, this method returns a minimal response that may not include the items array. To retrieve approval details, you must explicitly specify the fields you want using the `fields` query parameter. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).\nRequired: fileId (path) — Required. The ID of the file that the approval is on.\nOptional: pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from a previous response.; pageSize (query) — The maximum number of approvals to return. When not set, at most 100 approvals are returned.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsReassign",
+    "name": "Reassigns the reviewers on an approval.",
+    "description": "Reassigns the reviewers on an approval. Reassigns the reviewers on an approval. POST /drive/v3/files/{fileId}/approvals/{approvalId}:reassign",
+    "context": "POST /drive/v3/files/{fileId}/approvals/{approvalId}:reassign\nReassigns the reviewers on an approval. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals). Adds or replaces reviewers in the ReviewerResponse of the approval. This can be called by any user with the `writer` permission on the file while the approval Status is `IN_PROGRESS` and the Response for the reviewer being reassigned is `NO_RESPONSE`. A user with the `reader` permission can only reassign an approval that's assigned to themselves. Removing a reviewer isn't allowed.\nRequired: fileId (path) — Required. The ID of the file that the approval is on.; approvalId (path) — Required. The ID of the approval to reassign.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ApprovalsStart",
+    "name": "Starts an approval on a file.",
+    "description": "Starts an approval on a file. Starts an approval on a file. POST /drive/v3/files/{fileId}/approvals:start",
+    "context": "POST /drive/v3/files/{fileId}/approvals:start\nStarts an approval on a file. For more information, see [Manage approvals](https://developers.google.com/workspace/drive/api/guides/approvals).\nRequired: fileId (path) — Required. The ID of the file that the approval is created on.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AppsGet",
+    "name": "Gets a specific app.",
+    "description": "Gets a specific app. Gets a specific app. GET /drive/v3/apps/{appId}",
+    "context": "GET /drive/v3/apps/{appId}\nGets a specific app. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info).\nRequired: appId (path) — The ID of the app.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AppsList",
+    "name": "Lists a user's installed apps.",
+    "description": "Lists a user's installed apps. Lists a user's installed apps. GET /drive/v3/apps",
+    "context": "GET /drive/v3/apps\nLists a user's installed apps. For more information, see [Return user info](https://developers.google.com/workspace/drive/api/guides/user-info).\nOptional: appFilterMimeTypes (query) — A comma-separated list of file extensions to limit returned results. All results within the given app query scope which can open any of the given MIME types will be included in the response. If `appFilterExtensions` are provided as well, the result is a union of the two resulting app lists.; languageCode (query) — A language or locale code, as defined by BCP 47, with some extensions from Unicode's LDML format (http://www.unicode.org/reports/tr35/).; appFilterExtensions (query) — A comma-separated list of file extensions to limit returned results. All results within the given app query scope which can open any of the given file extensions are included in the response. If `appFilterMimeTypes` are provided as well, the result is a union of the two resulting app lists.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChangesGetStartPageToken",
+    "name": "Gets the starting pageToken for listing future changes.",
+    "description": "Gets the starting pageToken for listing future changes. Gets the starting pageToken for listing future changes. GET /drive/v3/changes/startPageToken",
+    "context": "GET /drive/v3/changes/startPageToken\nGets the starting pageToken for listing future changes. For more information, see [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).\nOptional: teamDriveId (query) — Deprecated: Use `driveId` instead.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; driveId (query) — The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive will be returned.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChangesList",
+    "name": "Lists the changes for a user or shared drive.",
+    "description": "Lists the changes for a user or shared drive. Lists the changes for a user or shared drive. GET /drive/v3/changes",
+    "context": "GET /drive/v3/changes\nLists the changes for a user or shared drive. For more information, see [Retrieve changes](https://developers.google.com/workspace/drive/api/guides/manage-changes).\nRequired: pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method.\nOptional: teamDriveId (query) — Deprecated: Use `driveId` instead.; spaces (query) — A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.; includeTeamDriveItems (query) — Deprecated: Use `includeItemsFromAllDrives` instead.; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only 'published' is supported.; pageSize (query) — The maximum number of changes to return. The service may return fewer than this value. If unspecified, at most 100 changes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.; includeCorpusRemovals (query) — Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; driveId (query) — The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; includeRemoved (query) — Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.; restrictToMyDrive (query) — Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.; includeItemsFromAllDrives (query) — Whether both My Drive and shared drive items should be included in results.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChangesWatch",
+    "name": "Subscribes to changes for a user.",
+    "description": "Subscribes to changes for a user. Subscribes to changes for a user. POST /drive/v3/changes/watch",
+    "context": "POST /drive/v3/changes/watch\nSubscribes to changes for a user. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).\nRequired: pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method.; body (body)\nOptional: pageSize (query) — The maximum number of changes to return. The service may return fewer than this value. If unspecified, at most 100 changes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.; includeTeamDriveItems (query) — Deprecated: Use `includeItemsFromAllDrives` instead.; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only 'published' is supported.; teamDriveId (query) — Deprecated: Use `driveId` instead.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; includeCorpusRemovals (query) — Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.; restrictToMyDrive (query) — Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; driveId (query) — The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.; includeItemsFromAllDrives (query) — Whether both My Drive and shared drive items should be included in results.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; includeRemoved (query) — Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.; spaces (query) — A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChannelsStop",
+    "name": "Stops watching resources through this channel.",
+    "description": "Stops watching resources through this channel. Stops watching resources through this channel. POST /drive/v3/channels/stop",
+    "context": "POST /drive/v3/channels/stop\nStops watching resources through this channel. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CommentsCreate",
+    "name": "Creates a comment on a file.",
+    "description": "Creates a comment on a file. Creates a comment on a file. POST /drive/v3/files/{fileId}/comments",
+    "context": "POST /drive/v3/files/{fileId}/comments\nCreates a comment on a file. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).\nRequired: fileId (path) — The ID of the file.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CommentsDelete",
+    "name": "Deletes a comment.",
+    "description": "Deletes a comment. Deletes a comment. DELETE /drive/v3/files/{fileId}/comments/{commentId}",
+    "context": "DELETE /drive/v3/files/{fileId}/comments/{commentId}\nDeletes a comment. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).\nRequired: fileId (path) — The ID of the file.; commentId (path) — The ID of the comment.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CommentsGet",
+    "name": "Gets a comment by ID.",
+    "description": "Gets a comment by ID. Gets a comment by ID. GET /drive/v3/files/{fileId}/comments/{commentId}",
+    "context": "GET /drive/v3/files/{fileId}/comments/{commentId}\nGets a comment by ID. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).\nRequired: fileId (path) — The ID of the file.; commentId (path) — The ID of the comment.\nOptional: includeDeleted (query) — Whether to return deleted comments. Deleted comments will not include their original content.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CommentsList",
+    "name": "Lists a file's comments.",
+    "description": "Lists a file's comments. Lists a file's comments. GET /drive/v3/files/{fileId}/comments",
+    "context": "GET /drive/v3/files/{fileId}/comments\nLists a file's comments. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).\nRequired: fileId (path) — The ID of the file.\nOptional: startModifiedTime (query) — The minimum value of 'modifiedTime' for the result comments (RFC 3339 date-time).; includeDeleted (query) — Whether to include deleted comments. Deleted comments will not include their original content.; pageSize (query) — The maximum number of comments to return. The service may return fewer than this value. If unspecified, at most 20 comments will be returned. The maximum value is 100; values above 100 will be coerced to 100.; pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CommentsUpdate",
+    "name": "Updates a comment with patch semantics.",
+    "description": "Updates a comment with patch semantics. Updates a comment with patch semantics. PATCH /drive/v3/files/{fileId}/comments/{commentId}",
+    "context": "PATCH /drive/v3/files/{fileId}/comments/{commentId}\nUpdates a comment with patch semantics. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments). Required: The `fields` parameter must be set. To return the exact fields you need, see [Return specific fields](https://developers.google.com/workspace/drive/api/guides/fields-parameter).\nRequired: fileId (path) — The ID of the file.; commentId (path) — The ID of the comment.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesCreate",
+    "name": "Creates a shared drive.",
+    "description": "Creates a shared drive. Creates a shared drive. POST /drive/v3/drives",
+    "context": "POST /drive/v3/drives\nCreates a shared drive. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).\nRequired: requestId (query) — Required. An ID, such as a random UUID, which uniquely identifies this user's request for idempotent creation of a shared drive. A repeated request by the same user and with the same request ID will avoid creating duplicates by attempting to create the same shared drive. If the shared drive already exists a 409 error will be returned.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesDelete",
+    "name": "Permanently deletes a shared drive for which the user is an `organizer`.",
+    "description": "Permanently deletes a shared drive for which the user is an `organizer`. Permanently deletes a shared drive for which the user is an `organizer`. DELETE /drive/v3/drives/{driveId}",
+    "context": "DELETE /drive/v3/drives/{driveId}\nPermanently deletes a shared drive for which the user is an `organizer`. The shared drive cannot contain any untrashed items. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).\nRequired: driveId (path) — The ID of the shared drive.\nOptional: allowItemDeletion (query) — Whether any items inside the shared drive should also be deleted. This option is only supported when `useDomainAdminAccess` is also set to `true`.; useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesGet",
+    "name": "Gets a shared drive's metadata by ID.",
+    "description": "Gets a shared drive's metadata by ID. Gets a shared drive's metadata by ID. GET /drive/v3/drives/{driveId}",
+    "context": "GET /drive/v3/drives/{driveId}\nGets a shared drive's metadata by ID. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).\nRequired: driveId (path) — The ID of the shared drive.\nOptional: useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesHide",
+    "name": "Hides a shared drive from the default view.",
+    "description": "Hides a shared drive from the default view. Hides a shared drive from the default view. POST /drive/v3/drives/{driveId}/hide",
+    "context": "POST /drive/v3/drives/{driveId}/hide\nHides a shared drive from the default view. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).\nRequired: driveId (path) — The ID of the shared drive.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesList",
+    "name": "Lists the user's shared drives.",
+    "description": "Lists the user's shared drives. Lists the user's shared drives. GET /drive/v3/drives",
+    "context": "GET /drive/v3/drives\nLists the user's shared drives. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for shared drives](https://developers.google.com/workspace/drive/api/guides/search-shareddrives) guide.\nOptional: pageToken (query) — Page token for shared drives.; pageSize (query) — The maximum number of shared drives to return. The service may return fewer than this value. If unspecified, at most 10 shared drives will be returned. The maximum value is 100; values above 100 will be coerced to 100.; q (query) — Query string for searching shared drives.; useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then all shared drives of the domain in which the requester is an administrator are returned.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesUnhide",
+    "name": "Restores a shared drive to the default view.",
+    "description": "Restores a shared drive to the default view. Restores a shared drive to the default view. POST /drive/v3/drives/{driveId}/unhide",
+    "context": "POST /drive/v3/drives/{driveId}/unhide\nRestores a shared drive to the default view. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).\nRequired: driveId (path) — The ID of the shared drive.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DrivesUpdate",
+    "name": "Updates the metadata for a shared drive.",
+    "description": "Updates the metadata for a shared drive. Updates the metadata for a shared drive. PATCH /drive/v3/drives/{driveId}",
+    "context": "PATCH /drive/v3/drives/{driveId}\nUpdates the metadata for a shared drive. For more information, see [Manage shared drives](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives).\nRequired: driveId (path) — The ID of the shared drive.; body (body)\nOptional: useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the shared drive belongs.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesCopy",
+    "name": "Creates a copy of a file and applies any requested updates with patch semantics.",
+    "description": "Creates a copy of a file and applies any requested updates with patch semantics. Creates a copy of a file and applies any requested updates with patch semantics. POST /drive/v3/files/{fileId}/copy",
+    "context": "POST /drive/v3/files/{fileId}/copy\nCreates a copy of a file and applies any requested updates with patch semantics. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file).\nRequired: fileId (path) — The ID of the file.; body (body)\nOptional: includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; keepRevisionForever (query) — Whether to set the `keepForever` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; enforceSingleParent (query) — Deprecated: Copying files into multiple folders is no longer supported. Use shortcuts instead.; ocrLanguage (query) — A language hint for OCR processing during image import (ISO 639-1 code).; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; ignoreDefaultVisibility (query) — Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; copyComments (query) — Whether to copy the open (unresolved) comments associated with the file.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesCreate",
+    "name": "Creates a file.",
+    "description": "Creates a file. Creates a file. POST /drive/v3/files",
+    "context": "POST /drive/v3/files\nCreates a file. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file). This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:* `*/*` (Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information, see [Google Workspace and Google Drive supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For more information on uploading files, see [Upload file data](https://developers.google.com/workspace/drive/api/guides/manage-uploads). Apps creating shortcuts with the `create` method must specify the MIME type `application/vnd.google-apps.shortcut`. Apps should specify a file extension in the `name` property when inserting files with the API. For example, an operation to insert a JPEG file should specify something like `\"name\": \"cat.jpg\"` in the metadata. Subsequent `GET` requests include the read-only `fileExtension` property populated with the extension originally specified in the `name` property. When a Google Drive user requests to download a file, or when the file is downloaded through the sync client, Drive builds a full filename (with extension) based on the name. In cases where the extension is missing, Drive attempts to determine the extension based on the file's MIME type.\nRequired: body (body)\nOptional: ocrLanguage (query) — A language hint for OCR processing during image import (ISO 639-1 code).; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; useContentAsIndexableText (query) — Whether to use the uploaded content as indexable text.; ignoreDefaultVisibility (query) — Whether to ignore the domain's default visibility settings for the created file. Domain administrators can choose to make all uploaded files visible to the domain by default; this parameter bypasses that behavior for the request. Permissions are still inherited from parent folders.; keepRevisionForever (query) — Whether to set the `keepForever` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.; enforceSingleParent (query) — Deprecated: Creating files in multiple folders is no longer supported.; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesDelete",
+    "name": "Permanently deletes a file owned by the user without moving it to the trash.",
+    "description": "Permanently deletes a file owned by the user without moving it to the trash. Permanently deletes a file owned by the user without moving it to the trash. DELETE /drive/v3/files/{fileId}",
+    "context": "DELETE /drive/v3/files/{fileId}\nPermanently deletes a file owned by the user without moving it to the trash. For more information, see [Trash or delete files and folders](https://developers.google.com/workspace/drive/api/guides/delete). If the file belongs to a shared drive, the user must be an `organizer` on the parent folder. If the target is a folder, all descendants owned by the user are also deleted.\nRequired: fileId (path) — The ID of the file.\nOptional: enforceSingleParent (query) — Deprecated: If an item isn't in a shared drive and its last parent is deleted but the item itself isn't, the item will be placed under its owner's root.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesDownload",
+    "name": "Downloads the content of a file.",
+    "description": "Downloads the content of a file. Downloads the content of a file. POST /drive/v3/files/{fileId}/download",
+    "context": "POST /drive/v3/files/{fileId}/download\nDownloads the content of a file. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Operations are valid for 24 hours from the time of creation.\nRequired: fileId (path) — Required. The ID of the file to download.\nOptional: mimeType (query) — Optional. The MIME type the file should be downloaded as. This field can only be set when downloading Google Workspace documents. For a list of supported MIME types, see [Export MIME types for Google Workspace documents](/workspace/drive/api/guides/ref-export-formats). If not set, a Google Workspace document is downloaded with a default MIME type. The default MIME type might change in the future.; revisionId (query) — Optional. The revision ID of the file to download. This field can only be set when downloading blob files, Google Docs, and Google Sheets. Returns `INVALID_ARGUMENT` if downloading a specific revision on the file is unsupported.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesEmptyTrash",
+    "name": "Permanently deletes all of the user's trashed files.",
+    "description": "Permanently deletes all of the user's trashed files. Permanently deletes all of the user's trashed files. DELETE /drive/v3/files/trash",
+    "context": "DELETE /drive/v3/files/trash\nPermanently deletes all of the user's trashed files. For more information, see [Trash or delete files and folders](https://developers.google.com/workspace/drive/api/guides/delete).\nOptional: enforceSingleParent (query) — Deprecated: If an item isn't in a shared drive and its last parent is deleted but the item itself isn't, the item will be placed under its owner's root.; driveId (query) — If set, empties the trash of the provided shared drive.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesExport",
+    "name": "Exports a Google Workspace document to the requested MIME type and returns exported byte content.",
+    "description": "Exports a Google Workspace document to the requested MIME type and returns exported byte content. Exports a Google Workspace document to the requested MIME type and returns exported byte content. GET /drive/v3/files/{fileId}/export",
+    "context": "GET /drive/v3/files/{fileId}/export\nExports a Google Workspace document to the requested MIME type and returns exported byte content. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads). Note that the exported content is limited to 10 MB.\nRequired: fileId (path) — The ID of the file.; mimeType (query) — Required. The MIME type of the format requested for this export. For a list of supported MIME types, see [Export MIME types for Google Workspace documents](/workspace/drive/api/guides/ref-export-formats).\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesGenerateCseToken",
+    "name": "Generates a CSE token which can be used to create or update CSE files.",
+    "description": "Generates a CSE token which can be used to create or update CSE files. GET /drive/v3/files/generateCseToken",
+    "context": "GET /drive/v3/files/generateCseToken\nGenerates a CSE token which can be used to create or update CSE files.\nOptional: fileId (query) — The ID of the file for which the JWT should be generated. If not provided, an id will be generated.; parent (query) — The ID of the expected parent of the file. Used when generating a JWT for a new CSE file. If specified, the parent will be fetched, and if the parent is a shared drive item, the shared drive's policy will be used to determine the KACLS that should be used. It is invalid to specify both file_id and parent in a single request.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesGenerateIds",
+    "name": "Generates a set of file IDs which can be provided in create or copy requests.",
+    "description": "Generates a set of file IDs which can be provided in create or copy requests. Generates a set of file IDs which can be provided in create or copy requests. GET /drive/v3/files/generateIds",
+    "context": "GET /drive/v3/files/generateIds\nGenerates a set of file IDs which can be provided in create or copy requests. For more information, see [Create and manage files](https://developers.google.com/workspace/drive/api/guides/create-file).\nOptional: type (query) — The type of items which the IDs can be used for. Supported values are `files` and `shortcuts`. Note that `shortcuts` are only supported in the `drive` `space`. (Default: `files`.) For more information, see [File organization](https://developers.google.com/workspace/drive/api/guides/about-files#file-organization).; space (query) — The space in which the IDs can be used to create files. Supported values are `drive` and `appDataFolder`. (Default: `drive`.) For more information, see [File organization](https://developers.google.com/workspace/drive/api/guides/about-files#file-organization).; count (query) — The number of IDs to return.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesGet",
+    "name": "Gets a file's metadata or content by ID.",
+    "description": "Gets a file's metadata or content by ID. Gets a file's metadata or content by ID. GET /drive/v3/files/{fileId}",
+    "context": "GET /drive/v3/files/{fileId}\nGets a file's metadata or content by ID. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). If you provide the URL parameter `alt=media`, then the response includes the file contents in the response body. Downloading content with `alt=media` only works if the file is stored in Drive. To download Google Docs, Sheets, and Slides use [`files.export`](https://developers.google.com/workspace/drive/api/reference/rest/v3/files/export) instead. For more information, see [Download and export files](https://developers.google.com/workspace/drive/api/guides/manage-downloads).\nRequired: fileId (path) — The ID of the file.\nOptional: includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; acknowledgeAbuse (query) — Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the `alt` parameter is set to `media` and the user is the owner of the file or an organizer of the shared drive in which the file resides.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesList",
+    "name": "Lists the user's files.",
+    "description": "Lists the user's files. Lists the user's files. GET /drive/v3/files",
+    "context": "GET /drive/v3/files\nLists the user's files. For more information, see [Search for files and folders](https://developers.google.com/workspace/drive/api/guides/search-files). This method accepts the `q` parameter, which is a search query combining one or more search terms. This method returns *all* files by default, including trashed files. If you don't want trashed files to appear in the list, use the `trashed=false` query parameter to remove trashed files from the results.\nOptional: includeItemsFromAllDrives (query) — Whether both My Drive and shared drive items should be included in results.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; q (query) — A query for filtering the file results. For supported syntax, see [Search for files and folders](/workspace/drive/api/guides/search-files).; corpora (query) — Specifies a collection of items (files or documents) to which the query applies. Supported items include: * `user` * `domain` * `drive` * `allDrives` Prefer `user` or `drive` to `allDrives` for efficiency. By default, corpora is set to `user`. However, this can change depending on the filter set through the `q` parameter. For more information, see [File organization](https://developers.google.com/workspace/drive/api/guides/about-files#file-organization).; pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from the previous response.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; spaces (query) — A comma-separated list of spaces to query within the corpora. Supported values are `drive` and `appDataFolder`. For more information, see [File organization](https://developers.google.com/workspace/drive/api/guides/about-files#file-organization).; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; corpus (query) — Deprecated: The source of files to list. Use `corpora` instead.; pageSize (query) — The maximum number of files to return. The service may return fewer than this value. If unspecified, at most 100 files will be returned for shared drives, and the entire list of files for non-shared drives. The maximum value is 1000; values above 1000 will be coerced to 1000.; driveId (query) — ID of the shared drive to search.; orderBy (query) — A comma-separated list of sort keys. Valid keys are: * `createdTime`: When the file was created. Avoid using this key for queries on large item collections as it might result in timeouts or other issues. For time-related sorting on large item collections, use `modifiedTime desc` instead. * `folder`: The folder ID. This field is sorted using alphabetical ordering. * `modifiedByMeTime`: The last time the file was modified by the user. * `modifiedTime`: The last time the file was modified by anyone. * `name`: The name of the file. This field is sorted using alphabetical ordering, so 1, 12, 2, 22. * `name_natural`: The name of the file. This field is sorted using natural sort ordering, so 1, 2, 12, 22. * `quotaBytesUsed`: The number of storage quota bytes used by the file. * `recency`: The most recent timestamp from the file's date-time fields. * `sharedWithMeTime`: When the file was shared with the user, if applicable. * `starred`: Whether the user has starred the file. * `viewedByMeTime`: The last time the file was viewed by the user. Each key sorts ascending by default, but can be reversed with the `desc` modifier. Example usage: `?orderBy=folder,modifiedTime desc,name`.; includeTeamDriveItems (query) — Deprecated: Use `includeItemsFromAllDrives` instead.; teamDriveId (query) — Deprecated: Use `driveId` instead.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesListLabels",
+    "name": "Lists the labels on a file.",
+    "description": "Lists the labels on a file. Lists the labels on a file. GET /drive/v3/files/{fileId}/listLabels",
+    "context": "GET /drive/v3/files/{fileId}/listLabels\nLists the labels on a file. For more information, see [List labels on a file](https://developers.google.com/workspace/drive/api/guides/list-labels).\nRequired: fileId (path) — The ID for the file.\nOptional: pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from the previous response.; maxResults (query) — The maximum number of labels to return per page. When not set, defaults to 100.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesModifyLabels",
+    "name": "Modifies the set of labels applied to a file.",
+    "description": "Modifies the set of labels applied to a file. Modifies the set of labels applied to a file. POST /drive/v3/files/{fileId}/modifyLabels",
+    "context": "POST /drive/v3/files/{fileId}/modifyLabels\nModifies the set of labels applied to a file. For more information, see [Set a label field on a file](https://developers.google.com/workspace/drive/api/guides/set-label). Returns a list of the labels that were added or modified.\nRequired: fileId (path) — The ID of the file to which the labels belong.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesUpdate",
+    "name": "Updates a file's metadata, content, or both.",
+    "description": "Updates a file's metadata, content, or both. Updates a file's metadata, content, or both. PATCH /drive/v3/files/{fileId}",
+    "context": "PATCH /drive/v3/files/{fileId}\nUpdates a file's metadata, content, or both. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might be changed automatically, such as `modifiedDate`. This method supports patch semantics. This method supports an */upload* URI and accepts uploaded media with the following characteristics: - *Maximum file size:* 5,120 GB - *Accepted Media MIME types:* `*/*` (Specify a valid MIME type, rather than the literal `*/*` value. The literal `*/*` is only used to indicate that any valid MIME type can be uploaded. For more information, see [Google Workspace and Google Drive supported MIME types](https://developers.google.com/workspace/drive/api/guides/mime-types).) For more information on uploading files, see [Upload file data](https://developers.google.com/workspace/drive/api/guides/manage-uploads).\nRequired: fileId (path) — The ID of the file.; body (body)\nOptional: ocrLanguage (query) — A language hint for OCR processing during image import (ISO 639-1 code).; keepRevisionForever (query) — Whether to set the `keepForever` field in the new head revision. This is only applicable to files with binary content in Google Drive. Only 200 revisions for the file can be kept forever. If the limit is reached, try deleting pinned revisions.; useContentAsIndexableText (query) — Whether to use the uploaded content as indexable text.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; enforceSingleParent (query) — Deprecated: Adding files to multiple folders is no longer supported. Use shortcuts instead.; addParents (query) — A comma-separated list of parent IDs to add.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; removeParents (query) — A comma-separated list of parent IDs to remove.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "FilesWatch",
+    "name": "Subscribes to changes to a file.",
+    "description": "Subscribes to changes to a file. Subscribes to changes to a file. POST /drive/v3/files/{fileId}/watch",
+    "context": "POST /drive/v3/files/{fileId}/watch\nSubscribes to changes to a file. For more information, see [Notifications for resource changes](https://developers.google.com/workspace/drive/api/guides/push).\nRequired: fileId (path) — The ID of the file.; body (body)\nOptional: supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; includeLabels (query) — A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.; acknowledgeAbuse (query) — Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the `alt` parameter is set to `media` and the user is the owner of the file or an organizer of the shared drive in which the file resides.; includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OperationsGet",
+    "name": "Gets the latest state of a long-running operation.",
+    "description": "Gets the latest state of a long-running operation. Gets the latest state of a long-running operation. GET /drive/v3/operations/{name}",
+    "context": "GET /drive/v3/operations/{name}\nGets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.\nRequired: name (path) — The name of the operation resource.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PermissionsCreate",
+    "name": "Creates a permission for a file or shared drive.",
+    "description": "Creates a permission for a file or shared drive. Creates a permission for a file or shared drive. POST /drive/v3/files/{fileId}/permissions",
+    "context": "POST /drive/v3/files/{fileId}/permissions\nCreates a permission for a file or shared drive. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.\nRequired: fileId (path) — The ID of the file or shared drive.; body (body)\nOptional: useDomainAdminAccess (query) — Issue the request as a domain administrator. If set to `true`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive. 2. The requester is an administrator of the domain to which the shared drive belongs. For more information, see [Manage shared drives as domain administrators](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives#manage-administrators).; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; enforceSingleParent (query) — Deprecated: See `moveToNewOwnersRoot` for details.; enforceExpansiveAccess (query) — Deprecated: All requests use the expansive access rules.; emailMessage (query) — A plain text custom message to include in the notification email.; sendNotificationEmail (query) — Whether to send a notification email when sharing to users or groups. This defaults to `true` for users and groups, and is not allowed for other requests. It must not be disabled for ownership transfers.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; moveToNewOwnersRoot (query) — This parameter only takes effect if the item isn't in a shared drive and the request is attempting to transfer the ownership of the item. If set to `true`, the item is moved to the new owner's My Drive root folder and all prior parents removed. If set to `false`, parents aren't changed.; transferOwnership (query) — Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. For more information, see [Transfer file ownership](https://developers.google.com/workspace/drive/api/guides/transfer-file).; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PermissionsDelete",
+    "name": "Deletes a permission.",
+    "description": "Deletes a permission. Deletes a permission. DELETE /drive/v3/files/{fileId}/permissions/{permissionId}",
+    "context": "DELETE /drive/v3/files/{fileId}/permissions/{permissionId}\nDeletes a permission. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.\nRequired: fileId (path) — The ID of the file or shared drive.; permissionId (path) — The ID of the permission.\nOptional: supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; enforceExpansiveAccess (query) — Deprecated: All requests use the expansive access rules.; useDomainAdminAccess (query) — Issue the request as a domain administrator. If set to `true`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive. 2. The requester is an administrator of the domain to which the shared drive belongs. For more information, see [Manage shared drives as domain administrators](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives#manage-administrators).; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PermissionsGet",
+    "name": "Gets a permission by ID.",
+    "description": "Gets a permission by ID. Gets a permission by ID. GET /drive/v3/files/{fileId}/permissions/{permissionId}",
+    "context": "GET /drive/v3/files/{fileId}/permissions/{permissionId}\nGets a permission by ID. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).\nRequired: fileId (path) — The ID of the file.; permissionId (path) — The ID of the permission.\nOptional: supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; useDomainAdminAccess (query) — Issue the request as a domain administrator. If set to `true`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive. 2. The requester is an administrator of the domain to which the shared drive belongs. For more information, see [Manage shared drives as domain administrators](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives#manage-administrators).; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PermissionsList",
+    "name": "Lists a file's or shared drive's permissions.",
+    "description": "Lists a file's or shared drive's permissions. Lists a file's or shared drive's permissions. GET /drive/v3/files/{fileId}/permissions",
+    "context": "GET /drive/v3/files/{fileId}/permissions\nLists a file's or shared drive's permissions. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing).\nRequired: fileId (path) — The ID of the file or shared drive.\nOptional: includePermissionsForView (query) — Specifies which additional view's permissions to include in the response. Only `published` is supported.; useDomainAdminAccess (query) — Issue the request as a domain administrator. If set to `true`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive. 2. The requester is an administrator of the domain to which the shared drive belongs. For more information, see [Manage shared drives as domain administrators](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives#manage-administrators).; pageSize (query) — The maximum number of permissions to return. The service may return fewer than this value. If unspecified, at most 100 permissions will be returned for shared drives, and the entire list of permissions for non-shared drives. The maximum value is 100; values above 100 will be coerced to 100.; supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from the previous response.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PermissionsUpdate",
+    "name": "Updates a permission with patch semantics.",
+    "description": "Updates a permission with patch semantics. Updates a permission with patch semantics. PATCH /drive/v3/files/{fileId}/permissions/{permissionId}",
+    "context": "PATCH /drive/v3/files/{fileId}/permissions/{permissionId}\nUpdates a permission with patch semantics. For more information, see [Share files, folders, and drives](https://developers.google.com/workspace/drive/api/guides/manage-sharing). **Warning:** Concurrent permissions operations on the same file aren't supported; only the last update is applied.\nRequired: permissionId (path) — The ID of the permission.; fileId (path) — The ID of the file or shared drive.; body (body)\nOptional: supportsAllDrives (query) — Whether the requesting application supports both My Drives and shared drives.; supportsTeamDrives (query) — Deprecated: Use `supportsAllDrives` instead.; transferOwnership (query) — Whether to transfer ownership to the specified user and downgrade the current owner to a writer. This parameter is required as an acknowledgement of the side effect. For more information, see [Transfer file ownership](https://developers.google.com//workspace/drive/api/guides/transfer-file).; useDomainAdminAccess (query) — Issue the request as a domain administrator. If set to `true`, and if the following additional conditions are met, the requester is granted access: 1. The file ID parameter refers to a shared drive. 2. The requester is an administrator of the domain to which the shared drive belongs. For more information, see [Manage shared drives as domain administrators](https://developers.google.com/workspace/drive/api/guides/manage-shareddrives#manage-administrators).; removeExpiration (query) — Whether to remove the expiration date.; enforceExpansiveAccess (query) — Deprecated: All requests use the expansive access rules.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RepliesCreate",
+    "name": "Creates a reply to a comment.",
+    "description": "Creates a reply to a comment. Creates a reply to a comment. POST /drive/v3/files/{fileId}/comments/{commentId}/replies",
+    "context": "POST /drive/v3/files/{fileId}/comments/{commentId}/replies\nCreates a reply to a comment. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).\nRequired: fileId (path) — The ID of the file.; commentId (path) — The ID of the comment.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RepliesDelete",
+    "name": "Deletes a reply.",
+    "description": "Deletes a reply. Deletes a reply. DELETE /drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}",
+    "context": "DELETE /drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}\nDeletes a reply. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).\nRequired: commentId (path) — The ID of the comment.; replyId (path) — The ID of the reply.; fileId (path) — The ID of the file.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RepliesGet",
+    "name": "Gets a reply by ID.",
+    "description": "Gets a reply by ID. Gets a reply by ID. GET /drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}",
+    "context": "GET /drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}\nGets a reply by ID. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).\nRequired: replyId (path) — The ID of the reply.; commentId (path) — The ID of the comment.; fileId (path) — The ID of the file.\nOptional: includeDeleted (query) — Whether to return deleted replies. Deleted replies don't include their original content.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RepliesList",
+    "name": "Lists a comment's replies.",
+    "description": "Lists a comment's replies. Lists a comment's replies. GET /drive/v3/files/{fileId}/comments/{commentId}/replies",
+    "context": "GET /drive/v3/files/{fileId}/comments/{commentId}/replies\nLists a comment's replies. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).\nRequired: fileId (path) — The ID of the file.; commentId (path) — The ID of the comment.\nOptional: includeDeleted (query) — Whether to include deleted replies. Deleted replies don't include their original content.; pageSize (query) — The maximum number of replies to return. The service may return fewer than this value. If unspecified, at most 20 replies will be returned. The maximum value is 100; values above 100 will be coerced to 100.; pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of `nextPageToken` from the previous response.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RepliesUpdate",
+    "name": "Updates a reply with patch semantics.",
+    "description": "Updates a reply with patch semantics. Updates a reply with patch semantics. PATCH /drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}",
+    "context": "PATCH /drive/v3/files/{fileId}/comments/{commentId}/replies/{replyId}\nUpdates a reply with patch semantics. For more information, see [Manage comments and replies](https://developers.google.com/workspace/drive/api/guides/manage-comments).\nRequired: replyId (path) — The ID of the reply.; fileId (path) — The ID of the file.; commentId (path) — The ID of the comment.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RevisionsDelete",
+    "name": "Permanently deletes a file version.",
+    "description": "Permanently deletes a file version. Permanently deletes a file version. DELETE /drive/v3/files/{fileId}/revisions/{revisionId}",
+    "context": "DELETE /drive/v3/files/{fileId}/revisions/{revisionId}\nPermanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted. For more information, see [Manage file revisions](https://developers.google.com/drive/api/guides/manage-revisions).\nRequired: fileId (path) — The ID of the file.; revisionId (path) — The ID of the revision.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RevisionsGet",
+    "name": "Gets a revision's metadata or content by ID.",
+    "description": "Gets a revision's metadata or content by ID. Gets a revision's metadata or content by ID. GET /drive/v3/files/{fileId}/revisions/{revisionId}",
+    "context": "GET /drive/v3/files/{fileId}/revisions/{revisionId}\nGets a revision's metadata or content by ID. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).\nRequired: fileId (path) — The ID of the file.; revisionId (path) — The ID of the revision.\nOptional: acknowledgeAbuse (query) — Whether the user is acknowledging the risk of downloading known malware or other abusive files. This is only applicable when the `alt` parameter is set to `media` and the user is the owner of the file or an organizer of the shared drive in which the file resides.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RevisionsList",
+    "name": "Lists a file's revisions.",
+    "description": "Lists a file's revisions. Lists a file's revisions. GET /drive/v3/files/{fileId}/revisions",
+    "context": "GET /drive/v3/files/{fileId}/revisions\nLists a file's revisions. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions). **Important:** The list of revisions returned by this method might be incomplete for files with a large revision history, including frequently edited Google Docs, Sheets, and Slides. Older revisions might be omitted from the response, meaning the first revision returned may not be the oldest existing revision. The revision history visible in the Workspace editor user interface might be more complete than the list returned by the API.\nRequired: fileId (path) — The ID of the file.\nOptional: pageSize (query) — The maximum number of revisions to return. The service may return fewer than this value. If unspecified, at most 200 revisions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.; pageToken (query) — The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RevisionsUpdate",
+    "name": "Updates a revision with patch semantics.",
+    "description": "Updates a revision with patch semantics. Updates a revision with patch semantics. PATCH /drive/v3/files/{fileId}/revisions/{revisionId}",
+    "context": "PATCH /drive/v3/files/{fileId}/revisions/{revisionId}\nUpdates a revision with patch semantics. For more information, see [Manage file revisions](https://developers.google.com/workspace/drive/api/guides/manage-revisions).\nRequired: fileId (path) — The ID of the file.; revisionId (path) — The ID of the revision.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TeamdrivesCreate",
+    "name": "Deprecated: Use `drives.create` instead.",
+    "description": "Deprecated: Use `drives.create` instead. POST /drive/v3/teamdrives",
+    "context": "POST /drive/v3/teamdrives\nDeprecated: Use `drives.create` instead.\nRequired: requestId (query) — Required. An ID, such as a random UUID, which uniquely identifies this user's request for idempotent creation of a Team Drive. A repeated request by the same user and with the same request ID will avoid creating duplicates by attempting to create the same Team Drive. If the Team Drive already exists a 409 error will be returned.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TeamdrivesDelete",
+    "name": "Deprecated: Use `drives.delete` instead.",
+    "description": "Deprecated: Use `drives.delete` instead. DELETE /drive/v3/teamdrives/{teamDriveId}",
+    "context": "DELETE /drive/v3/teamdrives/{teamDriveId}\nDeprecated: Use `drives.delete` instead.\nRequired: teamDriveId (path) — The ID of the Team Drive\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TeamdrivesGet",
+    "name": "Deprecated: Use `drives.get` instead.",
+    "description": "Deprecated: Use `drives.get` instead. GET /drive/v3/teamdrives/{teamDriveId}",
+    "context": "GET /drive/v3/teamdrives/{teamDriveId}\nDeprecated: Use `drives.get` instead.\nRequired: teamDriveId (path) — The ID of the Team Drive\nOptional: useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the Team Drive belongs.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TeamdrivesList",
+    "name": "Deprecated: Use `drives.list` instead.",
+    "description": "Deprecated: Use `drives.list` instead. GET /drive/v3/teamdrives",
+    "context": "GET /drive/v3/teamdrives\nDeprecated: Use `drives.list` instead.\nOptional: pageSize (query) — Maximum number of Team Drives to return.; pageToken (query) — Page token for Team Drives.; q (query) — Query string for searching Team Drives.; useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then all Team Drives of the domain in which the requester is an administrator are returned.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "TeamdrivesUpdate",
+    "name": "Deprecated: Use `drives.update` instead.",
+    "description": "Deprecated: Use `drives.update` instead. PATCH /drive/v3/teamdrives/{teamDriveId}",
+    "context": "PATCH /drive/v3/teamdrives/{teamDriveId}\nDeprecated: Use `drives.update` instead.\nRequired: teamDriveId (path) — The ID of the Team Drive; body (body)\nOptional: useDomainAdminAccess (query) — Issue the request as a domain administrator; if set to true, then the requester will be granted access if they are an administrator of the domain to which the Team Drive belongs.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

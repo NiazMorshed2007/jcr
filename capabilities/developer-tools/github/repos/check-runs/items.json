@@ -1,0 +1,32 @@
+[
+  {
+    "id": "checks%2Fcreate",
+    "name": "Create a check run",
+    "description": "Create a check run Creates a new check run for a specific commit in a repository. POST /repos/{owner}/{repo}/check-runs",
+    "context": "POST /repos/{owner}/{repo}/check-runs\nCreates a new check run for a specific commit in a repository. To create a check run, you must use a GitHub App. OAuth apps and authenticated users are not able to create a check suite. In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs. > [!NOTE] > The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "checks%2Fget",
+    "name": "Get a check run",
+    "description": "Get a check run Gets a single check run using its `id`. GET /repos/{owner}/{repo}/check-runs/{check_run_id}",
+    "context": "GET /repos/{owner}/{repo}/check-runs/{check_run_id}\nGets a single check run using its `id`. > [!NOTE] > The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; check_run_id (path) — The unique identifier of the check run."
+  },
+  {
+    "id": "checks%2Flist-annotations",
+    "name": "List check run annotations",
+    "description": "List check run annotations Lists annotations for a check run using the annotation `id`. GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations",
+    "context": "GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations\nLists annotations for a check run using the annotation `id`. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; check_run_id (path) — The unique identifier of the check run.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "checks%2Frerequest-run",
+    "name": "Rerequest a check run",
+    "description": "Rerequest a check run Triggers GitHub to rerequest an existing check run, without pushing new code to a repository. POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest",
+    "context": "POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest\nTriggers GitHub to rerequest an existing check run, without pushing new code to a repository. This endpoint will trigger the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) event with the action `rerequested`. When a check run is `rerequested`, the `status` of the check suite it belongs to is reset to `queued` and the `conclusion` is cleared. The check run itself is not updated. GitHub apps recieving the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) with the `rerequested` action should then decide if the check run should be reset or updated and call the [update `check_run` endpoint](https://docs.github.com/rest/checks/runs#update-a-check-run) to update the check_run if desired. For more information about how to re-run GitHub Actions jobs, see \"[Re-run a job from a workflow run](https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run)\".\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; check_run_id (path) — The unique identifier of the check run."
+  },
+  {
+    "id": "checks%2Fupdate",
+    "name": "Update a check run",
+    "description": "Update a check run Updates a check run for a specific commit in a repository. PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}",
+    "context": "PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}\nUpdates a check run for a specific commit in a repository. > [!NOTE] > The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array. OAuth apps and personal access tokens (classic) cannot use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; check_run_id (path) — The unique identifier of the check run.; body (body)"
+  }
+]

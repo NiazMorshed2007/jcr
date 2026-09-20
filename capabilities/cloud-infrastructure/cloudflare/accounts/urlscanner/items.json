@@ -1,0 +1,86 @@
+[
+  {
+    "id": "urlscanner-create-scan",
+    "name": "Create URL Scan",
+    "description": "Create URL Scan Submit a URL to scan. POST /client/v4/accounts/{account_id}/urlscanner/scan",
+    "context": "POST /client/v4/accounts/{account_id}/urlscanner/scan\nSubmit a URL to scan. You can also set some options, like the visibility level and custom headers. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "urlscanner-create-scan-bulk-v2",
+    "name": "Bulk create URL Scans",
+    "description": "Bulk create URL Scans Submit URLs to scan. POST /client/v4/accounts/{account_id}/urlscanner/v2/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/urlscanner/v2/bulk\nSubmit URLs to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/ and take into account scans submitted in bulk have lower priority and may take longer to finish.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "urlscanner-create-scan-v2",
+    "name": "Create URL Scan",
+    "description": "Create URL Scan Submit a URL to scan. POST /client/v4/accounts/{account_id}/urlscanner/v2/scan",
+    "context": "POST /client/v4/accounts/{account_id}/urlscanner/v2/scan\nSubmit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "urlscanner-get-response-text",
+    "name": "Get raw response",
+    "description": "Get raw response Returns the plain response of the network request. GET /client/v4/accounts/{account_id}/urlscanner/response/{response_id}",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/response/{response_id}\nReturns the plain response of the network request.\nRequired: response_id (path) — Response hash.; account_id (path) — Account ID."
+  },
+  {
+    "id": "urlscanner-get-response-v2",
+    "name": "Get raw response",
+    "description": "Get raw response Returns the raw response of the network request. GET /client/v4/accounts/{account_id}/urlscanner/v2/responses/{response_id}",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/v2/responses/{response_id}\nReturns the raw response of the network request. Find the `response_id` in the `data.requests.response.hash`.\nRequired: response_id (path) — Response hash.; account_id (path) — Account ID."
+  },
+  {
+    "id": "urlscanner-get-scan",
+    "name": "Get URL scan",
+    "description": "Get URL scan Get URL scan by uuid GET /client/v4/accounts/{account_id}/urlscanner/scan/{scan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/scan/{scan_id}\nGet URL scan by uuid\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID.\nOptional: full (query) — Whether to return full report (scan summary and network log)."
+  },
+  {
+    "id": "urlscanner-get-scan-dom-v2",
+    "name": "Get URL scan's DOM",
+    "description": "Get URL scan's DOM Returns a plain text response, with the scan's DOM content as rendered by Chrome. GET /client/v4/accounts/{account_id}/urlscanner/v2/dom/{scan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/v2/dom/{scan_id}\nReturns a plain text response, with the scan's DOM content as rendered by Chrome.\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID."
+  },
+  {
+    "id": "urlscanner-get-scan-har",
+    "name": "Get URL scan's HAR",
+    "description": "Get URL scan's HAR Get a URL scan's HAR file. GET /client/v4/accounts/{account_id}/urlscanner/scan/{scan_id}/har",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/scan/{scan_id}/har\nGet a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID."
+  },
+  {
+    "id": "urlscanner-get-scan-har-v2",
+    "name": "Get URL scan's HAR",
+    "description": "Get URL scan's HAR Get a URL scan's HAR file. GET /client/v4/accounts/{account_id}/urlscanner/v2/har/{scan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/v2/har/{scan_id}\nGet a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID."
+  },
+  {
+    "id": "urlscanner-get-scan-screenshot",
+    "name": "Get screenshot",
+    "description": "Get screenshot Get scan's screenshot by resolution (desktop/mobile/tablet). GET /client/v4/accounts/{account_id}/urlscanner/scan/{scan_id}/screenshot",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/scan/{scan_id}/screenshot\nGet scan's screenshot by resolution (desktop/mobile/tablet).\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID.\nOptional: resolution (query) — Target device type."
+  },
+  {
+    "id": "urlscanner-get-scan-screenshot-v2",
+    "name": "Get screenshot",
+    "description": "Get screenshot Get scan's screenshot by resolution (desktop/mobile/tablet). GET /client/v4/accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/v2/screenshots/{scan_id}.png\nGet scan's screenshot by resolution (desktop/mobile/tablet).\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID.\nOptional: resolution (query) — Target device type."
+  },
+  {
+    "id": "urlscanner-get-scan-v2",
+    "name": "Get URL scan",
+    "description": "Get URL scan Get URL scan by uuid GET /client/v4/accounts/{account_id}/urlscanner/v2/result/{scan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/v2/result/{scan_id}\nGet URL scan by uuid\nRequired: scan_id (path) — Scan UUID.; account_id (path) — Account ID."
+  },
+  {
+    "id": "urlscanner-search-scans",
+    "name": "Search URL scans",
+    "description": "Search URL scans Search scans by date and webpages' requests, including full URL (after redirects), hostname, and path. GET /client/v4/accounts/{account_id}/urlscanner/scan",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/scan\nSearch scans by date and webpages' requests, including full URL (after redirects), hostname, and path. A successful scan will appear in search results a few minutes after finishing but may take much longer if the system in under load. By default, only successfully completed scans will appear in search results, unless searching by `scanId`. Please take into account that older scans may be removed from the search index at an unspecified time.\nRequired: account_id (path) — Account ID.\nOptional: scan_id (query) — Scan UUID.; limit (query) — Limit the number of objects in the response.; next_cursor (query) — Pagination cursor to get the next set of results.; date_start (query) — Filter scans requested after date (inclusive).; date_end (query) — Filter scans requested before date (inclusive).; url (query) — Filter scans by URL of _any_ request made by the webpage; hostname (query) — Filter scans by hostname of _any_ request made by the webpage.; path (query) — Filter scans by url path of _any_ request made by the webpage.; ip (query) — Filter scans by IP address (IPv4 or IPv6) of _any_ request made by the webpage.; hash (query) — Filter scans by hash of any html/js/css request made by the webpage.; page_url (query) — Filter scans by submitted or scanned URL; page_hostname (query) — Filter scans by main page hostname (domain of effective URL).; page_path (query) — Filter scans by exact match of effective URL path (also supports suffix search).; page_asn (query) — Filter scans by main page Autonomous System Number (ASN).; page_ip (query) — Filter scans by main page IP address (IPv4 or IPv6).; account_scans (query) — Return only scans created by account.; is_malicious (query) — Filter scans by malicious verdict."
+  },
+  {
+    "id": "urlscanner-search-scans-v2",
+    "name": "Search URL scans",
+    "description": "Search URL scans Use a subset of ElasticSearch Query syntax to filter scans. GET /client/v4/accounts/{account_id}/urlscanner/v2/search",
+    "context": "GET /client/v4/accounts/{account_id}/urlscanner/v2/search\nUse a subset of ElasticSearch Query syntax to filter scans. Some example queries: - 'path:\"/bundles/jquery.js\"': Searches for scans who requested resources with the given path. - 'page.asn:AS24940 AND hash:xxx': Websites hosted in AS24940 where a resource with the given hash was downloaded. - 'page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com': malicious scans whose hostname starts with \"microsoft\". - 'apikey:me AND date:[2025-01 TO 2025-02]': my scans from 2025 January to 2025 February.\nRequired: account_id (path) — Account ID.\nOptional: size (query) — Limit the number of objects in the response.; q (query) — Filter scans"
+  }
+]

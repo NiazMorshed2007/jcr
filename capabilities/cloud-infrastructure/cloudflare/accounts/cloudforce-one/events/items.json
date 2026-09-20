@@ -1,0 +1,158 @@
+[
+  {
+    "id": "get_EventListGet",
+    "name": "Filter and list events",
+    "description": "Filter and list events Use `datasetId=all` or `datasetId=*` for the legacy all-datasets scope, `datasetId=analytics` for datasets with `isAnalytics=true`, or `datasetId=operational` for datasets with `isAnalytics=false` (limited to 50). GET /client/v4/accounts/{account_id}/cloudforce-one/events",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events\nUse `datasetId=all` or `datasetId=*` for the legacy all-datasets scope, `datasetId=analytics` for datasets with `isAnalytics=true`, or `datasetId=operational` for datasets with `isAnalytics=false` (limited to 50). Scope values must be used alone. When `datasetId` is unspecified, events are listed from the default Cloudforce One Threat Events dataset. To list existing datasets, use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint.\nRequired: account_id (path) — Account ID.\nOptional: cursor (query); search (query); page (query); pageSize (query); orderBy (query); order (query); datasetId (query); forceRefresh (query); format (query); cache (query)"
+  },
+  {
+    "id": "get_EventReadDeprecated",
+    "name": "Reads an event",
+    "description": "Reads an event This Method is deprecated. GET /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}\nThis Method is deprecated. Please use /events/dataset/:dataset_id/events/:event_id instead.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID."
+  },
+  {
+    "id": "patch_EventUpdate",
+    "name": "Updates an event",
+    "description": "Updates an event Partially updates a threat event in Cloudforce One, modifying specific fields without replacing the entire event. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}\nPartially updates a threat event in Cloudforce One, modifying specific fields without replacing the entire event.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventList",
+    "name": "Filter and list events",
+    "description": "Filter and list events Use `datasetId: [\"all\"]` or `datasetId: [\"*\"]` for the legacy all-datasets scope, `datasetId: [\"analytics\"]` for datasets with `isAnalytics=true`, or `datasetId: [\"operational\"]` for datasets with `isAnalytics=false` (limited to 50). POST /client/v4/accounts/{account_id}/cloudforce-one/events",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events\nUse `datasetId: [\"all\"]` or `datasetId: [\"*\"]` for the legacy all-datasets scope, `datasetId: [\"analytics\"]` for datasets with `isAnalytics=true`, or `datasetId: [\"operational\"]` for datasets with `isAnalytics=false` (limited to 50). Scope values must be used alone. When `datasetId` is unspecified, events are listed from the default Cloudforce One Threat Events dataset. To list existing datasets, use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint.\nRequired: account_id (path) — Account ID.\nOptional: forceRefresh (query); format (query) — Output format for event data. 'json' returns the default format, 'stix2' returns STIX 2.1 Sighting SROs with linked Indicator SDOs, Observed Data SDOs, and SCOs, 'taxii' returns a TAXII 2.1 Envelope with Content-Type application/taxii+json;version=2.1.; cache (query) — Cache strategy. 'from-graph' serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit.; body (body)"
+  },
+  {
+    "id": "post_EventUpdate",
+    "name": "Updates an event",
+    "description": "Updates an event POST /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}\nUpdates an event\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "delete_EventReferenceDelete",
+    "name": "Removes an event reference",
+    "description": "Removes an event reference Removes a reference link between related threat events in Cloudforce One. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/relate/{event_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/relate/{event_id}\nRemoves a reference link between related threat events in Cloudforce One.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventReferenceCreate",
+    "name": "Creates event references for a event",
+    "description": "Creates event references for a event POST /client/v4/accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create\nCreates event references for a event\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "delete_EventTagDelete",
+    "name": "Removes a tag from an event",
+    "description": "Removes a tag from an event Removes a tag from a threat event in Cloudforce One. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}\nRemoves a tag from a threat event in Cloudforce One.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventTagCreate",
+    "name": "Adds a tag to an event",
+    "description": "Adds a tag to an event Adds a tag to a threat event in Cloudforce One for classification and filtering. POST /client/v4/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create\nAdds a tag to a threat event in Cloudforce One for classification and filtering.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "delete_LegacyEventDelete",
+    "name": "Deletes one or more events",
+    "description": "Deletes one or more events Deprecated; use DELETE /events/datasets/{dataset_id}/events. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete\nDeprecated; use DELETE /events/datasets/{dataset_id}/events. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; eventIds (query) — Array of Event IDs to delete."
+  },
+  {
+    "id": "get_AttackerList",
+    "name": "Lists attackers across multiple datasets",
+    "description": "Lists attackers across multiple datasets Lists known threat attackers tracked in Cloudforce One threat intelligence. GET /client/v4/accounts/{account_id}/cloudforce-one/events/attackers",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/attackers\nLists known threat attackers tracked in Cloudforce One threat intelligence.\nRequired: account_id (path) — Account ID.\nOptional: datasetIds (query) — Array of dataset IDs to query attackers from. If not provided, uses the default dataset."
+  },
+  {
+    "id": "get_CountryRead",
+    "name": "Retrieves countries information for all countries",
+    "description": "Retrieves countries information for all countries Lists countries referenced in Cloudforce One threat intelligence data. GET /client/v4/accounts/{account_id}/cloudforce-one/events/countries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/countries\nLists countries referenced in Cloudforce One threat intelligence data.\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "get_EventAggregate",
+    "name": "Aggregate events by single or multiple columns with optional date filtering",
+    "description": "Aggregate events by single or multiple columns with optional date filtering Aggregate threat events by one or more columns (e.g., attacker, targetIndustry) with optional date filtering and daily grouping. GET /client/v4/accounts/{account_id}/cloudforce-one/events/aggregate",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/aggregate\nAggregate threat events by one or more columns (e.g., attacker, targetIndustry) with optional date filtering and daily grouping. Supports multi-dimensional aggregation for cross-analysis.\nRequired: account_id (path) — Account ID.; aggregateBy (query) — Column(s) to aggregate by - single column or comma-separated list (e.g., 'attacker', 'targetIndustry', 'attacker,targetIndustry')\nOptional: datasetId (query) — Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.; startDate (query) — Start date for filtering (ISO 8601 format, e.g., '2024-01-01'); endDate (query) — End date for filtering (ISO 8601 format, e.g., '2024-12-31'); groupByDate (query) — Whether to group results by date (daily aggregation); limit (query) — Maximum number of results to return"
+  },
+  {
+    "id": "get_EventGraph",
+    "name": "Query graph neighborhood from R2 Data Catalog",
+    "description": "Query graph neighborhood from R2 Data Catalog Expands the single-level relationship neighborhood of one or more seed nodes (event, indicator, or tag) from R2 Data Catalog. GET /client/v4/accounts/{account_id}/cloudforce-one/events/graph",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/graph\nExpands the single-level relationship neighborhood of one or more seed nodes (event, indicator, or tag) from R2 Data Catalog. Seeds use compact id format (type:uuid), e.g. \"event:550e8400-...\". Multi-seed requests merge and deduplicate results server-side. Hydrates neighbor entities with summary data from Durable Objects. Supports filtering by relationship type and dataset scope.\nRequired: account_id (path) — Account ID.\nOptional: seeds (query) — Comma-separated compact seed ids (type:uuid). Example: seeds=event:550e8400-...,indicator:661fa920-... Provide 1–50 entries; omitting seeds returns 400.; direction (query) — Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default).; hydration (query) — Hydration strategy for neighbor nodes when expand=nodes is set. r2_join (default): use R2 JOIN query + DO fallback. do_only: use plain R2 query + hydrate all neighbors via Durable Objects.; limit (query) — Max neighbors per seed (default: 100, max: 1000). Values above 1000 return 400.; max_nodes (query) — Total accumulated node cap across all seeds (default: 500, max: 1000). Values above 1000 return 400.; relationshipTypes (query) — Comma-separated relationship types to filter by. Allowed: tagged_with, appears_in, related_to, caused_by, attributed_to.; datasetIds (query) — Comma-separated dataset UUIDs to restrict neighbor scope, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Intersected with access grants.; cursor (query) — Opaque pagination token. Only valid when seeds has exactly 1 entry; 400 otherwise.; expand (query) — Comma-separated list of response sections to expand (hydrate). Allowed: `nodes`. Omitting `expand` returns identifier-only nodes."
+  },
+  {
+    "id": "get_EventRelationships",
+    "name": "Filter and list events related to specific event",
+    "description": "Filter and list events related to specific event The `event_id` must be defined (to list existing events (and their IDs), use the [`Filter and List Events`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/methods/list/) endpoint). GET /client/v4/accounts/{account_id}/cloudforc…",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships\nThe `event_id` must be defined (to list existing events (and their IDs), use the [`Filter and List Events`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/methods/list/) endpoint). Also, must provide query parameters.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.; datasetId (query) — The dataset ID to search within.\nOptional: direction (query) — The direction to traverse the graph. Defaults to 'both' to search all.; maxDepth (query) — The maximum depth to traverse. Defaults to 5.; relationshipTypes (query) — An optional array of relationship types to filter by.; indicatorTypeIds (query) — An optional array of indicator type IDs to filter the results by.; includeParent (query) — Whether to include the starting event in the results. Defaults to true.; page (query); pageSize (query)"
+  },
+  {
+    "id": "get_IndicatorAggregate",
+    "name": "Aggregate indicators by column(s)",
+    "description": "Aggregate indicators by column(s) Aggregate threat indicators by one or more columns (e.g., indicatorType, value) across datasets. GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicators/aggregate",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicators/aggregate\nAggregate threat indicators by one or more columns (e.g., indicatorType, value) across datasets. Returns top-N groups ordered by count.\nRequired: account_id (path) — Account ID.; aggregateBy (query) — Column(s) to aggregate by - single column or comma-separated list (e.g., 'indicatorType', 'value', 'indicatorType,value')\nOptional: measure (query) — What to count per group: 'indicators' (catalog rows, default) or 'relationships' (linked events per indicator). Use 'relationships' for 'top indicator by event activity'.; tagUuid (query) — Scope to indicators associated with this tag/actor UUID. Combine with measure=relationships for 'top indicator for an actor'.; datasetIds (query) — Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible datasets, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, aggregates across all accessible datasets.; createdAfter (query) — Filter indicators created after this date/datetime (ISO 8601, e.g., '2024-01-01' or '2024-01-01T00:00:00Z'); createdBefore (query) — Filter indicators created before this date/datetime (ISO 8601, e.g., '2024-12-31' or '2024-12-31T23:59:59Z'); eventDateAfter (query) — For measure=relationships: only count indicator→event links whose relationship was created/observed on or after this date (ISO 8601). Bounds the activity view to recently-observed links. Note: this filters by the relationship's createdAt (link-observation time), not the underlying event's business date.; eventDateBefore (query) — For measure=relationships: only count indicator→event links whose relationship was created/observed on or before this date (ISO 8601). Bounds the activity view by the relationship's createdAt (link-observation time), not the underlying event's business date.; limit (query) — Maximum number of aggregation results to return (1-100)"
+  },
+  {
+    "id": "get_IndicatorList",
+    "name": "Lists indicators across multiple datasets",
+    "description": "Lists indicators across multiple datasets Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicators",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicators\nRetrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use the standalone datasetIds value 'all'/'*' for legacy all-datasets behavior, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If no datasetIds are provided, uses the default dataset.\nRequired: account_id (path) — Account ID.\nOptional: datasetIds (query) — Dataset UUIDs to query, or one standalone scope value: 'all'/'*' for legacy all-datasets behavior, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.; page (query); pageSize (query); search (query) — Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType, uuid. Supports operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use the 'in' operator with an array value to bulk-check up to 100 indicators in a single request, e.g. search=[{\"field\":\"value\",\"op\":\"in\",\"value\":[\"evil.com\",\"bad.org\"]}]. Multiple conditions are AND'd together. Max 10 conditions per request.; name (query) — Filter indicators by value using substring match (LIKE). Legacy alternative to structured search.; indicatorType (query); relatedEvents (query) — Filter by related event IDs; tags (query) — Filter by tag values or UUIDs. Indicators must have at least one of the specified tags (OR logic). Supports both tag UUID and tag value.; tagSearch (query) — Structured tag-metadata filter as a JSON array of {field, op, value} objects. Operates against the per-dataset IndicatorTag mirror so you can find indicators by tag attributes (origin country, motive, sophistication, priority, etc.) without a separate Tags lookup. Common dashboard usage: drill from a country into indicators, e.g. tagSearch=[{\"field\":\"originCountryISO\",\"op\":\"in\",\"value\":[\"IR\",\"CN\"]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (e.g. \"iran\"). Operators: equals, not, gt/gte/lt/lte (numeric only), contains/like/find/startsWith/endsWith (string only), in. AND-joined across entries; combined with `tags`, a matching tag must satisfy both. Max 10 entries per request, max 100 values per 'in'. Performance notes: `originCountryISO` uses its B-tree index for equals/not/in. `priority` uses its B-tree index for numeric comparisons. Other string columns (`actorCategory`, `motive`, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on the JSON-encoded text, so substrings can cross alias boundaries (\"apt28\" also matches \"apt280\" when both appear in the same tag's alias list).; createdAfter (query) — Filter indicators created on or after this date. Must use ISO 8601 format (e.g., '2024-01-15T00:00:00Z').; createdBefore (query) — Filter indicators created on or before this date. Must use ISO 8601 format (e.g., '2024-12-31T23:59:59Z').; relatedEventsLimit (query) — Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events.; includeTags (query) — Whether to include full tag details for each indicator. Defaults to true.; includeTotalCount (query) — Whether to compute total count via COUNT(*). Defaults to false for performance. total_count is null unless this is true and the complete fan-out succeeds.; format (query) — Output format for indicator data. 'json' returns the default format, 'stix2' returns STIX 2.1 Indicator SDOs, 'taxii' returns a TAXII 2.1 Envelope with Content-Type application/taxii+json;version=2.1.; cache (query) — Cache strategy. 'from-graph' serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit. Cannot be combined with `cursor`.; cursor (query) — Opaque cursor from a previous response's `pagination.cursor`. When provided, all filters, datasetIds, page, `pageSize`, `includeTags` and `relatedEventsLimit` come from the cursor — do not resend them. Sending any filter, `page`, `pageSize`, `includeTags`, `relatedEventsLimit`, `includeTotalCount=true`, or `cache=from-graph` alongside a cursor yields a 400 `CursorFilterConflictError`. A cursor issued for a different entity, an unsupported version, or a dataset that has since been reconfigured as analytics-only yields a 400 `InvalidCursorError`."
+  },
+  {
+    "id": "get_IndicatorTypesList",
+    "name": "Lists indicator types across multiple datasets",
+    "description": "Lists indicator types across multiple datasets GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicator-types",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicator-types\nLists indicator types across multiple datasets\nRequired: account_id (path) — Account ID.\nOptional: datasetIds (query) — Dataset UUIDs to query, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, queries all accessible datasets."
+  },
+  {
+    "id": "get_LegacyEventRelationships",
+    "name": "Filter and list events related to specific event",
+    "description": "Filter and list events related to specific event Deprecated; use GET /events/by-id/{event_id}/relationships. GET /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/relationships",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/relationships\nDeprecated; use GET /events/by-id/{event_id}/relationships. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.; datasetId (query) — The dataset ID to search within.\nOptional: direction (query) — The direction to traverse the graph. Defaults to 'both' to search all.; maxDepth (query) — The maximum depth to traverse. Defaults to 5.; relationshipTypes (query) — An optional array of relationship types to filter by.; indicatorTypeIds (query) — An optional array of indicator type IDs to filter the results by.; includeParent (query) — Whether to include the starting event in the results. Defaults to true.; page (query); pageSize (query)"
+  },
+  {
+    "id": "post_CreateEventRelationship",
+    "name": "Create a relationship between two events",
+    "description": "Create a relationship between two events Creates a directed relationship between two events. POST /client/v4/accounts/{account_id}/cloudforce-one/events/relationships/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/relationships/create\nCreates a directed relationship between two events. The relationship is from parent to child with a specified type.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "get_LegacyIndicatorTypesList",
+    "name": "Lists all indicator types",
+    "description": "Lists all indicator types This Method is deprecated. GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicatorTypes",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/indicatorTypes\nThis Method is deprecated. Please use /events/dataset/:dataset_id/indicatorTypes instead.\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "get_TargetIndustryList",
+    "name": "Lists target industries across multiple datasets",
+    "description": "Lists target industries across multiple datasets Retrieves the catalog of industry classifications used in Cloudforce One threat intelligence. GET /client/v4/accounts/{account_id}/cloudforce-one/events/targetIndustries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/targetIndustries\nRetrieves the catalog of industry classifications used in Cloudforce One threat intelligence.\nRequired: account_id (path) — Account ID.\nOptional: datasetIds (query) — Array of dataset IDs to query target industries from. If not provided, uses the default dataset."
+  },
+  {
+    "id": "get_TargetIndustryListComplete",
+    "name": "Lists all target industries from industry map catalog",
+    "description": "Lists all target industries from industry map catalog GET /client/v4/accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog\nLists all target industries from industry map catalog\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "patch_EventUpdateBulk",
+    "name": "Bulk update events",
+    "description": "Bulk update events Updates multiple events with the same field values. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/update/bulk",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/update/bulk\nUpdates multiple events with the same field values. Maximum 100 events per request.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventGraphQL",
+    "name": "GraphQL endpoint for event aggregation",
+    "description": "GraphQL endpoint for event aggregation Execute GraphQL aggregations over threat events. POST /client/v4/accounts/{account_id}/cloudforce-one/events/graphql",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/graphql\nExecute GraphQL aggregations over threat events. Supports multi-dimensional group-bys, optional date range filtering, and multi-dataset aggregation.\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "post_EventGraphQLV2",
+    "name": "GraphQL endpoint for event aggregation",
+    "description": "GraphQL endpoint for event aggregation Execute GraphQL aggregations over threat events. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/events/graphql",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/events/graphql\nExecute GraphQL aggregations over threat events. Supports multi-dimensional group-bys, optional date range filtering, and multi-dataset aggregation.\nRequired: account_id (path) — Account ID."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "sandbox_custom_images_build_create",
+    "name": "Persist the image spec (from the request body or the builder agent's sandbox), run the security scan, and on pass build and publish the image.",
+    "description": "Persist the image spec (from the request body or the builder agent's sandbox), run the security scan, and on pass build and publish the image. POST /api/projects/{project_id}/sandbox_custom_images/{id}/build/",
+    "context": "POST /api/projects/{project_id}/sandbox_custom_images/{id}/build/\nPersist the image spec (from the request body or the builder agent's sandbox), run the security scan, and on pass build and publish the image.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "sandbox_custom_images_builder_task_create",
+    "name": "Revive (or reuse) the image's builder agent session",
+    "description": "Revive (or reuse) the image's builder agent session Revive (or reuse) the image's builder agent session. POST /api/projects/{project_id}/sandbox_custom_images/{id}/builder_task/",
+    "context": "POST /api/projects/{project_id}/sandbox_custom_images/{id}/builder_task/\nRevive (or reuse) the image's builder agent session. When the previous session has ended, a fresh one is started seeded with the stored spec — use this to update an existing image.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "sandbox_custom_images_create",
+    "name": "Create a draft custom image and start its interactive image-builder agent task",
+    "description": "Create a draft custom image and start its interactive image-builder agent task Create a draft custom image and start its interactive image-builder agent task. POST /api/projects/{project_id}/sandbox_custom_images/",
+    "context": "POST /api/projects/{project_id}/sandbox_custom_images/\nCreate a draft custom image and start its interactive image-builder agent task. The returned builder_task_id points at the conversation.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "sandbox_custom_images_destroy",
+    "name": "API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent",
+    "description": "API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent. DELETE /api/projects/{project_id}/sandbox_custom_images/{id}/",
+    "context": "DELETE /api/projects/{project_id}/sandbox_custom_images/{id}/\nAPI for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent. Custom images only run on the Modal VM runtime, so every action is gated on the `tasks-modal-vm-sandbox` flag (org-enabled with `user_created` in its origin_products payload).\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "sandbox_custom_images_list",
+    "name": "API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent",
+    "description": "API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent. GET /api/projects/{project_id}/sandbox_custom_images/",
+    "context": "GET /api/projects/{project_id}/sandbox_custom_images/\nAPI for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent. Custom images only run on the Modal VM runtime, so every action is gated on the `tasks-modal-vm-sandbox` flag (org-enabled with `user_created` in its origin_products payload).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "sandbox_custom_images_partial_update",
+    "name": "Rename or update the description of a custom image",
+    "description": "Rename or update the description of a custom image Rename or update the description of a custom image. PATCH /api/projects/{project_id}/sandbox_custom_images/{id}/",
+    "context": "PATCH /api/projects/{project_id}/sandbox_custom_images/{id}/\nRename or update the description of a custom image. Only mutable metadata (name, description) is editable; the build spec and status are managed by the build flow.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "sandbox_custom_images_retrieve",
+    "name": "API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent",
+    "description": "API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent API for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent. GET /api/projects/{project_id}/sandbox_custom_images/{id}/",
+    "context": "GET /api/projects/{project_id}/sandbox_custom_images/{id}/\nAPI for custom sandbox base images, built on top of the VM sandbox base via an image-builder agent. Custom images only run on the Modal VM runtime, so every action is gated on the `tasks-modal-vm-sandbox` flag (org-enabled with `user_created` in its origin_products payload).\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

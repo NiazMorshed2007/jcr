@@ -1,0 +1,206 @@
+[
+  {
+    "id": "magic-site-acls-acl-details",
+    "name": "Site ACL Details",
+    "description": "Site ACL Details Get a specific Site ACL. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}\nGet a specific Site ACL.\nRequired: site_id (path); account_id (path); acl_id (path)"
+  },
+  {
+    "id": "magic-site-acls-create-acl",
+    "name": "Create a new Site ACL",
+    "description": "Create a new Site ACL Creates a new Site ACL. POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls",
+    "context": "POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls\nCreates a new Site ACL.\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-acls-delete-acl",
+    "name": "Delete Site ACL",
+    "description": "Delete Site ACL Remove a specific Site ACL. DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}\nRemove a specific Site ACL.\nRequired: site_id (path); account_id (path); acl_id (path)"
+  },
+  {
+    "id": "magic-site-acls-list-acls",
+    "name": "List Site ACLs",
+    "description": "List Site ACLs Lists Site ACLs associated with an account. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls\nLists Site ACLs associated with an account.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "magic-site-acls-patch-acl",
+    "name": "Patch Site ACL",
+    "description": "Patch Site ACL Patch a specific Site ACL. PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}\nPatch a specific Site ACL.\nRequired: site_id (path); account_id (path); acl_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-acls-update-acl",
+    "name": "Update Site ACL",
+    "description": "Update Site ACL Update a specific Site ACL. PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/acls/{acl_id}\nUpdate a specific Site ACL.\nRequired: site_id (path); account_id (path); acl_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-app-configs-add-app-config",
+    "name": "Create a new App Config",
+    "description": "Create a new App Config Creates a new App Config for a site POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs",
+    "context": "POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs\nCreates a new App Config for a site\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-app-configs-delete-app-config",
+    "name": "Delete App Config",
+    "description": "Delete App Config Deletes specific App Config associated with a site. DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}\nDeletes specific App Config associated with a site.\nRequired: account_id (path); site_id (path); app_config_id (path)"
+  },
+  {
+    "id": "magic-site-app-configs-list-app-configs",
+    "name": "List App Configs",
+    "description": "List App Configs Lists App Configs associated with a site. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs\nLists App Configs associated with a site.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "magic-site-app-configs-patch-app-config",
+    "name": "Update an App Config",
+    "description": "Update an App Config Updates an App Config for a site PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}\nUpdates an App Config for a site\nRequired: account_id (path); site_id (path); app_config_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-app-configs-update-app-config",
+    "name": "Update an App Config",
+    "description": "Update an App Config Updates an App Config for a site PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/app_configs/{app_config_id}\nUpdates an App Config for a site\nRequired: account_id (path); site_id (path); app_config_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-lans-create-lan",
+    "name": "Create a new Site LAN",
+    "description": "Create a new Site LAN Creates a new Site LAN. POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans",
+    "context": "POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans\nCreates a new Site LAN. If the site is in high availability mode, static_addressing is required along with secondary and virtual address.\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-lans-delete-lan",
+    "name": "Delete Site LAN",
+    "description": "Delete Site LAN Remove a specific Site LAN. DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}\nRemove a specific Site LAN.\nRequired: site_id (path); account_id (path); lan_id (path)"
+  },
+  {
+    "id": "magic-site-lans-lan-details",
+    "name": "Site LAN Details",
+    "description": "Site LAN Details Get a specific Site LAN. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}\nGet a specific Site LAN.\nRequired: site_id (path); account_id (path); lan_id (path)"
+  },
+  {
+    "id": "magic-site-lans-list-lans",
+    "name": "List Site LANs",
+    "description": "List Site LANs Lists Site LANs associated with an account. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans\nLists Site LANs associated with an account.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "magic-site-lans-patch-lan",
+    "name": "Patch Site LAN",
+    "description": "Patch Site LAN Patch a specific Site LAN. PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}\nPatch a specific Site LAN.\nRequired: site_id (path); account_id (path); lan_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-lans-update-lan",
+    "name": "Update Site LAN",
+    "description": "Update Site LAN Update a specific Site LAN. PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/lans/{lan_id}\nUpdate a specific Site LAN.\nRequired: site_id (path); account_id (path); lan_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-netflow-config-create-netflow-config",
+    "name": "Create NetFlow Configuration",
+    "description": "Create NetFlow Configuration Creates a NetFlow configuration for a site. POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config",
+    "context": "POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config\nCreates a NetFlow configuration for a site.\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-netflow-config-delete-netflow-config",
+    "name": "Delete NetFlow Configuration",
+    "description": "Delete NetFlow Configuration Remove NetFlow configuration for a site. DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config\nRemove NetFlow configuration for a site.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "magic-site-netflow-config-details",
+    "name": "NetFlow Configuration Details",
+    "description": "NetFlow Configuration Details Get NetFlow configuration for a site. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config\nGet NetFlow configuration for a site.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "magic-site-netflow-config-patch-netflow-config",
+    "name": "Update NetFlow Configuration",
+    "description": "Update NetFlow Configuration Updates NetFlow configuration for a site. PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config\nUpdates NetFlow configuration for a site.\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-netflow-config-update-netflow-config",
+    "name": "Update NetFlow Configuration",
+    "description": "Update NetFlow Configuration Updates NetFlow configuration for a site (partial update). PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/netflow_config\nUpdates NetFlow configuration for a site (partial update).\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-wans-create-wan",
+    "name": "Create a new Site WAN",
+    "description": "Create a new Site WAN Creates a new Site WAN. POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans",
+    "context": "POST /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans\nCreates a new Site WAN.\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-wans-delete-wan",
+    "name": "Delete Site WAN",
+    "description": "Delete Site WAN Remove a specific Site WAN. DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}\nRemove a specific Site WAN.\nRequired: site_id (path); account_id (path); wan_id (path)"
+  },
+  {
+    "id": "magic-site-wans-list-wans",
+    "name": "List Site WANs",
+    "description": "List Site WANs Lists Site WANs associated with an account. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans\nLists Site WANs associated with an account.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "magic-site-wans-patch-wan",
+    "name": "Patch Site WAN",
+    "description": "Patch Site WAN Patch a specific Site WAN. PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}\nPatch a specific Site WAN.\nRequired: site_id (path); account_id (path); wan_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-wans-update-wan",
+    "name": "Update Site WAN",
+    "description": "Update Site WAN Update a specific Site WAN. PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}\nUpdate a specific Site WAN.\nRequired: site_id (path); account_id (path); wan_id (path); body (body)"
+  },
+  {
+    "id": "magic-site-wans-wan-details",
+    "name": "Site WAN Details",
+    "description": "Site WAN Details Get a specific Site WAN. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}/wans/{wan_id}\nGet a specific Site WAN.\nRequired: site_id (path); account_id (path); wan_id (path)"
+  },
+  {
+    "id": "magic-sites-create-site",
+    "name": "Create a new Site",
+    "description": "Create a new Site Creates a new Site POST /client/v4/accounts/{account_id}/magic/sites",
+    "context": "POST /client/v4/accounts/{account_id}/magic/sites\nCreates a new Site\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-sites-delete-site",
+    "name": "Delete Site",
+    "description": "Delete Site Remove a specific Site. DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/sites/{site_id}\nRemove a specific Site.\nRequired: site_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-sites-list-sites",
+    "name": "List Sites",
+    "description": "List Sites Lists Sites associated with an account. GET /client/v4/accounts/{account_id}/magic/sites",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites\nLists Sites associated with an account. Use connectorid query param to return sites where connectorid matches either site.ConnectorID or site.SecondaryConnectorID.\nRequired: account_id (path)\nOptional: connectorid (query)"
+  },
+  {
+    "id": "magic-sites-patch-site",
+    "name": "Patch Site",
+    "description": "Patch Site Patch a specific Site. PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/sites/{site_id}\nPatch a specific Site.\nRequired: site_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "magic-sites-site-details",
+    "name": "Site Details",
+    "description": "Site Details Get a specific Site. GET /client/v4/accounts/{account_id}/magic/sites/{site_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/sites/{site_id}\nGet a specific Site.\nRequired: site_id (path); account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-sites-update-site",
+    "name": "Update Site",
+    "description": "Update Site Update a specific Site. PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/sites/{site_id}\nUpdate a specific Site.\nRequired: site_id (path); account_id (path); body (body)"
+  }
+]

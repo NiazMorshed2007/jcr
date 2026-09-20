@@ -1,0 +1,32 @@
+[
+  {
+    "id": "DeleteSubscriptionItemsItem",
+    "name": "Delete a subscription item",
+    "description": "Delete a subscription item Deletes an item from the subscription. DELETE /v1/subscription_items/{item}",
+    "context": "DELETE /v1/subscription_items/{item}\nDeletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.\nRequired: item (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetSubscriptionItems",
+    "name": "List all subscription items",
+    "description": "List all subscription items Returns a list of your subscription items for a given subscription. GET /v1/subscription_items",
+    "context": "GET /v1/subscription_items\nReturns a list of your subscription items for a given subscription.\nRequired: subscription (query) — The ID of the subscription whose items will be retrieved.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetSubscriptionItemsItem",
+    "name": "Retrieve a subscription item",
+    "description": "Retrieve a subscription item Retrieves the subscription item with the given ID. GET /v1/subscription_items/{item}",
+    "context": "GET /v1/subscription_items/{item}\nRetrieves the subscription item with the given ID.\nRequired: item (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostSubscriptionItems",
+    "name": "Create a subscription item",
+    "description": "Create a subscription item Adds a new item to an existing subscription. POST /v1/subscription_items",
+    "context": "POST /v1/subscription_items\nAdds a new item to an existing subscription. No existing items will be changed or replaced.\nRequired: body (body)"
+  },
+  {
+    "id": "PostSubscriptionItemsItem",
+    "name": "Update a subscription item",
+    "description": "Update a subscription item Updates the plan or quantity of an item on a current subscription. POST /v1/subscription_items/{item}",
+    "context": "POST /v1/subscription_items/{item}\nUpdates the plan or quantity of an item on a current subscription.\nRequired: item (path)\nOptional: body (body)"
+  }
+]

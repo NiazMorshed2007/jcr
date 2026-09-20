@@ -1,0 +1,26 @@
+[
+  {
+    "id": "blobStorageIntegrations_deleteBlobStorageIntegration",
+    "name": "Delete a blob storage integration by ID (requires organization-scoped API key)",
+    "description": "Delete a blob storage integration by ID (requires organization-scoped API key) DELETE /api/public/integrations/blob-storage/{id}",
+    "context": "DELETE /api/public/integrations/blob-storage/{id}\nDelete a blob storage integration by ID (requires organization-scoped API key)\nRequired: id (path)"
+  },
+  {
+    "id": "blobStorageIntegrations_getBlobStorageIntegrations",
+    "name": "Get all blob storage integrations for the organization (requires organization-scoped API key)",
+    "description": "Get all blob storage integrations for the organization (requires organization-scoped API key) GET /api/public/integrations/blob-storage",
+    "context": "GET /api/public/integrations/blob-storage\nGet all blob storage integrations for the organization (requires organization-scoped API key)"
+  },
+  {
+    "id": "blobStorageIntegrations_getBlobStorageIntegrationStatus",
+    "name": "Get the sync status of a blob storage integration by integration ID (requires organization-scoped API key)",
+    "description": "Get the sync status of a blob storage integration by integration ID (requires organization-scoped API key) GET /api/public/integrations/blob-storage/{id}",
+    "context": "GET /api/public/integrations/blob-storage/{id}\nGet the sync status of a blob storage integration by integration ID (requires organization-scoped API key)\nRequired: id (path)"
+  },
+  {
+    "id": "blobStorageIntegrations_upsertBlobStorageIntegration",
+    "name": "Create or update a blob storage integration for a specific project (requires organization-scoped API key)",
+    "description": "Create or update a blob storage integration for a specific project (requires organization-scoped API key) Create or update a blob storage integration for a specific project (requires organization-scoped API key). PUT /api/public/integrations/blob-storage",
+    "context": "PUT /api/public/integrations/blob-storage\nCreate or update a blob storage integration for a specific project (requires organization-scoped API key). The configuration is validated by performing a test upload to the bucket.\nRequired: body (body)"
+  }
+]

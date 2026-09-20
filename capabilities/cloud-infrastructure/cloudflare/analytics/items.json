@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sql-api-introspection",
+    "name": "List available analytics datasets",
+    "description": "List available analytics datasets Returns the analytics dataset catalogue. GET /client/v4/analytics/sql/introspection",
+    "context": "GET /client/v4/analytics/sql/introspection\nReturns the analytics dataset catalogue. By default, the response contains dataset names and descriptions. Set `include_columns` to include each dataset's column names, descriptions, and data types. The caller must have Account Analytics Read permission on the account identified by `account_tag`. Dataset names, descriptions, and columns are the same for every authorized account. When `include_custom_attributes` is set, the response also includes custom attribute names and types discovered from that account's own data, which legitimately differs per caller.\nRequired: account_tag (query) — Account whose available analytics datasets are returned.\nOptional: include_columns (query) — Include column metadata for each returned dataset.; include_custom_attributes (query) — Include custom attribute names and types for each dataset that supports them.; dataset_name (query) — Return only the dataset with this exact name. An empty value does not filter the catalogue. An unknown name returns a successful response with an empty `datasets` array."
+  },
+  {
+    "id": "sql-api-query-get",
+    "name": "Query analytics datasets",
+    "description": "Query analytics datasets Executes a SQL query against the analytics datasets available to the caller. GET /client/v4/analytics/sql",
+    "context": "GET /client/v4/analytics/sql\nExecutes a SQL query against the analytics datasets available to the caller. SQL placeholders can be bound with query parameters named `param_ `, such as `param_status=404` for `$status`.\nRequired: query (query) — SQL query to execute."
+  },
+  {
+    "id": "sql-api-query-post",
+    "name": "Query analytics datasets",
+    "description": "Query analytics datasets Executes a SQL query against the analytics datasets available to the caller. POST /client/v4/analytics/sql",
+    "context": "POST /client/v4/analytics/sql\nExecutes a SQL query against the analytics datasets available to the caller. Send either raw SQL or a JSON object containing the query and optional positional or named parameters, time range, and account or zone scope. Raw SQL placeholders can also be bound with query parameters named `param_ `.\nRequired: body (body)"
+  }
+]

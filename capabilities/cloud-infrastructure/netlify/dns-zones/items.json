@@ -1,0 +1,56 @@
+[
+  {
+    "id": "createDnsRecord",
+    "name": "createDnsRecord",
+    "description": "createDnsRecord POST /api/v1/dns_zones/{zone_id}/dns_records",
+    "context": "POST /api/v1/dns_zones/{zone_id}/dns_records\ncreateDnsRecord\nRequired: body (body)"
+  },
+  {
+    "id": "createDnsZone",
+    "name": "createDnsZone",
+    "description": "createDnsZone POST /api/v1/dns_zones",
+    "context": "POST /api/v1/dns_zones\ncreateDnsZone\nRequired: body (body)"
+  },
+  {
+    "id": "deleteDnsRecord",
+    "name": "deleteDnsRecord",
+    "description": "deleteDnsRecord DELETE /api/v1/dns_zones/{zone_id}/dns_records/{dns_record_id}",
+    "context": "DELETE /api/v1/dns_zones/{zone_id}/dns_records/{dns_record_id}\ndeleteDnsRecord"
+  },
+  {
+    "id": "deleteDnsZone",
+    "name": "deleteDnsZone",
+    "description": "deleteDnsZone DELETE /api/v1/dns_zones/{zone_id}",
+    "context": "DELETE /api/v1/dns_zones/{zone_id}\ndeleteDnsZone"
+  },
+  {
+    "id": "getDnsRecords",
+    "name": "getDnsRecords",
+    "description": "getDnsRecords GET /api/v1/dns_zones/{zone_id}/dns_records",
+    "context": "GET /api/v1/dns_zones/{zone_id}/dns_records\ngetDnsRecords"
+  },
+  {
+    "id": "getDnsZone",
+    "name": "getDnsZone",
+    "description": "getDnsZone GET /api/v1/dns_zones/{zone_id}",
+    "context": "GET /api/v1/dns_zones/{zone_id}\ngetDnsZone"
+  },
+  {
+    "id": "getDnsZones",
+    "name": "getDnsZones",
+    "description": "getDnsZones GET /api/v1/dns_zones",
+    "context": "GET /api/v1/dns_zones\ngetDnsZones\nOptional: account_slug (query)"
+  },
+  {
+    "id": "getIndividualDnsRecord",
+    "name": "getIndividualDnsRecord",
+    "description": "getIndividualDnsRecord GET /api/v1/dns_zones/{zone_id}/dns_records/{dns_record_id}",
+    "context": "GET /api/v1/dns_zones/{zone_id}/dns_records/{dns_record_id}\ngetIndividualDnsRecord"
+  },
+  {
+    "id": "transferDnsZone",
+    "name": "transferDnsZone",
+    "description": "transferDnsZone PUT /api/v1/dns_zones/{zone_id}/transfer",
+    "context": "PUT /api/v1/dns_zones/{zone_id}/transfer\ntransferDnsZone"
+  }
+]

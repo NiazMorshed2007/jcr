@@ -1,0 +1,26 @@
+[
+  {
+    "id": "activity%2Fcheck-repo-is-starred-by-authenticated-user",
+    "name": "Check if a repository is starred by the authenticated user",
+    "description": "Check if a repository is starred by the authenticated user Whether the authenticated user has starred the repository. GET /user/starred/{owner}/{repo}",
+    "context": "GET /user/starred/{owner}/{repo}\nWhether the authenticated user has starred the repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "activity%2Flist-repos-starred-by-authenticated-user",
+    "name": "List repositories starred by the authenticated user",
+    "description": "List repositories starred by the authenticated user Lists repositories the authenticated user has starred. GET /user/starred",
+    "context": "GET /user/starred\nLists repositories the authenticated user has starred. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.\nOptional: sort (query) — The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.; direction (query) — The direction to sort the results by.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Fstar-repo-for-authenticated-user",
+    "name": "Star a repository for the authenticated user",
+    "description": "Star a repository for the authenticated user Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. PUT /user/starred/{owner}/{repo}",
+    "context": "PUT /user/starred/{owner}/{repo}\nNote that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "activity%2Funstar-repo-for-authenticated-user",
+    "name": "Unstar a repository for the authenticated user",
+    "description": "Unstar a repository for the authenticated user Unstar a repository that the authenticated user has previously starred. DELETE /user/starred/{owner}/{repo}",
+    "context": "DELETE /user/starred/{owner}/{repo}\nUnstar a repository that the authenticated user has previously starred.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  }
+]

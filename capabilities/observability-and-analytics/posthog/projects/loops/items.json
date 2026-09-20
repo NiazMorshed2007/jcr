@@ -1,0 +1,62 @@
+[
+  {
+    "id": "loops_create",
+    "name": "Create a loop",
+    "description": "Create a loop API for managing loops — named, cloud-executed agent automations triggered by schedule, GitHub events or authenticated API calls. POST /api/projects/{project_id}/loops/",
+    "context": "POST /api/projects/{project_id}/loops/\nAPI for managing loops — named, cloud-executed agent automations triggered by schedule, GitHub events or authenticated API calls. See `products/tasks/docs/LOOPS.md`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "loops_destroy",
+    "name": "Delete a loop",
+    "description": "Delete a loop Soft delete. DELETE /api/projects/{project_id}/loops/{id}/",
+    "context": "DELETE /api/projects/{project_id}/loops/{id}/\nSoft delete. Pauses every trigger's schedule. Owner or a project admin only.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "loops_list",
+    "name": "List loops",
+    "description": "List loops List loops visible to the caller: personal loops they own, plus every team loop. GET /api/projects/{project_id}/loops/",
+    "context": "GET /api/projects/{project_id}/loops/\nList loops visible to the caller: personal loops they own, plus every team loop. The response also carries `max_loops_per_team` and `total_loop_count` so a client can show remaining capacity and disable creation at the cap without hardcoding the limit.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "loops_partial_update",
+    "name": "Update a loop",
+    "description": "Update a loop Partial update. PATCH /api/projects/{project_id}/loops/{id}/",
+    "context": "PATCH /api/projects/{project_id}/loops/{id}/\nPartial update. Identity-bearing fields (instructions, repositories, connectors, behaviors, model config, triggers) are owner-only on team loops; name, description, notifications and enable/pause are editable by any team member.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "loops_preview_create",
+    "name": "Preview a loop fire",
+    "description": "Preview a loop fire Dry run: renders the assembled instructions and trigger context for a supplied sample payload (or a synthetic schedule fire when omitted), without creating a task, run, or any other side effect. POST /api/projects/{project_id}/loops/{id}/preview/",
+    "context": "POST /api/projects/{project_id}/loops/{id}/preview/\nDry run: renders the assembled instructions and trigger context for a supplied sample payload (or a synthetic schedule fire when omitted), without creating a task, run, or any other side effect.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "loops_retrieve",
+    "name": "Get a loop",
+    "description": "Get a loop API for managing loops — named, cloud-executed agent automations triggered by schedule, GitHub events or authenticated API calls. GET /api/projects/{project_id}/loops/{id}/",
+    "context": "GET /api/projects/{project_id}/loops/{id}/\nAPI for managing loops — named, cloud-executed agent automations triggered by schedule, GitHub events or authenticated API calls. See `products/tasks/docs/LOOPS.md`.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "loops_run_create",
+    "name": "Run a loop manually",
+    "description": "Run a loop manually Manual fire from the UI. POST /api/projects/{project_id}/loops/{id}/run/",
+    "context": "POST /api/projects/{project_id}/loops/{id}/run/\nManual fire from the UI. Owner-only for personal loops; any team member for team loops.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "loops_runs_retrieve",
+    "name": "List loop runs",
+    "description": "List loop runs Run history for a loop, newest first, cursor-paginated. GET /api/projects/{project_id}/loops/{id}/runs/",
+    "context": "GET /api/projects/{project_id}/loops/{id}/runs/\nRun history for a loop, newest first, cursor-paginated.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: cursor (query) — Opaque pagination cursor from a previous response's `next_cursor`.; limit (query) — Max results per page (default 50, max 100).; status (query) — Only return runs with this status. Use failed to read errors even when canvas state is unavailable. * `not_started` - Not Started * `queued` - Queued * `in_progress` - In Progress * `completed` - Completed * `failed` - Failed * `cancelled` - Cancelled"
+  },
+  {
+    "id": "loops_skill_bundles_update",
+    "name": "Replace a loop's skill bundles",
+    "description": "Replace a loop's skill bundles Replaces the loop's attached skill bundles wholesale: zipped local skills whose contents are seeded into every fired run's sandbox. PUT /api/projects/{project_id}/loops/{id}/skill_bundles/",
+    "context": "PUT /api/projects/{project_id}/loops/{id}/skill_bundles/\nReplaces the loop's attached skill bundles wholesale: zipped local skills whose contents are seeded into every fired run's sandbox. Send an empty list to detach every skill. Owner-only on team loops, like other identity-bearing configuration.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "loops_trigger_create",
+    "name": "Fire a loop externally",
+    "description": "Fire a loop externally Authenticated POST trigger for `type=api` triggers. POST /api/projects/{project_id}/loops/{id}/trigger/",
+    "context": "POST /api/projects/{project_id}/loops/{id}/trigger/\nAuthenticated POST trigger for `type=api` triggers. Project secret API key auth (`loop:write` scope), project-wide. Request body (JSON, capped at 64 KB) becomes run context. Send an `Idempotency-Key` header to dedupe retries.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

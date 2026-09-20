@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v1-delete-network-bans",
+    "name": "Remove network bans.",
+    "description": "Remove network bans. This is an **experimental** endpoint. DELETE /v1/projects/{ref}/network-bans",
+    "context": "DELETE /v1/projects/{ref}/network-bans\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-list-all-network-bans",
+    "name": "Gets project's network bans",
+    "description": "Gets project's network bans This is an **experimental** endpoint. POST /v1/projects/{ref}/network-bans/retrieve",
+    "context": "POST /v1/projects/{ref}/network-bans/retrieve\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-list-all-network-bans-enriched",
+    "name": "Gets project's network bans with additional information about which databases they affect",
+    "description": "Gets project's network bans with additional information about which databases they affect This is an **experimental** endpoint. POST /v1/projects/{ref}/network-bans/retrieve/enriched",
+    "context": "POST /v1/projects/{ref}/network-bans/retrieve/enriched\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  }
+]

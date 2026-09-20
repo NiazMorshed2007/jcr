@@ -1,0 +1,38 @@
+[
+  {
+    "id": "schema_property_groups_create",
+    "name": "schema_property_groups_create",
+    "description": "schema_property_groups_create POST /api/projects/{project_id}/schema_property_groups/",
+    "context": "POST /api/projects/{project_id}/schema_property_groups/\nschema_property_groups_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "schema_property_groups_destroy",
+    "name": "schema_property_groups_destroy",
+    "description": "schema_property_groups_destroy DELETE /api/projects/{project_id}/schema_property_groups/{id}/",
+    "context": "DELETE /api/projects/{project_id}/schema_property_groups/{id}/\nschema_property_groups_destroy\nRequired: id (path) — A UUID string identifying this schema property group.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "schema_property_groups_list",
+    "name": "schema_property_groups_list",
+    "description": "schema_property_groups_list GET /api/projects/{project_id}/schema_property_groups/",
+    "context": "GET /api/projects/{project_id}/schema_property_groups/\nschema_property_groups_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "schema_property_groups_partial_update",
+    "name": "schema_property_groups_partial_update",
+    "description": "schema_property_groups_partial_update PATCH /api/projects/{project_id}/schema_property_groups/{id}/",
+    "context": "PATCH /api/projects/{project_id}/schema_property_groups/{id}/\nschema_property_groups_partial_update\nRequired: id (path) — A UUID string identifying this schema property group.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "schema_property_groups_retrieve",
+    "name": "schema_property_groups_retrieve",
+    "description": "schema_property_groups_retrieve GET /api/projects/{project_id}/schema_property_groups/{id}/",
+    "context": "GET /api/projects/{project_id}/schema_property_groups/{id}/\nschema_property_groups_retrieve\nRequired: id (path) — A UUID string identifying this schema property group.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "schema_property_groups_update",
+    "name": "schema_property_groups_update",
+    "description": "schema_property_groups_update PUT /api/projects/{project_id}/schema_property_groups/{id}/",
+    "context": "PUT /api/projects/{project_id}/schema_property_groups/{id}/\nschema_property_groups_update\nRequired: id (path) — A UUID string identifying this schema property group.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

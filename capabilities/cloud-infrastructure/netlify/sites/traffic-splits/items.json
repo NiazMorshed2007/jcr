@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createSplitTest",
+    "name": "createSplitTest",
+    "description": "createSplitTest POST /api/v1/sites/{site_id}/traffic_splits",
+    "context": "POST /api/v1/sites/{site_id}/traffic_splits\ncreateSplitTest\nRequired: body (body)"
+  },
+  {
+    "id": "disableSplitTest",
+    "name": "disableSplitTest",
+    "description": "disableSplitTest POST /api/v1/sites/{site_id}/traffic_splits/{split_test_id}/unpublish",
+    "context": "POST /api/v1/sites/{site_id}/traffic_splits/{split_test_id}/unpublish\ndisableSplitTest"
+  },
+  {
+    "id": "enableSplitTest",
+    "name": "enableSplitTest",
+    "description": "enableSplitTest POST /api/v1/sites/{site_id}/traffic_splits/{split_test_id}/publish",
+    "context": "POST /api/v1/sites/{site_id}/traffic_splits/{split_test_id}/publish\nenableSplitTest"
+  },
+  {
+    "id": "getSplitTest",
+    "name": "getSplitTest",
+    "description": "getSplitTest GET /api/v1/sites/{site_id}/traffic_splits/{split_test_id}",
+    "context": "GET /api/v1/sites/{site_id}/traffic_splits/{split_test_id}\ngetSplitTest"
+  },
+  {
+    "id": "getSplitTests",
+    "name": "getSplitTests",
+    "description": "getSplitTests GET /api/v1/sites/{site_id}/traffic_splits",
+    "context": "GET /api/v1/sites/{site_id}/traffic_splits\ngetSplitTests"
+  },
+  {
+    "id": "updateSplitTest",
+    "name": "updateSplitTest",
+    "description": "updateSplitTest PUT /api/v1/sites/{site_id}/traffic_splits/{split_test_id}",
+    "context": "PUT /api/v1/sites/{site_id}/traffic_splits/{split_test_id}\nupdateSplitTest\nRequired: body (body)"
+  }
+]

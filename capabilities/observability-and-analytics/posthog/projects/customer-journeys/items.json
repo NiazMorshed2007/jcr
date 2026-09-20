@@ -1,0 +1,38 @@
+[
+  {
+    "id": "customer_journeys_create",
+    "name": "customer_journeys_create",
+    "description": "customer_journeys_create POST /api/projects/{project_id}/customer_journeys/",
+    "context": "POST /api/projects/{project_id}/customer_journeys/\ncustomer_journeys_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "customer_journeys_destroy",
+    "name": "customer_journeys_destroy",
+    "description": "customer_journeys_destroy DELETE /api/projects/{project_id}/customer_journeys/{id}/",
+    "context": "DELETE /api/projects/{project_id}/customer_journeys/{id}/\ncustomer_journeys_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_journeys_list",
+    "name": "customer_journeys_list",
+    "description": "customer_journeys_list GET /api/projects/{project_id}/customer_journeys/",
+    "context": "GET /api/projects/{project_id}/customer_journeys/\ncustomer_journeys_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "customer_journeys_partial_update",
+    "name": "customer_journeys_partial_update",
+    "description": "customer_journeys_partial_update PATCH /api/projects/{project_id}/customer_journeys/{id}/",
+    "context": "PATCH /api/projects/{project_id}/customer_journeys/{id}/\ncustomer_journeys_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "customer_journeys_retrieve",
+    "name": "customer_journeys_retrieve",
+    "description": "customer_journeys_retrieve GET /api/projects/{project_id}/customer_journeys/{id}/",
+    "context": "GET /api/projects/{project_id}/customer_journeys/{id}/\ncustomer_journeys_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_journeys_update",
+    "name": "customer_journeys_update",
+    "description": "customer_journeys_update PUT /api/projects/{project_id}/customer_journeys/{id}/",
+    "context": "PUT /api/projects/{project_id}/customer_journeys/{id}/\ncustomer_journeys_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

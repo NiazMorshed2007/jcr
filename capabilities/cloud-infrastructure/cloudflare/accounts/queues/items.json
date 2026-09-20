@@ -1,0 +1,140 @@
+[
+  {
+    "id": "queues-ack-messages",
+    "name": "Acknowledge + Retry Queue Messages",
+    "description": "Acknowledge + Retry Queue Messages Acknowledge + Retry messages from a Queue POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/ack",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/ack\nAcknowledge + Retry messages from a Queue\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-ack-preview-messages",
+    "name": "Delete Previewed Queue Messages",
+    "description": "Delete Previewed Queue Messages Delete previewed messages from a Queue. POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/preview/ack",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/preview/ack\nDelete previewed messages from a Queue. Note that messages acknowledged this way aren't considered delivered, they are instantly deleted from this queue and do not affect metrics.\nRequired: queue_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "queues-create",
+    "name": "Create Queue",
+    "description": "Create Queue Create a new queue POST /client/v4/accounts/{account_id}/queues",
+    "context": "POST /client/v4/accounts/{account_id}/queues\nCreate a new queue\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-create-consumer",
+    "name": "Create a Queue Consumer",
+    "description": "Create a Queue Consumer Creates a new consumer for a Queue POST /client/v4/accounts/{account_id}/queues/{queue_id}/consumers",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/consumers\nCreates a new consumer for a Queue\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-delete",
+    "name": "Delete Queue",
+    "description": "Delete Queue Deletes a queue DELETE /client/v4/accounts/{account_id}/queues/{queue_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/queues/{queue_id}\nDeletes a queue\nRequired: queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-delete-consumer",
+    "name": "Delete Queue Consumer",
+    "description": "Delete Queue Consumer Deletes the consumer for a queue. DELETE /client/v4/accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}\nDeletes the consumer for a queue.\nRequired: consumer_id (path); queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-extend-messages",
+    "name": "Extend Message Leases",
+    "description": "Extend Message Leases Extend the lease on a message. POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/extend",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/extend\nExtend the lease on a message. This creates a new lease ID on your message without incrementing the message's `attempts` counter.\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-get",
+    "name": "Get Queue",
+    "description": "Get Queue Get details about a specific queue. GET /client/v4/accounts/{account_id}/queues/{queue_id}",
+    "context": "GET /client/v4/accounts/{account_id}/queues/{queue_id}\nGet details about a specific queue.\nRequired: queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-get-consumer",
+    "name": "Get Queue Consumer",
+    "description": "Get Queue Consumer Fetches the consumer for a queue by consumer id GET /client/v4/accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}",
+    "context": "GET /client/v4/accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}\nFetches the consumer for a queue by consumer id\nRequired: consumer_id (path); queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-get-metrics",
+    "name": "Get Queue Metrics",
+    "description": "Get Queue Metrics Return best-effort metrics for a queue. GET /client/v4/accounts/{account_id}/queues/{queue_id}/metrics",
+    "context": "GET /client/v4/accounts/{account_id}/queues/{queue_id}/metrics\nReturn best-effort metrics for a queue. Values may be approximate due to the distributed nature of queues.\nRequired: queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-list",
+    "name": "List Queues",
+    "description": "List Queues Returns the queues owned by an account. GET /client/v4/accounts/{account_id}/queues",
+    "context": "GET /client/v4/accounts/{account_id}/queues\nReturns the queues owned by an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "queues-list-consumers",
+    "name": "List Queue Consumers",
+    "description": "List Queue Consumers Returns the consumers for a Queue GET /client/v4/accounts/{account_id}/queues/{queue_id}/consumers",
+    "context": "GET /client/v4/accounts/{account_id}/queues/{queue_id}/consumers\nReturns the consumers for a Queue\nRequired: queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-peek-messages",
+    "name": "Peek Queue Messages",
+    "description": "Peek Queue Messages Peek messages from a Queue without leasing them. POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/peek",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/peek\nPeek messages from a Queue without leasing them. Messages remain available for subsequent peek or pull operations.\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-preview-messages",
+    "name": "Preview Queue Messages",
+    "description": "Preview Queue Messages Preview messages from a Queue without leasing them. POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/preview",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/preview\nPreview messages from a Queue without leasing them. Messages remain available for subsequent preview or pull operations.\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-pull-messages",
+    "name": "Pull Queue Messages",
+    "description": "Pull Queue Messages Pull a batch of messages from a Queue POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/pull",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/pull\nPull a batch of messages from a Queue\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-purge",
+    "name": "Purge Queue",
+    "description": "Purge Queue Deletes all messages from the Queue. POST /client/v4/accounts/{account_id}/queues/{queue_id}/purge",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/purge\nDeletes all messages from the Queue.\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-purge-get",
+    "name": "Get Queue Purge Status",
+    "description": "Get Queue Purge Status Get details about a Queue's purge status. GET /client/v4/accounts/{account_id}/queues/{queue_id}/purge",
+    "context": "GET /client/v4/accounts/{account_id}/queues/{queue_id}/purge\nGet details about a Queue's purge status.\nRequired: queue_id (path); account_id (path)"
+  },
+  {
+    "id": "queues-purge-messages",
+    "name": "Purge Peeked Queue Messages",
+    "description": "Purge Peeked Queue Messages Delete peeked messages from a Queue by their ref. POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/purge",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/purge\nDelete peeked messages from a Queue by their ref. Purged messages aren't considered delivered, they are instantly deleted from this queue and do not affect metrics.\nRequired: queue_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "queues-push-message",
+    "name": "Push Message",
+    "description": "Push Message Push a message to a Queue POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages\nPush a message to a Queue\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-push-messages",
+    "name": "Push Message Batch",
+    "description": "Push Message Batch Push a batch of message to a Queue POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/batch",
+    "context": "POST /client/v4/accounts/{account_id}/queues/{queue_id}/messages/batch\nPush a batch of message to a Queue\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-update",
+    "name": "Update Queue",
+    "description": "Update Queue Updates a Queue. PUT /client/v4/accounts/{account_id}/queues/{queue_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/queues/{queue_id}\nUpdates a Queue. Note that this endpoint does not support partial updates. If successful, the Queue's configuration is overwritten with the supplied configuration.\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "queues-update-consumer",
+    "name": "Update Queue Consumer",
+    "description": "Update Queue Consumer Updates the consumer for a queue, or creates one if it does not exist. PUT /client/v4/accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}\nUpdates the consumer for a queue, or creates one if it does not exist.\nRequired: consumer_id (path); queue_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "queues-update-partial",
+    "name": "Update Queue",
+    "description": "Update Queue Updates a Queue. PATCH /client/v4/accounts/{account_id}/queues/{queue_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/queues/{queue_id}\nUpdates a Queue.\nRequired: queue_id (path); account_id (path)\nOptional: body (body)"
+  }
+]

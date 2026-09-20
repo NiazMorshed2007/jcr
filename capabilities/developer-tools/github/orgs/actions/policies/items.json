@@ -1,0 +1,32 @@
+[
+  {
+    "id": "actions%2Fcreate-org-actions-policy",
+    "name": "Create an organization Actions policy",
+    "description": "Create an organization Actions policy Create an Actions policy for an organization. POST /orgs/{org}/actions/policies",
+    "context": "POST /orgs/{org}/actions/policies\nCreate an Actions policy for an organization. Omitting `workflow_path` targets all workflows without storing an explicit condition.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body) — Request body"
+  },
+  {
+    "id": "actions%2Fdelete-org-actions-policy",
+    "name": "Delete an organization Actions policy",
+    "description": "Delete an organization Actions policy Delete an Actions policy for an organization. DELETE /orgs/{org}/actions/policies/{policy_id}",
+    "context": "DELETE /orgs/{org}/actions/policies/{policy_id}\nDelete an Actions policy for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; policy_id (path) — The ID of the policy."
+  },
+  {
+    "id": "actions%2Fget-org-actions-policies",
+    "name": "List organization Actions policies",
+    "description": "List organization Actions policies List all Actions policies for an organization. GET /orgs/{org}/actions/policies",
+    "context": "GET /orgs/{org}/actions/policies\nList all Actions policies for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; has_parents (query) — Include policies configured at higher levels that apply to this organization"
+  },
+  {
+    "id": "actions%2Fget-org-actions-policy",
+    "name": "Get an organization Actions policy",
+    "description": "Get an organization Actions policy Get a specific Actions policy for an organization. GET /orgs/{org}/actions/policies/{policy_id}",
+    "context": "GET /orgs/{org}/actions/policies/{policy_id}\nGet a specific Actions policy for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; policy_id (path) — The ID of the policy."
+  },
+  {
+    "id": "actions%2Fupdate-org-actions-policy",
+    "name": "Update an organization Actions policy",
+    "description": "Update an organization Actions policy Update an Actions policy for an organization. PUT /orgs/{org}/actions/policies/{policy_id}",
+    "context": "PUT /orgs/{org}/actions/policies/{policy_id}\nUpdate an Actions policy for an organization. Omitting `workflow_path` preserves the policy's existing workflow targeting.\nRequired: org (path) — The organization name. The name is not case sensitive.; policy_id (path) — The ID of the policy.; body (body) — Request body"
+  }
+]

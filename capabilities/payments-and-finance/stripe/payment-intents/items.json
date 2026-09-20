@@ -1,0 +1,74 @@
+[
+  {
+    "id": "GetPaymentIntents",
+    "name": "List all PaymentIntents",
+    "description": "List all PaymentIntents Returns a list of PaymentIntents. GET /v1/payment_intents",
+    "context": "GET /v1/payment_intents\nReturns a list of PaymentIntents.\nOptional: created (query) — A filter on the list, based on the object `created` field. The value can be a string with an integer Unix timestamp or a dictionary with a number of different query options.; customer (query) — Only return PaymentIntents for the customer that this customer ID specifies.; customer_account (query) — Only return PaymentIntents for the account representing the customer that this ID specifies.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetPaymentIntentsIntent",
+    "name": "Retrieve a PaymentIntent",
+    "description": "Retrieve a PaymentIntent Retrieves the details of a PaymentIntent that has previously been created. GET /v1/payment_intents/{intent}",
+    "context": "GET /v1/payment_intents/{intent}\nRetrieves the details of a PaymentIntent that has previously been created. You can retrieve a PaymentIntent client-side using a publishable key when the client_secret is in the query string. If you retrieve a PaymentIntent with a publishable key, it only returns a subset of properties. Refer to the payment intent object reference for more details.\nRequired: intent (path)\nOptional: client_secret (query) — The client secret of the PaymentIntent. We require it if you use a publishable key to retrieve the source.; expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetPaymentIntentsIntentAmountDetailsLineItems",
+    "name": "List all PaymentIntent LineItems",
+    "description": "List all PaymentIntent LineItems Lists all LineItems of a given PaymentIntent. GET /v1/payment_intents/{intent}/amount_details_line_items",
+    "context": "GET /v1/payment_intents/{intent}/amount_details_line_items\nLists all LineItems of a given PaymentIntent.\nRequired: intent (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetPaymentIntentsSearch",
+    "name": "Search PaymentIntents",
+    "description": "Search PaymentIntents Search for PaymentIntents you’ve previously created using Stripe’s Search Query Language . GET /v1/payment_intents/search",
+    "context": "GET /v1/payment_intents/search\nSearch for PaymentIntents you’ve previously created using Stripe’s Search Query Language . Don’t use search in read-after-write flows where strict consistency is necessary. Under normal operating conditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up to an hour behind during outages. Search functionality is not available to merchants in India.\nRequired: query (query) — The search query string. See [search query language](https://docs.stripe.com/search#search-query-language) and the list of supported [query fields for payment intents](https://docs.stripe.com/search#query-fields-for-paymentintents).\nOptional: expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; page (query) — A cursor for pagination across multiple pages of results. Don't include this parameter on the first call. Use the next_page value returned in a previous response to request subsequent results.; body (body)"
+  },
+  {
+    "id": "PostPaymentIntents",
+    "name": "Create a PaymentIntent",
+    "description": "Create a PaymentIntent Creates a PaymentIntent object. POST /v1/payment_intents",
+    "context": "POST /v1/payment_intents\nCreates a PaymentIntent object. After the PaymentIntent is created, attach a payment method and confirm to continue the payment. Learn more about the available payment flows with the Payment Intents API . When you use confirm=true during creation, it’s equivalent to creating and confirming the PaymentIntent in the same call. You can use any parameters available in the confirm API when you supply confirm=true .\nRequired: body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntent",
+    "name": "Update a PaymentIntent",
+    "description": "Update a PaymentIntent Updates properties on a PaymentIntent object without confirming. POST /v1/payment_intents/{intent}",
+    "context": "POST /v1/payment_intents/{intent}\nUpdates properties on a PaymentIntent object without confirming. Depending on which properties you update, you might need to confirm the PaymentIntent again. For example, updating the payment_method always requires you to confirm the PaymentIntent again. If you prefer to update and confirm at the same time, we recommend updating properties through the confirm API instead.\nRequired: intent (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntentApplyCustomerBalance",
+    "name": "Reconcile a customer_balance PaymentIntent",
+    "description": "Reconcile a customer_balance PaymentIntent Manually reconcile the remaining amount for a customer_balance PaymentIntent. POST /v1/payment_intents/{intent}/apply_customer_balance",
+    "context": "POST /v1/payment_intents/{intent}/apply_customer_balance\nManually reconcile the remaining amount for a customer_balance PaymentIntent.\nRequired: intent (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntentCancel",
+    "name": "Cancel a PaymentIntent",
+    "description": "Cancel a PaymentIntent You can cancel a PaymentIntent object when it’s in one of these statuses: requires_payment_method , requires_capture , requires_confirmation , requires_action or, in rare cases , processing . POST /v1/payment_intents/{intent}/cancel",
+    "context": "POST /v1/payment_intents/{intent}/cancel\nYou can cancel a PaymentIntent object when it’s in one of these statuses: requires_payment_method , requires_capture , requires_confirmation , requires_action or, in rare cases , processing . After it’s canceled, no additional charges are made by the PaymentIntent and any operations on the PaymentIntent fail with an error. For PaymentIntents with a status of requires_capture , the remaining amount_capturable is automatically refunded. You can directly cancel the PaymentIntent for a Checkout Session only when the PaymentIntent has a status of requires_capture . Otherwise, you must expire the Checkout Session .\nRequired: intent (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntentCapture",
+    "name": "Capture a PaymentIntent",
+    "description": "Capture a PaymentIntent Capture the funds of an existing uncaptured PaymentIntent when its status is requires_capture . POST /v1/payment_intents/{intent}/capture",
+    "context": "POST /v1/payment_intents/{intent}/capture\nCapture the funds of an existing uncaptured PaymentIntent when its status is requires_capture . Uncaptured PaymentIntents are cancelled a set number of days (7 by default) after their creation. Learn more about separate authorization and capture .\nRequired: intent (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntentConfirm",
+    "name": "Confirm a PaymentIntent",
+    "description": "Confirm a PaymentIntent Confirm that your customer intends to pay with current or provided payment method. POST /v1/payment_intents/{intent}/confirm",
+    "context": "POST /v1/payment_intents/{intent}/confirm\nConfirm that your customer intends to pay with current or provided payment method. Upon confirmation, the PaymentIntent will attempt to initiate a payment. If the selected payment method requires additional authentication steps, the PaymentIntent will transition to the requires_action status and suggest additional actions via next_action . If payment fails, the PaymentIntent transitions to the requires_payment_method status or the canceled status if the confirmation limit is reached. If payment succeeds, the PaymentIntent will transition to the succeeded status (or requires_capture , if capture_method is set to manual ). If the confirmation_method is automatic , payment may be attempted using our client SDKs and the PaymentIntent’s client_secret . After next_action s are handled by the client, no additional confirmation is required to complete the payment. If the confirmation_method is manual , all payment attempts must be initiated using a secret key. If any actions are required for the payment, the PaymentIntent will return to the requires_confirmation state after those actions are completed. Your server needs to then explicitly re-confirm the PaymentIntent to initiate the next payment attempt. There is a variable upper limit on how many times a PaymentIntent can be confirmed. After this limit is reached, any further calls to this endpoint will transition the PaymentIntent to the canceled state.\nRequired: intent (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntentIncrementAuthorization",
+    "name": "Increment an authorization",
+    "description": "Increment an authorization Perform an incremental authorization on an eligible PaymentIntent . POST /v1/payment_intents/{intent}/increment_authorization",
+    "context": "POST /v1/payment_intents/{intent}/increment_authorization\nPerform an incremental authorization on an eligible PaymentIntent . To be eligible, the PaymentIntent’s status must be requires_capture and incremental_authorization_supported must be true . Incremental authorizations attempt to increase the authorized amount on your customer’s card to the new, higher amount provided. Similar to the initial authorization, incremental authorizations can be declined. A single PaymentIntent can call this endpoint multiple times to further increase the authorized amount. If the incremental authorization succeeds, the PaymentIntent object returns with the updated amount . If the incremental authorization fails, a card_declined error returns, and no other fields on the PaymentIntent or Charge update. The PaymentIntent object remains capturable for the previously authorized amount. Each PaymentIntent can have a maximum of 10 incremental authorization attempts, including declines. After it’s captured, a PaymentIntent can no longer be incremented. Learn more about incremental authorizations with in-person payments and online payments .\nRequired: intent (path); body (body)"
+  },
+  {
+    "id": "PostPaymentIntentsIntentVerifyMicrodeposits",
+    "name": "Verify microdeposits on a PaymentIntent",
+    "description": "Verify microdeposits on a PaymentIntent Verifies microdeposits on a PaymentIntent object. POST /v1/payment_intents/{intent}/verify_microdeposits",
+    "context": "POST /v1/payment_intents/{intent}/verify_microdeposits\nVerifies microdeposits on a PaymentIntent object.\nRequired: intent (path)\nOptional: body (body)"
+  }
+]

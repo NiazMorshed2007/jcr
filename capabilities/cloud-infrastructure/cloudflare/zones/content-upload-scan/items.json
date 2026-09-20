@@ -1,0 +1,50 @@
+[
+  {
+    "id": "waf-content-scanning-add-custom-scan-expressions",
+    "name": "Create Content Scanning custom expressions for a zone.",
+    "description": "Create Content Scanning custom expressions for a zone. Create one or more Content Scanning custom expressions, appending them to the existing list of the zone, and return the updated list. POST /client/v4/zones/{zone_id}/content-upload-scan/payloads",
+    "context": "POST /client/v4/zones/{zone_id}/content-upload-scan/payloads\nCreate one or more Content Scanning custom expressions, appending them to the existing list of the zone, and return the updated list. Each expression reaches content objects the scanner cannot find automatically, for example `lookup_json_string(http.request.body.raw, \"file\")`.\nRequired: zone_id (path); body (body) — Array of Content Scanning custom expressions to create."
+  },
+  {
+    "id": "waf-content-scanning-delete-custom-scan-expressions",
+    "name": "Delete a Content Scanning custom expression from a zone.",
+    "description": "Delete a Content Scanning custom expression from a zone. Delete the Content Scanning custom expression with the given identifier and return the expressions that remain. DELETE /client/v4/zones/{zone_id}/content-upload-scan/payloads/{expression_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/content-upload-scan/payloads/{expression_id}\nDelete the Content Scanning custom expression with the given identifier and return the expressions that remain. Content objects reached only by the deleted expression are no longer scanned.\nRequired: zone_id (path); expression_id (path)"
+  },
+  {
+    "id": "waf-content-scanning-disable",
+    "name": "Disable Content Scanning for a zone.",
+    "description": "Disable Content Scanning for a zone. Disable Content Scanning for a zone. POST /client/v4/zones/{zone_id}/content-upload-scan/disable",
+    "context": "POST /client/v4/zones/{zone_id}/content-upload-scan/disable\nDisable Content Scanning for a zone. The `cf.waf.content_scan.*` fields are no longer populated, so rules that reference them stop matching.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "waf-content-scanning-enable",
+    "name": "Enable Content Scanning for a zone.",
+    "description": "Enable Content Scanning for a zone. Enable Content Scanning for a zone, so that Cloudflare inspects content objects uploaded to the zone and checks them for malware. POST /client/v4/zones/{zone_id}/content-upload-scan/enable",
+    "context": "POST /client/v4/zones/{zone_id}/content-upload-scan/enable\nEnable Content Scanning for a zone, so that Cloudflare inspects content objects uploaded to the zone and checks them for malware. Scan results populate the `cf.waf.content_scan.*` fields, which you can reference in custom rules and rate limiting rules.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "waf-content-scanning-get-status",
+    "name": "Get the Content Scanning status for a zone.",
+    "description": "Get the Content Scanning status for a zone. Get the current Content Scanning status for the zone, together with the date the status was last modified. GET /client/v4/zones/{zone_id}/content-upload-scan/settings",
+    "context": "GET /client/v4/zones/{zone_id}/content-upload-scan/settings\nGet the current Content Scanning status for the zone, together with the date the status was last modified.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "waf-content-scanning-list-custom-scan-expressions",
+    "name": "List the Content Scanning custom expressions of a zone.",
+    "description": "List the Content Scanning custom expressions of a zone. List the Content Scanning custom expressions configured for the zone, each with its own identifier. GET /client/v4/zones/{zone_id}/content-upload-scan/payloads",
+    "context": "GET /client/v4/zones/{zone_id}/content-upload-scan/payloads\nList the Content Scanning custom expressions configured for the zone, each with its own identifier. A custom expression tells the scanner how to reach content objects in a request it cannot parse on its own, such as files Base64-encoded inside a JSON body.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "waf-content-scanning-update-custom-scan-expression",
+    "name": "Update a Content Scanning custom expression for a zone.",
+    "description": "Update a Content Scanning custom expression for a zone. Update the Content Scanning custom expression with the given identifier and return the updated list of expressions. PATCH /client/v4/zones/{zone_id}/content-upload-scan/payloads/{expression_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/content-upload-scan/payloads/{expression_id}\nUpdate the Content Scanning custom expression with the given identifier and return the updated list of expressions.\nRequired: zone_id (path); expression_id (path); body (body) — Content Scanning custom expression to update."
+  },
+  {
+    "id": "waf-content-scanning-update-settings",
+    "name": "Update the Content Scanning status for a zone.",
+    "description": "Update the Content Scanning status for a zone. Update the Content Scanning status by setting the status value to `enabled` or `disabled`. PUT /client/v4/zones/{zone_id}/content-upload-scan/settings",
+    "context": "PUT /client/v4/zones/{zone_id}/content-upload-scan/settings\nUpdate the Content Scanning status by setting the status value to `enabled` or `disabled`. This is equivalent to calling the dedicated enable and disable endpoints.\nRequired: zone_id (path); body (body) — Content Scanning settings to update."
+  }
+]

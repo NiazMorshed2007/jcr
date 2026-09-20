@@ -1,0 +1,32 @@
+[
+  {
+    "id": "invites_bulk_create",
+    "name": "invites_bulk_create",
+    "description": "invites_bulk_create POST /api/organizations/{organization_id}/invites/bulk/",
+    "context": "POST /api/organizations/{organization_id}/invites/bulk/\ninvites_bulk_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "invites_create",
+    "name": "invites_create",
+    "description": "invites_create POST /api/organizations/{organization_id}/invites/",
+    "context": "POST /api/organizations/{organization_id}/invites/\ninvites_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "invites_delegate_create",
+    "name": "Create an onboarding delegation invite: an admin-level invite flagged as a setup delegation",
+    "description": "Create an onboarding delegation invite: an admin-level invite flagged as a setup delegation Create an onboarding delegation invite: an admin-level invite flagged as a setup delegation. POST /api/organizations/{organization_id}/invites/delegate/",
+    "context": "POST /api/organizations/{organization_id}/invites/delegate/\nCreate an onboarding delegation invite: an admin-level invite flagged as a setup delegation. Sends a single dedicated delegation email and records the inviting user as having delegated.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "invites_destroy",
+    "name": "invites_destroy",
+    "description": "invites_destroy DELETE /api/organizations/{organization_id}/invites/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/invites/{id}/\ninvites_destroy\nRequired: id (path) — A UUID string identifying this organization invite.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "invites_list",
+    "name": "invites_list",
+    "description": "invites_list GET /api/organizations/{organization_id}/invites/",
+    "context": "GET /api/organizations/{organization_id}/invites/\ninvites_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  }
+]

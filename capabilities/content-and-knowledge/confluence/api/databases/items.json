@@ -1,0 +1,92 @@
+[
+  {
+    "id": "createDatabase",
+    "name": "Create database",
+    "description": "Create database Creates a database in the space. POST /wiki/api/v2/databases",
+    "context": "POST /wiki/api/v2/databases\nCreates a database in the space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the corresponding space. Permission to create a database in the space.\nRequired: body (body)\nOptional: private (query) — The database will be private. Only the user who creates this database will have permission to view and edit one."
+  },
+  {
+    "id": "createDatabaseProperty",
+    "name": "Create content property for database",
+    "description": "Create content property for database Creates a new content property for a database. POST /wiki/api/v2/databases/{id}/properties",
+    "context": "POST /wiki/api/v2/databases/{id}/properties\nCreates a new content property for a database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the database.\nRequired: id (path) — The ID of the database to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deleteDatabase",
+    "name": "Delete database",
+    "description": "Delete database Delete a database by id. DELETE /wiki/api/v2/databases/{id}",
+    "context": "DELETE /wiki/api/v2/databases/{id}\nDelete a database by id. Deleting a database moves the database to the trash, where it can be restored later **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the database and its corresponding space. Permission to delete databases in the space.\nRequired: id (path) — The ID of the database to be deleted."
+  },
+  {
+    "id": "deleteDatabasePropertyById",
+    "name": "Delete content property for database by id",
+    "description": "Delete content property for database by id Deletes a content property for a database by its id. DELETE /wiki/api/v2/databases/{database-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/databases/{database-id}/properties/{property-id}\nDeletes a content property for a database by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the database.\nRequired: database-id (path) — The ID of the database the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getDatabaseAncestors",
+    "name": "Get all ancestors of database",
+    "description": "Get all ancestors of database Returns all ancestors for a given database by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). GET /wiki/api/v2/databases/{id}/ancestors",
+    "context": "GET /wiki/api/v2/databases/{id}/ancestors\nReturns all ancestors for a given database by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the ID of first ancestor in the response payload. This endpoint returns minimal information about each ancestor. To fetch more details, use a related endpoint, such as [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the database and its corresponding space\nRequired: id (path) — The ID of the database.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the highest ancestor's ID to fetch the next set of results."
+  },
+  {
+    "id": "getDatabaseById",
+    "name": "Get database by id",
+    "description": "Get database by id Returns a specific database. GET /wiki/api/v2/databases/{id}",
+    "context": "GET /wiki/api/v2/databases/{id}\nReturns a specific database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the database and its corresponding space.\nRequired: id (path) — The ID of the database to be returned\nOptional: include-collaborators (query) — Includes collaborators on the database.; include-direct-children (query) — Includes direct children of the database, as defined in the `ChildrenResponse` object.; include-operations (query) — Includes operations associated with this database in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes content properties associated with this database in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results."
+  },
+  {
+    "id": "getDatabaseClassificationLevel",
+    "name": "Get database classification level",
+    "description": "Get database classification level Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific database. GET /wiki/api/v2/databases/{id}/classification-level",
+    "context": "GET /wiki/api/v2/databases/{id}/classification-level\nReturns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the database.\nRequired: id (path) — The ID of the database for which classification level should be returned."
+  },
+  {
+    "id": "getDatabaseContentProperties",
+    "name": "Get content properties for database",
+    "description": "Get content properties for database Retrieves Content Properties tied to a specified database. GET /wiki/api/v2/databases/{id}/properties",
+    "context": "GET /wiki/api/v2/databases/{id}/properties\nRetrieves Content Properties tied to a specified database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the database.\nRequired: id (path) — The ID of the database for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getDatabaseContentPropertiesById",
+    "name": "Get content property for database by id",
+    "description": "Get content property for database by id Retrieves a specific Content Property by ID that is attached to a specified database. GET /wiki/api/v2/databases/{database-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/databases/{database-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the database.\nRequired: database-id (path) — The ID of the database for which content properties should be returned.; property-id (path) — The ID of the content property being requested."
+  },
+  {
+    "id": "getDatabaseDescendants",
+    "name": "Get descendants of a database",
+    "description": "Get descendants of a database Returns descendants in the content tree for a given database by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). GET /wiki/api/v2/databases/{id}/descendants",
+    "context": "GET /wiki/api/v2/databases/{id}/descendants\nReturns descendants in the content tree for a given database by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the cursor in the response payload. There is also a `depth` parameter specifying depth of descendants to be fetched. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each descendant. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the database and its corresponding space\nRequired: id (path) — The ID of the database.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the cursor to fetch the next set of results.; depth (query) — Maximum depth of descendants to return. If more results are required, use the endpoint corresponding to the content type of the deepest descendant to fetch more descendants.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results."
+  },
+  {
+    "id": "getDatabaseDirectChildren",
+    "name": "Get direct children of a database",
+    "description": "Get direct children of a database Returns all children for given database id in the content tree. GET /wiki/api/v2/databases/{id}/direct-children",
+    "context": "GET /wiki/api/v2/databases/{id}/direct-children\nReturns all children for given database id in the content tree. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each child. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only content that the user has permission to view will be returned.\nRequired: id (path) — The ID of the parent database.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of items per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getDatabaseOperations",
+    "name": "Get permitted operations for a database",
+    "description": "Get permitted operations for a database Returns the permitted operations on specific database. GET /wiki/api/v2/databases/{id}/operations",
+    "context": "GET /wiki/api/v2/databases/{id}/operations\nReturns the permitted operations on specific database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the database and its corresponding space.\nRequired: id (path) — The ID of the database for which operations should be returned."
+  },
+  {
+    "id": "postDatabaseClassificationLevel",
+    "name": "Reset database classification level",
+    "description": "Reset database classification level Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific database for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification…",
+    "context": "POST /wiki/api/v2/databases/{id}/classification-level/reset\nResets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific database for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the database.\nRequired: id (path) — The ID of the database for which classification level should be updated.; body (body)"
+  },
+  {
+    "id": "putDatabaseClassificationLevel",
+    "name": "Update database classification level",
+    "description": "Update database classification level Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific database. PUT /wiki/api/v2/databases/{id}/classification-level",
+    "context": "PUT /wiki/api/v2/databases/{id}/classification-level\nUpdates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific database. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to edit the database.\nRequired: id (path) — The ID of the database for which classification level should be updated.; body (body)"
+  },
+  {
+    "id": "updateDatabasePropertyById",
+    "name": "Update content property for database by id",
+    "description": "Update content property for database by id Update a content property for a database by its id. PUT /wiki/api/v2/databases/{database-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/databases/{database-id}/properties/{property-id}\nUpdate a content property for a database by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the database.\nRequired: database-id (path) — The ID of the database the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "events_list",
+    "name": "This endpoint allows you to list and filter events",
+    "description": "This endpoint allows you to list and filter events This endpoint allows you to list and filter events. GET /api/projects/{project_id}/events/",
+    "context": "GET /api/projects/{project_id}/events/\nThis endpoint allows you to list and filter events. It is effectively deprecated and is kept only for backwards compatibility. If you ever ask about it you will be advised to not use it... If you want to ad-hoc list or aggregate events, use the Query endpoint instead. If you want to export all events or many pages of events you should use our CDP/Batch Exports products instead.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return events with a timestamp after this time. Default: now() - 24 hours.; before (query) — Only return events with a timestamp before this time. Default: now() + 5 seconds.; distinct_id (query) — Filter list by distinct id.; event (query) — Filter list by event. For example `user sign up` or `$pageview`.; format (query); include_person (query) — Include person details for each event. Default: false.; limit (query) — The maximum number of results to return; offset (query) — Allows to skip first offset rows. Will fail for value larger than 100000. Read about proper way of paginating: https://posthog.com/docs/api/queries#5-use-timestamp-based-pagination-instead-of-offset; person_id (query) — Filter list by person id.; properties (query) — Filter events by event property, person property, cohort, groups and more.; select (query) — (Experimental) JSON-serialized array of HogQL expressions to return; where (query) — (Experimental) JSON-serialized array of HogQL expressions that must pass"
+  },
+  {
+    "id": "events_retrieve",
+    "name": "events_retrieve",
+    "description": "events_retrieve GET /api/projects/{project_id}/events/{id}/",
+    "context": "GET /api/projects/{project_id}/events/{id}/\nevents_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); include_person (query) — Include person details for the event. Default: false."
+  },
+  {
+    "id": "events_values_retrieve",
+    "name": "events_values_retrieve",
+    "description": "events_values_retrieve GET /api/projects/{project_id}/events/values/",
+    "context": "GET /api/projects/{project_id}/events/values/\nevents_values_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query)"
+  }
+]

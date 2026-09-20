@@ -1,0 +1,44 @@
+[
+  {
+    "id": "magic-static-routes-create-routes",
+    "name": "Create a Route",
+    "description": "Create a Route Creates a new Magic static route. POST /client/v4/accounts/{account_id}/magic/routes",
+    "context": "POST /client/v4/accounts/{account_id}/magic/routes\nCreates a new Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-static-routes-delete-many-routes",
+    "name": "Delete Many Routes",
+    "description": "Delete Many Routes Delete multiple Magic static routes. DELETE /client/v4/accounts/{account_id}/magic/routes",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/routes\nDelete multiple Magic static routes.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-static-routes-delete-route",
+    "name": "Delete Route",
+    "description": "Delete Route Disable and remove a specific Magic static route. DELETE /client/v4/accounts/{account_id}/magic/routes/{route_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/routes/{route_id}\nDisable and remove a specific Magic static route.\nRequired: route_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-static-routes-list-routes",
+    "name": "List Routes",
+    "description": "List Routes List all Magic static routes. GET /client/v4/accounts/{account_id}/magic/routes",
+    "context": "GET /client/v4/accounts/{account_id}/magic/routes\nList all Magic static routes.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-static-routes-route-details",
+    "name": "Route Details",
+    "description": "Route Details Get a specific Magic static route. GET /client/v4/accounts/{account_id}/magic/routes/{route_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/routes/{route_id}\nGet a specific Magic static route.\nRequired: route_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-static-routes-update-many-routes",
+    "name": "Update Many Routes",
+    "description": "Update Many Routes Update multiple Magic static routes. PUT /client/v4/accounts/{account_id}/magic/routes",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/routes\nUpdate multiple Magic static routes. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes. Only fields for a route that need to be changed need be provided.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-static-routes-update-route",
+    "name": "Update Route",
+    "description": "Update Route Update a specific Magic static route. PUT /client/v4/accounts/{account_id}/magic/routes/{route_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/routes/{route_id}\nUpdate a specific Magic static route. Use `?validate_only=true` as an optional query parameter to run validation only without persisting changes.\nRequired: route_id (path); account_id (path); body (body)"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "interactions%2Fget-pull-request-bypass-list-for-repo",
+    "name": "Get pull request creation cap bypass list for a repository",
+    "description": "Get pull request creation cap bypass list for a repository Lists the users that are on the pull request creation cap bypass list for a repository. GET /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    "context": "GET /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list\nLists the users that are on the pull request creation cap bypass list for a repository. Users on this list can create pull requests regardless of any configured pull request creation cap. Only users with maintainer permissions can view the bypass list.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "interactions%2Fget-pull-request-creation-cap-for-repo",
+    "name": "Get pull request creation cap for a repository",
+    "description": "Get pull request creation cap for a repository Gets the pull request creation cap configuration for a repository. GET /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap",
+    "context": "GET /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap\nGets the pull request creation cap configuration for a repository. The cap limits the number of open pull requests a user can have at one time. Only users with admin access to the repository can view the cap configuration.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "interactions%2Fget-restrictions-for-repo",
+    "name": "Get interaction restrictions for a repository",
+    "description": "Get interaction restrictions for a repository Shows which type of GitHub user can interact with this repository and when the restriction expires. GET /repos/{owner}/{repo}/interaction-limits",
+    "context": "GET /repos/{owner}/{repo}/interaction-limits\nShows which type of GitHub user can interact with this repository and when the restriction expires. If there are no restrictions, you will see an empty response.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "interactions%2Fremove-pull-request-bypass-list-for-repo",
+    "name": "Remove users from the pull request creation cap bypass list for a repository",
+    "description": "Remove users from the pull request creation cap bypass list for a repository Removes users from the pull request creation cap bypass list for a repository. DELETE /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    "context": "DELETE /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list\nRemoves users from the pull request creation cap bypass list for a repository. Removed users will be subject to any configured pull request creation cap. Only users with maintainer permissions can modify the bypass list. You can remove a maximum of 100 users per request.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "interactions%2Fremove-restrictions-for-repo",
+    "name": "Remove interaction restrictions for a repository",
+    "description": "Remove interaction restrictions for a repository Removes all interaction restrictions from the given repository. DELETE /repos/{owner}/{repo}/interaction-limits",
+    "context": "DELETE /repos/{owner}/{repo}/interaction-limits\nRemoves all interaction restrictions from the given repository. You must have owner or admin access to remove restrictions. If the interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "interactions%2Fset-pull-request-bypass-list-for-repo",
+    "name": "Add users to the pull request creation cap bypass list for a repository",
+    "description": "Add users to the pull request creation cap bypass list for a repository Adds users to the pull request creation cap bypass list for a repository. PUT /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    "context": "PUT /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list\nAdds users to the pull request creation cap bypass list for a repository. Users on this list can create pull requests regardless of any configured pull request creation cap. Only users with maintainer permissions can modify the bypass list. You can add a maximum of 100 users per request. The bypass list can only hold a maximum of 100 users.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "interactions%2Fset-restrictions-for-repo",
+    "name": "Set interaction restrictions for a repository",
+    "description": "Set interaction restrictions for a repository Temporarily restricts interactions to a certain type of GitHub user within the given repository. PUT /repos/{owner}/{repo}/interaction-limits",
+    "context": "PUT /repos/{owner}/{repo}/interaction-limits\nTemporarily restricts interactions to a certain type of GitHub user within the given repository. You must have owner or admin access to set these restrictions. If an interaction limit is set for the user or organization that owns this repository, you will receive a `409 Conflict` response and will not be able to use this endpoint to change the interaction limit for a single repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "interactions%2Fupdate-pull-request-creation-cap-for-repo",
+    "name": "Update pull request creation cap for a repository",
+    "description": "Update pull request creation cap for a repository Updates the pull request creation cap for a repository. PATCH /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap",
+    "context": "PATCH /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap\nUpdates the pull request creation cap for a repository. The cap limits the number of open pull requests a user can have at one time. Only users with admin access to the repository can configure the cap.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  }
+]

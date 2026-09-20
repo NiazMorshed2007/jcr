@@ -1,0 +1,26 @@
+[
+  {
+    "id": "exports_content_retrieve",
+    "name": "exports_content_retrieve",
+    "description": "exports_content_retrieve GET /api/projects/{project_id}/exports/{id}/content/",
+    "context": "GET /api/projects/{project_id}/exports/{id}/content/\nexports_content_retrieve\nRequired: id (path) — A unique integer value identifying this exported asset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "exports_create",
+    "name": "exports_create",
+    "description": "exports_create POST /api/projects/{project_id}/exports/",
+    "context": "POST /api/projects/{project_id}/exports/\nexports_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "exports_list",
+    "name": "exports_list",
+    "description": "exports_list GET /api/projects/{project_id}/exports/",
+    "context": "GET /api/projects/{project_id}/exports/\nexports_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "exports_retrieve",
+    "name": "exports_retrieve",
+    "description": "exports_retrieve GET /api/projects/{project_id}/exports/{id}/",
+    "context": "GET /api/projects/{project_id}/exports/{id}/\nexports_retrieve\nRequired: id (path) — A unique integer value identifying this exported asset.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

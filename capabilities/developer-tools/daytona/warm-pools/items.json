@@ -1,0 +1,26 @@
+[
+  {
+    "id": "createWarmPool",
+    "name": "Create a warm pool",
+    "description": "Create a warm pool POST /warm-pools",
+    "context": "POST /warm-pools\nCreate a warm pool\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteWarmPool",
+    "name": "Delete a warm pool",
+    "description": "Delete a warm pool DELETE /warm-pools/{id}",
+    "context": "DELETE /warm-pools/{id}\nDelete a warm pool\nRequired: id (path) — Warm pool ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "listWarmPools",
+    "name": "List warm pools for the organization",
+    "description": "List warm pools for the organization GET /warm-pools",
+    "context": "GET /warm-pools\nList warm pools for the organization\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updateWarmPool",
+    "name": "Update a warm pool size",
+    "description": "Update a warm pool size PATCH /warm-pools/{id}",
+    "context": "PATCH /warm-pools/{id}\nUpdate a warm pool size\nRequired: id (path) — Warm pool ID; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

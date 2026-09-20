@@ -1,0 +1,26 @@
+[
+  {
+    "id": "deleteForgeAppProperty",
+    "name": "Deletes a Forge app property.",
+    "description": "Deletes a Forge app property. Deletes a Forge app property. DELETE /wiki/api/v2/app/properties/{propertyKey}",
+    "context": "DELETE /wiki/api/v2/app/properties/{propertyKey}\nDeletes a Forge app property. This API can only be accessed using **[asApp()](https://developer.atlassian.com/platform/forge/apis-reference/fetch-api-product.requestconfluence/#method-signature)** requests from Forge.\nRequired: propertyKey (path) — The key of the property"
+  },
+  {
+    "id": "getForgeAppProperties",
+    "name": "Get Forge app properties.",
+    "description": "Get Forge app properties. Gets Forge app properties. GET /wiki/api/v2/app/properties",
+    "context": "GET /wiki/api/v2/app/properties\nGets Forge app properties. This API can only be accessed using **[asApp()](https://developer.atlassian.com/platform/forge/apis-reference/fetch-api-product.requestconfluence/#method-signature)** requests from Forge.\nOptional: cursor (query) — Used for pagination, this opaque cursor represents the last returned property key. It will be included in the response body as the next link. Use this key to request the next set of results.; limit (query) — Maximum number of app properties per result to return. If more results exist, use the last returned property key from the Link field in the response body as a cursor to retrieve the next set of results."
+  },
+  {
+    "id": "getForgeAppProperty",
+    "name": "Get a Forge app property by key.",
+    "description": "Get a Forge app property by key. Gets a Forge app property by property key. GET /wiki/api/v2/app/properties/{propertyKey}",
+    "context": "GET /wiki/api/v2/app/properties/{propertyKey}\nGets a Forge app property by property key. This API can only be accessed using **[asApp()](https://developer.atlassian.com/platform/forge/apis-reference/fetch-api-product.requestconfluence/#method-signature)** requests from Forge.\nRequired: propertyKey (path) — The key of the property"
+  },
+  {
+    "id": "putForgeAppProperty",
+    "name": "Create or update a Forge app property.",
+    "description": "Create or update a Forge app property. Creates or updates a Forge app property. PUT /wiki/api/v2/app/properties/{propertyKey}",
+    "context": "PUT /wiki/api/v2/app/properties/{propertyKey}\nCreates or updates a Forge app property. This API can only be accessed using **[asApp()](https://developer.atlassian.com/platform/forge/apis-reference/fetch-api-product.requestconfluence/#method-signature)** requests from Forge.\nRequired: propertyKey (path) — The key of the property; body (body)"
+  }
+]

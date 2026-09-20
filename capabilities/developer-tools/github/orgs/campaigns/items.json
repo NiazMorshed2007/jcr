@@ -1,0 +1,32 @@
+[
+  {
+    "id": "campaigns%2Fcreate-campaign",
+    "name": "Create a campaign for an organization",
+    "description": "Create a campaign for an organization Create a campaign for an organization. POST /orgs/{org}/campaigns",
+    "context": "POST /orgs/{org}/campaigns\nCreate a campaign for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. Fine-grained tokens must have the \"Code scanning alerts\" repository permissions (read) on all repositories included in the campaign.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "campaigns%2Fdelete-campaign",
+    "name": "Delete a campaign for an organization",
+    "description": "Delete a campaign for an organization Deletes a campaign in an organization. DELETE /orgs/{org}/campaigns/{campaign_number}",
+    "context": "DELETE /orgs/{org}/campaigns/{campaign_number}\nDeletes a campaign in an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; campaign_number (path) — The campaign number."
+  },
+  {
+    "id": "campaigns%2Fget-campaign-summary",
+    "name": "Get a campaign for an organization",
+    "description": "Get a campaign for an organization Gets a campaign for an organization. GET /orgs/{org}/campaigns/{campaign_number}",
+    "context": "GET /orgs/{org}/campaigns/{campaign_number}\nGets a campaign for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; campaign_number (path) — The campaign number."
+  },
+  {
+    "id": "campaigns%2Flist-org-campaigns",
+    "name": "List campaigns for an organization",
+    "description": "List campaigns for an organization Lists campaigns in an organization. GET /orgs/{org}/campaigns",
+    "context": "GET /orgs/{org}/campaigns\nLists campaigns in an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; direction (query) — The direction to sort the results by.; state (query) — If specified, only campaigns with this state will be returned.; sort (query) — The property by which to sort the results."
+  },
+  {
+    "id": "campaigns%2Fupdate-campaign",
+    "name": "Update a campaign",
+    "description": "Update a campaign Updates a campaign in an organization. PATCH /orgs/{org}/campaigns/{campaign_number}",
+    "context": "PATCH /orgs/{org}/campaigns/{campaign_number}\nUpdates a campaign in an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; campaign_number (path) — The campaign number.; body (body)"
+  }
+]

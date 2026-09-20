@@ -1,0 +1,92 @@
+[
+  {
+    "id": "delete-catalog",
+    "name": "Delete R2 catalog metadata",
+    "description": "Delete R2 catalog metadata Removes the catalog from the control plane without deleting R2 bucket objects. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/delete",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/delete\nRemoves the catalog from the control plane without deleting R2 bucket objects. Set force=true to remove catalog namespaces, tables, views, and maintenance metadata. Force deletion is limited to a configured catalog object count.\nRequired: account_id (path); bucket_name (path)\nOptional: force (query) — Remove child metadata before deleting the catalog."
+  },
+  {
+    "id": "disable-catalog",
+    "name": "Disable R2 catalog",
+    "description": "Disable R2 catalog Disable an R2 bucket as a catalog. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/disable",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/disable\nDisable an R2 bucket as a catalog. This operation deactivates the catalog but preserves existing metadata and data files. The catalog can be re-enabled later.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name to disable as catalog."
+  },
+  {
+    "id": "enable-catalog",
+    "name": "Enable R2 bucket as a catalog",
+    "description": "Enable R2 bucket as a catalog Enable an R2 bucket as an Apache Iceberg catalog. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/enable",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/enable\nEnable an R2 bucket as an Apache Iceberg catalog. This operation creates the necessary catalog infrastructure and activates the bucket for storing Iceberg metadata and data files.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name to enable as catalog."
+  },
+  {
+    "id": "get-catalog-details",
+    "name": "Get R2 catalog details",
+    "description": "Get R2 catalog details Retrieve detailed information about a specific R2 catalog by bucket name. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}\nRetrieve detailed information about a specific R2 catalog by bucket name. Returns catalog status, maintenance configuration, and credential status.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name."
+  },
+  {
+    "id": "get-maintenance-config",
+    "name": "Get catalog maintenance configuration",
+    "description": "Get catalog maintenance configuration Retrieve the maintenance configuration for a specific catalog, including compaction settings and credential status. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs\nRetrieve the maintenance configuration for a specific catalog, including compaction settings and credential status.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name."
+  },
+  {
+    "id": "get-table",
+    "name": "Get table details",
+    "description": "Get table details Returns full Apache Iceberg metadata for a single table: schema, partition specs, sort orders, properties, and recent snapshot history. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}\nReturns full Apache Iceberg metadata for a single table: schema, partition specs, sort orders, properties, and recent snapshot history. Designed for catalog introspection UIs that need per-table details without holding R2 credentials. The `metadata.snapshots`, `metadata.snapshot-log`, and `metadata.metadata-log` arrays are pruned to the most recent 10 entries by `timestamp-ms`. Use `total_snapshots` and `returned_snapshots` to surface the truncation to end users.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.; namespace (path) — The namespace identifier. For nested namespaces, use %1F as separator (e.g., \"bronze%1Fanalytics\").; table_name (path) — The table name within the given namespace."
+  },
+  {
+    "id": "get-table-maintenance-config",
+    "name": "Get table maintenance configuration",
+    "description": "Get table maintenance configuration Retrieve the maintenance configuration for a specific table, including compaction settings. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs\nRetrieve the maintenance configuration for a specific table, including compaction settings.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.; namespace (path) — The namespace identifier (use %1F as separator for nested namespaces).; table_name (path) — The table name."
+  },
+  {
+    "id": "list-catalogs",
+    "name": "List R2 catalogs",
+    "description": "List R2 catalogs Returns a list of R2 buckets that have been enabled as Apache Iceberg catalogs for the specified account. GET /client/v4/accounts/{account_id}/r2-catalog",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog\nReturns a list of R2 buckets that have been enabled as Apache Iceberg catalogs for the specified account. Each catalog represents an R2 bucket configured to store Iceberg metadata and data files.\nRequired: account_id (path) — Identifies the account."
+  },
+  {
+    "id": "list-namespaces",
+    "name": "List namespaces in catalog",
+    "description": "List namespaces in catalog Returns a list of namespaces in the specified R2 catalog. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces\nReturns a list of namespaces in the specified R2 catalog. Supports hierarchical filtering and pagination for efficient traversal of large namespace hierarchies.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.\nOptional: page_token (query) — Opaque pagination token from a previous response. Use this to fetch the next page of results.; page_size (query) — Maximum number of namespaces to return per page. Defaults to 100, maximum 1000.; parent (query) — Parent namespace to filter by. Only returns direct children of this namespace. For nested namespaces, use %1F as separator (e.g., \"bronze%1Fanalytics\"). Omit this parameter to list top-level namespaces.; return_uuids (query) — Whether to include namespace UUIDs in the response. Set to true to receive the namespace_uuids array.; return_details (query) — Whether to include additional metadata (timestamps). When true, response includes created_at and updated_at arrays."
+  },
+  {
+    "id": "list-table-maintenance-runs",
+    "name": "List table maintenance runs",
+    "description": "List table maintenance runs Retrieves recent table maintenance runs for the current table. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-runs",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-runs\nRetrieves recent table maintenance runs for the current table.\nRequired: account_id (path); bucket_name (path); namespace (path); table_name (path)\nOptional: page_size (query); page_token (query)"
+  },
+  {
+    "id": "list-tables",
+    "name": "List tables in namespace",
+    "description": "List tables in namespace Returns a list of tables in the specified namespace within an R2 catalog. GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables",
+    "context": "GET /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables\nReturns a list of tables in the specified namespace within an R2 catalog. Supports pagination for efficient traversal of large table collections.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.; namespace (path) — The namespace identifier. For nested namespaces, use %1F as separator (e.g., \"bronze%1Fanalytics\").\nOptional: page_token (query) — Opaque pagination token from a previous response. Use this to fetch the next page of results.; page_size (query) — Maximum number of tables to return per page. Defaults to 100, maximum 1000.; return_uuids (query) — Whether to include table UUIDs in the response. Set to true to receive the table_uuids array.; return_details (query) — Whether to include additional metadata (timestamps, locations). When true, response includes created_at, updated_at, metadata_locations, and locations arrays."
+  },
+  {
+    "id": "queue-table-maintenance",
+    "name": "Queue table maintenance",
+    "description": "Queue table maintenance Queue maintenance for normal polling. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs/{configuration_type}/queue",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs/{configuration_type}/queue\nQueue maintenance for normal polling. This request does not start a run.\nRequired: account_id (path); bucket_name (path); namespace (path); table_name (path); configuration_type (path); body (body)"
+  },
+  {
+    "id": "store-credentials",
+    "name": "Store catalog credentials",
+    "description": "Store catalog credentials Store authentication credentials for a catalog. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/credential",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/credential\nStore authentication credentials for a catalog. These credentials are used to authenticate with R2 storage when performing catalog operations.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.; body (body)"
+  },
+  {
+    "id": "update-maintenance-config",
+    "name": "Update catalog maintenance configuration",
+    "description": "Update catalog maintenance configuration Update the maintenance configuration for a catalog. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/maintenance-configs\nUpdate the maintenance configuration for a catalog. This allows you to enable or disable compaction and adjust target file sizes for optimization.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.; body (body)"
+  },
+  {
+    "id": "update-table-maintenance-config",
+    "name": "Update table maintenance configuration",
+    "description": "Update table maintenance configuration Update the maintenance configuration for a specific table. POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs",
+    "context": "POST /client/v4/accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs\nUpdate the maintenance configuration for a specific table. This allows you to enable or disable compaction and adjust target file sizes for optimization.\nRequired: account_id (path) — Identifies the account.; bucket_name (path) — Specifies the R2 bucket name.; namespace (path) — The namespace identifier (use %1F as separator for nested namespaces).; table_name (path) — The table name.; body (body)"
+  }
+]

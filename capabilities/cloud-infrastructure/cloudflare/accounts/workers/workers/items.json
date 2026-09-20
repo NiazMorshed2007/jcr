@@ -1,0 +1,74 @@
+[
+  {
+    "id": "createWorker",
+    "name": "Create Worker",
+    "description": "Create Worker Create a new Worker. POST /client/v4/accounts/{account_id}/workers/workers",
+    "context": "POST /client/v4/accounts/{account_id}/workers/workers\nCreate a new Worker.\nRequired: account_id (path); body (body) — Worker creation parameters."
+  },
+  {
+    "id": "createWorkerVersion",
+    "name": "Create Worker Version",
+    "description": "Create Worker Version Create a new version for a Worker. POST /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions",
+    "context": "POST /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions\nCreate a new version for a Worker.\nRequired: account_id (path); worker_id (path); body (body) — Version creation parameters.\nOptional: deploy (query)"
+  },
+  {
+    "id": "deleteWorker",
+    "name": "Delete Worker",
+    "description": "Delete Worker Delete a Worker and all its associated resources (versions, deployments, etc.). DELETE /client/v4/accounts/{account_id}/workers/workers/{worker_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/workers/{worker_id}\nDelete a Worker and all its associated resources (versions, deployments, etc.).\nRequired: account_id (path); worker_id (path)"
+  },
+  {
+    "id": "deleteWorkerVersion",
+    "name": "Delete Worker Version",
+    "description": "Delete Worker Version Delete a Worker version. DELETE /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}\nDelete a Worker version.\nRequired: account_id (path); worker_id (path); version_id (path)"
+  },
+  {
+    "id": "editWorker",
+    "name": "Edit Worker",
+    "description": "Edit Worker Perform a partial update on a Worker, where omitted properties are left unchanged from their current values. PATCH /client/v4/accounts/{account_id}/workers/workers/{worker_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/workers/{worker_id}\nPerform a partial update on a Worker, where omitted properties are left unchanged from their current values.\nRequired: account_id (path); worker_id (path); body (body) — Worker partial update parameters."
+  },
+  {
+    "id": "getLatestWorkerVersion",
+    "name": "Get Latest Worker Version",
+    "description": "Get Latest Worker Version Get details about the most recently created Worker version. GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/latest",
+    "context": "GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/latest\nGet details about the most recently created Worker version.\nRequired: account_id (path); worker_id (path)\nOptional: include (query)"
+  },
+  {
+    "id": "getWorker",
+    "name": "Get Worker",
+    "description": "Get Worker Get details about a specific Worker. GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}\nGet details about a specific Worker.\nRequired: account_id (path); worker_id (path)"
+  },
+  {
+    "id": "getWorkerVersion",
+    "name": "Get Worker Version",
+    "description": "Get Worker Version Get details about a specific Worker version. GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}\nGet details about a specific Worker version.\nRequired: account_id (path); worker_id (path); version_id (path)\nOptional: include (query)"
+  },
+  {
+    "id": "listWorkers",
+    "name": "List Workers",
+    "description": "List Workers List all Workers for an account. GET /client/v4/accounts/{account_id}/workers/workers",
+    "context": "GET /client/v4/accounts/{account_id}/workers/workers\nList all Workers for an account.\nRequired: account_id (path)\nOptional: page (query) — Current page.; per_page (query) — Items per-page.; order_by (query) — Property to sort results by.; order (query) — Sort direction."
+  },
+  {
+    "id": "listWorkerVersions",
+    "name": "List Worker Versions",
+    "description": "List Worker Versions List all versions for a Worker. GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions",
+    "context": "GET /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions\nList all versions for a Worker.\nRequired: account_id (path); worker_id (path)\nOptional: page (query) — Current page.; per_page (query) — Items per-page."
+  },
+  {
+    "id": "patchLatestWorkerVersion",
+    "name": "Patch Latest Worker Version",
+    "description": "Patch Latest Worker Version Only `/versions/latest` is supported. PATCH /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/latest",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/workers/{worker_id}/versions/latest\nOnly `/versions/latest` is supported. Creates a new Worker version by applying a JSON Merge Patch (RFC 7396) to the latest version. Patching a specific version ID is not supported. Omitted fields are inherited from the latest version.\nRequired: account_id (path); worker_id (path)\nOptional: deploy (query); body (body) — JSON Merge Patch to apply to the latest version. An empty object creates a new version with no changes."
+  },
+  {
+    "id": "updateWorker",
+    "name": "Update Worker",
+    "description": "Update Worker Perform a complete replacement of a Worker, where omitted properties are set to their default values. PUT /client/v4/accounts/{account_id}/workers/workers/{worker_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/workers/{worker_id}\nPerform a complete replacement of a Worker, where omitted properties are set to their default values. This is the exact same as the Create Worker endpoint, but operates on an existing Worker. To perform a partial update instead, use the Edit Worker endpoint.\nRequired: account_id (path); worker_id (path); body (body) — Worker update parameters."
+  }
+]

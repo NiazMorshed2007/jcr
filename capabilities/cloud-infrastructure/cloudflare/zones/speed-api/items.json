@@ -1,0 +1,62 @@
+[
+  {
+    "id": "speed-create-scheduled-test",
+    "name": "Create scheduled page test",
+    "description": "Create scheduled page test Creates a scheduled test for a page. POST /client/v4/zones/{zone_id}/speed_api/schedule/{url}",
+    "context": "POST /client/v4/zones/{zone_id}/speed_api/schedule/{url}\nCreates a scheduled test for a page.\nRequired: zone_id (path); url (path)\nOptional: region (query); frequency (query) — The frequency of the scheduled test. Defaults to WEEKLY for free plans, DAILY for paid plans."
+  },
+  {
+    "id": "speed-create-test",
+    "name": "Start page test",
+    "description": "Start page test Starts a test for a specific webpage, in a specific region. POST /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests",
+    "context": "POST /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests\nStarts a test for a specific webpage, in a specific region.\nRequired: zone_id (path); url (path)\nOptional: body (body)"
+  },
+  {
+    "id": "speed-delete-test-schedule",
+    "name": "Delete scheduled page test",
+    "description": "Delete scheduled page test Deletes a scheduled test for a page. DELETE /client/v4/zones/{zone_id}/speed_api/schedule/{url}",
+    "context": "DELETE /client/v4/zones/{zone_id}/speed_api/schedule/{url}\nDeletes a scheduled test for a page.\nRequired: zone_id (path); url (path)\nOptional: region (query)"
+  },
+  {
+    "id": "speed-delete-tests",
+    "name": "Delete all page tests",
+    "description": "Delete all page tests Deletes all tests for a specific webpage from a specific region. DELETE /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests",
+    "context": "DELETE /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests\nDeletes all tests for a specific webpage from a specific region. Deleted tests are still counted as part of the quota.\nRequired: zone_id (path); url (path)\nOptional: region (query)"
+  },
+  {
+    "id": "speed-get-availabilities",
+    "name": "Get quota and availability",
+    "description": "Get quota and availability Retrieves quota for all plans, as well as the current zone quota. GET /client/v4/zones/{zone_id}/speed_api/availabilities",
+    "context": "GET /client/v4/zones/{zone_id}/speed_api/availabilities\nRetrieves quota for all plans, as well as the current zone quota.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "speed-get-scheduled-test",
+    "name": "Get a page test schedule",
+    "description": "Get a page test schedule Retrieves the test schedule for a page in a specific region. GET /client/v4/zones/{zone_id}/speed_api/schedule/{url}",
+    "context": "GET /client/v4/zones/{zone_id}/speed_api/schedule/{url}\nRetrieves the test schedule for a page in a specific region.\nRequired: zone_id (path); url (path)\nOptional: region (query)"
+  },
+  {
+    "id": "speed-get-test",
+    "name": "Get a page test result",
+    "description": "Get a page test result Retrieves the result of a specific test. GET /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests/{test_id}",
+    "context": "GET /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests/{test_id}\nRetrieves the result of a specific test.\nRequired: zone_id (path); url (path); test_id (path)"
+  },
+  {
+    "id": "speed-list-page-trend",
+    "name": "List core web vital metrics trend",
+    "description": "List core web vital metrics trend Lists the core web vital metrics trend over time for a specific page. GET /client/v4/zones/{zone_id}/speed_api/pages/{url}/trend",
+    "context": "GET /client/v4/zones/{zone_id}/speed_api/pages/{url}/trend\nLists the core web vital metrics trend over time for a specific page.\nRequired: zone_id (path); url (path); region (query); deviceType (query); start (query); tz (query) — The timezone of the start and end timestamps.; metrics (query) — A comma-separated list of metrics to include in the results.\nOptional: end (query)"
+  },
+  {
+    "id": "speed-list-pages",
+    "name": "List tested webpages",
+    "description": "List tested webpages Lists all webpages which have been tested. GET /client/v4/zones/{zone_id}/speed_api/pages",
+    "context": "GET /client/v4/zones/{zone_id}/speed_api/pages\nLists all webpages which have been tested.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "speed-list-test-history",
+    "name": "List page test history",
+    "description": "List page test history Test history (list of tests) for a specific webpage. GET /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests",
+    "context": "GET /client/v4/zones/{zone_id}/speed_api/pages/{url}/tests\nTest history (list of tests) for a specific webpage.\nRequired: zone_id (path); url (path)\nOptional: page (query); per_page (query); region (query)"
+  }
+]

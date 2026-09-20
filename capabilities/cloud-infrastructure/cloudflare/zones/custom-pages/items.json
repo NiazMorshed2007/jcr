@@ -1,0 +1,56 @@
+[
+  {
+    "id": "custom-assets-for-a-zone-create-a-custom-asset",
+    "name": "Create a custom asset",
+    "description": "Create a custom asset Creates a new custom asset at the zone level. POST /client/v4/zones/{zone_identifier}/custom_pages/assets",
+    "context": "POST /client/v4/zones/{zone_identifier}/custom_pages/assets\nCreates a new custom asset at the zone level.\nRequired: zone_identifier (path); body (body)"
+  },
+  {
+    "id": "custom-assets-for-a-zone-delete-a-custom-asset",
+    "name": "Delete a custom asset",
+    "description": "Delete a custom asset Deletes an existing custom asset. DELETE /client/v4/zones/{zone_identifier}/custom_pages/assets/{asset_name}",
+    "context": "DELETE /client/v4/zones/{zone_identifier}/custom_pages/assets/{asset_name}\nDeletes an existing custom asset.\nRequired: asset_name (path); zone_identifier (path)"
+  },
+  {
+    "id": "custom-assets-for-a-zone-get-a-custom-asset",
+    "name": "Get a custom asset",
+    "description": "Get a custom asset Fetches the details of a custom asset. GET /client/v4/zones/{zone_identifier}/custom_pages/assets/{asset_name}",
+    "context": "GET /client/v4/zones/{zone_identifier}/custom_pages/assets/{asset_name}\nFetches the details of a custom asset.\nRequired: asset_name (path); zone_identifier (path)"
+  },
+  {
+    "id": "custom-assets-for-a-zone-list-custom-assets",
+    "name": "List custom assets",
+    "description": "List custom assets Fetches all the custom assets at the zone level. GET /client/v4/zones/{zone_identifier}/custom_pages/assets",
+    "context": "GET /client/v4/zones/{zone_identifier}/custom_pages/assets\nFetches all the custom assets at the zone level.\nRequired: zone_identifier (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "custom-assets-for-a-zone-update-a-custom-asset",
+    "name": "Update a custom asset",
+    "description": "Update a custom asset Updates the configuration of an existing custom asset. PUT /client/v4/zones/{zone_identifier}/custom_pages/assets/{asset_name}",
+    "context": "PUT /client/v4/zones/{zone_identifier}/custom_pages/assets/{asset_name}\nUpdates the configuration of an existing custom asset.\nRequired: asset_name (path); zone_identifier (path); body (body)"
+  },
+  {
+    "id": "custom-pages-for-a-zone-create-preview-token",
+    "name": "Create a preview token",
+    "description": "Create a preview token Creates a signed JWT token used to preview custom pages before they are published. POST /client/v4/zones/{zone_identifier}/custom_pages/preview_tokens",
+    "context": "POST /client/v4/zones/{zone_identifier}/custom_pages/preview_tokens\nCreates a signed JWT token used to preview custom pages before they are published. The API gateway rewrites zone-scoped requests to the account-level service endpoint.\nRequired: zone_identifier (path); body (body)"
+  },
+  {
+    "id": "custom-pages-for-a-zone-get-a-custom-page",
+    "name": "Get a custom page",
+    "description": "Get a custom page Fetches the details of a custom page. GET /client/v4/zones/{zone_identifier}/custom_pages/{identifier}",
+    "context": "GET /client/v4/zones/{zone_identifier}/custom_pages/{identifier}\nFetches the details of a custom page.\nRequired: identifier (path); zone_identifier (path)"
+  },
+  {
+    "id": "custom-pages-for-a-zone-list-custom-pages",
+    "name": "List custom pages",
+    "description": "List custom pages Fetches all the custom pages at the zone level. GET /client/v4/zones/{zone_identifier}/custom_pages",
+    "context": "GET /client/v4/zones/{zone_identifier}/custom_pages\nFetches all the custom pages at the zone level.\nRequired: zone_identifier (path)"
+  },
+  {
+    "id": "custom-pages-for-a-zone-update-a-custom-page",
+    "name": "Update a custom page",
+    "description": "Update a custom page Updates the configuration of an existing custom page. PUT /client/v4/zones/{zone_identifier}/custom_pages/{identifier}",
+    "context": "PUT /client/v4/zones/{zone_identifier}/custom_pages/{identifier}\nUpdates the configuration of an existing custom page.\nRequired: identifier (path); zone_identifier (path); body (body)"
+  }
+]

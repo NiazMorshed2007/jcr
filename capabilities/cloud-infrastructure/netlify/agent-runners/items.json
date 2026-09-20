@@ -1,0 +1,86 @@
+[
+  {
+    "id": "agentRunnerCommitToBranch",
+    "name": "agentRunnerCommitToBranch",
+    "description": "agentRunnerCommitToBranch POST /api/v1/agent_runners/{agent_runner_id}/commit",
+    "context": "POST /api/v1/agent_runners/{agent_runner_id}/commit\nagentRunnerCommitToBranch\nRequired: target_branch (query)"
+  },
+  {
+    "id": "agentRunnerPullRequest",
+    "name": "agentRunnerPullRequest",
+    "description": "agentRunnerPullRequest POST /api/v1/agent_runners/{agent_runner_id}/pull_request",
+    "context": "POST /api/v1/agent_runners/{agent_runner_id}/pull_request\nagentRunnerPullRequest"
+  },
+  {
+    "id": "archiveAgentRunner",
+    "name": "archiveAgentRunner",
+    "description": "archiveAgentRunner POST /api/v1/agent_runners/{agent_runner_id}/archive",
+    "context": "POST /api/v1/agent_runners/{agent_runner_id}/archive\narchiveAgentRunner"
+  },
+  {
+    "id": "createAgentRunner",
+    "name": "createAgentRunner",
+    "description": "createAgentRunner POST /api/v1/agent_runners",
+    "context": "POST /api/v1/agent_runners\ncreateAgentRunner\nRequired: site_id (query)\nOptional: deploy_id (query); branch (query); prompt (query); agent (query); model (query); parent_agent_runner_id (query); dev_server_image (query); file_keys (query)"
+  },
+  {
+    "id": "createAgentRunnerSession",
+    "name": "createAgentRunnerSession",
+    "description": "createAgentRunnerSession POST /api/v1/agent_runners/{agent_runner_id}/sessions",
+    "context": "POST /api/v1/agent_runners/{agent_runner_id}/sessions\ncreateAgentRunnerSession\nOptional: prompt (query); agent (query); model (query); file_keys (query)"
+  },
+  {
+    "id": "createAgentRunnerUploadUrl",
+    "name": "createAgentRunnerUploadUrl",
+    "description": "createAgentRunnerUploadUrl POST /api/v1/agent_runners/upload_url",
+    "context": "POST /api/v1/agent_runners/upload_url\ncreateAgentRunnerUploadUrl\nRequired: account_id (query); filename (query); content_type (query)"
+  },
+  {
+    "id": "deleteAgentRunner",
+    "name": "deleteAgentRunner",
+    "description": "deleteAgentRunner DELETE /api/v1/agent_runners/{agent_runner_id}",
+    "context": "DELETE /api/v1/agent_runners/{agent_runner_id}\ndeleteAgentRunner"
+  },
+  {
+    "id": "deleteAgentRunnerSession",
+    "name": "deleteAgentRunnerSession",
+    "description": "deleteAgentRunnerSession DELETE /api/v1/agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}",
+    "context": "DELETE /api/v1/agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}\ndeleteAgentRunnerSession"
+  },
+  {
+    "id": "getAgentRunner",
+    "name": "getAgentRunner",
+    "description": "getAgentRunner GET /api/v1/agent_runners/{agent_runner_id}",
+    "context": "GET /api/v1/agent_runners/{agent_runner_id}\ngetAgentRunner"
+  },
+  {
+    "id": "getAgentRunnerSession",
+    "name": "getAgentRunnerSession",
+    "description": "getAgentRunnerSession GET /api/v1/agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}",
+    "context": "GET /api/v1/agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}\ngetAgentRunnerSession"
+  },
+  {
+    "id": "listAgentRunners",
+    "name": "listAgentRunners",
+    "description": "listAgentRunners GET /api/v1/agent_runners",
+    "context": "GET /api/v1/agent_runners\nlistAgentRunners\nRequired: account_id (query); site_id (query)\nOptional: page (query); per_page (query); state (query); title (query); branch (query); result_branch (query); from (query); to (query)"
+  },
+  {
+    "id": "listAgentRunnerSessions",
+    "name": "listAgentRunnerSessions",
+    "description": "listAgentRunnerSessions GET /api/v1/agent_runners/{agent_runner_id}/sessions",
+    "context": "GET /api/v1/agent_runners/{agent_runner_id}/sessions\nlistAgentRunnerSessions\nOptional: page (query); per_page (query); state (query); from (query); to (query); order_by (query)"
+  },
+  {
+    "id": "updateAgentRunner",
+    "name": "updateAgentRunner",
+    "description": "updateAgentRunner PATCH /api/v1/agent_runners/{agent_runner_id}",
+    "context": "PATCH /api/v1/agent_runners/{agent_runner_id}\nupdateAgentRunner"
+  },
+  {
+    "id": "updateAgentRunnerSession",
+    "name": "updateAgentRunnerSession",
+    "description": "updateAgentRunnerSession PATCH /api/v1/agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}",
+    "context": "PATCH /api/v1/agent_runners/{agent_runner_id}/sessions/{agent_runner_session_id}\nupdateAgentRunnerSession\nOptional: is_published (query)"
+  }
+]

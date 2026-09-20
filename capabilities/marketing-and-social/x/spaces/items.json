@@ -1,0 +1,38 @@
+[
+  {
+    "id": "getSpacesBuyers",
+    "name": "Get Space ticket buyers",
+    "description": "Get Space ticket buyers Retrieves a list of Users who purchased tickets to a specific Space by its ID. GET /2/spaces/{id}/buyers",
+    "context": "GET /2/spaces/{id}/buyers\nRetrieves a list of Users who purchased tickets to a specific Space by its ID.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getSpacesByCreatorIds",
+    "name": "Get Spaces by Creator IDs",
+    "description": "Get Spaces by Creator IDs GET /2/spaces/by/creator_ids",
+    "context": "GET /2/spaces/by/creator_ids\nGet Spaces by Creator IDs\nRequired: user_ids (query)\nOptional: space.fields (query) — A comma separated list of Space fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; topic.fields (query) — A comma separated list of Topic fields to display."
+  },
+  {
+    "id": "getSpacesById",
+    "name": "Get Spaces by ID",
+    "description": "Get Spaces by ID GET /2/spaces/{id}",
+    "context": "GET /2/spaces/{id}\nGet Spaces by ID\nRequired: id (path)\nOptional: space.fields (query) — A comma separated list of Space fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; topic.fields (query) — A comma separated list of Topic fields to display."
+  },
+  {
+    "id": "getSpacesByIds",
+    "name": "Get Spaces by IDs",
+    "description": "Get Spaces by IDs GET /2/spaces",
+    "context": "GET /2/spaces\nGet Spaces by IDs\nRequired: ids (query)\nOptional: space.fields (query) — A comma separated list of Space fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; topic.fields (query) — A comma separated list of Topic fields to display."
+  },
+  {
+    "id": "getSpacesPosts",
+    "name": "Get Space Posts",
+    "description": "Get Space Posts Retrieves a list of Posts shared in a specific Space by its ID. GET /2/spaces/{id}/tweets",
+    "context": "GET /2/spaces/{id}/tweets\nRetrieves a list of Posts shared in a specific Space by its ID.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "searchSpaces",
+    "name": "Search Spaces",
+    "description": "Search Spaces Retrieves a list of Spaces matching the specified search query. GET /2/spaces/search",
+    "context": "GET /2/spaces/search\nRetrieves a list of Spaces matching the specified search query.\nRequired: query (query)\nOptional: state (query); max_results (query); space.fields (query) — A comma separated list of Space fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; topic.fields (query) — A comma separated list of Topic fields to display."
+  }
+]

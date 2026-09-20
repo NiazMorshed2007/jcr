@@ -1,0 +1,32 @@
+[
+  {
+    "id": "access-tags-create-tag",
+    "name": "Create a tag",
+    "description": "Create a tag POST /client/v4/accounts/{account_id}/access/tags",
+    "context": "POST /client/v4/accounts/{account_id}/access/tags\nCreate a tag\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "access-tags-delete-a-tag",
+    "name": "Delete a tag",
+    "description": "Delete a tag DELETE /client/v4/accounts/{account_id}/access/tags/{tag_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/tags/{tag_name}\nDelete a tag\nRequired: account_id (path); tag_name (path)"
+  },
+  {
+    "id": "access-tags-get-a-tag",
+    "name": "Get a tag",
+    "description": "Get a tag GET /client/v4/accounts/{account_id}/access/tags/{tag_name}",
+    "context": "GET /client/v4/accounts/{account_id}/access/tags/{tag_name}\nGet a tag\nRequired: account_id (path); tag_name (path)"
+  },
+  {
+    "id": "access-tags-list-tags",
+    "name": "List tags",
+    "description": "List tags GET /client/v4/accounts/{account_id}/access/tags",
+    "context": "GET /client/v4/accounts/{account_id}/access/tags\nList tags\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "access-tags-update-a-tag",
+    "name": "Update a tag",
+    "description": "Update a tag PUT /client/v4/accounts/{account_id}/access/tags/{tag_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/tags/{tag_name}\nUpdate a tag\nRequired: account_id (path); tag_name (path)\nOptional: body (body)"
+  }
+]

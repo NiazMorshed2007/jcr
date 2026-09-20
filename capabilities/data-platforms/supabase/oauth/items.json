@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v1-authorize-user",
+    "name": "Authorize user through oauth",
+    "description": "Authorize user through oauth This is an **experimental** endpoint. GET /v1/oauth/authorize",
+    "context": "GET /v1/oauth/authorize\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: client_id (query); response_type (query); redirect_uri (query)\nOptional: scope (query); state (query); response_mode (query); code_challenge (query); code_challenge_method (query); organization_slug (query) — Organization slug; target_flow (query); resource (query) — Resource indicator for MCP (Model Context Protocol) clients"
+  },
+  {
+    "id": "v1-exchange-oauth-token",
+    "name": "Exchange auth code for user's access and refresh token",
+    "description": "Exchange auth code for user's access and refresh token Supports `authorization_code`, `refresh_token`, and `urn:ietf:params:oauth:grant-type:jwt-bearer` grant types. POST /v1/oauth/token",
+    "context": "POST /v1/oauth/token\nSupports `authorization_code`, `refresh_token`, and `urn:ietf:params:oauth:grant-type:jwt-bearer` grant types. The `jwt-bearer` grant type (IDJAG — identity-directed JWT assertion) is in beta and available on Team and Enterprise plans only. This endpoint is currently in its **Beta** stage.\nRequired: body (body)"
+  },
+  {
+    "id": "v1-oauth-authorize-project-claim",
+    "name": "Authorize user through oauth and claim a project",
+    "description": "Authorize user through oauth and claim a project Initiates the OAuth authorization flow for the specified provider. GET /v1/oauth/authorize/project-claim",
+    "context": "GET /v1/oauth/authorize/project-claim\nInitiates the OAuth authorization flow for the specified provider. After successful authentication, the user can claim ownership of the specified project.\nRequired: project_ref (query) — Project ref; client_id (query); response_type (query); redirect_uri (query)\nOptional: state (query); response_mode (query); code_challenge (query); code_challenge_method (query)"
+  },
+  {
+    "id": "v1-revoke-token",
+    "name": "Revoke oauth app authorization and it's corresponding tokens",
+    "description": "Revoke oauth app authorization and it's corresponding tokens This is an **experimental** endpoint. POST /v1/oauth/revoke",
+    "context": "POST /v1/oauth/revoke\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: body (body)"
+  }
+]

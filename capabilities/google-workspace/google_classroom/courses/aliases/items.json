@@ -1,0 +1,20 @@
+[
+  {
+    "id": "CoursesAliasesCreate",
+    "name": "Creates an alias for a course.",
+    "description": "Creates an alias for a course. Creates an alias for a course. POST /v1/courses/{courseId}/aliases",
+    "context": "POST /v1/courses/{courseId}/aliases\nCreates an alias for a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create the alias or for access errors. * `NOT_FOUND` if the course does not exist. * `ALREADY_EXISTS` if the alias already exists. * `FAILED_PRECONDITION` if the alias requested does not make sense for the requesting user or course (for example, if a user not in a domain attempts to access a domain-scoped alias).\nRequired: courseId (path) — Identifier of the course to alias. This identifier can be either the Classroom-assigned identifier or an alias.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesAliasesDelete",
+    "name": "Deletes an alias of a course.",
+    "description": "Deletes an alias of a course. Deletes an alias of a course. DELETE /v1/courses/{courseId}/aliases/{alias}",
+    "context": "DELETE /v1/courses/{courseId}/aliases/{alias}\nDeletes an alias of a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to remove the alias or for access errors. * `NOT_FOUND` if the alias does not exist. * `FAILED_PRECONDITION` if the alias requested does not make sense for the requesting user or course (for example, if a user not in a domain attempts to delete a domain-scoped alias).\nRequired: courseId (path) — Identifier of the course whose alias should be deleted. This identifier can be either the Classroom-assigned identifier or an alias.; alias (path) — Alias to delete. This may not be the Classroom-assigned identifier.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesAliasesList",
+    "name": "Returns a list of aliases for a course.",
+    "description": "Returns a list of aliases for a course. Returns a list of aliases for a course. GET /v1/courses/{courseId}/aliases",
+    "context": "GET /v1/courses/{courseId}/aliases\nReturns a list of aliases for a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to access the course or for access errors. * `NOT_FOUND` if the course does not exist.\nRequired: courseId (path) — The identifier of the course. This identifier can be either the Classroom-assigned identifier or an alias.\nOptional: pageSize (query) — Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.; pageToken (query) — nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

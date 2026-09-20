@@ -1,0 +1,122 @@
+[
+  {
+    "id": "get-active-connections",
+    "name": "Get active connection count",
+    "description": "Get active connection count Get the number of active connections for one or more Postgres databases or Redis instances. GET /v1/metrics/active-connections",
+    "context": "GET /v1/metrics/active-connections\nGet the number of active connections for one or more Postgres databases or Redis instances.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; resource (query) — Resource ID to query. When multiple resource query params are provided, they are ORed together. Resources Postgres ids or Redis ids"
+  },
+  {
+    "id": "get-bandwidth",
+    "name": "Get bandwidth usage",
+    "description": "Get bandwidth usage Get bandwidth usage for one or more resources. GET /v1/metrics/bandwidth",
+    "context": "GET /v1/metrics/bandwidth\nGet bandwidth usage for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; resource (query) — Service ID to query. When multiple service ids are provided, they are ORed together"
+  },
+  {
+    "id": "get-bandwidth-sources",
+    "name": "Get bandwidth usage breakdown by traffic source",
+    "description": "Get bandwidth usage breakdown by traffic source Get bandwidth usage for one or more resources broken down by traffic source (HTTP, WebSocket, NAT, PrivateLink). GET /v1/metrics/bandwidth-sources",
+    "context": "GET /v1/metrics/bandwidth-sources\nGet bandwidth usage for one or more resources broken down by traffic source (HTTP, WebSocket, NAT, PrivateLink). Returns hourly data points with traffic source breakdown. Traffic source data is available from March 9, 2025 onwards. Queries for earlier dates will return a 400 Bad Request error.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-cpu",
+    "name": "Get CPU usage",
+    "description": "Get CPU usage Get CPU usage for one or more resources. GET /v1/metrics/cpu",
+    "context": "GET /v1/metrics/cpu\nGet CPU usage for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; resolutionSeconds (query) — The resolution of the returned data; resource (query) — Resource ID to query. When multiple resource query params are provided, they are ORed together. Resources can be service ids, Postgres ids, or Redis ids; service (query) — This parameter is deprecated. Please use `resource` instead; instance (query) — Instance ID to query. When multiple instance ID query params are provided, they are ORed together; aggregationMethod (query) — The aggregation method to apply to multiple time series"
+  },
+  {
+    "id": "get-cpu-limit",
+    "name": "Get CPU limit",
+    "description": "Get CPU limit Get the CPU limit for one or more resources. GET /v1/metrics/cpu-limit",
+    "context": "GET /v1/metrics/cpu-limit\nGet the CPU limit for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-cpu-target",
+    "name": "Get CPU target",
+    "description": "Get CPU target Get CPU target for one or more resources. GET /v1/metrics/cpu-target",
+    "context": "GET /v1/metrics/cpu-target\nGet CPU target for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-disk-capacity",
+    "name": "Get disk capacity",
+    "description": "Get disk capacity Get persistent disk capacity for one or more resources. GET /v1/metrics/disk-capacity",
+    "context": "GET /v1/metrics/disk-capacity\nGet persistent disk capacity for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-disk-usage",
+    "name": "Get disk usage",
+    "description": "Get disk usage Get persistent disk usage for one or more resources. GET /v1/metrics/disk-usage",
+    "context": "GET /v1/metrics/disk-usage\nGet persistent disk usage for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-http-latency",
+    "name": "Get HTTP latency",
+    "description": "Get HTTP latency Get HTTP latency metrics for one or more resources. GET /v1/metrics/http-latency",
+    "context": "GET /v1/metrics/http-latency\nGet HTTP latency metrics for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; host (query) — The hosts of HTTP requests to filter to. When multiple host query params are provided, they are ORed together; path (query) — The paths of HTTP requests to filter to. When multiple path query params are provided, they are ORed together; quantile (query) — The quantile of latencies to fetch. When multiple quantile query params are provided, they are ORed together"
+  },
+  {
+    "id": "get-http-requests",
+    "name": "Get HTTP request count",
+    "description": "Get HTTP request count Get the HTTP request count for one or more resources. GET /v1/metrics/http-requests",
+    "context": "GET /v1/metrics/http-requests\nGet the HTTP request count for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; aggregateBy (query) — The field to aggregate by"
+  },
+  {
+    "id": "get-instance-count",
+    "name": "Get instance count",
+    "description": "Get instance count Get the instance count for one or more resources. GET /v1/metrics/instance-count",
+    "context": "GET /v1/metrics/instance-count\nGet the instance count for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-memory",
+    "name": "Get memory usage",
+    "description": "Get memory usage Get memory usage for one or more resources. GET /v1/metrics/memory",
+    "context": "GET /v1/metrics/memory\nGet memory usage for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-memory-limit",
+    "name": "Get memory limit",
+    "description": "Get memory limit Get the memory limit for one or more resources. GET /v1/metrics/memory-limit",
+    "context": "GET /v1/metrics/memory-limit\nGet the memory limit for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-memory-target",
+    "name": "Get memory target",
+    "description": "Get memory target Get memory target for one or more resources. GET /v1/metrics/memory-target",
+    "context": "GET /v1/metrics/memory-target\nGet memory target for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "get-replication-lag",
+    "name": "Get replica lag",
+    "description": "Get replica lag Get seconds of replica lag of a Postgres replica. GET /v1/metrics/replication-lag",
+    "context": "GET /v1/metrics/replication-lag\nGet seconds of replica lag of a Postgres replica.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; resource (query) — Postgres ID to query. When multiple resource query params are provided, they are ORed together"
+  },
+  {
+    "id": "get-task-runs-completed",
+    "name": "Get task runs completed count",
+    "description": "Get task runs completed count Get the total number of task runs completed for one or more tasks. GET /v1/metrics/task-runs-completed",
+    "context": "GET /v1/metrics/task-runs-completed\nGet the total number of task runs completed for one or more tasks. Optionally filter by state (succeeded/failed) or aggregate by state.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; state (query) — The state of task runs to filter to. When multiple state query params are provided, they are ORed together; aggregateBy (query) — The field to aggregate by"
+  },
+  {
+    "id": "get-task-runs-queued",
+    "name": "Get task runs queued count",
+    "description": "Get task runs queued count Get the total number of task runs queued for one or more tasks. GET /v1/metrics/task-runs-queued",
+    "context": "GET /v1/metrics/task-runs-queued\nGet the total number of task runs queued for one or more tasks.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; resource (query) — Task ID to query. When multiple task IDs are provided, they are ORed together"
+  },
+  {
+    "id": "list-application-filter-values",
+    "name": "List queryable instance values",
+    "description": "List queryable instance values List instance values to filter by for one or more resources. GET /v1/metrics/filters/application",
+    "context": "GET /v1/metrics/filters/application\nList instance values to filter by for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  },
+  {
+    "id": "list-http-filter-values",
+    "name": "List queryable status codes and host values",
+    "description": "List queryable status codes and host values List status codes and host values to filter by for one or more resources. GET /v1/metrics/filters/http",
+    "context": "GET /v1/metrics/filters/http\nList status codes and host values to filter by for one or more resources.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; statusCode (query) — The status codes of HTTP requests to filter to. When multiple status code query params are provided, they are ORed together"
+  },
+  {
+    "id": "list-path-filter-values",
+    "name": "List queryable paths",
+    "description": "List queryable paths The path suggestions are based on the most recent 5000 log lines as filtered by the provided filters GET /v1/metrics/filters/path",
+    "context": "GET /v1/metrics/filters/path\nThe path suggestions are based on the most recent 5000 log lines as filtered by the provided filters\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`."
+  }
+]

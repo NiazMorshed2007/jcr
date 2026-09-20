@@ -1,0 +1,80 @@
+[
+  {
+    "id": "unstable_dashboards_addPlacement",
+    "name": "Add a placement to a dashboard grid (see `DashboardPlacement` for grid semantics)",
+    "description": "Add a placement to a dashboard grid (see `DashboardPlacement` for grid semantics) Add a placement to a dashboard grid (see `DashboardPlacement` for grid semantics). POST /api/public/unstable/dashboards/{dashboardId}/placements",
+    "context": "POST /api/public/unstable/dashboards/{dashboardId}/placements\nAdd a placement to a dashboard grid (see `DashboardPlacement` for grid semantics). `id` and the position fields are optional: when omitted, the placement gets a server-generated id and is appended below all existing tiles as a 6x6 tile. Returns the created placement. The referenced widget must exist in the same project or be a Langfuse-managed widget. The API returns `409` if a placement with the same `id` already exists on the dashboard.\nRequired: dashboardId (path); body (body)"
+  },
+  {
+    "id": "unstable_dashboards_create",
+    "name": "Create a dashboard.",
+    "description": "Create a dashboard. POST /api/public/unstable/dashboards",
+    "context": "POST /api/public/unstable/dashboards\nCreate a dashboard.\nRequired: body (body)"
+  },
+  {
+    "id": "unstable_dashboards_delete",
+    "name": "Delete a dashboard.",
+    "description": "Delete a dashboard. DELETE /api/public/unstable/dashboards/{dashboardId}",
+    "context": "DELETE /api/public/unstable/dashboards/{dashboardId}\nDelete a dashboard.\nRequired: dashboardId (path)"
+  },
+  {
+    "id": "unstable_dashboards_deletePlacement",
+    "name": "Remove a placement from a dashboard grid without deleting the referenced widget.",
+    "description": "Remove a placement from a dashboard grid without deleting the referenced widget. DELETE /api/public/unstable/dashboards/{dashboardId}/placements/{placementId}",
+    "context": "DELETE /api/public/unstable/dashboards/{dashboardId}/placements/{placementId}\nRemove a placement from a dashboard grid without deleting the referenced widget.\nRequired: dashboardId (path); placementId (path)"
+  },
+  {
+    "id": "unstable_dashboards_get",
+    "name": "Get a dashboard by id.",
+    "description": "Get a dashboard by id. GET /api/public/unstable/dashboards/{dashboardId}",
+    "context": "GET /api/public/unstable/dashboards/{dashboardId}\nGet a dashboard by id.\nRequired: dashboardId (path)"
+  },
+  {
+    "id": "unstable_dashboards_list",
+    "name": "List dashboards in the project, ordered by most recently updated first.",
+    "description": "List dashboards in the project, ordered by most recently updated first. GET /api/public/unstable/dashboards",
+    "context": "GET /api/public/unstable/dashboards\nList dashboards in the project, ordered by most recently updated first.\nOptional: page (query) — 1-based page number. Defaults to `1`.; limit (query) — Maximum number of items per page. Defaults to `50`."
+  },
+  {
+    "id": "unstable_dashboards_update",
+    "name": "Update a dashboard's name, description, definition, or filters.",
+    "description": "Update a dashboard's name, description, definition, or filters. PATCH /api/public/unstable/dashboards/{dashboardId}",
+    "context": "PATCH /api/public/unstable/dashboards/{dashboardId}\nUpdate a dashboard's name, description, definition, or filters.\nRequired: dashboardId (path); body (body)"
+  },
+  {
+    "id": "unstable_dashboards_updatePlacement",
+    "name": "Move or resize a placement",
+    "description": "Move or resize a placement Move or resize a placement. PATCH /api/public/unstable/dashboards/{dashboardId}/placements/{placementId}",
+    "context": "PATCH /api/public/unstable/dashboards/{dashboardId}/placements/{placementId}\nMove or resize a placement. All fields are optional; at least one is required. Omitted fields keep their current value. The placement's content (widget/preset reference) and id cannot change — delete and re-add the placement to swap content. Returns the updated placement.\nRequired: dashboardId (path); placementId (path); body (body)"
+  },
+  {
+    "id": "unstable_dashboardWidgets_create",
+    "name": "Create a dashboard widget (a standalone chart definition you place on any dashboard)",
+    "description": "Create a dashboard widget (a standalone chart definition you place on any dashboard) Create a dashboard widget (a standalone chart definition you place on any dashboard). POST /api/public/unstable/dashboard-widgets",
+    "context": "POST /api/public/unstable/dashboard-widgets\nCreate a dashboard widget (a standalone chart definition you place on any dashboard). This endpoint creates the widget only; place it on a dashboard via `POST /dashboards/{dashboardId}/placements`. Supported views are `observations`, `scores-numeric`, `scores-boolean`, and `scores-categorical`. The legacy `traces` view is not supported by this unstable API. Widgets are created as v2 internally. `chartConfig` is optional and defaults to the plain config for `chartType`; when `chartConfig.type` is given it must match `chartType`. Unstable API note: - This surface may evolve while dashboard/widget APIs are being finalized.\nRequired: body (body)"
+  },
+  {
+    "id": "unstable_dashboardWidgets_delete",
+    "name": "Delete a dashboard widget",
+    "description": "Delete a dashboard widget Delete a dashboard widget. DELETE /api/public/unstable/dashboard-widgets/{widgetId}",
+    "context": "DELETE /api/public/unstable/dashboard-widgets/{widgetId}\nDelete a dashboard widget. The API returns `409` while the widget is still placed on a dashboard. Remove those placements first.\nRequired: widgetId (path)"
+  },
+  {
+    "id": "unstable_dashboardWidgets_get",
+    "name": "Get a dashboard widget by id",
+    "description": "Get a dashboard widget by id Get a dashboard widget by id. GET /api/public/unstable/dashboard-widgets/{widgetId}",
+    "context": "GET /api/public/unstable/dashboard-widgets/{widgetId}\nGet a dashboard widget by id. The response may use `view: traces` for legacy widgets.\nRequired: widgetId (path)"
+  },
+  {
+    "id": "unstable_dashboardWidgets_list",
+    "name": "List dashboard widgets in the project, ordered by most recently updated first",
+    "description": "List dashboard widgets in the project, ordered by most recently updated first List dashboard widgets in the project, ordered by most recently updated first. GET /api/public/unstable/dashboard-widgets",
+    "context": "GET /api/public/unstable/dashboard-widgets\nList dashboard widgets in the project, ordered by most recently updated first. Responses may include legacy `traces` widgets created before this API existed. New widgets cannot be created with `view: traces`.\nOptional: page (query) — 1-based page number. Defaults to `1`.; limit (query) — Maximum number of items per page. Defaults to `50`."
+  },
+  {
+    "id": "unstable_dashboardWidgets_update",
+    "name": "Update a dashboard widget",
+    "description": "Update a dashboard widget Update a dashboard widget. PATCH /api/public/unstable/dashboard-widgets/{widgetId}",
+    "context": "PATCH /api/public/unstable/dashboard-widgets/{widgetId}\nUpdate a dashboard widget. All fields are optional; at least one field is required. Changing `chartType` without sending `chartConfig` resets the config to the new chart type's defaults. When `chartConfig.type` is given it must match the widget's (possibly updated) `chartType`. `view` cannot be changed to the legacy `traces` value. Existing `traces` widgets may be updated on other fields.\nRequired: widgetId (path); body (body)"
+  }
+]

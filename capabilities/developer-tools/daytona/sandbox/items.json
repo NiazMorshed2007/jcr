@@ -1,0 +1,278 @@
+[
+  {
+    "id": "archiveSandbox",
+    "name": "Archive sandbox",
+    "description": "Archive sandbox POST /sandbox/{sandboxIdOrName}/archive",
+    "context": "POST /sandbox/{sandboxIdOrName}/archive\nArchive sandbox\nRequired: sandboxIdOrName (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "createBackup",
+    "name": "Create sandbox backup",
+    "description": "Create sandbox backup Deprecated: backups are managed automatically. POST /sandbox/{sandboxIdOrName}/backup",
+    "context": "POST /sandbox/{sandboxIdOrName}/backup\nDeprecated: backups are managed automatically. This endpoint is a no-op kept for compatibility.\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "createSandbox",
+    "name": "Create a new sandbox",
+    "description": "Create a new sandbox POST /sandbox",
+    "context": "POST /sandbox\nCreate a new sandbox\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "createSandboxSnapshot",
+    "name": "Create a snapshot from a sandbox",
+    "description": "Create a snapshot from a sandbox POST /sandbox/{sandboxIdOrName}/snapshot",
+    "context": "POST /sandbox/{sandboxIdOrName}/snapshot\nCreate a snapshot from a sandbox\nRequired: sandboxIdOrName (path); body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "createSshAccess",
+    "name": "Create SSH access for sandbox",
+    "description": "Create SSH access for sandbox POST /sandbox/{sandboxIdOrName}/ssh-access",
+    "context": "POST /sandbox/{sandboxIdOrName}/ssh-access\nCreate SSH access for sandbox\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; expiresInMinutes (query) — Expiration time in minutes (default: 60)"
+  },
+  {
+    "id": "deleteSandbox",
+    "name": "Delete sandbox",
+    "description": "Delete sandbox DELETE /sandbox/{sandboxIdOrName}",
+    "context": "DELETE /sandbox/{sandboxIdOrName}\nDelete sandbox\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "expireSignedPortPreviewUrl",
+    "name": "Expire signed preview URL for a sandbox port",
+    "description": "Expire signed preview URL for a sandbox port POST /sandbox/{sandboxIdOrName}/ports/{port}/signed-preview-url/{token}/expire",
+    "context": "POST /sandbox/{sandboxIdOrName}/ports/{port}/signed-preview-url/{token}/expire\nExpire signed preview URL for a sandbox port\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; port (path) — Port number to expire signed preview URL for; token (path) — Token to expire signed preview URL for\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "forkSandbox",
+    "name": "Fork a sandbox",
+    "description": "Fork a sandbox POST /sandbox/{sandboxIdOrName}/fork",
+    "context": "POST /sandbox/{sandboxIdOrName}/fork\nFork a sandbox\nRequired: sandboxIdOrName (path); body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getBuildLogs",
+    "name": "Get build logs",
+    "description": "Get build logs This endpoint is deprecated. GET /sandbox/{sandboxIdOrName}/build-logs",
+    "context": "GET /sandbox/{sandboxIdOrName}/build-logs\nThis endpoint is deprecated. Use `getBuildLogsUrl` instead.\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; follow (query) — Whether to follow the logs stream"
+  },
+  {
+    "id": "getBuildLogsUrl",
+    "name": "Get build logs URL",
+    "description": "Get build logs URL GET /sandbox/{sandboxIdOrName}/build-logs-url",
+    "context": "GET /sandbox/{sandboxIdOrName}/build-logs-url\nGet build logs URL\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getOrganizationBySandboxId",
+    "name": "Get organization by sandbox ID",
+    "description": "Get organization by sandbox ID GET /sandbox/{sandboxId}/organization",
+    "context": "GET /sandbox/{sandboxId}/organization\nGet organization by sandbox ID\nRequired: sandboxId (path) — ID of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getPortPreviewUrl",
+    "name": "Get preview URL for a sandbox port",
+    "description": "Get preview URL for a sandbox port GET /sandbox/{sandboxIdOrName}/ports/{port}/preview-url",
+    "context": "GET /sandbox/{sandboxIdOrName}/ports/{port}/preview-url\nGet preview URL for a sandbox port\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; port (path) — Port number to get preview URL for\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getRegionQuotaBySandboxId",
+    "name": "Get region quota by sandbox ID",
+    "description": "Get region quota by sandbox ID GET /sandbox/{sandboxId}/region-quota",
+    "context": "GET /sandbox/{sandboxId}/region-quota\nGet region quota by sandbox ID\nRequired: sandboxId (path) — ID of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getSandbox",
+    "name": "Get sandbox details",
+    "description": "Get sandbox details Sandboxes destroyed by spot preemption remain retrievable for 24 hours so `spotEvictedAt` can be read. GET /sandbox/{sandboxIdOrName}",
+    "context": "GET /sandbox/{sandboxIdOrName}\nSandboxes destroyed by spot preemption remain retrievable for 24 hours so `spotEvictedAt` can be read.\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; verbose (query) — Include verbose output"
+  },
+  {
+    "id": "getSandboxAncestors",
+    "name": "Get sandbox fork ancestor chain",
+    "description": "Get sandbox fork ancestor chain GET /sandbox/{sandboxIdOrName}/ancestors",
+    "context": "GET /sandbox/{sandboxIdOrName}/ancestors\nGet sandbox fork ancestor chain\nRequired: sandboxIdOrName (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getSandboxesForRunner",
+    "name": "Get sandboxes for the authenticated runner",
+    "description": "Get sandboxes for the authenticated runner GET /sandbox/for-runner",
+    "context": "GET /sandbox/for-runner\nGet sandboxes for the authenticated runner\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; states (query) — Comma-separated list of sandbox states to filter by; skipReconcilingSandboxes (query) — Skip sandboxes where state differs from desired state"
+  },
+  {
+    "id": "getSandboxForks",
+    "name": "Get sandbox fork children",
+    "description": "Get sandbox fork children GET /sandbox/{sandboxIdOrName}/forks",
+    "context": "GET /sandbox/{sandboxIdOrName}/forks\nGet sandbox fork children\nRequired: sandboxIdOrName (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; includeDestroyed (query)"
+  },
+  {
+    "id": "getSandboxLogs",
+    "name": "Get sandbox logs",
+    "description": "Get sandbox logs Retrieve OTEL logs for a sandbox within a time range GET /sandbox/{sandboxId}/telemetry/logs",
+    "context": "GET /sandbox/{sandboxId}/telemetry/logs\nRetrieve OTEL logs for a sandbox within a time range\nRequired: sandboxId (path) — ID of the sandbox; from (query) — Start of time range (ISO 8601); to (query) — End of time range (ISO 8601)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; page (query) — Page number (1-indexed); limit (query) — Number of items per page; severities (query) — Filter by severity levels (DEBUG, INFO, WARN, ERROR); search (query) — Search in log body"
+  },
+  {
+    "id": "getSandboxMetrics",
+    "name": "Get sandbox metrics",
+    "description": "Get sandbox metrics Retrieve OTEL metrics for a sandbox within a time range GET /sandbox/{sandboxId}/telemetry/metrics",
+    "context": "GET /sandbox/{sandboxId}/telemetry/metrics\nRetrieve OTEL metrics for a sandbox within a time range\nRequired: sandboxId (path) — ID of the sandbox; from (query) — Start of time range (ISO 8601); to (query) — End of time range (ISO 8601)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; metricNames (query) — Filter by metric names"
+  },
+  {
+    "id": "getSandboxParent",
+    "name": "Get sandbox fork parent",
+    "description": "Get sandbox fork parent GET /sandbox/{sandboxIdOrName}/parent",
+    "context": "GET /sandbox/{sandboxIdOrName}/parent\nGet sandbox fork parent\nRequired: sandboxIdOrName (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getSandboxSigningKey",
+    "name": "Get the signing key for a sandbox",
+    "description": "Get the signing key for a sandbox GET /sandbox/{sandboxId}/signing-key",
+    "context": "GET /sandbox/{sandboxId}/signing-key\nGet the signing key for a sandbox\nRequired: sandboxId (path) — ID of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getSandboxTraces",
+    "name": "Get sandbox traces",
+    "description": "Get sandbox traces Retrieve OTEL traces for a sandbox within a time range GET /sandbox/{sandboxId}/telemetry/traces",
+    "context": "GET /sandbox/{sandboxId}/telemetry/traces\nRetrieve OTEL traces for a sandbox within a time range\nRequired: sandboxId (path) — ID of the sandbox; from (query) — Start of time range (ISO 8601); to (query) — End of time range (ISO 8601)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; page (query) — Page number (1-indexed); limit (query) — Number of items per page"
+  },
+  {
+    "id": "getSandboxTraceSpans",
+    "name": "Get trace spans",
+    "description": "Get trace spans Retrieve all spans for a specific trace GET /sandbox/{sandboxId}/telemetry/traces/{traceId}",
+    "context": "GET /sandbox/{sandboxId}/telemetry/traces/{traceId}\nRetrieve all spans for a specific trace\nRequired: sandboxId (path) — ID of the sandbox; traceId (path) — ID of the trace\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getSignedPortPreviewUrl",
+    "name": "Get signed preview URL for a sandbox port",
+    "description": "Get signed preview URL for a sandbox port GET /sandbox/{sandboxIdOrName}/ports/{port}/signed-preview-url",
+    "context": "GET /sandbox/{sandboxIdOrName}/ports/{port}/signed-preview-url\nGet signed preview URL for a sandbox port\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; port (path) — Port number to get signed preview URL for\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; expiresInSeconds (query) — Expiration time in seconds (default: 60 seconds)"
+  },
+  {
+    "id": "getToolboxProxyUrl",
+    "name": "Get toolbox proxy URL for a sandbox",
+    "description": "Get toolbox proxy URL for a sandbox GET /sandbox/{sandboxId}/toolbox-proxy-url",
+    "context": "GET /sandbox/{sandboxId}/toolbox-proxy-url\nGet toolbox proxy URL for a sandbox\nRequired: sandboxId (path) — ID of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "listSandboxes",
+    "name": "List sandboxes",
+    "description": "List sandboxes Advanced filtering and ordering. GET /sandbox",
+    "context": "GET /sandbox\nAdvanced filtering and ordering. Eventually consistent.\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; cursor (query) — Pagination cursor from a previous response; limit (query) — Number of results per page; id (query) — Filter by ID prefix (case-insensitive); name (query) — Filter by name prefix (case-insensitive); labels (query) — JSON encoded labels to filter by; includeErroredDeleted (query) — Include results with errored state and deleted desired state; includeWarm (query) — Include unclaimed warm pool sandboxes (excluded by default); states (query) — List of states to filter by.; snapshots (query) — List of snapshot names to filter by; regionIds (query) — List of regions IDs to filter by; sandboxClasses (query) — List of sandbox classes to filter by; minCpu (query) — Minimum CPU; maxCpu (query) — Maximum CPU; minMemoryGiB (query) — Minimum memory in GiB; maxMemoryGiB (query) — Maximum memory in GiB; minDiskGiB (query) — Minimum disk space in GiB; maxDiskGiB (query) — Maximum disk space in GiB; minGpu (query) — Minimum GPU; maxGpu (query) — Maximum GPU; isPublic (query) — Filter by public status; isRecoverable (query) — Filter by recoverable status; createdAtAfter (query) — Include items created after this timestamp; createdAtBefore (query) — Include items created before this timestamp; lastEventAfter (query) — Include items with last event after this timestamp; lastEventBefore (query) — Include items with last event before this timestamp; autoDestroyAtAfter (query) — Include items scheduled for auto destroy after this timestamp; autoDestroyAtBefore (query) — Include items scheduled for auto destroy before this timestamp; sort (query) — Field to sort by; order (query) — Direction to sort by"
+  },
+  {
+    "id": "pauseSandbox",
+    "name": "Pause sandbox",
+    "description": "Pause sandbox POST /sandbox/{sandboxIdOrName}/pause",
+    "context": "POST /sandbox/{sandboxIdOrName}/pause\nPause sandbox\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "recoverSandbox",
+    "name": "Recover sandbox from error state",
+    "description": "Recover sandbox from error state POST /sandbox/{sandboxIdOrName}/recover",
+    "context": "POST /sandbox/{sandboxIdOrName}/recover\nRecover sandbox from error state\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; skipStart (query) — If true, the sandbox is left in STOPPED after recovery instead of being started."
+  },
+  {
+    "id": "replaceLabels",
+    "name": "Replace sandbox labels",
+    "description": "Replace sandbox labels PUT /sandbox/{sandboxIdOrName}/labels",
+    "context": "PUT /sandbox/{sandboxIdOrName}/labels\nReplace sandbox labels\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "resizeSandbox",
+    "name": "Resize sandbox resources",
+    "description": "Resize sandbox resources POST /sandbox/{sandboxIdOrName}/resize",
+    "context": "POST /sandbox/{sandboxIdOrName}/resize\nResize sandbox resources\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "resolveSandboxSecrets",
+    "name": "Resolve sandbox secrets",
+    "description": "Resolve sandbox secrets GET /sandbox/{sandboxId}/secrets",
+    "context": "GET /sandbox/{sandboxId}/secrets\nResolve sandbox secrets\nRequired: sandboxId (path) — Sandbox ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "revokeSshAccess",
+    "name": "Revoke SSH access for sandbox",
+    "description": "Revoke SSH access for sandbox DELETE /sandbox/{sandboxIdOrName}/ssh-access",
+    "context": "DELETE /sandbox/{sandboxIdOrName}/ssh-access\nRevoke SSH access for sandbox\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; token (query) — SSH access token to revoke. If not provided, all SSH access for the sandbox will be revoked."
+  },
+  {
+    "id": "rotateSigningKey",
+    "name": "Rotate the signing key, invalidating all previously signed URLs",
+    "description": "Rotate the signing key, invalidating all previously signed URLs POST /sandbox/{sandboxId}/signing-key/rotate",
+    "context": "POST /sandbox/{sandboxId}/signing-key/rotate\nRotate the signing key, invalidating all previously signed URLs\nRequired: sandboxId (path) — ID of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "setAutoArchiveInterval",
+    "name": "Set sandbox auto-archive interval",
+    "description": "Set sandbox auto-archive interval POST /sandbox/{sandboxIdOrName}/autoarchive/{interval}",
+    "context": "POST /sandbox/{sandboxIdOrName}/autoarchive/{interval}\nSet sandbox auto-archive interval\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; interval (path) — Auto-archive interval in minutes (0 means the maximum interval will be used)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "setAutoDeleteInterval",
+    "name": "Set sandbox auto-delete interval",
+    "description": "Set sandbox auto-delete interval POST /sandbox/{sandboxIdOrName}/autodelete/{interval}",
+    "context": "POST /sandbox/{sandboxIdOrName}/autodelete/{interval}\nSet sandbox auto-delete interval\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; interval (path) — Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "setAutoPauseInterval",
+    "name": "Set sandbox auto-pause interval",
+    "description": "Set sandbox auto-pause interval POST /sandbox/{sandboxIdOrName}/autopause/{interval}",
+    "context": "POST /sandbox/{sandboxIdOrName}/autopause/{interval}\nSet sandbox auto-pause interval\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; interval (path) — Auto-pause interval in minutes (0 to disable)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "setAutostopInterval",
+    "name": "Set sandbox auto-stop interval",
+    "description": "Set sandbox auto-stop interval POST /sandbox/{sandboxIdOrName}/autostop/{interval}",
+    "context": "POST /sandbox/{sandboxIdOrName}/autostop/{interval}\nSet sandbox auto-stop interval\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; interval (path) — Auto-stop interval in minutes (0 to disable)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "setTtl",
+    "name": "Set sandbox TTL",
+    "description": "Set sandbox TTL POST /sandbox/{sandboxIdOrName}/ttl/{ttlMinutes}",
+    "context": "POST /sandbox/{sandboxIdOrName}/ttl/{ttlMinutes}\nSet sandbox TTL\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; ttlMinutes (path) — Maximum time to live in minutes, re-anchored from the current time (0 to disable). When it elapses the sandbox is destroyed, even if it is stopped, paused, or archived\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "startSandbox",
+    "name": "Start or resume sandbox",
+    "description": "Start or resume sandbox Starts a stopped or archived sandbox, or resumes a paused sandbox. POST /sandbox/{sandboxIdOrName}/start",
+    "context": "POST /sandbox/{sandboxIdOrName}/start\nStarts a stopped or archived sandbox, or resumes a paused sandbox. The transition taken depends on the current sandbox state.\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "stopSandbox",
+    "name": "Stop sandbox",
+    "description": "Stop sandbox POST /sandbox/{sandboxIdOrName}/stop",
+    "context": "POST /sandbox/{sandboxIdOrName}/stop\nStop sandbox\nRequired: sandboxIdOrName (path) — ID or name of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; force (query) — Force stop the sandbox using SIGKILL instead of SIGTERM"
+  },
+  {
+    "id": "updateLastActivity",
+    "name": "Update sandbox last activity",
+    "description": "Update sandbox last activity POST /sandbox/{sandboxId}/last-activity",
+    "context": "POST /sandbox/{sandboxId}/last-activity\nUpdate sandbox last activity\nRequired: sandboxId (path) — ID of the sandbox\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; body (body)"
+  },
+  {
+    "id": "updateNetworkSettings",
+    "name": "Update sandbox network settings",
+    "description": "Update sandbox network settings Changes outbound network policy on the runner for a running sandbox (for example block all traffic, restore access, or set a CIDR allow list). POST /sandbox/{sandboxIdOrName}/network-settings",
+    "context": "POST /sandbox/{sandboxIdOrName}/network-settings\nChanges outbound network policy on the runner for a running sandbox (for example block all traffic, restore access, or set a CIDR allow list).\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updatePublicStatus",
+    "name": "Update public status",
+    "description": "Update public status POST /sandbox/{sandboxIdOrName}/public/{isPublic}",
+    "context": "POST /sandbox/{sandboxIdOrName}/public/{isPublic}\nUpdate public status\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; isPublic (path) — Public status to set\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updateSandboxSecrets",
+    "name": "Update sandbox secrets",
+    "description": "Update sandbox secrets Replaces the set of vault secrets mounted in the sandbox. PUT /sandbox/{sandboxIdOrName}/secrets",
+    "context": "PUT /sandbox/{sandboxIdOrName}/secrets\nReplaces the set of vault secrets mounted in the sandbox. Attached, detached and rotated secrets take effect for outbound requests within seconds. New env vars become visible to processes spawned after the update; a sandbox created without any secrets must be restarted for newly attached secrets to work.\nRequired: sandboxIdOrName (path) — ID or name of the sandbox; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updateSandboxState",
+    "name": "Update sandbox state",
+    "description": "Update sandbox state PUT /sandbox/{sandboxId}/state",
+    "context": "PUT /sandbox/{sandboxId}/state\nUpdate sandbox state\nRequired: sandboxId (path) — ID of the sandbox; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "validateSshAccess",
+    "name": "Validate SSH access for sandbox",
+    "description": "Validate SSH access for sandbox GET /sandbox/ssh-access/validate",
+    "context": "GET /sandbox/ssh-access/validate\nValidate SSH access for sandbox\nRequired: token (query) — SSH access token to validate\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

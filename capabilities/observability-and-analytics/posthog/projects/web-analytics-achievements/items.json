@@ -1,0 +1,38 @@
+[
+  {
+    "id": "web_analytics_achievements_acknowledge_celebration",
+    "name": "Acknowledge an achievement celebration",
+    "description": "Acknowledge an achievement celebration Clears a pending celebration for the given track and stage once the client has shown it, so it isn't celebrated again. POST /api/projects/{project_id}/web_analytics_achievements/acknowledge_celebration/",
+    "context": "POST /api/projects/{project_id}/web_analytics_achievements/acknowledge_celebration/\nClears a pending celebration for the given track and stage once the client has shown it, so it isn't celebrated again. Idempotent.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_achievements_overview",
+    "name": "Get Web analytics achievements overview",
+    "description": "Get Web analytics achievements overview Returns the achievement track definitions (thresholds resolved for the requesting user's streak-cadence arm), the user's and team's progress, and any newly unlocked stages awaiting an in-session celebration. GET /api/projects/{project_id}/web_analytics_achievements/overview/",
+    "context": "GET /api/projects/{project_id}/web_analytics_achievements/overview/\nReturns the achievement track definitions (thresholds resolved for the requesting user's streak-cadence arm), the user's and team's progress, and any newly unlocked stages awaiting an in-session celebration.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_achievements_preferences",
+    "name": "Get Web analytics achievements preferences",
+    "description": "Get Web analytics achievements preferences Returns the requesting user's per-project Web analytics achievements preferences. GET /api/projects/{project_id}/web_analytics_achievements/preferences/",
+    "context": "GET /api/projects/{project_id}/web_analytics_achievements/preferences/\nReturns the requesting user's per-project Web analytics achievements preferences.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_achievements_record_interaction",
+    "name": "Record a Web analytics interaction",
+    "description": "Record a Web analytics interaction Idempotently increments the requesting user's first-party counter for an in-product Web analytics interaction (slicing data, or opening a session recording), which drives the Explorer and Detective achievement tracks. POST /api/projects/{project_id}/web_analytics_achievements/record_…",
+    "context": "POST /api/projects/{project_id}/web_analytics_achievements/record_interaction/\nIdempotently increments the requesting user's first-party counter for an in-product Web analytics interaction (slicing data, or opening a session recording), which drives the Explorer and Detective achievement tracks.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_achievements_record_visit",
+    "name": "Record a Web analytics visit",
+    "description": "Record a Web analytics visit Idempotently records that the requesting user opened Web analytics today (team-local date) and schedules a debounced achievement recompute. POST /api/projects/{project_id}/web_analytics_achievements/record_visit/",
+    "context": "POST /api/projects/{project_id}/web_analytics_achievements/record_visit/\nIdempotently records that the requesting user opened Web analytics today (team-local date) and schedules a debounced achievement recompute. Intended to be called once per session.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_achievements_update_preferences",
+    "name": "Update Web analytics achievements preferences",
+    "description": "Update Web analytics achievements preferences Sets the requesting user's per-project Web analytics achievements preferences. POST /api/projects/{project_id}/web_analytics_achievements/preferences/",
+    "context": "POST /api/projects/{project_id}/web_analytics_achievements/preferences/\nSets the requesting user's per-project Web analytics achievements preferences.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

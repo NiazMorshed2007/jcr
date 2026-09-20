@@ -1,0 +1,158 @@
+[
+  {
+    "id": "delete_publicDeleteSendingSuppression",
+    "name": "Delete account Email Sending suppression",
+    "description": "Delete account Email Sending suppression Deletes the suppression, its note, and every legacy internal zone membership, allowing future delivery attempts to the address. DELETE /client/v4/accounts/{account_id}/email/sending/suppressions/{suppression_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email/sending/suppressions/{suppression_id}\nDeletes the suppression, its note, and every legacy internal zone membership, allowing future delivery attempts to the address.\nRequired: account_id (path); suppression_id (path)"
+  },
+  {
+    "id": "delete_publicDeleteSuppressionRouting",
+    "name": "Delete account email suppression",
+    "description": "Delete account email suppression Deletes an email suppression for the specified account. DELETE /client/v4/accounts/{account_id}/email/routing/suppression/{suppression_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email/routing/suppression/{suppression_id}\nDeletes an email suppression for the specified account.\nRequired: account_id (path); suppression_id (path)"
+  },
+  {
+    "id": "delete_publicDeleteSuppressionSending",
+    "name": "Delete account email suppression",
+    "description": "Delete account email suppression Deletes an email suppression for the specified account. DELETE /client/v4/accounts/{account_id}/email/sending/suppression/{suppression_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email/sending/suppression/{suppression_id}\nDeletes an email suppression for the specified account.\nRequired: account_id (path); suppression_id (path)"
+  },
+  {
+    "id": "email-routing-destination-addresses-create-a-destination-address",
+    "name": "Create a destination address",
+    "description": "Create a destination address Create a destination address to forward your emails to. POST /client/v4/accounts/{account_id}/email/routing/addresses",
+    "context": "POST /client/v4/accounts/{account_id}/email/routing/addresses\nCreate a destination address to forward your emails to. Destination addresses need to be verified before they can be used.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-destination-addresses-delete-destination-address",
+    "name": "Delete destination address",
+    "description": "Delete destination address Deletes a specific destination address. DELETE /client/v4/accounts/{account_id}/email/routing/addresses/{destination_address_identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email/routing/addresses/{destination_address_identifier}\nDeletes a specific destination address.\nRequired: destination_address_identifier (path); account_id (path)"
+  },
+  {
+    "id": "email-routing-destination-addresses-get-a-destination-address",
+    "name": "Get a destination address",
+    "description": "Get a destination address Gets information for a specific destination email already created. GET /client/v4/accounts/{account_id}/email/routing/addresses/{destination_address_identifier}",
+    "context": "GET /client/v4/accounts/{account_id}/email/routing/addresses/{destination_address_identifier}\nGets information for a specific destination email already created.\nRequired: destination_address_identifier (path); account_id (path)"
+  },
+  {
+    "id": "email-routing-destination-addresses-list-destination-addresses",
+    "name": "List destination addresses",
+    "description": "List destination addresses Lists existing destination addresses. GET /client/v4/accounts/{account_id}/email/routing/addresses",
+    "context": "GET /client/v4/accounts/{account_id}/email/routing/addresses\nLists existing destination addresses.\nRequired: account_id (path)\nOptional: page (query); per_page (query); direction (query); verified (query)"
+  },
+  {
+    "id": "email-routing-destination-addresses-update-destination-address",
+    "name": "Update destination address",
+    "description": "Update destination address Updates the status of a specific destination address. PATCH /client/v4/accounts/{account_id}/email/routing/addresses/{destination_address_identifier}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email/routing/addresses/{destination_address_identifier}\nUpdates the status of a specific destination address.\nRequired: destination_address_identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-routing-rules-list-account-routing-rules",
+    "name": "List account routing rules",
+    "description": "List account routing rules Lists existing routing rules across all zones in the account. GET /client/v4/accounts/{account_id}/email/routing/rules",
+    "context": "GET /client/v4/accounts/{account_id}/email/routing/rules\nLists existing routing rules across all zones in the account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); enabled (query)"
+  },
+  {
+    "id": "email-routing-routing-rules-plan-account-routing-rules",
+    "name": "Plan account routing rule changes",
+    "description": "Plan account routing rule changes Computes the Email Routing rule changes that would be needed to reconcile a Wrangler-managed desired ruleset. POST /client/v4/accounts/{account_id}/email/routing/rules/plan",
+    "context": "POST /client/v4/accounts/{account_id}/email/routing/rules/plan\nComputes the Email Routing rule changes that would be needed to reconcile a Wrangler-managed desired ruleset. This endpoint is read-only and does not create, update, or delete rules.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "email-sending-account-send-builder",
+    "name": "Send an email",
+    "description": "Send an email Send an email for the specified account using the structured builder. POST /client/v4/accounts/{account_id}/email/sending/send",
+    "context": "POST /client/v4/accounts/{account_id}/email/sending/send\nSend an email for the specified account using the structured builder. Provide the sender, recipients, subject, and at least one of text or html; attachments are optional.\nRequired: account_id (path) — Identifier of the account.; body (body)"
+  },
+  {
+    "id": "email-sending-account-send-raw-message",
+    "name": "Send a raw MIME email",
+    "description": "Send a raw MIME email Send a raw RFC 5322 (MIME) email for the specified account. POST /client/v4/accounts/{account_id}/email/sending/send_raw",
+    "context": "POST /client/v4/accounts/{account_id}/email/sending/send_raw\nSend a raw RFC 5322 (MIME) email for the specified account. Provide the full MIME message plus the SMTP envelope (from and recipients).\nRequired: account_id (path) — Identifier of the account.; body (body)"
+  },
+  {
+    "id": "email-sending-get-email-message",
+    "name": "Fetch an email message",
+    "description": "Fetch an email message Returns the raw RFC 5322 MIME message for the given account and message id. GET /client/v4/accounts/{account_id}/email/sending/messages/{message_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/messages/{message_id}\nReturns the raw RFC 5322 MIME message for the given account and message id.\nRequired: account_id (path); message_id (path)"
+  },
+  {
+    "id": "email-sending-get-reputation",
+    "name": "Get account reputation",
+    "description": "Get account reputation Returns the authoritative Email Sending reputation state and active evaluation policy. GET /client/v4/accounts/{account_id}/email/sending/reputation",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/reputation\nReturns the authoritative Email Sending reputation state and active evaluation policy. Accounts without an evaluation are Healthy with null evaluation timestamps.\nRequired: account_id (path)"
+  },
+  {
+    "id": "email-sending-get-sending-limits",
+    "name": "Get sending limits",
+    "description": "Get sending limits Returns the current daily sending quota for the account and, when a quota is resolved, the account's current usage against it. GET /client/v4/accounts/{account_id}/email/sending/limits",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/limits\nReturns the current daily sending quota for the account and, when a quota is resolved, the account's current usage against it. Quota is null when not yet available; usage is null when there is no resolved quota or usage is temporarily unavailable.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get_publicGetSendingSuppression",
+    "name": "Get account Email Sending suppression",
+    "description": "Get account Email Sending suppression Gets an Email Sending suppression owned by the account. GET /client/v4/accounts/{account_id}/email/sending/suppressions/{suppression_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/suppressions/{suppression_id}\nGets an Email Sending suppression owned by the account.\nRequired: account_id (path); suppression_id (path)"
+  },
+  {
+    "id": "get_publicGetSuppressionRouting",
+    "name": "Get account email suppression",
+    "description": "Get account email suppression Retrieves a single email suppression for the specified account. GET /client/v4/accounts/{account_id}/email/routing/suppression/{suppression_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email/routing/suppression/{suppression_id}\nRetrieves a single email suppression for the specified account.\nRequired: account_id (path); suppression_id (path)"
+  },
+  {
+    "id": "get_publicGetSuppressionSending",
+    "name": "Get account email suppression",
+    "description": "Get account email suppression Retrieves a single email suppression for the specified account. GET /client/v4/accounts/{account_id}/email/sending/suppression/{suppression_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/suppression/{suppression_id}\nRetrieves a single email suppression for the specified account.\nRequired: account_id (path); suppression_id (path)"
+  },
+  {
+    "id": "get_publicListSendingSuppressions",
+    "name": "List account Email Sending suppressions",
+    "description": "List account Email Sending suppressions Lists every active Email Sending suppression owned by the account, including legacy rows with internal zone memberships. GET /client/v4/accounts/{account_id}/email/sending/suppressions",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/suppressions\nLists every active Email Sending suppression owned by the account, including legacy rows with internal zone memberships.\nRequired: account_id (path)\nOptional: per_page (query); cursor (query); email (query); search (query); reason (query)"
+  },
+  {
+    "id": "get_publicListSuppressionRouting",
+    "name": "List account email suppressions",
+    "description": "List account email suppressions Lists email suppressions for the specified account. GET /client/v4/accounts/{account_id}/email/routing/suppression",
+    "context": "GET /client/v4/accounts/{account_id}/email/routing/suppression\nLists email suppressions for the specified account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "get_publicListSuppressionSending",
+    "name": "List account email suppressions",
+    "description": "List account email suppressions Lists email suppressions for the specified account. GET /client/v4/accounts/{account_id}/email/sending/suppression",
+    "context": "GET /client/v4/accounts/{account_id}/email/sending/suppression\nLists email suppressions for the specified account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "patch_publicUpdateSendingSuppression",
+    "name": "Update account Email Sending suppression",
+    "description": "Update account Email Sending suppression Updates expiry or advisory note fields without changing legacy internal zone memberships. PATCH /client/v4/accounts/{account_id}/email/sending/suppressions/{suppression_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email/sending/suppressions/{suppression_id}\nUpdates expiry or advisory note fields without changing legacy internal zone memberships.\nRequired: account_id (path); suppression_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_publicBulkCreateSendingSuppressions",
+    "name": "Bulk import account Email Sending suppressions",
+    "description": "Bulk import account Email Sending suppressions Imports up to 1,000 account-level Email Sending suppressions in one request. POST /client/v4/accounts/{account_id}/email/sending/suppressions/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/email/sending/suppressions/bulk\nImports up to 1,000 account-level Email Sending suppressions in one request.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_publicCreateSendingSuppression",
+    "name": "Create account Email Sending suppression",
+    "description": "Create account Email Sending suppression Creates an account-wide suppression. POST /client/v4/accounts/{account_id}/email/sending/suppressions",
+    "context": "POST /client/v4/accounts/{account_id}/email/sending/suppressions\nCreates an account-wide suppression. If a mutable legacy zone-linked row already exists, it is promoted without changing its identifier.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_publicNewSuppressionRouting",
+    "name": "Create account email suppression",
+    "description": "Create account email suppression Creates a new email suppression for the specified account. POST /client/v4/accounts/{account_id}/email/routing/suppression",
+    "context": "POST /client/v4/accounts/{account_id}/email/routing/suppression\nCreates a new email suppression for the specified account.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_publicNewSuppressionSending",
+    "name": "Create account email suppression",
+    "description": "Create account email suppression Creates a new email suppression for the specified account. POST /client/v4/accounts/{account_id}/email/sending/suppression",
+    "context": "POST /client/v4/accounts/{account_id}/email/sending/suppression\nCreates a new email suppression for the specified account.\nRequired: account_id (path)\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "calendar_sync_backfill_create",
+    "name": "Backfill a connected Google account",
+    "description": "Backfill a connected Google account Start an admin-only Gmail and Google Calendar backfill for an inclusive UTC date range. POST /api/projects/{project_id}/calendar_sync/backfill/",
+    "context": "POST /api/projects/{project_id}/calendar_sync/backfill/\nStart an admin-only Gmail and Google Calendar backfill for an inclusive UTC date range.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "calendar_sync_list",
+    "name": "Calendar-sync controls for Customer analytics settings",
+    "description": "Calendar-sync controls for Customer analytics settings Calendar-sync controls for Customer analytics settings. GET /api/projects/{project_id}/calendar_sync/",
+    "context": "GET /api/projects/{project_id}/calendar_sync/\nCalendar-sync controls for Customer analytics settings. Sync runs on an hourly Temporal schedule; this surface only offers the manual \"sync now\" escape hatch.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "calendar_sync_sync_now_create",
+    "name": "Sync a connected calendar now",
+    "description": "Sync a connected calendar now Start a sync run for one connected Google Calendar immediately, outside the hourly schedule. POST /api/projects/{project_id}/calendar_sync/sync_now/",
+    "context": "POST /api/projects/{project_id}/calendar_sync/sync_now/\nStart a sync run for one connected Google Calendar immediately, outside the hourly schedule.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

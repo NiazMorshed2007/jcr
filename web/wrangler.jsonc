@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jcr",
+  "compatibility_date": "2026-07-01",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page",
+  },
+  "routes": [{ "pattern": "jcr.niazmorshed.dev", "custom_domain": true }],
+}

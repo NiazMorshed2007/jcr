@@ -1,0 +1,446 @@
+[
+  {
+    "id": "email_security_batch_allow_policies",
+    "name": "Batch allow policies operations",
+    "description": "Batch allow policies operations Executes multiple operations atomically. POST /client/v4/accounts/{account_id}/email-security/settings/allow_policies/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/allow_policies/batch\nExecutes multiple operations atomically. All four operation arrays (deletes, patches, puts, posts) are required and executed in order. Send empty arrays for unused operations.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_batch_blocked_senders",
+    "name": "Batch blocked senders operations",
+    "description": "Batch blocked senders operations Executes multiple operations atomically. POST /client/v4/accounts/{account_id}/email-security/settings/block_senders/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/block_senders/batch\nExecutes multiple operations atomically. All four operation arrays (deletes, patches, puts, posts) are required and executed in order. Send empty arrays for unused operations.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_batch_content_policies",
+    "name": "Batch content policy operations",
+    "description": "Batch content policy operations Executes multiple operations atomically. POST /client/v4/accounts/{account_id}/email-security/settings/content_policies/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/content_policies/batch\nExecutes multiple operations atomically. All four operation arrays (deletes, patches, puts, posts) are required and executed in order. Send empty arrays for unused operations.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_batch_domains",
+    "name": "Batch domain operations",
+    "description": "Batch domain operations Executes multiple domain operations in a single request. POST /client/v4/accounts/{account_id}/email-security/settings/domains/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/domains/batch\nExecutes multiple domain operations in a single request. All four operation arrays (deletes, patches, puts, posts) are required and executed in order. Send empty arrays for unused operations.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_batch_sending_domain_restrictions",
+    "name": "Batch sending domain restrictions operations",
+    "description": "Batch sending domain restrictions operations Executes multiple delete operations on sending domain restrictions atomically. POST /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/batch\nExecutes multiple delete operations on sending domain restrictions atomically. All operations succeed or fail together as a transaction. Currently only supports batch deletion. Removes TLS enforcement requirements for the specified domains.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_batch_trusted_domains",
+    "name": "Batch trusted domains operations",
+    "description": "Batch trusted domains operations Executes multiple operations atomically. POST /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/batch\nExecutes multiple operations atomically. All four operation arrays (deletes, patches, puts, posts) are required and executed in order. Send empty arrays for unused operations.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_batch_url_ignore_patterns",
+    "name": "Batch URL ignore patterns",
+    "description": "Batch URL ignore patterns Sends a batch of URL ignore patterns API calls to execute together. POST /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/batch",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/batch\nSends a batch of URL ignore patterns API calls to execute together.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_cancel_bulk_job",
+    "name": "Cancel a bulk action job",
+    "description": "Cancel a bulk action job Cancels the job, marking it as cancelled and stopping any pending message processing. POST /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}/cancel",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}/cancel\nCancels the job, marking it as cancelled and stopping any pending message processing. The job record remains visible in list and detail endpoints.\nRequired: account_id (path) — Account identifier tag.; job_id (path)"
+  },
+  {
+    "id": "email_security_create_allow_policy",
+    "name": "Create email allow policy",
+    "description": "Create email allow policy Creates a new allow policy that exempts matching emails from security detections. POST /client/v4/accounts/{account_id}/email-security/settings/allow_policies",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/allow_policies\nCreates a new allow policy that exempts matching emails from security detections. Use with caution as this bypasses email security scanning. Policies can match on sender patterns and apply to specific detections or all detections.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_blocked_sender",
+    "name": "Create blocked email sender",
+    "description": "Create blocked email sender Creates a new blocked sender pattern. POST /client/v4/accounts/{account_id}/email-security/settings/block_senders",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/block_senders\nCreates a new blocked sender pattern. Emails matching this pattern will be blocked from delivery. Patterns can be email addresses, domains, or IP addresses, and support regular expressions.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_bulk_job",
+    "name": "Create a bulk action job",
+    "description": "Create a bulk action job Creates a new bulk action job to move or release messages that match the provided search parameters. POST /client/v4/accounts/{account_id}/email-security/investigate/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/bulk\nCreates a new bulk action job to move or release messages that match the provided search parameters.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_content_policy",
+    "name": "Create a content policy",
+    "description": "Create a content policy Creates a new content policy. POST /client/v4/accounts/{account_id}/email-security/settings/content_policies",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/content_policies\nCreates a new content policy. Emails whose subject or body matches the pattern will be subject to the configured action.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_domains",
+    "name": "Add a new email domain",
+    "description": "Add a new email domain Protects a new email domain by adding it to Email Security. POST /client/v4/accounts/{account_id}/email-security/settings/domains",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/domains\nProtects a new email domain by adding it to Email Security. Accepts a flat configuration object covering all delivery modes. Returns the newly created domain configuration.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_impersonation_registry",
+    "name": "Create impersonation registry entry",
+    "description": "Create impersonation registry entry Creates a new entry in the impersonation registry to protect against impersonation. POST /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry\nCreates a new entry in the impersonation registry to protect against impersonation. Emails attempting to impersonate this identity will be flagged. Supports regex patterns for flexible email matching.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_sending_domain_restriction",
+    "name": "Create a sending domain restriction",
+    "description": "Create a sending domain restriction Creates a new sending domain restriction to enforce TLS requirements for a domain. POST /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions\nCreates a new sending domain restriction to enforce TLS requirements for a domain. Emails without TLS from this domain will be dropped unless the subdomain is in the exclude list.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_trusted_domain",
+    "name": "Create trusted email domain",
+    "description": "Create trusted email domain Creates a new trusted domain pattern. POST /client/v4/accounts/{account_id}/email-security/settings/trusted_domains",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/trusted_domains\nCreates a new trusted domain pattern. Use for partner domains or approved senders that should bypass recent domain registration and similarity checks. Configure whether it prevents recent domain or spoof dispositions.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_create_url_ignore_pattern",
+    "name": "Create a URL ignore pattern",
+    "description": "Create a URL ignore pattern Creates a new URL rewrite ignore pattern. POST /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns\nCreates a new URL rewrite ignore pattern. URLs matching this pattern will not be rewritten.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_delete_allow_policy",
+    "name": "Delete an email allow policy",
+    "description": "Delete an email allow policy Removes an allow policy. DELETE /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}\nRemoves an allow policy. After deletion, emails matching this pattern will be subject to normal security scanning and disposition actions.\nRequired: account_id (path) — Account identifier tag.; policy_id (path)"
+  },
+  {
+    "id": "email_security_delete_blocked_sender",
+    "name": "Delete a blocked email sender",
+    "description": "Delete a blocked email sender Removes a blocked sender pattern. DELETE /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}\nRemoves a blocked sender pattern. After deletion, emails from this sender will no longer be automatically blocked based on this rule.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path)"
+  },
+  {
+    "id": "email_security_delete_bulk_job",
+    "name": "Delete a bulk action job",
+    "description": "Delete a bulk action job Deletes the job, removing it from all list and detail endpoints. DELETE /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}\nDeletes the job, removing it from all list and detail endpoints. Only jobs in a terminal state (`COMPLETED`, `CANCELLED`, `FAILED`, or `SKIPPED`) can be deleted. To stop an in-progress job without removing it, use the cancel endpoint instead.\nRequired: account_id (path) — Account identifier tag.; job_id (path)"
+  },
+  {
+    "id": "email_security_delete_content_policy",
+    "name": "Delete a content policy",
+    "description": "Delete a content policy Removes a content policy. DELETE /client/v4/accounts/{account_id}/email-security/settings/content_policies/{policy_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/content_policies/{policy_id}\nRemoves a content policy. After deletion, emails will no longer be evaluated against this pattern.\nRequired: account_id (path) — Account identifier tag.; policy_id (path)"
+  },
+  {
+    "id": "email_security_delete_domain",
+    "name": "Unprotect an email domain",
+    "description": "Unprotect an email domain Removes email security protection from a domain. DELETE /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}\nRemoves email security protection from a domain. After deletion, emails for this domain will no longer be processed by Email Security. This action cannot be undone.\nRequired: account_id (path) — Account identifier tag.; domain_id (path)"
+  },
+  {
+    "id": "email_security_delete_domains",
+    "name": "Unprotect multiple email domains",
+    "description": "Unprotect multiple email domains Removes protection from multiple email domains. DELETE /client/v4/accounts/{account_id}/email-security/settings/domains",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/domains\nRemoves protection from multiple email domains. Deprecated; use the batch endpoint instead.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_delete_impersonation_registry",
+    "name": "Delete an impersonation registry entry",
+    "description": "Delete an impersonation registry entry Removes an entry from the impersonation registry. DELETE /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry/{impersonation_registry_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry/{impersonation_registry_id}\nRemoves an entry from the impersonation registry. After deletion, this identity will no longer be protected from impersonation.\nRequired: account_id (path) — Account identifier tag.; impersonation_registry_id (path)"
+  },
+  {
+    "id": "email_security_delete_sending_domain_restriction",
+    "name": "Delete a sending domain restriction",
+    "description": "Delete a sending domain restriction Removes a sending domain restriction. DELETE /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/{sending_domain_restriction_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/{sending_domain_restriction_id}\nRemoves a sending domain restriction. After deletion, TLS will no longer be enforced for emails from this domain.\nRequired: account_id (path) — Account identifier tag.; sending_domain_restriction_id (path)"
+  },
+  {
+    "id": "email_security_delete_trusted_domain",
+    "name": "Delete a trusted email domain",
+    "description": "Delete a trusted email domain Removes a trusted domain pattern. DELETE /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}\nRemoves a trusted domain pattern. After deletion, emails from this domain will be subject to normal recent domain and similarity checks.\nRequired: account_id (path) — Account identifier tag.; trusted_domain_id (path)"
+  },
+  {
+    "id": "email_security_delete_url_ignore_pattern",
+    "name": "Delete a URL ignore pattern",
+    "description": "Delete a URL ignore pattern Removes a URL rewrite ignore pattern. DELETE /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/{pattern_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/{pattern_id}\nRemoves a URL rewrite ignore pattern. After deletion, URLs matching this pattern will be rewritten again.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path)"
+  },
+  {
+    "id": "email_security_get_allow_policy",
+    "name": "Get an email allow policy",
+    "description": "Get an email allow policy Retrieves details for a specific allow policy including its pattern, dispositions that are exempted, and whether it applies to all detections. GET /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}\nRetrieves details for a specific allow policy including its pattern, dispositions that are exempted, and whether it applies to all detections.\nRequired: account_id (path) — Account identifier tag.; policy_id (path)"
+  },
+  {
+    "id": "email_security_get_blocked_sender",
+    "name": "Get a blocked email sender",
+    "description": "Get a blocked email sender Retrieves details for a specific blocked sender pattern including its pattern type, value, and metadata. GET /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}\nRetrieves details for a specific blocked sender pattern including its pattern type, value, and metadata.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path)"
+  },
+  {
+    "id": "email_security_get_bulk_job",
+    "name": "Get bulk action job details",
+    "description": "Get bulk action job details Returns the status and details of a specific bulk action job. GET /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}\nReturns the status and details of a specific bulk action job.\nRequired: account_id (path) — Account identifier tag.; job_id (path)"
+  },
+  {
+    "id": "email_security_get_bulk_job_messages",
+    "name": "List messages for a bulk action job",
+    "description": "List messages for a bulk action job Returns the individual messages associated with a bulk action job, including their processing status. GET /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}/messages",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/bulk/{job_id}/messages\nReturns the individual messages associated with a bulk action job, including their processing status.\nRequired: account_id (path) — Account identifier tag.; job_id (path)\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; status (query)"
+  },
+  {
+    "id": "email_security_get_bulk_jobs",
+    "name": "List bulk action jobs",
+    "description": "List bulk action jobs Returns a paginated list of bulk action jobs for the account. GET /client/v4/accounts/{account_id}/email-security/investigate/bulk",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/bulk\nReturns a paginated list of bulk action jobs for the account.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; action_type (query); status (query)"
+  },
+  {
+    "id": "email_security_get_content_policy",
+    "name": "Get a content policy",
+    "description": "Get a content policy Retrieves details for a specific content policy including its pattern, targets, and metadata. GET /client/v4/accounts/{account_id}/email-security/settings/content_policies/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/content_policies/{policy_id}\nRetrieves details for a specific content policy including its pattern, targets, and metadata.\nRequired: account_id (path) — Account identifier tag.; policy_id (path)"
+  },
+  {
+    "id": "email_security_get_domain",
+    "name": "Get an email domain",
+    "description": "Get an email domain Retrieves detailed information for a specific protected email domain including its delivery configuration, SPF/DMARC status, and authorization state. GET /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}\nRetrieves detailed information for a specific protected email domain including its delivery configuration, SPF/DMARC status, and authorization state.\nRequired: account_id (path) — Account identifier tag.; domain_id (path)"
+  },
+  {
+    "id": "email_security_get_domain_verification",
+    "name": "Get domain verification details",
+    "description": "Get domain verification details Returns the DNS TXT record information when the domain ownership isn't verified through Cloudflare zone ownership or CASB integration. GET /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}/verification",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}/verification\nReturns the DNS TXT record information when the domain ownership isn't verified through Cloudflare zone ownership or CASB integration.\nRequired: account_id (path) — Account identifier tag.; domain_id (path)"
+  },
+  {
+    "id": "email_security_get_impersonation_registry",
+    "name": "Get an impersonation registry entry",
+    "description": "Get an impersonation registry entry Retrieves details for a specific impersonation registry entry including the protected identity, email pattern, and synchronization source if directory-synced. GET /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry/{impersonation_registry_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry/{impersonation_registry_id}\nRetrieves details for a specific impersonation registry entry including the protected identity, email pattern, and synchronization source if directory-synced.\nRequired: account_id (path) — Account identifier tag.; impersonation_registry_id (path)"
+  },
+  {
+    "id": "email_security_get_message",
+    "name": "Get message details",
+    "description": "Get message details Retrieves comprehensive details for a specific email message including headers, recipients, sender information, and current quarantine status. GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}\nRetrieves comprehensive details for a specific email message including headers, recipients, sender information, and current quarantine status. Use the investigate_id from search results to fetch detailed information.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path)\nOptional: submission (query) — When true, search the submissions datastore only. When false or omitted, search the regular datastore only."
+  },
+  {
+    "id": "email_security_get_message_action_log",
+    "name": "Get action log for a message",
+    "description": "Get action log for a message Returns the list of post-delivery actions (moves, quarantine releases, previews, etc.) that have been applied to a specific email message. GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/action_log",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/action_log\nReturns the list of post-delivery actions (moves, quarantine releases, previews, etc.) that have been applied to a specific email message.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path)"
+  },
+  {
+    "id": "email_security_get_message_detections",
+    "name": "Get message detection details",
+    "description": "Get message detection details Returns detection details such as threat categories and sender information for non-benign messages. GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/detections",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/detections\nReturns detection details such as threat categories and sender information for non-benign messages.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path)"
+  },
+  {
+    "id": "email_security_get_message_preview",
+    "name": "Get email preview",
+    "description": "Get email preview Returns a preview of the message body as a base64 encoded PNG image for non-benign messages. GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/preview",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/preview\nReturns a preview of the message body as a base64 encoded PNG image for non-benign messages.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path)"
+  },
+  {
+    "id": "email_security_get_message_raw",
+    "name": "Get raw email content",
+    "description": "Get raw email content Returns the raw eml of any non-benign message. GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/raw",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/raw\nReturns the raw eml of any non-benign message.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path)"
+  },
+  {
+    "id": "email_security_get_message_trace",
+    "name": "Get email trace",
+    "description": "Get email trace Retrieves delivery and processing trace information for an email message. GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/trace",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/trace\nRetrieves delivery and processing trace information for an email message. Shows the delivery path, retraction history, and move operations performed on the message. Useful for debugging delivery issues.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path)"
+  },
+  {
+    "id": "email_security_get_monthly_report",
+    "name": "Get monthly report",
+    "description": "Get monthly report Returns an aggregated monthly email security report including detections, dispositions, and policy activity for the trailing 12 months. GET /client/v4/accounts/{account_id}/email-security/analytics/monthly_report",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/analytics/monthly_report\nReturns an aggregated monthly email security report including detections, dispositions, and policy activity for the trailing 12 months.\nRequired: account_id (path) — Account identifier tag."
+  },
+  {
+    "id": "email_security_get_phishguard_reports",
+    "name": "Get PhishGuard reports",
+    "description": "Get PhishGuard reports Retrieves PhishGuard security alert reports for a specified date range. GET /client/v4/accounts/{account_id}/email-security/phishguard/reports",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/phishguard/reports\nRetrieves PhishGuard security alert reports for a specified date range. Reports include detected threats, dispositions, and contextual information. Use for security monitoring and threat analysis.\nRequired: account_id (path) — Account identifier tag.\nOptional: start (query) — Start of the time range (RFC3339). Takes precedence over from_date.; end (query) — End of the time range (RFC3339). Takes precedence over to_date.; from_date (query) — Deprecated, use `start` instead. Start date in YYYY-MM-DD format.; to_date (query) — Deprecated, use `end` instead. End date in YYYY-MM-DD format."
+  },
+  {
+    "id": "email_security_get_sending_domain_restriction",
+    "name": "Get a sending domain restriction",
+    "description": "Get a sending domain restriction Retrieves details for a specific sending domain restriction including the domain requiring TLS and any excluded subdomains exempt from the TLS requirement. GET /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/{sending_domain_restriction_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/{sending_domain_restriction_id}\nRetrieves details for a specific sending domain restriction including the domain requiring TLS and any excluded subdomains exempt from the TLS requirement.\nRequired: account_id (path) — Account identifier tag.; sending_domain_restriction_id (path)"
+  },
+  {
+    "id": "email_security_get_trusted_domain",
+    "name": "Get a trusted email domain",
+    "description": "Get a trusted email domain Retrieves details for a specific trusted domain pattern including its pattern value, whether it uses regex matching, and which detection types it affects. GET /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}\nRetrieves details for a specific trusted domain pattern including its pattern value, whether it uses regex matching, and which detection types it affects.\nRequired: account_id (path) — Account identifier tag.; trusted_domain_id (path)"
+  },
+  {
+    "id": "email_security_get_url_ignore_pattern",
+    "name": "Get a URL ignore pattern",
+    "description": "Get a URL ignore pattern Returns a single URL rewrite ignore pattern by its identifier. GET /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/{pattern_id}",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/{pattern_id}\nReturns a single URL rewrite ignore pattern by its identifier.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path)"
+  },
+  {
+    "id": "email_security_investigate",
+    "name": "Search email messages",
+    "description": "Search email messages Returns information for each email that matches the search parameter(s). GET /client/v4/accounts/{account_id}/email-security/investigate",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/investigate\nReturns information for each email that matches the search parameter(s).\nRequired: account_id (path) — Account identifier tag.\nOptional: start (query) — The beginning of the search date range. Defaults to `now - 30 days`. Must not be in the future.; end (query) — The end of the search date range. Defaults to `now`.; query (query) — Space-delimited search term. Case-insensitive.; detections_only (query) — Whether to include only detections in search results.; final_disposition (query) — Dispositions to filter by.; metric (query); message_action (query) — Message actions to filter by.; recipient (query); sender (query); smtp_helo_ip (query) — Matches messages whose SMTP HELO server IP address equals this value.; alert_id (query); domain (query) — Sender domains to filter by.; message_id (query); subject (query); delivery_status (query) — Delivery status to filter by.; cursor (query); per_page (query) — The number of results per page. Maximum value is 1000.; page (query) — Deprecated: Use cursor pagination instead. End of life: November 1, 2026."
+  },
+  {
+    "id": "email_security_list_allow_policies",
+    "name": "List email allow policies",
+    "description": "List email allow policies Returns a paginated list of email allow policies. GET /client/v4/accounts/{account_id}/email-security/settings/allow_policies",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/allow_policies\nReturns a paginated list of email allow policies. These policies exempt matching emails from security detection, allowing them to bypass disposition actions. Supports filtering by pattern type and policy attributes.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction.; is_exempt_recipient (query) — Filter to show only policies where messages to the recipient bypass all detections.; is_trusted_sender (query) — Filter to show only policies where messages from the sender bypass all detections and link following.; is_acceptable_sender (query) — Filter to show only policies where messages from the sender are exempted from Spam, Spoof, and Bulk dispositions (not Malicious or Suspicious).; verify_sender (query) — Filter to show only policies that enforce DMARC, SPF, or DKIM authentication.; pattern_type (query); pattern (query)"
+  },
+  {
+    "id": "email_security_list_blocked_senders",
+    "name": "List blocked email senders",
+    "description": "List blocked email senders Returns a paginated list of blocked email sender patterns. GET /client/v4/accounts/{account_id}/email-security/settings/block_senders",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/block_senders\nReturns a paginated list of blocked email sender patterns. These patterns prevent emails from matching senders from being delivered. Supports filtering by pattern type and searching across patterns.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction.; pattern_type (query) — Filter by pattern type.; pattern (query) — Filter by pattern value."
+  },
+  {
+    "id": "email_security_list_content_policies",
+    "name": "List content policies",
+    "description": "List content policies Returns a paginated list of content policies. GET /client/v4/accounts/{account_id}/email-security/settings/content_policies",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/content_policies\nReturns a paginated list of content policies. These policies match against the subject or body of emails using a pattern. Supports filtering by name or enabled status, and searching across name and pattern fields.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction.; enabled (query) — Filter by enabled status.; name (query) — Filter by exact policy name."
+  },
+  {
+    "id": "email_security_list_domains",
+    "name": "List protected email domains",
+    "description": "List protected email domains Returns a paginated list of email domains protected by Email Security. GET /client/v4/accounts/{account_id}/email-security/settings/domains",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/domains\nReturns a paginated list of email domains protected by Email Security. Includes domain configuration, delivery modes, and authorization status. Supports filtering by delivery mode and integration ID.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction.; allowed_delivery_mode (query) — Delivery mode to filter by.; domain (query) — Domain names to filter by.; active_delivery_mode (query) — Currently active delivery mode to filter by.; integration_id (query) — Integration ID to filter by.; status (query) — Filters response to domains with the provided status."
+  },
+  {
+    "id": "email_security_list_impersonation_registry",
+    "name": "List entries in impersonation registry",
+    "description": "List entries in impersonation registry Returns a paginated list of protected identities in the impersonation registry. GET /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry\nReturns a paginated list of protected identities in the impersonation registry. These entries define identities and email addresses to protect from impersonation attacks. Can be manually added or automatically synced from directory integrations.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction.; provenance (query)"
+  },
+  {
+    "id": "email_security_list_sending_domain_restrictions",
+    "name": "List sending domain restrictions",
+    "description": "List sending domain restrictions Returns a paginated list of sending domain restrictions. GET /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions\nReturns a paginated list of sending domain restrictions. These restrictions enforce TLS requirements for emails from specific domains. Mail without TLS from restricted domains will be dropped unless the subdomain is in the exclude list. Supports sorting and searching.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction."
+  },
+  {
+    "id": "email_security_list_trusted_domains",
+    "name": "List trusted email domains",
+    "description": "List trusted email domains Returns a paginated list of trusted domain patterns. GET /client/v4/accounts/{account_id}/email-security/settings/trusted_domains",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/trusted_domains\nReturns a paginated list of trusted domain patterns. Trusted domains prevent false positives for recently registered domains and lookalike domain detections. Patterns can use regular expressions for flexible matching.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000.; search (query) — Search term for filtering records. Behavior may change.; order (query) — Field to sort by.; direction (query) — The sorting direction.; is_recent (query) — Filter to show only recently registered domains that are trusted to prevent triggering Suspicious or Malicious dispositions.; is_similarity (query) — Filter to show only proximity domains (partner or approved domains with similar spelling to connected domains) that prevent Spoof dispositions.; pattern (query)"
+  },
+  {
+    "id": "email_security_list_url_ignore_patterns",
+    "name": "List URL ignore patterns",
+    "description": "List URL ignore patterns Returns a paginated list of URL rewrite ignore patterns for the account. GET /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns\nReturns a paginated list of URL rewrite ignore patterns for the account. URLs matching these patterns will not be rewritten.\nRequired: account_id (path) — Account identifier tag.\nOptional: page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000."
+  },
+  {
+    "id": "email_security_post_bulk_move",
+    "name": "Move multiple messages",
+    "description": "Move multiple messages Moves multiple messages to a specified mailbox folder (Inbox, JunkEmail, DeletedItems, RecoverableItemsDeletions, or RecoverableItemsPurges). POST /client/v4/accounts/{account_id}/email-security/investigate/move",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/move\nMoves multiple messages to a specified mailbox folder (Inbox, JunkEmail, DeletedItems, RecoverableItemsDeletions, or RecoverableItemsPurges). Requires active integration.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_post_message_move",
+    "name": "Move a message",
+    "description": "Move a message Moves a single message to a specified mailbox folder (Inbox, JunkEmail, DeletedItems, RecoverableItemsDeletions, or RecoverableItemsPurges). POST /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/move",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/move\nMoves a single message to a specified mailbox folder (Inbox, JunkEmail, DeletedItems, RecoverableItemsDeletions, or RecoverableItemsPurges). Requires active integration.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path); body (body)"
+  },
+  {
+    "id": "email_security_post_preview",
+    "name": "Preview for non-detection messages",
+    "description": "Preview for non-detection messages Generates a preview image for a message that was not flagged as a detection. POST /client/v4/accounts/{account_id}/email-security/investigate/preview",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/preview\nGenerates a preview image for a message that was not flagged as a detection. Useful for investigating benign messages. Returns a base64-encoded PNG screenshot of the email body.\nRequired: account_id (path) — Account identifier tag.; body (body)"
+  },
+  {
+    "id": "email_security_post_reclassify",
+    "name": "Change email classification",
+    "description": "Change email classification Submits a request to reclassify an email's disposition. POST /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/reclassify",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/{investigate_id}/reclassify\nSubmits a request to reclassify an email's disposition. Use for reporting false positives or false negatives. Optionally provide the raw EML content for reanalysis. The reclassification is processed asynchronously.\nRequired: account_id (path) — Account identifier tag.; investigate_id (path); body (body)"
+  },
+  {
+    "id": "email_security_post_release",
+    "name": "Release messages from quarantine",
+    "description": "Release messages from quarantine Delivers one or more quarantined messages to their intended recipients, for cases where a message was incorrectly quarantined. POST /client/v4/accounts/{account_id}/email-security/investigate/release",
+    "context": "POST /client/v4/accounts/{account_id}/email-security/investigate/release\nDelivers one or more quarantined messages to their intended recipients, for cases where a message was incorrectly quarantined. The response includes delivery status for each recipient.\nRequired: account_id (path) — Account identifier tag.; body (body) — A list of investigate IDs identifying the messages to release."
+  },
+  {
+    "id": "email_security_replace_allow_policy",
+    "name": "Replace an email allow policy",
+    "description": "Replace an email allow policy Replaces an existing allow policy in full. PUT /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}\nReplaces an existing allow policy in full. Unlike PATCH, every field is taken from the request body, so optional fields that are omitted are reset rather than left untouched. Use this when managing policies declaratively.\nRequired: account_id (path) — Account identifier tag.; policy_id (path); body (body)"
+  },
+  {
+    "id": "email_security_replace_blocked_sender",
+    "name": "Replace a blocked email sender",
+    "description": "Replace a blocked email sender Replaces an existing blocked sender pattern in full. PUT /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}\nReplaces an existing blocked sender pattern in full. Unlike PATCH, every field is taken from the request body, so optional fields that are omitted are reset rather than left untouched. Use this when managing blocked senders declaratively.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path); body (body)"
+  },
+  {
+    "id": "email_security_replace_domain",
+    "name": "Replace an email domain",
+    "description": "Replace an email domain Replaces all mutable fields of a protected email domain in a single atomic operation. PUT /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}\nReplaces all mutable fields of a protected email domain in a single atomic operation. Unlike PATCH, all non-computed fields are required.\nRequired: account_id (path) — Account identifier tag.; domain_id (path); body (body)"
+  },
+  {
+    "id": "email_security_replace_trusted_domain",
+    "name": "Replace a trusted email domain",
+    "description": "Replace a trusted email domain Replaces an existing trusted domain in full. PUT /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}\nReplaces an existing trusted domain in full. Unlike PATCH, every field is taken from the request body, so optional fields that are omitted are reset rather than left untouched. Use this when managing trusted domains declaratively.\nRequired: account_id (path) — Account identifier tag.; trusted_domain_id (path); body (body)"
+  },
+  {
+    "id": "email_security_submissions",
+    "name": "Get reclassify submissions",
+    "description": "Get reclassify submissions Returns information for submissions made to reclassify emails. GET /client/v4/accounts/{account_id}/email-security/submissions",
+    "context": "GET /client/v4/accounts/{account_id}/email-security/submissions\nReturns information for submissions made to reclassify emails. Shows the status, outcome, and disposition changes for reclassification requests made by users or the security team. Useful for tracking false positive/negative reports.\nRequired: account_id (path) — Account identifier tag.\nOptional: start (query) — The beginning of the search date range. Defaults to `now - 30 days`.; end (query) — The end of the search date range. Defaults to `now`.; type (query); submission_id (query); original_disposition (query); requested_disposition (query); outcome_disposition (query); status (query); query (query); escalated_from_user (query) — When true, return only submissions that were escalated by an end user (vs. by the security team). When false, return only submissions that were not escalated by an end user. When omitted, no filter is applied.; order (query) — Field to sort by.; direction (query) — The sorting direction.; page (query) — Current page within paginated list of results.; per_page (query) — The number of results per page. Maximum value is 1000."
+  },
+  {
+    "id": "email_security_update_allow_policy",
+    "name": "Update an email allow policy",
+    "description": "Update an email allow policy Updates an existing allow policy. PATCH /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/allow_policies/{policy_id}\nUpdates an existing allow policy. Only provided fields will be modified. Changes take effect for new emails matching the pattern.\nRequired: account_id (path) — Account identifier tag.; policy_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_blocked_sender",
+    "name": "Update a blocked email sender",
+    "description": "Update a blocked email sender Updates an existing blocked sender pattern. PATCH /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/block_senders/{pattern_id}\nUpdates an existing blocked sender pattern. Only provided fields will be modified. The pattern will continue blocking emails until deleted.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_content_policy",
+    "name": "Update a content policy",
+    "description": "Update a content policy Updates an existing content policy. PATCH /client/v4/accounts/{account_id}/email-security/settings/content_policies/{policy_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/content_policies/{policy_id}\nUpdates an existing content policy. Only provided fields will be modified.\nRequired: account_id (path) — Account identifier tag.; policy_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_domain",
+    "name": "Update an email domain",
+    "description": "Update an email domain Updates configuration for a protected email domain. PATCH /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/domains/{domain_id}\nUpdates configuration for a protected email domain. Only provided fields will be modified. Changes affect delivery mode, security settings, and regional processing.\nRequired: account_id (path) — Account identifier tag.; domain_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_impersonation_registry",
+    "name": "Update an impersonation registry entry",
+    "description": "Update an impersonation registry entry Updates an existing impersonation registry entry. PATCH /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry/{impersonation_registry_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/impersonation_registry/{impersonation_registry_id}\nUpdates an existing impersonation registry entry. Only provided fields will be modified. Directory-synced entries can't be updated.\nRequired: account_id (path) — Account identifier tag.; impersonation_registry_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_sending_domain_restriction",
+    "name": "Update a sending domain restriction",
+    "description": "Update a sending domain restriction Updates an existing sending domain restriction. PATCH /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/{sending_domain_restriction_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/sending_domain_restrictions/{sending_domain_restriction_id}\nUpdates an existing sending domain restriction. Only provided fields will be modified. Changes affect which domains require TLS and which subdomains are excluded.\nRequired: account_id (path) — Account identifier tag.; sending_domain_restriction_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_trusted_domain",
+    "name": "Update a trusted email domain",
+    "description": "Update a trusted email domain Updates an existing trusted domain pattern. PATCH /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/trusted_domains/{trusted_domain_id}\nUpdates an existing trusted domain pattern. Only provided fields will be modified. Changes take effect for new emails matching the pattern.\nRequired: account_id (path) — Account identifier tag.; trusted_domain_id (path); body (body)"
+  },
+  {
+    "id": "email_security_update_url_ignore_pattern",
+    "name": "Update a URL ignore pattern",
+    "description": "Update a URL ignore pattern Updates an existing URL rewrite ignore pattern. PATCH /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/{pattern_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/email-security/settings/url_ignore_patterns/{pattern_id}\nUpdates an existing URL rewrite ignore pattern. Only provided fields will be modified.\nRequired: account_id (path) — Account identifier tag.; pattern_id (path); body (body)"
+  }
+]

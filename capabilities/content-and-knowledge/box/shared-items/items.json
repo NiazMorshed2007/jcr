@@ -1,0 +1,26 @@
+[
+  {
+    "id": "get_shared_items",
+    "name": "Find file for shared link",
+    "description": "Find file for shared link Returns the file represented by a shared link. GET /2.0/shared_items",
+    "context": "GET /2.0/shared_items\nReturns the file represented by a shared link. A shared file can be represented by a shared link, which can originate within the current enterprise or within another. This endpoint allows an application to retrieve information about a shared file when only given a shared link. The `shared_link_permission_options` array field can be returned by requesting it in the `fields` query parameter.\nRequired: boxapi (header) — A header containing the shared link and optional password for the shared link. The format for this header is as follows: `shared_link=[link]&shared_link_password=[password]`.\nOptional: if-none-match (header) — Ensures an item is only returned if it has changed. Pass in the item's last observed `etag` value into this header and the endpoint will fail with a `304 Not Modified` if the item has not changed since.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_shared_items#app_items",
+    "name": "Find app item for shared link",
+    "description": "Find app item for shared link Returns the app item represented by a shared link. GET /2.0/shared_items",
+    "context": "GET /2.0/shared_items\nReturns the app item represented by a shared link. The link can originate from the current enterprise or another.\nRequired: boxapi (header) — A header containing the shared link and optional password for the shared link. The format for this header is `shared_link=[link]&shared_link_password=[password]`."
+  },
+  {
+    "id": "get_shared_items#folders",
+    "name": "Find folder for shared link",
+    "description": "Find folder for shared link Return the folder represented by a shared link. GET /2.0/shared_items",
+    "context": "GET /2.0/shared_items\nReturn the folder represented by a shared link. A shared folder can be represented by a shared link, which can originate within the current enterprise or within another. This endpoint allows an application to retrieve information about a shared folder when only given a shared link.\nRequired: boxapi (header) — A header containing the shared link and optional password for the shared link. The format for this header is as follows: `shared_link=[link]&shared_link_password=[password]`.\nOptional: if-none-match (header) — Ensures an item is only returned if it has changed. Pass in the item's last observed `etag` value into this header and the endpoint will fail with a `304 Not Modified` if the item has not changed since.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_shared_items#web_links",
+    "name": "Find web link for shared link",
+    "description": "Find web link for shared link Returns the web link represented by a shared link. GET /2.0/shared_items",
+    "context": "GET /2.0/shared_items\nReturns the web link represented by a shared link. A shared web link can be represented by a shared link, which can originate within the current enterprise or within another. This endpoint allows an application to retrieve information about a shared web link when only given a shared link.\nRequired: boxapi (header) — A header containing the shared link and optional password for the shared link. The format for this header is as follows: `shared_link=[link]&shared_link_password=[password]`.\nOptional: if-none-match (header) — Ensures an item is only returned if it has changed. Pass in the item's last observed `etag` value into this header and the endpoint will fail with a `304 Not Modified` if the item has not changed since.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  }
+]

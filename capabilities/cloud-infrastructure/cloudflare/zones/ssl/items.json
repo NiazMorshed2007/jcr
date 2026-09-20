@@ -1,0 +1,74 @@
+[
+  {
+    "id": "analyze-certificate-analyze-certificate",
+    "name": "Analyze Certificate",
+    "description": "Analyze Certificate Returns the set of hostnames, the signature algorithm, and the expiration date of the certificate. POST /client/v4/zones/{zone_id}/ssl/analyze",
+    "context": "POST /client/v4/zones/{zone_id}/ssl/analyze\nReturns the set of hostnames, the signature algorithm, and the expiration date of the certificate.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "certificate-packs-delete-advanced-certificate-manager-certificate-pack",
+    "name": "Delete Advanced Certificate Manager Certificate Pack",
+    "description": "Delete Advanced Certificate Manager Certificate Pack For a given zone, delete an advanced certificate pack. DELETE /client/v4/zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}\nFor a given zone, delete an advanced certificate pack.\nRequired: certificate_pack_id (path); zone_id (path)"
+  },
+  {
+    "id": "certificate-packs-get-certificate-pack",
+    "name": "Get Certificate Pack",
+    "description": "Get Certificate Pack For a given zone, get a certificate pack. GET /client/v4/zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}",
+    "context": "GET /client/v4/zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}\nFor a given zone, get a certificate pack.\nRequired: certificate_pack_id (path); zone_id (path)"
+  },
+  {
+    "id": "certificate-packs-get-certificate-pack-quotas",
+    "name": "Get Certificate Pack Quotas",
+    "description": "Get Certificate Pack Quotas For a given zone, list certificate pack quotas. GET /client/v4/zones/{zone_id}/ssl/certificate_packs/quota",
+    "context": "GET /client/v4/zones/{zone_id}/ssl/certificate_packs/quota\nFor a given zone, list certificate pack quotas.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "certificate-packs-list-certificate-packs",
+    "name": "List Certificate Packs",
+    "description": "List Certificate Packs For a given zone, list all active certificate packs. GET /client/v4/zones/{zone_id}/ssl/certificate_packs",
+    "context": "GET /client/v4/zones/{zone_id}/ssl/certificate_packs\nFor a given zone, list all active certificate packs.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); status (query); deploy (query)"
+  },
+  {
+    "id": "certificate-packs-order-advanced-certificate-manager-certificate-pack",
+    "name": "Order Advanced Certificate Manager Certificate Pack",
+    "description": "Order Advanced Certificate Manager Certificate Pack For a given zone, order an advanced certificate pack. POST /client/v4/zones/{zone_id}/ssl/certificate_packs/order",
+    "context": "POST /client/v4/zones/{zone_id}/ssl/certificate_packs/order\nFor a given zone, order an advanced certificate pack.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "certificate-packs-restart-validation-for-advanced-certificate-manager-certificate-pack",
+    "name": "Restart Validation or Update Advanced Certificate Manager Certificate Pack",
+    "description": "Restart Validation or Update Advanced Certificate Manager Certificate Pack For a given zone, restart validation or add cloudflare branding for an advanced certificate pack. PATCH /client/v4/zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}\nFor a given zone, restart validation or add cloudflare branding for an advanced certificate pack. The former is only a validation operation for a Certificate Pack in a validation_timed_out status.\nRequired: certificate_pack_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "ssl-verification-edit-ssl-certificate-pack-validation-method",
+    "name": "Edit SSL Certificate Pack Validation Method",
+    "description": "Edit SSL Certificate Pack Validation Method Edit SSL validation method for a certificate pack. PATCH /client/v4/zones/{zone_id}/ssl/verification/{certificate_pack_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/ssl/verification/{certificate_pack_id}\nEdit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.\nRequired: certificate_pack_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "ssl-verification-ssl-verification-details",
+    "name": "SSL Verification Details",
+    "description": "SSL Verification Details Get SSL Verification Info for a Zone. GET /client/v4/zones/{zone_id}/ssl/verification",
+    "context": "GET /client/v4/zones/{zone_id}/ssl/verification\nGet SSL Verification Info for a Zone.\nRequired: zone_id (path)\nOptional: retry (query)"
+  },
+  {
+    "id": "ssl%2F-tls-mode-recommendation-ssl%2F-tls-recommendation",
+    "name": "SSL/TLS Recommendation",
+    "description": "SSL/TLS Recommendation Retrieve the SSL/TLS Recommender's recommendation for a zone. GET /client/v4/zones/{zone_id}/ssl/recommendation",
+    "context": "GET /client/v4/zones/{zone_id}/ssl/recommendation\nRetrieve the SSL/TLS Recommender's recommendation for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "universal-ssl-settings-for-a-zone-edit-universal-ssl-settings",
+    "name": "Edit Universal SSL Settings",
+    "description": "Edit Universal SSL Settings Patch Universal SSL Settings for a Zone. PATCH /client/v4/zones/{zone_id}/ssl/universal/settings",
+    "context": "PATCH /client/v4/zones/{zone_id}/ssl/universal/settings\nPatch Universal SSL Settings for a Zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "universal-ssl-settings-for-a-zone-universal-ssl-settings-details",
+    "name": "Universal SSL Settings Details",
+    "description": "Universal SSL Settings Details Get Universal SSL Settings for a Zone. GET /client/v4/zones/{zone_id}/ssl/universal/settings",
+    "context": "GET /client/v4/zones/{zone_id}/ssl/universal/settings\nGet Universal SSL Settings for a Zone.\nRequired: zone_id (path)"
+  }
+]

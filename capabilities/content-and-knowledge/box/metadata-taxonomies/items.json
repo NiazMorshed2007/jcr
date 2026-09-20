@@ -1,0 +1,86 @@
+[
+  {
+    "id": "delete_metadata_taxonomies_id_id",
+    "name": "Remove metadata taxonomy",
+    "description": "Remove metadata taxonomy Delete a metadata taxonomy. DELETE /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}",
+    "context": "DELETE /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}\nDelete a metadata taxonomy. This deletion is permanent and cannot be reverted.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy."
+  },
+  {
+    "id": "delete_metadata_taxonomies_id_id_nodes_id",
+    "name": "Remove metadata taxonomy node",
+    "description": "Remove metadata taxonomy node Delete a metadata taxonomy node. DELETE /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes/{node_id}",
+    "context": "DELETE /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes/{node_id}\nDelete a metadata taxonomy node. This deletion is permanent and cannot be reverted. Only metadata taxonomy nodes without any children can be deleted.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.; node_id (path) — The identifier of the metadata taxonomy node."
+  },
+  {
+    "id": "get_metadata_taxonomies_id",
+    "name": "Get metadata taxonomies for namespace",
+    "description": "Get metadata taxonomies for namespace Used to retrieve all metadata taxonomies in a namespace. GET /2.0/metadata_taxonomies/{namespace}",
+    "context": "GET /2.0/metadata_taxonomies/{namespace}\nUsed to retrieve all metadata taxonomies in a namespace.\nRequired: namespace (path) — The namespace of the metadata taxonomy.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_metadata_taxonomies_id_id",
+    "name": "Get metadata taxonomy by taxonomy key",
+    "description": "Get metadata taxonomy by taxonomy key Used to retrieve a metadata taxonomy by taxonomy key. GET /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}",
+    "context": "GET /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}\nUsed to retrieve a metadata taxonomy by taxonomy key.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy."
+  },
+  {
+    "id": "get_metadata_taxonomies_id_id_nodes",
+    "name": "List metadata taxonomy nodes",
+    "description": "List metadata taxonomy nodes Used to retrieve metadata taxonomy nodes based on the parameters specified. GET /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes",
+    "context": "GET /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes\nUsed to retrieve metadata taxonomy nodes based on the parameters specified. Results are sorted in lexicographic order unless a `query` parameter is passed. With a `query` parameter specified, results are sorted in order of relevance.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.\nOptional: level (query) — Filters results by taxonomy level. Multiple values can be provided. Results include nodes that match any of the specified values.; parent (query) — Node identifier of a direct parent node. Multiple values can be provided. Results include nodes that match any of the specified values.; ancestor (query) — Node identifier of any ancestor node. Multiple values can be provided. Results include nodes that match any of the specified values.; query (query) — Query text to search for the taxonomy nodes.; include-total-result-count (query) — When set to `true` this provides the total number of nodes that matched the query. The response will compute counts of up to 10,000 elements. Defaults to `false`.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_metadata_taxonomies_id_id_nodes_id",
+    "name": "Get metadata taxonomy node by ID",
+    "description": "Get metadata taxonomy node by ID Retrieves a metadata taxonomy node by its identifier. GET /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes/{node_id}",
+    "context": "GET /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes/{node_id}\nRetrieves a metadata taxonomy node by its identifier.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.; node_id (path) — The identifier of the metadata taxonomy node."
+  },
+  {
+    "id": "patch_metadata_taxonomies_id_id",
+    "name": "Update metadata taxonomy",
+    "description": "Update metadata taxonomy Updates an existing metadata taxonomy. PATCH /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}",
+    "context": "PATCH /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}\nUpdates an existing metadata taxonomy.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_metadata_taxonomies_id_id_levels_id",
+    "name": "Update metadata taxonomy level",
+    "description": "Update metadata taxonomy level Updates an existing metadata taxonomy level. PATCH /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels/{level_index}",
+    "context": "PATCH /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels/{level_index}\nUpdates an existing metadata taxonomy level.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.; level_index (path) — The index of the metadata taxonomy level.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_metadata_taxonomies_id_id_nodes_id",
+    "name": "Update metadata taxonomy node",
+    "description": "Update metadata taxonomy node Updates an existing metadata taxonomy node. PATCH /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes/{node_id}",
+    "context": "PATCH /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes/{node_id}\nUpdates an existing metadata taxonomy node.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.; node_id (path) — The identifier of the metadata taxonomy node.\nOptional: body (body)"
+  },
+  {
+    "id": "post_metadata_taxonomies",
+    "name": "Create metadata taxonomy",
+    "description": "Create metadata taxonomy Creates a new metadata taxonomy that can be used in metadata templates. POST /2.0/metadata_taxonomies",
+    "context": "POST /2.0/metadata_taxonomies\nCreates a new metadata taxonomy that can be used in metadata templates.\nOptional: body (body)"
+  },
+  {
+    "id": "post_metadata_taxonomies_id_id_levels",
+    "name": "Create metadata taxonomy levels",
+    "description": "Create metadata taxonomy levels Creates new metadata taxonomy levels. POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels",
+    "context": "POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels\nCreates new metadata taxonomy levels.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.\nOptional: body (body)"
+  },
+  {
+    "id": "post_metadata_taxonomies_id_id_levels:append",
+    "name": "Add metadata taxonomy level",
+    "description": "Add metadata taxonomy level Creates a new metadata taxonomy level and appends it to the existing levels. POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels:append",
+    "context": "POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels:append\nCreates a new metadata taxonomy level and appends it to the existing levels. If there are no levels defined yet, this will create the first level.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.\nOptional: body (body)"
+  },
+  {
+    "id": "post_metadata_taxonomies_id_id_levels:trim",
+    "name": "Delete metadata taxonomy level",
+    "description": "Delete metadata taxonomy level Deletes the last level of the metadata taxonomy. POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels:trim",
+    "context": "POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/levels:trim\nDeletes the last level of the metadata taxonomy.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy."
+  },
+  {
+    "id": "post_metadata_taxonomies_id_id_nodes",
+    "name": "Create metadata taxonomy node",
+    "description": "Create metadata taxonomy node Creates a new metadata taxonomy node. POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes",
+    "context": "POST /2.0/metadata_taxonomies/{namespace}/{taxonomy_key}/nodes\nCreates a new metadata taxonomy node.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; taxonomy_key (path) — The key of the metadata taxonomy.\nOptional: body (body)"
+  }
+]

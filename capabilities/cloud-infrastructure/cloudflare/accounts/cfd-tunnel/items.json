@@ -1,0 +1,74 @@
+[
+  {
+    "id": "cloudflare-tunnel-clean-up-cloudflare-tunnel-connections",
+    "name": "Clean up Cloudflare Tunnel connections",
+    "description": "Clean up Cloudflare Tunnel connections Removes a connection (aka Cloudflare Tunnel Connector) from a Cloudflare Tunnel independently of its current state. DELETE /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections",
+    "context": "DELETE /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections\nRemoves a connection (aka Cloudflare Tunnel Connector) from a Cloudflare Tunnel independently of its current state. If no connector id (client_id) is provided all connectors will be removed. We recommend running this command after rotating tokens.\nRequired: account_id (path); tunnel_id (path)\nOptional: client_id (query)"
+  },
+  {
+    "id": "cloudflare-tunnel-configuration-get-configuration",
+    "name": "Get Tunnel configuration",
+    "description": "Get Tunnel configuration Retrieves the configuration for a remotely managed Cloudflare Tunnel. GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations",
+    "context": "GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations\nRetrieves the configuration for a remotely managed Cloudflare Tunnel.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-configuration-put-configuration",
+    "name": "Update Tunnel configuration",
+    "description": "Update Tunnel configuration Replaces the configuration for a remotely managed Cloudflare Tunnel, including its ingress rules and origin request settings. PUT /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations",
+    "context": "PUT /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations\nReplaces the configuration for a remotely managed Cloudflare Tunnel, including its ingress rules and origin request settings.\nRequired: account_id (path); tunnel_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-tunnel-create-a-cloudflare-tunnel",
+    "name": "Create a Cloudflare Tunnel",
+    "description": "Create a Cloudflare Tunnel Creates a remotely or locally managed Cloudflare Tunnel in an account. POST /client/v4/accounts/{account_id}/cfd_tunnel",
+    "context": "POST /client/v4/accounts/{account_id}/cfd_tunnel\nCreates a remotely or locally managed Cloudflare Tunnel in an account. After creation, retrieve its token and run cloudflared to establish the connector connection.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-tunnel-delete-a-cloudflare-tunnel",
+    "name": "Delete a Cloudflare Tunnel",
+    "description": "Delete a Cloudflare Tunnel Permanently deletes a Cloudflare Tunnel from an account. DELETE /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}\nPermanently deletes a Cloudflare Tunnel from an account. The tunnel must have no active connections.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-a-cloudflare-tunnel",
+    "name": "Get a Cloudflare Tunnel",
+    "description": "Get a Cloudflare Tunnel Fetches a single Cloudflare Tunnel. GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}\nFetches a single Cloudflare Tunnel.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-a-cloudflare-tunnel-management-token",
+    "name": "Get a Cloudflare Tunnel management token",
+    "description": "Get a Cloudflare Tunnel management token Creates a short-lived management token for the requested Tunnel management resources, such as streaming logs. POST /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/management",
+    "context": "POST /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/management\nCreates a short-lived management token for the requested Tunnel management resources, such as streaming logs. Treat the token as a secret.\nRequired: account_id (path); tunnel_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-a-cloudflare-tunnel-token",
+    "name": "Get a Cloudflare Tunnel token",
+    "description": "Get a Cloudflare Tunnel token Retrieves the token used to run cloudflared and associate it with a specific Cloudflare Tunnel. GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/token",
+    "context": "GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/token\nRetrieves the token used to run cloudflared and associate it with a specific Cloudflare Tunnel. Treat the token as a secret.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-cloudflare-tunnel-connector",
+    "name": "Get Cloudflare Tunnel connector",
+    "description": "Get Cloudflare Tunnel connector Retrieves a connector and its connection details for a Cloudflare Tunnel, including its cloudflared version, architecture, and connected Cloudflare locations. GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}\nRetrieves a connector and its connection details for a Cloudflare Tunnel, including its cloudflared version, architecture, and connected Cloudflare locations.\nRequired: account_id (path); tunnel_id (path); connector_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-list-cloudflare-tunnel-connections",
+    "name": "List Cloudflare Tunnel connections",
+    "description": "List Cloudflare Tunnel connections Lists the connections for a Cloudflare Tunnel, including connector IDs, cloudflared versions, and Cloudflare locations. GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections",
+    "context": "GET /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections\nLists the connections for a Cloudflare Tunnel, including connector IDs, cloudflared versions, and Cloudflare locations.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-list-cloudflare-tunnels",
+    "name": "List Cloudflare Tunnels",
+    "description": "List Cloudflare Tunnels Lists and filters Cloudflare Tunnels in an account. GET /client/v4/accounts/{account_id}/cfd_tunnel",
+    "context": "GET /client/v4/accounts/{account_id}/cfd_tunnel\nLists and filters Cloudflare Tunnels in an account.\nRequired: account_id (path)\nOptional: name (query); is_deleted (query); existed_at (query); uuid (query); was_active_at (query); was_inactive_at (query); include_prefix (query); exclude_prefix (query); status (query); per_page (query); page (query)"
+  },
+  {
+    "id": "cloudflare-tunnel-update-a-cloudflare-tunnel",
+    "name": "Update a Cloudflare Tunnel",
+    "description": "Update a Cloudflare Tunnel Updates the name or secret of an existing Cloudflare Tunnel. PATCH /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cfd_tunnel/{tunnel_id}\nUpdates the name or secret of an existing Cloudflare Tunnel.\nRequired: tunnel_id (path); account_id (path); body (body)"
+  }
+]

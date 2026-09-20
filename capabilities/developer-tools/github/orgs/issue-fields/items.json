@@ -1,0 +1,26 @@
+[
+  {
+    "id": "orgs%2Fcreate-issue-field",
+    "name": "Create issue field for an organization",
+    "description": "Create issue field for an organization Creates a new issue field for an organization. POST /orgs/{org}/issue-fields",
+    "context": "POST /orgs/{org}/issue-fields\nCreates a new issue field for an organization. You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "orgs%2Fdelete-issue-field",
+    "name": "Delete issue field for an organization",
+    "description": "Delete issue field for an organization Deletes an issue field for an organization. DELETE /orgs/{org}/issue-fields/{issue_field_id}",
+    "context": "DELETE /orgs/{org}/issue-fields/{issue_field_id}\nDeletes an issue field for an organization. You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; issue_field_id (path) — The unique identifier of the issue field."
+  },
+  {
+    "id": "orgs%2Flist-issue-fields",
+    "name": "List issue fields for an organization",
+    "description": "List issue fields for an organization Lists all issue fields for an organization. GET /orgs/{org}/issue-fields",
+    "context": "GET /orgs/{org}/issue-fields\nLists all issue fields for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "orgs%2Fupdate-issue-field",
+    "name": "Update issue field for an organization",
+    "description": "Update issue field for an organization Updates an issue field for an organization. PATCH /orgs/{org}/issue-fields/{issue_field_id}",
+    "context": "PATCH /orgs/{org}/issue-fields/{issue_field_id}\nUpdates an issue field for an organization. You can find out more about issue fields in [Managing issue fields in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/using-issues/managing-issue-fields-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; issue_field_id (path) — The unique identifier of the issue field.; body (body)"
+  }
+]

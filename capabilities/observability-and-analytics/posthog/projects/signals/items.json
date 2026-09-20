@@ -1,0 +1,470 @@
+[
+  {
+    "id": "signals_processing_list",
+    "name": "Return current processing state including pause status.",
+    "description": "Return current processing state including pause status. GET /api/projects/{project_id}/signals/processing/",
+    "context": "GET /api/projects/{project_id}/signals/processing/\nReturn current processing state including pause status.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "signals_processing_pause_destroy",
+    "name": "View and control signal processing pipeline state for a team.",
+    "description": "View and control signal processing pipeline state for a team. DELETE /api/projects/{project_id}/signals/processing/pause/",
+    "context": "DELETE /api/projects/{project_id}/signals/processing/pause/\nView and control signal processing pipeline state for a team.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_processing_pause_update",
+    "name": "View and control signal processing pipeline state for a team.",
+    "description": "View and control signal processing pipeline state for a team. PUT /api/projects/{project_id}/signals/processing/pause/",
+    "context": "PUT /api/projects/{project_id}/signals/processing/pause/\nView and control signal processing pipeline state for a team.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_report_artefacts_create",
+    "name": "Append an artefact to a report",
+    "description": "Append an artefact to a report Append an artefact to a report (see artefact_type for the writable types). POST /api/projects/{project_id}/signals/reports/{report_id}/artefacts/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{report_id}/artefacts/\nAppend an artefact to a report (see artefact_type for the writable types). Everything is append-only: log entries (code reference, commit, task run, note) accumulate, while status types (safety / actionability / priority judgments, repo selection, suggested reviewers, channel assignments) are latest-wins — appending a new version supersedes the previous one as the report's canonical status. Content is validated against the type's schema.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404.; body (body)\nOptional: X-PostHog-Task-Id (header) — Task to attribute the artefact to (must belong to this project). Set automatically for sandbox agents; when absent the artefact is attributed to the requesting user."
+  },
+  {
+    "id": "signals_report_artefacts_destroy",
+    "name": "Delete an artefact",
+    "description": "Delete an artefact Delete an artefact, addressed by id. DELETE /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/\nDelete an artefact, addressed by id. Deleting the latest row of a status type reverts the report's canonical status to the previous version (latest-wins over what remains). `task_run` artefacts are an append-only work log and cannot be deleted. Neither can the types this API cannot write, which the pipeline owns: `check_result`, `code_review`, `implementation_decision`, `implementation_dispatch`, `implementation_handover`, `implementation_replacement`, `pull_request`, `summary_change`, `task_run`, `title_change`, `video_segment`, `work_claim`, `work_release`.\nRequired: id (path) — A UUID string identifying this signal report artefact.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404."
+  },
+  {
+    "id": "signals_report_artefacts_diff",
+    "name": "Fetch the diff for a commit artefact",
+    "description": "Fetch the diff for a commit artefact Fetch the unified diff of a `commit` artefact's branch against the repository default branch via the team's GitHub integration — using the branch's current tip so the diff reflects the latest state of the work, not just the single recorded commit. GET /api/projects/{project_id}/sig…",
+    "context": "GET /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/diff/\nFetch the unified diff of a `commit` artefact's branch against the repository default branch via the team's GitHub integration — using the branch's current tip so the diff reflects the latest state of the work, not just the single recorded commit.\nRequired: id (path) — A UUID string identifying this signal report artefact.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404."
+  },
+  {
+    "id": "signals_report_artefacts_list",
+    "name": "List a report's artefacts",
+    "description": "List a report's artefacts List every artefact on a report — the full work log: signal findings (the evidence behind the report), status judgments (safety / actionability / priority, repo selection, suggested reviewers — the newest row of each status type is canonical), and log entries (code references, commits, task r…",
+    "context": "GET /api/projects/{project_id}/signals/reports/{report_id}/artefacts/\nList every artefact on a report — the full work log: signal findings (the evidence behind the report), status judgments (safety / actionability / priority, repo selection, suggested reviewers — the newest row of each status type is canonical), and log entries (code references, commits, task runs, notes). `suggested_reviewers` content is enriched with PostHog user info at read time.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "signals_report_artefacts_partial_update",
+    "name": "Replace an artefact's content",
+    "description": "Replace an artefact's content Replace the content of an existing artefact, addressed by id. PATCH /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/\nReplace the content of an existing artefact, addressed by id. The new content is validated against the artefact's type schema. Editing the latest row of a status type changes the report's canonical status (latest-wins); to re-assess while keeping history, append a new artefact instead. Attribution is creation-time only — edits don't reassign it.\nRequired: id (path) — A UUID string identifying this signal report artefact.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404.\nOptional: body (body)"
+  },
+  {
+    "id": "signals_report_artefacts_retrieve",
+    "name": "Get a single artefact",
+    "description": "Get a single artefact Get one artefact by id, content parsed (and reviewers enriched) the same way as the list. GET /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{report_id}/artefacts/{id}/\nGet one artefact by id, content parsed (and reviewers enriched) the same way as the list.\nRequired: id (path) — A UUID string identifying this signal report artefact.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404."
+  },
+  {
+    "id": "signals_report_checks_destroy",
+    "name": "Cancel a check",
+    "description": "Cancel a check Stop a check that is still open — active, or pending its report resolving. DELETE /api/projects/{project_id}/signals/reports/{report_id}/checks/{id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/reports/{report_id}/checks/{id}/\nStop a check that is still open — active, or pending its report resolving. Its recorded results stay on the report.\nRequired: id (path) — A UUID string identifying this Signal report check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404."
+  },
+  {
+    "id": "signals_report_checks_list",
+    "name": "List a report's checks",
+    "description": "List a report's checks List the forward-looking checks on a report. GET /api/projects/{project_id}/signals/reports/{report_id}/checks/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{report_id}/checks/\nList the forward-looking checks on a report. A check says what must stay true after the report was acted on, and the coordinator records each verdict as a `check_result` artefact on the report.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "signals_report_checks_retrieve",
+    "name": "Get a single check",
+    "description": "Get a single check Checks attached to a signal report: read and cancel. GET /api/projects/{project_id}/signals/reports/{report_id}/checks/{id}/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{report_id}/checks/{id}/\nChecks attached to a signal report: read and cancel. There is no create here. A check is authored by a scout run or by the research pipeline, both through `report_check_authoring.create_check`. An `agent` check puts its author's prose in front of a privileged scout run, and `task:write` does not authorize that, so no caller-facing endpoint accepts one. Anyone who can read the report can read its checks, and a person can still stop one. There is no update: a check is a claim about the future, and editing its threshold after a result would make the recorded verdict unreadable. Cancel it and let its author write a new one.\nRequired: id (path) — A UUID string identifying this Signal report check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (path) — UUID of the report whose artefacts you're addressing. This must be a report id (the report's own UUID), not a signal id such as `sig_praise` — a non-report id returns 404."
+  },
+  {
+    "id": "signals_report_pr_checks",
+    "name": "Fetch CI checks for a report's implementation PR",
+    "description": "Fetch CI checks for a report's implementation PR Fetch the CI status (GitHub Actions check runs and legacy commit statuses) of the pull request attached to the report, via the team's GitHub integration. GET /api/projects/{project_id}/signals/reports/{id}/pr_checks/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{id}/pr_checks/\nFetch the CI status (GitHub Actions check runs and legacy commit statuses) of the pull request attached to the report, via the team's GitHub integration.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first)."
+  },
+  {
+    "id": "signals_report_pr_comments",
+    "name": "Fetch comments for a report's implementation PR",
+    "description": "Fetch comments for a report's implementation PR Fetch the pull request's conversation comments and inline review comments, merged chronologically, via the team's GitHub integration. GET /api/projects/{project_id}/signals/reports/{id}/pr_comments/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{id}/pr_comments/\nFetch the pull request's conversation comments and inline review comments, merged chronologically, via the team's GitHub integration.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first)."
+  },
+  {
+    "id": "signals_report_pr_review_comment_destroy",
+    "name": "Delete one of the requesting user's own review comments",
+    "description": "Delete one of the requesting user's own review comments DELETE /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/\nDelete one of the requesting user's own review comments\nRequired: comment_id (path); id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first)."
+  },
+  {
+    "id": "signals_report_pr_review_comment_reaction_destroy",
+    "name": "Remove one of the requesting user's own reactions from a review comment",
+    "description": "Remove one of the requesting user's own reactions from a review comment DELETE /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/reactions/{reaction_id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/reactions/{reaction_id}/\nRemove one of the requesting user's own reactions from a review comment\nRequired: comment_id (path); id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; reaction_id (path)\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first)."
+  },
+  {
+    "id": "signals_report_pr_review_comment_reactions_create",
+    "name": "React to a review comment as the requesting user",
+    "description": "React to a review comment as the requesting user POST /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/reactions/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/reactions/\nReact to a review comment as the requesting user\nRequired: comment_id (path); id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first)."
+  },
+  {
+    "id": "signals_report_pr_review_comment_update",
+    "name": "Edit one of the requesting user's own review comments",
+    "description": "Edit one of the requesting user's own review comments PATCH /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/",
+    "context": "PATCH /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/{comment_id}/\nEdit one of the requesting user's own review comments\nRequired: comment_id (path); id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first).; body (body)"
+  },
+  {
+    "id": "signals_report_pr_review_comments_create",
+    "name": "Post an inline review comment on a report's implementation PR",
+    "description": "Post an inline review comment on a report's implementation PR Post an inline review comment on the report's implementation pull request, attributed to the requesting user's own GitHub identity via their personal GitHub connection. POST /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/pr_review_comments/\nPost an inline review comment on the report's implementation pull request, attributed to the requesting user's own GitHub identity via their personal GitHub connection. Either replies to an existing thread (`in_reply_to`) or starts a new thread on a diff line (`path` + `line`).\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: pull_request_id (query) — Select a PR from the report's pull_requests collection. Omit for the compatibility primary PR (unfinished first)."
+  },
+  {
+    "id": "signals_reports_bulk_state_create",
+    "name": "Transition many reports to a new state in one call",
+    "description": "Transition many reports to a new state in one call Transition many reports to a new state in one call. POST /api/projects/{project_id}/signals/reports/bulk-state/",
+    "context": "POST /api/projects/{project_id}/signals/reports/bulk-state/\nTransition many reports to a new state in one call. Each id is processed independently: a report whose transition isn't allowed from its current status is reported as `skipped` (a 409 on the single-report endpoint) and the rest still go through. Returns one result per requested id (in request order, after de-duplication) plus per-outcome counts. The whole call is 200 even on partial failure — inspect `results` / the counts to see what happened.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_reports_claim",
+    "name": "Claim or release a signal report",
+    "description": "Claim or release a signal report Start or update work for the current user, internal task, or external agent. POST /api/projects/{project_id}/signals/reports/{id}/claim/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/claim/\nStart or update work for the current user, internal task, or external agent. Supply claim_id to resume, pull_requests to add PRs, takeover=true to explicitly take ownership, or release=true to end ownership while preserving work history and PR links.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "signals_reports_feedback_create",
+    "name": "Leave feedback on a report",
+    "description": "Leave feedback on a report Record the thumbs rating at the end of a report, with an optional note. POST /api/projects/{project_id}/signals/reports/{id}/feedback/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/feedback/\nRecord the thumbs rating at the end of a report, with an optional note. For browser-session requests the rating is persisted as a per-person report action, which counts as consumption evidence for the scout that authored the report (scouts whose output nobody consumes are eventually paused); requests authenticated any other way record no action. When a note is present and the report was authored by a scout, the note is also forwarded to that scout as a steering note it reads on its next run; for any other report there is nothing to steer. The report's state is never changed.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_reports_list",
+    "name": "signals_reports_list",
+    "description": "signals_reports_list GET /api/projects/{project_id}/signals/reports/",
+    "context": "GET /api/projects/{project_id}/signals/reports/\nsignals_reports_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: actionability (query) — Comma-separated actionability judgments to include. Valid values: immediately_actionable, requires_human_input, not_actionable. Reports without a judgment are excluded.; already_addressed (query) — Filter by whether the latest actionability judgment says the issue is already being handled. False also includes older reports where that judgment did not record a value.; assignee (query) — Use 'me' to return reports claimed by the current user, task, or MCP agent.; channel_id (query) — Narrow to reports assigned to one space (channel). Absent or empty means all reports regardless of assignment.; count_only (query) — Return the filtered total with an empty results page. Skips report ordering, serialization, and decorative metadata lookups. Defaults to false.; has_implementation_pr (query) — Filter reports by whether an implementation pull request is attached. 'true' keeps only reports with a PR; 'false' keeps only those without. Pair with count_only=true to return only the filtered total.; include_all_statuses (query) — When true, the list includes reports in every status with no default exclusions applied — currently that adds suppressed (dismissed) reports, which are otherwise hidden. Use it to see the full inbox state (e.g. deduplicating before creating a report) and read each row's status (plus dismissal_reason/dismissal_note on dismissed rows) before acting. Deleted reports are terminal and never returned. Defaults to false, which keeps the existing default exclusions. Ignored when an explicit 'status' filter is set — that filter alone decides which statuses are returned.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; ordering (query) — Comma-separated ordering clauses. Each clause is a field name optionally prefixed with '-' for descending. Allowed fields: status, is_suggested_reviewer, signal_count, total_weight, priority, created_at, updated_at, id. Defaults to '-is_suggested_reviewer,status,-updated_at'.; priority (query) — Comma-separated list of priorities to include. Valid values: P0, P1, P2, P3, P4. Reports without a priority assignment are excluded when this filter is set.; scope (query) — Reviewer scope: for_me, entire_project, or teammate. Pass teammate_uuid with teammate.; scout (query) — Comma-separated list of scout skill_name slugs (e.g. signals-scout-error-tracking). Reports are kept if at least one of their contributing signals was authored by one of these scouts. Combines with source_product as an AND.; scout_prefix (query) — Scout skill_name prefix (e.g. signals-scout-customer-analytics). Reports are kept if at least one of their contributing signals was authored by a scout whose skill_name starts with this prefix — new scouts in the family match without callers listing every name. Combines with the other filters as an AND.; search (query) — Case-insensitive substring match against report title and summary.; sort (query) — Inbox sort preset: priority, last_updated, newest, or oldest. Ignored when ordering is supplied.; source_id (query) — Comma-separated list of source record ids. Reports are kept if at least one of their contributing signals came from one of these records — e.g. pass a support ticket's UUID to see what the inbox already found for that ticket. Requires exactly one source_product, since a source id is only unique within its product.; source_product (query) — Comma-separated list of source products to include. Reports are kept if at least one of their contributing signals comes from one of these products (e.g. error_tracking, session_replay).; status (query) — Comma-separated list of statuses to include. Valid values: potential, candidate, in_progress, pending_input, ready, resolved, failed, suppressed. Defaults to all statuses except suppressed.; suggested_reviewers (query) — Comma-separated list of PostHog user UUIDs. Reports are kept if their suggested reviewers include any of the given users.; task_id (query) — Only reports associated with this task (via the report's task associations).; teammate_uuid (query) — PostHog user UUID used when scope=teammate.; unclaimed (query) — Filter by whether the report has no owner and no draft, open, or unknown PR. Resolved reports are never unclaimed.; use_priority_preference (query) — When true and priority is omitted, include priorities at or above the requesting user's personal PR-generation threshold, falling back to the project threshold.; view (query) — Apply an inbox view: actionable, needs_input, monitoring, resolved, dismissed, not_actionable, or all. Each view applies the corresponding status, actionability, and implementation-PR filters."
+  },
+  {
+    "id": "signals_reports_partial_update",
+    "name": "Edit a report's title or summary",
+    "description": "Edit a report's title or summary Edit the human-facing title and/or summary (description) of a signal report, addressed by id. PATCH /api/projects/{project_id}/signals/reports/{id}/",
+    "context": "PATCH /api/projects/{project_id}/signals/reports/{id}/\nEdit the human-facing title and/or summary (description) of a signal report, addressed by id. Both fields are optional — supply only the ones you want to change; at least one is required. Every other report field (status, weights, judgments) is managed by the signals pipeline and cannot be set here. Returns the full updated report.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "signals_reports_pr_ci_statuses",
+    "name": "Fetch CI status for several reports' implementation PRs",
+    "description": "Fetch CI status for several reports' implementation PRs Resolve the coarse CI rollup of the pull requests several reports opened, so a list of reports can show which pull requests are red without opening each report. GET /api/projects/{project_id}/signals/reports/pr_ci_statuses/",
+    "context": "GET /api/projects/{project_id}/signals/reports/pr_ci_statuses/\nResolve the coarse CI rollup of the pull requests several reports opened, so a list of reports can show which pull requests are red without opening each report. One GitHub call covers the whole batch, and the answers are cached briefly and shared across callers. A report is left out when it has no open implementation pull request, and also when GitHub could not answer for it (no integration reaches the repository, a rate limit, an upstream failure), so a caller shows no CI state for it rather than an error. For the individual checks behind the rollup, use `pr_checks`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_ids (query) — Comma-separated report UUIDs to resolve CI state for, at most 100 per request."
+  },
+  {
+    "id": "signals_reports_refresh_metrics_create",
+    "name": "Refresh the saved metric snapshots of the reports on screen",
+    "description": "Refresh the saved metric snapshots of the reports on screen Re-run the stored metric queries of the given reports through the query cache and save the newest values as their snapshots. POST /api/projects/{project_id}/signals/reports/refresh_metrics/",
+    "context": "POST /api/projects/{project_id}/signals/reports/refresh_metrics/\nRe-run the stored metric queries of the given reports through the query cache and save the newest values as their snapshots. Call it when a person opens the inbox list or a report, with the ids on screen. Report titles and summaries are point-in-time text and never change here; only value, value_at, and series do, and legacy comparisons are cleared. A snapshot measured in the last 15 minutes is served as is. Each call runs at most 40 source series inside a 20-second budget, row metrics first; the rest keep their previous snapshot until the next open. Returns snapshot-only metrics for every requested report the caller can read whose status is ready or pending_input. A report in any other status is left out of the response, and its saved snapshots stay as they are.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_reports_refund_create",
+    "name": "Refund a report's implementation PR",
+    "description": "Refund a report's implementation PR Refund the flat charge for this report's implementation PR and archive the report. POST /api/projects/{project_id}/signals/reports/{id}/refund/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/refund/\nRefund the flat charge for this report's implementation PR and archive the report. Refunds auto-approve: the charge is either excluded from usage before it is ever reported to billing (refund on the same UTC day as the PR run) or returned as a Stripe customer-balance credit on the next invoice. A refunded PR does not count toward the free monthly PR allowance. One refund per report, ever — repeat calls return the existing refund with already_refunded=true. The report is archived as part of the refund (a resolved report stays resolved) and can't be restored afterwards.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_reports_refund_summary_retrieve",
+    "name": "Summarize credited PR refunds for the billing period",
+    "description": "Summarize credited PR refunds for the billing period Aggregate credited-path refunds across the whole organization for the current billing period — counts only, no per-team detail. GET /api/projects/{project_id}/signals/reports/refund-summary/",
+    "context": "GET /api/projects/{project_id}/signals/reports/refund-summary/\nAggregate credited-path refunds across the whole organization for the current billing period — counts only, no per-team detail. The billing usage widget needs this because billing usage is org-wide while reports (and their refunds) are team-scoped: subtract the refunded credits from billing usage to show the net PR count. Excluded-path refunds never reach billing usage, so no adjustment is needed for them. Also carries the org's live billable credits for the period (billing's recorded usage lags by up to a day), so the widget can count just-created PRs and react to same-day refunds.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_reports_retrieve",
+    "name": "signals_reports_retrieve",
+    "description": "signals_reports_retrieve GET /api/projects/{project_id}/signals/reports/{id}/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{id}/\nsignals_reports_retrieve\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_reports_signals_retrieve",
+    "name": "List a report's signals",
+    "description": "List a report's signals Fetch all signals for a report from ClickHouse, including full metadata. GET /api/projects/{project_id}/signals/reports/{id}/signals/",
+    "context": "GET /api/projects/{project_id}/signals/reports/{id}/signals/\nFetch all signals for a report from ClickHouse, including full metadata.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_reports_state_create",
+    "name": "Transition a report to a new state",
+    "description": "Transition a report to a new state Transition a report to a new state. POST /api/projects/{project_id}/signals/reports/{id}/state/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/state/\nTransition a report to a new state. The model validates allowed transitions, except that a verdict the report already holds (dismissing a suppressed report, resolving a resolved one) is a 200 that records the dismissal feedback without touching the status. The request body is validated by SignalReportStateRequestSerializer — only the fields it declares (state, dismissal_reason, dismissal_note, corrected_repository, snooze_for) are read, and only snooze_for is ever forwarded to transition_to. Any other key is ignored, so internal transition_to kwargs (reset_weight, error, ...) can't be injected. Body: { \"state\": \"suppressed\" | \"potential\" | \"resolved\", # Optional dismissal feedback (honored when state == \"suppressed\", \"potential\", or \"resolved\"): \"dismissal_reason\": \" \", \"dismissal_note\": \"free-form text\", # Optional, only allowed with dismissal_reason == \"wrong_repo\": \"corrected_repository\": \"owner/repo the report should have targeted\", # Optional, only honored for state == \"potential\": \"snooze_for\": , }\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_reports_viewed_create",
+    "name": "Record that a person viewed a report",
+    "description": "Record that a person viewed a report Record that the caller opened this report's detail view. POST /api/projects/{project_id}/signals/reports/{id}/viewed/",
+    "context": "POST /api/projects/{project_id}/signals/reports/{id}/viewed/\nRecord that the caller opened this report's detail view. One row per person per report is kept (repeat views bump a counter), and the record counts as consumption evidence for the scout that authored the report — scouts whose reports nobody consumes are eventually paused. Intended as fire-and-forget from the inbox UI when a person opens a report. Only browser-session requests leave a record; a call with any other credential (personal API key, OAuth token) returns 204 but records nothing.\nRequired: id (path) — A UUID string identifying this signal report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_scout_chat_tasks_create",
+    "name": "Start a scout chat task",
+    "description": "Start a scout chat task Create and run a cloud task for one of the fixed scout chat templates (suggest a scout, fleet overview, recent signals). POST /api/projects/{project_id}/signals/scout/chat_tasks/",
+    "context": "POST /api/projects/{project_id}/signals/scout/chat_tasks/\nCreate and run a cloud task for one of the fixed scout chat templates (suggest a scout, fleet overview, recent signals). The prompt is server-owned; the response carries the task id to navigate to.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_config_create",
+    "name": "Create a scout config",
+    "description": "Create a scout config Register the config for a skill immediately, without waiting for the coordinator to auto-register it — and the way to make a skill without the `signals-scout-` prefix a scout at all. POST /api/projects/{project_id}/signals/scout/configs/",
+    "context": "POST /api/projects/{project_id}/signals/scout/configs/\nRegister the config for a skill immediately, without waiting for the coordinator to auto-register it — and the way to make a skill without the `signals-scout-` prefix a scout at all. The same call can optionally set `run_interval_minutes`, a cron `run_cron_schedule`, `enabled`, `emit`, `network_access`, and output destinations. The skill must already exist on this project. Upsert: if a config already exists for the skill, the provided fields are applied to it. Registering puts the skill's body on the schedule as the scout's prompt, so this call needs `llm_skill:write` and editor access to skills on top of `signal_scout:write`, like creating a scout.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_config_destroy",
+    "name": "Delete a scout config",
+    "description": "Delete a scout config Delete one scout config by its `id`, removing the per-(team, skill) schedule/emit row outright. DELETE /api/projects/{project_id}/signals/scout/configs/{id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/scout/configs/{id}/\nDelete one scout config by its `id`, removing the per-(team, skill) schedule/emit row outright. The point is cleaning up an orphaned config whose skill was archived or deleted — it lingers in `list` with an empty `description`, never runs (the coordinator skips it and the skill can't load), but can't otherwise be removed over the API. Deletion is activity-logged. Note: auto-registration only scans live `signals-scout-*` skills, so a config deleted for one of those is back on the coordinator's next tick. A scout under any other name does not come back on its own: its config stays deleted until you re-register it, and its skill still reads as a scout meanwhile. To retire a live scout, archive its skill (or set `enabled=false` to make it inert) rather than deleting the config. A scout whose `scout_role` is `operational` cannot be deleted: it is part of the self-driving system rather than the project's own fleet.\nRequired: id (path) — A UUID string identifying this Signal scout config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_scout_config_list",
+    "name": "List scout configs",
+    "description": "List scout configs List the per-(team, skill) scout configs for this project. GET /api/projects/{project_id}/signals/scout/configs/",
+    "context": "GET /api/projects/{project_id}/signals/scout/configs/\nList the per-(team, skill) scout configs for this project. Each row includes its `display_name` (the label people read), its `skill_name` (the permanent identifier), its schedule (rolling `run_interval_minutes`, or a project-local `run_cron_schedule` when set), `enabled`, `emit` posture, and `tags`. A freshly authored scout skill appears here once its config is registered, either explicitly via create or by the coordinator's next tick. Pass `tags` to narrow the fleet to the scouts carrying at least one of the given labels, and `search` to narrow it to the scouts matching a substring of either name.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: search (query) — Case-insensitive substring filter over a scout's display name and its skill name. A scout matches on either, so a person who knows the label and a caller who knows the identifier both find it. Omit for the whole fleet.; tags (query) — Comma-separated tags, e.g. `revenue,on-call`. Returns the scouts carrying at least one of them. Values are normalized the same way stored tags are, so `On Call` matches `on-call`. Omit for the whole fleet."
+  },
+  {
+    "id": "signals_scout_config_run",
+    "name": "Run a scout now",
+    "description": "Run a scout now Dispatch one on-demand run of this scout immediately, regardless of its schedule. POST /api/projects/{project_id}/signals/scout/configs/{id}/run/",
+    "context": "POST /api/projects/{project_id}/signals/scout/configs/{id}/run/\nDispatch one on-demand run of this scout immediately, regardless of its schedule. Useful to test a scout right after authoring it, or to refresh its findings on demand. The run executes asynchronously on the worker and inherits every guard the scheduled path has: it is forbidden if scouts are not enabled for the project (403), and skipped if self-driving is paused at the project's pull request limit, or the project is over its daily report limit or daily run budget (429), or a run for this scout is already in progress (409). A manual run counts against the same daily run budget as scheduled runs, so repeated manual runs of the same scout can exhaust the project's daily allowance. A manual run does not change the scout's schedule or `last_run_at`. A disabled scout can still be run this way (to test before enabling). Pass an optional `note` to steer this one run without leaving a scout note that would steer every later run too. Returns immediately with the workflow id: poll the scout's runs for the result.\nRequired: id (path) — A UUID string identifying this Signal scout config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "signals_scout_config_sync",
+    "name": "Sync scout configs",
+    "description": "Sync scout configs Materialize the scout fleet for this project on demand (idempotent): seed the canonical `signals-scout-*` skills, create a default-schedule config for any scout lacking one, retire the skills whose canonical scout no longer ships, and return all scout configs. POST /api/projects/{project_id}/signals…",
+    "context": "POST /api/projects/{project_id}/signals/scout/configs/sync/\nMaterialize the scout fleet for this project on demand (idempotent): seed the canonical `signals-scout-*` skills, create a default-schedule config for any scout lacking one, retire the skills whose canonical scout no longer ships, and return all scout configs. Normally the Temporal coordinator does this on its next tick; this action exists so the scout UIs and setup flows (e.g. the wizard's self-driving program) can hand the user a tunable fleet immediately.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: surface (query) — Which surface asked for the materialization, recorded on the `signals_scout_fleet_synced` analytics event so a fleet a person's tab-open delivered is separable from one the coordinator was going to deliver anyway. Omitted means unknown. * `roster` - roster * `desktop` - desktop * `wizard` - wizard"
+  },
+  {
+    "id": "signals_scout_config_update",
+    "name": "Update a scout config",
+    "description": "Update a scout config Tune one scout: change its schedule (rolling `run_interval_minutes`, or a cron `run_cron_schedule` that takes precedence when set), `enabled`, `emit` (dry-run) posture, `network_access` (trusted-domain allowlist vs full access for the scout's sandbox), or output destinations. PATCH /api/projects/…",
+    "context": "PATCH /api/projects/{project_id}/signals/scout/configs/{id}/\nTune one scout: change its schedule (rolling `run_interval_minutes`, or a cron `run_cron_schedule` that takes precedence when set), `enabled`, `emit` (dry-run) posture, `network_access` (trusted-domain allowlist vs full access for the scout's sandbox), or output destinations. `skill_name` is fixed. Enabling records `enabled_by` and is activity-logged since it drives spend.\nRequired: id (path) — A UUID string identifying this Signal scout config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "signals_scout_create",
+    "name": "Create a scout",
+    "description": "Create a scout Create a scout skill and its runnable config atomically. POST /api/projects/{project_id}/signals/scout/",
+    "context": "POST /api/projects/{project_id}/signals/scout/\nCreate a scout skill and its runnable config atomically. Give it a `display_name` — the label people read, kept exactly as written — and the scout's permanent skill name is generated from it, with a numeric suffix when that name is taken, so two scouts may share a label without sharing an identity. Pass `name` instead to pick that identifier yourself; any valid skill name works, since the config row is what makes a skill a scout. The skill always receives the report-channel tools. The optional config controls schedule, enablement, dry-run posture, network access, and typed destinations such as Slack. Repeating the same definition is safe and applies any supplied config fields; reusing an explicit `name` for a different definition returns 409.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_edit_report",
+    "name": "Edit an existing report for a run",
+    "description": "Edit an existing report for a run Rewrite a report's title/summary, append a note or fresh evidence, set its suggested reviewers, and/or point it at another repository. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/edit-report/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/edit-report/\nRewrite a report's title/summary, append a note or fresh evidence, set its suggested reviewers, and/or point it at another repository. Can target ANY of the project's inbox reports, not just scout-authored ones — so the edit is attributed to this scout. Reviewers and repository are how you rescue a report that surfaced routed to no one or against the wrong codebase: each replaces what the report holds and re-runs autostart, so a report that was missing a qualifying reviewer or a repository can open a draft PR. The response carries the repository the report holds after the edit, and the call fails when a repository it named did not land. Title/summary edits are best-effort: the pipeline may later re-research them. Set `supersedes_implementation` alongside a rewrite when the fix changed. Verified automated predecessor PRs close only after the replacement completes with verified open PRs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_emit_report",
+    "name": "Author a full report for a run",
+    "description": "Author a full report for a run The second emit channel: author a complete `SignalReport` directly instead of emitting a weak signal. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/emit-report/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/emit-report/\nThe second emit channel: author a complete `SignalReport` directly instead of emitting a weak signal. The report passes the safety judge, then surfaces at the status the scout's `actionability` call implies (or is suppressed). Backing `evidence` is written as bound signals so the report behaves like a pipeline report. Safe to retry: resending an emission returns the report the first call authored (`idempotent_replay` true) rather than a second one, keyed on `idempotency_key` or, without one, on the report's content. Use `reports` to find a report from an earlier run and `edit-report` to update it instead of authoring a near-duplicate.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_emit_signal",
+    "name": "Emit a finding for a run",
+    "description": "Emit a finding for a run Fire `emit_signal` with `source_product = signals_scout`. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/emit-signal/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/emit-signal/\nFire `emit_signal` with `source_product = signals_scout`. The `finding_id` is baked into the deterministic `Signal.source_id = run: :finding: ` for traceability, but this is NOT idempotent — a second call with the same `finding_id` emits a second signal, so do not retry an emit that may have already succeeded.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_lighthouse_audit",
+    "name": "Run a Lighthouse audit for a run",
+    "description": "Run a Lighthouse audit for a run Load one page in a real browser and return what makes it slow — most usefully the element the browser chose as the Largest Contentful Paint, and where the LCP time went. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/lighthouse-audit/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/lighthouse-audit/\nLoad one page in a real browser and return what makes it slow — most usefully the element the browser chose as the Largest Contentful Paint, and where the LCP time went. Field data says a route is slow; this says which element and why, so a finding can name it instead of guessing from source. Restricted to public PostHog pages: the browser signs in to nothing, so a page behind a login would report the login screen's numbers. One throttled cold load is not a p75 over real users — corroborate a field finding with it, never replace one. Capped at 5 audits per run.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_members_list",
+    "name": "List project members for reviewer routing",
+    "description": "List project members for reviewer routing Return the people who can review work on this project — one row per member with access to it, each with their `user_uuid`, `email`, `first_name`/`last_name`, and resolved GitHub `login` (null when they have no linked GitHub identity). GET /api/projects/{project_id}/signals/sco…",
+    "context": "GET /api/projects/{project_id}/signals/scout/members/\nReturn the people who can review work on this project — one row per member with access to it, each with their `user_uuid`, `email`, `first_name`/`last_name`, and resolved GitHub `login` (null when they have no linked GitHub identity). The cold-start reviewer-routing path: when a finding's owner can't be read off a fetched entity's `created_by` and there's no cached `reviewer: ` memory or inbox precedent, list members, match the owner by email/name, then put their resolved `github_login` in `suggested_reviewers` on `emit-report` / `edit-report`. Pass `search` to narrow a large roster; the result is capped at 200. Strictly team-scoped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: search (query) — Case-insensitive substring filter over member email and first/last name. Use it to narrow a large project's roster to the owner you're trying to match instead of pulling every member."
+  },
+  {
+    "id": "signals_scout_metadata_get",
+    "name": "Get scout metadata",
+    "description": "Get scout metadata Return the project's scout metadata: whether it is enrolled, the current announcement banner (e.g. GET /api/projects/{project_id}/signals/scout/metadata/current/",
+    "context": "GET /api/projects/{project_id}/signals/scout/metadata/current/\nReturn the project's scout metadata: whether it is enrolled, the current announcement banner (e.g. an alpha run-limit notice, or null when unset), and the enforced run limits with current usage. Limits reflect what the coordinator actually applies at dispatch, so a user can see the real throttle rather than what they assume they set. All values come from the `signals-scout` flag payload, so the banner and caps can change with no deploy.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_scout_notes_create",
+    "name": "Leave a note for the scouts",
+    "description": "Leave a note for the scouts Leave a steering note the scout fleet reads on its next runs. POST /api/projects/{project_id}/signals/scout/notes/",
+    "context": "POST /api/projects/{project_id}/signals/scout/notes/\nLeave a steering note the scout fleet reads on its next runs. Address it to one scout via `skill_name` (a configured scout), to one stage of the report pipeline via a reserved audience (`pipeline:report-research`), or omit it for a general note every scout sees. Each call creates a new note (no upsert); delete retires one. Attributed to the authenticated user.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_notes_destroy",
+    "name": "Delete a scout note",
+    "description": "Delete a scout note Delete one note by its `id`, retiring it from every scout's view. DELETE /api/projects/{project_id}/signals/scout/notes/{id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/scout/notes/{id}/\nDelete one note by its `id`, retiring it from every scout's view. Use this when a note has been acted on or no longer applies; time-boxed notes can instead carry an `expires_at` and retire themselves.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_scout_notes_list",
+    "name": "List scout notes",
+    "description": "List scout notes Return the steering notes left for this project's scouts, newest first. GET /api/projects/{project_id}/signals/scout/notes/",
+    "context": "GET /api/projects/{project_id}/signals/scout/notes/\nReturn the steering notes left for this project's scouts, newest first. Pass `skill_name` to get the notes addressed to one scout (or one pipeline audience, e.g. `pipeline:report-research`) plus the general (blank-target) fleet-wide notes — the shape a scout run reads at cold start. Omit `skill_name` to browse every note. Expired notes are excluded unless `include_expired=true`. `date_from` / `date_to` are a half-open window on `created_at` (`>= date_from`, `< date_to`); pass `date_to` (the `created_at` of the oldest note seen) to walk past the cap. Results capped at 500.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: content_max_chars (query) — Truncate each note's `content` to the first N characters (a preview). Omit for the full body — use this on wide scans so stacked notes can't dominate your context.; date_from (query) — ISO-8601 inclusive lower bound on `created_at`. Omit to skip the lower bound.; date_to (query) — ISO-8601 exclusive upper bound on `created_at`. Pass the `created_at` of the oldest note from the prior page to walk back past the result cap.; include_expired (query) — Include notes whose `expires_at` has passed. Off by default so time-boxed steering retires itself.; include_general (query) — Only meaningful with `skill_name`: when false, exclude the general fleet-wide notes and return the target's own notes only.; limit (query) — Max rows to return (default 20, hard cap 500).; skill_name (query) — Return the notes addressed to this target plus the general (blank-target) notes for the whole fleet. Pass a configured scout's skill name or a pipeline audience (`pipeline:report-research`). Omit to browse every note on the project."
+  },
+  {
+    "id": "signals_scout_project_profile_get",
+    "name": "Get the current project profile",
+    "description": "Get the current project profile Return the team's deterministic project profile. GET /api/projects/{project_id}/signals/scout/project_profile/current/",
+    "context": "GET /api/projects/{project_id}/signals/scout/project_profile/current/\nReturn the team's deterministic project profile. The response opens with a compact `summary` envelope carrying the emit gate and the inbox report counts, then the full `payload`. The inventory runs to tens of kilobytes, so a client that truncates a long tool result still keeps the gate. Pass `summary_only=true` to omit `payload` entirely. For the internal scout token the response reflects the newest non-expired cached row or a freshly-built one (lazy compute on cache miss); `force_refresh=true` skips the cache and rebuilds from authoritative sources. Public read callers (session auth or a `signal_scout:read` PAK) get the newest cached profile, or 404 if none has been built yet — they never trigger a rebuild. Read this at the start of a run to orient on the team's product mix, integrations, warehouse sources, signal coverage, and existing inbox surface.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: force_refresh (query) — When true, skip the cache and rebuild the profile from authoritative sources before responding. Use after seeding events, importing data, or any other change the caller knows just landed but hasn't surfaced through natural cache expiry yet. Honored only for the internal scout token — public read callers get the cached profile regardless. Concurrent forced rebuilds are serialized by the team-keyed advisory lock — at most one extra `build_inventory` per simultaneous request.; run_id (query) — The run whose scout's write posture `emit_eligibility` should answer for. A scout sandbox never needs this: its token is bound to the task that dispatched the run, and that binding is what the endpoint reads, so it wins over any value passed here. Pass it to inspect one scout's effective eligibility from outside a run — a run id from another project is ignored.; summary_only (query) — When true, respond with the cache metadata and the `summary` envelope only, and omit `payload` entirely. Use it when you need the emit gate and the inbox counts but not the full inventory. The full profile runs to tens of kilobytes, which a client can truncate. Costs nothing extra: the profile is read or built the same way either way."
+  },
+  {
+    "id": "signals_scout_record_check_result",
+    "name": "Record the verdict on a report check",
+    "description": "Record the verdict on a report check Close the follow-up check this run was dispatched to answer. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/check-result/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/check-result/\nClose the follow-up check this run was dispatched to answer. The run note carries the check id and what to establish; this call is the only thing that records the answer, so a run that investigates and says nothing leaves the check unanswered. The verdict lands on the report as a `check_result` entry people read in the inbox. `failed` retires the check, `passed` re-arms a recurring one, and `errored` retries it, so send the outcome you actually reached rather than the one that closes the loop. A run may only close a check dispatched to its own scout.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_record_output",
+    "name": "Record structured output for a run",
+    "description": "Record structured output for a run The structured-output channel: record schema-validated records this run produced. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/record-output/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/record-output/\nThe structured-output channel: record schema-validated records this run produced. Opt-in via the scout config's `structured_output_schema` (a JSON Schema describing one record) — without it the call fails closed, as it does for a dry-run scout (emit off). All-or-nothing: any invalid record fails the whole call with nothing written, so fix and resubmit the batch. Each accepted record lands in the project's event stream as a `$scout_structured_output` event — query them like any event (insights, SQL over `events`). Recording is idempotent: event ids are deterministic, so resubmitting an identical batch (e.g. retrying after a 503) cannot double-count.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_report_check_cancel",
+    "name": "Cancel a follow-up check",
+    "description": "Cancel a follow-up check Stop a check that is no longer worth running — the claim it re-measures has changed, or a better check replaces it. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/report-check-cancel/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/report-check-cancel/\nStop a check that is no longer worth running — the claim it re-measures has changed, or a better check replaces it. Results it already recorded stay on the report. A check that has already finished cannot be cancelled.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_report_check_create",
+    "name": "Write a follow-up check on a report",
+    "description": "Write a follow-up check on a report Schedule a re-measurement of a report's claim, so whether the fix held becomes a stored fact instead of something a future run has to remember to look for. POST /api/projects/{project_id}/signals/scout/runs/{run_id}/report-check-create/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/{run_id}/report-check-create/\nSchedule a re-measurement of a report's claim, so whether the fix held becomes a stored fact instead of something a future run has to remember to look for. A `metric_threshold` check runs one bounded Trends query and compares the result. An `agent` check runs a scout instead, for a claim no single number settles.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row.; body (body)"
+  },
+  {
+    "id": "signals_scout_report_checks_list",
+    "name": "List a report's follow-up checks",
+    "description": "List a report's follow-up checks Every check on one report, newest first. GET /api/projects/{project_id}/signals/scout/runs/{run_id}/report-checks/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/{run_id}/report-checks/\nEvery check on one report, newest first. Read this before writing one: a report already carrying a check for the same claim needs no second one, and a report holds at most five open checks at a time.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; report_id (query) — The report whose checks to list.; run_id (path) — UUID of the `SignalScoutRun` bridge row."
+  },
+  {
+    "id": "signals_scout_runs_costs",
+    "name": "Get what each scout spent over a window",
+    "description": "Get what each scout spent over a window Return what every scout on this project spent on model calls over the last `window_days`, with how many runs it started, how many of those had spend attributed, and how many inbox reports it filed or added to. GET /api/projects/{project_id}/signals/scout/runs/costs/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/costs/\nReturn what every scout on this project spent on model calls over the last `window_days`, with how many runs it started, how many of those had spend attributed, and how many inbox reports it filed or added to. Cost per day, per run, and per report are derived from those numbers by the caller, so the endpoint stays a fact table and the definitions live in one place. Spend is summed from the `$ai_generation` events the runs' sandboxes produced and joined to the run rows by task run id, because a team-authored scout's generations all carry the same stage tag and so cannot name it. Cached per project for 15 minutes: the window's trailing edge moves and the newest runs may still be settling, so this is a roughly current number, not a live one. `available` is false where the internal AI observability project holding those events can't be read, so an unknown spend never reads as zero. Staff-only, same gate as the per-run cost read. Strictly team-scoped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: window_days (query) — Window in days over runs' `created_at` (default 7). Only 7 is accepted today — it matches the window the roster's fleet headline spans, so every number on the page describes one span."
+  },
+  {
+    "id": "signals_scout_runs_emission_reports",
+    "name": "List the inbox reports a run's findings linked to",
+    "description": "List the inbox reports a run's findings linked to Best-effort reverse of the report -> signals link. GET /api/projects/{project_id}/signals/scout/runs/{run_id}/emissions/reports/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/{run_id}/emissions/reports/\nBest-effort reverse of the report -> signals link. For each finding the run emitted, resolve the inbox `SignalReport` (if any) its underlying signal grouped into by walking the deterministic `source_id` back through the signal store. `report` is null when the finding hasn't grouped into a report yet, was de-duplicated away, or its signal was deleted. Lets the scout UI surface which inbox report a finding contributed to — the reverse of the report's evidence list. Strictly team-scoped — a run UUID belonging to another team returns 404.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row."
+  },
+  {
+    "id": "signals_scout_runs_emission_reports_batch",
+    "name": "List the inbox reports many runs' findings linked to",
+    "description": "List the inbox reports many runs' findings linked to Batched form of the per-run emission-reports endpoint. POST /api/projects/{project_id}/signals/scout/runs/emissions/reports/batch/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/emissions/reports/batch/\nBatched form of the per-run emission-reports endpoint. For every finding the requested runs emitted, resolve the inbox `SignalReport` (if any) its signal grouped into — all in a single ClickHouse round-trip rather than one query per run, which is what made the findings page slow to open. `report` is null when a finding hasn't grouped yet, was de-duplicated, or its signal was deleted. Strictly team-scoped — run ids belonging to another team contribute no rows.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_runs_emissions",
+    "name": "List a run's emitted findings",
+    "description": "List a run's emitted findings Return the findings a `SignalScoutRun` emitted to the inbox, newest first — one row per emit with its `description` (the finding text as surfaced), `weight`, `confidence`, `severity`, and the deterministic `source_id` that joins back to the underlying signal. GET /api/projects/{project_id…",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/{run_id}/emissions/\nReturn the findings a `SignalScoutRun` emitted to the inbox, newest first — one row per emit with its `description` (the finding text as surfaced), `weight`, `confidence`, `severity`, and the deterministic `source_id` that joins back to the underlying signal. Lets a team and its agents see *what* a run surfaced without parsing `emitted_finding_ids` or scanning the signal store. Strictly team-scoped — a run UUID belonging to another team returns 404.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row."
+  },
+  {
+    "id": "signals_scout_runs_emissions_batch",
+    "name": "List emitted findings for many runs at once",
+    "description": "List emitted findings for many runs at once Batched form of the per-run emissions endpoint: return the findings every requested `SignalScoutRun` emitted, flattened newest-first, in a single request. POST /api/projects/{project_id}/signals/scout/runs/emissions/batch/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/emissions/batch/\nBatched form of the per-run emissions endpoint: return the findings every requested `SignalScoutRun` emitted, flattened newest-first, in a single request. Each row carries its `run_id`, so the caller can regroup by run. The findings UI uses this to load the whole recent window in one round-trip instead of one request per run. Strictly team-scoped — run ids belonging to another team contribute no rows (no per-run 404; one stale id never fails the batch).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_runs_findings_summary",
+    "name": "Summarise recent scout output across the fleet",
+    "description": "Summarise recent scout output across the fleet Return a cheap fleet-wide tally of the output the scout troop produced in the recent window — the finding count, the distinct reports authored/edited via the report channel, the number of distinct scouts behind them, and the latest output time. GET /api/projects/{project_…",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/findings/summary/\nReturn a cheap fleet-wide tally of the output the scout troop produced in the recent window — the finding count, the distinct reports authored/edited via the report channel, the number of distinct scouts behind them, and the latest output time. Backs the 'Scout findings' callout so it renders from one query instead of the client paging through the whole runs window. Counts runs that emitted at least one finding (`emitted_count > 0`) or authored/edited an inbox report within the last `window_hours` (default 72), capped to the most recent 120 such runs so the count matches what the findings list renders. Strictly team-scoped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: window_hours (query) — Lookback window in hours over runs' `created_at` (default 72, hard cap 168)."
+  },
+  {
+    "id": "signals_scout_runs_list",
+    "name": "Search recent agent runs",
+    "description": "Search recent agent runs Return the most recent `SignalScoutRun` summaries for this project, newest first. GET /api/projects/{project_id}/signals/scout/runs/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/\nReturn the most recent `SignalScoutRun` summaries for this project, newest first. Used by the headless scout to dedupe against work other runs already covered. ILIKE matches on `summary`. `date_from` / `date_to` are a half-open window on `created_at` (`>= date_from`, `< date_to`); pass `date_to` on subsequent calls to walk past the 100-row cap. Pass `emitted=true` to see only runs that surfaced at least one finding. Pass `skill_name` (optionally with `skill_version`) to scope to a single scout. Results capped at 100.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: date_from (query) — ISO-8601 inclusive lower bound on `created_at`. Omit to skip the lower bound.; date_to (query) — ISO-8601 exclusive upper bound on `created_at`. Pass to walk back past the result cap on subsequent calls (cursor-style: set to the `created_at` of the oldest run from the prior page).; emitted (query) — Filter by emit outcome. `true` returns only runs that emitted at least one finding (`emitted_count > 0`); `false` returns only runs that emitted nothing. Omit for both.; limit (query) — Max rows to return (default 20, hard cap 100).; skill_name (query) — Exact-match filter on the scout skill (e.g. `signals-scout-errors`). Narrows the run dump to a single scout — the primary scoping path when a specialist dedupes against its own past runs. Omit to span every scout on the team.; skill_version (query) — Exact-match filter on the skill version. Pair with `skill_name` to pin one version; omit for all.; text (query) — Case-insensitive substring match on the scout's end-of-run `summary`. Omit to skip the filter."
+  },
+  {
+    "id": "signals_scout_runs_recent_emissions",
+    "name": "List recent emitted findings across all runs",
+    "description": "List recent emitted findings across all runs Return the team's recently emitted scout findings across *every* run, newest first — the cross-run counterpart to the per-run `emissions` action. GET /api/projects/{project_id}/signals/scout/runs/emissions/recent/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/emissions/recent/\nReturn the team's recently emitted scout findings across *every* run, newest first — the cross-run counterpart to the per-run `emissions` action. Each row carries its `run_id`, so you can regroup by run without first listing runs and fanning out one `emissions` call each. Pass `skill_name` to scope to a single scout, and `date_from` / `date_to` (a half-open window on `emitted_at`) to bound or paginate — set `date_to` to the oldest emission's `emitted_at` to walk back past the limit. Pure Postgres, no ClickHouse round-trip. Capped at 200 rows (default 50).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: date_from (query) — ISO-8601 inclusive lower bound on `emitted_at`. Omit to skip the lower bound.; date_to (query) — ISO-8601 exclusive upper bound on `emitted_at`. Pass to walk back past the result cap on subsequent calls (cursor-style: set to the `emitted_at` of the oldest emission from the prior page).; limit (query) — Max rows to return (default 50, hard cap 200).; skill_name (query) — Exact-match filter on the emitting scout's skill (e.g. `signals-scout-errors`). Narrows to findings one specialist surfaced; omit to span every scout on the team."
+  },
+  {
+    "id": "signals_scout_runs_recent_per_scout",
+    "name": "List each scout's most recent runs",
+    "description": "List each scout's most recent runs Return the most recent `per_scout_limit` runs of *every* configured scout on the project (default 25), newest-first across the fleet. GET /api/projects/{project_id}/signals/scout/runs/recent-per-scout/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/recent-per-scout/\nReturn the most recent `per_scout_limit` runs of *every* configured scout on the project (default 25), newest-first across the fleet. The per-scout probe is the point: a fleet-wide time window has to serve hourly and weekly scouts from one result cap, so the busy scouts crowd out the sparse ones and a scout's visible history shrinks as the rest of the fleet gets busier. Probing each `skill_name` gives every scout the same depth of history whatever its schedule, and bounds the response at scouts x `per_scout_limit` rather than at the fleet's run rate. Only scouts that still have a config are covered, so runs left behind by a deleted or renamed scout are excluded. Runs older than the staleness guard are excluded too, so a scout that stopped running reads as stale instead of healthy — `max_age_days` (default 30) is that guard's floor, which each scout's own cadence extends. Use `list` instead when you want a literal time window or a text/emitted filter. Strictly team-scoped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: max_age_days (query) — Floor for the staleness guard on `created_at`, in days (default 30, hard cap 365). Runs older than the guard are excluded even when a scout has fewer than `per_scout_limit` newer ones, so a scout that stopped running doesn't report its last runs as current. Each scout's own cadence extends its guard to cover 3 runs' worth of its schedule, so a slow scout on a monthly cron or a 30-day interval keeps its history.; per_scout_limit (query) — How many of each scout's most recent runs to return (default 25, hard cap 100). The count is per scout, so a scout's history depth does not depend on how often the rest of the fleet runs."
+  },
+  {
+    "id": "signals_scout_runs_retrieve",
+    "name": "Get a run by ID",
+    "description": "Get a run by ID Return the full `SignalScoutRun` row. GET /api/projects/{project_id}/signals/scout/runs/{run_id}/",
+    "context": "GET /api/projects/{project_id}/signals/scout/runs/{run_id}/\nReturn the full `SignalScoutRun` row. Status, timing, and error flow from the linked `tasks.TaskRun`. Strictly team-scoped — a UUID belonging to another team returns 404.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path) — UUID of the `SignalScoutRun` bridge row."
+  },
+  {
+    "id": "signals_scout_runs_token_costs",
+    "name": "Get the model spend of many runs at once",
+    "description": "Get the model spend of many runs at once Return what each requested `SignalScoutRun` spent on model calls, summed from the `$ai_generation` events its sandbox produced. POST /api/projects/{project_id}/signals/scout/runs/token-costs/",
+    "context": "POST /api/projects/{project_id}/signals/scout/runs/token-costs/\nReturn what each requested `SignalScoutRun` spent on model calls, summed from the `$ai_generation` events its sandbox produced. One query for the whole batch, cached per run: a settled run's total is final, a run still in progress reports what it has spent so far. `available` is false where the internal AI observability project holding those events can't be read, so an unknown cost never reads as zero. Staff-only — fleet spend is an internal operating number, and the events sit outside the project in the path. Strictly team-scoped — run ids belonging to another project contribute no rows.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_scratchpad_forget",
+    "name": "Forget a scratchpad entry by key",
+    "description": "Forget a scratchpad entry by key Delete an entry by key. POST /api/projects/{project_id}/signals/scout/scratchpad/forget/",
+    "context": "POST /api/projects/{project_id}/signals/scout/scratchpad/forget/\nDelete an entry by key. Returns `deleted=false` if no row matched.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_scratchpad_remember",
+    "name": "Remember a scratchpad entry",
+    "description": "Remember a scratchpad entry Upsert a memory keyed on `(team, key)`. POST /api/projects/{project_id}/signals/scout/scratchpad/",
+    "context": "POST /api/projects/{project_id}/signals/scout/scratchpad/\nUpsert a memory keyed on `(team, key)`. Re-using a key updates the existing entry in place. A write carries the entry's whole state, so `expires_at` is set when passed and cleared when omitted.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_scout_scratchpad_search",
+    "name": "Search the scout scratchpad",
+    "description": "Search the scout scratchpad Return `SignalScratchpad` entries for this project, newest-first. GET /api/projects/{project_id}/signals/scout/scratchpad/",
+    "context": "GET /api/projects/{project_id}/signals/scout/scratchpad/\nReturn `SignalScratchpad` entries for this project, newest-first. ILIKE matches on `content` and `key`; pass `key` instead for an exact single-entry lookup. `date_from` / `date_to` are a half-open window on `updated_at` (`>= date_from`, `< date_to`); pass `date_to` (the `updated_at` of the oldest entry seen) on subsequent calls to walk past the cap. Entries whose `expires_at` has passed are excluded unless `include_expired=true`, and are hard-deleted by a daily janitor once their expiry is more than two weeks in the past. Pass `keys_only=true` to scan keys without pulling entry bodies, or `content_max_chars` to cap each `content` to a preview — both keep a wide orientation scan from returning every entry's full prose. Results capped at 1000.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: content_max_chars (query) — Truncate each entry's `content` to the first N characters (a preview). Omit for the full body. Ignored when `keys_only=true`.; date_from (query) — ISO-8601 inclusive lower bound on `updated_at`. Omit to skip the lower bound.; date_to (query) — ISO-8601 exclusive upper bound on `updated_at`. Pass to walk back past the result cap on subsequent calls (cursor-style: set to the `updated_at` of the oldest entry from the prior page).; include_expired (query) — Include entries whose `expires_at` has passed. Off by default so a time-boxed memory retires itself; turn it on to audit what the fleet remembered and when it lapsed.; key (query) — Exact key match — returns the single entry with this key, or nothing. Use this to re-read a known entry; `text` searches key *and* content, so it can push the row you asked for past the limit.; keys_only (query) — When true, blank each entry's `content` and return only keys + metadata. Use to scan which memories exist without pulling their (potentially large) bodies, then re-query the ones worth a full read. Takes precedence over `content_max_chars`.; limit (query) — Max rows to return (default 20, hard cap 1000).; text (query) — ILIKE substring match against `content`. Omit to return the most recent entries."
+  },
+  {
+    "id": "signals_scout_suggestions_dismiss",
+    "name": "Dismiss a suggested scout",
+    "description": "Dismiss a suggested scout Hide one suggestion from this project's batch. POST /api/projects/{project_id}/signals/scout/suggestions/{id}/dismiss/",
+    "context": "POST /api/projects/{project_id}/signals/scout/suggestions/{id}/dismiss/\nHide one suggestion from this project's batch. Dismissal is remembered across refreshes by skill name, so the same suggestion is not shown again.\nRequired: id (path) — A UUID string identifying this Signal scout suggestion set.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_scout_suggestions_list",
+    "name": "Get suggested scouts for this project",
+    "description": "Get suggested scouts for this project Return the pre-computed scout suggestions for this project: up to five picks, best first, each either a PostHog-authored scout to turn on or a drafted custom scout. GET /api/projects/{project_id}/signals/scout/suggestions/",
+    "context": "GET /api/projects/{project_id}/signals/scout/suggestions/\nReturn the pre-computed scout suggestions for this project: up to five picks, best first, each either a PostHog-authored scout to turn on or a drafted custom scout. Dismissed and already-created suggestions are omitted. An empty `items` with status `empty` means no batch has been generated yet; the interactive `scout-chat-tasks` path still works.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_scout_suggestions_refresh",
+    "name": "Refresh suggested scouts",
+    "description": "Refresh suggested scouts Re-run the suggestion scan for this project now instead of waiting for the scheduled refresh. POST /api/projects/{project_id}/signals/scout/suggestions/refresh/",
+    "context": "POST /api/projects/{project_id}/signals/scout/suggestions/refresh/\nRe-run the suggestion scan for this project now instead of waiting for the scheduled refresh. Runs headlessly; poll the list endpoint for the new batch (`generated_at` advances). Capped per project per day.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_source_configs_create",
+    "name": "signals_source_configs_create",
+    "description": "signals_source_configs_create POST /api/projects/{project_id}/signals/source_configs/",
+    "context": "POST /api/projects/{project_id}/signals/source_configs/\nsignals_source_configs_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "signals_source_configs_destroy",
+    "name": "signals_source_configs_destroy",
+    "description": "signals_source_configs_destroy DELETE /api/projects/{project_id}/signals/source_configs/{id}/",
+    "context": "DELETE /api/projects/{project_id}/signals/source_configs/{id}/\nsignals_source_configs_destroy\nRequired: id (path) — A UUID string identifying this signal source config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_source_configs_list",
+    "name": "signals_source_configs_list",
+    "description": "signals_source_configs_list GET /api/projects/{project_id}/signals/source_configs/",
+    "context": "GET /api/projects/{project_id}/signals/source_configs/\nsignals_source_configs_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "signals_source_configs_partial_update",
+    "name": "signals_source_configs_partial_update",
+    "description": "signals_source_configs_partial_update PATCH /api/projects/{project_id}/signals/source_configs/{id}/",
+    "context": "PATCH /api/projects/{project_id}/signals/source_configs/{id}/\nsignals_source_configs_partial_update\nRequired: id (path) — A UUID string identifying this signal source config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "signals_source_configs_retrieve",
+    "name": "signals_source_configs_retrieve",
+    "description": "signals_source_configs_retrieve GET /api/projects/{project_id}/signals/source_configs/{id}/",
+    "context": "GET /api/projects/{project_id}/signals/source_configs/{id}/\nsignals_source_configs_retrieve\nRequired: id (path) — A UUID string identifying this signal source config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "signals_source_configs_update",
+    "name": "signals_source_configs_update",
+    "description": "signals_source_configs_update PUT /api/projects/{project_id}/signals/source_configs/{id}/",
+    "context": "PUT /api/projects/{project_id}/signals/source_configs/{id}/\nsignals_source_configs_update\nRequired: id (path) — A UUID string identifying this signal source config.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

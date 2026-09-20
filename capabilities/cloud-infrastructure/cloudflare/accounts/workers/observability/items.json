@@ -1,0 +1,218 @@
+[
+  {
+    "id": "destination.create",
+    "name": "Create Destination",
+    "description": "Create Destination Create a new Workers Observability Telemetry Destination. POST /client/v4/accounts/{account_id}/workers/observability/destinations",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/destinations\nCreate a new Workers Observability Telemetry Destination.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "destination.list",
+    "name": "Get Destinations",
+    "description": "Get Destinations List your Workers Observability Telemetry Destinations. GET /client/v4/accounts/{account_id}/workers/observability/destinations",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/destinations\nList your Workers Observability Telemetry Destinations.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: page (query); perPage (query); order (query); orderBy (query)"
+  },
+  {
+    "id": "destination.update",
+    "name": "Update Destination",
+    "description": "Update Destination Update an existing Workers Observability Telemetry Destination. PATCH /client/v4/accounts/{account_id}/workers/observability/destinations/{slug}",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/observability/destinations/{slug}\nUpdate an existing Workers Observability Telemetry Destination.\nRequired: account_id (path) — Your Cloudflare account ID.; slug (path)\nOptional: body (body)"
+  },
+  {
+    "id": "destinations.delete",
+    "name": "Delete Destination",
+    "description": "Delete Destination Delete a Workers Observability Telemetry Destination. DELETE /client/v4/accounts/{account_id}/workers/observability/destinations/{slug}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/observability/destinations/{slug}\nDelete a Workers Observability Telemetry Destination.\nRequired: account_id (path) — Your Cloudflare account ID.; slug (path)"
+  },
+  {
+    "id": "issues.automations.create",
+    "name": "Create an issue automation",
+    "description": "Create an issue automation Create an account or service issue automation. POST /client/v4/accounts/{account_id}/workers/observability/issues/automations",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/issues/automations\nCreate an account or service issue automation.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "issues.automations.delete",
+    "name": "Delete an issue automation",
+    "description": "Delete an issue automation Delete an issue automation while preserving its historical runs. DELETE /client/v4/accounts/{account_id}/workers/observability/issues/automations/{automationId}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/observability/issues/automations/{automationId}\nDelete an issue automation while preserving its historical runs.\nRequired: account_id (path) — Your Cloudflare account ID.; automationId (path)"
+  },
+  {
+    "id": "issues.automations.get",
+    "name": "Get an issue automation",
+    "description": "Get an issue automation Retrieve an issue automation. GET /client/v4/accounts/{account_id}/workers/observability/issues/automations/{automationId}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/issues/automations/{automationId}\nRetrieve an issue automation.\nRequired: account_id (path) — Your Cloudflare account ID.; automationId (path)"
+  },
+  {
+    "id": "issues.automations.list",
+    "name": "List issue automations",
+    "description": "List issue automations List account and service issue automations. GET /client/v4/accounts/{account_id}/workers/observability/issues/automations",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/issues/automations\nList account and service issue automations.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: service (query)"
+  },
+  {
+    "id": "issues.automations.update",
+    "name": "Update an issue automation",
+    "description": "Update an issue automation Replace an issue automation configuration. PUT /client/v4/accounts/{account_id}/workers/observability/issues/automations/{automationId}",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/observability/issues/automations/{automationId}\nReplace an issue automation configuration.\nRequired: account_id (path) — Your Cloudflare account ID.; automationId (path); body (body)"
+  },
+  {
+    "id": "issues.get",
+    "name": "Get an issue",
+    "description": "Get an issue Retrieve an issue. GET /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}\nRetrieve an issue.\nRequired: account_id (path) — Your Cloudflare account ID.; issueId (path)"
+  },
+  {
+    "id": "issues.list",
+    "name": "List detected issues",
+    "description": "List detected issues List detected issues. GET /client/v4/accounts/{account_id}/workers/observability/issues",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/issues\nList detected issues.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: page (query); perPage (query); order (query); orderBy (query); search (query); service (query); status (query)"
+  },
+  {
+    "id": "issues.notificationRuns.create",
+    "name": "Notify about an issue",
+    "description": "Notify about an issue Send the issue to one ANS policy, or every matching Real-Time Issue policy when no policy ID is provided. POST /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}/notification-runs",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}/notification-runs\nSend the issue to one ANS policy, or every matching Real-Time Issue policy when no policy ID is provided.\nRequired: account_id (path) — Your Cloudflare account ID.; issueId (path); body (body)"
+  },
+  {
+    "id": "issues.occurrences.list",
+    "name": "List issue occurrences",
+    "description": "List issue occurrences List the retained error occurrences grouped into an issue, newest first. GET /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}/occurrences",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}/occurrences\nList the retained error occurrences grouped into an issue, newest first.\nRequired: account_id (path) — Your Cloudflare account ID.; issueId (path) — Issue ID returned by the issues API.\nOptional: cursor (query) — Opaque cursor returned in result_info.cursors.after.; per_page (query)"
+  },
+  {
+    "id": "issues.patch",
+    "name": "Modify an issue",
+    "description": "Modify an issue Modify an issue status. PATCH /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/observability/issues/{issueId}\nModify an issue status.\nRequired: account_id (path) — Your Cloudflare account ID.; issueId (path); body (body) — Modify an issue status."
+  },
+  {
+    "id": "issues.summary",
+    "name": "Summarize detected issues",
+    "description": "Summarize detected issues Retrieve aggregate issue counts for the account. GET /client/v4/accounts/{account_id}/workers/observability/issues/summary",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/issues/summary\nRetrieve aggregate issue counts for the account.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: service (query)"
+  },
+  {
+    "id": "metricsExport.list",
+    "name": "List Metrics Exports",
+    "description": "List Metrics Exports List resources configured for Workers Observability metrics export. GET /client/v4/accounts/{account_id}/workers/observability/metricsexport",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/metricsexport\nList resources configured for Workers Observability metrics export.\nRequired: account_id (path) — Your Cloudflare account ID."
+  },
+  {
+    "id": "metricsExport.upsert",
+    "name": "Upsert Metrics Exports",
+    "description": "Upsert Metrics Exports Create or replace resources configured for Workers Observability metrics export. POST /client/v4/accounts/{account_id}/workers/observability/metricsexport",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/metricsexport\nCreate or replace resources configured for Workers Observability metrics export.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "queries.delete",
+    "name": "Delete query",
+    "description": "Delete query Delete a saved query. DELETE /client/v4/accounts/{account_id}/workers/observability/queries/{queryId}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/observability/queries/{queryId}\nDelete a saved query.\nRequired: account_id (path) — Your Cloudflare account ID.; queryId (path)"
+  },
+  {
+    "id": "queries.get",
+    "name": "Get query",
+    "description": "Get query Retrieve a saved query. GET /client/v4/accounts/{account_id}/workers/observability/queries/{queryId}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/queries/{queryId}\nRetrieve a saved query.\nRequired: account_id (path) — Your Cloudflare account ID.; queryId (path)"
+  },
+  {
+    "id": "queries.list",
+    "name": "List queries",
+    "description": "List queries List saved queries. GET /client/v4/accounts/{account_id}/workers/observability/queries",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/queries\nList saved queries.\nRequired: account_id (path) — Your Cloudflare account ID.\nOptional: page (query); perPage (query); order (query); orderBy (query)"
+  },
+  {
+    "id": "queries.patch",
+    "name": "Update query",
+    "description": "Update query Update saved query. PATCH /client/v4/accounts/{account_id}/workers/observability/queries/{queryId}",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/observability/queries/{queryId}\nUpdate saved query.\nRequired: account_id (path) — Your Cloudflare account ID.; queryId (path); body (body) — Specify the new contents of the query."
+  },
+  {
+    "id": "queries.post",
+    "name": "Save query",
+    "description": "Save query Persist query for later use. POST /client/v4/accounts/{account_id}/workers/observability/queries",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/queries\nPersist query for later use.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Specify the new contents of the query."
+  },
+  {
+    "id": "shared.query.get",
+    "name": "View a query that has been shared",
+    "description": "View a query that has been shared Shared queries store the results of a previously run query, allowing you to share the results with others. GET /client/v4/accounts/{account_id}/workers/observability/shared/query/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/shared/query/{id}\nShared queries store the results of a previously run query, allowing you to share the results with others.\nRequired: account_id (path) — Your Cloudflare account ID.; id (path) — Specify the ID of the shared query.\nOptional: view (query) — Select the view of the query result to return, defaults to events."
+  },
+  {
+    "id": "shared.query.post",
+    "name": "Create a sharable link to a query result",
+    "description": "Create a sharable link to a query result Shared queries store the results of a previously run query, allowing you to share the results with others. POST /client/v4/accounts/{account_id}/workers/observability/shared/query",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/shared/query\nShared queries store the results of a previously run query, allowing you to share the results with others.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Create a sharable link to a query result."
+  },
+  {
+    "id": "telemetry.keys.list",
+    "name": "List keys",
+    "description": "List keys List all the keys in your telemetry events. POST /client/v4/accounts/{account_id}/workers/observability/telemetry/keys",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/telemetry/keys\nList all the keys in your telemetry events.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Find keys in your telemetry events matching a specific filter or needle."
+  },
+  {
+    "id": "telemetry.live-tail.heartbeat.get",
+    "name": "Live tail heartbeat",
+    "description": "Live tail heartbeat Notify live tail that user is still eligible to receive live events. POST /client/v4/accounts/{account_id}/workers/observability/telemetry/live-tail/heartbeat",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/telemetry/live-tail/heartbeat\nNotify live tail that user is still eligible to receive live events.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Keep your live tail connection alive."
+  },
+  {
+    "id": "telemetry.live-tail.post",
+    "name": "Prepare live tail",
+    "description": "Prepare live tail Prepare websocket server for live tail. POST /client/v4/accounts/{account_id}/workers/observability/telemetry/live-tail",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/telemetry/live-tail\nPrepare websocket server for live tail.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Create websocket server for live tail."
+  },
+  {
+    "id": "telemetry.query",
+    "name": "Run a query",
+    "description": "Run a query Run a temporary or saved query. POST /client/v4/accounts/{account_id}/workers/observability/telemetry/query",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/telemetry/query\nRun a temporary or saved query.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Query your observability events, requests, and traces to build visualizations and identify insights."
+  },
+  {
+    "id": "telemetry.values.list",
+    "name": "List values",
+    "description": "List values List unique values found in your events. POST /client/v4/accounts/{account_id}/workers/observability/telemetry/values",
+    "context": "POST /client/v4/accounts/{account_id}/workers/observability/telemetry/values\nList unique values found in your events.\nRequired: account_id (path) — Your Cloudflare account ID.; body (body) — Retrieve values from your telemetry events."
+  },
+  {
+    "id": "usage.get",
+    "name": "Get event count",
+    "description": "Get event count Event counts broken down by dataset and service, bucketed by day, for up to 90 days. GET /client/v4/accounts/{account_id}/workers/observability/usage",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/usage\nEvent counts broken down by dataset and service, bucketed by day, for up to 90 days. The top-level events field is the sum of all breakdown counts.\nRequired: account_id (path) — Your Cloudflare account ID.; from (query) — Unix timestamp in milliseconds for the start of the range.; to (query) — Unix timestamp in milliseconds for the end of the range."
+  },
+  {
+    "id": "zone.observability.tracing.rules.delete",
+    "name": "Delete zone trace rules",
+    "description": "Delete zone trace rules Delete every sampling override from a zone's managed Cloudflare Traces ruleset. DELETE /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/rules",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/rules\nDelete every sampling override from a zone's managed Cloudflare Traces ruleset.\nRequired: account_id (path) — Your Cloudflare account ID.; zone_id (path) — Specify the zone ID."
+  },
+  {
+    "id": "zone.observability.tracing.rules.get",
+    "name": "View zone trace rules",
+    "description": "View zone trace rules Retrieve the ordered sampling overrides for a zone's managed Cloudflare Traces ruleset. GET /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/rules",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/rules\nRetrieve the ordered sampling overrides for a zone's managed Cloudflare Traces ruleset.\nRequired: account_id (path) — Your Cloudflare account ID.; zone_id (path) — Specify the zone ID."
+  },
+  {
+    "id": "zone.observability.tracing.rules.update",
+    "name": "Replace zone trace rules",
+    "description": "Replace zone trace rules Replace all sampling overrides in a zone's managed Cloudflare Traces ruleset. PUT /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/rules",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/rules\nReplace all sampling overrides in a zone's managed Cloudflare Traces ruleset. Rules are evaluated in the supplied order.\nRequired: account_id (path) — Your Cloudflare account ID.; zone_id (path) — Specify the zone ID.; body (body) — Replace the ordered trace rules"
+  },
+  {
+    "id": "zone.observability.tracing.settings.delete",
+    "name": "Reset zone tracing settings",
+    "description": "Reset zone tracing settings Reset the zone-level Cloudflare Traces settings to their defaults while preserving the sampling rules. DELETE /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/settings",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/settings\nReset the zone-level Cloudflare Traces settings to their defaults while preserving the sampling rules.\nRequired: account_id (path) — Your Cloudflare account ID.; zone_id (path) — Specify the zone ID."
+  },
+  {
+    "id": "zone.observability.tracing.settings.get",
+    "name": "View zone tracing settings",
+    "description": "View zone tracing settings Retrieve the zone-level Cloudflare Traces settings. GET /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/settings",
+    "context": "GET /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/settings\nRetrieve the zone-level Cloudflare Traces settings.\nRequired: account_id (path) — Your Cloudflare account ID.; zone_id (path) — Specify the zone ID."
+  },
+  {
+    "id": "zone.observability.tracing.settings.update",
+    "name": "Update zone tracing settings",
+    "description": "Update zone tracing settings Update the zone-level Cloudflare Traces settings. PATCH /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/observability/zones/{zone_id}/observability/tracing/settings\nUpdate the zone-level Cloudflare Traces settings.\nRequired: account_id (path) — Your Cloudflare account ID.; zone_id (path) — Specify the zone ID.; body (body) — Update zone tracing settings"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "checkAccessByEmail",
+    "name": "Check site access for a list of emails",
+    "description": "Check site access for a list of emails Returns the list of emails from the input list that do not have access to site. POST /wiki/api/v2/user/access/check-access-by-email",
+    "context": "POST /wiki/api/v2/user/access/check-access-by-email\nReturns the list of emails from the input list that do not have access to site. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission).\nRequired: body (body)"
+  },
+  {
+    "id": "inviteByEmail",
+    "name": "Invite a list of emails to the site",
+    "description": "Invite a list of emails to the site Invite a list of emails to the site. POST /wiki/api/v2/user/access/invite-by-email",
+    "context": "POST /wiki/api/v2/user/access/invite-by-email\nInvite a list of emails to the site. Ignores all invalid emails and no action is taken for the emails that already have access to the site. NOTE: This API is asynchronous and may take some time to complete. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission).\nRequired: body (body)"
+  },
+  {
+    "id": "convertContentIdsToContentTypes",
+    "name": "Convert content ids to content types",
+    "description": "Convert content ids to content types Converts a list of content ids into their associated content types. POST /wiki/api/v2/content/convert-ids-to-types",
+    "context": "POST /wiki/api/v2/content/convert-ids-to-types\nConverts a list of content ids into their associated content types. This is useful for users migrating from v1 to v2 who may have stored just content ids without their associated type. This will return types as they should be used in v2. Notably, this will return `inline-comment` for inline comments and `footer-comment` for footer comments, which is distinct from them both being represented by `comment` in v1. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the requested content. Any content that the user does not have permission to view or does not exist will map to `null` in the response.\nRequired: body (body)"
+  },
+  {
+    "id": "createBulkUserLookup",
+    "name": "Create bulk user lookup using ids",
+    "description": "Create bulk user lookup using ids Returns user details for the ids provided in the request body. POST /wiki/api/v2/users-bulk",
+    "context": "POST /wiki/api/v2/users-bulk\nReturns user details for the ids provided in the request body. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). The user must be able to view user profiles in the Confluence site.\nRequired: body (body)"
+  },
+  {
+    "id": "getClassificationLevels",
+    "name": "Get list of classification levels",
+    "description": "Get list of classification levels Returns a list of [classification levels](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) available. GET /wiki/api/v2/classification-levels",
+    "context": "GET /wiki/api/v2/classification-levels\nReturns a list of [classification levels](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) available. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission)."
+  },
+  {
+    "id": "getDataPolicyMetadata",
+    "name": "Get data policy metadata for the workspace",
+    "description": "Get data policy metadata for the workspace Returns data policy metadata for the workspace. GET /wiki/api/v2/data-policies/metadata",
+    "context": "GET /wiki/api/v2/data-policies/metadata\nReturns data policy metadata for the workspace. **[Permissions](#permissions) required:** Only apps can make this request. Permission to access the Confluence site ('Can use' global permission)."
+  },
+  {
+    "id": "getDataPolicySpaces",
+    "name": "Get spaces with data policies",
+    "description": "Get spaces with data policies Returns all spaces. GET /wiki/api/v2/data-policies/spaces",
+    "context": "GET /wiki/api/v2/data-policies/spaces\nReturns all spaces. The results will be sorted by id ascending. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Only apps can make this request. Permission to access the Confluence site ('Can use' global permission). Only spaces that the app has permission to view will be returned.\nOptional: ids (query) — Filter the results to spaces based on their IDs. Multiple IDs can be specified as a comma-separated list.; keys (query) — Filter the results to spaces based on their keys. Multiple keys can be specified as a comma-separated list.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of spaces per result to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaceRoleMode",
+    "name": "Get space role mode",
+    "description": "Get space role mode Retrieves the space role mode. GET /wiki/api/v2/space-role-mode",
+    "context": "GET /wiki/api/v2/space-role-mode\nRetrieves the space role mode. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission)."
+  }
+]

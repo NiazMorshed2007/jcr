@@ -1,0 +1,176 @@
+[
+  {
+    "id": "cloudforce-one-add-account-exemptions",
+    "name": "Add patterns to exemption rules",
+    "description": "Add patterns to exemption rules Add regex patterns to per-account exemption rules (union semantics). POST /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions\nAdd regex patterns to per-account exemption rules (union semantics). Missing keys leave that type untouched; duplicates are silently deduped.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-cancel-rule-approval",
+    "name": "Cancel a pending approval",
+    "description": "Cancel a pending approval Cancel a pending rule approval. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals/{id}/cancel",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals/{id}/cancel\nCancel a pending rule approval. Only its original requester may cancel it.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the approval."
+  },
+  {
+    "id": "cloudforce-one-create-email-rule",
+    "name": "Create an email rule",
+    "description": "Create an email rule Create a structured email rule. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured\nCreate a structured email rule.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-create-rule",
+    "name": "Create a rule",
+    "description": "Create a rule Create a new detection rule. POST /client/v4/accounts/{account_id}/cloudforce-one/rules",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules\nCreate a new detection rule.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-delete-all-rules",
+    "name": "Delete all rules",
+    "description": "Delete all rules Delete all rules in an account. DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules\nDelete all rules in an account.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "cloudforce-one-delete-email-rule",
+    "name": "Delete an email rule",
+    "description": "Delete an email rule Delete an existing structured email rule. DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}\nDelete an existing structured email rule.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule."
+  },
+  {
+    "id": "cloudforce-one-delete-rule",
+    "name": "Delete a rule",
+    "description": "Delete a rule Delete an existing rule. DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules/{id}\nDelete an existing rule.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-get-email-rule",
+    "name": "Get an email rule",
+    "description": "Get an email rule Get a structured email rule by ID. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}\nGet a structured email rule by ID.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule."
+  },
+  {
+    "id": "cloudforce-one-get-email-rule-schema",
+    "name": "Get email rule schema",
+    "description": "Get email rule schema Get the field catalog for structured email rules. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/schema",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/schema\nGet the field catalog for structured email rules.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "cloudforce-one-get-exemptions",
+    "name": "Get exemption rules for an account",
+    "description": "Get exemption rules for an account Get all exemption rule patterns for the account, grouped by type. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions\nGet all exemption rule patterns for the account, grouped by type.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "cloudforce-one-get-managed-rules",
+    "name": "Get managed rules",
+    "description": "Get managed rules Get DFP managed rule metadata (name and description) from YARA rules. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/managed",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/managed\nGet DFP managed rule metadata (name and description) from YARA rules.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "cloudforce-one-get-rule",
+    "name": "Get a rule",
+    "description": "Get a rule Get a single rule by ID. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/{id}\nGet a single rule by ID.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule."
+  },
+  {
+    "id": "cloudforce-one-get-rule-approval",
+    "name": "Get rule approval details",
+    "description": "Get rule approval details Get a single rule approval with current rule data. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals/{id}\nGet a single rule approval with current rule data.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the approval."
+  },
+  {
+    "id": "cloudforce-one-get-rule-stats",
+    "name": "Get dashboard stats",
+    "description": "Get dashboard stats Get statistics about rules for the dashboard. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/stats",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/stats\nGet statistics about rules for the dashboard.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "cloudforce-one-get-rule-tree",
+    "name": "Get folder tree structure",
+    "description": "Get folder tree structure Get the folder tree structure for rules navigation. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/tree",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/tree\nGet the folder tree structure for rules navigation.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "cloudforce-one-list-email-rules",
+    "name": "List email rules",
+    "description": "List email rules Returns structured email rules. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/structured",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/structured\nReturns structured email rules.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: limit (query); offset (query); search (query)"
+  },
+  {
+    "id": "cloudforce-one-list-rule-approvals",
+    "name": "List rule approvals",
+    "description": "List rule approvals Returns rule approvals with optional status, revision, reviewer-scope, and mutation-type filtering. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals\nReturns rule approvals with optional status, revision, reviewer-scope, and mutation-type filtering.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: status (query) — Selects approval statuses. Repeat the parameter to OR-match statuses (for example, status=pending&status=rejected). Use status=all alone to disable status filtering.; latest_only (query) — When true, returns the newest revision in each approval chain.; limit (query); offset (query); reviewer_scope (query) — Limits approvals to the specified reviewer scope.; change_type (query) — Limits approvals to the specified mutation type.; rule_id (query) — Filter approvals by rule ID."
+  },
+  {
+    "id": "cloudforce-one-list-rules",
+    "name": "List rules",
+    "description": "List rules Returns all rules for an account with optional filtering. GET /client/v4/accounts/{account_id}/cloudforce-one/rules",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules\nReturns all rules for an account with optional filtering.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: namespace (query) — Selects namespaces. Repeat the parameter to select multiple namespaces (for example, namespace=foo&namespace=bar).; path (query) — Selects paths with exact-match semantics. Omit the parameter to return rules from all paths. Pass an empty string (path=) to return only rules with an empty or uncategorized path. Pass a value (for example, path=yara) to match that exact path. Repeat the parameter (for example, path=yara&path=expr) to OR-match multiple paths with SQL `IN (...)` semantics. The `recursive` flag affects only customer-account namespace selection.; recursive (query) — For customer accounts, true enables descendant matching for namespaces. Paths always use exact matching.; search (query); is_public (query) — Limits rules to the specified public visibility.; limit (query); offset (query)"
+  },
+  {
+    "id": "cloudforce-one-remove-account-exemptions",
+    "name": "Remove patterns from exemption rules",
+    "description": "Remove patterns from exemption rules Remove regex patterns from per-account exemption rules. DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions\nRemove regex patterns from per-account exemption rules. Missing keys leave that type untouched; non-existent patterns are silently skipped.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-resubmit-email-rule-approval",
+    "name": "Revise and resubmit a rejected structured email rule approval",
+    "description": "Revise and resubmit a rejected structured email rule approval Validates and compiles a complete structured email rule, then creates an immutable pending revision of its rejected approval. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit\nValidates and compiles a complete structured email rule, then creates an immutable pending revision of its rejected approval.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the approval.\nOptional: module (query) — Structured rule module.; body (body)"
+  },
+  {
+    "id": "cloudforce-one-resubmit-rule-approval",
+    "name": "Revise and resubmit a rejected approval",
+    "description": "Revise and resubmit a rejected approval Create a new pending revision from a rejected rule approval. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals/{id}/resubmit",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/approvals/{id}/resubmit\nCreate a new pending revision from a rejected rule approval. Only the original requester may resubmit the latest revision.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the approval.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-search-rules",
+    "name": "Search rules",
+    "description": "Search rules Search rules using hybrid, vector, keyword, or exact retrieval, backed by AI Search with a SQL fallback. GET /client/v4/accounts/{account_id}/cloudforce-one/rules/search",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/rules/search\nSearch rules using hybrid, vector, keyword, or exact retrieval, backed by AI Search with a SQL fallback.\nRequired: account_id (path) — Cloudflare account ID.; query (query) — Natural-language or keyword search query.\nOptional: namespace (query) — Selects namespaces. Repeat the parameter to select multiple namespaces (for example, namespace=foo&namespace=bar).; path (query) — Selects paths with exact-match semantics. Omit the parameter to return rules from all paths. Pass an empty string (path=) to return only rules with an empty or uncategorized path. Pass a value (for example, path=yara) to match that exact path. Repeat the parameter (for example, path=yara&path=expr) to OR-match multiple paths with SQL `IN (...)` semantics. The `recursive` flag affects only customer-account namespace selection.; recursive (query) — For customer accounts, true enables descendant matching for namespaces. Paths always use exact matching.; search (query); is_public (query) — Limits rules to the specified public visibility.; limit (query); offset (query); mode (query) — Retrieval strategy used for the query.; language (query) — Limits results to the specified rule language."
+  },
+  {
+    "id": "cloudforce-one-test-email-rule",
+    "name": "Test an email rule",
+    "description": "Test an email rule Test a structured email rule against sample email JSON. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}/test",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}/test\nTest a structured email rule against sample email JSON.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-update-account-exemptions",
+    "name": "Update exemption rule patterns",
+    "description": "Update exemption rule patterns Replace existing exemption patterns with new values. PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/exemptions\nReplace existing exemption patterns with new values. Each key maps to an array of {old_pattern, new_pattern} entries. Missing keys leave that type untouched. Fails if any old pattern is not found or any new pattern already exists.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-update-email-rule",
+    "name": "Update an email rule",
+    "description": "Update an email rule Updates an existing structured email rule. PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/{id}\nUpdates an existing structured email rule.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-update-pending-email-rule-approval",
+    "name": "Update a pending structured email rule approval",
+    "description": "Update a pending structured email rule approval Validate, compile, and replace the proposed structured email rule on a pending approval. PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}\nValidate, compile, and replace the proposed structured email rule on a pending approval. Only the original requester may update it.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the approval.\nOptional: module (query) — Structured rule module.; body (body)"
+  },
+  {
+    "id": "cloudforce-one-update-rule",
+    "name": "Update a rule",
+    "description": "Update a rule Updates an existing rule. PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/rules/{id}\nUpdates an existing rule.\nRequired: account_id (path) — Cloudflare account ID.; id (path) — The unique identifier for the rule.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-validate-email-rule",
+    "name": "Validate an email rule",
+    "description": "Validate an email rule Validates structured email rule syntax and metadata. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/validate",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/structured/validate\nValidates structured email rule syntax and metadata.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "cloudforce-one-validate-rule",
+    "name": "Validate rule with context",
+    "description": "Validate rule with context Validates rule syntax, name uniqueness, namespace, and metadata. POST /client/v4/accounts/{account_id}/cloudforce-one/rules/validate",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/rules/validate\nValidates rule syntax, name uniqueness, namespace, and metadata.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  }
+]

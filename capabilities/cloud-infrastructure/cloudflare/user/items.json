@@ -1,0 +1,332 @@
+[
+  {
+    "id": "audit-logs-get-user-audit-logs",
+    "name": "Get user audit logs",
+    "description": "Get user audit logs Gets a list of audit logs for a user account. GET /client/v4/user/audit_logs",
+    "context": "GET /client/v4/user/audit_logs\nGets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.\nOptional: id (query); export (query); action.type (query); actor.ip (query); actor.email (query); since (query); before (query); zone.name (query); direction (query); per_page (query); page (query); hide_user_logs (query)"
+  },
+  {
+    "id": "ip-access-rules-for-a-user-create-an-ip-access-rule",
+    "name": "Create an IP Access rule",
+    "description": "Create an IP Access rule Creates a new IP Access rule for all zones owned by the current user. POST /client/v4/user/firewall/access_rules/rules",
+    "context": "POST /client/v4/user/firewall/access_rules/rules\nCreates a new IP Access rule for all zones owned by the current user. Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.\nRequired: body (body)"
+  },
+  {
+    "id": "ip-access-rules-for-a-user-delete-an-ip-access-rule",
+    "name": "Delete an IP Access rule",
+    "description": "Delete an IP Access rule Deletes an IP Access rule at the user level. DELETE /client/v4/user/firewall/access_rules/rules/{rule_id}",
+    "context": "DELETE /client/v4/user/firewall/access_rules/rules/{rule_id}\nDeletes an IP Access rule at the user level. Note: Deleting a user-level rule will affect all zones owned by the user.\nRequired: rule_id (path)"
+  },
+  {
+    "id": "ip-access-rules-for-a-user-get-an-ip-access-rule",
+    "name": "Get an IP Access rule",
+    "description": "Get an IP Access rule Fetches the details of an IP Access rule defined at the user level. GET /client/v4/user/firewall/access_rules/rules/{rule_id}",
+    "context": "GET /client/v4/user/firewall/access_rules/rules/{rule_id}\nFetches the details of an IP Access rule defined at the user level.\nRequired: rule_id (path)"
+  },
+  {
+    "id": "ip-access-rules-for-a-user-list-ip-access-rules",
+    "name": "List IP Access rules",
+    "description": "List IP Access rules Fetches IP Access rules of the user. GET /client/v4/user/firewall/access_rules/rules",
+    "context": "GET /client/v4/user/firewall/access_rules/rules\nFetches IP Access rules of the user. You can filter the results using several optional parameters.\nOptional: mode (query); configuration.target (query); configuration.value (query); notes (query); match (query); page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "ip-access-rules-for-a-user-update-an-ip-access-rule",
+    "name": "Update an IP Access rule",
+    "description": "Update an IP Access rule Updates an IP Access rule defined at the user level. PATCH /client/v4/user/firewall/access_rules/rules/{rule_id}",
+    "context": "PATCH /client/v4/user/firewall/access_rules/rules/{rule_id}\nUpdates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.\nRequired: rule_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-healthcheck-events-list-healthcheck-events",
+    "name": "List Healthcheck Events",
+    "description": "List Healthcheck Events List origin health changes. GET /client/v4/user/load_balancing_analytics/events",
+    "context": "GET /client/v4/user/load_balancing_analytics/events\nList origin health changes.\nOptional: until (query); pool_name (query); origin_healthy (query); pool_id (query); since (query); origin_name (query); pool_healthy (query)"
+  },
+  {
+    "id": "load-balancer-monitors-create-monitor",
+    "name": "Create Monitor",
+    "description": "Create Monitor Create a configured monitor. POST /client/v4/user/load_balancers/monitors",
+    "context": "POST /client/v4/user/load_balancers/monitors\nCreate a configured monitor.\nRequired: body (body)"
+  },
+  {
+    "id": "load-balancer-monitors-delete-monitor",
+    "name": "Delete Monitor",
+    "description": "Delete Monitor Delete a configured monitor. DELETE /client/v4/user/load_balancers/monitors/{monitor_id}",
+    "context": "DELETE /client/v4/user/load_balancers/monitors/{monitor_id}\nDelete a configured monitor.\nRequired: monitor_id (path)"
+  },
+  {
+    "id": "load-balancer-monitors-list-monitor-references",
+    "name": "List Monitor References",
+    "description": "List Monitor References Get the list of resources that reference the provided monitor. GET /client/v4/user/load_balancers/monitors/{monitor_id}/references",
+    "context": "GET /client/v4/user/load_balancers/monitors/{monitor_id}/references\nGet the list of resources that reference the provided monitor.\nRequired: monitor_id (path)"
+  },
+  {
+    "id": "load-balancer-monitors-list-monitors",
+    "name": "List Monitors",
+    "description": "List Monitors List configured monitors for a user. GET /client/v4/user/load_balancers/monitors",
+    "context": "GET /client/v4/user/load_balancers/monitors\nList configured monitors for a user."
+  },
+  {
+    "id": "load-balancer-monitors-monitor-details",
+    "name": "Monitor Details",
+    "description": "Monitor Details List a single configured monitor for a user. GET /client/v4/user/load_balancers/monitors/{monitor_id}",
+    "context": "GET /client/v4/user/load_balancers/monitors/{monitor_id}\nList a single configured monitor for a user.\nRequired: monitor_id (path)"
+  },
+  {
+    "id": "load-balancer-monitors-patch-monitor",
+    "name": "Patch Monitor",
+    "description": "Patch Monitor Apply changes to an existing monitor, overwriting the supplied properties. PATCH /client/v4/user/load_balancers/monitors/{monitor_id}",
+    "context": "PATCH /client/v4/user/load_balancers/monitors/{monitor_id}\nApply changes to an existing monitor, overwriting the supplied properties.\nRequired: monitor_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-monitors-preview-monitor",
+    "name": "Preview Monitor",
+    "description": "Preview Monitor Preview pools using the specified monitor with provided monitor details. POST /client/v4/user/load_balancers/monitors/{monitor_id}/preview",
+    "context": "POST /client/v4/user/load_balancers/monitors/{monitor_id}/preview\nPreview pools using the specified monitor with provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.\nRequired: monitor_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-monitors-preview-result",
+    "name": "Preview Result",
+    "description": "Preview Result Get the result of a previous preview operation using the provided preview_id. GET /client/v4/user/load_balancers/preview/{preview_id}",
+    "context": "GET /client/v4/user/load_balancers/preview/{preview_id}\nGet the result of a previous preview operation using the provided preview_id.\nRequired: preview_id (path)"
+  },
+  {
+    "id": "load-balancer-monitors-update-monitor",
+    "name": "Update Monitor",
+    "description": "Update Monitor Modify a configured monitor. PUT /client/v4/user/load_balancers/monitors/{monitor_id}",
+    "context": "PUT /client/v4/user/load_balancers/monitors/{monitor_id}\nModify a configured monitor.\nRequired: monitor_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-pools-create-pool",
+    "name": "Create Pool",
+    "description": "Create Pool Create a new pool. POST /client/v4/user/load_balancers/pools",
+    "context": "POST /client/v4/user/load_balancers/pools\nCreate a new pool.\nRequired: body (body)"
+  },
+  {
+    "id": "load-balancer-pools-delete-pool",
+    "name": "Delete Pool",
+    "description": "Delete Pool Delete a configured pool. DELETE /client/v4/user/load_balancers/pools/{pool_id}",
+    "context": "DELETE /client/v4/user/load_balancers/pools/{pool_id}\nDelete a configured pool.\nRequired: pool_id (path)"
+  },
+  {
+    "id": "load-balancer-pools-list-pool-references",
+    "name": "List Pool References",
+    "description": "List Pool References Get the list of resources that reference the provided pool. GET /client/v4/user/load_balancers/pools/{pool_id}/references",
+    "context": "GET /client/v4/user/load_balancers/pools/{pool_id}/references\nGet the list of resources that reference the provided pool.\nRequired: pool_id (path)"
+  },
+  {
+    "id": "load-balancer-pools-list-pools",
+    "name": "List Pools",
+    "description": "List Pools List configured pools. GET /client/v4/user/load_balancers/pools",
+    "context": "GET /client/v4/user/load_balancers/pools\nList configured pools.\nOptional: monitor (query)"
+  },
+  {
+    "id": "load-balancer-pools-patch-pool",
+    "name": "Patch Pool",
+    "description": "Patch Pool Apply changes to an existing pool, overwriting the supplied properties. PATCH /client/v4/user/load_balancers/pools/{pool_id}",
+    "context": "PATCH /client/v4/user/load_balancers/pools/{pool_id}\nApply changes to an existing pool, overwriting the supplied properties.\nRequired: pool_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-pools-patch-pools",
+    "name": "Patch Pools",
+    "description": "Patch Pools Apply changes to a number of existing pools, overwriting the supplied properties. PATCH /client/v4/user/load_balancers/pools",
+    "context": "PATCH /client/v4/user/load_balancers/pools\nApply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.\nRequired: body (body)"
+  },
+  {
+    "id": "load-balancer-pools-pool-details",
+    "name": "Pool Details",
+    "description": "Pool Details Fetch a single configured pool. GET /client/v4/user/load_balancers/pools/{pool_id}",
+    "context": "GET /client/v4/user/load_balancers/pools/{pool_id}\nFetch a single configured pool.\nRequired: pool_id (path)"
+  },
+  {
+    "id": "load-balancer-pools-pool-health-details",
+    "name": "Pool Health Details",
+    "description": "Pool Health Details Fetch the latest pool health status for a single pool. GET /client/v4/user/load_balancers/pools/{pool_id}/health",
+    "context": "GET /client/v4/user/load_balancers/pools/{pool_id}/health\nFetch the latest pool health status for a single pool.\nRequired: pool_id (path)"
+  },
+  {
+    "id": "load-balancer-pools-preview-pool",
+    "name": "Preview Pool",
+    "description": "Preview Pool Preview pool health using provided monitor details. POST /client/v4/user/load_balancers/pools/{pool_id}/preview",
+    "context": "POST /client/v4/user/load_balancers/pools/{pool_id}/preview\nPreview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.\nRequired: pool_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-pools-update-pool",
+    "name": "Update Pool",
+    "description": "Update Pool Modify a configured pool. PUT /client/v4/user/load_balancers/pools/{pool_id}",
+    "context": "PUT /client/v4/user/load_balancers/pools/{pool_id}\nModify a configured pool.\nRequired: pool_id (path); body (body)"
+  },
+  {
+    "id": "permission-groups-list-permission-groups",
+    "name": "List Token Permission Groups",
+    "description": "List Token Permission Groups Find all available permission groups for API Tokens. GET /client/v4/user/tokens/permission_groups",
+    "context": "GET /client/v4/user/tokens/permission_groups\nFind all available permission groups for API Tokens.\nOptional: name (query) — Filter by the name of the permission group. The value must be URL-encoded.; scope (query) — Filter by the scope of the permission group. The value must be URL-encoded."
+  },
+  {
+    "id": "spectrum-analytics-get-zones-report",
+    "name": "Get zones bandwidth report",
+    "description": "Get zones bandwidth report Retrieves a list of total bandwidth by zone over a given time period. GET /client/v4/user/spectrum_analytics/zones/report",
+    "context": "GET /client/v4/user/spectrum_analytics/zones/report\nRetrieves a list of total bandwidth by zone over a given time period.\nOptional: since (query); until (query); cdn_traffic (query)"
+  },
+  {
+    "id": "User_listUserTenants",
+    "name": "List user tenants",
+    "description": "List user tenants Retrieves list of tenants the authenticated user / method has access to. GET /client/v4/user/tenants",
+    "context": "GET /client/v4/user/tenants\nRetrieves list of tenants the authenticated user / method has access to."
+  },
+  {
+    "id": "user-analytics-get-dashboard",
+    "name": "Get user analytics dashboard",
+    "description": "Get user analytics dashboard The user analytics dashboard provides totals and timeseries data aggregated across all zones owned by the authenticated user for the given time period. GET /client/v4/user/analytics/dashboard",
+    "context": "GET /client/v4/user/analytics/dashboard\nThe user analytics dashboard provides totals and timeseries data aggregated across all zones owned by the authenticated user for the given time period. Only zones for which the user has the `#analytics:read` permission are included. This endpoint is deprecated. Please use the GraphQL Analytics API instead: https://developers.cloudflare.com/analytics/graphql-api/\nOptional: since (query); until (query); continuous (query)"
+  },
+  {
+    "id": "user-api-tokens-create-token",
+    "name": "Create Token",
+    "description": "Create Token Create a new access token. POST /client/v4/user/tokens",
+    "context": "POST /client/v4/user/tokens\nCreate a new access token.\nRequired: body (body)"
+  },
+  {
+    "id": "user-api-tokens-delete-token",
+    "name": "Delete Token",
+    "description": "Delete Token Destroy a token. DELETE /client/v4/user/tokens/{token_id}",
+    "context": "DELETE /client/v4/user/tokens/{token_id}\nDestroy a token.\nRequired: token_id (path)"
+  },
+  {
+    "id": "user-api-tokens-list-tokens",
+    "name": "List Tokens",
+    "description": "List Tokens List all access tokens you created. GET /client/v4/user/tokens",
+    "context": "GET /client/v4/user/tokens\nList all access tokens you created. Results include active, disabled, and recently-expired tokens when include_expired is set to true.\nOptional: page (query); per_page (query); direction (query); include_expired (query) — When true, includes recently-expired tokens in the response."
+  },
+  {
+    "id": "user-api-tokens-roll-token",
+    "name": "Roll Token",
+    "description": "Roll Token Roll the token secret. PUT /client/v4/user/tokens/{token_id}/value",
+    "context": "PUT /client/v4/user/tokens/{token_id}/value\nRoll the token secret.\nRequired: token_id (path)"
+  },
+  {
+    "id": "user-api-tokens-token-details",
+    "name": "Token Details",
+    "description": "Token Details Get information about a specific token. GET /client/v4/user/tokens/{token_id}",
+    "context": "GET /client/v4/user/tokens/{token_id}\nGet information about a specific token.\nRequired: token_id (path)"
+  },
+  {
+    "id": "user-api-tokens-update-token",
+    "name": "Update Token",
+    "description": "Update Token Update an existing token. PUT /client/v4/user/tokens/{token_id}",
+    "context": "PUT /client/v4/user/tokens/{token_id}\nUpdate an existing token.\nRequired: token_id (path); body (body)"
+  },
+  {
+    "id": "user-api-tokens-verify-token",
+    "name": "Verify Token",
+    "description": "Verify Token Test whether a token works. GET /client/v4/user/tokens/verify",
+    "context": "GET /client/v4/user/tokens/verify\nTest whether a token works."
+  },
+  {
+    "id": "user-billing-history-(-deprecated)-billing-history-details",
+    "name": "Billing History Details",
+    "description": "Billing History Details Accesses your billing history object. GET /client/v4/user/billing/history",
+    "context": "GET /client/v4/user/billing/history\nAccesses your billing history object.\nOptional: page (query); per_page (query); order (query); occurred_at (query); type (query); action (query)"
+  },
+  {
+    "id": "user-billing-profile-(-deprecated)-billing-profile-details",
+    "name": "Billing Profile Details",
+    "description": "Billing Profile Details Accesses your billing profile object. GET /client/v4/user/billing/profile",
+    "context": "GET /client/v4/user/billing/profile\nAccesses your billing profile object."
+  },
+  {
+    "id": "user-communication-preferences-get",
+    "name": "Get communication preferences",
+    "description": "Get communication preferences Retrieve the communication preferences for the authenticated user, including email verification status, marketing subscription opt-in/opt-out state, and language locale. GET /client/v4/user/communication_preferences",
+    "context": "GET /client/v4/user/communication_preferences\nRetrieve the communication preferences for the authenticated user, including email verification status, marketing subscription opt-in/opt-out state, and language locale. Callers authenticate with standard Cloudflare API tokens or keys."
+  },
+  {
+    "id": "user-communication-preferences-update",
+    "name": "Update communication preferences",
+    "description": "Update communication preferences Set one or more communication preferences for the authenticated user. PUT /client/v4/user/communication_preferences",
+    "context": "PUT /client/v4/user/communication_preferences\nSet one or more communication preferences for the authenticated user. Supply a map of preference keys to subscription states, and an optional language locale. This endpoint does not modify email verification settings. Callers authenticate with standard Cloudflare API tokens or keys.\nRequired: body (body)"
+  },
+  {
+    "id": "user-edit-user",
+    "name": "Edit User",
+    "description": "Edit User Edit part of your user details. PATCH /client/v4/user",
+    "context": "PATCH /client/v4/user\nEdit part of your user details.\nRequired: body (body)"
+  },
+  {
+    "id": "user-load-balancer-regions-list-regions",
+    "name": "List Regions",
+    "description": "List Regions List all region mappings in the user context. GET /client/v4/user/load_balancers/regions",
+    "context": "GET /client/v4/user/load_balancers/regions\nList all region mappings in the user context.\nOptional: subdivision_code (query); country_code (query)"
+  },
+  {
+    "id": "user-memberships-get",
+    "name": "Get User Membership",
+    "description": "Get User Membership Get a specific membership for the currently authenticated user. GET /client/v4/user/memberships/{membership_id}",
+    "context": "GET /client/v4/user/memberships/{membership_id}\nGet a specific membership for the currently authenticated user.\nRequired: membership_id (path)"
+  },
+  {
+    "id": "user-subscription-create-user-subscription",
+    "name": "Create User Subscription",
+    "description": "Create User Subscription Creates a user subscription. POST /client/v4/user/subscriptions",
+    "context": "POST /client/v4/user/subscriptions\nCreates a user subscription.\nRequired: body (body)"
+  },
+  {
+    "id": "user-subscription-delete-user-subscription",
+    "name": "Delete User Subscription",
+    "description": "Delete User Subscription Deletes a user's subscription. DELETE /client/v4/user/subscriptions/{identifier}",
+    "context": "DELETE /client/v4/user/subscriptions/{identifier}\nDeletes a user's subscription.\nRequired: identifier (path)"
+  },
+  {
+    "id": "user-subscription-get-user-subscriptions",
+    "name": "Get User Subscriptions",
+    "description": "Get User Subscriptions Lists all of a user's subscriptions. GET /client/v4/user/subscriptions",
+    "context": "GET /client/v4/user/subscriptions\nLists all of a user's subscriptions."
+  },
+  {
+    "id": "user-subscription-update-user-subscription",
+    "name": "Update User Subscription",
+    "description": "Update User Subscription Updates a user's subscriptions. PUT /client/v4/user/subscriptions/{identifier}",
+    "context": "PUT /client/v4/user/subscriptions/{identifier}\nUpdates a user's subscriptions.\nRequired: identifier (path); body (body)"
+  },
+  {
+    "id": "user-user-details",
+    "name": "User Details",
+    "description": "User Details Retrieves detailed information about the currently authenticated user, including email, name, and account memberships. GET /client/v4/user",
+    "context": "GET /client/v4/user\nRetrieves detailed information about the currently authenticated user, including email, name, and account memberships."
+  },
+  {
+    "id": "user'-s-invites-invitation-details",
+    "name": "Invitation Details",
+    "description": "Invitation Details Gets the details of an invitation. GET /client/v4/user/invites/{invite_id}",
+    "context": "GET /client/v4/user/invites/{invite_id}\nGets the details of an invitation.\nRequired: invite_id (path)"
+  },
+  {
+    "id": "user'-s-invites-list-invitations",
+    "name": "List Invitations",
+    "description": "List Invitations Lists all invitations associated with my user. GET /client/v4/user/invites",
+    "context": "GET /client/v4/user/invites\nLists all invitations associated with my user."
+  },
+  {
+    "id": "user'-s-invites-respond-to-invitation",
+    "name": "Respond to Invitation",
+    "description": "Respond to Invitation Responds to an invitation. PATCH /client/v4/user/invites/{invite_id}",
+    "context": "PATCH /client/v4/user/invites/{invite_id}\nResponds to an invitation.\nRequired: invite_id (path); body (body)"
+  },
+  {
+    "id": "user'-s-organizations-leave-organization",
+    "name": "Leave Organization",
+    "description": "Leave Organization Removes association to an organization. DELETE /client/v4/user/organizations/{organization_id}",
+    "context": "DELETE /client/v4/user/organizations/{organization_id}\nRemoves association to an organization.\nRequired: organization_id (path)"
+  },
+  {
+    "id": "user'-s-organizations-list-organizations",
+    "name": "List Organizations",
+    "description": "List Organizations Lists organizations the user is associated with. GET /client/v4/user/organizations",
+    "context": "GET /client/v4/user/organizations\nLists organizations the user is associated with.\nOptional: name (query); page (query); per_page (query); order (query); direction (query); match (query); status (query)"
+  },
+  {
+    "id": "user'-s-organizations-organization-details",
+    "name": "Organization Details",
+    "description": "Organization Details Gets a specific organization the user is associated with. GET /client/v4/user/organizations/{organization_id}",
+    "context": "GET /client/v4/user/organizations/{organization_id}\nGets a specific organization the user is associated with.\nRequired: organization_id (path)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "scoreConfigs_create",
+    "name": "Create a score configuration (config)",
+    "description": "Create a score configuration (config) Create a score configuration (config). POST /api/public/score-configs",
+    "context": "POST /api/public/score-configs\nCreate a score configuration (config). Score configs are used to define the structure of scores\nRequired: body (body)"
+  },
+  {
+    "id": "scoreConfigs_get",
+    "name": "Get all score configs",
+    "description": "Get all score configs GET /api/public/score-configs",
+    "context": "GET /api/public/score-configs\nGet all score configs\nOptional: page (query) — Page number, starts at 1.; limit (query) — Limit of items per page. If you encounter api issues due to too large page sizes, try to reduce the limit"
+  },
+  {
+    "id": "scoreConfigs_get-by-id",
+    "name": "Get a score config",
+    "description": "Get a score config GET /api/public/score-configs/{configId}",
+    "context": "GET /api/public/score-configs/{configId}\nGet a score config\nRequired: configId (path) — The unique langfuse identifier of a score config"
+  },
+  {
+    "id": "scoreConfigs_update",
+    "name": "Update a score config",
+    "description": "Update a score config PATCH /api/public/score-configs/{configId}",
+    "context": "PATCH /api/public/score-configs/{configId}\nUpdate a score config\nRequired: configId (path) — The unique langfuse identifier of a score config; body (body)"
+  }
+]

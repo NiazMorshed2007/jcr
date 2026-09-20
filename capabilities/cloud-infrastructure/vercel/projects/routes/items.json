@@ -1,0 +1,50 @@
+[
+  {
+    "id": "addRoute",
+    "name": "Add a routing rule",
+    "description": "Add a routing rule Add a single routing rule to a project at a specified position. POST /v1/projects/{projectId}/routes",
+    "context": "POST /v1/projects/{projectId}/routes\nAdd a single routing rule to a project at a specified position. Defaults to the end of the list if no position is provided. The route is enabled by default. Stages a new version with the added route.\nRequired: projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteRoutes",
+    "name": "Delete routing rules",
+    "description": "Delete routing rules Delete one or more routing rules from a project by ID. DELETE /v1/projects/{projectId}/routes",
+    "context": "DELETE /v1/projects/{projectId}/routes\nDelete one or more routing rules from a project by ID. Stages a new version with the routes removed.\nRequired: projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "editRoute",
+    "name": "Edit a routing rule",
+    "description": "Edit a routing rule Replace a routing rule identified by its ID, or restore it from the current production version. PATCH /v1/projects/{projectId}/routes/{routeId}",
+    "context": "PATCH /v1/projects/{projectId}/routes/{routeId}\nReplace a routing rule identified by its ID, or restore it from the current production version. Stages a new version with the modified route.\nRequired: projectId (path); routeId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "generateRoute",
+    "name": "Generate a routing rule from natural language",
+    "description": "Generate a routing rule from natural language Generate a routing rule configuration from a natural language description. POST /v1/projects/{projectId}/routes/generate",
+    "context": "POST /v1/projects/{projectId}/routes/generate\nGenerate a routing rule configuration from a natural language description. Returns a suggested route configuration that can be reviewed and saved.\nRequired: projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getRoutes",
+    "name": "Get project routing rules",
+    "description": "Get project routing rules Get the routing rules for a project. GET /v1/projects/{projectId}/routes",
+    "context": "GET /v1/projects/{projectId}/routes\nGet the routing rules for a project. Supports searching by name/ID/pattern, filtering by route type, and diffing staged changes against production.\nRequired: projectId (path)\nOptional: versionId (query); q (query); filter (query); diff (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRouteVersions",
+    "name": "Get routing rule version history",
+    "description": "Get routing rule version history Get the version history for a project's routing rules. GET /v1/projects/{projectId}/routes/versions",
+    "context": "GET /v1/projects/{projectId}/routes/versions\nGet the version history for a project's routing rules. Returns the staging version (if one exists) followed by production versions, most recent first. The staging version has `isStaging: true` and the current production version has `isLive: true`.\nRequired: projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "stageRoutes",
+    "name": "Stage routing rules",
+    "description": "Stage routing rules Stage routing rules for a project. PUT /v1/projects/{projectId}/routes",
+    "context": "PUT /v1/projects/{projectId}/routes\nStage routing rules for a project. Set `overwrite` to true to replace all existing rules, or omit it to merge with existing rules by ID. Returns the new staged version.\nRequired: projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateRouteVersions",
+    "name": "Promote, restore, or discard a routing rule version",
+    "description": "Promote, restore, or discard a routing rule version Promote staged routing rules to production, restore a previous production version, or discard staged changes. POST /v1/projects/{projectId}/routes/versions",
+    "context": "POST /v1/projects/{projectId}/routes/versions\nPromote staged routing rules to production, restore a previous production version, or discard staged changes. - `promote`: Publishes the staging version to production. - `restore`: Rolls back to a previous production version. - `discard`: Removes the staging version without publishing.\nRequired: projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

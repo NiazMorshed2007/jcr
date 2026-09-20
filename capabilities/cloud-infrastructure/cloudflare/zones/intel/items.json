@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sinkhole-config-create-ingress",
+    "name": "Create an ingress rule",
+    "description": "Create an ingress rule Create a new ingress rule for the specified sinkhole. POST /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses",
+    "context": "POST /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses\nCreate a new ingress rule for the specified sinkhole. The CIDR block must be a Cloudflare BYOIP associated with your account. The zone_id must be a zone with the ability to create Spectrum Apps. The sinkhole must belong to the same account as the zone.\nRequired: zone_id (path) — The unique identifier for the Cloudflare zone.; sinkhole_id (path) — The unique identifier for the sinkhole.; body (body)"
+  },
+  {
+    "id": "sinkhole-config-delete-ingress",
+    "name": "Delete an ingress rule",
+    "description": "Delete an ingress rule Delete the specified ingress rule. DELETE /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses/{ingress_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses/{ingress_id}\nDelete the specified ingress rule. The sinkhole must belong to the same account as the zone.\nRequired: zone_id (path) — The unique identifier for the Cloudflare zone.; sinkhole_id (path) — The unique identifier for the sinkhole.; ingress_id (path) — The unique identifier for the ingress rule."
+  },
+  {
+    "id": "sinkhole-config-get-ingress",
+    "name": "Get an ingress rule",
+    "description": "Get an ingress rule Get the specified ingress rule associated with a sinkhole. GET /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses/{ingress_id}",
+    "context": "GET /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses/{ingress_id}\nGet the specified ingress rule associated with a sinkhole. The sinkhole must belong to the same account as the zone.\nRequired: zone_id (path) — The unique identifier for the Cloudflare zone.; sinkhole_id (path) — The unique identifier for the sinkhole.; ingress_id (path) — The unique identifier for the ingress rule."
+  },
+  {
+    "id": "sinkhole-config-update-ingress",
+    "name": "Update an ingress rule",
+    "description": "Update an ingress rule Replaces the specified ingress rule. PUT /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses/{ingress_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/intel/sinkholes/{sinkhole_id}/ingresses/{ingress_id}\nReplaces the specified ingress rule. The sinkhole must belong to the same account as the zone.\nRequired: zone_id (path) — The unique identifier for the Cloudflare zone.; sinkhole_id (path) — The unique identifier for the sinkhole.; ingress_id (path) — The unique identifier for the ingress rule.; body (body)"
+  }
+]

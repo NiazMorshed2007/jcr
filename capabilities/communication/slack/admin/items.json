@@ -1,0 +1,578 @@
+[
+  {
+    "id": "admin.analytics.getFile",
+    "name": "Retrieve analytics data for a given date, presented as a compressed JSON file.",
+    "description": "Retrieve analytics data for a given date, presented as a compressed JSON file. POST /api/admin.analytics.getFile",
+    "context": "POST /api/admin.analytics.getFile\nRetrieve analytics data for a given date, presented as a compressed JSON file.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.activities.list",
+    "name": "Get logs for a specified team/org.",
+    "description": "Get logs for a specified team/org. POST /api/admin.apps.activities.list",
+    "context": "POST /api/admin.apps.activities.list\nGet logs for a specified team/org.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.apps.approve",
+    "name": "Approve an app for installation on a workspace.",
+    "description": "Approve an app for installation on a workspace. POST /api/admin.apps.approve",
+    "context": "POST /api/admin.apps.approve\nApprove an app for installation on a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.approved.list",
+    "name": "List approved apps for an org or workspace.",
+    "description": "List approved apps for an org or workspace. POST /api/admin.apps.approved.list",
+    "context": "POST /api/admin.apps.approved.list\nList approved apps for an org or workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.clearResolution",
+    "name": "Clear an app resolution.",
+    "description": "Clear an app resolution. POST /api/admin.apps.clearResolution",
+    "context": "POST /api/admin.apps.clearResolution\nClear an app resolution.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.config.lookup",
+    "name": "Look up the app config for connectors by their IDs.",
+    "description": "Look up the app config for connectors by their IDs. POST /api/admin.apps.config.lookup",
+    "context": "POST /api/admin.apps.config.lookup\nLook up the app config for connectors by their IDs.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.config.set",
+    "name": "Set the app config for a connector.",
+    "description": "Set the app config for a connector. POST /api/admin.apps.config.set",
+    "context": "POST /api/admin.apps.config.set\nSet the app config for a connector.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.requests.cancel",
+    "name": "Cancel app request for team.",
+    "description": "Cancel app request for team. POST /api/admin.apps.requests.cancel",
+    "context": "POST /api/admin.apps.requests.cancel\nCancel app request for team.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.requests.list",
+    "name": "List app requests for a team/workspace.",
+    "description": "List app requests for a team/workspace. POST /api/admin.apps.requests.list",
+    "context": "POST /api/admin.apps.requests.list\nList app requests for a team/workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.restrict",
+    "name": "Restrict an app for installation on a workspace.",
+    "description": "Restrict an app for installation on a workspace. POST /api/admin.apps.restrict",
+    "context": "POST /api/admin.apps.restrict\nRestrict an app for installation on a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.restricted.list",
+    "name": "List restricted apps for an org or workspace.",
+    "description": "List restricted apps for an org or workspace. POST /api/admin.apps.restricted.list",
+    "context": "POST /api/admin.apps.restricted.list\nList restricted apps for an org or workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.apps.uninstall",
+    "name": "Uninstall an app from one or many workspaces, or an entire enterprise organization.",
+    "description": "Uninstall an app from one or many workspaces, or an entire enterprise organization. POST /api/admin.apps.uninstall",
+    "context": "POST /api/admin.apps.uninstall\nUninstall an app from one or many workspaces, or an entire enterprise organization.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.auth.policy.assignEntities",
+    "name": "Assign entities to a particular authentication policy.",
+    "description": "Assign entities to a particular authentication policy. POST /api/admin.auth.policy.assignEntities",
+    "context": "POST /api/admin.auth.policy.assignEntities\nAssign entities to a particular authentication policy.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.auth.policy.getEntities",
+    "name": "Fetch all the entities assigned to a particular authentication policy by name.",
+    "description": "Fetch all the entities assigned to a particular authentication policy by name. POST /api/admin.auth.policy.getEntities",
+    "context": "POST /api/admin.auth.policy.getEntities\nFetch all the entities assigned to a particular authentication policy by name.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.auth.policy.removeEntities",
+    "name": "Remove specified entities from a specified authentication policy.",
+    "description": "Remove specified entities from a specified authentication policy. POST /api/admin.auth.policy.removeEntities",
+    "context": "POST /api/admin.auth.policy.removeEntities\nRemove specified entities from a specified authentication policy.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.barriers.create",
+    "name": "Create an Information Barrier.",
+    "description": "Create an Information Barrier. POST /api/admin.barriers.create",
+    "context": "POST /api/admin.barriers.create\nCreate an Information Barrier.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.barriers.delete",
+    "name": "Delete an existing Information Barrier.",
+    "description": "Delete an existing Information Barrier. POST /api/admin.barriers.delete",
+    "context": "POST /api/admin.barriers.delete\nDelete an existing Information Barrier.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.barriers.list",
+    "name": "Get all Information Barriers for your organization.",
+    "description": "Get all Information Barriers for your organization. POST /api/admin.barriers.list",
+    "context": "POST /api/admin.barriers.list\nGet all Information Barriers for your organization.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.barriers.update",
+    "name": "Update an existing Information Barrier.",
+    "description": "Update an existing Information Barrier. POST /api/admin.barriers.update",
+    "context": "POST /api/admin.barriers.update\nUpdate an existing Information Barrier.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.archive",
+    "name": "Archive a public or private channel.",
+    "description": "Archive a public or private channel. POST /api/admin.conversations.archive",
+    "context": "POST /api/admin.conversations.archive\nArchive a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.bulkArchive",
+    "name": "Archive public or private channels in bulk.",
+    "description": "Archive public or private channels in bulk. POST /api/admin.conversations.bulkArchive",
+    "context": "POST /api/admin.conversations.bulkArchive\nArchive public or private channels in bulk.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.bulkDelete",
+    "name": "Delete public or private channels in bulk.",
+    "description": "Delete public or private channels in bulk. POST /api/admin.conversations.bulkDelete",
+    "context": "POST /api/admin.conversations.bulkDelete\nDelete public or private channels in bulk.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.bulkMove",
+    "name": "Move public or private channels in bulk.",
+    "description": "Move public or private channels in bulk. POST /api/admin.conversations.bulkMove",
+    "context": "POST /api/admin.conversations.bulkMove\nMove public or private channels in bulk.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.convertToPrivate",
+    "name": "Convert a public channel to a private channel.",
+    "description": "Convert a public channel to a private channel. POST /api/admin.conversations.convertToPrivate",
+    "context": "POST /api/admin.conversations.convertToPrivate\nConvert a public channel to a private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.convertToPublic",
+    "name": "Convert a private channel to a public channel.",
+    "description": "Convert a private channel to a public channel. POST /api/admin.conversations.convertToPublic",
+    "context": "POST /api/admin.conversations.convertToPublic\nConvert a private channel to a public channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.create",
+    "name": "Create a public or private channel-based conversation.",
+    "description": "Create a public or private channel-based conversation. POST /api/admin.conversations.create",
+    "context": "POST /api/admin.conversations.create\nCreate a public or private channel-based conversation.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.delete",
+    "name": "Delete a public or private channel.",
+    "description": "Delete a public or private channel. POST /api/admin.conversations.delete",
+    "context": "POST /api/admin.conversations.delete\nDelete a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.disconnectShared",
+    "name": "Disconnect a connected channel from one or more workspaces.",
+    "description": "Disconnect a connected channel from one or more workspaces. POST /api/admin.conversations.disconnectShared",
+    "context": "POST /api/admin.conversations.disconnectShared\nDisconnect a connected channel from one or more workspaces.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.ekm.listOriginalConnectedChannelInfo",
+    "name": "List all disconnected channels — i.e., channels that were once connected to other workspaces and then disconnected — and the corresponding original channel IDs for key revocation with EKM.",
+    "description": "List all disconnected channels — i.e., channels that were once connected to other workspaces and then disconnected — and the corresponding original channel IDs for key revocation with EKM. POST /api/admin.conversations.ekm.listOriginalConnectedChannelInfo",
+    "context": "POST /api/admin.conversations.ekm.listOriginalConnectedChannelInfo\nList all disconnected channels — i.e., channels that were once connected to other workspaces and then disconnected — and the corresponding original channel IDs for key revocation with EKM.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.conversations.getConversationPrefs",
+    "name": "Get conversation preferences for a public or private channel.",
+    "description": "Get conversation preferences for a public or private channel. POST /api/admin.conversations.getConversationPrefs",
+    "context": "POST /api/admin.conversations.getConversationPrefs\nGet conversation preferences for a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.getCustomRetention",
+    "name": "Get a conversation's retention policy.",
+    "description": "Get a conversation's retention policy. POST /api/admin.conversations.getCustomRetention",
+    "context": "POST /api/admin.conversations.getCustomRetention\nGet a conversation's retention policy.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.getTeams",
+    "name": "Get all the workspaces a given public or private channel is connected to within this Enterprise org.",
+    "description": "Get all the workspaces a given public or private channel is connected to within this Enterprise org. POST /api/admin.conversations.getTeams",
+    "context": "POST /api/admin.conversations.getTeams\nGet all the workspaces a given public or private channel is connected to within this Enterprise org.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.invite",
+    "name": "Invite a user to a public or private channel.",
+    "description": "Invite a user to a public or private channel. POST /api/admin.conversations.invite",
+    "context": "POST /api/admin.conversations.invite\nInvite a user to a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.lookup",
+    "name": "Returns channels on the given team using the filters.",
+    "description": "Returns channels on the given team using the filters. POST /api/admin.conversations.lookup",
+    "context": "POST /api/admin.conversations.lookup\nReturns channels on the given team using the filters.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.removeCustomRetention",
+    "name": "Remove a conversation's retention policy.",
+    "description": "Remove a conversation's retention policy. POST /api/admin.conversations.removeCustomRetention",
+    "context": "POST /api/admin.conversations.removeCustomRetention\nRemove a conversation's retention policy.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.rename",
+    "name": "Rename a public or private channel.",
+    "description": "Rename a public or private channel. POST /api/admin.conversations.rename",
+    "context": "POST /api/admin.conversations.rename\nRename a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.restrictAccess.addGroup",
+    "name": "Add an allowlist of IDP groups for accessing a channel.",
+    "description": "Add an allowlist of IDP groups for accessing a channel. POST /api/admin.conversations.restrictAccess.addGroup",
+    "context": "POST /api/admin.conversations.restrictAccess.addGroup\nAdd an allowlist of IDP groups for accessing a channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.restrictAccess.listGroups",
+    "name": "List all IDP Groups linked to a channel.",
+    "description": "List all IDP Groups linked to a channel. POST /api/admin.conversations.restrictAccess.listGroups",
+    "context": "POST /api/admin.conversations.restrictAccess.listGroups\nList all IDP Groups linked to a channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.restrictAccess.removeGroup",
+    "name": "Remove a linked IDP group linked from a private channel.",
+    "description": "Remove a linked IDP group linked from a private channel. POST /api/admin.conversations.restrictAccess.removeGroup",
+    "context": "POST /api/admin.conversations.restrictAccess.removeGroup\nRemove a linked IDP group linked from a private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.search",
+    "name": "Search for public or private channels in an Enterprise organization.",
+    "description": "Search for public or private channels in an Enterprise organization. POST /api/admin.conversations.search",
+    "context": "POST /api/admin.conversations.search\nSearch for public or private channels in an Enterprise organization.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.conversations.setConversationPrefs",
+    "name": "Set the posting permissions for a public or private channel.",
+    "description": "Set the posting permissions for a public or private channel. POST /api/admin.conversations.setConversationPrefs",
+    "context": "POST /api/admin.conversations.setConversationPrefs\nSet the posting permissions for a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.setCustomRetention",
+    "name": "Set a conversation's retention policy.",
+    "description": "Set a conversation's retention policy. POST /api/admin.conversations.setCustomRetention",
+    "context": "POST /api/admin.conversations.setCustomRetention\nSet a conversation's retention policy.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.setTeams",
+    "name": "Set the workspaces in an Enterprise grid org that connect to a public or private channel.",
+    "description": "Set the workspaces in an Enterprise grid org that connect to a public or private channel. POST /api/admin.conversations.setTeams",
+    "context": "POST /api/admin.conversations.setTeams\nSet the workspaces in an Enterprise grid org that connect to a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.conversations.unarchive",
+    "name": "Unarchive a public or private channel.",
+    "description": "Unarchive a public or private channel. POST /api/admin.conversations.unarchive",
+    "context": "POST /api/admin.conversations.unarchive\nUnarchive a public or private channel.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.emoji.add",
+    "name": "Add an emoji.",
+    "description": "Add an emoji. POST /api/admin.emoji.add",
+    "context": "POST /api/admin.emoji.add\nAdd an emoji.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.emoji.addAlias",
+    "name": "Add an emoji alias.",
+    "description": "Add an emoji alias. POST /api/admin.emoji.addAlias",
+    "context": "POST /api/admin.emoji.addAlias\nAdd an emoji alias.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.emoji.list",
+    "name": "List emoji for an Enterprise Grid organization.",
+    "description": "List emoji for an Enterprise Grid organization. POST /api/admin.emoji.list",
+    "context": "POST /api/admin.emoji.list\nList emoji for an Enterprise Grid organization.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.emoji.remove",
+    "name": "Remove an emoji across an Enterprise Grid organization.",
+    "description": "Remove an emoji across an Enterprise Grid organization. POST /api/admin.emoji.remove",
+    "context": "POST /api/admin.emoji.remove\nRemove an emoji across an Enterprise Grid organization.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.emoji.rename",
+    "name": "Rename an emoji.",
+    "description": "Rename an emoji. POST /api/admin.emoji.rename",
+    "context": "POST /api/admin.emoji.rename\nRename an emoji.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.functions.list",
+    "name": "Look up functions by a set of apps.",
+    "description": "Look up functions by a set of apps. POST /api/admin.functions.list",
+    "context": "POST /api/admin.functions.list\nLook up functions by a set of apps.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.functions.permissions.lookup",
+    "name": "Lookup the visibility of multiple Slack functions and include the users if it is limited to particular named entities.",
+    "description": "Lookup the visibility of multiple Slack functions and include the users if it is limited to particular named entities. POST /api/admin.functions.permissions.lookup",
+    "context": "POST /api/admin.functions.permissions.lookup\nLookup the visibility of multiple Slack functions and include the users if it is limited to particular named entities.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.functions.permissions.set",
+    "name": "Set the visibility of a Slack function and define the users or workspaces if it is set to named_entities.",
+    "description": "Set the visibility of a Slack function and define the users or workspaces if it is set to named_entities. POST /api/admin.functions.permissions.set",
+    "context": "POST /api/admin.functions.permissions.set\nSet the visibility of a Slack function and define the users or workspaces if it is set to named_entities.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.inviteRequests.approve",
+    "name": "Approve a workspace invite request.",
+    "description": "Approve a workspace invite request. POST /api/admin.inviteRequests.approve",
+    "context": "POST /api/admin.inviteRequests.approve\nApprove a workspace invite request.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.inviteRequests.approved.list",
+    "name": "List all approved workspace invite requests.",
+    "description": "List all approved workspace invite requests. POST /api/admin.inviteRequests.approved.list",
+    "context": "POST /api/admin.inviteRequests.approved.list\nList all approved workspace invite requests.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.inviteRequests.denied.list",
+    "name": "List all denied workspace invite requests.",
+    "description": "List all denied workspace invite requests. POST /api/admin.inviteRequests.denied.list",
+    "context": "POST /api/admin.inviteRequests.denied.list\nList all denied workspace invite requests.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.inviteRequests.deny",
+    "name": "Deny a workspace invite request.",
+    "description": "Deny a workspace invite request. POST /api/admin.inviteRequests.deny",
+    "context": "POST /api/admin.inviteRequests.deny\nDeny a workspace invite request.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.inviteRequests.list",
+    "name": "List all pending workspace invite requests.",
+    "description": "List all pending workspace invite requests. POST /api/admin.inviteRequests.list",
+    "context": "POST /api/admin.inviteRequests.list\nList all pending workspace invite requests.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.roles.addAssignments",
+    "name": "Adds members to the specified role with the specified scopes.",
+    "description": "Adds members to the specified role with the specified scopes. POST /api/admin.roles.addAssignments",
+    "context": "POST /api/admin.roles.addAssignments\nAdds members to the specified role with the specified scopes.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.roles.listAssignments",
+    "name": "Lists assignments for all roles across entities. Options to scope results by any combination of roles or entities.",
+    "description": "Lists assignments for all roles across entities. Options to scope results by any combination of roles or entities. POST /api/admin.roles.listAssignments",
+    "context": "POST /api/admin.roles.listAssignments\nLists assignments for all roles across entities. Options to scope results by any combination of roles or entities.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.roles.removeAssignments",
+    "name": "Removes a set of users from a role for the given scopes and entities.",
+    "description": "Removes a set of users from a role for the given scopes and entities. POST /api/admin.roles.removeAssignments",
+    "context": "POST /api/admin.roles.removeAssignments\nRemoves a set of users from a role for the given scopes and entities.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.admins.list",
+    "name": "List all of the admins on a given workspace.",
+    "description": "List all of the admins on a given workspace. POST /api/admin.teams.admins.list",
+    "context": "POST /api/admin.teams.admins.list\nList all of the admins on a given workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.create",
+    "name": "Create an Enterprise team.",
+    "description": "Create an Enterprise team. POST /api/admin.teams.create",
+    "context": "POST /api/admin.teams.create\nCreate an Enterprise team.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.list",
+    "name": "List all teams on an Enterprise organization.",
+    "description": "List all teams on an Enterprise organization. POST /api/admin.teams.list",
+    "context": "POST /api/admin.teams.list\nList all teams on an Enterprise organization.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.teams.owners.list",
+    "name": "List all of the owners on a given workspace.",
+    "description": "List all of the owners on a given workspace. POST /api/admin.teams.owners.list",
+    "context": "POST /api/admin.teams.owners.list\nList all of the owners on a given workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.settings.info",
+    "name": "Fetch information about settings in a workspace.",
+    "description": "Fetch information about settings in a workspace. POST /api/admin.teams.settings.info",
+    "context": "POST /api/admin.teams.settings.info\nFetch information about settings in a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.settings.setDefaultChannels",
+    "name": "Set the default channels of a workspace.",
+    "description": "Set the default channels of a workspace. POST /api/admin.teams.settings.setDefaultChannels",
+    "context": "POST /api/admin.teams.settings.setDefaultChannels\nSet the default channels of a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.settings.setDescription",
+    "name": "Set the description of a given workspace.",
+    "description": "Set the description of a given workspace. POST /api/admin.teams.settings.setDescription",
+    "context": "POST /api/admin.teams.settings.setDescription\nSet the description of a given workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.settings.setDiscoverability",
+    "name": "Set the discoverability of a given workspace.",
+    "description": "Set the discoverability of a given workspace. POST /api/admin.teams.settings.setDiscoverability",
+    "context": "POST /api/admin.teams.settings.setDiscoverability\nSet the discoverability of a given workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.settings.setIcon",
+    "name": "Sets the icon of a workspace.",
+    "description": "Sets the icon of a workspace. POST /api/admin.teams.settings.setIcon",
+    "context": "POST /api/admin.teams.settings.setIcon\nSets the icon of a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.teams.settings.setName",
+    "name": "Set the name of a given workspace.",
+    "description": "Set the name of a given workspace. POST /api/admin.teams.settings.setName",
+    "context": "POST /api/admin.teams.settings.setName\nSet the name of a given workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.usergroups.addChannels",
+    "name": "Add up to one hundred default channels to an IDP group.",
+    "description": "Add up to one hundred default channels to an IDP group. POST /api/admin.usergroups.addChannels",
+    "context": "POST /api/admin.usergroups.addChannels\nAdd up to one hundred default channels to an IDP group.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.usergroups.addTeams",
+    "name": "Associate one or more default workspaces with an organization-wide IDP group.",
+    "description": "Associate one or more default workspaces with an organization-wide IDP group. POST /api/admin.usergroups.addTeams",
+    "context": "POST /api/admin.usergroups.addTeams\nAssociate one or more default workspaces with an organization-wide IDP group.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.usergroups.listChannels",
+    "name": "List the channels linked to an org-level IDP group (user group).",
+    "description": "List the channels linked to an org-level IDP group (user group). POST /api/admin.usergroups.listChannels",
+    "context": "POST /api/admin.usergroups.listChannels\nList the channels linked to an org-level IDP group (user group).\nRequired: body (body)"
+  },
+  {
+    "id": "admin.usergroups.removeChannels",
+    "name": "Remove one or more default channels from an org-level IDP group (user group).",
+    "description": "Remove one or more default channels from an org-level IDP group (user group). POST /api/admin.usergroups.removeChannels",
+    "context": "POST /api/admin.usergroups.removeChannels\nRemove one or more default channels from an org-level IDP group (user group).\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.assign",
+    "name": "Add an Enterprise user to a workspace.",
+    "description": "Add an Enterprise user to a workspace. POST /api/admin.users.assign",
+    "context": "POST /api/admin.users.assign\nAdd an Enterprise user to a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.getExpiration",
+    "name": "Fetches the expiration timestamp for a guest.",
+    "description": "Fetches the expiration timestamp for a guest. POST /api/admin.users.getExpiration",
+    "context": "POST /api/admin.users.getExpiration\nFetches the expiration timestamp for a guest.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.invite",
+    "name": "Invite a user to a workspace.",
+    "description": "Invite a user to a workspace. POST /api/admin.users.invite",
+    "context": "POST /api/admin.users.invite\nInvite a user to a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.list",
+    "name": "List users on a workspace.",
+    "description": "List users on a workspace. POST /api/admin.users.list",
+    "context": "POST /api/admin.users.list\nList users on a workspace.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.users.remove",
+    "name": "Remove a user from a workspace.",
+    "description": "Remove a user from a workspace. POST /api/admin.users.remove",
+    "context": "POST /api/admin.users.remove\nRemove a user from a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.session.clearSettings",
+    "name": "Clear user-specific session settings—the session duration and what happens when the client closes—for a list of users.",
+    "description": "Clear user-specific session settings—the session duration and what happens when the client closes—for a list of users. POST /api/admin.users.session.clearSettings",
+    "context": "POST /api/admin.users.session.clearSettings\nClear user-specific session settings—the session duration and what happens when the client closes—for a list of users.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.session.getSettings",
+    "name": "Get user-specific session settings—the session duration and what happens when the client closes—given a list of users.",
+    "description": "Get user-specific session settings—the session duration and what happens when the client closes—given a list of users. POST /api/admin.users.session.getSettings",
+    "context": "POST /api/admin.users.session.getSettings\nGet user-specific session settings—the session duration and what happens when the client closes—given a list of users.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.session.invalidate",
+    "name": "Revoke a single session for a user. The user will be forced to login to Slack.",
+    "description": "Revoke a single session for a user. The user will be forced to login to Slack. POST /api/admin.users.session.invalidate",
+    "context": "POST /api/admin.users.session.invalidate\nRevoke a single session for a user. The user will be forced to login to Slack.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.session.list",
+    "name": "List active user sessions for an organization.",
+    "description": "List active user sessions for an organization. POST /api/admin.users.session.list",
+    "context": "POST /api/admin.users.session.list\nList active user sessions for an organization.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.users.session.reset",
+    "name": "Wipes all valid sessions on all devices for a given user.",
+    "description": "Wipes all valid sessions on all devices for a given user. POST /api/admin.users.session.reset",
+    "context": "POST /api/admin.users.session.reset\nWipes all valid sessions on all devices for a given user.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.session.resetBulk",
+    "name": "Enqueues an asynchronous job to wipe all valid sessions on all devices for a given user list.",
+    "description": "Enqueues an asynchronous job to wipe all valid sessions on all devices for a given user list. POST /api/admin.users.session.resetBulk",
+    "context": "POST /api/admin.users.session.resetBulk\nEnqueues an asynchronous job to wipe all valid sessions on all devices for a given user list.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.session.setSettings",
+    "name": "Configure the user-level session settings—the session duration and what happens when the client closes—for one or more users.",
+    "description": "Configure the user-level session settings—the session duration and what happens when the client closes—for one or more users. POST /api/admin.users.session.setSettings",
+    "context": "POST /api/admin.users.session.setSettings\nConfigure the user-level session settings—the session duration and what happens when the client closes—for one or more users.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.setAdmin",
+    "name": "Set an existing guest, regular user, or owner to be an admin user.",
+    "description": "Set an existing guest, regular user, or owner to be an admin user. POST /api/admin.users.setAdmin",
+    "context": "POST /api/admin.users.setAdmin\nSet an existing guest, regular user, or owner to be an admin user.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.setExpiration",
+    "name": "Set an expiration for a guest user.",
+    "description": "Set an expiration for a guest user. POST /api/admin.users.setExpiration",
+    "context": "POST /api/admin.users.setExpiration\nSet an expiration for a guest user.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.setOwner",
+    "name": "Set an existing guest, regular user, or admin user to be a workspace owner.",
+    "description": "Set an existing guest, regular user, or admin user to be a workspace owner. POST /api/admin.users.setOwner",
+    "context": "POST /api/admin.users.setOwner\nSet an existing guest, regular user, or admin user to be a workspace owner.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.setRegular",
+    "name": "Set an existing guest user, admin user, or owner to be a regular user.",
+    "description": "Set an existing guest user, admin user, or owner to be a regular user. POST /api/admin.users.setRegular",
+    "context": "POST /api/admin.users.setRegular\nSet an existing guest user, admin user, or owner to be a regular user.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.users.unsupportedVersions.export",
+    "name": "Ask Slackbot to send you an export listing all workspace members using unsupported software, presented as a zipped CSV file.",
+    "description": "Ask Slackbot to send you an export listing all workspace members using unsupported software, presented as a zipped CSV file. POST /api/admin.users.unsupportedVersions.export",
+    "context": "POST /api/admin.users.unsupportedVersions.export\nAsk Slackbot to send you an export listing all workspace members using unsupported software, presented as a zipped CSV file.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.workflows.collaborators.add",
+    "name": "Add collaborators to workflows within the team or enterprise.",
+    "description": "Add collaborators to workflows within the team or enterprise. POST /api/admin.workflows.collaborators.add",
+    "context": "POST /api/admin.workflows.collaborators.add\nAdd collaborators to workflows within the team or enterprise.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.workflows.collaborators.remove",
+    "name": "Remove collaborators from workflows within the team or enterprise.",
+    "description": "Remove collaborators from workflows within the team or enterprise. POST /api/admin.workflows.collaborators.remove",
+    "context": "POST /api/admin.workflows.collaborators.remove\nRemove collaborators from workflows within the team or enterprise.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.workflows.permissions.lookup",
+    "name": "Look up the permissions for a set of workflows.",
+    "description": "Look up the permissions for a set of workflows. POST /api/admin.workflows.permissions.lookup",
+    "context": "POST /api/admin.workflows.permissions.lookup\nLook up the permissions for a set of workflows.\nRequired: body (body)"
+  },
+  {
+    "id": "admin.workflows.search",
+    "name": "Search workflows within the team or enterprise.",
+    "description": "Search workflows within the team or enterprise. POST /api/admin.workflows.search",
+    "context": "POST /api/admin.workflows.search\nSearch workflows within the team or enterprise.\nOptional: body (body)"
+  },
+  {
+    "id": "admin.workflows.unpublish",
+    "name": "Unpublish workflows within the team or enterprise.",
+    "description": "Unpublish workflows within the team or enterprise. POST /api/admin.workflows.unpublish",
+    "context": "POST /api/admin.workflows.unpublish\nUnpublish workflows within the team or enterprise.\nRequired: body (body)"
+  }
+]

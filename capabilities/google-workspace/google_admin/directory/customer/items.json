@@ -1,0 +1,386 @@
+[
+  {
+    "id": "ChromeosdevicesAction",
+    "name": "Use [BatchChangeChromeOsDeviceStatus](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos/batchChangeStatus) instead",
+    "description": "Use [BatchChangeChromeOsDeviceStatus](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos/batchChangeStatus) instead Use [BatchChangeChromeOsDeviceStatus](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos/batchChangeStatu…",
+    "context": "POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{resourceId}/action\nUse [BatchChangeChromeOsDeviceStatus](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos/batchChangeStatus) instead. Takes an action that affects a Chrome OS Device. This includes deprovisioning, disabling, and re-enabling devices. *Warning:* * Deprovisioning a device will stop device policy syncing and remove device-level printers. After a device is deprovisioned, it must be wiped before it can be re-enrolled. * Lost or stolen devices should use the disable action. * Re-enabling a disabled device will consume a device license. If you do not have sufficient licenses available when completing the re-enable action, you will receive an error. For more information about deprovisioning and disabling devices, visit the [help center](https://support.google.com/chrome/a/answer/3523633).\nRequired: resourceId (path) — The unique ID of the device. The `resourceId`s are returned in the response from the [chromeosdevices.list](https://developers.google.com/workspace/admin/directory/v1/reference/chromeosdevices/list) method.; customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChromeosdevicesGet",
+    "name": "Retrieves a Chrome OS device's properties.",
+    "description": "Retrieves a Chrome OS device's properties. GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}",
+    "context": "GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}\nRetrieves a Chrome OS device's properties.\nRequired: deviceId (path) — The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](https://developers.google.com/workspace/admin/directory/v1/reference/chromeosdevices/list) method.; customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).\nOptional: projection (query) — Determines whether the response contains the full list of properties or only a subset.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChromeosdevicesList",
+    "name": "Retrieves a paginated list of Chrome OS devices within an account.",
+    "description": "Retrieves a paginated list of Chrome OS devices within an account. GET /admin/directory/v1/customer/{customerId}/devices/chromeos",
+    "context": "GET /admin/directory/v1/customer/{customerId}/devices/chromeos\nRetrieves a paginated list of Chrome OS devices within an account.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).\nOptional: pageToken (query) — The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.; orgUnitPath (query) — The full path of the organizational unit (minus the leading `/`) or its unique ID.; orderBy (query) — Device property to use for sorting results.; includeChildOrgunits (query) — Return devices from all child orgunits, as well as the specified org unit. If this is set to true, 'orgUnitPath' must be provided.; sortOrder (query) — Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.; query (query) — Search string in the format given at [List query operators](https://developers.google.com/workspace/admin/directory/v1/list-query-operators).; projection (query) — Determines whether the response contains the full list of properties or only a subset.; maxResults (query) — Maximum number of results to return. Value should not exceed 300.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChromeosdevicesMoveDevicesToOu",
+    "name": "Moves or inserts multiple Chrome OS devices to an organizational unit.",
+    "description": "Moves or inserts multiple Chrome OS devices to an organizational unit. Moves or inserts multiple Chrome OS devices to an organizational unit. POST /admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu",
+    "context": "POST /admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu\nMoves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.\nRequired: orgUnitPath (query) — Full path of the target organizational unit or its ID; customerId (path) — Immutable. ID of the Google Workspace account; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChromeosdevicesPatch",
+    "name": "Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`",
+    "description": "Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId` Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. PATCH /admin/directory/v1/customer/{customerId}/devi…",
+    "context": "PATCH /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}\nUpdates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. This method supports [patch semantics](https://developers.google.com/workspace/admin/directory/v1/guides/performance#patch).\nRequired: deviceId (path) — The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](https://developers.google.com/workspace/admin/v1/reference/chromeosdevices/list) method.; customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; body (body)\nOptional: projection (query) — Determines whether the response contains the full list of properties or only a subset.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ChromeosdevicesUpdate",
+    "name": "Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`.",
+    "description": "Updates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`. PUT /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}",
+    "context": "PUT /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}\nUpdates a device's updatable properties, such as `annotatedUser`, `annotatedLocation`, `notes`, `orgUnitPath`, or `annotatedAssetId`.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; deviceId (path) — The unique ID of the device. The `deviceId`s are returned in the response from the [chromeosdevices.list](https://developers.google.com/workspace/admin/v1/reference/chromeosdevices/list) method.; body (body)\nOptional: projection (query) — Determines whether the response contains the full list of properties or only a subset.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomerDevicesChromeosBatchChangeStatus",
+    "name": "Changes the status of a batch of ChromeOS devices.",
+    "description": "Changes the status of a batch of ChromeOS devices. Changes the status of a batch of ChromeOS devices. POST /admin/directory/v1/customer/{customerId}/devices/chromeos:batchChangeStatus",
+    "context": "POST /admin/directory/v1/customer/{customerId}/devices/chromeos:batchChangeStatus\nChanges the status of a batch of ChromeOS devices. For more information about changing a ChromeOS device state [Repair, repurpose, or retire ChromeOS devices](https://support.google.com/chrome/a/answer/3523633).\nRequired: customerId (path) — Required. Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomerDevicesChromeosCommandsGet",
+    "name": "Gets command data a specific command issued to the device.",
+    "description": "Gets command data a specific command issued to the device. GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}/commands/{commandId}",
+    "context": "GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}/commands/{commandId}\nGets command data a specific command issued to the device.\nRequired: commandId (path) — Immutable. ID of Chrome OS Device Command.; deviceId (path) — Immutable. ID of Chrome OS Device.; customerId (path) — Immutable. ID of the Google Workspace account.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomerDevicesChromeosCountChromeOsDevices",
+    "name": "Counts ChromeOS devices matching the request.",
+    "description": "Counts ChromeOS devices matching the request. GET /admin/directory/v1/customer/{customerId}/devices/chromeos:countChromeOsDevices",
+    "context": "GET /admin/directory/v1/customer/{customerId}/devices/chromeos:countChromeOsDevices\nCounts ChromeOS devices matching the request.\nRequired: customerId (path) — Required. Immutable ID of the Google Workspace account.\nOptional: includeChildOrgunits (query) — Optional. Return devices from all child orgunits, as well as the specified org unit. If this is set to true, 'orgUnitPath' must be provided.; filter (query) — Optional. Search string in the format given at [List query operators](https://developers.google.com/workspace/admin/directory/v1/list-query-operators).; orgUnitPath (query) — Optional. The full path of the organizational unit (minus the leading `/`) or its unique ID.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomerDevicesChromeosIssueCommand",
+    "name": "Issues a command for the device to execute.",
+    "description": "Issues a command for the device to execute. POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}:issueCommand",
+    "context": "POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}:issueCommand\nIssues a command for the device to execute.\nRequired: customerId (path) — Immutable. ID of the Google Workspace account.; deviceId (path) — Immutable. ID of Chrome OS Device.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainAliasesDelete",
+    "name": "Deletes a domain Alias of the customer.",
+    "description": "Deletes a domain Alias of the customer. DELETE /admin/directory/v1/customer/{customer}/domainaliases/{domainAliasName}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/domainaliases/{domainAliasName}\nDeletes a domain Alias of the customer.\nRequired: customer (path) — Immutable ID of the Google Workspace account.; domainAliasName (path) — Name of domain alias to be retrieved.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainAliasesGet",
+    "name": "Retrieves a domain alias of the customer.",
+    "description": "Retrieves a domain alias of the customer. GET /admin/directory/v1/customer/{customer}/domainaliases/{domainAliasName}",
+    "context": "GET /admin/directory/v1/customer/{customer}/domainaliases/{domainAliasName}\nRetrieves a domain alias of the customer.\nRequired: domainAliasName (path) — Name of domain alias to be retrieved.; customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainAliasesInsert",
+    "name": "Inserts a domain alias of the customer.",
+    "description": "Inserts a domain alias of the customer. POST /admin/directory/v1/customer/{customer}/domainaliases",
+    "context": "POST /admin/directory/v1/customer/{customer}/domainaliases\nInserts a domain alias of the customer.\nRequired: customer (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainAliasesList",
+    "name": "Lists the domain aliases of the customer.",
+    "description": "Lists the domain aliases of the customer. GET /admin/directory/v1/customer/{customer}/domainaliases",
+    "context": "GET /admin/directory/v1/customer/{customer}/domainaliases\nLists the domain aliases of the customer.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: parentDomainName (query) — Name of the parent domain for which domain aliases are to be fetched.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainsDelete",
+    "name": "Deletes a domain of the customer.",
+    "description": "Deletes a domain of the customer. DELETE /admin/directory/v1/customer/{customer}/domains/{domainName}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/domains/{domainName}\nDeletes a domain of the customer.\nRequired: domainName (path) — Name of domain to be deleted; customer (path) — Immutable ID of the Google Workspace account.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainsGet",
+    "name": "Retrieves a domain of the customer.",
+    "description": "Retrieves a domain of the customer. GET /admin/directory/v1/customer/{customer}/domains/{domainName}",
+    "context": "GET /admin/directory/v1/customer/{customer}/domains/{domainName}\nRetrieves a domain of the customer.\nRequired: domainName (path) — Name of domain to be retrieved; customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainsInsert",
+    "name": "Inserts a domain of the customer.",
+    "description": "Inserts a domain of the customer. POST /admin/directory/v1/customer/{customer}/domains",
+    "context": "POST /admin/directory/v1/customer/{customer}/domains\nInserts a domain of the customer.\nRequired: customer (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DomainsList",
+    "name": "Lists the domains of the customer.",
+    "description": "Lists the domains of the customer. GET /admin/directory/v1/customer/{customer}/domains",
+    "context": "GET /admin/directory/v1/customer/{customer}/domains\nLists the domains of the customer.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MobiledevicesAction",
+    "name": "Takes an action that affects a mobile device.",
+    "description": "Takes an action that affects a mobile device. Takes an action that affects a mobile device. POST /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}/action",
+    "context": "POST /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}/action\nTakes an action that affects a mobile device. For example, remotely wiping a device.\nRequired: resourceId (path) — The unique ID the API service uses to identify the mobile device.; customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MobiledevicesDelete",
+    "name": "Removes a mobile device.",
+    "description": "Removes a mobile device. DELETE /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}",
+    "context": "DELETE /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}\nRemoves a mobile device.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; resourceId (path) — The unique ID the API service uses to identify the mobile device.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MobiledevicesGet",
+    "name": "Retrieves a mobile device's properties.",
+    "description": "Retrieves a mobile device's properties. GET /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}",
+    "context": "GET /admin/directory/v1/customer/{customerId}/devices/mobile/{resourceId}\nRetrieves a mobile device's properties.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; resourceId (path) — The unique ID the API service uses to identify the mobile device.\nOptional: projection (query) — Restrict information returned to a set of selected fields.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MobiledevicesList",
+    "name": "Retrieves a paginated list of all user-owned mobile devices for an account.",
+    "description": "Retrieves a paginated list of all user-owned mobile devices for an account. Retrieves a paginated list of all user-owned mobile devices for an account. GET /admin/directory/v1/customer/{customerId}/devices/mobile",
+    "context": "GET /admin/directory/v1/customer/{customerId}/devices/mobile\nRetrieves a paginated list of all user-owned mobile devices for an account. To retrieve a list that includes company-owned devices, use the Cloud Identity [Devices API](https://cloud.google.com/identity/docs/concepts/overview-devices) instead. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/workspace/admin/directory/v1/guides/troubleshoot-error-codes).\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).\nOptional: query (query) — Search string in the format given at https://developers.google.com/workspace/admin/directory/v1/search-operators; projection (query) — Restrict information returned to a set of selected fields.; sortOrder (query) — Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.; orderBy (query) — Device property to use for sorting results.; pageToken (query) — Token to specify next page in the list; maxResults (query) — Maximum number of results to return. Max allowed value is 100.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OrgunitsDelete",
+    "name": "Removes an organizational unit.",
+    "description": "Removes an organizational unit. DELETE /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+    "context": "DELETE /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}\nRemoves an organizational unit.\nRequired: orgUnitPath (path) — The full path of the organizational unit (minus the leading `/`) or its unique ID.; customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OrgunitsGet",
+    "name": "Retrieves an organizational unit.",
+    "description": "Retrieves an organizational unit. GET /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+    "context": "GET /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}\nRetrieves an organizational unit.\nRequired: orgUnitPath (path) — The full path of the organizational unit (minus the leading `/`) or its unique ID.; customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OrgunitsInsert",
+    "name": "Adds an organizational unit.",
+    "description": "Adds an organizational unit. POST /admin/directory/v1/customer/{customerId}/orgunits",
+    "context": "POST /admin/directory/v1/customer/{customerId}/orgunits\nAdds an organizational unit.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OrgunitsList",
+    "name": "Retrieves a list of all organizational units for an account.",
+    "description": "Retrieves a list of all organizational units for an account. GET /admin/directory/v1/customer/{customerId}/orgunits",
+    "context": "GET /admin/directory/v1/customer/{customerId}/orgunits\nRetrieves a list of all organizational units for an account.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).\nOptional: type (query) — Whether to return all sub-organizations or just immediate children.; orgUnitPath (query) — The full path to the organizational unit or its unique ID. Returns the children of the specified organizational unit.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OrgunitsPatch",
+    "name": "Updates an organizational unit.",
+    "description": "Updates an organizational unit. Updates an organizational unit. PATCH /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+    "context": "PATCH /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}\nUpdates an organizational unit. This method supports [patch semantics](https://developers.google.com/workspace/admin/directory/v1/guides/performance#patch)\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; orgUnitPath (path) — The full path of the organizational unit (minus the leading `/`) or its unique ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "OrgunitsUpdate",
+    "name": "Updates an organizational unit.",
+    "description": "Updates an organizational unit. PUT /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}",
+    "context": "PUT /admin/directory/v1/customer/{customerId}/orgunits/{orgUnitPath}\nUpdates an organizational unit.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/workspace/admin/directory/v1/reference/users).; orgUnitPath (path) — The full path of the organizational unit (minus the leading `/`) or its unique ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "PrivilegesList",
+    "name": "Retrieves a paginated list of all privileges for a customer.",
+    "description": "Retrieves a paginated list of all privileges for a customer. GET /admin/directory/v1/customer/{customer}/roles/ALL/privileges",
+    "context": "GET /admin/directory/v1/customer/{customer}/roles/ALL/privileges\nRetrieves a paginated list of all privileges for a customer.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesBuildingsDelete",
+    "name": "Deletes a building.",
+    "description": "Deletes a building. DELETE /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}\nDeletes a building.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; buildingId (path) — The id of the building to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesBuildingsGet",
+    "name": "Retrieves a building.",
+    "description": "Retrieves a building. GET /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+    "context": "GET /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}\nRetrieves a building.\nRequired: buildingId (path) — The unique ID of the building to retrieve.; customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesBuildingsInsert",
+    "name": "Inserts a building.",
+    "description": "Inserts a building. POST /admin/directory/v1/customer/{customer}/resources/buildings",
+    "context": "POST /admin/directory/v1/customer/{customer}/resources/buildings\nInserts a building.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; body (body)\nOptional: coordinatesSource (query) — Source from which Building.coordinates are derived.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesBuildingsList",
+    "name": "Retrieves a list of buildings for an account.",
+    "description": "Retrieves a list of buildings for an account. GET /admin/directory/v1/customer/{customer}/resources/buildings",
+    "context": "GET /admin/directory/v1/customer/{customer}/resources/buildings\nRetrieves a list of buildings for an account.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.\nOptional: maxResults (query) — Maximum number of results to return.; pageToken (query) — Token to specify the next page in the list.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesBuildingsPatch",
+    "name": "Patches a building.",
+    "description": "Patches a building. PATCH /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+    "context": "PATCH /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}\nPatches a building.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; buildingId (path) — The id of the building to update.; body (body)\nOptional: coordinatesSource (query) — Source from which Building.coordinates are derived.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesBuildingsUpdate",
+    "name": "Updates a building.",
+    "description": "Updates a building. PUT /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}",
+    "context": "PUT /admin/directory/v1/customer/{customer}/resources/buildings/{buildingId}\nUpdates a building.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; buildingId (path) — The id of the building to update.; body (body)\nOptional: coordinatesSource (query) — Source from which Building.coordinates are derived.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesCalendarsDelete",
+    "name": "Deletes a calendar resource.",
+    "description": "Deletes a calendar resource. DELETE /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}\nDeletes a calendar resource.\nRequired: calendarResourceId (path) — The unique ID of the calendar resource to delete.; customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesCalendarsGet",
+    "name": "Retrieves a calendar resource.",
+    "description": "Retrieves a calendar resource. GET /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+    "context": "GET /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}\nRetrieves a calendar resource.\nRequired: calendarResourceId (path) — The unique ID of the calendar resource to retrieve.; customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesCalendarsInsert",
+    "name": "Inserts a calendar resource.",
+    "description": "Inserts a calendar resource. POST /admin/directory/v1/customer/{customer}/resources/calendars",
+    "context": "POST /admin/directory/v1/customer/{customer}/resources/calendars\nInserts a calendar resource.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesCalendarsList",
+    "name": "Retrieves a list of calendar resources for an account.",
+    "description": "Retrieves a list of calendar resources for an account. GET /admin/directory/v1/customer/{customer}/resources/calendars",
+    "context": "GET /admin/directory/v1/customer/{customer}/resources/calendars\nRetrieves a list of calendar resources for an account.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.\nOptional: pageToken (query) — Token to specify the next page in the list.; orderBy (query) — Field(s) to sort results by in either ascending or descending order. Supported fields include `resourceId`, `resourceName`, `capacity`, `buildingId`, and `floorName`. If no order is specified, defaults to ascending. Should be of the form \"field [asc|desc], field [asc|desc], ...\". For example `buildingId, capacity desc` would return results sorted first by `buildingId` in ascending order then by `capacity` in descending order.; maxResults (query) — Maximum number of results to return.; query (query) — String query used to filter results. Contains one or more search clauses, each with a field, operator, and value. A field can be any of supported fields and operators can be any of supported operations. Operators include '=' for exact match, '!=' for mismatch and ':' for prefix match or HAS match where applicable. For prefix match, the value should always be followed by a *. Logical operators NOT and AND are supported (in this order of precedence). Supported fields include `generatedResourceName`, `name`, `buildingId`, `floor_name`, `capacity`, `featureInstances.feature.name`, `resourceEmail`, `resourceCategory`. For example `buildingId=US-NYC-9TH AND featureInstances.feature.name:Phone`.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesCalendarsPatch",
+    "name": "Patches a calendar resource.",
+    "description": "Patches a calendar resource. PATCH /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+    "context": "PATCH /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}\nPatches a calendar resource.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; calendarResourceId (path) — The unique ID of the calendar resource to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesCalendarsUpdate",
+    "name": "Updates a calendar resource.",
+    "description": "Updates a calendar resource. Updates a calendar resource. PUT /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}",
+    "context": "PUT /admin/directory/v1/customer/{customer}/resources/calendars/{calendarResourceId}\nUpdates a calendar resource. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; calendarResourceId (path) — The unique ID of the calendar resource to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesDelete",
+    "name": "Deletes a feature.",
+    "description": "Deletes a feature. DELETE /admin/directory/v1/customer/{customer}/resources/features/{featureKey}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/resources/features/{featureKey}\nDeletes a feature.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; featureKey (path) — The unique ID of the feature to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesGet",
+    "name": "Retrieves a feature.",
+    "description": "Retrieves a feature. GET /admin/directory/v1/customer/{customer}/resources/features/{featureKey}",
+    "context": "GET /admin/directory/v1/customer/{customer}/resources/features/{featureKey}\nRetrieves a feature.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; featureKey (path) — The unique ID of the feature to retrieve.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesInsert",
+    "name": "Inserts a feature.",
+    "description": "Inserts a feature. POST /admin/directory/v1/customer/{customer}/resources/features",
+    "context": "POST /admin/directory/v1/customer/{customer}/resources/features\nInserts a feature.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesList",
+    "name": "Retrieves a list of features for an account.",
+    "description": "Retrieves a list of features for an account. GET /admin/directory/v1/customer/{customer}/resources/features",
+    "context": "GET /admin/directory/v1/customer/{customer}/resources/features\nRetrieves a list of features for an account.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.\nOptional: maxResults (query) — Maximum number of results to return.; pageToken (query) — Token to specify the next page in the list.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesPatch",
+    "name": "Patches a feature.",
+    "description": "Patches a feature. PATCH /admin/directory/v1/customer/{customer}/resources/features/{featureKey}",
+    "context": "PATCH /admin/directory/v1/customer/{customer}/resources/features/{featureKey}\nPatches a feature.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; featureKey (path) — The unique ID of the feature to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesRename",
+    "name": "Renames a feature.",
+    "description": "Renames a feature. POST /admin/directory/v1/customer/{customer}/resources/features/{oldName}/rename",
+    "context": "POST /admin/directory/v1/customer/{customer}/resources/features/{oldName}/rename\nRenames a feature.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; oldName (path) — The unique ID of the feature to rename.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResourcesFeaturesUpdate",
+    "name": "Updates a feature.",
+    "description": "Updates a feature. PUT /admin/directory/v1/customer/{customer}/resources/features/{featureKey}",
+    "context": "PUT /admin/directory/v1/customer/{customer}/resources/features/{featureKey}\nUpdates a feature.\nRequired: featureKey (path) — The unique ID of the feature to update.; customer (path) — The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RoleAssignmentsDelete",
+    "name": "Deletes a role assignment.",
+    "description": "Deletes a role assignment. DELETE /admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}\nDeletes a role assignment.\nRequired: roleAssignmentId (path) — Immutable ID of the role assignment.; customer (path) — Immutable ID of the Google Workspace account.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RoleAssignmentsGet",
+    "name": "Retrieves a role assignment.",
+    "description": "Retrieves a role assignment. GET /admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}",
+    "context": "GET /admin/directory/v1/customer/{customer}/roleassignments/{roleAssignmentId}\nRetrieves a role assignment.\nRequired: roleAssignmentId (path) — Immutable ID of the role assignment.; customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RoleAssignmentsInsert",
+    "name": "Creates a role assignment.",
+    "description": "Creates a role assignment. POST /admin/directory/v1/customer/{customer}/roleassignments",
+    "context": "POST /admin/directory/v1/customer/{customer}/roleassignments\nCreates a role assignment.\nRequired: customer (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RoleAssignmentsList",
+    "name": "Retrieves a paginated list of all roleAssignments.",
+    "description": "Retrieves a paginated list of all roleAssignments. GET /admin/directory/v1/customer/{customer}/roleassignments",
+    "context": "GET /admin/directory/v1/customer/{customer}/roleassignments\nRetrieves a paginated list of all roleAssignments.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: userKey (query) — The primary email address, alias email address, or unique user or group ID. If included in the request, returns role assignments only for this user or group.; maxResults (query) — Maximum number of results to return.; pageToken (query) — Token to specify the next page in the list.; roleId (query) — Immutable ID of a role. If included in the request, returns only role assignments containing this role ID.; includeIndirectRoleAssignments (query) — When set to `true`, fetches indirect role assignments (i.e. role assignment via a group) as well as direct ones. Defaults to `false`. You must specify `user_key` or the indirect role assignments will not be included.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RolesDelete",
+    "name": "Deletes a role.",
+    "description": "Deletes a role. DELETE /admin/directory/v1/customer/{customer}/roles/{roleId}",
+    "context": "DELETE /admin/directory/v1/customer/{customer}/roles/{roleId}\nDeletes a role.\nRequired: roleId (path) — Immutable ID of the role.; customer (path) — Immutable ID of the Google Workspace account.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RolesGet",
+    "name": "Retrieves a role.",
+    "description": "Retrieves a role. GET /admin/directory/v1/customer/{customer}/roles/{roleId}",
+    "context": "GET /admin/directory/v1/customer/{customer}/roles/{roleId}\nRetrieves a role.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.; roleId (path) — Immutable ID of the role.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RolesInsert",
+    "name": "Creates a role.",
+    "description": "Creates a role. POST /admin/directory/v1/customer/{customer}/roles",
+    "context": "POST /admin/directory/v1/customer/{customer}/roles\nCreates a role.\nRequired: customer (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RolesList",
+    "name": "Retrieves a paginated list of all the roles in a domain.",
+    "description": "Retrieves a paginated list of all the roles in a domain. GET /admin/directory/v1/customer/{customer}/roles",
+    "context": "GET /admin/directory/v1/customer/{customer}/roles\nRetrieves a paginated list of all the roles in a domain.\nRequired: customer (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: pageToken (query) — Token to specify the next page in the list.; maxResults (query) — Maximum number of results to return.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RolesPatch",
+    "name": "Patches a role.",
+    "description": "Patches a role. PATCH /admin/directory/v1/customer/{customer}/roles/{roleId}",
+    "context": "PATCH /admin/directory/v1/customer/{customer}/roles/{roleId}\nPatches a role.\nRequired: roleId (path) — Immutable ID of the role.; customer (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "RolesUpdate",
+    "name": "Updates a role.",
+    "description": "Updates a role. PUT /admin/directory/v1/customer/{customer}/roles/{roleId}",
+    "context": "PUT /admin/directory/v1/customer/{customer}/roles/{roleId}\nUpdates a role.\nRequired: roleId (path) — Immutable ID of the role.; customer (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SchemasDelete",
+    "name": "Deletes a schema.",
+    "description": "Deletes a schema. DELETE /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
+    "context": "DELETE /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}\nDeletes a schema.\nRequired: customerId (path) — Immutable ID of the Google Workspace account.; schemaKey (path) — Name or immutable ID of the schema.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SchemasGet",
+    "name": "Retrieves a schema.",
+    "description": "Retrieves a schema. GET /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
+    "context": "GET /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}\nRetrieves a schema.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.; schemaKey (path) — Name or immutable ID of the schema.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SchemasInsert",
+    "name": "Creates a schema.",
+    "description": "Creates a schema. POST /admin/directory/v1/customer/{customerId}/schemas",
+    "context": "POST /admin/directory/v1/customer/{customerId}/schemas\nCreates a schema.\nRequired: customerId (path) — Immutable ID of the Google Workspace account.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SchemasList",
+    "name": "Retrieves all schemas for a customer.",
+    "description": "Retrieves all schemas for a customer. GET /admin/directory/v1/customer/{customerId}/schemas",
+    "context": "GET /admin/directory/v1/customer/{customerId}/schemas\nRetrieves all schemas for a customer.\nRequired: customerId (path) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SchemasPatch",
+    "name": "Patches a schema.",
+    "description": "Patches a schema. PATCH /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
+    "context": "PATCH /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}\nPatches a schema.\nRequired: customerId (path) — Immutable ID of the Google Workspace account.; schemaKey (path) — Name or immutable ID of the schema.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SchemasUpdate",
+    "name": "Updates a schema.",
+    "description": "Updates a schema. PUT /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}",
+    "context": "PUT /admin/directory/v1/customer/{customerId}/schemas/{schemaKey}\nUpdates a schema.\nRequired: customerId (path) — Immutable ID of the Google Workspace account.; schemaKey (path) — Name or immutable ID of the schema.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

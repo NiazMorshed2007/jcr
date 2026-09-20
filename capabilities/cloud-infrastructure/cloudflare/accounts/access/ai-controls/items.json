@@ -1,0 +1,92 @@
+[
+  {
+    "id": "mcp-portals-api-account-tool-call-timeseries",
+    "name": "Account-global MCP tool-call timeseries",
+    "description": "Account-global MCP tool-call timeseries Returns daily or monthly tool-call counts across the account. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/analytics/tool-calls/timeseries",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/analytics/tool-calls/timeseries\nReturns daily or monthly tool-call counts across the account.\nRequired: account_id (path)\nOptional: granularity (query); aggregate (query); tz (query); days (query) — Daily trailing-window size; defaults to 7 and is ignored for monthly"
+  },
+  {
+    "id": "mcp-portals-api-create-portals",
+    "name": "Create a new MCP Portal",
+    "description": "Create a new MCP Portal Creates a new MCP portal for managing AI tool access through Cloudflare Access. POST /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals",
+    "context": "POST /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals\nCreates a new MCP portal for managing AI tool access through Cloudflare Access.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "mcp-portals-api-create-servers",
+    "name": "Create a new MCP Server",
+    "description": "Create a new MCP Server Creates a new MCP server for connecting to an upstream MCP endpoint. POST /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers",
+    "context": "POST /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers\nCreates a new MCP server for connecting to an upstream MCP endpoint.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "mcp-portals-api-delete-portals",
+    "name": "Delete an MCP Portal",
+    "description": "Delete an MCP Portal Deletes an MCP portal from the account. DELETE /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{id}\nDeletes an MCP portal from the account.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "mcp-portals-api-delete-servers",
+    "name": "Delete an MCP Server",
+    "description": "Delete an MCP Server Deletes an MCP server from the account. DELETE /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}\nDeletes an MCP server from the account.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "mcp-portals-api-effective-redirect-uri",
+    "name": "Resolve an MCP server OAuth redirect URI",
+    "description": "Resolve an MCP server OAuth redirect URI Resolves the OAuth redirect URI to register for a portal and server based on the server's current shared callback setting. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{portal_id}/servers/{server_id}/effective-redirect-uri",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{portal_id}/servers/{server_id}/effective-redirect-uri\nResolves the OAuth redirect URI to register for a portal and server based on the server's current shared callback setting. Use the returned value when setting up a new manual OAuth registration. This value is for display only: existing manual OAuth registrations continue using their stored redirect URI, so changing callback settings can make this result differ from the URI used at runtime.\nRequired: portal_id (path); server_id (path); account_id (path)"
+  },
+  {
+    "id": "mcp-portals-api-fetch-gateways",
+    "name": "Read details of an MCP Portal",
+    "description": "Read details of an MCP Portal Read the details of a single MCP Portal, including its configured servers. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{id}\nRead the details of a single MCP Portal, including its configured servers.\nRequired: id (path); account_id (path)"
+  },
+  {
+    "id": "mcp-portals-api-fetch-servers",
+    "name": "Read the details of an MCP Server",
+    "description": "Read the details of an MCP Server Retrieves an MCP server's configuration and capability sync state. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}\nRetrieves an MCP server's configuration and capability sync state.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "mcp-portals-api-list-portals",
+    "name": "List MCP Portals",
+    "description": "List MCP Portals Lists all MCP portals configured for the account. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals\nLists all MCP portals configured for the account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); search (query)"
+  },
+  {
+    "id": "mcp-portals-api-list-servers",
+    "name": "List MCP Servers",
+    "description": "List MCP Servers Lists all MCP servers configured for the account. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers\nLists all MCP servers configured for the account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); search (query)"
+  },
+  {
+    "id": "mcp-portals-api-portal-tool-call-timeseries",
+    "name": "Per-portal MCP tool-call timeseries",
+    "description": "Per-portal MCP tool-call timeseries Returns daily or monthly tool-call counts for a portal. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/analytics/portals/{portal_id}/tool-calls/timeseries",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/analytics/portals/{portal_id}/tool-calls/timeseries\nReturns daily or monthly tool-call counts for a portal.\nRequired: account_id (path); portal_id (path)\nOptional: granularity (query); aggregate (query); tz (query); days (query) — Daily trailing-window size; defaults to 7 and is ignored for monthly"
+  },
+  {
+    "id": "mcp-portals-api-server-tool-call-timeseries",
+    "name": "Per-server MCP tool-call timeseries",
+    "description": "Per-server MCP tool-call timeseries Returns daily or monthly tool-call counts for a server. GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/analytics/servers/{server_id}/tool-calls/timeseries",
+    "context": "GET /client/v4/accounts/{account_id}/access/ai-controls/mcp/analytics/servers/{server_id}/tool-calls/timeseries\nReturns daily or monthly tool-call counts for a server.\nRequired: account_id (path); server_id (path)\nOptional: granularity (query); aggregate (query); tz (query); days (query) — Daily trailing-window size; defaults to 7 and is ignored for monthly"
+  },
+  {
+    "id": "mcp-portals-api-sync-server",
+    "name": "Sync MCP Server Capabilities",
+    "description": "Sync MCP Server Capabilities Syncs an MCP server's capabilities and returns the updated server state, including any connection errors. POST /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync",
+    "context": "POST /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync\nSyncs an MCP server's capabilities and returns the updated server state, including any connection errors.\nRequired: id (path); account_id (path)"
+  },
+  {
+    "id": "mcp-portals-api-update-portals",
+    "name": "Update an MCP Portal",
+    "description": "Update an MCP Portal Updates an MCP portal configuration. PUT /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/ai-controls/mcp/portals/{id}\nUpdates an MCP portal configuration.\nRequired: id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "mcp-portals-api-update-servers",
+    "name": "Update an MCP Server",
+    "description": "Update an MCP Server Updates an MCP server's configuration and credentials. PUT /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/ai-controls/mcp/servers/{id}\nUpdates an MCP server's configuration and credentials.\nRequired: id (path); account_id (path)\nOptional: body (body)"
+  }
+]

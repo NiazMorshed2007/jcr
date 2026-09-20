@@ -1,0 +1,50 @@
+[
+  {
+    "id": "activity%2Fdelete-thread-subscription",
+    "name": "Delete a thread subscription",
+    "description": "Delete a thread subscription Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. DELETE /notifications/threads/{thread_id}/subscription",
+    "context": "DELETE /notifications/threads/{thread_id}/subscription\nMutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://docs.github.com/rest/activity/notifications#set-a-thread-subscription) endpoint and set `ignore` to `true`.\nRequired: thread_id (path) — The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user))."
+  },
+  {
+    "id": "activity%2Fget-thread",
+    "name": "Get a thread",
+    "description": "Get a thread Gets information about a notification thread. GET /notifications/threads/{thread_id}",
+    "context": "GET /notifications/threads/{thread_id}\nGets information about a notification thread.\nRequired: thread_id (path) — The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user))."
+  },
+  {
+    "id": "activity%2Fget-thread-subscription-for-authenticated-user",
+    "name": "Get a thread subscription for the authenticated user",
+    "description": "Get a thread subscription for the authenticated user This checks to see if the current user is subscribed to a thread. GET /notifications/threads/{thread_id}/subscription",
+    "context": "GET /notifications/threads/{thread_id}/subscription\nThis checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/activity/watching#get-a-repository-subscription). Note that subscriptions are only generated if a user is participating in a conversation--for example, they've replied to the thread, were **@mentioned**, or manually subscribe to a thread.\nRequired: thread_id (path) — The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user))."
+  },
+  {
+    "id": "activity%2Flist-notifications-for-authenticated-user",
+    "name": "List notifications for the authenticated user",
+    "description": "List notifications for the authenticated user List all notifications for the current user, sorted by most recently updated. GET /notifications",
+    "context": "GET /notifications\nList all notifications for the current user, sorted by most recently updated.\nOptional: all (query) — If `true`, show notifications marked as read.; participating (query) — If `true`, only shows notifications in which the user is directly participating or mentioned.; since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; before (query) — Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 50). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Fmark-notifications-as-read",
+    "name": "Mark notifications as read",
+    "description": "Mark notifications as read Marks all notifications as \"read\" for the current user. PUT /notifications",
+    "context": "PUT /notifications\nMarks all notifications as \"read\" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.\nOptional: body (body)"
+  },
+  {
+    "id": "activity%2Fmark-thread-as-done",
+    "name": "Mark a thread as done",
+    "description": "Mark a thread as done Marks a thread as \"done.\" Marking a thread as \"done\" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications. DELETE /notifications/threads/{thread_id}",
+    "context": "DELETE /notifications/threads/{thread_id}\nMarks a thread as \"done.\" Marking a thread as \"done\" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.\nRequired: thread_id (path) — The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user))."
+  },
+  {
+    "id": "activity%2Fmark-thread-as-read",
+    "name": "Mark a thread as read",
+    "description": "Mark a thread as read Marks a thread as \"read.\" Marking a thread as \"read\" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications. PATCH /notifications/threads/{thread_id}",
+    "context": "PATCH /notifications/threads/{thread_id}\nMarks a thread as \"read.\" Marking a thread as \"read\" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.\nRequired: thread_id (path) — The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user))."
+  },
+  {
+    "id": "activity%2Fset-thread-subscription",
+    "name": "Set a thread subscription",
+    "description": "Set a thread subscription If you are watching a repository, you receive notifications for all threads by default. PUT /notifications/threads/{thread_id}/subscription",
+    "context": "PUT /notifications/threads/{thread_id}/subscription\nIf you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**. You can also use this endpoint to subscribe to threads that you are currently not receiving notifications for or to subscribed to threads that you have previously ignored. Unsubscribing from a conversation in a repository that you are not watching is functionally equivalent to the [Delete a thread subscription](https://docs.github.com/rest/activity/notifications#delete-a-thread-subscription) endpoint.\nRequired: thread_id (path) — The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user)).\nOptional: body (body)"
+  }
+]

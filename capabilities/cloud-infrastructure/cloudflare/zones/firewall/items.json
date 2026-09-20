@@ -1,0 +1,224 @@
+[
+  {
+    "id": "firewall-rules-create-firewall-rules",
+    "name": "Create firewall rules",
+    "description": "Create firewall rules **This endpoint has been deprecated and returns 410 Gone. POST /client/v4/zones/{zone_id}/firewall/rules",
+    "context": "POST /client/v4/zones/{zone_id}/firewall/rules\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Create one or more firewall rules.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "firewall-rules-delete-a-firewall-rule",
+    "name": "Delete a firewall rule",
+    "description": "Delete a firewall rule **This endpoint has been deprecated and returns 410 Gone. DELETE /client/v4/zones/{zone_id}/firewall/rules/{rule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/firewall/rules/{rule_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Deletes an existing firewall rule.\nRequired: rule_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "firewall-rules-delete-firewall-rules",
+    "name": "Delete firewall rules",
+    "description": "Delete firewall rules **This endpoint has been deprecated and returns 410 Gone. DELETE /client/v4/zones/{zone_id}/firewall/rules",
+    "context": "DELETE /client/v4/zones/{zone_id}/firewall/rules\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Deletes existing firewall rules.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "firewall-rules-get-a-firewall-rule",
+    "name": "Get a firewall rule",
+    "description": "Get a firewall rule **This endpoint has been deprecated and returns 410 Gone. GET /client/v4/zones/{zone_id}/firewall/rules/{rule_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/rules/{rule_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Fetches the details of a firewall rule.\nRequired: rule_id (path); zone_id (path)\nOptional: id (query)"
+  },
+  {
+    "id": "firewall-rules-list-firewall-rules",
+    "name": "List firewall rules",
+    "description": "List firewall rules **This endpoint has been deprecated and returns 410 Gone. GET /client/v4/zones/{zone_id}/firewall/rules",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/rules\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Fetches firewall rules in a zone. You can filter the results using several optional parameters.\nRequired: zone_id (path)\nOptional: description (query); action (query); page (query); per_page (query); id (query); paused (query)"
+  },
+  {
+    "id": "firewall-rules-update-a-firewall-rule",
+    "name": "Update a firewall rule",
+    "description": "Update a firewall rule **This endpoint has been deprecated and returns 410 Gone. PUT /client/v4/zones/{zone_id}/firewall/rules/{rule_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/firewall/rules/{rule_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Updates an existing firewall rule.\nRequired: rule_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "firewall-rules-update-firewall-rules",
+    "name": "Update firewall rules",
+    "description": "Update firewall rules **This endpoint has been deprecated and returns 410 Gone. PUT /client/v4/zones/{zone_id}/firewall/rules",
+    "context": "PUT /client/v4/zones/{zone_id}/firewall/rules\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Updates one or more existing firewall rules.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "firewall-rules-update-priority-of-a-firewall-rule",
+    "name": "Update priority of a firewall rule",
+    "description": "Update priority of a firewall rule **This endpoint has been deprecated and returns 410 Gone. PATCH /client/v4/zones/{zone_id}/firewall/rules/{rule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/firewall/rules/{rule_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Updates the priority of an existing firewall rule.\nRequired: rule_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "firewall-rules-update-priority-of-firewall-rules",
+    "name": "Update priority of firewall rules",
+    "description": "Update priority of firewall rules **This endpoint has been deprecated and returns 410 Gone. PATCH /client/v4/zones/{zone_id}/firewall/rules",
+    "context": "PATCH /client/v4/zones/{zone_id}/firewall/rules\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Updates the priority of existing firewall rules.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "ip-access-rules-for-a-zone-create-an-ip-access-rule",
+    "name": "Create an IP Access rule",
+    "description": "Create an IP Access rule Creates a new IP Access rule for a zone. POST /client/v4/zones/{zone_id}/firewall/access_rules/rules",
+    "context": "POST /client/v4/zones/{zone_id}/firewall/access_rules/rules\nCreates a new IP Access rule for a zone. Note: To create an IP Access rule that applies to multiple zones, refer to [IP Access rules for a user](#ip-access-rules-for-a-user) or [IP Access rules for an account](#ip-access-rules-for-an-account) as appropriate.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "ip-access-rules-for-a-zone-delete-an-ip-access-rule",
+    "name": "Delete an IP Access rule",
+    "description": "Delete an IP Access rule Deletes an IP Access rule defined at the zone level. DELETE /client/v4/zones/{zone_id}/firewall/access_rules/rules/{rule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/firewall/access_rules/rules/{rule_id}\nDeletes an IP Access rule defined at the zone level. Optionally, you can use the `cascade` property to specify that you wish to delete similar rules in other zones managed by the same zone owner.\nRequired: zone_id (path); rule_id (path); body (body)"
+  },
+  {
+    "id": "ip-access-rules-for-a-zone-list-ip-access-rules",
+    "name": "List IP Access rules",
+    "description": "List IP Access rules Fetches IP Access rules of a zone. GET /client/v4/zones/{zone_id}/firewall/access_rules/rules",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/access_rules/rules\nFetches IP Access rules of a zone. You can filter the results using several optional parameters.\nRequired: zone_id (path)\nOptional: mode (query); configuration.target (query); configuration.value (query); notes (query); match (query); page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "ip-access-rules-for-a-zone-update-an-ip-access-rule",
+    "name": "Update an IP Access rule",
+    "description": "Update an IP Access rule Updates an IP Access rule defined at the zone level. PATCH /client/v4/zones/{zone_id}/firewall/access_rules/rules/{rule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/firewall/access_rules/rules/{rule_id}\nUpdates an IP Access rule defined at the zone level. You can only update the rule action (`mode` parameter) and notes.\nRequired: zone_id (path); rule_id (path); body (body)"
+  },
+  {
+    "id": "user-agent-blocking-rules-create-a-user-agent-blocking-rule",
+    "name": "Create a User Agent Blocking rule",
+    "description": "Create a User Agent Blocking rule Creates a new User Agent Blocking rule in a zone. POST /client/v4/zones/{zone_id}/firewall/ua_rules",
+    "context": "POST /client/v4/zones/{zone_id}/firewall/ua_rules\nCreates a new User Agent Blocking rule in a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "user-agent-blocking-rules-delete-a-user-agent-blocking-rule",
+    "name": "Delete a User Agent Blocking rule",
+    "description": "Delete a User Agent Blocking rule Deletes an existing User Agent Blocking rule. DELETE /client/v4/zones/{zone_id}/firewall/ua_rules/{ua_rule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/firewall/ua_rules/{ua_rule_id}\nDeletes an existing User Agent Blocking rule.\nRequired: ua_rule_id (path); zone_id (path)"
+  },
+  {
+    "id": "user-agent-blocking-rules-get-a-user-agent-blocking-rule",
+    "name": "Get a User Agent Blocking rule",
+    "description": "Get a User Agent Blocking rule Fetches the details of a User Agent Blocking rule. GET /client/v4/zones/{zone_id}/firewall/ua_rules/{ua_rule_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/ua_rules/{ua_rule_id}\nFetches the details of a User Agent Blocking rule.\nRequired: ua_rule_id (path); zone_id (path)"
+  },
+  {
+    "id": "user-agent-blocking-rules-list-user-agent-blocking-rules",
+    "name": "List User Agent Blocking rules",
+    "description": "List User Agent Blocking rules Fetches User Agent Blocking rules in a zone. GET /client/v4/zones/{zone_id}/firewall/ua_rules",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/ua_rules\nFetches User Agent Blocking rules in a zone. You can filter the results using several optional parameters.\nRequired: zone_id (path)\nOptional: page (query); description (query); per_page (query); user_agent (query); paused (query)"
+  },
+  {
+    "id": "user-agent-blocking-rules-update-a-user-agent-blocking-rule",
+    "name": "Update a User Agent Blocking rule",
+    "description": "Update a User Agent Blocking rule Updates an existing User Agent Blocking rule. PUT /client/v4/zones/{zone_id}/firewall/ua_rules/{ua_rule_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/firewall/ua_rules/{ua_rule_id}\nUpdates an existing User Agent Blocking rule.\nRequired: ua_rule_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waf-overrides-create-a-waf-override",
+    "name": "Create a WAF override",
+    "description": "Create a WAF override **This endpoint has been deprecated and returns 410 Gone. POST /client/v4/zones/{zone_id}/firewall/waf/overrides",
+    "context": "POST /client/v4/zones/{zone_id}/firewall/waf/overrides\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Previously created a URI-based WAF override for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "waf-overrides-delete-a-waf-override",
+    "name": "Delete a WAF override",
+    "description": "Delete a WAF override **This endpoint has been deprecated and returns 410 Gone. DELETE /client/v4/zones/{zone_id}/firewall/waf/overrides/{overrides_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/firewall/waf/overrides/{overrides_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Previously deleted an existing URI-based WAF override.\nRequired: overrides_id (path); zone_id (path)"
+  },
+  {
+    "id": "waf-overrides-get-a-waf-override",
+    "name": "Get a WAF override",
+    "description": "Get a WAF override **This endpoint has been deprecated and returns 410 Gone. GET /client/v4/zones/{zone_id}/firewall/waf/overrides/{overrides_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/overrides/{overrides_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Previously fetched the details of a URI-based WAF override.\nRequired: overrides_id (path); zone_id (path)"
+  },
+  {
+    "id": "waf-overrides-list-waf-overrides",
+    "name": "List WAF overrides",
+    "description": "List WAF overrides **This endpoint has been deprecated and returns 410 Gone. GET /client/v4/zones/{zone_id}/firewall/waf/overrides",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/overrides\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Previously fetched the URI-based WAF overrides in a zone.\nRequired: zone_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "waf-overrides-update-waf-override",
+    "name": "Update WAF override",
+    "description": "Update WAF override **This endpoint has been deprecated and returns 410 Gone. PUT /client/v4/zones/{zone_id}/firewall/waf/overrides/{overrides_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/firewall/waf/overrides/{overrides_id}\n**This endpoint has been deprecated and returns 410 Gone. Please use the [Rulesets API](https://developers.cloudflare.com/ruleset-engine/) instead.** Previously updated an existing URI-based WAF override.\nRequired: overrides_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waf-packages-get-a-waf-package",
+    "name": "Get a WAF package",
+    "description": "Get a WAF package Fetches the details of a WAF package. GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}\nFetches the details of a WAF package. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: package_id (path); zone_id (path)"
+  },
+  {
+    "id": "waf-packages-list-waf-packages",
+    "name": "List WAF packages",
+    "description": "List WAF packages Fetches WAF packages for a zone. GET /client/v4/zones/{zone_id}/firewall/waf/packages",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/packages\nFetches WAF packages for a zone. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: zone_id (path)\nOptional: page (query); per_page (query); order (query); direction (query); match (query); name (query)"
+  },
+  {
+    "id": "waf-packages-update-a-waf-package",
+    "name": "Update a WAF package",
+    "description": "Update a WAF package Updates a WAF package. PATCH /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}\nUpdates a WAF package. You can update the sensitivity and the action of an anomaly detection WAF package. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: package_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waf-rule-groups-get-a-waf-rule-group",
+    "name": "Get a WAF rule group",
+    "description": "Get a WAF rule group Fetches the details of a WAF rule group. GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/groups/{group_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/groups/{group_id}\nFetches the details of a WAF rule group. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: group_id (path); package_id (path); zone_id (path)"
+  },
+  {
+    "id": "waf-rule-groups-list-waf-rule-groups",
+    "name": "List WAF rule groups",
+    "description": "List WAF rule groups Fetches the WAF rule groups in a WAF package. GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/groups",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/groups\nFetches the WAF rule groups in a WAF package. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: package_id (path); zone_id (path)\nOptional: mode (query); page (query); per_page (query); order (query); direction (query); match (query); name (query); rules_count (query)"
+  },
+  {
+    "id": "waf-rule-groups-update-a-waf-rule-group",
+    "name": "Update a WAF rule group",
+    "description": "Update a WAF rule group Updates a WAF rule group. PATCH /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/groups/{group_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/groups/{group_id}\nUpdates a WAF rule group. You can update the state (`mode` parameter) of a rule group. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: group_id (path); package_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waf-rules-get-a-waf-rule",
+    "name": "Get a WAF rule",
+    "description": "Get a WAF rule Fetches the details of a WAF rule in a WAF package. GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/rules/{rule_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/rules/{rule_id}\nFetches the details of a WAF rule in a WAF package. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: rule_id (path); package_id (path); zone_id (path)"
+  },
+  {
+    "id": "waf-rules-list-waf-rules",
+    "name": "List WAF rules",
+    "description": "List WAF rules Fetches WAF rules in a WAF package. GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/rules",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/rules\nFetches WAF rules in a WAF package. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: package_id (path); zone_id (path)\nOptional: mode (query); group_id (query); page (query); per_page (query); order (query); direction (query); match (query); description (query); priority (query)"
+  },
+  {
+    "id": "waf-rules-update-a-waf-rule",
+    "name": "Update a WAF rule",
+    "description": "Update a WAF rule Updates a WAF rule. PATCH /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/rules/{rule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/firewall/waf/packages/{package_id}/rules/{rule_id}\nUpdates a WAF rule. You can only update the mode/action of the rule. **Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).\nRequired: rule_id (path); package_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-lockdown-create-a-zone-lockdown-rule",
+    "name": "Create a Zone Lockdown rule",
+    "description": "Create a Zone Lockdown rule Creates a new Zone Lockdown rule. POST /client/v4/zones/{zone_id}/firewall/lockdowns",
+    "context": "POST /client/v4/zones/{zone_id}/firewall/lockdowns\nCreates a new Zone Lockdown rule.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-lockdown-delete-a-zone-lockdown-rule",
+    "name": "Delete a Zone Lockdown rule",
+    "description": "Delete a Zone Lockdown rule Deletes an existing Zone Lockdown rule. DELETE /client/v4/zones/{zone_id}/firewall/lockdowns/{lock_downs_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/firewall/lockdowns/{lock_downs_id}\nDeletes an existing Zone Lockdown rule.\nRequired: lock_downs_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-lockdown-get-a-zone-lockdown-rule",
+    "name": "Get a Zone Lockdown rule",
+    "description": "Get a Zone Lockdown rule Fetches the details of a Zone Lockdown rule. GET /client/v4/zones/{zone_id}/firewall/lockdowns/{lock_downs_id}",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/lockdowns/{lock_downs_id}\nFetches the details of a Zone Lockdown rule.\nRequired: lock_downs_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-lockdown-list-zone-lockdown-rules",
+    "name": "List Zone Lockdown rules",
+    "description": "List Zone Lockdown rules Fetches Zone Lockdown rules. GET /client/v4/zones/{zone_id}/firewall/lockdowns",
+    "context": "GET /client/v4/zones/{zone_id}/firewall/lockdowns\nFetches Zone Lockdown rules. You can filter the results using several optional parameters.\nRequired: zone_id (path)\nOptional: page (query); description (query); modified_on (query); ip (query); priority (query); uri_search (query); ip_range_search (query); per_page (query); created_on (query); description_search (query); ip_search (query)"
+  },
+  {
+    "id": "zone-lockdown-update-a-zone-lockdown-rule",
+    "name": "Update a Zone Lockdown rule",
+    "description": "Update a Zone Lockdown rule Updates an existing Zone Lockdown rule. PUT /client/v4/zones/{zone_id}/firewall/lockdowns/{lock_downs_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/firewall/lockdowns/{lock_downs_id}\nUpdates an existing Zone Lockdown rule.\nRequired: lock_downs_id (path); zone_id (path); body (body)"
+  }
+]

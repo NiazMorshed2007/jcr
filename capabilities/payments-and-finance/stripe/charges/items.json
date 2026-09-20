@@ -1,0 +1,86 @@
+[
+  {
+    "id": "GetCharges",
+    "name": "List all charges",
+    "description": "List all charges Returns a list of charges you’ve previously created. GET /v1/charges",
+    "context": "GET /v1/charges\nReturns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.\nOptional: created (query) — Only return charges that were created during the given date interval.; customer (query) — Only return charges for the customer specified by this customer ID.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; payment_intent (query) — Only return charges that were created by the PaymentIntent specified by this PaymentIntent ID.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; transfer_group (query) — Only return charges for this transfer group, limited to 100.; body (body)"
+  },
+  {
+    "id": "GetChargesCharge",
+    "name": "Retrieve a charge",
+    "description": "Retrieve a charge Retrieves the details of a charge that has previously been created. GET /v1/charges/{charge}",
+    "context": "GET /v1/charges/{charge}\nRetrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.\nRequired: charge (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetChargesChargeDispute",
+    "name": "Retrieve a dispute for a specified charge.",
+    "description": "Retrieve a dispute for a specified charge. GET /v1/charges/{charge}/dispute",
+    "context": "GET /v1/charges/{charge}/dispute\nRetrieve a dispute for a specified charge.\nRequired: charge (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetChargesChargeRefunds",
+    "name": "List all refunds",
+    "description": "List all refunds You can see a list of the refunds belonging to a specific charge. GET /v1/charges/{charge}/refunds",
+    "context": "GET /v1/charges/{charge}/refunds\nYou can see a list of the refunds belonging to a specific charge. Note that the 10 most recent refunds are always available by default on the charge object. If you need more than those 10, you can use this API method and the limit and starting_after parameters to page through additional refunds.\nRequired: charge (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetChargesChargeRefundsRefund",
+    "name": "Retrieves the details of an existing refund.",
+    "description": "Retrieves the details of an existing refund. GET /v1/charges/{charge}/refunds/{refund}",
+    "context": "GET /v1/charges/{charge}/refunds/{refund}\nRetrieves the details of an existing refund.\nRequired: charge (path); refund (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetChargesSearch",
+    "name": "Search charges",
+    "description": "Search charges Search for charges you’ve previously created using Stripe’s Search Query Language . GET /v1/charges/search",
+    "context": "GET /v1/charges/search\nSearch for charges you’ve previously created using Stripe’s Search Query Language . Don’t use search in read-after-write flows where strict consistency is necessary. Under normal operating conditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up to an hour behind during outages. Search functionality is not available to merchants in India.\nRequired: query (query) — The search query string. See [search query language](https://docs.stripe.com/search#search-query-language) and the list of supported [query fields for charges](https://docs.stripe.com/search#query-fields-for-charges).\nOptional: expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; page (query) — A cursor for pagination across multiple pages of results. Don't include this parameter on the first call. Use the next_page value returned in a previous response to request subsequent results.; body (body)"
+  },
+  {
+    "id": "PostCharges",
+    "name": "Create a charge",
+    "description": "Create a charge This method is no longer recommended—use the Payment Intents API to initiate a new payment instead. POST /v1/charges",
+    "context": "POST /v1/charges\nThis method is no longer recommended—use the Payment Intents API to initiate a new payment instead. Confirmation of the PaymentIntent creates the Charge object used to request payment.\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesCharge",
+    "name": "Update a charge",
+    "description": "Update a charge Updates the specified charge by setting the values of the parameters passed. POST /v1/charges/{charge}",
+    "context": "POST /v1/charges/{charge}\nUpdates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.\nRequired: charge (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesChargeCapture",
+    "name": "Capture a charge",
+    "description": "Capture a charge Capture the payment of an existing, uncaptured charge that was created with the capture option set to false. POST /v1/charges/{charge}/capture",
+    "context": "POST /v1/charges/{charge}/capture\nCapture the payment of an existing, uncaptured charge that was created with the capture option set to false. Uncaptured payments expire a set number of days after they are created ( 7 by default ), after which they are marked as refunded and capture attempts will fail. Don’t use this method to capture a PaymentIntent-initiated charge. Use Capture a PaymentIntent .\nRequired: charge (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesChargeDispute",
+    "name": "PostChargesChargeDispute",
+    "description": "PostChargesChargeDispute POST /v1/charges/{charge}/dispute",
+    "context": "POST /v1/charges/{charge}/dispute\nPostChargesChargeDispute\nRequired: charge (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesChargeDisputeClose",
+    "name": "PostChargesChargeDisputeClose",
+    "description": "PostChargesChargeDisputeClose POST /v1/charges/{charge}/dispute/close",
+    "context": "POST /v1/charges/{charge}/dispute/close\nPostChargesChargeDisputeClose\nRequired: charge (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesChargeRefund",
+    "name": "Create a refund",
+    "description": "Create a refund When you create a new refund, you must specify either a Charge or a PaymentIntent object. POST /v1/charges/{charge}/refund",
+    "context": "POST /v1/charges/{charge}/refund\nWhen you create a new refund, you must specify either a Charge or a PaymentIntent object. This action refunds a previously created charge that’s not refunded yet. Funds are refunded to the credit or debit card that’s originally charged. You can optionally refund only part of a charge. You can repeat this until the entire charge is refunded. After you entirely refund a charge, you can’t refund it again. This method raises an error when it’s called on an already-refunded charge, or when you attempt to refund more money than is left on a charge.\nRequired: charge (path) — The identifier of the charge to refund.\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesChargeRefunds",
+    "name": "Create a refund",
+    "description": "Create a refund When you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it. POST /v1/charges/{charge}/refunds",
+    "context": "POST /v1/charges/{charge}/refunds\nWhen you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it. Creating a new refund will refund a charge that has previously been created but not yet refunded. Funds will be refunded to the credit or debit card that was originally charged. You can optionally refund only part of a charge. You can do so multiple times, until the entire charge has been refunded. Once entirely refunded, a charge can’t be refunded again. This method will raise an error when called on an already-refunded charge, or when trying to refund more money than is left on a charge.\nRequired: charge (path) — The identifier of the charge to refund.\nOptional: body (body)"
+  },
+  {
+    "id": "PostChargesChargeRefundsRefund",
+    "name": "Update a specified refund.",
+    "description": "Update a specified refund. POST /v1/charges/{charge}/refunds/{refund}",
+    "context": "POST /v1/charges/{charge}/refunds/{refund}\nUpdate a specified refund.\nRequired: charge (path); refund (path)\nOptional: body (body)"
+  }
+]

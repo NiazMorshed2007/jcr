@@ -1,0 +1,20 @@
+[
+  {
+    "id": "activity%2Fget-stargazer-count-for-repo",
+    "name": "Get stargazer count",
+    "description": "Get stargazer count Gets the current number of users who have starred the repository. GET /repos/{owner}/{repo}/stargazers/count",
+    "context": "GET /repos/{owner}/{repo}/stargazers/count\nGets the current number of users who have starred the repository. Users who previously starred the repository but later removed their star are not included.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "activity%2Fget-stargazer-history-for-repo",
+    "name": "Get repository star history",
+    "description": "Get repository star history Returns repository stars grouped by calendar weeks, most recent first. GET /repos/{owner}/{repo}/stargazers/history",
+    "context": "GET /repos/{owner}/{repo}/stargazers/history\nReturns repository stars grouped by calendar weeks, most recent first. Pages move backward toward the repository's creation week, and weeks within a page are ordered newest to oldest, so concatenating pages produces one continuous series. Weeks without stars contain zero counts. Week and day boundaries are not guaranteed to align with UTC. The `days` array contains the number of stars created on each day of the week, starting on Sunday.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 30). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-stargazers-for-repo",
+    "name": "List stargazers",
+    "description": "List stargazers Lists the people that have starred the repository. GET /repos/{owner}/{repo}/stargazers",
+    "context": "GET /repos/{owner}/{repo}/stargazers\nLists the people that have starred the repository. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

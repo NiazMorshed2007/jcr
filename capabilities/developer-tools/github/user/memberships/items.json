@@ -1,0 +1,20 @@
+[
+  {
+    "id": "orgs%2Fget-membership-for-authenticated-user",
+    "name": "Get an organization membership for the authenticated user",
+    "description": "Get an organization membership for the authenticated user If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. GET /user/memberships/orgs/{org}",
+    "context": "GET /user/memberships/orgs/{org}\nIf the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "orgs%2Flist-memberships-for-authenticated-user",
+    "name": "List organization memberships for the authenticated user",
+    "description": "List organization memberships for the authenticated user Lists all of the authenticated user's organization memberships. GET /user/memberships/orgs",
+    "context": "GET /user/memberships/orgs\nLists all of the authenticated user's organization memberships.\nOptional: state (query) — Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fupdate-membership-for-authenticated-user",
+    "name": "Update an organization membership for the authenticated user",
+    "description": "Update an organization membership for the authenticated user Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization. PATCH /user/memberships/orgs/{org}",
+    "context": "PATCH /user/memberships/orgs/{org}\nConverts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  }
+]

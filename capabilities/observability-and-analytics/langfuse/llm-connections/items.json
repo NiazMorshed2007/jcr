@@ -1,0 +1,20 @@
+[
+  {
+    "id": "llmConnections_delete",
+    "name": "Delete an LLM connection by id",
+    "description": "Delete an LLM connection by id Delete an LLM connection by id. DELETE /api/public/llm-connections/{id}",
+    "context": "DELETE /api/public/llm-connections/{id}\nDelete an LLM connection by id. Evaluators that depend on the deleted connection are automatically paused.\nRequired: id (path)"
+  },
+  {
+    "id": "llmConnections_list",
+    "name": "Get all LLM connections in a project",
+    "description": "Get all LLM connections in a project GET /api/public/llm-connections",
+    "context": "GET /api/public/llm-connections\nGet all LLM connections in a project\nOptional: page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  },
+  {
+    "id": "llmConnections_upsert",
+    "name": "Create or update an LLM connection",
+    "description": "Create or update an LLM connection Create or update an LLM connection. PUT /api/public/llm-connections",
+    "context": "PUT /api/public/llm-connections\nCreate or update an LLM connection. The connection is upserted on provider.\nRequired: body (body)"
+  }
+]

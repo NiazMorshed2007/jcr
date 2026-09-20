@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createPrivateLinkEndpoint",
+    "name": "Create a PrivateLink endpoint",
+    "description": "Create a PrivateLink endpoint Creates a PrivateLink endpoint for a project. POST /v1/networking/privatelink/endpoints",
+    "context": "POST /v1/networking/privatelink/endpoints\nCreates a PrivateLink endpoint for a project.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deletePrivateLinkEndpoint",
+    "name": "Delete a PrivateLink endpoint",
+    "description": "Delete a PrivateLink endpoint Deletes a PrivateLink endpoint. DELETE /v1/networking/privatelink/endpoints/{endpointId}",
+    "context": "DELETE /v1/networking/privatelink/endpoints/{endpointId}\nDeletes a PrivateLink endpoint.\nRequired: projectId (query) — The project ID the PrivateLink endpoint belongs to.; endpointId (path) — The unique identifier of the PrivateLink endpoint.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listPrivateLinkEndpoints",
+    "name": "List PrivateLink endpoints",
+    "description": "List PrivateLink endpoints Lists all PrivateLink endpoints for a project. GET /v1/networking/privatelink/endpoints",
+    "context": "GET /v1/networking/privatelink/endpoints\nLists all PrivateLink endpoints for a project.\nRequired: projectId (query) — The project ID to list PrivateLink endpoints for.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "readPrivateLinkEndpoint",
+    "name": "Read a PrivateLink endpoint",
+    "description": "Read a PrivateLink endpoint Reads a single PrivateLink endpoint. GET /v1/networking/privatelink/endpoints/{endpointId}",
+    "context": "GET /v1/networking/privatelink/endpoints/{endpointId}\nReads a single PrivateLink endpoint.\nRequired: projectId (query) — The project ID the PrivateLink endpoint belongs to.; endpointId (path) — The unique identifier of the PrivateLink endpoint.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updatePrivateLinkEndpoint",
+    "name": "Update a PrivateLink endpoint",
+    "description": "Update a PrivateLink endpoint Updates a PrivateLink endpoint (name, privateDns). PATCH /v1/networking/privatelink/endpoints/{endpointId}",
+    "context": "PATCH /v1/networking/privatelink/endpoints/{endpointId}\nUpdates a PrivateLink endpoint (name, privateDns).\nRequired: projectId (query) — The project ID the PrivateLink endpoint belongs to.; endpointId (path) — The unique identifier of the PrivateLink endpoint.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

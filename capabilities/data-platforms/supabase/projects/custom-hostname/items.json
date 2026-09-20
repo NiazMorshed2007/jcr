@@ -1,0 +1,32 @@
+[
+  {
+    "id": "v1-activate-custom-hostname",
+    "name": "Activates a custom hostname for a project.",
+    "description": "Activates a custom hostname for a project. This is an **experimental** endpoint. POST /v1/projects/{ref}/custom-hostname/activate",
+    "context": "POST /v1/projects/{ref}/custom-hostname/activate\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-Delete hostname config",
+    "name": "Deletes a project's custom hostname configuration",
+    "description": "Deletes a project's custom hostname configuration This is an **experimental** endpoint. DELETE /v1/projects/{ref}/custom-hostname",
+    "context": "DELETE /v1/projects/{ref}/custom-hostname\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref\nOptional: remove_addon (query) — If true, also removes the custom domain add-on from the project subscription."
+  },
+  {
+    "id": "v1-get-hostname-config",
+    "name": "Gets project's custom hostname config",
+    "description": "Gets project's custom hostname config This is an **experimental** endpoint. GET /v1/projects/{ref}/custom-hostname",
+    "context": "GET /v1/projects/{ref}/custom-hostname\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-hostname-config",
+    "name": "Updates project's custom hostname configuration",
+    "description": "Updates project's custom hostname configuration This is an **experimental** endpoint. POST /v1/projects/{ref}/custom-hostname/initialize",
+    "context": "POST /v1/projects/{ref}/custom-hostname/initialize\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-verify-dns-config",
+    "name": "Attempts to verify the DNS configuration for project's custom hostname configuration",
+    "description": "Attempts to verify the DNS configuration for project's custom hostname configuration This is an **experimental** endpoint. POST /v1/projects/{ref}/custom-hostname/reverify",
+    "context": "POST /v1/projects/{ref}/custom-hostname/reverify\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  }
+]

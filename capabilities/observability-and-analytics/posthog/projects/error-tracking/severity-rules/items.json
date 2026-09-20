@@ -1,0 +1,44 @@
+[
+  {
+    "id": "error_tracking_severity_rules_create",
+    "name": "error_tracking_severity_rules_create",
+    "description": "error_tracking_severity_rules_create POST /api/projects/{project_id}/error_tracking/severity_rules/",
+    "context": "POST /api/projects/{project_id}/error_tracking/severity_rules/\nerror_tracking_severity_rules_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_severity_rules_destroy",
+    "name": "error_tracking_severity_rules_destroy",
+    "description": "error_tracking_severity_rules_destroy DELETE /api/projects/{project_id}/error_tracking/severity_rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/severity_rules/{id}/\nerror_tracking_severity_rules_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_severity_rules_list",
+    "name": "error_tracking_severity_rules_list",
+    "description": "error_tracking_severity_rules_list GET /api/projects/{project_id}/error_tracking/severity_rules/",
+    "context": "GET /api/projects/{project_id}/error_tracking/severity_rules/\nerror_tracking_severity_rules_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_severity_rules_partial_update",
+    "name": "error_tracking_severity_rules_partial_update",
+    "description": "error_tracking_severity_rules_partial_update PATCH /api/projects/{project_id}/error_tracking/severity_rules/{id}/",
+    "context": "PATCH /api/projects/{project_id}/error_tracking/severity_rules/{id}/\nerror_tracking_severity_rules_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_severity_rules_reorder_partial_update",
+    "name": "error_tracking_severity_rules_reorder_partial_update",
+    "description": "error_tracking_severity_rules_reorder_partial_update PATCH /api/projects/{project_id}/error_tracking/severity_rules/reorder/",
+    "context": "PATCH /api/projects/{project_id}/error_tracking/severity_rules/reorder/\nerror_tracking_severity_rules_reorder_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_severity_rules_retrieve",
+    "name": "error_tracking_severity_rules_retrieve",
+    "description": "error_tracking_severity_rules_retrieve GET /api/projects/{project_id}/error_tracking/severity_rules/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/severity_rules/{id}/\nerror_tracking_severity_rules_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_severity_rules_update",
+    "name": "error_tracking_severity_rules_update",
+    "description": "error_tracking_severity_rules_update PUT /api/projects/{project_id}/error_tracking/severity_rules/{id}/",
+    "context": "PUT /api/projects/{project_id}/error_tracking/severity_rules/{id}/\nerror_tracking_severity_rules_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

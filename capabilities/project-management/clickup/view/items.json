@@ -1,0 +1,38 @@
+[
+  {
+    "id": "CreateChatViewComment",
+    "name": "Create Chat View Comment",
+    "description": "Create Chat View Comment Add a new comment to a Chat view. POST /api/v2/view/{view_id}/comment",
+    "context": "POST /api/v2/view/{view_id}/comment\nAdd a new comment to a Chat view.\nRequired: view_id (path) — 105 (string); body (body)"
+  },
+  {
+    "id": "DeleteView",
+    "name": "Delete View",
+    "description": "Delete View DELETE /api/v2/view/{view_id}",
+    "context": "DELETE /api/v2/view/{view_id}\nDelete View\nRequired: view_id (path) — 105 (string)"
+  },
+  {
+    "id": "GetChatViewComments",
+    "name": "Get Chat View Comments",
+    "description": "Get Chat View Comments View comments from a Chat view. GET /api/v2/view/{view_id}/comment",
+    "context": "GET /api/v2/view/{view_id}/comment\nView comments from a Chat view. \\ \\ If you do not include the `start` and `start_id` parameters, this endpoint will return the most recent 25 comments.\\ \\ Use the `start` and `start id` parameters of the oldest comment to retrieve the next 25 comments.\nRequired: view_id (path) — 105 (string)\nOptional: start (query) — Enter the `date` of a Chat view comment using Unix time in milliseconds.; start_id (query) — Enter the Comment `id` of a Chat view comment."
+  },
+  {
+    "id": "GetView",
+    "name": "Get View",
+    "description": "Get View View information about a specific task or page view. GET /api/v2/view/{view_id}",
+    "context": "GET /api/v2/view/{view_id}\nView information about a specific task or page view. The information returned about a view varies by the type of view.\nRequired: view_id (path)"
+  },
+  {
+    "id": "GetViewTasks",
+    "name": "Get View Tasks",
+    "description": "Get View Tasks See all visible tasks in a view in ClickUp. GET /api/v2/view/{view_id}/task",
+    "context": "GET /api/v2/view/{view_id}/task\nSee all visible tasks in a view in ClickUp.\nRequired: view_id (path) — 105 (string); page (query)"
+  },
+  {
+    "id": "UpdateView",
+    "name": "Update View",
+    "description": "Update View Rename a view, update the grouping, sorting, filters, columns, and settings of a view. PUT /api/v2/view/{view_id}",
+    "context": "PUT /api/v2/view/{view_id}\nRename a view, update the grouping, sorting, filters, columns, and settings of a view.\nRequired: view_id (path); body (body)"
+  }
+]

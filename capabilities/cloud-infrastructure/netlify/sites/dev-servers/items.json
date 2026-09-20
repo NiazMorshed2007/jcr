@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createSiteDevServer",
+    "name": "createSiteDevServer",
+    "description": "createSiteDevServer POST /api/v1/sites/{site_id}/dev_servers",
+    "context": "POST /api/v1/sites/{site_id}/dev_servers\ncreateSiteDevServer\nOptional: branch (query)"
+  },
+  {
+    "id": "deleteSiteDevServers",
+    "name": "deleteSiteDevServers",
+    "description": "deleteSiteDevServers DELETE /api/v1/sites/{site_id}/dev_servers",
+    "context": "DELETE /api/v1/sites/{site_id}/dev_servers\ndeleteSiteDevServers\nOptional: branch (query)"
+  },
+  {
+    "id": "getSiteDevServer",
+    "name": "getSiteDevServer",
+    "description": "getSiteDevServer GET /api/v1/sites/{site_id}/dev_servers/{dev_server_id}",
+    "context": "GET /api/v1/sites/{site_id}/dev_servers/{dev_server_id}\ngetSiteDevServer"
+  },
+  {
+    "id": "listSiteDevServers",
+    "name": "listSiteDevServers",
+    "description": "listSiteDevServers GET /api/v1/sites/{site_id}/dev_servers",
+    "context": "GET /api/v1/sites/{site_id}/dev_servers\nlistSiteDevServers\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "markDevServerActivity",
+    "name": "markDevServerActivity",
+    "description": "markDevServerActivity POST /api/v1/sites/{site_id}/dev_servers/{dev_server_id}/activity",
+    "context": "POST /api/v1/sites/{site_id}/dev_servers/{dev_server_id}/activity\nmarkDevServerActivity"
+  },
+  {
+    "id": "updateDevServerState",
+    "name": "updateDevServerState",
+    "description": "updateDevServerState POST /api/v1/sites/{site_id}/dev_servers/{dev_server_id}/state",
+    "context": "POST /api/v1/sites/{site_id}/dev_servers/{dev_server_id}/state\nupdateDevServerState\nRequired: body (body)"
+  }
+]

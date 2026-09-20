@@ -1,0 +1,74 @@
+[
+  {
+    "id": "agents%2Fcreate-or-update-repo-secret",
+    "name": "Create or update a repository secret",
+    "description": "Create or update a repository secret Creates or updates a repository secret with an encrypted value. PUT /repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    "context": "PUT /repos/{owner}/{repo}/agents/secrets/{secret_name}\nCreates or updates a repository secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see \"[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).\" Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  },
+  {
+    "id": "agents%2Fcreate-repo-variable",
+    "name": "Create a repository variable",
+    "description": "Create a repository variable Creates a repository variable that you can reference in a GitHub Actions workflow. POST /repos/{owner}/{repo}/agents/variables",
+    "context": "POST /repos/{owner}/{repo}/agents/variables\nCreates a repository variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "agents%2Fdelete-repo-secret",
+    "name": "Delete a repository secret",
+    "description": "Delete a repository secret Deletes a secret in a repository using the secret name. DELETE /repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    "context": "DELETE /repos/{owner}/{repo}/agents/secrets/{secret_name}\nDeletes a secret in a repository using the secret name. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "agents%2Fdelete-repo-variable",
+    "name": "Delete a repository variable",
+    "description": "Delete a repository variable Deletes a repository variable using the variable name. DELETE /repos/{owner}/{repo}/agents/variables/{name}",
+    "context": "DELETE /repos/{owner}/{repo}/agents/variables/{name}\nDeletes a repository variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; name (path) — The name of the variable."
+  },
+  {
+    "id": "agents%2Fget-repo-public-key",
+    "name": "Get a repository public key",
+    "description": "Get a repository public key Gets your public key, which you need to encrypt secrets. GET /repos/{owner}/{repo}/agents/secrets/public-key",
+    "context": "GET /repos/{owner}/{repo}/agents/secrets/public-key\nGets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "agents%2Fget-repo-secret",
+    "name": "Get a repository secret",
+    "description": "Get a repository secret Gets a single repository secret without revealing its encrypted value. GET /repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    "context": "GET /repos/{owner}/{repo}/agents/secrets/{secret_name}\nGets a single repository secret without revealing its encrypted value. The authenticated user must have collaborator access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "agents%2Fget-repo-variable",
+    "name": "Get a repository variable",
+    "description": "Get a repository variable Gets a specific variable in a repository. GET /repos/{owner}/{repo}/agents/variables/{name}",
+    "context": "GET /repos/{owner}/{repo}/agents/variables/{name}\nGets a specific variable in a repository. The authenticated user must have collaborator access to the repository to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; name (path) — The name of the variable."
+  },
+  {
+    "id": "agents%2Flist-repo-organization-secrets",
+    "name": "List repository organization secrets",
+    "description": "List repository organization secrets Lists all organization secrets shared with a repository without revealing their encrypted values. GET /repos/{owner}/{repo}/agents/organization-secrets",
+    "context": "GET /repos/{owner}/{repo}/agents/organization-secrets\nLists all organization secrets shared with a repository without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Flist-repo-organization-variables",
+    "name": "List repository organization variables",
+    "description": "List repository organization variables Lists all organization variables shared with a repository. GET /repos/{owner}/{repo}/agents/organization-variables",
+    "context": "GET /repos/{owner}/{repo}/agents/organization-variables\nLists all organization variables shared with a repository. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 30). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Flist-repo-secrets",
+    "name": "List repository secrets",
+    "description": "List repository secrets Lists all secrets available in a repository without revealing their encrypted values. GET /repos/{owner}/{repo}/agents/secrets",
+    "context": "GET /repos/{owner}/{repo}/agents/secrets\nLists all secrets available in a repository without revealing their encrypted values. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Flist-repo-variables",
+    "name": "List repository variables",
+    "description": "List repository variables Lists all repository variables. GET /repos/{owner}/{repo}/agents/variables",
+    "context": "GET /repos/{owner}/{repo}/agents/variables\nLists all repository variables. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 30). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "agents%2Fupdate-repo-variable",
+    "name": "Update a repository variable",
+    "description": "Update a repository variable Updates a repository variable that you can reference in a GitHub Actions workflow. PATCH /repos/{owner}/{repo}/agents/variables/{name}",
+    "context": "PATCH /repos/{owner}/{repo}/agents/variables/{name}\nUpdates a repository variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; name (path) — The name of the variable.; body (body)"
+  }
+]

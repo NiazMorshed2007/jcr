@@ -1,0 +1,80 @@
+[
+  {
+    "id": "secondary-dns-(-primary-zone)-create-primary-zone-configuration",
+    "name": "Create Primary Zone Configuration",
+    "description": "Create Primary Zone Configuration Create primary zone configuration for outgoing zone transfers. POST /client/v4/zones/{zone_id}/secondary_dns/outgoing",
+    "context": "POST /client/v4/zones/{zone_id}/secondary_dns/outgoing\nCreate primary zone configuration for outgoing zone transfers.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-delete-primary-zone-configuration",
+    "name": "Delete Primary Zone Configuration",
+    "description": "Delete Primary Zone Configuration Delete primary zone configuration for outgoing zone transfers. DELETE /client/v4/zones/{zone_id}/secondary_dns/outgoing",
+    "context": "DELETE /client/v4/zones/{zone_id}/secondary_dns/outgoing\nDelete primary zone configuration for outgoing zone transfers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-disable-outgoing-zone-transfers",
+    "name": "Disable Outgoing Zone Transfers",
+    "description": "Disable Outgoing Zone Transfers Disable outgoing zone transfers for primary zone and clears IXFR backlog of primary zone. POST /client/v4/zones/{zone_id}/secondary_dns/outgoing/disable",
+    "context": "POST /client/v4/zones/{zone_id}/secondary_dns/outgoing/disable\nDisable outgoing zone transfers for primary zone and clears IXFR backlog of primary zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-enable-outgoing-zone-transfers",
+    "name": "Enable Outgoing Zone Transfers",
+    "description": "Enable Outgoing Zone Transfers Enable outgoing zone transfers for primary zone. POST /client/v4/zones/{zone_id}/secondary_dns/outgoing/enable",
+    "context": "POST /client/v4/zones/{zone_id}/secondary_dns/outgoing/enable\nEnable outgoing zone transfers for primary zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-force-dns-notify",
+    "name": "Force DNS NOTIFY",
+    "description": "Force DNS NOTIFY Notifies the secondary nameserver(s) and clears IXFR backlog of primary zone. POST /client/v4/zones/{zone_id}/secondary_dns/outgoing/force_notify",
+    "context": "POST /client/v4/zones/{zone_id}/secondary_dns/outgoing/force_notify\nNotifies the secondary nameserver(s) and clears IXFR backlog of primary zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-get-outgoing-zone-transfer-status",
+    "name": "Get Outgoing Zone Transfer Status",
+    "description": "Get Outgoing Zone Transfer Status Get primary zone transfer status. GET /client/v4/zones/{zone_id}/secondary_dns/outgoing/status",
+    "context": "GET /client/v4/zones/{zone_id}/secondary_dns/outgoing/status\nGet primary zone transfer status.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-primary-zone-configuration-details",
+    "name": "Primary Zone Configuration Details",
+    "description": "Primary Zone Configuration Details Get primary zone configuration for outgoing zone transfers. GET /client/v4/zones/{zone_id}/secondary_dns/outgoing",
+    "context": "GET /client/v4/zones/{zone_id}/secondary_dns/outgoing\nGet primary zone configuration for outgoing zone transfers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-primary-zone)-update-primary-zone-configuration",
+    "name": "Update Primary Zone Configuration",
+    "description": "Update Primary Zone Configuration Update primary zone configuration for outgoing zone transfers. PUT /client/v4/zones/{zone_id}/secondary_dns/outgoing",
+    "context": "PUT /client/v4/zones/{zone_id}/secondary_dns/outgoing\nUpdate primary zone configuration for outgoing zone transfers.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "secondary-dns-(-secondary-zone)-create-secondary-zone-configuration",
+    "name": "Create Secondary Zone Configuration",
+    "description": "Create Secondary Zone Configuration Create secondary zone configuration for incoming zone transfers. POST /client/v4/zones/{zone_id}/secondary_dns/incoming",
+    "context": "POST /client/v4/zones/{zone_id}/secondary_dns/incoming\nCreate secondary zone configuration for incoming zone transfers.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "secondary-dns-(-secondary-zone)-delete-secondary-zone-configuration",
+    "name": "Delete Secondary Zone Configuration",
+    "description": "Delete Secondary Zone Configuration Delete secondary zone configuration for incoming zone transfers. DELETE /client/v4/zones/{zone_id}/secondary_dns/incoming",
+    "context": "DELETE /client/v4/zones/{zone_id}/secondary_dns/incoming\nDelete secondary zone configuration for incoming zone transfers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-secondary-zone)-force-axfr",
+    "name": "Force AXFR",
+    "description": "Force AXFR Sends AXFR zone transfer request to primary nameserver(s). POST /client/v4/zones/{zone_id}/secondary_dns/force_axfr",
+    "context": "POST /client/v4/zones/{zone_id}/secondary_dns/force_axfr\nSends AXFR zone transfer request to primary nameserver(s).\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-secondary-zone)-secondary-zone-configuration-details",
+    "name": "Secondary Zone Configuration Details",
+    "description": "Secondary Zone Configuration Details Get secondary zone configuration for incoming zone transfers. GET /client/v4/zones/{zone_id}/secondary_dns/incoming",
+    "context": "GET /client/v4/zones/{zone_id}/secondary_dns/incoming\nGet secondary zone configuration for incoming zone transfers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "secondary-dns-(-secondary-zone)-update-secondary-zone-configuration",
+    "name": "Update Secondary Zone Configuration",
+    "description": "Update Secondary Zone Configuration Update secondary zone configuration for incoming zone transfers. PUT /client/v4/zones/{zone_id}/secondary_dns/incoming",
+    "context": "PUT /client/v4/zones/{zone_id}/secondary_dns/incoming\nUpdate secondary zone configuration for incoming zone transfers.\nRequired: zone_id (path); body (body)"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createWebhookReplayJob",
+    "name": "Create replay job for webhook",
+    "description": "Create replay job for webhook Creates a replay job to retrieve events from up to the past 24 hours for all events delivered or attempted to be delivered to the webhook. POST /2/webhooks/replay",
+    "context": "POST /2/webhooks/replay\nCreates a replay job to retrieve events from up to the past 24 hours for all events delivered or attempted to be delivered to the webhook.\nRequired: body (body)"
+  },
+  {
+    "id": "createWebhooks",
+    "name": "Create webhook",
+    "description": "Create webhook Creates a new webhook configuration. POST /2/webhooks",
+    "context": "POST /2/webhooks\nCreates a new webhook configuration.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteWebhooks",
+    "name": "Delete webhook",
+    "description": "Delete webhook Deletes an existing webhook configuration. DELETE /2/webhooks/{webhook_id}",
+    "context": "DELETE /2/webhooks/{webhook_id}\nDeletes an existing webhook configuration.\nRequired: webhook_id (path)"
+  },
+  {
+    "id": "getWebhooks",
+    "name": "Get webhook",
+    "description": "Get webhook Get a list of webhook configs associated with a client app. GET /2/webhooks",
+    "context": "GET /2/webhooks\nGet a list of webhook configs associated with a client app.\nOptional: webhook_config.fields (query) — A comma separated list of WebhookConfig fields to display."
+  },
+  {
+    "id": "validateWebhooks",
+    "name": "Validate webhook",
+    "description": "Validate webhook Triggers a CRC check for a given webhook. PUT /2/webhooks/{webhook_id}",
+    "context": "PUT /2/webhooks/{webhook_id}\nTriggers a CRC check for a given webhook.\nRequired: webhook_id (path)"
+  }
+]

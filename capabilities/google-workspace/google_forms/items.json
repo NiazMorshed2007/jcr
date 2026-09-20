@@ -1,0 +1,62 @@
+[
+  {
+    "id": "BatchUpdate",
+    "name": "Change the form with a batch of updates.",
+    "description": "Change the form with a batch of updates. POST /v1/forms/{formId}:batchUpdate",
+    "context": "POST /v1/forms/{formId}:batchUpdate\nChange the form with a batch of updates.\nRequired: formId (path) — Required. The form ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Create",
+    "name": "Create a new form using the title given in the provided form message in the request.",
+    "description": "Create a new form using the title given in the provided form message in the request. Create a new form using the title given in the provided form message in the request. POST /v1/forms",
+    "context": "POST /v1/forms\nCreate a new form using the title given in the provided form message in the request. *Important:* Only the form.info.title and form.info.document_title fields are copied to the new form. All other fields including the form description, items and settings are disallowed. To create a new form and add items, you must first call forms.create to create an empty form with a title and (optional) document title, and then call forms.update to add the items.\nRequired: body (body)\nOptional: unpublished (query) — Optional. Whether the form is unpublished. If set to `true`, the form doesn't accept responses. If set to `false` or unset, the form is published and accepts responses.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Get",
+    "name": "Get a form.",
+    "description": "Get a form. GET /v1/forms/{formId}",
+    "context": "GET /v1/forms/{formId}\nGet a form.\nRequired: formId (path) — Required. The form ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResponsesGet",
+    "name": "Get one response from the form.",
+    "description": "Get one response from the form. GET /v1/forms/{formId}/responses/{responseId}",
+    "context": "GET /v1/forms/{formId}/responses/{responseId}\nGet one response from the form.\nRequired: formId (path) — Required. The form ID.; responseId (path) — Required. The response ID within the form.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ResponsesList",
+    "name": "List a form's responses.",
+    "description": "List a form's responses. GET /v1/forms/{formId}/responses",
+    "context": "GET /v1/forms/{formId}/responses\nList a form's responses.\nRequired: formId (path) — Required. ID of the Form whose responses to list.\nOptional: pageToken (query) — A page token returned by a previous list response. If this field is set, the form and the values of the filter must be the same as for the original request.; filter (query) — Which form responses to return. Currently, the only supported filters are: * timestamp > *N* which means to get all form responses submitted after (but not at) timestamp *N*. * timestamp >= *N* which means to get all form responses submitted at and after timestamp *N*. For both supported filters, timestamp must be formatted in RFC3339 UTC \"Zulu\" format. Examples: \"2014-10-02T15:01:23Z\" and \"2014-10-02T15:01:23.045123456Z\".; pageSize (query) — The maximum number of responses to return. The service may return fewer than this value. If unspecified or zero, at most 5000 responses are returned.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SetPublishSettings",
+    "name": "Updates the publish settings of a form.",
+    "description": "Updates the publish settings of a form. Updates the publish settings of a form. POST /v1/forms/{formId}:setPublishSettings",
+    "context": "POST /v1/forms/{formId}:setPublishSettings\nUpdates the publish settings of a form. Legacy forms aren't supported because they don't have the `publish_settings` field.\nRequired: formId (path) — Required. The ID of the form. You can get the id from Form.form_id field.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "WatchesCreate",
+    "name": "Create a new watch.",
+    "description": "Create a new watch. Create a new watch. POST /v1/forms/{formId}/watches",
+    "context": "POST /v1/forms/{formId}/watches\nCreate a new watch. If a watch ID is provided, it must be unused. For each invoking project, the per form limit is one watch per Watch.EventType. A watch expires seven days after it is created (see Watch.expire_time).\nRequired: formId (path) — Required. ID of the Form to watch.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "WatchesDelete",
+    "name": "Delete a watch.",
+    "description": "Delete a watch. DELETE /v1/forms/{formId}/watches/{watchId}",
+    "context": "DELETE /v1/forms/{formId}/watches/{watchId}\nDelete a watch.\nRequired: watchId (path) — Required. The ID of the Watch to delete.; formId (path) — Required. The ID of the Form.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "WatchesList",
+    "name": "Return a list of the watches owned by the invoking project.",
+    "description": "Return a list of the watches owned by the invoking project. Return a list of the watches owned by the invoking project. GET /v1/forms/{formId}/watches",
+    "context": "GET /v1/forms/{formId}/watches\nReturn a list of the watches owned by the invoking project. The maximum number of watches is two: For each invoker, the limit is one for each event type per form.\nRequired: formId (path) — Required. ID of the Form whose watches to list.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "WatchesRenew",
+    "name": "Renew an existing watch for seven days.",
+    "description": "Renew an existing watch for seven days. Renew an existing watch for seven days. POST /v1/forms/{formId}/watches/{watchId}:renew",
+    "context": "POST /v1/forms/{formId}/watches/{watchId}:renew\nRenew an existing watch for seven days. The state of the watch after renewal is `ACTIVE`, and the `expire_time` is seven days from the renewal. Renewing a watch in an error state (e.g. `SUSPENDED`) succeeds if the error is no longer present, but fail otherwise. After a watch has expired, RenewWatch returns `NOT_FOUND`.\nRequired: watchId (path) — Required. The ID of the Watch to renew.; formId (path) — Required. The ID of the Form.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  }
+]

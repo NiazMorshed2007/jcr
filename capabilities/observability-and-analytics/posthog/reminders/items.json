@@ -1,0 +1,38 @@
+[
+  {
+    "id": "reminders_create",
+    "name": "reminders_create",
+    "description": "reminders_create POST /api/reminders/",
+    "context": "POST /api/reminders/\nreminders_create\nRequired: body (body)"
+  },
+  {
+    "id": "reminders_destroy",
+    "name": "reminders_destroy",
+    "description": "reminders_destroy DELETE /api/reminders/{id}/",
+    "context": "DELETE /api/reminders/{id}/\nreminders_destroy\nRequired: id (path) — A UUID string identifying this reminder."
+  },
+  {
+    "id": "reminders_list",
+    "name": "reminders_list",
+    "description": "reminders_list GET /api/reminders/",
+    "context": "GET /api/reminders/\nreminders_list\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "reminders_partial_update",
+    "name": "reminders_partial_update",
+    "description": "reminders_partial_update PATCH /api/reminders/{id}/",
+    "context": "PATCH /api/reminders/{id}/\nreminders_partial_update\nRequired: id (path) — A UUID string identifying this reminder.\nOptional: body (body)"
+  },
+  {
+    "id": "reminders_retrieve",
+    "name": "reminders_retrieve",
+    "description": "reminders_retrieve GET /api/reminders/{id}/",
+    "context": "GET /api/reminders/{id}/\nreminders_retrieve\nRequired: id (path) — A UUID string identifying this reminder."
+  },
+  {
+    "id": "reminders_update",
+    "name": "reminders_update",
+    "description": "reminders_update PUT /api/reminders/{id}/",
+    "context": "PUT /api/reminders/{id}/\nreminders_update\nRequired: id (path) — A UUID string identifying this reminder.; body (body)"
+  }
+]

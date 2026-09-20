@@ -1,0 +1,398 @@
+[
+  {
+    "id": "aig-billing-check-topup-status",
+    "name": "Check top-up status",
+    "description": "Check top-up status Get the payment processing status of a top-up by its invoice ID. POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup/status",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup/status\nGet the payment processing status of a top-up by its invoice ID.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "aig-billing-create-topup",
+    "name": "Create a top-up",
+    "description": "Create a top-up Create a credit top-up for the given account, charged to the account's default payment method. POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup\nCreate a credit top-up for the given account, charged to the account's default payment method.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "aig-billing-delete-spending-limit",
+    "name": "Delete spending limit",
+    "description": "Delete spending limit Remove the spending limit for the account. DELETE /client/v4/accounts/{account_id}/ai-gateway/billing/spending-limit",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/billing/spending-limit\nRemove the spending limit for the account.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-delete-topup-config",
+    "name": "Delete auto top-up configuration",
+    "description": "Delete auto top-up configuration Remove the auto top-up configuration for the account. DELETE /client/v4/accounts/{account_id}/ai-gateway/billing/topup/config",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/billing/topup/config\nRemove the auto top-up configuration for the account. Dashboard sessions only: API token, OAuth, and service credentials are rejected with 403.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-get-credit-balance",
+    "name": "Get credit balance",
+    "description": "Get credit balance Retrieve the current credit balance, payment method info, and top-up configuration. GET /client/v4/accounts/{account_id}/ai-gateway/billing/credit-balance",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/credit-balance\nRetrieve the current credit balance, payment method info, and top-up configuration.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-get-invoice-history",
+    "name": "Get invoice history",
+    "description": "Get invoice history Retrieve a list of past invoices with pagination, optionally filtered by type. GET /client/v4/accounts/{account_id}/ai-gateway/billing/invoice-history",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/invoice-history\nRetrieve a list of past invoices with pagination, optionally filtered by type.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: type (query) — Filter invoice type: auto, manual, or all."
+  },
+  {
+    "id": "aig-billing-get-invoice-preview",
+    "name": "Get invoice preview",
+    "description": "Get invoice preview Retrieve a preview of the upcoming invoice including line items and tax. GET /client/v4/accounts/{account_id}/ai-gateway/billing/invoice-preview",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/invoice-preview\nRetrieve a preview of the upcoming invoice including line items and tax.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-get-spending-limit",
+    "name": "Get spending limit",
+    "description": "Get spending limit Retrieve the current spending limit configuration for the account. GET /client/v4/accounts/{account_id}/ai-gateway/billing/spending-limit",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/spending-limit\nRetrieve the current spending limit configuration for the account.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-get-topup-config",
+    "name": "Get auto top-up configuration",
+    "description": "Get auto top-up configuration Retrieve the current auto top-up threshold, amount, and any error state. GET /client/v4/accounts/{account_id}/ai-gateway/billing/topup/config",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/topup/config\nRetrieve the current auto top-up threshold, amount, and any error state.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-get-topup-limits",
+    "name": "Get account top-up limits",
+    "description": "Get account top-up limits Retrieve the minimum and maximum allowed top-up amounts (in cents) for this account. GET /client/v4/accounts/{account_id}/ai-gateway/billing/topup/limits",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/topup/limits\nRetrieve the minimum and maximum allowed top-up amounts (in cents) for this account.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "aig-billing-get-usage-history",
+    "name": "Get usage history",
+    "description": "Get usage history Retrieve aggregated usage meter event summaries for the given time range. GET /client/v4/accounts/{account_id}/ai-gateway/billing/usage-history",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/billing/usage-history\nRetrieve aggregated usage meter event summaries for the given time range.\nRequired: account_id (path) — Cloudflare account ID.; value_grouping_window (query) — Grouping window for usage data.\nOptional: start_time (query) — Start time as Unix timestamp in milliseconds.; end_time (query) — End time as Unix timestamp in milliseconds."
+  },
+  {
+    "id": "aig-billing-set-spending-limit",
+    "name": "Set spending limit (deprecated)",
+    "description": "Set spending limit (deprecated) Deprecated: spending limits can no longer be created, enabled, or modified and this endpoint always responds 403. POST /client/v4/accounts/{account_id}/ai-gateway/billing/spending-limit",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/billing/spending-limit\nDeprecated: spending limits can no longer be created, enabled, or modified and this endpoint always responds 403. Use the new AI Gateway spend limits instead: https://developers.cloudflare.com/ai-gateway/features/spend-limits/. Existing limits can be removed via DELETE /spending-limit.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "aig-billing-set-topup-config",
+    "name": "Set auto top-up configuration",
+    "description": "Set auto top-up configuration Configure auto top-up with a balance threshold and top-up amount. POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup/config",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup/config\nConfigure auto top-up with a balance threshold and top-up amount. Dashboard sessions only: API token, OAuth, and service credentials are rejected with 403.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "aig-billing-topup-eligibility",
+    "name": "Get top-up eligibility",
+    "description": "Get top-up eligibility Determine whether an account can self-serve a credit top-up, and if not, why. POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup/eligibility",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/billing/topup/eligibility\nDetermine whether an account can self-serve a credit top-up, and if not, why. The dashboard forwards the account's payment-method list in the body; the reason logic is owned here.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-account-provider",
+    "name": "Create a new Account Provider",
+    "description": "Create a new Account Provider Creates a new AI Gateway. POST /client/v4/accounts/{account_id}/ai-gateway/custom-providers",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/custom-providers\nCreates a new AI Gateway.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-account-provider-cost",
+    "name": "Create a new Account Provider Cost",
+    "description": "Create a new Account Provider Cost Creates a new AI Gateway. POST /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs\nCreates a new AI Gateway.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-custom-domain",
+    "name": "Create a custom domain for a gateway",
+    "description": "Create a custom domain for a gateway Provisions a Cloudflare-for-SaaS custom hostname and returns the CNAME target to point DNS at. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains\nProvisions a Cloudflare-for-SaaS custom hostname and returns the CNAME target to point DNS at.\nRequired: account_id (path); gateway_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-dataset",
+    "name": "Create a new Dataset",
+    "description": "Create a new Dataset Creates a new AI Gateway. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets\nCreates a new AI Gateway.\nRequired: gateway_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-evaluations",
+    "name": "Create a new Evaluation",
+    "description": "Create a new Evaluation Creates a new AI Gateway. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations\nCreates a new AI Gateway.\nRequired: gateway_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-gateway",
+    "name": "Create a new Gateway",
+    "description": "Create a new Gateway Creates a new AI Gateway. POST /client/v4/accounts/{account_id}/ai-gateway/gateways",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways\nCreates a new AI Gateway.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-create-providers",
+    "name": "Create a new Provider Configs",
+    "description": "Create a new Provider Configs Creates a new AI Gateway. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs\nCreates a new AI Gateway.\nRequired: account_id (path); gateway_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-delete-account-provider",
+    "name": "Delete a Account Provider",
+    "description": "Delete a Account Provider Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/custom-providers/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/custom-providers/{id}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-delete-account-provider-cost",
+    "name": "Delete a Account Provider Cost",
+    "description": "Delete a Account Provider Cost Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs/{id}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-delete-custom-domain",
+    "name": "Delete a Custom Domain",
+    "description": "Delete a Custom Domain Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains/{hostname}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains/{hostname}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); hostname (path)"
+  },
+  {
+    "id": "aig-config-delete-dataset",
+    "name": "Delete a Dataset",
+    "description": "Delete a Dataset Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-delete-evaluations",
+    "name": "Delete a Evaluation",
+    "description": "Delete a Evaluation Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-delete-gateway",
+    "name": "Delete a Gateway",
+    "description": "Delete a Gateway Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{id}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-delete-gateway-dynamic-route",
+    "name": "Delete an AI Gateway Dynamic Route.",
+    "description": "Delete an AI Gateway Dynamic Route. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}\nDelete an AI Gateway Dynamic Route.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-delete-gateway-logs",
+    "name": "Delete Gateway Logs",
+    "description": "Delete Gateway Logs Deletes gateway log entries matching the specified criteria. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs\nDeletes gateway log entries matching the specified criteria.\nRequired: account_id (path); gateway_id (path)\nOptional: order_by (query); order_by_direction (query); filters (query); limit (query)"
+  },
+  {
+    "id": "aig-config-delete-providers",
+    "name": "Delete a Provider Configs",
+    "description": "Delete a Provider Configs Deletes an AI Gateway dataset. DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}\nDeletes an AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-fetch-account-provider",
+    "name": "Fetch a Account Provider",
+    "description": "Fetch a Account Provider Retrieves details for a specific AI Gateway dataset. GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers/{id}\nRetrieves details for a specific AI Gateway dataset.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-fetch-account-provider-cost",
+    "name": "Fetch a Account Provider Cost",
+    "description": "Fetch a Account Provider Cost Retrieves details for a specific AI Gateway dataset. GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs/{id}\nRetrieves details for a specific AI Gateway dataset.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-fetch-custom-domain",
+    "name": "Fetch a Custom Domain",
+    "description": "Fetch a Custom Domain Retrieves details for a specific AI Gateway dataset. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains/{hostname}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains/{hostname}\nRetrieves details for a specific AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); hostname (path)"
+  },
+  {
+    "id": "aig-config-fetch-dataset",
+    "name": "Fetch a Dataset",
+    "description": "Fetch a Dataset Retrieves details for a specific AI Gateway dataset. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}\nRetrieves details for a specific AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-fetch-evaluations",
+    "name": "Fetch a Evaluation",
+    "description": "Fetch a Evaluation Retrieves details for a specific AI Gateway dataset. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations/{id}\nRetrieves details for a specific AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-fetch-gateway",
+    "name": "Fetch a Gateway",
+    "description": "Fetch a Gateway Retrieves details for a specific AI Gateway dataset. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{id}\nRetrieves details for a specific AI Gateway dataset.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-get-gateway-dynamic-route",
+    "name": "Get an AI Gateway Dynamic Route.",
+    "description": "Get an AI Gateway Dynamic Route. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}\nGet an AI Gateway Dynamic Route.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-get-gateway-dynamic-route-version",
+    "name": "Get an AI Gateway Dynamic Route Version.",
+    "description": "Get an AI Gateway Dynamic Route Version. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions/{version_id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions/{version_id}\nGet an AI Gateway Dynamic Route Version.\nRequired: account_id (path); gateway_id (path); id (path); version_id (path)"
+  },
+  {
+    "id": "aig-config-get-gateway-log-detail",
+    "name": "Get Gateway Log Detail",
+    "description": "Get Gateway Log Detail Retrieves detailed information for a specific AI Gateway log entry. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}\nRetrieves detailed information for a specific AI Gateway log entry.\nRequired: id (path); gateway_id (path); account_id (path)"
+  },
+  {
+    "id": "aig-config-get-gateway-log-request",
+    "name": "Get Gateway Log Request",
+    "description": "Get Gateway Log Request Retrieves the original request payload for an AI Gateway log entry. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/request",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/request\nRetrieves the original request payload for an AI Gateway log entry.\nRequired: id (path); gateway_id (path); account_id (path)"
+  },
+  {
+    "id": "aig-config-get-gateway-log-response",
+    "name": "Get Gateway Log Response",
+    "description": "Get Gateway Log Response Retrieves the response payload for an AI Gateway log entry. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/response",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}/response\nRetrieves the response payload for an AI Gateway log entry.\nRequired: id (path); gateway_id (path); account_id (path)"
+  },
+  {
+    "id": "aig-config-get-gateway-url",
+    "name": "Get Gateway URL",
+    "description": "Get Gateway URL Retrieves the endpoint URL for an AI Gateway. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/url/{provider}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/url/{provider}\nRetrieves the endpoint URL for an AI Gateway.\nRequired: gateway_id (path); account_id (path); provider (path)"
+  },
+  {
+    "id": "aig-config-get-logging-state",
+    "name": "Get AI Gateway logging state",
+    "description": "Get AI Gateway logging state Returns the canonical logging platform and migration availability for an account. GET /client/v4/accounts/{account_id}/ai-gateway/logging-state",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/logging-state\nReturns the canonical logging platform and migration availability for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "aig-config-list-account-provider",
+    "name": "List Account Providers",
+    "description": "List Account Providers Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); beta (query); enable (query); search (query)"
+  },
+  {
+    "id": "aig-config-list-account-provider-cost",
+    "name": "List Account Provider Costs",
+    "description": "List Account Provider Costs Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); enable (query); account_provider_id (query); model_rule (query); cost_type (query); search (query)"
+  },
+  {
+    "id": "aig-config-list-custom-domain",
+    "name": "List Custom Domains",
+    "description": "List Custom Domains Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/custom-domains\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path); gateway_id (path)\nOptional: page (query); per_page (query); status (query); search (query)"
+  },
+  {
+    "id": "aig-config-list-dataset",
+    "name": "List Datasets",
+    "description": "List Datasets Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path); gateway_id (path)\nOptional: page (query); per_page (query); name (query); enable (query); search (query)"
+  },
+  {
+    "id": "aig-config-list-evaluations",
+    "name": "List Evaluations",
+    "description": "List Evaluations Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/evaluations\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path); gateway_id (path)\nOptional: page (query); per_page (query); name (query); processed (query); search (query)"
+  },
+  {
+    "id": "aig-config-list-evaluators",
+    "name": "List Evaluators",
+    "description": "List Evaluators Lists all available evaluator types for scoring AI gateway responses. GET /client/v4/accounts/{account_id}/ai-gateway/evaluation-types",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/evaluation-types\nLists all available evaluator types for scoring AI gateway responses.\nRequired: account_id (path)\nOptional: page (query); per_page (query); order_by (query); order_by_direction (query)"
+  },
+  {
+    "id": "aig-config-list-gateway",
+    "name": "List Gateways",
+    "description": "List Gateways Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/gateways",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); search (query)"
+  },
+  {
+    "id": "aig-config-list-gateway-dynamic-route-deployments",
+    "name": "List all AI Gateway Dynamic Route Deployments.",
+    "description": "List all AI Gateway Dynamic Route Deployments. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments\nList all AI Gateway Dynamic Route Deployments.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-list-gateway-dynamic-route-versions",
+    "name": "List all AI Gateway Dynamic Route Versions.",
+    "description": "List all AI Gateway Dynamic Route Versions. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions\nList all AI Gateway Dynamic Route Versions.\nRequired: account_id (path); gateway_id (path); id (path)"
+  },
+  {
+    "id": "aig-config-list-gateway-dynamic-routes",
+    "name": "List all AI Gateway Dynamic Routes.",
+    "description": "List all AI Gateway Dynamic Routes. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes\nList all AI Gateway Dynamic Routes.\nRequired: account_id (path); gateway_id (path)\nOptional: page (query) — Page number; per_page (query) — Number of routes per page"
+  },
+  {
+    "id": "aig-config-list-gateway-logs",
+    "name": "List Gateway Logs",
+    "description": "List Gateway Logs Lists request/response log entries for the AI gateway with filtering and pagination. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs\nLists request/response log entries for the AI gateway with filtering and pagination.\nRequired: account_id (path); gateway_id (path)\nOptional: search (query); page (query); per_page (query); order_by (query); order_by_direction (query); filters (query); meta_info (query); direction (query); start_date (query); end_date (query); min_cost (query); max_cost (query); min_tokens_in (query); max_tokens_in (query); min_tokens_out (query); max_tokens_out (query); min_total_tokens (query); max_total_tokens (query); min_duration (query); max_duration (query); feedback (query); success (query); cached (query); model (query); model_type (query); provider (query); request_content_type (query); response_content_type (query)"
+  },
+  {
+    "id": "aig-config-list-providers",
+    "name": "List Provider Configs",
+    "description": "List Provider Configs Lists all AI Gateway evaluator types configured for the account. GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs\nLists all AI Gateway evaluator types configured for the account.\nRequired: account_id (path); gateway_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "aig-config-patch-gateway-log",
+    "name": "Patch Gateway Log",
+    "description": "Patch Gateway Log Updates metadata for an AI Gateway log entry. PATCH /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}\nUpdates metadata for an AI Gateway log entry.\nRequired: id (path); gateway_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-patch-logging-state",
+    "name": "Migrate AI Gateway logging to Workers Observability",
+    "description": "Migrate AI Gateway logging to Workers Observability Irreversibly migrates an eligible account to Workers Observability logging. PATCH /client/v4/accounts/{account_id}/ai-gateway/logging-state",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-gateway/logging-state\nIrreversibly migrates an eligible account to Workers Observability logging.\nRequired: account_id (path)"
+  },
+  {
+    "id": "aig-config-post-gateway-dynamic-route",
+    "name": "Create a new AI Gateway Dynamic Route.",
+    "description": "Create a new AI Gateway Dynamic Route. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes\nCreate a new AI Gateway Dynamic Route.\nRequired: account_id (path); gateway_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-post-gateway-dynamic-route-deployment",
+    "name": "Create a new AI Gateway Dynamic Route Deployment.",
+    "description": "Create a new AI Gateway Dynamic Route Deployment. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/deployments\nCreate a new AI Gateway Dynamic Route Deployment.\nRequired: account_id (path); gateway_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-post-gateway-dynamic-route-version",
+    "name": "Create a new AI Gateway Dynamic Route Version.",
+    "description": "Create a new AI Gateway Dynamic Route Version. POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions",
+    "context": "POST /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}/versions\nCreate a new AI Gateway Dynamic Route Version.\nRequired: account_id (path); gateway_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-update-account-provider",
+    "name": "Update a Account Provider",
+    "description": "Update a Account Provider Updates an existing AI Gateway dataset. PATCH /client/v4/accounts/{account_id}/ai-gateway/custom-providers/{id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-gateway/custom-providers/{id}\nUpdates an existing AI Gateway dataset.\nRequired: account_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-update-account-provider-cost",
+    "name": "Update a Account Provider Cost",
+    "description": "Update a Account Provider Cost Updates an existing AI Gateway dataset. PATCH /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs/{id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-gateway/custom-providers/costs/{id}\nUpdates an existing AI Gateway dataset.\nRequired: account_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-update-dataset",
+    "name": "Update a Dataset",
+    "description": "Update a Dataset Updates an existing AI Gateway dataset. PUT /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}\nUpdates an existing AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-update-gateway",
+    "name": "Update a Gateway",
+    "description": "Update a Gateway Updates an existing AI Gateway dataset. PUT /client/v4/accounts/{account_id}/ai-gateway/gateways/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-gateway/gateways/{id}\nUpdates an existing AI Gateway dataset.\nRequired: account_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-update-gateway-dynamic-route",
+    "name": "Update an AI Gateway Dynamic Route.",
+    "description": "Update an AI Gateway Dynamic Route. PATCH /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/routes/{id}\nUpdate an AI Gateway Dynamic Route.\nRequired: account_id (path); gateway_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "aig-config-update-providers",
+    "name": "Update a Provider Configs",
+    "description": "Update a Provider Configs Updates an existing AI Gateway dataset. PUT /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}\nUpdates an existing AI Gateway dataset.\nRequired: account_id (path); gateway_id (path); id (path)\nOptional: body (body)"
+  }
+]

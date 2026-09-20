@@ -1,0 +1,62 @@
+[
+  {
+    "id": "CheckAppealEligibility",
+    "name": "Check whether a report can be appealed",
+    "description": "Check whether a report can be appealed Returns whether the report is currently appealable, along with the signals behind that decision: whether it already has an open appeal, how many appeals have been submitted against it, and whether it has at least one mitigation that an appeal could reverse. GET /client/v4/account…",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/{report_id}/appeals/eligibility\nReturns whether the report is currently appealable, along with the signals behind that decision: whether it already has an open appeal, how many appeals have been submitted against it, and whether it has at least one mitigation that an appeal could reverse.\nRequired: account_id (path) — Cloudflare Account ID; report_id (path) — Abuse Report ID"
+  },
+  {
+    "id": "GetAbuseReport",
+    "name": "Abuse Report Details",
+    "description": "Abuse Report Details Retrieve the details of an abuse report. GET /client/v4/accounts/{account_id}/abuse-reports/{report_param}",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/{report_param}\nRetrieve the details of an abuse report.\nRequired: account_id (path) — Cloudflare Account ID; report_param (path) — Identifier of the abuse report"
+  },
+  {
+    "id": "GetSubmittedAbuseReport",
+    "name": "Get a submitted abuse report",
+    "description": "Get a submitted abuse report Retrieve a report submitted by the account. GET /client/v4/accounts/{account_id}/abuse-reports/submitted/{report_id}",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/submitted/{report_id}\nRetrieve a report submitted by the account.\nRequired: account_id (path) — Cloudflare Account ID; report_id (path) — Public report code."
+  },
+  {
+    "id": "ListAbuseReports",
+    "name": "List abuse reports",
+    "description": "List abuse reports List the abuse reports for a given account GET /client/v4/accounts/{account_id}/abuse-reports",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports\nList the abuse reports for a given account\nRequired: account_id (path) — Cloudflare Account ID\nOptional: page (query) — Where in pagination to start listing abuse reports; per_page (query) — How many abuse reports per page to list; sort (query) — A property to sort by, followed by the order (id, cdate, domain, type, status); domain (query) — Filter by domain name related to the abuse report; created_before (query) — Returns reports created before the specified date; created_after (query) — Returns reports created after the specified date; status (query) — Filter by the status of the report.; type (query) — Filter by the type of the report.; mitigation_status (query) — Filter reports that have any mitigations in the given status."
+  },
+  {
+    "id": "ListEmails",
+    "name": "List abuse report emails",
+    "description": "List abuse report emails List emails sent to the customer for an abuse report. GET /client/v4/accounts/{account_id}/abuse-reports/{report_id}/emails",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/{report_id}/emails\nList emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.\nRequired: account_id (path) — Cloudflare Account ID; report_id (path) — Abuse Report ID\nOptional: page (query) — Page number to retrieve (default 1); per_page (query) — Number of emails per page (default 20, max 100)"
+  },
+  {
+    "id": "ListMitigations",
+    "name": "List abuse report mitigations",
+    "description": "List abuse report mitigations List mitigations done to remediate the abuse report. GET /client/v4/accounts/{account_id}/abuse-reports/{report_id}/mitigations",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/{report_id}/mitigations\nList mitigations done to remediate the abuse report.\nRequired: account_id (path) — Cloudflare Account ID; report_id (path) — Abuse Report ID\nOptional: page (query) — Where in pagination to start listing abuse reports; per_page (query) — How many abuse reports per page to list; sort (query) — A property to sort by, followed by the order; type (query) — Filter by the type of mitigation. This filter parameter can be specified multiple times to include multiple types of mitigations in the result set.; effective_before (query) — Returns mitigations that were dispatched before the given date; effective_after (query) — Returns mitigation that were dispatched after the given date; status (query) — Filter by the status of the mitigation.; entity_type (query) — Filter by the type of entity the mitigation impacts."
+  },
+  {
+    "id": "ListSubmittedAbuseReportEmails",
+    "name": "List emails sent to an abuse report submitter",
+    "description": "List emails sent to an abuse report submitter List successful emails sent to the submitter of a report submitted by the account. GET /client/v4/accounts/{account_id}/abuse-reports/submitted/{report_id}/emails",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/submitted/{report_id}/emails\nList successful emails sent to the submitter of a report submitted by the account. Does not include emails sent to customers or hosts.\nRequired: account_id (path) — Cloudflare Account ID; report_id (path) — Public report code.\nOptional: page (query) — Page number to retrieve (default 1).; per_page (query) — Number of emails per page (default 20, max 100)."
+  },
+  {
+    "id": "ListSubmittedAbuseReports",
+    "name": "List submitted abuse reports",
+    "description": "List submitted abuse reports List abuse reports submitted by the account. GET /client/v4/accounts/{account_id}/abuse-reports/submitted",
+    "context": "GET /client/v4/accounts/{account_id}/abuse-reports/submitted\nList abuse reports submitted by the account.\nRequired: account_id (path) — Cloudflare Account ID\nOptional: page (query) — Page of submitted reports to return.; per_page (query) — Number of submitted reports per page.; sort (query) — A property and direction to sort by (id, cdate, domain, type, status).; id (query) — Filter by report code.; domain (query) — Filter by reported domain. This parameter can be specified multiple times.; created_before (query) — Return reports submitted before this time.; created_after (query) — Return reports submitted after this time.; status (query) — Filter by submitter-facing status. This parameter can be specified multiple times.; type (query) — Filter by report type. This parameter can be specified multiple times."
+  },
+  {
+    "id": "RequestReview",
+    "name": "Request review on mitigations",
+    "description": "Request review on mitigations Request a review for mitigations on an account. POST /client/v4/accounts/{account_id}/abuse-reports/{report_id}/mitigations/appeal",
+    "context": "POST /client/v4/accounts/{account_id}/abuse-reports/{report_id}/mitigations/appeal\nRequest a review for mitigations on an account. Repeating a request for a mitigation with an unresolved appeal is idempotent and returns that mitigation in the in-review state.\nRequired: account_id (path) — Cloudflare Account ID; report_id (path) — Abuse Report ID; body (body)"
+  },
+  {
+    "id": "SubmitAbuseReport",
+    "name": "Submit an abuse report",
+    "description": "Submit an abuse report Submit an abuse report of a particular type. POST /client/v4/accounts/{account_id}/abuse-reports/{report_param}",
+    "context": "POST /client/v4/accounts/{account_id}/abuse-reports/{report_param}\nSubmit an abuse report of a particular type. Requires the abuse-reports entitlement on the account (Enterprise accounts have it by default; other accounts must request access) and an API token with the `Account > Abuse Reports > Edit` permission. If the account is not entitled, the request is rejected with an HTTP `401` response (see below).\nRequired: account_id (path) — Cloudflare Account ID; report_param (path) — The report type to be submitted. Example: abuse_general; body (body)"
+  }
+]

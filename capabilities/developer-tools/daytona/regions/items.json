@@ -1,0 +1,50 @@
+[
+  {
+    "id": "createRegion",
+    "name": "Create a new region",
+    "description": "Create a new region POST /regions",
+    "context": "POST /regions\nCreate a new region\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteRegion",
+    "name": "Delete a region",
+    "description": "Delete a region DELETE /regions/{id}",
+    "context": "DELETE /regions/{id}\nDelete a region\nRequired: id (path) — Region ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getRegionById",
+    "name": "Get region by ID",
+    "description": "Get region by ID GET /regions/{id}",
+    "context": "GET /regions/{id}\nGet region by ID\nRequired: id (path) — Region ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "listAvailableRegions",
+    "name": "List all available regions for the organization",
+    "description": "List all available regions for the organization GET /regions",
+    "context": "GET /regions\nList all available regions for the organization\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "regenerateProxyApiKey",
+    "name": "Regenerate proxy API key for a region",
+    "description": "Regenerate proxy API key for a region POST /regions/{id}/regenerate-proxy-api-key",
+    "context": "POST /regions/{id}/regenerate-proxy-api-key\nRegenerate proxy API key for a region\nRequired: id (path) — Region ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "regenerateSnapshotManagerCredentials",
+    "name": "Regenerate snapshot manager credentials for a region",
+    "description": "Regenerate snapshot manager credentials for a region POST /regions/{id}/regenerate-snapshot-manager-credentials",
+    "context": "POST /regions/{id}/regenerate-snapshot-manager-credentials\nRegenerate snapshot manager credentials for a region\nRequired: id (path) — Region ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "regenerateSshGatewayApiKey",
+    "name": "Regenerate SSH gateway API key for a region",
+    "description": "Regenerate SSH gateway API key for a region POST /regions/{id}/regenerate-ssh-gateway-api-key",
+    "context": "POST /regions/{id}/regenerate-ssh-gateway-api-key\nRegenerate SSH gateway API key for a region\nRequired: id (path) — Region ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updateRegion",
+    "name": "Update region configuration",
+    "description": "Update region configuration PATCH /regions/{id}",
+    "context": "PATCH /regions/{id}\nUpdate region configuration\nRequired: id (path) — Region ID; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "account-creation",
+    "name": "Create an Account",
+    "description": "Create an Account Create an Account. POST /client/v4/accounts",
+    "context": "POST /client/v4/accounts\nCreate an Account. To create the Account within an Organization, provide `unit.id` and omit `standalone`. To create a standalone Free Account, provide `standalone: true` and omit `unit`. Providing both fields is invalid. If you omit both fields, Cloudflare can determine the destination only when the User is an administrator of exactly one Organization. Cloudflare creates the Account in that Organization; otherwise, the request returns an error.\nRequired: body (body) — Parameters for account creation\nOptional: Idempotency-Key (header) — Optional key that identifies an Account-creation request. Free Account creation can require exactly one valid key, so API clients should send a key with every Account-creation request. Reuse the same key when retrying the same request."
+  },
+  {
+    "id": "account-deletion",
+    "name": "Delete a specific account",
+    "description": "Delete a specific account Delete a specific account (only available for tenant admins at this time). DELETE /client/v4/accounts/{account_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}\nDelete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account\nRequired: account_id (path)"
+  },
+  {
+    "id": "accounts-account-details",
+    "name": "Account Details",
+    "description": "Account Details Get information about a specific account that you are a member of. GET /client/v4/accounts/{account_id}",
+    "context": "GET /client/v4/accounts/{account_id}\nGet information about a specific account that you are a member of.\nRequired: account_id (path)"
+  },
+  {
+    "id": "accounts-list-accounts",
+    "name": "List Accounts",
+    "description": "List Accounts List all accounts you have ownership or verified access to. GET /client/v4/accounts",
+    "context": "GET /client/v4/accounts\nList all accounts you have ownership or verified access to.\nOptional: name (query); page (query); per_page (query); direction (query)"
+  },
+  {
+    "id": "accounts-update-account",
+    "name": "Update Account",
+    "description": "Update Account Update an existing account. PUT /client/v4/accounts/{account_id}",
+    "context": "PUT /client/v4/accounts/{account_id}\nUpdate an existing account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-billing-create-setup-intent",
+    "name": "Create Setup Intent",
+    "description": "Create Setup Intent Creates a Stripe setup intent for adding a payment method to an account. POST /client/v4/accounts/{account_id}/client-secret",
+    "context": "POST /client/v4/accounts/{account_id}/client-secret\nCreates a Stripe setup intent for adding a payment method to an account. Returns a client secret for frontend payment method collection.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-billing-get-receipt-pdf",
+    "name": "Get Receipt PDF",
+    "description": "Get Receipt PDF Downloads a receipt as a PDF document. GET /client/v4/accounts/{account_id}/receipts/{receipt_id}/pdf",
+    "context": "GET /client/v4/accounts/{account_id}/receipts/{receipt_id}/pdf\nDownloads a receipt as a PDF document.\nRequired: account_id (path); receipt_id (path) — Receipt identifier.\nOptional: doctype (query)"
+  },
+  {
+    "id": "account-billing-pay-bad-debt",
+    "name": "Pay Bad Debt",
+    "description": "Pay Bad Debt Pays outstanding bad debt for an account. POST /client/v4/accounts/{account_id}/pay-bad-debt",
+    "context": "POST /client/v4/accounts/{account_id}/pay-bad-debt\nPays outstanding bad debt for an account. Discovers all debt automatically and handles invoice deduplication.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-billing-pay-invoice",
+    "name": "Pay Invoice",
+    "description": "Pay Invoice Pays an outstanding invoice for an account. POST /client/v4/accounts/{account_id}/pay-invoice",
+    "context": "POST /client/v4/accounts/{account_id}/pay-invoice\nPays an outstanding invoice for an account. Returns a Stripe client secret when Strong Customer Authentication (SCA) is required to complete the payment.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-billing-toggle-pdf-invoices",
+    "name": "Toggle PDF Invoices",
+    "description": "Toggle PDF Invoices Toggles PDF invoice generation for an account. PATCH /client/v4/accounts/{account_id}/invoices",
+    "context": "PATCH /client/v4/accounts/{account_id}/invoices\nToggles PDF invoice generation for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-request-tracer-request-trace",
+    "name": "Request Trace",
+    "description": "Request Trace Traces a simulated HTTP request through Cloudflare's edge to analyze how rules, settings, and configurations would process the request. POST /client/v4/accounts/{account_id}/request-tracer/trace",
+    "context": "POST /client/v4/accounts/{account_id}/request-tracer/trace\nTraces a simulated HTTP request through Cloudflare's edge to analyze how rules, settings, and configurations would process the request. Useful for debugging firewall rules, page rules, and other request transformations without sending actual traffic. Supports custom headers, cookies, body content, and geolocation context.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-roles-list-roles",
+    "name": "List Roles",
+    "description": "List Roles Get all available roles for an account. GET /client/v4/accounts/{account_id}/roles",
+    "context": "GET /client/v4/accounts/{account_id}/roles\nGet all available roles for an account.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "account-roles-role-details",
+    "name": "Role Details",
+    "description": "Role Details Get information about a specific role for an account. GET /client/v4/accounts/{account_id}/roles/{role_id}",
+    "context": "GET /client/v4/accounts/{account_id}/roles/{role_id}\nGet information about a specific role for an account.\nRequired: role_id (path); account_id (path)"
+  },
+  {
+    "id": "account-subscriptions-bulk-create-subscription",
+    "name": "Create Subscriptions",
+    "description": "Create Subscriptions Creates multiple subscriptions for an account in a single request. POST /client/v4/accounts/{account_id}/bulk/subscriptions",
+    "context": "POST /client/v4/accounts/{account_id}/bulk/subscriptions\nCreates multiple subscriptions for an account in a single request.\nRequired: account_id (path); body (body)\nOptional: idemp_key (query)"
+  },
+  {
+    "id": "Accounts_batchMoveAccounts",
+    "name": "Batch move accounts",
+    "description": "Batch move accounts Batch move a collection of accounts to a specific organization. POST /client/v4/accounts/move",
+    "context": "POST /client/v4/accounts/move\nBatch move a collection of accounts to a specific organization. ⚠️ Not implemented.\nRequired: body (body)"
+  },
+  {
+    "id": "Accounts_moveAccounts",
+    "name": "Move account",
+    "description": "Move account Move an account within an organization hierarchy or an account outside an organization. POST /client/v4/accounts/{account_id}/move",
+    "context": "POST /client/v4/accounts/{account_id}/move\nMove an account within an organization hierarchy or an account outside an organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: account_id (path); body (body) — The destination organization ID is where the account is to be moved."
+  },
+  {
+    "id": "Accounts_getAccountProfile",
+    "name": "Get account profile",
+    "description": "Get account profile Retrieves the profile information for a specific Cloudflare account, including organization details, settings, and metadata. GET /client/v4/accounts/{account_id}/profile",
+    "context": "GET /client/v4/accounts/{account_id}/profile\nRetrieves the profile information for a specific Cloudflare account, including organization details, settings, and metadata. This endpoint is commonly used to verify account access and retrieve account-level configuration.\nRequired: account_id (path)"
+  },
+  {
+    "id": "Accounts_modifyAccountProfile",
+    "name": "Modify account profile",
+    "description": "Modify account profile Updates the profile information for a Cloudflare account. PUT /client/v4/accounts/{account_id}/profile",
+    "context": "PUT /client/v4/accounts/{account_id}/profile\nUpdates the profile information for a Cloudflare account. Allows modification of account-level settings and organizational details. Requires Account Settings Write permission.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "Accounts_listAccountOrganizations",
+    "name": "List account organizations",
+    "description": "List account organizations Retrieve a list of the organizations that \"contain\" this account or are managing it. GET /client/v4/accounts/{account_id}/organizations",
+    "context": "GET /client/v4/accounts/{account_id}/organizations\nRetrieve a list of the organizations that \"contain\" this account or are managing it. The returned list will be in order from \"root\" to \"leaf\", where the \"leaf\" will be the organization that _immediately_ contains the specified account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "analytics-engine-sql-query-get",
+    "name": "Execute an Analytics Engine SQL query via query parameter",
+    "description": "Execute an Analytics Engine SQL query via query parameter Executes a SQL query against Workers Analytics Engine data. GET /client/v4/accounts/{account_id}/analytics_engine/sql",
+    "context": "GET /client/v4/accounts/{account_id}/analytics_engine/sql\nExecutes a SQL query against Workers Analytics Engine data. Pass the SQL query as a query parameter. The response uses newline-delimited JSON (NDJSON) by default, or a single JSON object when the query includes a FORMAT JSON clause. Use the POST method for longer queries that may exceed URL length limits.\nRequired: account_id (path) — Cloudflare account identifier.; query (query) — Supply a SQL query to run against your Analytics Engine datasets. Use only SELECT statements. The service validates the query against a restricted SQL grammar before execution."
+  },
+  {
+    "id": "analytics-engine-sql-query-post",
+    "name": "Execute an Analytics Engine SQL query via request body",
+    "description": "Execute an Analytics Engine SQL query via request body Executes a SQL query against Workers Analytics Engine data. POST /client/v4/accounts/{account_id}/analytics_engine/sql",
+    "context": "POST /client/v4/accounts/{account_id}/analytics_engine/sql\nExecutes a SQL query against Workers Analytics Engine data. Pass the SQL query in the request body as plain text. The response uses newline-delimited JSON (NDJSON) by default, or a single JSON object when the query includes a FORMAT JSON clause. Prefer this method for longer queries that may exceed URL length limits.\nRequired: account_id (path) — Cloudflare account identifier.; body (body)"
+  },
+  {
+    "id": "audit-logs-get-account-audit-logs",
+    "name": "Get account audit logs",
+    "description": "Get account audit logs Gets a list of audit logs for an account. GET /client/v4/accounts/{account_id}/audit_logs",
+    "context": "GET /client/v4/accounts/{account_id}/audit_logs\nGets a list of audit logs for an account. Can be filtered by who made the change, on which zone, and the timeframe of the change.\nRequired: account_id (path)\nOptional: id (query); export (query); action.type (query); actor.ip (query); actor.email (query); since (query); before (query); zone.name (query); direction (query); per_page (query); page (query); hide_user_logs (query)"
+  },
+  {
+    "id": "billable-usage-get-v1-account-usage",
+    "name": "Get Account Billable Usage (Version 1, Alpha)",
+    "description": "Get Account Billable Usage (Version 1, Alpha) Returns billable usage data for the account. GET /client/v4/accounts/{account_id}/billable-usage",
+    "context": "GET /client/v4/accounts/{account_id}/billable-usage\nReturns billable usage data for the account. When no query parameters are provided, returns usage for the current billing period.\nRequired: account_id (path) — Identifies the Cloudflare account.\nOptional: from (query) — Start date for the usage query (ISO 8601). The provided time range must include the subscription billing cycle anchor day, otherwise no usage data is returned. Use the info endpoint to retrieve the subscription anchor day.; to (query) — End date for the usage query (ISO 8601)."
+  },
+  {
+    "id": "billable-usage-get-v1-account-usage-info",
+    "name": "Get Account Billable Usage Info (Version 1, Alpha)",
+    "description": "Get Account Billable Usage Info (Version 1, Alpha) Returns high-level usage information for the account, including coverage, and subscription metadata. GET /client/v4/accounts/{account_id}/billable-usage/info",
+    "context": "GET /client/v4/accounts/{account_id}/billable-usage/info\nReturns high-level usage information for the account, including coverage, and subscription metadata.\nRequired: account_id (path) — Identifies the Cloudflare account."
+  },
+  {
+    "id": "cloudflare-tunnel-list-all-tunnels",
+    "name": "List All Tunnels",
+    "description": "List All Tunnels Lists and filters all types of Tunnels in an account. GET /client/v4/accounts/{account_id}/tunnels",
+    "context": "GET /client/v4/accounts/{account_id}/tunnels\nLists and filters all types of Tunnels in an account.\nRequired: account_id (path)\nOptional: name (query); is_deleted (query); existed_at (query); uuid (query); was_active_at (query); was_inactive_at (query); include_prefix (query); exclude_prefix (query); tun_types (query); status (query); per_page (query); page (query)"
+  },
+  {
+    "id": "dns-records-for-an-account-get-usage",
+    "name": "Get DNS Record Usage for Account",
+    "description": "Get DNS Record Usage for Account Get the current DNS record usage and quota for an account. GET /client/v4/accounts/{account_id}/dns_records/usage",
+    "context": "GET /client/v4/accounts/{account_id}/dns_records/usage\nGet the current DNS record usage and quota for an account. May include internal DNS usage and quota.\nRequired: account_id (path)"
+  },
+  {
+    "id": "entitlements-get-account-entitlements",
+    "name": "Get Account Entitlements",
+    "description": "Get Account Entitlements Returns the list of entitlements (features and their allocations) for a given account. GET /client/v4/accounts/{account_id}/entitlements",
+    "context": "GET /client/v4/accounts/{account_id}/entitlements\nReturns the list of entitlements (features and their allocations) for a given account. Each entitlement describes a product feature the account is permitted to use and the allocation value (boolean, count, range, enum, or string) that governs its behaviour.\nRequired: account_id (path) — Identifier of the account."
+  },
+  {
+    "id": "get_FlowsGet",
+    "name": "Get transformation flows",
+    "description": "Get transformation flows Get the current transformation flows configuration for a zone. GET /client/v4/accounts/{accountId}/zones/{zoneId}/v1/images/flows",
+    "context": "GET /client/v4/accounts/{accountId}/zones/{zoneId}/v1/images/flows\nGet the current transformation flows configuration for a zone.\nRequired: accountId (path) — Account identifier.; zoneId (path) — Zone identifier."
+  },
+  {
+    "id": "put_FlowsUpdate",
+    "name": "Update transformation flows",
+    "description": "Update transformation flows Replace the entire transformation flows configuration for a zone. PUT /client/v4/accounts/{accountId}/zones/{zoneId}/v1/images/flows",
+    "context": "PUT /client/v4/accounts/{accountId}/zones/{zoneId}/v1/images/flows\nReplace the entire transformation flows configuration for a zone.\nRequired: accountId (path) — Account identifier.; zoneId (path) — Zone identifier.\nOptional: body (body)"
+  },
+  {
+    "id": "usage-analytics-get-account-media-usage",
+    "name": "Get account Media usage",
+    "description": "Get account Media usage Retrieve Media usage analytics for an account. GET /client/v4/accounts/{account_id}/media/usage",
+    "context": "GET /client/v4/accounts/{account_id}/media/usage\nRetrieve Media usage analytics for an account. This endpoint shares the same backend handler as the Stream usage endpoint and returns identical Stream metrics (streamMinutesViewed). The gateway rewrites this path to the shared usage handler.\nRequired: account_id (path) — Standard Cloudflare hex account identifier. The API gateway translates this to an internal numeric ID before forwarding to the backend service.\nOptional: metrics (query) — Comma-separated list of metrics to include in the response. Available metrics depend on the endpoint. Billing usage supports: streamMinutesViewed, rateLimitingRequestsAllowed, loadBalancingQueries, argoAcceleratedBytes, workersRequests, workersKVReads, imageResizingRequests, spectrumBytesTransferred, mediaUniqueTransformations. Stream/media usage supports: streamMinutesViewed.; since (query) — Start of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to 6 hours before the current time.; until (query) — End of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to the current time.; time_delta (query) — Time unit to aggregate usage observations into. Data retention is approximately 18 months. The effective number of data points returned depends on the time range and granularity selected. For example, requesting hourly granularity over 18 months could produce up to ~13,000 data points; use the limit parameter to cap results and be aware that responses may be truncated.; limit (query) — Maximum number of data points to return. The actual number of results depends on the interaction between the time range (since/until) and time_delta granularity. Results are truncated to this limit without error if the time range produces more data points than the limit allows.; filters (query) — Filter expressions to apply to the query. Format: field==value. Multiple filters can be combined."
+  },
+  {
+    "id": "waiting-room-list-waiting-rooms-account",
+    "name": "List waiting rooms for account",
+    "description": "List waiting rooms for account Lists waiting rooms for account. GET /client/v4/accounts/{account_id}/waiting_rooms",
+    "context": "GET /client/v4/accounts/{account_id}/waiting_rooms\nLists waiting rooms for account.\nRequired: account_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page. Must be a multiple of 5."
+  }
+]

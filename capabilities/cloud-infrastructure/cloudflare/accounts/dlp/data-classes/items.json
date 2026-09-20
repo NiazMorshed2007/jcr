@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dlp-data-classes-create",
+    "name": "Creates a new data class",
+    "description": "Creates a new data class Creates a data class for use in DLP profiles. POST /client/v4/accounts/{account_id}/dlp/data_classes",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/data_classes\nCreates a data class for use in DLP profiles.\nRequired: account_id (path); body (body) — Attributes of the new data class."
+  },
+  {
+    "id": "dlp-data-classes-delete",
+    "name": "Delete a single data class",
+    "description": "Delete a single data class Deletes a data class from the account. DELETE /client/v4/accounts/{account_id}/dlp/data_classes/{data_class_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/data_classes/{data_class_id}\nDeletes a data class from the account.\nRequired: account_id (path); data_class_id (path)"
+  },
+  {
+    "id": "dlp-data-classes-list",
+    "name": "Retrieve all data classes in an account",
+    "description": "Retrieve all data classes in an account Lists data classes configured for the account. GET /client/v4/accounts/{account_id}/dlp/data_classes",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_classes\nLists data classes configured for the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-data-classes-read",
+    "name": "Retrieve a specific data class",
+    "description": "Retrieve a specific data class Gets the configuration for a data class. GET /client/v4/accounts/{account_id}/dlp/data_classes/{data_class_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_classes/{data_class_id}\nGets the configuration for a data class.\nRequired: account_id (path); data_class_id (path)"
+  },
+  {
+    "id": "dlp-data-classes-update",
+    "name": "Update the attributes of a single data class",
+    "description": "Update the attributes of a single data class Updates the configuration for a data class. PUT /client/v4/accounts/{account_id}/dlp/data_classes/{data_class_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/data_classes/{data_class_id}\nUpdates the configuration for a data class.\nRequired: account_id (path); data_class_id (path); body (body) — Attributes of the data class to update."
+  }
+]

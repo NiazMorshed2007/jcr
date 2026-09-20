@@ -1,0 +1,410 @@
+[
+  {
+    "id": "create-deployment-group",
+    "name": "Create deployment group",
+    "description": "Create deployment group Creates a new deployment group. POST /client/v4/accounts/{account_id}/devices/deployment-groups",
+    "context": "POST /client/v4/accounts/{account_id}/devices/deployment-groups\nCreates a new deployment group. Policy IDs must be unique across all deployment groups. This endpoint is in Beta.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "create-ip-profile",
+    "name": "Create IP profile",
+    "description": "Create IP profile Creates a WARP Device IP profile. POST /client/v4/accounts/{account_id}/devices/ip-profiles",
+    "context": "POST /client/v4/accounts/{account_id}/devices/ip-profiles\nCreates a WARP Device IP profile. Currently, only IPv4 Device subnets can be associated.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "delete-deployment-group",
+    "name": "Delete deployment group",
+    "description": "Delete deployment group Deletes a deployment group. DELETE /client/v4/accounts/{account_id}/devices/deployment-groups/{group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/deployment-groups/{group_id}\nDeletes a deployment group. Associated policies no longer apply and devices stop receiving version targets. This endpoint is in Beta.\nRequired: account_id (path); group_id (path)"
+  },
+  {
+    "id": "delete-device",
+    "name": "Delete device",
+    "description": "Delete device Deletes a WARP device. DELETE /client/v4/accounts/{account_id}/devices/physical-devices/{device_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/physical-devices/{device_id}\nDeletes a WARP device.\nRequired: device_id (path); account_id (path)"
+  },
+  {
+    "id": "delete-ip-profile",
+    "name": "Delete IP profile",
+    "description": "Delete IP profile Delete a WARP Device IP profile. DELETE /client/v4/accounts/{account_id}/devices/ip-profiles/{profile_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/ip-profiles/{profile_id}\nDelete a WARP Device IP profile.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "delete-registration",
+    "name": "Delete registration",
+    "description": "Delete registration Deletes a WARP registration. DELETE /client/v4/accounts/{account_id}/devices/registrations/{registration_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/registrations/{registration_id}\nDeletes a WARP registration.\nRequired: registration_id (path); account_id (path)"
+  },
+  {
+    "id": "delete-registrations",
+    "name": "Delete registrations",
+    "description": "Delete registrations Deletes a list of WARP registrations. DELETE /client/v4/accounts/{account_id}/devices/registrations",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/registrations\nDeletes a list of WARP registrations.\nRequired: account_id (path); id (query) — A list of registration IDs to delete."
+  },
+  {
+    "id": "device-managed-networks-create-device-managed-network",
+    "name": "Create a device managed network",
+    "description": "Create a device managed network Creates a new device managed network. POST /client/v4/accounts/{account_id}/devices/networks",
+    "context": "POST /client/v4/accounts/{account_id}/devices/networks\nCreates a new device managed network.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "device-managed-networks-delete-device-managed-network",
+    "name": "Delete a device managed network",
+    "description": "Delete a device managed network Deletes a device managed network and fetches a list of the remaining device managed networks for an account. DELETE /client/v4/accounts/{account_id}/devices/networks/{network_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/networks/{network_id}\nDeletes a device managed network and fetches a list of the remaining device managed networks for an account.\nRequired: network_id (path); account_id (path)"
+  },
+  {
+    "id": "device-managed-networks-device-managed-network-details",
+    "name": "Get device managed network details",
+    "description": "Get device managed network details Fetches details for a single managed network. GET /client/v4/accounts/{account_id}/devices/networks/{network_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/networks/{network_id}\nFetches details for a single managed network.\nRequired: network_id (path); account_id (path)"
+  },
+  {
+    "id": "device-managed-networks-list-device-managed-networks",
+    "name": "List your device managed networks",
+    "description": "List your device managed networks Fetches a list of managed networks for an account. GET /client/v4/accounts/{account_id}/devices/networks",
+    "context": "GET /client/v4/accounts/{account_id}/devices/networks\nFetches a list of managed networks for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "device-managed-networks-update-device-managed-network",
+    "name": "Update a device managed network",
+    "description": "Update a device managed network Updates a configured device managed network. PUT /client/v4/accounts/{account_id}/devices/networks/{network_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/networks/{network_id}\nUpdates a configured device managed network.\nRequired: network_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "device-posture-integrations-create-device-posture-integration",
+    "name": "Create a device posture integration",
+    "description": "Create a device posture integration Create a new device posture integration. POST /client/v4/accounts/{account_id}/devices/posture/integration",
+    "context": "POST /client/v4/accounts/{account_id}/devices/posture/integration\nCreate a new device posture integration.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "device-posture-integrations-delete-device-posture-integration",
+    "name": "Delete a device posture integration",
+    "description": "Delete a device posture integration Delete a configured device posture integration. DELETE /client/v4/accounts/{account_id}/devices/posture/integration/{integration_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/posture/integration/{integration_id}\nDelete a configured device posture integration.\nRequired: integration_id (path); account_id (path)"
+  },
+  {
+    "id": "device-posture-integrations-device-posture-integration-details",
+    "name": "Get device posture integration details",
+    "description": "Get device posture integration details Fetches details for a single device posture integration. GET /client/v4/accounts/{account_id}/devices/posture/integration/{integration_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/posture/integration/{integration_id}\nFetches details for a single device posture integration.\nRequired: integration_id (path); account_id (path)"
+  },
+  {
+    "id": "device-posture-integrations-list-device-posture-integrations",
+    "name": "List your device posture integrations",
+    "description": "List your device posture integrations Fetches the list of device posture integrations for an account. GET /client/v4/accounts/{account_id}/devices/posture/integration",
+    "context": "GET /client/v4/accounts/{account_id}/devices/posture/integration\nFetches the list of device posture integrations for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "device-posture-integrations-update-device-posture-integration",
+    "name": "Update a device posture integration",
+    "description": "Update a device posture integration Updates a configured device posture integration. PATCH /client/v4/accounts/{account_id}/devices/posture/integration/{integration_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/devices/posture/integration/{integration_id}\nUpdates a configured device posture integration.\nRequired: integration_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "device-posture-rules-create-device-posture-rule",
+    "name": "Create a device posture rule",
+    "description": "Create a device posture rule Creates a new device posture rule. POST /client/v4/accounts/{account_id}/devices/posture",
+    "context": "POST /client/v4/accounts/{account_id}/devices/posture\nCreates a new device posture rule.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "device-posture-rules-delete-device-posture-rule",
+    "name": "Delete a device posture rule",
+    "description": "Delete a device posture rule Deletes a device posture rule. DELETE /client/v4/accounts/{account_id}/devices/posture/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/posture/{rule_id}\nDeletes a device posture rule.\nRequired: rule_id (path); account_id (path)"
+  },
+  {
+    "id": "device-posture-rules-device-posture-rules-details",
+    "name": "Get device posture rule details",
+    "description": "Get device posture rule details Fetches a single device posture rule. GET /client/v4/accounts/{account_id}/devices/posture/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/posture/{rule_id}\nFetches a single device posture rule.\nRequired: rule_id (path); account_id (path)"
+  },
+  {
+    "id": "device-posture-rules-list-device-posture-rules",
+    "name": "List device posture rules",
+    "description": "List device posture rules Fetches device posture rules for a Zero Trust account. GET /client/v4/accounts/{account_id}/devices/posture",
+    "context": "GET /client/v4/accounts/{account_id}/devices/posture\nFetches device posture rules for a Zero Trust account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "device-posture-rules-update-device-posture-rule",
+    "name": "Update a device posture rule",
+    "description": "Update a device posture rule Updates a device posture rule. PUT /client/v4/accounts/{account_id}/devices/posture/{rule_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/posture/{rule_id}\nUpdates a device posture rule.\nRequired: rule_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "devices-create-device-settings-policy",
+    "name": "Create a device settings profile",
+    "description": "Create a device settings profile Creates a device settings profile to be applied to certain devices matching the criteria. POST /client/v4/accounts/{account_id}/devices/policy",
+    "context": "POST /client/v4/accounts/{account_id}/devices/policy\nCreates a device settings profile to be applied to certain devices matching the criteria.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-delete-device-settings-policy",
+    "name": "Delete a device settings profile",
+    "description": "Delete a device settings profile Deletes a device settings profile and fetches a list of the remaining profiles for an account. DELETE /client/v4/accounts/{account_id}/devices/policy/{policy_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/policy/{policy_id}\nDeletes a device settings profile and fetches a list of the remaining profiles for an account.\nRequired: policy_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-device-details",
+    "name": "Get device (deprecated)",
+    "description": "Get device (deprecated) Fetches a single WARP device. GET /client/v4/accounts/{account_id}/devices/{device_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/{device_id}\nFetches a single WARP device. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account. **Deprecated**: please use one of the following endpoints instead: - GET /accounts/{account_id}/devices/physical-devices/{device_id} - GET /accounts/{account_id}/devices/registrations/{registration_id}\nRequired: device_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-get-default-device-settings-policy",
+    "name": "Get the default device settings profile",
+    "description": "Get the default device settings profile Fetches the default device settings profile for an account. GET /client/v4/accounts/{account_id}/devices/policy",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy\nFetches the default device settings profile for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-get-device-settings-policy-by-id",
+    "name": "Get device settings profile by ID",
+    "description": "Get device settings profile by ID Fetches a device settings profile by ID. GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}\nFetches a device settings profile by ID.\nRequired: policy_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-get-local-domain-fallback-list",
+    "name": "Get your Local Domain Fallback list",
+    "description": "Get your Local Domain Fallback list Fetches a list of domains to bypass Gateway DNS resolution. GET /client/v4/accounts/{account_id}/devices/policy/fallback_domains",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/fallback_domains\nFetches a list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-get-local-domain-fallback-list-for-a-device-settings-policy",
+    "name": "Get the Local Domain Fallback list for a device settings profile",
+    "description": "Get the Local Domain Fallback list for a device settings profile Fetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains\nFetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. These domains will use the specified local DNS resolver instead.\nRequired: policy_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-get-split-tunnel-exclude-list",
+    "name": "Get the Split Tunnel exclude list",
+    "description": "Get the Split Tunnel exclude list Fetches the list of routes excluded from the WARP client's tunnel. GET /client/v4/accounts/{account_id}/devices/policy/exclude",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/exclude\nFetches the list of routes excluded from the WARP client's tunnel.\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-get-split-tunnel-exclude-list-for-a-device-settings-policy",
+    "name": "Get the Split Tunnel exclude list for a device settings profile",
+    "description": "Get the Split Tunnel exclude list for a device settings profile Fetches the list of routes excluded from the WARP client's tunnel for a specific device settings profile. GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}/exclude",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}/exclude\nFetches the list of routes excluded from the WARP client's tunnel for a specific device settings profile.\nRequired: policy_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-get-split-tunnel-include-list",
+    "name": "Get the Split Tunnel include list",
+    "description": "Get the Split Tunnel include list Fetches the list of routes included in the WARP client's tunnel. GET /client/v4/accounts/{account_id}/devices/policy/include",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/include\nFetches the list of routes included in the WARP client's tunnel.\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-get-split-tunnel-include-list-for-a-device-settings-policy",
+    "name": "Get the Split Tunnel include list for a device settings profile",
+    "description": "Get the Split Tunnel include list for a device settings profile Fetches the list of routes included in the WARP client's tunnel for a specific device settings profile. GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}/include",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policy/{policy_id}/include\nFetches the list of routes included in the WARP client's tunnel for a specific device settings profile.\nRequired: policy_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-list-admin-override-code-for-device",
+    "name": "Get override codes (deprecated)",
+    "description": "Get override codes (deprecated) Fetches a one-time use admin override code for a device. GET /client/v4/accounts/{account_id}/devices/{device_id}/override_codes",
+    "context": "GET /client/v4/accounts/{account_id}/devices/{device_id}/override_codes\nFetches a one-time use admin override code for a device. This relies on the **Admin Override** setting being enabled in your device configuration. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account. **Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.\nRequired: device_id (path); account_id (path)"
+  },
+  {
+    "id": "devices-list-device-settings-policies",
+    "name": "List device settings profiles",
+    "description": "List device settings profiles Fetches a list of the device settings profiles for an account. GET /client/v4/accounts/{account_id}/devices/policies",
+    "context": "GET /client/v4/accounts/{account_id}/devices/policies\nFetches a list of the device settings profiles for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-list-devices",
+    "name": "List devices (deprecated)",
+    "description": "List devices (deprecated) List WARP devices. GET /client/v4/accounts/{account_id}/devices",
+    "context": "GET /client/v4/accounts/{account_id}/devices\nList WARP devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account. **Deprecated**: please use one of the following endpoints instead: - GET /accounts/{account_id}/devices/physical-devices - GET /accounts/{account_id}/devices/registrations\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-resilience-retrieve-global-warp-override",
+    "name": "Retrieve Global WARP override state",
+    "description": "Retrieve Global WARP override state Fetch the Global WARP override state. GET /client/v4/accounts/{account_id}/devices/resilience/disconnect",
+    "context": "GET /client/v4/accounts/{account_id}/devices/resilience/disconnect\nFetch the Global WARP override state.\nRequired: account_id (path)"
+  },
+  {
+    "id": "devices-resilience-set-global-warp-override",
+    "name": "Set Global WARP override state",
+    "description": "Set Global WARP override state Sets the Global WARP override state. POST /client/v4/accounts/{account_id}/devices/resilience/disconnect",
+    "context": "POST /client/v4/accounts/{account_id}/devices/resilience/disconnect\nSets the Global WARP override state.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-revoke-devices",
+    "name": "Revoke devices (deprecated)",
+    "description": "Revoke devices (deprecated) Revokes a list of devices. POST /client/v4/accounts/{account_id}/devices/revoke",
+    "context": "POST /client/v4/accounts/{account_id}/devices/revoke\nRevokes a list of devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled. **Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-set-local-domain-fallback-list",
+    "name": "Set your Local Domain Fallback list",
+    "description": "Set your Local Domain Fallback list Sets the list of domains to bypass Gateway DNS resolution. PUT /client/v4/accounts/{account_id}/devices/policy/fallback_domains",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/policy/fallback_domains\nSets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-set-local-domain-fallback-list-for-a-device-settings-policy",
+    "name": "Set the Local Domain Fallback list for a device settings profile",
+    "description": "Set the Local Domain Fallback list for a device settings profile Sets the list of domains to bypass Gateway DNS resolution. PUT /client/v4/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/policy/{policy_id}/fallback_domains\nSets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead. This will only apply to the specified device settings profile.\nRequired: policy_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "devices-set-split-tunnel-exclude-list",
+    "name": "Set the Split Tunnel exclude list",
+    "description": "Set the Split Tunnel exclude list Sets the list of routes excluded from the WARP client's tunnel. PUT /client/v4/accounts/{account_id}/devices/policy/exclude",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/policy/exclude\nSets the list of routes excluded from the WARP client's tunnel.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-set-split-tunnel-exclude-list-for-a-device-settings-policy",
+    "name": "Set the Split Tunnel exclude list for a device settings profile",
+    "description": "Set the Split Tunnel exclude list for a device settings profile Sets the list of routes excluded from the WARP client's tunnel for a specific device settings profile. PUT /client/v4/accounts/{account_id}/devices/policy/{policy_id}/exclude",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/policy/{policy_id}/exclude\nSets the list of routes excluded from the WARP client's tunnel for a specific device settings profile.\nRequired: policy_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "devices-set-split-tunnel-include-list",
+    "name": "Set the Split Tunnel include list",
+    "description": "Set the Split Tunnel include list Sets the list of routes included in the WARP client's tunnel. PUT /client/v4/accounts/{account_id}/devices/policy/include",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/policy/include\nSets the list of routes included in the WARP client's tunnel.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-set-split-tunnel-include-list-for-a-device-settings-policy",
+    "name": "Set the Split Tunnel include list for a device settings profile",
+    "description": "Set the Split Tunnel include list for a device settings profile Sets the list of routes included in the WARP client's tunnel for a specific device settings profile. PUT /client/v4/accounts/{account_id}/devices/policy/{policy_id}/include",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/policy/{policy_id}/include\nSets the list of routes included in the WARP client's tunnel for a specific device settings profile.\nRequired: policy_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "devices-unrevoke-devices",
+    "name": "Unrevoke devices (deprecated)",
+    "description": "Unrevoke devices (deprecated) Unrevokes a list of devices. POST /client/v4/accounts/{account_id}/devices/unrevoke",
+    "context": "POST /client/v4/accounts/{account_id}/devices/unrevoke\nUnrevokes a list of devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled. **Deprecated**: please use POST /accounts/{account_id}/devices/registrations/unrevoke instead.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-update-default-device-settings-policy",
+    "name": "Update the default device settings profile",
+    "description": "Update the default device settings profile Updates the default device settings profile for an account. PATCH /client/v4/accounts/{account_id}/devices/policy",
+    "context": "PATCH /client/v4/accounts/{account_id}/devices/policy\nUpdates the default device settings profile for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "devices-update-device-settings-policy",
+    "name": "Update a device settings profile",
+    "description": "Update a device settings profile Updates a configured device settings profile. PATCH /client/v4/accounts/{account_id}/devices/policy/{policy_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/devices/policy/{policy_id}\nUpdates a configured device settings profile.\nRequired: policy_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "get-deployment-group",
+    "name": "Get deployment group",
+    "description": "Get deployment group Fetches a single deployment group by its ID. GET /client/v4/accounts/{account_id}/devices/deployment-groups/{group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/deployment-groups/{group_id}\nFetches a single deployment group by its ID. This endpoint is in Beta.\nRequired: account_id (path); group_id (path)"
+  },
+  {
+    "id": "get-device",
+    "name": "Get device",
+    "description": "Get device Fetches a single WARP device. GET /client/v4/accounts/{account_id}/devices/physical-devices/{device_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/physical-devices/{device_id}\nFetches a single WARP device.\nRequired: device_id (path); account_id (path)\nOptional: include (query) — Comma-separated list of additional information that should be included in the device response. Supported values are: \"last_seen_registration.policy\"."
+  },
+  {
+    "id": "get-ip-profile",
+    "name": "Get IP profile",
+    "description": "Get IP profile Fetches a single WARP Device IP profile. GET /client/v4/accounts/{account_id}/devices/ip-profiles/{profile_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/ip-profiles/{profile_id}\nFetches a single WARP Device IP profile.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "get-registration",
+    "name": "Get registration",
+    "description": "Get registration Fetches a single WARP registration. GET /client/v4/accounts/{account_id}/devices/registrations/{registration_id}",
+    "context": "GET /client/v4/accounts/{account_id}/devices/registrations/{registration_id}\nFetches a single WARP registration.\nRequired: registration_id (path); account_id (path)\nOptional: include (query) — Comma-separated list of additional information that should be included in the registration response. Supported values are: \"policy\"."
+  },
+  {
+    "id": "get-registration-override-codes",
+    "name": "Get override codes",
+    "description": "Get override codes Fetches one-time use admin override codes for a registration. GET /client/v4/accounts/{account_id}/devices/registrations/{registration_id}/override_codes",
+    "context": "GET /client/v4/accounts/{account_id}/devices/registrations/{registration_id}/override_codes\nFetches one-time use admin override codes for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.\nRequired: account_id (path); registration_id (path)"
+  },
+  {
+    "id": "list-client-target-environments",
+    "name": "List available target environments",
+    "description": "List available target environments Retrieves a list of all available target environments with their display names. GET /client/v4/accounts/{account_id}/devices/client-versions/target-environments",
+    "context": "GET /client/v4/accounts/{account_id}/devices/client-versions/target-environments\nRetrieves a list of all available target environments with their display names. This endpoint is in Beta.\nRequired: account_id (path)"
+  },
+  {
+    "id": "list-client-versions",
+    "name": "List client versions",
+    "description": "List client versions Lists available WARP client versions for a specific target environment and release track. GET /client/v4/accounts/{account_id}/devices/client-versions",
+    "context": "GET /client/v4/accounts/{account_id}/devices/client-versions\nLists available WARP client versions for a specific target environment and release track. This endpoint is in Beta.\nRequired: account_id (path); target_environment (query) — The target environment for the client version (e.g., windows, macos).; release_track (query) — The release track (ga for General Availability, beta for Beta releases).\nOptional: page (query) — The page number to return.; per_page (query) — The maximum number of versions to return per page."
+  },
+  {
+    "id": "list-deployment-groups",
+    "name": "List deployment groups",
+    "description": "List deployment groups Lists all deployment groups for an account. GET /client/v4/accounts/{account_id}/devices/deployment-groups",
+    "context": "GET /client/v4/accounts/{account_id}/devices/deployment-groups\nLists all deployment groups for an account. Use deployment groups to assign target WARP client versions to specific devices. This endpoint is in Beta.\nRequired: account_id (path)\nOptional: page (query) — The page number to return.; per_page (query) — The maximum number of deployment groups to return per page."
+  },
+  {
+    "id": "list-devices",
+    "name": "List devices",
+    "description": "List devices Lists WARP devices. GET /client/v4/accounts/{account_id}/devices/physical-devices",
+    "context": "GET /client/v4/accounts/{account_id}/devices/physical-devices\nLists WARP devices.\nRequired: account_id (path)\nOptional: cursor (query) — Opaque token indicating the starting position when requesting the next set of records. A cursor value can be obtained from the result_info.cursor field in the response.; sort_by (query) — The device field to order results by.; sort_order (query) — Sort direction.; last_seen_user.email (query) — Filter by the last seen user's email.; seen_after (query) — Filter by the last_seen timestamp - returns only devices last seen after this timestamp.; seen_before (query) — Filter by the last_seen timestamp - returns only devices last seen before this timestamp.; per_page (query) — The maximum number of devices to return in a single response.; search (query) — Search by device details.; active_registrations (query) — Include or exclude devices with active registrations. The default is \"only\" - return only devices with active registrations.; has_registration_type (query) — Filter by the type of active registration associated with the device.; id (query) — Filter by a one or more device IDs.; last_seen_registration.policy.id (query) — Filter by the ID of the device settings profile assigned to the device registration.; include (query) — Comma-separated list of additional information that should be included in the device response. Supported values are: \"last_seen_registration.policy\"."
+  },
+  {
+    "id": "list-ip-profiles",
+    "name": "List IP profiles",
+    "description": "List IP profiles Lists WARP Device IP profiles. GET /client/v4/accounts/{account_id}/devices/ip-profiles",
+    "context": "GET /client/v4/accounts/{account_id}/devices/ip-profiles\nLists WARP Device IP profiles.\nRequired: account_id (path)\nOptional: page (query) — The page number to return.; per_page (query) — The number of IP profiles to return per page."
+  },
+  {
+    "id": "list-registrations",
+    "name": "List registrations",
+    "description": "List registrations Lists WARP registrations. GET /client/v4/accounts/{account_id}/devices/registrations",
+    "context": "GET /client/v4/accounts/{account_id}/devices/registrations\nLists WARP registrations.\nRequired: account_id (path)\nOptional: user.id (query) — Filter by user ID.; seen_after (query) — Filter by the last_seen timestamp - returns only registrations last seen after this timestamp.; seen_before (query) — Filter by the last_seen timestamp - returns only registrations last seen before this timestamp.; status (query) — Filter by registration status. Defaults to 'active'.; registration_type (query) — Filter by registration client type.; per_page (query) — The maximum number of devices to return in a single response.; search (query) — Filter by registration details.; sort_by (query) — The registration field to order results by.; sort_order (query) — Sort direction.; cursor (query) — Opaque token indicating the starting position when requesting the next set of records. A cursor value can be obtained from the result_info.cursor field in the response.; id (query) — Filter by registration ID.; device.id (query) — Filter by WARP device ID.; policy.id (query) — Filter by the ID of the device settings profile assigned to the registration.; include (query) — Comma-separated list of additional information that should be included in the registration response. Supported values are: \"policy\"."
+  },
+  {
+    "id": "revoke-device",
+    "name": "Revoke device registrations",
+    "description": "Revoke device registrations Revokes all WARP registrations associated with the specified device. POST /client/v4/accounts/{account_id}/devices/physical-devices/{device_id}/revoke",
+    "context": "POST /client/v4/accounts/{account_id}/devices/physical-devices/{device_id}/revoke\nRevokes all WARP registrations associated with the specified device.\nRequired: account_id (path); device_id (path)"
+  },
+  {
+    "id": "revoke-registrations",
+    "name": "Revoke registrations",
+    "description": "Revoke registrations Revokes a list of WARP registrations. POST /client/v4/accounts/{account_id}/devices/registrations/revoke",
+    "context": "POST /client/v4/accounts/{account_id}/devices/registrations/revoke\nRevokes a list of WARP registrations.\nRequired: account_id (path); id (query) — A list of registration IDs to revoke."
+  },
+  {
+    "id": "unrevoke-registrations",
+    "name": "Unrevoke registrations",
+    "description": "Unrevoke registrations Unrevokes a list of WARP registrations. POST /client/v4/accounts/{account_id}/devices/registrations/unrevoke",
+    "context": "POST /client/v4/accounts/{account_id}/devices/registrations/unrevoke\nUnrevokes a list of WARP registrations.\nRequired: account_id (path); id (query) — A list of registration IDs to unrevoke."
+  },
+  {
+    "id": "update-deployment-group",
+    "name": "Update deployment group",
+    "description": "Update deployment group Updates a deployment group. PATCH /client/v4/accounts/{account_id}/devices/deployment-groups/{group_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/devices/deployment-groups/{group_id}\nUpdates a deployment group. Returns 409 if any newly added policy IDs already belong to another deployment group. This endpoint is in Beta.\nRequired: account_id (path); group_id (path); body (body)"
+  },
+  {
+    "id": "update-ip-profile",
+    "name": "Update IP profile",
+    "description": "Update IP profile Updates a WARP Device IP profile. PATCH /client/v4/accounts/{account_id}/devices/ip-profiles/{profile_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/devices/ip-profiles/{profile_id}\nUpdates a WARP Device IP profile. Currently, only IPv4 Device subnets can be associated.\nRequired: account_id (path); profile_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-accounts-delete-device-settings-for-zero-trust-account",
+    "name": "Reset device settings for a Zero Trust account with defaults. This turns off all proxying.",
+    "description": "Reset device settings for a Zero Trust account with defaults. This turns off all proxying. Resets the current device settings for a Zero Trust account. DELETE /client/v4/accounts/{account_id}/devices/settings",
+    "context": "DELETE /client/v4/accounts/{account_id}/devices/settings\nResets the current device settings for a Zero Trust account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "zero-trust-accounts-get-device-settings-for-zero-trust-account",
+    "name": "Get device settings for a Zero Trust account",
+    "description": "Get device settings for a Zero Trust account Describes the current device settings for a Zero Trust account. GET /client/v4/accounts/{account_id}/devices/settings",
+    "context": "GET /client/v4/accounts/{account_id}/devices/settings\nDescribes the current device settings for a Zero Trust account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "zero-trust-accounts-patch-device-settings-for-the-zero-trust-account",
+    "name": "Patch device settings for a Zero Trust account",
+    "description": "Patch device settings for a Zero Trust account Patches the current device settings for a Zero Trust account. PATCH /client/v4/accounts/{account_id}/devices/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/devices/settings\nPatches the current device settings for a Zero Trust account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-accounts-update-device-settings-for-the-zero-trust-account",
+    "name": "Update device settings for a Zero Trust account",
+    "description": "Update device settings for a Zero Trust account Updates the current device settings for a Zero Trust account. PUT /client/v4/accounts/{account_id}/devices/settings",
+    "context": "PUT /client/v4/accounts/{account_id}/devices/settings\nUpdates the current device settings for a Zero Trust account.\nRequired: account_id (path); body (body)"
+  }
+]

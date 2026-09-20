@@ -1,0 +1,212 @@
+[
+  {
+    "id": "meetingCreate",
+    "name": "Create a meeting",
+    "description": "Create a meeting Create a meeting for a user The expiration time of start_url is two hours. POST /v2/users/{userId}/meetings",
+    "context": "POST /v2/users/{userId}/meetings\nCreate a meeting for a user The expiration time of start_url is two hours. But for API users, the expiration time is 90 days.\nRequired: userId (path) — The user ID or email address; body (body) — Meeting object"
+  },
+  {
+    "id": "meetings",
+    "name": "List meetings",
+    "description": "List meetings List meetings for a user GET /v2/users/{userId}/meetings",
+    "context": "GET /v2/users/{userId}/meetings\nList meetings for a user\nRequired: userId (path) — The user ID or email address\nOptional: type (query) — The meeting type; page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "recordingsList",
+    "name": "List all the recordings",
+    "description": "List all the recordings GET /v2/users/{userId}/recordings",
+    "context": "GET /v2/users/{userId}/recordings\nList all the recordings\nRequired: userId (path) — The user ID or email address; from (query) — Start Date; to (query) — End Date\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes.; mc (query) — Query mc; trash (query) — Query trash"
+  },
+  {
+    "id": "user",
+    "name": "Retrieve a user",
+    "description": "Retrieve a user Retrieve a user on your account GET /v2/users/{userId}",
+    "context": "GET /v2/users/{userId}\nRetrieve a user on your account\nRequired: userId (path) — The user ID or email address\nOptional: login_type (query)"
+  },
+  {
+    "id": "userAssistantCreate",
+    "name": "Add assistants",
+    "description": "Add assistants Add assistants to a user POST /v2/users/{userId}/assistants",
+    "context": "POST /v2/users/{userId}/assistants\nAdd assistants to a user\nRequired: userId (path) — The user ID or email address; body (body) — User assistant"
+  },
+  {
+    "id": "userAssistantDelete",
+    "name": "Delete a user's assistant",
+    "description": "Delete a user's assistant Delete one of a user's assistants DELETE /v2/users/{userId}/assistants/{assistantId}",
+    "context": "DELETE /v2/users/{userId}/assistants/{assistantId}\nDelete one of a user's assistants\nRequired: userId (path) — The user ID or email address; assistantId (path) — Assistant's ID"
+  },
+  {
+    "id": "userAssistants",
+    "name": "List a user's assistants",
+    "description": "List a user's assistants GET /v2/users/{userId}/assistants",
+    "context": "GET /v2/users/{userId}/assistants\nList a user's assistants\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userAssistantsDelete",
+    "name": "Delete a user's assistants",
+    "description": "Delete a user's assistants Delete all of a user'sassitants DELETE /v2/users/{userId}/assistants",
+    "context": "DELETE /v2/users/{userId}/assistants\nDelete all of a user'sassitants\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userCreate",
+    "name": "Create a user",
+    "description": "Create a user Create a user on your account POST /v2/users",
+    "context": "POST /v2/users\nCreate a user on your account\nRequired: body (body) — User"
+  },
+  {
+    "id": "userDelete",
+    "name": "Delete a user",
+    "description": "Delete a user Delete a user on your account DELETE /v2/users/{userId}",
+    "context": "DELETE /v2/users/{userId}\nDelete a user on your account\nRequired: userId (path) — The user ID or email address\nOptional: action (query) — Delete action type; transfer_email (query) — Transfer email; transfer_meeting (query) — Transfer meeting; transfer_webinar (query) — Transfer webinar; transfer_recording (query) — Transfer recording"
+  },
+  {
+    "id": "userEmail",
+    "name": "Check a user's email",
+    "description": "Check a user's email Check if the user email exists GET /v2/users/email",
+    "context": "GET /v2/users/email\nCheck if the user email exists\nRequired: email (query) — Zoom work email"
+  },
+  {
+    "id": "userEmailUpdate",
+    "name": "Update a user's email",
+    "description": "Update a user's email PUT /v2/users/{userId}/email",
+    "context": "PUT /v2/users/{userId}/email\nUpdate a user's email\nRequired: userId (path) — The user ID or email address; body (body) — User email"
+  },
+  {
+    "id": "userPACs",
+    "name": "List user's PAC accounts",
+    "description": "List user's PAC accounts GET /v2/users/{userId}/pac",
+    "context": "GET /v2/users/{userId}/pac\nList user's PAC accounts\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userPassword",
+    "name": "Update a user's password",
+    "description": "Update a user's password PUT /v2/users/{userId}/password",
+    "context": "PUT /v2/users/{userId}/password\nUpdate a user's password\nRequired: userId (path) — The user ID or email address; body (body) — User password"
+  },
+  {
+    "id": "userPermission",
+    "name": "Retrieve a user's permissions",
+    "description": "Retrieve a user's permissions GET /v2/users/{userId}/permissions",
+    "context": "GET /v2/users/{userId}/permissions\nRetrieve a user's permissions\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userPicture",
+    "name": "Upload a user's picture",
+    "description": "Upload a user's picture Upload a user's profile picture POST /v2/users/{userId}/picture",
+    "context": "POST /v2/users/{userId}/picture\nUpload a user's profile picture\nRequired: userId (path) — The user ID or email address; body (body)"
+  },
+  {
+    "id": "users",
+    "name": "List Users",
+    "description": "List Users List users on your account GET /v2/users",
+    "context": "GET /v2/users\nList users on your account\nOptional: status (query) — User status; page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "userSchedulerDelete",
+    "name": "Delete a user's scheduler",
+    "description": "Delete a user's scheduler Delete one of a user's schedulers DELETE /v2/users/{userId}/schedulers/{schedulerId}",
+    "context": "DELETE /v2/users/{userId}/schedulers/{schedulerId}\nDelete one of a user's schedulers\nRequired: userId (path) — The user ID or email address; schedulerId (path) — Scheduler's ID"
+  },
+  {
+    "id": "userSchedulers",
+    "name": "List a user's schedulers",
+    "description": "List a user's schedulers GET /v2/users/{userId}/schedulers",
+    "context": "GET /v2/users/{userId}/schedulers\nList a user's schedulers\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userSchedulersDelete",
+    "name": "Delete a user's schedulers",
+    "description": "Delete a user's schedulers Delete all of a user'schedulers DELETE /v2/users/{userId}/schedulers",
+    "context": "DELETE /v2/users/{userId}/schedulers\nDelete all of a user'schedulers\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userSettings",
+    "name": "Retrieve a user's settings",
+    "description": "Retrieve a user's settings GET /v2/users/{userId}/settings",
+    "context": "GET /v2/users/{userId}/settings\nRetrieve a user's settings\nRequired: userId (path) — The user ID or email address\nOptional: login_type (query)"
+  },
+  {
+    "id": "userSettingsUpdate",
+    "name": "Update a user's settings",
+    "description": "Update a user's settings PATCH /v2/users/{userId}/settings",
+    "context": "PATCH /v2/users/{userId}/settings\nUpdate a user's settings\nRequired: userId (path) — The user ID or email address; body (body) — User Settings"
+  },
+  {
+    "id": "userSSOTokenDelete",
+    "name": "Revoke a user's SSO token",
+    "description": "Revoke a user's SSO token DELETE /v2/users/{userId}/token",
+    "context": "DELETE /v2/users/{userId}/token\nRevoke a user's SSO token\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userStatus",
+    "name": "Update a user's status",
+    "description": "Update a user's status PUT /v2/users/{userId}/status",
+    "context": "PUT /v2/users/{userId}/status\nUpdate a user's status\nRequired: userId (path) — The user ID or email address; body (body) — User status"
+  },
+  {
+    "id": "userToken",
+    "name": "Retrieve a user's token",
+    "description": "Retrieve a user's token GET /v2/users/{userId}/token",
+    "context": "GET /v2/users/{userId}/token\nRetrieve a user's token\nRequired: userId (path) — The user ID or email address\nOptional: type (query) — User token type"
+  },
+  {
+    "id": "userTSP",
+    "name": "Retrieve a user's TSP account",
+    "description": "Retrieve a user's TSP account GET /v2/users/{userId}/tsp/{tspId}",
+    "context": "GET /v2/users/{userId}/tsp/{tspId}\nRetrieve a user's TSP account\nRequired: userId (path) — The user ID or email address; tspId (path) — TSP account index"
+  },
+  {
+    "id": "userTSPCreate",
+    "name": "Add a user's TSP account",
+    "description": "Add a user's TSP account POST /v2/users/{userId}/tsp",
+    "context": "POST /v2/users/{userId}/tsp\nAdd a user's TSP account\nRequired: userId (path) — The user ID or email address; body (body) — TSP Account"
+  },
+  {
+    "id": "userTSPDelete",
+    "name": "Delete a user's TSP account",
+    "description": "Delete a user's TSP account DELETE /v2/users/{userId}/tsp/{tspId}",
+    "context": "DELETE /v2/users/{userId}/tsp/{tspId}\nDelete a user's TSP account\nRequired: userId (path) — The user ID or email address; tspId (path) — TSP account index"
+  },
+  {
+    "id": "userTSPs",
+    "name": "List user's TSP accounts",
+    "description": "List user's TSP accounts GET /v2/users/{userId}/tsp",
+    "context": "GET /v2/users/{userId}/tsp\nList user's TSP accounts\nRequired: userId (path) — The user ID or email address"
+  },
+  {
+    "id": "userTSPUpdate",
+    "name": "Update a TSP account",
+    "description": "Update a TSP account Update a user's TSP account PATCH /v2/users/{userId}/tsp/{tspId}",
+    "context": "PATCH /v2/users/{userId}/tsp/{tspId}\nUpdate a user's TSP account\nRequired: userId (path) — The user ID or email address; tspId (path) — TSP account index; body (body) — TSP Account"
+  },
+  {
+    "id": "userUpdate",
+    "name": "Update a user",
+    "description": "Update a user Update a user on your account PATCH /v2/users/{userId}",
+    "context": "PATCH /v2/users/{userId}\nUpdate a user on your account\nRequired: userId (path) — The user ID or email address; body (body) — User"
+  },
+  {
+    "id": "userVanityName",
+    "name": "Check a user's personal meeting room name",
+    "description": "Check a user's personal meeting room name Check if the user's personal meeting room name exists GET /v2/users/vanity_name",
+    "context": "GET /v2/users/vanity_name\nCheck if the user's personal meeting room name exists\nRequired: vanity_name (query) — Personal meeting room name"
+  },
+  {
+    "id": "userZPK",
+    "name": "Verify a user's zpk (Deprecated",
+    "description": "Verify a user's zpk (Deprecated Check if the zpk is expired. GET /v2/users/zpk",
+    "context": "GET /v2/users/zpk\nCheck if the zpk is expired. The zpk is used to authenticate a user.\nRequired: zpk (query) — User zpk"
+  },
+  {
+    "id": "webinarCreate",
+    "name": "Create a webinar",
+    "description": "Create a webinar Create a webinar for a user The expiration time of start_url is two hours. POST /v2/users/{userId}/webinars",
+    "context": "POST /v2/users/{userId}/webinars\nCreate a webinar for a user The expiration time of start_url is two hours. But for API users, the expiration time is 90 days.\nRequired: userId (path) — The user ID or email address; body (body) — User"
+  },
+  {
+    "id": "webinars",
+    "name": "List webinars",
+    "description": "List webinars List webinars for a user GET /v2/users/{userId}/webinars",
+    "context": "GET /v2/users/{userId}/webinars\nList webinars for a user\nRequired: userId (path) — The user ID or email address\nOptional: page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  }
+]

@@ -1,0 +1,176 @@
+[
+  {
+    "id": "createPage",
+    "name": "Create page",
+    "description": "Create page Creates a page in the space. POST /wiki/api/v2/pages",
+    "context": "POST /wiki/api/v2/pages\nCreates a page in the space. Pages are created as published by default unless specified as a draft in the status field. If creating a published page, the title must be specified. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the corresponding space. Permission to create a page in the space.\nRequired: body (body)\nOptional: embedded (query) — Tag the content as embedded and content will be created in NCS.; private (query) — The page will be private. Only the user who creates this page will have permission to view and edit one.; root-level (query) — The page will be created at the root level of the space (outside the space homepage tree). If true, then a value may not be supplied for the `parentId` body parameter."
+  },
+  {
+    "id": "createPageProperty",
+    "name": "Create content property for page",
+    "description": "Create content property for page Creates a new content property for a page. POST /wiki/api/v2/pages/{page-id}/properties",
+    "context": "POST /wiki/api/v2/pages/{page-id}/properties\nCreates a new content property for a page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the page.\nRequired: page-id (path) — The ID of the page to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deletePage",
+    "name": "Delete page",
+    "description": "Delete page Delete a page by id. DELETE /wiki/api/v2/pages/{id}",
+    "context": "DELETE /wiki/api/v2/pages/{id}\nDelete a page by id. By default this will delete pages that are non-drafts. To delete a page that is a draft, the endpoint must be called on a draft with the following param `draft=true`. Discarded drafts are not sent to the trash and are permanently deleted. Deleting a page moves the page to the trash, where it can be restored later. To permanently delete a page (or \"purge\" it), the endpoint must be called on a **trashed** page with the following param `purge=true`. **[Permissions](https://support.atlassian.com/confluence-cloud/docs/what-are-confluences-roles/) required**: Permission to view the page and its corresponding space. Permission to delete pages in the space. [`manage/content`](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) permission for the space (if attempting to purge). **Note:** To find the display name for each permission ID, call the [Get available space permissions](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) API.\nRequired: id (path) — The ID of the page to be deleted.\nOptional: purge (query) — If attempting to purge the page.; draft (query) — If attempting to delete a page that is a draft."
+  },
+  {
+    "id": "deletePagePropertyById",
+    "name": "Delete content property for page by id",
+    "description": "Delete content property for page by id Deletes a content property for a page by its id. DELETE /wiki/api/v2/pages/{page-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/pages/{page-id}/properties/{property-id}\nDeletes a content property for a page by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the page.\nRequired: page-id (path) — The ID of the page the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getChildPages",
+    "name": "Get child pages",
+    "description": "Get child pages Returns all child pages for given page id. GET /wiki/api/v2/pages/{id}/children",
+    "context": "GET /wiki/api/v2/pages/{id}/children\nReturns all child pages for given page id. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only pages that the user has permission to view will be returned.\nRequired: id (path) — The ID of the parent page. If you don't know the page ID, use Get pages and filter the results.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getCustomContentByTypeInPage",
+    "name": "Get custom content by type in page",
+    "description": "Get custom content by type in page Returns all custom content for a given type within a given page. GET /wiki/api/v2/pages/{id}/custom-content",
+    "context": "GET /wiki/api/v2/pages/{id}/custom-content\nReturns all custom content for a given type within a given page. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the custom content, the container of the custom content (page), and the corresponding space.\nRequired: id (path) — The ID of the page for which custom content should be returned.; type (query) — The type of custom content being requested. See: https://developer.atlassian.com/cloud/confluence/custom-content/ for additional details on custom content.\nOptional: sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field. Note: If the custom content body type is `storage`, the `storage` and `atlas_doc_format` body formats are able to be returned. If the custom content body type is `raw`, only the `raw` body format is able to be returned."
+  },
+  {
+    "id": "getPageAncestors",
+    "name": "Get all ancestors of page",
+    "description": "Get all ancestors of page Returns all ancestors for a given page by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). GET /wiki/api/v2/pages/{id}/ancestors",
+    "context": "GET /wiki/api/v2/pages/{id}/ancestors\nReturns all ancestors for a given page by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the ID of first ancestor in the response payload. This endpoint returns minimal information about each ancestor. To fetch more details, use a related endpoint, such as [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission).\nRequired: id (path) — The ID of the page.\nOptional: limit (query) — Maximum number of pages per result to return. If more results exist, call this endpoint with the highest ancestor's ID to fetch the next set of results."
+  },
+  {
+    "id": "getPageAttachments",
+    "name": "Get attachments for page",
+    "description": "Get attachments for page Returns the attachments of specific page. GET /wiki/api/v2/pages/{id}/attachments",
+    "context": "GET /wiki/api/v2/pages/{id}/attachments\nReturns the attachments of specific page. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nRequired: id (path) — The ID of the page for which attachments should be returned.\nOptional: sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; status (query) — Filter the results to attachments based on their status. By default, `current` and `archived` are used.; mediaType (query) — Filters on the mediaType of attachments. Only one may be specified.; filename (query) — Filters on the file-name of attachments. Only one may be specified.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageById",
+    "name": "Get page by id",
+    "description": "Get page by id Returns a specific page. GET /wiki/api/v2/pages/{id}",
+    "context": "GET /wiki/api/v2/pages/{id}\nReturns a specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page and its corresponding space.\nRequired: id (path) — The ID of the page to be returned. If you don't know the page ID, use Get pages and filter the results.\nOptional: body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; get-draft (query) — Retrieve the draft version of this page.; status (query) — Filter the page being retrieved by its status.; version (query) — Allows you to retrieve a previously published version. Specify the previous version's number to retrieve its details.; include-labels (query) — Includes labels associated with this page in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes content properties associated with this page in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-operations (query) — Includes operations associated with this page in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-likes (query) — Includes likes associated with this page in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-versions (query) — Includes versions associated with this page in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-version (query) — Includes the current version associated with this page in the response. By default this is included and can be omitted by setting the value to `false`.; include-favorited-by-current-user-status (query) — Includes whether this page has been favorited by the current user.; include-webresources (query) — Includes web resources that can be used to render page content on a client.; include-collaborators (query) — Includes collaborators on the page.; include-direct-children (query) — Includes direct children of the page, as defined in the `ChildrenResponse` object."
+  },
+  {
+    "id": "getPageClassificationLevel",
+    "name": "Get page classification level",
+    "description": "Get page classification level Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific page. GET /wiki/api/v2/pages/{id}/classification-level",
+    "context": "GET /wiki/api/v2/pages/{id}/classification-level\nReturns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the page. 'Permission to edit the page is required if trying to view classification level for a draft.\nRequired: id (path) — The ID of the page for which classification level should be returned.\nOptional: status (query) — Status of page from which classification level will fetched."
+  },
+  {
+    "id": "getPageContentProperties",
+    "name": "Get content properties for page",
+    "description": "Get content properties for page Retrieves Content Properties tied to a specified page. GET /wiki/api/v2/pages/{page-id}/properties",
+    "context": "GET /wiki/api/v2/pages/{page-id}/properties\nRetrieves Content Properties tied to a specified page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page.\nRequired: page-id (path) — The ID of the page for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageContentPropertiesById",
+    "name": "Get content property for page by id",
+    "description": "Get content property for page by id Retrieves a specific Content Property by ID that is attached to a specified page. GET /wiki/api/v2/pages/{page-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/pages/{page-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page.\nRequired: page-id (path) — The ID of the page for which content properties should be returned.; property-id (path) — The ID of the content property being requested."
+  },
+  {
+    "id": "getPageDescendants",
+    "name": "Get descendants of page",
+    "description": "Get descendants of page Returns descendants in the content tree for a given page by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). GET /wiki/api/v2/pages/{id}/descendants",
+    "context": "GET /wiki/api/v2/pages/{id}/descendants\nReturns descendants in the content tree for a given page by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the cursor in the response payload. There is also a `depth` parameter specifying depth of descendants to be fetched. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each descendant. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the page and its corresponding space\nRequired: id (path) — The ID of the page.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the cursor to fetch the next set of results.; depth (query) — Maximum depth of descendants to return. If more results are required, use the endpoint corresponding to the content type of the deepest descendant to fetch more descendants.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results."
+  },
+  {
+    "id": "getPageDirectChildren",
+    "name": "Get direct children of a page",
+    "description": "Get direct children of a page Returns all children for given page id in the content tree. GET /wiki/api/v2/pages/{id}/direct-children",
+    "context": "GET /wiki/api/v2/pages/{id}/direct-children\nReturns all children for given page id in the content tree. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each child. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only content that the user has permission to view will be returned.\nRequired: id (path) — The ID of the parent page.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of items per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getPageFooterComments",
+    "name": "Get footer comments for page",
+    "description": "Get footer comments for page Returns the root footer comments of specific page. GET /wiki/api/v2/pages/{id}/footer-comments",
+    "context": "GET /wiki/api/v2/pages/{id}/footer-comments\nReturns the root footer comments of specific page. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nRequired: id (path) — The ID of the page for which footer comments should be returned.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; status (query) — Filter the footer comment being retrieved by its status.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of footer comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageInlineComments",
+    "name": "Get inline comments for page",
+    "description": "Get inline comments for page Returns the root inline comments of specific page. GET /wiki/api/v2/pages/{id}/inline-comments",
+    "context": "GET /wiki/api/v2/pages/{id}/inline-comments\nReturns the root inline comments of specific page. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nRequired: id (path) — The ID of the page for which inline comments should be returned.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; status (query) — Filter the inline comment being retrieved by its status.; resolution-status (query) — Filter the inline comment being retrieved by its resolution status.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of inline comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageLabels",
+    "name": "Get labels for page",
+    "description": "Get labels for page Returns the labels of specific page. GET /wiki/api/v2/pages/{id}/labels",
+    "context": "GET /wiki/api/v2/pages/{id}/labels\nReturns the labels of specific page. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space. Only labels that the user has permission to view will be returned.\nRequired: id (path) — The ID of the page for which labels should be returned.\nOptional: prefix (query) — Filter the results to labels based on their prefix.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of labels per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageLikeCount",
+    "name": "Get like count for page",
+    "description": "Get like count for page Returns the count of likes of specific page. GET /wiki/api/v2/pages/{id}/likes/count",
+    "context": "GET /wiki/api/v2/pages/{id}/likes/count\nReturns the count of likes of specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nRequired: id (path) — The ID of the page for which like count should be returned."
+  },
+  {
+    "id": "getPageLikeUsers",
+    "name": "Get account IDs of likes for page",
+    "description": "Get account IDs of likes for page Returns the account IDs of likes of specific page. GET /wiki/api/v2/pages/{id}/likes/users",
+    "context": "GET /wiki/api/v2/pages/{id}/likes/users\nReturns the account IDs of likes of specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nRequired: id (path) — The ID of the page for which like count should be returned.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of account IDs per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageOperations",
+    "name": "Get permitted operations for page",
+    "description": "Get permitted operations for page Returns the permitted operations on specific page. GET /wiki/api/v2/pages/{id}/operations",
+    "context": "GET /wiki/api/v2/pages/{id}/operations\nReturns the permitted operations on specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the parent content of the page and its corresponding space.\nRequired: id (path) — The ID of the page for which operations should be returned."
+  },
+  {
+    "id": "getPages",
+    "name": "Get pages",
+    "description": "Get pages Returns all pages. GET /wiki/api/v2/pages",
+    "context": "GET /wiki/api/v2/pages\nReturns all pages. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only pages that the user has permission to view will be returned.\nOptional: id (query) — Filter the results based on page ids. Multiple page ids can be specified as a comma-separated list.; space-id (query) — Filter the results based on space ids. Multiple space ids can be specified as a comma-separated list.; sort (query) — Used to sort the result by a particular field.; status (query) — Filter the results to pages based on their status. By default, `current` and `archived` are used.; title (query) — Filter the results to pages based on their title.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; subtype (query) — Filter the results to pages based on their subtype.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getPageVersionDetails",
+    "name": "Get version details for page version",
+    "description": "Get version details for page version Retrieves version details for the specified page and version number. GET /wiki/api/v2/pages/{page-id}/versions/{version-number}",
+    "context": "GET /wiki/api/v2/pages/{page-id}/versions/{version-number}\nRetrieves version details for the specified page and version number. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page.\nRequired: page-id (path) — The ID of the page for which version details should be returned.; version-number (path) — The version number of the page to be returned."
+  },
+  {
+    "id": "getPageVersions",
+    "name": "Get page versions",
+    "description": "Get page versions Returns the versions of specific page. GET /wiki/api/v2/pages/{id}/versions",
+    "context": "GET /wiki/api/v2/pages/{id}/versions\nReturns the versions of specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page and its corresponding space.\nRequired: id (path) — The ID of the page to be queried for its versions. If you don't know the page ID, use Get pages and filter the results.\nOptional: body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of versions per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "postPageClassificationLevel",
+    "name": "Reset page classification level",
+    "description": "Reset page classification level Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific page for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/)…",
+    "context": "POST /wiki/api/v2/pages/{id}/classification-level/reset\nResets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific page for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the page.\nRequired: id (path) — The ID of the page for which classification level should be updated.; body (body)"
+  },
+  {
+    "id": "postRedactPage",
+    "name": "Redact Content in a Confluence Page",
+    "description": "Redact Content in a Confluence Page Redacts sensitive content in a Confluence page by replacing specified text ranges with redaction markers. POST /wiki/api/v2/pages/{id}/redact",
+    "context": "POST /wiki/api/v2/pages/{id}/redact\nRedacts sensitive content in a Confluence page by replacing specified text ranges with redaction markers. Each redaction in the response includes a unique UUID for restoration (except code block redactions). The response metadata items maintain the same order as the input redaction pointers, and completely overlapping redactions are merged into a single redaction with one UUID. **Note**: This endpoint requires **Atlassian Guard Premium**.\nRequired: id (path) — The ID of the page to redact content from.\nOptional: body (body)"
+  },
+  {
+    "id": "putPageClassificationLevel",
+    "name": "Update page classification level",
+    "description": "Update page classification level Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific page. PUT /wiki/api/v2/pages/{id}/classification-level",
+    "context": "PUT /wiki/api/v2/pages/{id}/classification-level\nUpdates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to edit the page.\nRequired: id (path) — The ID of the page for which classification level should be updated.; body (body)"
+  },
+  {
+    "id": "updatePage",
+    "name": "Update page",
+    "description": "Update page Update a page by id. PUT /wiki/api/v2/pages/{id}",
+    "context": "PUT /wiki/api/v2/pages/{id}\nUpdate a page by id. When the \"current\" version is updated, the provided body content is considered as the latest version. This latest body content will be attempted to be merged into the draft version through a content reconciliation algorithm. If two versions are significantly diverged, the latest provided content may entirely override what was previously in the draft. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page and its corresponding space. Permission to update pages in the space.\nRequired: id (path) — The ID of the page to be updated. If you don't know the page ID, use Get Pages and filter the results.; body (body)"
+  },
+  {
+    "id": "updatePagePropertyById",
+    "name": "Update content property for page by id",
+    "description": "Update content property for page by id Update a content property for a page by its id. PUT /wiki/api/v2/pages/{page-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/pages/{page-id}/properties/{property-id}\nUpdate a content property for a page by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the page.\nRequired: page-id (path) — The ID of the page the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  },
+  {
+    "id": "updatePageTitle",
+    "name": "Update page title",
+    "description": "Update page title Updates the title of a specified page. PUT /wiki/api/v2/pages/{id}/title",
+    "context": "PUT /wiki/api/v2/pages/{id}/title\nUpdates the title of a specified page. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the page and its corresponding space. Permission to update pages in the space.\nRequired: id (path) — The ID of the page to be updated. If you don't know the page ID, use Get Pages and filter the results; body (body)"
+  }
+]

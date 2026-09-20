@@ -1,0 +1,20 @@
+[
+  {
+    "id": "radar-get-traffic-anomalies",
+    "name": "Get latest Internet traffic anomalies",
+    "description": "Get latest Internet traffic anomalies Retrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. GET /client/v4/radar/traffic_anomalies",
+    "context": "GET /client/v4/radar/traffic_anomalies\nRetrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. These alerts are automatically detected by Radar and manually verified by our team.\nOptional: limit (query) — Limits the number of objects returned in the response.; offset (query) — Skips the specified number of objects before fetching the results.; dateRange (query) — Filters results by a relative date range ending at the current time. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`), e.g. `7d`. Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `3dcontrol` covers days -10 to -7, `7dcontrol` covers days -14 to -7, `28dcontrol` covers days -56 to -28, and `10dcontrol` covers days -24 to -14). Mutually exclusive with `dateStart`/`dateEnd`.; dateStart (query) — Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.; dateEnd (query) — End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.; status (query); type (query) — Filters results by entity type (LOCATION, AS, or ORIGIN).; dataSource (query) — Filters results by data source.; asn (query) — Filters results by Autonomous System. Specify a single Autonomous System Number (ASN) as integer.; location (query) — Filters results by location. Specify an alpha-2 location code.; origin (query) — Filters results by origin.; format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-traffic-anomalies-top",
+    "name": "Get top locations by total traffic anomalies",
+    "description": "Get top locations by total traffic anomalies Retrieves the sum of Internet traffic anomalies, grouped by location. GET /client/v4/radar/traffic_anomalies/locations",
+    "context": "GET /client/v4/radar/traffic_anomalies/locations\nRetrieves the sum of Internet traffic anomalies, grouped by location. These anomalies are signals that might indicate an outage, automatically detected by Radar and manually verified by our team.\nOptional: limit (query) — Limits the number of objects returned in the response.; dateRange (query) — Filters results by a relative date range ending at the current time. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`), e.g. `7d`. Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `3dcontrol` covers days -10 to -7, `7dcontrol` covers days -14 to -7, `28dcontrol` covers days -56 to -28, and `10dcontrol` covers days -24 to -14). Mutually exclusive with `dateStart`/`dateEnd`.; dateStart (query) — Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.; dateEnd (query) — End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.; status (query); format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-get-traffic-anomaly-by-uuid",
+    "name": "Get traffic anomaly by UUID",
+    "description": "Get traffic anomaly by UUID Retrieves a single Internet traffic anomaly by UUID. GET /client/v4/radar/traffic_anomalies/{uuid}",
+    "context": "GET /client/v4/radar/traffic_anomalies/{uuid}\nRetrieves a single Internet traffic anomaly by UUID.\nRequired: uuid (path) — Traffic anomaly UUID.\nOptional: format (query) — Format in which results will be returned."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "access-groups-create-an-access-group",
+    "name": "Create an Access group",
+    "description": "Create an Access group Creates a new Access group. POST /client/v4/accounts/{account_id}/access/groups",
+    "context": "POST /client/v4/accounts/{account_id}/access/groups\nCreates a new Access group.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-groups-delete-an-access-group",
+    "name": "Delete an Access group",
+    "description": "Delete an Access group Deletes an Access group. DELETE /client/v4/accounts/{account_id}/access/groups/{group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/groups/{group_id}\nDeletes an Access group.\nRequired: group_id (path); account_id (path)"
+  },
+  {
+    "id": "access-groups-get-an-access-group",
+    "name": "Get an Access group",
+    "description": "Get an Access group Fetches a single Access group. GET /client/v4/accounts/{account_id}/access/groups/{group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/groups/{group_id}\nFetches a single Access group.\nRequired: group_id (path); account_id (path)"
+  },
+  {
+    "id": "access-groups-list-access-groups",
+    "name": "List Access groups",
+    "description": "List Access groups Lists all Access groups. GET /client/v4/accounts/{account_id}/access/groups",
+    "context": "GET /client/v4/accounts/{account_id}/access/groups\nLists all Access groups.\nRequired: account_id (path)\nOptional: name (query); search (query); page (query); per_page (query)"
+  },
+  {
+    "id": "access-groups-update-an-access-group",
+    "name": "Update an Access group",
+    "description": "Update an Access group Updates a configured Access group. PUT /client/v4/accounts/{account_id}/access/groups/{group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/groups/{group_id}\nUpdates a configured Access group.\nRequired: group_id (path); account_id (path); body (body)"
+  }
+]

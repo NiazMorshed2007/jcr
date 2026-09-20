@@ -1,0 +1,98 @@
+[
+  {
+    "id": "createAccountRuleset",
+    "name": "Create an account ruleset",
+    "description": "Create an account ruleset Creates a ruleset at the account level. POST /client/v4/accounts/{account_id}/rulesets",
+    "context": "POST /client/v4/accounts/{account_id}/rulesets\nCreates a ruleset at the account level.\nRequired: account_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "createAccountRulesetRule",
+    "name": "Create an account ruleset rule",
+    "description": "Create an account ruleset rule Adds a new rule to an account ruleset. POST /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/rules",
+    "context": "POST /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/rules\nAdds a new rule to an account ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.\nRequired: ruleset_id (path); account_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "deleteAccountRuleset",
+    "name": "Delete an account ruleset",
+    "description": "Delete an account ruleset Deletes all versions of an existing account ruleset. DELETE /client/v4/accounts/{account_id}/rulesets/{ruleset_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/rulesets/{ruleset_id}\nDeletes all versions of an existing account ruleset.\nRequired: ruleset_id (path); account_id (path)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "deleteAccountRulesetRule",
+    "name": "Delete an account ruleset rule",
+    "description": "Delete an account ruleset rule Deletes an existing rule from an account ruleset. DELETE /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}\nDeletes an existing rule from an account ruleset.\nRequired: rule_id (path); ruleset_id (path); account_id (path)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "deleteAccountRulesetVersion",
+    "name": "Delete an account ruleset version",
+    "description": "Delete an account ruleset version Deletes an existing version of an account ruleset. DELETE /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}",
+    "context": "DELETE /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}\nDeletes an existing version of an account ruleset.\nRequired: ruleset_version (path); ruleset_id (path); account_id (path)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "getAccountEntrypointRuleset",
+    "name": "Get an account entry point ruleset",
+    "description": "Get an account entry point ruleset Fetches the latest version of the account entry point ruleset for a given phase. GET /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint\nFetches the latest version of the account entry point ruleset for a given phase.\nRequired: ruleset_phase (path); account_id (path)"
+  },
+  {
+    "id": "getAccountEntrypointRulesetVersion",
+    "name": "Get an account entry point ruleset version",
+    "description": "Get an account entry point ruleset version Fetches a specific version of an account entry point ruleset. GET /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}\nFetches a specific version of an account entry point ruleset.\nRequired: ruleset_version (path); ruleset_phase (path); account_id (path)"
+  },
+  {
+    "id": "getAccountRuleset",
+    "name": "Get an account ruleset",
+    "description": "Get an account ruleset Fetches the latest version of an account ruleset. GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}\nFetches the latest version of an account ruleset.\nRequired: ruleset_id (path); account_id (path)"
+  },
+  {
+    "id": "getAccountRulesetVersion",
+    "name": "Get an account ruleset version",
+    "description": "Get an account ruleset version Fetches a specific version of an account ruleset. GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}\nFetches a specific version of an account ruleset.\nRequired: ruleset_version (path); ruleset_id (path); account_id (path)"
+  },
+  {
+    "id": "listAccountEntrypointRulesetVersions",
+    "name": "List an account entry point ruleset's versions",
+    "description": "List an account entry point ruleset's versions Fetches the versions of an account entry point ruleset. GET /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions\nFetches the versions of an account entry point ruleset.\nRequired: ruleset_phase (path); account_id (path)"
+  },
+  {
+    "id": "listAccountRulesets",
+    "name": "List account rulesets",
+    "description": "List account rulesets Fetches all rulesets at the account level. GET /client/v4/accounts/{account_id}/rulesets",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets\nFetches all rulesets at the account level.\nRequired: account_id (path)\nOptional: cursor (query); per_page (query)"
+  },
+  {
+    "id": "listAccountRulesetVersionRulesByTag",
+    "name": "List an account ruleset version's rules by tag",
+    "description": "List an account ruleset version's rules by tag Fetches the rules of a managed account ruleset version for a given tag. GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}\nFetches the rules of a managed account ruleset version for a given tag.\nRequired: rule_tag (path); ruleset_version (path); ruleset_id (path); account_id (path)"
+  },
+  {
+    "id": "listAccountRulesetVersions",
+    "name": "List an account ruleset's versions",
+    "description": "List an account ruleset's versions Fetches the versions of an account ruleset. GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions",
+    "context": "GET /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/versions\nFetches the versions of an account ruleset.\nRequired: ruleset_id (path); account_id (path)"
+  },
+  {
+    "id": "updateAccountEntrypointRuleset",
+    "name": "Update an account entry point ruleset",
+    "description": "Update an account entry point ruleset Updates an account entry point ruleset, creating a new version. PUT /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint",
+    "context": "PUT /client/v4/accounts/{account_id}/rulesets/phases/{ruleset_phase}/entrypoint\nUpdates an account entry point ruleset, creating a new version.\nRequired: ruleset_phase (path); account_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "updateAccountRuleset",
+    "name": "Update an account ruleset",
+    "description": "Update an account ruleset Updates an account ruleset, creating a new version. PUT /client/v4/accounts/{account_id}/rulesets/{ruleset_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/rulesets/{ruleset_id}\nUpdates an account ruleset, creating a new version.\nRequired: ruleset_id (path); account_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "updateAccountRulesetRule",
+    "name": "Update an account ruleset rule",
+    "description": "Update an account ruleset rule Updates an existing rule in an account ruleset. PATCH /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/rulesets/{ruleset_id}/rules/{rule_id}\nUpdates an existing rule in an account ruleset.\nRequired: rule_id (path); ruleset_id (path); account_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "file_system_shortcut_create",
+    "name": "file_system_shortcut_create",
+    "description": "file_system_shortcut_create POST /api/projects/{project_id}/file_system_shortcut/",
+    "context": "POST /api/projects/{project_id}/file_system_shortcut/\nfile_system_shortcut_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_shortcut_destroy",
+    "name": "file_system_shortcut_destroy",
+    "description": "file_system_shortcut_destroy DELETE /api/projects/{project_id}/file_system_shortcut/{id}/",
+    "context": "DELETE /api/projects/{project_id}/file_system_shortcut/{id}/\nfile_system_shortcut_destroy\nRequired: id (path) — A UUID string identifying this file system shortcut.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_system_shortcut_list",
+    "name": "file_system_shortcut_list",
+    "description": "file_system_shortcut_list GET /api/projects/{project_id}/file_system_shortcut/",
+    "context": "GET /api/projects/{project_id}/file_system_shortcut/\nfile_system_shortcut_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "file_system_shortcut_partial_update",
+    "name": "file_system_shortcut_partial_update",
+    "description": "file_system_shortcut_partial_update PATCH /api/projects/{project_id}/file_system_shortcut/{id}/",
+    "context": "PATCH /api/projects/{project_id}/file_system_shortcut/{id}/\nfile_system_shortcut_partial_update\nRequired: id (path) — A UUID string identifying this file system shortcut.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "file_system_shortcut_reorder_create",
+    "name": "Set the display order of the current user's shortcuts",
+    "description": "Set the display order of the current user's shortcuts Set the display order of the current user's shortcuts. POST /api/projects/{project_id}/file_system_shortcut/reorder/",
+    "context": "POST /api/projects/{project_id}/file_system_shortcut/reorder/\nSet the display order of the current user's shortcuts. `ordered_ids` becomes the new top-to-bottom order; any unknown IDs are rejected.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_shortcut_retrieve",
+    "name": "file_system_shortcut_retrieve",
+    "description": "file_system_shortcut_retrieve GET /api/projects/{project_id}/file_system_shortcut/{id}/",
+    "context": "GET /api/projects/{project_id}/file_system_shortcut/{id}/\nfile_system_shortcut_retrieve\nRequired: id (path) — A UUID string identifying this file system shortcut.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_system_shortcut_update",
+    "name": "file_system_shortcut_update",
+    "description": "file_system_shortcut_update PUT /api/projects/{project_id}/file_system_shortcut/{id}/",
+    "context": "PUT /api/projects/{project_id}/file_system_shortcut/{id}/\nfile_system_shortcut_update\nRequired: id (path) — A UUID string identifying this file system shortcut.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

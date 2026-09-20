@@ -1,0 +1,338 @@
+[
+  {
+    "id": "logs_alerts_create",
+    "name": "logs_alerts_create",
+    "description": "logs_alerts_create POST /api/projects/{project_id}/logs/alerts/",
+    "context": "POST /api/projects/{project_id}/logs/alerts/\nlogs_alerts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "logs_alerts_destinations_create",
+    "name": "Create a notification destination for this alert",
+    "description": "Create a notification destination for this alert Create a notification destination for this alert. POST /api/projects/{project_id}/logs/alerts/{id}/destinations/",
+    "context": "POST /api/projects/{project_id}/logs/alerts/{id}/destinations/\nCreate a notification destination for this alert. One HogFunction is created per alert event kind (firing, resolved, ...) atomically.\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_alerts_destinations_delete_create",
+    "name": "Delete a notification destination by deleting its HogFunction group atomically.",
+    "description": "Delete a notification destination by deleting its HogFunction group atomically. POST /api/projects/{project_id}/logs/alerts/{id}/destinations/delete/",
+    "context": "POST /api/projects/{project_id}/logs/alerts/{id}/destinations/delete/\nDelete a notification destination by deleting its HogFunction group atomically.\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_alerts_destroy",
+    "name": "logs_alerts_destroy",
+    "description": "logs_alerts_destroy DELETE /api/projects/{project_id}/logs/alerts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/logs/alerts/{id}/\nlogs_alerts_destroy\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_alerts_events_list",
+    "name": "Paginated event history for this alert, newest first",
+    "description": "Paginated event history for this alert, newest first Paginated event history for this alert, newest first. GET /api/projects/{project_id}/logs/alerts/{id}/events/",
+    "context": "GET /api/projects/{project_id}/logs/alerts/{id}/events/\nPaginated event history for this alert, newest first. Returns state transitions, errored checks, and user-initiated control-plane rows (reset, enable/disable, snooze/unsnooze, threshold change) — quiet no-op check rows (where state didn't change and there was no error) are filtered out since only the last 10 are kept and they carry no forensic value. Optional `?kind=...` narrows to a single kind.\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_alerts_list",
+    "name": "logs_alerts_list",
+    "description": "logs_alerts_list GET /api/projects/{project_id}/logs/alerts/",
+    "context": "GET /api/projects/{project_id}/logs/alerts/\nlogs_alerts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query) — Only return log alerts created by the user with this UUID.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_alerts_partial_update",
+    "name": "logs_alerts_partial_update",
+    "description": "logs_alerts_partial_update PATCH /api/projects/{project_id}/logs/alerts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/logs/alerts/{id}/\nlogs_alerts_partial_update\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "logs_alerts_reset_create",
+    "name": "Reset a broken alert",
+    "description": "Reset a broken alert Reset a broken alert. POST /api/projects/{project_id}/logs/alerts/{id}/reset/",
+    "context": "POST /api/projects/{project_id}/logs/alerts/{id}/reset/\nReset a broken alert. Clears the consecutive-failure counter and schedules an immediate recheck.\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_alerts_retrieve",
+    "name": "logs_alerts_retrieve",
+    "description": "logs_alerts_retrieve GET /api/projects/{project_id}/logs/alerts/{id}/",
+    "context": "GET /api/projects/{project_id}/logs/alerts/{id}/\nlogs_alerts_retrieve\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_alerts_simulate_create",
+    "name": "Simulate a logs alert on historical data using the full state machine",
+    "description": "Simulate a logs alert on historical data using the full state machine Simulate a logs alert on historical data using the full state machine. POST /api/projects/{project_id}/logs/alerts/simulate/",
+    "context": "POST /api/projects/{project_id}/logs/alerts/simulate/\nSimulate a logs alert on historical data using the full state machine. Read-only — no alert check records are created.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_alerts_update",
+    "name": "logs_alerts_update",
+    "description": "logs_alerts_update PUT /api/projects/{project_id}/logs/alerts/{id}/",
+    "context": "PUT /api/projects/{project_id}/logs/alerts/{id}/\nlogs_alerts_update\nRequired: id (path) — A UUID string identifying this logs alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "logs_anomalies_scan_create",
+    "name": "Scan a service's logs for volume anomalies",
+    "description": "Scan a service's logs for volume anomalies Runs anomaly detection on demand over one service's log volume for the given window. POST /api/projects/{project_id}/logs/anomalies/scan/",
+    "context": "POST /api/projects/{project_id}/logs/anomalies/scan/\nRuns anomaly detection on demand over one service's log volume for the given window. Learns per severity baselines from up to 6 weeks of history and returns per bucket expected bands plus any spike, drop, or silence issues. Synchronous and read only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_anomalies_series_bands_create",
+    "name": "Per-series log volume with expected bands",
+    "description": "Per-series log volume with expected bands Returns log volume over the requested window for every (namespace, environment, severity) series of one service, with a time-of-week expected band derived from the prior weeks of the volume rollup. POST /api/projects/{project_id}/logs/anomalies/series_bands/",
+    "context": "POST /api/projects/{project_id}/logs/anomalies/series_bands/\nReturns log volume over the requested window for every (namespace, environment, severity) series of one service, with a time-of-week expected band derived from the prior weeks of the volume rollup. The window defaults to the last 7 days and may span at most 7 days. Synchronous and read only.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_attributes_retrieve",
+    "name": "logs_attributes_retrieve",
+    "description": "logs_attributes_retrieve GET /api/projects/{project_id}/logs/attributes/",
+    "context": "GET /api/projects/{project_id}/logs/attributes/\nlogs_attributes_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: attribute_type (query) — Type of attributes: \"log\" for log attributes, \"resource\" for resource attributes. Defaults to \"log\". * `log` - log * `resource` - resource; dateRange (query) — Date range to search within. Defaults to last hour.; filterGroup (query) — Property filters to narrow which logs are scanned for attributes.; limit (query) — Max results (default: 100); offset (query) — Pagination offset (default: 0); search (query) — Search filter for attribute names; search_values (query) — When true, the search query also matches attribute values (not just keys). Each result indicates whether it matched on key or value.; serviceNames (query) — Filter attributes to those appearing in logs from these services."
+  },
+  {
+    "id": "logs_count_create",
+    "name": "logs_count_create",
+    "description": "logs_count_create POST /api/projects/{project_id}/logs/count/",
+    "context": "POST /api/projects/{project_id}/logs/count/\nlogs_count_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_count_ranges_create",
+    "name": "logs_count_ranges_create",
+    "description": "logs_count_ranges_create POST /api/projects/{project_id}/logs/count-ranges/",
+    "context": "POST /api/projects/{project_id}/logs/count-ranges/\nlogs_count_ranges_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_explainLogWithAI_create",
+    "name": "Explain a log entry using AI",
+    "description": "Explain a log entry using AI Explain a log entry using AI. POST /api/projects/{project_id}/logs/explainLogWithAI/",
+    "context": "POST /api/projects/{project_id}/logs/explainLogWithAI/\nExplain a log entry using AI. POST /api/environments/:id/logs/explainLogWithAI/\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_export_create",
+    "name": "logs_export_create",
+    "description": "logs_export_create POST /api/projects/{project_id}/logs/export/",
+    "context": "POST /api/projects/{project_id}/logs/export/\nlogs_export_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_facet_values_create",
+    "name": "logs_facet_values_create",
+    "description": "logs_facet_values_create POST /api/projects/{project_id}/logs/facet_values/",
+    "context": "POST /api/projects/{project_id}/logs/facet_values/\nlogs_facet_values_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_group_by_create",
+    "name": "logs_group_by_create",
+    "description": "logs_group_by_create POST /api/projects/{project_id}/logs/group-by/",
+    "context": "POST /api/projects/{project_id}/logs/group-by/\nlogs_group_by_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_has_logs_retrieve",
+    "name": "logs_has_logs_retrieve",
+    "description": "logs_has_logs_retrieve GET /api/projects/{project_id}/logs/has_logs/",
+    "context": "GET /api/projects/{project_id}/logs/has_logs/\nlogs_has_logs_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_impact_create",
+    "name": "logs_impact_create",
+    "description": "logs_impact_create POST /api/projects/{project_id}/logs/impact/",
+    "context": "POST /api/projects/{project_id}/logs/impact/\nlogs_impact_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_metric_rules_create",
+    "name": "logs_metric_rules_create",
+    "description": "logs_metric_rules_create POST /api/projects/{project_id}/logs/metric_rules/",
+    "context": "POST /api/projects/{project_id}/logs/metric_rules/\nlogs_metric_rules_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_metric_rules_destroy",
+    "name": "logs_metric_rules_destroy",
+    "description": "logs_metric_rules_destroy DELETE /api/projects/{project_id}/logs/metric_rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/logs/metric_rules/{id}/\nlogs_metric_rules_destroy\nRequired: id (path) — A UUID string identifying this logs metric rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_metric_rules_list",
+    "name": "logs_metric_rules_list",
+    "description": "logs_metric_rules_list GET /api/projects/{project_id}/logs/metric_rules/",
+    "context": "GET /api/projects/{project_id}/logs/metric_rules/\nlogs_metric_rules_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_metric_rules_partial_update",
+    "name": "logs_metric_rules_partial_update",
+    "description": "logs_metric_rules_partial_update PATCH /api/projects/{project_id}/logs/metric_rules/{id}/",
+    "context": "PATCH /api/projects/{project_id}/logs/metric_rules/{id}/\nlogs_metric_rules_partial_update\nRequired: id (path) — A UUID string identifying this logs metric rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "logs_metric_rules_retrieve",
+    "name": "logs_metric_rules_retrieve",
+    "description": "logs_metric_rules_retrieve GET /api/projects/{project_id}/logs/metric_rules/{id}/",
+    "context": "GET /api/projects/{project_id}/logs/metric_rules/{id}/\nlogs_metric_rules_retrieve\nRequired: id (path) — A UUID string identifying this logs metric rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_metric_rules_update",
+    "name": "logs_metric_rules_update",
+    "description": "logs_metric_rules_update PUT /api/projects/{project_id}/logs/metric_rules/{id}/",
+    "context": "PUT /api/projects/{project_id}/logs/metric_rules/{id}/\nlogs_metric_rules_update\nRequired: id (path) — A UUID string identifying this logs metric rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_patterns_create",
+    "name": "logs_patterns_create",
+    "description": "logs_patterns_create POST /api/projects/{project_id}/logs/patterns/",
+    "context": "POST /api/projects/{project_id}/logs/patterns/\nlogs_patterns_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_patterns_diff_create",
+    "name": "logs_patterns_diff_create",
+    "description": "logs_patterns_diff_create POST /api/projects/{project_id}/logs/patterns_diff/",
+    "context": "POST /api/projects/{project_id}/logs/patterns_diff/\nlogs_patterns_diff_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_query_create",
+    "name": "logs_query_create",
+    "description": "logs_query_create POST /api/projects/{project_id}/logs/query/",
+    "context": "POST /api/projects/{project_id}/logs/query/\nlogs_query_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_retention_rules_create",
+    "name": "logs_retention_rules_create",
+    "description": "logs_retention_rules_create POST /api/projects/{project_id}/logs/retention_rules/",
+    "context": "POST /api/projects/{project_id}/logs/retention_rules/\nlogs_retention_rules_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_retention_rules_destroy",
+    "name": "logs_retention_rules_destroy",
+    "description": "logs_retention_rules_destroy DELETE /api/projects/{project_id}/logs/retention_rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/logs/retention_rules/{id}/\nlogs_retention_rules_destroy\nRequired: id (path) — A UUID string identifying this logs retention rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_retention_rules_list",
+    "name": "logs_retention_rules_list",
+    "description": "logs_retention_rules_list GET /api/projects/{project_id}/logs/retention_rules/",
+    "context": "GET /api/projects/{project_id}/logs/retention_rules/\nlogs_retention_rules_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_retention_rules_partial_update",
+    "name": "logs_retention_rules_partial_update",
+    "description": "logs_retention_rules_partial_update PATCH /api/projects/{project_id}/logs/retention_rules/{id}/",
+    "context": "PATCH /api/projects/{project_id}/logs/retention_rules/{id}/\nlogs_retention_rules_partial_update\nRequired: id (path) — A UUID string identifying this logs retention rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "logs_retention_rules_reorder_create",
+    "name": "Atomically reassign priorities so the given ID order maps to ascending priorities (0..n-1).",
+    "description": "Atomically reassign priorities so the given ID order maps to ascending priorities (0..n-1). POST /api/projects/{project_id}/logs/retention_rules/reorder/",
+    "context": "POST /api/projects/{project_id}/logs/retention_rules/reorder/\nAtomically reassign priorities so the given ID order maps to ascending priorities (0..n-1).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_retention_rules_retrieve",
+    "name": "logs_retention_rules_retrieve",
+    "description": "logs_retention_rules_retrieve GET /api/projects/{project_id}/logs/retention_rules/{id}/",
+    "context": "GET /api/projects/{project_id}/logs/retention_rules/{id}/\nlogs_retention_rules_retrieve\nRequired: id (path) — A UUID string identifying this logs retention rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_retention_rules_suggest_name_create",
+    "name": "Suggest a human-readable name for a retention rule from its retention tier and filter group",
+    "description": "Suggest a human-readable name for a retention rule from its retention tier and filter group Suggest a human-readable name for a retention rule from its retention tier and filter group. POST /api/projects/{project_id}/logs/retention_rules/suggest_name/",
+    "context": "POST /api/projects/{project_id}/logs/retention_rules/suggest_name/\nSuggest a human-readable name for a retention rule from its retention tier and filter group. Used by the create form as an auto-suggest; nothing is persisted. Returns an empty name when a suggestion can't be generated.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_retention_rules_update",
+    "name": "logs_retention_rules_update",
+    "description": "logs_retention_rules_update PUT /api/projects/{project_id}/logs/retention_rules/{id}/",
+    "context": "PUT /api/projects/{project_id}/logs/retention_rules/{id}/\nlogs_retention_rules_update\nRequired: id (path) — A UUID string identifying this logs retention rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_sampling_rules_create",
+    "name": "logs_sampling_rules_create",
+    "description": "logs_sampling_rules_create POST /api/projects/{project_id}/logs/sampling_rules/",
+    "context": "POST /api/projects/{project_id}/logs/sampling_rules/\nlogs_sampling_rules_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_sampling_rules_destroy",
+    "name": "logs_sampling_rules_destroy",
+    "description": "logs_sampling_rules_destroy DELETE /api/projects/{project_id}/logs/sampling_rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/logs/sampling_rules/{id}/\nlogs_sampling_rules_destroy\nRequired: id (path) — A UUID string identifying this logs exclusion rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_sampling_rules_list",
+    "name": "logs_sampling_rules_list",
+    "description": "logs_sampling_rules_list GET /api/projects/{project_id}/logs/sampling_rules/",
+    "context": "GET /api/projects/{project_id}/logs/sampling_rules/\nlogs_sampling_rules_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_sampling_rules_partial_update",
+    "name": "logs_sampling_rules_partial_update",
+    "description": "logs_sampling_rules_partial_update PATCH /api/projects/{project_id}/logs/sampling_rules/{id}/",
+    "context": "PATCH /api/projects/{project_id}/logs/sampling_rules/{id}/\nlogs_sampling_rules_partial_update\nRequired: id (path) — A UUID string identifying this logs exclusion rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "logs_sampling_rules_reorder_create",
+    "name": "Atomically reassign priorities so the given ID order maps to ascending priorities (0..n-1).",
+    "description": "Atomically reassign priorities so the given ID order maps to ascending priorities (0..n-1). POST /api/projects/{project_id}/logs/sampling_rules/reorder/",
+    "context": "POST /api/projects/{project_id}/logs/sampling_rules/reorder/\nAtomically reassign priorities so the given ID order maps to ascending priorities (0..n-1).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_sampling_rules_retrieve",
+    "name": "logs_sampling_rules_retrieve",
+    "description": "logs_sampling_rules_retrieve GET /api/projects/{project_id}/logs/sampling_rules/{id}/",
+    "context": "GET /api/projects/{project_id}/logs/sampling_rules/{id}/\nlogs_sampling_rules_retrieve\nRequired: id (path) — A UUID string identifying this logs exclusion rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_sampling_rules_simulate_create",
+    "name": "Dry-run estimate for how much volume this rule would remove (placeholder response until CH-backed simulation is wired).",
+    "description": "Dry-run estimate for how much volume this rule would remove (placeholder response until CH-backed simulation is wired). POST /api/projects/{project_id}/logs/sampling_rules/{id}/simulate/",
+    "context": "POST /api/projects/{project_id}/logs/sampling_rules/{id}/simulate/\nDry-run estimate for how much volume this rule would remove (placeholder response until CH-backed simulation is wired).\nRequired: id (path) — A UUID string identifying this logs exclusion rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "logs_sampling_rules_update",
+    "name": "logs_sampling_rules_update",
+    "description": "logs_sampling_rules_update PUT /api/projects/{project_id}/logs/sampling_rules/{id}/",
+    "context": "PUT /api/projects/{project_id}/logs/sampling_rules/{id}/\nlogs_sampling_rules_update\nRequired: id (path) — A UUID string identifying this logs exclusion rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_services_create",
+    "name": "logs_services_create",
+    "description": "logs_services_create POST /api/projects/{project_id}/logs/services/",
+    "context": "POST /api/projects/{project_id}/logs/services/\nlogs_services_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_sparkline_create",
+    "name": "logs_sparkline_create",
+    "description": "logs_sparkline_create POST /api/projects/{project_id}/logs/sparkline/",
+    "context": "POST /api/projects/{project_id}/logs/sparkline/\nlogs_sparkline_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_values_retrieve",
+    "name": "logs_values_retrieve",
+    "description": "logs_values_retrieve GET /api/projects/{project_id}/logs/values/",
+    "context": "GET /api/projects/{project_id}/logs/values/\nlogs_values_retrieve\nRequired: key (query) — The attribute key to get values for; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: attribute_type (query) — Type of attribute: \"log\" or \"resource\". Defaults to \"log\". * `log` - log * `resource` - resource; dateRange (query) — Date range to search within. Defaults to last hour.; filterGroup (query) — Property filters to narrow which logs are scanned for values.; serviceNames (query) — Filter values to those appearing in logs from these services.; value (query) — Search filter for attribute values"
+  },
+  {
+    "id": "logs_views_create",
+    "name": "logs_views_create",
+    "description": "logs_views_create POST /api/projects/{project_id}/logs/views/",
+    "context": "POST /api/projects/{project_id}/logs/views/\nlogs_views_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "logs_views_destroy",
+    "name": "logs_views_destroy",
+    "description": "logs_views_destroy DELETE /api/projects/{project_id}/logs/views/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/logs/views/{short_id}/\nlogs_views_destroy\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "logs_views_list",
+    "name": "logs_views_list",
+    "description": "logs_views_list GET /api/projects/{project_id}/logs/views/",
+    "context": "GET /api/projects/{project_id}/logs/views/\nlogs_views_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "logs_views_partial_update",
+    "name": "logs_views_partial_update",
+    "description": "logs_views_partial_update PATCH /api/projects/{project_id}/logs/views/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/logs/views/{short_id}/\nlogs_views_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "logs_views_retrieve",
+    "name": "logs_views_retrieve",
+    "description": "logs_views_retrieve GET /api/projects/{project_id}/logs/views/{short_id}/",
+    "context": "GET /api/projects/{project_id}/logs/views/{short_id}/\nlogs_views_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "logs_views_update",
+    "name": "logs_views_update",
+    "description": "logs_views_update PUT /api/projects/{project_id}/logs/views/{short_id}/",
+    "context": "PUT /api/projects/{project_id}/logs/views/{short_id}/\nlogs_views_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  }
+]

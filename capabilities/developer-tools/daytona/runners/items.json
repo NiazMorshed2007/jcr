@@ -1,0 +1,74 @@
+[
+  {
+    "id": "createRunner",
+    "name": "Create runner",
+    "description": "Create runner POST /runners",
+    "context": "POST /runners\nCreate runner\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteRunner",
+    "name": "Delete runner",
+    "description": "Delete runner DELETE /runners/{id}",
+    "context": "DELETE /runners/{id}\nDelete runner\nRequired: id (path) — Runner ID\nOptional: force (query) — Delete the runner without waiting for sandboxes already marked for destruction. Requires the runner to have stopped reporting as ready.; X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getInfoForAuthenticatedRunner",
+    "name": "Get info for authenticated runner",
+    "description": "Get info for authenticated runner GET /runners/me",
+    "context": "GET /runners/me\nGet info for authenticated runner"
+  },
+  {
+    "id": "getRunnerById",
+    "name": "Get runner by ID",
+    "description": "Get runner by ID GET /runners/{id}",
+    "context": "GET /runners/{id}\nGet runner by ID\nRequired: id (path) — Runner ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getRunnerBySandboxId",
+    "name": "Get runner by sandbox ID",
+    "description": "Get runner by sandbox ID GET /runners/by-sandbox/{sandboxId}",
+    "context": "GET /runners/by-sandbox/{sandboxId}\nGet runner by sandbox ID\nRequired: sandboxId (path)"
+  },
+  {
+    "id": "getRunnerFullById",
+    "name": "Get runner by ID",
+    "description": "Get runner by ID GET /runners/{id}/full",
+    "context": "GET /runners/{id}/full\nGet runner by ID\nRequired: id (path) — Runner ID"
+  },
+  {
+    "id": "getRunnersBySnapshotRef",
+    "name": "Get runners by snapshot ref",
+    "description": "Get runners by snapshot ref GET /runners/by-snapshot-ref",
+    "context": "GET /runners/by-snapshot-ref\nGet runners by snapshot ref\nRequired: ref (query) — Snapshot ref"
+  },
+  {
+    "id": "getSnapshotRefsForAuthenticatedRunner",
+    "name": "Get snapshot refs for authenticated runner",
+    "description": "Get snapshot refs for authenticated runner GET /runners/me/snapshots",
+    "context": "GET /runners/me/snapshots\nGet snapshot refs for authenticated runner"
+  },
+  {
+    "id": "listRunners",
+    "name": "List all runners",
+    "description": "List all runners GET /runners",
+    "context": "GET /runners\nList all runners\nOptional: regionId (query) — Filter runners by region ID; X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "runnerHealthcheck",
+    "name": "Runner healthcheck",
+    "description": "Runner healthcheck Endpoint for version 2 runners to send healthcheck and metrics. POST /runners/healthcheck",
+    "context": "POST /runners/healthcheck\nEndpoint for version 2 runners to send healthcheck and metrics. Updates lastChecked timestamp and runner metrics.\nRequired: body (body)"
+  },
+  {
+    "id": "updateRunnerDraining",
+    "name": "Update runner draining status",
+    "description": "Update runner draining status PATCH /runners/{id}/draining",
+    "context": "PATCH /runners/{id}/draining\nUpdate runner draining status\nRequired: id (path) — Runner ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updateRunnerScheduling",
+    "name": "Update runner scheduling status",
+    "description": "Update runner scheduling status PATCH /runners/{id}/scheduling",
+    "context": "PATCH /runners/{id}/scheduling\nUpdate runner scheduling status\nRequired: id (path) — Runner ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

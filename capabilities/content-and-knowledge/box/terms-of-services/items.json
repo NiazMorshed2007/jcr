@@ -1,0 +1,26 @@
+[
+  {
+    "id": "get_terms_of_services",
+    "name": "List terms of services",
+    "description": "List terms of services Returns the current terms of service text and settings for the enterprise. GET /2.0/terms_of_services",
+    "context": "GET /2.0/terms_of_services\nReturns the current terms of service text and settings for the enterprise.\nOptional: tos_type (query) — Limits the results to the terms of service of the given type."
+  },
+  {
+    "id": "get_terms_of_services_id",
+    "name": "Get terms of service",
+    "description": "Get terms of service Fetches a specific terms of service. GET /2.0/terms_of_services/{terms_of_service_id}",
+    "context": "GET /2.0/terms_of_services/{terms_of_service_id}\nFetches a specific terms of service.\nRequired: terms_of_service_id (path) — The ID of the terms of service."
+  },
+  {
+    "id": "post_terms_of_services",
+    "name": "Create terms of service",
+    "description": "Create terms of service Creates a terms of service for a given enterprise and type of user. POST /2.0/terms_of_services",
+    "context": "POST /2.0/terms_of_services\nCreates a terms of service for a given enterprise and type of user.\nOptional: body (body)"
+  },
+  {
+    "id": "put_terms_of_services_id",
+    "name": "Update terms of service",
+    "description": "Update terms of service Updates a specific terms of service. PUT /2.0/terms_of_services/{terms_of_service_id}",
+    "context": "PUT /2.0/terms_of_services/{terms_of_service_id}\nUpdates a specific terms of service.\nRequired: terms_of_service_id (path) — The ID of the terms of service.\nOptional: body (body)"
+  }
+]

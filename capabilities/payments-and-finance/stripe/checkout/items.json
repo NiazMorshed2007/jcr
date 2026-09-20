@@ -1,0 +1,38 @@
+[
+  {
+    "id": "GetCheckoutSessions",
+    "name": "List all Checkout Sessions",
+    "description": "List all Checkout Sessions Returns a list of Checkout Sessions. GET /v1/checkout/sessions",
+    "context": "GET /v1/checkout/sessions\nReturns a list of Checkout Sessions.\nOptional: created (query) — Only return Checkout Sessions that were created during the given date interval.; customer (query) — Only return the Checkout Sessions for the Customer specified.; customer_account (query) — Only return the Checkout Sessions for the Account specified.; customer_details (query) — Only return the Checkout Sessions for the Customer details specified.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; payment_intent (query) — Only return the Checkout Session for the PaymentIntent specified.; payment_link (query) — Only return the Checkout Sessions for the Payment Link specified.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; status (query) — Only return the Checkout Sessions matching the given status.; subscription (query) — Only return the Checkout Session for the subscription specified.; body (body)"
+  },
+  {
+    "id": "GetCheckoutSessionsSession",
+    "name": "Retrieve a Checkout Session",
+    "description": "Retrieve a Checkout Session Retrieves a Checkout Session object. GET /v1/checkout/sessions/{session}",
+    "context": "GET /v1/checkout/sessions/{session}\nRetrieves a Checkout Session object.\nRequired: session (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCheckoutSessionsSessionLineItems",
+    "name": "Retrieve a Checkout Session's line items",
+    "description": "Retrieve a Checkout Session's line items When retrieving a Checkout Session, there is an includable line_items property containing the first handful of those items. GET /v1/checkout/sessions/{session}/line_items",
+    "context": "GET /v1/checkout/sessions/{session}/line_items\nWhen retrieving a Checkout Session, there is an includable line_items property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.\nRequired: session (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "PostCheckoutSessions",
+    "name": "Create a Checkout Session",
+    "description": "Create a Checkout Session Creates a Checkout Session object. POST /v1/checkout/sessions",
+    "context": "POST /v1/checkout/sessions\nCreates a Checkout Session object.\nOptional: body (body)"
+  },
+  {
+    "id": "PostCheckoutSessionsSession",
+    "name": "Update a Checkout Session",
+    "description": "Update a Checkout Session Updates a Checkout Session object. POST /v1/checkout/sessions/{session}",
+    "context": "POST /v1/checkout/sessions/{session}\nUpdates a Checkout Session object. Related guide: Dynamically update a Checkout Session\nRequired: session (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCheckoutSessionsSessionExpire",
+    "name": "Expire a Checkout Session",
+    "description": "Expire a Checkout Session A Checkout Session can be expired when it is in one of these statuses: open After it expires, a customer can’t complete a Checkout Session and customers loading the Checkout Session see a message saying the Checkout Session is expired. POST /v1/checkout/sessions/{session}/expire",
+    "context": "POST /v1/checkout/sessions/{session}/expire\nA Checkout Session can be expired when it is in one of these statuses: open After it expires, a customer can’t complete a Checkout Session and customers loading the Checkout Session see a message saying the Checkout Session is expired.\nRequired: session (path)\nOptional: body (body)"
+  }
+]

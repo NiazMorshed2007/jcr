@@ -1,0 +1,74 @@
+[
+  {
+    "id": "createFolder",
+    "name": "Create folder",
+    "description": "Create folder Creates a folder in the space. POST /wiki/api/v2/folders",
+    "context": "POST /wiki/api/v2/folders\nCreates a folder in the space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the corresponding space. Permission to create a folder in the space.\nRequired: body (body)"
+  },
+  {
+    "id": "createFolderProperty",
+    "name": "Create content property for folder",
+    "description": "Create content property for folder Creates a new content property for a folder. POST /wiki/api/v2/folders/{id}/properties",
+    "context": "POST /wiki/api/v2/folders/{id}/properties\nCreates a new content property for a folder. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the folder.\nRequired: id (path) — The ID of the folder to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deleteFolder",
+    "name": "Delete folder",
+    "description": "Delete folder Delete a folder by id. DELETE /wiki/api/v2/folders/{id}",
+    "context": "DELETE /wiki/api/v2/folders/{id}\nDelete a folder by id. Deleting a folder moves the folder to the trash, where it can be restored later **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the folder and its corresponding space. Permission to delete folders in the space.\nRequired: id (path) — The ID of the folder to be deleted."
+  },
+  {
+    "id": "deleteFolderPropertyById",
+    "name": "Delete content property for folder by id",
+    "description": "Delete content property for folder by id Deletes a content property for a folder by its id. DELETE /wiki/api/v2/folders/{folder-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/folders/{folder-id}/properties/{property-id}\nDeletes a content property for a folder by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the folder.\nRequired: folder-id (path) — The ID of the folder the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getFolderAncestors",
+    "name": "Get all ancestors of folder",
+    "description": "Get all ancestors of folder Returns all ancestors for a given folder by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). GET /wiki/api/v2/folders/{id}/ancestors",
+    "context": "GET /wiki/api/v2/folders/{id}/ancestors\nReturns all ancestors for a given folder by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the ID of first ancestor in the response payload. This endpoint returns minimal information about each ancestor. To fetch more details, use a related endpoint, such as [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-folders-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the folder and its corresponding space\nRequired: id (path) — The ID of the folder.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the highest ancestor's ID to fetch the next set of results."
+  },
+  {
+    "id": "getFolderById",
+    "name": "Get folder by id",
+    "description": "Get folder by id Returns a specific folder. GET /wiki/api/v2/folders/{id}",
+    "context": "GET /wiki/api/v2/folders/{id}\nReturns a specific folder. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the folder and its corresponding space.\nRequired: id (path) — The ID of the folder to be returned.\nOptional: include-collaborators (query) — Includes collaborators on the folder.; include-direct-children (query) — Includes direct children of the folder, as defined in the `ChildrenResponse` object.; include-operations (query) — Includes operations associated with this folder in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes content properties associated with this folder in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results."
+  },
+  {
+    "id": "getFolderContentProperties",
+    "name": "Get content properties for folder",
+    "description": "Get content properties for folder Retrieves Content Properties tied to a specified folder. GET /wiki/api/v2/folders/{id}/properties",
+    "context": "GET /wiki/api/v2/folders/{id}/properties\nRetrieves Content Properties tied to a specified folder. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the folder.\nRequired: id (path) — The ID of the folder for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getFolderContentPropertiesById",
+    "name": "Get content property for folder by id",
+    "description": "Get content property for folder by id Retrieves a specific Content Property by ID that is attached to a specified folder. GET /wiki/api/v2/folders/{folder-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/folders/{folder-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified folder. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the folder.\nRequired: folder-id (path) — The ID of the folder for which content properties should be returned.; property-id (path) — The ID of the content property being requested."
+  },
+  {
+    "id": "getFolderDescendants",
+    "name": "Get descendants of folder",
+    "description": "Get descendants of folder Returns descendants in the content tree for a given folder by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). GET /wiki/api/v2/folders/{id}/descendants",
+    "context": "GET /wiki/api/v2/folders/{id}/descendants\nReturns descendants in the content tree for a given folder by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the cursor in the response payload. There is also a `depth` parameter specifying depth of descendants to be fetched. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each descendant. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the and its corresponding space\nRequired: id (path) — The ID of the folder.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the cursor to fetch the next set of results.; depth (query) — Maximum depth of descendants to return. If more results are required, use the endpoint corresponding to the content type of the deepest descendant to fetch more descendants.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results."
+  },
+  {
+    "id": "getFolderDirectChildren",
+    "name": "Get direct children of a folder",
+    "description": "Get direct children of a folder Returns all children for given folder id in the content tree. GET /wiki/api/v2/folders/{id}/direct-children",
+    "context": "GET /wiki/api/v2/folders/{id}/direct-children\nReturns all children for given folder id in the content tree. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each child. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only content that the user has permission to view will be returned.\nRequired: id (path) — The ID of the parent folder.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of items per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getFolderOperations",
+    "name": "Get permitted operations for a folder",
+    "description": "Get permitted operations for a folder Returns the permitted operations on specific folder. GET /wiki/api/v2/folders/{id}/operations",
+    "context": "GET /wiki/api/v2/folders/{id}/operations\nReturns the permitted operations on specific folder. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the folder and its corresponding space.\nRequired: id (path) — The ID of the folder for which operations should be returned."
+  },
+  {
+    "id": "updateFolderPropertyById",
+    "name": "Update content property for folder by id",
+    "description": "Update content property for folder by id Update a content property for a folder by its id. PUT /wiki/api/v2/folders/{folder-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/folders/{folder-id}/properties/{property-id}\nUpdate a content property for a folder by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the folder.\nRequired: folder-id (path) — The ID of the folder the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "actions%2Fcreate-hosted-runner-for-org",
+    "name": "Create a GitHub-hosted runner for an organization",
+    "description": "Create a GitHub-hosted runner for an organization Creates a GitHub-hosted runner for an organization. POST /orgs/{org}/actions/hosted-runners",
+    "context": "POST /orgs/{org}/actions/hosted-runners\nCreates a GitHub-hosted runner for an organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fdelete-custom-image-from-org",
+    "name": "Delete a custom image from the organization",
+    "description": "Delete a custom image from the organization Delete a custom image from the organization. DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}",
+    "context": "DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}\nDelete a custom image from the organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; image_definition_id (path) — Image definition ID of custom image"
+  },
+  {
+    "id": "actions%2Fdelete-custom-image-version-from-org",
+    "name": "Delete an image version of custom image from the organization",
+    "description": "Delete an image version of custom image from the organization Delete an image version of custom image from the organization. DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}",
+    "context": "DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}\nDelete an image version of custom image from the organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; image_definition_id (path) — Image definition ID of custom image; version (path) — Version of a custom image"
+  },
+  {
+    "id": "actions%2Fdelete-hosted-runner-for-org",
+    "name": "Delete a GitHub-hosted runner for an organization",
+    "description": "Delete a GitHub-hosted runner for an organization Deletes a GitHub-hosted runner for an organization. DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "context": "DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}\nDeletes a GitHub-hosted runner for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; hosted_runner_id (path) — Unique identifier of the GitHub-hosted runner."
+  },
+  {
+    "id": "actions%2Fget-custom-image-for-org",
+    "name": "Get a custom image definition for GitHub Actions Hosted Runners",
+    "description": "Get a custom image definition for GitHub Actions Hosted Runners Get a custom image definition for GitHub Actions Hosted Runners. GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}",
+    "context": "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}\nGet a custom image definition for GitHub Actions Hosted Runners. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; image_definition_id (path) — Image definition ID of custom image"
+  },
+  {
+    "id": "actions%2Fget-custom-image-version-for-org",
+    "name": "Get an image version of a custom image for GitHub Actions Hosted Runners",
+    "description": "Get an image version of a custom image for GitHub Actions Hosted Runners Get an image version of a custom image for GitHub Actions Hosted Runners. GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}",
+    "context": "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}\nGet an image version of a custom image for GitHub Actions Hosted Runners. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; image_definition_id (path) — Image definition ID of custom image; version (path) — Version of a custom image"
+  },
+  {
+    "id": "actions%2Fget-hosted-runner-for-org",
+    "name": "Get a GitHub-hosted runner for an organization",
+    "description": "Get a GitHub-hosted runner for an organization Gets a GitHub-hosted runner configured in an organization. GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "context": "GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}\nGets a GitHub-hosted runner configured in an organization. OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; hosted_runner_id (path) — Unique identifier of the GitHub-hosted runner."
+  },
+  {
+    "id": "actions%2Fget-hosted-runners-github-owned-images-for-org",
+    "name": "Get GitHub-owned images for GitHub-hosted runners in an organization",
+    "description": "Get GitHub-owned images for GitHub-hosted runners in an organization Get the list of GitHub-owned images available for GitHub-hosted runners for an organization. GET /orgs/{org}/actions/hosted-runners/images/github-owned",
+    "context": "GET /orgs/{org}/actions/hosted-runners/images/github-owned\nGet the list of GitHub-owned images available for GitHub-hosted runners for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-hosted-runners-limits-for-org",
+    "name": "Get limits on GitHub-hosted runners for an organization",
+    "description": "Get limits on GitHub-hosted runners for an organization Get the GitHub-hosted runners limits for an organization. GET /orgs/{org}/actions/hosted-runners/limits",
+    "context": "GET /orgs/{org}/actions/hosted-runners/limits\nGet the GitHub-hosted runners limits for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-hosted-runners-machine-specs-for-org",
+    "name": "Get GitHub-hosted runners machine specs for an organization",
+    "description": "Get GitHub-hosted runners machine specs for an organization Get the list of machine specs available for GitHub-hosted runners for an organization. GET /orgs/{org}/actions/hosted-runners/machine-sizes",
+    "context": "GET /orgs/{org}/actions/hosted-runners/machine-sizes\nGet the list of machine specs available for GitHub-hosted runners for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-hosted-runners-partner-images-for-org",
+    "name": "Get partner images for GitHub-hosted runners in an organization",
+    "description": "Get partner images for GitHub-hosted runners in an organization Get the list of partner images available for GitHub-hosted runners for an organization. GET /orgs/{org}/actions/hosted-runners/images/partner",
+    "context": "GET /orgs/{org}/actions/hosted-runners/images/partner\nGet the list of partner images available for GitHub-hosted runners for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-hosted-runners-platforms-for-org",
+    "name": "Get platforms for GitHub-hosted runners in an organization",
+    "description": "Get platforms for GitHub-hosted runners in an organization Get the list of platforms available for GitHub-hosted runners for an organization. GET /orgs/{org}/actions/hosted-runners/platforms",
+    "context": "GET /orgs/{org}/actions/hosted-runners/platforms\nGet the list of platforms available for GitHub-hosted runners for an organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Flist-custom-image-versions-for-org",
+    "name": "List image versions of a custom image for an organization",
+    "description": "List image versions of a custom image for an organization List image versions of a custom image for an organization. GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions",
+    "context": "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions\nList image versions of a custom image for an organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: image_definition_id (path) — Image definition ID of custom image; org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Flist-custom-images-for-org",
+    "name": "List custom images for an organization",
+    "description": "List custom images for an organization List custom images for an organization. GET /orgs/{org}/actions/hosted-runners/images/custom",
+    "context": "GET /orgs/{org}/actions/hosted-runners/images/custom\nList custom images for an organization. OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Flist-hosted-runners-for-org",
+    "name": "List GitHub-hosted runners for an organization",
+    "description": "List GitHub-hosted runners for an organization Lists all GitHub-hosted runners configured in an organization. GET /orgs/{org}/actions/hosted-runners",
+    "context": "GET /orgs/{org}/actions/hosted-runners\nLists all GitHub-hosted runners configured in an organization. OAuth app tokens and personal access tokens (classic) need the `manage_runner:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Fupdate-hosted-runner-for-org",
+    "name": "Update a GitHub-hosted runner for an organization",
+    "description": "Update a GitHub-hosted runner for an organization Updates a GitHub-hosted runner for an organization. PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "context": "PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}\nUpdates a GitHub-hosted runner for an organization. OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; hosted_runner_id (path) — Unique identifier of the GitHub-hosted runner.; body (body)"
+  }
+]

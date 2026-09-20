@@ -1,0 +1,32 @@
+[
+  {
+    "id": "apps%2Fcheck-token",
+    "name": "Check a token",
+    "description": "Check a token OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. POST /applications/{client_id}/token",
+    "context": "POST /applications/{client_id}/token\nOAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. Invalid tokens will return `404 NOT FOUND`.\nRequired: client_id (path) — The client ID of the GitHub app.; body (body)"
+  },
+  {
+    "id": "apps%2Fdelete-authorization",
+    "name": "Delete an app authorization",
+    "description": "Delete an app authorization OAuth and GitHub application owners can revoke a grant for their application and a specific user. DELETE /applications/{client_id}/grant",
+    "context": "DELETE /applications/{client_id}/grant\nOAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted. Deleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).\nRequired: client_id (path) — The client ID of the GitHub app.; body (body)"
+  },
+  {
+    "id": "apps%2Fdelete-token",
+    "name": "Delete an app token",
+    "description": "Delete an app token OAuth or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization. DELETE /applications/{client_id}/token",
+    "context": "DELETE /applications/{client_id}/token\nOAuth or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.\nRequired: client_id (path) — The client ID of the GitHub app.; body (body)"
+  },
+  {
+    "id": "apps%2Freset-token",
+    "name": "Reset a token",
+    "description": "Reset a token OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. PATCH /applications/{client_id}/token",
+    "context": "PATCH /applications/{client_id}/token\nOAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the \"token\" property in the response because changes take effect immediately. Invalid tokens will return `404 NOT FOUND`.\nRequired: client_id (path) — The client ID of the GitHub app.; body (body)"
+  },
+  {
+    "id": "apps%2Fscope-token",
+    "name": "Create a scoped access token",
+    "description": "Create a scoped access token Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. POST /applications/{client_id}/token/scoped",
+    "context": "POST /applications/{client_id}/token/scoped\nUse a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify which repositories the token can access and which permissions are granted to the token. Invalid tokens will return `404 NOT FOUND`.\nRequired: client_id (path) — The client ID of the GitHub app.; body (body)"
+  }
+]

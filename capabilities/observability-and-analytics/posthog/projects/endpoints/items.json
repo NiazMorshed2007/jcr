@@ -1,0 +1,98 @@
+[
+  {
+    "id": "endpoints_create",
+    "name": "Create a new endpoint.",
+    "description": "Create a new endpoint. POST /api/projects/{project_id}/endpoints/",
+    "context": "POST /api/projects/{project_id}/endpoints/\nCreate a new endpoint.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "endpoints_destroy",
+    "name": "Delete an endpoint and clean up materialized query.",
+    "description": "Delete an endpoint and clean up materialized query. DELETE /api/projects/{project_id}/endpoints/{name}/",
+    "context": "DELETE /api/projects/{project_id}/endpoints/{name}/\nDelete an endpoint and clean up materialized query.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "endpoints_last_execution_times_create",
+    "name": "Get the most recent execution time per endpoint (endpoint-level)",
+    "description": "Get the most recent execution time per endpoint (endpoint-level) Get the most recent execution time per endpoint (endpoint-level). POST /api/projects/{project_id}/endpoints/last_execution_times/",
+    "context": "POST /api/projects/{project_id}/endpoints/last_execution_times/\nGet the most recent execution time per endpoint (endpoint-level). Timestamps are recorded by the run path for personal-API-key calls. For per-version usage, query the query_log table directly.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "endpoints_list",
+    "name": "List all endpoints for the team.",
+    "description": "List all endpoints for the team. GET /api/projects/{project_id}/endpoints/",
+    "context": "GET /api/projects/{project_id}/endpoints/\nList all endpoints for the team.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query); is_active (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "endpoints_logs_retrieve",
+    "name": "endpoints_logs_retrieve",
+    "description": "endpoints_logs_retrieve GET /api/projects/{project_id}/endpoints/{name}/logs/",
+    "context": "GET /api/projects/{project_id}/endpoints/{name}/logs/\nendpoints_logs_retrieve\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "endpoints_materialization_conditions_retrieve",
+    "name": "Get the source code of the live materialization checks, plus the rewrite contract",
+    "description": "Get the source code of the live materialization checks, plus the rewrite contract Get the source code of the live materialization checks, plus the rewrite contract. GET /api/projects/{project_id}/endpoints/materialization_conditions/",
+    "context": "GET /api/projects/{project_id}/endpoints/materialization_conditions/\nGet the source code of the live materialization checks, plus the rewrite contract. Lets an agent rewrite a rejected endpoint query itself: fetch these conditions, produce a semantically equivalent query that passes every check, update the endpoint with it, then confirm via materialization_status. The source is read from the running system, so it always matches the checks this instance enforces.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "endpoints_materialization_preview_create",
+    "name": "Preview the materialization transform for an endpoint",
+    "description": "Preview the materialization transform for an endpoint Preview the materialization transform for an endpoint. POST /api/projects/{project_id}/endpoints/{name}/materialization_preview/",
+    "context": "POST /api/projects/{project_id}/endpoints/{name}/materialization_preview/\nPreview the materialization transform for an endpoint. Shows what the query will look like after materialization, including range pair detection and bucket functions.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "endpoints_materialization_status_retrieve",
+    "name": "Get materialization status for an endpoint",
+    "description": "Get materialization status for an endpoint Get materialization status for an endpoint. GET /api/projects/{project_id}/endpoints/{name}/materialization_status/",
+    "context": "GET /api/projects/{project_id}/endpoints/{name}/materialization_status/\nGet materialization status for an endpoint. Supports ?version=N query param.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "endpoints_materialization_suggestion_create",
+    "name": "Ask AI to rewrite the endpoint's query into a semantically equivalent form that can be materialized",
+    "description": "Ask AI to rewrite the endpoint's query into a semantically equivalent form that can be materialized Ask AI to rewrite the endpoint's query into a semantically equivalent form that can be materialized. POST /api/projects/{project_id}/endpoints/{name}/materialization_suggestion/",
+    "context": "POST /api/projects/{project_id}/endpoints/{name}/materialization_suggestion/\nAsk AI to rewrite the endpoint's query into a semantically equivalent form that can be materialized. Only applicable to SQL (HogQL) endpoints that currently fail the materialization checks. The suggestion is validated against the live checks before being returned; nothing is saved. Requires the organization's AI data processing approval.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "endpoints_openapi_spec_retrieve",
+    "name": "Get OpenAPI 3.0 specification for this endpoint",
+    "description": "Get OpenAPI 3.0 specification for this endpoint Get OpenAPI 3.0 specification for this endpoint. GET /api/projects/{project_id}/endpoints/{name}/openapi.json/",
+    "context": "GET /api/projects/{project_id}/endpoints/{name}/openapi.json/\nGet OpenAPI 3.0 specification for this endpoint. Use this to generate typed SDK clients.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: version (query) — Specific endpoint version to generate the spec for. Defaults to latest."
+  },
+  {
+    "id": "endpoints_partial_update",
+    "name": "Update an existing endpoint.",
+    "description": "Update an existing endpoint. PATCH /api/projects/{project_id}/endpoints/{name}/",
+    "context": "PATCH /api/projects/{project_id}/endpoints/{name}/\nUpdate an existing endpoint.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "endpoints_retrieve",
+    "name": "Retrieve an endpoint, or a specific version via ?version=N.",
+    "description": "Retrieve an endpoint, or a specific version via ?version=N. GET /api/projects/{project_id}/endpoints/{name}/",
+    "context": "GET /api/projects/{project_id}/endpoints/{name}/\nRetrieve an endpoint, or a specific version via ?version=N.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "endpoints_run_create",
+    "name": "Execute endpoint with optional materialization",
+    "description": "Execute endpoint with optional materialization Execute endpoint with optional materialization. POST /api/projects/{project_id}/endpoints/{name}/run/",
+    "context": "POST /api/projects/{project_id}/endpoints/{name}/run/\nExecute endpoint with optional materialization. Supports version parameter, runs latest version if not set.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "endpoints_run_retrieve",
+    "name": "Execute endpoint with optional materialization",
+    "description": "Execute endpoint with optional materialization Execute endpoint with optional materialization. GET /api/projects/{project_id}/endpoints/{name}/run/",
+    "context": "GET /api/projects/{project_id}/endpoints/{name}/run/\nExecute endpoint with optional materialization. Supports version parameter, runs latest version if not set.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "endpoints_update",
+    "name": "Update an existing endpoint",
+    "description": "Update an existing endpoint Update an existing endpoint. PUT /api/projects/{project_id}/endpoints/{name}/",
+    "context": "PUT /api/projects/{project_id}/endpoints/{name}/\nUpdate an existing endpoint. Parameters are optional. Pass version in body or ?version=N query param to target a specific version.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "endpoints_versions_list",
+    "name": "List all versions for an endpoint.",
+    "description": "List all versions for an endpoint. GET /api/projects/{project_id}/endpoints/{name}/versions/",
+    "context": "GET /api/projects/{project_id}/endpoints/{name}/versions/\nList all versions for an endpoint.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query); is_active (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  }
+]

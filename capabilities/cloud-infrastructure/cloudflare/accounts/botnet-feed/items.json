@@ -1,0 +1,26 @@
+[
+  {
+    "id": "botnet-threat-feed-delete-asn",
+    "name": "Delete an ASN",
+    "description": "Delete an ASN Delete an ASN from botnet threat feed for a given user. DELETE /client/v4/accounts/{account_id}/botnet_feed/configs/asn/{asn_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/botnet_feed/configs/asn/{asn_id}\nDelete an ASN from botnet threat feed for a given user.\nRequired: account_id (path); asn_id (path)"
+  },
+  {
+    "id": "botnet-threat-feed-get-day-report",
+    "name": "Get daily report",
+    "description": "Get daily report Gets all the data the botnet tracking database has for a given ASN registered to user account for given date. GET /client/v4/accounts/{account_id}/botnet_feed/asn/{asn_id}/day_report",
+    "context": "GET /client/v4/accounts/{account_id}/botnet_feed/asn/{asn_id}/day_report\nGets all the data the botnet tracking database has for a given ASN registered to user account for given date. If no date is given, it will return results for the previous day.\nRequired: account_id (path); asn_id (path)\nOptional: date (query)"
+  },
+  {
+    "id": "botnet-threat-feed-get-full-report",
+    "name": "Get full report",
+    "description": "Get full report Gets all the data the botnet threat feed tracking database has for a given ASN registered to user account. GET /client/v4/accounts/{account_id}/botnet_feed/asn/{asn_id}/full_report",
+    "context": "GET /client/v4/accounts/{account_id}/botnet_feed/asn/{asn_id}/full_report\nGets all the data the botnet threat feed tracking database has for a given ASN registered to user account.\nRequired: account_id (path); asn_id (path)"
+  },
+  {
+    "id": "botnet-threat-feed-list-asn",
+    "name": "Get list of ASNs",
+    "description": "Get list of ASNs Gets a list of all ASNs registered for a user for the DDoS Botnet Feed API. GET /client/v4/accounts/{account_id}/botnet_feed/configs/asn",
+    "context": "GET /client/v4/accounts/{account_id}/botnet_feed/configs/asn\nGets a list of all ASNs registered for a user for the DDoS Botnet Feed API.\nRequired: account_id (path)"
+  }
+]

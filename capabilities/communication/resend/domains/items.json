@@ -1,0 +1,38 @@
+[
+  {
+    "id": "delete_domains_domain_id",
+    "name": "Remove an existing domain",
+    "description": "Remove an existing domain DELETE /domains/{domain_id}",
+    "context": "DELETE /domains/{domain_id}\nRemove an existing domain\nRequired: domain_id (path) — The ID of the domain."
+  },
+  {
+    "id": "get_domains",
+    "name": "Retrieve a list of domains",
+    "description": "Retrieve a list of domains GET /domains",
+    "context": "GET /domains\nRetrieve a list of domains\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_domains_domain_id",
+    "name": "Retrieve a single domain",
+    "description": "Retrieve a single domain GET /domains/{domain_id}",
+    "context": "GET /domains/{domain_id}\nRetrieve a single domain\nRequired: domain_id (path) — The ID of the domain."
+  },
+  {
+    "id": "patch_domains_domain_id",
+    "name": "Update an existing domain",
+    "description": "Update an existing domain PATCH /domains/{domain_id}",
+    "context": "PATCH /domains/{domain_id}\nUpdate an existing domain\nRequired: domain_id (path) — The ID of the domain.\nOptional: body (body)"
+  },
+  {
+    "id": "post_domains",
+    "name": "Create a new domain",
+    "description": "Create a new domain POST /domains",
+    "context": "POST /domains\nCreate a new domain\nOptional: body (body)"
+  },
+  {
+    "id": "post_domains_domain_id_verify",
+    "name": "Verify an existing domain",
+    "description": "Verify an existing domain Triggers verification of the domain's DNS records including DKIM, SPF, and the tracking CNAME (if a tracking subdomain is configured). POST /domains/{domain_id}/verify",
+    "context": "POST /domains/{domain_id}/verify\nTriggers verification of the domain's DNS records including DKIM, SPF, and the tracking CNAME (if a tracking subdomain is configured).\nRequired: domain_id (path) — The ID of the domain."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createOrganizationNotificationsAction",
+    "name": "Create a Spike Protection Notification Action",
+    "description": "Create a Spike Protection Notification Action Creates a new Notification Action for Spike Protection. POST /api/0/organizations/{organization_id_or_slug}/notifications/actions/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/notifications/actions/\nCreates a new Notification Action for Spike Protection. Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry. For example, organization owners and managers can receive an email when a spike occurs.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationNotificationsAction",
+    "name": "Delete a Spike Protection Notification Action",
+    "description": "Delete a Spike Protection Notification Action Deletes a Spike Protection Notification Action. DELETE /api/0/organizations/{organization_id_or_slug}/notifications/actions/{action_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/notifications/actions/{action_id}/\nDeletes a Spike Protection Notification Action. Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry. For example, organization owners and managers can receive an email when a spike occurs.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; action_id (path) — ID of the notification action to retrieve"
+  },
+  {
+    "id": "getOrganizationNotificationsAction",
+    "name": "Retrieve a Spike Protection Notification Action",
+    "description": "Retrieve a Spike Protection Notification Action Returns a serialized Spike Protection Notification Action object. GET /api/0/organizations/{organization_id_or_slug}/notifications/actions/{action_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/notifications/actions/{action_id}/\nReturns a serialized Spike Protection Notification Action object. Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry. For example, organization owners and managers can receive an email when a spike occurs.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; action_id (path) — ID of the notification action to retrieve"
+  },
+  {
+    "id": "listOrganizationNotificationsActions",
+    "name": "List Spike Protection Notifications",
+    "description": "List Spike Protection Notifications Returns all Spike Protection Notification Actions for an organization. GET /api/0/organizations/{organization_id_or_slug}/notifications/actions/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/notifications/actions/\nReturns all Spike Protection Notification Actions for an organization. Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry. For example, organization owners and managers can receive an email when a spike occurs. You can use the `project` query parameter with project IDs or slugs to filter for certain projects. A legacy project slug query parameter is also supported and takes priority if both are present.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; project_id_or_slug (query) — The legacy project slug filter. Prefer `project`, which accepts project IDs or slugs. Use `$all` to include all available projects. For example, the following are valid parameters: - `/?projectSlug=$all` - `/?projectSlug=android&projectSlug=javascript-react`; triggerType (query) — Type of the trigger that causes the notification. The only supported value right now is: `spike-protection`"
+  },
+  {
+    "id": "updateOrganizationNotificationsAction",
+    "name": "Update a Spike Protection Notification Action",
+    "description": "Update a Spike Protection Notification Action Updates a Spike Protection Notification Action. PUT /api/0/organizations/{organization_id_or_slug}/notifications/actions/{action_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/notifications/actions/{action_id}/\nUpdates a Spike Protection Notification Action. Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry. For example, organization owners and managers can receive an email when a spike occurs.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; action_id (path) — ID of the notification action to retrieve; body (body)"
+  }
+]

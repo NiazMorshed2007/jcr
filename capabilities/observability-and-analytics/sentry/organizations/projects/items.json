@@ -1,0 +1,20 @@
+[
+  {
+    "id": "createOrganizationProject",
+    "name": "Create a Project for an Organization",
+    "description": "Create a Project for an Organization Create a new project for an organization. POST /api/0/organizations/{organization_id_or_slug}/projects/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/projects/\nCreate a new project for an organization. A personal team (`team-{username}`) is automatically created for the caller with Team Admin role, and the project is bound to it. If the org has member project creation disabled (`disable_member_project_creation`), `org:write` scope is required.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "createOrganizationProjectDetector",
+    "name": "Create a Monitor for a Project",
+    "description": "Create a Monitor for a Project Create a Monitor for a project POST /api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors/\nCreate a Monitor for a project\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; project_id_or_slug (path) — The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.; body (body)"
+  },
+  {
+    "id": "listOrganizationProjects",
+    "name": "List an Organization's Projects",
+    "description": "List an Organization's Projects Return a list of projects bound to a organization. GET /api/0/organizations/{organization_id_or_slug}/projects/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/projects/\nReturn a list of projects bound to a organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.; per_page (query) — Limit the number of rows to return in the result. Default and maximum allowed is 100.; query (query) — Filter projects by name or slug."
+  }
+]

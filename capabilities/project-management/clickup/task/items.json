@@ -1,0 +1,152 @@
+[
+  {
+    "id": "AddDependency",
+    "name": "Add Dependency",
+    "description": "Add Dependency Set a task as waiting on or blocking another task. POST /api/v2/task/{task_id}/dependency",
+    "context": "POST /api/v2/task/{task_id}/dependency\nSet a task as waiting on or blocking another task.\nRequired: task_id (path) — This is the task which is waiting on or blocking another task.; body (body) — Use the `depends_on` parameter in the request body to specify the task that must be completed before the task in the path parameter.\\ \\ Use the `dependency_of` parameter in the request body to specify the task that's waiting for the task in the path parameter to be completed.\\ \\ You can only use one per request.\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "AddGuestToTask",
+    "name": "Add Guest To Task",
+    "description": "Add Guest To Task Share a task with a guest. POST /api/v2/task/{task_id}/guest/{guest_id}",
+    "context": "POST /api/v2/task/{task_id}/guest/{guest_id}\nShare a task with a guest. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: task_id (path); guest_id (path); body (body)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`.; custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "AddTagToTask",
+    "name": "Add Tag To Task",
+    "description": "Add Tag To Task Add a Tag to a task. POST /api/v2/task/{task_id}/tag/{tag_name}",
+    "context": "POST /api/v2/task/{task_id}/tag/{tag_name}\nAdd a Tag to a task.\nRequired: task_id (path); tag_name (path); Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "AddTaskLink",
+    "name": "Add Task Link",
+    "description": "Add Task Link This is the equivalent of the feature _Task Links_ in the right-hand sidebar of a Task. POST /api/v2/task/{task_id}/link/{links_to}",
+    "context": "POST /api/v2/task/{task_id}/link/{links_to}\nThis is the equivalent of the feature _Task Links_ in the right-hand sidebar of a Task. It allows you to link two tasks together. General links or links to other objects than tasks are not supported.\nRequired: task_id (path) — The task to initiate the link from.; links_to (path) — The task to link to.\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "CreateChecklist",
+    "name": "Create Checklist",
+    "description": "Create Checklist Add a new checklist to a task. POST /api/v2/task/{task_id}/checklist",
+    "context": "POST /api/v2/task/{task_id}/checklist\nAdd a new checklist to a task.\nRequired: task_id (path); body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "CreateTaskAttachment",
+    "name": "Create Task Attachment",
+    "description": "Create Task Attachment Upload a file to a task as an attachment. POST /api/v2/task/{task_id}/attachment",
+    "context": "POST /api/v2/task/{task_id}/attachment\nUpload a file to a task as an attachment. Files stored in the cloud cannot be used in this API request.\\ \\ ***Note:** This request uses multipart/form-data as the content type.* \\ ***Tip:** Try our new [V3 Attachments API](ref:postentityattachment), which supports both tasks and File type Custom Fields!*\nRequired: task_id (path); body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by its custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "CreateTaskComment",
+    "name": "Create Task Comment",
+    "description": "Create Task Comment Add a new comment to a task. POST /api/v2/task/{task_id}/comment",
+    "context": "POST /api/v2/task/{task_id}/comment\nAdd a new comment to a task.\nRequired: task_id (path); body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "DeleteDependency",
+    "name": "Delete Dependency",
+    "description": "Delete Dependency Remove the dependency relationship between two or more tasks. DELETE /api/v2/task/{task_id}/dependency",
+    "context": "DELETE /api/v2/task/{task_id}/dependency\nRemove the dependency relationship between two or more tasks.\nRequired: task_id (path); depends_on (query); dependency_of (query)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "DeleteTask",
+    "name": "Delete Task",
+    "description": "Delete Task Delete a task from your Workspace. DELETE /api/v2/task/{task_id}",
+    "context": "DELETE /api/v2/task/{task_id}\nDelete a task from your Workspace.\nRequired: task_id (path); Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by its custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "DeleteTaskLink",
+    "name": "Delete Task Link",
+    "description": "Delete Task Link Remove the link between two tasks. DELETE /api/v2/task/{task_id}/link/{links_to}",
+    "context": "DELETE /api/v2/task/{task_id}/link/{links_to}\nRemove the link between two tasks.\nRequired: task_id (path); links_to (path)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "Deletetimetracked",
+    "name": "Delete time tracked",
+    "description": "Delete time tracked ***Note:** This is a legacy time tracking endpoint. DELETE /api/v2/task/{task_id}/time/{interval_id}",
+    "context": "DELETE /api/v2/task/{task_id}/time/{interval_id}\n***Note:** This is a legacy time tracking endpoint. We recommend using the Time Tracking API endpoints to manage time entries.*\nRequired: task_id (path); interval_id (path); Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "Edittimetracked",
+    "name": "Edit time tracked",
+    "description": "Edit time tracked ***Note:** This is a legacy time tracking endpoint. PUT /api/v2/task/{task_id}/time/{interval_id}",
+    "context": "PUT /api/v2/task/{task_id}/time/{interval_id}\n***Note:** This is a legacy time tracking endpoint. We recommend using the Time Tracking API endpoints to manage time entries.*\nRequired: task_id (path); interval_id (path); body (body) — Edit the start, end, or total time of a time tracked entry.\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "GetBulkTasks'TimeinStatus",
+    "name": "Get Bulk Tasks' Time in Status",
+    "description": "Get Bulk Tasks' Time in Status View how long two or more tasks have been in each status. GET /api/v2/task/bulk_time_in_status/task_ids",
+    "context": "GET /api/v2/task/bulk_time_in_status/task_ids\nView how long two or more tasks have been in each status. The Total time in Status ClickApp must first be enabled by the Workspace owner or an admin.\nRequired: task_ids (query) — Include this paramater once per `task_id`. You can include up to 100 task ids per request. For example: `task_ids=3cuh&task_ids=g4fs`; Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "GetTask",
+    "name": "Get Task",
+    "description": "Get Task View information about a task. GET /api/v2/task/{task_id}",
+    "context": "GET /api/v2/task/{task_id}\nView information about a task. You can only view task information of tasks you can access. \\ \\ Tasks with attachments will return an \"attachments\" response. \\ \\ Docs attached to a task are not returned.\\ \\ The `custom_fields` array only includes Custom Fields applicable to the task's `custom_item_id`. Use [Get Custom Fields](ref:getaccessiblecustomfields) and each field's `applied_objects` to discover which fields apply to which task types.\nRequired: task_id (path)\nOptional: custom_task_ids (query) — If you want to reference a task by its custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`.; include_subtasks (query) — Include subtasks, default false; include_markdown_description (query) — To return task descriptions in Markdown format, use `?include_markdown_description=true`.; custom_fields (query) — Include tasks with specific values in one or more Custom Fields. Custom Relationships are included.\\ \\ For example: `?custom_fields=[{\"field_id\":\"abcdefghi12345678\",\"operator\":\"=\",\"value\":\"1234\"},{\"field_id\":\"jklmnop123456\",\"operator\":\"<\",\"value\":\"5\"}]`\\ \\ Only set Custom Field values display in the `value` property of the `custom_fields` parameter. If you want to include tasks with specific values in only one Custom Field, use `custom_field` instead.\\ \\ Learn more about [filtering using Custom Fields.](doc:filtertasks)"
+  },
+  {
+    "id": "GetTask'sTimeinStatus",
+    "name": "Get Task's Time in Status",
+    "description": "Get Task's Time in Status View how long a task has been in each status. GET /api/v2/task/{task_id}/time_in_status",
+    "context": "GET /api/v2/task/{task_id}/time_in_status\nView how long a task has been in each status. The Total time in Status ClickApp must first be enabled by the Workspace owner or an admin.\nRequired: task_id (path); Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "GetTaskComments",
+    "name": "Get Task Comments",
+    "description": "Get Task Comments View task comments. GET /api/v2/task/{task_id}/comment",
+    "context": "GET /api/v2/task/{task_id}/comment\nView task comments. \\ \\ Retrieve comments from a task. Results are returned in reverse chronological order (newest to oldest). By default, the request returns the 25 most recent comments.\\ \\ [Pagination](https://developer.clickup.com/docs/task-comments-pagination): To fetch the next page of history (older comments), you must use the `start` and `start_id` parameters together, using the data from the last comment of the current response.\nRequired: task_id (path)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`.; start (query) — The Unix timestamp (in milliseconds) of the reference comment. Required for pagination. Must be used in combination with `start_id`. \\ Value should be the `date` of the last comment from the previous response.; start_id (query) — The unique ID of the reference comment. Required for pagination. Must be used in combination with `start`. \\ Value should be the `id` of the last comment from the previous response."
+  },
+  {
+    "id": "GetTaskMembers",
+    "name": "Get Task Members",
+    "description": "Get Task Members Get Workspace members who have explicit access to a task. GET /api/v2/task/{task_id}/member",
+    "context": "GET /api/v2/task/{task_id}/member\nGet Workspace members who have explicit access to a task. Responses do not include people with access through a Team, or people with access from the List, Folder, or Space where the task exists.\nRequired: task_id (path)"
+  },
+  {
+    "id": "Gettrackedtime",
+    "name": "Get tracked time",
+    "description": "Get tracked time ***Note:** This is a legacy time tracking endpoint. GET /api/v2/task/{task_id}/time",
+    "context": "GET /api/v2/task/{task_id}/time\n***Note:** This is a legacy time tracking endpoint. We recommend using the Time Tracking API endpoints to manage time entries.*\nRequired: task_id (path); Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "mergeTasks",
+    "name": "Merge Tasks",
+    "description": "Merge Tasks Merge multiple tasks into a target task. POST /api/v2/task/{task_id}/merge",
+    "context": "POST /api/v2/task/{task_id}/merge\nMerge multiple tasks into a target task. The target task is specified by the task_id parameter, while the source tasks to be merged are provided in the request body. Custom Task IDs are not supported.\nRequired: task_id (path) — ID of the target task that other tasks will be merged into.; body (body)"
+  },
+  {
+    "id": "RemoveCustomFieldValue",
+    "name": "Remove Custom Field Value",
+    "description": "Remove Custom Field Value Remove the data from a Custom Field on a task. DELETE /api/v2/task/{task_id}/field/{field_id}",
+    "context": "DELETE /api/v2/task/{task_id}/field/{field_id}\nRemove the data from a Custom Field on a task. This does not delete the option from the Custom Field.\nRequired: task_id (path); field_id (path) — b8a8-48d8-a0c6-b4200788a683 (uuid)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "RemoveGuestFromTask",
+    "name": "Remove Guest From Task",
+    "description": "Remove Guest From Task Revoke a guest's access to a task. DELETE /api/v2/task/{task_id}/guest/{guest_id}",
+    "context": "DELETE /api/v2/task/{task_id}/guest/{guest_id}\nRevoke a guest's access to a task. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: task_id (path); guest_id (path)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`.; custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "RemoveTagFromTask",
+    "name": "Remove Tag From Task",
+    "description": "Remove Tag From Task Remove a Tag from a task. DELETE /api/v2/task/{task_id}/tag/{tag_name}",
+    "context": "DELETE /api/v2/task/{task_id}/tag/{tag_name}\nRemove a Tag from a task. This does not delete the Tag from the Space.\nRequired: task_id (path); tag_name (path); Content-Type (header)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "SetCustomFieldValue",
+    "name": "Set Custom Field Value",
+    "description": "Set Custom Field Value Add data to a Custom field on a task. POST /api/v2/task/{task_id}/field/{field_id}",
+    "context": "POST /api/v2/task/{task_id}/field/{field_id}\nAdd data to a Custom field on a task. \\ \\ You'll need to know the `task_id` of the task you want to update, and the universal unique identifier (UUID) `field_id` of the Custom Field you want to set. \\ \\ The Custom Field must be applicable to the task's current `custom_item_id`. Use [Get Custom Fields](ref:getaccessiblecustomfields) (check each field's `applied_objects`) or [Get Task](ref:gettask) to find applicable `field_id` values.\\ \\ Returns `400` if the field is not enabled for the task's custom task type.\nRequired: task_id (path) — Enter the task ID of the task you want to update.; field_id (path) — Enter the universal unique identifier (UUID) of the Custom Field you want to set.; body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by its Custom Task ID, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "Tracktime",
+    "name": "Track time",
+    "description": "Track time ***Note:** This is a legacy time tracking endpoint. POST /api/v2/task/{task_id}/time",
+    "context": "POST /api/v2/task/{task_id}/time\n***Note:** This is a legacy time tracking endpoint. We recommend using the Time Tracking API endpoints to manage time entries.*\nRequired: task_id (path); body (body) — Include the total time or the start time and end time.\\ \\ The total time is in milliseconds and `\"start\"` and `\"end\"` values are Unix time in milliseconds.\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "UpdateTask",
+    "name": "Update Task",
+    "description": "Update Task Update a task by including one or more fields in the request body. PUT /api/v2/task/{task_id}",
+    "context": "PUT /api/v2/task/{task_id}\nUpdate a task by including one or more fields in the request body.\nRequired: task_id (path); body (body) — ***Note:** To update Custom Fields on a task, you must use the Set Custom Field endpoint.*\nOptional: custom_task_ids (query) — If you want to reference a task by its custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "repos%2Fcreate-webhook",
+    "name": "Create a repository webhook",
+    "description": "Create a repository webhook Repositories can have multiple webhooks installed. POST /repos/{owner}/{repo}/hooks",
+    "context": "POST /repos/{owner}/{repo}/hooks\nRepositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can share the same `config` as long as those webhooks do not have any `events` that overlap.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "repos%2Fdelete-webhook",
+    "name": "Delete a repository webhook",
+    "description": "Delete a repository webhook Delete a webhook for an organization. DELETE /repos/{owner}/{repo}/hooks/{hook_id}",
+    "context": "DELETE /repos/{owner}/{repo}/hooks/{hook_id}\nDelete a webhook for an organization. The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "repos%2Fget-webhook",
+    "name": "Get a repository webhook",
+    "description": "Get a repository webhook Returns a webhook configured in a repository. GET /repos/{owner}/{repo}/hooks/{hook_id}",
+    "context": "GET /repos/{owner}/{repo}/hooks/{hook_id}\nReturns a webhook configured in a repository. To get only the webhook `config` properties, see \"[Get a webhook configuration for a repository](/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "repos%2Fget-webhook-config-for-repo",
+    "name": "Get a webhook configuration for a repository",
+    "description": "Get a webhook configuration for a repository Returns the webhook configuration for a repository. GET /repos/{owner}/{repo}/hooks/{hook_id}/config",
+    "context": "GET /repos/{owner}/{repo}/hooks/{hook_id}/config\nReturns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use \"[Get a repository webhook](/rest/webhooks/repos#get-a-repository-webhook).\" OAuth app tokens and personal access tokens (classic) need the `read:repo_hook` or `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "repos%2Fget-webhook-delivery",
+    "name": "Get a delivery for a repository webhook",
+    "description": "Get a delivery for a repository webhook Returns a delivery for a webhook configured in a repository. GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
+    "context": "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}\nReturns a delivery for a webhook configured in a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.; delivery_id (path)"
+  },
+  {
+    "id": "repos%2Flist-webhook-deliveries",
+    "name": "List deliveries for a repository webhook",
+    "description": "List deliveries for a repository webhook Returns a list of webhook deliveries for a webhook configured in a repository. GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
+    "context": "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries\nReturns a list of webhook deliveries for a webhook configured in a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; cursor (query) — Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.; status (query) — Returns webhook deliveries filtered by delivery outcome classification based on `status_code` range. A `status` of `success` returns deliveries with a `status_code` in the 200-399 range (inclusive). A `status` of `failure` returns deliveries with a `status_code` in the 400-599 range (inclusive)."
+  },
+  {
+    "id": "repos%2Flist-webhooks",
+    "name": "List repository webhooks",
+    "description": "List repository webhooks Lists webhooks for a repository. GET /repos/{owner}/{repo}/hooks",
+    "context": "GET /repos/{owner}/{repo}/hooks\nLists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fping-webhook",
+    "name": "Ping a repository webhook",
+    "description": "Ping a repository webhook This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook. POST /repos/{owner}/{repo}/hooks/{hook_id}/pings",
+    "context": "POST /repos/{owner}/{repo}/hooks/{hook_id}/pings\nThis will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "repos%2Fredeliver-webhook-delivery",
+    "name": "Redeliver a delivery for a repository webhook",
+    "description": "Redeliver a delivery for a repository webhook Redeliver a webhook delivery for a webhook configured in a repository. POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+    "context": "POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts\nRedeliver a webhook delivery for a webhook configured in a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.; delivery_id (path)"
+  },
+  {
+    "id": "repos%2Ftest-push-webhook",
+    "name": "Test the push repository webhook",
+    "description": "Test the push repository webhook This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. POST /repos/{owner}/{repo}/hooks/{hook_id}/tests",
+    "context": "POST /repos/{owner}/{repo}/hooks/{hook_id}/tests\nThis will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated. > [!NOTE] > Previously `/repos/:owner/:repo/hooks/:hook_id/test`\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "repos%2Fupdate-webhook",
+    "name": "Update a repository webhook",
+    "description": "Update a repository webhook Updates a webhook configured in a repository. PATCH /repos/{owner}/{repo}/hooks/{hook_id}",
+    "context": "PATCH /repos/{owner}/{repo}/hooks/{hook_id}\nUpdates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use \"[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.; body (body)"
+  },
+  {
+    "id": "repos%2Fupdate-webhook-config-for-repo",
+    "name": "Update a webhook configuration for a repository",
+    "description": "Update a webhook configuration for a repository Updates the webhook configuration for a repository. PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config",
+    "context": "PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config\nUpdates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use \"[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook).\" OAuth app tokens and personal access tokens (classic) need the `write:repo_hook` or `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.\nOptional: body (body)"
+  }
+]

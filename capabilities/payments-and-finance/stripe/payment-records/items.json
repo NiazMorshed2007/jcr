@@ -1,0 +1,56 @@
+[
+  {
+    "id": "GetPaymentRecords",
+    "name": "List Payment Records",
+    "description": "List Payment Records List all the Payment Records for a given merchant. GET /v1/payment_records",
+    "context": "GET /v1/payment_records\nList all the Payment Records for a given merchant.\nOptional: created_after (query) — Only return Payment Records that were created after this unix timestamp.; created_before (query) — Only return Payment Records that were created before this unix timestamp.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetPaymentRecordsId",
+    "name": "Retrieve a Payment Record",
+    "description": "Retrieve a Payment Record Retrieves a Payment Record with the given ID GET /v1/payment_records/{id}",
+    "context": "GET /v1/payment_records/{id}\nRetrieves a Payment Record with the given ID\nRequired: id (path) — The ID of the Payment Record.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsIdReportPaymentAttempt",
+    "name": "Report a payment attempt",
+    "description": "Report a payment attempt Report a new payment attempt on the specified Payment Record. POST /v1/payment_records/{id}/report_payment_attempt",
+    "context": "POST /v1/payment_records/{id}/report_payment_attempt\nReport a new payment attempt on the specified Payment Record. A new payment attempt can only be specified if all other payment attempts are canceled or failed.\nRequired: id (path) — The ID of the Payment Record.; body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsIdReportPaymentAttemptCanceled",
+    "name": "Report payment attempt canceled",
+    "description": "Report payment attempt canceled Report that the most recent payment attempt on the specified Payment Record was canceled. POST /v1/payment_records/{id}/report_payment_attempt_canceled",
+    "context": "POST /v1/payment_records/{id}/report_payment_attempt_canceled\nReport that the most recent payment attempt on the specified Payment Record was canceled.\nRequired: id (path) — The ID of the Payment Record.; body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsIdReportPaymentAttemptFailed",
+    "name": "Report payment attempt failed",
+    "description": "Report payment attempt failed Report that the most recent payment attempt on the specified Payment Record failed or errored. POST /v1/payment_records/{id}/report_payment_attempt_failed",
+    "context": "POST /v1/payment_records/{id}/report_payment_attempt_failed\nReport that the most recent payment attempt on the specified Payment Record failed or errored.\nRequired: id (path) — The ID of the Payment Record.; body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsIdReportPaymentAttemptGuaranteed",
+    "name": "Report payment attempt guaranteed",
+    "description": "Report payment attempt guaranteed Report that the most recent payment attempt on the specified Payment Record was guaranteed. POST /v1/payment_records/{id}/report_payment_attempt_guaranteed",
+    "context": "POST /v1/payment_records/{id}/report_payment_attempt_guaranteed\nReport that the most recent payment attempt on the specified Payment Record was guaranteed.\nRequired: id (path) — The ID of the Payment Record.; body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsIdReportPaymentAttemptInformational",
+    "name": "Report payment attempt informational",
+    "description": "Report payment attempt informational Report informational updates on the specified Payment Record. POST /v1/payment_records/{id}/report_payment_attempt_informational",
+    "context": "POST /v1/payment_records/{id}/report_payment_attempt_informational\nReport informational updates on the specified Payment Record.\nRequired: id (path) — The ID of the Payment Record.\nOptional: body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsIdReportRefund",
+    "name": "Report a refund",
+    "description": "Report a refund Report that the most recent payment attempt on the specified Payment Record was refunded. POST /v1/payment_records/{id}/report_refund",
+    "context": "POST /v1/payment_records/{id}/report_refund\nReport that the most recent payment attempt on the specified Payment Record was refunded.\nRequired: id (path) — The ID of the Payment Record.; body (body)"
+  },
+  {
+    "id": "PostPaymentRecordsReportPayment",
+    "name": "Report a payment",
+    "description": "Report a payment Report a new Payment Record. POST /v1/payment_records/report_payment",
+    "context": "POST /v1/payment_records/report_payment\nReport a new Payment Record. You may report a Payment Record as it is initialized and later report updates through the other report_* methods, or report Payment Records in a terminal state directly, through this method.\nRequired: body (body)"
+  }
+]

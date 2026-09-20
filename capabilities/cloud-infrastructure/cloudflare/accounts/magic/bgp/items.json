@@ -1,0 +1,44 @@
+[
+  {
+    "id": "magic-bgp-create-filter-profile",
+    "name": "Create BGP Filter Profile",
+    "description": "Create BGP Filter Profile Creates a new BGP filter profile for an account. POST /client/v4/accounts/{account_id}/magic/bgp/filter_profiles",
+    "context": "POST /client/v4/accounts/{account_id}/magic/bgp/filter_profiles\nCreates a new BGP filter profile for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-bgp-delete-filter-profile",
+    "name": "Delete BGP Filter Profile",
+    "description": "Delete BGP Filter Profile Deletes a BGP filter profile. DELETE /client/v4/accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}\nDeletes a BGP filter profile.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "magic-bgp-get-filter-profile",
+    "name": "Get BGP Filter Profile",
+    "description": "Get BGP Filter Profile Gets a specific BGP filter profile for an account. GET /client/v4/accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}\nGets a specific BGP filter profile for an account.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "magic-bgp-get-settings",
+    "name": "Get BGP Settings",
+    "description": "Get BGP Settings Gets the BGP settings for an account, including the default ASN and redistribution configuration. GET /client/v4/accounts/{account_id}/magic/bgp/settings",
+    "context": "GET /client/v4/accounts/{account_id}/magic/bgp/settings\nGets the BGP settings for an account, including the default ASN and redistribution configuration.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-bgp-list-filter-profiles",
+    "name": "List BGP Filter Profiles",
+    "description": "List BGP Filter Profiles Lists all BGP filter profiles for an account. GET /client/v4/accounts/{account_id}/magic/bgp/filter_profiles",
+    "context": "GET /client/v4/accounts/{account_id}/magic/bgp/filter_profiles\nLists all BGP filter profiles for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-bgp-update-filter-profile",
+    "name": "Update BGP Filter Profile",
+    "description": "Update BGP Filter Profile Updates a BGP filter profile. PUT /client/v4/accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/bgp/filter_profiles/{profile_id}\nUpdates a BGP filter profile. Omitted properties are left unchanged. To clear an existing description send `description: \"\"`.\nRequired: account_id (path); profile_id (path); body (body)"
+  },
+  {
+    "id": "magic-bgp-update-settings",
+    "name": "Update BGP Settings",
+    "description": "Update BGP Settings Modifies the BGP settings for an account, including the default ASN and redistribution configuration. PUT /client/v4/accounts/{account_id}/magic/bgp/settings",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/bgp/settings\nModifies the BGP settings for an account, including the default ASN and redistribution configuration.\nRequired: account_id (path); body (body)"
+  }
+]

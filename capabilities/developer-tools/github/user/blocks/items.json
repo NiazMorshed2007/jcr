@@ -1,0 +1,26 @@
+[
+  {
+    "id": "users%2Fblock",
+    "name": "Block a user",
+    "description": "Block a user Blocks the given user and returns a 204. PUT /user/blocks/{username}",
+    "context": "PUT /user/blocks/{username}\nBlocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "users%2Fcheck-blocked",
+    "name": "Check if a user is blocked by the authenticated user",
+    "description": "Check if a user is blocked by the authenticated user Returns a 204 if the given user is blocked by the authenticated user. GET /user/blocks/{username}",
+    "context": "GET /user/blocks/{username}\nReturns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "users%2Flist-blocked-by-authenticated-user",
+    "name": "List users blocked by the authenticated user",
+    "description": "List users blocked by the authenticated user List the users you've blocked on your personal account. GET /user/blocks",
+    "context": "GET /user/blocks\nList the users you've blocked on your personal account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Funblock",
+    "name": "Unblock a user",
+    "description": "Unblock a user Unblocks the given user and returns a 204. DELETE /user/blocks/{username}",
+    "context": "DELETE /user/blocks/{username}\nUnblocks the given user and returns a 204.\nRequired: username (path) — The handle for the GitHub user account."
+  }
+]

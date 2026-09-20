@@ -1,0 +1,26 @@
+[
+  {
+    "id": "uploaded_media_complete_upload_create",
+    "name": "Step 2 of the presigned upload flow: verifies the object POSTed to the upload_url, sniffs its real content type, and activates it — after this it appears in the library and is publicly servable.",
+    "description": "Step 2 of the presigned upload flow: verifies the object POSTed to the upload_url, sniffs its real content type, and activates it — after this it appears in the library and is publicly servable. POST /api/projects/{project_id}/uploaded_media/{id}/complete_upload/",
+    "context": "POST /api/projects/{project_id}/uploaded_media/{id}/complete_upload/\nStep 2 of the presigned upload flow: verifies the object POSTed to the upload_url, sniffs its real content type, and activates it — after this it appears in the library and is publicly servable.\nRequired: id (path) — A UUID string identifying this uploaded media.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "uploaded_media_create",
+    "name": "When object storage is available this API allows upload of media which can be used, for example, in text cards on dashboards",
+    "description": "When object storage is available this API allows upload of media which can be used, for example, in text cards on dashboards When object storage is available this API allows upload of media which can be used, for example, in text cards on dashboards. POST /api/projects/{project_id}/uploaded_media/",
+    "context": "POST /api/projects/{project_id}/uploaded_media/\nWhen object storage is available this API allows upload of media which can be used, for example, in text cards on dashboards. Uploaded media must be less than 4MB and decode as a PNG, JPEG, GIF, WebP, AVIF or BMP image — the formats the download route will serve inline. Pass `purpose` to also add the image to a library, making it visible to `GET ?purpose=...`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "uploaded_media_list",
+    "name": "List images in the media library",
+    "description": "List images in the media library List images in the media library. GET /api/projects/{project_id}/uploaded_media/",
+    "context": "GET /api/projects/{project_id}/uploaded_media/\nList images in the media library. Requires a `purpose` filter — the library is scoped per consumer (e.g. `email`), so browsing without one would mix in unrelated uploads (dashboard images, toolbar screenshots, ...).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; purpose (query) — The library to list.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "uploaded_media_start_upload_create",
+    "name": "Step 1 of the presigned upload flow: reserves a pending image and returns a presigned URL to POST the file to directly, bytes never pass through this API",
+    "description": "Step 1 of the presigned upload flow: reserves a pending image and returns a presigned URL to POST the file to directly, bytes never pass through this API Step 1 of the presigned upload flow: reserves a pending image and returns a presigned URL to POST the file to directly, bytes never pass through this API. POST /api/…",
+    "context": "POST /api/projects/{project_id}/uploaded_media/start_upload/\nStep 1 of the presigned upload flow: reserves a pending image and returns a presigned URL to POST the file to directly, bytes never pass through this API. Call complete_upload with the returned id once the upload finishes.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

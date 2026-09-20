@@ -1,0 +1,194 @@
+[
+  {
+    "id": "v1-create-a-sso-provider",
+    "name": "Creates a new SSO provider",
+    "description": "Creates a new SSO provider POST /v1/projects/{ref}/config/auth/sso/providers",
+    "context": "POST /v1/projects/{ref}/config/auth/sso/providers\nCreates a new SSO provider\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-create-legacy-signing-key",
+    "name": "Set up the project's existing JWT secret as an in_use JWT signing key. This endpoint will be removed in the future always check for HTTP 404 Not Found.",
+    "description": "Set up the project's existing JWT secret as an in_use JWT signing key. This endpoint will be removed in the future always check for HTTP 404 Not Found. POST /v1/projects/{ref}/config/auth/signing-keys/legacy",
+    "context": "POST /v1/projects/{ref}/config/auth/signing-keys/legacy\nSet up the project's existing JWT secret as an in_use JWT signing key. This endpoint will be removed in the future always check for HTTP 404 Not Found.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-create-project-signing-key",
+    "name": "Create a new signing key for the project in standby status",
+    "description": "Create a new signing key for the project in standby status POST /v1/projects/{ref}/config/auth/signing-keys",
+    "context": "POST /v1/projects/{ref}/config/auth/signing-keys\nCreate a new signing key for the project in standby status\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-create-project-tpa-integration",
+    "name": "Creates a new third-party auth integration",
+    "description": "Creates a new third-party auth integration POST /v1/projects/{ref}/config/auth/third-party-auth",
+    "context": "POST /v1/projects/{ref}/config/auth/third-party-auth\nCreates a new third-party auth integration\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-delete-a-sso-provider",
+    "name": "Removes a SSO provider by its UUID",
+    "description": "Removes a SSO provider by its UUID DELETE /v1/projects/{ref}/config/auth/sso/providers/{provider_id}",
+    "context": "DELETE /v1/projects/{ref}/config/auth/sso/providers/{provider_id}\nRemoves a SSO provider by its UUID\nRequired: ref (path) — Project ref; provider_id (path)"
+  },
+  {
+    "id": "v1-delete-project-tpa-integration",
+    "name": "Removes a third-party auth integration",
+    "description": "Removes a third-party auth integration DELETE /v1/projects/{ref}/config/auth/third-party-auth/{tpa_id}",
+    "context": "DELETE /v1/projects/{ref}/config/auth/third-party-auth/{tpa_id}\nRemoves a third-party auth integration\nRequired: ref (path) — Project ref; tpa_id (path)"
+  },
+  {
+    "id": "v1-get-a-sso-provider",
+    "name": "Gets a SSO provider by its UUID",
+    "description": "Gets a SSO provider by its UUID GET /v1/projects/{ref}/config/auth/sso/providers/{provider_id}",
+    "context": "GET /v1/projects/{ref}/config/auth/sso/providers/{provider_id}\nGets a SSO provider by its UUID\nRequired: ref (path) — Project ref; provider_id (path)"
+  },
+  {
+    "id": "v1-get-auth-service-config",
+    "name": "Gets project's auth config",
+    "description": "Gets project's auth config GET /v1/projects/{ref}/config/auth",
+    "context": "GET /v1/projects/{ref}/config/auth\nGets project's auth config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-database-disk",
+    "name": "Get database disk attributes",
+    "description": "Get database disk attributes GET /v1/projects/{ref}/config/disk",
+    "context": "GET /v1/projects/{ref}/config/disk\nGet database disk attributes\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-disk-utilization",
+    "name": "Get disk utilization",
+    "description": "Get disk utilization GET /v1/projects/{ref}/config/disk/util",
+    "context": "GET /v1/projects/{ref}/config/disk/util\nGet disk utilization\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-legacy-signing-key",
+    "name": "Get the signing key information for the JWT secret imported as signing key for this project. This endpoint will be removed in the future, check for HTTP 404 Not Found.",
+    "description": "Get the signing key information for the JWT secret imported as signing key for this project. This endpoint will be removed in the future, check for HTTP 404 Not Found. GET /v1/projects/{ref}/config/auth/signing-keys/legacy",
+    "context": "GET /v1/projects/{ref}/config/auth/signing-keys/legacy\nGet the signing key information for the JWT secret imported as signing key for this project. This endpoint will be removed in the future, check for HTTP 404 Not Found.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-pooler-config",
+    "name": "Gets project's supavisor config",
+    "description": "Gets project's supavisor config GET /v1/projects/{ref}/config/database/pooler",
+    "context": "GET /v1/projects/{ref}/config/database/pooler\nGets project's supavisor config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-postgres-config",
+    "name": "Gets project's Postgres config",
+    "description": "Gets project's Postgres config GET /v1/projects/{ref}/config/database/postgres",
+    "context": "GET /v1/projects/{ref}/config/database/postgres\nGets project's Postgres config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-project-disk-autoscale-config",
+    "name": "Gets project disk autoscale config",
+    "description": "Gets project disk autoscale config GET /v1/projects/{ref}/config/disk/autoscale",
+    "context": "GET /v1/projects/{ref}/config/disk/autoscale\nGets project disk autoscale config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-project-pgbouncer-config",
+    "name": "Get project's pgbouncer config",
+    "description": "Get project's pgbouncer config GET /v1/projects/{ref}/config/database/pgbouncer",
+    "context": "GET /v1/projects/{ref}/config/database/pgbouncer\nGet project's pgbouncer config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-project-signing-key",
+    "name": "Get information about a signing key",
+    "description": "Get information about a signing key GET /v1/projects/{ref}/config/auth/signing-keys/{id}",
+    "context": "GET /v1/projects/{ref}/config/auth/signing-keys/{id}\nGet information about a signing key\nRequired: id (path); ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-project-signing-keys",
+    "name": "List all signing keys for the project",
+    "description": "List all signing keys for the project GET /v1/projects/{ref}/config/auth/signing-keys",
+    "context": "GET /v1/projects/{ref}/config/auth/signing-keys\nList all signing keys for the project\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-project-tpa-integration",
+    "name": "Get a third-party integration",
+    "description": "Get a third-party integration GET /v1/projects/{ref}/config/auth/third-party-auth/{tpa_id}",
+    "context": "GET /v1/projects/{ref}/config/auth/third-party-auth/{tpa_id}\nGet a third-party integration\nRequired: ref (path) — Project ref; tpa_id (path)"
+  },
+  {
+    "id": "v1-get-realtime-config",
+    "name": "Gets realtime configuration",
+    "description": "Gets realtime configuration GET /v1/projects/{ref}/config/realtime",
+    "context": "GET /v1/projects/{ref}/config/realtime\nGets realtime configuration\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-storage-config",
+    "name": "Gets project's storage config",
+    "description": "Gets project's storage config GET /v1/projects/{ref}/config/storage",
+    "context": "GET /v1/projects/{ref}/config/storage\nGets project's storage config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-list-all-sso-provider",
+    "name": "Lists all SSO providers",
+    "description": "Lists all SSO providers GET /v1/projects/{ref}/config/auth/sso/providers",
+    "context": "GET /v1/projects/{ref}/config/auth/sso/providers\nLists all SSO providers\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-list-project-tpa-integrations",
+    "name": "Lists all third-party auth integrations",
+    "description": "Lists all third-party auth integrations GET /v1/projects/{ref}/config/auth/third-party-auth",
+    "context": "GET /v1/projects/{ref}/config/auth/third-party-auth\nLists all third-party auth integrations\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-modify-database-disk",
+    "name": "Modify database disk",
+    "description": "Modify database disk POST /v1/projects/{ref}/config/disk",
+    "context": "POST /v1/projects/{ref}/config/disk\nModify database disk\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-remove-project-signing-key",
+    "name": "Remove a signing key from a project. Only possible if the key has been in revoked status for a while.",
+    "description": "Remove a signing key from a project. Only possible if the key has been in revoked status for a while. DELETE /v1/projects/{ref}/config/auth/signing-keys/{id}",
+    "context": "DELETE /v1/projects/{ref}/config/auth/signing-keys/{id}\nRemove a signing key from a project. Only possible if the key has been in revoked status for a while.\nRequired: id (path); ref (path) — Project ref"
+  },
+  {
+    "id": "v1-shutdown-realtime",
+    "name": "Shutdowns realtime connections for a project",
+    "description": "Shutdowns realtime connections for a project POST /v1/projects/{ref}/config/realtime/shutdown",
+    "context": "POST /v1/projects/{ref}/config/realtime/shutdown\nShutdowns realtime connections for a project\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-a-sso-provider",
+    "name": "Updates a SSO provider by its UUID",
+    "description": "Updates a SSO provider by its UUID PUT /v1/projects/{ref}/config/auth/sso/providers/{provider_id}",
+    "context": "PUT /v1/projects/{ref}/config/auth/sso/providers/{provider_id}\nUpdates a SSO provider by its UUID\nRequired: ref (path) — Project ref; provider_id (path); body (body)"
+  },
+  {
+    "id": "v1-update-auth-service-config",
+    "name": "Updates a project's auth config",
+    "description": "Updates a project's auth config PATCH /v1/projects/{ref}/config/auth",
+    "context": "PATCH /v1/projects/{ref}/config/auth\nUpdates a project's auth config\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-pooler-config",
+    "name": "Updates project's supavisor config",
+    "description": "Updates project's supavisor config PATCH /v1/projects/{ref}/config/database/pooler",
+    "context": "PATCH /v1/projects/{ref}/config/database/pooler\nUpdates project's supavisor config\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-postgres-config",
+    "name": "Updates project's Postgres config",
+    "description": "Updates project's Postgres config PUT /v1/projects/{ref}/config/database/postgres",
+    "context": "PUT /v1/projects/{ref}/config/database/postgres\nUpdates project's Postgres config\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-project-signing-key",
+    "name": "Update a signing key, mainly its status",
+    "description": "Update a signing key, mainly its status PATCH /v1/projects/{ref}/config/auth/signing-keys/{id}",
+    "context": "PATCH /v1/projects/{ref}/config/auth/signing-keys/{id}\nUpdate a signing key, mainly its status\nRequired: id (path); ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-realtime-config",
+    "name": "Updates realtime configuration",
+    "description": "Updates realtime configuration PATCH /v1/projects/{ref}/config/realtime",
+    "context": "PATCH /v1/projects/{ref}/config/realtime\nUpdates realtime configuration\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-storage-config",
+    "name": "Updates project's storage config",
+    "description": "Updates project's storage config PATCH /v1/projects/{ref}/config/storage",
+    "context": "PATCH /v1/projects/{ref}/config/storage\nUpdates project's storage config\nRequired: ref (path) — Project ref; body (body)"
+  }
+]

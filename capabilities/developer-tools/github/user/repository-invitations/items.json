@@ -1,0 +1,20 @@
+[
+  {
+    "id": "repos%2Faccept-invitation-for-authenticated-user",
+    "name": "Accept a repository invitation",
+    "description": "Accept a repository invitation PATCH /user/repository_invitations/{invitation_id}",
+    "context": "PATCH /user/repository_invitations/{invitation_id}\nAccept a repository invitation\nRequired: invitation_id (path) — The unique identifier of the invitation."
+  },
+  {
+    "id": "repos%2Fdecline-invitation-for-authenticated-user",
+    "name": "Decline a repository invitation",
+    "description": "Decline a repository invitation DELETE /user/repository_invitations/{invitation_id}",
+    "context": "DELETE /user/repository_invitations/{invitation_id}\nDecline a repository invitation\nRequired: invitation_id (path) — The unique identifier of the invitation."
+  },
+  {
+    "id": "repos%2Flist-invitations-for-authenticated-user",
+    "name": "List repository invitations for the authenticated user",
+    "description": "List repository invitations for the authenticated user When authenticating as a user, this endpoint will list all currently open repository invitations for that user. GET /user/repository_invitations",
+    "context": "GET /user/repository_invitations\nWhen authenticating as a user, this endpoint will list all currently open repository invitations for that user.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

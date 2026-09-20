@@ -1,0 +1,254 @@
+[
+  {
+    "id": "repos%2Fdelete",
+    "name": "Delete a repository",
+    "description": "Delete a repository Deleting a repository requires admin access. DELETE /repos/{owner}/{repo}",
+    "context": "DELETE /repos/{owner}/{repo}\nDeleting a repository requires admin access. If an organization owner has configured the organization to prevent members from deleting organization-owned repositories, you will get a `403 Forbidden` response. OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget",
+    "name": "Get a repository",
+    "description": "Get a repository The `parent` and `source` objects are present when the repository is a fork. GET /repos/{owner}/{repo}",
+    "context": "GET /repos/{owner}/{repo}\nThe `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network. > [!NOTE] > - In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\" > - To view merge-related settings, you must have the `contents:read` and `contents:write` permissions.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fupdate",
+    "name": "Update a repository",
+    "description": "Update a repository **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint. PATCH /repos/{owner}/{repo}",
+    "context": "PATCH /repos/{owner}/{repo}\n**Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "activity%2Flist-repo-events",
+    "name": "List repository events",
+    "description": "List repository events > [!NOTE] > This API is not built to serve real-time use cases. GET /repos/{owner}/{repo}/events",
+    "context": "GET /repos/{owner}/{repo}/events\n> [!NOTE] > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-repo-notifications-for-authenticated-user",
+    "name": "List repository notifications for the authenticated user",
+    "description": "List repository notifications for the authenticated user Lists all notifications for the current user in the specified repository. GET /repos/{owner}/{repo}/notifications",
+    "context": "GET /repos/{owner}/{repo}/notifications\nLists all notifications for the current user in the specified repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: all (query) — If `true`, show notifications marked as read.; participating (query) — If `true`, only shows notifications in which the user is directly participating or mentioned.; since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; before (query) — Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Fmark-repo-notifications-as-read",
+    "name": "Mark repository notifications as read",
+    "description": "Mark repository notifications as read Marks all notifications in a repository as \"read\" for the current user. PUT /repos/{owner}/{repo}/notifications",
+    "context": "PUT /repos/{owner}/{repo}/notifications\nMarks all notifications in a repository as \"read\" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as \"read.\" To check whether any \"unread\" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "activity%2Flist-watchers-for-repo",
+    "name": "List watchers",
+    "description": "List watchers Lists the people watching the specified repository. GET /repos/{owner}/{repo}/subscribers",
+    "context": "GET /repos/{owner}/{repo}/subscribers\nLists the people watching the specified repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "apps%2Fget-repo-installation",
+    "name": "Get a repository installation for the authenticated app",
+    "description": "Get a repository installation for the authenticated app Enables an authenticated GitHub App to find the repository's installation information. GET /repos/{owner}/{repo}/installation",
+    "context": "GET /repos/{owner}/{repo}/installation\nEnables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "code-security%2Fget-configuration-for-repository",
+    "name": "Get the code security configuration associated with a repository",
+    "description": "Get the code security configuration associated with a repository Get the code security configuration that manages a repository's code security settings. GET /repos/{owner}/{repo}/code-security-configuration",
+    "context": "GET /repos/{owner}/{repo}/code-security-configuration\nGet the code security configuration that manages a repository's code security settings. The authenticated user must be an administrator or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "copilot%2Fget-copilot-cloud-agent-configuration",
+    "name": "Get Copilot cloud agent configuration for a repository",
+    "description": "Get Copilot cloud agent configuration for a repository > [!NOTE] > This endpoint is in public preview and is subject to change. GET /repos/{owner}/{repo}/copilot/cloud-agent/configuration",
+    "context": "GET /repos/{owner}/{repo}/copilot/cloud-agent/configuration\n> [!NOTE] > This endpoint is in public preview and is subject to change. Gets the Copilot cloud agent configuration for a repository, including MCP server configuration, enabled review tools, Actions workflow approval settings, and firewall configuration. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "issues%2Fcheck-user-can-be-assigned",
+    "name": "Check if a user can be assigned",
+    "description": "Check if a user can be assigned Checks if a user has permission to be assigned to an issue in this repository. GET /repos/{owner}/{repo}/assignees/{assignee}",
+    "context": "GET /repos/{owner}/{repo}/assignees/{assignee}\nChecks if a user has permission to be assigned to an issue in this repository. If the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned. Otherwise a `404` status code is returned.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; assignee (path)"
+  },
+  {
+    "id": "issues%2Flist-assignees",
+    "name": "List assignees",
+    "description": "List assignees Lists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository. GET /repos/{owner}/{repo}/assignees",
+    "context": "GET /repos/{owner}/{repo}/assignees\nLists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "licenses%2Fget-for-repo",
+    "name": "Get the license for a repository",
+    "description": "Get the license for a repository This method returns the contents of the repository's license file, if one is detected. GET /repos/{owner}/{repo}/license",
+    "context": "GET /repos/{owner}/{repo}/license\nThis method returns the contents of the repository's license file, if one is detected. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw contents of the license. - **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: ref (query) — The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`."
+  },
+  {
+    "id": "repos%2Fcodeowners-errors",
+    "name": "List CODEOWNERS errors",
+    "description": "List CODEOWNERS errors List any syntax errors that are detected in the CODEOWNERS file. GET /repos/{owner}/{repo}/codeowners/errors",
+    "context": "GET /repos/{owner}/{repo}/codeowners/errors\nList any syntax errors that are detected in the CODEOWNERS file. For more information about the correct CODEOWNERS syntax, see \"[About code owners](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: ref (query) — A branch, tag or commit name used to determine which version of the CODEOWNERS file to use. Default: the repository's default branch (e.g. `main`)"
+  },
+  {
+    "id": "repos%2Fcompare-commits",
+    "name": "Compare two commits",
+    "description": "Compare two commits Compares two commits against one another. GET /repos/{owner}/{repo}/compare/{basehead}",
+    "context": "GET /repos/{owner}/{repo}/compare/{basehead}\nCompares two commits against one another. You can compare refs (branches or tags) and commit SHAs in the same repository, or you can compare refs and commit SHAs that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see \"[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories).\" This endpoint is equivalent to running the `git log BASE..HEAD` command, but it returns commits in a different order. The `git log BASE..HEAD` command returns commits in reverse chronological order, whereas the API returns commits in chronological order. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.diff`**: Returns the diff of the commit. - **`application/vnd.github.patch`**: Returns the patch of the commit. Diffs with binary data will have no `patch` property. The API response includes details about the files that were changed between the two commits. This includes the status of the change (if a file was added, removed, modified, or renamed), and details of the change itself. For example, files with a `renamed` status have a `previous_filename` field showing the previous filename of the file, and files with a `modified` status have a `patch` field showing the changes made to the file. When calling this endpoint without any paging parameter (`per_page` or `page`), the returned list is limited to 250 commits, and the last commit in the list is the most recent of the entire comparison. **Working with large comparisons** To process a response with a large number of commits, use a query parameter (`per_page` or `page`) to paginate the results. When using pagination: - The list of changed files is only shown on the first page of results, and it includes up to 300 changed files for the entire comparison. - The results are returned in chronological order, but the last commit in the returned list may not be the most recent one in the entire set if there are more pages of results. For more information on working with pagination, see \"[Using pagination in the REST API](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).\" **Signature verification object** The response will include a `verification` object that describes the result of verifying the commit's signature. The `verification` object includes the following fields: | Name | Type | Description | | ---- | ---- | ----------- | | `verified` | `boolean` | Indicates whether GitHub considers the signature in this commit to be verified. | | `reason` | `string` | The reason for verified value. Possible values and their meanings are enumerated in table below. | | `signature` | `string` | The signature that was extracted from the commit. | | `payload` | `string` | The value that was signed. | | `verified_at` | `string` | The date the signature was verified by GitHub. | These are the possible values for `reason` in the `verification` object: | Value | Description | | ----- | ----------- | | `expired_key` | The key that made the signature is expired. | | `not_signing_key` | The \"signing\" flag is not among the usage flags in the GPG key that made the signature. | | `gpgverify_error` | There was an error communicating with the signature verification service. | | `gpgverify_unavailable` | The signature verification service is currently unavailable. | | `unsigned` | The object does not include a signature. | | `unknown_signature_type` | A non-PGP signature was found in the commit. | | `no_user` | No user was associated with the `committer` email address in the commit. | | `unverified_email` | The `committer` email address in the commit was associated with a user, but the email address is not verified on their account. | | `bad_email` | The `committer` email address in the commit is not included in the identities of the PGP key that made the signature. | | `unknown_key` | The key that made the signature has not been registered with any user's account. | | `malformed_signature` | There was an error parsing the signature. | | `invalid` | The signature could not be cryptographically verified using the key whose key-id was found in the signature. | | `valid` | None of the above errors applied, so the signature is considered to be verified. |\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; basehead (path) — The base branch and head branch to compare. This parameter expects the format `BASE...HEAD`. Both must be branch names in `repo`. To compare with a branch that exists in a different repository in the same network as `repo`, the `basehead` parameter expects the format `USERNAME:BASE...USERNAME:HEAD`.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fcreate-attestation",
+    "name": "Create an attestation",
+    "description": "Create an attestation Store an artifact attestation and associate it with a repository. POST /repos/{owner}/{repo}/attestations",
+    "context": "POST /repos/{owner}/{repo}/attestations\nStore an artifact attestation and associate it with a repository. The authenticated user must have write permission to the repository and, if using a fine-grained access token, the `attestations:write` permission is required. Artifact attestations are meant to be created using the [attest action](https://github.com/actions/attest). For more information, see our guide on [using artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Flist-attestations",
+    "name": "List attestations",
+    "description": "List attestations List a collection of artifact attestations with a given subject digest that are associated with a repository. GET /repos/{owner}/{repo}/attestations/{subject_digest}",
+    "context": "GET /repos/{owner}/{repo}/attestations/{subject_digest}\nList a collection of artifact attestations with a given subject digest that are associated with a repository. The authenticated user making the request must have read access to the repository. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; subject_digest (path) — The parameter should be set to the attestation's subject's SHA256 digest, in the form `sha256:HEX_DIGEST`.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; predicate_type (query) — Optional filter for fetching attestations with a given predicate type. This option accepts `provenance`, `sbom`, `release`, or freeform text for custom predicate types."
+  },
+  {
+    "id": "repos%2Fcreate-commit-status",
+    "name": "Create a commit status",
+    "description": "Create a commit status Users with push access in a repository can create commit statuses for a given SHA. POST /repos/{owner}/{repo}/statuses/{sha}",
+    "context": "POST /repos/{owner}/{repo}/statuses/{sha}\nUsers with push access in a repository can create commit statuses for a given SHA. Note: there is a limit of 1000 statuses per `sha` and `context` within a repository. Attempts to create more than 1000 statuses will result in a validation error.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; sha (path); body (body)"
+  },
+  {
+    "id": "repos%2Fcreate-dispatch-event",
+    "name": "Create a repository dispatch event",
+    "description": "Create a repository dispatch event You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. POST /repos/{owner}/{repo}/dispatches",
+    "context": "POST /repos/{owner}/{repo}/dispatches\nYou can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see \"[RepositoryDispatchEvent](https://docs.github.com/webhooks/event-payloads/#repository_dispatch).\" The `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow. This input example shows how you can use the `client_payload` as a test to debug your workflow. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fcreate-fork",
+    "name": "Create a fork",
+    "description": "Create a fork Create a fork for the authenticated user. POST /repos/{owner}/{repo}/forks",
+    "context": "POST /repos/{owner}/{repo}/forks\nCreate a fork for the authenticated user. > [!NOTE] > Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api). > [!NOTE] > Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "repos%2Flist-forks",
+    "name": "List forks",
+    "description": "List forks GET /repos/{owner}/{repo}/forks",
+    "context": "GET /repos/{owner}/{repo}/forks\nList forks\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: sort (query) — The sort order. `stargazers` will sort by star count.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fcreate-using-template",
+    "name": "Create a repository using a template",
+    "description": "Create a repository using a template Creates a new repository using a repository template. POST /repos/{template_owner}/{template_repo}/generate",
+    "context": "POST /repos/{template_owner}/{template_repo}/generate\nCreates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. If the repository is not public, the authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/repos/repos#get-a-repository) endpoint and check that the `is_template` key is `true`. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.\nRequired: template_owner (path) — The account owner of the template repository. The name is not case sensitive.; template_repo (path) — The name of the template repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fcustom-properties-for-repos-create-or-update-repository-values",
+    "name": "Create or update custom property values for a repository",
+    "description": "Create or update custom property values for a repository Create new or update existing custom property values for a repository. PATCH /repos/{owner}/{repo}/properties/values",
+    "context": "PATCH /repos/{owner}/{repo}/properties/values\nCreate new or update existing custom property values for a repository. Using a value of `null` for a custom property will remove or 'unset' the property value from the repository. Repository admins and other users with the repository-level \"edit custom property values\" fine-grained permission can use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fcustom-properties-for-repos-get-repository-values",
+    "name": "Get all custom property values for a repository",
+    "description": "Get all custom property values for a repository Gets all custom property values that are set for a repository. GET /repos/{owner}/{repo}/properties/values",
+    "context": "GET /repos/{owner}/{repo}/properties/values\nGets all custom property values that are set for a repository. Users with read access to the repository can use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fdownload-tarball-archive",
+    "name": "Download a repository archive (tar)",
+    "description": "Download a repository archive (tar) Gets a redirect URL to download a tar archive for a repository. GET /repos/{owner}/{repo}/tarball/{ref}",
+    "context": "GET /repos/{owner}/{repo}/tarball/{ref}\nGets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually `main`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use the `Location` header to make a second `GET` request. > [!NOTE] > For private repositories, these links are temporary and expire after five minutes.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; ref (path)"
+  },
+  {
+    "id": "repos%2Fdownload-zipball-archive",
+    "name": "Download a repository archive (zip)",
+    "description": "Download a repository archive (zip) Gets a redirect URL to download a zip archive for a repository. GET /repos/{owner}/{repo}/zipball/{ref}",
+    "context": "GET /repos/{owner}/{repo}/zipball/{ref}\nGets a redirect URL to download a zip archive for a repository. If you omit `:ref`, the repository’s default branch (usually `main`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use the `Location` header to make a second `GET` request. > [!NOTE] > For private repositories, these links are temporary and expire after five minutes. If the repository is empty, you will receive a 404 when you follow the redirect.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; ref (path)"
+  },
+  {
+    "id": "repos%2Fget-all-topics",
+    "name": "Get all repository topics",
+    "description": "Get all repository topics GET /repos/{owner}/{repo}/topics",
+    "context": "GET /repos/{owner}/{repo}/topics\nGet all repository topics\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Freplace-all-topics",
+    "name": "Replace all repository topics",
+    "description": "Replace all repository topics PUT /repos/{owner}/{repo}/topics",
+    "context": "PUT /repos/{owner}/{repo}/topics\nReplace all repository topics\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fget-branch-rules",
+    "name": "Get rules for a branch",
+    "description": "Get rules for a branch Returns all active rules that apply to the specified branch. GET /repos/{owner}/{repo}/rules/branches/{branch}",
+    "context": "GET /repos/{owner}/{repo}/rules/branches/{branch}\nReturns all active rules that apply to the specified branch. The branch does not need to exist; rules that would apply to a branch with that name will be returned. All active rules that apply will be returned, regardless of the level at which they are configured (e.g. repository or organization). Rules in rulesets with \"evaluate\" or \"disabled\" enforcement statuses are not returned.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; branch (path) — The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fget-community-profile-metrics",
+    "name": "Get community profile metrics",
+    "description": "Get community profile metrics Returns all community profile metrics for a repository. GET /repos/{owner}/{repo}/community/profile",
+    "context": "GET /repos/{owner}/{repo}/community/profile\nReturns all community profile metrics for a repository. The repository cannot be a fork. The returned metrics include an overall health score, the repository description, the presence of documentation, the detected code of conduct, the detected license, and the presence of ISSUE\\_TEMPLATE, PULL\\_REQUEST\\_TEMPLATE, README, and CONTRIBUTING files. The `health_percentage` score is defined as a percentage of how many of the recommended community health files are present. For more information, see \"[About community profiles for public repositories](https://docs.github.com/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories).\" `content_reports_enabled` is only returned for organization-owned repositories.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget-hash-algorithm",
+    "name": "Get the hash algorithm for a repository",
+    "description": "Get the hash algorithm for a repository Returns the hash algorithm used to store repository objects. GET /repos/{owner}/{repo}/hash-algorithm",
+    "context": "GET /repos/{owner}/{repo}/hash-algorithm\nReturns the hash algorithm used to store repository objects.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget-readme",
+    "name": "Get a repository README",
+    "description": "Get a repository README Gets the preferred README for a repository. GET /repos/{owner}/{repo}/readme",
+    "context": "GET /repos/{owner}/{repo}/readme\nGets the preferred README for a repository. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw file contents. This is the default if you do not specify a media type. - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: ref (query) — The name of the commit/branch/tag. Default: the repository’s default branch."
+  },
+  {
+    "id": "repos%2Fget-readme-in-directory",
+    "name": "Get a repository README for a directory",
+    "description": "Get a repository README for a directory Gets the README from a repository directory. GET /repos/{owner}/{repo}/readme/{dir}",
+    "context": "GET /repos/{owner}/{repo}/readme/{dir}\nGets the README from a repository directory. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw file contents. This is the default if you do not specify a media type. - **`application/vnd.github.html+json`**: Returns the README in HTML. Markup languages are rendered to HTML using GitHub's open-source [Markup library](https://github.com/github/markup).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; dir (path) — The alternate path to look for a README file\nOptional: ref (query) — The name of the commit/branch/tag. Default: the repository’s default branch."
+  },
+  {
+    "id": "repos%2Flist-activities",
+    "name": "List repository activities",
+    "description": "List repository activities Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users. GET /repos/{owner}/{repo}/activity",
+    "context": "GET /repos/{owner}/{repo}/activity\nLists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users. For more information about viewing repository activity, see \"[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: direction (query) — The direction to sort the results by.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; ref (query) — The Git reference for the activities you want to list. The `ref` for a branch can be formatted either as `refs/heads/BRANCH_NAME` or `BRANCH_NAME`, where `BRANCH_NAME` is the name of your branch.; actor (query) — The GitHub username to use to filter by the actor who performed the activity.; time_period (query) — The time period to filter by. For example, `day` will filter for activity that occurred in the past 24 hours, and `week` will filter for activity that occurred in the past 7 days (168 hours).; activity_type (query) — The activity type to filter by. For example, you can choose to filter by \"force_push\", to see all force pushes to the repository."
+  },
+  {
+    "id": "repos%2Flist-contributors",
+    "name": "List repository contributors",
+    "description": "List repository contributors Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. GET /repos/{owner}/{repo}/contributors",
+    "context": "GET /repos/{owner}/{repo}/contributors\nLists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API caches contributor data to improve performance. GitHub identifies contributors by author email address. This endpoint groups contribution counts by GitHub user, which includes all associated email addresses. To improve performance, only the first 500 author email addresses in the repository link to GitHub users. The rest will appear as anonymous contributors without associated GitHub user information.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: anon (query) — Set to `1` or `true` to include anonymous contributors in results.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Flist-issue-types",
+    "name": "List issue types for a repository",
+    "description": "List issue types for a repository Lists issue types available for a repository (inherited from its organization owner, with any per-repository overrides applied). GET /repos/{owner}/{repo}/issue-types",
+    "context": "GET /repos/{owner}/{repo}/issue-types\nLists issue types available for a repository (inherited from its organization owner, with any per-repository overrides applied). OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. Fine-grained access tokens require the \"Metadata\" repository permission (read).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Flist-languages",
+    "name": "List repository languages",
+    "description": "List repository languages Lists languages for the specified repository. GET /repos/{owner}/{repo}/languages",
+    "context": "GET /repos/{owner}/{repo}/languages\nLists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Flist-tags",
+    "name": "List repository tags",
+    "description": "List repository tags GET /repos/{owner}/{repo}/tags",
+    "context": "GET /repos/{owner}/{repo}/tags\nList repository tags\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Flist-teams",
+    "name": "List repository teams",
+    "description": "List repository teams Lists the teams that have access to the specified repository and that are also visible to the authenticated user. GET /repos/{owner}/{repo}/teams",
+    "context": "GET /repos/{owner}/{repo}/teams\nLists the teams that have access to the specified repository and that are also visible to the authenticated user. For a public repository, a team is listed only if that team added the public repository explicitly. OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to use this endpoint with a public repository, and `repo` scope to use this endpoint with a private repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fmerge",
+    "name": "Merge a branch",
+    "description": "Merge a branch POST /repos/{owner}/{repo}/merges",
+    "context": "POST /repos/{owner}/{repo}/merges\nMerge a branch\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fmerge-upstream",
+    "name": "Sync a fork branch with the upstream repository",
+    "description": "Sync a fork branch with the upstream repository Sync a branch of a forked repository to keep it up-to-date with the upstream repository. POST /repos/{owner}/{repo}/merge-upstream",
+    "context": "POST /repos/{owner}/{repo}/merge-upstream\nSync a branch of a forked repository to keep it up-to-date with the upstream repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Ftransfer",
+    "name": "Transfer a repository",
+    "description": "Transfer a repository A transfer request will need to be accepted by the new owner when transferring a personal repository to another user. POST /repos/{owner}/{repo}/transfer",
+    "context": "POST /repos/{owner}/{repo}/transfer\nA transfer request will need to be accepted by the new owner when transferring a personal repository to another user. The response will contain the original `owner`, and the transfer will continue asynchronously. For more details on the requirements to transfer personal and organization-owned repositories, see [about repository transfers](https://docs.github.com/articles/about-repository-transfers/).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  }
+]

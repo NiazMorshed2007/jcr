@@ -1,0 +1,122 @@
+[
+  {
+    "id": "tracing_spans_aggregate_create",
+    "name": "tracing_spans_aggregate_create",
+    "description": "tracing_spans_aggregate_create POST /api/projects/{project_id}/tracing/spans/aggregate/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/aggregate/\ntracing_spans_aggregate_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_attribute_breakdown_create",
+    "name": "tracing_spans_attribute_breakdown_create",
+    "description": "tracing_spans_attribute_breakdown_create POST /api/projects/{project_id}/tracing/spans/attribute-breakdown/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/attribute-breakdown/\ntracing_spans_attribute_breakdown_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_attributes_retrieve",
+    "name": "tracing_spans_attributes_retrieve",
+    "description": "tracing_spans_attributes_retrieve GET /api/projects/{project_id}/tracing/spans/attributes/",
+    "context": "GET /api/projects/{project_id}/tracing/spans/attributes/\ntracing_spans_attributes_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: attribute_type (query) — Type of attributes: \"span_attribute\" for span-level attributes, \"span_resource_attribute\" for resource-level attributes. * `span_attribute` - span_attribute * `span_resource_attribute` - span_resource_attribute; limit (query) — Max results (default: 100).; offset (query) — Pagination offset (default: 0).; search (query) — Search filter for attribute names.; search_values (query) — When true, the search query also matches attribute values (not just keys), so a value such as a trace_id finds the key holding it."
+  },
+  {
+    "id": "tracing_spans_count_create",
+    "name": "tracing_spans_count_create",
+    "description": "tracing_spans_count_create POST /api/projects/{project_id}/tracing/spans/count/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/count/\ntracing_spans_count_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_duration_histogram_create",
+    "name": "tracing_spans_duration_histogram_create",
+    "description": "tracing_spans_duration_histogram_create POST /api/projects/{project_id}/tracing/spans/duration-histogram/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/duration-histogram/\ntracing_spans_duration_histogram_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_has_spans_retrieve",
+    "name": "tracing_spans_has_spans_retrieve",
+    "description": "tracing_spans_has_spans_retrieve GET /api/projects/{project_id}/tracing/spans/has_spans/",
+    "context": "GET /api/projects/{project_id}/tracing/spans/has_spans/\ntracing_spans_has_spans_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "tracing_spans_latency_heatmap_create",
+    "name": "tracing_spans_latency_heatmap_create",
+    "description": "tracing_spans_latency_heatmap_create POST /api/projects/{project_id}/tracing/spans/latency-heatmap/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/latency-heatmap/\ntracing_spans_latency_heatmap_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_query_create",
+    "name": "tracing_spans_query_create",
+    "description": "tracing_spans_query_create POST /api/projects/{project_id}/tracing/spans/query/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/query/\ntracing_spans_query_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_service_names_retrieve",
+    "name": "tracing_spans_service_names_retrieve",
+    "description": "tracing_spans_service_names_retrieve GET /api/projects/{project_id}/tracing/spans/service-names/",
+    "context": "GET /api/projects/{project_id}/tracing/spans/service-names/\ntracing_spans_service_names_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: dateRange (query) — JSON-encoded date range, e.g. '{\"date_from\": \"-1h\"}'.; search (query) — Search filter for service names."
+  },
+  {
+    "id": "tracing_spans_sparkline_create",
+    "name": "tracing_spans_sparkline_create",
+    "description": "tracing_spans_sparkline_create POST /api/projects/{project_id}/tracing/spans/sparkline/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/sparkline/\ntracing_spans_sparkline_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_symbol_stats_create",
+    "name": "tracing_spans_symbol_stats_create",
+    "description": "tracing_spans_symbol_stats_create POST /api/projects/{project_id}/tracing/spans/symbol-stats/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/symbol-stats/\ntracing_spans_symbol_stats_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_trace_create",
+    "name": "tracing_spans_trace_create",
+    "description": "tracing_spans_trace_create POST /api/projects/{project_id}/tracing/spans/trace/{trace_id}/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/trace/{trace_id}/\ntracing_spans_trace_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; trace_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tracing_spans_tree_create",
+    "name": "tracing_spans_tree_create",
+    "description": "tracing_spans_tree_create POST /api/projects/{project_id}/tracing/spans/tree/",
+    "context": "POST /api/projects/{project_id}/tracing/spans/tree/\ntracing_spans_tree_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_spans_values_retrieve",
+    "name": "tracing_spans_values_retrieve",
+    "description": "tracing_spans_values_retrieve GET /api/projects/{project_id}/tracing/spans/values/",
+    "context": "GET /api/projects/{project_id}/tracing/spans/values/\ntracing_spans_values_retrieve\nRequired: key (query) — The attribute key to get values for.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: attribute_type (query) — Type of attribute: \"span\" for built-in span fields (e.g. name), \"span_attribute\" for span-level attributes, \"span_resource_attribute\" for resource-level attributes. * `span` - span * `span_attribute` - span_attribute * `span_resource_attribute` - span_resource_attribute; limit (query) — Max results (default: 100).; offset (query) — Pagination offset (default: 0).; value (query) — Search filter for attribute values."
+  },
+  {
+    "id": "tracing_views_create",
+    "name": "tracing_views_create",
+    "description": "tracing_views_create POST /api/projects/{project_id}/tracing/views/",
+    "context": "POST /api/projects/{project_id}/tracing/views/\ntracing_views_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "tracing_views_destroy",
+    "name": "tracing_views_destroy",
+    "description": "tracing_views_destroy DELETE /api/projects/{project_id}/tracing/views/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/tracing/views/{short_id}/\ntracing_views_destroy\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "tracing_views_list",
+    "name": "tracing_views_list",
+    "description": "tracing_views_list GET /api/projects/{project_id}/tracing/views/",
+    "context": "GET /api/projects/{project_id}/tracing/views/\ntracing_views_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "tracing_views_partial_update",
+    "name": "tracing_views_partial_update",
+    "description": "tracing_views_partial_update PATCH /api/projects/{project_id}/tracing/views/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/tracing/views/{short_id}/\ntracing_views_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "tracing_views_retrieve",
+    "name": "tracing_views_retrieve",
+    "description": "tracing_views_retrieve GET /api/projects/{project_id}/tracing/views/{short_id}/",
+    "context": "GET /api/projects/{project_id}/tracing/views/{short_id}/\ntracing_views_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "tracing_views_update",
+    "name": "tracing_views_update",
+    "description": "tracing_views_update PUT /api/projects/{project_id}/tracing/views/{short_id}/",
+    "context": "PUT /api/projects/{project_id}/tracing/views/{short_id}/\ntracing_views_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path); body (body)"
+  }
+]

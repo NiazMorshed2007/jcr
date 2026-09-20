@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ai_observability_instrumentation_checklist_dismiss_create",
+    "name": "Mark a check as not applicable to this project.",
+    "description": "Mark a check as not applicable to this project. POST /api/projects/{project_id}/ai_observability/instrumentation_checklist/dismiss/",
+    "context": "POST /api/projects/{project_id}/ai_observability/instrumentation_checklist/dismiss/\nMark a check as not applicable to this project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "ai_observability_instrumentation_checklist_restore_create",
+    "name": "Bring a dismissed check back into grading.",
+    "description": "Bring a dismissed check back into grading. POST /api/projects/{project_id}/ai_observability/instrumentation_checklist/restore/",
+    "context": "POST /api/projects/{project_id}/ai_observability/instrumentation_checklist/restore/\nBring a dismissed check back into grading.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "ai_observability_instrumentation_checklist_retrieve",
+    "name": "Grade every instrumentation check for this project.",
+    "description": "Grade every instrumentation check for this project. GET /api/projects/{project_id}/ai_observability/instrumentation_checklist/",
+    "context": "GET /api/projects/{project_id}/ai_observability/instrumentation_checklist/\nGrade every instrumentation check for this project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: refresh (query) — Grade the checks against a fresh read instead of a recent cached one. Use it after changing instrumentation, when a cached verdict would still describe the old code."
+  }
+]

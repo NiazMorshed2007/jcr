@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createAccountActivitySubscription",
+    "name": "Create subscription",
+    "description": "Create subscription Creates an Account Activity subscription for the user and the given webhook. POST /2/account_activity/webhooks/{webhook_id}/subscriptions/all",
+    "context": "POST /2/account_activity/webhooks/{webhook_id}/subscriptions/all\nCreates an Account Activity subscription for the user and the given webhook.\nRequired: webhook_id (path); body (body)"
+  },
+  {
+    "id": "deleteAccountActivitySubscription",
+    "name": "Delete subscription",
+    "description": "Delete subscription Deletes an Account Activity subscription for the given webhook and user ID. DELETE /2/account_activity/webhooks/{webhook_id}/subscriptions/{user_id}/all",
+    "context": "DELETE /2/account_activity/webhooks/{webhook_id}/subscriptions/{user_id}/all\nDeletes an Account Activity subscription for the given webhook and user ID.\nRequired: webhook_id (path); user_id (path)"
+  },
+  {
+    "id": "getAccountActivitySubscriptionCount",
+    "name": "Get Account Activity Subscription Count",
+    "description": "Get Account Activity Subscription Count GET /2/account_activity/subscriptions/count",
+    "context": "GET /2/account_activity/subscriptions/count\nGet Account Activity Subscription Count"
+  },
+  {
+    "id": "getAccountActivitySubscriptions",
+    "name": "Get Account Activity Subscriptions",
+    "description": "Get Account Activity Subscriptions GET /2/account_activity/webhooks/{webhook_id}/subscriptions/all/list",
+    "context": "GET /2/account_activity/webhooks/{webhook_id}/subscriptions/all/list\nGet Account Activity Subscriptions\nRequired: webhook_id (path)"
+  },
+  {
+    "id": "validateAccountActivitySubscription",
+    "name": "Validate Account Activity Subscription",
+    "description": "Validate Account Activity Subscription GET /2/account_activity/webhooks/{webhook_id}/subscriptions/all",
+    "context": "GET /2/account_activity/webhooks/{webhook_id}/subscriptions/all\nValidate Account Activity Subscription\nRequired: webhook_id (path)"
+  }
+]

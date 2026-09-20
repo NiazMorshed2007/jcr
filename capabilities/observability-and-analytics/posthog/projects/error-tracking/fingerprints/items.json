@@ -1,0 +1,26 @@
+[
+  {
+    "id": "error_tracking_fingerprints_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/error_tracking/fingerprints/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/fingerprints/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_fingerprints_list",
+    "name": "error_tracking_fingerprints_list",
+    "description": "error_tracking_fingerprints_list GET /api/projects/{project_id}/error_tracking/fingerprints/",
+    "context": "GET /api/projects/{project_id}/error_tracking/fingerprints/\nerror_tracking_fingerprints_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "error_tracking_fingerprints_resolve_retrieve",
+    "name": "error_tracking_fingerprints_resolve_retrieve",
+    "description": "error_tracking_fingerprints_resolve_retrieve GET /api/projects/{project_id}/error_tracking/fingerprints/resolve/",
+    "context": "GET /api/projects/{project_id}/error_tracking/fingerprints/resolve/\nerror_tracking_fingerprints_resolve_retrieve\nRequired: fingerprint (query) — Fingerprint value to resolve to the issue it currently belongs to.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_fingerprints_retrieve",
+    "name": "error_tracking_fingerprints_retrieve",
+    "description": "error_tracking_fingerprints_retrieve GET /api/projects/{project_id}/error_tracking/fingerprints/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/fingerprints/{id}/\nerror_tracking_fingerprints_retrieve\nRequired: id (path) — Fingerprint ID.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

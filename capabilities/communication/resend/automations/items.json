@@ -1,0 +1,50 @@
+[
+  {
+    "id": "delete_automations_automation_id",
+    "name": "Delete an automation",
+    "description": "Delete an automation DELETE /automations/{automation_id}",
+    "context": "DELETE /automations/{automation_id}\nDelete an automation\nRequired: automation_id (path) — The ID of the automation."
+  },
+  {
+    "id": "get_automations",
+    "name": "Retrieve a list of automations",
+    "description": "Retrieve a list of automations GET /automations",
+    "context": "GET /automations\nRetrieve a list of automations\nOptional: status (query) — Filter automations by status.; limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_automations_automation_id",
+    "name": "Retrieve a single automation",
+    "description": "Retrieve a single automation GET /automations/{automation_id}",
+    "context": "GET /automations/{automation_id}\nRetrieve a single automation\nRequired: automation_id (path) — The ID of the automation."
+  },
+  {
+    "id": "get_automations_automation_id_runs",
+    "name": "Retrieve a list of automation runs",
+    "description": "Retrieve a list of automation runs GET /automations/{automation_id}/runs",
+    "context": "GET /automations/{automation_id}/runs\nRetrieve a list of automation runs\nRequired: automation_id (path) — The ID of the automation.\nOptional: status (query) — Filter runs by status. Comma-separated list of: running, completed, failed, cancelled.; limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_automations_automation_id_runs_run_id",
+    "name": "Retrieve a single automation run",
+    "description": "Retrieve a single automation run GET /automations/{automation_id}/runs/{run_id}",
+    "context": "GET /automations/{automation_id}/runs/{run_id}\nRetrieve a single automation run\nRequired: automation_id (path) — The ID of the automation.; run_id (path) — The ID of the automation run."
+  },
+  {
+    "id": "patch_automations_automation_id",
+    "name": "Update an automation",
+    "description": "Update an automation PATCH /automations/{automation_id}",
+    "context": "PATCH /automations/{automation_id}\nUpdate an automation\nRequired: automation_id (path) — The ID of the automation.\nOptional: body (body)"
+  },
+  {
+    "id": "post_automations",
+    "name": "Create an automation",
+    "description": "Create an automation POST /automations",
+    "context": "POST /automations\nCreate an automation\nOptional: body (body)"
+  },
+  {
+    "id": "post_automations_automation_id_stop",
+    "name": "Stop an automation",
+    "description": "Stop an automation POST /automations/{automation_id}/stop",
+    "context": "POST /automations/{automation_id}/stop\nStop an automation\nRequired: automation_id (path) — The ID of the automation."
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "delete_metadata_templates_id_id_schema",
+    "name": "Remove metadata template",
+    "description": "Remove metadata template Delete a metadata template and its instances. DELETE /2.0/metadata_templates/{scope}/{template_key}/schema",
+    "context": "DELETE /2.0/metadata_templates/{scope}/{template_key}/schema\nDelete a metadata template and its instances. This deletion is permanent and can not be reversed.\nRequired: scope (path) — The scope of the metadata template.; template_key (path) — The name of the metadata template."
+  },
+  {
+    "id": "get_metadata_templates",
+    "name": "Find metadata template by instance ID",
+    "description": "Find metadata template by instance ID Finds a metadata template by searching for the ID of an instance of the template. GET /2.0/metadata_templates",
+    "context": "GET /2.0/metadata_templates\nFinds a metadata template by searching for the ID of an instance of the template.\nRequired: metadata_instance_id (query) — The ID of an instance of the metadata template to find.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_metadata_templates_enterprise",
+    "name": "List all metadata templates for enterprise",
+    "description": "List all metadata templates for enterprise Used to retrieve all metadata templates created to be used specifically within the user's enterprise. GET /2.0/metadata_templates/enterprise",
+    "context": "GET /2.0/metadata_templates/enterprise\nUsed to retrieve all metadata templates created to be used specifically within the user's enterprise.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema",
+    "name": "List all classifications",
+    "description": "List all classifications Retrieves the classification metadata template and lists all the classifications available to this enterprise. GET /2.0/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema",
+    "context": "GET /2.0/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema\nRetrieves the classification metadata template and lists all the classifications available to this enterprise. This API can also be called by including the enterprise ID in the URL explicitly, for example `/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`."
+  },
+  {
+    "id": "get_metadata_templates_global",
+    "name": "List all global metadata templates",
+    "description": "List all global metadata templates Used to retrieve all generic, global metadata templates available to all enterprises using Box. GET /2.0/metadata_templates/global",
+    "context": "GET /2.0/metadata_templates/global\nUsed to retrieve all generic, global metadata templates available to all enterprises using Box.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_metadata_templates_id",
+    "name": "Get metadata template by ID",
+    "description": "Get metadata template by ID Retrieves a metadata template by its ID. GET /2.0/metadata_templates/{template_id}",
+    "context": "GET /2.0/metadata_templates/{template_id}\nRetrieves a metadata template by its ID.\nRequired: template_id (path) — The ID of the template."
+  },
+  {
+    "id": "get_metadata_templates_id_id_fields_id_options",
+    "name": "List metadata template's options for taxonomy field",
+    "description": "List metadata template's options for taxonomy field Used to retrieve metadata taxonomy nodes which are available for the taxonomy field based on its configuration and the parameters specified. GET /2.0/metadata_templates/{namespace}/{template_key}/fields/{field_key}/options",
+    "context": "GET /2.0/metadata_templates/{namespace}/{template_key}/fields/{field_key}/options\nUsed to retrieve metadata taxonomy nodes which are available for the taxonomy field based on its configuration and the parameters specified. Results are sorted in lexicographic order unless a `query` parameter is passed. With a `query` parameter specified, results are sorted in order of relevance.\nRequired: namespace (path) — The namespace of the metadata taxonomy.; template_key (path) — The name of the metadata template.; field_key (path) — The key of the metadata taxonomy field in the template.\nOptional: level (query) — Filters results by taxonomy level. Multiple values can be provided. Results include nodes that match any of the specified values.; parent (query) — Node identifier of a direct parent node. Multiple values can be provided. Results include nodes that match any of the specified values.; ancestor (query) — Node identifier of any ancestor node. Multiple values can be provided. Results include nodes that match any of the specified values.; query (query) — Query text to search for the taxonomy nodes.; include-total-result-count (query) — When set to `true` this provides the total number of nodes that matched the query. The response will compute counts of up to 10,000 elements. Defaults to `false`.; only-selectable-options (query) — When set to `true`, this only returns valid selectable options for this template taxonomy field. Otherwise, it returns all taxonomy nodes, whether or not they are selectable. Defaults to `true`.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_metadata_templates_id_id_schema",
+    "name": "Get metadata template by name",
+    "description": "Get metadata template by name Retrieves a metadata template by its `scope` and `templateKey` values. GET /2.0/metadata_templates/{scope}/{template_key}/schema",
+    "context": "GET /2.0/metadata_templates/{scope}/{template_key}/schema\nRetrieves a metadata template by its `scope` and `templateKey` values. To find the `scope` and `templateKey` for a template, list all templates for an enterprise or globally, or list all templates applied to a file or folder.\nRequired: scope (path) — The scope of the metadata template.; template_key (path) — The name of the metadata template."
+  },
+  {
+    "id": "post_metadata_templates_schema",
+    "name": "Create metadata template",
+    "description": "Create metadata template Creates a new metadata template that can be applied to files and folders. POST /2.0/metadata_templates/schema",
+    "context": "POST /2.0/metadata_templates/schema\nCreates a new metadata template that can be applied to files and folders.\nOptional: body (body)"
+  },
+  {
+    "id": "post_metadata_templates_schema#classifications",
+    "name": "Add initial classifications",
+    "description": "Add initial classifications When an enterprise does not yet have any classifications, this API call initializes the classification template with an initial set of classifications. POST /2.0/metadata_templates/schema",
+    "context": "POST /2.0/metadata_templates/schema\nWhen an enterprise does not yet have any classifications, this API call initializes the classification template with an initial set of classifications. If an enterprise already has a classification, the template will already exist and instead an API call should be made to add additional classifications.\nOptional: body (body)"
+  },
+  {
+    "id": "put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#add",
+    "name": "Add classification",
+    "description": "Add classification Adds one or more new classifications to the list of classifications available to the enterprise. PUT /2.0/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema",
+    "context": "PUT /2.0/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema\nAdds one or more new classifications to the list of classifications available to the enterprise. This API can also be called by including the enterprise ID in the URL explicitly, for example `/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`.\nOptional: body (body)"
+  },
+  {
+    "id": "put_metadata_templates_enterprise_securityClassification-6VMVochwUWo_schema#update",
+    "name": "Update classification",
+    "description": "Update classification Updates the labels and descriptions of one or more classifications available to the enterprise. PUT /2.0/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema",
+    "context": "PUT /2.0/metadata_templates/enterprise/securityClassification-6VMVochwUWo/schema\nUpdates the labels and descriptions of one or more classifications available to the enterprise. This API can also be called by including the enterprise ID in the URL explicitly, for example `/metadata_templates/enterprise_12345/securityClassification-6VMVochwUWo/schema`.\nOptional: body (body)"
+  },
+  {
+    "id": "put_metadata_templates_id_id_schema",
+    "name": "Update metadata template",
+    "description": "Update metadata template Updates a metadata template. PUT /2.0/metadata_templates/{scope}/{template_key}/schema",
+    "context": "PUT /2.0/metadata_templates/{scope}/{template_key}/schema\nUpdates a metadata template. The metadata template can only be updated if the template already exists. The update is applied atomically. If any errors occur during the application of the operations, the metadata template will not be changed.\nRequired: scope (path) — The scope of the metadata template.; template_key (path) — The name of the metadata template.\nOptional: body (body)"
+  }
+]

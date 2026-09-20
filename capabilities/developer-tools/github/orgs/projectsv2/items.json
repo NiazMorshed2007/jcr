@@ -1,0 +1,80 @@
+[
+  {
+    "id": "projects%2Fadd-field-for-org",
+    "name": "Add a field to an organization-owned project.",
+    "description": "Add a field to an organization-owned project. POST /orgs/{org}/projectsV2/{project_number}/fields",
+    "context": "POST /orgs/{org}/projectsV2/{project_number}/fields\nAdd a field to an organization-owned project.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "projects%2Fadd-item-for-org",
+    "name": "Add item to organization owned project",
+    "description": "Add item to organization owned project Add an issue or pull request item to the specified organization owned project. POST /orgs/{org}/projectsV2/{project_number}/items",
+    "context": "POST /orgs/{org}/projectsV2/{project_number}/items\nAdd an issue or pull request item to the specified organization owned project.\nRequired: org (path) — The organization name. The name is not case sensitive.; project_number (path) — The project's number.; body (body) — Details of the item to add to the project. You can specify either the unique ID or the repository owner, name, and issue/PR number."
+  },
+  {
+    "id": "projects%2Fcreate-draft-item-for-org",
+    "name": "Create draft item for organization owned project",
+    "description": "Create draft item for organization owned project Create draft issue item for the specified organization owned project. POST /orgs/{org}/projectsV2/{project_number}/drafts",
+    "context": "POST /orgs/{org}/projectsV2/{project_number}/drafts\nCreate draft issue item for the specified organization owned project.\nRequired: org (path) — The organization name. The name is not case sensitive.; project_number (path) — The project's number.; body (body) — Details of the draft item to create in the project."
+  },
+  {
+    "id": "projects%2Fcreate-view-for-org",
+    "name": "Create a view for an organization-owned project",
+    "description": "Create a view for an organization-owned project Create a new view in an organization-owned project. POST /orgs/{org}/projectsV2/{project_number}/views",
+    "context": "POST /orgs/{org}/projectsV2/{project_number}/views\nCreate a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.\nRequired: org (path) — The organization name. The name is not case sensitive.; project_number (path) — The project's number.; body (body)"
+  },
+  {
+    "id": "projects%2Fdelete-item-for-org",
+    "name": "Delete project item for organization",
+    "description": "Delete project item for organization Delete a specific item from an organization-owned project. DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}",
+    "context": "DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}\nDelete a specific item from an organization-owned project.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.; item_id (path) — The unique identifier of the project item."
+  },
+  {
+    "id": "projects%2Fget-field-for-org",
+    "name": "Get project field for organization",
+    "description": "Get project field for organization Get a specific field for an organization-owned project. GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}",
+    "context": "GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}\nGet a specific field for an organization-owned project.\nRequired: project_number (path) — The project's number.; field_id (path) — The unique identifier of the field.; org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "projects%2Fget-for-org",
+    "name": "Get project for organization",
+    "description": "Get project for organization Get a specific organization-owned project. GET /orgs/{org}/projectsV2/{project_number}",
+    "context": "GET /orgs/{org}/projectsV2/{project_number}\nGet a specific organization-owned project.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "projects%2Fget-org-item",
+    "name": "Get an item for an organization owned project",
+    "description": "Get an item for an organization owned project Get a specific item from an organization-owned project. GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}",
+    "context": "GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}\nGet a specific item from an organization-owned project.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.; item_id (path) — The unique identifier of the project item.\nOptional: fields (query) — Limit results to specific fields, by their IDs. If not specified, the title field will be returned. Example: fields[]=123&fields[]=456&fields[]=789 or fields=123,456,789"
+  },
+  {
+    "id": "projects%2Flist-fields-for-org",
+    "name": "List project fields for organization",
+    "description": "List project fields for organization List all fields for a specific organization-owned project. GET /orgs/{org}/projectsV2/{project_number}/fields",
+    "context": "GET /orgs/{org}/projectsV2/{project_number}/fields\nList all fields for a specific organization-owned project.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Flist-for-org",
+    "name": "List projects for organization",
+    "description": "List projects for organization List all projects owned by a specific organization accessible by the authenticated user. GET /orgs/{org}/projectsV2",
+    "context": "GET /orgs/{org}/projectsV2\nList all projects owned by a specific organization accessible by the authenticated user.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: q (query) — Limit results to projects of the specified type.; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Flist-items-for-org",
+    "name": "List items for an organization owned project",
+    "description": "List items for an organization owned project List all items for a specific organization-owned project accessible by the authenticated user. GET /orgs/{org}/projectsV2/{project_number}/items",
+    "context": "GET /orgs/{org}/projectsV2/{project_number}/items\nList all items for a specific organization-owned project accessible by the authenticated user.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.\nOptional: q (query) — Search query to filter items, see [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.; fields (query) — Limit results to specific fields, by their IDs. If not specified, the title field will be returned. Example: `fields[]=123&fields[]=456&fields[]=789` or `fields=123,456,789`; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Flist-view-items-for-org",
+    "name": "List items for an organization project view",
+    "description": "List items for an organization project view List items in an organization project with the saved view's filter applied. GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items",
+    "context": "GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items\nList items in an organization project with the saved view's filter applied.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.; view_number (path) — The number that identifies the project view.\nOptional: fields (query) — Limit results to specific fields, by their IDs. If not specified, the title field will be returned. Example: `fields[]=123&fields[]=456&fields[]=789` or `fields=123,456,789`; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Fupdate-item-for-org",
+    "name": "Update project item for organization",
+    "description": "Update project item for organization Update a specific item in an organization-owned project. PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}",
+    "context": "PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}\nUpdate a specific item in an organization-owned project.\nRequired: project_number (path) — The project's number.; org (path) — The organization name. The name is not case sensitive.; item_id (path) — The unique identifier of the project item.; body (body) — Field updates to apply to the project item. Only text, number, date, single select, and iteration fields are supported."
+  }
+]

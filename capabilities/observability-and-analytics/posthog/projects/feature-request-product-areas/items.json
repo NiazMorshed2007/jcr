@@ -1,0 +1,26 @@
+[
+  {
+    "id": "feature_request_product_areas_create",
+    "name": "feature_request_product_areas_create",
+    "description": "feature_request_product_areas_create POST /api/projects/{project_id}/feature_request_product_areas/",
+    "context": "POST /api/projects/{project_id}/feature_request_product_areas/\nfeature_request_product_areas_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_request_product_areas_list",
+    "name": "feature_request_product_areas_list",
+    "description": "feature_request_product_areas_list GET /api/projects/{project_id}/feature_request_product_areas/",
+    "context": "GET /api/projects/{project_id}/feature_request_product_areas/\nfeature_request_product_areas_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: include_inactive (query) — Include inactive product areas. Defaults to false."
+  },
+  {
+    "id": "feature_request_product_areas_partial_update",
+    "name": "feature_request_product_areas_partial_update",
+    "description": "feature_request_product_areas_partial_update PATCH /api/projects/{project_id}/feature_request_product_areas/{id}/",
+    "context": "PATCH /api/projects/{project_id}/feature_request_product_areas/{id}/\nfeature_request_product_areas_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "feature_request_product_areas_update",
+    "name": "feature_request_product_areas_update",
+    "description": "feature_request_product_areas_update PUT /api/projects/{project_id}/feature_request_product_areas/{id}/",
+    "context": "PUT /api/projects/{project_id}/feature_request_product_areas/{id}/\nfeature_request_product_areas_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

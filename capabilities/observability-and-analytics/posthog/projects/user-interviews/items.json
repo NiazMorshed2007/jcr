@@ -1,0 +1,44 @@
+[
+  {
+    "id": "user_interviews_create",
+    "name": "user_interviews_create",
+    "description": "user_interviews_create POST /api/projects/{project_id}/user_interviews/",
+    "context": "POST /api/projects/{project_id}/user_interviews/\nuser_interviews_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "user_interviews_destroy",
+    "name": "user_interviews_destroy",
+    "description": "user_interviews_destroy DELETE /api/projects/{project_id}/user_interviews/{id}/",
+    "context": "DELETE /api/projects/{project_id}/user_interviews/{id}/\nuser_interviews_destroy\nRequired: id (path) — A UUID string identifying this user interview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "user_interviews_list",
+    "name": "user_interviews_list",
+    "description": "user_interviews_list GET /api/projects/{project_id}/user_interviews/",
+    "context": "GET /api/projects/{project_id}/user_interviews/\nuser_interviews_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: classifications (query) — Comma-separated classifications; returns responses carrying any of them (OR). Valid values: abandoned, off-topic.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; topic (query)"
+  },
+  {
+    "id": "user_interviews_partial_update",
+    "name": "user_interviews_partial_update",
+    "description": "user_interviews_partial_update PATCH /api/projects/{project_id}/user_interviews/{id}/",
+    "context": "PATCH /api/projects/{project_id}/user_interviews/{id}/\nuser_interviews_partial_update\nRequired: id (path) — A UUID string identifying this user interview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "user_interviews_retrieve",
+    "name": "user_interviews_retrieve",
+    "description": "user_interviews_retrieve GET /api/projects/{project_id}/user_interviews/{id}/",
+    "context": "GET /api/projects/{project_id}/user_interviews/{id}/\nuser_interviews_retrieve\nRequired: id (path) — A UUID string identifying this user interview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "user_interviews_search_create",
+    "name": "Search interview responses by semantic similarity",
+    "description": "Search interview responses by semantic similarity Embed `query` with the same model used to index interview transcripts and summaries, then return the top matches by cosine distance. POST /api/projects/{project_id}/user_interviews/search/",
+    "context": "POST /api/projects/{project_id}/user_interviews/search/\nEmbed `query` with the same model used to index interview transcripts and summaries, then return the top matches by cosine distance. Each match is a single (interview, document_type) pair — an interview can appear up to twice if both its transcript and summary score above other interviews. Useful for surfacing relevant interview snippets in natural language, without exact keyword matches.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "user_interviews_update",
+    "name": "user_interviews_update",
+    "description": "user_interviews_update PUT /api/projects/{project_id}/user_interviews/{id}/",
+    "context": "PUT /api/projects/{project_id}/user_interviews/{id}/\nuser_interviews_update\nRequired: id (path) — A UUID string identifying this user interview.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

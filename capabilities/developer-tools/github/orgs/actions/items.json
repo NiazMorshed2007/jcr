@@ -1,0 +1,14 @@
+[
+  {
+    "id": "actions%2Fget-actions-cache-usage-by-repo-for-org",
+    "name": "List repositories with GitHub Actions cache usage for an organization",
+    "description": "List repositories with GitHub Actions cache usage for an organization Lists repositories and their GitHub Actions cache usage for an organization. GET /orgs/{org}/actions/cache/usage-by-repository",
+    "context": "GET /orgs/{org}/actions/cache/usage-by-repository\nLists repositories and their GitHub Actions cache usage for an organization. The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated. OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Fget-actions-cache-usage-for-org",
+    "name": "Get GitHub Actions cache usage for an organization",
+    "description": "Get GitHub Actions cache usage for an organization Gets the total GitHub Actions cache usage for an organization. GET /orgs/{org}/actions/cache/usage",
+    "context": "GET /orgs/{org}/actions/cache/usage\nGets the total GitHub Actions cache usage for an organization. The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated. OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  }
+]

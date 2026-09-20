@@ -1,0 +1,146 @@
+[
+  {
+    "id": "vectorize-(-deprecated)-create-vectorize-index",
+    "name": "Create Vectorize Index (Deprecated)",
+    "description": "Create Vectorize Index (Deprecated) Creates and returns a new Vectorize Index. POST /client/v4/accounts/{account_id}/vectorize/indexes",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/indexes\nCreates and returns a new Vectorize Index.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-delete-vectorize-index",
+    "name": "Delete Vectorize Index (Deprecated)",
+    "description": "Delete Vectorize Index (Deprecated) Deletes the specified Vectorize Index. DELETE /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}\nDeletes the specified Vectorize Index.\nRequired: account_id (path); index_name (path)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-delete-vectors-by-id",
+    "name": "Delete Vectors By Identifier (Deprecated)",
+    "description": "Delete Vectors By Identifier (Deprecated) Delete a set of vectors from an index by their vector identifiers. POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/delete-by-ids",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/delete-by-ids\nDelete a set of vectors from an index by their vector identifiers.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-get-vectorize-index",
+    "name": "Get Vectorize Index (Deprecated)",
+    "description": "Get Vectorize Index (Deprecated) Returns the specified Vectorize Index. GET /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}\nReturns the specified Vectorize Index.\nRequired: account_id (path); index_name (path)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-get-vectors-by-id",
+    "name": "Get Vectors By Identifier (Deprecated)",
+    "description": "Get Vectors By Identifier (Deprecated) Get a set of vectors from an index by their vector identifiers. POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/get-by-ids",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/get-by-ids\nGet a set of vectors from an index by their vector identifiers.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-insert-vector",
+    "name": "Insert Vectors (Deprecated)",
+    "description": "Insert Vectors (Deprecated) Inserts vectors into the specified index and returns the count of the vectors successfully inserted. POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/insert",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/insert\nInserts vectors into the specified index and returns the count of the vectors successfully inserted.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-list-vectorize-indexes",
+    "name": "List Vectorize Indexes (Deprecated)",
+    "description": "List Vectorize Indexes (Deprecated) Returns a list of Vectorize Indexes GET /client/v4/accounts/{account_id}/vectorize/indexes",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/indexes\nReturns a list of Vectorize Indexes\nRequired: account_id (path)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-query-vector",
+    "name": "Query Vectors (Deprecated)",
+    "description": "Query Vectors (Deprecated) Finds vectors closest to a given vector in an index. POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/query",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/query\nFinds vectors closest to a given vector in an index.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-update-vectorize-index",
+    "name": "Update Vectorize Index (Deprecated)",
+    "description": "Update Vectorize Index (Deprecated) Updates and returns the specified Vectorize Index. PUT /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}\nUpdates and returns the specified Vectorize Index.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-(-deprecated)-upsert-vector",
+    "name": "Upsert Vectors (Deprecated)",
+    "description": "Upsert Vectors (Deprecated) Upserts vectors into the specified index, creating them if they do not exist and returns the count of values and ids successfully inserted. POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/upsert",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/indexes/{index_name}/upsert\nUpserts vectors into the specified index, creating them if they do not exist and returns the count of values and ids successfully inserted.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-create-metadata-index",
+    "name": "Create Metadata Index",
+    "description": "Create Metadata Index Enable metadata filtering based on metadata property. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/create",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/create\nEnable metadata filtering based on metadata property. Limited to 10 properties.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-create-vectorize-index",
+    "name": "Create Vectorize Index",
+    "description": "Create Vectorize Index Creates and returns a new Vectorize Index. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes\nCreates and returns a new Vectorize Index.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "vectorize-delete-metadata-index",
+    "name": "Delete Metadata Index",
+    "description": "Delete Metadata Index Allow Vectorize to delete the specified metadata index. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/delete",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/delete\nAllow Vectorize to delete the specified metadata index.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-delete-vectorize-index",
+    "name": "Delete Vectorize Index",
+    "description": "Delete Vectorize Index Deletes the specified Vectorize Index. DELETE /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}\nDeletes the specified Vectorize Index.\nRequired: account_id (path); index_name (path)"
+  },
+  {
+    "id": "vectorize-delete-vectors-by-id",
+    "name": "Delete Vectors By Identifier",
+    "description": "Delete Vectors By Identifier Delete a set of vectors from an index by their vector identifiers. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/delete_by_ids",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/delete_by_ids\nDelete a set of vectors from an index by their vector identifiers.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-get-vectorize-index",
+    "name": "Get Vectorize Index",
+    "description": "Get Vectorize Index Returns the specified Vectorize Index. GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}\nReturns the specified Vectorize Index.\nRequired: account_id (path); index_name (path)"
+  },
+  {
+    "id": "vectorize-get-vectors-by-id",
+    "name": "Get Vectors By Identifier",
+    "description": "Get Vectors By Identifier Get a set of vectors from an index by their vector identifiers. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/get_by_ids",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/get_by_ids\nGet a set of vectors from an index by their vector identifiers.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-index-info",
+    "name": "Get Vectorize Index Info",
+    "description": "Get Vectorize Index Info Get information about a vectorize index. GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/info",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/info\nGet information about a vectorize index.\nRequired: account_id (path); index_name (path)"
+  },
+  {
+    "id": "vectorize-insert-vector",
+    "name": "Insert Vectors",
+    "description": "Insert Vectors Inserts vectors into the specified index and returns a mutation id corresponding to the vectors enqueued for insertion. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/insert",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/insert\nInserts vectors into the specified index and returns a mutation id corresponding to the vectors enqueued for insertion.\nRequired: account_id (path); index_name (path); body (body)\nOptional: unparsable-behavior (query)"
+  },
+  {
+    "id": "vectorize-list-metadata-indexes",
+    "name": "List Metadata Indexes",
+    "description": "List Metadata Indexes List Metadata Indexes for the specified Vectorize Index. GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/list",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/metadata_index/list\nList Metadata Indexes for the specified Vectorize Index.\nRequired: account_id (path); index_name (path)"
+  },
+  {
+    "id": "vectorize-list-vectorize-indexes",
+    "name": "List Vectorize Indexes",
+    "description": "List Vectorize Indexes Returns a list of Vectorize Indexes GET /client/v4/accounts/{account_id}/vectorize/v2/indexes",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/v2/indexes\nReturns a list of Vectorize Indexes\nRequired: account_id (path)"
+  },
+  {
+    "id": "vectorize-list-vectors",
+    "name": "List Vectors",
+    "description": "List Vectors Returns a paginated list of vector identifiers from the specified index. GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/list",
+    "context": "GET /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/list\nReturns a paginated list of vector identifiers from the specified index.\nRequired: account_id (path); index_name (path)\nOptional: count (query); cursor (query)"
+  },
+  {
+    "id": "vectorize-query-vector",
+    "name": "Query Vectors",
+    "description": "Query Vectors Finds vectors closest to a given vector in an index. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/query",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/query\nFinds vectors closest to a given vector in an index.\nRequired: account_id (path); index_name (path); body (body)"
+  },
+  {
+    "id": "vectorize-upsert-vector",
+    "name": "Upsert Vectors",
+    "description": "Upsert Vectors Upserts vectors into the specified index, creating them if they do not exist and returns a mutation id corresponding to the vectors enqueued for upsertion. POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/upsert",
+    "context": "POST /client/v4/accounts/{account_id}/vectorize/v2/indexes/{index_name}/upsert\nUpserts vectors into the specified index, creating them if they do not exist and returns a mutation id corresponding to the vectors enqueued for upsertion.\nRequired: account_id (path); index_name (path); body (body)\nOptional: unparsable-behavior (query)"
+  }
+]

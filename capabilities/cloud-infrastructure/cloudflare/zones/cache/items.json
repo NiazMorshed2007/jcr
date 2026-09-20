@@ -1,0 +1,140 @@
+[
+  {
+    "id": "origin-cloud-regions-batch-delete",
+    "name": "Batch delete origin cloud region mappings",
+    "description": "Batch delete origin cloud region mappings Removes up to 100 IP-to-cloud-region mappings in a single request. DELETE /client/v4/zones/{zone_id}/cache/origin_cloud_regions/batch",
+    "context": "DELETE /client/v4/zones/{zone_id}/cache/origin_cloud_regions/batch\nRemoves up to 100 IP-to-cloud-region mappings in a single request. Each IP is validated independently — successfully deleted items are returned in the `succeeded` array and IPs that could not be found or are invalid are returned in the `failed` array.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "origin-cloud-regions-batch-upsert",
+    "name": "Batch create or update origin cloud region mappings",
+    "description": "Batch create or update origin cloud region mappings Adds or updates up to 100 IP-to-cloud-region mappings in a single request. PATCH /client/v4/zones/{zone_id}/cache/origin_cloud_regions/batch",
+    "context": "PATCH /client/v4/zones/{zone_id}/cache/origin_cloud_regions/batch\nAdds or updates up to 100 IP-to-cloud-region mappings in a single request. Each item is validated independently — valid items are applied and invalid items are returned in the `failed` array. The vendor and region for every item are validated against the list from `GET /zones/{zone_id}/cache/origin_cloud_regions/supported_regions`.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "origin-cloud-regions-create",
+    "name": "Create an origin cloud region mapping",
+    "description": "Create an origin cloud region mapping Adds a single IP-to-cloud-region mapping for the zone. POST /client/v4/zones/{zone_id}/cache/origin_cloud_regions",
+    "context": "POST /client/v4/zones/{zone_id}/cache/origin_cloud_regions\nAdds a single IP-to-cloud-region mapping for the zone. The IP must be a valid IPv4 or IPv6 address and is normalized to canonical form before storage (RFC 5952 for IPv6). Returns 400 (code 1145) if a mapping for that IP already exists — use PATCH to update an existing entry. The vendor and region are validated against the list from `GET /zones/{zone_id}/cache/origin_cloud_regions/supported_regions`.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "origin-cloud-regions-delete",
+    "name": "Delete an origin cloud region mapping",
+    "description": "Delete an origin cloud region mapping Removes the cloud region mapping for a single origin IP address. DELETE /client/v4/zones/{zone_id}/cache/origin_cloud_regions/{origin_ip}",
+    "context": "DELETE /client/v4/zones/{zone_id}/cache/origin_cloud_regions/{origin_ip}\nRemoves the cloud region mapping for a single origin IP address. The IP path parameter is normalized before lookup. Returns the deleted entry on success. Returns 404 (code 1163) if no mapping exists for the specified IP. When the last mapping for the zone is removed the underlying rule record is also deleted.\nRequired: zone_id (path); origin_ip (path) — Origin IP address whose mapping should be deleted."
+  },
+  {
+    "id": "origin-cloud-regions-get",
+    "name": "Get an origin cloud region mapping",
+    "description": "Get an origin cloud region mapping Returns the cloud region mapping for a single origin IP address. GET /client/v4/zones/{zone_id}/cache/origin_cloud_regions/{origin_ip}",
+    "context": "GET /client/v4/zones/{zone_id}/cache/origin_cloud_regions/{origin_ip}\nReturns the cloud region mapping for a single origin IP address. The IP path parameter is normalized before lookup (RFC 5952 for IPv6). Returns 404 (code 1142) if the zone has no mappings or if the specified IP has no mapping.\nRequired: zone_id (path); origin_ip (path) — Origin IP address to look up. IPv4 and IPv6 are supported."
+  },
+  {
+    "id": "origin-cloud-regions-list",
+    "name": "List origin cloud region mappings",
+    "description": "List origin cloud region mappings Returns all IP-to-cloud-region mappings configured for the zone. GET /client/v4/zones/{zone_id}/cache/origin_cloud_regions",
+    "context": "GET /client/v4/zones/{zone_id}/cache/origin_cloud_regions\nReturns all IP-to-cloud-region mappings configured for the zone. Each mapping tells Cloudflare which cloud vendor and region hosts the origin at that IP, enabling the edge to route via the nearest Tiered Cache upper-tier co-located with that cloud provider. Returns an empty array when no mappings exist.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "origin-cloud-regions-supported-regions",
+    "name": "List supported cloud vendors and regions",
+    "description": "List supported cloud vendors and regions Returns the cloud vendors and regions that are valid values for origin cloud region mappings. GET /client/v4/zones/{zone_id}/cache/origin_cloud_regions/supported_regions",
+    "context": "GET /client/v4/zones/{zone_id}/cache/origin_cloud_regions/supported_regions\nReturns the cloud vendors and regions that are valid values for origin cloud region mappings. Each region includes the Tiered Cache upper-tier colocation codes that will be used for cache routing when a mapping targeting that region is active. Requires the zone to have Tiered Cache enabled.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "origin-cloud-regions-upsert",
+    "name": "Create or update an origin cloud region mapping",
+    "description": "Create or update an origin cloud region mapping Adds or updates a single IP-to-cloud-region mapping for the zone. PATCH /client/v4/zones/{zone_id}/cache/origin_cloud_regions",
+    "context": "PATCH /client/v4/zones/{zone_id}/cache/origin_cloud_regions\nAdds or updates a single IP-to-cloud-region mapping for the zone. Unlike POST, this operation is idempotent — if a mapping for the IP already exists it is overwritten. Returns the complete updated list of all mappings for the zone. Returns 403 (code 1164) when the zone has reached the limit of 3,500 IP mappings.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "smart-tiered-cache-create-smart-tiered-cache-setting",
+    "name": "Create Smart Tiered Cache setting",
+    "description": "Create Smart Tiered Cache setting Smart Tiered Cache dynamically selects the single closest upper tier for each of your website's origins with no configuration required, using our in-house performance and routing data. POST /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+    "context": "POST /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable\nSmart Tiered Cache dynamically selects the single closest upper tier for each of your website's origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "smart-tiered-cache-delete-smart-tiered-cache-setting",
+    "name": "Delete Smart Tiered Cache setting",
+    "description": "Delete Smart Tiered Cache setting Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. DELETE /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+    "context": "DELETE /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable\nSmart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "smart-tiered-cache-get-smart-tiered-cache-setting",
+    "name": "Get Smart Tiered Cache setting",
+    "description": "Get Smart Tiered Cache setting Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. GET /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+    "context": "GET /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable\nSmart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "smart-tiered-cache-patch-smart-tiered-cache-setting",
+    "name": "Patch Smart Tiered Cache setting",
+    "description": "Patch Smart Tiered Cache setting Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. PATCH /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable",
+    "context": "PATCH /client/v4/zones/{zone_id}/cache/tiered_cache_smart_topology_enable\nSmart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-cache-reserve-setting",
+    "name": "Change Cache Reserve setting",
+    "description": "Change Cache Reserve setting Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. PATCH /client/v4/zones/{zone_id}/cache/cache_reserve",
+    "context": "PATCH /client/v4/zones/{zone_id}/cache/cache_reserve\nIncrease cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-origin-post-quantum-encryption-setting",
+    "name": "Change Origin Post-Quantum Encryption setting",
+    "description": "Change Origin Post-Quantum Encryption setting Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. PUT /client/v4/zones/{zone_id}/cache/origin_post_quantum_encryption",
+    "context": "PUT /client/v4/zones/{zone_id}/cache/origin_post_quantum_encryption\nInstructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-regional-tiered-cache-setting",
+    "name": "Change Regional Tiered Cache setting",
+    "description": "Change Regional Tiered Cache setting Instructs Cloudflare to check a regional hub data center on the way to your upper tier. PATCH /client/v4/zones/{zone_id}/cache/regional_tiered_cache",
+    "context": "PATCH /client/v4/zones/{zone_id}/cache/regional_tiered_cache\nInstructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-change-variants-setting",
+    "name": "Change variants setting",
+    "description": "Change variants setting Variant support enables caching variants of images with certain file extensions in addition to the original. PATCH /client/v4/zones/{zone_id}/cache/variants",
+    "context": "PATCH /client/v4/zones/{zone_id}/cache/variants\nVariant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-cache-settings-delete-variants-setting",
+    "name": "Delete variants setting",
+    "description": "Delete variants setting Variant support enables caching variants of images with certain file extensions in addition to the original. DELETE /client/v4/zones/{zone_id}/cache/variants",
+    "context": "DELETE /client/v4/zones/{zone_id}/cache/variants\nVariant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-cache-reserve-clear",
+    "name": "Get Cache Reserve Clear",
+    "description": "Get Cache Reserve Clear You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. GET /client/v4/zones/{zone_id}/cache/cache_reserve_clear",
+    "context": "GET /client/v4/zones/{zone_id}/cache/cache_reserve_clear\nYou can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-cache-reserve-setting",
+    "name": "Get Cache Reserve setting",
+    "description": "Get Cache Reserve setting Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. GET /client/v4/zones/{zone_id}/cache/cache_reserve",
+    "context": "GET /client/v4/zones/{zone_id}/cache/cache_reserve\nIncrease cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-origin-post-quantum-encryption-setting",
+    "name": "Get Origin Post-Quantum Encryption setting",
+    "description": "Get Origin Post-Quantum Encryption setting Instructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. GET /client/v4/zones/{zone_id}/cache/origin_post_quantum_encryption",
+    "context": "GET /client/v4/zones/{zone_id}/cache/origin_post_quantum_encryption\nInstructs Cloudflare to use Post-Quantum (PQ) key agreement algorithms when connecting to your origin. Preferred instructs Cloudflare to opportunistically send a Post-Quantum keyshare in the first message to the origin (for fastest connections when the origin supports and prefers PQ), supported means that PQ algorithms are advertised but only used when requested by the origin, and off means that PQ algorithms are not advertised.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-regional-tiered-cache-setting",
+    "name": "Get Regional Tiered Cache setting",
+    "description": "Get Regional Tiered Cache setting Instructs Cloudflare to check a regional hub data center on the way to your upper tier. GET /client/v4/zones/{zone_id}/cache/regional_tiered_cache",
+    "context": "GET /client/v4/zones/{zone_id}/cache/regional_tiered_cache\nInstructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-get-variants-setting",
+    "name": "Get variants setting",
+    "description": "Get variants setting Variant support enables caching variants of images with certain file extensions in addition to the original. GET /client/v4/zones/{zone_id}/cache/variants",
+    "context": "GET /client/v4/zones/{zone_id}/cache/variants\nVariant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-cache-settings-start-cache-reserve-clear",
+    "name": "Start Cache Reserve Clear",
+    "description": "Start Cache Reserve Clear You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. POST /client/v4/zones/{zone_id}/cache/cache_reserve_clear",
+    "context": "POST /client/v4/zones/{zone_id}/cache/cache_reserve_clear\nYou can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.\nRequired: zone_id (path)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "error_tracking_query_issue_create",
+    "name": "Get compact error tracking issue details",
+    "description": "Get compact error tracking issue details Fetch one error tracking issue with impact counts, top in_app frame, latest release, and optional sparkline. POST /api/projects/{project_id}/error_tracking/query/issue/",
+    "context": "POST /api/projects/{project_id}/error_tracking/query/issue/\nFetch one error tracking issue with impact counts, top in_app frame, latest release, and optional sparkline.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_query_issue_events_create",
+    "name": "List sampled exception events for an error tracking issue",
+    "description": "List sampled exception events for an error tracking issue Fetch sampled exception events, stack traces, browser/SDK context, URL, and $session_id values for one issue. POST /api/projects/{project_id}/error_tracking/query/issue_events/",
+    "context": "POST /api/projects/{project_id}/error_tracking/query/issue_events/\nFetch sampled exception events, stack traces, browser/SDK context, URL, and $session_id values for one issue.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_query_issues_list_create",
+    "name": "List compact error tracking issues",
+    "description": "List compact error tracking issues List error tracking issues with typed filters and compact aggregate counts. POST /api/projects/{project_id}/error_tracking/query/issues/",
+    "context": "POST /api/projects/{project_id}/error_tracking/query/issues/\nList error tracking issues with typed filters and compact aggregate counts.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

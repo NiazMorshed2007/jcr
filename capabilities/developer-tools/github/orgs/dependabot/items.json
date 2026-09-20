@@ -1,0 +1,80 @@
+[
+  {
+    "id": "dependabot%2Fadd-selected-repo-to-org-secret",
+    "name": "Add selected repository to an organization secret",
+    "description": "Add selected repository to an organization secret Adds a repository to an organization secret when the `visibility` for repository access is set to `selected`. PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}\nAdds a repository to an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; repository_id (path)"
+  },
+  {
+    "id": "dependabot%2Fcreate-or-update-org-secret",
+    "name": "Create or update an organization secret",
+    "description": "Create or update an organization secret Creates or updates an organization secret with an encrypted value. PUT /orgs/{org}/dependabot/secrets/{secret_name}",
+    "context": "PUT /orgs/{org}/dependabot/secrets/{secret_name}\nCreates or updates an organization secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see \"[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  },
+  {
+    "id": "dependabot%2Fdelete-org-secret",
+    "name": "Delete an organization secret",
+    "description": "Delete an organization secret Deletes a secret in an organization using the secret name. DELETE /orgs/{org}/dependabot/secrets/{secret_name}",
+    "context": "DELETE /orgs/{org}/dependabot/secrets/{secret_name}\nDeletes a secret in an organization using the secret name. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "dependabot%2Fget-org-public-key",
+    "name": "Get an organization public key",
+    "description": "Get an organization public key Gets your public key, which you need to encrypt secrets. GET /orgs/{org}/dependabot/secrets/public-key",
+    "context": "GET /orgs/{org}/dependabot/secrets/public-key\nGets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "dependabot%2Fget-org-secret",
+    "name": "Get an organization secret",
+    "description": "Get an organization secret Gets a single organization secret without revealing its encrypted value. GET /orgs/{org}/dependabot/secrets/{secret_name}",
+    "context": "GET /orgs/{org}/dependabot/secrets/{secret_name}\nGets a single organization secret without revealing its encrypted value. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "dependabot%2Flist-alerts-for-org",
+    "name": "List Dependabot alerts for an organization",
+    "description": "List Dependabot alerts for an organization Lists Dependabot alerts for an organization. GET /orgs/{org}/dependabot/alerts",
+    "context": "GET /orgs/{org}/dependabot/alerts\nLists Dependabot alerts for an organization. The authenticated user must be an owner or security manager for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: classification (query) — A comma-separated list of vulnerability classifications. If specified, only alerts for vulnerabilities with these classifications will be returned. Can be: `malware`, `general`; state (query) — A comma-separated list of states. If specified, only alerts with these states will be returned. Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`; severity (query) — A comma-separated list of severities. If specified, only alerts with these severities will be returned. Can be: `low`, `medium`, `high`, `critical`; ecosystem (query) — A comma-separated list of ecosystems. If specified, only alerts for these ecosystems will be returned. Can be: `composer`, `go`, `maven`, `npm`, `nuget`, `pip`, `pub`, `rubygems`, `rust`; package (query) — A comma-separated list of package names. If specified, only alerts for these packages will be returned.; epss_percentage (query) — CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as: - An exact number (`n`) - Comparators such as `>n`, `<n`, `>=n`, `<=n` - A range like `n..n`, where `n` is a number from 0.0 to 1.0 Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.; artifact_registry_url (query) — A comma-separated list of artifact registry URLs. If specified, only alerts for repositories with storage records matching these URLs will be returned.; artifact_registry (query) — A comma-separated list of Artifact Registry name strings. If specified, only alerts for repositories with storage records matching these registries will be returned. Can be: `jfrog-artifactory`; has (query) — Filters the list of alerts based on whether the alert has the given value. If specified, only alerts meeting this criterion will be returned. Multiple `has` filters can be passed to filter for alerts that have all of the values.; assignee (query) — Filter alerts by assignees. Provide a comma-separated list of user handles (e.g., `octocat` or `octocat,hubot`) to return alerts assigned to any of the specified users. Use `*` to list alerts with at least one assignee or `none` to list alerts with no assignees.; runtime_risk (query) — A comma-separated list of runtime risk strings. If specified, only alerts for repositories with deployment records matching these risks will be returned. Can be: `critical-resource`, `internet-exposed`, `sensitive-data`, `lateral-movement`; scope (query) — The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.; relationship (query) — A comma-separated list of relationships of the vulnerable dependency to your project. If specified, only alerts with these relationships will be returned. > [!NOTE] > We are rolling out support for dependency relationship across ecosystems. This value will be \"unknown\" for all dependencies in unsupported ecosystems.; sort (query) — The property by which to sort the results. `created` means when the alert was created. `updated` means when the alert's state last changed. `epss_percentage` sorts alerts by the Exploit Prediction Scoring System (EPSS) percentage.; direction (query) — The direction to sort the results by.; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "dependabot%2Flist-org-secrets",
+    "name": "List organization secrets",
+    "description": "List organization secrets Lists all secrets available in an organization without revealing their encrypted values. GET /orgs/{org}/dependabot/secrets",
+    "context": "GET /orgs/{org}/dependabot/secrets\nLists all secrets available in an organization without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "dependabot%2Flist-selected-repos-for-org-secret",
+    "name": "List selected repositories for an organization secret",
+    "description": "List selected repositories for an organization secret Lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+    "context": "GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories\nLists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "dependabot%2Fremove-selected-repo-from-org-secret",
+    "name": "Remove selected repository from an organization secret",
+    "description": "Remove selected repository from an organization secret Removes a repository from an organization secret when the `visibility` for repository access is set to `selected`. DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}\nRemoves a repository from an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; repository_id (path)"
+  },
+  {
+    "id": "dependabot%2Frepository-access-for-org",
+    "name": "Lists the repositories Dependabot can access in an organization",
+    "description": "Lists the repositories Dependabot can access in an organization Lists repositories that organization admins have allowed Dependabot to access when updating dependencies. GET /orgs/{org}/dependabot/repository-access",
+    "context": "GET /orgs/{org}/dependabot/repository-access\nLists repositories that organization admins have allowed Dependabot to access when updating dependencies. > [!NOTE] > This operation supports both server-to-server and user-to-server access. Unauthorized users will not see the existence of this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: page (query) — The page number of results to fetch.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "dependabot%2Fset-repository-access-default-level",
+    "name": "Set the default repository access level for Dependabot",
+    "description": "Set the default repository access level for Dependabot Sets the default level of repository access Dependabot will have while performing an update. PUT /orgs/{org}/dependabot/repository-access/default-level",
+    "context": "PUT /orgs/{org}/dependabot/repository-access/default-level\nSets the default level of repository access Dependabot will have while performing an update. Available values are: - 'public' - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories. - 'internal' - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories. Unauthorized users will not see the existence of this endpoint. This operation supports both server-to-server and user-to-server access.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "dependabot%2Fset-selected-repos-for-org-secret",
+    "name": "Set selected repositories for an organization secret",
+    "description": "Set selected repositories for an organization secret Replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+    "context": "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories\nReplaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  },
+  {
+    "id": "dependabot%2Fupdate-repository-access-for-org",
+    "name": "Updates Dependabot's repository access list for an organization",
+    "description": "Updates Dependabot's repository access list for an organization Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies. PATCH /orgs/{org}/dependabot/repository-access",
+    "context": "PATCH /orgs/{org}/dependabot/repository-access\nUpdates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies. > [!NOTE] > This operation supports both server-to-server and user-to-server access. Unauthorized users will not see the existence of this endpoint. **Example request body:** ```json { \"repository_ids_to_add\": [123, 456], \"repository_ids_to_remove\": [789] } ```\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  }
+]

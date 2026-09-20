@@ -1,0 +1,86 @@
+[
+  {
+    "id": "dns-records-for-a-zone-apply-dns-scan-results",
+    "name": "Review Scanned DNS Records",
+    "description": "Review Scanned DNS Records Accept or reject DNS records found by the DNS records scan. POST /client/v4/zones/{zone_id}/dns_records/scan/review",
+    "context": "POST /client/v4/zones/{zone_id}/dns_records/scan/review\nAccept or reject DNS records found by the DNS records scan. Accepted records will be permanently added to the zone, while rejected records will be permanently deleted.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "dns-records-for-a-zone-batch-dns-records",
+    "name": "Batch DNS Records",
+    "description": "Batch DNS Records Send a Batch of DNS Record API calls to be executed together. POST /client/v4/zones/{zone_id}/dns_records/batch",
+    "context": "POST /client/v4/zones/{zone_id}/dns_records/batch\nSend a Batch of DNS Record API calls to be executed together. Notes: - Although Cloudflare will execute the batched operations in a single database transaction, Cloudflare's distributed KV store must treat each record change as a single key-value pair. This means that the propagation of changes is not atomic. See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/batch-record-changes/ \"Batch DNS records\") for more information. - The operations you specify within the /batch request body are always executed in the following order: - Deletes - Patches - Puts - Posts\nRequired: zone_id (path); body (body)\nOptional: include_shadow_metadata (query)"
+  },
+  {
+    "id": "dns-records-for-a-zone-create-dns-record",
+    "name": "Create DNS Record",
+    "description": "Create DNS Record Create a new DNS record for a zone. POST /client/v4/zones/{zone_id}/dns_records",
+    "context": "POST /client/v4/zones/{zone_id}/dns_records\nCreate a new DNS record for a zone. Notes: - A/AAAA records cannot exist on the same name as CNAME records. - NS records cannot exist on the same name as any other record type. - Domain names are always represented in Punycode, even if Unicode characters were used when creating the record.\nRequired: zone_id (path); body (body)\nOptional: include_shadow_metadata (query)"
+  },
+  {
+    "id": "dns-records-for-a-zone-delete-dns-record",
+    "name": "Delete DNS Record",
+    "description": "Delete DNS Record Permanently removes a DNS record from the zone. DELETE /client/v4/zones/{zone_id}/dns_records/{dns_record_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/dns_records/{dns_record_id}\nPermanently removes a DNS record from the zone.\nRequired: dns_record_id (path); zone_id (path)"
+  },
+  {
+    "id": "dns-records-for-a-zone-dns-record-details",
+    "name": "DNS Record Details",
+    "description": "DNS Record Details Retrieves details for a specific DNS record in the zone. GET /client/v4/zones/{zone_id}/dns_records/{dns_record_id}",
+    "context": "GET /client/v4/zones/{zone_id}/dns_records/{dns_record_id}\nRetrieves details for a specific DNS record in the zone.\nRequired: dns_record_id (path); zone_id (path)\nOptional: include_shadow_metadata (query)"
+  },
+  {
+    "id": "dns-records-for-a-zone-export-dns-records",
+    "name": "Export DNS Records",
+    "description": "Export DNS Records You can export your [BIND config](https://en.wikipedia.org/wiki/Zone_file \"Zone file\") through this endpoint. GET /client/v4/zones/{zone_id}/dns_records/export",
+    "context": "GET /client/v4/zones/{zone_id}/dns_records/export\nYou can export your [BIND config](https://en.wikipedia.org/wiki/Zone_file \"Zone file\") through this endpoint. See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ \"Import and export records\") for more information.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dns-records-for-a-zone-get-usage",
+    "name": "Get DNS Record Usage",
+    "description": "Get DNS Record Usage Get the current DNS record usage for a zone, including the number of records and the quota limit. GET /client/v4/zones/{zone_id}/dns_records/usage",
+    "context": "GET /client/v4/zones/{zone_id}/dns_records/usage\nGet the current DNS record usage for a zone, including the number of records and the quota limit.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dns-records-for-a-zone-import-dns-records",
+    "name": "Import DNS Records",
+    "description": "Import DNS Records You can upload your [BIND config](https://en.wikipedia.org/wiki/Zone_file \"Zone file\") through this endpoint. POST /client/v4/zones/{zone_id}/dns_records/import",
+    "context": "POST /client/v4/zones/{zone_id}/dns_records/import\nYou can upload your [BIND config](https://en.wikipedia.org/wiki/Zone_file \"Zone file\") through this endpoint. It assumes that cURL is called from a location with bind_config.txt (valid BIND config) present. See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ \"Import and export records\") for more information.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "dns-records-for-a-zone-list-dns-records",
+    "name": "List DNS Records",
+    "description": "List DNS Records List, search, sort, and filter a zones' DNS records. GET /client/v4/zones/{zone_id}/dns_records",
+    "context": "GET /client/v4/zones/{zone_id}/dns_records\nList, search, sort, and filter a zones' DNS records.\nRequired: zone_id (path)\nOptional: name (query); name.exact (query); name.contains (query); name.startswith (query); name.endswith (query); type (query); content (query); content.exact (query); content.contains (query); content.startswith (query); content.endswith (query); proxied (query); match (query); comment (query); comment.present (query); comment.absent (query); comment.exact (query); comment.contains (query); comment.startswith (query); comment.endswith (query); tag (query); tag.present (query); tag.absent (query); tag.exact (query); tag.contains (query); tag.startswith (query); tag.endswith (query); search (query); tag_match (query); page (query); per_page (query); order (query); direction (query); include_shadow_metadata (query); shadowed_by_name (query); shadowing_name (query)"
+  },
+  {
+    "id": "dns-records-for-a-zone-patch-dns-record",
+    "name": "Update DNS Record",
+    "description": "Update DNS Record Update an existing DNS record. PATCH /client/v4/zones/{zone_id}/dns_records/{dns_record_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/dns_records/{dns_record_id}\nUpdate an existing DNS record. Notes: - A/AAAA records cannot exist on the same name as CNAME records. - NS records cannot exist on the same name as any other record type. - Domain names are always represented in Punycode, even if Unicode characters were used when creating the record.\nRequired: dns_record_id (path); zone_id (path); body (body)\nOptional: include_shadow_metadata (query)"
+  },
+  {
+    "id": "dns-records-for-a-zone-review-dns-scan",
+    "name": "List Scanned DNS Records",
+    "description": "List Scanned DNS Records Retrieves the list of DNS records discovered up to this point by the asynchronous scan. GET /client/v4/zones/{zone_id}/dns_records/scan/review",
+    "context": "GET /client/v4/zones/{zone_id}/dns_records/scan/review\nRetrieves the list of DNS records discovered up to this point by the asynchronous scan. These records are temporary until explicitly accepted or rejected via `POST /scan/review`. Additional records may be discovered by the scan later.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dns-records-for-a-zone-scan-dns-records",
+    "name": "Scan DNS Records",
+    "description": "Scan DNS Records Scan for common DNS records on your domain and automatically add them to your zone. POST /client/v4/zones/{zone_id}/dns_records/scan",
+    "context": "POST /client/v4/zones/{zone_id}/dns_records/scan\nScan for common DNS records on your domain and automatically add them to your zone. Useful if you haven't updated your nameservers yet.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dns-records-for-a-zone-trigger-dns-scan",
+    "name": "Trigger DNS Record Scan",
+    "description": "Trigger DNS Record Scan Initiates an asynchronous scan for common DNS records on your domain. POST /client/v4/zones/{zone_id}/dns_records/scan/trigger",
+    "context": "POST /client/v4/zones/{zone_id}/dns_records/scan/trigger\nInitiates an asynchronous scan for common DNS records on your domain. Note that this **does not** automatically add records to your zone. The scan runs in the background, and results can be reviewed later using the `/scan/review` endpoints. Useful if you haven't updated your nameservers yet.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dns-records-for-a-zone-update-dns-record",
+    "name": "Overwrite DNS Record",
+    "description": "Overwrite DNS Record Overwrite an existing DNS record. PUT /client/v4/zones/{zone_id}/dns_records/{dns_record_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/dns_records/{dns_record_id}\nOverwrite an existing DNS record. Notes: - A/AAAA records cannot exist on the same name as CNAME records. - NS records cannot exist on the same name as any other record type. - Domain names are always represented in Punycode, even if Unicode characters were used when creating the record.\nRequired: dns_record_id (path); zone_id (path); body (body)\nOptional: include_shadow_metadata (query)"
+  }
+]

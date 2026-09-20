@@ -1,0 +1,38 @@
+[
+  {
+    "id": "private-registries%2Fcreate-org-private-registry",
+    "name": "Create a private registry for an organization",
+    "description": "Create a private registry for an organization Creates a private registry configuration with an encrypted value for an organization. POST /orgs/{org}/private-registries",
+    "context": "POST /orgs/{org}/private-registries\nCreates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see \"[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).\" For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "private-registries%2Fdelete-org-private-registry",
+    "name": "Delete a private registry for an organization",
+    "description": "Delete a private registry for an organization Delete a private registry configuration at the organization-level. DELETE /orgs/{org}/private-registries/{secret_name}",
+    "context": "DELETE /orgs/{org}/private-registries/{secret_name}\nDelete a private registry configuration at the organization-level. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "private-registries%2Fget-org-private-registry",
+    "name": "Get a private registry for an organization",
+    "description": "Get a private registry for an organization Get the configuration of a single private registry defined for an organization, omitting its encrypted value. GET /orgs/{org}/private-registries/{secret_name}",
+    "context": "GET /orgs/{org}/private-registries/{secret_name}\nGet the configuration of a single private registry defined for an organization, omitting its encrypted value. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "private-registries%2Fget-org-public-key",
+    "name": "Get private registries public key for an organization",
+    "description": "Get private registries public key for an organization Gets the org public key, which is needed to encrypt private registry secrets. GET /orgs/{org}/private-registries/public-key",
+    "context": "GET /orgs/{org}/private-registries/public-key\nGets the org public key, which is needed to encrypt private registry secrets. You need to encrypt a secret before you can create or update secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "private-registries%2Flist-org-private-registries",
+    "name": "List private registries for an organization",
+    "description": "List private registries for an organization Lists all private registry configurations available at the organization-level without revealing their encrypted values. GET /orgs/{org}/private-registries",
+    "context": "GET /orgs/{org}/private-registries\nLists all private registry configurations available at the organization-level without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "private-registries%2Fupdate-org-private-registry",
+    "name": "Update a private registry for an organization",
+    "description": "Update a private registry for an organization Updates a private registry configuration with an encrypted value for an organization. PATCH /orgs/{org}/private-registries/{secret_name}",
+    "context": "PATCH /orgs/{org}/private-registries/{secret_name}\nUpdates a private registry configuration with an encrypted value for an organization. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see \"[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).\" For OIDC-based registries (`oidc_azure`, `oidc_aws`, `oidc_jfrog`, `oidc_cloudsmith`, or `oidc_gcp`), the `encrypted_value` and `key_id` fields should be omitted. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  }
+]

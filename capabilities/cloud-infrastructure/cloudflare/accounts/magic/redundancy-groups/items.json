@@ -1,0 +1,32 @@
+[
+  {
+    "id": "magic-redundancy-groups-create-redundancy-group",
+    "name": "Create a Redundancy Group",
+    "description": "Create a Redundancy Group Creates a new redundancy group, optionally with tunnel members. POST /client/v4/accounts/{account_id}/magic/redundancy_groups",
+    "context": "POST /client/v4/accounts/{account_id}/magic/redundancy_groups\nCreates a new redundancy group, optionally with tunnel members.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-redundancy-groups-delete-redundancy-group",
+    "name": "Delete a Redundancy Group",
+    "description": "Delete a Redundancy Group Deletes a redundancy group. DELETE /client/v4/accounts/{account_id}/magic/redundancy_groups/{redundancy_group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/redundancy_groups/{redundancy_group_id}\nDeletes a redundancy group. Member tunnels are not deleted — their redundancy_group_id is cleared.\nRequired: account_id (path); redundancy_group_id (path)"
+  },
+  {
+    "id": "magic-redundancy-groups-get-redundancy-group",
+    "name": "Get Redundancy Group Details",
+    "description": "Get Redundancy Group Details Gets details for a specific redundancy group, including full member tunnel data. GET /client/v4/accounts/{account_id}/magic/redundancy_groups/{redundancy_group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/redundancy_groups/{redundancy_group_id}\nGets details for a specific redundancy group, including full member tunnel data.\nRequired: account_id (path); redundancy_group_id (path)"
+  },
+  {
+    "id": "magic-redundancy-groups-list-redundancy-groups",
+    "name": "List Redundancy Groups",
+    "description": "List Redundancy Groups Lists redundancy groups associated with an account, including full member tunnel data. GET /client/v4/accounts/{account_id}/magic/redundancy_groups",
+    "context": "GET /client/v4/accounts/{account_id}/magic/redundancy_groups\nLists redundancy groups associated with an account, including full member tunnel data.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-redundancy-groups-update-redundancy-group",
+    "name": "Update a Redundancy Group",
+    "description": "Update a Redundancy Group Replaces the name, description, and full set of members for an existing redundancy group. PUT /client/v4/accounts/{account_id}/magic/redundancy_groups/{redundancy_group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/redundancy_groups/{redundancy_group_id}\nReplaces the name, description, and full set of members for an existing redundancy group.\nRequired: account_id (path); redundancy_group_id (path); body (body)"
+  }
+]

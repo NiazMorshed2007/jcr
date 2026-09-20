@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CoursesStudentGroupsCreate",
+    "name": "Creates a student group for a course.",
+    "description": "Creates a student group for a course. Creates a student group for a course. POST /v1/courses/{courseId}/studentGroups",
+    "context": "POST /v1/courses/{courseId}/studentGroups\nCreates a student group for a course. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create the student group or for access errors. * `NOT_FOUND` if the course does not exist or the requesting user doesn't have access to the course. * `FAILED_PRECONDITION` if creating the student group would exceed the maximum number of student groups per course.\nRequired: courseId (path) — Required. The identifier of the course.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesStudentGroupsDelete",
+    "name": "Deletes a student group.",
+    "description": "Deletes a student group. Deletes a student group. DELETE /v1/courses/{courseId}/studentGroups/{id}",
+    "context": "DELETE /v1/courses/{courseId}/studentGroups/{id}\nDeletes a student group. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete the requested student group or for access errors. * `NOT_FOUND` if the student group does not exist or the user does not have access to the student group.\nRequired: courseId (path) — Required. The identifier of the course containing the student group to delete.; id (path) — Required. The identifier of the student group to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesStudentGroupsList",
+    "name": "Returns a list of groups in a course.",
+    "description": "Returns a list of groups in a course. Returns a list of groups in a course. GET /v1/courses/{courseId}/studentGroups",
+    "context": "GET /v1/courses/{courseId}/studentGroups\nReturns a list of groups in a course. This method returns the following error codes: * `NOT_FOUND` if the course does not exist.\nRequired: courseId (path) — Required. The identifier of the course.\nOptional: pageToken (query) — nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.; pageSize (query) — Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum, which is currently set to 75 items. The server may return fewer than the specified number of results.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesStudentGroupsPatch",
+    "name": "Updates one or more fields in a student group.",
+    "description": "Updates one or more fields in a student group. Updates one or more fields in a student group. PATCH /v1/courses/{courseId}/studentGroups/{id}",
+    "context": "PATCH /v1/courses/{courseId}/studentGroups/{id}\nUpdates one or more fields in a student group. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to modify the requested student group or for access errors. * `NOT_FOUND` if the student group does not exist or the user does not have access to the student group. * `INVALID_ARGUMENT` if invalid fields are specified in the update mask or if no update mask is supplied.\nRequired: courseId (path) — Required. Identifier of the course.; id (path) — Required. Identifier of the student group.; body (body)\nOptional: updateMask (query) — Required. Mask that identifies which fields on the student group to update. This field is required to do an update. The update fails if invalid fields are specified. The following fields can be specified by teachers: * `title`; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesStudentGroupsStudentGroupMembersCreate",
+    "name": "Creates a student group member for a student group.",
+    "description": "Creates a student group member for a student group. Creates a student group member for a student group. POST /v1/courses/{courseId}/studentGroups/{studentGroupId}/studentGroupMembers",
+    "context": "POST /v1/courses/{courseId}/studentGroups/{studentGroupId}/studentGroupMembers\nCreates a student group member for a student group. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create the student group or member for access errors. * `NOT_FOUND` if the student group does not exist or the user does not have access to the student group. * `ALREADY_EXISTS` if the student group member already exists. * `FAILED_PRECONDITION` if attempting to add a member to a student group that has reached its member limit.\nRequired: courseId (path) — Required. The identifier of the course.; studentGroupId (path) — Required. The identifier of the student group.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesStudentGroupsStudentGroupMembersDelete",
+    "name": "Deletes a student group member.",
+    "description": "Deletes a student group member. Deletes a student group member. DELETE /v1/courses/{courseId}/studentGroups/{studentGroupId}/studentGroupMembers/{userId}",
+    "context": "DELETE /v1/courses/{courseId}/studentGroups/{studentGroupId}/studentGroupMembers/{userId}\nDeletes a student group member. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete the requested student group member or for access errors. * `NOT_FOUND` if the student group member does not exist or the user does not have access to the student group.\nRequired: userId (path) — Required. The identifier of the student group member to delete.; courseId (path) — Required. The identifier of the course containing the relevant student group.; studentGroupId (path) — Required. The identifier of the student group containing the student group member to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CoursesStudentGroupsStudentGroupMembersList",
+    "name": "Returns a list of students in a group.",
+    "description": "Returns a list of students in a group. Returns a list of students in a group. GET /v1/courses/{courseId}/studentGroups/{studentGroupId}/studentGroupMembers",
+    "context": "GET /v1/courses/{courseId}/studentGroups/{studentGroupId}/studentGroupMembers\nReturns a list of students in a group. This method returns the following error codes: * `NOT_FOUND` if the course or student group does not exist.\nRequired: courseId (path) — Required. The identifier of the course.; studentGroupId (path) — Required. The identifier of the student group.\nOptional: pageToken (query) — nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.; pageSize (query) — Maximum number of items to return. Zero or unspecified indicates that the server may assign a maximum. The server may return fewer than the specified number of results.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

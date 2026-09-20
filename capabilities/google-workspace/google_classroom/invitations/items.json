@@ -1,0 +1,32 @@
+[
+  {
+    "id": "InvitationsAccept",
+    "name": "Accepts an invitation, removing it and adding the invited user to the teachers or students (as appropriate) of the specified course",
+    "description": "Accepts an invitation, removing it and adding the invited user to the teachers or students (as appropriate) of the specified course Accepts an invitation, removing it and adding the invited user to the teachers or students (as appropriate) of the specified course. POST /v1/invitations/{id}:accept",
+    "context": "POST /v1/invitations/{id}:accept\nAccepts an invitation, removing it and adding the invited user to the teachers or students (as appropriate) of the specified course. Only the invited user may accept an invitation. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to accept the requested invitation or for access errors. * `FAILED_PRECONDITION` for the following request errors: * CourseMemberLimitReached * CourseNotModifiable * CourseTeacherLimitReached * UserGroupsMembershipLimitReached * `NOT_FOUND` if no invitation exists with the requested ID.\nRequired: id (path) — Identifier of the invitation to accept.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "InvitationsCreate",
+    "name": "Creates an invitation.",
+    "description": "Creates an invitation. Creates an invitation. POST /v1/invitations",
+    "context": "POST /v1/invitations\nCreates an invitation. Only one invitation for a user and course may exist at a time. Delete and re-create an invitation to make changes. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to create invitations for this course or for access errors. * `NOT_FOUND` if the course or the user does not exist. * `FAILED_PRECONDITION`: * if the requested user's account is disabled. * if the user already has this role or a role with greater permissions. * for the following request errors: * IneligibleOwner * `ALREADY_EXISTS` if an invitation for the specified user and course already exists.\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "InvitationsDelete",
+    "name": "Deletes an invitation.",
+    "description": "Deletes an invitation. Deletes an invitation. DELETE /v1/invitations/{id}",
+    "context": "DELETE /v1/invitations/{id}\nDeletes an invitation. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to delete the requested invitation or for access errors. * `NOT_FOUND` if no invitation exists with the requested ID.\nRequired: id (path) — Identifier of the invitation to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "InvitationsGet",
+    "name": "Returns an invitation.",
+    "description": "Returns an invitation. Returns an invitation. GET /v1/invitations/{id}",
+    "context": "GET /v1/invitations/{id}\nReturns an invitation. This method returns the following error codes: * `PERMISSION_DENIED` if the requesting user is not permitted to view the requested invitation or for access errors. * `NOT_FOUND` if no invitation exists with the requested ID.\nRequired: id (path) — Identifier of the invitation to return.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "InvitationsList",
+    "name": "Returns a list of invitations that the requesting user is permitted to view, restricted to those that match the list request",
+    "description": "Returns a list of invitations that the requesting user is permitted to view, restricted to those that match the list request Returns a list of invitations that the requesting user is permitted to view, restricted to those that match the list request. GET /v1/invitations",
+    "context": "GET /v1/invitations\nReturns a list of invitations that the requesting user is permitted to view, restricted to those that match the list request. *Note:* At least one of `user_id` or `course_id` must be supplied. Both fields can be supplied. This method returns the following error codes: * `PERMISSION_DENIED` for access errors.\nOptional: userId (query) — Restricts returned invitations to those for a specific user. The identifier can be one of the following: * the numeric identifier for the user * the email address of the user * the string literal `\"me\"`, indicating the requesting user; courseId (query) — Restricts returned invitations to those for a course with the specified identifier.; pageToken (query) — nextPageToken value returned from a previous list call, indicating that the subsequent page of results should be returned. The list request must be otherwise identical to the one that resulted in this token.; pageSize (query) — Maximum number of items to return. The default is 500 if unspecified or `0`. The server may return fewer than the specified number of results.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

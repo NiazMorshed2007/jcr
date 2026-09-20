@@ -1,0 +1,32 @@
+[
+  {
+    "id": "CreateChecklistItem",
+    "name": "Create Checklist Item",
+    "description": "Create Checklist Item Add a line item to a task checklist. POST /api/v2/checklist/{checklist_id}/checklist_item",
+    "context": "POST /api/v2/checklist/{checklist_id}/checklist_item\nAdd a line item to a task checklist.\nRequired: checklist_id (path) — b8a8-48d8-a0c6-b4200788a683 (uuid); body (body)"
+  },
+  {
+    "id": "DeleteChecklist",
+    "name": "Delete Checklist",
+    "description": "Delete Checklist Delete a checklist from a task. DELETE /api/v2/checklist/{checklist_id}",
+    "context": "DELETE /api/v2/checklist/{checklist_id}\nDelete a checklist from a task.\nRequired: checklist_id (path) — b8a8-48d8-a0c6-b4200788a683 (uuid)"
+  },
+  {
+    "id": "DeleteChecklistItem",
+    "name": "Delete Checklist Item",
+    "description": "Delete Checklist Item Delete a line item from a task checklist. DELETE /api/v2/checklist/{checklist_id}/checklist_item/{checklist_item_id}",
+    "context": "DELETE /api/v2/checklist/{checklist_id}/checklist_item/{checklist_item_id}\nDelete a line item from a task checklist.\nRequired: checklist_id (path) — b8a8-48d8-a0c6-b4200788a683 (uuid); checklist_item_id (path) — e491-47f5-9fd8-d1dc4cedcc6f (uuid)"
+  },
+  {
+    "id": "EditChecklist",
+    "name": "Edit Checklist",
+    "description": "Edit Checklist Rename a task checklist, or reorder a checklist so it appears above or below other checklists on a task. PUT /api/v2/checklist/{checklist_id}",
+    "context": "PUT /api/v2/checklist/{checklist_id}\nRename a task checklist, or reorder a checklist so it appears above or below other checklists on a task.\nRequired: checklist_id (path) — b8a8-48d8-a0c6-b4200788a683 (uuid); body (body)"
+  },
+  {
+    "id": "EditChecklistItem",
+    "name": "Edit Checklist Item",
+    "description": "Edit Checklist Item Update an individual line item in a task checklist. PUT /api/v2/checklist/{checklist_id}/checklist_item/{checklist_item_id}",
+    "context": "PUT /api/v2/checklist/{checklist_id}/checklist_item/{checklist_item_id}\nUpdate an individual line item in a task checklist. \\ \\ You can rename it, set the assignee, mark it as resolved, or nest it under another checklist item.\nRequired: checklist_id (path) — b8a8-48d8-a0c6-b4200788a683 (uuid); checklist_item_id (path) — e491-47f5-9fd8-d1dc4cedcc6f (uuid); body (body)"
+  }
+]

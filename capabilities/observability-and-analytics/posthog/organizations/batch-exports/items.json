@@ -1,0 +1,74 @@
+[
+  {
+    "id": "org_organizations_batch_exports_create",
+    "name": "org_organizations_batch_exports_create",
+    "description": "org_organizations_batch_exports_create POST /api/organizations/{organization_id}/batch_exports/",
+    "context": "POST /api/organizations/{organization_id}/batch_exports/\norg_organizations_batch_exports_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "org_organizations_batch_exports_destroy",
+    "name": "org_organizations_batch_exports_destroy",
+    "description": "org_organizations_batch_exports_destroy DELETE /api/organizations/{organization_id}/batch_exports/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/batch_exports/{id}/\norg_organizations_batch_exports_destroy\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "org_organizations_batch_exports_list",
+    "name": "org_organizations_batch_exports_list",
+    "description": "org_organizations_batch_exports_list GET /api/organizations/{organization_id}/batch_exports/",
+    "context": "GET /api/organizations/{organization_id}/batch_exports/\norg_organizations_batch_exports_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "org_organizations_batch_exports_logs_retrieve",
+    "name": "org_organizations_batch_exports_logs_retrieve",
+    "description": "org_organizations_batch_exports_logs_retrieve GET /api/organizations/{organization_id}/batch_exports/{id}/logs/",
+    "context": "GET /api/organizations/{organization_id}/batch_exports/{id}/logs/\norg_organizations_batch_exports_logs_retrieve\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "org_organizations_batch_exports_partial_update",
+    "name": "org_organizations_batch_exports_partial_update",
+    "description": "org_organizations_batch_exports_partial_update PATCH /api/organizations/{organization_id}/batch_exports/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/batch_exports/{id}/\norg_organizations_batch_exports_partial_update\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "org_organizations_batch_exports_pause_create",
+    "name": "Pause a BatchExport.",
+    "description": "Pause a BatchExport. POST /api/organizations/{organization_id}/batch_exports/{id}/pause/",
+    "context": "POST /api/organizations/{organization_id}/batch_exports/{id}/pause/\nPause a BatchExport.\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "org_organizations_batch_exports_retrieve",
+    "name": "org_organizations_batch_exports_retrieve",
+    "description": "org_organizations_batch_exports_retrieve GET /api/organizations/{organization_id}/batch_exports/{id}/",
+    "context": "GET /api/organizations/{organization_id}/batch_exports/{id}/\norg_organizations_batch_exports_retrieve\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "org_organizations_batch_exports_run_test_step_create",
+    "name": "org_organizations_batch_exports_run_test_step_create",
+    "description": "org_organizations_batch_exports_run_test_step_create POST /api/organizations/{organization_id}/batch_exports/{id}/run_test_step/",
+    "context": "POST /api/organizations/{organization_id}/batch_exports/{id}/run_test_step/\norg_organizations_batch_exports_run_test_step_create\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "org_organizations_batch_exports_run_test_step_new_create",
+    "name": "org_organizations_batch_exports_run_test_step_new_create",
+    "description": "org_organizations_batch_exports_run_test_step_new_create POST /api/organizations/{organization_id}/batch_exports/run_test_step_new/",
+    "context": "POST /api/organizations/{organization_id}/batch_exports/run_test_step_new/\norg_organizations_batch_exports_run_test_step_new_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "org_organizations_batch_exports_test_retrieve",
+    "name": "org_organizations_batch_exports_test_retrieve",
+    "description": "org_organizations_batch_exports_test_retrieve GET /api/organizations/{organization_id}/batch_exports/test/",
+    "context": "GET /api/organizations/{organization_id}/batch_exports/test/\norg_organizations_batch_exports_test_retrieve\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "org_organizations_batch_exports_unpause_create",
+    "name": "Unpause a BatchExport.",
+    "description": "Unpause a BatchExport. POST /api/organizations/{organization_id}/batch_exports/{id}/unpause/",
+    "context": "POST /api/organizations/{organization_id}/batch_exports/{id}/unpause/\nUnpause a BatchExport.\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "org_organizations_batch_exports_update",
+    "name": "org_organizations_batch_exports_update",
+    "description": "org_organizations_batch_exports_update PUT /api/organizations/{organization_id}/batch_exports/{id}/",
+    "context": "PUT /api/organizations/{organization_id}/batch_exports/{id}/\norg_organizations_batch_exports_update\nRequired: id (path) — A UUID string identifying this batch export.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "error_tracking_alerts_create",
+    "name": "error_tracking_alerts_create",
+    "description": "error_tracking_alerts_create POST /api/projects/{project_id}/error_tracking/alerts/",
+    "context": "POST /api/projects/{project_id}/error_tracking/alerts/\nerror_tracking_alerts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_alerts_destroy",
+    "name": "error_tracking_alerts_destroy",
+    "description": "error_tracking_alerts_destroy DELETE /api/projects/{project_id}/error_tracking/alerts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/alerts/{id}/\nerror_tracking_alerts_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_alerts_list",
+    "name": "error_tracking_alerts_list",
+    "description": "error_tracking_alerts_list GET /api/projects/{project_id}/error_tracking/alerts/",
+    "context": "GET /api/projects/{project_id}/error_tracking/alerts/\nerror_tracking_alerts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "error_tracking_alerts_partial_update",
+    "name": "error_tracking_alerts_partial_update",
+    "description": "error_tracking_alerts_partial_update PATCH /api/projects/{project_id}/error_tracking/alerts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/error_tracking/alerts/{id}/\nerror_tracking_alerts_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_alerts_retrieve",
+    "name": "error_tracking_alerts_retrieve",
+    "description": "error_tracking_alerts_retrieve GET /api/projects/{project_id}/error_tracking/alerts/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/alerts/{id}/\nerror_tracking_alerts_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_alerts_update",
+    "name": "error_tracking_alerts_update",
+    "description": "error_tracking_alerts_update PUT /api/projects/{project_id}/error_tracking/alerts/{id}/",
+    "context": "PUT /api/projects/{project_id}/error_tracking/alerts/{id}/\nerror_tracking_alerts_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "web_analytics_fetch_llms_txt",
+    "name": "Load an llms.txt file",
+    "description": "Load an llms.txt file Loads an llms.txt file from a public URL for coverage analysis without saving it. POST /api/projects/{project_id}/web_analytics/llms_txt/",
+    "context": "POST /api/projects/{project_id}/web_analytics/llms_txt/\nLoads an llms.txt file from a public URL for coverage analysis without saving it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "web_analytics_recap",
+    "name": "Weekly web analytics recap",
+    "description": "Weekly web analytics recap The 'Wrapped'-style weekly recap: everything in the weekly digest (visitors, pageviews, sessions, bounce rate, average session duration with period-over-period comparisons, top pages, top sources, and goals) plus a single derived weekly persona and a short list of screenshot-worthy highlight…",
+    "context": "GET /api/projects/{project_id}/web_analytics/recap/\nThe 'Wrapped'-style weekly recap: everything in the weekly digest (visitors, pageviews, sessions, bounce rate, average session duration with period-over-period comparisons, top pages, top sources, and goals) plus a single derived weekly persona and a short list of screenshot-worthy highlights for the period.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: compare (query) — When true (default), include period-over-period change for each metric comparing against the prior equal-length period. Set to false to skip the comparison query.; days (query) — Lookback window in days (1–90). Defaults to 7."
+  },
+  {
+    "id": "web_analytics_weekly_digest",
+    "name": "Summarize web analytics",
+    "description": "Summarize web analytics Summarizes a project's web analytics over a lookback window (default 7 days): unique visitors, pageviews, sessions, bounce rate, and average session duration with period-over-period comparisons, plus the top 5 pages, top 5 traffic sources, and goal conversions. GET /api/projects/{project_id}/we…",
+    "context": "GET /api/projects/{project_id}/web_analytics/weekly_digest/\nSummarizes a project's web analytics over a lookback window (default 7 days): unique visitors, pageviews, sessions, bounce rate, and average session duration with period-over-period comparisons, plus the top 5 pages, top 5 traffic sources, and goal conversions.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: compare (query) — When true (default), include period-over-period change for each metric comparing against the prior equal-length period. Set to false to skip the comparison query (faster).; days (query) — Lookback window in days (1–90). Defaults to 7."
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "page-shield-create-policy",
+    "name": "Create a content security rule",
+    "description": "Create a content security rule Creates a rule that applies a client-side security action when its filter expression matches. POST /client/v4/zones/{zone_id}/page_shield/policies",
+    "context": "POST /client/v4/zones/{zone_id}/page_shield/policies\nCreates a rule that applies a client-side security action when its filter expression matches.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "page-shield-delete-policy",
+    "name": "Delete a content security rule",
+    "description": "Delete a content security rule Permanently deletes a content security rule by ID. DELETE /client/v4/zones/{zone_id}/page_shield/policies/{policy_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/page_shield/policies/{policy_id}\nPermanently deletes a content security rule by ID.\nRequired: zone_id (path); policy_id (path)"
+  },
+  {
+    "id": "page-shield-get-connection",
+    "name": "Get a detected connection",
+    "description": "Get a detected connection Returns a webpage connection detected on the zone by connection ID. GET /client/v4/zones/{zone_id}/page_shield/connections/{connection_id}",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/connections/{connection_id}\nReturns a webpage connection detected on the zone by connection ID.\nRequired: zone_id (path); connection_id (path)"
+  },
+  {
+    "id": "page-shield-get-cookie",
+    "name": "Get a detected cookie",
+    "description": "Get a detected cookie Returns a cookie detected on the zone by cookie ID. GET /client/v4/zones/{zone_id}/page_shield/cookies/{cookie_id}",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/cookies/{cookie_id}\nReturns a cookie detected on the zone by cookie ID.\nRequired: zone_id (path); cookie_id (path)"
+  },
+  {
+    "id": "page-shield-get-policy",
+    "name": "Get a content security rule",
+    "description": "Get a content security rule Returns a content security rule by ID. GET /client/v4/zones/{zone_id}/page_shield/policies/{policy_id}",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/policies/{policy_id}\nReturns a content security rule by ID.\nRequired: zone_id (path); policy_id (path)"
+  },
+  {
+    "id": "page-shield-get-script",
+    "name": "Get a detected script",
+    "description": "Get a detected script Returns a script detected on the zone by script ID. GET /client/v4/zones/{zone_id}/page_shield/scripts/{script_id}",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/scripts/{script_id}\nReturns a script detected on the zone by script ID.\nRequired: zone_id (path); script_id (path)"
+  },
+  {
+    "id": "page-shield-get-settings",
+    "name": "Get client-side security settings",
+    "description": "Get client-side security settings Returns the client-side security product enablement status and reporting behaviors. GET /client/v4/zones/{zone_id}/page_shield",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield\nReturns the client-side security product enablement status and reporting behaviors.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "page-shield-list-connections",
+    "name": "List detected connections",
+    "description": "List detected connections Lists outbound connections made by webpages in the zone. GET /client/v4/zones/{zone_id}/page_shield/connections",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/connections\nLists outbound connections made by webpages in the zone.\nRequired: zone_id (path)\nOptional: exclude_urls (query); urls (query); hosts (query); page (query); per_page (query); order_by (query); direction (query); prioritize_malicious (query); exclude_cdn_cgi (query); status (query); page_url (query); export (query)"
+  },
+  {
+    "id": "page-shield-list-cookies",
+    "name": "List detected cookies",
+    "description": "List detected cookies Lists cookies detected on the zone. GET /client/v4/zones/{zone_id}/page_shield/cookies",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/cookies\nLists cookies detected on the zone.\nRequired: zone_id (path)\nOptional: hosts (query); page (query); per_page (query); order_by (query); direction (query); page_url (query); export (query); name (query); secure (query); http_only (query); same_site (query); type (query); path (query); domain (query)"
+  },
+  {
+    "id": "page-shield-list-policies",
+    "name": "List content security rules",
+    "description": "List content security rules Lists content security rules configured for the zone. GET /client/v4/zones/{zone_id}/page_shield/policies",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/policies\nLists content security rules configured for the zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "page-shield-list-scripts",
+    "name": "List detected scripts",
+    "description": "List detected scripts Lists scripts detected on webpages in the zone, with filtering and pagination. GET /client/v4/zones/{zone_id}/page_shield/scripts",
+    "context": "GET /client/v4/zones/{zone_id}/page_shield/scripts\nLists scripts detected on webpages in the zone, with filtering and pagination.\nRequired: zone_id (path)\nOptional: exclude_urls (query); urls (query); hosts (query); page (query); per_page (query); order_by (query); direction (query); prioritize_malicious (query); exclude_cdn_cgi (query); exclude_duplicates (query); status (query); page_url (query); export (query)"
+  },
+  {
+    "id": "page-shield-update-policy",
+    "name": "Update a content security rule",
+    "description": "Update a content security rule Updates the description, action, expression, enabled state, and policy value for a content security rule. PUT /client/v4/zones/{zone_id}/page_shield/policies/{policy_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/page_shield/policies/{policy_id}\nUpdates the description, action, expression, enabled state, and policy value for a content security rule.\nRequired: zone_id (path); policy_id (path); body (body)"
+  },
+  {
+    "id": "page-shield-update-settings",
+    "name": "Update client-side security settings",
+    "description": "Update client-side security settings Updates client-side security enablement and reporting behaviors for the zone. PUT /client/v4/zones/{zone_id}/page_shield",
+    "context": "PUT /client/v4/zones/{zone_id}/page_shield\nUpdates client-side security enablement and reporting behaviors for the zone.\nRequired: zone_id (path); body (body)"
+  }
+]

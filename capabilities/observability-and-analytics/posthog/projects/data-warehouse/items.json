@@ -1,0 +1,128 @@
+[
+  {
+    "id": "data_warehouse_check_database_name_retrieve",
+    "name": "Check if a database name is available.",
+    "description": "Check if a database name is available. GET /api/projects/{project_id}/data_warehouse/check-database-name/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/check-database-name/\nCheck if a database name is available.\nRequired: name (query) — Database name to check; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_check_schema_name_retrieve",
+    "name": "Check if a schema name is free within the organization's managed warehouse.",
+    "description": "Check if a schema name is free within the organization's managed warehouse. GET /api/projects/{project_id}/data_warehouse/check-schema-name/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/check-schema-name/\nCheck if a schema name is free within the organization's managed warehouse.\nRequired: name (query) — Schema name to check; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_completed_activity_retrieve",
+    "name": "Returns completed/non-running activities (jobs with status 'Completed')",
+    "description": "Returns completed/non-running activities (jobs with status 'Completed') Returns completed/non-running activities (jobs with status 'Completed'). GET /api/projects/{project_id}/data_warehouse/completed_activity/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/completed_activity/\nReturns completed/non-running activities (jobs with status 'Completed'). Supports pagination and cutoff time filtering.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_data_health_issues_retrieve",
+    "name": "Returns failed/disabled data pipeline items for the Pipeline status side panel",
+    "description": "Returns failed/disabled data pipeline items for the Pipeline status side panel Returns failed/disabled data pipeline items for the Pipeline status side panel. GET /api/projects/{project_id}/data_warehouse/data_health_issues/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/data_health_issues/\nReturns failed/disabled data pipeline items for the Pipeline status side panel. Includes: materializations, syncs, sources, destinations, and transformations.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_data_ops_dashboard_retrieve",
+    "name": "Returns the data ops overview dashboard ID for this team, creating it if it doesn't exist yet.",
+    "description": "Returns the data ops overview dashboard ID for this team, creating it if it doesn't exist yet. GET /api/projects/{project_id}/data_warehouse/data_ops_dashboard/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/data_ops_dashboard/\nReturns the data ops overview dashboard ID for this team, creating it if it doesn't exist yet.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_data_quality_gate_partial_update",
+    "name": "Read or update the team's data quality gate: whether a materialization whose error-severity checks fail is published.",
+    "description": "Read or update the team's data quality gate: whether a materialization whose error-severity checks fail is published. PATCH /api/projects/{project_id}/data_warehouse/data_quality_gate/",
+    "context": "PATCH /api/projects/{project_id}/data_warehouse/data_quality_gate/\nRead or update the team's data quality gate: whether a materialization whose error-severity checks fail is published.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_warehouse_data_quality_gate_retrieve",
+    "name": "Read or update the team's data quality gate: whether a materialization whose error-severity checks fail is published.",
+    "description": "Read or update the team's data quality gate: whether a materialization whose error-severity checks fail is published. GET /api/projects/{project_id}/data_warehouse/data_quality_gate/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/data_quality_gate/\nRead or update the team's data quality gate: whether a materialization whose error-severity checks fail is published.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_delete_org_destroy",
+    "name": "Remove the organization's provisioning record after teardown, freeing its warehouse name",
+    "description": "Remove the organization's provisioning record after teardown, freeing its warehouse name Remove the organization's provisioning record after teardown, freeing its warehouse name. DELETE /api/projects/{project_id}/data_warehouse/delete-org/",
+    "context": "DELETE /api/projects/{project_id}/data_warehouse/delete-org/\nRemove the organization's provisioning record after teardown, freeing its warehouse name. Called once the warehouse status reports `deleted`: deprovision tears the warehouse down, this removes the now-empty org row so the database_name can be reused. Restricted to organization admins.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_deprovision_create",
+    "name": "Start deprovisioning the organization's managed warehouse",
+    "description": "Start deprovisioning the organization's managed warehouse Start deprovisioning the organization's managed warehouse. POST /api/projects/{project_id}/data_warehouse/deprovision/",
+    "context": "POST /api/projects/{project_id}/data_warehouse/deprovision/\nStart deprovisioning the organization's managed warehouse. Restricted to organization admins.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_job_stats_retrieve",
+    "name": "Returns success and failed job statistics for the last 1, 7, or 30 days",
+    "description": "Returns success and failed job statistics for the last 1, 7, or 30 days Returns success and failed job statistics for the last 1, 7, or 30 days. GET /api/projects/{project_id}/data_warehouse/job_stats/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/job_stats/\nReturns success and failed job statistics for the last 1, 7, or 30 days. Query parameter 'days' can be 1, 7, or 30 (default: 7).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_managed_warehouse_data_status_retrieve",
+    "name": "Get events, persons, and imported source readiness for the managed warehouse.",
+    "description": "Get events, persons, and imported source readiness for the managed warehouse. GET /api/projects/{project_id}/data_warehouse/managed-warehouse-data-status/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/managed-warehouse-data-status/\nGet events, persons, and imported source readiness for the managed warehouse.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_managed_warehouse_monitoring_retrieve",
+    "name": "Get managed warehouse monitoring snapshot",
+    "description": "Get managed warehouse monitoring snapshot Get tenant-safe live worker, session, queue, and capacity data for the current organization. GET /api/projects/{project_id}/data_warehouse/managed-warehouse-monitoring/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/managed-warehouse-monitoring/\nGet tenant-safe live worker, session, queue, and capacity data for the current organization.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_managed_warehouse_monitoring_timeseries_retrieve",
+    "name": "Get managed warehouse monitoring time series",
+    "description": "Get managed warehouse monitoring time series Get one allow-listed monitoring metric for the current organization and trailing time window. GET /api/projects/{project_id}/data_warehouse/managed-warehouse-monitoring-timeseries/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/managed-warehouse-monitoring-timeseries/\nGet one allow-listed monitoring metric for the current organization and trailing time window.\nRequired: metric (query) — Allow-listed managed warehouse metric to retrieve. * `query_rate` - query_rate * `error_ratio` - error_ratio * `duration_p50` - duration_p50 * `duration_p95` - duration_p95 * `sessions_active` - sessions_active * `acquire_p95` - acquire_p95 * `acquire_by_source` - acquire_by_source * `storage_bytes` - storage_bytes * `worker_crash_rate` - worker_crash_rate; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: window (query) — Trailing time window to retrieve. Defaults to 24h. * `1h` - 1h * `6h` - 6h * `24h` - 24h * `7d` - 7d * `30d` - 30d"
+  },
+  {
+    "id": "data_warehouse_managed_warehouse_source_schemas_retrieve",
+    "name": "Get per-schema detail for one imported source",
+    "description": "Get per-schema detail for one imported source Per-schema backfill and live import status for one source, for the Overview tab's drill-down modal — the main status endpoint only returns a per-source rollup. GET /api/projects/{project_id}/data_warehouse/managed-warehouse-source-schemas/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/managed-warehouse-source-schemas/\nPer-schema backfill and live import status for one source, for the Overview tab's drill-down modal — the main status endpoint only returns a per-source rollup.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; source_id (query) — Imported source connection to fetch per-schema detail for."
+  },
+  {
+    "id": "data_warehouse_onboard_team_create",
+    "name": "Onboard this project onto the organization's existing managed warehouse",
+    "description": "Onboard this project onto the organization's existing managed warehouse Onboard this project onto the organization's existing managed warehouse. POST /api/projects/{project_id}/data_warehouse/onboard-team/",
+    "context": "POST /api/projects/{project_id}/data_warehouse/onboard-team/\nOnboard this project onto the organization's existing managed warehouse. Requires a schema name and records the project's membership in the Duckgres control plane. Restricted to organization admins.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_warehouse_property_values_retrieve",
+    "name": "API endpoints for data warehouse aggregate statistics and operations.",
+    "description": "API endpoints for data warehouse aggregate statistics and operations. GET /api/projects/{project_id}/data_warehouse/property_values/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/property_values/\nAPI endpoints for data warehouse aggregate statistics and operations.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_provision_create",
+    "name": "Start provisioning a managed warehouse for this organization (shared by all its teams).",
+    "description": "Start provisioning a managed warehouse for this organization (shared by all its teams). POST /api/projects/{project_id}/data_warehouse/provision/",
+    "context": "POST /api/projects/{project_id}/data_warehouse/provision/\nStart provisioning a managed warehouse for this organization (shared by all its teams).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_warehouse_reset_password_create",
+    "name": "Reset the root password for the managed warehouse.",
+    "description": "Reset the root password for the managed warehouse. POST /api/projects/{project_id}/data_warehouse/reset-password/",
+    "context": "POST /api/projects/{project_id}/data_warehouse/reset-password/\nReset the root password for the managed warehouse.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_running_activity_retrieve",
+    "name": "Returns currently running activities (jobs with status 'Running')",
+    "description": "Returns currently running activities (jobs with status 'Running') Returns currently running activities (jobs with status 'Running'). GET /api/projects/{project_id}/data_warehouse/running_activity/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/running_activity/\nReturns currently running activities (jobs with status 'Running'). Supports pagination and cutoff time filtering.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_total_rows_stats_retrieve",
+    "name": "Returns aggregated statistics for the data warehouse total rows processed within the current billing period",
+    "description": "Returns aggregated statistics for the data warehouse total rows processed within the current billing period Returns aggregated statistics for the data warehouse total rows processed within the current billing period. GET /api/projects/{project_id}/data_warehouse/total_rows_stats/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/total_rows_stats/\nReturns aggregated statistics for the data warehouse total rows processed within the current billing period. Used by the frontend data warehouse scene to display usage information.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_warehouse_warehouse_status_retrieve",
+    "name": "Get the current provisioning status of the managed warehouse, with this project's onboarding state.",
+    "description": "Get the current provisioning status of the managed warehouse, with this project's onboarding state. GET /api/projects/{project_id}/data_warehouse/warehouse_status/",
+    "context": "GET /api/projects/{project_id}/data_warehouse/warehouse_status/\nGet the current provisioning status of the managed warehouse, with this project's onboarding state.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

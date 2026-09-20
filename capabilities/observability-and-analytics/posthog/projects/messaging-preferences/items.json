@@ -1,0 +1,44 @@
+[
+  {
+    "id": "messaging_preferences_add_opt_out_create",
+    "name": "Manually add a recipient to the opt-out list",
+    "description": "Manually add a recipient to the opt-out list Manually add a recipient to the opt-out list for a specific category or all marketing messages. POST /api/projects/{project_id}/messaging_preferences/add_opt_out/",
+    "context": "POST /api/projects/{project_id}/messaging_preferences/add_opt_out/\nManually add a recipient to the opt-out list for a specific category or all marketing messages.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "messaging_preferences_bulk_add_opt_outs_create",
+    "name": "Add multiple recipients to the opt-out list",
+    "description": "Add multiple recipients to the opt-out list Opt every recipient in the list out of the category named on their entry, or a default category. POST /api/projects/{project_id}/messaging_preferences/bulk_add_opt_outs/",
+    "context": "POST /api/projects/{project_id}/messaging_preferences/bulk_add_opt_outs/\nOpt every recipient in the list out of the category named on their entry, or a default category.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "messaging_preferences_export_opt_outs_csv_retrieve",
+    "name": "Download the opt-out list as a CSV file",
+    "description": "Download the opt-out list as a CSV file Stream the opt-out list for a category as a CSV file that can be re-imported as-is. GET /api/projects/{project_id}/messaging_preferences/export_opt_outs_csv/",
+    "context": "GET /api/projects/{project_id}/messaging_preferences/export_opt_outs_csv/\nStream the opt-out list for a category as a CSV file that can be re-imported as-is.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: category_key (query) — Message category key to export. If omitted, exports recipients opted out of all marketing messages."
+  },
+  {
+    "id": "messaging_preferences_generate_link_create",
+    "name": "Generate a preferences page link for a recipient",
+    "description": "Generate a preferences page link for a recipient Generate an unsubscribe link for the current user's email address POST /api/projects/{project_id}/messaging_preferences/generate_link/",
+    "context": "POST /api/projects/{project_id}/messaging_preferences/generate_link/\nGenerate an unsubscribe link for the current user's email address\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "messaging_preferences_opt_outs_retrieve",
+    "name": "List recipients opted out of a message category",
+    "description": "List recipients opted out of a message category Get opt-outs filtered by category or overall opt-outs if no category specified GET /api/projects/{project_id}/messaging_preferences/opt_outs/",
+    "context": "GET /api/projects/{project_id}/messaging_preferences/opt_outs/\nGet opt-outs filtered by category or overall opt-outs if no category specified\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: category_key (query) — Message category key to list opt-outs for. If omitted, lists recipients opted out of all marketing messages.; page (query); page_size (query); search (query) — Case-insensitive substring match on the recipient identifier."
+  },
+  {
+    "id": "messaging_preferences_remove_opt_out_create",
+    "name": "Remove a recipient from the opt-out list",
+    "description": "Remove a recipient from the opt-out list Opt a recipient back in to a specific category, or to all marketing messages. POST /api/projects/{project_id}/messaging_preferences/remove_opt_out/",
+    "context": "POST /api/projects/{project_id}/messaging_preferences/remove_opt_out/\nOpt a recipient back in to a specific category, or to all marketing messages.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "messaging_preferences_webhook_url_retrieve",
+    "name": "Get the Customer.io webhook URL for the team",
+    "description": "Get the Customer.io webhook URL for the team Return the webhook URL for Customer.io integration setup. GET /api/projects/{project_id}/messaging_preferences/webhook_url/",
+    "context": "GET /api/projects/{project_id}/messaging_preferences/webhook_url/\nReturn the webhook URL for Customer.io integration setup.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

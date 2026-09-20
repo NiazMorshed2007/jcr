@@ -1,0 +1,38 @@
+[
+  {
+    "id": "custom-ssl-for-a-zone-create-ssl-configuration",
+    "name": "Create SSL Configuration",
+    "description": "Create SSL Configuration Upload a new SSL certificate for a zone. POST /client/v4/zones/{zone_id}/custom_certificates",
+    "context": "POST /client/v4/zones/{zone_id}/custom_certificates\nUpload a new SSL certificate for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-ssl-for-a-zone-delete-ssl-configuration",
+    "name": "Delete SSL Configuration",
+    "description": "Delete SSL Configuration Remove a SSL certificate from a zone. DELETE /client/v4/zones/{zone_id}/custom_certificates/{custom_certificate_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/custom_certificates/{custom_certificate_id}\nRemove a SSL certificate from a zone.\nRequired: custom_certificate_id (path); zone_id (path)"
+  },
+  {
+    "id": "custom-ssl-for-a-zone-edit-ssl-configuration",
+    "name": "Edit SSL Configuration",
+    "description": "Edit SSL Configuration Upload a new private key and/or PEM/CRT for the SSL certificate. PATCH /client/v4/zones/{zone_id}/custom_certificates/{custom_certificate_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/custom_certificates/{custom_certificate_id}\nUpload a new private key and/or PEM/CRT for the SSL certificate. Note: PATCHing a configuration for sni_custom certificates will result in a new resource id being returned, and the previous one being deleted.\nRequired: custom_certificate_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-ssl-for-a-zone-list-ssl-configurations",
+    "name": "List SSL Configurations",
+    "description": "List SSL Configurations List, search, and filter all of your custom SSL certificates. GET /client/v4/zones/{zone_id}/custom_certificates",
+    "context": "GET /client/v4/zones/{zone_id}/custom_certificates\nList, search, and filter all of your custom SSL certificates. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); match (query); status (query)"
+  },
+  {
+    "id": "custom-ssl-for-a-zone-re-prioritize-ssl-certificates",
+    "name": "Re-prioritize SSL Certificates",
+    "description": "Re-prioritize SSL Certificates If a zone has multiple SSL certificates, you can set the order in which they should be used during a request. PUT /client/v4/zones/{zone_id}/custom_certificates/prioritize",
+    "context": "PUT /client/v4/zones/{zone_id}/custom_certificates/prioritize\nIf a zone has multiple SSL certificates, you can set the order in which they should be used during a request. The higher priority will break ties across overlapping 'legacy_custom' certificates.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "custom-ssl-for-a-zone-ssl-configuration-details",
+    "name": "SSL Configuration Details",
+    "description": "SSL Configuration Details Retrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration. GET /client/v4/zones/{zone_id}/custom_certificates/{custom_certificate_id}",
+    "context": "GET /client/v4/zones/{zone_id}/custom_certificates/{custom_certificate_id}\nRetrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration.\nRequired: custom_certificate_id (path); zone_id (path)"
+  }
+]

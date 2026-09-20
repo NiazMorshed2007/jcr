@@ -1,0 +1,152 @@
+[
+  {
+    "id": "notification-alert-types-get-alert-types",
+    "name": "Get Alert Types",
+    "description": "Get Alert Types Gets a list of all alert types for which an account is eligible. GET /client/v4/accounts/{account_id}/alerting/v3/available_alerts",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/available_alerts\nGets a list of all alert types for which an account is eligible.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-destinations-with-pager-duty-connect-pager-duty",
+    "name": "Create PagerDuty integration token",
+    "description": "Create PagerDuty integration token Creates a new token for integrating with PagerDuty. POST /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty/connect",
+    "context": "POST /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty/connect\nCreates a new token for integrating with PagerDuty.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-destinations-with-pager-duty-connect-pager-duty-token",
+    "name": "Connect PagerDuty",
+    "description": "Connect PagerDuty Links PagerDuty with the account using the integration token. GET /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty/connect/{token_id}",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty/connect/{token_id}\nLinks PagerDuty with the account using the integration token.\nRequired: account_id (path); token_id (path)"
+  },
+  {
+    "id": "notification-destinations-with-pager-duty-delete-pager-duty-services",
+    "name": "Delete PagerDuty Services",
+    "description": "Delete PagerDuty Services Deletes all the PagerDuty Services connected to the account. DELETE /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty",
+    "context": "DELETE /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty\nDeletes all the PagerDuty Services connected to the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-destinations-with-pager-duty-list-pager-duty-services",
+    "name": "List PagerDuty services",
+    "description": "List PagerDuty services Get a list of all configured PagerDuty services. GET /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/destinations/pagerduty\nGet a list of all configured PagerDuty services.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-history-list-history",
+    "name": "List History",
+    "description": "List History Gets a list of history records for notifications sent to an account. GET /client/v4/accounts/{account_id}/alerting/v3/history",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/history\nGets a list of history records for notifications sent to an account. The records are displayed for last `x` number of days based on the zone plan (free = 30, pro = 30, biz = 30, ent = 90).\nRequired: account_id (path)\nOptional: per_page (query); before (query); page (query); since (query)"
+  },
+  {
+    "id": "notification-mechanism-eligibility-get-delivery-mechanism-eligibility",
+    "name": "Get delivery mechanism eligibility",
+    "description": "Get delivery mechanism eligibility Get a list of all delivery mechanism types for which an account is eligible. GET /client/v4/accounts/{account_id}/alerting/v3/destinations/eligible",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/destinations/eligible\nGet a list of all delivery mechanism types for which an account is eligible.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-policies-create-a-notification-policy",
+    "name": "Create a Notification policy",
+    "description": "Create a Notification policy Creates a new Notification policy. POST /client/v4/accounts/{account_id}/alerting/v3/policies",
+    "context": "POST /client/v4/accounts/{account_id}/alerting/v3/policies\nCreates a new Notification policy.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "notification-policies-delete-a-notification-policy",
+    "name": "Delete a Notification policy",
+    "description": "Delete a Notification policy Delete a Notification policy. DELETE /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}\nDelete a Notification policy.\nRequired: account_id (path); policy_id (path)"
+  },
+  {
+    "id": "notification-policies-get-a-notification-policy",
+    "name": "Get a Notification policy",
+    "description": "Get a Notification policy Get details for a single policy. GET /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}\nGet details for a single policy.\nRequired: account_id (path); policy_id (path)"
+  },
+  {
+    "id": "notification-policies-list-notification-policies",
+    "name": "List Notification policies",
+    "description": "List Notification policies Get a list of all Notification policies. GET /client/v4/accounts/{account_id}/alerting/v3/policies",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/policies\nGet a list of all Notification policies.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-policies-show-email-unsubscribe-details",
+    "name": "Show email unsubscribe details",
+    "description": "Show email unsubscribe details Shows details for unsubscribing an email address from a notification policy. GET /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}/email/unsubscribe",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}/email/unsubscribe\nShows details for unsubscribing an email address from a notification policy.\nRequired: account_id (path); policy_id (path); email (query); token (query)"
+  },
+  {
+    "id": "notification-policies-test-a-notification-policy",
+    "name": "Test a Notification policy",
+    "description": "Test a Notification policy Send a test notification for a policy to verify delivery mechanisms are working as expected. POST /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}/test",
+    "context": "POST /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}/test\nSend a test notification for a policy to verify delivery mechanisms are working as expected.\nRequired: account_id (path); policy_id (path)\nOptional: body (body) — Optional configuration for the test notification. When omitted, a default INFO-severity test alert is sent."
+  },
+  {
+    "id": "notification-policies-unsubscribe-email-from-notification-policy",
+    "name": "Unsubscribe email from a Notification policy",
+    "description": "Unsubscribe email from a Notification policy Unsubscribes an email address from a notification policy. POST /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}/email/unsubscribe",
+    "context": "POST /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}/email/unsubscribe\nUnsubscribes an email address from a notification policy.\nRequired: account_id (path); policy_id (path); email (query); token (query)"
+  },
+  {
+    "id": "notification-policies-update-a-notification-policy",
+    "name": "Update a Notification policy",
+    "description": "Update a Notification policy Update a Notification policy. PUT /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/alerting/v3/policies/{policy_id}\nUpdate a Notification policy.\nRequired: account_id (path); policy_id (path); body (body)"
+  },
+  {
+    "id": "notification-silences-create-silences",
+    "name": "Create Silences",
+    "description": "Create Silences Creates a new silence for an account. POST /client/v4/accounts/{account_id}/alerting/v3/silences",
+    "context": "POST /client/v4/accounts/{account_id}/alerting/v3/silences\nCreates a new silence for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "notification-silences-delete-silences",
+    "name": "Delete Silence",
+    "description": "Delete Silence Deletes an existing silence for an account. DELETE /client/v4/accounts/{account_id}/alerting/v3/silences/{silence_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/alerting/v3/silences/{silence_id}\nDeletes an existing silence for an account.\nRequired: account_id (path); silence_id (path)"
+  },
+  {
+    "id": "notification-silences-get-silence",
+    "name": "Get Silence",
+    "description": "Get Silence Gets a specific silence for an account. GET /client/v4/accounts/{account_id}/alerting/v3/silences/{silence_id}",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/silences/{silence_id}\nGets a specific silence for an account.\nRequired: account_id (path); silence_id (path)"
+  },
+  {
+    "id": "notification-silences-list-silences",
+    "name": "List Silences",
+    "description": "List Silences Gets a list of silences for an account. GET /client/v4/accounts/{account_id}/alerting/v3/silences",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/silences\nGets a list of silences for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-silences-update-silences",
+    "name": "Update Silences",
+    "description": "Update Silences Updates existing silences for an account. PUT /client/v4/accounts/{account_id}/alerting/v3/silences",
+    "context": "PUT /client/v4/accounts/{account_id}/alerting/v3/silences\nUpdates existing silences for an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "notification-webhooks-create-a-webhook",
+    "name": "Create a webhook",
+    "description": "Create a webhook Creates a new webhook destination. POST /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks",
+    "context": "POST /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks\nCreates a new webhook destination.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "notification-webhooks-delete-a-webhook",
+    "name": "Delete a webhook",
+    "description": "Delete a webhook Delete a configured webhook destination. DELETE /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}\nDelete a configured webhook destination.\nRequired: webhook_id (path); account_id (path)"
+  },
+  {
+    "id": "notification-webhooks-get-a-webhook",
+    "name": "Get a webhook",
+    "description": "Get a webhook Get details for a single webhooks destination. GET /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}\nGet details for a single webhooks destination.\nRequired: account_id (path); webhook_id (path)"
+  },
+  {
+    "id": "notification-webhooks-list-webhooks",
+    "name": "List webhooks",
+    "description": "List webhooks Gets a list of all configured webhook destinations. GET /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks",
+    "context": "GET /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks\nGets a list of all configured webhook destinations.\nRequired: account_id (path)"
+  },
+  {
+    "id": "notification-webhooks-update-a-webhook",
+    "name": "Update a webhook",
+    "description": "Update a webhook Update a webhook destination. PUT /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}\nUpdate a webhook destination.\nRequired: webhook_id (path); account_id (path); body (body)"
+  }
+]

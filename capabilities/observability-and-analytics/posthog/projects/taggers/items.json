@@ -1,0 +1,44 @@
+[
+  {
+    "id": "taggers_create",
+    "name": "taggers_create",
+    "description": "taggers_create POST /api/projects/{project_id}/taggers/",
+    "context": "POST /api/projects/{project_id}/taggers/\ntaggers_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "taggers_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/taggers/{id}/",
+    "context": "DELETE /api/projects/{project_id}/taggers/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A UUID string identifying this tagger.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "taggers_list",
+    "name": "taggers_list",
+    "description": "taggers_list GET /api/projects/{project_id}/taggers/",
+    "context": "GET /api/projects/{project_id}/taggers/\ntaggers_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: enabled (query) — Filter by enabled status; id__in (query) — Multiple values may be separated by commas.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Ordering * `created_at` - Created At * `-created_at` - Created At (descending) * `updated_at` - Updated At * `-updated_at` - Updated At (descending) * `name` - Name * `-name` - Name (descending); search (query) — Search in name or description"
+  },
+  {
+    "id": "taggers_partial_update",
+    "name": "taggers_partial_update",
+    "description": "taggers_partial_update PATCH /api/projects/{project_id}/taggers/{id}/",
+    "context": "PATCH /api/projects/{project_id}/taggers/{id}/\ntaggers_partial_update\nRequired: id (path) — A UUID string identifying this tagger.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "taggers_retrieve",
+    "name": "taggers_retrieve",
+    "description": "taggers_retrieve GET /api/projects/{project_id}/taggers/{id}/",
+    "context": "GET /api/projects/{project_id}/taggers/{id}/\ntaggers_retrieve\nRequired: id (path) — A UUID string identifying this tagger.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "taggers_test_hog_create",
+    "name": "Test Hog tagger code against sample events without saving.",
+    "description": "Test Hog tagger code against sample events without saving. POST /api/projects/{project_id}/taggers/test_hog/",
+    "context": "POST /api/projects/{project_id}/taggers/test_hog/\nTest Hog tagger code against sample events without saving.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "taggers_update",
+    "name": "taggers_update",
+    "description": "taggers_update PUT /api/projects/{project_id}/taggers/{id}/",
+    "context": "PUT /api/projects/{project_id}/taggers/{id}/\ntaggers_update\nRequired: id (path) — A UUID string identifying this tagger.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

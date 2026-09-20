@@ -1,0 +1,44 @@
+[
+  {
+    "id": "proxy_records_create",
+    "name": "Create a new managed reverse proxy",
+    "description": "Create a new managed reverse proxy Create a new managed reverse proxy. POST /api/organizations/{organization_id}/proxy_records/",
+    "context": "POST /api/organizations/{organization_id}/proxy_records/\nCreate a new managed reverse proxy. Provide the domain you want to proxy through. The response includes the CNAME target you need to add as a DNS record. Once the CNAME is configured, the proxy will be automatically verified and provisioned.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "proxy_records_destroy",
+    "name": "Delete a reverse proxy",
+    "description": "Delete a reverse proxy Delete a reverse proxy. DELETE /api/organizations/{organization_id}/proxy_records/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/proxy_records/{id}/\nDelete a reverse proxy. For proxies in 'waiting', 'erroring', or 'timed_out' status, the record is deleted immediately. For active proxies, a deletion workflow is started to clean up the provisioned infrastructure.\nRequired: id (path) — A UUID string identifying this proxy record.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "proxy_records_diagnose_create",
+    "name": "Run a deep diagnostic on a reverse proxy",
+    "description": "Run a deep diagnostic on a reverse proxy Run a deep diagnostic on a reverse proxy. POST /api/organizations/{organization_id}/proxy_records/{id}/diagnose/",
+    "context": "POST /api/organizations/{organization_id}/proxy_records/{id}/diagnose/\nRun a deep diagnostic on a reverse proxy. Inspects DNS CNAME alignment, the certificate provider's hostname state, CAA records walked up the customer's DNS tree, HTTP-01 challenge reachability, a live event probe, and certificate expiry. Returns a structured report with each check's status and concrete remediation steps (e.g. exact DNS records to add). Use this to debug why a proxy is stuck or erroring.\nRequired: id (path) — A UUID string identifying this proxy record.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "proxy_records_list",
+    "name": "List all reverse proxies configured for the organization",
+    "description": "List all reverse proxies configured for the organization List all reverse proxies configured for the organization. GET /api/organizations/{organization_id}/proxy_records/",
+    "context": "GET /api/organizations/{organization_id}/proxy_records/\nList all reverse proxies configured for the organization. Returns proxy records along with the maximum number allowed by the current plan.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "proxy_records_partial_update",
+    "name": "Set or clear the HTTPS redirect for requests to the managed proxy domain root.",
+    "description": "Set or clear the HTTPS redirect for requests to the managed proxy domain root. PATCH /api/organizations/{organization_id}/proxy_records/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/proxy_records/{id}/\nSet or clear the HTTPS redirect for requests to the managed proxy domain root.\nRequired: id (path) — A UUID string identifying this proxy record.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "proxy_records_retrieve",
+    "name": "Get details of a specific reverse proxy by ID",
+    "description": "Get details of a specific reverse proxy by ID Get details of a specific reverse proxy by ID. GET /api/organizations/{organization_id}/proxy_records/{id}/",
+    "context": "GET /api/organizations/{organization_id}/proxy_records/{id}/\nGet details of a specific reverse proxy by ID. Returns the full configuration including domain, CNAME target, and current provisioning status.\nRequired: id (path) — A UUID string identifying this proxy record.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "proxy_records_retry_create",
+    "name": "Retry provisioning a failed reverse proxy",
+    "description": "Retry provisioning a failed reverse proxy Retry provisioning a failed reverse proxy. POST /api/organizations/{organization_id}/proxy_records/{id}/retry/",
+    "context": "POST /api/organizations/{organization_id}/proxy_records/{id}/retry/\nRetry provisioning a failed reverse proxy. Only available for proxies in 'erroring' or 'timed_out' status. Resets the proxy to 'waiting' status and restarts the provisioning workflow.\nRequired: id (path) — A UUID string identifying this proxy record.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  }
+]

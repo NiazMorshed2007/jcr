@@ -1,0 +1,20 @@
+[
+  {
+    "id": "createWorkflowVersion",
+    "name": "Deploy a workflow version",
+    "description": "Deploy a workflow version Creates and deploys a new version of a workflow. POST /v1/workflowversions",
+    "context": "POST /v1/workflowversions\nCreates and deploys a new version of a workflow.\nRequired: body (body)"
+  },
+  {
+    "id": "getWorkflowVersion",
+    "name": "Retrieve workflow version",
+    "description": "Retrieve workflow version Retrieve the specific workflow service version with the provided ID. GET /v1/workflowversions/{workflowVersionId}",
+    "context": "GET /v1/workflowversions/{workflowVersionId}\nRetrieve the specific workflow service version with the provided ID.\nRequired: workflowVersionId (path) — The ID of the workflow version"
+  },
+  {
+    "id": "listWorkflowVersions",
+    "name": "List workflow versions",
+    "description": "List workflow versions List known versions of the workflow service with the provided ID. GET /v1/workflowversions",
+    "context": "GET /v1/workflowversions\nList known versions of the workflow service with the provided ID.\nOptional: ownerId (query) — The ID of the workspaces to return resources for; workflowID (query) — The IDs of the workflows to return resources for; workflowVersionId (query) — The IDs of the workflow versions to return resources for; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  }
+]

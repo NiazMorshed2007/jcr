@@ -1,0 +1,122 @@
+[
+  {
+    "id": "share-create",
+    "name": "Create a new share",
+    "description": "Create a new share Creates a new resource share for sharing Cloudflare resources with other accounts or organizations. POST /client/v4/accounts/{account_id}/shares",
+    "context": "POST /client/v4/accounts/{account_id}/shares\nCreates a new resource share for sharing Cloudflare resources with other accounts or organizations.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "share-delete",
+    "name": "Delete a share",
+    "description": "Delete a share Deletion is not immediate, an updated share object with a new status will be returned. DELETE /client/v4/accounts/{account_id}/shares/{share_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/shares/{share_id}\nDeletion is not immediate, an updated share object with a new status will be returned.\nRequired: account_id (path); share_id (path)"
+  },
+  {
+    "id": "share-excluded-recipient-create",
+    "name": "Create a new share excluded recipient",
+    "description": "Create a new share excluded recipient Excludes a single account from an organization-targeted share. POST /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients",
+    "context": "POST /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients\nExcludes a single account from an organization-targeted share. The share continues to target the entire organization, but the excluded account is skipped during reconciliation.\nRequired: account_id (path); share_id (path); body (body)"
+  },
+  {
+    "id": "share-excluded-recipient-delete",
+    "name": "Delete a share excluded recipient",
+    "description": "Delete a share excluded recipient Removes a single account from a share's excluded-recipient list. DELETE /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients/{excluded_recipient_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients/{excluded_recipient_id}\nRemoves a single account from a share's excluded-recipient list. The account becomes eligible to receive the share again on the next reconciliation cycle.\nRequired: account_id (path); share_id (path); excluded_recipient_id (path)"
+  },
+  {
+    "id": "share-excluded-recipients-get-by-id",
+    "name": "Get share excluded recipient by ID",
+    "description": "Get share excluded recipient by ID Gets a single excluded recipient of a share by its identifier tag. GET /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients/{excluded_recipient_id}",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients/{excluded_recipient_id}\nGets a single excluded recipient of a share by its identifier tag.\nRequired: account_id (path); share_id (path); excluded_recipient_id (path)"
+  },
+  {
+    "id": "share-excluded-recipients-list",
+    "name": "List share excluded recipients by share ID",
+    "description": "List share excluded recipients by share ID Lists the accounts excluded from an organization-targeted share. GET /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients\nLists the accounts excluded from an organization-targeted share. Only valid for shares with `target_type=organization`.\nRequired: account_id (path); share_id (path)\nOptional: page (query) — Page number. Defaults to `1` when `per_page` is supplied without `page`. May be omitted entirely along with `per_page` to receive a non-paginated response.; per_page (query) — Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response."
+  },
+  {
+    "id": "share-excluded-recipients-update",
+    "name": "Update a share's excluded recipients",
+    "description": "Update a share's excluded recipients Reconciles a share's excluded recipients to match the given list. PUT /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients",
+    "context": "PUT /client/v4/accounts/{account_id}/shares/{share_id}/excluded-recipients\nReconciles a share's excluded recipients to match the given list. Only valid for shares with `target_type=organization`.\nRequired: account_id (path); share_id (path); body (body)"
+  },
+  {
+    "id": "share-recipient-create",
+    "name": "Create a new share recipient",
+    "description": "Create a new share recipient Adds a single recipient to an account-targeted resource share, granting them access to the shared resources. POST /client/v4/accounts/{account_id}/shares/{share_id}/recipients",
+    "context": "POST /client/v4/accounts/{account_id}/shares/{share_id}/recipients\nAdds a single recipient to an account-targeted resource share, granting them access to the shared resources. The recipient account must belong to the same organization as the share owner. To replace the entire recipient list in one call, use `PUT /accounts/{account_id}/shares/{share_id}/recipients` instead.\nRequired: account_id (path); share_id (path); body (body)"
+  },
+  {
+    "id": "share-recipient-delete",
+    "name": "Delete a share recipient",
+    "description": "Delete a share recipient Performs a **soft delete**: sets the recipient's `desired_association_status` to `disassociated`, which signals the background reconciliation workflow (Temporal) to remove the shared resources from the recipient account. DELETE /client/v4/accounts/{account_id}/shares/{share_id}/recipients/{rec…",
+    "context": "DELETE /client/v4/accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}\nPerforms a **soft delete**: sets the recipient's `desired_association_status` to `disassociated`, which signals the background reconciliation workflow (Temporal) to remove the shared resources from the recipient account. The recipient record remains in the database for audit purposes and is still returned by `GET /accounts/{account_id}/shares/{share_id}/recipients` with its updated status. Resource access is not fully removed until the workflow completes and `current_association_status` transitions to `disassociated`. The recipient record itself is never physically deleted.\nRequired: account_id (path); share_id (path); recipient_id (path)"
+  },
+  {
+    "id": "share-recipients-get-by-id",
+    "name": "Get share recipient by ID",
+    "description": "Get share recipient by ID Get share recipient by ID. GET /client/v4/accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}\nGet share recipient by ID.\nRequired: account_id (path); share_id (path); recipient_id (path)\nOptional: include_resources (query) — Include resources in the response."
+  },
+  {
+    "id": "share-recipients-list",
+    "name": "List share recipients by share ID",
+    "description": "List share recipients by share ID List share recipients by share ID. GET /client/v4/accounts/{account_id}/shares/{share_id}/recipients",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}/recipients\nList share recipients by share ID. Returns **all** recipients regardless of their `association_status` (associating, associated, disassociating, disassociated). Callers that want only \"active\" recipients must filter client-side on the `association_status` field.\nRequired: account_id (path); share_id (path)\nOptional: include_resources (query) — Include resources in the response.; page (query) — Page number. Defaults to `1` when `per_page` is supplied without `page`. May be omitted entirely along with `per_page` to receive a non-paginated response.; per_page (query) — Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response."
+  },
+  {
+    "id": "share-recipients-update",
+    "name": "Update a share's recipients",
+    "description": "Update a share's recipients Replaces the full recipient list for an account-targeted share. PUT /client/v4/accounts/{account_id}/shares/{share_id}/recipients",
+    "context": "PUT /client/v4/accounts/{account_id}/shares/{share_id}/recipients\nReplaces the full recipient list for an account-targeted share. The server computes the diff between the current and desired recipients: new accounts are added, accounts no longer in the list are marked for disassociation, and unchanged accounts are left as-is. Returns an error if the share targets an organization (`target_type=organization`); org-targeted shares derive their recipients dynamically from org membership and cannot be modified through this endpoint.\nRequired: account_id (path); share_id (path); body (body)"
+  },
+  {
+    "id": "share-resource-create",
+    "name": "Create a new share resource",
+    "description": "Create a new share resource Adds a resource to an existing share, making it available to share recipients. POST /client/v4/accounts/{account_id}/shares/{share_id}/resources",
+    "context": "POST /client/v4/accounts/{account_id}/shares/{share_id}/resources\nAdds a resource to an existing share, making it available to share recipients.\nRequired: account_id (path); share_id (path); body (body)"
+  },
+  {
+    "id": "share-resource-delete",
+    "name": "Delete a share resource",
+    "description": "Delete a share resource Deletion is not immediate, an updated share resource object with a new status will be returned. DELETE /client/v4/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}\nDeletion is not immediate, an updated share resource object with a new status will be returned.\nRequired: account_id (path); share_id (path); share_resource_id (path)"
+  },
+  {
+    "id": "share-resource-update",
+    "name": "Update a share resource",
+    "description": "Update a share resource Update is not immediate, an updated share resource object with a new status will be returned. PUT /client/v4/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}\nUpdate is not immediate, an updated share resource object with a new status will be returned.\nRequired: account_id (path); share_id (path); share_resource_id (path); body (body)"
+  },
+  {
+    "id": "share-resources-get-by-id",
+    "name": "Get share resource by ID",
+    "description": "Get share resource by ID Get share resource by ID. GET /client/v4/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}/resources/{share_resource_id}\nGet share resource by ID.\nRequired: account_id (path); share_id (path); share_resource_id (path)"
+  },
+  {
+    "id": "share-resources-list",
+    "name": "List share resources by share ID",
+    "description": "List share resources by share ID List share resources by share ID. GET /client/v4/accounts/{account_id}/shares/{share_id}/resources",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}/resources\nList share resources by share ID.\nRequired: account_id (path); share_id (path)\nOptional: status (query) — Filter share resources by status.; resource_type (query) — Filter share resources by resource_type.; page (query) — Page number. Defaults to `1` when `per_page` is supplied without `page`. May be omitted entirely along with `per_page` to receive a non-paginated response.; per_page (query) — Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response."
+  },
+  {
+    "id": "share-update",
+    "name": "Update a share",
+    "description": "Update a share Updates the share's display name and tags. PUT /client/v4/accounts/{account_id}/shares/{share_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/shares/{share_id}\nUpdates the share's display name and tags. This endpoint does **not** modify recipients or resources — those are managed via dedicated subresource endpoints: - **Recipients**: Use `POST /accounts/{account_id}/shares/{share_id}/recipients` to add a single recipient, `PUT /accounts/{account_id}/shares/{share_id}/recipients` to replace the full recipient list, or `DELETE /accounts/{account_id}/shares/{share_id}/recipients/{recipient_id}` to remove a recipient. - **Resources**: Use the share's resource subresource endpoints. Updating is not immediate; an updated share object with a new status will be returned.\nRequired: account_id (path); share_id (path); body (body)"
+  },
+  {
+    "id": "shares-get-by-id",
+    "name": "Get account share by ID",
+    "description": "Get account share by ID Fetches share by ID. GET /client/v4/accounts/{account_id}/shares/{share_id}",
+    "context": "GET /client/v4/accounts/{account_id}/shares/{share_id}\nFetches share by ID.\nRequired: account_id (path); share_id (path)\nOptional: include_resources (query) — Include resources in the response.; include_recipient_counts (query) — Include recipient counts in the response."
+  },
+  {
+    "id": "shares-list",
+    "name": "List account shares",
+    "description": "List account shares Lists all account shares. GET /client/v4/accounts/{account_id}/shares",
+    "context": "GET /client/v4/accounts/{account_id}/shares\nLists all account shares.\nRequired: account_id (path)\nOptional: status (query) — Filter shares by status.; kind (query) — Filter shares by kind.; target_type (query) — Filter shares by target_type.; resource_types (query) — Filter share resources by resource_types.; order (query) — Order shares by values in the given field.; direction (query) — Direction to sort objects.; page (query) — Page number. Defaults to `1` when `per_page` is supplied without `page`. May be omitted entirely along with `per_page` to receive a non-paginated response.; per_page (query) — Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.; include_resources (query) — Include resources in the response.; include_recipient_counts (query) — Include recipient counts in the response.; tag (query) — Filter shares by tag. Each value is either `key=value` (matches shares whose tags contain that key/value pair) or `key` alone (matches shares that have any value for that key). May be repeated; multiple `tag` parameters are ANDed together. Maximum 20 `tag` parameters per request."
+  }
+]

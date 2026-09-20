@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createOrganizationMonitor",
+    "name": "Create a Monitor",
+    "description": "Create a Monitor Create a new monitor. POST /api/0/organizations/{organization_id_or_slug}/monitors/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/monitors/\nCreate a new monitor.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationMonitor",
+    "name": "Delete a Monitor or Monitor Environments",
+    "description": "Delete a Monitor or Monitor Environments Delete a monitor or monitor environments. DELETE /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/\nDelete a monitor or monitor environments.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; monitor_id_or_slug (path) — The ID or slug of the monitor.\nOptional: environment (query) — The name of environments to filter by."
+  },
+  {
+    "id": "getOrganizationMonitor",
+    "name": "Retrieve a Monitor",
+    "description": "Retrieve a Monitor Retrieves details for a monitor. GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/\nRetrieves details for a monitor.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; monitor_id_or_slug (path) — The ID or slug of the monitor.\nOptional: environment (query) — The name of environments to filter by."
+  },
+  {
+    "id": "listOrganizationMonitorCheckins",
+    "name": "Retrieve Check-Ins for a Monitor",
+    "description": "Retrieve Check-Ins for a Monitor Retrieve a list of check-ins for a monitor GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/checkins/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/checkins/\nRetrieve a list of check-ins for a monitor\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; monitor_id_or_slug (path) — The ID or slug of the monitor.\nOptional: cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "listOrganizationMonitors",
+    "name": "Retrieve Monitors for an Organization",
+    "description": "Retrieve Monitors for an Organization Lists monitors, including nested monitor environments. GET /api/0/organizations/{organization_id_or_slug}/monitors/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/monitors/\nLists monitors, including nested monitor environments. May be filtered to a project or environment.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; environment (query) — The name of environments to filter by.; owner (query) — The owner of the monitor, in the format `user:id` or `team:id`. May be specified multiple times.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "updateOrganizationMonitor",
+    "name": "Update a Monitor",
+    "description": "Update a Monitor Update a monitor. PUT /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/\nUpdate a monitor.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; monitor_id_or_slug (path) — The ID or slug of the monitor.; body (body)"
+  }
+]

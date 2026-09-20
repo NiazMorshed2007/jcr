@@ -1,0 +1,86 @@
+[
+  {
+    "id": "file_system_count_by_path_create",
+    "name": "Get count of all files in a folder.",
+    "description": "Get count of all files in a folder. POST /api/projects/{project_id}/file_system/count_by_path/",
+    "context": "POST /api/projects/{project_id}/file_system/count_by_path/\nGet count of all files in a folder.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_count_create",
+    "name": "Get count of all files in a folder.",
+    "description": "Get count of all files in a folder. POST /api/projects/{project_id}/file_system/{id}/count/",
+    "context": "POST /api/projects/{project_id}/file_system/{id}/count/\nGet count of all files in a folder.\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_create",
+    "name": "file_system_create",
+    "description": "file_system_create POST /api/projects/{project_id}/file_system/",
+    "context": "POST /api/projects/{project_id}/file_system/\nfile_system_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_destroy",
+    "name": "file_system_destroy",
+    "description": "file_system_destroy DELETE /api/projects/{project_id}/file_system/{id}/",
+    "context": "DELETE /api/projects/{project_id}/file_system/{id}/\nfile_system_destroy\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_system_link_create",
+    "name": "file_system_link_create",
+    "description": "file_system_link_create POST /api/projects/{project_id}/file_system/{id}/link/",
+    "context": "POST /api/projects/{project_id}/file_system/{id}/link/\nfile_system_link_create\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_list",
+    "name": "file_system_list",
+    "description": "file_system_list GET /api/projects/{project_id}/file_system/",
+    "context": "GET /api/projects/{project_id}/file_system/\nfile_system_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "file_system_log_view_create",
+    "name": "file_system_log_view_create",
+    "description": "file_system_log_view_create POST /api/projects/{project_id}/file_system/log_view/",
+    "context": "POST /api/projects/{project_id}/file_system/log_view/\nfile_system_log_view_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_log_view_retrieve",
+    "name": "file_system_log_view_retrieve",
+    "description": "file_system_log_view_retrieve GET /api/projects/{project_id}/file_system/log_view/",
+    "context": "GET /api/projects/{project_id}/file_system/log_view/\nfile_system_log_view_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_system_move_create",
+    "name": "file_system_move_create",
+    "description": "file_system_move_create POST /api/projects/{project_id}/file_system/{id}/move/",
+    "context": "POST /api/projects/{project_id}/file_system/{id}/move/\nfile_system_move_create\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_partial_update",
+    "name": "file_system_partial_update",
+    "description": "file_system_partial_update PATCH /api/projects/{project_id}/file_system/{id}/",
+    "context": "PATCH /api/projects/{project_id}/file_system/{id}/\nfile_system_partial_update\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "file_system_retrieve",
+    "name": "file_system_retrieve",
+    "description": "file_system_retrieve GET /api/projects/{project_id}/file_system/{id}/",
+    "context": "GET /api/projects/{project_id}/file_system/{id}/\nfile_system_retrieve\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_system_undo_delete_create",
+    "name": "file_system_undo_delete_create",
+    "description": "file_system_undo_delete_create POST /api/projects/{project_id}/file_system/undo_delete/",
+    "context": "POST /api/projects/{project_id}/file_system/undo_delete/\nfile_system_undo_delete_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_system_unfiled_retrieve",
+    "name": "file_system_unfiled_retrieve",
+    "description": "file_system_unfiled_retrieve GET /api/projects/{project_id}/file_system/unfiled/",
+    "context": "GET /api/projects/{project_id}/file_system/unfiled/\nfile_system_unfiled_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_system_update",
+    "name": "file_system_update",
+    "description": "file_system_update PUT /api/projects/{project_id}/file_system/{id}/",
+    "context": "PUT /api/projects/{project_id}/file_system/{id}/\nfile_system_update\nRequired: id (path) — A UUID string identifying this file system.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

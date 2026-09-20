@@ -1,0 +1,230 @@
+[
+  {
+    "id": "r2-add-custom-domain",
+    "name": "Attach Custom Domain To Bucket",
+    "description": "Attach Custom Domain To Bucket Register a new custom domain for an existing R2 bucket. POST /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom",
+    "context": "POST /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom\nRegister a new custom domain for an existing R2 bucket.\nRequired: account_id (path); bucket_name (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-create-bucket",
+    "name": "Create Bucket",
+    "description": "Create Bucket Creates a new R2 bucket. POST /client/v4/accounts/{account_id}/r2/buckets",
+    "context": "POST /client/v4/accounts/{account_id}/r2/buckets\nCreates a new R2 bucket.\nRequired: account_id (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-create-bucket-by-name",
+    "name": "Create Bucket (by name)",
+    "description": "Create Bucket (by name) Creates a new R2 bucket using the name from the URL path. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}\nCreates a new R2 bucket using the name from the URL path. Similar to `r2-create-bucket` (POST), but the bucket name comes from the path and the optional storage class is supplied via the `cf-r2-storage-class` header. There is no request body. Unlike the POST variant, this endpoint does not accept a location hint — the bucket is placed in the R2 region for the caller's edge colo. Use the POST variant if you need to set a `locationHint`.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; cf-r2-storage-class (header)"
+  },
+  {
+    "id": "r2-create-storage-class-migration-job",
+    "name": "Create a Storage Class Migration Job",
+    "description": "Create a Storage Class Migration Job Creates a storage-class migration background job for an R2 bucket. POST /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/storage-class-migration-jobs",
+    "context": "POST /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/storage-class-migration-jobs\nCreates a storage-class migration background job for an R2 bucket.\nRequired: account_id (path); bucket_name (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-create-temp-access-credentials",
+    "name": "Create Temporary Access Credentials",
+    "description": "Create Temporary Access Credentials Creates temporary access credentials on a bucket that can be optionally scoped to prefixes or objects. POST /client/v4/accounts/{account_id}/r2/temp-access-credentials",
+    "context": "POST /client/v4/accounts/{account_id}/r2/temp-access-credentials\nCreates temporary access credentials on a bucket that can be optionally scoped to prefixes or objects.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "r2-delete-bucket",
+    "name": "Delete Bucket",
+    "description": "Delete Bucket Deletes an existing R2 bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}\nDeletes an existing R2 bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-delete-bucket-cors-policy",
+    "name": "Delete Bucket CORS Policy",
+    "description": "Delete Bucket CORS Policy Delete the CORS policy for a bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/cors",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/cors\nDelete the CORS policy for a bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-delete-bucket-lock-configuration",
+    "name": "Delete Bucket Lock Rules",
+    "description": "Delete Bucket Lock Rules Delete all lock rules for a bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lock",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lock\nDelete all lock rules for a bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-delete-bucket-sippy-config",
+    "name": "Disable Sippy",
+    "description": "Disable Sippy Disables Sippy on this bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/sippy",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/sippy\nDisables Sippy on this bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-delete-custom-domain",
+    "name": "Remove Custom Domain From Bucket",
+    "description": "Remove Custom Domain From Bucket Remove custom domain registration from an existing R2 bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}\nRemove custom domain registration from an existing R2 bucket.\nRequired: bucket_name (path); account_id (path); domain (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-delete-object",
+    "name": "Delete Object",
+    "description": "Delete Object Deletes an object from an R2 bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects/{object_key}",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects/{object_key}\nDeletes an object from an R2 bucket. For most workloads, we recommend using R2's [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.\nRequired: account_id (path); bucket_name (path); object_key (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-delete-objects",
+    "name": "Delete Objects or Empty a Bucket",
+    "description": "Delete Objects or Empty a Bucket Deletes objects from an R2 bucket. DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects",
+    "context": "DELETE /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects\nDeletes objects from an R2 bucket. Three modes are supported: 1. **Delete by list** (default): Provide a JSON array of object keys in the request body. All listed objects are deleted; per-key errors are reported in the response. 2. **Delete by prefix**: Provide a non-empty `prefix` query parameter and no request body to delete every object whose key begins with that prefix. 3. **Empty bucket**: Provide the `prefix` query parameter with an empty value (`?prefix=`) and no request body to delete all objects in the bucket. Prefix and empty-bucket requests return a job descriptor. Small jobs can finish synchronously and return `COMPLETED`; larger jobs continue in the background. Poll the returned `id` with the Get Bucket Job endpoint. Objects uploaded after a background job starts are not deleted by that job. Abort active multipart uploads before submitting the request; a synchronously completed job does not abort them. Avoid writing objects or starting multipart uploads while a bucket-emptying job is in progress. Each repeated or concurrent request creates a distinct job. The number of active jobs is limited per bucket; wait for an existing job to finish before retrying a request rejected with HTTP 429. A bucket cannot be emptied while event notifications are configured. Remove the event notification rules and retry requests rejected with HTTP 409 / error code 10034. To protect a bucket with R2 Data Catalog enabled, send the `cf-r2-data-catalog-check` header; a conflict is returned with HTTP 409 / error code 10081. For most workloads, we recommend using R2's [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; prefix (query); cf-r2-data-catalog-check (header) — Set this header to reject the operation when R2 Data Catalog is enabled for the bucket.; body (body) — Required for \"delete by list\" mode (when `prefix` query parameter is omitted). A JSON array of object keys to delete. Ignored when `prefix` is provided."
+  },
+  {
+    "id": "r2-edit-custom-domain-settings",
+    "name": "Configure Custom Domain Settings",
+    "description": "Configure Custom Domain Settings Edit the configuration for a custom domain on an existing R2 bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}\nEdit the configuration for a custom domain on an existing R2 bucket.\nRequired: account_id (path); bucket_name (path); domain (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-account-level-metrics",
+    "name": "Get Account-Level Metrics",
+    "description": "Get Account-Level Metrics Get Storage/Object Count Metrics across all buckets in your account. GET /client/v4/accounts/{account_id}/r2/metrics",
+    "context": "GET /client/v4/accounts/{account_id}/r2/metrics\nGet Storage/Object Count Metrics across all buckets in your account. Note that Account-Level Metrics may not immediately reflect the latest data.\nRequired: account_id (path)"
+  },
+  {
+    "id": "r2-get-bucket",
+    "name": "Get Bucket",
+    "description": "Get Bucket Gets properties of an existing R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}\nGets properties of an existing R2 bucket.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-bucket-cors-policy",
+    "name": "Get Bucket CORS Policy",
+    "description": "Get Bucket CORS Policy Get the CORS policy for a bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/cors",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/cors\nGet the CORS policy for a bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-bucket-job",
+    "name": "Get Bucket Job",
+    "description": "Get Bucket Job Gets the current status of a background job for an R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/jobs/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/jobs/{job_id}\nGets the current status of a background job for an R2 bucket. Poll this endpoint with the job identifier returned when the operation was submitted until the status is `COMPLETED`, `FAILED`, or `CANCELLED`.\nRequired: account_id (path); bucket_name (path); job_id (path) — Identifier returned when the background job was submitted.\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-bucket-lifecycle-configuration",
+    "name": "Get Object Lifecycle Rules",
+    "description": "Get Object Lifecycle Rules Get object lifecycle rules for a bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle\nGet object lifecycle rules for a bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-bucket-local-uploads-configuration",
+    "name": "Get Local Uploads Configuration",
+    "description": "Get Local Uploads Configuration Get the local uploads configuration for a bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/local-uploads",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/local-uploads\nGet the local uploads configuration for a bucket. When enabled, object's data is written to the nearest region first, then asynchronously replicated to the bucket's primary region.\nRequired: bucket_name (path); account_id (path)"
+  },
+  {
+    "id": "r2-get-bucket-lock-configuration",
+    "name": "Get Bucket Lock Rules",
+    "description": "Get Bucket Lock Rules Get lock rules for a bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lock",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lock\nGet lock rules for a bucket.\nRequired: bucket_name (path); account_id (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-bucket-public-policy",
+    "name": "Get r2.dev Domain of Bucket",
+    "description": "Get r2.dev Domain of Bucket Gets state of public access over the bucket's R2-managed (r2.dev) domain. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed\nGets state of public access over the bucket's R2-managed (r2.dev) domain.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-bucket-sippy-config",
+    "name": "Get Sippy Configuration",
+    "description": "Get Sippy Configuration Gets configuration for Sippy for an existing R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/sippy",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/sippy\nGets configuration for Sippy for an existing R2 bucket.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-custom-domain-settings",
+    "name": "Get Custom Domain Settings",
+    "description": "Get Custom Domain Settings Get the configuration for a custom domain on an existing R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}\nGet the configuration for a custom domain on an existing R2 bucket.\nRequired: account_id (path); bucket_name (path); domain (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-get-object",
+    "name": "Get Object",
+    "description": "Get Object Retrieves an object from an R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects/{object_key}",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects/{object_key}\nRetrieves an object from an R2 bucket. Returns the object body along with metadata headers. For most workloads, we recommend using R2's [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.\nRequired: account_id (path); bucket_name (path); object_key (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; If-None-Match (header); If-Modified-Since (header)"
+  },
+  {
+    "id": "r2-get-storage-class-migration-job",
+    "name": "Get Storage Class Migration Job",
+    "description": "Get Storage Class Migration Job Gets the current status of a storage-class migration job. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/storage-class-migration-jobs/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/storage-class-migration-jobs/{job_id}\nGets the current status of a storage-class migration job.\nRequired: account_id (path); bucket_name (path); job_id (path) — Identifier returned when the migration job was submitted.\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-list-bucket-jobs",
+    "name": "List Bucket Jobs",
+    "description": "List Bucket Jobs Lists background jobs for an R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/jobs",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/jobs\nLists background jobs for an R2 bucket. Use this endpoint to poll jobs returned by asynchronous operations such as deleting objects by prefix or emptying a bucket.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; jobType (query) — Restricts results to jobs of the specified type.; status (query) — Restricts results to jobs with the specified status. `jobType` is required when this parameter is provided.; maxKeys (query) — Maximum number of jobs to return.; continuationToken (query) — Pagination token received as `nextContinuationToken` in the previous response."
+  },
+  {
+    "id": "r2-list-buckets",
+    "name": "List Buckets",
+    "description": "List Buckets Lists all R2 buckets on your account. GET /client/v4/accounts/{account_id}/r2/buckets",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets\nLists all R2 buckets on your account.\nRequired: account_id (path)\nOptional: name_contains (query); start_after (query); per_page (query); order (query); direction (query); cursor (query); cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-list-custom-domains",
+    "name": "List Custom Domains of Bucket",
+    "description": "List Custom Domains of Bucket Gets a list of all custom domains registered with an existing R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom\nGets a list of all custom domains registered with an existing R2 bucket.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-list-objects",
+    "name": "List Objects",
+    "description": "List Objects Lists objects in an R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects\nLists objects in an R2 bucket. Returns object metadata including key, size, etag, last modified date, HTTP metadata, and custom metadata. For most workloads, we recommend using R2's [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; per_page (query); prefix (query); delimiter (query); cursor (query); start_after (query)"
+  },
+  {
+    "id": "r2-list-storage-class-migration-jobs",
+    "name": "List Storage Class Migration Jobs",
+    "description": "List Storage Class Migration Jobs Lists storage-class migration jobs for an R2 bucket. GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/storage-class-migration-jobs",
+    "context": "GET /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/storage-class-migration-jobs\nLists storage-class migration jobs for an R2 bucket.\nRequired: account_id (path); bucket_name (path)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; status (query) — Restricts results to jobs with the specified status.; maxKeys (query) — Maximum number of jobs to return.; continuationToken (query) — Pagination token received as `nextContinuationToken` in the previous response."
+  },
+  {
+    "id": "r2-patch-bucket",
+    "name": "Patch Bucket",
+    "description": "Patch Bucket Updates properties of an existing R2 bucket. PATCH /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}",
+    "context": "PATCH /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}\nUpdates properties of an existing R2 bucket.\nRequired: account_id (path); bucket_name (path); cf-r2-storage-class (header)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-bucket-cors-policy",
+    "name": "Put Bucket CORS Policy",
+    "description": "Put Bucket CORS Policy Set the CORS policy for a bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/cors",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/cors\nSet the CORS policy for a bucket.\nRequired: bucket_name (path); account_id (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-bucket-lifecycle-configuration",
+    "name": "Put Object Lifecycle Rules",
+    "description": "Put Object Lifecycle Rules Set the object lifecycle rules for a bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle\nSet the object lifecycle rules for a bucket.\nRequired: bucket_name (path); account_id (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-bucket-local-uploads-configuration",
+    "name": "Put Local Uploads Configuration",
+    "description": "Put Local Uploads Configuration Set the local uploads configuration for a bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/local-uploads",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/local-uploads\nSet the local uploads configuration for a bucket. When enabled, object's data is written to the nearest region first, then asynchronously replicated to the bucket's primary region.\nRequired: bucket_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "r2-put-bucket-lock-configuration",
+    "name": "Put Bucket Lock Rules",
+    "description": "Put Bucket Lock Rules Set lock rules for a bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lock",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/lock\nSet lock rules for a bucket.\nRequired: bucket_name (path); account_id (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-bucket-public-policy",
+    "name": "Update r2.dev Domain of Bucket",
+    "description": "Update r2.dev Domain of Bucket Updates state of public access over the bucket's R2-managed (r2.dev) domain. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed\nUpdates state of public access over the bucket's R2-managed (r2.dev) domain.\nRequired: account_id (path); bucket_name (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-bucket-sippy-config",
+    "name": "Enable Sippy",
+    "description": "Enable Sippy Sets configuration for Sippy for an existing R2 bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/sippy",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/sippy\nSets configuration for Sippy for an existing R2 bucket.\nRequired: account_id (path); bucket_name (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored."
+  },
+  {
+    "id": "r2-put-object",
+    "name": "Upload Object",
+    "description": "Upload Object Uploads an object to an R2 bucket. PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects/{object_key}",
+    "context": "PUT /client/v4/accounts/{account_id}/r2/buckets/{bucket_name}/objects/{object_key}\nUploads an object to an R2 bucket. The object body is provided as the request body. Returns metadata about the uploaded object. The maximum upload size for this endpoint is 300 MB. For most workloads, we recommend using R2's [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.\nRequired: account_id (path); bucket_name (path); object_key (path); body (body)\nOptional: cf-r2-jurisdiction (header) — Jurisdiction where objects in this bucket are guaranteed to be stored.; Content-Type (header); Content-Length (header); cf-r2-storage-class (header) — Storage class for this object. Overrides the bucket default."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_metadata_cascade_policies_id",
+    "name": "Remove metadata cascade policy",
+    "description": "Remove metadata cascade policy Deletes a metadata cascade policy. DELETE /2.0/metadata_cascade_policies/{metadata_cascade_policy_id}",
+    "context": "DELETE /2.0/metadata_cascade_policies/{metadata_cascade_policy_id}\nDeletes a metadata cascade policy.\nRequired: metadata_cascade_policy_id (path) — The ID of the metadata cascade policy."
+  },
+  {
+    "id": "get_metadata_cascade_policies",
+    "name": "List metadata cascade policies",
+    "description": "List metadata cascade policies Retrieves a list of all the metadata cascade policies that are applied to a given folder. GET /2.0/metadata_cascade_policies",
+    "context": "GET /2.0/metadata_cascade_policies\nRetrieves a list of all the metadata cascade policies that are applied to a given folder. This can not be used on the root folder with ID `0`.\nRequired: folder_id (query) — Specifies which folder to return policies for. This can not be used on the root folder with ID `0`.\nOptional: owner_enterprise_id (query) — The ID of the enterprise ID for which to find metadata cascade policies. If not specified, it defaults to the current enterprise.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response."
+  },
+  {
+    "id": "get_metadata_cascade_policies_id",
+    "name": "Get metadata cascade policy",
+    "description": "Get metadata cascade policy Retrieve a specific metadata cascade policy assigned to a folder. GET /2.0/metadata_cascade_policies/{metadata_cascade_policy_id}",
+    "context": "GET /2.0/metadata_cascade_policies/{metadata_cascade_policy_id}\nRetrieve a specific metadata cascade policy assigned to a folder.\nRequired: metadata_cascade_policy_id (path) — The ID of the metadata cascade policy."
+  },
+  {
+    "id": "post_metadata_cascade_policies",
+    "name": "Create metadata cascade policy",
+    "description": "Create metadata cascade policy Creates a new metadata cascade policy that applies a given metadata template to a given folder and automatically cascades it down to any files within that folder. POST /2.0/metadata_cascade_policies",
+    "context": "POST /2.0/metadata_cascade_policies\nCreates a new metadata cascade policy that applies a given metadata template to a given folder and automatically cascades it down to any files within that folder. In order for the policy to be applied a metadata instance must first be applied to the folder the policy is to be applied to.\nOptional: body (body)"
+  },
+  {
+    "id": "post_metadata_cascade_policies_id_apply",
+    "name": "Force-apply metadata cascade policy to folder",
+    "description": "Force-apply metadata cascade policy to folder Force the metadata on a folder with a metadata cascade policy to be applied to all of its children. POST /2.0/metadata_cascade_policies/{metadata_cascade_policy_id}/apply",
+    "context": "POST /2.0/metadata_cascade_policies/{metadata_cascade_policy_id}/apply\nForce the metadata on a folder with a metadata cascade policy to be applied to all of its children. This can be used after creating a new cascade policy to enforce the metadata to be cascaded down to all existing files within that folder.\nRequired: metadata_cascade_policy_id (path) — The ID of the cascade policy to force-apply.\nOptional: body (body)"
+  }
+]

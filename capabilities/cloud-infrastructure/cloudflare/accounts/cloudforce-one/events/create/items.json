@@ -1,0 +1,20 @@
+[
+  {
+    "id": "post_DOSEventCreateBulkWithRelationships",
+    "name": "Creates bulk DOS event with relationships and indicators",
+    "description": "Creates bulk DOS event with relationships and indicators This method is deprecated. POST /client/v4/accounts/{account_id}/cloudforce-one/events/create/bulk/relationships",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/create/bulk/relationships\nThis method is deprecated. Please use `event_create_bulk` instead\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventCreate",
+    "name": "Creates a new event",
+    "description": "Creates a new event To create a dataset, see the [`Create Dataset`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/create/) endpoint. POST /client/v4/accounts/{account_id}/cloudforce-one/events/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/create\nTo create a dataset, see the [`Create Dataset`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/create/) endpoint. When `datasetId` parameter is unspecified, it will be created in a default dataset named `Cloudforce One Threat Events`.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventCreateBulk",
+    "name": "Creates bulk events",
+    "description": "Creates bulk events The `datasetId` parameter must be defined. POST /client/v4/accounts/{account_id}/cloudforce-one/events/create/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/create/bulk\nThe `datasetId` parameter must be defined. To list existing datasets (and their IDs) in your account, use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  }
+]

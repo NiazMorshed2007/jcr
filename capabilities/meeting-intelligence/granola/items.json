@@ -1,0 +1,56 @@
+[
+  {
+    "id": "delete_v1_webhook_endpoints_webhook_endpoint_id",
+    "name": "Delete webhook endpoint",
+    "description": "Delete webhook endpoint DELETE /v1/webhook-endpoints/{webhook_endpoint_id}",
+    "context": "DELETE /v1/webhook-endpoints/{webhook_endpoint_id}\nDelete webhook endpoint\nRequired: webhook_endpoint_id (path)"
+  },
+  {
+    "id": "get_v1_audit",
+    "name": "List audit events",
+    "description": "List audit events GET /v1/audit",
+    "context": "GET /v1/audit\nList audit events\nOptional: action (query); occurred_before (query); occurred_after (query); cursor (query); page_size (query)"
+  },
+  {
+    "id": "get_v1_folders",
+    "name": "List folders",
+    "description": "List folders GET /v1/folders",
+    "context": "GET /v1/folders\nList folders\nOptional: cursor (query); page_size (query)"
+  },
+  {
+    "id": "get_v1_notes",
+    "name": "List notes",
+    "description": "List notes GET /v1/notes",
+    "context": "GET /v1/notes\nList notes\nOptional: created_before (query); created_after (query); updated_after (query); folder_id (query); cursor (query); page_size (query)"
+  },
+  {
+    "id": "get_v1_notes_note_id",
+    "name": "Get note",
+    "description": "Get note GET /v1/notes/{note_id}",
+    "context": "GET /v1/notes/{note_id}\nGet note\nRequired: note_id (path)\nOptional: include (query)"
+  },
+  {
+    "id": "get_v1_notes_note_id_transcript",
+    "name": "Get transcript",
+    "description": "Get transcript Retrieve a meeting transcript in pages, including when Get Note returns `TRANSCRIPT_TOO_LARGE`. GET /v1/notes/{note_id}/transcript",
+    "context": "GET /v1/notes/{note_id}/transcript\nRetrieve a meeting transcript in pages, including when Get Note returns `TRANSCRIPT_TOO_LARGE`.\nRequired: note_id (path)\nOptional: cursor (query); page_size (query)"
+  },
+  {
+    "id": "get_v1_webhook_endpoints",
+    "name": "List webhook endpoints",
+    "description": "List webhook endpoints GET /v1/webhook-endpoints",
+    "context": "GET /v1/webhook-endpoints\nList webhook endpoints"
+  },
+  {
+    "id": "patch_v1_webhook_endpoints_webhook_endpoint_id",
+    "name": "Update webhook endpoint",
+    "description": "Update webhook endpoint PATCH /v1/webhook-endpoints/{webhook_endpoint_id}",
+    "context": "PATCH /v1/webhook-endpoints/{webhook_endpoint_id}\nUpdate webhook endpoint\nRequired: webhook_endpoint_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_v1_webhook_endpoints",
+    "name": "Create webhook endpoint",
+    "description": "Create webhook endpoint Registers an HTTPS URL to receive event deliveries. POST /v1/webhook-endpoints",
+    "context": "POST /v1/webhook-endpoints\nRegisters an HTTPS URL to receive event deliveries. With a Workspace API key the endpoint is workspace-managed: pass `scopes: [\"workspace\"]` (the key's own scope), and `folder_ids` may only reference folders the key can list.\nOptional: body (body)"
+  }
+]

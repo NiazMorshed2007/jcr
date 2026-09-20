@@ -1,0 +1,146 @@
+[
+  {
+    "id": "createBlogPost",
+    "name": "Create blog post",
+    "description": "Create blog post Creates a new blog post in the space specified by the spaceId. POST /wiki/api/v2/blogposts",
+    "context": "POST /wiki/api/v2/blogposts\nCreates a new blog post in the space specified by the spaceId. By default this will create the blog post as a non-draft, unless the status is specified as draft. If creating a non-draft, the title must not be empty. Currently only supports the storage representation specified in the body.representation enums below\nRequired: body (body)\nOptional: private (query) — The blog post will be private. Only the user who creates this blog post will have permission to view and edit one."
+  },
+  {
+    "id": "createBlogpostProperty",
+    "name": "Create content property for blog post",
+    "description": "Create content property for blog post Creates a new property for a blogpost. POST /wiki/api/v2/blogposts/{blogpost-id}/properties",
+    "context": "POST /wiki/api/v2/blogposts/{blogpost-id}/properties\nCreates a new property for a blogpost. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the blog post.\nRequired: blogpost-id (path) — The ID of the blog post to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deleteBlogPost",
+    "name": "Delete blog post",
+    "description": "Delete blog post Delete a blog post by id. DELETE /wiki/api/v2/blogposts/{id}",
+    "context": "DELETE /wiki/api/v2/blogposts/{id}\nDelete a blog post by id. By default this will delete blog posts that are non-drafts. To delete a blog post that is a draft, the endpoint must be called on a draft with the following param `draft=true`. Discarded drafts are not sent to the trash and are permanently deleted. Deleting a blog post that is not a draft moves the blog post to the trash, where it can be restored later. To permanently delete a blog post (or \"purge\" it), the endpoint must be called on a **trashed** blog post with the following param `purge=true`. **[Permissions](https://support.atlassian.com/confluence-cloud/docs/what-are-confluences-roles/) required**: Permission to view the blog post and its corresponding space. Permission to delete blog posts in the space. [`manage/content`](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) permission for the space (if attempting to purge). **Note:** To find the display name for each permission ID, call the [Get available space permissions](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) API.\nRequired: id (path) — The ID of the blog post to be deleted.\nOptional: purge (query) — If attempting to purge the blog post.; draft (query) — If attempting to delete a blog post that is a draft."
+  },
+  {
+    "id": "deleteBlogpostPropertyById",
+    "name": "Delete content property for blogpost by id",
+    "description": "Delete content property for blogpost by id Deletes a content property for a blogpost by its id. DELETE /wiki/api/v2/blogposts/{blogpost-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/blogposts/{blogpost-id}/properties/{property-id}\nDeletes a content property for a blogpost by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the blog post.\nRequired: blogpost-id (path) — The ID of the blog post the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getBlogpostAttachments",
+    "name": "Get attachments for blog post",
+    "description": "Get attachments for blog post Returns the attachments of specific blog post. GET /wiki/api/v2/blogposts/{id}/attachments",
+    "context": "GET /wiki/api/v2/blogposts/{id}/attachments\nReturns the attachments of specific blog post. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post for which attachments should be returned.\nOptional: sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; status (query) — Filter the results to attachments based on their status. By default, `current` and `archived` are used.; mediaType (query) — Filters on the mediaType of attachments. Only one may be specified.; filename (query) — Filters on the file-name of attachments. Only one may be specified.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogPostById",
+    "name": "Get blog post by id",
+    "description": "Get blog post by id Returns a specific blog post. GET /wiki/api/v2/blogposts/{id}",
+    "context": "GET /wiki/api/v2/blogposts/{id}\nReturns a specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post to be returned. If you don't know the blog post ID, use Get blog posts and filter the results.\nOptional: body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; get-draft (query) — Retrieve the draft version of this blog post.; status (query) — Filter the blog post being retrieved by its status.; version (query) — Allows you to retrieve a previously published version. Specify the previous version's number to retrieve its details.; include-labels (query) — Includes labels associated with this blog post in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes content properties associated with this blog post in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-operations (query) — Includes operations associated with this blog post in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-likes (query) — Includes likes associated with this blog post in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-versions (query) — Includes versions associated with this blog post in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-version (query) — Includes the current version associated with this blog post in the response. By default this is included and can be omitted by setting the value to `false`.; include-favorited-by-current-user-status (query) — Includes whether this blog post has been favorited by the current user.; include-webresources (query) — Includes web resources that can be used to render blog post content on a client.; include-collaborators (query) — Includes collaborators on the blog post."
+  },
+  {
+    "id": "getBlogPostClassificationLevel",
+    "name": "Get blog post classification level",
+    "description": "Get blog post classification level Returns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific blog post. GET /wiki/api/v2/blogposts/{id}/classification-level",
+    "context": "GET /wiki/api/v2/blogposts/{id}/classification-level\nReturns the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the blog post. 'Permission to edit the blog post is required if trying to view classification level for a draft.\nRequired: id (path) — The ID of the blog post for which classification level should be returned.\nOptional: status (query) — Status of blog post from which classification level will fetched."
+  },
+  {
+    "id": "getBlogpostContentProperties",
+    "name": "Get content properties for blog post",
+    "description": "Get content properties for blog post Retrieves all Content Properties tied to a specified blog post. GET /wiki/api/v2/blogposts/{blogpost-id}/properties",
+    "context": "GET /wiki/api/v2/blogposts/{blogpost-id}/properties\nRetrieves all Content Properties tied to a specified blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the blog post.\nRequired: blogpost-id (path) — The ID of the blog post for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogpostContentPropertiesById",
+    "name": "Get content property for blog post by id",
+    "description": "Get content property for blog post by id Retrieves a specific Content Property by ID that is attached to a specified blog post. GET /wiki/api/v2/blogposts/{blogpost-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/blogposts/{blogpost-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the blog post.\nRequired: blogpost-id (path) — The ID of the blog post for which content properties should be returned.; property-id (path) — The ID of the property being requested"
+  },
+  {
+    "id": "getBlogPostFooterComments",
+    "name": "Get footer comments for blog post",
+    "description": "Get footer comments for blog post Returns the root footer comments of specific blog post. GET /wiki/api/v2/blogposts/{id}/footer-comments",
+    "context": "GET /wiki/api/v2/blogposts/{id}/footer-comments\nReturns the root footer comments of specific blog post. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post for which footer comments should be returned.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; status (query) — Filter the footer comment being retrieved by its status.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of footer comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogPostInlineComments",
+    "name": "Get inline comments for blog post",
+    "description": "Get inline comments for blog post Returns the root inline comments of specific blog post. GET /wiki/api/v2/blogposts/{id}/inline-comments",
+    "context": "GET /wiki/api/v2/blogposts/{id}/inline-comments\nReturns the root inline comments of specific blog post. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post for which inline comments should be returned.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; status (query) — Filter the inline comment being retrieved by its status.; resolution-status (query) — Filter the inline comment being retrieved by its resolution status.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of inline comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogPostLabels",
+    "name": "Get labels for blog post",
+    "description": "Get labels for blog post Returns the labels of specific blog post. GET /wiki/api/v2/blogposts/{id}/labels",
+    "context": "GET /wiki/api/v2/blogposts/{id}/labels\nReturns the labels of specific blog post. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the blog post and its corresponding space. Only labels that the user has permission to view will be returned.\nRequired: id (path) — The ID of the blog post for which labels should be returned.\nOptional: prefix (query) — Filter the results to labels based on their prefix.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of labels per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogPostLikeCount",
+    "name": "Get like count for blog post",
+    "description": "Get like count for blog post Returns the count of likes of specific blog post. GET /wiki/api/v2/blogposts/{id}/likes/count",
+    "context": "GET /wiki/api/v2/blogposts/{id}/likes/count\nReturns the count of likes of specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post for which like count should be returned."
+  },
+  {
+    "id": "getBlogPostLikeUsers",
+    "name": "Get account IDs of likes for blog post",
+    "description": "Get account IDs of likes for blog post Returns the account IDs of likes of specific blog post. GET /wiki/api/v2/blogposts/{id}/likes/users",
+    "context": "GET /wiki/api/v2/blogposts/{id}/likes/users\nReturns the account IDs of likes of specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post for which account IDs should be returned.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of account IDs per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogPostOperations",
+    "name": "Get permitted operations for blog post",
+    "description": "Get permitted operations for blog post Returns the permitted operations on specific blog post. GET /wiki/api/v2/blogposts/{id}/operations",
+    "context": "GET /wiki/api/v2/blogposts/{id}/operations\nReturns the permitted operations on specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the parent content of the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post for which operations should be returned."
+  },
+  {
+    "id": "getBlogPosts",
+    "name": "Get blog posts",
+    "description": "Get blog posts Returns all blog posts. GET /wiki/api/v2/blogposts",
+    "context": "GET /wiki/api/v2/blogposts\nReturns all blog posts. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only blog posts that the user has permission to view will be returned.\nOptional: id (query) — Filter the results based on blog post ids. Multiple blog post ids can be specified as a comma-separated list.; space-id (query) — Filter the results based on space ids. Multiple space ids can be specified as a comma-separated list.; sort (query) — Used to sort the result by a particular field.; status (query) — Filter the results to blog posts based on their status. By default, `current` is used.; title (query) — Filter the results to blog posts based on their title.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of blog posts per result to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getBlogPostVersionDetails",
+    "name": "Get version details for blog post version",
+    "description": "Get version details for blog post version Retrieves version details for the specified blog post and version number. GET /wiki/api/v2/blogposts/{blogpost-id}/versions/{version-number}",
+    "context": "GET /wiki/api/v2/blogposts/{blogpost-id}/versions/{version-number}\nRetrieves version details for the specified blog post and version number. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the blog post.\nRequired: blogpost-id (path) — The ID of the blog post for which version details should be returned.; version-number (path) — The version number of the blog post to be returned."
+  },
+  {
+    "id": "getBlogPostVersions",
+    "name": "Get blog post versions",
+    "description": "Get blog post versions Returns the versions of specific blog post. GET /wiki/api/v2/blogposts/{id}/versions",
+    "context": "GET /wiki/api/v2/blogposts/{id}/versions\nReturns the versions of specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the blog post and its corresponding space.\nRequired: id (path) — The ID of the blog post to be queried for its versions. If you don't know the blog post ID, use Get blog posts and filter the results.\nOptional: body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of versions per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getCustomContentByTypeInBlogPost",
+    "name": "Get custom content by type in blog post",
+    "description": "Get custom content by type in blog post Returns all custom content for a given type within a given blogpost. GET /wiki/api/v2/blogposts/{id}/custom-content",
+    "context": "GET /wiki/api/v2/blogposts/{id}/custom-content\nReturns all custom content for a given type within a given blogpost. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the custom content, the container of the custom content (blog post), and the corresponding space.\nRequired: id (path) — The ID of the blog post for which custom content should be returned.; type (query) — The type of custom content being requested. See: https://developer.atlassian.com/cloud/confluence/custom-content/ for additional details on custom content.\nOptional: sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field. Note: If the custom content body type is `storage`, the `storage` and `atlas_doc_format` body formats are able to be returned. If the custom content body type is `raw`, only the `raw` body format is able to be returned."
+  },
+  {
+    "id": "postBlogPostClassificationLevel",
+    "name": "Reset blog post classification level",
+    "description": "Reset blog post classification level Resets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific blog post for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classificati…",
+    "context": "POST /wiki/api/v2/blogposts/{id}/classification-level/reset\nResets the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific blog post for the space [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the blog post.\nRequired: id (path) — The ID of the blog post for which classification level should be updated.; body (body)"
+  },
+  {
+    "id": "postRedactBlog",
+    "name": "Redact Content in a Confluence Blog Post",
+    "description": "Redact Content in a Confluence Blog Post Redacts sensitive content in a Confluence blog post by replacing specified text ranges with redaction markers. POST /wiki/api/v2/blogposts/{id}/redact",
+    "context": "POST /wiki/api/v2/blogposts/{id}/redact\nRedacts sensitive content in a Confluence blog post by replacing specified text ranges with redaction markers. Each redaction in the response includes a unique UUID for restoration (except code block redactions). The response metadata items maintain the same order as the input redaction pointers, and completely overlapping redactions are merged into a single redaction with one UUID. **Note**: This endpoint requires **Atlassian Guard Premium**.\nRequired: id (path) — The ID of the blog post to redact content from.\nOptional: body (body)"
+  },
+  {
+    "id": "putBlogPostClassificationLevel",
+    "name": "Update blog post classification level",
+    "description": "Update blog post classification level Updates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific blog post. PUT /wiki/api/v2/blogposts/{id}/classification-level",
+    "context": "PUT /wiki/api/v2/blogposts/{id}/classification-level\nUpdates the [classification level](https://developer.atlassian.com/cloud/admin/dlp/rest/intro/#Classification%20level) for a specific blog post. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to edit the blog post.\nRequired: id (path) — The ID of the blog post for which classification level should be updated.; body (body)"
+  },
+  {
+    "id": "updateBlogPost",
+    "name": "Update blog post",
+    "description": "Update blog post Update a blog post by id. PUT /wiki/api/v2/blogposts/{id}",
+    "context": "PUT /wiki/api/v2/blogposts/{id}\nUpdate a blog post by id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the blog post and its corresponding space. Permission to update blog posts in the space.\nRequired: id (path) — The ID of the blog post to be updated. If you don't know the blog post ID, use Get Blog Posts and filter the results.; body (body)"
+  },
+  {
+    "id": "updateBlogpostPropertyById",
+    "name": "Update content property for blog post by id",
+    "description": "Update content property for blog post by id Update a content property for blog post by its id. PUT /wiki/api/v2/blogposts/{blogpost-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/blogposts/{blogpost-id}/properties/{property-id}\nUpdate a content property for blog post by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the blog post.\nRequired: blogpost-id (path) — The ID of the blog post the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  }
+]

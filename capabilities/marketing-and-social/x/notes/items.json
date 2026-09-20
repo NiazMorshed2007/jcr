@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createCommunityNotes",
+    "name": "Create Community Notes",
+    "description": "Create Community Notes POST /2/notes",
+    "context": "POST /2/notes\nCreate Community Notes\nRequired: body (body)"
+  },
+  {
+    "id": "deleteCommunityNotes",
+    "name": "Delete a Community Note",
+    "description": "Delete a Community Note Deletes a community note. DELETE /2/notes/{id}",
+    "context": "DELETE /2/notes/{id}\nDeletes a community note.\nRequired: id (path)"
+  },
+  {
+    "id": "evaluateCommunityNotes",
+    "name": "Evaluate Community Notes",
+    "description": "Evaluate Community Notes POST /2/notes/evaluate",
+    "context": "POST /2/notes/evaluate\nEvaluate Community Notes\nRequired: body (body)"
+  },
+  {
+    "id": "searchCommunityNotesWritten",
+    "name": "Search Community Notes Written",
+    "description": "Search Community Notes Written GET /2/notes/search/notes_written",
+    "context": "GET /2/notes/search/notes_written\nSearch Community Notes Written\nRequired: test_mode (query)\nOptional: max_results (query); pagination_token (query); note.fields (query) — A comma separated list of Note fields to display."
+  },
+  {
+    "id": "searchEligiblePosts",
+    "name": "Search Eligible Posts",
+    "description": "Search Eligible Posts GET /2/notes/search/posts_eligible_for_notes",
+    "context": "GET /2/notes/search/posts_eligible_for_notes\nSearch Eligible Posts\nRequired: test_mode (query)\nOptional: max_results (query); pagination_token (query); post_selection (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  }
+]

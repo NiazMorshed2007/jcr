@@ -1,0 +1,20 @@
+[
+  {
+    "id": "delete_folder_locks_id",
+    "name": "Delete folder lock",
+    "description": "Delete folder lock Deletes a folder lock on a given folder. DELETE /2.0/folder_locks/{folder_lock_id}",
+    "context": "DELETE /2.0/folder_locks/{folder_lock_id}\nDeletes a folder lock on a given folder. You must be authenticated as the owner or co-owner of the folder to use this endpoint.\nRequired: folder_lock_id (path) — The ID of the folder lock."
+  },
+  {
+    "id": "get_folder_locks",
+    "name": "List folder locks",
+    "description": "List folder locks Retrieves folder lock details for a given folder. GET /2.0/folder_locks",
+    "context": "GET /2.0/folder_locks\nRetrieves folder lock details for a given folder. You must be authenticated as the owner or co-owner of the folder to use this endpoint.\nRequired: folder_id (query) — The unique identifier that represent a folder. The ID for any folder can be determined by visiting this folder in the web application and copying the ID from the URL. For example, for the URL `https://*.app.box.com/folder/123` the `folder_id` is `123`. The root folder of a Box account is always represented by the ID `0`."
+  },
+  {
+    "id": "post_folder_locks",
+    "name": "Create folder lock",
+    "description": "Create folder lock Creates a folder lock on a folder, preventing it from being moved and/or deleted. POST /2.0/folder_locks",
+    "context": "POST /2.0/folder_locks\nCreates a folder lock on a folder, preventing it from being moved and/or deleted. You must be authenticated as the owner or co-owner of the folder to use this endpoint.\nOptional: body (body)"
+  }
+]

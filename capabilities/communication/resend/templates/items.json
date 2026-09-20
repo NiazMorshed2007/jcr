@@ -1,0 +1,44 @@
+[
+  {
+    "id": "delete_templates_id",
+    "name": "Remove an existing template",
+    "description": "Remove an existing template DELETE /templates/{id}",
+    "context": "DELETE /templates/{id}\nRemove an existing template\nRequired: id (path) — The Template ID or alias."
+  },
+  {
+    "id": "get_templates",
+    "name": "Retrieve a list of templates",
+    "description": "Retrieve a list of templates GET /templates",
+    "context": "GET /templates\nRetrieve a list of templates\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_templates_id",
+    "name": "Retrieve a single template",
+    "description": "Retrieve a single template GET /templates/{id}",
+    "context": "GET /templates/{id}\nRetrieve a single template\nRequired: id (path) — The Template ID or alias."
+  },
+  {
+    "id": "patch_templates_id",
+    "name": "Update an existing template",
+    "description": "Update an existing template PATCH /templates/{id}",
+    "context": "PATCH /templates/{id}\nUpdate an existing template\nRequired: id (path) — The Template ID or alias.\nOptional: body (body)"
+  },
+  {
+    "id": "post_templates",
+    "name": "Create a template",
+    "description": "Create a template POST /templates",
+    "context": "POST /templates\nCreate a template\nOptional: body (body)"
+  },
+  {
+    "id": "post_templates_id_duplicate",
+    "name": "Duplicate a template",
+    "description": "Duplicate a template POST /templates/{id}/duplicate",
+    "context": "POST /templates/{id}/duplicate\nDuplicate a template\nRequired: id (path) — The Template ID or alias."
+  },
+  {
+    "id": "post_templates_id_publish",
+    "name": "Publish a template",
+    "description": "Publish a template POST /templates/{id}/publish",
+    "context": "POST /templates/{id}/publish\nPublish a template\nRequired: id (path) — The Template ID or alias."
+  }
+]

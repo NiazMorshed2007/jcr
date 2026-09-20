@@ -1,0 +1,254 @@
+[
+  {
+    "id": "users_cancel_email_change_request_partial_update",
+    "name": "users_cancel_email_change_request_partial_update",
+    "description": "users_cancel_email_change_request_partial_update PATCH /api/users/cancel_email_change_request/",
+    "context": "PATCH /api/users/cancel_email_change_request/\nusers_cancel_email_change_request_partial_update\nOptional: body (body)"
+  },
+  {
+    "id": "users_credentials_review_complete_create",
+    "name": "Mark the user as having reviewed their existing credentials",
+    "description": "Mark the user as having reviewed their existing credentials Mark the user as having reviewed their existing credentials. POST /api/users/{uuid}/credentials_review_complete/",
+    "context": "POST /api/users/{uuid}/credentials_review_complete/\nMark the user as having reviewed their existing credentials. Idempotent. Flips `requires_credential_review` to False so the post-login interstitial isn't shown again. Does not modify any credentials; the user revokes individual Personal API Keys and passkeys via their existing endpoints from the same screen.\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_destroy",
+    "name": "users_destroy",
+    "description": "users_destroy DELETE /api/users/{uuid}/",
+    "context": "DELETE /api/users/{uuid}/\nusers_destroy\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_github_login_retrieve",
+    "name": "users_github_login_retrieve",
+    "description": "users_github_login_retrieve GET /api/users/{uuid}/github_login/",
+    "context": "GET /api/users/{uuid}/github_login/\nusers_github_login_retrieve\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_hedgehog_config_partial_update",
+    "name": "users_hedgehog_config_partial_update",
+    "description": "users_hedgehog_config_partial_update PATCH /api/users/{uuid}/hedgehog_config/",
+    "context": "PATCH /api/users/{uuid}/hedgehog_config/\nusers_hedgehog_config_partial_update\nRequired: uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "users_hedgehog_config_retrieve",
+    "name": "users_hedgehog_config_retrieve",
+    "description": "users_hedgehog_config_retrieve GET /api/users/{uuid}/hedgehog_config/",
+    "context": "GET /api/users/{uuid}/hedgehog_config/\nusers_hedgehog_config_retrieve\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_integrations_github_branches_retrieve",
+    "name": "List branches for a personal GitHub installation repository",
+    "description": "List branches for a personal GitHub installation repository List branches for a repository accessible to a personal GitHub installation. GET /api/users/{uuid}/integrations/github/{installation_id}/branches/",
+    "context": "GET /api/users/{uuid}/integrations/github/{installation_id}/branches/\nList branches for a repository accessible to a personal GitHub installation.\nRequired: installation_id (path); repo (query) — Repository in owner/repo format; uuid (path)\nOptional: limit (query) — Maximum number of branches to return; offset (query) — Number of branches to skip; search (query) — Optional case-insensitive branch name search query."
+  },
+  {
+    "id": "users_integrations_github_destroy",
+    "name": "Disconnect a personal GitHub integration",
+    "description": "Disconnect a personal GitHub integration Remove a specific GitHub installation by its installation_id. DELETE /api/users/{uuid}/integrations/github/{installation_id}/",
+    "context": "DELETE /api/users/{uuid}/integrations/github/{installation_id}/\nRemove a specific GitHub installation by its installation_id.\nRequired: installation_id (path); uuid (path)"
+  },
+  {
+    "id": "users_integrations_github_install_requests_destroy",
+    "name": "Dismiss a GitHub install-approval request",
+    "description": "Dismiss a GitHub install-approval request Delete one of the requesting user's install-approval requests, whatever its status. DELETE /api/users/{uuid}/integrations/github/install_requests/{request_id}/",
+    "context": "DELETE /api/users/{uuid}/integrations/github/install_requests/{request_id}/\nDelete one of the requesting user's install-approval requests, whatever its status. User-facing bookkeeping only: a later connect attempt records a fresh row.\nRequired: request_id (path); uuid (path)"
+  },
+  {
+    "id": "users_integrations_github_install_requests_retrieve",
+    "name": "List the user's GitHub install-approval requests",
+    "description": "List the user's GitHub install-approval requests Return the requesting user's GitHub App install-approval requests, newest first. GET /api/users/{uuid}/integrations/github/install_requests/",
+    "context": "GET /api/users/{uuid}/integrations/github/install_requests/\nReturn the requesting user's GitHub App install-approval requests, newest first. This is the durable server-side \"awaiting org owner approval\" state (see ``posthog.models.user_integration.GitHubInstallRequest``), distinct from the in-flight connect spinner, which never touches this table.\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_integrations_github_prepare_callback_create",
+    "name": "Seed personal GitHub manage callback state before opening installation settings on GitHub.",
+    "description": "Seed personal GitHub manage callback state before opening installation settings on GitHub. POST /api/users/{uuid}/integrations/github/prepare_callback/",
+    "context": "POST /api/users/{uuid}/integrations/github/prepare_callback/\nSeed personal GitHub manage callback state before opening installation settings on GitHub.\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_integrations_github_repos_refresh_create",
+    "name": "Refresh repositories for a personal GitHub installation",
+    "description": "Refresh repositories for a personal GitHub installation Refresh repositories accessible to a specific GitHub installation. POST /api/users/{uuid}/integrations/github/{installation_id}/repos/refresh/",
+    "context": "POST /api/users/{uuid}/integrations/github/{installation_id}/repos/refresh/\nRefresh repositories accessible to a specific GitHub installation.\nRequired: installation_id (path); uuid (path)"
+  },
+  {
+    "id": "users_integrations_github_repos_retrieve",
+    "name": "List repositories for a personal GitHub installation",
+    "description": "List repositories for a personal GitHub installation List repositories accessible to a specific GitHub installation (paginated, cached). GET /api/users/{uuid}/integrations/github/{installation_id}/repos/",
+    "context": "GET /api/users/{uuid}/integrations/github/{installation_id}/repos/\nList repositories accessible to a specific GitHub installation (paginated, cached).\nRequired: installation_id (path); uuid (path)\nOptional: limit (query) — Maximum number of repositories to return per request (max 500).; offset (query) — Number of repositories to skip before returning results.; search (query) — Optional case-insensitive repository name search query."
+  },
+  {
+    "id": "users_integrations_github_start_create",
+    "name": "Start GitHub personal integration linking",
+    "description": "Start GitHub personal integration linking Start GitHub linking: either full App install or OAuth-only (user-to-server). POST /api/users/{uuid}/integrations/github/start/",
+    "context": "POST /api/users/{uuid}/integrations/github/start/\nStart GitHub linking: either full App install or OAuth-only (user-to-server). ``**_kwargs`` absorbs ``parent_lookup_uuid`` from the nested ``/api/users/{uuid}/integrations/`` router (same pattern as ``local_evaluation`` under projects). Usually returns ``install_url`` pointing at ``/installations/new`` so the user can pick any GitHub org (new or already connected). GitHub's install page handles both cases: orgs where the app is installed show \"Configure\" (no admin needed), orgs where it isn't show \"Install\" (needs admin). **OAuth fast path:** when the current project already has a team-level GitHub installation, and the user has no ``UserIntegration`` for that installation yet, we skip the org picker and redirect straight to ``/login/oauth/authorize`` so the user only authorizes themselves. ``connect_from`` is preserved for first-party clients so they return to the originating client immediately. In both cases the response key is ``install_url`` for compatibility with callers.\nRequired: uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "users_integrations_list",
+    "name": "List the user's personal integrations of a given kind",
+    "description": "List the user's personal integrations of a given kind Return the authenticated user's personal integrations of a given ``kind`` (``github`` or ``slack``). GET /api/users/{uuid}/integrations/",
+    "context": "GET /api/users/{uuid}/integrations/\nReturn the authenticated user's personal integrations of a given ``kind`` (``github`` or ``slack``). The response shape varies per kind because the underlying ``UserIntegration`` rows carry different identity fields — GitHub rows expose ``installation_id`` / ``account`` / ``uses_shared_installation``; Slack rows expose ``slack_user_id`` / ``slack_team_id`` / ``slack_team_name``. Kind-specific destroy and start actions remain split so their distinct semantics (e.g. Slack's lack of \"uninstall on last reference\") stay explicit at the URL layer. Default of ``kind=github`` is load-bearing: mobile (``apps/mobile/...``) and the Code SDK (``packages/api-client/...``) both call this endpoint without a query param today and rely on receiving GitHub rows.\nRequired: uuid (path)\nOptional: kind (query) — Integration kind to list. Defaults to `github` for back-compat with mobile and the Code SDK, which call this endpoint without a query param and expect GitHub-shaped items.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "users_integrations_slack_destroy",
+    "name": "Unlink a Slack identity",
+    "description": "Unlink a Slack identity Remove a Slack identity link by Slack user id. DELETE /api/users/{uuid}/integrations/slack/{slack_user_id}/",
+    "context": "DELETE /api/users/{uuid}/integrations/slack/{slack_user_id}/\nRemove a Slack identity link by Slack user id. Idempotent and flag-agnostic — users must always be able to unlink even after the feature flag is turned off.\nRequired: slack_user_id (path); uuid (path)"
+  },
+  {
+    "id": "users_integrations_slack_linkable_workspaces_retrieve",
+    "name": "List Slack workspaces this user could link to",
+    "description": "List Slack workspaces this user could link to Return Slack workspaces in the user's organizations that they have not yet linked. GET /api/users/{uuid}/integrations/slack/linkable_workspaces/",
+    "context": "GET /api/users/{uuid}/integrations/slack/linkable_workspaces/\nReturn Slack workspaces in the user's organizations that they have not yet linked. The settings UI uses this list to decide whether to show a \"Link my Slack account\" button (non-empty list) and what to offer in the picker when several are connectable.\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_integrations_slack_start_create",
+    "name": "Start Slack identity link from settings",
+    "description": "Start Slack identity link from settings Mint a Sign-in-with-Slack invite URL initiated from settings, without Slack-DM context. POST /api/users/{uuid}/integrations/slack/start/",
+    "context": "POST /api/users/{uuid}/integrations/slack/start/\nMint a Sign-in-with-Slack invite URL initiated from settings, without Slack-DM context. The returned URL takes the user through PostHog login (already satisfied here), then to Slack OAuth, then back to our callback which writes the ``UserIntegration`` row. Without body params, falls back to the user's ``current_team`` and that team's first Slack ``Integration`` — works when there's exactly one linkable workspace. With ``team_id`` + ``slack_team_id``, links against the exact pair (what the frontend uses when a picker is shown). Refuses if the target team has no matching Slack workspace, if the feature flag is off for the workspace, or if the user is already linked to it.\nRequired: uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "users_list",
+    "name": "users_list",
+    "description": "users_list GET /api/users/",
+    "context": "GET /api/users/\nusers_list\nOptional: email (query); is_staff (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "users_login_sessions_destroy",
+    "name": "Revoke a single login session belonging to the current user",
+    "description": "Revoke a single login session belonging to the current user Revoke a single login session belonging to the current user. DELETE /api/users/{uuid}/login_sessions/{session_id}/",
+    "context": "DELETE /api/users/{uuid}/login_sessions/{session_id}/\nRevoke a single login session belonging to the current user. Self-only. Requires recent auth (TimeSensitiveActionPermission) so a stolen cookie can't weaponize revocation, and is blocked while impersonating via ImpersonationBlockedPathsMiddleware.\nRequired: session_id (path); uuid (path)"
+  },
+  {
+    "id": "users_login_sessions_list",
+    "name": "List the cookie-auth login sessions for the current user",
+    "description": "List the cookie-auth login sessions for the current user List the cookie-auth login sessions for the current user. GET /api/users/{uuid}/login_sessions/",
+    "context": "GET /api/users/{uuid}/login_sessions/\nList the cookie-auth login sessions for the current user. Self-only — never another user.\nRequired: uuid (path)\nOptional: email (query); is_staff (query)"
+  },
+  {
+    "id": "users_login_sessions_revoke_others_create",
+    "name": "Revoke every login session for the current user except the one making this request",
+    "description": "Revoke every login session for the current user except the one making this request Revoke every login session for the current user except the one making this request. POST /api/users/{uuid}/login_sessions/revoke_others/",
+    "context": "POST /api/users/{uuid}/login_sessions/revoke_others/\nRevoke every login session for the current user except the one making this request. Self-only. Requires recent auth (TimeSensitiveActionPermission) so a stolen cookie can't weaponize the \"log out everywhere else\" lock-out, and is blocked while impersonating.\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_onboarding_skip_create",
+    "name": "Mark the current user as having exited onboarding with a non-delegated reason",
+    "description": "Mark the current user as having exited onboarding with a non-delegated reason Mark the current user as having exited onboarding with a non-delegated reason. POST /api/users/{uuid}/onboarding/skip/",
+    "context": "POST /api/users/{uuid}/onboarding/skip/\nMark the current user as having exited onboarding with a non-delegated reason. Idempotent: the skip timestamp is only set on the first successful call. Callers wanting to delegate setup to a teammate must use the dedicated /organizations/{id}/invites/delegate/ endpoint, which atomically creates the invite and sets reason=\"delegated\". This endpoint rejects that reason so state can't be faked without a real invite.\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_partial_update",
+    "name": "Update one or more of the authenticated user's profile fields or settings.",
+    "description": "Update one or more of the authenticated user's profile fields or settings. PATCH /api/users/{uuid}/",
+    "context": "PATCH /api/users/{uuid}/\nUpdate one or more of the authenticated user's profile fields or settings.\nRequired: uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "users_product_intro_seen_partial_update",
+    "name": "Record that this user has seen one product intro",
+    "description": "Record that this user has seen one product intro Record that this user has seen one product intro. PATCH /api/users/{uuid}/product_intro_seen/",
+    "context": "PATCH /api/users/{uuid}/product_intro_seen/\nRecord that this user has seen one product intro. Separate from the `has_seen_product_intro_for` field on the main user PATCH, which requires a recently authenticated session. Dismissing an intro must not depend on that: a re-auth prompt would cover the intro it interrupts, and the dismissal would never persist. Nothing reachable here changes an account, an organization, or a profile. Merging server-side also keeps two intros dismissed from separate tabs from dropping each other's key, which a read-modify-write of the whole map cannot avoid.\nRequired: uuid (path)\nOptional: body (body)"
+  },
+  {
+    "id": "users_push_tokens_create",
+    "name": "Register a push notification token",
+    "description": "Register a push notification token Idempotent upsert: if the (user, token) pair already exists, `platform` and `last_seen_at` are refreshed. POST /api/users/{uuid}/push_tokens/",
+    "context": "POST /api/users/{uuid}/push_tokens/\nIdempotent upsert: if the (user, token) pair already exists, `platform` and `last_seen_at` are refreshed. Otherwise a new row is created.\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_push_tokens_unregister_create",
+    "name": "Unregister a push notification token",
+    "description": "Unregister a push notification token Delete the row matching `(user, token)`. POST /api/users/{uuid}/push_tokens/unregister/",
+    "context": "POST /api/users/{uuid}/push_tokens/unregister/\nDelete the row matching `(user, token)`. Returns 204 even if no row matches so the mobile client can call this unconditionally when the user opts out.\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_request_email_verification_create",
+    "name": "users_request_email_verification_create",
+    "description": "users_request_email_verification_create POST /api/users/request_email_verification/",
+    "context": "POST /api/users/request_email_verification/\nusers_request_email_verification_create\nRequired: body (body)"
+  },
+  {
+    "id": "users_retrieve",
+    "name": "Retrieve a user's profile and settings",
+    "description": "Retrieve a user's profile and settings Retrieve a user's profile and settings. GET /api/users/{uuid}/",
+    "context": "GET /api/users/{uuid}/\nRetrieve a user's profile and settings. Pass `@me` as the UUID to fetch the authenticated user; non-staff callers may only access their own account.\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_scene_personalisation_create",
+    "name": "users_scene_personalisation_create",
+    "description": "users_scene_personalisation_create POST /api/users/{uuid}/scene_personalisation/",
+    "context": "POST /api/users/{uuid}/scene_personalisation/\nusers_scene_personalisation_create\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_signal_autonomy_create",
+    "name": "Per-user signal autonomy config (singleton keyed by user)",
+    "description": "Per-user signal autonomy config (singleton keyed by user) Per-user signal autonomy config (singleton keyed by user). POST /api/users/{user_id}/signal_autonomy/",
+    "context": "POST /api/users/{user_id}/signal_autonomy/\nPer-user signal autonomy config (singleton keyed by user). GET /api/users/ /signal_autonomy/ → current config (or 404) POST /api/users/ /signal_autonomy/ → create or update DELETE /api/users/ /signal_autonomy/ → remove (opt out)\nRequired: user_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "users_signal_autonomy_destroy",
+    "name": "Per-user signal autonomy config (singleton keyed by user)",
+    "description": "Per-user signal autonomy config (singleton keyed by user) Per-user signal autonomy config (singleton keyed by user). DELETE /api/users/{user_id}/signal_autonomy/",
+    "context": "DELETE /api/users/{user_id}/signal_autonomy/\nPer-user signal autonomy config (singleton keyed by user). GET /api/users/ /signal_autonomy/ → current config (or 404) POST /api/users/ /signal_autonomy/ → create or update DELETE /api/users/ /signal_autonomy/ → remove (opt out)\nRequired: user_id (path)"
+  },
+  {
+    "id": "users_signal_autonomy_retrieve",
+    "name": "Per-user signal autonomy config (singleton keyed by user)",
+    "description": "Per-user signal autonomy config (singleton keyed by user) Per-user signal autonomy config (singleton keyed by user). GET /api/users/{user_id}/signal_autonomy/",
+    "context": "GET /api/users/{user_id}/signal_autonomy/\nPer-user signal autonomy config (singleton keyed by user). GET /api/users/ /signal_autonomy/ → current config (or 404) POST /api/users/ /signal_autonomy/ → create or update DELETE /api/users/ /signal_autonomy/ → remove (opt out)\nRequired: user_id (path)"
+  },
+  {
+    "id": "users_start_2fa_setup_retrieve",
+    "name": "users_start_2fa_setup_retrieve",
+    "description": "users_start_2fa_setup_retrieve GET /api/users/{uuid}/start_2fa_setup/",
+    "context": "GET /api/users/{uuid}/start_2fa_setup/\nusers_start_2fa_setup_retrieve\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_two_factor_backup_codes_create",
+    "name": "Generate new backup codes, invalidating any existing ones",
+    "description": "Generate new backup codes, invalidating any existing ones POST /api/users/{uuid}/two_factor_backup_codes/",
+    "context": "POST /api/users/{uuid}/two_factor_backup_codes/\nGenerate new backup codes, invalidating any existing ones\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_two_factor_disable_create",
+    "name": "Disable 2FA and remove all related devices",
+    "description": "Disable 2FA and remove all related devices POST /api/users/{uuid}/two_factor_disable/",
+    "context": "POST /api/users/{uuid}/two_factor_disable/\nDisable 2FA and remove all related devices\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_two_factor_start_setup_retrieve",
+    "name": "users_two_factor_start_setup_retrieve",
+    "description": "users_two_factor_start_setup_retrieve GET /api/users/{uuid}/two_factor_start_setup/",
+    "context": "GET /api/users/{uuid}/two_factor_start_setup/\nusers_two_factor_start_setup_retrieve\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_two_factor_status_retrieve",
+    "name": "Get current 2FA status including backup codes if enabled",
+    "description": "Get current 2FA status including backup codes if enabled GET /api/users/{uuid}/two_factor_status/",
+    "context": "GET /api/users/{uuid}/two_factor_status/\nGet current 2FA status including backup codes if enabled\nRequired: uuid (path)"
+  },
+  {
+    "id": "users_two_factor_validate_create",
+    "name": "users_two_factor_validate_create",
+    "description": "users_two_factor_validate_create POST /api/users/{uuid}/two_factor_validate/",
+    "context": "POST /api/users/{uuid}/two_factor_validate/\nusers_two_factor_validate_create\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_update",
+    "name": "Replace the authenticated user's profile and settings",
+    "description": "Replace the authenticated user's profile and settings Replace the authenticated user's profile and settings. PUT /api/users/{uuid}/",
+    "context": "PUT /api/users/{uuid}/\nReplace the authenticated user's profile and settings. Pass `@me` as the UUID to update the authenticated user. Prefer the PATCH endpoint for partial updates — PUT requires every writable field to be provided.\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_validate_2fa_create",
+    "name": "users_validate_2fa_create",
+    "description": "users_validate_2fa_create POST /api/users/{uuid}/validate_2fa/",
+    "context": "POST /api/users/{uuid}/validate_2fa/\nusers_validate_2fa_create\nRequired: uuid (path); body (body)"
+  },
+  {
+    "id": "users_verify_email_create",
+    "name": "users_verify_email_create",
+    "description": "users_verify_email_create POST /api/users/verify_email/",
+    "context": "POST /api/users/verify_email/\nusers_verify_email_create\nRequired: body (body)"
+  }
+]

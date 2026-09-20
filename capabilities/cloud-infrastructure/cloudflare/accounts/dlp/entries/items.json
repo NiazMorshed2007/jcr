@@ -1,0 +1,74 @@
+[
+  {
+    "id": "dlp-entries-create-entry",
+    "name": "Create custom entry",
+    "description": "Create custom entry Creates a DLP custom entry. POST /client/v4/accounts/{account_id}/dlp/entries",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/entries\nCreates a DLP custom entry.\nRequired: account_id (path); body (body) — A new entry to create."
+  },
+  {
+    "id": "dlp-entries-create-integration-entry",
+    "name": "Create integration entry",
+    "description": "Create integration entry Integration entries can't be created, this will update an existing integration entry. POST /client/v4/accounts/{account_id}/dlp/entries/integration",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/entries/integration\nIntegration entries can't be created, this will update an existing integration entry. This is needed for our generated terraform API.\nRequired: account_id (path); body (body) — This endpoint will update an existing integration entry. It is not possible to create new integration entries."
+  },
+  {
+    "id": "dlp-entries-create-predefined-entry",
+    "name": "Create predefined entry",
+    "description": "Create predefined entry Predefined entries can't be created, this will update an existing predefined entry. POST /client/v4/accounts/{account_id}/dlp/entries/predefined",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/entries/predefined\nPredefined entries can't be created, this will update an existing predefined entry. This is needed for our generated terraform API.\nRequired: account_id (path); body (body) — This endpoint will update an existing predefined entry. It is not possible to create new predefined entries."
+  },
+  {
+    "id": "dlp-entries-delete-entry",
+    "name": "Delete custom entry",
+    "description": "Delete custom entry Deletes a DLP custom entry. DELETE /client/v4/accounts/{account_id}/dlp/entries/{entry_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/entries/{entry_id}\nDeletes a DLP custom entry.\nRequired: account_id (path); entry_id (path)"
+  },
+  {
+    "id": "dlp-entries-delete-integration-entry",
+    "name": "Delete integration entry",
+    "description": "Delete integration entry This is a no-op as integration entires can't be deleted but is needed for our generated terraform API. DELETE /client/v4/accounts/{account_id}/dlp/entries/integration/{entry_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/entries/integration/{entry_id}\nThis is a no-op as integration entires can't be deleted but is needed for our generated terraform API.\nRequired: account_id (path); entry_id (path)"
+  },
+  {
+    "id": "dlp-entries-delete-predefined-entry",
+    "name": "Delete predefined entry",
+    "description": "Delete predefined entry This is a no-op as predefined entires can't be deleted but is needed for our generated terraform API. DELETE /client/v4/accounts/{account_id}/dlp/entries/predefined/{entry_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/entries/predefined/{entry_id}\nThis is a no-op as predefined entires can't be deleted but is needed for our generated terraform API.\nRequired: account_id (path); entry_id (path)"
+  },
+  {
+    "id": "dlp-entries-get-dlp-entry",
+    "name": "Get DLP Entry",
+    "description": "Get DLP Entry Fetches a DLP entry by ID. GET /client/v4/accounts/{account_id}/dlp/entries/{entry_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/entries/{entry_id}\nFetches a DLP entry by ID.\nRequired: account_id (path); entry_id (path)"
+  },
+  {
+    "id": "dlp-entries-list-all-entries",
+    "name": "List all entries",
+    "description": "List all entries Lists all DLP entries in an account. GET /client/v4/accounts/{account_id}/dlp/entries",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/entries\nLists all DLP entries in an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-entries-update-custom-entry",
+    "name": "Update custom entry",
+    "description": "Update custom entry Updates a DLP custom entry. PUT /client/v4/accounts/{account_id}/dlp/entries/custom/{entry_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/entries/custom/{entry_id}\nUpdates a DLP custom entry.\nRequired: account_id (path); entry_id (path); body (body) — Update to be applied to the entry."
+  },
+  {
+    "id": "dlp-entries-update-entry",
+    "name": "Update entry",
+    "description": "Update entry Updates a DLP entry. PUT /client/v4/accounts/{account_id}/dlp/entries/{entry_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/entries/{entry_id}\nUpdates a DLP entry.\nRequired: account_id (path); entry_id (path); body (body) — Update to be applied to the entry."
+  },
+  {
+    "id": "dlp-entries-update-integration-entry",
+    "name": "Update integration entry",
+    "description": "Update integration entry Updates a DLP entry. PUT /client/v4/accounts/{account_id}/dlp/entries/integration/{entry_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/entries/integration/{entry_id}\nUpdates a DLP entry.\nRequired: account_id (path); entry_id (path); body (body) — Enable or disable integration entry in owning profile."
+  },
+  {
+    "id": "dlp-entries-update-predefined-entry",
+    "name": "Update predefined entry",
+    "description": "Update predefined entry Updates a DLP entry. PUT /client/v4/accounts/{account_id}/dlp/entries/predefined/{entry_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/entries/predefined/{entry_id}\nUpdates a DLP entry.\nRequired: account_id (path); entry_id (path); body (body) — Settings to enable or disable predefined entry in owning profile."
+  }
+]

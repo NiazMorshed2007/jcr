@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createRegistry",
+    "name": "Create registry",
+    "description": "Create registry POST /docker-registry",
+    "context": "POST /docker-registry\nCreate registry\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deleteRegistry",
+    "name": "Delete registry",
+    "description": "Delete registry DELETE /docker-registry/{id}",
+    "context": "DELETE /docker-registry/{id}\nDelete registry\nRequired: id (path) — ID of the docker registry\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getRegistry",
+    "name": "Get registry",
+    "description": "Get registry GET /docker-registry/{id}",
+    "context": "GET /docker-registry/{id}\nGet registry\nRequired: id (path) — ID of the docker registry\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getTransientPushAccess",
+    "name": "Get temporary registry access for pushing snapshots",
+    "description": "Get temporary registry access for pushing snapshots GET /docker-registry/registry-push-access",
+    "context": "GET /docker-registry/registry-push-access\nGet temporary registry access for pushing snapshots\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; regionId (query) — ID of the region where the snapshot will be available (defaults to organization default region)"
+  },
+  {
+    "id": "listRegistries",
+    "name": "List registries",
+    "description": "List registries GET /docker-registry",
+    "context": "GET /docker-registry\nList registries\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "updateRegistry",
+    "name": "Update registry",
+    "description": "Update registry PATCH /docker-registry/{id}",
+    "context": "PATCH /docker-registry/{id}\nUpdate registry\nRequired: id (path) — ID of the docker registry; body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

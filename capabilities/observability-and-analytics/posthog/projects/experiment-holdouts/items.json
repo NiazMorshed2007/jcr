@@ -1,0 +1,38 @@
+[
+  {
+    "id": "experiment_holdouts_create",
+    "name": "experiment_holdouts_create",
+    "description": "experiment_holdouts_create POST /api/projects/{project_id}/experiment_holdouts/",
+    "context": "POST /api/projects/{project_id}/experiment_holdouts/\nexperiment_holdouts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiment_holdouts_destroy",
+    "name": "experiment_holdouts_destroy",
+    "description": "experiment_holdouts_destroy DELETE /api/projects/{project_id}/experiment_holdouts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/experiment_holdouts/{id}/\nexperiment_holdouts_destroy\nRequired: id (path) — A unique integer value identifying this experiment holdout.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiment_holdouts_list",
+    "name": "experiment_holdouts_list",
+    "description": "experiment_holdouts_list GET /api/projects/{project_id}/experiment_holdouts/",
+    "context": "GET /api/projects/{project_id}/experiment_holdouts/\nexperiment_holdouts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "experiment_holdouts_partial_update",
+    "name": "experiment_holdouts_partial_update",
+    "description": "experiment_holdouts_partial_update PATCH /api/projects/{project_id}/experiment_holdouts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/experiment_holdouts/{id}/\nexperiment_holdouts_partial_update\nRequired: id (path) — A unique integer value identifying this experiment holdout.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "experiment_holdouts_retrieve",
+    "name": "experiment_holdouts_retrieve",
+    "description": "experiment_holdouts_retrieve GET /api/projects/{project_id}/experiment_holdouts/{id}/",
+    "context": "GET /api/projects/{project_id}/experiment_holdouts/{id}/\nexperiment_holdouts_retrieve\nRequired: id (path) — A unique integer value identifying this experiment holdout.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiment_holdouts_update",
+    "name": "experiment_holdouts_update",
+    "description": "experiment_holdouts_update PUT /api/projects/{project_id}/experiment_holdouts/{id}/",
+    "context": "PUT /api/projects/{project_id}/experiment_holdouts/{id}/\nexperiment_holdouts_update\nRequired: id (path) — A unique integer value identifying this experiment holdout.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

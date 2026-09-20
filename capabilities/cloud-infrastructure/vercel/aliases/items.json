@@ -1,0 +1,26 @@
+[
+  {
+    "id": "deleteAlias",
+    "name": "Delete an Alias",
+    "description": "Delete an Alias Delete an Alias with the specified ID. DELETE /v2/aliases/{aliasId}",
+    "context": "DELETE /v2/aliases/{aliasId}\nDelete an Alias with the specified ID.\nRequired: aliasId (path) — The ID or alias that will be removed\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getAlias",
+    "name": "Get an Alias",
+    "description": "Get an Alias Retrieves an Alias for the given host name or alias ID. GET /v4/aliases/{idOrAlias}",
+    "context": "GET /v4/aliases/{idOrAlias}\nRetrieves an Alias for the given host name or alias ID.\nRequired: idOrAlias (path) — The alias or alias ID to be retrieved\nOptional: from (query) — Get the alias only if it was created after the provided timestamp; projectId (query) — Get the alias only if it is assigned to the provided project ID; since (query) — Get the alias only if it was created after this JavaScript timestamp; until (query) — Get the alias only if it was created before this JavaScript timestamp; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listAliases",
+    "name": "List aliases",
+    "description": "List aliases Retrieves a list of aliases for the authenticated User or Team. GET /v4/aliases",
+    "context": "GET /v4/aliases\nRetrieves a list of aliases for the authenticated User or Team. When `domain` is provided, only aliases for that domain will be returned. When `projectId` is provided, it will only return the given project aliases.\nOptional: domain (query) — Get only aliases of the given domain name; from (query) — Get only aliases created after the provided timestamp; limit (query) — Maximum number of aliases to list from a request; projectId (query) — Filter aliases from the given `projectId`; since (query) — Get aliases created after this JavaScript timestamp; until (query) — Get aliases created before this JavaScript timestamp; rollbackDeploymentId (query) — Get aliases that would be rolled back for the given deployment; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "patchUrlProtectionBypass",
+    "name": "Update the protection bypass for a URL",
+    "description": "Update the protection bypass for a URL Update the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). PATCH /aliases/{id}/protection-bypass",
+    "context": "PATCH /aliases/{id}/protection-bypass\nUpdate the protection bypass for the alias or deployment URL (used for user access & comment access for deployments). Used as shareable links and user scoped access for Vercel Authentication and also to allow external (logged in) people to comment on previews for Preview Comments (next-live-mode).\nRequired: id (path) — The alias or deployment ID\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

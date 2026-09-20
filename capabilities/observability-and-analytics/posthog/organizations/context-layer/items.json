@@ -1,0 +1,80 @@
+[
+  {
+    "id": "context_layer_channel_pages_retrieve",
+    "name": "Resolve a channel's wiki page",
+    "description": "Resolve a channel's wiki page The organization's context wiki: a git repo of Markdown pages hosted by PostHog. GET /api/organizations/{organization_id}/context_layer/channel-pages/{channel_id}/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/channel-pages/{channel_id}/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: channel_id (path); organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "context_layer_commits_create",
+    "name": "Land agent commits from a git bundle",
+    "description": "Land agent commits from a git bundle The organization's context wiki: a git repo of Markdown pages hosted by PostHog. POST /api/organizations/{organization_id}/context_layer/commits/",
+    "context": "POST /api/organizations/{organization_id}/context_layer/commits/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "context_layer_dreams_list",
+    "name": "List dream runs",
+    "description": "List dream runs The active dreaming task, when present, plus every landed run newest first. GET /api/organizations/{organization_id}/context_layer/dreams/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/dreams/\nThe active dreaming task, when present, plus every landed run newest first. A landed run is one merge commit `dream: ` whose body is the summary; its changes are on the detail read.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "context_layer_dreams_retrieve",
+    "name": "Read one dream run",
+    "description": "Read one dream run One dreaming run with the per-file unified patches it landed. GET /api/organizations/{organization_id}/context_layer/dreams/{sha}/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/dreams/{sha}/\nOne dreaming run with the per-file unified patches it landed.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; sha (path)"
+  },
+  {
+    "id": "context_layer_enable_create",
+    "name": "Enable the context layer",
+    "description": "Enable the context layer Create the organization's wiki with the default structure and import existing channel CONTEXT.md documents once. POST /api/organizations/{organization_id}/context_layer/enable/",
+    "context": "POST /api/organizations/{organization_id}/context_layer/enable/\nCreate the organization's wiki with the default structure and import existing channel CONTEXT.md documents once. Idempotent.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "context_layer_export_retrieve",
+    "name": "Export the wiki",
+    "description": "Export the wiki A short-lived download URL for the wiki's current bundle: the whole repo and its history, one file, standard git. GET /api/organizations/{organization_id}/context_layer/export/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/export/\nA short-lived download URL for the wiki's current bundle: the whole repo and its history, one file, standard git.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "context_layer_pages_retrieve",
+    "name": "Read a wiki page",
+    "description": "Read a wiki page The organization's context wiki: a git repo of Markdown pages hosted by PostHog. GET /api/organizations/{organization_id}/context_layer/pages/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/pages/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; path (query) — Repo-relative Markdown path of the page to read.\nOptional: head_sha (query) — Head from the first chunk. Required for continuation. A changed head returns 409.; limit (query) — Maximum characters to read. Omit for the full page.; offset (query) — Character offset from next_offset."
+  },
+  {
+    "id": "context_layer_pages_update",
+    "name": "Create or replace a wiki page",
+    "description": "Create or replace a wiki page The organization's context wiki: a git repo of Markdown pages hosted by PostHog. PUT /api/organizations/{organization_id}/context_layer/pages/",
+    "context": "PUT /api/organizations/{organization_id}/context_layer/pages/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "context_layer_proposals_apply_create",
+    "name": "Apply a reviewed wiki edit",
+    "description": "Apply a reviewed wiki edit The organization's context wiki: a git repo of Markdown pages hosted by PostHog. POST /api/organizations/{organization_id}/context_layer/proposals/{proposal_id}/apply/",
+    "context": "POST /api/organizations/{organization_id}/context_layer/proposals/{proposal_id}/apply/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; proposal_id (path)"
+  },
+  {
+    "id": "context_layer_proposals_list",
+    "name": "List your pending wiki edits",
+    "description": "List your pending wiki edits The organization's context wiki: a git repo of Markdown pages hosted by PostHog. GET /api/organizations/{organization_id}/context_layer/proposals/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/proposals/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "context_layer_status_retrieve",
+    "name": "Get the wiki head",
+    "description": "Get the wiki head The organization's context wiki: a git repo of Markdown pages hosted by PostHog. GET /api/organizations/{organization_id}/context_layer/status/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/status/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "context_layer_tree_retrieve",
+    "name": "List wiki pages",
+    "description": "List wiki pages The organization's context wiki: a git repo of Markdown pages hosted by PostHog. GET /api/organizations/{organization_id}/context_layer/tree/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/tree/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "context_layer_wiki_report_retrieve",
+    "name": "Report wiki health findings",
+    "description": "Report wiki health findings The organization's context wiki: a git repo of Markdown pages hosted by PostHog. GET /api/organizations/{organization_id}/context_layer/wiki/report/",
+    "context": "GET /api/organizations/{organization_id}/context_layer/wiki/report/\nThe organization's context wiki: a git repo of Markdown pages hosted by PostHog.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  }
+]

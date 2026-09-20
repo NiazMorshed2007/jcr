@@ -1,0 +1,44 @@
+[
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-create-or-update-organization-definition",
+    "name": "Create or update a custom property for an organization",
+    "description": "Create or update a custom property for an organization Creates a new or updates an existing custom property that is defined for an organization. PUT /orgs/{org}/properties/schema/{custom_property_name}",
+    "context": "PUT /orgs/{org}/properties/schema/{custom_property_name}\nCreates a new or updates an existing custom property that is defined for an organization. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; custom_property_name (path) — The custom property name; body (body)"
+  },
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-create-or-update-organization-definitions",
+    "name": "Create or update custom properties for an organization",
+    "description": "Create or update custom properties for an organization Creates new or updates existing custom properties defined for an organization in a batch. PATCH /orgs/{org}/properties/schema",
+    "context": "PATCH /orgs/{org}/properties/schema\nCreates new or updates existing custom properties defined for an organization in a batch. If the property already exists, the existing property will be replaced with the new values. Missing optional values will fall back to default values, previous values will be overwritten. E.g. if a property exists with `values_editable_by: org_and_repo_actors` and it's updated without specifying `values_editable_by`, it will be updated to default value `org_actors`. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-create-or-update-organization-values",
+    "name": "Create or update custom property values for organization repositories",
+    "description": "Create or update custom property values for organization repositories Create new or update existing custom property values for repositories in a batch that belong to an organization. PATCH /orgs/{org}/properties/values",
+    "context": "PATCH /orgs/{org}/properties/values\nCreate new or update existing custom property values for repositories in a batch that belong to an organization. Each target repository will have its custom property values updated to match the values provided in the request. A maximum of 30 repositories can be updated in a single request. Using a value of `null` for a custom property will remove or 'unset' the property value from the repository. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-delete-organization-definition",
+    "name": "Remove a custom property for an organization",
+    "description": "Remove a custom property for an organization Removes a custom property that is defined for an organization. DELETE /orgs/{org}/properties/schema/{custom_property_name}",
+    "context": "DELETE /orgs/{org}/properties/schema/{custom_property_name}\nRemoves a custom property that is defined for an organization. To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; custom_property_name (path) — The custom property name"
+  },
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-get-organization-definition",
+    "name": "Get a custom property for an organization",
+    "description": "Get a custom property for an organization Gets a custom property that is defined for an organization. GET /orgs/{org}/properties/schema/{custom_property_name}",
+    "context": "GET /orgs/{org}/properties/schema/{custom_property_name}\nGets a custom property that is defined for an organization. Organization members can read these properties.\nRequired: org (path) — The organization name. The name is not case sensitive.; custom_property_name (path) — The custom property name"
+  },
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-get-organization-definitions",
+    "name": "Get all custom properties for an organization",
+    "description": "Get all custom properties for an organization Gets all custom properties defined for an organization. GET /orgs/{org}/properties/schema",
+    "context": "GET /orgs/{org}/properties/schema\nGets all custom properties defined for an organization. Organization members can read these properties.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "orgs%2Fcustom-properties-for-repos-get-organization-values",
+    "name": "List custom property values for organization repositories",
+    "description": "List custom property values for organization repositories Lists organization repositories with all of their custom property values. GET /orgs/{org}/properties/values",
+    "context": "GET /orgs/{org}/properties/values\nLists organization repositories with all of their custom property values. Organization members can read these properties.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; repository_query (query) — Finds repositories in the organization with a query containing one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query). See \"[Searching for repositories](https://docs.github.com/articles/searching-for-repositories/)\" for a detailed list of qualifiers."
+  }
+]

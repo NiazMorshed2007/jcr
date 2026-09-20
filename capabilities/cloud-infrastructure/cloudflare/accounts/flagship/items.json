@@ -1,0 +1,86 @@
+[
+  {
+    "id": "flagship_create_app",
+    "name": "Create app",
+    "description": "Create app Creates an app. POST /client/v4/accounts/{account_id}/flagship/apps",
+    "context": "POST /client/v4/accounts/{account_id}/flagship/apps\nCreates an app. The returned `id` is used in all subsequent flag, changelog, and evaluation requests.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "flagship_create_flag",
+    "name": "Create flag",
+    "description": "Create flag Creates a flag. POST /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags",
+    "context": "POST /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags\nCreates a flag. Returns 409 if the key already exists. `type` is always inferred from variation values; legacy request-side values are ignored.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; body (body)"
+  },
+  {
+    "id": "flagship_delete_app",
+    "name": "Delete app",
+    "description": "Delete app Deletes an app and all its flags and changelog history. DELETE /client/v4/accounts/{account_id}/flagship/apps/{app_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/flagship/apps/{app_id}\nDeletes an app and all its flags and changelog history. Returns 409 if any Worker still references this app via a Flagship binding.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier."
+  },
+  {
+    "id": "flagship_delete_flag",
+    "name": "Delete flag",
+    "description": "Delete flag Deletes a flag permanently. DELETE /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}",
+    "context": "DELETE /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}\nDeletes a flag permanently. Subsequent evaluations fall back to the caller-supplied default. Cannot be undone.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; flag_key (path) — Flag key (slug)."
+  },
+  {
+    "id": "flagship_evaluate_flag",
+    "name": "Evaluate flag",
+    "description": "Evaluate flag Evaluates a flag against the provided context. GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/evaluate",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/evaluate\nEvaluates a flag against the provided context. Pass context attributes as query parameters; values are forwarded as strings. For low-latency in-Worker evaluation, prefer the Flagship binding over this endpoint.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; flagKey (query) — The flag key to evaluate.\nOptional: targetingKey (query) — Context targeting key (per OpenFeature spec); used for percentage rollout bucketing."
+  },
+  {
+    "id": "flagship_evaluate_flag_post",
+    "name": "Evaluate flag (POST)",
+    "description": "Evaluate flag (POST) Evaluates a flag against the provided context, passed as a JSON request body (OFREP-shaped) rather than query parameters. POST /client/v4/accounts/{account_id}/flagship/apps/{app_id}/evaluate",
+    "context": "POST /client/v4/accounts/{account_id}/flagship/apps/{app_id}/evaluate\nEvaluates a flag against the provided context, passed as a JSON request body (OFREP-shaped) rather than query parameters. Returns the same response shape as the GET variant.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; body (body)"
+  },
+  {
+    "id": "flagship_get_app",
+    "name": "Get app",
+    "description": "Get app Returns an app's name and audit fields. GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}\nReturns an app's name and audit fields. Flag definitions are not included.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier."
+  },
+  {
+    "id": "flagship_get_definitions",
+    "name": "Get flag definitions",
+    "description": "Get flag definitions Returns an app's evaluation-only flag definitions for SDKs that evaluate locally. GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/definitions",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/definitions\nReturns an app's evaluation-only flag definitions for SDKs that evaluate locally. Send the returned `ETag` in `If-None-Match` to avoid downloading unchanged definitions.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.\nOptional: If-None-Match (header) — Previously returned ETag, or `*`."
+  },
+  {
+    "id": "flagship_get_flag",
+    "name": "Get flag",
+    "description": "Get flag Returns the full flag definition including rules, variations, and audit fields. GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}\nReturns the full flag definition including rules, variations, and audit fields.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; flag_key (path) — Flag key (slug)."
+  },
+  {
+    "id": "flagship_get_flag_changelog",
+    "name": "Get flag changelog",
+    "description": "Get flag changelog Returns the audit history for a flag, newest first. GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}/changelog",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}/changelog\nReturns the audit history for a flag, newest first. Each entry includes the event type and full flag state after the change; `update` entries include a field-level diff. Capped at 200 entries per flag.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; flag_key (path) — Flag key (slug).\nOptional: limit (query) — Max items to return (1–200).; cursor (query) — Pagination cursor from a previous response."
+  },
+  {
+    "id": "flagship_list_apps",
+    "name": "List apps",
+    "description": "List apps Lists all apps in the account. GET /client/v4/accounts/{account_id}/flagship/apps",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps\nLists all apps in the account. Returns identity and audit fields only — flag definitions are not included.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "flagship_list_flags",
+    "name": "List flags",
+    "description": "List flags Lists an app's flags ordered by key. GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags",
+    "context": "GET /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags\nLists an app's flags ordered by key. Pass `cursor` from `result_info` to page forward; a null cursor indicates the last page.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.\nOptional: limit (query) — Max items to return (1–200).; cursor (query) — Pagination cursor from a previous response."
+  },
+  {
+    "id": "flagship_update_app",
+    "name": "Update app",
+    "description": "Update app Updates an app. PUT /client/v4/accounts/{account_id}/flagship/apps/{app_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/flagship/apps/{app_id}\nUpdates an app. Only `name` is mutable.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; body (body)"
+  },
+  {
+    "id": "flagship_update_flag",
+    "name": "Update flag",
+    "description": "Update flag Replaces the entire flag definition. PUT /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}",
+    "context": "PUT /client/v4/accounts/{account_id}/flagship/apps/{app_id}/flags/{flag_key}\nReplaces the entire flag definition. Omitted fields are dropped, not preserved — read before writing. Each update appends a changelog entry.\nRequired: account_id (path) — Cloudflare account ID.; app_id (path) — App identifier.; flag_key (path) — Flag key (slug).; body (body)"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "create-hyperdrive",
+    "name": "Create Hyperdrive",
+    "description": "Create Hyperdrive Creates and returns a new Hyperdrive configuration. POST /client/v4/accounts/{account_id}/hyperdrive/configs",
+    "context": "POST /client/v4/accounts/{account_id}/hyperdrive/configs\nCreates and returns a new Hyperdrive configuration. For a PlanetScale integration, the Cloudflare account must already be linked to PlanetScale in the Hyperdrive dashboard.\nRequired: account_id (path) — The Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "create-hyperdrive-database-signature",
+    "name": "Create Database Signature",
+    "description": "Create Database Signature Returns a short-lived signed authorization for creating a database that is billed through Cloudflare. POST /client/v4/accounts/{account_id}/hyperdrive/integrationsOperations/{integration}/createDatabaseSignature",
+    "context": "POST /client/v4/accounts/{account_id}/hyperdrive/integrationsOperations/{integration}/createDatabaseSignature\nReturns a short-lived signed authorization for creating a database that is billed through Cloudflare. The caller passes these values to the integration partner's own CLI, which verifies the signature before creating the database. Requires the account to be entitled to Cloudflare-billed databases for the integration.\nRequired: account_id (path) — The Cloudflare account ID.; integration (path) — The database integration to authorize against. This value is case-insensitive."
+  },
+  {
+    "id": "delete-hyperdrive",
+    "name": "Delete Hyperdrive",
+    "description": "Delete Hyperdrive Deletes the specified Hyperdrive. DELETE /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}\nDeletes the specified Hyperdrive.\nRequired: account_id (path) — The Cloudflare account ID.; hyperdrive_id (path) — The unique identifier of the Hyperdrive configuration."
+  },
+  {
+    "id": "get-hyperdrive",
+    "name": "Get Hyperdrive",
+    "description": "Get Hyperdrive Returns the specified Hyperdrive configuration. GET /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}",
+    "context": "GET /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}\nReturns the specified Hyperdrive configuration.\nRequired: account_id (path) — The Cloudflare account ID.; hyperdrive_id (path) — The unique identifier of the Hyperdrive configuration."
+  },
+  {
+    "id": "list-hyperdrive",
+    "name": "List Hyperdrives",
+    "description": "List Hyperdrives Returns a list of Hyperdrives. GET /client/v4/accounts/{account_id}/hyperdrive/configs",
+    "context": "GET /client/v4/accounts/{account_id}/hyperdrive/configs\nReturns a list of Hyperdrives.\nRequired: account_id (path) — The Cloudflare account ID.\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page."
+  },
+  {
+    "id": "patch-hyperdrive",
+    "name": "Update Hyperdrive",
+    "description": "Update Hyperdrive Updates and returns the specified fields of the Hyperdrive configuration. PATCH /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}\nUpdates and returns the specified fields of the Hyperdrive configuration. Custom caching settings are not kept if caching is disabled.\nRequired: account_id (path) — The Cloudflare account ID.; hyperdrive_id (path) — The unique identifier of the Hyperdrive configuration.; body (body)"
+  },
+  {
+    "id": "restart-hyperdrive",
+    "name": "Restart Hyperdrive",
+    "description": "Restart Hyperdrive Restarts the connection pool for the specified Hyperdrive configuration without changing its configuration. POST /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}/restart",
+    "context": "POST /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}/restart\nRestarts the connection pool for the specified Hyperdrive configuration without changing its configuration. Existing connections are drained and a new pool is established at the edge.\nRequired: account_id (path) — The Cloudflare account ID.; hyperdrive_id (path) — The unique identifier of the Hyperdrive configuration."
+  },
+  {
+    "id": "update-hyperdrive",
+    "name": "Replace Hyperdrive",
+    "description": "Replace Hyperdrive Replaces and returns the specified Hyperdrive configuration. PUT /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}\nReplaces and returns the specified Hyperdrive configuration. The request must include the name and complete origin connection details. Omitted caching settings are reset to their defaults, while omitted mTLS settings and origin connection limits are preserved. Use the update operation to modify only selected fields.\nRequired: account_id (path) — The Cloudflare account ID.; hyperdrive_id (path) — The unique identifier of the Hyperdrive configuration.; body (body)"
+  }
+]

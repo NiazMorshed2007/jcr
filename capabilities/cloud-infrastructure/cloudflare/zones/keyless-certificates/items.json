@@ -1,0 +1,32 @@
+[
+  {
+    "id": "keyless-ssl-for-a-zone-create-keyless-ssl-configuration",
+    "name": "Create Keyless SSL Configuration",
+    "description": "Create Keyless SSL Configuration Creates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. POST /client/v4/zones/{zone_id}/keyless_certificates",
+    "context": "POST /client/v4/zones/{zone_id}/keyless_certificates\nCreates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. Keys remain on your infrastructure.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "keyless-ssl-for-a-zone-delete-keyless-ssl-configuration",
+    "name": "Delete Keyless SSL Configuration",
+    "description": "Delete Keyless SSL Configuration Removes a Keyless SSL configuration. DELETE /client/v4/zones/{zone_id}/keyless_certificates/{keyless_certificate_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/keyless_certificates/{keyless_certificate_id}\nRemoves a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.\nRequired: keyless_certificate_id (path); zone_id (path)"
+  },
+  {
+    "id": "keyless-ssl-for-a-zone-edit-keyless-ssl-configuration",
+    "name": "Edit Keyless SSL Configuration",
+    "description": "Edit Keyless SSL Configuration This will update attributes of a Keyless SSL. PATCH /client/v4/zones/{zone_id}/keyless_certificates/{keyless_certificate_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/keyless_certificates/{keyless_certificate_id}\nThis will update attributes of a Keyless SSL. Consists of one or more of the following: host,name,port.\nRequired: keyless_certificate_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "keyless-ssl-for-a-zone-get-keyless-ssl-configuration",
+    "name": "Get Keyless SSL Configuration",
+    "description": "Get Keyless SSL Configuration Get details for one Keyless SSL configuration. GET /client/v4/zones/{zone_id}/keyless_certificates/{keyless_certificate_id}",
+    "context": "GET /client/v4/zones/{zone_id}/keyless_certificates/{keyless_certificate_id}\nGet details for one Keyless SSL configuration.\nRequired: keyless_certificate_id (path); zone_id (path)"
+  },
+  {
+    "id": "keyless-ssl-for-a-zone-list-keyless-ssl-configurations",
+    "name": "List Keyless SSL Configurations",
+    "description": "List Keyless SSL Configurations List all Keyless SSL configurations for a given zone. GET /client/v4/zones/{zone_id}/keyless_certificates",
+    "context": "GET /client/v4/zones/{zone_id}/keyless_certificates\nList all Keyless SSL configurations for a given zone.\nRequired: zone_id (path)"
+  }
+]

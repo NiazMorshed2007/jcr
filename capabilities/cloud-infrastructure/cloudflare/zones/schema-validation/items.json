@@ -1,0 +1,92 @@
+[
+  {
+    "id": "schema-validation-bulk-edit-per-operation-settings",
+    "name": "Bulk edit per-operation schema validation settings",
+    "description": "Bulk edit per-operation schema validation settings Updates schema validation settings for multiple API operations in a single request. PATCH /client/v4/zones/{zone_id}/schema_validation/settings/operations",
+    "context": "PATCH /client/v4/zones/{zone_id}/schema_validation/settings/operations\nUpdates schema validation settings for multiple API operations in a single request. Efficient for applying consistent validation rules across endpoints.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "schema-validation-create-schema",
+    "name": "Upload a schema",
+    "description": "Upload a schema Uploads an OpenAPI schema that defines expected request formats for API operations. POST /client/v4/zones/{zone_id}/schema_validation/schemas",
+    "context": "POST /client/v4/zones/{zone_id}/schema_validation/schemas\nUploads an OpenAPI schema that defines expected request formats for API operations.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "schema-validation-delete-per-operation-setting",
+    "name": "Delete per-operation schema validation setting",
+    "description": "Delete per-operation schema validation setting Removes custom schema validation settings for a specific API operation, reverting to zone-level defaults. DELETE /client/v4/zones/{zone_id}/schema_validation/settings/operations/{operation_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/schema_validation/settings/operations/{operation_id}\nRemoves custom schema validation settings for a specific API operation, reverting to zone-level defaults.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation"
+  },
+  {
+    "id": "schema-validation-delete-schema",
+    "name": "Delete a schema",
+    "description": "Delete a schema Permanently removes an uploaded OpenAPI schema from API Security. DELETE /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}\nPermanently removes an uploaded OpenAPI schema from API Security. Operations using this schema will lose their validation rules.\nRequired: zone_id (path); schema_id (path) — The unique identifier of the schema"
+  },
+  {
+    "id": "schema-validation-edit-schema",
+    "name": "Set schema validation state",
+    "description": "Set schema validation state Enables or disables validation for an uploaded OpenAPI schema without changing the schema document. PATCH /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}\nEnables or disables validation for an uploaded OpenAPI schema without changing the schema document.\nRequired: zone_id (path); schema_id (path) — The unique identifier of the schema; body (body)"
+  },
+  {
+    "id": "schema-validation-edit-settings",
+    "name": "Edit global schema validation settings",
+    "description": "Edit global schema validation settings Partially updates global schema validation settings for a zone using PATCH semantics. PATCH /client/v4/zones/{zone_id}/schema_validation/settings",
+    "context": "PATCH /client/v4/zones/{zone_id}/schema_validation/settings\nPartially updates global schema validation settings for a zone using PATCH semantics.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "schema-validation-extract-operations-from-schema",
+    "name": "Retrieve all operations from the schema",
+    "description": "Retrieve all operations from the schema Retrieves all operations from the schema. GET /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}/operations",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}/operations\nRetrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.\nRequired: zone_id (path); schema_id (path) — The unique identifier of the schema\nOptional: feature (query) — Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning.; host (query); method (query); endpoint (query); page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; operation_status (query) — Filter results by whether operations exist in Web Asset Management or not. `new` will just return operations from the schema that do not exist otherwise. `existing` will just return operations from the schema that already exist."
+  },
+  {
+    "id": "schema-validation-get-per-operation-setting",
+    "name": "Get per-operation schema validation setting",
+    "description": "Get per-operation schema validation setting Retrieves the schema validation settings configured for a specific API operation. GET /client/v4/zones/{zone_id}/schema_validation/settings/operations/{operation_id}",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/settings/operations/{operation_id}\nRetrieves the schema validation settings configured for a specific API operation.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation"
+  },
+  {
+    "id": "schema-validation-get-schema",
+    "name": "Get details of a schema",
+    "description": "Get details of a schema Gets the contents and metadata of a specific OpenAPI schema uploaded to API Security. GET /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/schemas/{schema_id}\nGets the contents and metadata of a specific OpenAPI schema uploaded to API Security.\nRequired: zone_id (path); schema_id (path) — The unique identifier of the schema\nOptional: omit_source (query) — Omit the source-files of schemas and only retrieve their meta-data."
+  },
+  {
+    "id": "schema-validation-get-settings",
+    "name": "Get global schema validation settings",
+    "description": "Get global schema validation settings Retrieves the current global schema validation settings for a zone. GET /client/v4/zones/{zone_id}/schema_validation/settings",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/settings\nRetrieves the current global schema validation settings for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "schema-validation-list-per-operation-settings",
+    "name": "List per-operation schema validation settings",
+    "description": "List per-operation schema validation settings Lists per-operation schema validation settings configured for the zone. GET /client/v4/zones/{zone_id}/schema_validation/settings/operations",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/settings/operations\nLists per-operation schema validation settings configured for the zone.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page."
+  },
+  {
+    "id": "schema-validation-list-schema-hosts",
+    "name": "List hosts covered by uploaded schemas",
+    "description": "List hosts covered by uploaded schemas Lists all unique hosts found in uploaded OpenAPI schemas for the zone. GET /client/v4/zones/{zone_id}/schema_validation/schemas/hosts",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/schemas/hosts\nLists all unique hosts found in uploaded OpenAPI schemas for the zone.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page."
+  },
+  {
+    "id": "schema-validation-list-schemas-paginated",
+    "name": "List all uploaded schemas",
+    "description": "List all uploaded schemas Lists all OpenAPI schemas uploaded to API Security. GET /client/v4/zones/{zone_id}/schema_validation/schemas",
+    "context": "GET /client/v4/zones/{zone_id}/schema_validation/schemas\nLists all OpenAPI schemas uploaded to API Security.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; omit_source (query) — Omit the source-files of schemas and only retrieve their meta-data.; validation_enabled (query) — Filter for enabled schemas"
+  },
+  {
+    "id": "schema-validation-update-per-operation-setting",
+    "name": "Update per-operation schema validation setting",
+    "description": "Update per-operation schema validation setting Fully updates schema validation settings for a specific API operation. PUT /client/v4/zones/{zone_id}/schema_validation/settings/operations/{operation_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/schema_validation/settings/operations/{operation_id}\nFully updates schema validation settings for a specific API operation.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation; body (body)"
+  },
+  {
+    "id": "schema-validation-update-settings",
+    "name": "Update global schema validation settings",
+    "description": "Update global schema validation settings Fully updates global schema validation settings for a zone, replacing existing configuration. PUT /client/v4/zones/{zone_id}/schema_validation/settings",
+    "context": "PUT /client/v4/zones/{zone_id}/schema_validation/settings\nFully updates global schema validation settings for a zone, replacing existing configuration.\nRequired: zone_id (path); body (body)"
+  }
+]

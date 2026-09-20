@@ -1,0 +1,20 @@
+[
+  {
+    "id": "data_quality_checks_health_list",
+    "name": "Health rollup for every table and view in the project that has checks.",
+    "description": "Health rollup for every table and view in the project that has checks. GET /api/projects/{project_id}/data_quality_checks/health/",
+    "context": "GET /api/projects/{project_id}/data_quality_checks/health/\nHealth rollup for every table and view in the project that has checks.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_quality_checks_list",
+    "name": "Every check in the project, and the health of every subject that has one",
+    "description": "Every check in the project, and the health of every subject that has one Every check in the project, and the health of every subject that has one. GET /api/projects/{project_id}/data_quality_checks/",
+    "context": "GET /api/projects/{project_id}/data_quality_checks/\nEvery check in the project, and the health of every subject that has one. The per-subject surfaces answer \"what is wrong with this table\". This answers \"what is wrong across the project\", which they cannot: each is nested under one parent. Read-only -- authoring still happens against the subject that owns the check.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_quality_checks_metric_subjects_list",
+    "name": "Every check in the project, and the health of every subject that has one",
+    "description": "Every check in the project, and the health of every subject that has one Every check in the project, and the health of every subject that has one. GET /api/projects/{project_id}/data_quality_checks/metric_subjects/",
+    "context": "GET /api/projects/{project_id}/data_quality_checks/metric_subjects/\nEvery check in the project, and the health of every subject that has one. The per-subject surfaces answer \"what is wrong with this table\". This answers \"what is wrong across the project\", which they cannot: each is nested under one parent. Read-only -- authoring still happens against the subject that owns the check.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

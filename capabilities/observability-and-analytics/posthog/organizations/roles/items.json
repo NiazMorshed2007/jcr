@@ -1,0 +1,62 @@
+[
+  {
+    "id": "roles_create",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. POST /api/organizations/{organization_id}/roles/",
+    "context": "POST /api/organizations/{organization_id}/roles/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "roles_destroy",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. DELETE /api/organizations/{organization_id}/roles/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/roles/{id}/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: id (path) — A UUID string identifying this role.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "roles_list",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. GET /api/organizations/{organization_id}/roles/",
+    "context": "GET /api/organizations/{organization_id}/roles/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "roles_partial_update",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. PATCH /api/organizations/{organization_id}/roles/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/roles/{id}/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: id (path) — A UUID string identifying this role.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "roles_retrieve",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. GET /api/organizations/{organization_id}/roles/{id}/",
+    "context": "GET /api/organizations/{organization_id}/roles/{id}/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: id (path) — A UUID string identifying this role.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "roles_role_memberships_create",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. POST /api/organizations/{organization_id}/roles/{role_id}/role_memberships/",
+    "context": "POST /api/organizations/{organization_id}/roles/{role_id}/role_memberships/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; role_id (path); body (body)"
+  },
+  {
+    "id": "roles_role_memberships_destroy",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. DELETE /api/organizations/{organization_id}/roles/{role_id}/role_memberships/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/roles/{role_id}/role_memberships/{id}/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: id (path) — A UUID string identifying this role membership.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; role_id (path)"
+  },
+  {
+    "id": "roles_role_memberships_list",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. GET /api/organizations/{organization_id}/roles/{role_id}/role_memberships/",
+    "context": "GET /api/organizations/{organization_id}/roles/{role_id}/role_memberships/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; role_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "roles_role_memberships_retrieve",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. GET /api/organizations/{organization_id}/roles/{role_id}/role_memberships/{id}/",
+    "context": "GET /api/organizations/{organization_id}/roles/{role_id}/role_memberships/{id}/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: id (path) — A UUID string identifying this role membership.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; role_id (path)"
+  },
+  {
+    "id": "roles_update",
+    "name": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.",
+    "description": "Role endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility. PUT /api/organizations/{organization_id}/roles/{id}/",
+    "context": "PUT /api/organizations/{organization_id}/roles/{id}/\nRole endpoints disclose member records, so they scope them the same way the members list does when the org restricts member list visibility.\nRequired: id (path) — A UUID string identifying this role.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  }
+]

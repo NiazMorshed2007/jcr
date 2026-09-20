@@ -1,0 +1,32 @@
+[
+  {
+    "id": "legal_documents_create",
+    "name": "legal_documents_create",
+    "description": "legal_documents_create POST /api/organizations/{organization_id}/legal_documents/",
+    "context": "POST /api/organizations/{organization_id}/legal_documents/\nlegal_documents_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "legal_documents_destroy",
+    "name": "Delete an unsigned legal document",
+    "description": "Delete an unsigned legal document Delete an unsigned legal document. DELETE /api/organizations/{organization_id}/legal_documents/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/legal_documents/{id}/\nDelete an unsigned legal document. The PandaDoc envelope is voided first so the original signer can no longer complete it; only if that succeeds is the row removed, freeing the unique-per-org-per-type constraint so a fresh document can be generated. Returns 503 if the PandaDoc void fails — the row stays in that case and the frontend should prompt the user to retry. Returns 403 for signed documents (legal artifacts; staff can still delete signed rows from Django admin).\nRequired: id (path); organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "legal_documents_download_retrieve",
+    "name": "Short-lived redirect to the signed PDF in object storage",
+    "description": "Short-lived redirect to the signed PDF in object storage Short-lived redirect to the signed PDF in object storage. GET /api/organizations/{organization_id}/legal_documents/{id}/download/",
+    "context": "GET /api/organizations/{organization_id}/legal_documents/{id}/download/\nShort-lived redirect to the signed PDF in object storage. 404 while the envelope is still out for signature (or if the upload hasn't completed yet). The underlying presigned URL expires in ~60s; clients should hit this endpoint each time they want to view the PDF rather than caching.\nRequired: id (path); organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "legal_documents_list",
+    "name": "legal_documents_list",
+    "description": "legal_documents_list GET /api/organizations/{organization_id}/legal_documents/",
+    "context": "GET /api/organizations/{organization_id}/legal_documents/\nlegal_documents_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "legal_documents_retrieve",
+    "name": "legal_documents_retrieve",
+    "description": "legal_documents_retrieve GET /api/organizations/{organization_id}/legal_documents/{id}/",
+    "context": "GET /api/organizations/{organization_id}/legal_documents/{id}/\nlegal_documents_retrieve\nRequired: id (path); organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  }
+]

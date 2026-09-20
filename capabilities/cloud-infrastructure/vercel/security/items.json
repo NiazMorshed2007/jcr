@@ -1,0 +1,80 @@
+[
+  {
+    "id": "addBypassIp",
+    "name": "Create System Bypass Rule",
+    "description": "Create System Bypass Rule Create new system bypass rules POST /v1/security/firewall/bypass",
+    "context": "POST /v1/security/firewall/bypass\nCreate new system bypass rules\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSecurityFirewallConfigByConfigVersionActivate",
+    "name": "Returns activated WAF config",
+    "description": "Returns activated WAF config Promotes a draft WAF config to an active config POST /v1/security/firewall/config/{configVersion}/activate",
+    "context": "POST /v1/security/firewall/config/{configVersion}/activate\nPromotes a draft WAF config to an active config\nRequired: configVersion (path) — The deployed configVersion for the firewall configuration"
+  },
+  {
+    "id": "deleteSecurityFirewallConfigByConfigVersion",
+    "name": "Returns activated WAF config",
+    "description": "Returns activated WAF config Promotes a draft WAF config to an active config DELETE /v1/security/firewall/config/{configVersion}",
+    "context": "DELETE /v1/security/firewall/config/{configVersion}\nPromotes a draft WAF config to an active config\nRequired: configVersion (path) — The deployed configVersion for the firewall configuration"
+  },
+  {
+    "id": "generateFirewallRule",
+    "name": "Generate a firewall rule from natural language",
+    "description": "Generate a firewall rule from natural language Generate a firewall rule from a natural language description. POST /v1/security/firewall/config/generate-rule",
+    "context": "POST /v1/security/firewall/config/generate-rule\nGenerate a firewall rule from a natural language description.\nOptional: projectId (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getActiveAttackStatus",
+    "name": "Read active attack data",
+    "description": "Read active attack data Retrieve active attack data within the last N days (default: 1 day) GET /v1/security/firewall/attack-status",
+    "context": "GET /v1/security/firewall/attack-status\nRetrieve active attack data within the last N days (default: 1 day)\nRequired: projectId (query)\nOptional: since (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getBypassIp",
+    "name": "Read System Bypass",
+    "description": "Read System Bypass Retrieve the system bypass rules configured for the specified project GET /v1/security/firewall/bypass",
+    "context": "GET /v1/security/firewall/bypass\nRetrieve the system bypass rules configured for the specified project\nRequired: projectId (query)\nOptional: limit (query); sourceIp (query) — Filter by source IP; domain (query) — Filter by domain; projectScope (query) — Filter by project scoped rules; offset (query) — Used for pagination. Retrieves results after the provided id; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getFirewallConfig",
+    "name": "Read Firewall Configuration",
+    "description": "Read Firewall Configuration Retrieve the specified firewall configuration for a project. GET /v1/security/firewall/config/{configVersion}",
+    "context": "GET /v1/security/firewall/config/{configVersion}\nRetrieve the specified firewall configuration for a project. The deployed configVersion will be `active`\nRequired: projectId (query); configVersion (path) — The deployed configVersion for the firewall configuration\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getSecurityFirewallConfig",
+    "name": "Returns activated WAF config",
+    "description": "Returns activated WAF config Lists WAF configs for a project GET /v1/security/firewall/config",
+    "context": "GET /v1/security/firewall/config\nLists WAF configs for a project"
+  },
+  {
+    "id": "getSecurityFirewallEvents",
+    "name": "Read Firewall Actions by Project",
+    "description": "Read Firewall Actions by Project Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. GET /v1/security/firewa…",
+    "context": "GET /v1/security/firewall/events\nRetrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`.\nRequired: projectId (query)\nOptional: startTimestamp (query); endTimestamp (query); hosts (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "putFirewallConfig",
+    "name": "Put Firewall Configuration",
+    "description": "Put Firewall Configuration Set the firewall configuration to provided rules and settings. PUT /v1/security/firewall/config",
+    "context": "PUT /v1/security/firewall/config\nSet the firewall configuration to provided rules and settings. Creates or overwrite the existing firewall configuration.\nRequired: projectId (query); body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "removeBypassIp",
+    "name": "Remove System Bypass Rule",
+    "description": "Remove System Bypass Rule Remove system bypass rules DELETE /v1/security/firewall/bypass",
+    "context": "DELETE /v1/security/firewall/bypass\nRemove system bypass rules\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateAttackChallengeMode",
+    "name": "Update Attack Challenge mode",
+    "description": "Update Attack Challenge mode Update the setting for determining if the project has Attack Challenge mode enabled. POST /v1/security/attack-mode",
+    "context": "POST /v1/security/attack-mode\nUpdate the setting for determining if the project has Attack Challenge mode enabled.\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateFirewallConfig",
+    "name": "Update Firewall Configuration",
+    "description": "Update Firewall Configuration Process updates to modify the existing firewall config for a project PATCH /v1/security/firewall/config",
+    "context": "PATCH /v1/security/firewall/config\nProcess updates to modify the existing firewall config for a project\nRequired: projectId (query); body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "delete-zones-zone_id-logpush-jobs-job_id",
+    "name": "Delete Logpush job",
+    "description": "Delete Logpush job Deletes a Logpush job. DELETE /client/v4/zones/{zone_id}/logpush/jobs/{job_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/logpush/jobs/{job_id}\nDeletes a Logpush job.\nRequired: job_id (path); zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_id-logpush-datasets-dataset_id-fields",
+    "name": "List fields",
+    "description": "List fields Lists all fields available for a dataset. GET /client/v4/zones/{zone_id}/logpush/datasets/{dataset_id}/fields",
+    "context": "GET /client/v4/zones/{zone_id}/logpush/datasets/{dataset_id}/fields\nLists all fields available for a dataset. The response result is. an object with key-value pairs, where keys are field names, and values are descriptions.\nRequired: dataset_id (path); zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_id-logpush-datasets-dataset_id-jobs",
+    "name": "List Logpush jobs for a dataset",
+    "description": "List Logpush jobs for a dataset Lists Logpush jobs for a zone for a dataset. GET /client/v4/zones/{zone_id}/logpush/datasets/{dataset_id}/jobs",
+    "context": "GET /client/v4/zones/{zone_id}/logpush/datasets/{dataset_id}/jobs\nLists Logpush jobs for a zone for a dataset.\nRequired: dataset_id (path); zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_id-logpush-edge-jobs",
+    "name": "List Instant Logs jobs",
+    "description": "List Instant Logs jobs Lists Instant Logs jobs for a zone. GET /client/v4/zones/{zone_id}/logpush/edge/jobs",
+    "context": "GET /client/v4/zones/{zone_id}/logpush/edge/jobs\nLists Instant Logs jobs for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_id-logpush-jobs",
+    "name": "List Logpush jobs",
+    "description": "List Logpush jobs Lists Logpush jobs for a zone. GET /client/v4/zones/{zone_id}/logpush/jobs",
+    "context": "GET /client/v4/zones/{zone_id}/logpush/jobs\nLists Logpush jobs for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "get-zones-zone_id-logpush-jobs-job_id",
+    "name": "Get Logpush job details",
+    "description": "Get Logpush job details Gets the details of a Logpush job. GET /client/v4/zones/{zone_id}/logpush/jobs/{job_id}",
+    "context": "GET /client/v4/zones/{zone_id}/logpush/jobs/{job_id}\nGets the details of a Logpush job.\nRequired: job_id (path); zone_id (path)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-edge-jobs",
+    "name": "Create Instant Logs job",
+    "description": "Create Instant Logs job Creates a new Instant Logs job for a zone. POST /client/v4/zones/{zone_id}/logpush/edge/jobs",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/edge/jobs\nCreates a new Instant Logs job for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-jobs",
+    "name": "Create Logpush job",
+    "description": "Create Logpush job Creates a new Logpush job for a zone. POST /client/v4/zones/{zone_id}/logpush/jobs",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/jobs\nCreates a new Logpush job for a zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-ownership",
+    "name": "Get ownership challenge",
+    "description": "Get ownership challenge Gets a new ownership challenge sent to your destination. POST /client/v4/zones/{zone_id}/logpush/ownership",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/ownership\nGets a new ownership challenge sent to your destination.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-ownership-validate",
+    "name": "Validate ownership challenge",
+    "description": "Validate ownership challenge Validates ownership challenge of the destination. POST /client/v4/zones/{zone_id}/logpush/ownership/validate",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/ownership/validate\nValidates ownership challenge of the destination.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-validate-destination",
+    "name": "Validate destination",
+    "description": "Validate destination Validates destination. POST /client/v4/zones/{zone_id}/logpush/validate/destination",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/validate/destination\nValidates destination.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-validate-destination-exists",
+    "name": "Check destination exists",
+    "description": "Check destination exists Checks if there is an existing job with a destination. POST /client/v4/zones/{zone_id}/logpush/validate/destination/exists",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/validate/destination/exists\nChecks if there is an existing job with a destination.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "post-zones-zone_id-logpush-validate-origin",
+    "name": "Validate origin",
+    "description": "Validate origin Validates logpull origin with logpull_options. POST /client/v4/zones/{zone_id}/logpush/validate/origin",
+    "context": "POST /client/v4/zones/{zone_id}/logpush/validate/origin\nValidates logpull origin with logpull_options.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "put-zones-zone_id-logpush-jobs-job_id",
+    "name": "Update Logpush job",
+    "description": "Update Logpush job Updates a Logpush job. PUT /client/v4/zones/{zone_id}/logpush/jobs/{job_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/logpush/jobs/{job_id}\nUpdates a Logpush job.\nRequired: job_id (path); zone_id (path); body (body)"
+  }
+]

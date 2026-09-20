@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Create an External Issue and Link It to an Issue",
+    "name": "Create a new issue in the external provider (such as a Jira ticket or GitHub issue) and link it to the given Sentry issue",
+    "description": "Create a new issue in the external provider (such as a Jira ticket or GitHub issue) and link it to the given Sentry issue Create a new issue in the external provider (such as a Jira ticket or GitHub issue) and link it to the given Sentry issue. POST /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/inte…",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/\nCreate a new issue in the external provider (such as a Jira ticket or GitHub issue) and link it to the given Sentry issue. The accepted fields are integration-specific; fetch them from the `createIssueConfig` returned by the `GET` endpoint with `?action=create`.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; integration_id (path) — The ID of the integration installed on the organization.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationIssue",
+    "name": "Remove an Issue",
+    "description": "Remove an Issue Asynchronously queue an individual issue for deletion. DELETE /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/\nAsynchronously queue an individual issue for deletion.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query."
+  },
+  {
+    "id": "deleteOrganizationIssueExternalIssue",
+    "name": "Unlink a Custom Integration's External Issue",
+    "description": "Unlink a Custom Integration's External Issue **Experimental:** This API is under active development and may change. DELETE /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/external-issues/{external_issue_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/external-issues/{external_issue_id}/\n**Experimental:** This API is under active development and may change. Remove a custom integration's association with a Sentry issue. The external issue is not deleted.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; external_issue_id (path) — The ID of the custom integration issue link to remove."
+  },
+  {
+    "id": "deleteOrganizationIssues",
+    "name": "Bulk Remove an Organization's Issues",
+    "description": "Bulk Remove an Organization's Issues Permanently remove the given issues. DELETE /api/0/organizations/{organization_id_or_slug}/issues/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/issues/\nPermanently remove the given issues. If IDs are provided, queries and filtering will be ignored. If any IDs are out of scope, the data won't be mutated but the endpoint will still produce a successful response. For example, if no issues were found matching the criteria, a HTTP 204 is returned.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: environment (query) — The name of environments to filter by.; project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; id (query) — The list of issue IDs to be removed. If not provided, it will attempt to remove the first 1000 issues.; query (query) — An optional search query for filtering issues. A default query will apply if no view/query is set. For all results use this parameter with an empty string.; viewId (query) — The ID of the view to use. If no query is present, the view's query and filters will be applied.; sort (query) — The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), 'Date Added' (`inbox`), and 'Recommended' (`recommended`).; limit (query) — The maximum number of issues to affect. The maximum is 100."
+  },
+  {
+    "id": "getOrganizationIssue",
+    "name": "Retrieve an Issue",
+    "description": "Retrieve an Issue Return details on an individual issue, including its basic stats, comment and user-report counts, and a summary of the latest event. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/\nReturn details on an individual issue, including its basic stats, comment and user-report counts, and a summary of the latest event.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: environment (query) — The name of environments to filter by.; expand (query) — Additional data to include in the response.; collapse (query) — Fields to remove from the response to improve query performance."
+  },
+  {
+    "id": "getOrganizationIssueAutofixState",
+    "name": "Retrieve Seer Issue Fix State",
+    "description": "Retrieve Seer Issue Fix State **Experimental:** This API is under active development and may change. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/autofix/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/autofix/\n**Experimental:** This API is under active development and may change. Retrieve the current detailed state of an issue fix process for a specific issue including: - Current status - Steps performed and their outcomes - Repository information and permissions - Root Cause Analysis - Proposed Solution - Generated code changes\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: llmFormat (query) — If set, adds a `formatted` field to the response with the autofix rendered as the requested format for LLM consumption."
+  },
+  {
+    "id": "getOrganizationIssueEvent",
+    "name": "Retrieve an Issue Event",
+    "description": "Retrieve an Issue Event Retrieves the details of an issue event. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/{event_id}/\nRetrieves the details of an issue event.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; event_id (path) — The ID of the event to retrieve, or 'latest', 'oldest', or 'recommended'.\nOptional: environment (query) — The name of environments to filter by.; llmFormat (query) — If set, adds a `formatted` field to the response with the event rendered as the requested format for LLM consumption."
+  },
+  {
+    "id": "getOrganizationIssueTag",
+    "name": "Retrieve Tag Details",
+    "description": "Retrieve Tag Details Return a list of values associated with this key for an issue. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/\nReturn a list of values associated with this key for an issue. When paginated can return at most 1000 values.\nRequired: issue_id (path) — The ID of the issue you'd like to query.; organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; key (path) — The tag key to look the values up for.\nOptional: environment (query) — The name of environments to filter by."
+  },
+  {
+    "id": "Link an Existing External Issue to an Issue",
+    "name": "Link an issue that already exists in the external provider (such as a Jira ticket or GitHub issue) to the given Sentry issue",
+    "description": "Link an issue that already exists in the external provider (such as a Jira ticket or GitHub issue) to the given Sentry issue Link an issue that already exists in the external provider (such as a Jira ticket or GitHub issue) to the given Sentry issue. PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}…",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/\nLink an issue that already exists in the external provider (such as a Jira ticket or GitHub issue) to the given Sentry issue. Additional accepted fields are integration-specific; fetch them from the `linkIssueConfig` returned by the `GET` endpoint with `?action=link`.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; integration_id (path) — The ID of the integration installed on the organization.; body (body)"
+  },
+  {
+    "id": "listOrganizationIssueEvents",
+    "name": "List an Issue's Events",
+    "description": "List an Issue's Events Return a list of error events bound to an issue GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/events/\nReturn a list of error events bound to an issue\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: start (query) — The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.; end (query) — The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.; statsPeriod (query) — The period of time for the query, will override the start & end parameters, a number followed by one of: - `d` for days - `h` for hours - `m` for minutes - `s` for seconds - `w` for weeks For example, `24h`, to mean query data starting from 24 hours ago to now.; environment (query) — The name of environments to filter by.; full (query) — Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.; sample (query) — Return events in pseudo-random order. This is deterministic so an identical query will always return the same events in the same order.; query (query) — An optional search query for filtering events. See [search syntax](https://docs.sentry.io/concepts/search/) and queryable event properties at [Sentry Search Documentation](https://docs.sentry.io/concepts/search/searchable-properties/events/) for more information. An example query might be `query=transaction:foo AND release:abc`; per_page (query) — Limit the number of rows to return in the result. Default and maximum allowed is 100.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "listOrganizationIssueExternalIssues",
+    "name": "Retrieve custom integration issue links for the given Sentry issue",
+    "description": "Retrieve custom integration issue links for the given Sentry issue GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/external-issues/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/external-issues/\nRetrieve custom integration issue links for the given Sentry issue\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "listOrganizationIssueHashes",
+    "name": "List an Issue's Hashes",
+    "description": "List an Issue's Hashes List the hashes that make up an issue. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/hashes/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/hashes/\nList the hashes that make up an issue. Each hash represents a grouping signature used to aggregate individual events into this issue.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: full (query) — Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "listOrganizationIssueIntegrations",
+    "name": "List an Issue's Tracker Integrations and Links",
+    "description": "List an Issue's Tracker Integrations and Links **Experimental:** This API is under active development and may change. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/\n**Experimental:** This API is under active development and may change. List the organization's issue-tracker integrations and the external issues linked to this Sentry issue through each integration. The external issue's `id` is the Sentry link identifier used by the unlink endpoint.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.; per_page (query) — The maximum number of integrations to return per page (1–100)."
+  },
+  {
+    "id": "listOrganizationIssues",
+    "name": "List an Organization's Issues",
+    "description": "List an Organization's Issues Return a list of issues for an organization. GET /api/0/organizations/{organization_id_or_slug}/issues/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/\nReturn a list of issues for an organization. All parameters are supplied as query string parameters. A default query of `is:unresolved` is applied. To return all results, use an empty query value (i.e. ``?query=`).\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: environment (query) — The name of environments to filter by.; project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; statsPeriod (query) — The period of time for the query, will override the start & end parameters, a number followed by one of: - `d` for days - `h` for hours - `m` for minutes - `s` for seconds - `w` for weeks For example, `24h`, to mean query data starting from 24 hours ago to now.; start (query) — The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.; end (query) — The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.; groupStatsPeriod (query) — The timeline on which stats for the groups should be presented.; shortIdLookup (query) — If this is set to `1` then the query will be parsed for issue short IDs. These may ignore other filters (e.g. projects), which is why it is an opt-in.; query (query) — An optional search query for filtering issues. A default query will apply if no view/query is set. For all results use this parameter with an empty string.; viewId (query) — The ID of the view to use. If no query is present, the view's query and filters will be applied.; sort (query) — The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), 'Date Added' (`inbox`), and 'Recommended' (`recommended`).; limit (query) — The maximum number of issues to affect. The maximum is 100.; expand (query) — Additional data to include in the response.; collapse (query) — Fields to remove from the response to improve query performance.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "listOrganizationIssueTagValues",
+    "name": "List a Tag's Values for an Issue",
+    "description": "List a Tag's Values for an Issue Returns a list of values associated with this key for an issue. GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/values/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/values/\nReturns a list of values associated with this key for an issue. Returns at most 1000 values when paginated.\nRequired: issue_id (path) — The ID of the issue you'd like to query.; organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; key (path) — The tag key to look the values up for.\nOptional: sort (query) — Sort order of the resulting tag values. Default is `id`.; environment (query) — The name of environments to filter by."
+  },
+  {
+    "id": "Retrieve an Integration's Issue Config for an Issue",
+    "name": "Retrieve the form fields needed to either link an existing external issue (such as a Jira ticket or GitHub issue) to a Sentry issue, or create a new one",
+    "description": "Retrieve the form fields needed to either link an existing external issue (such as a Jira ticket or GitHub issue) to a Sentry issue, or create a new one Retrieve the form fields needed to either link an existing external issue (such as a Jira ticket or GitHub issue) to a Sentry issue, or create a new one. GET /api/0/o…",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/\nRetrieve the form fields needed to either link an existing external issue (such as a Jira ticket or GitHub issue) to a Sentry issue, or create a new one. The returned `linkIssueConfig`/`createIssueConfig` describes the fields to submit back to this endpoint via `PUT`/`POST` respectively.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; integration_id (path) — The ID of the integration installed on the organization.; action (query) — Whether to fetch the config for linking an existing external issue (`link`) or creating a new one (`create`)."
+  },
+  {
+    "id": "startOrganizationIssueAutofix",
+    "name": "Start Seer Issue Fix",
+    "description": "Start Seer Issue Fix Trigger a Seer Issue Fix run for a specific issue. POST /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/autofix/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/autofix/\nTrigger a Seer Issue Fix run for a specific issue. The issue fix process can: - Identify the root cause of the issue - Propose a solution - Generate code changes - Create a pull request with the fix The process runs asynchronously, and you can get the state using the GET endpoint.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.\nOptional: body (body)"
+  },
+  {
+    "id": "Unlink an External Issue from an Issue",
+    "name": "Remove the link between a Sentry issue and an external issue",
+    "description": "Remove the link between a Sentry issue and an external issue Remove the link between a Sentry issue and an external issue. DELETE /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/integrations/{integration_id}/\nRemove the link between a Sentry issue and an external issue. If no other Sentry issues reference the external issue, the link record is deleted entirely. This does not delete the issue in the external provider.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; integration_id (path) — The ID of the integration installed on the organization.; externalIssue (query) — The ID of the `ExternalIssue` link to remove."
+  },
+  {
+    "id": "updateOrganizationIssue",
+    "name": "Update an Issue",
+    "description": "Update an Issue Update an individual issue's attributes. PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/\nUpdate an individual issue's attributes. Only the attributes submitted are modified.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; issue_id (path) — The ID of the issue you'd like to query.; body (body)"
+  },
+  {
+    "id": "updateOrganizationIssues",
+    "name": "Bulk Mutate an Organization's Issues",
+    "description": "Bulk Mutate an Organization's Issues Bulk mutate various attributes on a maxmimum of 1000 issues. PUT /api/0/organizations/{organization_id_or_slug}/issues/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/issues/\nBulk mutate various attributes on a maxmimum of 1000 issues. - For non-status updates, the `id` query parameter is required. - For status updates, the `id` query parameter may be omitted to update issues that match the filtering. If any IDs are out of scope, the data won't be mutated but the endpoint will still produce a successful response. For example, if no issues were found matching the criteria, a HTTP 204 is returned.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)\nOptional: environment (query) — The name of environments to filter by.; project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; id (query) — The list of issue IDs to mutate. It is optional for status updates, in which an implicit `update all` is assumed.; query (query) — An optional search query for filtering issues. A default query will apply if no view/query is set. For all results use this parameter with an empty string.; viewId (query) — The ID of the view to use. If no query is present, the view's query and filters will be applied.; sort (query) — The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), 'Date Added' (`inbox`), and 'Recommended' (`recommended`).; limit (query) — The maximum number of issues to affect. The maximum is 100."
+  }
+]

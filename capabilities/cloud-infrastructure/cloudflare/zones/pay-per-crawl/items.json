@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pay-per-crawl.createConfig",
+    "name": "Creates pay-per-crawl config for a zone",
+    "description": "Creates pay-per-crawl config for a zone Creates the pay-per-crawl config for a zone. POST /client/v4/zones/{zone_id}/pay-per-crawl/configuration",
+    "context": "POST /client/v4/zones/{zone_id}/pay-per-crawl/configuration\nCreates the pay-per-crawl config for a zone.\nRequired: zone_id (path) — zone id; body (body) — Data for setting flag on zones"
+  },
+  {
+    "id": "pay-per-crawl.getConfig",
+    "name": "Get the pay-per-crawl config",
+    "description": "Get the pay-per-crawl config Gets the pay-per-crawl config for a zone including the bot configuration. GET /client/v4/zones/{zone_id}/pay-per-crawl/configuration",
+    "context": "GET /client/v4/zones/{zone_id}/pay-per-crawl/configuration\nGets the pay-per-crawl config for a zone including the bot configuration.\nRequired: zone_id (path) — zone id"
+  },
+  {
+    "id": "pay-per-crawl.getZoneCanBeEnabled",
+    "name": "Get pay-per-crawl zone eligibility",
+    "description": "Get pay-per-crawl zone eligibility Gets whether pay-per-crawl can be enabled for a zone. GET /client/v4/zones/{zone_id}/pay-per-crawl/can_be_enabled",
+    "context": "GET /client/v4/zones/{zone_id}/pay-per-crawl/can_be_enabled\nGets whether pay-per-crawl can be enabled for a zone.\nRequired: zone_id (path) — zone id"
+  },
+  {
+    "id": "pay-per-crawl.patchConfig",
+    "name": "Changes pay-per-crawl config for a zone",
+    "description": "Changes pay-per-crawl config for a zone Changes the pay-per-crawl config for a zone. PATCH /client/v4/zones/{zone_id}/pay-per-crawl/configuration",
+    "context": "PATCH /client/v4/zones/{zone_id}/pay-per-crawl/configuration\nChanges the pay-per-crawl config for a zone.\nRequired: zone_id (path) — zone id; body (body) — Data for setting flag on zones"
+  }
+]

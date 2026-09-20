@@ -1,0 +1,224 @@
+[
+  {
+    "id": "CustomersAdGroupAdsRemoveAutomaticallyCreatedAssets",
+    "name": "Remove automatically created assets from an ad.",
+    "description": "Remove automatically created assets from an ad. Remove automatically created assets from an ad. POST /v25/{adGroupAd}:removeAutomaticallyCreatedAssets",
+    "context": "POST /v25/{adGroupAd}:removeAutomaticallyCreatedAssets\nRemove automatically created assets from an ad. List of thrown errors: [AdError]() [AuthenticationError]() [AuthorizationError]() [AutomaticallyCreatedAssetRemovalError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: adGroupAd (path) — Required. The resource name of the AdGroupAd from which to remove automatically created assets.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBatchJobsAddOperations",
+    "name": "Add operations to the batch job.",
+    "description": "Add operations to the batch job. Add operations to the batch job. POST /v25/{resourceName}:addOperations",
+    "context": "POST /v25/{resourceName}:addOperations\nAdd operations to the batch job. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [BatchJobError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: resourceName (path) — Required. The resource name of the batch job.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBatchJobsListResults",
+    "name": "Returns the results of the batch job.",
+    "description": "Returns the results of the batch job. Returns the results of the batch job. GET /v25/{resourceName}:listResults",
+    "context": "GET /v25/{resourceName}:listResults\nReturns the results of the batch job. The job must be done. Supports standard list paging. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [BatchJobError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The resource name of the batch job whose results are being listed.\nOptional: pageToken (query) — Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results.; responseContentType (query) — The response content type setting. Determines whether the mutable resource or just the resource name should be returned.; pageSize (query) — Number of elements to retrieve in a single page. The default and the page_size limit is 1000. A value of 0 or an unset page size will be defaulted to 1000. A page size less than 0 or greater than 1000 will result in an INVALID_PAGE_SIZE error.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBatchJobsRun",
+    "name": "Runs the batch job.",
+    "description": "Runs the batch job. Runs the batch job. POST /v25/{resourceName}:run",
+    "context": "POST /v25/{resourceName}:run\nRuns the batch job. The Operation.metadata field type is BatchJobMetadata. When finished, the long running operation will not contain errors or a response. Instead, use ListBatchJobResults to get the results of the job. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [BatchJobError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The resource name of the BatchJob to run.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "CustomersCampaignDraftsListAsyncErrors",
+    "name": "Returns all errors that occurred during CampaignDraft promote.",
+    "description": "Returns all errors that occurred during CampaignDraft promote. Returns all errors that occurred during CampaignDraft promote. GET /v25/{resourceName}:listAsyncErrors",
+    "context": "GET /v25/{resourceName}:listAsyncErrors\nReturns all errors that occurred during CampaignDraft promote. Throws an error if called before campaign draft is promoted. Supports standard list paging. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The name of the campaign draft from which to retrieve the async errors.\nOptional: pageSize (query) — Number of elements to retrieve in a single page. When a page request is too large, the server may decide to further limit the number of returned resources.; pageToken (query) — Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignDraftsPromote",
+    "name": "Promotes the changes in a draft back to the base campaign.",
+    "description": "Promotes the changes in a draft back to the base campaign. Promotes the changes in a draft back to the base campaign. POST /v25/{campaignDraft}:promote",
+    "context": "POST /v25/{campaignDraft}:promote\nPromotes the changes in a draft back to the base campaign. This method returns a Long Running Operation (LRO) indicating if the Promote is done. Use google.longrunning.Operations.GetOperation to poll the LRO until it is done. Only a done status is returned in the response. See the status in the Campaign Draft resource to determine if the promotion was successful. If the LRO failed, use CampaignDraftService.ListCampaignDraftAsyncErrors to view the list of error reasons. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CampaignDraftError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: campaignDraft (path) — Required. The resource name of the campaign draft to promote.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentsEndExperiment",
+    "name": "Immediately ends an experiment, changing the experiment's scheduled end date and without waiting for end of day.",
+    "description": "Immediately ends an experiment, changing the experiment's scheduled end date and without waiting for end of day. Immediately ends an experiment, changing the experiment's scheduled end date and without waiting for end of day. POST /v25/{experiment}:endExperiment",
+    "context": "POST /v25/{experiment}:endExperiment\nImmediately ends an experiment, changing the experiment's scheduled end date and without waiting for end of day. End date is updated to be the time of the request. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ExperimentError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: experiment (path) — Required. The resource name of the campaign experiment to end.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentsGraduateExperiment",
+    "name": "Graduates an experiment to a full campaign.",
+    "description": "Graduates an experiment to a full campaign. Graduates an experiment to a full campaign. POST /v25/{experiment}:graduateExperiment",
+    "context": "POST /v25/{experiment}:graduateExperiment\nGraduates an experiment to a full campaign. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ExperimentError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: experiment (path) — Required. The experiment to be graduated.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentsListExperimentAsyncErrors",
+    "name": "Returns all errors that occurred during the last Experiment update (either scheduling or promotion).",
+    "description": "Returns all errors that occurred during the last Experiment update (either scheduling or promotion). Returns all errors that occurred during the last Experiment update (either scheduling or promotion). GET /v25/{resourceName}:listExperimentAsyncErrors",
+    "context": "GET /v25/{resourceName}:listExperimentAsyncErrors\nReturns all errors that occurred during the last Experiment update (either scheduling or promotion). Supports standard list paging. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The name of the experiment from which to retrieve the async errors.\nOptional: pageToken (query) — Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results.; pageSize (query) — Number of elements to retrieve in a single page. When a page request is too large, the server may decide to further limit the number of returned resources. The maximum page size is 1000.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentsPromoteExperiment",
+    "name": "Promotes the trial campaign thus applying changes in the trial campaign to the base campaign.",
+    "description": "Promotes the trial campaign thus applying changes in the trial campaign to the base campaign. Promotes the trial campaign thus applying changes in the trial campaign to the base campaign. POST /v25/{resourceName}:promoteExperiment",
+    "context": "POST /v25/{resourceName}:promoteExperiment\nPromotes the trial campaign thus applying changes in the trial campaign to the base campaign. This method returns a long running operation that tracks the promotion of the experiment campaign. If it fails, a list of errors can be retrieved using the ListExperimentAsyncErrors method. The operation's metadata will be a string containing the resource name of the created experiment. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ExperimentError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The resource name of the experiment to promote.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentsScheduleExperiment",
+    "name": "Schedule an experiment.",
+    "description": "Schedule an experiment. Schedule an experiment. POST /v25/{resourceName}:scheduleExperiment",
+    "context": "POST /v25/{resourceName}:scheduleExperiment\nSchedule an experiment. The in design campaign will be converted into a real campaign (called the experiment campaign) that will begin serving ads if successfully created. The experiment is scheduled immediately with status INITIALIZING. This method returns a long running operation that tracks the forking of the in design campaign. If the forking fails, a list of errors can be retrieved using the ListExperimentAsyncErrors method. The operation's metadata will be a string containing the resource name of the created experiment. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ExperimentError]() [DatabaseError]() [DateError]() [DateRangeError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: resourceName (path) — Required. The scheduled experiment.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersLocalServicesLeadsProvideLeadFeedback",
+    "name": "RPC to provide feedback on Local Services Lead resources.",
+    "description": "RPC to provide feedback on Local Services Lead resources. POST /v25/{resourceName}:provideLeadFeedback",
+    "context": "POST /v25/{resourceName}:provideLeadFeedback\nRPC to provide feedback on Local Services Lead resources.\nRequired: resourceName (path) — Required. The resource name of the local services lead that for which the feedback is being provided.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOfflineUserDataJobsAddOperations",
+    "name": "Adds operations to the offline user data job.",
+    "description": "Adds operations to the offline user data job. Adds operations to the offline user data job. POST /v25/{resourceName}:addOperations",
+    "context": "POST /v25/{resourceName}:addOperations\nAdds operations to the offline user data job. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [OfflineUserDataJobError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The resource name of the OfflineUserDataJob.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOfflineUserDataJobsRun",
+    "name": "Runs the offline user data job.",
+    "description": "Runs the offline user data job. Runs the offline user data job. POST /v25/{resourceName}:run",
+    "context": "POST /v25/{resourceName}:run\nRuns the offline user data job. When finished, the long running operation will contain the processing result or failure information, if any. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [HeaderError]() [InternalError]() [OfflineUserDataJobError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The resource name of the OfflineUserDataJob to run.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOperationsCancel",
+    "name": "Starts asynchronous cancellation on a long-running operation.",
+    "description": "Starts asynchronous cancellation on a long-running operation. Starts asynchronous cancellation on a long-running operation. POST /v25/{name}:cancel",
+    "context": "POST /v25/{name}:cancel\nStarts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.\nRequired: name (path) — The name of the operation resource to be cancelled.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "CustomersOperationsDelete",
+    "name": "Deletes a long-running operation.",
+    "description": "Deletes a long-running operation. Deletes a long-running operation. DELETE /v25/{name}",
+    "context": "DELETE /v25/{name}\nDeletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.\nRequired: name (path) — The name of the operation resource to be deleted.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOperationsGet",
+    "name": "Gets the latest state of a long-running operation.",
+    "description": "Gets the latest state of a long-running operation. Gets the latest state of a long-running operation. GET /v25/{name}",
+    "context": "GET /v25/{name}\nGets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.\nRequired: name (path) — The name of the operation resource.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOperationsList",
+    "name": "Lists operations that match the specified filter in the request.",
+    "description": "Lists operations that match the specified filter in the request. Lists operations that match the specified filter in the request. GET /v25/{name}",
+    "context": "GET /v25/{name}\nLists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.\nRequired: name (path) — The name of the operation's parent resource.\nOptional: filter (query) — The standard list filter.; pageToken (query) — The standard list page token.; pageSize (query) — The standard list page size.; returnPartialSuccess (query) — When set to `true`, operations that are reachable are returned as normal, and those that are unreachable are returned in the ListOperationsResponse.unreachable field. This can only be `true` when reading across collections. For example, when `parent` is set to `\"projects/example/locations/-\"`. This field is not supported by default and will result in an `UNIMPLEMENTED` error if set unless explicitly documented otherwise in service or product specific documentation.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOperationsWait",
+    "name": "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state",
+    "description": "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. POST /v25/{name}:wait",
+    "context": "POST /v25/{name}:wait\nWaits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.\nRequired: name (path) — The name of the operation resource to wait on.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSmartCampaignSettingsGetSmartCampaignStatus",
+    "name": "Returns the status of the requested Smart campaign.",
+    "description": "Returns the status of the requested Smart campaign. GET /v25/{resourceName}:getSmartCampaignStatus",
+    "context": "GET /v25/{resourceName}:getSmartCampaignStatus\nReturns the status of the requested Smart campaign.\nRequired: resourceName (path) — Required. The resource name of the Smart campaign setting belonging to the Smart campaign to fetch the status of.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersThirdPartyAppAnalyticsLinksRegenerateShareableLinkId",
+    "name": "Regenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be provided to the third party when setting up app analytics",
+    "description": "Regenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be provided to the third party when setting up app analytics Regenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be provided to the third party when setting up app analytics. POST /v25/{resourceName}:regenerateShareableLinkId",
+    "context": "POST /v25/{resourceName}:regenerateShareableLinkId\nRegenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be provided to the third party when setting up app analytics. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Resource name of the third party app analytics link.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "GoogleAdsFieldsGet",
+    "name": "Returns just the requested field.",
+    "description": "Returns just the requested field. Returns just the requested field. GET /v25/{resourceName}",
+    "context": "GET /v25/{resourceName}\nReturns just the requested field. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: resourceName (path) — Required. The resource name of the field to get.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "AudienceInsightsListInsightsEligibleDates",
+    "name": "Lists date ranges for which audience insights data can be requested.",
+    "description": "Lists date ranges for which audience insights data can be requested. Lists date ranges for which audience insights data can be requested. POST /v25/audienceInsights:listInsightsEligibleDates",
+    "context": "POST /v25/audienceInsights:listInsightsEligibleDates\nLists date ranges for which audience insights data can be requested. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersListAccessibleCustomers",
+    "name": "Returns resource names of customers directly accessible by the user authenticating the call.",
+    "description": "Returns resource names of customers directly accessible by the user authenticating the call. Returns resource names of customers directly accessible by the user authenticating the call. GET /v25/customers:listAccessibleCustomers",
+    "context": "GET /v25/customers:listAccessibleCustomers\nReturns resource names of customers directly accessible by the user authenticating the call. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GenerateConversionRates",
+    "name": "Returns a collection of conversion rate suggestions for supported plannable products.",
+    "description": "Returns a collection of conversion rate suggestions for supported plannable products. Returns a collection of conversion rate suggestions for supported plannable products. POST /v25:generateConversionRates",
+    "context": "POST /v25:generateConversionRates\nReturns a collection of conversion rate suggestions for supported plannable products. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GeoTargetConstantsSuggest",
+    "name": "Returns GeoTargetConstant suggestions by location name or by resource name.",
+    "description": "Returns GeoTargetConstant suggestions by location name or by resource name. Returns GeoTargetConstant suggestions by location name or by resource name. POST /v25/geoTargetConstants:suggest",
+    "context": "POST /v25/geoTargetConstants:suggest\nReturns GeoTargetConstant suggestions by location name or by resource name. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [GeoTargetConstantSuggestionError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GoogleAdsFieldsSearch",
+    "name": "Returns all fields that match the search query.",
+    "description": "Returns all fields that match the search query. Returns all fields that match the search query. POST /v25/googleAdsFields:search",
+    "context": "POST /v25/googleAdsFields:search\nReturns all fields that match the search query. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QueryError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "IncentivesFetchIncentive",
+    "name": "Returns incentives for a given user.",
+    "description": "Returns incentives for a given user. GET /v25/incentives:fetchIncentive",
+    "context": "GET /v25/incentives:fetchIncentive\nReturns incentives for a given user.\nOptional: languageCode (query) — Optional. User's language code. If not provided, the server will default to \"en\". Possible language codes: https://developers.google.com/google-ads/api/data/codes-formats#languages; countryCode (query) — Optional. User's country code. If not provided, the server will default to \"US\". Possible country codes: https://developers.google.com/google-ads/api/data/codes-formats#country_codes; email (query) — Optional. Email of the user that the requested incentive is meant for. Will be used for channel partners who do NOT use OAuth to authenticate on behalf of user.; incentiveType (query) — Optional. The type of incentive to get. Defaults to ACQUISITION.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "KeywordThemeConstantsSuggest",
+    "name": "Returns KeywordThemeConstant suggestions by keyword themes.",
+    "description": "Returns KeywordThemeConstant suggestions by keyword themes. Returns KeywordThemeConstant suggestions by keyword themes. POST /v25/keywordThemeConstants:suggest",
+    "context": "POST /v25/keywordThemeConstants:suggest\nReturns KeywordThemeConstant suggestions by keyword themes. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListBenchmarksAvailableDates",
+    "name": "Returns a date range that supports benchmarks.",
+    "description": "Returns a date range that supports benchmarks. Returns a date range that supports benchmarks. POST /v25:listBenchmarksAvailableDates",
+    "context": "POST /v25:listBenchmarksAvailableDates\nReturns a date range that supports benchmarks. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListBenchmarksLocations",
+    "name": "Returns the list of locations that support benchmarks (for example, countries).",
+    "description": "Returns the list of locations that support benchmarks (for example, countries). Returns the list of locations that support benchmarks (for example, countries). POST /v25:listBenchmarksLocations",
+    "context": "POST /v25:listBenchmarksLocations\nReturns the list of locations that support benchmarks (for example, countries). List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListBenchmarksProducts",
+    "name": "Returns the list of products that supports benchmarks.",
+    "description": "Returns the list of products that supports benchmarks. Returns the list of products that supports benchmarks. POST /v25:listBenchmarksProducts",
+    "context": "POST /v25:listBenchmarksProducts\nReturns the list of products that supports benchmarks. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListBenchmarksSources",
+    "name": "Returns the list of benchmarks sources (for example, Industry Verticals).",
+    "description": "Returns the list of benchmarks sources (for example, Industry Verticals). Returns the list of benchmarks sources (for example, Industry Verticals). POST /v25:listBenchmarksSources",
+    "context": "POST /v25:listBenchmarksSources\nReturns the list of benchmarks sources (for example, Industry Verticals). List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListPlannableLocations",
+    "name": "Returns the list of plannable locations (for example, countries).",
+    "description": "Returns the list of plannable locations (for example, countries). Returns the list of plannable locations (for example, countries). POST /v25:listPlannableLocations",
+    "context": "POST /v25:listPlannableLocations\nReturns the list of plannable locations (for example, countries). List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListPlannableProducts",
+    "name": "Returns the list of per-location plannable YouTube ad formats with allowed targeting.",
+    "description": "Returns the list of per-location plannable YouTube ad formats with allowed targeting. Returns the list of per-location plannable YouTube ad formats with allowed targeting. POST /v25:listPlannableProducts",
+    "context": "POST /v25:listPlannableProducts\nReturns the list of per-location plannable YouTube ad formats with allowed targeting. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListPlannableUserInterests",
+    "name": "Returns the list of plannable user interests.",
+    "description": "Returns the list of plannable user interests. Returns the list of plannable user interests. POST /v25:listPlannableUserInterests",
+    "context": "POST /v25:listPlannableUserInterests\nReturns the list of plannable user interests. A plannable user interest is one that can be targeted in a reach forecast using ReachPlanService.GenerateReachForecast. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [ListOperationError]() [QuotaError]() [RequestError]() [StringLengthError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ListPlannableUserLists",
+    "name": "Returns the list of plannable user lists with their plannable status.",
+    "description": "Returns the list of plannable user lists with their plannable status. Returns the list of plannable user lists with their plannable status. POST /v25:listPlannableUserLists",
+    "context": "POST /v25:listPlannableUserLists\nReturns the list of plannable user lists with their plannable status. User lists may not be plannable for a number of reasons, including: - They are less than 10 days old. - They have a membership lifespan that is less than 30 days - They have less than 10,000 or more than 700,000 users. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [ReachPlanError]() [RequestError]()\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

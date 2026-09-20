@@ -1,0 +1,26 @@
+[
+  {
+    "id": "WebhookController_getAppPortalAccess",
+    "name": "Get Svix Consumer App Portal access for an organization",
+    "description": "Get Svix Consumer App Portal access for an organization POST /webhooks/organizations/{organizationId}/app-portal-access",
+    "context": "POST /webhooks/organizations/{organizationId}/app-portal-access\nGet Svix Consumer App Portal access for an organization\nRequired: organizationId (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "WebhookController_getInitializationStatus",
+    "name": "Get webhook initialization status for an organization",
+    "description": "Get webhook initialization status for an organization GET /webhooks/organizations/{organizationId}/initialization-status",
+    "context": "GET /webhooks/organizations/{organizationId}/initialization-status\nGet webhook initialization status for an organization\nRequired: organizationId (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "WebhookController_initializeWebhooks",
+    "name": "Initialize webhooks for an organization",
+    "description": "Initialize webhooks for an organization POST /webhooks/organizations/{organizationId}/initialize",
+    "context": "POST /webhooks/organizations/{organizationId}/initialize\nInitialize webhooks for an organization\nRequired: organizationId (path) — Organization ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "WebhookController_refreshEndpoints",
+    "name": "Refresh cached endpoint presence flag for an organization",
+    "description": "Refresh cached endpoint presence flag for an organization POST /webhooks/organizations/{organizationId}/refresh-endpoints",
+    "context": "POST /webhooks/organizations/{organizationId}/refresh-endpoints\nRefresh cached endpoint presence flag for an organization\nRequired: organizationId (path)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

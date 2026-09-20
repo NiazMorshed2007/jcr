@@ -1,0 +1,296 @@
+[
+  {
+    "id": "add-audio-track",
+    "name": "Add audio tracks to a video",
+    "description": "Add audio tracks to a video Adds an additional audio track to a video using the provided audio track URL. POST /client/v4/accounts/{account_id}/stream/{identifier}/audio/copy",
+    "context": "POST /client/v4/accounts/{account_id}/stream/{identifier}/audio/copy\nAdds an additional audio track to a video using the provided audio track URL.\nRequired: account_id (path); identifier (path); body (body)"
+  },
+  {
+    "id": "delete-audio-tracks",
+    "name": "Delete additional audio tracks on a video",
+    "description": "Delete additional audio tracks on a video Deletes additional audio tracks on a video. DELETE /client/v4/accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}\nDeletes additional audio tracks on a video. Deleting a default audio track is not allowed. You must assign another audio track as default prior to deletion.\nRequired: account_id (path); identifier (path); audio_identifier (path)"
+  },
+  {
+    "id": "edit-audio-tracks",
+    "name": "Edit additional audio tracks on a video",
+    "description": "Edit additional audio tracks on a video Edits additional audio tracks on a video. PATCH /client/v4/accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}",
+    "context": "PATCH /client/v4/accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}\nEdits additional audio tracks on a video. Editing the default status of an audio track to `true` will mark all other audio tracks on the video default status to `false`.\nRequired: account_id (path); identifier (path); audio_identifier (path); body (body)"
+  },
+  {
+    "id": "list-audio-tracks",
+    "name": "List additional audio tracks on a video",
+    "description": "List additional audio tracks on a video Lists additional audio tracks on a video. GET /client/v4/accounts/{account_id}/stream/{identifier}/audio",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}/audio\nLists additional audio tracks on a video. Note this API will not return information for audio attached to the video upload.\nRequired: account_id (path); identifier (path)"
+  },
+  {
+    "id": "stream-downloads-create-type-specific-downloads",
+    "name": "Create download",
+    "description": "Create download Creates a download for a video of specified type. POST /client/v4/accounts/{account_id}/stream/{identifier}/downloads/{download_type}",
+    "context": "POST /client/v4/accounts/{account_id}/stream/{identifier}/downloads/{download_type}\nCreates a download for a video of specified type. For backwards-compatibility, POST requests to /downloads will enable the default download.\nRequired: identifier (path); account_id (path); download_type (path)"
+  },
+  {
+    "id": "stream-downloads-delete-type-specific-downloads",
+    "name": "Delete download",
+    "description": "Delete download Delete specific type of download. DELETE /client/v4/accounts/{account_id}/stream/{identifier}/downloads/{download_type}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/{identifier}/downloads/{download_type}\nDelete specific type of download. For backwards-compatibility, DELETE requests to /downloads will delete the default download.\nRequired: identifier (path); account_id (path); download_type (path)"
+  },
+  {
+    "id": "stream-live-inputs-create-a-live-input",
+    "name": "Create a live input",
+    "description": "Create a live input Creates a live input, and returns credentials that you or your users can use to stream live video to Cloudflare Stream. POST /client/v4/accounts/{account_id}/stream/live_inputs",
+    "context": "POST /client/v4/accounts/{account_id}/stream/live_inputs\nCreates a live input, and returns credentials that you or your users can use to stream live video to Cloudflare Stream.\nRequired: account_id (path); body (body)\nOptional: Idempotency-Key (header) — Prevents duplicate live inputs from being created when retrying this request. The key is scoped to the account, may contain up to 255 bytes, and expires six hours after the live input is created. Reusing a key for a deleted input before expiry returns a 409 Conflict response."
+  },
+  {
+    "id": "stream-live-inputs-create-a-new-output,-connected-to-a-live-input",
+    "name": "Create a new output, connected to a live input",
+    "description": "Create a new output, connected to a live input Creates a new output that can be used to simulcast or restream live video to other RTMP or SRT destinations. POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs",
+    "context": "POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs\nCreates a new output that can be used to simulcast or restream live video to other RTMP or SRT destinations. Outputs are always linked to a specific live input — one live input can have many outputs.\nRequired: live_input_identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "stream-live-inputs-delete-a-live-input",
+    "name": "Delete a live input",
+    "description": "Delete a live input Permanently delete a live input, making it inaccessible and blocking current and future broadcasts to it. DELETE /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}\nPermanently delete a live input, making it inaccessible and blocking current and future broadcasts to it. Existing recordings will be retained.\nRequired: live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-delete-an-output",
+    "name": "Delete an output",
+    "description": "Delete an output Deletes an output and removes it from the associated live input. DELETE /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}\nDeletes an output and removes it from the associated live input.\nRequired: output_identifier (path); live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-disable-a-live-input",
+    "name": "Disable a live input",
+    "description": "Disable a live input Prevents a live input from being streamed to and terminates any active broadcasts until re-enabled. POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/disable",
+    "context": "POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/disable\nPrevents a live input from being streamed to and terminates any active broadcasts until re-enabled.\nRequired: live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-enable-a-live-input",
+    "name": "Enable a live input",
+    "description": "Enable a live input Allows a disabled live input to start receiving broadcasts again. POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/enable",
+    "context": "POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/enable\nAllows a disabled live input to start receiving broadcasts again.\nRequired: live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-list-all-outputs-associated-with-a-specified-live-input",
+    "name": "List all outputs associated with a specified live input",
+    "description": "List all outputs associated with a specified live input Retrieves all outputs associated with a specified live input. GET /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs",
+    "context": "GET /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs\nRetrieves all outputs associated with a specified live input.\nRequired: live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-list-live-inputs",
+    "name": "List live inputs",
+    "description": "List live inputs Lists the live inputs created for an account. GET /client/v4/accounts/{account_id}/stream/live_inputs",
+    "context": "GET /client/v4/accounts/{account_id}/stream/live_inputs\nLists the live inputs created for an account. To get the credentials needed to stream to a specific live input, request a single live input.\nRequired: account_id (path)\nOptional: include_counts (query)"
+  },
+  {
+    "id": "stream-live-inputs-retrieve-a-live-input",
+    "name": "Retrieve a live input",
+    "description": "Retrieve a live input Retrieves details of an existing live input. GET /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}",
+    "context": "GET /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}\nRetrieves details of an existing live input.\nRequired: live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-rotate-keys-for-a-live-input",
+    "name": "Rotate keys for a live input",
+    "description": "Rotate keys for a live input Rotates the credentials for a live input without changing its identifier. POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/rotate_keys",
+    "context": "POST /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/rotate_keys\nRotates the credentials for a live input without changing its identifier. Old credentials are revoked, broadcasts using stale credentials are automatically disconnected shortly after rotation, and the response returns refreshed credentials.\nRequired: live_input_identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-live-inputs-update-a-live-input",
+    "name": "Update a live input",
+    "description": "Update a live input Updates a specified live input. PUT /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}",
+    "context": "PUT /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}\nUpdates a specified live input.\nRequired: live_input_identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "stream-live-inputs-update-an-output",
+    "name": "Update an output",
+    "description": "Update an output Updates the state of an output. PUT /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}",
+    "context": "PUT /client/v4/accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}\nUpdates the state of an output.\nRequired: output_identifier (path); live_input_identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "stream-mp4-downloads-create-downloads",
+    "name": "Create downloads",
+    "description": "Create downloads Creates a download for a video when a video is ready to view. POST /client/v4/accounts/{account_id}/stream/{identifier}/downloads",
+    "context": "POST /client/v4/accounts/{account_id}/stream/{identifier}/downloads\nCreates a download for a video when a video is ready to view. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-mp4-downloads-delete-downloads",
+    "name": "Delete downloads",
+    "description": "Delete downloads Delete the downloads for a video. DELETE /client/v4/accounts/{account_id}/stream/{identifier}/downloads",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/{identifier}/downloads\nDelete the downloads for a video. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-mp4-downloads-list-downloads",
+    "name": "List downloads",
+    "description": "List downloads Lists the downloads created for a video. GET /client/v4/accounts/{account_id}/stream/{identifier}/downloads",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}/downloads\nLists the downloads created for a video.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-signing-keys-create-signing-keys",
+    "name": "Create signing keys",
+    "description": "Create signing keys Creates an RSA private key in PEM and JWK formats. POST /client/v4/accounts/{account_id}/stream/keys",
+    "context": "POST /client/v4/accounts/{account_id}/stream/keys\nCreates an RSA private key in PEM and JWK formats. Key files are only displayed once after creation. Keys are created, used, and deleted independently of videos, and every key can sign any video.\nRequired: account_id (path)"
+  },
+  {
+    "id": "stream-signing-keys-delete-signing-keys",
+    "name": "Delete signing keys",
+    "description": "Delete signing keys Deletes signing keys and revokes all signed URLs generated with the key. DELETE /client/v4/accounts/{account_id}/stream/keys/{identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/keys/{identifier}\nDeletes signing keys and revokes all signed URLs generated with the key.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-signing-keys-list-signing-keys",
+    "name": "List signing keys",
+    "description": "List signing keys Lists the video ID and creation date and time when a signing key was created. GET /client/v4/accounts/{account_id}/stream/keys",
+    "context": "GET /client/v4/accounts/{account_id}/stream/keys\nLists the video ID and creation date and time when a signing key was created.\nRequired: account_id (path)"
+  },
+  {
+    "id": "stream-subtitles%2F-captions-delete-captions-or-subtitles",
+    "name": "Delete captions or subtitles",
+    "description": "Delete captions or subtitles Removes the captions or subtitles from a video. DELETE /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}\nRemoves the captions or subtitles from a video.\nRequired: language (path); identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-subtitles%2F-captions-generate-caption-or-subtitle-for-language",
+    "name": "Generate captions or subtitles for a provided language via AI",
+    "description": "Generate captions or subtitles for a provided language via AI Generate captions or subtitles for provided language via AI. POST /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}/generate",
+    "context": "POST /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}/generate\nGenerate captions or subtitles for provided language via AI.\nRequired: language (path); identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-subtitles%2F-captions-get-caption-or-subtitle-for-language",
+    "name": "List captions or subtitles for a provided language",
+    "description": "List captions or subtitles for a provided language Lists the captions or subtitles for provided language. GET /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}\nLists the captions or subtitles for provided language.\nRequired: language (path); identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-subtitles%2F-captions-get-vtt-caption-or-subtitle",
+    "name": "Return WebVTT captions for a provided language",
+    "description": "Return WebVTT captions for a provided language Return WebVTT captions for a provided language. GET /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}/vtt",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}/vtt\nReturn WebVTT captions for a provided language.\nRequired: language (path); identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-subtitles%2F-captions-list-captions-or-subtitles",
+    "name": "List captions or subtitles",
+    "description": "List captions or subtitles Lists the available captions or subtitles for a specific video. GET /client/v4/accounts/{account_id}/stream/{identifier}/captions",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}/captions\nLists the available captions or subtitles for a specific video.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-subtitles%2F-captions-upload-captions-or-subtitles",
+    "name": "Upload captions or subtitles",
+    "description": "Upload captions or subtitles Uploads the caption or subtitle file to the endpoint for a specific BCP47 language. PUT /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}",
+    "context": "PUT /client/v4/accounts/{account_id}/stream/{identifier}/captions/{language}\nUploads the caption or subtitle file to the endpoint for a specific BCP47 language. One caption or subtitle file per language is allowed.\nRequired: language (path); identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "stream-video-clipping-clip-videos-given-a-start-and-end-time",
+    "name": "Clip videos given a start and end time",
+    "description": "Clip videos given a start and end time Clips a video based on the specified start and end times provided in seconds. POST /client/v4/accounts/{account_id}/stream/clip",
+    "context": "POST /client/v4/accounts/{account_id}/stream/clip\nClips a video based on the specified start and end times provided in seconds.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "stream-videos-create-signed-url-tokens-for-videos",
+    "name": "Create signed URL tokens for videos",
+    "description": "Create signed URL tokens for videos Creates a signed URL token for a video. POST /client/v4/accounts/{account_id}/stream/{identifier}/token",
+    "context": "POST /client/v4/accounts/{account_id}/stream/{identifier}/token\nCreates a signed URL token for a video. If a body is not provided in the request, a token is created with default values.\nRequired: identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "stream-videos-delete-video",
+    "name": "Delete video",
+    "description": "Delete video Deletes a video and its copies from Cloudflare Stream. DELETE /client/v4/accounts/{account_id}/stream/{identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/{identifier}\nDeletes a video and its copies from Cloudflare Stream.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-videos-initiate-video-uploads-using-tus",
+    "name": "Initiate video uploads using TUS",
+    "description": "Initiate video uploads using TUS Initiates a video upload using the TUS protocol. POST /client/v4/accounts/{account_id}/stream",
+    "context": "POST /client/v4/accounts/{account_id}/stream\nInitiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.\nRequired: Tus-Resumable (header); Upload-Length (header); account_id (path)\nOptional: Upload-Creator (header); Upload-Metadata (header); direct_user (query)"
+  },
+  {
+    "id": "stream-videos-list-videos",
+    "name": "List videos",
+    "description": "List videos Lists up to 1000 videos from a single request. GET /client/v4/accounts/{account_id}/stream",
+    "context": "GET /client/v4/accounts/{account_id}/stream\nLists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.\nRequired: account_id (path)\nOptional: status (query); creator (query); type (query); asc (query); video_name (query); search (query); start (query); end (query); include_counts (query); id (query) — Filter by video ID(s). Can be a single ID or a comma-separated list of IDs.; name (query) — Filter by video name/UID(s). Can be a single name or a comma-separated list.; live_input_id (query) — Filter by live input ID to find videos associated with a specific live stream.; before (query) — Alias for 'end'. Returns videos created before this date/time (RFC 3339 format).; after (query) — Alias for 'start'. Returns videos created after this date/time (RFC 3339 format).; limit (query) — Maximum number of videos to return (default 1000, max 1000)."
+  },
+  {
+    "id": "stream-videos-retreieve-embed-code-html",
+    "name": "Deprecated: Retrieve legacy embed code HTML",
+    "description": "Deprecated: Retrieve legacy embed code HTML Fetches the legacy HTML code snippet to embed a video in a web page delivered through Cloudflare. GET /client/v4/accounts/{account_id}/stream/{identifier}/embed",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}/embed\nFetches the legacy HTML code snippet to embed a video in a web page delivered through Cloudflare. On success, returns an HTML fragment for use on web pages to display a video. On failure, returns a JSON response body.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-videos-retrieve-video-details",
+    "name": "Retrieve video details",
+    "description": "Retrieve video details Fetches details for a single video. GET /client/v4/accounts/{account_id}/stream/{identifier}",
+    "context": "GET /client/v4/accounts/{account_id}/stream/{identifier}\nFetches details for a single video.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-videos-storage-usage",
+    "name": "Storage use",
+    "description": "Storage use Returns information about an account's storage use. GET /client/v4/accounts/{account_id}/stream/storage-usage",
+    "context": "GET /client/v4/accounts/{account_id}/stream/storage-usage\nReturns information about an account's storage use.\nRequired: account_id (path)\nOptional: creator (query)"
+  },
+  {
+    "id": "stream-videos-update-video-details",
+    "name": "Edit video details",
+    "description": "Edit video details Edit details for a single video. POST /client/v4/accounts/{account_id}/stream/{identifier}",
+    "context": "POST /client/v4/accounts/{account_id}/stream/{identifier}\nEdit details for a single video.\nRequired: identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "stream-videos-upload-videos-from-a-url",
+    "name": "Upload videos from a URL",
+    "description": "Upload videos from a URL Uploads a video to Stream from a provided URL. POST /client/v4/accounts/{account_id}/stream/copy",
+    "context": "POST /client/v4/accounts/{account_id}/stream/copy\nUploads a video to Stream from a provided URL.\nRequired: account_id (path); body (body)\nOptional: Upload-Creator (header)"
+  },
+  {
+    "id": "stream-videos-upload-videos-via-direct-upload-ur-ls",
+    "name": "Upload videos via direct upload URLs",
+    "description": "Upload videos via direct upload URLs Creates a direct upload endpoint that allows an end-user to upload a video without an API key. POST /client/v4/accounts/{account_id}/stream/direct_upload",
+    "context": "POST /client/v4/accounts/{account_id}/stream/direct_upload\nCreates a direct upload endpoint that allows an end-user to upload a video without an API key.\nRequired: account_id (path); body (body)\nOptional: Upload-Creator (header)"
+  },
+  {
+    "id": "stream-watermark-profile-create-watermark-profiles-via-basic-upload",
+    "name": "Create watermark profiles via basic upload",
+    "description": "Create watermark profiles via basic upload Creates watermark profiles using a single `HTTP POST multipart/form-data` request. POST /client/v4/accounts/{account_id}/stream/watermarks",
+    "context": "POST /client/v4/accounts/{account_id}/stream/watermarks\nCreates watermark profiles using a single `HTTP POST multipart/form-data` request.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "stream-watermark-profile-delete-watermark-profiles",
+    "name": "Delete watermark profiles",
+    "description": "Delete watermark profiles Deletes a watermark profile. DELETE /client/v4/accounts/{account_id}/stream/watermarks/{identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/watermarks/{identifier}\nDeletes a watermark profile.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-watermark-profile-list-watermark-profiles",
+    "name": "List watermark profiles",
+    "description": "List watermark profiles Lists all watermark profiles for an account. GET /client/v4/accounts/{account_id}/stream/watermarks",
+    "context": "GET /client/v4/accounts/{account_id}/stream/watermarks\nLists all watermark profiles for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "stream-watermark-profile-watermark-profile-details",
+    "name": "Watermark profile details",
+    "description": "Watermark profile details Retrieves details for a single watermark profile. GET /client/v4/accounts/{account_id}/stream/watermarks/{identifier}",
+    "context": "GET /client/v4/accounts/{account_id}/stream/watermarks/{identifier}\nRetrieves details for a single watermark profile.\nRequired: identifier (path); account_id (path)"
+  },
+  {
+    "id": "stream-webhook-create-webhooks",
+    "name": "Create VOD webhooks",
+    "description": "Create VOD webhooks Create a webhook for notifications about on-demand video uploads. PUT /client/v4/accounts/{account_id}/stream/webhook",
+    "context": "PUT /client/v4/accounts/{account_id}/stream/webhook\nCreate a webhook for notifications about on-demand video uploads.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "stream-webhook-delete-webhooks",
+    "name": "Delete webhooks",
+    "description": "Delete webhooks Deletes the on-demand video webhook. DELETE /client/v4/accounts/{account_id}/stream/webhook",
+    "context": "DELETE /client/v4/accounts/{account_id}/stream/webhook\nDeletes the on-demand video webhook.\nRequired: account_id (path)"
+  },
+  {
+    "id": "stream-webhook-view-webhooks",
+    "name": "View webhook",
+    "description": "View webhook Retrieve current on-demand webhook information. GET /client/v4/accounts/{account_id}/stream/webhook",
+    "context": "GET /client/v4/accounts/{account_id}/stream/webhook\nRetrieve current on-demand webhook information.\nRequired: account_id (path)"
+  },
+  {
+    "id": "usage-analytics-get-account-stream-usage",
+    "name": "Get account Stream usage",
+    "description": "Get account Stream usage Retrieve Stream usage analytics for an account. GET /client/v4/accounts/{account_id}/stream/usage",
+    "context": "GET /client/v4/accounts/{account_id}/stream/usage\nRetrieve Stream usage analytics for an account. Returns time-series data for Stream billable minutes viewed across all zones in the account. The gateway rewrites this path before forwarding to the backend usage handler.\nRequired: account_id (path) — Standard Cloudflare hex account identifier. The API gateway translates this to an internal numeric ID before forwarding to the backend service.\nOptional: metrics (query) — Comma-separated list of metrics to include in the response. Available metrics depend on the endpoint. Billing usage supports: streamMinutesViewed, rateLimitingRequestsAllowed, loadBalancingQueries, argoAcceleratedBytes, workersRequests, workersKVReads, imageResizingRequests, spectrumBytesTransferred, mediaUniqueTransformations. Stream/media usage supports: streamMinutesViewed.; since (query) — Start of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to 6 hours before the current time.; until (query) — End of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to the current time.; time_delta (query) — Time unit to aggregate usage observations into. Data retention is approximately 18 months. The effective number of data points returned depends on the time range and granularity selected. For example, requesting hourly granularity over 18 months could produce up to ~13,000 data points; use the limit parameter to cap results and be aware that responses may be truncated.; limit (query) — Maximum number of data points to return. The actual number of results depends on the interaction between the time range (since/until) and time_delta granularity. Results are truncated to this limit without error if the time range produces more data points than the limit allows.; filters (query) — Filter expressions to apply to the query. Format: field==value. Multiple filters can be combined."
+  }
+]

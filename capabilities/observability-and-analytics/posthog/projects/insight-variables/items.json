@@ -1,0 +1,38 @@
+[
+  {
+    "id": "insight_variables_create",
+    "name": "insight_variables_create",
+    "description": "insight_variables_create POST /api/projects/{project_id}/insight_variables/",
+    "context": "POST /api/projects/{project_id}/insight_variables/\ninsight_variables_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "insight_variables_destroy",
+    "name": "insight_variables_destroy",
+    "description": "insight_variables_destroy DELETE /api/projects/{project_id}/insight_variables/{id}/",
+    "context": "DELETE /api/projects/{project_id}/insight_variables/{id}/\ninsight_variables_destroy\nRequired: id (path) — A UUID string identifying this insight variable.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "insight_variables_list",
+    "name": "insight_variables_list",
+    "description": "insight_variables_list GET /api/projects/{project_id}/insight_variables/",
+    "context": "GET /api/projects/{project_id}/insight_variables/\ninsight_variables_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: page (query) — A page number within the paginated result set."
+  },
+  {
+    "id": "insight_variables_partial_update",
+    "name": "insight_variables_partial_update",
+    "description": "insight_variables_partial_update PATCH /api/projects/{project_id}/insight_variables/{id}/",
+    "context": "PATCH /api/projects/{project_id}/insight_variables/{id}/\ninsight_variables_partial_update\nRequired: id (path) — A UUID string identifying this insight variable.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "insight_variables_retrieve",
+    "name": "insight_variables_retrieve",
+    "description": "insight_variables_retrieve GET /api/projects/{project_id}/insight_variables/{id}/",
+    "context": "GET /api/projects/{project_id}/insight_variables/{id}/\ninsight_variables_retrieve\nRequired: id (path) — A UUID string identifying this insight variable.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "insight_variables_update",
+    "name": "insight_variables_update",
+    "description": "insight_variables_update PUT /api/projects/{project_id}/insight_variables/{id}/",
+    "context": "PUT /api/projects/{project_id}/insight_variables/{id}/\ninsight_variables_update\nRequired: id (path) — A UUID string identifying this insight variable.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

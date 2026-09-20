@@ -1,0 +1,86 @@
+[
+  {
+    "id": "actions%2Fget-actions-cache-retention-limit-for-organization",
+    "name": "Get GitHub Actions cache retention limit for an organization",
+    "description": "Get GitHub Actions cache retention limit for an organization Gets GitHub Actions cache retention limit for an organization. GET /organizations/{org}/actions/cache/retention-limit",
+    "context": "GET /organizations/{org}/actions/cache/retention-limit\nGets GitHub Actions cache retention limit for an organization. All repositories under this organization may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-actions-cache-storage-limit-for-organization",
+    "name": "Get GitHub Actions cache storage limit for an organization",
+    "description": "Get GitHub Actions cache storage limit for an organization Gets GitHub Actions cache storage limit for an organization. GET /organizations/{org}/actions/cache/storage-limit",
+    "context": "GET /organizations/{org}/actions/cache/storage-limit\nGets GitHub Actions cache storage limit for an organization. All repositories under this organization may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fset-actions-cache-retention-limit-for-organization",
+    "name": "Set GitHub Actions cache retention limit for an organization",
+    "description": "Set GitHub Actions cache retention limit for an organization Sets GitHub Actions cache retention limit for an organization. PUT /organizations/{org}/actions/cache/retention-limit",
+    "context": "PUT /organizations/{org}/actions/cache/retention-limit\nSets GitHub Actions cache retention limit for an organization. All repositories under this organization may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-actions-cache-storage-limit-for-organization",
+    "name": "Set GitHub Actions cache storage limit for an organization",
+    "description": "Set GitHub Actions cache storage limit for an organization Sets GitHub Actions cache storage limit for an organization. PUT /organizations/{org}/actions/cache/storage-limit",
+    "context": "PUT /organizations/{org}/actions/cache/storage-limit\nSets GitHub Actions cache storage limit for an organization. All organizations and repositories under this organization may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "billing%2Fcreate-organization-budget",
+    "name": "Create a budget for an organization",
+    "description": "Create a budget for an organization Creates a new budget for an organization. POST /organizations/{org}/settings/billing/budgets",
+    "context": "POST /organizations/{org}/settings/billing/budgets\nCreates a new budget for an organization. The authenticated user must be an organization admin or billing manager.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "billing%2Fdelete-budget-org",
+    "name": "Delete a budget for an organization",
+    "description": "Delete a budget for an organization Deletes a budget by ID for an organization. DELETE /organizations/{org}/settings/billing/budgets/{budget_id}",
+    "context": "DELETE /organizations/{org}/settings/billing/budgets/{budget_id}\nDeletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.\nRequired: org (path) — The organization name. The name is not case sensitive.; budget_id (path) — The ID corresponding to the budget."
+  },
+  {
+    "id": "billing%2Fget-all-budgets-org",
+    "name": "Get all budgets for an organization",
+    "description": "Get all budgets for an organization Gets all budgets for an organization. GET /organizations/{org}/settings/billing/budgets",
+    "context": "GET /organizations/{org}/settings/billing/budgets\nGets all budgets for an organization. The authenticated user must be an organization admin or billing manager. Each page returns up to 100 budgets.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: page (query) — The page number of the results to fetch.; per_page (query) — The number of results per page (max 100).; scope (query) — Filter budgets by scope type. - `organization`: Budgets scoped to the organization. - `repository`: Budgets scoped to a repository. - `multi_user_customer`: Universal budgets that apply to all users in the organization. - `user`: Budgets scoped to an individual user.; user (query) — Filter consumed amount details for budgets by the specified user login."
+  },
+  {
+    "id": "billing%2Fget-budget-org",
+    "name": "Get a budget by ID for an organization",
+    "description": "Get a budget by ID for an organization Gets a budget by ID. GET /organizations/{org}/settings/billing/budgets/{budget_id}",
+    "context": "GET /organizations/{org}/settings/billing/budgets/{budget_id}\nGets a budget by ID. The authenticated user must be an organization admin or billing manager.\nRequired: org (path) — The organization name. The name is not case sensitive.; budget_id (path) — The ID corresponding to the budget."
+  },
+  {
+    "id": "billing%2Fget-github-billing-ai-credit-usage-report-org",
+    "name": "Get billing AI credit usage report for an organization",
+    "description": "Get billing AI credit usage report for an organization Gets a report of AI credit usage for an organization. GET /organizations/{org}/settings/billing/ai_credit/usage",
+    "context": "GET /organizations/{org}/settings/billing/ai_credit/usage\nGets a report of AI credit usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** Only data from the past 24 months is accessible via this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. Default value is the current month. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.; user (query) — The user name to query usage for. The name is not case sensitive.; model (query) — The model name to query usage for. The name is not case sensitive.; product (query) — The product name to query usage for. The name is not case sensitive."
+  },
+  {
+    "id": "billing%2Fget-github-billing-premium-request-usage-report-org",
+    "name": "Get billing premium request usage report for an organization",
+    "description": "Get billing premium request usage report for an organization Gets a report of premium request usage for an organization. GET /organizations/{org}/settings/billing/premium_request/usage",
+    "context": "GET /organizations/{org}/settings/billing/premium_request/usage\nGets a report of premium request usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** Only data from the past 24 months is accessible via this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. Default value is the current month. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.; user (query) — The user name to query usage for. The name is not case sensitive.; model (query) — The model name to query usage for. The name is not case sensitive.; product (query) — The product name to query usage for. The name is not case sensitive."
+  },
+  {
+    "id": "billing%2Fget-github-billing-usage-report-org",
+    "name": "Get billing usage report for an organization",
+    "description": "Get billing usage report for an organization Gets a report of the total usage for an organization. GET /organizations/{org}/settings/billing/usage",
+    "context": "GET /organizations/{org}/settings/billing/usage\nGets a report of the total usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see \"[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform).\"\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used."
+  },
+  {
+    "id": "billing%2Fget-github-billing-usage-summary-report-org",
+    "name": "Get billing usage summary for an organization",
+    "description": "Get billing usage summary for an organization > [!NOTE] > This endpoint is in public preview and is subject to change. GET /organizations/{org}/settings/billing/usage/summary",
+    "context": "GET /organizations/{org}/settings/billing/usage/summary\n> [!NOTE] > This endpoint is in public preview and is subject to change. Gets a summary report of usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account. **Note:** Only data from the past 24 months is accessible via this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. Default value is the current month. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.; repository (query) — The repository name to query for usage in the format owner/repository.; product (query) — The product name to query usage for. The name is not case sensitive.; sku (query) — The SKU to query for usage."
+  },
+  {
+    "id": "billing%2Fupdate-budget-org",
+    "name": "Update a budget for an organization",
+    "description": "Update a budget for an organization Updates an existing budget for an organization. PATCH /organizations/{org}/settings/billing/budgets/{budget_id}",
+    "context": "PATCH /organizations/{org}/settings/billing/budgets/{budget_id}\nUpdates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.\nRequired: org (path) — The organization name. The name is not case sensitive.; budget_id (path) — The ID corresponding to the budget.; body (body)"
+  },
+  {
+    "id": "orgs%2Flist",
+    "name": "List organizations",
+    "description": "List organizations Lists all organizations, in the order that they were created. GET /organizations",
+    "context": "GET /organizations\nLists all organizations, in the order that they were created. > [!NOTE] > Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.\nOptional: since (query) — An organization ID. Only return organizations with an ID greater than this ID.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

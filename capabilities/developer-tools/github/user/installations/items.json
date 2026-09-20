@@ -1,0 +1,26 @@
+[
+  {
+    "id": "apps%2Fadd-repo-to-installation-for-authenticated-user",
+    "name": "Add a repository to an app installation",
+    "description": "Add a repository to an app installation Add a single repository to an installation. PUT /user/installations/{installation_id}/repositories/{repository_id}",
+    "context": "PUT /user/installations/{installation_id}/repositories/{repository_id}\nAdd a single repository to an installation. The authenticated user must have admin access to the repository. This endpoint only works for PATs (classic) with the `repo` scope.\nRequired: installation_id (path) — The unique identifier of the installation.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "apps%2Flist-installation-repos-for-authenticated-user",
+    "name": "List repositories accessible to the user access token",
+    "description": "List repositories accessible to the user access token List repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation. GET /user/installations/{installation_id}/repositories",
+    "context": "GET /user/installations/{installation_id}/repositories\nList repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation. The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership. The access the user has to each repository is included in the hash under the `permissions` key.\nRequired: installation_id (path) — The unique identifier of the installation.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "apps%2Flist-installations-for-authenticated-user",
+    "name": "List app installations accessible to the user access token",
+    "description": "List app installations accessible to the user access token Lists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access. GET /user/installations",
+    "context": "GET /user/installations\nLists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access. The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership. You can find the permissions for the installation under the `permissions` key.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "apps%2Fremove-repo-from-installation-for-authenticated-user",
+    "name": "Remove a repository from an app installation",
+    "description": "Remove a repository from an app installation Remove a single repository from an installation. DELETE /user/installations/{installation_id}/repositories/{repository_id}",
+    "context": "DELETE /user/installations/{installation_id}/repositories/{repository_id}\nRemove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`. This endpoint only works for PATs (classic) with the `repo` scope.\nRequired: installation_id (path) — The unique identifier of the installation.; repository_id (path) — The unique identifier of the repository."
+  }
+]

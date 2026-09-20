@@ -1,0 +1,32 @@
+[
+  {
+    "id": "GetReportingReportRuns",
+    "name": "List all Report Runs",
+    "description": "List all Report Runs Returns a list of Report Runs, with the most recent appearing first. GET /v1/reporting/report_runs",
+    "context": "GET /v1/reporting/report_runs\nReturns a list of Report Runs, with the most recent appearing first.\nOptional: created (query) — Only return Report Runs that were created during the given date interval.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetReportingReportRunsReportRun",
+    "name": "Retrieve a Report Run",
+    "description": "Retrieve a Report Run Retrieves the details of an existing Report Run. GET /v1/reporting/report_runs/{report_run}",
+    "context": "GET /v1/reporting/report_runs/{report_run}\nRetrieves the details of an existing Report Run.\nRequired: report_run (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetReportingReportTypes",
+    "name": "List all Report Types",
+    "description": "List all Report Types Returns a full list of Report Types. GET /v1/reporting/report_types",
+    "context": "GET /v1/reporting/report_types\nReturns a full list of Report Types.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetReportingReportTypesReportType",
+    "name": "Retrieve a Report Type",
+    "description": "Retrieve a Report Type Retrieves the details of a Report Type. GET /v1/reporting/report_types/{report_type}",
+    "context": "GET /v1/reporting/report_types/{report_type}\nRetrieves the details of a Report Type. (Certain report types require a live-mode API key .)\nRequired: report_type (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostReportingReportRuns",
+    "name": "Create a Report Run",
+    "description": "Create a Report Run Creates a new object and begin running the report. POST /v1/reporting/report_runs",
+    "context": "POST /v1/reporting/report_runs\nCreates a new object and begin running the report. (Certain report types require a live-mode API key .)\nRequired: body (body)"
+  }
+]

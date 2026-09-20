@@ -1,0 +1,38 @@
+[
+  {
+    "id": "webhook",
+    "name": "Retrieve a webhook",
+    "description": "Retrieve a webhook GET /v2/webhooks/{webhookId}",
+    "context": "GET /v2/webhooks/{webhookId}\nRetrieve a webhook\nRequired: webhookId (path) — The webhook ID"
+  },
+  {
+    "id": "webhookCreate",
+    "name": "Create a webhook",
+    "description": "Create a webhook Create a webhook for a account POST /v2/webhooks",
+    "context": "POST /v2/webhooks\nCreate a webhook for a account\nRequired: body (body) — Webhook"
+  },
+  {
+    "id": "webhookDelete",
+    "name": "Delete a webhook",
+    "description": "Delete a webhook DELETE /v2/webhooks/{webhookId}",
+    "context": "DELETE /v2/webhooks/{webhookId}\nDelete a webhook\nRequired: webhookId (path) — The webhook ID"
+  },
+  {
+    "id": "webhooks",
+    "name": "List webhooks",
+    "description": "List webhooks List webhooks for a account GET /v2/webhooks",
+    "context": "GET /v2/webhooks\nList webhooks for a account"
+  },
+  {
+    "id": "webhookSwitch",
+    "name": "Switch webhook version",
+    "description": "Switch webhook version PATCH /v2/webhooks/options",
+    "context": "PATCH /v2/webhooks/options\nSwitch webhook version\nRequired: body (body)"
+  },
+  {
+    "id": "webhookUpdate",
+    "name": "Update a webhook",
+    "description": "Update a webhook PATCH /v2/webhooks/{webhookId}",
+    "context": "PATCH /v2/webhooks/{webhookId}\nUpdate a webhook\nRequired: webhookId (path) — The webhook ID; body (body) — Webhook"
+  }
+]

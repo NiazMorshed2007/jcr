@@ -1,0 +1,212 @@
+[
+  {
+    "id": "zones-0-delete",
+    "name": "Delete Zone",
+    "description": "Delete Zone Deletes an existing zone. DELETE /client/v4/zones/{zone_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}\nDeletes an existing zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zones-0-get",
+    "name": "Zone Details",
+    "description": "Zone Details Retrieves detailed information about a specific zone identified by its zone ID. GET /client/v4/zones/{zone_id}",
+    "context": "GET /client/v4/zones/{zone_id}\nRetrieves detailed information about a specific zone identified by its zone ID. Returns zone configuration, status, nameservers, and associated metadata.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zones-0-patch",
+    "name": "Edit Zone",
+    "description": "Edit Zone Edits a zone. PATCH /client/v4/zones/{zone_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}\nEdits a zone. Only one zone property can be changed at a time.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zones-get",
+    "name": "List Zones",
+    "description": "List Zones Lists, searches, sorts, and filters your zones. GET /client/v4/zones",
+    "context": "GET /client/v4/zones\nLists, searches, sorts, and filters your zones. Listing zones across more than 500 accounts is currently not allowed.\nOptional: name (query); status (query); type (query); account.id (query); account.name (query); page (query); per_page (query); order (query); direction (query); match (query)"
+  },
+  {
+    "id": "zones-post",
+    "name": "Create Zone",
+    "description": "Create Zone Creates a new zone (domain) in your Cloudflare account. POST /client/v4/zones",
+    "context": "POST /client/v4/zones\nCreates a new zone (domain) in your Cloudflare account. The zone is created in a pending state and must be activated by updating your domain's nameservers to point to Cloudflare, or by completing the verification process for partial (CNAME) setups.\nRequired: body (body)"
+  },
+  {
+    "id": "account-level-custom-nameservers-usage-for-a-zone-get-account-custom-nameserver-related-zone-metadata",
+    "name": "Get Account Custom Nameserver Related Zone Metadata",
+    "description": "Get Account Custom Nameserver Related Zone Metadata Get metadata for account-level custom nameservers on a zone. GET /client/v4/zones/{zone_id}/custom_ns",
+    "context": "GET /client/v4/zones/{zone_id}/custom_ns\nGet metadata for account-level custom nameservers on a zone. Deprecated in favor of [Show DNS Settings](https://developers.cloudflare.com/api/operations/dns-settings-for-a-zone-list-dns-settings).\nRequired: zone_id (path)"
+  },
+  {
+    "id": "account-level-custom-nameservers-usage-for-a-zone-set-account-custom-nameserver-related-zone-metadata",
+    "name": "Set Account Custom Nameserver Related Zone Metadata",
+    "description": "Set Account Custom Nameserver Related Zone Metadata Set metadata for account-level custom nameservers on a zone. PUT /client/v4/zones/{zone_id}/custom_ns",
+    "context": "PUT /client/v4/zones/{zone_id}/custom_ns\nSet metadata for account-level custom nameservers on a zone. If you would like new zones in the account to use account custom nameservers by default, use PUT /accounts/:identifier to set the account setting use_account_custom_ns_by_default to true. Deprecated in favor of [Update DNS Settings](https://developers.cloudflare.com/api/operations/dns-settings-for-a-zone-update-dns-settings).\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "ai-audit-bulk-get-robots",
+    "name": "Bulk get robots.txt rules",
+    "description": "Bulk get robots.txt rules Fetches and parses robots.txt files for multiple domains within a zone in a single request. POST /client/v4/zones/{zone_id}/ai-audit/robots/bulk",
+    "context": "POST /client/v4/zones/{zone_id}/ai-audit/robots/bulk\nFetches and parses robots.txt files for multiple domains within a zone in a single request. Each domain must belong to the specified zone. Results are keyed by hostname.\nRequired: zone_id (path) — Identifier of the zone.; body (body)"
+  },
+  {
+    "id": "ai-audit-get-robots",
+    "name": "Get robots.txt rules",
+    "description": "Get robots.txt rules Fetches and parses the robots.txt file for a zone or a specific subdomain within the zone. GET /client/v4/zones/{zone_id}/ai-audit/robots",
+    "context": "GET /client/v4/zones/{zone_id}/ai-audit/robots\nFetches and parses the robots.txt file for a zone or a specific subdomain within the zone. Returns parsed user-agent rules, content signals, and sitemaps.\nRequired: zone_id (path) — Identifier of the zone.\nOptional: subdomain (query) — Optional subdomain to fetch robots.txt for. If omitted, fetches robots.txt for the zone apex domain."
+  },
+  {
+    "id": "client-certificate-for-a-zone-list-hostname-associations",
+    "name": "List Hostname Associations",
+    "description": "List Hostname Associations List Hostname Associations. GET /client/v4/zones/{zone_id}/certificate_authorities/hostname_associations",
+    "context": "GET /client/v4/zones/{zone_id}/certificate_authorities/hostname_associations\nList Hostname Associations.\nRequired: zone_id (path)\nOptional: mtls_certificate_id (query)"
+  },
+  {
+    "id": "client-certificate-for-a-zone-put-hostname-associations",
+    "name": "Replace Hostname Associations",
+    "description": "Replace Hostname Associations Replace Hostname Associations. PUT /client/v4/zones/{zone_id}/certificate_authorities/hostname_associations",
+    "context": "PUT /client/v4/zones/{zone_id}/certificate_authorities/hostname_associations\nReplace Hostname Associations.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "ct-alerting-get-subscription",
+    "name": "Get CT Alerting Subscription",
+    "description": "Get CT Alerting Subscription Retrieve the Certificate Transparency alerting subscription settings for a zone. GET /client/v4/zones/{zone_id}/ct/alerting",
+    "context": "GET /client/v4/zones/{zone_id}/ct/alerting\nRetrieve the Certificate Transparency alerting subscription settings for a zone. Returns whether CT monitoring is enabled and the list of email addresses that receive alerts, if any have been configured.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "ct-alerting-update-subscription",
+    "name": "Update CT Alerting Subscription",
+    "description": "Update CT Alerting Subscription Create or update the Certificate Transparency alerting subscription for a zone. PATCH /client/v4/zones/{zone_id}/ct/alerting",
+    "context": "PATCH /client/v4/zones/{zone_id}/ct/alerting\nCreate or update the Certificate Transparency alerting subscription for a zone. Enables or disables email notifications when certificates are issued for the zone's domains. The `enabled` field is required on every request and controls whether the subscription is active. The `emails` field is optional and, when provided, replaces the stored recipient list for the zone. When `emails` is omitted, the stored recipient list is preserved and only the enabled state is toggled. A maximum of 100 email addresses may be configured per zone. Requests that omit `enabled` are rejected with error code 1008. Subscribe and unsubscribe notification emails are only sent for recipients whose effective subscription state changes. Idempotent requests (no state change) send no notification email.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "dcv-delegation-uuid-get",
+    "name": "Retrieve the DCV Delegation unique identifier.",
+    "description": "Retrieve the DCV Delegation unique identifier. Retrieve the account and zone specific unique identifier used as part of the CNAME target for DCV Delegation. GET /client/v4/zones/{zone_id}/dcv_delegation/uuid",
+    "context": "GET /client/v4/zones/{zone_id}/dcv_delegation/uuid\nRetrieve the account and zone specific unique identifier used as part of the CNAME target for DCV Delegation.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "devices-get-policy-certificates",
+    "name": "Get device certificate provisioning status",
+    "description": "Get device certificate provisioning status Fetches device certificate provisioning. GET /client/v4/zones/{zone_id}/devices/policy/certificates",
+    "context": "GET /client/v4/zones/{zone_id}/devices/policy/certificates\nFetches device certificate provisioning.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "devices-update-policy-certificates",
+    "name": "Update device certificate provisioning status",
+    "description": "Update device certificate provisioning status Enable Zero Trust Clients to provision a certificate, containing a x509 subject, and referenced by Access device posture policies when the client visits MTLS protected domains. PATCH /client/v4/zones/{zone_id}/devices/policy/certificates",
+    "context": "PATCH /client/v4/zones/{zone_id}/devices/policy/certificates\nEnable Zero Trust Clients to provision a certificate, containing a x509 subject, and referenced by Access device posture policies when the client visits MTLS protected domains. This facilitates device posture without a WARP session.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "dns-analytics-by-time",
+    "name": "By Time",
+    "description": "By Time Retrieves a list of aggregate metrics grouped by time interval. GET /client/v4/zones/{zone_id}/dns_analytics/report/bytime",
+    "context": "GET /client/v4/zones/{zone_id}/dns_analytics/report/bytime\nRetrieves a list of aggregate metrics grouped by time interval. See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.\nRequired: zone_id (path)\nOptional: metrics (query); dimensions (query); since (query); until (query); limit (query); sort (query); filters (query); time_delta (query)"
+  },
+  {
+    "id": "dns-analytics-table",
+    "name": "Table",
+    "description": "Table Retrieves a list of summarised aggregate metrics over a given time period. GET /client/v4/zones/{zone_id}/dns_analytics/report",
+    "context": "GET /client/v4/zones/{zone_id}/dns_analytics/report\nRetrieves a list of summarised aggregate metrics over a given time period. See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.\nRequired: zone_id (path)\nOptional: metrics (query); dimensions (query); since (query); until (query); limit (query); sort (query); filters (query)"
+  },
+  {
+    "id": "dns-settings-for-a-zone-list-dns-settings",
+    "name": "Show DNS Settings",
+    "description": "Show DNS Settings Show DNS settings for a zone GET /client/v4/zones/{zone_id}/dns_settings",
+    "context": "GET /client/v4/zones/{zone_id}/dns_settings\nShow DNS settings for a zone\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dns-settings-for-a-zone-update-dns-settings",
+    "name": "Update DNS Settings",
+    "description": "Update DNS Settings Update DNS settings for a zone PATCH /client/v4/zones/{zone_id}/dns_settings",
+    "context": "PATCH /client/v4/zones/{zone_id}/dns_settings\nUpdate DNS settings for a zone\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "entitlements-get-zone-entitlements",
+    "name": "Get Zone Entitlements",
+    "description": "Get Zone Entitlements Returns the list of entitlements (features and their allocations) for a given zone. GET /client/v4/zones/{zone_id}/entitlements",
+    "context": "GET /client/v4/zones/{zone_id}/entitlements\nReturns the list of entitlements (features and their allocations) for a given zone. Each entitlement describes a product feature the zone is permitted to use and the allocation value (boolean, count, range, enum, or string) that governs its behaviour.\nRequired: zone_id (path) — Identifier of the zone."
+  },
+  {
+    "id": "fraud-detection-zone-get-settings",
+    "name": "Get Fraud Detection Settings",
+    "description": "Get Fraud Detection Settings Retrieve Fraud Detection settings for a zone. GET /client/v4/zones/{zone_id}/fraud_detection/settings",
+    "context": "GET /client/v4/zones/{zone_id}/fraud_detection/settings\nRetrieve Fraud Detection settings for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "fraud-detection-zone-update-settings",
+    "name": "Update Fraud Detection Settings",
+    "description": "Update Fraud Detection Settings Update Fraud Detection settings for a zone. PUT /client/v4/zones/{zone_id}/fraud_detection/settings",
+    "context": "PUT /client/v4/zones/{zone_id}/fraud_detection/settings\nUpdate Fraud Detection settings for a zone. Notes on `username_expressions` behavior: - If omitted or set to null, expressions are not modified. - If provided as an empty array `[]`, all expressions will be cleared.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "precursor-for-a-zone-get-config",
+    "name": "Get Zone Precursor Config",
+    "description": "Get Zone Precursor Config Retrieve a zone's Precursor configuration: the zone-level `default_mode` and the ordered list of `enforcement_rules`. GET /client/v4/zones/{zone_id}/precursor",
+    "context": "GET /client/v4/zones/{zone_id}/precursor\nRetrieve a zone's Precursor configuration: the zone-level `default_mode` and the ordered list of `enforcement_rules`.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "precursor-for-a-zone-update-config",
+    "name": "Update Zone Precursor Config",
+    "description": "Update Zone Precursor Config Updates the Precursor configuration for a zone. PUT /client/v4/zones/{zone_id}/precursor",
+    "context": "PUT /client/v4/zones/{zone_id}/precursor\nUpdates the Precursor configuration for a zone. `default_mode` sets the zone-level enforcement mode. `enforcement_rules` is the ordered list of rules that override enforcement for matching requests. This is a partial update: only the fields present in the request body are changed. - Sending an empty array (`[]`) clears all enforcement rules. - At least one of `default_mode` or `enforcement_rules` must be present; an empty body (`{}`) is rejected with `400`. - Rule `id` is read-only (assigned by Cloudflare) and ignored on input. - Rule `mode` must be `min-friction` or `max-security` (`off` is not a valid rule mode; use `default_mode` to disable enforcement). - Rule `expression` is limited to 4000 characters. The limit applies to each rule individually, not to the combined size of all rules.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "put-zones-zone_id-activation_check",
+    "name": "Rerun the Activation Check",
+    "description": "Rerun the Activation Check Triggeres a new activation check for a PENDING Zone. PUT /client/v4/zones/{zone_id}/activation_check",
+    "context": "PUT /client/v4/zones/{zone_id}/activation_check\nTriggeres a new activation check for a PENDING Zone. This can be triggered every 5 min for paygo/ent customers, every hour for FREE Zones.\nRequired: zone_id (path) — Zone ID"
+  },
+  {
+    "id": "rate-limit-analytics-get-zone-analytics",
+    "name": "Get Rate Limiting Analytics",
+    "description": "Get Rate Limiting Analytics Returns rate limiting analytics for a zone over the specified time period. GET /client/v4/zones/{zone_id}/rate_limit_analytics",
+    "context": "GET /client/v4/zones/{zone_id}/rate_limit_analytics\nReturns rate limiting analytics for a zone over the specified time period. The time period divides into time segments of a given length. Each segment contains total action counts and action counts broken down by colo.\nRequired: zone_id (path) — Identifier of the zone.; since (query) — The start of the queried time period. Time must be rounded to the time segment boundary and formatted as RFC 3339.; until (query) — The exclusive end of the queried time period. Time must be rounded to the time segment boundary and formatted as RFC 3339.; time_delta (query) — Length (in seconds) of each time segment dividing the entire time period. Accepted values are 60 (minute), 3600 (hour), 86400 (day), and 2592000 (month)."
+  },
+  {
+    "id": "usage-analytics-get-zone-media-usage",
+    "name": "Get zone Media usage",
+    "description": "Get zone Media usage Retrieve Media usage analytics for a zone. GET /client/v4/zones/{zone_id}/media/usage",
+    "context": "GET /client/v4/zones/{zone_id}/media/usage\nRetrieve Media usage analytics for a zone. This endpoint shares the same backend handler as the Stream usage endpoint and returns identical Stream metrics (streamMinutesViewed). The gateway resolves the zone to its owning account and rewrites this path to the shared usage handler.\nRequired: zone_id (path) — Standard Cloudflare hex zone identifier. The API gateway resolves this to the owning account and translates it to an internal numeric ID before forwarding to the backend service.\nOptional: metrics (query) — Comma-separated list of metrics to include in the response. Available metrics depend on the endpoint. Billing usage supports: streamMinutesViewed, rateLimitingRequestsAllowed, loadBalancingQueries, argoAcceleratedBytes, workersRequests, workersKVReads, imageResizingRequests, spectrumBytesTransferred, mediaUniqueTransformations. Stream/media usage supports: streamMinutesViewed.; since (query) — Start of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to 6 hours before the current time.; until (query) — End of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to the current time.; time_delta (query) — Time unit to aggregate usage observations into. Data retention is approximately 18 months. The effective number of data points returned depends on the time range and granularity selected. For example, requesting hourly granularity over 18 months could produce up to ~13,000 data points; use the limit parameter to cap results and be aware that responses may be truncated.; limit (query) — Maximum number of data points to return. The actual number of results depends on the interaction between the time range (since/until) and time_delta granularity. Results are truncated to this limit without error if the time range produces more data points than the limit allows.; filters (query) — Filter expressions to apply to the query. Format: field==value. Multiple filters can be combined."
+  },
+  {
+    "id": "usage-analytics-get-zone-stream-usage",
+    "name": "Get zone Stream usage",
+    "description": "Get zone Stream usage Retrieve Stream usage analytics for a zone. GET /client/v4/zones/{zone_id}/stream/usage",
+    "context": "GET /client/v4/zones/{zone_id}/stream/usage\nRetrieve Stream usage analytics for a zone. Returns time-series data for Stream billable minutes viewed. The gateway resolves the zone to its owning account and rewrites this path before forwarding to the backend usage handler.\nRequired: zone_id (path) — Standard Cloudflare hex zone identifier. The API gateway resolves this to the owning account and translates it to an internal numeric ID before forwarding to the backend service.\nOptional: metrics (query) — Comma-separated list of metrics to include in the response. Available metrics depend on the endpoint. Billing usage supports: streamMinutesViewed, rateLimitingRequestsAllowed, loadBalancingQueries, argoAcceleratedBytes, workersRequests, workersKVReads, imageResizingRequests, spectrumBytesTransferred, mediaUniqueTransformations. Stream/media usage supports: streamMinutesViewed.; since (query) — Start of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to 6 hours before the current time.; until (query) — End of the time range for the query (inclusive). ISO 8601 timestamp. Defaults to the current time.; time_delta (query) — Time unit to aggregate usage observations into. Data retention is approximately 18 months. The effective number of data points returned depends on the time range and granularity selected. For example, requesting hourly granularity over 18 months could produce up to ~13,000 data points; use the limit parameter to cap results and be aware that responses may be truncated.; limit (query) — Maximum number of data points to return. The actual number of results depends on the interaction between the time range (since/until) and time_delta granularity. Results are truncated to this limit without error if the time range produces more data points than the limit allows.; filters (query) — Filter expressions to apply to the query. Format: field==value. Multiple filters can be combined."
+  },
+  {
+    "id": "zone-cloud-conenctor-rules-put",
+    "name": "Put Rules",
+    "description": "Put Rules Updates Cloud Connector rules for a zone, replacing the existing rule configuration. PUT /client/v4/zones/{zone_id}/cloud_connector/rules",
+    "context": "PUT /client/v4/zones/{zone_id}/cloud_connector/rules\nUpdates Cloud Connector rules for a zone, replacing the existing rule configuration.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "zone-cloud-connector-rules",
+    "name": "Rules",
+    "description": "Rules Retrieves the Cloud Connector rules configured for a zone. GET /client/v4/zones/{zone_id}/cloud_connector/rules",
+    "context": "GET /client/v4/zones/{zone_id}/cloud_connector/rules\nRetrieves the Cloud Connector rules configured for a zone. Rules define how traffic is routed to cloud services.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-purge",
+    "name": "Purge Cached Content",
+    "description": "Purge Cached Content ### Purge All Cached Content Removes ALL files from Cloudflare's cache. POST /client/v4/zones/{zone_id}/purge_cache",
+    "context": "POST /client/v4/zones/{zone_id}/purge_cache\n### Purge All Cached Content Removes ALL files from Cloudflare's cache. All tiers can purge everything. ``` {\"purge_everything\": true} ``` ### Purge Cached Content by URL Granularly removes one or more files from Cloudflare's cache by specifying URLs. All tiers can purge by URL. To purge files with custom cache keys, include the headers used to compute the cache key as in the example. If you have a device type or geo in your cache key, you will need to include the CF-Device-Type or CF-IPCountry headers. If you have lang in your cache key, you will need to include the Accept-Language header. **NB:** When including the Origin header, be sure to include the **scheme** and **hostname**. The port number can be omitted if it is the default port (80 for http, 443 for https), but must be included otherwise. Single file purge example with files: ``` {\"files\": [\"http://www.example.com/css/styles.css\", \"http://www.example.com/js/index.js\"]} ``` Single file purge example with url and header pairs: ``` {\"files\": [{\"url\": \"http://www.example.com/cat_picture.jpg\", \"headers\": {\"CF-IPCountry\": \"US\", \"CF-Device-Type\": \"desktop\", \"Accept-Language\": \"zh-CN\"}}, {\"url\": \"http://www.example.com/dog_picture.jpg\", \"headers\": {\"CF-IPCountry\": \"EU\", \"CF-Device-Type\": \"mobile\", \"Accept-Language\": \"en-US\"}}]} ``` ### Purge Cached Content by Tag, Host or Prefix Granularly removes one or more files from Cloudflare's cache either by specifying the host, the associated Cache-Tag, or a Prefix. Flex purge with tags: ``` {\"tags\": [\"a-cache-tag\", \"another-cache-tag\"]} ``` Flex purge with hosts: ``` {\"hosts\": [\"www.example.com\", \"images.example.com\"]} ``` Flex purge with prefixes: ``` {\"prefixes\": [\"www.example.com/foo\", \"images.example.com/bar/baz\"]} ``` ### Availability and limits Please refer to [purge cache availability and limits documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-rate-plan-available-plan-details",
+    "name": "Available Plan Details",
+    "description": "Available Plan Details Details of the available plan that the zone can subscribe to. GET /client/v4/zones/{zone_id}/available_plans/{plan_identifier}",
+    "context": "GET /client/v4/zones/{zone_id}/available_plans/{plan_identifier}\nDetails of the available plan that the zone can subscribe to.\nRequired: plan_identifier (path); zone_id (path)"
+  },
+  {
+    "id": "zone-rate-plan-list-available-plans",
+    "name": "List Available Plans",
+    "description": "List Available Plans Lists available plans the zone can subscribe to. GET /client/v4/zones/{zone_id}/available_plans",
+    "context": "GET /client/v4/zones/{zone_id}/available_plans\nLists available plans the zone can subscribe to.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-rate-plan-list-available-rate-plans",
+    "name": "List Available Rate Plans",
+    "description": "List Available Rate Plans Lists all rate plans the zone can subscribe to. GET /client/v4/zones/{zone_id}/available_rate_plans",
+    "context": "GET /client/v4/zones/{zone_id}/available_rate_plans\nLists all rate plans the zone can subscribe to.\nRequired: zone_id (path)"
+  }
+]

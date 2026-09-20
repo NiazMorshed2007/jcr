@@ -1,0 +1,200 @@
+[
+  {
+    "id": "integrations_anthropic_managed_agent_envs_retrieve",
+    "name": "integrations_anthropic_managed_agent_envs_retrieve",
+    "description": "integrations_anthropic_managed_agent_envs_retrieve GET /api/projects/{project_id}/integrations/{id}/anthropic_managed_agent_environments/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/anthropic_managed_agent_environments/\nintegrations_anthropic_managed_agent_envs_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_anthropic_managed_agent_vaults_retrieve",
+    "name": "integrations_anthropic_managed_agent_vaults_retrieve",
+    "description": "integrations_anthropic_managed_agent_vaults_retrieve GET /api/projects/{project_id}/integrations/{id}/anthropic_managed_agent_vaults/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/anthropic_managed_agent_vaults/\nintegrations_anthropic_managed_agent_vaults_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_anthropic_managed_agents_retrieve",
+    "name": "integrations_anthropic_managed_agents_retrieve",
+    "description": "integrations_anthropic_managed_agents_retrieve GET /api/projects/{project_id}/integrations/{id}/anthropic_managed_agents/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/anthropic_managed_agents/\nintegrations_anthropic_managed_agents_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_authorize_retrieve",
+    "name": "integrations_authorize_retrieve",
+    "description": "integrations_authorize_retrieve GET /api/projects/{project_id}/integrations/authorize/",
+    "context": "GET /api/projects/{project_id}/integrations/authorize/\nintegrations_authorize_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_channels_retrieve",
+    "name": "integrations_channels_retrieve",
+    "description": "integrations_channels_retrieve GET /api/projects/{project_id}/integrations/{id}/channels/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/channels/\nintegrations_channels_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum number of channels to return per request (max 200).; offset (query) — Number of channels to skip before returning results.; search (query) — Optional case-insensitive channel name or ID search query."
+  },
+  {
+    "id": "integrations_clickup_lists_retrieve",
+    "name": "integrations_clickup_lists_retrieve",
+    "description": "integrations_clickup_lists_retrieve GET /api/projects/{project_id}/integrations/{id}/clickup_lists/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/clickup_lists/\nintegrations_clickup_lists_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_clickup_spaces_retrieve",
+    "name": "integrations_clickup_spaces_retrieve",
+    "description": "integrations_clickup_spaces_retrieve GET /api/projects/{project_id}/integrations/{id}/clickup_spaces/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/clickup_spaces/\nintegrations_clickup_spaces_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_clickup_workspaces_retrieve",
+    "name": "integrations_clickup_workspaces_retrieve",
+    "description": "integrations_clickup_workspaces_retrieve GET /api/projects/{project_id}/integrations/{id}/clickup_workspaces/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/clickup_workspaces/\nintegrations_clickup_workspaces_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_create",
+    "name": "integrations_create",
+    "description": "integrations_create POST /api/projects/{project_id}/integrations/",
+    "context": "POST /api/projects/{project_id}/integrations/\nintegrations_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "integrations_destroy",
+    "name": "integrations_destroy",
+    "description": "integrations_destroy DELETE /api/projects/{project_id}/integrations/{id}/",
+    "context": "DELETE /api/projects/{project_id}/integrations/{id}/\nintegrations_destroy\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_domain_connect_apply_url_create",
+    "name": "Unified endpoint for generating Domain Connect apply URLs",
+    "description": "Unified endpoint for generating Domain Connect apply URLs Unified endpoint for generating Domain Connect apply URLs. POST /api/projects/{project_id}/integrations/domain-connect/apply-url/",
+    "context": "POST /api/projects/{project_id}/integrations/domain-connect/apply-url/\nUnified endpoint for generating Domain Connect apply URLs. Accepts a context (\"email\" or \"proxy\") and the relevant resource ID. The backend resolves the domain, template variables, and service ID based on context, then builds the signed apply URL.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "integrations_domain_connect_check_retrieve",
+    "name": "integrations_domain_connect_check_retrieve",
+    "description": "integrations_domain_connect_check_retrieve GET /api/projects/{project_id}/integrations/domain-connect/check/",
+    "context": "GET /api/projects/{project_id}/integrations/domain-connect/check/\nintegrations_domain_connect_check_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_email_partial_update",
+    "name": "integrations_email_partial_update",
+    "description": "integrations_email_partial_update PATCH /api/projects/{project_id}/integrations/{id}/email/",
+    "context": "PATCH /api/projects/{project_id}/integrations/{id}/email/\nintegrations_email_partial_update\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "integrations_email_verify_create",
+    "name": "integrations_email_verify_create",
+    "description": "integrations_email_verify_create POST /api/projects/{project_id}/integrations/{id}/email/verify/",
+    "context": "POST /api/projects/{project_id}/integrations/{id}/email/verify/\nintegrations_email_verify_create\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "integrations_github_available_installations_retrieve",
+    "name": "List GitHub installations this project can link",
+    "description": "List GitHub installations this project can link List GitHub installations this project can link. GET /api/projects/{project_id}/integrations/github/available_installations/",
+    "context": "GET /api/projects/{project_id}/integrations/github/available_installations/\nList GitHub installations this project can link. A GitHub App installs once per organization, so a second project links an existing installation rather than reinstalling. This backs the picker: when more than one option exists, the client passes the chosen installation_id to github/link_existing. The list also includes installations the user's personal GitHub link can see but that aren't linked to any project yet (``source_team_id: null``) — orphan installations approved on GitHub outside PostHog's callback, which ``github/link_existing`` can adopt.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_github_branches_retrieve",
+    "name": "integrations_github_branches_retrieve",
+    "description": "integrations_github_branches_retrieve GET /api/projects/{project_id}/integrations/{id}/github_branches/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/github_branches/\nintegrations_github_branches_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; repo (query) — Repository in owner/repo format\nOptional: limit (query) — Maximum number of branches to return; offset (query) — Number of branches to skip; search (query) — Optional case-insensitive branch name search query."
+  },
+  {
+    "id": "integrations_github_link_existing_create",
+    "name": "Reuse a GitHub installation already linked to a sibling team in the same organization.",
+    "description": "Reuse a GitHub installation already linked to a sibling team in the same organization. POST /api/projects/{project_id}/integrations/github/link_existing/",
+    "context": "POST /api/projects/{project_id}/integrations/github/link_existing/\nReuse a GitHub installation already linked to a sibling team in the same organization.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "integrations_github_oauth_authorize_create",
+    "name": "Mint a User OAuth URL to bootstrap a fresh `code` when the install flow returns without one.",
+    "description": "Mint a User OAuth URL to bootstrap a fresh `code` when the install flow returns without one. POST /api/projects/{project_id}/integrations/github/oauth_authorize/",
+    "context": "POST /api/projects/{project_id}/integrations/github/oauth_authorize/\nMint a User OAuth URL to bootstrap a fresh `code` when the install flow returns without one.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "integrations_github_prepare_callback_create",
+    "name": "Seed GitHub setup callback state without redirecting to GitHub",
+    "description": "Seed GitHub setup callback state without redirecting to GitHub Seed GitHub setup callback state without redirecting to GitHub. POST /api/projects/{project_id}/integrations/github/prepare_callback/",
+    "context": "POST /api/projects/{project_id}/integrations/github/prepare_callback/\nSeed GitHub setup callback state without redirecting to GitHub. Used when the user opens an existing installation's settings on github.com (e.g. PostHog Code \"Update in GitHub\") so the subsequent Setup URL redirect can be validated.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "integrations_github_repos_refresh_create",
+    "name": "integrations_github_repos_refresh_create",
+    "description": "integrations_github_repos_refresh_create POST /api/projects/{project_id}/integrations/{id}/github_repos/refresh/",
+    "context": "POST /api/projects/{project_id}/integrations/{id}/github_repos/refresh/\nintegrations_github_repos_refresh_create\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_github_repos_retrieve",
+    "name": "integrations_github_repos_retrieve",
+    "description": "integrations_github_repos_retrieve GET /api/projects/{project_id}/integrations/{id}/github_repos/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/github_repos/\nintegrations_github_repos_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum number of repositories to return per request (max 500).; offset (query) — Number of repositories to skip before returning results.; search (query) — Optional case-insensitive repository name search query."
+  },
+  {
+    "id": "integrations_github_teams_retrieve",
+    "name": "integrations_github_teams_retrieve",
+    "description": "integrations_github_teams_retrieve GET /api/projects/{project_id}/integrations/{id}/github_teams/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/github_teams/\nintegrations_github_teams_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum number of teams to return per request (max 500).; offset (query) — Number of teams to skip before returning results.; search (query) — Optional case-insensitive team name or slug search query."
+  },
+  {
+    "id": "integrations_google_accessible_accounts_retrieve",
+    "name": "integrations_google_accessible_accounts_retrieve",
+    "description": "integrations_google_accessible_accounts_retrieve GET /api/projects/{project_id}/integrations/{id}/google_accessible_accounts/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/google_accessible_accounts/\nintegrations_google_accessible_accounts_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_google_conversion_actions_retrieve",
+    "name": "integrations_google_conversion_actions_retrieve",
+    "description": "integrations_google_conversion_actions_retrieve GET /api/projects/{project_id}/integrations/{id}/google_conversion_actions/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/google_conversion_actions/\nintegrations_google_conversion_actions_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_jira_projects_retrieve",
+    "name": "integrations_jira_projects_retrieve",
+    "description": "integrations_jira_projects_retrieve GET /api/projects/{project_id}/integrations/{id}/jira_projects/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/jira_projects/\nintegrations_jira_projects_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_linear_teams_retrieve",
+    "name": "integrations_linear_teams_retrieve",
+    "description": "integrations_linear_teams_retrieve GET /api/projects/{project_id}/integrations/{id}/linear_teams/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/linear_teams/\nintegrations_linear_teams_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_linkedin_ads_accounts_retrieve",
+    "name": "integrations_linkedin_ads_accounts_retrieve",
+    "description": "integrations_linkedin_ads_accounts_retrieve GET /api/projects/{project_id}/integrations/{id}/linkedin_ads_accounts/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/linkedin_ads_accounts/\nintegrations_linkedin_ads_accounts_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_linkedin_ads_conversion_rules_retrieve",
+    "name": "integrations_linkedin_ads_conversion_rules_retrieve",
+    "description": "integrations_linkedin_ads_conversion_rules_retrieve GET /api/projects/{project_id}/integrations/{id}/linkedin_ads_conversion_rules/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/linkedin_ads_conversion_rules/\nintegrations_linkedin_ads_conversion_rules_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_list",
+    "name": "integrations_list",
+    "description": "integrations_list GET /api/projects/{project_id}/integrations/",
+    "context": "GET /api/projects/{project_id}/integrations/\nintegrations_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: kind (query) — * `anthropic` - Anthropic * `apns` - Apple Push * `aws-redshift` - Aws Redshift * `aws-s3` - Aws S3 * `azure-blob` - Azure Blob * `bing-ads` - Bing Ads * `clickup` - Clickup * `customerio-app` - Customerio App * `customerio-track` - Customerio Track * `customerio-webhook` - Customerio Webhook * `databricks` - Databricks * `email` - Email * `firebase` - Firebase * `github` - Github * `gitlab` - Gitlab * `google-ads` - Google Ads * `google-analytics` - Google Analytics * `google-calendar` - Google Calendar * `google-cloud-service-account` - Google Cloud Service Account * `google-cloud-storage` - Google Cloud Storage * `google-pubsub` - Google Pubsub * `google-search-console` - Google Search Console * `google-sheets` - Google Sheets * `helpscout` - Helpscout * `hubspot` - Hubspot * `instagram` - Instagram * `intercom` - Intercom * `jira` - Jira * `linear` - Linear * `linkedin-ads` - Linkedin Ads * `meta-ads` - Meta Ads * `pardot` - Pardot * `pinterest-ads` - Pinterest Ads * `postgresql` - Postgresql * `posthog` - Posthog * `reddit-ads` - Reddit Ads * `resend` - Resend * `s3-compatible` - S3 Compatible * `salesforce` - Salesforce * `slack` - Slack * `slack-posthog-code` - Slack Posthog Code * `snapchat` - Snapchat * `snowflake` - Snowflake * `stripe` - Stripe * `tiktok-ads` - Tiktok Ads * `twilio` - Twilio * `vercel` - Vercel * `youtube-analytics` - Youtube Analytics; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "integrations_request_access_create",
+    "name": "Notify project admins that a member is requesting an integration be connected.",
+    "description": "Notify project admins that a member is requesting an integration be connected. POST /api/projects/{project_id}/integrations/request_access/",
+    "context": "POST /api/projects/{project_id}/integrations/request_access/\nNotify project admins that a member is requesting an integration be connected.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "integrations_retrieve",
+    "name": "integrations_retrieve",
+    "description": "integrations_retrieve GET /api/projects/{project_id}/integrations/{id}/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/\nintegrations_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_twilio_phone_numbers_retrieve",
+    "name": "integrations_twilio_phone_numbers_retrieve",
+    "description": "integrations_twilio_phone_numbers_retrieve GET /api/projects/{project_id}/integrations/{id}/twilio_phone_numbers/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/twilio_phone_numbers/\nintegrations_twilio_phone_numbers_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "integrations_users_retrieve",
+    "name": "integrations_users_retrieve",
+    "description": "integrations_users_retrieve GET /api/projects/{project_id}/integrations/{id}/users/",
+    "context": "GET /api/projects/{project_id}/integrations/{id}/users/\nintegrations_users_retrieve\nRequired: id (path) — A unique integer value identifying this integration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: force_refresh (query) — Bypass the 1 hour member cache. Honored only for browser session callers; API key, OAuth, and MCP callers always read through the cache.; limit (query) — Maximum number of members to return per request (max 200).; offset (query) — Number of members to skip before returning results.; search (query) — Optional case-insensitive member name or ID search query.; user_id (query) — Look up one member directly by Slack member ID (e.g. U0123ABC). When set, `search`, `limit`, and `offset` are ignored and the response holds at most that member."
+  }
+]

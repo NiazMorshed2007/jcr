@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dangerouslyDeleteBySrcImages",
+    "name": "Dangerously delete by source image",
+    "description": "Dangerously delete by source image Marks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. POST /v1/edge-cache/dangerously-delete-by-src-images",
+    "context": "POST /v1/edge-cache/dangerously-delete-by-src-images\nMarks a source image as deleted, causing cache entries associated with that source image to be revalidated in the foreground on the next request. Use this method with caution because one source image can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateBySrcImage` instead.\nRequired: projectIdOrName (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "dangerouslyDeleteByTags",
+    "name": "Dangerously delete by tag",
+    "description": "Dangerously delete by tag Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. POST /v1/edge-cache/dangerously-delete-by-tags",
+    "context": "POST /v1/edge-cache/dangerously-delete-by-tags\nMarks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request. Use this method with caution because one tag can be associated with many paths and deleting the cache can cause many concurrent requests to the origin leading to cache stampede problem. This method is for advanced use cases and is not recommended; prefer using `invalidateByTag` instead.\nRequired: projectIdOrName (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "invalidateBySrcImages",
+    "name": "Invalidate by source image",
+    "description": "Invalidate by source image Marks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request. POST /v1/edge-cache/invalidate-by-src-images",
+    "context": "POST /v1/edge-cache/invalidate-by-src-images\nMarks a source image as stale, causing its corresponding transformed images to be revalidated in the background on the next request.\nRequired: projectIdOrName (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "invalidateByTags",
+    "name": "Invalidate by tag",
+    "description": "Invalidate by tag Marks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request. POST /v1/edge-cache/invalidate-by-tags",
+    "context": "POST /v1/edge-cache/invalidate-by-tags\nMarks a cache tag as stale, causing cache entries associated with that tag to be revalidated in the background on the next request.\nRequired: projectIdOrName (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

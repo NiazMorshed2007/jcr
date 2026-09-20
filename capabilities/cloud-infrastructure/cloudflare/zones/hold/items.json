@@ -1,0 +1,32 @@
+[
+  {
+    "id": "zones-0-hold-delete",
+    "name": "Remove Zone Hold",
+    "description": "Remove Zone Hold Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing the creation and activation of zones with this zone's hostname. DELETE /client/v4/zones/{zone_id}/hold",
+    "context": "DELETE /client/v4/zones/{zone_id}/hold\nStop enforcement of a zone hold on the zone, permanently or temporarily, allowing the creation and activation of zones with this zone's hostname. Existing zone holds can be removed from CDN-only zones when `hold_after` is not provided. Active holds are automatically disabled when a zone transitions to CDN-only mode.\nRequired: zone_id (path) — Zone ID\nOptional: hold_after (query) — If `hold_after` is provided, the hold will be temporarily disabled, then automatically re-enabled by the system at the time specified in this RFC3339-formatted timestamp. Otherwise, the hold will be disabled indefinitely. `hold_after` cannot be provided for CDN-only zones."
+  },
+  {
+    "id": "zones-0-hold-get",
+    "name": "Get Zone Hold",
+    "description": "Get Zone Hold Retrieve whether the zone is subject to a zone hold, and metadata about the hold. GET /client/v4/zones/{zone_id}/hold",
+    "context": "GET /client/v4/zones/{zone_id}/hold\nRetrieve whether the zone is subject to a zone hold, and metadata about the hold.\nRequired: zone_id (path) — Zone ID"
+  },
+  {
+    "id": "zones-0-hold-patch",
+    "name": "Update Zone Hold",
+    "description": "Update Zone Hold Update the `hold_after` and/or `include_subdomains` values on an existing zone hold. PATCH /client/v4/zones/{zone_id}/hold",
+    "context": "PATCH /client/v4/zones/{zone_id}/hold\nUpdate the `hold_after` and/or `include_subdomains` values on an existing zone hold. The hold is enabled if the `hold_after` date-time value is in the past. Existing zone holds can be removed from CDN-only zones by setting `hold_after` to `null`. Other zone hold updates cannot be made on CDN-only zones. Active holds are automatically disabled when a zone transitions to CDN-only mode.\nRequired: zone_id (path) — Zone ID; body (body)"
+  },
+  {
+    "id": "zones-0-hold-post",
+    "name": "Create Zone Hold",
+    "description": "Create Zone Hold Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname. POST /client/v4/zones/{zone_id}/hold",
+    "context": "POST /client/v4/zones/{zone_id}/hold\nEnforce a zone hold on the zone, blocking the creation and activation of zones with this zone's hostname. Zone holds cannot be enabled on CDN-only zones.\nRequired: zone_id (path) — Zone ID\nOptional: include_subdomains (query) — If provided, the zone hold will extend to block any subdomain of the given zone, as well as SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname 'example.com' and include_subdomains=true will block 'example.com', 'staging.example.com', 'api.staging.example.com', etc."
+  },
+  {
+    "id": "zones-0-hold-zone-name-get",
+    "name": "Get Zone Hold by Zone Name",
+    "description": "Get Zone Hold by Zone Name Retrieve whether a given hostname is subject to a zone hold, and metadata about the hold. GET /client/v4/zones/{zone_id}/hold/{zone_name}",
+    "context": "GET /client/v4/zones/{zone_id}/hold/{zone_name}\nRetrieve whether a given hostname is subject to a zone hold, and metadata about the hold. This endpoint checks whether the given hostname (or any of its ancestor domains) is blocked by an active zone hold. If a hold with `include_subdomains` is active on an ancestor domain, that hold is returned. This endpoint is used internally by SSL/COMS to check hold status during zone activation.\nRequired: zone_id (path) — Zone identifier. Consumed by the API gateway for routing; the backend handler does not use this value directly.; zone_name (path) — The hostname to check for a zone hold. May be a subdomain (e.g. `subdomain.example.com`) or an apex domain (e.g. `example.com`). The service checks the hostname and its ancestor domains for active holds with `include_subdomains` enabled."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "integrations_environment_mapping_partial_update",
+    "name": "ViewSet for organization-level integrations",
+    "description": "ViewSet for organization-level integrations ViewSet for organization-level integrations. PATCH /api/organizations/{organization_id}/integrations/{id}/environment-mapping/",
+    "context": "PATCH /api/organizations/{organization_id}/integrations/{id}/environment-mapping/\nViewSet for organization-level integrations. Provides access to integrations that are scoped to the entire organization (vs. project-level integrations). Examples include Vercel, AWS Marketplace, etc. Creation is handled by the integration installation flows (e.g., Vercel marketplace installation). Users can disconnect integrations via the DELETE endpoint.\nRequired: id (path) — A UUID string identifying this organization integration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "org_organization_integrations_destroy",
+    "name": "ViewSet for organization-level integrations",
+    "description": "ViewSet for organization-level integrations ViewSet for organization-level integrations. DELETE /api/organizations/{organization_id}/integrations/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/integrations/{id}/\nViewSet for organization-level integrations. Provides access to integrations that are scoped to the entire organization (vs. project-level integrations). Examples include Vercel, AWS Marketplace, etc. Creation is handled by the integration installation flows (e.g., Vercel marketplace installation). Users can disconnect integrations via the DELETE endpoint.\nRequired: id (path) — A UUID string identifying this organization integration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "org_organizations_integrations_list",
+    "name": "ViewSet for organization-level integrations",
+    "description": "ViewSet for organization-level integrations ViewSet for organization-level integrations. GET /api/organizations/{organization_id}/integrations/",
+    "context": "GET /api/organizations/{organization_id}/integrations/\nViewSet for organization-level integrations. Provides access to integrations that are scoped to the entire organization (vs. project-level integrations). Examples include Vercel, AWS Marketplace, etc. Creation is handled by the integration installation flows (e.g., Vercel marketplace installation). Users can disconnect integrations via the DELETE endpoint.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "org_organizations_integrations_retrieve",
+    "name": "ViewSet for organization-level integrations",
+    "description": "ViewSet for organization-level integrations ViewSet for organization-level integrations. GET /api/organizations/{organization_id}/integrations/{id}/",
+    "context": "GET /api/organizations/{organization_id}/integrations/{id}/\nViewSet for organization-level integrations. Provides access to integrations that are scoped to the entire organization (vs. project-level integrations). Examples include Vercel, AWS Marketplace, etc. Creation is handled by the integration installation flows (e.g., Vercel marketplace installation). Users can disconnect integrations via the DELETE endpoint.\nRequired: id (path) — A UUID string identifying this organization integration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  }
+]

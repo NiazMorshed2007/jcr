@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bot-management-for-a-zone-get-config",
+    "name": "Get Zone Bot Management Config",
+    "description": "Get Zone Bot Management Config Retrieve a zone's Bot Management Config GET /client/v4/zones/{zone_id}/bot_management",
+    "context": "GET /client/v4/zones/{zone_id}/bot_management\nRetrieve a zone's Bot Management Config\nRequired: zone_id (path)"
+  },
+  {
+    "id": "bot-management-for-a-zone-update-config",
+    "name": "Update Zone Bot Management Config",
+    "description": "Update Zone Bot Management Config Updates the Bot Management configuration for a zone. PUT /client/v4/zones/{zone_id}/bot_management",
+    "context": "PUT /client/v4/zones/{zone_id}/bot_management\nUpdates the Bot Management configuration for a zone. This API is used to update: - **Bot Fight Mode** - **Super Bot Fight Mode** - **Bot Management for Enterprise** See [Bot Plans](https://developers.cloudflare.com/bots/plans/) for more information on the different plans \\ If you recently upgraded or downgraded your plan, refer to the following examples to clean up old configurations. Copy and paste the example body to remove old zone configurations based on your current plan. #### Clean up configuration for Bot Fight Mode plan ```json { \"sbfm_likely_automated\": \"allow\", \"sbfm_definitely_automated\": \"allow\", \"sbfm_verified_bots\": \"allow\", \"sbfm_static_resource_protection\": false, \"optimize_wordpress\": false, \"suppress_session_score\": false } ``` #### Clean up configuration for SBFM Pro plan ```json { \"sbfm_likely_automated\": \"allow\", \"fight_mode\": false } ``` #### Clean up configuration for SBFM Biz plan ```json { \"fight_mode\": false } ``` #### Clean up configuration for BM Enterprise Subscription plan It is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks. ```json { \"sbfm_likely_automated\": \"allow\", \"sbfm_definitely_automated\": \"allow\", \"sbfm_verified_bots\": \"allow\", \"sbfm_static_resource_protection\": false, \"optimize_wordpress\": false, \"fight_mode\": false } ```\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "bot-management-zone-feedback-create",
+    "name": "Submit a feedback report",
+    "description": "Submit a feedback report Submit a feedback report for the specified zone. POST /client/v4/zones/{zone_id}/bot_management/feedback",
+    "context": "POST /client/v4/zones/{zone_id}/bot_management/feedback\nSubmit a feedback report for the specified zone. Use `type` to indicate whether the report is a false positive (good traffic flagged as bot) or a false negative (bot traffic missed). Furthermore, you can also use `expression` as a wirefilter to identify the affected traffic sample. See more accepted API fields and expression types at https://developers.cloudflare.com/bots/concepts/feedback-loop/#api-fields and https://developers.cloudflare.com/bots/concepts/feedback-loop/#expression-fields, respectively.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "bot-management-zone-feedback-list",
+    "name": "List zone feedback reports",
+    "description": "List zone feedback reports Returns all feedback reports previously submitted for the specified zone. GET /client/v4/zones/{zone_id}/bot_management/feedback",
+    "context": "GET /client/v4/zones/{zone_id}/bot_management/feedback\nReturns all feedback reports previously submitted for the specified zone. Feedback reports help improve detection by sharing samples of traffic that were misclassified as bots or humans.\nRequired: zone_id (path)"
+  }
+]

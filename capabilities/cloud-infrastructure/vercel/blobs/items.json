@@ -1,0 +1,44 @@
+[
+  {
+    "id": "createByTeamSlugByProjectSlugByRepositoryNameBlobsUploads",
+    "name": "Start a blob upload",
+    "description": "Start a blob upload POST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount= &from= ] Initiate a blob upload. POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/",
+    "context": "POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/\nPOST /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/[?mount= &from= ] Initiate a blob upload. Returns a UUID in the Location header that the client uses for subsequent PATCH (chunk) and PUT (complete) requests.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.\nOptional: mount (query) — Digest of the blob to mount from another repository.; from (query) — Source repository to mount the blob from."
+  },
+  {
+    "id": "deleteByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
+    "name": "Delete a blob",
+    "description": "Delete a blob DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}",
+    "context": "DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}\nDELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Blob deletion is intentionally not supported. Matches the behaviour of most public registries.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; digest (path) — Content-addressable digest (algorithm:hex)."
+  },
+  {
+    "id": "deleteByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+    "name": "Cancel a blob upload",
+    "description": "Cancel a blob upload DELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}",
+    "context": "DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}\nDELETE /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Cancel an in-flight blob upload. Aborts the underlying S3 multipart upload (if one was started) and discards the session.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; uuid (path) — Blob upload session identifier."
+  },
+  {
+    "id": "getByTeamSlugByProjectSlugByRepositoryNameBlobsByDigest",
+    "name": "Download a blob",
+    "description": "Download a blob GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest. GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}",
+    "context": "GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest}\nGET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/:digest Fetch a blob by digest.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; digest (path) — Content-addressable digest (algorithm:hex)."
+  },
+  {
+    "id": "getByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+    "name": "Get blob upload status",
+    "description": "Get blob upload status GET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}",
+    "context": "GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}\nGET /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Query the status of an in-progress blob upload. Used by clients to resume a partial upload after an interruption.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; uuid (path) — Blob upload session identifier."
+  },
+  {
+    "id": "replaceByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+    "name": "Complete a blob upload",
+    "description": "Complete a blob upload PUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest= Complete the blob upload. PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}",
+    "context": "PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}\nPUT /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid?digest= Complete the blob upload. This may include a final chunk of data in the request body (monolithic upload) or just finalize a previous chunked upload.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; uuid (path) — Blob upload session identifier.; digest (query) — Content-addressable digest (algorithm:hex)."
+  },
+  {
+    "id": "updateByTeamSlugByProjectSlugByRepositoryNameBlobsUploadsByUuid",
+    "name": "Upload a blob chunk",
+    "description": "Upload a blob chunk PATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}",
+    "context": "PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid}\nPATCH /v2/:teamSlug/:projectSlug/:repositoryName/blobs/uploads/:uuid Upload a chunk of blob data. The request body is streamed directly to S3 as a multipart upload part while hashing incrementally. The client may call this multiple times for chunked uploads.\nRequired: teamSlug (path) — Single Docker repository team slug component.; projectSlug (path) — Single Docker repository project slug component.; repositoryName (path) — Single Docker repository name component.; uuid (path) — Blob upload session identifier."
+  }
+]

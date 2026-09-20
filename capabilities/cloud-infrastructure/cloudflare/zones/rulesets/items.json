@@ -1,0 +1,98 @@
+[
+  {
+    "id": "createZoneRuleset",
+    "name": "Create a zone ruleset",
+    "description": "Create a zone ruleset Creates a ruleset at the zone level. POST /client/v4/zones/{zone_id}/rulesets",
+    "context": "POST /client/v4/zones/{zone_id}/rulesets\nCreates a ruleset at the zone level.\nRequired: zone_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "createZoneRulesetRule",
+    "name": "Create a zone ruleset rule",
+    "description": "Create a zone ruleset rule Adds a new rule to a zone ruleset. POST /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/rules",
+    "context": "POST /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/rules\nAdds a new rule to a zone ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.\nRequired: ruleset_id (path); zone_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "deleteZoneRuleset",
+    "name": "Delete a zone ruleset",
+    "description": "Delete a zone ruleset Deletes all versions of an existing zone ruleset. DELETE /client/v4/zones/{zone_id}/rulesets/{ruleset_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/rulesets/{ruleset_id}\nDeletes all versions of an existing zone ruleset.\nRequired: ruleset_id (path); zone_id (path)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "deleteZoneRulesetRule",
+    "name": "Delete a zone ruleset rule",
+    "description": "Delete a zone ruleset rule Deletes an existing rule from a zone ruleset. DELETE /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}\nDeletes an existing rule from a zone ruleset.\nRequired: rule_id (path); ruleset_id (path); zone_id (path)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "deleteZoneRulesetVersion",
+    "name": "Delete a zone ruleset version",
+    "description": "Delete a zone ruleset version Deletes an existing version of a zone ruleset. DELETE /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}",
+    "context": "DELETE /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}\nDeletes an existing version of a zone ruleset.\nRequired: ruleset_version (path); ruleset_id (path); zone_id (path)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "getZoneEntrypointRuleset",
+    "name": "Get a zone entry point ruleset",
+    "description": "Get a zone entry point ruleset Fetches the latest version of the zone entry point ruleset for a given phase. GET /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint\nFetches the latest version of the zone entry point ruleset for a given phase.\nRequired: ruleset_phase (path); zone_id (path)"
+  },
+  {
+    "id": "getZoneEntrypointRulesetVersion",
+    "name": "Get a zone entry point ruleset version",
+    "description": "Get a zone entry point ruleset version Fetches a specific version of a zone entry point ruleset. GET /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}\nFetches a specific version of a zone entry point ruleset.\nRequired: ruleset_version (path); ruleset_phase (path); zone_id (path)"
+  },
+  {
+    "id": "getZoneRuleset",
+    "name": "Get a zone ruleset",
+    "description": "Get a zone ruleset Fetches the latest version of a zone ruleset. GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}\nFetches the latest version of a zone ruleset.\nRequired: ruleset_id (path); zone_id (path)"
+  },
+  {
+    "id": "getZoneRulesetVersion",
+    "name": "Get a zone ruleset version",
+    "description": "Get a zone ruleset version Fetches a specific version of a zone ruleset. GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}\nFetches a specific version of a zone ruleset.\nRequired: ruleset_version (path); ruleset_id (path); zone_id (path)"
+  },
+  {
+    "id": "listZoneEntrypointRulesetVersions",
+    "name": "List a zone entry point ruleset's versions",
+    "description": "List a zone entry point ruleset's versions Fetches the versions of a zone entry point ruleset. GET /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions\nFetches the versions of a zone entry point ruleset.\nRequired: ruleset_phase (path); zone_id (path)"
+  },
+  {
+    "id": "listZoneRulesets",
+    "name": "List zone rulesets",
+    "description": "List zone rulesets Fetches all rulesets at the zone level. GET /client/v4/zones/{zone_id}/rulesets",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets\nFetches all rulesets at the zone level.\nRequired: zone_id (path)\nOptional: cursor (query); per_page (query)"
+  },
+  {
+    "id": "listZoneRulesetVersionRulesByTag",
+    "name": "List a zone ruleset version's rules by tag",
+    "description": "List a zone ruleset version's rules by tag Fetches the rules of a managed zone ruleset version for a given tag. GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}\nFetches the rules of a managed zone ruleset version for a given tag.\nRequired: rule_tag (path); ruleset_version (path); ruleset_id (path); zone_id (path)"
+  },
+  {
+    "id": "listZoneRulesetVersions",
+    "name": "List a zone ruleset's versions",
+    "description": "List a zone ruleset's versions Fetches the versions of a zone ruleset. GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions",
+    "context": "GET /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/versions\nFetches the versions of a zone ruleset.\nRequired: ruleset_id (path); zone_id (path)"
+  },
+  {
+    "id": "updateZoneEntrypointRuleset",
+    "name": "Update a zone entry point ruleset",
+    "description": "Update a zone entry point ruleset Updates a zone entry point ruleset, creating a new version. PUT /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint",
+    "context": "PUT /client/v4/zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint\nUpdates a zone entry point ruleset, creating a new version.\nRequired: ruleset_phase (path); zone_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "updateZoneRuleset",
+    "name": "Update a zone ruleset",
+    "description": "Update a zone ruleset Updates a zone ruleset, creating a new version. PUT /client/v4/zones/{zone_id}/rulesets/{ruleset_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/rulesets/{ruleset_id}\nUpdates a zone ruleset, creating a new version.\nRequired: ruleset_id (path); zone_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  },
+  {
+    "id": "updateZoneRulesetRule",
+    "name": "Update a zone ruleset rule",
+    "description": "Update a zone ruleset rule Updates an existing rule in a zone ruleset. PATCH /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}\nUpdates an existing rule in a zone ruleset.\nRequired: rule_id (path); ruleset_id (path); zone_id (path); body (body)\nOptional: dry_run (query) — Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204."
+  }
+]

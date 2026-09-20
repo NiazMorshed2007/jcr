@@ -1,0 +1,26 @@
+[
+  {
+    "id": "get_EventRawRead",
+    "name": "Reads data for a raw event",
+    "description": "Reads data for a raw event Retrieves raw threat event data for a specific event in Cloudforce One. GET /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}\nRetrieves raw threat event data for a specific event in Cloudforce One.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.; raw_id (path) — Raw Event UUID."
+  },
+  {
+    "id": "get_LegacyEventRawReadDS",
+    "name": "Reads raw data for an event by UUID",
+    "description": "Reads raw data for an event by UUID Deprecated; use GET /events/datasets/{dataset_id}/events/{event_id}/raw. GET /client/v4/accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}\nDeprecated; use GET /events/datasets/{dataset_id}/events/{event_id}/raw. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; event_id (path) — Event ID.; dataset_id (path) — Dataset ID."
+  },
+  {
+    "id": "patch_EventRawUpdate",
+    "name": "Updates a raw event",
+    "description": "Updates a raw event Partially updates raw threat event data in Cloudforce One, modifying specific fields of the event. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}\nPartially updates raw threat event data in Cloudforce One, modifying specific fields of the event.\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.; raw_id (path) — Raw Event UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_EventRawUpdate",
+    "name": "Updates a raw event",
+    "description": "Updates a raw event POST /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}\nUpdates a raw event\nRequired: account_id (path) — Account ID.; event_id (path) — Event UUID.; raw_id (path) — Raw Event UUID.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "account-level-custom-nameservers-add-account-custom-nameserver",
+    "name": "Add Account Custom Nameserver",
+    "description": "Add Account Custom Nameserver Adds a custom nameserver to the account for use as a vanity nameserver on zones. POST /client/v4/accounts/{account_id}/custom_ns",
+    "context": "POST /client/v4/accounts/{account_id}/custom_ns\nAdds a custom nameserver to the account for use as a vanity nameserver on zones.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-level-custom-nameservers-delete-account-custom-nameserver",
+    "name": "Delete Account Custom Nameserver",
+    "description": "Delete Account Custom Nameserver Removes a custom nameserver from the account. DELETE /client/v4/accounts/{account_id}/custom_ns/{custom_ns_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/custom_ns/{custom_ns_id}\nRemoves a custom nameserver from the account.\nRequired: custom_ns_id (path); account_id (path)"
+  },
+  {
+    "id": "account-level-custom-nameservers-list-account-custom-nameservers",
+    "name": "List Account Custom Nameservers",
+    "description": "List Account Custom Nameservers List an account's custom nameservers. GET /client/v4/accounts/{account_id}/custom_ns",
+    "context": "GET /client/v4/accounts/{account_id}/custom_ns\nList an account's custom nameservers.\nRequired: account_id (path)"
+  }
+]

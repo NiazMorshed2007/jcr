@@ -1,0 +1,50 @@
+[
+  {
+    "id": "v1-delete-a-branch",
+    "name": "Delete a database branch",
+    "description": "Delete a database branch Deletes the specified database branch. DELETE /v1/branches/{branch_id_or_ref}",
+    "context": "DELETE /v1/branches/{branch_id_or_ref}\nDeletes the specified database branch. By default, deletes immediately. Use force=false to schedule deletion with 1-hour grace period (only when soft deletion is enabled).\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID\nOptional: force (query) — If set to false, schedule deletion with 1-hour grace period (only when soft deletion is enabled)."
+  },
+  {
+    "id": "v1-diff-a-branch",
+    "name": "Diffs a database branch",
+    "description": "Diffs a database branch Diffs the specified database branch This endpoint is currently in its **Beta** stage. GET /v1/branches/{branch_id_or_ref}/diff",
+    "context": "GET /v1/branches/{branch_id_or_ref}/diff\nDiffs the specified database branch This endpoint is currently in its **Beta** stage.\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID\nOptional: included_schemas (query); pgdelta (query) — Use pg-delta instead of Migra for diffing when true. Boolean string. Truthy values: `true`, `1`, `yes`, `on`, `y`, `enabled` Falsy values: `false`, `0`, `no`, `off`, `n`, `disabled`"
+  },
+  {
+    "id": "v1-get-a-branch-config",
+    "name": "Get database branch config",
+    "description": "Get database branch config Fetches configurations of the specified database branch GET /v1/branches/{branch_id_or_ref}",
+    "context": "GET /v1/branches/{branch_id_or_ref}\nFetches configurations of the specified database branch\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID"
+  },
+  {
+    "id": "v1-merge-a-branch",
+    "name": "Merges a database branch",
+    "description": "Merges a database branch Merges the specified database branch POST /v1/branches/{branch_id_or_ref}/merge",
+    "context": "POST /v1/branches/{branch_id_or_ref}/merge\nMerges the specified database branch\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID; body (body)"
+  },
+  {
+    "id": "v1-push-a-branch",
+    "name": "Pushes a database branch",
+    "description": "Pushes a database branch Pushes the specified database branch POST /v1/branches/{branch_id_or_ref}/push",
+    "context": "POST /v1/branches/{branch_id_or_ref}/push\nPushes the specified database branch\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID; body (body)"
+  },
+  {
+    "id": "v1-reset-a-branch",
+    "name": "Resets a database branch",
+    "description": "Resets a database branch Resets the specified database branch POST /v1/branches/{branch_id_or_ref}/reset",
+    "context": "POST /v1/branches/{branch_id_or_ref}/reset\nResets the specified database branch\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID; body (body)"
+  },
+  {
+    "id": "v1-restore-a-branch",
+    "name": "Restore a scheduled branch deletion",
+    "description": "Restore a scheduled branch deletion Cancels scheduled deletion and restores the branch to active state POST /v1/branches/{branch_id_or_ref}/restore",
+    "context": "POST /v1/branches/{branch_id_or_ref}/restore\nCancels scheduled deletion and restores the branch to active state\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID"
+  },
+  {
+    "id": "v1-update-a-branch-config",
+    "name": "Update database branch config",
+    "description": "Update database branch config Updates the configuration of the specified database branch PATCH /v1/branches/{branch_id_or_ref}",
+    "context": "PATCH /v1/branches/{branch_id_or_ref}\nUpdates the configuration of the specified database branch\nRequired: branch_id_or_ref (path) — Branch ref or deprecated branch ID; body (body)"
+  }
+]

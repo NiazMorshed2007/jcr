@@ -1,0 +1,44 @@
+[
+  {
+    "id": "delete_LegacyCategoryDelete",
+    "name": "Deletes a category",
+    "description": "Deletes a category Deprecated; use DELETE /events/event-categories/by-id/{category_id}. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}\nDeprecated; use DELETE /events/event-categories/by-id/{category_id}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID."
+  },
+  {
+    "id": "get_CategoryList",
+    "name": "Lists categories across multiple datasets",
+    "description": "Lists categories across multiple datasets Lists all threat event categories configured for classifying and organizing threat events. GET /client/v4/accounts/{account_id}/cloudforce-one/events/categories",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/categories\nLists all threat event categories configured for classifying and organizing threat events.\nRequired: account_id (path) — Account ID.\nOptional: datasetIds (query) — Array of dataset IDs to query categories from. If not provided, uses the default dataset."
+  },
+  {
+    "id": "get_CategoryListComplete",
+    "name": "Lists categories",
+    "description": "Lists categories GET /client/v4/accounts/{account_id}/cloudforce-one/events/categories/catalog",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/categories/catalog\nLists categories\nRequired: account_id (path) — Account ID."
+  },
+  {
+    "id": "get_LegacyCategoryRead",
+    "name": "Reads a category",
+    "description": "Reads a category Deprecated; use GET /events/event-categories/by-id/{category_id}. GET /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}\nDeprecated; use GET /events/event-categories/by-id/{category_id}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID."
+  },
+  {
+    "id": "patch_LegacyCategoryUpdate",
+    "name": "Updates a category",
+    "description": "Updates a category Deprecated; use PATCH /events/event-categories/by-id/{category_id}. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}\nDeprecated; use PATCH /events/event-categories/by-id/{category_id}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_CategoryCreate",
+    "name": "Creates a new category",
+    "description": "Creates a new category Creates a new threat event category in Cloudforce One for organizing and classifying threat events. POST /client/v4/accounts/{account_id}/cloudforce-one/events/categories/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/categories/create\nCreates a new threat event category in Cloudforce One for organizing and classifying threat events.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_LegacyCategoryUpdate",
+    "name": "Updates a category",
+    "description": "Updates a category Deprecated; use POST /events/event-categories/by-id/{category_id}. POST /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/categories/{category_id}\nDeprecated; use POST /events/event-categories/by-id/{category_id}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID.\nOptional: body (body)"
+  }
+]

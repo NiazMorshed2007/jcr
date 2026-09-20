@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v1-get-action-run",
+    "name": "Get the status of an action run",
+    "description": "Get the status of an action run Returns the current status of the specified action run. GET /v1/projects/{ref}/actions/{run_id}",
+    "context": "GET /v1/projects/{ref}/actions/{run_id}\nReturns the current status of the specified action run.\nRequired: ref (path) — Project ref; run_id (path) — Action Run ID"
+  },
+  {
+    "id": "v1-get-action-run-logs",
+    "name": "Get the logs of an action run",
+    "description": "Get the logs of an action run Returns the logs from the specified action run. GET /v1/projects/{ref}/actions/{run_id}/logs",
+    "context": "GET /v1/projects/{ref}/actions/{run_id}/logs\nReturns the logs from the specified action run.\nRequired: ref (path) — Project ref; run_id (path) — Action Run ID"
+  },
+  {
+    "id": "v1-list-action-runs",
+    "name": "List all action runs",
+    "description": "List all action runs Returns a paginated list of action runs of the specified project. GET /v1/projects/{ref}/actions",
+    "context": "GET /v1/projects/{ref}/actions\nReturns a paginated list of action runs of the specified project.\nRequired: ref (path) — Project ref\nOptional: offset (query); limit (query)"
+  },
+  {
+    "id": "v1-update-action-run-status",
+    "name": "Update the status of an action run",
+    "description": "Update the status of an action run Updates the status of an ongoing action run. PATCH /v1/projects/{ref}/actions/{run_id}/status",
+    "context": "PATCH /v1/projects/{ref}/actions/{run_id}/status\nUpdates the status of an ongoing action run.\nRequired: ref (path) — Project ref; run_id (path) — Action Run ID; body (body)"
+  }
+]

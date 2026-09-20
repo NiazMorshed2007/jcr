@@ -1,0 +1,68 @@
+[
+  {
+    "id": "delete_web_links_id",
+    "name": "Remove web link",
+    "description": "Remove web link Deletes a web link. DELETE /2.0/web_links/{web_link_id}",
+    "context": "DELETE /2.0/web_links/{web_link_id}\nDeletes a web link.\nRequired: web_link_id (path) — The ID of the web link."
+  },
+  {
+    "id": "delete_web_links_id_trash",
+    "name": "Permanently remove web link",
+    "description": "Permanently remove web link Permanently deletes a web link that is in the trash. DELETE /2.0/web_links/{web_link_id}/trash",
+    "context": "DELETE /2.0/web_links/{web_link_id}/trash\nPermanently deletes a web link that is in the trash. This action cannot be undone.\nRequired: web_link_id (path) — The ID of the web link."
+  },
+  {
+    "id": "get_web_links_id",
+    "name": "Get web link",
+    "description": "Get web link Retrieve information about a web link. GET /2.0/web_links/{web_link_id}",
+    "context": "GET /2.0/web_links/{web_link_id}\nRetrieve information about a web link.\nRequired: web_link_id (path) — The ID of the web link.\nOptional: boxapi (header) — The URL, and optional password, for the shared link of this item. This header can be used to access items that have not been explicitly shared with a user. Use the format `shared_link=[link]` or if a password is required then use `shared_link=[link]&shared_link_password=[password]`. This header can be used on the file or folder shared, as well as on any files or folders nested within the item."
+  },
+  {
+    "id": "get_web_links_id_trash",
+    "name": "Get trashed web link",
+    "description": "Get trashed web link Retrieves a web link that has been moved to the trash. GET /2.0/web_links/{web_link_id}/trash",
+    "context": "GET /2.0/web_links/{web_link_id}/trash\nRetrieves a web link that has been moved to the trash.\nRequired: web_link_id (path) — The ID of the web link.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_web_links_id#get_shared_link",
+    "name": "Get shared link for web link",
+    "description": "Get shared link for web link Gets the information for a shared link on a web link. GET /2.0/web_links/{web_link_id}",
+    "context": "GET /2.0/web_links/{web_link_id}\nGets the information for a shared link on a web link.\nRequired: web_link_id (path) — The ID of the web link.; fields (query) — Explicitly request the `shared_link` fields to be returned for this item."
+  },
+  {
+    "id": "post_web_links",
+    "name": "Create web link",
+    "description": "Create web link Creates a web link object within a folder. POST /2.0/web_links",
+    "context": "POST /2.0/web_links\nCreates a web link object within a folder.\nOptional: body (body)"
+  },
+  {
+    "id": "post_web_links_id",
+    "name": "Restore web link",
+    "description": "Restore web link Restores a web link that has been moved to the trash. POST /2.0/web_links/{web_link_id}",
+    "context": "POST /2.0/web_links/{web_link_id}\nRestores a web link that has been moved to the trash. An optional new parent ID can be provided to restore the web link to in case the original folder has been deleted.\nRequired: web_link_id (path) — The ID of the web link.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  },
+  {
+    "id": "put_web_links_id",
+    "name": "Update web link",
+    "description": "Update web link Updates a web link object. PUT /2.0/web_links/{web_link_id}",
+    "context": "PUT /2.0/web_links/{web_link_id}\nUpdates a web link object.\nRequired: web_link_id (path) — The ID of the web link.\nOptional: body (body)"
+  },
+  {
+    "id": "put_web_links_id#add_shared_link",
+    "name": "Add shared link to web link",
+    "description": "Add shared link to web link Adds a shared link to a web link. PUT /2.0/web_links/{web_link_id}",
+    "context": "PUT /2.0/web_links/{web_link_id}\nAdds a shared link to a web link.\nRequired: web_link_id (path) — The ID of the web link.; fields (query) — Explicitly request the `shared_link` fields to be returned for this item.\nOptional: body (body)"
+  },
+  {
+    "id": "put_web_links_id#remove_shared_link",
+    "name": "Remove shared link from web link",
+    "description": "Remove shared link from web link Removes a shared link from a web link. PUT /2.0/web_links/{web_link_id}",
+    "context": "PUT /2.0/web_links/{web_link_id}\nRemoves a shared link from a web link.\nRequired: web_link_id (path) — The ID of the web link.; fields (query) — Explicitly request the `shared_link` fields to be returned for this item.\nOptional: body (body)"
+  },
+  {
+    "id": "put_web_links_id#update_shared_link",
+    "name": "Update shared link on web link",
+    "description": "Update shared link on web link Updates a shared link on a web link. PUT /2.0/web_links/{web_link_id}",
+    "context": "PUT /2.0/web_links/{web_link_id}\nUpdates a shared link on a web link.\nRequired: web_link_id (path) — The ID of the web link.; fields (query) — Explicitly request the `shared_link` fields to be returned for this item.\nOptional: body (body)"
+  }
+]

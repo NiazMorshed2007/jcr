@@ -1,0 +1,38 @@
+[
+  {
+    "id": "account_relationship_definitions_create",
+    "name": "account_relationship_definitions_create",
+    "description": "account_relationship_definitions_create POST /api/projects/{project_id}/account_relationship_definitions/",
+    "context": "POST /api/projects/{project_id}/account_relationship_definitions/\naccount_relationship_definitions_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "account_relationship_definitions_destroy",
+    "name": "account_relationship_definitions_destroy",
+    "description": "account_relationship_definitions_destroy DELETE /api/projects/{project_id}/account_relationship_definitions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/account_relationship_definitions/{id}/\naccount_relationship_definitions_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "account_relationship_definitions_list",
+    "name": "account_relationship_definitions_list",
+    "description": "account_relationship_definitions_list GET /api/projects/{project_id}/account_relationship_definitions/",
+    "context": "GET /api/projects/{project_id}/account_relationship_definitions/\naccount_relationship_definitions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "account_relationship_definitions_partial_update",
+    "name": "account_relationship_definitions_partial_update",
+    "description": "account_relationship_definitions_partial_update PATCH /api/projects/{project_id}/account_relationship_definitions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/account_relationship_definitions/{id}/\naccount_relationship_definitions_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "account_relationship_definitions_retrieve",
+    "name": "account_relationship_definitions_retrieve",
+    "description": "account_relationship_definitions_retrieve GET /api/projects/{project_id}/account_relationship_definitions/{id}/",
+    "context": "GET /api/projects/{project_id}/account_relationship_definitions/{id}/\naccount_relationship_definitions_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "account_relationship_definitions_update",
+    "name": "account_relationship_definitions_update",
+    "description": "account_relationship_definitions_update PUT /api/projects/{project_id}/account_relationship_definitions/{id}/",
+    "context": "PUT /api/projects/{project_id}/account_relationship_definitions/{id}/\naccount_relationship_definitions_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

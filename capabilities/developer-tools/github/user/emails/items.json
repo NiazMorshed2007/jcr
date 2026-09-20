@@ -1,0 +1,20 @@
+[
+  {
+    "id": "users%2Fadd-email-for-authenticated-user",
+    "name": "Add an email address for the authenticated user",
+    "description": "Add an email address for the authenticated user OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint. POST /user/emails",
+    "context": "POST /user/emails\nOAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nOptional: body (body)"
+  },
+  {
+    "id": "users%2Fdelete-email-for-authenticated-user",
+    "name": "Delete an email address for the authenticated user",
+    "description": "Delete an email address for the authenticated user OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint. DELETE /user/emails",
+    "context": "DELETE /user/emails\nOAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nOptional: body (body)"
+  },
+  {
+    "id": "users%2Flist-emails-for-authenticated-user",
+    "name": "List email addresses for the authenticated user",
+    "description": "List email addresses for the authenticated user Lists all of your email addresses, and specifies which one is visible to the public. GET /user/emails",
+    "context": "GET /user/emails\nLists all of your email addresses, and specifies which one is visible to the public. OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

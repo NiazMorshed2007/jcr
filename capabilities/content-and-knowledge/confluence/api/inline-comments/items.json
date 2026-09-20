@@ -1,0 +1,68 @@
+[
+  {
+    "id": "createInlineComment",
+    "name": "Create inline comment",
+    "description": "Create inline comment Create an inline comment. POST /wiki/api/v2/inline-comments",
+    "context": "POST /wiki/api/v2/inline-comments\nCreate an inline comment. This can be at the top level (specifying pageId or blogPostId in the request body) or as a reply (specifying parentCommentId in the request body). Note the inlineCommentProperties object in the request body is used to select the text the inline comment should be tied to. This is what determines the text highlighting when viewing a page in Confluence. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blogpost and its corresponding space. Permission to create comments in the space.\nRequired: body (body) — The inline comment to be created"
+  },
+  {
+    "id": "deleteInlineComment",
+    "name": "Delete inline comment",
+    "description": "Delete inline comment Deletes an inline comment. DELETE /wiki/api/v2/inline-comments/{comment-id}",
+    "context": "DELETE /wiki/api/v2/inline-comments/{comment-id}\nDeletes an inline comment. This is a permanent deletion and cannot be reverted. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blogpost and its corresponding space. Permission to delete comments in the space.\nRequired: comment-id (path) — The ID of the comment to be deleted."
+  },
+  {
+    "id": "getInlineCommentById",
+    "name": "Get inline comment by id",
+    "description": "Get inline comment by id Retrieves an inline comment by id **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blogpost and its corresponding space. GET /wiki/api/v2/inline-comments/{comment-id}",
+    "context": "GET /wiki/api/v2/inline-comments/{comment-id}\nRetrieves an inline comment by id **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blogpost and its corresponding space.\nRequired: comment-id (path) — The ID of the comment to be retrieved.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; version (query) — Allows you to retrieve a previously published version. Specify the previous version's number to retrieve its details.; include-properties (query) — Includes content properties associated with this inline comment in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-operations (query) — Includes operations associated with this inline comment in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-likes (query) — Includes likes associated with this inline comment in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-versions (query) — Includes versions associated with this inline comment in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-version (query) — Includes the current version associated with this inline comment in the response. By default this is included and can be omitted by setting the value to `false`."
+  },
+  {
+    "id": "getInlineCommentChildren",
+    "name": "Get children inline comments",
+    "description": "Get children inline comments Returns the children inline comments of specific comment. GET /wiki/api/v2/inline-comments/{id}/children",
+    "context": "GET /wiki/api/v2/inline-comments/{id}/children\nReturns the children inline comments of specific comment. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nRequired: id (path) — The ID of the parent comment for which inline comment children should be returned.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of footer comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getInlineCommentOperations",
+    "name": "Get permitted operations for inline comment",
+    "description": "Get permitted operations for inline comment Returns the permitted operations on specific inline comment. GET /wiki/api/v2/inline-comments/{id}/operations",
+    "context": "GET /wiki/api/v2/inline-comments/{id}/operations\nReturns the permitted operations on specific inline comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the parent content of the inline comment and its corresponding space.\nRequired: id (path) — The ID of the inline comment for which operations should be returned."
+  },
+  {
+    "id": "getInlineComments",
+    "name": "Get inline comments",
+    "description": "Get inline comments Returns all inline comments. GET /wiki/api/v2/inline-comments",
+    "context": "GET /wiki/api/v2/inline-comments\nReturns all inline comments. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page and its corresponding space.\nOptional: body-format (query) — The content format type to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of footer comments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getInlineCommentVersionDetails",
+    "name": "Get version details for inline comment version",
+    "description": "Get version details for inline comment version Retrieves version details for the specified inline comment version. GET /wiki/api/v2/inline-comments/{id}/versions/{version-number}",
+    "context": "GET /wiki/api/v2/inline-comments/{id}/versions/{version-number}\nRetrieves version details for the specified inline comment version. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blog post and its corresponding space.\nRequired: id (path) — The ID of the inline comment for which version details should be returned.; version-number (path) — The version number of the inline comment to be returned."
+  },
+  {
+    "id": "getInlineCommentVersions",
+    "name": "Get inline comment versions",
+    "description": "Get inline comment versions Retrieves the versions of the specified inline comment. GET /wiki/api/v2/inline-comments/{id}/versions",
+    "context": "GET /wiki/api/v2/inline-comments/{id}/versions\nRetrieves the versions of the specified inline comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blog post and its corresponding space.\nRequired: id (path) — The ID of the inline comment for which versions should be returned\nOptional: body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of versions per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getInlineLikeCount",
+    "name": "Get like count for inline comment",
+    "description": "Get like count for inline comment Returns the count of likes of specific inline comment. GET /wiki/api/v2/inline-comments/{id}/likes/count",
+    "context": "GET /wiki/api/v2/inline-comments/{id}/likes/count\nReturns the count of likes of specific inline comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page/blogpost and its corresponding space.\nRequired: id (path) — The ID of the inline comment for which like count should be returned."
+  },
+  {
+    "id": "getInlineLikeUsers",
+    "name": "Get account IDs of likes for inline comment",
+    "description": "Get account IDs of likes for inline comment Returns the account IDs of likes of specific inline comment. GET /wiki/api/v2/inline-comments/{id}/likes/users",
+    "context": "GET /wiki/api/v2/inline-comments/{id}/likes/users\nReturns the account IDs of likes of specific inline comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page/blogpost and its corresponding space.\nRequired: id (path) — The ID of the inline comment for which like count should be returned.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of account IDs per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "updateInlineComment",
+    "name": "Update inline comment",
+    "description": "Update inline comment Update an inline comment. PUT /wiki/api/v2/inline-comments/{comment-id}",
+    "context": "PUT /wiki/api/v2/inline-comments/{comment-id}\nUpdate an inline comment. This can be used to update the body text of a comment and/or to resolve the comment **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the content of the page or blogpost and its corresponding space. Permission to create comments in the space.\nRequired: comment-id (path) — The ID of the comment to be retrieved.; body (body) — The inline comment to be updated"
+  }
+]

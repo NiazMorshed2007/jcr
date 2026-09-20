@@ -1,0 +1,62 @@
+[
+  {
+    "id": "organizations_deleteProjectMembership",
+    "name": "Delete a membership from a specific project (requires organization-scoped API key)",
+    "description": "Delete a membership from a specific project (requires organization-scoped API key) Delete a membership from a specific project (requires organization-scoped API key). DELETE /api/public/projects/{projectId}/memberships",
+    "context": "DELETE /api/public/projects/{projectId}/memberships\nDelete a membership from a specific project (requires organization-scoped API key). The user must be a member of the organization.\nRequired: projectId (path); body (body)"
+  },
+  {
+    "id": "organizations_getProjectMemberships",
+    "name": "Get all memberships for a specific project (requires organization-scoped API key)",
+    "description": "Get all memberships for a specific project (requires organization-scoped API key) GET /api/public/projects/{projectId}/memberships",
+    "context": "GET /api/public/projects/{projectId}/memberships\nGet all memberships for a specific project (requires organization-scoped API key)\nRequired: projectId (path)"
+  },
+  {
+    "id": "organizations_updateProjectMembership",
+    "name": "Create or update a membership for a specific project (requires organization-scoped API key)",
+    "description": "Create or update a membership for a specific project (requires organization-scoped API key) Create or update a membership for a specific project (requires organization-scoped API key). PUT /api/public/projects/{projectId}/memberships",
+    "context": "PUT /api/public/projects/{projectId}/memberships\nCreate or update a membership for a specific project (requires organization-scoped API key). The user must already be a member of the organization.\nRequired: projectId (path); body (body)"
+  },
+  {
+    "id": "projects_create",
+    "name": "Create a new project (requires organization-scoped API key)",
+    "description": "Create a new project (requires organization-scoped API key) POST /api/public/projects",
+    "context": "POST /api/public/projects\nCreate a new project (requires organization-scoped API key)\nRequired: body (body)"
+  },
+  {
+    "id": "projects_createApiKey",
+    "name": "Create a new API key for a project (requires organization-scoped API key)",
+    "description": "Create a new API key for a project (requires organization-scoped API key) POST /api/public/projects/{projectId}/apiKeys",
+    "context": "POST /api/public/projects/{projectId}/apiKeys\nCreate a new API key for a project (requires organization-scoped API key)\nRequired: projectId (path); body (body)"
+  },
+  {
+    "id": "projects_delete",
+    "name": "Delete a project by ID (requires organization-scoped API key)",
+    "description": "Delete a project by ID (requires organization-scoped API key) Delete a project by ID (requires organization-scoped API key). DELETE /api/public/projects/{projectId}",
+    "context": "DELETE /api/public/projects/{projectId}\nDelete a project by ID (requires organization-scoped API key). Project deletion is processed asynchronously.\nRequired: projectId (path)"
+  },
+  {
+    "id": "projects_deleteApiKey",
+    "name": "Delete an API key for a project (requires organization-scoped API key)",
+    "description": "Delete an API key for a project (requires organization-scoped API key) DELETE /api/public/projects/{projectId}/apiKeys/{apiKeyId}",
+    "context": "DELETE /api/public/projects/{projectId}/apiKeys/{apiKeyId}\nDelete an API key for a project (requires organization-scoped API key)\nRequired: projectId (path); apiKeyId (path)"
+  },
+  {
+    "id": "projects_get",
+    "name": "Get Project associated with API key (requires project-scoped API key)",
+    "description": "Get Project associated with API key (requires project-scoped API key) Get Project associated with API key (requires project-scoped API key). GET /api/public/projects",
+    "context": "GET /api/public/projects\nGet Project associated with API key (requires project-scoped API key). You can use GET /api/public/organizations/projects to get all projects with an organization-scoped key."
+  },
+  {
+    "id": "projects_getApiKeys",
+    "name": "Get all API keys for a project (requires organization-scoped API key)",
+    "description": "Get all API keys for a project (requires organization-scoped API key) GET /api/public/projects/{projectId}/apiKeys",
+    "context": "GET /api/public/projects/{projectId}/apiKeys\nGet all API keys for a project (requires organization-scoped API key)\nRequired: projectId (path)"
+  },
+  {
+    "id": "projects_update",
+    "name": "Update a project by ID (requires organization-scoped API key).",
+    "description": "Update a project by ID (requires organization-scoped API key). PUT /api/public/projects/{projectId}",
+    "context": "PUT /api/public/projects/{projectId}\nUpdate a project by ID (requires organization-scoped API key).\nRequired: projectId (path); body (body)"
+  }
+]

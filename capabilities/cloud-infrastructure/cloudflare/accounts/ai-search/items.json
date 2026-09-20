@@ -1,0 +1,296 @@
+[
+  {
+    "id": "ai-search-create-instance",
+    "name": "Create an AI Search instance.",
+    "description": "Create an AI Search instance. Create a new AI Search instance with the given configuration. POST /client/v4/accounts/{account_id}/ai-search/instances",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/instances\nCreate a new AI Search instance with the given configuration. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-create-namespace",
+    "name": "Create a namespace",
+    "description": "Create a namespace Create a namespace for organizing AI Search instances. POST /client/v4/accounts/{account_id}/ai-search/namespaces",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces\nCreate a namespace for organizing AI Search instances.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-create-tokens",
+    "name": "Create a token",
+    "description": "Create a token Create a stored Cloudflare credential for an AI Search instance to access its data source. POST /client/v4/accounts/{account_id}/ai-search/tokens",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/tokens\nCreate a stored Cloudflare credential for an AI Search instance to access its data source.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-delete-instance",
+    "name": "Delete an AI Search instance.",
+    "description": "Delete an AI Search instance. Permanently delete an AI Search instance and all its indexed data. DELETE /client/v4/accounts/{account_id}/ai-search/instances/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-search/instances/{id}\nPermanently delete an AI Search instance and all its indexed data. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "ai-search-delete-namespace",
+    "name": "Delete a namespace",
+    "description": "Delete a namespace Permanently delete a namespace. DELETE /client/v4/accounts/{account_id}/ai-search/namespaces/{name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-search/namespaces/{name}\nPermanently delete a namespace. The namespace must be empty (no instances), and the default namespace cannot be deleted.\nRequired: account_id (path); name (path)"
+  },
+  {
+    "id": "ai-search-delete-tokens",
+    "name": "Delete a token",
+    "description": "Delete a token Permanently delete a stored AI Search credential. DELETE /client/v4/accounts/{account_id}/ai-search/tokens/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-search/tokens/{id}\nPermanently delete a stored AI Search credential. Credentials in use by an instance cannot be deleted.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "ai-search-fetch-instance",
+    "name": "Get an AI Search instance.",
+    "description": "Get an AI Search instance. Retrieve the configuration and status of an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/instances/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/instances/{id}\nRetrieve the configuration and status of an AI Search instance. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "ai-search-fetch-namespace",
+    "name": "Get a namespace",
+    "description": "Get a namespace Retrieve a namespace and its description. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}\nRetrieve a namespace and its description.\nRequired: account_id (path); name (path)"
+  },
+  {
+    "id": "ai-search-fetch-tokens",
+    "name": "Get a token",
+    "description": "Get a token Retrieve a stored AI Search credential without exposing its secret. GET /client/v4/accounts/{account_id}/ai-search/tokens/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/tokens/{id}\nRetrieve a stored AI Search credential without exposing its secret.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "ai-search-instance-change-job-status",
+    "name": "Cancel an indexing job.",
+    "description": "Cancel an indexing job. Cancel an in-progress indexing job for an AI Search instance. PATCH /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}\nCancel an in-progress indexing job for an AI Search instance. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; job_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-instance-chat-completion",
+    "name": "Chat Completions",
+    "description": "Chat Completions Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses. POST /client/v4/accounts/{account_id}/ai-search/instances/{id}/chat/completions",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/instances/{id}/chat/completions\nPerforms a chat completion request against an AI Search instance, using indexed content as context for generating responses. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-instance-create-job",
+    "name": "Create new job",
+    "description": "Create new job Creates a new indexing job for an AI Search instance. POST /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs\nCreates a new indexing job for an AI Search instance. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-instance-get-job",
+    "name": "Get a Job Details",
+    "description": "Get a Job Details Retrieves details for a specific AI Search indexing job. GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}\nRetrieves details for a specific AI Search indexing job. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; job_id (path); account_id (path)"
+  },
+  {
+    "id": "ai-search-instance-list-job-logs",
+    "name": "List Job Logs",
+    "description": "List Job Logs Lists log entries for an AI Search indexing job. GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs/{job_id}/logs\nLists log entries for an AI Search indexing job. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; job_id (path); account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "ai-search-instance-list-jobs",
+    "name": "List Jobs",
+    "description": "List Jobs Lists indexing jobs for an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/jobs\nLists indexing jobs for an AI Search instance. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "ai-search-instance-search",
+    "name": "Search",
+    "description": "Search Executes a semantic search query against an AI Search instance to find relevant indexed content. POST /client/v4/accounts/{account_id}/ai-search/instances/{id}/search",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/instances/{id}/search\nExecutes a semantic search query against an AI Search instance to find relevant indexed content. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-list-instances",
+    "name": "List AI Search instances.",
+    "description": "List AI Search instances. List all AI Search instances in the account. GET /client/v4/accounts/{account_id}/ai-search/instances",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/instances\nList all AI Search instances in the account. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: account_id (path)\nOptional: page (query) — Page number (1-indexed).; per_page (query) — Number of results per page.; search (query) — Filter instances whose id contains this string (case-insensitive).; namespace (query) — Filter by namespace.; order_by (query) — Field to order results by.; order_by_direction (query) — Order direction."
+  },
+  {
+    "id": "ai-search-list-namespaces",
+    "name": "List namespaces",
+    "description": "List namespaces List namespaces in the account, including their descriptions and creation times. GET /client/v4/accounts/{account_id}/ai-search/namespaces",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces\nList namespaces in the account, including their descriptions and creation times.\nRequired: account_id (path)\nOptional: page (query) — Page number (1-indexed).; per_page (query) — Number of results per page.; search (query) — Filter namespaces whose name or description contains this string (case-insensitive)."
+  },
+  {
+    "id": "ai-search-list-tokens",
+    "name": "List tokens",
+    "description": "List tokens List stored AI Search credentials in the account without exposing their secrets. GET /client/v4/accounts/{account_id}/ai-search/tokens",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/tokens\nList stored AI Search credentials in the account without exposing their secrets.\nRequired: account_id (path)\nOptional: page (query) — Page number (1-indexed).; per_page (query) — Number of results per page.; search (query) — Filter tokens whose name contains this string (case-insensitive)."
+  },
+  {
+    "id": "ai-search-move-instance",
+    "name": "Move an instance to a different namespace.",
+    "description": "Move an instance to a different namespace. Moves an instance from its current namespace to the specified target namespace. PATCH /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}\nMoves an instance from its current namespace to the specified target namespace. Use 'default' with --destination-namespace to move the instance back to the default namespace. Fails with 400 if the target namespace already has an instance with the same id (ids must be unique within a namespace — the same id can exist in different namespaces).\nRequired: account_id (path); name (path) — Current namespace of the instance.; id (path) — Instance id.\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-create-instance",
+    "name": "Create an AI Search instance.",
+    "description": "Create an AI Search instance. Create a new AI Search instance with the given configuration. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances\nCreate a new AI Search instance with the given configuration.\nRequired: account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-delete-instance",
+    "name": "Delete an AI Search instance.",
+    "description": "Delete an AI Search instance. Permanently delete an AI Search instance and all its indexed data. DELETE /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}\nPermanently delete an AI Search instance and all its indexed data.\nRequired: account_id (path); id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-fetch-instance",
+    "name": "Get an AI Search instance.",
+    "description": "Get an AI Search instance. Retrieve the configuration and status of an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}\nRetrieve the configuration and status of an AI Search instance.\nRequired: account_id (path); id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-instance-change-job-status",
+    "name": "Cancel an indexing job.",
+    "description": "Cancel an indexing job. Cancel an in-progress indexing job for an AI Search instance. PATCH /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs/{job_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs/{job_id}\nCancel an in-progress indexing job for an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; job_id (path); account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-instance-chat-completion",
+    "name": "Chat Completions",
+    "description": "Chat Completions Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/chat/completions",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/chat/completions\nPerforms a chat completion request against an AI Search instance, using indexed content as context for generating responses.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-instance-create-job",
+    "name": "Create new job",
+    "description": "Create new job Creates a new indexing job for an AI Search instance. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs\nCreates a new indexing job for an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-instance-create-or-update-item",
+    "name": "Create or Update Item.",
+    "description": "Create or Update Item. Creates or updates an indexed item in an AI Search instance. PUT /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items\nCreates or updates an indexed item in an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-instance-delete-item",
+    "name": "Delete Item.",
+    "description": "Delete Item. Deletes a file from a managed AI Search instance and triggers a reindex. DELETE /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}\nDeletes a file from a managed AI Search instance and triggers a reindex.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; item_id (path); account_id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-instance-get-item",
+    "name": "Get Item.",
+    "description": "Get Item. Retrieves a specific indexed item from an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}\nRetrieves a specific indexed item from an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; item_id (path); account_id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-instance-get-item-content",
+    "name": "Download Item Content.",
+    "description": "Download Item Content. Downloads the raw file content for a specific item from the managed AI Search instance storage. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}/download",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}/download\nDownloads the raw file content for a specific item from the managed AI Search instance storage.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; item_id (path); account_id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-instance-get-job",
+    "name": "Get a Job Details",
+    "description": "Get a Job Details Retrieves details for a specific AI Search indexing job. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs/{job_id}",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs/{job_id}\nRetrieves details for a specific AI Search indexing job.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; job_id (path); account_id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-instance-list-item-chunks",
+    "name": "List Item Chunks.",
+    "description": "List Item Chunks. Lists chunks for a specific item in an AI Search instance, including their text content. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}/chunks",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}/chunks\nLists chunks for a specific item in an AI Search instance, including their text content.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; item_id (path); account_id (path); name (path) — Namespace name\nOptional: limit (query); offset (query)"
+  },
+  {
+    "id": "ai-search-namespace-instance-list-items",
+    "name": "Items List.",
+    "description": "Items List. Lists indexed items in an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items\nLists indexed items in an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: page (query); per_page (query); search (query); sort_by (query) — Sort order for items. \"status\" (default) sorts by status priority then last_seen_at. \"modified_at\" sorts by file modification time (most recent first), falling back to created_at.; status (query); source (query) — Filter items by source_id. Use \"builtin\" for uploaded files, or a source identifier like \"web-crawler:https://example.com\".; metadata_filter (query) — JSON-encoded metadata filter using Vectorize filter syntax. Examples: {\"folder\":\"reports/\"}, {\"timestamp\":{\"$gte\":1700000000000}}, {\"folder\":{\"$in\":[\"docs/\",\"reports/\"]}}; item_id (query) — Filter items by their unique ID. Returns at most one item.; key (query) — Filter items by their exact key (object key / filename). Keys are unique per source, so combine with `source` to disambiguate across data sources."
+  },
+  {
+    "id": "ai-search-namespace-instance-list-job-logs",
+    "name": "List Job Logs",
+    "description": "List Job Logs Lists log entries for an AI Search indexing job. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs/{job_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs/{job_id}/logs\nLists log entries for an AI Search indexing job.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; job_id (path); account_id (path); name (path) — Namespace name\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "ai-search-namespace-instance-list-jobs",
+    "name": "List Jobs",
+    "description": "List Jobs Lists indexing jobs for an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/jobs\nLists indexing jobs for an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "ai-search-namespace-instance-logs-item",
+    "name": "Item Logs.",
+    "description": "Item Logs. Lists processing logs for a specific item in an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}/logs\nLists processing logs for a specific item in an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; item_id (path); account_id (path); name (path) — Namespace name\nOptional: limit (query); cursor (query)"
+  },
+  {
+    "id": "ai-search-namespace-instance-search",
+    "name": "Search",
+    "description": "Search Executes a semantic search query against an AI Search instance to find relevant indexed content. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/search",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/search\nExecutes a semantic search query against an AI Search instance to find relevant indexed content.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-instance-sync-item",
+    "name": "Sync Item.",
+    "description": "Sync Item. Syncs an item to an AI Search instance index. PATCH /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items/{item_id}\nSyncs an item to an AI Search instance index.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; item_id (path); account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-instance-upload-item",
+    "name": "Upload Item.",
+    "description": "Upload Item. Uploads a file to a managed AI Search instance via multipart/form-data. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/items\nUploads a file to a managed AI Search instance via multipart/form-data.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-list-instances",
+    "name": "List AI Search instances.",
+    "description": "List AI Search instances. List all AI Search instances in the account. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances\nList all AI Search instances in the account.\nRequired: account_id (path); name (path) — Namespace name\nOptional: page (query) — Page number (1-indexed).; per_page (query) — Number of results per page.; search (query) — Filter instances whose id contains this string (case-insensitive).; namespace (query) — Filter by namespace.; order_by (query) — Field to order results by.; order_by_direction (query) — Order direction."
+  },
+  {
+    "id": "ai-search-namespace-multi-instance-chat-completion",
+    "name": "Multi-Instance Chat Completions",
+    "description": "Multi-Instance Chat Completions Performs a chat completion request against multiple AI Search instances in parallel, merging retrieved content as context for generating a response. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/chat/completions",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/chat/completions\nPerforms a chat completion request against multiple AI Search instances in parallel, merging retrieved content as context for generating a response.\nRequired: account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-multi-instance-search",
+    "name": "Multi-Instance Search",
+    "description": "Multi-Instance Search Performs a semantic search query against multiple AI Search instances in parallel, merging the retrieved results into a single ranked response. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/search",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/search\nPerforms a semantic search query against multiple AI Search instances in parallel, merging the retrieved results into a single ranked response.\nRequired: account_id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-namespace-purge-instance-cache",
+    "name": "Purge search cache.",
+    "description": "Purge search cache. Purges all cached search results for an AI Search instance. POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/purge_cache",
+    "context": "POST /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/purge_cache\nPurges all cached search results for an AI Search instance. A new internal cache key is generated, immediately orphaning all prior cached entries.\nRequired: account_id (path); id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-stats",
+    "name": "Get instance statistics.",
+    "description": "Get instance statistics. Retrieve usage and indexing statistics for an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/stats",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}/stats\nRetrieve usage and indexing statistics for an AI Search instance.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path); name (path) — Namespace name"
+  },
+  {
+    "id": "ai-search-namespace-update-instance",
+    "name": "Update an AI Search instance.",
+    "description": "Update an AI Search instance. Update the configuration of an AI Search instance. PUT /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-search/namespaces/{name}/instances/{id}\nUpdate the configuration of an AI Search instance.\nRequired: account_id (path); id (path); name (path) — Namespace name\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-stats",
+    "name": "Get instance statistics.",
+    "description": "Get instance statistics. Retrieve usage and indexing statistics for an AI Search instance. GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/stats",
+    "context": "GET /client/v4/accounts/{account_id}/ai-search/instances/{id}/stats\nRetrieve usage and indexing statistics for an AI Search instance. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: id (path) — AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.; account_id (path)"
+  },
+  {
+    "id": "ai-search-update-instance",
+    "name": "Update an AI Search instance.",
+    "description": "Update an AI Search instance. Update the configuration of an AI Search instance. PUT /client/v4/accounts/{account_id}/ai-search/instances/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-search/instances/{id}\nUpdate the configuration of an AI Search instance. Deprecated: use /accounts/{account_id}/ai-search/namespaces/{name}/instances (and descendant paths) instead.\nRequired: account_id (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-update-namespace",
+    "name": "Update a namespace",
+    "description": "Update a namespace Update the description and/or the public endpoint configuration of an existing namespace. PUT /client/v4/accounts/{account_id}/ai-search/namespaces/{name}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-search/namespaces/{name}\nUpdate the description and/or the public endpoint configuration of an existing namespace. The default namespace's description cannot be modified, but its public endpoint can.\nRequired: account_id (path); name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ai-search-update-tokens",
+    "name": "Update a token",
+    "description": "Update a token Replace a stored AI Search credential and invalidate cached credentials for instances that use it. PUT /client/v4/accounts/{account_id}/ai-search/tokens/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/ai-search/tokens/{id}\nReplace a stored AI Search credential and invalidate cached credentials for instances that use it.\nRequired: account_id (path); id (path)\nOptional: body (body)"
+  }
+]

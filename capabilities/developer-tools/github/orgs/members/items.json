@@ -1,0 +1,44 @@
+[
+  {
+    "id": "codespaces%2Fdelete-from-organization",
+    "name": "Delete a codespace from the organization",
+    "description": "Delete a codespace from the organization Deletes a user's codespace. DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}",
+    "context": "DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}\nDeletes a user's codespace. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.; codespace_name (path) — The name of the codespace."
+  },
+  {
+    "id": "codespaces%2Fget-codespaces-for-user-in-org",
+    "name": "List codespaces for a user in organization",
+    "description": "List codespaces for a user in organization Lists the codespaces that a member of an organization has for repositories in that organization. GET /orgs/{org}/members/{username}/codespaces",
+    "context": "GET /orgs/{org}/members/{username}/codespaces\nLists the codespaces that a member of an organization has for repositories in that organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "codespaces%2Fstop-in-organization",
+    "name": "Stop a codespace for an organization user",
+    "description": "Stop a codespace for an organization user Stops a user's codespace. POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop",
+    "context": "POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop\nStops a user's codespace. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.; codespace_name (path) — The name of the codespace."
+  },
+  {
+    "id": "copilot%2Fget-copilot-seat-details-for-user",
+    "name": "Get Copilot seat assignment details for a user",
+    "description": "Get Copilot seat assignment details for a user > [!NOTE] > This endpoint is in public preview and is subject to change. GET /orgs/{org}/members/{username}/copilot",
+    "context": "GET /orgs/{org}/members/{username}/copilot\n> [!NOTE] > This endpoint is in public preview and is subject to change. Gets the GitHub Copilot seat details for a member of an organization who currently has access to GitHub Copilot. The seat object contains information about the user's most recent Copilot activity. Users must have telemetry enabled in their IDE for Copilot in the IDE activity to be reflected in `last_activity_at`. For more information about activity data, see [Metrics data properties for GitHub Copilot](https://docs.github.com/copilot/reference/metrics-data). Only organization owners can view Copilot seat assignment details for members of their organization. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Fcheck-membership-for-user",
+    "name": "Check organization membership for a user",
+    "description": "Check organization membership for a user Check if a user is, publicly or privately, a member of the organization. GET /orgs/{org}/members/{username}",
+    "context": "GET /orgs/{org}/members/{username}\nCheck if a user is, publicly or privately, a member of the organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Flist-members",
+    "name": "List organization members",
+    "description": "List organization members List all users who are members of an organization. GET /orgs/{org}/members",
+    "context": "GET /orgs/{org}/members\nList all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: filter (query) — Filter members returned in the list. `2fa_disabled` means that only members without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned. `2fa_insecure` means that only members with [insecure 2FA methods](https://docs.github.com/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization#requiring-secure-methods-of-two-factor-authentication-in-your-organization) will be returned. These options are only available for organization owners.; role (query) — Filter members returned by their role.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fremove-member",
+    "name": "Remove an organization member",
+    "description": "Remove an organization member Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories. DELETE /orgs/{org}/members/{username}",
+    "context": "DELETE /orgs/{org}/members/{username}\nRemoving a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories. > [!NOTE] > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  }
+]

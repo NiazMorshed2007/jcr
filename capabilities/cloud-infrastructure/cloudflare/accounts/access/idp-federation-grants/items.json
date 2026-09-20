@@ -1,0 +1,26 @@
+[
+  {
+    "id": "access-idp-federation-grants-create",
+    "name": "Create an IdP federation grant",
+    "description": "Create an IdP federation grant Creates an IdP federation grant for the specified identity provider, making it available for federation to other accounts in the same Cloudflare organization. POST /client/v4/accounts/{account_id}/access/idp_federation_grants",
+    "context": "POST /client/v4/accounts/{account_id}/access/idp_federation_grants\nCreates an IdP federation grant for the specified identity provider, making it available for federation to other accounts in the same Cloudflare organization. The account must belong to a Cloudflare organization. One-time pin and Cloudflare-managed identity providers cannot be federated. An account can federate at most five identity providers at a time.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-idp-federation-grants-delete",
+    "name": "Delete an IdP federation grant",
+    "description": "Delete an IdP federation grant Deletes an IdP federation grant. DELETE /client/v4/accounts/{account_id}/access/idp_federation_grants/{grant_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/idp_federation_grants/{grant_id}\nDeletes an IdP federation grant. The identity provider remains in the account, but it is no longer available for federation to other accounts.\nRequired: account_id (path); grant_id (path) — UID of the IdP federation grant."
+  },
+  {
+    "id": "access-idp-federation-grants-get",
+    "name": "Get an IdP federation grant",
+    "description": "Get an IdP federation grant Retrieves a single IdP federation grant by its UID. GET /client/v4/accounts/{account_id}/access/idp_federation_grants/{grant_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/idp_federation_grants/{grant_id}\nRetrieves a single IdP federation grant by its UID.\nRequired: account_id (path); grant_id (path) — UID of the IdP federation grant."
+  },
+  {
+    "id": "access-idp-federation-grants-list",
+    "name": "List IdP federation grants",
+    "description": "List IdP federation grants Lists the IdP federation grants owned by the account. GET /client/v4/accounts/{account_id}/access/idp_federation_grants",
+    "context": "GET /client/v4/accounts/{account_id}/access/idp_federation_grants\nLists the IdP federation grants owned by the account.\nRequired: account_id (path)"
+  }
+]

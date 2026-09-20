@@ -1,0 +1,26 @@
+[
+  {
+    "id": "magic-interconnects-list-interconnect-details",
+    "name": "List interconnect Details",
+    "description": "List interconnect Details Lists details for a specific interconnect. GET /client/v4/accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}\nLists details for a specific interconnect.\nRequired: cf_interconnect_id (path); account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-interconnects-list-interconnects",
+    "name": "List interconnects",
+    "description": "List interconnects Lists interconnects associated with an account. GET /client/v4/accounts/{account_id}/magic/cf_interconnects",
+    "context": "GET /client/v4/accounts/{account_id}/magic/cf_interconnects\nLists interconnects associated with an account.\nRequired: account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-interconnects-update-interconnect",
+    "name": "Update interconnect",
+    "description": "Update interconnect Updates a specific interconnect associated with an account. PUT /client/v4/accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}\nUpdates a specific interconnect associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: cf_interconnect_id (path); account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-interconnects-update-multiple-interconnects",
+    "name": "Update multiple interconnects",
+    "description": "Update multiple interconnects Updates multiple interconnects associated with an account. PUT /client/v4/accounts/{account_id}/magic/cf_interconnects",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/cf_interconnects\nUpdates multiple interconnects associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  }
+]

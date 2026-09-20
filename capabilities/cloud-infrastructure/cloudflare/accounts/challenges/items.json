@@ -1,0 +1,38 @@
+[
+  {
+    "id": "accounts-turnstile-widget-create",
+    "name": "Create a Turnstile Widget",
+    "description": "Create a Turnstile Widget Lists challenge widgets. POST /client/v4/accounts/{account_id}/challenges/widgets",
+    "context": "POST /client/v4/accounts/{account_id}/challenges/widgets\nLists challenge widgets.\nRequired: account_id (path); body (body)\nOptional: page (query); per_page (query); order (query); direction (query); filter (query) — Filter widgets by field using case-insensitive substring matching. Format: `field:value` Supported fields: - `name` - Filter by widget name (e.g., `filter=name:login-form`) - `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`) Returns 400 Bad Request if the field is unsupported or format is invalid. An empty filter value returns all results."
+  },
+  {
+    "id": "accounts-turnstile-widget-delete",
+    "name": "Delete a Turnstile Widget",
+    "description": "Delete a Turnstile Widget Destroy a Turnstile Widget. DELETE /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}",
+    "context": "DELETE /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}\nDestroy a Turnstile Widget.\nRequired: account_id (path); sitekey (path)"
+  },
+  {
+    "id": "accounts-turnstile-widget-get",
+    "name": "Turnstile Widget Details",
+    "description": "Turnstile Widget Details Show a single challenge widget configuration. GET /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}",
+    "context": "GET /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}\nShow a single challenge widget configuration.\nRequired: account_id (path); sitekey (path)"
+  },
+  {
+    "id": "accounts-turnstile-widget-rotate-secret",
+    "name": "Rotate Secret for a Turnstile Widget",
+    "description": "Rotate Secret for a Turnstile Widget Generate a new secret key for this widget. POST /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}/rotate_secret",
+    "context": "POST /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}/rotate_secret\nGenerate a new secret key for this widget. If `invalidate_immediately` is set to `false`, the previous secret remains valid for 2 hours. Note that secrets cannot be rotated again during the grace period.\nRequired: account_id (path); sitekey (path); body (body)"
+  },
+  {
+    "id": "accounts-turnstile-widget-update",
+    "name": "Update a Turnstile Widget",
+    "description": "Update a Turnstile Widget Update the configuration of a widget. PUT /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}",
+    "context": "PUT /client/v4/accounts/{account_id}/challenges/widgets/{sitekey}\nUpdate the configuration of a widget.\nRequired: account_id (path); sitekey (path); body (body)"
+  },
+  {
+    "id": "accounts-turnstile-widgets-list",
+    "name": "List Turnstile Widgets",
+    "description": "List Turnstile Widgets Lists all turnstile widgets of an account. GET /client/v4/accounts/{account_id}/challenges/widgets",
+    "context": "GET /client/v4/accounts/{account_id}/challenges/widgets\nLists all turnstile widgets of an account.\nRequired: account_id (path)\nOptional: page (query); per_page (query); order (query); direction (query); filter (query) — Filter widgets by field using case-insensitive substring matching. Format: `field:value` Supported fields: - `name` - Filter by widget name (e.g., `filter=name:login-form`) - `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`) Returns 400 Bad Request if the field is unsupported or format is invalid. An empty filter value returns all results."
+  }
+]

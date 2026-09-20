@@ -1,0 +1,44 @@
+[
+  {
+    "id": "zone-environment-purge",
+    "name": "Purge Cached Content by Environment",
+    "description": "Purge Cached Content by Environment Purge cached content scoped to a specific environment. POST /client/v4/zones/{zone_id}/environments/{environment_id}/purge_cache",
+    "context": "POST /client/v4/zones/{zone_id}/environments/{environment_id}/purge_cache\nPurge cached content scoped to a specific environment. Supports the same purge types as the zone-level endpoint (purge everything, by URL, by tag, host, or prefix). ### Availability and limits Please refer to [purge cache availability and limits documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).\nRequired: zone_id (path); environment_id (path); body (body)"
+  },
+  {
+    "id": "zonesEnvironmentsCreate",
+    "name": "Create zone environments",
+    "description": "Create zone environments Creates environments for a zone. POST /client/v4/zones/{zone_id}/environments",
+    "context": "POST /client/v4/zones/{zone_id}/environments\nCreates environments for a zone.\nRequired: zone_id (path) — Identifier of the zone.; body (body)"
+  },
+  {
+    "id": "zonesEnvironmentsDelete",
+    "name": "Delete zone environment",
+    "description": "Delete zone environment Deletes a zone environment by reference identifier. DELETE /client/v4/zones/{zone_id}/environments/{environment_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/environments/{environment_id}\nDeletes a zone environment by reference identifier.\nRequired: zone_id (path) — Identifier of the zone.; environment_id (path) — Reference identifier for the environment."
+  },
+  {
+    "id": "zonesEnvironmentsEdit",
+    "name": "Partially update zone environments",
+    "description": "Partially update zone environments Applies partial updates to zone environments. PATCH /client/v4/zones/{zone_id}/environments",
+    "context": "PATCH /client/v4/zones/{zone_id}/environments\nApplies partial updates to zone environments.\nRequired: zone_id (path) — Identifier of the zone.; body (body)"
+  },
+  {
+    "id": "zonesEnvironmentsList",
+    "name": "List zone environments",
+    "description": "List zone environments Lists configured environments for a zone. GET /client/v4/zones/{zone_id}/environments",
+    "context": "GET /client/v4/zones/{zone_id}/environments\nLists configured environments for a zone.\nRequired: zone_id (path) — Identifier of the zone."
+  },
+  {
+    "id": "zonesEnvironmentsRollback",
+    "name": "Roll back zone environment",
+    "description": "Roll back zone environment Rolls a zone environment back to its previous version. POST /client/v4/zones/{zone_id}/environments/{environment_id}/rollback",
+    "context": "POST /client/v4/zones/{zone_id}/environments/{environment_id}/rollback\nRolls a zone environment back to its previous version.\nRequired: zone_id (path) — Identifier of the zone.; environment_id (path) — Reference identifier for the environment."
+  },
+  {
+    "id": "zonesEnvironmentsUpdate",
+    "name": "Upsert zone environments",
+    "description": "Upsert zone environments Replaces the full environment configuration for a zone. PUT /client/v4/zones/{zone_id}/environments",
+    "context": "PUT /client/v4/zones/{zone_id}/environments\nReplaces the full environment configuration for a zone.\nRequired: zone_id (path) — Identifier of the zone.; body (body)"
+  }
+]

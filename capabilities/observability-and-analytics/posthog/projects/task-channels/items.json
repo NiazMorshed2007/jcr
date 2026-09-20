@@ -1,0 +1,128 @@
+[
+  {
+    "id": "task_channels_context_generation_retrieve",
+    "name": "Get the channel's CONTEXT.md generation task",
+    "description": "Get the channel's CONTEXT.md generation task GET /api/projects/{project_id}/task_channels/{id}/context_generation/",
+    "context": "GET /api/projects/{project_id}/task_channels/{id}/context_generation/\nGet the channel's CONTEXT.md generation task\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_context_generation_update",
+    "name": "Set or clear the channel's CONTEXT.md generation task",
+    "description": "Set or clear the channel's CONTEXT.md generation task PUT /api/projects/{project_id}/task_channels/{id}/context_generation/",
+    "context": "PUT /api/projects/{project_id}/task_channels/{id}/context_generation/\nSet or clear the channel's CONTEXT.md generation task\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_channels_create",
+    "name": "Create a channel",
+    "description": "Create a channel Create a channel. POST /api/projects/{project_id}/task_channels/",
+    "context": "POST /api/projects/{project_id}/task_channels/\nCreate a channel. Public channels use lowercase names with hyphens. If a public channel has that name, return it. The name general returns the project's general space. Private channels always get a new ID, even if another channel has the same name. The requester and users in member_ids with project access become members. New channels are starred for the requester unless star is false. The names \"me\" and \"personal\" are reserved.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_channels_destroy",
+    "name": "Delete a channel",
+    "description": "Delete a channel DELETE /api/projects/{project_id}/task_channels/{id}/",
+    "context": "DELETE /api/projects/{project_id}/task_channels/{id}/\nDelete a channel\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_feed_create",
+    "name": "Post a channel feed message",
+    "description": "Post a channel feed message API for a channel's system-announcement feed — durable \"PostHog agent\" rows (context created, CONTEXT.md being built) rendered alongside the channel's task cards. POST /api/projects/{project_id}/task_channels/{channel_id}/feed/",
+    "context": "POST /api/projects/{project_id}/task_channels/{channel_id}/feed/\nAPI for a channel's system-announcement feed — durable \"PostHog agent\" rows (context created, CONTEXT.md being built) rendered alongside the channel's task cards. Read by any team member for a public channel; personal channels are owner-only.\nRequired: channel_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_channels_feed_list",
+    "name": "List channel feed messages",
+    "description": "List channel feed messages A channel's system announcements in chronological order. GET /api/projects/{project_id}/task_channels/{channel_id}/feed/",
+    "context": "GET /api/projects/{project_id}/task_channels/{channel_id}/feed/\nA channel's system announcements in chronological order.\nRequired: channel_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "task_channels_instructions_destroy",
+    "name": "Delete channel instructions",
+    "description": "Delete channel instructions DELETE /api/projects/{project_id}/task_channels/{id}/instructions/",
+    "context": "DELETE /api/projects/{project_id}/task_channels/{id}/instructions/\nDelete channel instructions\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_instructions_partial_update",
+    "name": "Publish channel instructions",
+    "description": "Publish channel instructions Publish a new version of the channel's CONTEXT.md instructions. PATCH /api/projects/{project_id}/task_channels/{id}/instructions/",
+    "context": "PATCH /api/projects/{project_id}/task_channels/{id}/instructions/\nPublish a new version of the channel's CONTEXT.md instructions. Pass base_version (the version you read) so a concurrent edit is rejected with 409 instead of overwritten.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "task_channels_instructions_retrieve",
+    "name": "Get channel instructions",
+    "description": "Get channel instructions The channel's latest CONTEXT.md instructions. GET /api/projects/{project_id}/task_channels/{id}/instructions/",
+    "context": "GET /api/projects/{project_id}/task_channels/{id}/instructions/\nThe channel's latest CONTEXT.md instructions. A channel with no published instructions reads as a blank version 0 — publish against base_version 0 to create version 1.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_instructions_update",
+    "name": "Publish channel instructions",
+    "description": "Publish channel instructions Publish a new version of the channel's CONTEXT.md instructions. PUT /api/projects/{project_id}/task_channels/{id}/instructions/",
+    "context": "PUT /api/projects/{project_id}/task_channels/{id}/instructions/\nPublish a new version of the channel's CONTEXT.md instructions. Pass base_version (the version you read) so a concurrent edit is rejected with 409 instead of overwritten.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_channels_instructions_versions_retrieve",
+    "name": "List channel instruction versions",
+    "description": "List channel instruction versions GET /api/projects/{project_id}/task_channels/{id}/instructions/versions/",
+    "context": "GET /api/projects/{project_id}/task_channels/{id}/instructions/versions/\nList channel instruction versions\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_list",
+    "name": "List channels",
+    "description": "List channels List channels the requester can access, sorted by name and ID. GET /api/projects/{project_id}/task_channels/",
+    "context": "GET /api/projects/{project_id}/task_channels/\nList channels the requester can access, sorted by name and ID. Includes public channels, their personal #me channel, and private channels they belong to. Call provision_defaults to create missing default channels. Send limit and offset to get a page with count, next, previous, and results. Without limit, the response is an array of all accessible channels.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "task_channels_members_retrieve",
+    "name": "List a channel's members",
+    "description": "List a channel's members List the members of a private channel. GET /api/projects/{project_id}/task_channels/{id}/members/",
+    "context": "GET /api/projects/{project_id}/task_channels/{id}/members/\nList the members of a private channel. Return an empty list for public and personal channels. Return 404 if the requester cannot access the channel.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_members_update",
+    "name": "Replace a private channel's members",
+    "description": "Replace a private channel's members Replace the members of a private channel. PUT /api/projects/{project_id}/task_channels/{id}/members/",
+    "context": "PUT /api/projects/{project_id}/task_channels/{id}/members/\nReplace the members of a private channel. Any member can update this list. The creator remains a member. Return 400 for public and personal channels.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_channels_onboarding_session_create",
+    "name": "Start a first-run onboarding session",
+    "description": "Start a first-run onboarding session Open the agent session a new user lands in, in the team's #general space. POST /api/projects/{project_id}/task_channels/onboarding_session/",
+    "context": "POST /api/projects/{project_id}/task_channels/onboarding_session/\nOpen the agent session a new user lands in, in the team's #general space. Reads the company's homepage, so it takes a few seconds and is deliberately not part of provisioning, which blocks the app opening. Callers fire it without awaiting it when provision_defaults reports personal_created.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_onboarding_session_test_create",
+    "name": "Start a test first-run onboarding session",
+    "description": "Start a test first-run onboarding session Feature-flagged test path that creates a repeatable session from explicit prompt-building inputs, in the requester's personal space. POST /api/projects/{project_id}/task_channels/onboarding_session_test/",
+    "context": "POST /api/projects/{project_id}/task_channels/onboarding_session_test/\nFeature-flagged test path that creates a repeatable session from explicit prompt-building inputs, in the requester's personal space.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "task_channels_partial_update",
+    "name": "Update a channel",
+    "description": "Update a channel PATCH /api/projects/{project_id}/task_channels/{id}/",
+    "context": "PATCH /api/projects/{project_id}/task_channels/{id}/\nUpdate a channel\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "task_channels_provision_defaults_create",
+    "name": "Provision default channels",
+    "description": "Provision default channels Get-or-create the requester's personal #me channel and the team's shared #general channel, and report which of the two this call created. POST /api/projects/{project_id}/task_channels/provision_defaults/",
+    "context": "POST /api/projects/{project_id}/task_channels/provision_defaults/\nGet-or-create the requester's personal #me channel and the team's shared #general channel, and report which of the two this call created. Idempotent.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_retrieve",
+    "name": "Get a channel",
+    "description": "Get a channel GET /api/projects/{project_id}/task_channels/{id}/",
+    "context": "GET /api/projects/{project_id}/task_channels/{id}/\nGet a channel\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_channels_star_create",
+    "name": "Star or unstar a channel for the requesting user",
+    "description": "Star or unstar a channel for the requesting user POST /api/projects/{project_id}/task_channels/{id}/star/",
+    "context": "POST /api/projects/{project_id}/task_channels/{id}/star/\nStar or unstar a channel for the requesting user\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_channels_teaching_canvas_test_create",
+    "name": "Create the teaching canvas for testing",
+    "description": "Create the teaching canvas for testing Feature-flagged test path that resolves or creates the teaching canvas in the requester's personal space. POST /api/projects/{project_id}/task_channels/teaching_canvas_test/",
+    "context": "POST /api/projects/{project_id}/task_channels/teaching_canvas_test/\nFeature-flagged test path that resolves or creates the teaching canvas in the requester's personal space.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

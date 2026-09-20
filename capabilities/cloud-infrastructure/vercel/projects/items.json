@@ -1,0 +1,128 @@
+[
+  {
+    "id": "createProject",
+    "name": "Create a new project",
+    "description": "Create a new project Allows to create a new project with the provided configuration. POST /v11/projects",
+    "context": "POST /v11/projects\nAllows to create a new project with the provided configuration. It only requires the project `name` but more configuration can be provided to override the defaults.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteProject",
+    "name": "Delete a Project",
+    "description": "Delete a Project Delete a specific project by passing either the project `id` or `name` in the URL. DELETE /v9/projects/{idOrName}",
+    "context": "DELETE /v9/projects/{idOrName}\nDelete a specific project by passing either the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProject",
+    "name": "Find a project by id or name",
+    "description": "Find a project by id or name Get the information for a specific project by passing either the project `id` or `name` in the URL. GET /v9/projects/{idOrName}",
+    "context": "GET /v9/projects/{idOrName}\nGet the information for a specific project by passing either the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjects",
+    "name": "Retrieve a list of projects",
+    "description": "Retrieve a list of projects Allows to retrieve the list of projects of the authenticated user or team. GET /v10/projects",
+    "context": "GET /v10/projects\nAllows to retrieve the list of projects of the authenticated user or team. The list will be paginated and the provided query parameters allow filtering the returned projects.\nOptional: from (query) — Query only projects updated after the given timestamp or continuation token.; gitForkProtection (query) — Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed; limit (query) — Limit the number of projects returned; search (query) — Search projects by the name field; repo (query) — Filter results by repo. Also used for project count; repoId (query) — Filter results by Repository ID.; repoUrl (query) — Filter results by Repository URL.; excludeRepos (query) — Filter results by excluding those projects that belong to a repo; edgeConfigId (query) — Filter results by connected Global Config ID; edgeConfigTokenId (query) — Filter results by connected Global Config Token ID; deprecated (query); elasticConcurrencyEnabled (query) — Filter results by projects with elastic concurrency enabled; staticIpsEnabled (query) — Filter results by projects with Static IPs enabled; buildMachineTypes (query) — Filter results by effective build machine types. Accepts comma-separated values. Use \\\"elastic\\\" for projects with elastic selection and \\\"default\\\" for projects without a build machine type set.; buildQueueConfiguration (query) — Filter results by build queue configuration. SKIP_NAMESPACE_QUEUE includes projects without a configuration set.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateProject",
+    "name": "Update an existing project",
+    "description": "Update an existing project Update the fields of a project using either its `name` or `id`. PATCH /v9/projects/{idOrName}",
+    "context": "PATCH /v9/projects/{idOrName}\nUpdate the fields of a project using either its `name` or `id`.\nRequired: idOrName (path) — The unique project identifier or the project name; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "acceptProjectTransferRequest",
+    "name": "Accept project transfer request",
+    "description": "Accept project transfer request Accept a project transfer request initated by another team. PUT /projects/transfer-request/{code}",
+    "context": "PUT /projects/transfer-request/{code}\nAccept a project transfer request initated by another team. The `code` is generated using the `POST /projects/:idOrName/transfer-request` endpoint.\nRequired: code (path) — The code of the project transfer request.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createProjectTransferRequest",
+    "name": "Create project transfer request",
+    "description": "Create project transfer request Initiates a project transfer request from one team to another. POST /projects/{idOrName}/transfer-request",
+    "context": "POST /projects/{idOrName}/transfer-request\nInitiates a project transfer request from one team to another. Returns a `code` that remains valid for 24 hours and can be used to accept the transfer request by another team using the `PUT /projects/transfer-request/:code` endpoint. Users can also accept the project transfer request using the claim URL: `https://vercel.com/claim-deployment?code= &returnUrl= `. The `code` parameter specifies the project transfer request code generated using this endpoint. The `returnUrl` parameter redirects users to a specific page of the application if the claim URL is invalid or expired.\nRequired: idOrName (path) — The ID or name of the project to transfer.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createTraceSession",
+    "name": "Create a trace session token for a deployment",
+    "description": "Create a trace session token for a deployment Mints a short-lived HS256 JWT scoped to a deployment hostname. POST /v1/projects/traces/session",
+    "context": "POST /v1/projects/traces/session\nMints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI presents this JWT to the Vercel proxy on requests it wants traced.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getProjectTrace",
+    "name": "Get a project trace by request ID",
+    "description": "Get a project trace by request ID Returns the OTEL trace for a given Vercel CLI request. GET /v1/projects/traces",
+    "context": "GET /v1/projects/traces\nReturns the OTEL trace for a given Vercel CLI request.\nRequired: projectId (query) — The project ID; requestId (query) — The Vercel CLI request ID associated with the trace\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectToken",
+    "name": "Generate a project OIDC token",
+    "description": "Generate a project OIDC token Generates an OIDC token for the project and returns it. POST /v1/projects/{idOrName}/token",
+    "context": "POST /v1/projects/{idOrName}/token\nGenerates an OIDC token for the project and returns it.\nRequired: idOrName (path) — The project ID or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getRuntimeLogs",
+    "name": "Get logs for a deployment",
+    "description": "Get logs for a deployment Returns a stream of logs for a given deployment. GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs",
+    "context": "GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs\nReturns a stream of logs for a given deployment.\nRequired: projectId (path); deploymentId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listPromoteAliases",
+    "name": "Gets a list of aliases with status for the current promote",
+    "description": "Gets a list of aliases with status for the current promote Get a list of aliases related to the last promote request with their mapping status GET /v1/projects/{projectId}/promote/aliases",
+    "context": "GET /v1/projects/{projectId}/promote/aliases\nGet a list of aliases related to the last promote request with their mapping status\nRequired: projectId (path)\nOptional: limit (query) — Maximum number of aliases to list from a request (max 100).; since (query) — Get aliases created after this epoch timestamp.; until (query) — Get aliases created before this epoch timestamp.; failedOnly (query) — Filter results down to aliases that failed to map to the requested deployment; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "requestPromote",
+    "name": "Point production traffic to a given deployment",
+    "description": "Point production traffic to a given deployment Allows users to promote a deployment to production. POST /v10/projects/{projectId}/promote/{deploymentId}",
+    "context": "POST /v10/projects/{projectId}/promote/{deploymentId}\nAllows users to promote a deployment to production. Note: This does NOT rebuild the deployment. If you need that, then call create-deployments endpoint.\nRequired: projectId (path); deploymentId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "pauseProject",
+    "name": "Pause a project",
+    "description": "Pause a project Pause a project by passing its project `id` in the URL. POST /v1/projects/{projectId}/pause",
+    "context": "POST /v1/projects/{projectId}/pause\nPause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project disables auto assigning custom production domains and blocks the active Production Deployment then the request will return with 200 status code.\nRequired: projectId (path) — The unique project identifier\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "requestRollback",
+    "name": "Point production traffic to a previous production deployment by ID",
+    "description": "Point production traffic to a previous production deployment by ID Allows users to rollback to a deployment. POST /v1/projects/{projectId}/rollback/{deploymentId}",
+    "context": "POST /v1/projects/{projectId}/rollback/{deploymentId}\nAllows users to rollback to a deployment.\nRequired: projectId (path); deploymentId (path) — The ID of the deployment to rollback *to*\nOptional: description (query) — The reason for the rollback; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateProjectsByProjectIdRollbackByDeploymentIdUpdateDescription",
+    "name": "Updates the description for a rollback",
+    "description": "Updates the description for a rollback Updates the reason for a rollback, without changing the rollback status itself. PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description",
+    "context": "PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description\nUpdates the reason for a rollback, without changing the rollback status itself.\nRequired: projectId (path); deploymentId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "unpauseProject",
+    "name": "Unpause a project",
+    "description": "Unpause a project Unpause a project by passing its project `id` in the URL. POST /v1/projects/{projectId}/unpause",
+    "context": "POST /v1/projects/{projectId}/unpause\nUnpause a project by passing its project `id` in the URL. If the project does not exist given the id then the request will fail with 400 status code. If the project enables auto assigning custom production domains and unblocks the active Production Deployment then the request will return with 200 status code.\nRequired: projectId (path) — The unique project identifier\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateMicrofrontends",
+    "name": "Update the microfrontends settings",
+    "description": "Update the microfrontends settings Update the microfrontends settings for a project. PATCH /v1/projects/{projectId}/microfrontends",
+    "context": "PATCH /v1/projects/{projectId}/microfrontends\nUpdate the microfrontends settings for a project.\nRequired: projectId (path) — The unique project identifier\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateProjectProtectionBypass",
+    "name": "Update Protection Bypass for Automation",
+    "description": "Update Protection Bypass for Automation Update the deployment protection automation bypass for a project PATCH /v1/projects/{idOrName}/protection-bypass",
+    "context": "PATCH /v1/projects/{idOrName}/protection-bypass\nUpdate the deployment protection automation bypass for a project\nRequired: idOrName (path) — The unique project identifier or the project name; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateStaticIps",
+    "name": "Configures Static IPs for a project",
+    "description": "Configures Static IPs for a project Allows configuring Static IPs for a project PATCH /v1/projects/{idOrName}/shared-connect-links",
+    "context": "PATCH /v1/projects/{idOrName}/shared-connect-links\nAllows configuring Static IPs for a project\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "uploadProjectAvatar",
+    "name": "Upload a project avatar",
+    "description": "Upload a project avatar Upload an image as the avatar of the project identified by `idOrName`. POST /v1/projects/{idOrName}/avatar",
+    "context": "POST /v1/projects/{idOrName}/avatar\nUpload an image as the avatar of the project identified by `idOrName`. The request body is the raw bytes of a JPG, PNG, or SVG image; the `Content-Type` header must declare which. SVG payloads are sanitized and optimized server-side before storage. The final SHA-1 of the stored bytes becomes the project's `avatar` value. The actual upload pipeline (validation, sanitization, S3 write, conditional `updateProject`, and event emission) lives in the shared `@api/project-avatar-upload` helper so it can be reused by background workers.\nRequired: idOrName (path) — The unique project identifier or the project name.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

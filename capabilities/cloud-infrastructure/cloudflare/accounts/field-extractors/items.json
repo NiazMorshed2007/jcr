@@ -1,0 +1,20 @@
+[
+  {
+    "id": "deleteFieldExtractor",
+    "name": "Delete Field Extractor",
+    "description": "Delete Field Extractor Deletes all custom extraction rules for an extractor type. DELETE /client/v4/accounts/{account_id}/field_extractors/{extractor}",
+    "context": "DELETE /client/v4/accounts/{account_id}/field_extractors/{extractor}\nDeletes all custom extraction rules for an extractor type.\nRequired: account_id (path) — Cloudflare account ID.; extractor (path) — Extractor type."
+  },
+  {
+    "id": "getFieldExtractor",
+    "name": "Get Field Extractor",
+    "description": "Get Field Extractor Retrieves the custom extraction rules configured for a given extractor type. GET /client/v4/accounts/{account_id}/field_extractors/{extractor}",
+    "context": "GET /client/v4/accounts/{account_id}/field_extractors/{extractor}\nRetrieves the custom extraction rules configured for a given extractor type.\nRequired: account_id (path) — Cloudflare account ID.; extractor (path) — Extractor type."
+  },
+  {
+    "id": "updateFieldExtractor",
+    "name": "Update Field Extractor",
+    "description": "Update Field Extractor Replaces all custom extraction rules for an extractor type. PUT /client/v4/accounts/{account_id}/field_extractors/{extractor}",
+    "context": "PUT /client/v4/accounts/{account_id}/field_extractors/{extractor}\nReplaces all custom extraction rules for an extractor type. Omitted rules are deleted.\nRequired: account_id (path) — Cloudflare account ID.; extractor (path) — Extractor type.\nOptional: body (body) — Desired-state replacement of all rules for this extractor type."
+  }
+]

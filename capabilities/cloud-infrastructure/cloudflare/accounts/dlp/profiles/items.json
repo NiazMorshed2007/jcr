@@ -1,0 +1,86 @@
+[
+  {
+    "id": "dlp-profiles-create-custom-profiles",
+    "name": "Create custom profile",
+    "description": "Create custom profile Creates a DLP custom profile. POST /client/v4/accounts/{account_id}/dlp/profiles/custom",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/profiles/custom\nCreates a DLP custom profile.\nRequired: account_id (path); body (body) — A new profile to create."
+  },
+  {
+    "id": "dlp-profiles-create-predefined-profile",
+    "name": "Create predefined profile",
+    "description": "Create predefined profile Creates a DLP predefined profile. POST /client/v4/accounts/{account_id}/dlp/profiles/predefined",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/profiles/predefined\nCreates a DLP predefined profile. Only supports enabling/disabling entries.\nRequired: account_id (path); body (body) — Predefined profiles can not be created. This endpoint will only update an existing predefined profiles settings."
+  },
+  {
+    "id": "dlp-profiles-create-predefined-profile-config",
+    "name": "Create predefined profile",
+    "description": "Create predefined profile This is similar to `update_predefined` but only returns entries that are enabled. POST /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config\nThis is similar to `update_predefined` but only returns entries that are enabled. This is needed for our terraform API Creates a DLP predefined profile. Only supports enabling/disabling entries.\nRequired: account_id (path); profile_id (path); body (body) — Predefined profiles can not be created. This endpoint will only update an existing predefined profiles settings."
+  },
+  {
+    "id": "dlp-profiles-delete-custom-profile",
+    "name": "Delete custom profile",
+    "description": "Delete custom profile Deletes a DLP custom profile. DELETE /client/v4/accounts/{account_id}/dlp/profiles/custom/{profile_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/profiles/custom/{profile_id}\nDeletes a DLP custom profile.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "dlp-profiles-delete-predefined-profile",
+    "name": "Delete predefined profile",
+    "description": "Delete predefined profile This is a no-op as predefined profiles can't be deleted but is needed for our generated terraform API. DELETE /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}\nThis is a no-op as predefined profiles can't be deleted but is needed for our generated terraform API.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "dlp-profiles-get-custom-profile",
+    "name": "Get custom profile",
+    "description": "Get custom profile Fetches a custom DLP profile by id. GET /client/v4/accounts/{account_id}/dlp/profiles/custom/{profile_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/profiles/custom/{profile_id}\nFetches a custom DLP profile by id.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "dlp-profiles-get-dlp-profile",
+    "name": "Get DLP Profile",
+    "description": "Get DLP Profile Fetches a DLP profile by ID. GET /client/v4/accounts/{account_id}/dlp/profiles/{profile_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/profiles/{profile_id}\nFetches a DLP profile by ID.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "dlp-profiles-get-predefined-profile",
+    "name": "Get predefined profile",
+    "description": "Get predefined profile Fetches a predefined DLP profile by id. GET /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}\nFetches a predefined DLP profile by id.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "dlp-profiles-get-predefined-profile-config",
+    "name": "Get predefined profile config",
+    "description": "Get predefined profile config This is similar to `get_predefined` but only returns entries that are enabled. GET /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config\nThis is similar to `get_predefined` but only returns entries that are enabled. This is needed for our terraform API Fetches a predefined DLP profile by id.\nRequired: account_id (path); profile_id (path)"
+  },
+  {
+    "id": "dlp-profiles-list-all-custom-profiles",
+    "name": "List all custom profiles",
+    "description": "List all custom profiles Lists all DLP custom profiles in an account. GET /client/v4/accounts/{account_id}/dlp/profiles/custom",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/profiles/custom\nLists all DLP custom profiles in an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-profiles-list-all-profiles",
+    "name": "List all profiles",
+    "description": "List all profiles Lists all DLP profiles in an account. GET /client/v4/accounts/{account_id}/dlp/profiles",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/profiles\nLists all DLP profiles in an account.\nRequired: account_id (path)\nOptional: all (query) — Return all profiles, including those that current account does not have access to."
+  },
+  {
+    "id": "dlp-profiles-update-custom-profile",
+    "name": "Update custom profile",
+    "description": "Update custom profile Updates a DLP custom profile. PUT /client/v4/accounts/{account_id}/dlp/profiles/custom/{profile_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/profiles/custom/{profile_id}\nUpdates a DLP custom profile.\nRequired: account_id (path); profile_id (path); body (body) — The updated parameters for the profile."
+  },
+  {
+    "id": "dlp-profiles-update-predefined-profile",
+    "name": "Update predefined profile",
+    "description": "Update predefined profile Updates a DLP predefined profile. PUT /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}\nUpdates a DLP predefined profile. Only supports enabling/disabling entries.\nRequired: account_id (path); profile_id (path); body (body) — The updated parameters for the predefined profile."
+  },
+  {
+    "id": "dlp-profiles-update-predefined-profile-config",
+    "name": "Update predefined profile config",
+    "description": "Update predefined profile config This is similar to `update_predefined` but only returns entries that are enabled. PUT /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config\nThis is similar to `update_predefined` but only returns entries that are enabled. This is needed for our terraform API Updates a DLP predefined profile. Only supports enabling/disabling entries.\nRequired: account_id (path); profile_id (path); body (body) — The updated parameters for the predefined profile."
+  }
+]

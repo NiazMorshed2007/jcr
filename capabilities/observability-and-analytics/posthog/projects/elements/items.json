@@ -1,0 +1,50 @@
+[
+  {
+    "id": "elements_create",
+    "name": "elements_create",
+    "description": "elements_create POST /api/projects/{project_id}/elements/",
+    "context": "POST /api/projects/{project_id}/elements/\nelements_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "elements_destroy",
+    "name": "elements_destroy",
+    "description": "elements_destroy DELETE /api/projects/{project_id}/elements/{id}/",
+    "context": "DELETE /api/projects/{project_id}/elements/{id}/\nelements_destroy\nRequired: id (path) — A unique integer value identifying this element.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "elements_list",
+    "name": "elements_list",
+    "description": "elements_list GET /api/projects/{project_id}/elements/",
+    "context": "GET /api/projects/{project_id}/elements/\nelements_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "elements_partial_update",
+    "name": "elements_partial_update",
+    "description": "elements_partial_update PATCH /api/projects/{project_id}/elements/{id}/",
+    "context": "PATCH /api/projects/{project_id}/elements/{id}/\nelements_partial_update\nRequired: id (path) — A unique integer value identifying this element.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "elements_retrieve",
+    "name": "elements_retrieve",
+    "description": "elements_retrieve GET /api/projects/{project_id}/elements/{id}/",
+    "context": "GET /api/projects/{project_id}/elements/{id}/\nelements_retrieve\nRequired: id (path) — A unique integer value identifying this element.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "elements_stats_retrieve",
+    "name": "Counts of $autocapture, $rageclick, and $dead_click events grouped by the element chain they occurred on, ordered by count",
+    "description": "Counts of $autocapture, $rageclick, and $dead_click events grouped by the element chain they occurred on, ordered by count Counts of $autocapture, $rageclick, and $dead_click events grouped by the element chain they occurred on, ordered by count. GET /api/projects/{project_id}/elements/stats/",
+    "context": "GET /api/projects/{project_id}/elements/stats/\nCounts of $autocapture, $rageclick, and $dead_click events grouped by the element chain they occurred on, ordered by count. Defaults to all three event types; narrow with the include parameter.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: data_attributes (query) — Comma-separated data attribute names (wildcards allowed, e.g. data-*). When provided, each element's attributes map is filtered to matching attr__* keys, shrinking the response.; date_from (query) — Start of the date range (e.g. -7d, 2024-01-01). Defaults to last 7 days.; date_to (query) — End of the date range (e.g. 2024-01-31). Defaults to now.; filter_test_accounts (query) — When true, applies the project's internal-and-test-account filters to the underlying events. Pass the lowercase string true; other truthy spellings are ignored.; include (query) — Event types to include: $autocapture, $rageclick, $dead_click. Defaults to all three. Accepts repeated parameters, a JSON array, or a comma-separated list.; limit (query) — Maximum rows per page; offset (query) — Pagination offset; properties (query) — JSON-encoded list of property filters to apply to the underlying events, e.g. [{\"key\": \"$current_url\", \"value\": \"https://example.com/page\"}] or [{\"key\": \"email\", \"value\": \"@posthog.com\", \"operator\": \"icontains\", \"type\": \"person\"}]. Supports event, person, cohort, element, and HogQL property filter types.; sampling_factor (query) — Sampling factor between 0 and 1"
+  },
+  {
+    "id": "elements_update",
+    "name": "elements_update",
+    "description": "elements_update PUT /api/projects/{project_id}/elements/{id}/",
+    "context": "PUT /api/projects/{project_id}/elements/{id}/\nelements_update\nRequired: id (path) — A unique integer value identifying this element.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "elements_values_list",
+    "name": "elements_values_list",
+    "description": "elements_values_list GET /api/projects/{project_id}/elements/values/",
+    "context": "GET /api/projects/{project_id}/elements/values/\nelements_values_list\nRequired: key (query) — Element property to list values for: tag_name, text, href, or attr_id.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: value (query) — Optional substring to filter values by (case-sensitive contains match)."
+  }
+]

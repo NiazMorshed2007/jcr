@@ -1,0 +1,236 @@
+[
+  {
+    "id": "deleteAccountsAccountIdBrandProtectionBrands",
+    "name": "Delete brands by ID",
+    "description": "Delete brands by ID Return a success message after deleting brands by ID DELETE /client/v4/accounts/{account_id}/brand-protection/brands",
+    "context": "DELETE /client/v4/accounts/{account_id}/brand-protection/brands\nReturn a success message after deleting brands by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "deleteAccountsAccountIdBrandProtectionBrandsPatterns",
+    "name": "Delete patterns for brands by ID",
+    "description": "Delete patterns for brands by ID Return a success message after deleting patterns for brands by ID DELETE /client/v4/accounts/{account_id}/brand-protection/brands/patterns",
+    "context": "DELETE /client/v4/accounts/{account_id}/brand-protection/brands/patterns\nReturn a success message after deleting patterns for brands by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "deleteAccountsAccountIdBrandProtectionLogosLogoId",
+    "name": "Delete saved logo queries by ID",
+    "description": "Delete saved logo queries by ID Return a success message after deleting saved logo queries by ID DELETE /client/v4/accounts/{account_id}/brand-protection/logos/{logo_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/brand-protection/logos/{logo_id}\nReturn a success message after deleting saved logo queries by ID\nRequired: account_id (path); logo_id (path)"
+  },
+  {
+    "id": "deleteAccountsAccountIdBrandProtectionQueries",
+    "name": "Delete saved string queries by ID",
+    "description": "Delete saved string queries by ID Return a success message after deleting saved string queries by ID DELETE /client/v4/accounts/{account_id}/brand-protection/queries",
+    "context": "DELETE /client/v4/accounts/{account_id}/brand-protection/queries\nReturn a success message after deleting saved string queries by ID\nRequired: account_id (path)\nOptional: id (query); tag (query); scan (query)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionAlerts",
+    "name": "Read all alerts on submitted domains",
+    "description": "Read all alerts on submitted domains Return all alerts on submitted domains GET /client/v4/accounts/{account_id}/brand-protection/alerts",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/alerts\nReturn all alerts on submitted domains\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionBrands",
+    "name": "Read all brands",
+    "description": "Read all brands Return all brands GET /client/v4/accounts/{account_id}/brand-protection/brands",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/brands\nReturn all brands\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionBrandsPatterns",
+    "name": "Read patterns for brands by ID",
+    "description": "Read patterns for brands by ID Return patterns for brands based on ID GET /client/v4/accounts/{account_id}/brand-protection/brands/patterns",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/brands/patterns\nReturn patterns for brands based on ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionDomainInfo",
+    "name": "Read submitted domains by ID",
+    "description": "Read submitted domains by ID Return submitted domains based on ID GET /client/v4/accounts/{account_id}/brand-protection/domain-info",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/domain-info\nReturn submitted domains based on ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionLogoMatches",
+    "name": "Read matches for logo queries by ID",
+    "description": "Read matches for logo queries by ID Return matches for logo queries based on ID GET /client/v4/accounts/{account_id}/brand-protection/logo-matches",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/logo-matches\nReturn matches for logo queries based on ID\nRequired: account_id (path)\nOptional: logo_id (query); offset (query); limit (query)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionLogoMatchesDownload",
+    "name": "Download matches for logo queries by ID",
+    "description": "Download matches for logo queries by ID Return matches as CSV for logo queries based on ID GET /client/v4/accounts/{account_id}/brand-protection/logo-matches/download",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/logo-matches/download\nReturn matches as CSV for logo queries based on ID\nRequired: account_id (path)\nOptional: logo_id (query); offset (query); limit (query)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionLogos",
+    "name": "Read all saved logo queries",
+    "description": "Read all saved logo queries Return all saved logo queries GET /client/v4/accounts/{account_id}/brand-protection/logos",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/logos\nReturn all saved logo queries\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionLogosLogoId",
+    "name": "Read saved logo queries by ID",
+    "description": "Read saved logo queries by ID Return saved logo queries based on ID GET /client/v4/accounts/{account_id}/brand-protection/logos/{logo_id}",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/logos/{logo_id}\nReturn saved logo queries based on ID\nRequired: account_id (path); logo_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionMatches",
+    "name": "Read matches for string queries by ID",
+    "description": "Read matches for string queries by ID Return matches for string queries based on ID GET /client/v4/accounts/{account_id}/brand-protection/matches",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/matches\nReturn matches for string queries based on ID\nRequired: account_id (path)\nOptional: id (query); offset (query); limit (query); include_domain_id (query); include_dismissed (query)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionMatchesDownload",
+    "name": "Download matches for string queries by ID",
+    "description": "Download matches for string queries by ID Return matches as CSV for string queries based on ID GET /client/v4/accounts/{account_id}/brand-protection/matches/download",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/matches/download\nReturn matches as CSV for string queries based on ID\nRequired: account_id (path)\nOptional: id (query); offset (query); limit (query); include_domain_id (query); include_dismissed (query)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionQueries",
+    "name": "Read string queries by ID",
+    "description": "Read string queries by ID Return string queries based on ID GET /client/v4/accounts/{account_id}/brand-protection/queries",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/queries\nReturn string queries based on ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionRecentSubmissions",
+    "name": "Read recent URL submissions",
+    "description": "Read recent URL submissions Return recent URL submissions GET /client/v4/accounts/{account_id}/brand-protection/recent-submissions",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/recent-submissions\nReturn recent URL submissions\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionSubmissionInfo",
+    "name": "Read URL submissions by ID",
+    "description": "Read URL submissions by ID Return URL submissions based on ID GET /client/v4/accounts/{account_id}/brand-protection/submission-info",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/submission-info\nReturn URL submissions based on ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionTotalQueries",
+    "name": "Read the total number of saved string queries",
+    "description": "Read the total number of saved string queries Return the total number of saved string queries GET /client/v4/accounts/{account_id}/brand-protection/total-queries",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/total-queries\nReturn the total number of saved string queries\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionTrackedDomains",
+    "name": "Read submitted domains by pattern",
+    "description": "Read submitted domains by pattern Return submitted domains based on pattern GET /client/v4/accounts/{account_id}/brand-protection/tracked-domains",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/tracked-domains\nReturn submitted domains based on pattern\nRequired: account_id (path)"
+  },
+  {
+    "id": "getAccountsAccountIdBrandProtectionUrlInfo",
+    "name": "Read submitted URLs by ID",
+    "description": "Read submitted URLs by ID Return submitted URLs based on ID GET /client/v4/accounts/{account_id}/brand-protection/url-info",
+    "context": "GET /client/v4/accounts/{account_id}/brand-protection/url-info\nReturn submitted URLs based on ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionAlerts",
+    "name": "Update alerts on submitted domains by ID",
+    "description": "Update alerts on submitted domains by ID Return a success message after updating alerts on submitted domains by ID PATCH /client/v4/accounts/{account_id}/brand-protection/alerts",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/alerts\nReturn a success message after updating alerts on submitted domains by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionAlertsClear",
+    "name": "Update verification statuses of tracked URLs to awaiting by ID",
+    "description": "Update verification statuses of tracked URLs to awaiting by ID Return a success message after updating verification statuses of tracked URLs to awaiting by ID PATCH /client/v4/accounts/{account_id}/brand-protection/alerts/clear",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/alerts/clear\nReturn a success message after updating verification statuses of tracked URLs to awaiting by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionAlertsRefute",
+    "name": "Update verification statuses of tracked URLs to disproven by ID",
+    "description": "Update verification statuses of tracked URLs to disproven by ID Return a success message after updating verification statuses of tracked URLs to disproven by ID PATCH /client/v4/accounts/{account_id}/brand-protection/alerts/refute",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/alerts/refute\nReturn a success message after updating verification statuses of tracked URLs to disproven by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionAlertsVerify",
+    "name": "Update verification statuses of tracked URLs to confirmed by ID",
+    "description": "Update verification statuses of tracked URLs to confirmed by ID Return a success message after updating verification statuses of tracked URLs to confirmed by ID PATCH /client/v4/accounts/{account_id}/brand-protection/alerts/verify",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/alerts/verify\nReturn a success message after updating verification statuses of tracked URLs to confirmed by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionClear",
+    "name": "Update verification statuses of submitted URLs to awaiting by ID",
+    "description": "Update verification statuses of submitted URLs to awaiting by ID Return a success message after updating verification statuses of submitted URLs to awaiting by ID PATCH /client/v4/accounts/{account_id}/brand-protection/clear",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/clear\nReturn a success message after updating verification statuses of submitted URLs to awaiting by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionQueries",
+    "name": "Update saved string queries by ID",
+    "description": "Update saved string queries by ID Update a saved query's tag, scan setting, or string_matches (pattern). PATCH /client/v4/accounts/{account_id}/brand-protection/queries",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/queries\nUpdate a saved query's tag, scan setting, or string_matches (pattern). When string_matches is provided, the query parameters and hash are updated. At least one of tag, scan, or string_matches is required.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionRefute",
+    "name": "Update verification statuses of submitted URLs to disproven by ID",
+    "description": "Update verification statuses of submitted URLs to disproven by ID Return a success message after updating verification statuses of submitted URLs to disproven by ID PATCH /client/v4/accounts/{account_id}/brand-protection/refute",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/refute\nReturn a success message after updating verification statuses of submitted URLs to disproven by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "patchAccountsAccountIdBrandProtectionVerify",
+    "name": "Update verification statuses of submitted URLs to confirmed by ID",
+    "description": "Update verification statuses of submitted URLs to confirmed by ID Return a success message after updating verification statuses of submitted URLs to confirmed by ID PATCH /client/v4/accounts/{account_id}/brand-protection/verify",
+    "context": "PATCH /client/v4/accounts/{account_id}/brand-protection/verify\nReturn a success message after updating verification statuses of submitted URLs to confirmed by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionBrands",
+    "name": "Create new brands",
+    "description": "Create new brands Return new brands POST /client/v4/accounts/{account_id}/brand-protection/brands",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/brands\nReturn new brands\nRequired: account_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionBrandsPatterns",
+    "name": "Create new patterns for brands by ID",
+    "description": "Create new patterns for brands by ID Return a success message after creating new patterns for brands by ID POST /client/v4/accounts/{account_id}/brand-protection/brands/patterns",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/brands/patterns\nReturn a success message after creating new patterns for brands by ID\nRequired: account_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionLogos",
+    "name": "Create new saved logo queries from image files",
+    "description": "Create new saved logo queries from image files Return new saved logo queries created from image files POST /client/v4/accounts/{account_id}/brand-protection/logos",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/logos\nReturn new saved logo queries created from image files\nRequired: account_id (path); body (body)\nOptional: tag (query); match_type (query); threshold (query)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionQueries",
+    "name": "Create new saved string queries",
+    "description": "Create new saved string queries Return a success message after creating new saved string queries POST /client/v4/accounts/{account_id}/brand-protection/queries",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/queries\nReturn a success message after creating new saved string queries\nRequired: account_id (path); body (body)\nOptional: id (query); tag (query); scan (query)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionQueriesBulk",
+    "name": "Create new saved string queries in bulk",
+    "description": "Create new saved string queries in bulk Return a success message after creating new saved string queries in bulk POST /client/v4/accounts/{account_id}/brand-protection/queries/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/queries/bulk\nReturn a success message after creating new saved string queries in bulk\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionQueriesQueryIdMatchesDomainIdDismiss",
+    "name": "Dismiss a match for a saved string query",
+    "description": "Dismiss a match for a saved string query Hide a matched domain from the default view of a saved query's results. POST /client/v4/accounts/{account_id}/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss\nHide a matched domain from the default view of a saved query's results. Dismissal is scoped to the calling account.\nRequired: account_id (path); query_id (path); domain_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionQueriesQueryIdMatchesDomainIdUndismiss",
+    "name": "Undismiss a match for a saved string query",
+    "description": "Undismiss a match for a saved string query Restore a previously dismissed matched domain to the default view. POST /client/v4/accounts/{account_id}/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss\nRestore a previously dismissed matched domain to the default view. Dismissal is scoped to the calling account.\nRequired: account_id (path); query_id (path); domain_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionScanLogo",
+    "name": "Create new logo queries from image files",
+    "description": "Create new logo queries from image files Return new logo queries created from image files POST /client/v4/accounts/{account_id}/brand-protection/scan-logo",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/scan-logo\nReturn new logo queries created from image files\nRequired: account_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionScanPage",
+    "name": "Create new logo queries from URLs",
+    "description": "Create new logo queries from URLs Return new logo queries created from URLs POST /client/v4/accounts/{account_id}/brand-protection/scan-page",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/scan-page\nReturn new logo queries created from URLs\nRequired: account_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionSearch",
+    "name": "Create new string queries",
+    "description": "Create new string queries Return new string queries POST /client/v4/accounts/{account_id}/brand-protection/search",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/search\nReturn new string queries\nRequired: account_id (path)"
+  },
+  {
+    "id": "postAccountsAccountIdBrandProtectionSubmit",
+    "name": "Create new URL submissions",
+    "description": "Create new URL submissions Return new URL submissions POST /client/v4/accounts/{account_id}/brand-protection/submit",
+    "context": "POST /client/v4/accounts/{account_id}/brand-protection/submit\nReturn new URL submissions\nRequired: account_id (path)"
+  }
+]

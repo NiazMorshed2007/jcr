@@ -1,0 +1,50 @@
+[
+  {
+    "id": "group",
+    "name": "Retrieve a group",
+    "description": "Retrieve a group Retrieve a group under your account GET /v2/groups/{groupId}",
+    "context": "GET /v2/groups/{groupId}\nRetrieve a group under your account\nRequired: groupId (path) — The group ID"
+  },
+  {
+    "id": "groupCreate",
+    "name": "Create a group",
+    "description": "Create a group Create a group under your account POST /v2/groups",
+    "context": "POST /v2/groups\nCreate a group under your account\nRequired: body (body)"
+  },
+  {
+    "id": "groupDelete",
+    "name": "Delete a group",
+    "description": "Delete a group Delete a group under your account DELETE /v2/groups/{groupId}",
+    "context": "DELETE /v2/groups/{groupId}\nDelete a group under your account\nRequired: groupId (path) — The group ID"
+  },
+  {
+    "id": "groupMembers",
+    "name": "List a group's members",
+    "description": "List a group's members List a group's members under your account GET /v2/groups/{groupId}/members",
+    "context": "GET /v2/groups/{groupId}/members\nList a group's members under your account\nRequired: groupId (path) — The group ID\nOptional: page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "groupMembersCreate",
+    "name": "Add group members",
+    "description": "Add group members Add members to a group under your account POST /v2/groups/{groupId}/members",
+    "context": "POST /v2/groups/{groupId}/members\nAdd members to a group under your account\nRequired: groupId (path) — The group ID; body (body)"
+  },
+  {
+    "id": "groupMembersDelete",
+    "name": "Delete a group member",
+    "description": "Delete a group member Delete a member from a group under your account DELETE /v2/groups/{groupId}/members/{memberId}",
+    "context": "DELETE /v2/groups/{groupId}/members/{memberId}\nDelete a member from a group under your account\nRequired: groupId (path) — The group ID; memberId (path) — The member ID"
+  },
+  {
+    "id": "groups",
+    "name": "List groups",
+    "description": "List groups List groups under your account GET /v2/groups",
+    "context": "GET /v2/groups\nList groups under your account"
+  },
+  {
+    "id": "groupUpdate",
+    "name": "Update a group",
+    "description": "Update a group Update a group under your account PATCH /v2/groups/{groupId}",
+    "context": "PATCH /v2/groups/{groupId}\nUpdate a group under your account\nRequired: groupId (path) — The group ID; body (body)"
+  }
+]

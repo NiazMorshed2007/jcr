@@ -1,0 +1,20 @@
+[
+  {
+    "id": "messaging_suppressions_add_suppression_create",
+    "name": "Manually add an email address to the suppression list",
+    "description": "Manually add an email address to the suppression list Manually suppress an email address so no workflow sends to it. POST /api/projects/{project_id}/messaging_suppressions/add_suppression/",
+    "context": "POST /api/projects/{project_id}/messaging_suppressions/add_suppression/\nManually suppress an email address so no workflow sends to it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "messaging_suppressions_remove_suppression_create",
+    "name": "Remove an email address from the suppression list",
+    "description": "Remove an email address from the suppression list Remove an address from the suppression list so it can receive messages again. POST /api/projects/{project_id}/messaging_suppressions/remove_suppression/",
+    "context": "POST /api/projects/{project_id}/messaging_suppressions/remove_suppression/\nRemove an address from the suppression list so it can receive messages again.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "messaging_suppressions_suppressions_retrieve",
+    "name": "List suppressed email addresses for the team",
+    "description": "List suppressed email addresses for the team List suppressed recipients for the team, most recently updated first. GET /api/projects/{project_id}/messaging_suppressions/suppressions/",
+    "context": "GET /api/projects/{project_id}/messaging_suppressions/suppressions/\nList suppressed recipients for the team, most recently updated first.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: page (query); page_size (query); search (query) — Case-insensitive substring match on the recipient email address."
+  }
+]

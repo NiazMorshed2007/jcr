@@ -1,0 +1,236 @@
+[
+  {
+    "id": "bulkCreatePrefixes",
+    "name": "Create multiple prefixes.",
+    "description": "Create multiple prefixes. Create multiple prefixes for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/bulk\nCreate multiple prefixes for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The list of new prefixes to create."
+  },
+  {
+    "id": "createAllowlistedPrefix",
+    "name": "Create allowlist prefix.",
+    "description": "Create allowlist prefix. Create an allowlist prefix for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist\nCreate an allowlist prefix for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new allowlist prefix to create."
+  },
+  {
+    "id": "createPrefix",
+    "name": "Create prefix.",
+    "description": "Create prefix. Create a prefix for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes\nCreate a prefix for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new prefix to create."
+  },
+  {
+    "id": "createSynProtectionFilter",
+    "name": "Create a SYN Protection filter.",
+    "description": "Create a SYN Protection filter. Create a SYN Protection filter for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters\nCreate a SYN Protection filter for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new filter to create."
+  },
+  {
+    "id": "createSynProtectionRule",
+    "name": "Create SYN Protection rule.",
+    "description": "Create SYN Protection rule. Create a SYN Protection rule for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules\nCreate a SYN Protection rule for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new SYN Protection rule to add."
+  },
+  {
+    "id": "createTcpFlowProtectionFilter",
+    "name": "Create a TCP Flow Protection filter.",
+    "description": "Create a TCP Flow Protection filter. Create a TCP Flow Protection filter for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters\nCreate a TCP Flow Protection filter for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new filter to create."
+  },
+  {
+    "id": "createTcpFlowProtectionRule",
+    "name": "Create TCP Flow Protection rule.",
+    "description": "Create TCP Flow Protection rule. Create a TCP Flow Protection rule for an account. POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules\nCreate a TCP Flow Protection rule for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new TCP Flow Protection rule."
+  },
+  {
+    "id": "deleteAllowlistPrefix",
+    "name": "Delete allowlist prefix.",
+    "description": "Delete allowlist prefix. Delete the allowlist prefix for an account given a UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}\nDelete the allowlist prefix for an account given a UUID.\nRequired: account_id (path) — The ID of the account.; prefix_id (path) — The UUID of the allowlist prefix to delete."
+  },
+  {
+    "id": "deleteAllowlistPrefixesForAccount",
+    "name": "Delete all allowlist prefixes.",
+    "description": "Delete all allowlist prefixes. Delete all allowlist prefixes for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist\nDelete all allowlist prefixes for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "deletePrefix",
+    "name": "Delete prefix.",
+    "description": "Delete prefix. Delete the prefix for an account given a UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}\nDelete the prefix for an account given a UUID.\nRequired: account_id (path) — The ID of the account.; prefix_id (path) — The UUID of the prefix to delete."
+  },
+  {
+    "id": "deletePrefixesForAccount",
+    "name": "Delete all prefixes.",
+    "description": "Delete all prefixes. Delete all prefixes for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes\nDelete all prefixes for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "deleteSynProtectionFilter",
+    "name": "Delete SYN Protection filter.",
+    "description": "Delete SYN Protection filter. Delete a SYN Protection filter specified by the given UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}\nDelete a SYN Protection filter specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; filter_id (path) — The UUID of the filter to delete."
+  },
+  {
+    "id": "deleteSynProtectionFiltersForAccount",
+    "name": "Delete all SYN Protection filters.",
+    "description": "Delete all SYN Protection filters. Delete all SYN Protection filters for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters\nDelete all SYN Protection filters for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "deleteSynProtectionRule",
+    "name": "Delete SYN Protection rule.",
+    "description": "Delete SYN Protection rule. Delete a SYN Protection rule specified by the given UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}\nDelete a SYN Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the SYN Protection rule to delete."
+  },
+  {
+    "id": "deleteSynProtectionRulesForAccount",
+    "name": "Delete all SYN Protection rules.",
+    "description": "Delete all SYN Protection rules. Delete all SYN Protection rules for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules\nDelete all SYN Protection rules for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "deleteTcpFlowProtectionFilter",
+    "name": "Delete TCP Flow Protection filter.",
+    "description": "Delete TCP Flow Protection filter. Delete a TCP Flow Protection filter specified by the given UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}\nDelete a TCP Flow Protection filter specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; filter_id (path) — The UUID of the filter to delete."
+  },
+  {
+    "id": "deleteTcpFlowProtectionFiltersForAccount",
+    "name": "Delete all TCP Flow Protection filters.",
+    "description": "Delete all TCP Flow Protection filters. Delete all TCP Flow Protection filters for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters\nDelete all TCP Flow Protection filters for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "deleteTcpFlowProtectionRule",
+    "name": "Delete TCP Flow Protection rule.",
+    "description": "Delete TCP Flow Protection rule. Delete a TCP Flow Protection rule specified by the given UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}\nDelete a TCP Flow Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the TCP Flow Protection rule to delete."
+  },
+  {
+    "id": "deleteTcpFlowProtectionRulesForAccount",
+    "name": "Delete all TCP Flow Protection rules.",
+    "description": "Delete all TCP Flow Protection rules. Delete all TCP Flow Protection rules for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules\nDelete all TCP Flow Protection rules for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "getAllowlistPrefix",
+    "name": "Get allowlist prefix.",
+    "description": "Get allowlist prefix. Get an allowlist prefix specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}\nGet an allowlist prefix specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; prefix_id (path) — The UUID of the allowlist prefix."
+  },
+  {
+    "id": "getPrefix",
+    "name": "Get prefix.",
+    "description": "Get prefix. Get a prefix specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}\nGet a prefix specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; prefix_id (path) — The UUID of the prefix."
+  },
+  {
+    "id": "getProtectionStatus",
+    "name": "Get protection status.",
+    "description": "Get protection status. Get the protection status of the account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status\nGet the protection status of the account.\nRequired: account_id (path) — The account ID."
+  },
+  {
+    "id": "getSynProtectionFilter",
+    "name": "Get SYN Protection filter.",
+    "description": "Get SYN Protection filter. Get a SYN Protection filter specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}\nGet a SYN Protection filter specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; filter_id (path) — The UUID of the filter to retrieve."
+  },
+  {
+    "id": "getSynProtectionRule",
+    "name": "Get SYN Protection rule.",
+    "description": "Get SYN Protection rule. Get a SYN Protection rule specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}\nGet a SYN Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the SYN Protection rule."
+  },
+  {
+    "id": "getTcpFlowProtectionFilter",
+    "name": "Get TCP Flow Protection filter.",
+    "description": "Get TCP Flow Protection filter. Get a TCP Flow Protection filter specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}\nGet a TCP Flow Protection filter specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; filter_id (path) — The UUID of the filter to retrieve."
+  },
+  {
+    "id": "getTcpFlowProtectionRule",
+    "name": "Get TCP Flow Protection rule.",
+    "description": "Get TCP Flow Protection rule. Get a TCP Flow Protection rule specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}\nGet a TCP Flow Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the TCP Flow Protection rule."
+  },
+  {
+    "id": "listAllowlistPrefixesForAccount",
+    "name": "List all allowlist prefixes.",
+    "description": "List all allowlist prefixes. List all allowlist prefixes for an account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist\nList all allowlist prefixes for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "listPrefixesForAccount",
+    "name": "List all prefixes.",
+    "description": "List all prefixes. List all prefixes for an account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes\nList all prefixes for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "listSynProtectionFiltersForAccount",
+    "name": "List all SYN Protection filters.",
+    "description": "List all SYN Protection filters. List all SYN Protection filters for an account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters\nList all SYN Protection filters for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: mode (query) — The mode of the filters to get. Optional. Valid values: 'enabled', 'disabled', 'monitoring'.; page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "listSynProtectionRulesForAccount",
+    "name": "List all SYN Protection rules.",
+    "description": "List all SYN Protection rules. List all SYN Protection rules for an account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules\nList all SYN Protection rules for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "listTcpFlowProtectionFiltersForAccount",
+    "name": "List all TCP Flow Protection filters.",
+    "description": "List all TCP Flow Protection filters. List all TCP Flow Protection filters for an account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters\nList all TCP Flow Protection filters for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: mode (query) — The mode of the filters to get. Optional. Valid values: 'enabled', 'disabled', 'monitoring'.; page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "listTcpFlowProtectionRulesForAccount",
+    "name": "List all TCP Flow Protection rules.",
+    "description": "List all TCP Flow Protection rules. List all TCP Flow Protection rules for an account. GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules\nList all TCP Flow Protection rules for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "updateAllowlistPrefix",
+    "name": "Update allowlist prefix.",
+    "description": "Update allowlist prefix. Update an allowlist prefix specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}\nUpdate an allowlist prefix specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; prefix_id (path) — The UUID of the allowlist prefix to update.; body (body) — The updates to apply to the allowlist prefix."
+  },
+  {
+    "id": "updatePrefix",
+    "name": "Update prefix.",
+    "description": "Update prefix. Update a prefix specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}\nUpdate a prefix specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; prefix_id (path) — The UUID of the prefix to update.; body (body) — The updates to apply to the prefix."
+  },
+  {
+    "id": "updateProtectionStatus",
+    "name": "Update protection status.",
+    "description": "Update protection status. Update the protection status of the account. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status\nUpdate the protection status of the account.\nRequired: account_id (path) — The account ID.; body (body) — The update to apply to the protection status."
+  },
+  {
+    "id": "updateSynProtectionFilter",
+    "name": "Update SYN Protection filter.",
+    "description": "Update SYN Protection filter. Update a SYN Protection filter specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}\nUpdate a SYN Protection filter specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; filter_id (path) — The UUID of the filter to update.; body (body) — The updates to apply to the filter."
+  },
+  {
+    "id": "updateSynProtectionRule",
+    "name": "Update SYN Protection rule.",
+    "description": "Update SYN Protection rule. Update a SYN Protection rule specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}\nUpdate a SYN Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the SYN Protection rule to update.; body (body) — The fields to update on the SYN Protection rule."
+  },
+  {
+    "id": "updateTcpFlowProtectionFilter",
+    "name": "Update TCP Flow Protection filter.",
+    "description": "Update TCP Flow Protection filter. Update a TCP Flow Protection filter specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}\nUpdate a TCP Flow Protection filter specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; filter_id (path) — The UUID of the filter to update.; body (body) — The updates to apply to the filter."
+  },
+  {
+    "id": "updateTcpFlowProtectionRule",
+    "name": "Update TCP Flow Protection rule.",
+    "description": "Update TCP Flow Protection rule. Update a TCP Flow Protection rule specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}\nUpdate a TCP Flow Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the TCP Flow Protection rule to update.; body (body) — The updates to apply to the TCP Flow Protection rule."
+  }
+]

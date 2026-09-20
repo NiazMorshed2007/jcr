@@ -1,0 +1,38 @@
+[
+  {
+    "id": "mcp_registry_servers_compare_retrieve",
+    "name": "Rank the same index under several ranking versions side by side",
+    "description": "Rank the same index under several ranking versions side by side Rank the same index under several ranking versions side by side. GET /api/projects/{project_id}/mcp_registry/servers/compare/",
+    "context": "GET /api/projects/{project_id}/mcp_registry/servers/compare/\nRank the same index under several ranking versions side by side. With exactly two versions the response includes per-server rank deltas, the review surface for promoting a new ranking version.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; versions (query) — Comma-separated ranking versions to compare (2+).\nOptional: limit (query) — Rows per arm (default 20, max 100).; search (query) — Optional text filter applied to every arm."
+  },
+  {
+    "id": "mcp_registry_servers_discover_retrieve",
+    "name": "Given a task, return the MCP servers most likely to do it, each with its rank rationale, real usage signal where we measure it, and ready-to-run connection instructions",
+    "description": "Given a task, return the MCP servers most likely to do it, each with its rank rationale, real usage signal where we measure it, and ready-to-run connection instructions Given a task, return the MCP servers most likely to do it, each with its rank rationale, real usage signal where we measure it, and ready-to-run conne…",
+    "context": "GET /api/projects/{project_id}/mcp_registry/servers/discover/\nGiven a task, return the MCP servers most likely to do it, each with its rank rationale, real usage signal where we measure it, and ready-to-run connection instructions. One call is everything an agent needs to go from a task to a connected server.\nRequired: intent (query) — What the agent is trying to do, in natural language.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Candidates to return (default 5, max 20).; version (query) — Ranking version to rank candidates by."
+  },
+  {
+    "id": "mcp_registry_servers_list",
+    "name": "List registry servers ordered by static rank under the chosen ranking version.",
+    "description": "List registry servers ordered by static rank under the chosen ranking version. GET /api/projects/{project_id}/mcp_registry/servers/",
+    "context": "GET /api/projects/{project_id}/mcp_registry/servers/\nList registry servers ordered by static rank under the chosen ranking version.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; measured_only (query) — Only servers with real MCP Analytics signal.; offset (query) — The initial index from which to return the results.; search (query) — Free-text query matched against server names, descriptions, and tool names.; version (query) — Ranking version ordering the results; defaults to the current default version."
+  },
+  {
+    "id": "mcp_registry_servers_measured_projects_list",
+    "name": "Which projects feed MCP Analytics signal into the index, and how much each contributes",
+    "description": "Which projects feed MCP Analytics signal into the index, and how much each contributes Which projects feed MCP Analytics signal into the index, and how much each contributes. GET /api/projects/{project_id}/mcp_registry/servers/measured_projects/",
+    "context": "GET /api/projects/{project_id}/mcp_registry/servers/measured_projects/\nWhich projects feed MCP Analytics signal into the index, and how much each contributes. Staff only, because it reports across every project rather than the one in the route: it answers whether the measured layer has enough coverage to rank on.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_registry_servers_retrieve",
+    "name": "Full server record: tools, measured stats, per-version scores, connection instructions.",
+    "description": "Full server record: tools, measured stats, per-version scores, connection instructions. GET /api/projects/{project_id}/mcp_registry/servers/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_registry/servers/{id}/\nFull server record: tools, measured stats, per-version scores, connection instructions.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_registry_servers_versions_list",
+    "name": "Registered ranking versions and their latest completed runs.",
+    "description": "Registered ranking versions and their latest completed runs. GET /api/projects/{project_id}/mcp_registry/servers/versions/",
+    "context": "GET /api/projects/{project_id}/mcp_registry/servers/versions/\nRegistered ranking versions and their latest completed runs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

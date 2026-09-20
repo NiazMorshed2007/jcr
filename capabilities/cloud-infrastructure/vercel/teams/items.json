@@ -1,0 +1,116 @@
+[
+  {
+    "id": "createTeam",
+    "name": "Create a Team",
+    "description": "Create a Team Create a new Team under your account. POST /v1/teams",
+    "context": "POST /v1/teams\nCreate a new Team under your account. You need to send a POST request with the desired Team slug, and optionally the Team name.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteMicrofrontendsGroup",
+    "name": "Delete a microfrontends group",
+    "description": "Delete a microfrontends group Deletes a microfrontends group from the team associated with the group ID. DELETE /v1/teams/{teamId}/microfrontends/{groupId}",
+    "context": "DELETE /v1/teams/{teamId}/microfrontends/{groupId}\nDeletes a microfrontends group from the team associated with the group ID.\nRequired: groupId (path) — The microfrontend group ID to delete.; teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteTeam",
+    "name": "Delete a Team",
+    "description": "Delete a Team Delete a team under your account. DELETE /v1/teams/{teamId}",
+    "context": "DELETE /v1/teams/{teamId}\nDelete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.; body (body)\nOptional: newDefaultTeamId (query) — Id of the team to be set as the new default team; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteTeamInviteCode",
+    "name": "Delete a Team invite code",
+    "description": "Delete a Team invite code Delete an active Team invite code. DELETE /v1/teams/{teamId}/invites/{inviteId}",
+    "context": "DELETE /v1/teams/{teamId}/invites/{inviteId}\nDelete an active Team invite code.\nRequired: inviteId (path) — The Team invite code ID.; teamId (path) — The Team identifier to perform the request on behalf of."
+  },
+  {
+    "id": "getTeam",
+    "name": "Get a Team",
+    "description": "Get a Team Get information for the Team specified by the `teamId` parameter. GET /v2/teams/{teamId}",
+    "context": "GET /v2/teams/{teamId}\nGet information for the Team specified by the `teamId` parameter.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: slug (query)"
+  },
+  {
+    "id": "getTeamAccessRequest",
+    "name": "Get access request status",
+    "description": "Get access request status Check the status of a join request. GET /v1/teams/{teamId}/request/{userId}",
+    "context": "GET /v1/teams/{teamId}/request/{userId}\nCheck the status of a join request. It'll respond with a 404 if the request has been declined. If no `userId` path segment was provided, this endpoint will instead return the status of the authenticated user.\nRequired: userId (path); teamId (path)"
+  },
+  {
+    "id": "getTeamMembers",
+    "name": "List team members",
+    "description": "List team members Get a paginated list of team members for the provided team. GET /v3/teams/{teamId}/members",
+    "context": "GET /v3/teams/{teamId}/members\nGet a paginated list of team members for the provided team.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: limit (query) — Limit how many teams should be returned; since (query) — Timestamp in milliseconds to only include members added since then.; until (query) — Timestamp in milliseconds to only include members added until then.; search (query) — Search team members by their name, username, and email.; role (query) — Only return members with the specified team role.; excludeProject (query) — Exclude members who belong to the specified project.; eligibleMembersForProjectId (query) — Include team members who are eligible to be members of the specified project.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getTeams",
+    "name": "List all teams",
+    "description": "List all teams Get a paginated list of all the Teams the authenticated User is a member of. GET /v2/teams",
+    "context": "GET /v2/teams\nGet a paginated list of all the Teams the authenticated User is a member of.\nOptional: limit (query) — Maximum number of Teams which may be returned.; since (query) — Timestamp (in milliseconds) to only include Teams created since then.; until (query) — Timestamp (in milliseconds) to only include Teams created until then."
+  },
+  {
+    "id": "inviteUserToTeam",
+    "name": "Invite a user",
+    "description": "Invite a user Invite a user to join the team specified in the URL. POST /v2/teams/{teamId}/members",
+    "context": "POST /v2/teams/{teamId}/members\nInvite a user to join the team specified in the URL. The authenticated user needs to be an `OWNER` in order to successfully invoke this endpoint. The user to be invited must be specified by email.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "joinTeam",
+    "name": "Join a team",
+    "description": "Join a team Join a team with a provided invite code or team ID. POST /v1/teams/{teamId}/members/teams/join",
+    "context": "POST /v1/teams/{teamId}/members/teams/join\nJoin a team with a provided invite code or team ID.\nRequired: teamId (path); body (body)"
+  },
+  {
+    "id": "listTeamFlags",
+    "name": "List all flags for a team",
+    "description": "List all flags for a team Retrieve all feature flags for a team across all projects. GET /v1/teams/{teamId}/feature-flags/flags",
+    "context": "GET /v1/teams/{teamId}/feature-flags/flags\nRetrieve all feature flags for a team across all projects. The list can be filtered by state and supports pagination.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: state (query) — The state of the flags to retrieve. Defaults to `active`.; withMetadata (query) — Deprecated. Whether to include creator metadata in each flag in the response. Resolve creator identity client-side (e.g. via the team members endpoint) instead; this parameter will be removed in a future release.; limit (query) — Maximum number of flags to return.; cursor (query) — Pagination cursor to continue from.; search (query) — Search flags by their slug or description. Case-insensitive.; kind (query) — The kind of flags to retrieve.; tags (query) — Filter flags by tag. Repeat the parameter for multiple tags (all must match).; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listTeamFlagSettings",
+    "name": "List team project flag settings",
+    "description": "List team project flag settings Retrieve feature flag settings for projects in a team. GET /v1/teams/{teamId}/feature-flags/settings",
+    "context": "GET /v1/teams/{teamId}/feature-flags/settings\nRetrieve feature flag settings for projects in a team.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: limit (query) — Maximum number of settings to return.; cursor (query) — Pagination cursor to continue from.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listTeamFlagsV2",
+    "name": "List all flags for a team",
+    "description": "List all flags for a team Retrieve all feature flags for a team across all projects. GET /v2/teams/{teamId}/feature-flags/flags",
+    "context": "GET /v2/teams/{teamId}/feature-flags/flags\nRetrieve all feature flags for a team across all projects. Returns an opaque cursor for pagination.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: state (query) — The state of the flags to retrieve. Defaults to `active`.; limit (query) — Maximum number of flags to return.; cursor (query) — Pagination cursor to continue from.; search (query) — Search flags by their slug or description. Case-insensitive.; kind (query) — The kind of flags to retrieve.; tags (query) — Filter flags by tag. Repeat the parameter for multiple tags (all must match).; createdBy (query) — Filter flags by the id of the entity that created them (a user or team id).; maintainerIds (query) — Filter flags by maintainer user id. Repeat the parameter for multiple maintainers (any may match).; includeMarketplaceFlags (query) — Whether to include Marketplace experimentation items in the paginated response. Defaults to false.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "patchTeam",
+    "name": "Update a Team",
+    "description": "Update a Team Update the information of a Team specified by the `teamId` parameter. PATCH /v2/teams/{teamId}",
+    "context": "PATCH /v2/teams/{teamId}\nUpdate the information of a Team specified by the `teamId` parameter. The request body should contain the information that will be updated on the Team.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.; body (body)\nOptional: slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "postTeamDsyncRoles",
+    "name": "Update Team Directory Sync Role Mappings",
+    "description": "Update Team Directory Sync Role Mappings Update the Directory Sync role mappings for a Team. POST /v1/teams/{teamId}/dsync-roles",
+    "context": "POST /v1/teams/{teamId}/dsync-roles\nUpdate the Directory Sync role mappings for a Team. This endpoint allows updating the mapping between directory groups and team roles or access groups.\nRequired: teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "removeTeamMember",
+    "name": "Remove a Team Member",
+    "description": "Remove a Team Member Remove a Team Member from the Team, or dismiss a user that requested access, or leave a team. DELETE /v1/teams/{teamId}/members/{uid}",
+    "context": "DELETE /v1/teams/{teamId}/members/{uid}\nRemove a Team Member from the Team, or dismiss a user that requested access, or leave a team. Directory Sync members can be removed when their directory email is absent or does not match the user's primary or verified secondary emails.\nRequired: uid (path) — The user ID of the member.; teamId (path)\nOptional: newDefaultTeamId (query) — The ID of the team to set as the new default team for the Northstar user."
+  },
+  {
+    "id": "requestAccessToTeam",
+    "name": "Request access to a team",
+    "description": "Request access to a team Request access to a team as a member. POST /v1/teams/{teamId}/request",
+    "context": "POST /v1/teams/{teamId}/request\nRequest access to a team as a member. An owner has to approve the request. Only 100 users can request access to a team at the same time.\nRequired: teamId (path); body (body)"
+  },
+  {
+    "id": "updateMicrofrontendsGroup",
+    "name": "Update a microfrontends group",
+    "description": "Update a microfrontends group Updates a microfrontends group's settings. PATCH /v1/teams/{teamId}/microfrontends/{groupId}",
+    "context": "PATCH /v1/teams/{teamId}/microfrontends/{groupId}\nUpdates a microfrontends group's settings.\nRequired: groupId (path); teamId (path) — The Team identifier to perform the request on behalf of.\nOptional: slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateTeamMember",
+    "name": "Update a Team Member",
+    "description": "Update a Team Member Update the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. PATCH /v1/teams/{teamId}/members/{uid}",
+    "context": "PATCH /v1/teams/{teamId}/members/{uid}\nUpdate the membership of a Team Member on the Team specified by `teamId`, such as changing the _role_ of the member, or confirming a request to join the Team for an unconfirmed member. The authenticated user must be an `OWNER` of the Team.\nRequired: uid (path) — The ID of the member.; teamId (path); body (body)"
+  }
+]

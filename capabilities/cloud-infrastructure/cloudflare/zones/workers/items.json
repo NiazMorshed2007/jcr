@@ -1,0 +1,32 @@
+[
+  {
+    "id": "worker-routes-create-route",
+    "name": "Create Worker Route",
+    "description": "Create Worker Route Creates a route that maps a URL pattern to a Worker. POST /client/v4/zones/{zone_id}/workers/routes",
+    "context": "POST /client/v4/zones/{zone_id}/workers/routes\nCreates a route that maps a URL pattern to a Worker.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "worker-routes-delete-route",
+    "name": "Delete Worker Route",
+    "description": "Delete Worker Route Deletes a Worker route. DELETE /client/v4/zones/{zone_id}/workers/routes/{route_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/workers/routes/{route_id}\nDeletes a Worker route.\nRequired: route_id (path); zone_id (path)"
+  },
+  {
+    "id": "worker-routes-get-route",
+    "name": "Get Worker Route",
+    "description": "Get Worker Route Returns information about a Worker route, including URL pattern and Worker. GET /client/v4/zones/{zone_id}/workers/routes/{route_id}",
+    "context": "GET /client/v4/zones/{zone_id}/workers/routes/{route_id}\nReturns information about a Worker route, including URL pattern and Worker.\nRequired: route_id (path); zone_id (path)"
+  },
+  {
+    "id": "worker-routes-list-routes",
+    "name": "List Worker Routes",
+    "description": "List Worker Routes Returns Worker routes for a zone. GET /client/v4/zones/{zone_id}/workers/routes",
+    "context": "GET /client/v4/zones/{zone_id}/workers/routes\nReturns Worker routes for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "worker-routes-update-route",
+    "name": "Replace Worker Route",
+    "description": "Replace Worker Route Replaces the URL pattern or Worker associated with a Worker route. PUT /client/v4/zones/{zone_id}/workers/routes/{route_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/workers/routes/{route_id}\nReplaces the URL pattern or Worker associated with a Worker route.\nRequired: route_id (path); zone_id (path); body (body)"
+  }
+]

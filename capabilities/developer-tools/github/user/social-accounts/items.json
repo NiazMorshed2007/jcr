@@ -1,0 +1,20 @@
+[
+  {
+    "id": "users%2Fadd-social-account-for-authenticated-user",
+    "name": "Add social accounts for the authenticated user",
+    "description": "Add social accounts for the authenticated user Add one or more social accounts to the authenticated user's profile. POST /user/social_accounts",
+    "context": "POST /user/social_accounts\nAdd one or more social accounts to the authenticated user's profile. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: body (body)"
+  },
+  {
+    "id": "users%2Fdelete-social-account-for-authenticated-user",
+    "name": "Delete social accounts for the authenticated user",
+    "description": "Delete social accounts for the authenticated user Deletes one or more social accounts from the authenticated user's profile. DELETE /user/social_accounts",
+    "context": "DELETE /user/social_accounts\nDeletes one or more social accounts from the authenticated user's profile. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: body (body)"
+  },
+  {
+    "id": "users%2Flist-social-accounts-for-authenticated-user",
+    "name": "List social accounts for the authenticated user",
+    "description": "List social accounts for the authenticated user Lists all of your social accounts. GET /user/social_accounts",
+    "context": "GET /user/social_accounts\nLists all of your social accounts.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "connectivity-services-delete",
+    "name": "Delete Workers VPC connectivity service",
+    "description": "Delete Workers VPC connectivity service Removes a single Workers VPC connectivity service by its ID. DELETE /client/v4/accounts/{account_id}/connectivity/directory/services/{service_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/connectivity/directory/services/{service_id}\nRemoves a single Workers VPC connectivity service by its ID. Any Worker bindings referencing this service will stop working.\nRequired: account_id (path); service_id (path)"
+  },
+  {
+    "id": "connectivity-services-get",
+    "name": "Get Workers VPC connectivity service",
+    "description": "Get Workers VPC connectivity service Fetches a single Workers VPC connectivity service by its ID. GET /client/v4/accounts/{account_id}/connectivity/directory/services/{service_id}",
+    "context": "GET /client/v4/accounts/{account_id}/connectivity/directory/services/{service_id}\nFetches a single Workers VPC connectivity service by its ID.\nRequired: account_id (path); service_id (path)"
+  },
+  {
+    "id": "connectivity-services-list",
+    "name": "List Workers VPC connectivity services",
+    "description": "List Workers VPC connectivity services Lists the Workers VPC connectivity services in the account. GET /client/v4/accounts/{account_id}/connectivity/directory/services",
+    "context": "GET /client/v4/accounts/{account_id}/connectivity/directory/services\nLists the Workers VPC connectivity services in the account.\nRequired: account_id (path)\nOptional: type (query); page (query) — Current page in the response; per_page (query) — Max amount of entries returned per page"
+  },
+  {
+    "id": "connectivity-services-post",
+    "name": "Create Workers VPC connectivity service",
+    "description": "Create Workers VPC connectivity service Creates a new Workers VPC connectivity service in the account. POST /client/v4/accounts/{account_id}/connectivity/directory/services",
+    "context": "POST /client/v4/accounts/{account_id}/connectivity/directory/services\nCreates a new Workers VPC connectivity service in the account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "connectivity-services-put",
+    "name": "Update Workers VPC connectivity service",
+    "description": "Update Workers VPC connectivity service Updates an existing Workers VPC connectivity service by its ID. PUT /client/v4/accounts/{account_id}/connectivity/directory/services/{service_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/connectivity/directory/services/{service_id}\nUpdates an existing Workers VPC connectivity service by its ID.\nRequired: account_id (path); service_id (path); body (body)"
+  }
+]

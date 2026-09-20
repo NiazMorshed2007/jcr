@@ -1,0 +1,68 @@
+[
+  {
+    "id": "createAccessGroup",
+    "name": "Creates an access group",
+    "description": "Creates an access group Allows to create an access group POST /v1/access-groups",
+    "context": "POST /v1/access-groups\nAllows to create an access group\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createAccessGroupProject",
+    "name": "Create an access group project",
+    "description": "Create an access group project Allows creation of an access group project POST /v1/access-groups/{accessGroupIdOrName}/projects",
+    "context": "POST /v1/access-groups/{accessGroupIdOrName}/projects\nAllows creation of an access group project\nRequired: accessGroupIdOrName (path); body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAccessGroup",
+    "name": "Deletes an access group",
+    "description": "Deletes an access group Allows to delete an access group DELETE /v1/access-groups/{idOrName}",
+    "context": "DELETE /v1/access-groups/{idOrName}\nAllows to delete an access group\nRequired: idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAccessGroupProject",
+    "name": "Delete an access group project",
+    "description": "Delete an access group project Allows deletion of an access group project DELETE /v1/access-groups/{accessGroupIdOrName}/projects/{projectId}",
+    "context": "DELETE /v1/access-groups/{accessGroupIdOrName}/projects/{projectId}\nAllows deletion of an access group project\nRequired: accessGroupIdOrName (path); projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listAccessGroupMembers",
+    "name": "List members of an access group",
+    "description": "List members of an access group GET /v1/access-groups/{idOrName}/members",
+    "context": "GET /v1/access-groups/{idOrName}/members\nList members of an access group\nRequired: idOrName (path) — The ID or name of the Access Group.\nOptional: limit (query) — Limit how many access group members should be returned.; next (query) — Continuation cursor to retrieve the next page of results.; search (query) — Search project members by their name, username, and email.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listAccessGroupProjects",
+    "name": "List projects of an access group",
+    "description": "List projects of an access group GET /v1/access-groups/{idOrName}/projects",
+    "context": "GET /v1/access-groups/{idOrName}/projects\nList projects of an access group\nRequired: idOrName (path) — The ID or name of the Access Group.\nOptional: limit (query) — Limit how many access group projects should be returned.; next (query) — Continuation cursor to retrieve the next page of results.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listAccessGroups",
+    "name": "List access groups for a team, project or member",
+    "description": "List access groups for a team, project or member List access groups GET /v1/access-groups",
+    "context": "GET /v1/access-groups\nList access groups\nOptional: projectId (query) — Filter access groups by project.; search (query) — Search for access groups by name.; membersLimit (query) — Number of members to include in the response.; projectsLimit (query) — Number of projects to include in the response.; limit (query) — Limit how many access group should be returned.; next (query) — Continuation cursor to retrieve the next page of results.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "readAccessGroup",
+    "name": "Reads an access group",
+    "description": "Reads an access group Allows to read an access group GET /v1/access-groups/{idOrName}",
+    "context": "GET /v1/access-groups/{idOrName}\nAllows to read an access group\nRequired: idOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "readAccessGroupProject",
+    "name": "Reads an access group project",
+    "description": "Reads an access group project Allows reading an access group project GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId}",
+    "context": "GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId}\nAllows reading an access group project\nRequired: accessGroupIdOrName (path); projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateAccessGroup",
+    "name": "Update an access group",
+    "description": "Update an access group Allows to update an access group metadata POST /v1/access-groups/{idOrName}",
+    "context": "POST /v1/access-groups/{idOrName}\nAllows to update an access group metadata\nRequired: idOrName (path); body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateAccessGroupProject",
+    "name": "Update an access group project",
+    "description": "Update an access group project Allows update of an access group project PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId}",
+    "context": "PATCH /v1/access-groups/{accessGroupIdOrName}/projects/{projectId}\nAllows update of an access group project\nRequired: accessGroupIdOrName (path); projectId (path); body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

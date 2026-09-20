@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createDnsProtectionRule",
+    "name": "Create DNS Protection rule.",
+    "description": "Create DNS Protection rule. Create a DNS Protection rule for an account. POST /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules",
+    "context": "POST /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules\nCreate a DNS Protection rule for an account.\nRequired: account_id (path) — The ID of the account.; body (body) — The new DNS Protection rule to add."
+  },
+  {
+    "id": "deleteDnsProtectionRule",
+    "name": "Delete DNS Protection rule.",
+    "description": "Delete DNS Protection rule. Delete a DNS Protection rule specified by the given UUID. DELETE /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}\nDelete a DNS Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the DNS Protection rule to delete."
+  },
+  {
+    "id": "deleteDnsProtectionRulesForAccount",
+    "name": "Delete all DNS Protection rules.",
+    "description": "Delete all DNS Protection rules. Delete all DNS Protection rules for an account. DELETE /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules\nDelete all DNS Protection rules for an account.\nRequired: account_id (path) — The ID of the account."
+  },
+  {
+    "id": "getDnsProtectionRule",
+    "name": "Get DNS Protection rule.",
+    "description": "Get DNS Protection rule. Get a DNS Protection rule specified by the given UUID. GET /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}\nGet a DNS Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the DNS Protection rule."
+  },
+  {
+    "id": "listDnsProtectionRulesForAccount",
+    "name": "List all DNS Protection rules.",
+    "description": "List all DNS Protection rules. List all DNS Protection rules for an account. GET /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules",
+    "context": "GET /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules\nList all DNS Protection rules for an account.\nRequired: account_id (path) — The ID of the account.\nOptional: page (query) — The page number for pagination. Defaults to 1.; per_page (query) — The number of items per page. Must be between 10 and 1000. Defaults to 25.; order (query) — The field to order by. Defaults to 'prefix'.; direction (query) — The direction of ordering (ASC or DESC). Defaults to 'ASC'."
+  },
+  {
+    "id": "updateDnsProtectionRule",
+    "name": "Update DNS Protection rule.",
+    "description": "Update DNS Protection rule. Update a DNS Protection rule specified by the given UUID. PATCH /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}\nUpdate a DNS Protection rule specified by the given UUID.\nRequired: account_id (path) — The ID of the account.; rule_id (path) — The UUID of the DNS Protection rule to update.; body (body) — The updates to apply to the DNS Protection rule."
+  }
+]

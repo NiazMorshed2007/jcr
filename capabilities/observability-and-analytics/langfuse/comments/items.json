@@ -1,0 +1,20 @@
+[
+  {
+    "id": "comments_create",
+    "name": "Create a comment",
+    "description": "Create a comment Create a comment. POST /api/public/comments",
+    "context": "POST /api/public/comments\nCreate a comment. Comments may be attached to different object types (trace, observation, session, prompt).\nRequired: body (body)"
+  },
+  {
+    "id": "comments_get",
+    "name": "Get all comments",
+    "description": "Get all comments GET /api/public/comments",
+    "context": "GET /api/public/comments\nGet all comments\nOptional: page (query) — Page number, starts at 1.; limit (query) — Limit of items per page. If you encounter api issues due to too large page sizes, try to reduce the limit; objectType (query) — Filter comments by object type (trace, observation, session, prompt).; objectId (query) — Filter comments by object id. If objectType is not provided, an error will be thrown.; authorUserId (query) — Filter comments by author user id."
+  },
+  {
+    "id": "comments_get-by-id",
+    "name": "Get a comment by id",
+    "description": "Get a comment by id GET /api/public/comments/{commentId}",
+    "context": "GET /api/public/comments/{commentId}\nGet a comment by id\nRequired: commentId (path) — The unique langfuse identifier of a comment"
+  }
+]

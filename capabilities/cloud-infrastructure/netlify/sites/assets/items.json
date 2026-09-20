@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createSiteAsset",
+    "name": "createSiteAsset",
+    "description": "createSiteAsset POST /api/v1/sites/{site_id}/assets",
+    "context": "POST /api/v1/sites/{site_id}/assets\ncreateSiteAsset\nRequired: name (query); size (query); content_type (query)\nOptional: visibility (query)"
+  },
+  {
+    "id": "deleteSiteAsset",
+    "name": "deleteSiteAsset",
+    "description": "deleteSiteAsset DELETE /api/v1/sites/{site_id}/assets/{asset_id}",
+    "context": "DELETE /api/v1/sites/{site_id}/assets/{asset_id}\ndeleteSiteAsset"
+  },
+  {
+    "id": "getSiteAssetInfo",
+    "name": "getSiteAssetInfo",
+    "description": "getSiteAssetInfo GET /api/v1/sites/{site_id}/assets/{asset_id}",
+    "context": "GET /api/v1/sites/{site_id}/assets/{asset_id}\ngetSiteAssetInfo"
+  },
+  {
+    "id": "getSiteAssetPublicSignature",
+    "name": "getSiteAssetPublicSignature",
+    "description": "getSiteAssetPublicSignature GET /api/v1/sites/{site_id}/assets/{asset_id}/public_signature",
+    "context": "GET /api/v1/sites/{site_id}/assets/{asset_id}/public_signature\ngetSiteAssetPublicSignature"
+  },
+  {
+    "id": "listSiteAssets",
+    "name": "listSiteAssets",
+    "description": "listSiteAssets GET /api/v1/sites/{site_id}/assets",
+    "context": "GET /api/v1/sites/{site_id}/assets\nlistSiteAssets"
+  },
+  {
+    "id": "updateSiteAsset",
+    "name": "updateSiteAsset",
+    "description": "updateSiteAsset PUT /api/v1/sites/{site_id}/assets/{asset_id}",
+    "context": "PUT /api/v1/sites/{site_id}/assets/{asset_id}\nupdateSiteAsset\nRequired: state (query)"
+  }
+]

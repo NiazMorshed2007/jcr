@@ -1,0 +1,200 @@
+[
+  {
+    "id": "delete_DeleteDomainQuery",
+    "name": "Delete domain query",
+    "description": "Delete domain query Delete a saved brand protection domain query from the account_queries table. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}\nDelete a saved brand protection domain query from the account_queries table. This operation will remove the query from the durable object database. Returns 404 if the query ID doesn't exist.\nRequired: account_id (path); query_id (path)"
+  },
+  {
+    "id": "delete_DeleteLogoQuery",
+    "name": "Delete logo query",
+    "description": "Delete logo query Delete a saved brand protection logo query. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}\nDelete a saved brand protection logo query. Returns 404 if the query ID doesn't exist.\nRequired: account_id (path); query_id (path)"
+  },
+  {
+    "id": "delete_LetterTemplateDelete",
+    "name": "Delete letter template",
+    "description": "Delete letter template Delete a user-defined takedown letter template. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}\nDelete a user-defined takedown letter template. System templates cannot be deleted.\nRequired: account_id (path); template_id (path)"
+  },
+  {
+    "id": "delete_TakedownLetterDelete",
+    "name": "Delete takedown letter",
+    "description": "Delete takedown letter Delete a specific takedown letter and its associated PDF from storage. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}\nDelete a specific takedown letter and its associated PDF from storage.\nRequired: account_id (path); notice_id (path); letter_id (path)"
+  },
+  {
+    "id": "delete_TakedownNoticeDelete",
+    "name": "Delete takedown notice",
+    "description": "Delete takedown notice Delete a takedown notice and all associated letters. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}\nDelete a takedown notice and all associated letters. PDFs are also removed from storage.\nRequired: account_id (path); notice_id (path)"
+  },
+  {
+    "id": "get_DomainMatchList",
+    "name": "List saved query matches",
+    "description": "List saved query matches Get paginated list of domain matches for one or more brand protection queries. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches\nGet paginated list of domain matches for one or more brand protection queries. When multiple query_ids are provided (comma-separated), matches are deduplicated across queries and each match includes a match_details array with per-match query metadata and individual dismissed state.\nRequired: account_id (path); query_id (query)\nOptional: offset (query); limit (query); include_domain_id (query); include_dismissed (query); domain_search (query); orderBy (query); order (query)"
+  },
+  {
+    "id": "get_GetDomainQueries",
+    "name": "Get queries",
+    "description": "Get queries Get all saved brand protection queries for an account GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries\nGet all saved brand protection queries for an account\nRequired: account_id (path)\nOptional: id (query); page (query); per_page (query)"
+  },
+  {
+    "id": "get_GetLogoQueries",
+    "name": "Get logo queries",
+    "description": "Get logo queries Get all saved brand protection logo queries for an account. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries\nGet all saved brand protection logo queries for an account. Optionally specify id to get a single query. Set download=true to include base64-encoded image data.\nRequired: account_id (path)\nOptional: id (query) — Optional query ID to retrieve a specific logo query; download (query) — If true, include base64-encoded image data in the response"
+  },
+  {
+    "id": "get_LetterTemplateExamples",
+    "name": "List example letter templates",
+    "description": "List example letter templates List system-provided example templates that can be used as starting points when creating custom templates. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples\nList system-provided example templates that can be used as starting points when creating custom templates. These templates cannot be used directly for letter generation.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get_LetterTemplateGet",
+    "name": "Get letter template",
+    "description": "Get letter template Get a specific user-defined takedown letter template by ID. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}\nGet a specific user-defined takedown letter template by ID. System example templates are available via the /templates/examples endpoint.\nRequired: account_id (path); template_id (path)"
+  },
+  {
+    "id": "get_LetterTemplateList",
+    "name": "List letter templates",
+    "description": "List letter templates List user-defined takedown letter templates. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates\nList user-defined takedown letter templates. System example templates are available via the /templates/examples endpoint.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get_LogoMatchList",
+    "name": "List logo matches",
+    "description": "List logo matches Get paginated list of logo matches for a specific brand protection logo query GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches\nGet paginated list of logo matches for a specific brand protection logo query\nRequired: account_id (path); query_id (query)\nOptional: offset (query); limit (query); download (query); orderBy (query); order (query)"
+  },
+  {
+    "id": "get_TakedownLetterGet",
+    "name": "Get takedown letter",
+    "description": "Get takedown letter Get a specific takedown letter by ID, including the rendered text. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}\nGet a specific takedown letter by ID, including the rendered text.\nRequired: account_id (path); notice_id (path); letter_id (path)"
+  },
+  {
+    "id": "get_TakedownLetterList",
+    "name": "List takedown letters",
+    "description": "List takedown letters List all letters for a specific takedown notice. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters\nList all letters for a specific takedown notice.\nRequired: account_id (path); notice_id (path)"
+  },
+  {
+    "id": "get_TakedownLetterPdfGet",
+    "name": "Download takedown letter PDF",
+    "description": "Download takedown letter PDF Download the PDF for a stored takedown letter. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf\nDownload the PDF for a stored takedown letter. If no PDF exists yet, it is generated from the stored letter text and cached for future downloads.\nRequired: account_id (path); notice_id (path); letter_id (path)"
+  },
+  {
+    "id": "get_TakedownNoticeGet",
+    "name": "Get takedown notice",
+    "description": "Get takedown notice Get a specific takedown notice by ID. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}\nGet a specific takedown notice by ID.\nRequired: account_id (path); notice_id (path)"
+  },
+  {
+    "id": "get_TakedownNoticeList",
+    "name": "List takedown notices",
+    "description": "List takedown notices List all takedown notices for the account. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices\nList all takedown notices for the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get_TotalQueries",
+    "name": "Get total queries",
+    "description": "Get total queries Get the total number of saved brand protection queries (domain + logo) for an account GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries\nGet the total number of saved brand protection queries (domain + logo) for an account\nRequired: account_id (path)"
+  },
+  {
+    "id": "patch_UpdateDomainQuery",
+    "name": "Update domain query",
+    "description": "Update domain query Update a saved brand protection domain query with string match patterns PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}\nUpdate a saved brand protection domain query with string match patterns\nRequired: account_id (path); query_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_BulkDismissMatches",
+    "name": "Bulk dismiss or undismiss matches",
+    "description": "Bulk dismiss or undismiss matches Dismiss or undismiss multiple matches in a single request. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss\nDismiss or undismiss multiple matches in a single request. Accepts either the new format (matches: [{query_id, domain_id}]) for per-query control, or the legacy format (match_ids: [number]) which dismisses for all queries sharing each match's hash. Returns per-item success/error results.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_DismissMatch",
+    "name": "Dismiss a match",
+    "description": "Dismiss a match Mark a specific domain as dismissed for a given query. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss\nMark a specific domain as dismissed for a given query. Dismissals are per-query — dismissing a domain in one query does not affect other queries.\nRequired: account_id (path); query_id (path); domain_id (path)"
+  },
+  {
+    "id": "post_DomainTrial",
+    "name": "Analyze domains for brand impersonation",
+    "description": "Analyze domains for brand impersonation Uses AI to scan all domains in the lookback table and identify potential phishing or impersonation attempts against the given brand string. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial\nUses AI to scan all domains in the lookback table and identify potential phishing or impersonation attempts against the given brand string.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_InsertDomainQuery",
+    "name": "Insert query",
+    "description": "Insert query Create a new saved brand protection query with string match patterns POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries\nCreate a new saved brand protection query with string match patterns\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_InsertLogoQuery",
+    "name": "Insert logo query",
+    "description": "Insert logo query Create a new saved brand protection logo query for visual similarity matching POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries\nCreate a new saved brand protection logo query for visual similarity matching\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_LetterGenerate",
+    "name": "Generate takedown letter",
+    "description": "Generate takedown letter Generate a takedown letter from a template. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate\nGenerate a takedown letter from a template. Returns V4 JSON for text format or a PDF binary for pdf format.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_LetterTemplateCreate",
+    "name": "Create letter template",
+    "description": "Create letter template Create a new user-defined takedown letter template POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates\nCreate a new user-defined takedown letter template\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_SearchLogoSimilarity",
+    "name": "Search scanned images",
+    "description": "Search scanned images Submit an image and find the n closest matches from the scanned images index without creating any match records. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search\nSubmit an image and find the n closest matches from the scanned images index without creating any match records. Returns similarity scores and metadata for each match.\nRequired: account_id (path)\nOptional: showHistoric (query) — Include scanned images without domain metadata (historic data). Default: false (only show images with domain); download (query) — If true, include base64-encoded image data in the response; body (body)"
+  },
+  {
+    "id": "post_TakedownLetterCreate",
+    "name": "Create takedown letter",
+    "description": "Create takedown letter Generate a takedown letter for a notice and persist the rendered text. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters\nGenerate a takedown letter for a notice and persist the rendered text. The PDF is generated lazily on download.\nRequired: account_id (path); notice_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_TakedownNoticeCreate",
+    "name": "Create takedown notice",
+    "description": "Create takedown notice Create a new takedown notice for a domain suspected of trademark infringement. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices\nCreate a new takedown notice for a domain suspected of trademark infringement.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_TakedownNoticeLookup",
+    "name": "Lookup takedown notices by domains",
+    "description": "Lookup takedown notices by domains Bulk lookup of takedown notices by domain names. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup\nBulk lookup of takedown notices by domain names. Returns an array of { domain, queryId, notice } entries (notice is null when no match exists). Supports optional queryId or queryIds to scope lookups per query. Uses POST to avoid URL length limits when looking up many domains. This endpoint is read-only. Domains are normalized (trimmed, lowercased) and deduplicated.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_UndismissMatch",
+    "name": "Undismiss a match",
+    "description": "Undismiss a match Remove the dismissed status from a specific domain for a given query. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss\nRemove the dismissed status from a specific domain for a given query. Undismissals are per-query — undismissing a domain in one query does not affect other queries.\nRequired: account_id (path); query_id (path); domain_id (path)"
+  },
+  {
+    "id": "put_LetterTemplateUpdate",
+    "name": "Update letter template",
+    "description": "Update letter template Update a user-defined takedown letter template. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}\nUpdate a user-defined takedown letter template. System templates cannot be modified.\nRequired: account_id (path); template_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "put_TakedownNoticeUpdate",
+    "name": "Update takedown notice",
+    "description": "Update takedown notice Update a takedown notice (e.g. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}\nUpdate a takedown notice (e.g. change status to sent, resolved, etc.).\nRequired: account_id (path); notice_id (path)\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "accounts-browser-extension-config-delete",
+    "name": "Delete browser extension configuration",
+    "description": "Delete browser extension configuration Deletes the browser extension configuration for an account. DELETE /client/v4/accounts/{account_id}/browser-extension/config",
+    "context": "DELETE /client/v4/accounts/{account_id}/browser-extension/config\nDeletes the browser extension configuration for an account. The shard mapping is preserved and not deleted.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "accounts-browser-extension-config-extension-events-search",
+    "name": "Search browser extension event logs",
+    "description": "Search browser extension event logs Searches browser extension event logs for an account. POST /client/v4/accounts/{account_id}/browser-extension/config/logs/extension-events/search",
+    "context": "POST /client/v4/accounts/{account_id}/browser-extension/config/logs/extension-events/search\nSearches browser extension event logs for an account. The request accepts only supported fields and filters; raw SQL is not accepted.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "accounts-browser-extension-config-get",
+    "name": "Get browser extension configuration",
+    "description": "Get browser extension configuration Returns the browser extension configuration for an account. GET /client/v4/accounts/{account_id}/browser-extension/config",
+    "context": "GET /client/v4/accounts/{account_id}/browser-extension/config\nReturns the browser extension configuration for an account.\nRequired: account_id (path) — Cloudflare account ID."
+  },
+  {
+    "id": "accounts-browser-extension-config-post",
+    "name": "Create browser extension configuration",
+    "description": "Create browser extension configuration Creates the browser extension configuration for an account. POST /client/v4/accounts/{account_id}/browser-extension/config",
+    "context": "POST /client/v4/accounts/{account_id}/browser-extension/config\nCreates the browser extension configuration for an account.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "accounts-browser-extension-config-put",
+    "name": "Update browser extension configuration",
+    "description": "Update browser extension configuration Replaces the browser extension configuration for an account. PUT /client/v4/accounts/{account_id}/browser-extension/config",
+    "context": "PUT /client/v4/accounts/{account_id}/browser-extension/config\nReplaces the browser extension configuration for an account. The configuration must already exist. The shard mapping is immutable.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "accounts-browser-extension-inventories-get",
+    "name": "Get a single browser extension inventory",
+    "description": "Get a single browser extension inventory Returns the installed extension inventory for a single registered browser extension device. GET /client/v4/accounts/{account_id}/browser-extension/config/inventories/{registration_id}",
+    "context": "GET /client/v4/accounts/{account_id}/browser-extension/config/inventories/{registration_id}\nReturns the installed extension inventory for a single registered browser extension device.\nRequired: account_id (path) — Cloudflare account ID.; registration_id (path) — Browser extension registration ID."
+  },
+  {
+    "id": "accounts-browser-extension-inventories-list",
+    "name": "List browser extension inventories",
+    "description": "List browser extension inventories Returns the installed extension inventory for each registered browser extension device in the account. GET /client/v4/accounts/{account_id}/browser-extension/config/inventories",
+    "context": "GET /client/v4/accounts/{account_id}/browser-extension/config/inventories\nReturns the installed extension inventory for each registered browser extension device in the account. Each device reports its inventory periodically; this endpoint returns the latest known snapshot per device. Results are paginated by cursor. Pass the `cursor` from a previous response to fetch the next page. `per_page` controls page size (default 50, max 200).\nRequired: account_id (path) — Cloudflare account ID.\nOptional: cursor (query) — Opaque cursor from a previous response to fetch the next page.; per_page (query) — Number of results per page (default 50, max 200)."
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "access-service-tokens-create-a-service-token",
+    "name": "Create a service token",
+    "description": "Create a service token Generates a new service token. POST /client/v4/accounts/{account_id}/access/service_tokens",
+    "context": "POST /client/v4/accounts/{account_id}/access/service_tokens\nGenerates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to rotate the Client Secret or create a new service token.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-service-tokens-delete-a-service-token",
+    "name": "Delete a service token",
+    "description": "Delete a service token Deletes a service token. DELETE /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}\nDeletes a service token.\nRequired: service_token_id (path); account_id (path)"
+  },
+  {
+    "id": "access-service-tokens-get-a-service-token",
+    "name": "Get a service token",
+    "description": "Get a service token Fetches a single service token. GET /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}\nFetches a single service token.\nRequired: service_token_id (path); account_id (path)"
+  },
+  {
+    "id": "access-service-tokens-list-service-tokens",
+    "name": "List service tokens",
+    "description": "List service tokens Lists all service tokens. GET /client/v4/accounts/{account_id}/access/service_tokens",
+    "context": "GET /client/v4/accounts/{account_id}/access/service_tokens\nLists all service tokens.\nRequired: account_id (path)\nOptional: name (query); search (query); page (query); per_page (query)"
+  },
+  {
+    "id": "access-service-tokens-refresh-a-service-token",
+    "name": "Refresh a service token",
+    "description": "Refresh a service token Refreshes the expiration of a service token. POST /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}/refresh",
+    "context": "POST /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}/refresh\nRefreshes the expiration of a service token.\nRequired: service_token_id (path); account_id (path)"
+  },
+  {
+    "id": "access-service-tokens-rotate-a-service-token",
+    "name": "Rotate a service token",
+    "description": "Rotate a service token Generates a new Client Secret for a service token and revokes the old one. POST /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}/rotate",
+    "context": "POST /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}/rotate\nGenerates a new Client Secret for a service token and revokes the old one.\nRequired: service_token_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "access-service-tokens-update-a-service-token",
+    "name": "Update a service token",
+    "description": "Update a service token Updates a configured service token. PUT /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/service_tokens/{service_token_id}\nUpdates a configured service token.\nRequired: service_token_id (path); account_id (path); body (body)"
+  }
+]

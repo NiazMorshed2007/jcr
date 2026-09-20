@@ -1,0 +1,38 @@
+[
+  {
+    "id": "deleteOrganizationPreprodArtifactSnapshot",
+    "name": "Delete a Snapshot",
+    "description": "Delete a Snapshot Delete a snapshot and all associated data (images, comparisons, metrics). DELETE /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/\nDelete a snapshot and all associated data (images, comparisons, metrics). This is a permanent, irreversible operation. The snapshot and its images will no longer be accessible after deletion. This endpoint requires a bearer token with `project:write` access.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; snapshot_id (path) — The ID of the snapshot to delete."
+  },
+  {
+    "id": "getOrganizationPreprodArtifactInstallDetails",
+    "name": "Retrieve install info for a given artifact",
+    "description": "Retrieve install info for a given artifact Retrieve install info for a given artifact. GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/install-details/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/install-details/\nRetrieve install info for a given artifact. Returns distribution and installation details for a specific preprod artifact, including whether the artifact is installable, the install URL, download count, and iOS-specific code signing information.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; artifact_id (path) — The ID of the build artifact."
+  },
+  {
+    "id": "getOrganizationPreprodArtifactSizeAnalysis",
+    "name": "Retrieve Size Analysis results for a given artifact",
+    "description": "Retrieve Size Analysis results for a given artifact Retrieve size analysis results for a given artifact. GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/size-analysis/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/size-analysis/\nRetrieve size analysis results for a given artifact. Returns size metrics including download size, install size, and optional insights. When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter), comparison data showing size differences is included. The response `state` field indicates the analysis status: - `PENDING`: Analysis has not started yet. - `PROCESSING`: Analysis is currently running. - `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included. - `COMPLETED`: Analysis finished successfully with full size data.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; artifact_id (path) — The ID of the build artifact.\nOptional: baseArtifactId (query) — Optional ID of the base artifact to compare against. If not provided, uses the default base head artifact."
+  },
+  {
+    "id": "getOrganizationPreprodArtifactSnapshot",
+    "name": "Retrieve Snapshot details",
+    "description": "Retrieve Snapshot details Retrieve full details for a snapshot, including categorized image lists and comparison status. GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/\nRetrieve full details for a snapshot, including categorized image lists and comparison status. When a comparison exists (`comparison_type` is `diff`), images are categorized into `changed`, `added`, `removed`, `renamed`, `unchanged`, `errored`, and `skipped` lists with counts, and the top-level `images` array is empty because those images are already present in the categorized lists. For `solo` and `waiting_for_base` snapshots the categorized lists are empty and `images` is the only populated source. `image_count` is accurate in all modes. Use `compact_metadata=1` to strip image objects down to `display_name`, `image_file_name`, `group`, and `description` only. This endpoint requires a bearer token with `project:read` access.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; snapshot_id (path) — The ID of the snapshot.\nOptional: compact_metadata (query) — Set to '1' or 'true' to strip image metadata to display_name, image_file_name, group, and description only."
+  },
+  {
+    "id": "getOrganizationPreprodArtifactSnapshotImage",
+    "name": "Retrieve Snapshot image detail",
+    "description": "Retrieve Snapshot image detail Retrieve detailed information for a single image within a snapshot. GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/images/{image_identifier}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/images/{image_identifier}/\nRetrieve detailed information for a single image within a snapshot. The `image_identifier` can be either the image filename or its content hash. The response includes head and base image metadata, comparison status, diff image URL, diff percentage, and previous filename for renames. This endpoint uses a flat response format with nullable fields designed for LLM/MCP consumers. This endpoint requires a bearer token with `project:read` access.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; snapshot_id (path) — The ID of the snapshot.; image_identifier (path) — The image filename or content hash."
+  },
+  {
+    "id": "getOrganizationPreprodArtifactSnapshotLatestBase",
+    "name": "Retrieve latest base Snapshot",
+    "description": "Retrieve latest base Snapshot Retrieve the most recent base snapshot for a given app. GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/latest-base/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/latest-base/\nRetrieve the most recent base snapshot for a given app. A base snapshot is one uploaded without a `base_sha` (i.e., a snapshot from a base branch like `main`). Use the optional `branch` and `project` parameters to narrow the search. The response includes the full image list with download URLs. Use `compact_metadata=1` to reduce image metadata. This endpoint requires a bearer token with `project:read` access.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; app_id (query) — App identifier to match.\nOptional: branch (query) — Git branch name to filter on.; project (query) — Project ID or slug to scope the lookup.; compact_metadata (query) — Set to '1' or 'true' to strip image metadata to display_name, image_file_name, group, description, and image_url only."
+  }
+]

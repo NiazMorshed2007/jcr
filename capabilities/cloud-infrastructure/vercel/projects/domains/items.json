@@ -1,0 +1,44 @@
+[
+  {
+    "id": "addProjectDomain",
+    "name": "Add a domain to a project",
+    "description": "Add a domain to a project Add a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. POST /v10/projects/{idOrName}/domains",
+    "context": "POST /v10/projects/{idOrName}/domains\nAdd a domain to the project by passing its domain name and by specifying the project by either passing the project `id` or `name` in the URL. If the domain is not yet verified to be used on this project, the request will return `verified = false`, and the domain will need to be verified according to the `verification` challenge via `POST /projects/:idOrName/domains/:domain/verify`. If the domain already exists on the project, the request will fail with a `400` status code.\nRequired: idOrName (path) — The unique project identifier or the project name; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectDomain",
+    "name": "Get a project domain",
+    "description": "Get a project domain Get project domain by project id/name and domain name. GET /v9/projects/{idOrName}/domains/{domain}",
+    "context": "GET /v9/projects/{idOrName}/domains/{domain}\nGet project domain by project id/name and domain name.\nRequired: idOrName (path) — The unique project identifier or the project name; domain (path) — The project domain name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectDomains",
+    "name": "Retrieve project domains by project by id or name",
+    "description": "Retrieve project domains by project by id or name Retrieve the domains associated with a given project by passing either the project `id` or `name` in the URL. GET /v9/projects/{idOrName}/domains",
+    "context": "GET /v9/projects/{idOrName}/domains\nRetrieve the domains associated with a given project by passing either the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: production (query) — Filters only production domains when set to `true`.; target (query) — Filters on the target of the domain. Can be either \"production\", \"preview\"; customEnvironmentId (query) — The unique custom environment identifier within the project; gitBranch (query) — Filters domains based on specific branch.; redirects (query) — Excludes redirect project domains when \"false\". Includes redirect project domains when \"true\" (default).; redirect (query) — Filters domains based on their redirect target.; verified (query) — Filters domains based on their verification status.; limit (query) — Maximum number of domains to list from a request (max 100).; since (query) — Get domains created after this JavaScript timestamp.; until (query) — Get domains created before this JavaScript timestamp.; order (query) — Domains sort order by createdAt; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "moveProjectDomain",
+    "name": "Move a project domain",
+    "description": "Move a project domain Move one project's domain to another project. POST /v1/projects/{idOrName}/domains/{domain}/move",
+    "context": "POST /v1/projects/{idOrName}/domains/{domain}/move\nMove one project's domain to another project. Also allows the move of all redirects pointed to that domain in the same project.\nRequired: idOrName (path) — The unique project identifier or the project name; domain (path) — The project domain name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "removeProjectDomain",
+    "name": "Remove a domain from a project",
+    "description": "Remove a domain from a project Remove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL. DELETE /v9/projects/{idOrName}/domains/{domain}",
+    "context": "DELETE /v9/projects/{idOrName}/domains/{domain}\nRemove a domain from a project by passing the domain name and by specifying the project by either passing the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name; domain (path) — The project domain name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateProjectDomain",
+    "name": "Update a project domain",
+    "description": "Update a project domain Update a project domain's configuration, including the name, git branch and redirect of the domain. PATCH /v9/projects/{idOrName}/domains/{domain}",
+    "context": "PATCH /v9/projects/{idOrName}/domains/{domain}\nUpdate a project domain's configuration, including the name, git branch and redirect of the domain.\nRequired: idOrName (path) — The unique project identifier or the project name; domain (path) — The project domain name; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "verifyProjectDomain",
+    "name": "Verify project domain",
+    "description": "Verify project domain Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge. POST /v9/projects/{idOrName}/domains/{domain}/verify",
+    "context": "POST /v9/projects/{idOrName}/domains/{domain}/verify\nAttempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.\nRequired: idOrName (path) — The unique project identifier or the project name; domain (path) — The domain name you want to verify\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "createFlag",
+    "name": "Create a flag",
+    "description": "Create a flag Create a new feature flag for a project. PUT /v1/projects/{projectIdOrName}/feature-flags/flags",
+    "context": "PUT /v1/projects/{projectIdOrName}/feature-flags/flags\nCreate a new feature flag for a project. The flag must have a unique slug within the project and specify its kind (boolean, string, number, or json).\nRequired: projectIdOrName (path) — The project id or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createFlagSegment",
+    "name": "Create a segment",
+    "description": "Create a segment Create a new feature flag segment. PUT /v1/projects/{projectIdOrName}/feature-flags/segments",
+    "context": "PUT /v1/projects/{projectIdOrName}/feature-flags/segments\nCreate a new feature flag segment.\nRequired: projectIdOrName (path) — The project id or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createSdkKey",
+    "name": "Create an SDK key",
+    "description": "Create an SDK key Creates an SDK key. PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys",
+    "context": "PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys\nCreates an SDK key.\nRequired: projectIdOrName (path) — The project id or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteFlag",
+    "name": "Delete a flag",
+    "description": "Delete a flag Permanently delete a feature flag from the project. DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}",
+    "context": "DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}\nPermanently delete a feature flag from the project. This action cannot be undone. Consider archiving the flag instead if you may need it in the future.\nRequired: projectIdOrName (path) — The project id or name; flagIdOrSlug (path) — The flag id or name\nOptional: ifMatch (query) — Etag to match, can be used interchangeably with the `if-match` header; withMetadata (query) — Whether to include metadata in the response; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteFlagSegment",
+    "name": "Delete a segment",
+    "description": "Delete a segment Delete a feature flag segment. DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug}",
+    "context": "DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug}\nDelete a feature flag segment.\nRequired: projectIdOrName (path) — The project id or name; segmentIdOrSlug (path) — The segment slug\nOptional: withMetadata (query) — Whether to include metadata; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteSdkKey",
+    "name": "Delete an SDK key",
+    "description": "Delete an SDK key Deletes an SDK key. DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey}",
+    "context": "DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey}\nDeletes an SDK key.\nRequired: projectIdOrName (path) — The project id or name; hashKey (path) — The SDK key hash key to delete\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getFlag",
+    "name": "Get a flag",
+    "description": "Get a flag Retrieve a specific feature flag by its ID or slug. GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}\nRetrieve a specific feature flag by its ID or slug.\nRequired: projectIdOrName (path) — The project id or name; flagIdOrSlug (path) — The flag id or name\nOptional: ifMatch (query) — Etag to match, can be used interchangeably with the `if-match` header; withMetadata (query) — Whether to include metadata in the response; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getFlagSegment",
+    "name": "Get a segment",
+    "description": "Get a segment Retrieve a feature flag segment by ID or slug. GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug}",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug}\nRetrieve a feature flag segment by ID or slug.\nRequired: projectIdOrName (path) — The project id or name; segmentIdOrSlug (path) — The segment slug\nOptional: withMetadata (query) — Whether to include metadata; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getFlagSettings",
+    "name": "Get project flag settings",
+    "description": "Get project flag settings Retrieve feature flag settings for a project. GET /v1/projects/{projectIdOrName}/feature-flags/settings",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/settings\nRetrieve feature flag settings for a project.\nRequired: projectIdOrName (path) — The project id or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getSdkKeys",
+    "name": "Get all SDK keys",
+    "description": "Get all SDK keys Gets all SDK keys for a project. GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys\nGets all SDK keys for a project.\nRequired: projectIdOrName (path) — The project id or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listFlags",
+    "name": "List flags",
+    "description": "List flags Retrieve feature flags for a project. GET /v1/projects/{projectIdOrName}/feature-flags/flags",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/flags\nRetrieve feature flags for a project. The list can be filtered by state and supports pagination.\nRequired: projectIdOrName (path) — The project id or name\nOptional: state (query) — The state of the flags to retrieve. Defaults to `active`.; withMetadata (query) — Deprecated. Whether to include creator metadata in each flag in the response. Resolve creator identity client-side (e.g. via the team members endpoint) instead; this parameter will be removed in a future release. Use `GET /v1/projects/:id/feature-flags/flags/:flagIdOrSlug?withMetadata=true` for single-flag lookups that need creator metadata.; limit (query) — Maximum number of flags to return. When not set, all flags are returned.; cursor (query) — Pagination cursor to continue from.; search (query) — Search flags by their slug or description. Case-insensitive.; tags (query) — Filter flags by tag. Repeat the parameter for multiple tags (all must match).; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listFlagSegments",
+    "name": "List segments",
+    "description": "List segments List all feature flag segments for a project. GET /v1/projects/{projectIdOrName}/feature-flags/segments",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/segments\nList all feature flag segments for a project.\nRequired: projectIdOrName (path) — The project id or name\nOptional: withMetadata (query) — Whether to include metadata; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listFlagsV2",
+    "name": "List flags",
+    "description": "List flags Retrieve feature flags for a project. GET /v2/projects/{projectIdOrName}/feature-flags/flags",
+    "context": "GET /v2/projects/{projectIdOrName}/feature-flags/flags\nRetrieve feature flags for a project. Returns an opaque cursor for pagination.\nRequired: projectIdOrName (path) — The project id or name\nOptional: state (query) — The state of the flags to retrieve. Defaults to `active`.; limit (query) — Maximum number of flags to return.; cursor (query) — Pagination cursor to continue from.; search (query) — Search flags by their slug or description. Case-insensitive.; tags (query) — Filter flags by tag. Repeat the parameter for multiple tags (all must match).; createdBy (query) — Filter flags by the id of the entity that created them (a user or team id).; maintainerIds (query) — Filter flags by maintainer user id. Repeat the parameter for multiple maintainers (any may match).; includeMarketplaceFlags (query) — Whether to include Marketplace experimentation items in the paginated response. Defaults to false.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listFlagVersions",
+    "name": "List flag versions",
+    "description": "List flag versions Lists flag versions for a given flag. GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions",
+    "context": "GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions\nLists flag versions for a given flag.\nRequired: projectIdOrName (path); flagIdOrSlug (path)\nOptional: limit (query); cursor (query) — Pagination cursor; environment (query) — Environment to filter by; withMetadata (query) — Whether to include metadata; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateFlag",
+    "name": "Update a flag",
+    "description": "Update a flag Update an existing feature flag. PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}",
+    "context": "PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}\nUpdate an existing feature flag. This endpoint supports partial updates, allowing you to modify specific properties like variants, environments, or state without providing the full flag configuration.\nRequired: projectIdOrName (path) — The project id or name; flagIdOrSlug (path) — The flag id or name\nOptional: ifMatch (query) — Etag to match, can be used interchangeably with the `if-match` header; withMetadata (query) — Whether to include metadata in the response; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateFlagSegment",
+    "name": "Update a segment",
+    "description": "Update a segment Update an existing feature flag segment. PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug}",
+    "context": "PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug}\nUpdate an existing feature flag segment.\nRequired: projectIdOrName (path) — The project id or name; segmentIdOrSlug (path) — The segment slug\nOptional: withMetadata (query) — Whether to include metadata; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateFlagSettings",
+    "name": "Update project flag settings",
+    "description": "Update project flag settings Update feature flag settings for a project. PATCH /v1/projects/{projectIdOrName}/feature-flags/settings",
+    "context": "PATCH /v1/projects/{projectIdOrName}/feature-flags/settings\nUpdate feature flag settings for a project.\nRequired: projectIdOrName (path) — The project id or name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "assignAlias",
+    "name": "Assign an Alias",
+    "description": "Assign an Alias Creates a new alias for the deployment resolved from the given deployment or alias ID or URL. POST /v2/deployments/{id}/aliases",
+    "context": "POST /v2/deployments/{id}/aliases\nCreates a new alias for the deployment resolved from the given deployment or alias ID or URL. The authenticated user or team must own this deployment. If the desired alias is already assigned to another deployment, then it will be removed from the old deployment and assigned to the new one.\nRequired: id (path) — The deployment or alias ID or URL to assign from; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "cancelDeployment",
+    "name": "Cancel a deployment",
+    "description": "Cancel a deployment Cancels a deployment that is currently in progress, stopping the build before it completes. PATCH /v12/deployments/{id}/cancel",
+    "context": "PATCH /v12/deployments/{id}/cancel\nCancels a deployment that is currently in progress, stopping the build before it completes. Use this to recover quickly from accidental deploys, wrong-branch pushes, or builds with known errors — without waiting for them to finish. Returns 400 if the deployment is no longer cancelable (already `READY`, `ERROR`, or `CANCELED`). Returns the updated deployment object with `readyState: 'CANCELED'` on success.\nRequired: id (path) — The unique identifier of the deployment.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createCheck",
+    "name": "Creates a new Check",
+    "description": "Creates a new Check Creates a new check. POST /v1/deployments/{deploymentId}/checks",
+    "context": "POST /v1/deployments/{deploymentId}/checks\nCreates a new check. This endpoint must be called with an OAuth2 or it will produce a 400 error.\nRequired: deploymentId (path) — The deployment to create the check for.; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createDeployment",
+    "name": "Create a new deployment",
+    "description": "Create a new deployment Creates a new deployment for the authenticated team or user. POST /v13/deployments",
+    "context": "POST /v13/deployments\nCreates a new deployment for the authenticated team or user. For non-git deployments, upload files first via the file upload API, then reference them here by SHA — or inline small files directly in the request body. To redeploy an existing deployment, provide its `deploymentId`; all settings are inherited unless explicitly overridden. The deployment begins building immediately and transitions through `QUEUED` → `INITIALIZING` → `BUILDING` before reaching `READY` or `ERROR`.\nRequired: body (body)\nOptional: forceNew (query) — Forces a new deployment even if there is a previous similar deployment. Set to `1` to bypass deployment deduplication and always trigger a fresh build.; skipAutoDetectionConfirmation (query) — Set to `1` to skip framework auto-detection and proceed without confirmation. By default, if Vercel detects a framework that differs from the project setting, the API returns a `400` asking you to confirm. Use this to suppress that check in automated pipelines.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createDeploymentCheckRun",
+    "name": "Create a check run",
+    "description": "Create a check run Creates a new check run for a deployment. POST /v2/deployments/{deploymentId}/check-runs",
+    "context": "POST /v2/deployments/{deploymentId}/check-runs\nCreates a new check run for a deployment.\nRequired: deploymentId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteDeployment",
+    "name": "Delete a Deployment",
+    "description": "Delete a Deployment This API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. DELETE /v13/deployments/{id}",
+    "context": "DELETE /v13/deployments/{id}\nThis API allows you to delete a deployment, either by supplying its `id` in the URL or the `url` of the deployment as a query parameter. You can obtain the ID, for example, by listing all deployments.\nRequired: id (path) — The ID of the deployment to be deleted\nOptional: url (query) — A Deployment or Alias URL. In case it is passed, the ID will be ignored; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getAllChecks",
+    "name": "Retrieve a list of all checks",
+    "description": "Retrieve a list of all checks List all of the checks created for a deployment. GET /v1/deployments/{deploymentId}/checks",
+    "context": "GET /v1/deployments/{deploymentId}/checks\nList all of the checks created for a deployment.\nRequired: deploymentId (path) — The deployment to get all checks for\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getCheck",
+    "name": "Get a single check",
+    "description": "Get a single check Return a detailed response for a single check. GET /v1/deployments/{deploymentId}/checks/{checkId}",
+    "context": "GET /v1/deployments/{deploymentId}/checks/{checkId}\nReturn a detailed response for a single check.\nRequired: deploymentId (path) — The deployment to get the check for.; checkId (path) — The check to fetch\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDeployment",
+    "name": "Get a deployment by ID or URL",
+    "description": "Get a deployment by ID or URL Retrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). GET /v13/deployments/{idOrUrl}",
+    "context": "GET /v13/deployments/{idOrUrl}\nRetrieves information for a deployment either by supplying its ID (`id` property) or Hostname (`url` property). Additional details will be included when the authenticated user or team is an owner of the deployment.\nRequired: idOrUrl (path) — The unique identifier or hostname of the deployment.\nOptional: withGitRepoInfo (query) — When `true`, the response includes the `gitSource` object with the commit SHA, branch name, and connected repository metadata. Defaults to `false`.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDeploymentCheckRun",
+    "name": "Get a check run",
+    "description": "Get a check run Return a detailed response for a single check run. GET /v2/deployments/{deploymentId}/check-runs/{checkRunId}",
+    "context": "GET /v2/deployments/{deploymentId}/check-runs/{checkRunId}\nReturn a detailed response for a single check run.\nRequired: deploymentId (path); checkRunId (path) — The ID of the resource that will be updated.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDeploymentEvents",
+    "name": "Get deployment events",
+    "description": "Get deployment events Get the build logs of a deployment by deployment ID and build ID. GET /v3/deployments/{idOrUrl}/events",
+    "context": "GET /v3/deployments/{idOrUrl}/events\nGet the build logs of a deployment by deployment ID and build ID. It can work as an infinite stream of logs or as a JSON endpoint depending on the input parameters.\nRequired: idOrUrl (path) — The unique identifier or hostname of the deployment.\nOptional: direction (query) — Order of the returned events based on the timestamp.; follow (query) — When enabled, this endpoint will return live events as they happen.; limit (query) — Maximum number of events to return. Provide `-1` to return all available logs.; name (query) — Deployment build ID.; since (query) — Timestamp for when build logs should be pulled from.; until (query) — Timestamp for when the build logs should be pulled up until.; statusCode (query) — HTTP status code range to filter events by.; delimiter (query); builds (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDeploymentFeatureFlags",
+    "name": "Retrieve the feature flags of a deployment",
+    "description": "Retrieve the feature flags of a deployment Retrieve the feature flags of a deployment. GET /v1/deployments/{deploymentId}/feature-flags",
+    "context": "GET /v1/deployments/{deploymentId}/feature-flags\nRetrieve the feature flags of a deployment.\nRequired: deploymentId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDeploymentFileContents",
+    "name": "Get Deployment File Contents",
+    "description": "Get Deployment File Contents Allows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. GET /v8/deployments/{id}/files/{fileId}",
+    "context": "GET /v8/deployments/{id}/files/{fileId}\nAllows to retrieve the content of a file by supplying the file identifier and the deployment unique identifier. The response body will contain a JSON response containing the contents of the file encoded as base64.\nRequired: id (path) — The unique deployment identifier; fileId (path) — The unique file identifier\nOptional: path (query) — Path to the file to fetch (only for Git deployments); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDeployments",
+    "name": "List deployments",
+    "description": "List deployments List deployments under the authenticated user or team. GET /v7/deployments",
+    "context": "GET /v7/deployments\nList deployments under the authenticated user or team. If a deployment hasn't finished uploading (is incomplete), the `url` property will have a value of `null`.\nOptional: app (query) — Name of the deployment.; from (query) — Gets the deployment created after this Date timestamp. (default: current time); limit (query) — Maximum number of deployments to list from a request.; projectId (query) — Filter deployments from the given ID or name.; projectIds (query) — Filter deployments from the given project IDs. Cannot be used when projectId is specified.; target (query) — Filter deployments based on the environment.; to (query) — Gets the deployment created before this Date timestamp. (default: current time); users (query) — Filter out deployments based on users who have created the deployment.; since (query) — Get Deployments created after this JavaScript timestamp.; until (query) — Get Deployments created before this JavaScript timestamp.; state (query) — Filter deployments based on their state (`BUILDING`, `ERROR`, `INITIALIZING`, `QUEUED`, `READY`, `CANCELED`, `BLOCKED`); rollbackCandidate (query) — Filter deployments based on their rollback candidacy; branch (query) — Filter deployments based on the branch name; sha (query) — Filter deployments based on the SHA; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listDeploymentAliases",
+    "name": "List Deployment Aliases",
+    "description": "List Deployment Aliases Retrieves all Aliases for the Deployment with the given ID. GET /v2/deployments/{id}/aliases",
+    "context": "GET /v2/deployments/{id}/aliases\nRetrieves all Aliases for the Deployment with the given ID. The authenticated user or team must own the deployment.\nRequired: id (path) — The ID of the deployment the aliases should be listed for\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listDeploymentCheckRuns",
+    "name": "List check runs for a deployment",
+    "description": "List check runs for a deployment List all check runs for a deployment. GET /v2/deployments/{deploymentId}/check-runs",
+    "context": "GET /v2/deployments/{deploymentId}/check-runs\nList all check runs for a deployment.\nRequired: deploymentId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listDeploymentFiles",
+    "name": "List Deployment Files",
+    "description": "List Deployment Files Allows to retrieve the file structure of the source code of a deployment by supplying the deployment unique identifier. GET /v6/deployments/{id}/files",
+    "context": "GET /v6/deployments/{id}/files\nAllows to retrieve the file structure of the source code of a deployment by supplying the deployment unique identifier. If the deployment was created with the Vercel CLI or the API directly with the `files` key, it will have a file tree that can be retrievable.\nRequired: id (path) — The unique deployment identifier\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "rerequestCheck",
+    "name": "Rerequest a check",
+    "description": "Rerequest a check Rerequest a selected check that has failed. POST /v1/deployments/{deploymentId}/checks/{checkId}/rerequest",
+    "context": "POST /v1/deployments/{deploymentId}/checks/{checkId}/rerequest\nRerequest a selected check that has failed.\nRequired: deploymentId (path) — The deployment to rerun the check for.; checkId (path) — The check to rerun\nOptional: autoUpdate (query) — Mark the check as running; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "update-integration-deployment-action",
+    "name": "Update deployment integration action",
+    "description": "Update deployment integration action Updates the deployment integration action for the specified integration installation PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action}",
+    "context": "PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action}\nUpdates the deployment integration action for the specified integration installation\nRequired: deploymentId (path); integrationConfigurationId (path); resourceId (path); action (path)\nOptional: body (body)"
+  },
+  {
+    "id": "updateCheck",
+    "name": "Update a check",
+    "description": "Update a check Update an existing check. PATCH /v1/deployments/{deploymentId}/checks/{checkId}",
+    "context": "PATCH /v1/deployments/{deploymentId}/checks/{checkId}\nUpdate an existing check. This endpoint must be called with an OAuth2 or it will produce a 400 error.\nRequired: deploymentId (path) — The deployment to update the check for.; checkId (path) — The check being updated; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateDeploymentCheckRun",
+    "name": "Update a check run",
+    "description": "Update a check run Update an existing check run for a deployment. PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId}",
+    "context": "PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId}\nUpdate an existing check run for a deployment.\nRequired: deploymentId (path); checkRunId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

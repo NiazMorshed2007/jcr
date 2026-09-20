@@ -1,0 +1,248 @@
+[
+  {
+    "id": "Addtagsfromtimeentries",
+    "name": "Add tags from time entries",
+    "description": "Add tags from time entries Add a label to a time entry. POST /api/v2/team/{team_id}/time_entries/tags",
+    "context": "POST /api/v2/team/{team_id}/time_entries/tags\nAdd a label to a time entry.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "Changetagnamesfromtimeentries",
+    "name": "Change tag names from time entries",
+    "description": "Change tag names from time entries Rename an time entry label. PUT /api/v2/team/{team_id}/time_entries/tags",
+    "context": "PUT /api/v2/team/{team_id}/time_entries/tags\nRename an time entry label.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "Createatimeentry",
+    "name": "Create a time entry",
+    "description": "Create a time entry Create a time entry. POST /api/v2/team/{team_Id}/time_entries",
+    "context": "POST /api/v2/team/{team_Id}/time_entries\nCreate a time entry. \\ \\ ***Note:** A time entry that has a negative duration means that timer is currently running for that user.*\nRequired: team_Id (path) — Workspace ID; body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "CreateGoal",
+    "name": "Create Goal",
+    "description": "Create Goal Add a new Goal to a Workspace. POST /api/v2/team/{team_id}/goal",
+    "context": "POST /api/v2/team/{team_id}/goal\nAdd a new Goal to a Workspace.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "CreateSpace",
+    "name": "Create Space",
+    "description": "Create Space Add a new Space to a Workspace. POST /api/v2/team/{team_id}/space",
+    "context": "POST /api/v2/team/{team_id}/space\nAdd a new Space to a Workspace.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "CreateTeamView",
+    "name": "Create Workspace (Everything level) View",
+    "description": "Create Workspace (Everything level) View Add a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view at the Everything Level of a Workspace. POST /api/v2/team/{team_id}/view",
+    "context": "POST /api/v2/team/{team_id}/view\nAdd a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view at the Everything Level of a Workspace.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "CreateUserGroup",
+    "name": "Create Group",
+    "description": "Create Group This endpoint creates a [User Group](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups) within a Workspace.\\ \\ User Groups are used to organize and manage users within a Workspace.\\ \\ In the API documentation, `team_id` refers to the Workspace ID, and `group_id` refers to the Us…",
+    "context": "POST /api/v2/team/{team_id}/group\nThis endpoint creates a [User Group](https://docs.clickup.com/en/articles/4010016-teams-how-to-create-user-groups) within a Workspace.\\ \\ User Groups are used to organize and manage users within a Workspace.\\ \\ In the API documentation, `team_id` refers to the Workspace ID, and `group_id` refers to the User Group ID.\\ \\ **Note:** Adding a guest with view-only permissions to a Team automatically converts them to a paid guest.\\ \\ If no paid guest seats are available, an additional member seat will be added, increasing the number of paid guest seats.\\ \\ This change incurs a prorated charge based on the billing cycle.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "CreateWebhook",
+    "name": "Create Webhook",
+    "description": "Create Webhook Set up a webhook to monitor for events. POST /api/v2/team/{team_id}/webhook",
+    "context": "POST /api/v2/team/{team_id}/webhook\nSet up a webhook to monitor for events. We do not have a dedicated IP address for webhooks. We use our domain name and dynamic addressing.\nRequired: team_id (path) — Workspace ID; body (body) — You can subscribe to specific events, and one specific location per webhook. [Learn more](doc:webhooks)."
+  },
+  {
+    "id": "DeleteatimeEntry",
+    "name": "Delete a time Entry",
+    "description": "Delete a time Entry Delete a time entry from a Workspace. DELETE /api/v2/team/{team_id}/time_entries/{timer_id}",
+    "context": "DELETE /api/v2/team/{team_id}/time_entries/{timer_id}\nDelete a time entry from a Workspace.\nRequired: team_id (path) — Workspace ID; timer_id (path) — Array of timer ids to delete separated by commas; Content-Type (header)"
+  },
+  {
+    "id": "EditGuestOnWorkspace",
+    "name": "Edit Guest On Workspace",
+    "description": "Edit Guest On Workspace Configure options for a guest. PUT /api/v2/team/{team_id}/guest/{guest_id}",
+    "context": "PUT /api/v2/team/{team_id}/guest/{guest_id}\nConfigure options for a guest. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; guest_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "EditUserOnWorkspace",
+    "name": "Edit User On Workspace",
+    "description": "Edit User On Workspace Update a user's name and role. PUT /api/v2/team/{team_id}/user/{user_id}",
+    "context": "PUT /api/v2/team/{team_id}/user/{user_id}\nUpdate a user's name and role. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; user_id (path); body (body)"
+  },
+  {
+    "id": "Getalltagsfromtimeentries",
+    "name": "Get all tags from time entries",
+    "description": "Get all tags from time entries View all the labels that have been applied to time entries in a Workspace. GET /api/v2/team/{team_id}/time_entries/tags",
+    "context": "GET /api/v2/team/{team_id}/time_entries/tags\nView all the labels that have been applied to time entries in a Workspace.\nRequired: team_id (path) — Workspace ID; Content-Type (header)"
+  },
+  {
+    "id": "GetAuthorizedTeams",
+    "name": "Get Authorized Workspaces",
+    "description": "Get Authorized Workspaces View the Workspaces available to the authenticated user. GET /api/v2/team",
+    "context": "GET /api/v2/team\nView the Workspaces available to the authenticated user."
+  },
+  {
+    "id": "GetCustomItems",
+    "name": "Get Custom Task Types",
+    "description": "Get Custom Task Types View the custom task types available in a Workspace. GET /api/v2/team/{team_id}/custom_item",
+    "context": "GET /api/v2/team/{team_id}/custom_item\nView the custom task types available in a Workspace.\nRequired: team_id (path) — Workspace ID"
+  },
+  {
+    "id": "GetCustomRoles",
+    "name": "Get Custom Roles",
+    "description": "Get Custom Roles View the Custom Roles available in a Workspace. GET /api/v2/team/{team_id}/customroles",
+    "context": "GET /api/v2/team/{team_id}/customroles\nView the Custom Roles available in a Workspace.\nRequired: team_id (path) — Workspace ID\nOptional: include_members (query)"
+  },
+  {
+    "id": "GetFilteredTeamTasks",
+    "name": "Get Filtered Team Tasks",
+    "description": "Get Filtered Team Tasks View the tasks that meet specific criteria from a Workspace. GET /api/v2/team/{team_Id}/task",
+    "context": "GET /api/v2/team/{team_Id}/task\nView the tasks that meet specific criteria from a Workspace. Responses are limited to 100 tasks per page. \\ \\ You can only view task information of tasks you can access. \\ \\ Each task's `custom_fields` array only includes Custom Fields applicable to that task's `custom_item_id`.\\ \\ Our Try It modal currently supports filtering by two or more Lists, Folders, or Spaces. To filter by a single List, Folder, or Space, we recommend using a free app like [Postman](https://www.postman.com/) to test our public API.\nRequired: team_Id (path) — Workspace ID\nOptional: page (query) — Page to fetch (starts at 0).; order_by (query) — Order by a particular field. By default, tasks are ordered by `created`.\\ \\ Options include: `id`, `created`, `updated`, and `due_date`.; reverse (query) — Tasks are displayed in reverse order.; subtasks (query) — Include or exclude subtasks. By default, subtasks are excluded.; space_ids[] (query) — Filter by Spaces. For example: \\ \\ `?space_ids[]=1234&space_ids[]=6789`; project_ids[] (query) — Filter by Folders. For example: \\ \\ `?project_ids[]=1234&project_ids[]=6789`; list_ids[] (query) — Filter by Lists. For example: \\ \\ `?list_ids[]=1234&list_ids[]=6789`; statuses[] (query) — Filter by statuses. Use `%20` to represent a space character. To include closed tasks, use the `include_closed` parameter. \\ \\ For example: \\ \\ `?statuses[]=to%20do&statuses[]=in%20progress`; include_closed (query) — Include or excluse closed tasks. By default, they are excluded.\\ \\ To include closed tasks, use `include_closed: true`.; assignees[] (query) — Filter by Assignees using people's ClickUp user id. For example: \\ \\ `?assignees[]=1234&assignees[]=5678`; tags[] (query) — Filter by tags. User `%20` to represent a space character. For example: \\ \\ `?tags[]=tag1&tags[]=this%20tag`; due_date_gt (query) — Filter by due date greater than Unix time in milliseconds.; due_date_lt (query) — Filter by due date less than Unix time in milliseconds.; date_created_gt (query) — Filter by date created greater than Unix time in milliseconds.; date_created_lt (query) — Filter by date created less than Unix time in milliseconds.; date_updated_gt (query) — Filter by date updated greater than Unix time in milliseconds.; date_updated_lt (query) — Filter by date updated less than Unix time in milliseconds.; date_done_gt (query) — Filter by date done greater than Unix time in milliseconds.; date_done_lt (query) — Filter by date done less than Unix time in milliseconds.; custom_fields (query) — Include tasks with specific values in one or more Custom Fields. Custom Relationships are included.\\ \\ For example: `?custom_fields=[{\"field_id\":\"abcdefghi12345678\",\"operator\":\"=\",\"value\":\"1234\"}{\"field_id\":\"jklmnop123456\",\"operator\":\"<\",\"value\":\"5\"}]`\\ \\ Only set Custom Field values display in the `value` property of the `custom_fields` parameter. The `=` operator isn't supported with Label Custom Fields.\\ \\ Learn more about [filtering using Custom Fields.](doc:taskfilters); parent (query) — Include the parent task ID to return subtasks.; include_markdown_description (query) — To return task descriptions in Markdown format, use `?include_markdown_description=true`.; custom_items[] (query) — Filter by custom task types. For example: \\ \\ `?custom_items[]=0&custom_items[]=1300` \\ \\ Including `0` returns tasks. Including `1` returns Milestones. Including any other number returns the custom task type as defined in your Workspace."
+  },
+  {
+    "id": "GetFolderTemplates",
+    "name": "Get Folder Templates",
+    "description": "Get Folder Templates View the Folder templates available in a Workspace. GET /api/v2/team/{team_id}/folder_template",
+    "context": "GET /api/v2/team/{team_id}/folder_template\nView the Folder templates available in a Workspace. Use this endpoint to retrieve Folder template IDs for use with the [Create Folder From Template](#tag/Folders/operation/CreateFolderFromTemplate) endpoint. Template IDs are returned with a `t-` prefix (e.g., `t-7162342`). Pass the full ID including the prefix as the `template_id` path parameter when creating a Folder from a template.\nRequired: team_id (path) — Workspace ID; Content-Type (header)"
+  },
+  {
+    "id": "GetGoals",
+    "name": "Get Goals",
+    "description": "Get Goals View the Goals available in a Workspace. GET /api/v2/team/{team_id}/goal",
+    "context": "GET /api/v2/team/{team_id}/goal\nView the Goals available in a Workspace.\nRequired: team_id (path) — Workspace ID\nOptional: include_completed (query)"
+  },
+  {
+    "id": "GetGuest",
+    "name": "Get Guest",
+    "description": "Get Guest View information about a guest. GET /api/v2/team/{team_id}/guest/{guest_id}",
+    "context": "GET /api/v2/team/{team_id}/guest/{guest_id}\nView information about a guest. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; guest_id (path)"
+  },
+  {
+    "id": "GetListTemplates",
+    "name": "Get List Templates",
+    "description": "Get List Templates View the List templates available in a Workspace. GET /api/v2/team/{team_id}/list_template",
+    "context": "GET /api/v2/team/{team_id}/list_template\nView the List templates available in a Workspace. Use this endpoint to retrieve List template IDs for use with the [Create List From Template in Folder](#tag/Lists/operation/CreateFolderListFromTemplate) and [Create List From Template in Space](#tag/Lists/operation/CreateSpaceListFromTemplate) endpoints. Template IDs are returned with a `t-` prefix (e.g., `t-15363293`). Pass the full ID including the prefix as the `template_id` path parameter when creating a List from a template.\nRequired: team_id (path) — Workspace ID; Content-Type (header)"
+  },
+  {
+    "id": "Getrunningtimeentry",
+    "name": "Get running time entry",
+    "description": "Get running time entry View a time entry that's currently tracking time for the authenticated user. GET /api/v2/team/{team_id}/time_entries/current",
+    "context": "GET /api/v2/team/{team_id}/time_entries/current\nView a time entry that's currently tracking time for the authenticated user. \\ \\ ***Note:** A time entry that has a negative duration means that timer is currently running for that user.*\nRequired: team_id (path) — Workspace ID; Content-Type (header)\nOptional: assignee (query) — user id"
+  },
+  {
+    "id": "Getsingulartimeentry",
+    "name": "Get singular time entry",
+    "description": "Get singular time entry View a single time entry. GET /api/v2/team/{team_id}/time_entries/{timer_id}",
+    "context": "GET /api/v2/team/{team_id}/time_entries/{timer_id}\nView a single time entry. \\ \\ ***Note:** A time entry that has a negative duration means that timer is currently running for that user.*\nRequired: team_id (path) — Workspace ID; timer_id (path) — The ID of a time entry. \\ \\ This can be found using the [Get Time Entries Within a Date Range](ref:gettimeentrieswithinadaterange) endpoint.; Content-Type (header)\nOptional: include_task_tags (query) — Include task tags in the response for time entries associated with tasks.; include_location_names (query) — Include the names of the List, Folder, and Space along with `list_id`,`folder_id`, and `space_id`.; include_approval_history (query) — Include the history of the approval for the time entry.; include_approval_details (query) — Include the details of the approval for the time entry."
+  },
+  {
+    "id": "GetSpaces",
+    "name": "Get Spaces",
+    "description": "Get Spaces View the Spaces avialable in a Workspace. GET /api/v2/team/{team_id}/space",
+    "context": "GET /api/v2/team/{team_id}/space\nView the Spaces avialable in a Workspace. You can only get member info in private Spaces.\nRequired: team_id (path) — Workspace ID\nOptional: archived (query)"
+  },
+  {
+    "id": "GetTaskTemplates",
+    "name": "Get Task Templates",
+    "description": "Get Task Templates View the task templates available in a Workspace. GET /api/v2/team/{team_id}/taskTemplate",
+    "context": "GET /api/v2/team/{team_id}/taskTemplate\nView the task templates available in a Workspace.\nRequired: team_id (path) — Workspace ID; page (query); Content-Type (header)"
+  },
+  {
+    "id": "getTeamAvailableFields",
+    "name": "Get Workspace Custom Fields",
+    "description": "Get Workspace Custom Fields View the Custom Fields you have access to in a specific Workspace. GET /api/v2/team/{team_id}/field",
+    "context": "GET /api/v2/team/{team_id}/field\nView the Custom Fields you have access to in a specific Workspace. Get Workspace Custom Fields only returns Custom Fields created at the Workspace level. Custom Fields created at the Space, Folder, and List level are not included.\\ \\ Custom Fields scoped to specific custom task types include an `applied_objects` array on each field object. Each entry has `object_type` (`19` for custom task type) and `object_id` (the custom task type ID, matching `custom_item_id` on tasks). Use [Get Custom Task Types](ref:getcustomitems) to resolve IDs to names. Fields without task-type scoping omit `applied_objects`.\nRequired: team_id (path) — Workspace ID; Content-Type (header)\nOptional: include_applied_objects (query) — When `true`, includes `applied_objects` on task-type-scoped Custom Fields in the response."
+  },
+  {
+    "id": "GetTeamViews",
+    "name": "Get Workspace (Everything level) Views",
+    "description": "Get Workspace (Everything level) Views View the task and page views available at the Everything Level of a Workspace. GET /api/v2/team/{team_id}/view",
+    "context": "GET /api/v2/team/{team_id}/view\nView the task and page views available at the Everything Level of a Workspace.\nRequired: team_id (path) — Workspace ID"
+  },
+  {
+    "id": "Gettimeentrieswithinadaterange",
+    "name": "Get time entries within a date range",
+    "description": "Get time entries within a date range View time entries filtered by start and end date. GET /api/v2/team/{team_Id}/time_entries",
+    "context": "GET /api/v2/team/{team_Id}/time_entries\nView time entries filtered by start and end date. \\ \\ By default, this endpoint returns time entries from the last 30 days created by the authenticated user. \\ \\ To retrieve time entries for other users, you must include the `assignee` query parameter. \\ \\ Only one of the following location filters can be included at a time: `space_id`, `folder_id`, `list_id`, or `task_id`. \\ \\ ***Note:** A time entry that has a negative duration means that timer is currently running for that user.*\nRequired: team_Id (path) — Workspace ID; Content-Type (header)\nOptional: start_date (query) — Unix time in milliseconds; end_date (query) — Unix time in milliseconds; assignee (query) — Filter by `user_id`. For multiple assignees, separate `user_id` using commas.\\ \\ **Example:** `assignee=1234,9876`\\ \\ ***Note:** Only Workspace Owners/Admins have access to do this.*; include_task_tags (query) — Include task tags in the response for time entries associated with tasks.; include_location_names (query) — Include the names of the List, Folder, and Space along with the `list_id`,`folder_id`, and `space_id`.; include_approval_history (query) — Include the history of the approval for each time entry. Adds status changes, notes, and approvers.; include_approval_details (query) — Include the details of the approval for each time entry. Adds Approver ID, Approved Time, List of Approvers, and Approval Status.; space_id (query) — Only include time entries associated with tasks in a specific Space.; folder_id (query) — Only include time entries associated with tasks in a specific Folder.; list_id (query) — Only include time entries associated with tasks in a specific List.; task_id (query) — Only include time entries associated with a specific task.; custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`.; is_billable (query) — Include only billable time entries by using a value of `true` or only non-billable time entries by using a value of `false`.\\ \\ For example: `?is_billable=true`."
+  },
+  {
+    "id": "Gettimeentryhistory",
+    "name": "Get time entry history",
+    "description": "Get time entry history View a list of changes made to a time entry. GET /api/v2/team/{team_id}/time_entries/{timer_id}/history",
+    "context": "GET /api/v2/team/{team_id}/time_entries/{timer_id}/history\nView a list of changes made to a time entry.\nRequired: team_id (path) — Workspace ID; timer_id (path) — The ID of a time entry. \\ \\ This can be found using the [Get Time Entries Within a Date Range](ref:gettimeentrieswithinadaterange) endpoint.; Content-Type (header)"
+  },
+  {
+    "id": "GetUser",
+    "name": "Get User",
+    "description": "Get User View information about a user in a Workspace. GET /api/v2/team/{team_id}/user/{user_id}",
+    "context": "GET /api/v2/team/{team_id}/user/{user_id}\nView information about a user in a Workspace. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; user_id (path)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`."
+  },
+  {
+    "id": "GetWebhooks",
+    "name": "Get Webhooks",
+    "description": "Get Webhooks View the webhooks created via the API for a Workspace. GET /api/v2/team/{team_id}/webhook",
+    "context": "GET /api/v2/team/{team_id}/webhook\nView the webhooks created via the API for a Workspace. This endpoint returns webhooks created by the authenticated user.\nRequired: team_id (path) — Workspace ID"
+  },
+  {
+    "id": "GetWorkspaceplan",
+    "name": "Get Workspace Plan",
+    "description": "Get Workspace Plan View the current [Plan](https://clickup.com/pricing) for the specified Workspace. GET /api/v2/team/{team_id}/plan",
+    "context": "GET /api/v2/team/{team_id}/plan\nView the current [Plan](https://clickup.com/pricing) for the specified Workspace.\nRequired: team_id (path) — Workspace ID"
+  },
+  {
+    "id": "GetWorkspaceseats",
+    "name": "Get Workspace seats",
+    "description": "Get Workspace seats View the used, total, and available member and guest seats for a Workspace. GET /api/v2/team/{team_id}/seats",
+    "context": "GET /api/v2/team/{team_id}/seats\nView the used, total, and available member and guest seats for a Workspace.\nRequired: team_id (path) — Workspace ID"
+  },
+  {
+    "id": "InviteGuestToWorkspace",
+    "name": "Invite Guest To Workspace",
+    "description": "Invite Guest To Workspace Invite a guest to join a Workspace. POST /api/v2/team/{team_id}/guest",
+    "context": "POST /api/v2/team/{team_id}/guest\nInvite a guest to join a Workspace. To invite a member to your Workspace, use the [Invite User to Workspace](ref:inviteusertoworkspace) endpoint. \\ \\ You'll also need to grant the guest access to specific items using the following endpoints: [Add Guest to Folder](ref:addguesttofolder), [Add Guest to List](ref:addguesttolist), or [Add Guest to Task](ref:addguesttotask). \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "InviteUserToWorkspace",
+    "name": "Invite User To Workspace",
+    "description": "Invite User To Workspace Invite someone to join your Workspace as a member. POST /api/v2/team/{team_id}/user",
+    "context": "POST /api/v2/team/{team_id}/user\nInvite someone to join your Workspace as a member. To invite someone as a guest, use the [Invite Guest](ref:inviteguesttoworkspace) endpoint.\\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "RemoveGuestFromWorkspace",
+    "name": "Remove Guest From Workspace",
+    "description": "Remove Guest From Workspace Revoke a guest's access to a Workspace. DELETE /api/v2/team/{team_id}/guest/{guest_id}",
+    "context": "DELETE /api/v2/team/{team_id}/guest/{guest_id}\nRevoke a guest's access to a Workspace. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; guest_id (path)"
+  },
+  {
+    "id": "Removetagsfromtimeentries",
+    "name": "Remove tags from time entries",
+    "description": "Remove tags from time entries Remove labels from time entries. DELETE /api/v2/team/{team_id}/time_entries/tags",
+    "context": "DELETE /api/v2/team/{team_id}/time_entries/tags\nRemove labels from time entries. This does not remove the label from a Workspace.\nRequired: team_id (path) — Workspace ID; body (body)"
+  },
+  {
+    "id": "RemoveUserFromWorkspace",
+    "name": "Remove User From Workspace",
+    "description": "Remove User From Workspace Deactivate a user from a Workspace. DELETE /api/v2/team/{team_id}/user/{user_id}",
+    "context": "DELETE /api/v2/team/{team_id}/user/{user_id}\nDeactivate a user from a Workspace. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: team_id (path) — Workspace ID; user_id (path)"
+  },
+  {
+    "id": "SharedHierarchy",
+    "name": "Shared Hierarchy",
+    "description": "Shared Hierarchy View the tasks, Lists, and Folders that have been shared with the authenticated user. GET /api/v2/team/{team_id}/shared",
+    "context": "GET /api/v2/team/{team_id}/shared\nView the tasks, Lists, and Folders that have been shared with the authenticated user.\nRequired: team_id (path) — Workspace ID"
+  },
+  {
+    "id": "StartatimeEntry",
+    "name": "Start a time Entry",
+    "description": "Start a time Entry Start a timer for the authenticated user. POST /api/v2/team/{team_Id}/time_entries/start",
+    "context": "POST /api/v2/team/{team_Id}/time_entries/start\nStart a timer for the authenticated user.\nRequired: team_Id (path) — Workspace ID; body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`."
+  },
+  {
+    "id": "StopatimeEntry",
+    "name": "Stop a time Entry",
+    "description": "Stop a time Entry Stop a timer that's currently running for the authenticated user. POST /api/v2/team/{team_id}/time_entries/stop",
+    "context": "POST /api/v2/team/{team_id}/time_entries/stop\nStop a timer that's currently running for the authenticated user.\nRequired: team_id (path) — Workspace ID; Content-Type (header)"
+  },
+  {
+    "id": "UpdateatimeEntry",
+    "name": "Update a time Entry",
+    "description": "Update a time Entry Update the details of a time entry. PUT /api/v2/team/{team_id}/time_entries/{timer_id}",
+    "context": "PUT /api/v2/team/{team_id}/time_entries/{timer_id}\nUpdate the details of a time entry.\nRequired: team_id (path) — Workspace ID; timer_id (path); body (body)\nOptional: custom_task_ids (query) — If you want to reference a task by it's custom task id, this value must be `true`.; team_id (query) — When the `custom_task_ids` parameter is set to `true`, the Workspace ID must be provided using the `team_id` parameter. \\ For example: `custom_task_ids=true&team_id=123`"
+  }
+]

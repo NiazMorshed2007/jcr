@@ -1,0 +1,230 @@
+[
+  {
+    "id": "experiments_activity_retrieve",
+    "name": "Change history for this experiment",
+    "description": "Change history for this experiment Change history for this experiment. GET /api/projects/{project_id}/experiments/{id}/activity/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/activity/\nChange history for this experiment. Returns a paginated audit trail of changes to the experiment, its holdouts and shared metrics, and its linked feature flag: who made each change, what changed (field-level before/after values), and when. Ordered newest first.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of items per page; page (query) — Page number"
+  },
+  {
+    "id": "experiments_archive_create",
+    "name": "Archive an ended experiment",
+    "description": "Archive an ended experiment Archive an ended experiment. POST /api/projects/{project_id}/experiments/{id}/archive/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/archive/\nArchive an ended experiment. Hides the experiment from the default list view. The experiment can be restored at any time by updating archived=false. When the linked feature flag is still enabled, pass disable_feature_flag=true to also disable and archive it. Returns 400 if the experiment is already archived or has not ended yet.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "experiments_bulk_update_tags_create",
+    "name": "Bulk update tags on multiple objects",
+    "description": "Bulk update tags on multiple objects Bulk update tags on multiple objects. POST /api/projects/{project_id}/experiments/bulk_update_tags/",
+    "context": "POST /api/projects/{project_id}/experiments/bulk_update_tags/\nBulk update tags on multiple objects. PAT access: this action has no ``required_scopes=`` on the decorator — inheriting viewsets must add ``\"bulk_update_tags\"`` to their ``scope_object_write_actions`` list to accept personal API keys. Without that opt-in, ``APIScopePermission`` rejects PAT requests with \"This action does not support personal API key access\". Done per-viewset so granting `` :write`` for one resource doesn't leak access to sibling resources that share this mixin. Accepts: - {\"ids\": [...], \"action\": \"add\"|\"remove\"|\"set\", \"tags\": [\"tag1\", \"tag2\"]} Actions: - \"add\": Add tags to existing tags on each object - \"remove\": Remove specific tags from each object - \"set\": Replace all tags on each object with the provided list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_calculate_running_time_create",
+    "name": "Estimate the recommended sample size and running time for an experiment",
+    "description": "Estimate the recommended sample size and running time for an experiment Estimate the recommended sample size and running time for an experiment. POST /api/projects/{project_id}/experiments/calculate_running_time/",
+    "context": "POST /api/projects/{project_id}/experiments/calculate_running_time/\nEstimate the recommended sample size and running time for an experiment. Pure statistical calculation — does not read or write any experiment. Pass the metric type, a minimum detectable effect, and either a baseline value or raw baseline statistics. When `exposure_rate_per_day` is provided, the response also includes the estimated running time in days.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_copy_to_project_create",
+    "name": "Copy an experiment into another project in the same organization as a new draft.",
+    "description": "Copy an experiment into another project in the same organization as a new draft. POST /api/projects/{project_id}/experiments/{id}/copy_to_project/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/copy_to_project/\nCopy an experiment into another project in the same organization as a new draft.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_create",
+    "name": "Create a new experiment in draft status with optional metrics.",
+    "description": "Create a new experiment in draft status with optional metrics. POST /api/projects/{project_id}/experiments/",
+    "context": "POST /api/projects/{project_id}/experiments/\nCreate a new experiment in draft status with optional metrics.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_create_exposure_cohort_for_experiment_create",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. POST /api/projects/{project_id}/experiments/{id}/create_exposure_cohort_for_experiment/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/create_exposure_cohort_for_experiment/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_create_from_prompt_create",
+    "name": "Create an experiment that compares N versions of an LLM prompt using a metric template",
+    "description": "Create an experiment that compares N versions of an LLM prompt using a metric template Create an experiment that compares N versions of an LLM prompt using a metric template. POST /api/projects/{project_id}/experiments/create_from_prompt/",
+    "context": "POST /api/projects/{project_id}/experiments/create_from_prompt/\nCreate an experiment that compares N versions of an LLM prompt using a metric template. The user picks 2+ versions of an existing LLMPrompt and 1+ metric templates (cost / latency / eval_pass_rate). The endpoint builds the matching variants (control + test-N, each named after its prompt version) and attaches one metric per selected template, each scoped to the prompt's $ai_prompt_name. Resulting experiment is in draft state.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/experiments/{id}/",
+    "context": "DELETE /api/projects/{project_id}/experiments/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_duplicate_create",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. POST /api/projects/{project_id}/experiments/{id}/duplicate/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/duplicate/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_end_create",
+    "name": "End a running experiment without shipping a variant",
+    "description": "End a running experiment without shipping a variant End a running experiment without shipping a variant. POST /api/projects/{project_id}/experiments/{id}/end/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/end/\nEnd a running experiment without shipping a variant. Sets end_date to now and marks the experiment as stopped. The feature flag is NOT modified — users continue to see their assigned variants and exposure events ($feature_flag_called) continue to be recorded. However, only data up to end_date is included in experiment results. Use this when: - You want to freeze the results window without changing which variant users see. - A variant was already shipped manually via the feature flag UI and the experiment just needs to be marked complete. The end_date can be adjusted after ending via PATCH if it needs to be backdated (e.g. to match when the flag was actually paused). Other options: - Use ship_variant to end the experiment AND roll out a single variant to 100%% of users. - Use pause to deactivate the flag without ending the experiment (stops variant assignment but does not freeze results). Returns 400 if the experiment is not running.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "experiments_flag_cleanup_target_retrieve",
+    "name": "Repository a flag-cleanup pull request for this experiment would be opened in",
+    "description": "Repository a flag-cleanup pull request for this experiment would be opened in Repository a flag-cleanup pull request for this experiment would be opened in. GET /api/projects/{project_id}/experiments/{id}/flag_cleanup_target/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/flag_cleanup_target/\nRepository a flag-cleanup pull request for this experiment would be opened in. Resolution order: the experiment's saved repository, else the environment's default cleanup repository, else the team's only connected GitHub repository. When the team has several repositories and none is saved (source=ambiguous), pass one via `repository` on end/ship_variant.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_flag_cleanup_task_retrieve",
+    "name": "Status of the flag-cleanup Desktop task opened for this experiment",
+    "description": "Status of the flag-cleanup Desktop task opened for this experiment Status of the flag-cleanup Desktop task opened for this experiment. GET /api/projects/{project_id}/experiments/{id}/flag_cleanup_task/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/flag_cleanup_task/\nStatus of the flag-cleanup Desktop task opened for this experiment. When an experiment was ended or shipped with open_cleanup_pr=true, a Desktop task removes the experiment's feature-flag code and opens a draft pull request. This returns that task's latest run status and the PR URL once one is opened. Poll until is_terminal is true. Returns 404 when no cleanup task was opened.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_freeze_exposure_create",
+    "name": "Freeze exposure on a running experiment while metrics keep flowing",
+    "description": "Freeze exposure on a running experiment while metrics keep flowing Freeze exposure on a running experiment while metrics keep flowing. POST /api/projects/{project_id}/experiments/{id}/freeze_exposure/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/freeze_exposure/\nFreeze exposure on a running experiment while metrics keep flowing. Snapshots the already-exposed users into a static cohort and narrows the linked feature flag so only those users keep matching — new users can no longer enter the experiment. ``end_date`` is left null so long-term metrics (revenue/LTV/renewals/retention) keep accumulating. Enrolled users keep their assigned variant. The serialized status becomes 'exposure_frozen'. Returns 400 if the experiment is not running, exposure is already frozen, the experiment is group-aggregated (group flags cannot be frozen with a person cohort), or the exposed set is too large to snapshot synchronously.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_in_session_exposure_retrieve",
+    "name": "How the recordings tab's in-session exposure scope reads on this experiment",
+    "description": "How the recordings tab's in-session exposure scope reads on this experiment How the recordings tab's in-session exposure scope reads on this experiment. GET /api/projects/{project_id}/experiments/{id}/in_session_exposure/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/in_session_exposure/\nHow the recordings tab's in-session exposure scope reads on this experiment. Resolved through the same seam as the recordings query's `in_session` refusal, so the scope control disables exactly what a query would be refused for, and the copy can say when sessions are matched on the stamped flag property rather than on the exposure event. Postgres reads only, so it can serve the tab's mount path.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_launch_create",
+    "name": "Launch a draft experiment",
+    "description": "Launch a draft experiment Launch a draft experiment. POST /api/projects/{project_id}/experiments/{id}/launch/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/launch/\nLaunch a draft experiment. Validates the experiment is in draft state, activates its linked feature flag, sets start_date to the current server time, and transitions the experiment to running. Returns 400 if the experiment has already been launched or if the feature flag configuration is invalid (e.g. fewer than 2 variants).\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_list",
+    "name": "List experiments for the current project",
+    "description": "List experiments for the current project List experiments for the current project. GET /api/projects/{project_id}/experiments/",
+    "context": "GET /api/projects/{project_id}/experiments/\nList experiments for the current project. Supports filtering by status and archival state.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: archived (query) — Filter by archived state. Defaults to non-archived experiments only.; created_by_id (query) — Filter to experiments created by the given user(s). Accepts a single user ID, or a JSON-encoded / comma-separated list of user IDs to match any of them.; event (query) — Filter to experiments whose metrics reference this event name. Matches events used directly in metric queries as well as events behind any actions those metrics reference.; excluded_tags (query) — JSON-encoded list of tag names. Excludes experiments carrying any of the given tags, even when they also carry non-excluded tags.; feature_flag_id (query) — Filter to experiments linked to the given feature flag ID.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order (query) — Field to order by. Prefix with '-' for descending. Allowlisted fields include name, created_at, updated_at, start_date, end_date, duration, and status.; prompt_name (query) — Filter to experiments created from an LLM prompt with this name. Matches experiments whose parameters.prompt_metadata.name equals the given value.; search (query) — Free-text search applied to the experiment name (case-insensitive).; status (query) — Filter by experiment status. \"running\", \"paused\", and \"exposure_frozen\" are mutually exclusive: \"running\" returns launched experiments with an active feature flag, \"paused\" returns launched experiments whose feature flag is deactivated, and \"exposure_frozen\" returns launched experiments whose exposure was frozen to the already-enrolled cohort while metrics keep flowing. \"complete\" is an alias for \"stopped\". \"all\" disables status filtering.; tags (query) — JSON-encoded list of tag names. Returns experiments carrying at least one of the given tags, e.g. `[\"growth\", \"checkout\"]`."
+  },
+  {
+    "id": "experiments_matching_ids_retrieve",
+    "name": "Get IDs of all experiments matching the current list filters",
+    "description": "Get IDs of all experiments matching the current list filters Get IDs of all experiments matching the current list filters. GET /api/projects/{project_id}/experiments/matching_ids/",
+    "context": "GET /api/projects/{project_id}/experiments/matching_ids/\nGet IDs of all experiments matching the current list filters. Accepts the same query params as the list endpoint and returns only IDs of experiments the user has permission to edit.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: archived (query) — Filter by archived state. Defaults to non-archived experiments only.; created_by_id (query) — Filter to experiments created by the given user(s). Accepts a single user ID, or a JSON-encoded / comma-separated list of user IDs to match any of them.; event (query) — Filter to experiments whose metrics reference this event name. Matches events used directly in metric queries as well as events behind any actions those metrics reference.; excluded_tags (query) — JSON-encoded list of tag names. Excludes experiments carrying any of the given tags, even when they also carry non-excluded tags.; feature_flag_id (query) — Filter to experiments linked to the given feature flag ID.; order (query) — Field to order by. Prefix with '-' for descending. Allowlisted fields include name, created_at, updated_at, start_date, end_date, duration, and status.; prompt_name (query) — Filter to experiments created from an LLM prompt with this name. Matches experiments whose parameters.prompt_metadata.name equals the given value.; search (query) — Free-text search applied to the experiment name (case-insensitive).; status (query) — Filter by experiment status. \"running\", \"paused\", and \"exposure_frozen\" are mutually exclusive: \"running\" returns launched experiments with an active feature flag, \"paused\" returns launched experiments whose feature flag is deactivated, and \"exposure_frozen\" returns launched experiments whose exposure was frozen to the already-enrolled cohort while metrics keep flowing. \"complete\" is an alias for \"stopped\". \"all\" disables status filtering.; tags (query) — JSON-encoded list of tag names. Returns experiments carrying at least one of the given tags, e.g. `[\"growth\", \"checkout\"]`."
+  },
+  {
+    "id": "experiments_metrics_recalculation_create",
+    "name": "Trigger a batch recalculation of all metrics for this experiment",
+    "description": "Trigger a batch recalculation of all metrics for this experiment Trigger a batch recalculation of all metrics for this experiment. POST /api/projects/{project_id}/experiments/{id}/metrics_recalculation/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/metrics_recalculation/\nTrigger a batch recalculation of all metrics for this experiment. Returns 201 with the new pending recalculation, or 200 with the active one if a recalculation is already pending or in progress for this experiment. The response payload intentionally does not include the `results` array — at POST time the workflow has just been queued and no per-metric results exist yet. Clients should poll `GET metrics_recalculation/{id}/` for results as the workflow progresses.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "experiments_metrics_recalculation_latest_retrieve",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. GET /api/projects/{project_id}/experiments/{id}/metrics_recalculation/latest/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/metrics_recalculation/latest/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_metrics_recalculation_retrieve",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. GET /api/projects/{project_id}/experiments/{id}/metrics_recalculation/{recalculation_id}/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/metrics_recalculation/{recalculation_id}/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; recalculation_id (path) — UUID of the recalculation run to fetch. This is the run's own id, not the experiment id."
+  },
+  {
+    "id": "experiments_partial_update",
+    "name": "Update an experiment",
+    "description": "Update an experiment Update an experiment. PATCH /api/projects/{project_id}/experiments/{id}/",
+    "context": "PATCH /api/projects/{project_id}/experiments/{id}/\nUpdate an experiment. Use this to modify experiment properties such as name, description, metrics, variants, and configuration. Metrics can be added, changed and removed at any time. Feature-flag config (variants, rollout, payloads) is sent via the feature_flag object.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "experiments_pause_create",
+    "name": "Pause a running experiment",
+    "description": "Pause a running experiment Pause a running experiment. POST /api/projects/{project_id}/experiments/{id}/pause/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/pause/\nPause a running experiment. Deactivates the linked feature flag so it is no longer returned by the /decide endpoint. Users fall back to the application default (typically the control experience), and no new exposure events are recorded (i.e. $feature_flag_called is not fired). Returns 400 if the experiment is not running or is already paused.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_prompt_templates_retrieve",
+    "name": "List the LLM metric templates that can be passed to `create_from_prompt`.",
+    "description": "List the LLM metric templates that can be passed to `create_from_prompt`. GET /api/projects/{project_id}/experiments/prompt_templates/",
+    "context": "GET /api/projects/{project_id}/experiments/prompt_templates/\nList the LLM metric templates that can be passed to `create_from_prompt`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_recalculate_timeseries_create",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. POST /api/projects/{project_id}/experiments/{id}/recalculate_timeseries/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/recalculate_timeseries/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_reset_create",
+    "name": "Reset an experiment back to draft state",
+    "description": "Reset an experiment back to draft state Reset an experiment back to draft state. POST /api/projects/{project_id}/experiments/{id}/reset/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/reset/\nReset an experiment back to draft state. Clears start/end dates, conclusion, archived flag, and any flag-cleanup task pointer. The feature flag is left unchanged — users continue to see their assigned variants. Previously collected events still exist but won't be included in results unless the start date is manually adjusted after re-launch. Returns 400 if the experiment is already in draft state.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_resume_create",
+    "name": "Resume a paused experiment",
+    "description": "Resume a paused experiment Resume a paused experiment. POST /api/projects/{project_id}/experiments/{id}/resume/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/resume/\nResume a paused experiment. Reactivates the linked feature flag so it is returned by /decide again. Users are re-bucketed deterministically into the same variants they had before the pause, and exposure tracking resumes. Returns 400 if the experiment is not running or is not paused.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_retrieve",
+    "name": "Retrieve a single experiment by ID, including its current status, metrics, feature flag, and results metadata.",
+    "description": "Retrieve a single experiment by ID, including its current status, metrics, feature flag, and results metadata. GET /api/projects/{project_id}/experiments/{id}/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/\nRetrieve a single experiment by ID, including its current status, metrics, feature flag, and results metadata.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_session_buckets_create",
+    "name": "Session recordings of this experiment matching a bucket",
+    "description": "Session recordings of this experiment matching a bucket Session recordings of this experiment matching a bucket. POST /api/projects/{project_id}/experiments/{id}/session_buckets/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/session_buckets/\nSession recordings of this experiment matching a bucket. Answers the questions a recordings query can't express on its own — \"fired any of these metrics\", \"fired none of them\", \"was exposed but never completed the funnel in this session\" — by returning a bounded, most-recent-first list of session IDs to pass back as a recordings query's session_ids. POST because the metric list doesn't fit a query string; the endpoint only reads. Session-scoped and goal-free: the set describes what happened in each session, while the experiment analysis counts per person over the whole run window. A session can be in the drop-off bucket while the same person converts in a later one.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_session_context_retrieve",
+    "name": "Resolve which experiments (and variants) a session recording saw",
+    "description": "Resolve which experiments (and variants) a session recording saw Resolve which experiments (and variants) a session recording saw. GET /api/projects/{project_id}/experiments/session_context/",
+    "context": "GET /api/projects/{project_id}/experiments/session_context/\nResolve which experiments (and variants) a session recording saw. Variants come from the session's $feature_flag_called events and stamped $feature/ event properties — flag evaluation, which may differ from an experiment's exposure criteria.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; session_id (query) — ID of the session recording to resolve experiment context for."
+  },
+  {
+    "id": "experiments_session_contexts_create",
+    "name": "Resolve experiment context for a batch of session recordings",
+    "description": "Resolve experiment context for a batch of session recordings Resolve experiment context for a batch of session recordings. POST /api/projects/{project_id}/experiments/session_contexts/",
+    "context": "POST /api/projects/{project_id}/experiments/session_contexts/\nResolve experiment context for a batch of session recordings. Batch variant of `session_context`, used to prefetch the replay player's experiments box for a whole recordings list in one request. POST because the id list doesn't fit a query string; the endpoint only reads. Already-computed sessions are served from (and cold ones written to) the same short-lived per-viewer cache the single-session endpoint uses, so opening any prefetched recording renders its context instantly. Sessions whose recording metadata doesn't exist yet are omitted from the response, as are recordings the caller can't access and sessions beyond the batch's recording-day budget (each distinct recording day costs its own set of ClickHouse scans, so only the most recent days are computed per request).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_session_event_deltas_create",
+    "name": "The recordings worth watching for this experiment, grouped into cards",
+    "description": "The recordings worth watching for this experiment, grouped into cards The recordings worth watching for this experiment, grouped into cards. POST /api/projects/{project_id}/experiments/{id}/session_event_deltas/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/session_event_deltas/\nThe recordings worth watching for this experiment, grouped into cards. Each card is one sentence and the recordings that back it: an event one variant did clearly more than the others, an error signal concentrated in one variant, or a shortcut to a metric event happening on screen. Every card's count is a count of recordings that actually exist, so handing its session ids to the recordings list can't come back empty. POST to take the same throttle and cache posture as the other reads in this family rather than because it carries a body: it takes no parameters, and it only reads. It reports no effect size. Cards carry a direction and a band rather than a rate, a ratio or a person count: the experiment's results already state magnitudes, computed per person over the whole run window, and this reads one session per person over a clamped one. Two numbers for the same event would read as a contradiction, so this surface states none. That is what lets a card sit on one of the experiment's own metric events, which it names, so a reader is sent to the results rather than given a second answer.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_ship_variant_create",
+    "name": "Ship a variant and (optionally) end the experiment",
+    "description": "Ship a variant and (optionally) end the experiment Ship a variant and (optionally) end the experiment. POST /api/projects/{project_id}/experiments/{id}/ship_variant/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/ship_variant/\nShip a variant and (optionally) end the experiment. Updates the feature flag so the selected variant gets 100% of the variant distribution. By default, existing release conditions on the flag are preserved untouched — the variant is served only to users who already match them. Pass ``release_to_everyone: true`` to also prepend a catch-all release condition that rolls the variant out to 100% of users (overrides any existing release conditions on the flag). Can be called on both running and stopped experiments. If the experiment is still running, it will also be ended (end_date set and status marked as stopped). If the experiment has already ended, only the flag is rewritten - this supports the \"end first, ship later\" workflow. If an approval policy requires review before changes on the flag take effect, the API returns 409 with a change_request_id. The experiment is NOT ended until the change request is approved and the user retries. Returns 400 if the experiment is in draft state, the variant_key is not found on the flag, or the experiment has no linked feature flag.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiments_stats_retrieve",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. GET /api/projects/{project_id}/experiments/stats/",
+    "context": "GET /api/projects/{project_id}/experiments/stats/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_timeseries_results_retrieve",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. GET /api/projects/{project_id}/experiments/{id}/timeseries_results/",
+    "context": "GET /api/projects/{project_id}/experiments/{id}/timeseries_results/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: fingerprint (query) — Fingerprint of the metric configuration. Available alongside metric_uuid on each metric in the experiment's metrics array.; id (path) — A unique integer value identifying this experiment.; metric_uuid (query) — UUID of the metric to fetch timeseries for. Available on each metric in the experiment's metrics array.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_unarchive_create",
+    "name": "Unarchive an archived experiment",
+    "description": "Unarchive an archived experiment Unarchive an archived experiment. POST /api/projects/{project_id}/experiments/{id}/unarchive/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/unarchive/\nUnarchive an archived experiment. Restores the experiment to the default list view. Returns 400 if the experiment is not currently archived.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_unfreeze_exposure_create",
+    "name": "Reopen enrollment on an exposure-frozen experiment",
+    "description": "Reopen enrollment on an exposure-frozen experiment Reopen enrollment on an exposure-frozen experiment. POST /api/projects/{project_id}/experiments/{id}/unfreeze_exposure/",
+    "context": "POST /api/projects/{project_id}/experiments/{id}/unfreeze_exposure/\nReopen enrollment on an exposure-frozen experiment. Removes the snapshot-cohort condition and freeze markers from every release group, restoring the flag's original targeting: new users can enroll again and already-enrolled users keep their assigned variant. The snapshot cohort is soft-deleted. The serialized status returns to 'running'. Returns 400 if the experiment is not running or its exposure is not frozen.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiments_update",
+    "name": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers",
+    "description": "Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers Mixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. PUT /api/projects/{project_id}/experiments/{id}/",
+    "context": "PUT /api/projects/{project_id}/experiments/{id}/\nMixin for ViewSets to handle approval-gate exceptions raised from decorated serializers. Intercepts ApprovalRequired (409) and PolicyConflict (400) raised by the @approval_gate decorator on serializer methods and converts them into the same responses the viewset path produces (see decorators._result_to_response), so both paths share one contract.\nRequired: id (path) — A unique integer value identifying this experiment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

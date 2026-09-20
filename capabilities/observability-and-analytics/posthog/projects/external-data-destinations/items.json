@@ -1,0 +1,38 @@
+[
+  {
+    "id": "external_data_destinations_create",
+    "name": "Manage where warehouse sources write their synced rows",
+    "description": "Manage where warehouse sources write their synced rows Manage where warehouse sources write their synced rows. POST /api/projects/{project_id}/external_data_destinations/",
+    "context": "POST /api/projects/{project_id}/external_data_destinations/\nManage where warehouse sources write their synced rows. A destination can be attached to several sources, or to a single table on a source. Credentials come from an integration, so one connection can be reused across syncs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_destinations_destroy",
+    "name": "Soft-delete, and detach it from everything that syncs to it",
+    "description": "Soft-delete, and detach it from everything that syncs to it Soft-delete, and detach it from everything that syncs to it. DELETE /api/projects/{project_id}/external_data_destinations/{id}/",
+    "context": "DELETE /api/projects/{project_id}/external_data_destinations/{id}/\nSoft-delete, and detach it from everything that syncs to it. Runs already in flight keep their own snapshot of the destination, so deleting one never strands a run part-way through. The next run of each affected table resolves without it.\nRequired: id (path) — A UUID string identifying this external data destination.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_destinations_list",
+    "name": "Manage where warehouse sources write their synced rows",
+    "description": "Manage where warehouse sources write their synced rows Manage where warehouse sources write their synced rows. GET /api/projects/{project_id}/external_data_destinations/",
+    "context": "GET /api/projects/{project_id}/external_data_destinations/\nManage where warehouse sources write their synced rows. A destination can be attached to several sources, or to a single table on a source. Credentials come from an integration, so one connection can be reused across syncs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "external_data_destinations_partial_update",
+    "name": "Manage where warehouse sources write their synced rows",
+    "description": "Manage where warehouse sources write their synced rows Manage where warehouse sources write their synced rows. PATCH /api/projects/{project_id}/external_data_destinations/{id}/",
+    "context": "PATCH /api/projects/{project_id}/external_data_destinations/{id}/\nManage where warehouse sources write their synced rows. A destination can be attached to several sources, or to a single table on a source. Credentials come from an integration, so one connection can be reused across syncs.\nRequired: id (path) — A UUID string identifying this external data destination.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_destinations_retrieve",
+    "name": "Manage where warehouse sources write their synced rows",
+    "description": "Manage where warehouse sources write their synced rows Manage where warehouse sources write their synced rows. GET /api/projects/{project_id}/external_data_destinations/{id}/",
+    "context": "GET /api/projects/{project_id}/external_data_destinations/{id}/\nManage where warehouse sources write their synced rows. A destination can be attached to several sources, or to a single table on a source. Credentials come from an integration, so one connection can be reused across syncs.\nRequired: id (path) — A UUID string identifying this external data destination.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_destinations_update",
+    "name": "Manage where warehouse sources write their synced rows",
+    "description": "Manage where warehouse sources write their synced rows Manage where warehouse sources write their synced rows. PUT /api/projects/{project_id}/external_data_destinations/{id}/",
+    "context": "PUT /api/projects/{project_id}/external_data_destinations/{id}/\nManage where warehouse sources write their synced rows. A destination can be attached to several sources, or to a single table on a source. Credentials come from an integration, so one connection can be reused across syncs.\nRequired: id (path) — A UUID string identifying this external data destination.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

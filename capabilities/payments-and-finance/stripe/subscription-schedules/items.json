@@ -1,0 +1,38 @@
+[
+  {
+    "id": "GetSubscriptionSchedules",
+    "name": "List all schedules",
+    "description": "List all schedules Retrieves the list of your subscription schedules. GET /v1/subscription_schedules",
+    "context": "GET /v1/subscription_schedules\nRetrieves the list of your subscription schedules.\nOptional: canceled_at (query) — Only return subscription schedules that were created canceled the given date interval.; completed_at (query) — Only return subscription schedules that completed during the given date interval.; created (query) — Only return subscription schedules that were created during the given date interval.; customer (query) — Only return subscription schedules for the given customer. The response will not include subscription schedules for customers with a test clock attached if this parameter is not set.; customer_account (query) — Only return subscription schedules for the given account.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; released_at (query) — Only return subscription schedules that were released during the given date interval.; scheduled (query) — Only return subscription schedules that have not started yet.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetSubscriptionSchedulesSchedule",
+    "name": "Retrieve a schedule",
+    "description": "Retrieve a schedule Retrieves the details of an existing subscription schedule. GET /v1/subscription_schedules/{schedule}",
+    "context": "GET /v1/subscription_schedules/{schedule}\nRetrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.\nRequired: schedule (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostSubscriptionSchedules",
+    "name": "Create a schedule",
+    "description": "Create a schedule Creates a new subscription schedule object. POST /v1/subscription_schedules",
+    "context": "POST /v1/subscription_schedules\nCreates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.\nOptional: body (body)"
+  },
+  {
+    "id": "PostSubscriptionSchedulesSchedule",
+    "name": "Update a schedule",
+    "description": "Update a schedule Updates an existing subscription schedule. POST /v1/subscription_schedules/{schedule}",
+    "context": "POST /v1/subscription_schedules/{schedule}\nUpdates an existing subscription schedule.\nRequired: schedule (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostSubscriptionSchedulesScheduleCancel",
+    "name": "Cancel a schedule",
+    "description": "Cancel a schedule Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). POST /v1/subscription_schedules/{schedule}/cancel",
+    "context": "POST /v1/subscription_schedules/{schedule}/cancel\nCancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is not_started or active .\nRequired: schedule (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostSubscriptionSchedulesScheduleRelease",
+    "name": "Release a schedule",
+    "description": "Release a schedule Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. POST /v1/subscription_schedules/{schedule}/release",
+    "context": "POST /v1/subscription_schedules/{schedule}/release\nReleases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is not_started or active . If the subscription schedule is currently associated with a subscription, releasing it will remove its subscription property and set the subscription’s ID to the released_subscription property.\nRequired: schedule (path)\nOptional: body (body)"
+  }
+]

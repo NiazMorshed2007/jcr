@@ -1,0 +1,26 @@
+[
+  {
+    "id": "Create or update an External Issue",
+    "name": "Create or update an external issue from an integration platform integration.",
+    "description": "Create or update an external issue from an integration platform integration. POST /api/0/sentry-app-installations/{uuid}/external-issues/",
+    "context": "POST /api/0/sentry-app-installations/{uuid}/external-issues/\nCreate or update an external issue from an integration platform integration.\nRequired: uuid (path) — The uuid of the integration platform integration.; body (body)"
+  },
+  {
+    "id": "Delete an External Issue",
+    "name": "Delete an external issue.",
+    "description": "Delete an external issue. DELETE /api/0/sentry-app-installations/{uuid}/external-issues/{external_issue_id}/",
+    "context": "DELETE /api/0/sentry-app-installations/{uuid}/external-issues/{external_issue_id}/\nDelete an external issue.\nRequired: uuid (path) — The uuid of the integration platform integration.; external_issue_id (path) — The ID of the external issue."
+  },
+  {
+    "id": "executeSentryAppInstallationExternalIssueAction",
+    "name": "Create or Link an External Issue Through a Sentry App",
+    "description": "Create or Link an External Issue Through a Sentry App **Experimental:** This API is under active development and may change. POST /api/0/sentry-app-installations/{uuid}/external-issue-actions/",
+    "context": "POST /api/0/sentry-app-installations/{uuid}/external-issue-actions/\n**Experimental:** This API is under active development and may change. Invoke the installed app's issue-link callback and store the returned association. Submit the app-specific form fields alongside `groupId`, `action`, and `uri`.\nRequired: uuid (path) — The UUID of the Sentry App installation.; body (body)"
+  },
+  {
+    "id": "getSentryAppInstallationExternalRequestOptions",
+    "name": "Retrieve a Sentry App's Select Field Options",
+    "description": "Retrieve a Sentry App's Select Field Options **Experimental:** This API is under active development and may change. GET /api/0/sentry-app-installations/{uuid}/external-requests/",
+    "context": "GET /api/0/sentry-app-installations/{uuid}/external-requests/\n**Experimental:** This API is under active development and may change. Request select options from the installed app. Each choice contains its value followed by its label.\nRequired: uuid (path) — The UUID of the Sentry App installation.; uri (query) — The relative URI of the select field's options callback.\nOptional: projectId (query) — The Sentry project ID to include in the options request.; query (query) — The search text for select options.; dependentData (query) — A JSON-encoded object containing the values of fields this select depends on."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "claimDomainOwnership",
+    "name": "Claim Domain Ownership",
+    "description": "Claim Domain Ownership Claim ownership of a domain for the authenticated team by verifying a TXT record. POST /v9/domains/{domain}/claim",
+    "context": "POST /v9/domains/{domain}/claim\nClaim ownership of a domain for the authenticated team by verifying a TXT record. The caller must first add a TXT record to `_vercel.{domain}` (obtained from GET /domains/:domain/verification), then call this endpoint to complete the ownership transfer. If the TXT record is verified, the domain ownership will be transferred to the caller's team, even if the domain is currently owned by another user or team.\nRequired: domain (path) — The domain name to claim ownership of\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createOrTransferDomain",
+    "name": "Add an existing domain to the Vercel platform",
+    "description": "Add an existing domain to the Vercel platform This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. POST /v7/domains",
+    "context": "POST /v7/domains\nThis endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note: This endpoint is no longer used for initiating domain transfers from external registrars to Vercel. For this, please use the endpoint [Transfer-in a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/transfer-in-a-domain).\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createRecord",
+    "name": "Create a DNS record",
+    "description": "Create a DNS record Creates a DNS record for a domain. POST /v2/domains/{domain}/records",
+    "context": "POST /v2/domains/{domain}/records\nCreates a DNS record for a domain.\nRequired: domain (path) — The domain used to create the DNS record.; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteDomain",
+    "name": "Remove a domain by name",
+    "description": "Remove a domain by name Delete a previously registered domain name from Vercel. DELETE /v6/domains/{domain}",
+    "context": "DELETE /v6/domains/{domain}\nDelete a previously registered domain name from Vercel. Deleting a domain will automatically remove any associated aliases.\nRequired: domain (path) — The name of the domain.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDomain",
+    "name": "Get Information for a Single Domain",
+    "description": "Get Information for a Single Domain Get information for a single domain in an account or team. GET /v5/domains/{domain}",
+    "context": "GET /v5/domains/{domain}\nGet information for a single domain in an account or team.\nRequired: domain (path) — The name of the domain.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDomainConfig",
+    "name": "Get a Domain's configuration",
+    "description": "Get a Domain's configuration Get a Domain's configuration. GET /v6/domains/{domain}/config",
+    "context": "GET /v6/domains/{domain}/config\nGet a Domain's configuration.\nRequired: domain (path) — The name of the domain.\nOptional: projectIdOrName (query) — The project id or name that will be associated with the domain. Use this when the domain is not yet associated with a project.; strict (query) — When true, the response will only include the nameservers assigned directly to the specified domain. When false and there are no nameservers assigned directly to the specified domain, the response will include the nameservers of the domain's parent zone.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDomainProjectDomains",
+    "name": "List Project Domains by Apex Domain",
+    "description": "List Project Domains by Apex Domain List all project domains associated with an apex domain owned by the authenticated account. GET /v1/domains/{domain}/project-domains",
+    "context": "GET /v1/domains/{domain}/project-domains\nList all project domains associated with an apex domain owned by the authenticated account.\nRequired: domain (path) — The apex domain name.\nOptional: limit (query) — Maximum number of project domains to list from a request.; since (query) — Get project domains created after this JavaScript timestamp.; until (query) — Get project domains created before this JavaScript timestamp.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDomains",
+    "name": "List all the domains",
+    "description": "List all the domains Retrieves a list of domains registered for the authenticated user or team. GET /v5/domains",
+    "context": "GET /v5/domains\nRetrieves a list of domains registered for the authenticated user or team. By default it returns the last 20 domains if no limit is provided.\nOptional: limit (query) — Maximum number of domains to list from a request.; since (query) — Get domains created after this JavaScript timestamp.; until (query) — Get domains created before this JavaScript timestamp.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getDomainsRecordsByRecordId",
+    "name": "getDomainsRecordsByRecordId",
+    "description": "getDomainsRecordsByRecordId GET /domains/records/{recordId}",
+    "context": "GET /domains/records/{recordId}\ngetDomainsRecordsByRecordId\nRequired: recordId (path) — The unique ID of the DNS record"
+  },
+  {
+    "id": "getDomainVerificationRecord",
+    "name": "Get Domain Verification Record",
+    "description": "Get Domain Verification Record Get the TXT verification record needed to claim ownership of a domain for the authenticated team. GET /v9/domains/{domain}/verification",
+    "context": "GET /v9/domains/{domain}/verification\nGet the TXT verification record needed to claim ownership of a domain for the authenticated team. The caller must add this TXT record to `_vercel.{domain}` in their DNS configuration, then call POST /domains/:domain/claim to complete the ownership transfer.\nRequired: domain (path) — The domain name to get the verification record for\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRecords",
+    "name": "List existing DNS records",
+    "description": "List existing DNS records Retrieves a list of DNS records created for a domain name. GET /v5/domains/{domain}/records",
+    "context": "GET /v5/domains/{domain}/records\nRetrieves a list of DNS records created for a domain name. By default it returns 20 records if no limit is provided. The rest can be retrieved using the pagination options.\nRequired: domain (path)\nOptional: limit (query) — Maximum number of records to list from a request.; since (query) — Get records created after this JavaScript timestamp.; until (query) — Get records created before this JavaScript timestamp.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "patchDomain",
+    "name": "Update or move apex domain",
+    "description": "Update or move apex domain Update or move apex domain. PATCH /v3/domains/{domain}",
+    "context": "PATCH /v3/domains/{domain}\nUpdate or move apex domain. Note: This endpoint is no longer used for updating auto-renew or nameservers. For this, please use the endpoints [Update auto-renew for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-auto-renew-for-a-domain) and [Update nameservers for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/update-nameservers-for-a-domain).\nRequired: domain (path); body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "removeRecord",
+    "name": "Delete a DNS record",
+    "description": "Delete a DNS record Removes an existing DNS record from a domain name. DELETE /v2/domains/{domain}/records/{recordId}",
+    "context": "DELETE /v2/domains/{domain}/records/{recordId}\nRemoves an existing DNS record from a domain name.\nRequired: domain (path); recordId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "replaceDomainsByDomainRecords",
+    "name": "replaceDomainsByDomainRecords",
+    "description": "replaceDomainsByDomainRecords PUT /domains/{domain}/records",
+    "context": "PUT /domains/{domain}/records\nreplaceDomainsByDomainRecords\nRequired: domain (path) — The domain name"
+  },
+  {
+    "id": "updateRecord",
+    "name": "Update an existing DNS record",
+    "description": "Update an existing DNS record Updates an existing DNS record for a domain name. PATCH /v1/domains/records/{recordId}",
+    "context": "PATCH /v1/domains/records/{recordId}\nUpdates an existing DNS record for a domain name.\nRequired: recordId (path) — The id of the DNS record; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

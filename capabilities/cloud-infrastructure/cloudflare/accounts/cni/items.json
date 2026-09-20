@@ -1,0 +1,98 @@
+[
+  {
+    "id": "create_cni",
+    "name": "Create a new CNI object",
+    "description": "Create a new CNI object Creates a new Cloud Network Interconnect (CNI) for private network connectivity between Cloudflare and your infrastructure. POST /client/v4/accounts/{account_id}/cni/cnis",
+    "context": "POST /client/v4/accounts/{account_id}/cni/cnis\nCreates a new Cloud Network Interconnect (CNI) for private network connectivity between Cloudflare and your infrastructure. CNIs enable dedicated, high-performance network links.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "create_interconnect",
+    "name": "Create a new interconnect",
+    "description": "Create a new interconnect Creates a new network interconnect for connecting Cloudflare's network to external networks. POST /client/v4/accounts/{account_id}/cni/interconnects",
+    "context": "POST /client/v4/accounts/{account_id}/cni/interconnects\nCreates a new network interconnect for connecting Cloudflare's network to external networks. Interconnects provide dedicated bandwidth and reduced latency for traffic exchange.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "delete_cni",
+    "name": "Delete a specified CNI object",
+    "description": "Delete a specified CNI object Permanently removes a Cloud Network Interconnect (CNI) configuration. DELETE /client/v4/accounts/{account_id}/cni/cnis/{cni}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cni/cnis/{cni}\nPermanently removes a Cloud Network Interconnect (CNI) configuration. The private network connection will be terminated.\nRequired: cni (path) — CNI ID to retrieve information about; account_id (path)"
+  },
+  {
+    "id": "delete_interconnect",
+    "name": "Delete an interconnect object",
+    "description": "Delete an interconnect object Permanently removes a network interconnect configuration. DELETE /client/v4/accounts/{account_id}/cni/interconnects/{icon}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cni/interconnects/{icon}\nPermanently removes a network interconnect configuration. The physical or virtual connection will be terminated.\nRequired: icon (path) — Interconnect name to retrieve information about; account_id (path)"
+  },
+  {
+    "id": "get_cni",
+    "name": "Get information about a CNI object",
+    "description": "Get information about a CNI object Retrieves configuration details for a specific Cloud Network Interconnect (CNI), including connection status and parameters. GET /client/v4/accounts/{account_id}/cni/cnis/{cni}",
+    "context": "GET /client/v4/accounts/{account_id}/cni/cnis/{cni}\nRetrieves configuration details for a specific Cloud Network Interconnect (CNI), including connection status and parameters.\nRequired: cni (path) — CNI ID to retrieve information about; account_id (path)"
+  },
+  {
+    "id": "get_interconnect",
+    "name": "Get information about an interconnect object",
+    "description": "Get information about an interconnect object Retrieves configuration and status details for a specific network interconnect. GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}",
+    "context": "GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}\nRetrieves configuration and status details for a specific network interconnect.\nRequired: icon (path) — Interconnect name to retrieve information about; account_id (path)"
+  },
+  {
+    "id": "get_interconnect_loa",
+    "name": "Generate the Letter of Authorization (LOA) for a given interconnect",
+    "description": "Generate the Letter of Authorization (LOA) for a given interconnect Downloads the Letter of Authorization (LOA) for a network interconnect, required for physical cross-connect provisioning. GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}/loa",
+    "context": "GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}/loa\nDownloads the Letter of Authorization (LOA) for a network interconnect, required for physical cross-connect provisioning.\nRequired: icon (path) — Interconnect name to retrieve information about; account_id (path)\nOptional: name (query) — Custom name to use in the LOA instead of the account name (200 Character limit)"
+  },
+  {
+    "id": "get_interconnect_loa_default_name",
+    "name": "Get the default customer name for LOA generation",
+    "description": "Get the default customer name for LOA generation Retrieves the default customer name that will be used in the LOA if no name is provided to the `/accounts/{account_id}/cni/interconnects/{icon}/loa` endpoint. GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}/loa/default",
+    "context": "GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}/loa/default\nRetrieves the default customer name that will be used in the LOA if no name is provided to the `/accounts/{account_id}/cni/interconnects/{icon}/loa` endpoint.\nRequired: icon (path) — Interconnect name to retrieve information about; account_id (path)"
+  },
+  {
+    "id": "get_interconnect_status",
+    "name": "Get the current status of an interconnect object",
+    "description": "Get the current status of an interconnect object Gets the current operational status of a network interconnect, including link state and traffic metrics. GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}/status",
+    "context": "GET /client/v4/accounts/{account_id}/cni/interconnects/{icon}/status\nGets the current operational status of a network interconnect, including link state and traffic metrics.\nRequired: icon (path) — Interconnect name to retrieve information about; account_id (path)"
+  },
+  {
+    "id": "get_settings",
+    "name": "Get the current settings for the active account",
+    "description": "Get the current settings for the active account Retrieves current settings configuration for the specified resource or service. GET /client/v4/accounts/{account_id}/cni/settings",
+    "context": "GET /client/v4/accounts/{account_id}/cni/settings\nRetrieves current settings configuration for the specified resource or service.\nRequired: account_id (path) — Account tag to retrieve settings for"
+  },
+  {
+    "id": "get_slot",
+    "name": "Get information about the specified slot",
+    "description": "Get information about the specified slot Gets information about a specific infrastructure slot allocation. GET /client/v4/accounts/{account_id}/cni/slots/{slot}",
+    "context": "GET /client/v4/accounts/{account_id}/cni/slots/{slot}\nGets information about a specific infrastructure slot allocation.\nRequired: slot (path); account_id (path)"
+  },
+  {
+    "id": "list_cnis",
+    "name": "List existing CNI objects",
+    "description": "List existing CNI objects Lists all Cloud Network Interconnects (CNIs) configured for the account, showing connection status and parameters. GET /client/v4/accounts/{account_id}/cni/cnis",
+    "context": "GET /client/v4/accounts/{account_id}/cni/cnis\nLists all Cloud Network Interconnects (CNIs) configured for the account, showing connection status and parameters.\nRequired: account_id (path)\nOptional: slot (query) — If specified, only show CNIs associated with the specified slot; tunnel_id (query) — If specified, only show cnis associated with the specified tunnel id; cursor (query); limit (query)"
+  },
+  {
+    "id": "list_interconnects",
+    "name": "List existing interconnects",
+    "description": "List existing interconnects Lists all network interconnects configured for the account, including physical and virtual connections. GET /client/v4/accounts/{account_id}/cni/interconnects",
+    "context": "GET /client/v4/accounts/{account_id}/cni/interconnects\nLists all network interconnects configured for the account, including physical and virtual connections.\nRequired: account_id (path)\nOptional: site (query) — If specified, only show interconnects located at the given site; type (query) — If specified, only show interconnects of the given type; cursor (query); limit (query)"
+  },
+  {
+    "id": "list_slots",
+    "name": "Retrieve a list of all slots matching the specified parameters",
+    "description": "Retrieve a list of all slots matching the specified parameters Lists all available infrastructure slots for the account, showing allocation status and capacity. GET /client/v4/accounts/{account_id}/cni/slots",
+    "context": "GET /client/v4/accounts/{account_id}/cni/slots\nLists all available infrastructure slots for the account, showing allocation status and capacity.\nRequired: account_id (path)\nOptional: address_contains (query) — If specified, only show slots with the given text in their address field; site (query) — If specified, only show slots located at the given site; speed (query) — If specified, only show slots that support the given speed; occupied (query) — If specified, only show slots with a specific occupied/unoccupied state; cursor (query); limit (query)"
+  },
+  {
+    "id": "update_cni",
+    "name": "Modify stored information about a CNI object",
+    "description": "Modify stored information about a CNI object Updates the configuration of an existing Cloud Network Interconnect (CNI), including connection parameters and routing settings. PUT /client/v4/accounts/{account_id}/cni/cnis/{cni}",
+    "context": "PUT /client/v4/accounts/{account_id}/cni/cnis/{cni}\nUpdates the configuration of an existing Cloud Network Interconnect (CNI), including connection parameters and routing settings.\nRequired: cni (path) — CNI ID to retrieve information about; account_id (path); body (body)"
+  },
+  {
+    "id": "update_settings",
+    "name": "Update the current settings for the active account",
+    "description": "Update the current settings for the active account Updates configuration settings for the specified resource or service. PUT /client/v4/accounts/{account_id}/cni/settings",
+    "context": "PUT /client/v4/accounts/{account_id}/cni/settings\nUpdates configuration settings for the specified resource or service.\nRequired: account_id (path) — Account tag to update settings for; body (body)"
+  }
+]

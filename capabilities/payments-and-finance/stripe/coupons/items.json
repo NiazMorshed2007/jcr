@@ -1,0 +1,32 @@
+[
+  {
+    "id": "DeleteCouponsCoupon",
+    "name": "Delete a coupon",
+    "description": "Delete a coupon You can delete coupons via the coupon management page of the Stripe dashboard. DELETE /v1/coupons/{coupon}",
+    "context": "DELETE /v1/coupons/{coupon}\nYou can delete coupons via the coupon management page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.\nRequired: coupon (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetCoupons",
+    "name": "List all coupons",
+    "description": "List all coupons Returns a list of your coupons. GET /v1/coupons",
+    "context": "GET /v1/coupons\nReturns a list of your coupons.\nOptional: created (query) — A filter on the list, based on the object `created` field. The value can be a string with an integer Unix timestamp, or it can be a dictionary with a number of different query options.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCouponsCoupon",
+    "name": "Retrieve a coupon",
+    "description": "Retrieve a coupon Retrieves the coupon with the given ID. GET /v1/coupons/{coupon}",
+    "context": "GET /v1/coupons/{coupon}\nRetrieves the coupon with the given ID.\nRequired: coupon (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostCoupons",
+    "name": "Create a coupon",
+    "description": "Create a coupon You can create coupons easily via the coupon management page of the Stripe dashboard. POST /v1/coupons",
+    "context": "POST /v1/coupons\nYou can create coupons easily via the coupon management page of the Stripe dashboard. Coupon creation is also accessible via the API if you need to create coupons on the fly. A coupon has either a percent_off or an amount_off and currency . If you set an amount_off , that amount will be subtracted from any invoice’s subtotal. For example, an invoice with a subtotal of 100 will have a final total of 0 if a coupon with an amount_off of 200 is applied to it and an invoice with a subtotal of 300 will have a final total of 100 if a coupon with an amount_off of 200 is applied to it.\nOptional: body (body)"
+  },
+  {
+    "id": "PostCouponsCoupon",
+    "name": "Update a coupon",
+    "description": "Update a coupon Updates the metadata of a coupon. POST /v1/coupons/{coupon}",
+    "context": "POST /v1/coupons/{coupon}\nUpdates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.\nRequired: coupon (path)\nOptional: body (body)"
+  }
+]

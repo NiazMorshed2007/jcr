@@ -1,0 +1,32 @@
+[
+  {
+    "id": "subscriptions-create",
+    "name": "Create Event Subscription",
+    "description": "Create Event Subscription Create a new event subscription for a queue POST /client/v4/accounts/{account_id}/event_subscriptions/subscriptions",
+    "context": "POST /client/v4/accounts/{account_id}/event_subscriptions/subscriptions\nCreate a new event subscription for a queue\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "subscriptions-delete",
+    "name": "Delete Event Subscription",
+    "description": "Delete Event Subscription Delete an existing event subscription DELETE /client/v4/accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}\nDelete an existing event subscription\nRequired: account_id (path); subscription_id (path)"
+  },
+  {
+    "id": "subscriptions-get",
+    "name": "Get Event Subscription",
+    "description": "Get Event Subscription Get details about an existing event subscription GET /client/v4/accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}",
+    "context": "GET /client/v4/accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}\nGet details about an existing event subscription\nRequired: account_id (path); subscription_id (path)"
+  },
+  {
+    "id": "subscriptions-list",
+    "name": "List Event Subscriptions",
+    "description": "List Event Subscriptions Get a paginated list of event subscriptions with optional sorting and filtering GET /client/v4/accounts/{account_id}/event_subscriptions/subscriptions",
+    "context": "GET /client/v4/accounts/{account_id}/event_subscriptions/subscriptions\nGet a paginated list of event subscriptions with optional sorting and filtering\nRequired: account_id (path)\nOptional: page (query) — Page number for pagination; per_page (query) — Number of items per page; order (query) — Field to sort by; direction (query) — Sort direction"
+  },
+  {
+    "id": "subscriptions-patch",
+    "name": "Update Event Subscription",
+    "description": "Update Event Subscription Update an existing event subscription PATCH /client/v4/accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}\nUpdate an existing event subscription\nRequired: account_id (path); subscription_id (path); body (body)"
+  }
+]

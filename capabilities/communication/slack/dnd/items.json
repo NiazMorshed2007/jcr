@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dnd.endDnd",
+    "name": "Ends the current user's Do Not Disturb session immediately.",
+    "description": "Ends the current user's Do Not Disturb session immediately. POST /api/dnd.endDnd",
+    "context": "POST /api/dnd.endDnd\nEnds the current user's Do Not Disturb session immediately.\nOptional: body (body)"
+  },
+  {
+    "id": "dnd.endSnooze",
+    "name": "Ends the current user's snooze mode immediately.",
+    "description": "Ends the current user's snooze mode immediately. POST /api/dnd.endSnooze",
+    "context": "POST /api/dnd.endSnooze\nEnds the current user's snooze mode immediately.\nOptional: body (body)"
+  },
+  {
+    "id": "dnd.info",
+    "name": "Retrieves a user's current Do Not Disturb status.",
+    "description": "Retrieves a user's current Do Not Disturb status. POST /api/dnd.info",
+    "context": "POST /api/dnd.info\nRetrieves a user's current Do Not Disturb status.\nOptional: body (body)"
+  },
+  {
+    "id": "dnd.setSnooze",
+    "name": "Turns on Do Not Disturb mode for the current user, or changes its duration.",
+    "description": "Turns on Do Not Disturb mode for the current user, or changes its duration. POST /api/dnd.setSnooze",
+    "context": "POST /api/dnd.setSnooze\nTurns on Do Not Disturb mode for the current user, or changes its duration.\nRequired: body (body)"
+  },
+  {
+    "id": "dnd.teamInfo",
+    "name": "Retrieves the Do Not Disturb status for up to 50 users on a team.",
+    "description": "Retrieves the Do Not Disturb status for up to 50 users on a team. POST /api/dnd.teamInfo",
+    "context": "POST /api/dnd.teamInfo\nRetrieves the Do Not Disturb status for up to 50 users on a team.\nRequired: body (body)"
+  }
+]

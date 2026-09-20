@@ -1,0 +1,86 @@
+[
+  {
+    "id": "tunnel-route-create-a-tunnel-route",
+    "name": "Create a tunnel route",
+    "description": "Create a tunnel route Routes a private network through a Cloudflare Tunnel. POST /client/v4/accounts/{account_id}/teamnet/routes",
+    "context": "POST /client/v4/accounts/{account_id}/teamnet/routes\nRoutes a private network through a Cloudflare Tunnel.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "tunnel-route-create-a-tunnel-route-with-cidr",
+    "name": "Create a tunnel route (CIDR Endpoint)",
+    "description": "Create a tunnel route (CIDR Endpoint) Routes a private network through a Cloudflare Tunnel. POST /client/v4/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}",
+    "context": "POST /client/v4/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}\nRoutes a private network through a Cloudflare Tunnel. The CIDR in `ip_network_encoded` must be written in URL-encoded format.\nRequired: ip_network_encoded (path); account_id (path); body (body)"
+  },
+  {
+    "id": "tunnel-route-delete-a-tunnel-route",
+    "name": "Delete a tunnel route",
+    "description": "Delete a tunnel route Deletes a private network route from an account. DELETE /client/v4/accounts/{account_id}/teamnet/routes/{route_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/teamnet/routes/{route_id}\nDeletes a private network route from an account.\nRequired: route_id (path); account_id (path)"
+  },
+  {
+    "id": "tunnel-route-delete-a-tunnel-route-with-cidr",
+    "name": "Delete a tunnel route (CIDR Endpoint)",
+    "description": "Delete a tunnel route (CIDR Endpoint) Deletes a private network route from an account. DELETE /client/v4/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}",
+    "context": "DELETE /client/v4/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}\nDeletes a private network route from an account. The CIDR in `ip_network_encoded` must be written in URL-encoded format. If no virtual_network_id is provided it will delete the route from the default vnet. If no tun_type is provided it will fetch the type from the tunnel_id or if that is missing it will assume Cloudflare Tunnel as default. If tunnel_id is provided it will delete the route from that tunnel, otherwise it will delete the route based on the vnet and tun_type.\nRequired: ip_network_encoded (path); account_id (path)\nOptional: virtual_network_id (query); tun_type (query); tunnel_id (query)"
+  },
+  {
+    "id": "tunnel-route-get-tunnel-route",
+    "name": "Get tunnel route",
+    "description": "Get tunnel route Get a private network route in an account. GET /client/v4/accounts/{account_id}/teamnet/routes/{route_id}",
+    "context": "GET /client/v4/accounts/{account_id}/teamnet/routes/{route_id}\nGet a private network route in an account.\nRequired: account_id (path); route_id (path)"
+  },
+  {
+    "id": "tunnel-route-get-tunnel-route-by-ip",
+    "name": "Get tunnel route by IP",
+    "description": "Get tunnel route by IP Fetches routes that contain the given IP address. GET /client/v4/accounts/{account_id}/teamnet/routes/ip/{ip}",
+    "context": "GET /client/v4/accounts/{account_id}/teamnet/routes/ip/{ip}\nFetches routes that contain the given IP address.\nRequired: ip (path); account_id (path)\nOptional: virtual_network_id (query); default_virtual_network_fallback (query) — When the virtual_network_id parameter is not provided the request filter will default search routes that are in the default virtual network for the account. If this parameter is set to false, the search will include routes that do not have a virtual network."
+  },
+  {
+    "id": "tunnel-route-list-tunnel-routes",
+    "name": "List tunnel routes",
+    "description": "List tunnel routes Lists and filters private network routes in an account. GET /client/v4/accounts/{account_id}/teamnet/routes",
+    "context": "GET /client/v4/accounts/{account_id}/teamnet/routes\nLists and filters private network routes in an account.\nRequired: account_id (path)\nOptional: comment (query); is_deleted (query); network_subset (query); network_superset (query); existed_at (query); tunnel_id (query); route_id (query); tun_types (query); virtual_network_id (query); per_page (query); page (query)"
+  },
+  {
+    "id": "tunnel-route-update-a-tunnel-route",
+    "name": "Update a tunnel route",
+    "description": "Update a tunnel route Updates an existing private network route in an account. PATCH /client/v4/accounts/{account_id}/teamnet/routes/{route_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/teamnet/routes/{route_id}\nUpdates an existing private network route in an account. The fields that are meant to be updated should be provided in the body of the request.\nRequired: route_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "tunnel-route-update-a-tunnel-route-with-cidr",
+    "name": "Update a tunnel route (CIDR Endpoint)",
+    "description": "Update a tunnel route (CIDR Endpoint) Updates an existing private network route in an account. PATCH /client/v4/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}",
+    "context": "PATCH /client/v4/accounts/{account_id}/teamnet/routes/network/{ip_network_encoded}\nUpdates an existing private network route in an account. The CIDR in `ip_network_encoded` must be written in URL-encoded format.\nRequired: ip_network_encoded (path); account_id (path)"
+  },
+  {
+    "id": "tunnel-virtual-network-create-a-virtual-network",
+    "name": "Create a virtual network",
+    "description": "Create a virtual network Adds a new virtual network to an account. POST /client/v4/accounts/{account_id}/teamnet/virtual_networks",
+    "context": "POST /client/v4/accounts/{account_id}/teamnet/virtual_networks\nAdds a new virtual network to an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "tunnel-virtual-network-delete",
+    "name": "Delete a virtual network",
+    "description": "Delete a virtual network Deletes an existing virtual network. DELETE /client/v4/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}\nDeletes an existing virtual network.\nRequired: virtual_network_id (path); account_id (path)"
+  },
+  {
+    "id": "tunnel-virtual-network-get",
+    "name": "Get a virtual network",
+    "description": "Get a virtual network Get a virtual network. GET /client/v4/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}",
+    "context": "GET /client/v4/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}\nGet a virtual network.\nRequired: account_id (path); virtual_network_id (path); body (body)"
+  },
+  {
+    "id": "tunnel-virtual-network-list-virtual-networks",
+    "name": "List virtual networks",
+    "description": "List virtual networks Lists and filters virtual networks in an account. GET /client/v4/accounts/{account_id}/teamnet/virtual_networks",
+    "context": "GET /client/v4/accounts/{account_id}/teamnet/virtual_networks\nLists and filters virtual networks in an account.\nRequired: account_id (path)\nOptional: id (query); name (query); is_default (query); is_default_network (query); is_deleted (query)"
+  },
+  {
+    "id": "tunnel-virtual-network-update",
+    "name": "Update a virtual network",
+    "description": "Update a virtual network Updates an existing virtual network. PATCH /client/v4/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/teamnet/virtual_networks/{virtual_network_id}\nUpdates an existing virtual network.\nRequired: account_id (path); virtual_network_id (path); body (body)"
+  }
+]

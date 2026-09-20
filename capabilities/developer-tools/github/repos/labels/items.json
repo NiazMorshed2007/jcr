@@ -1,0 +1,32 @@
+[
+  {
+    "id": "issues%2Fcreate-label",
+    "name": "Create a label",
+    "description": "Create a label Creates a label for the specified repository with the given name and color. POST /repos/{owner}/{repo}/labels",
+    "context": "POST /repos/{owner}/{repo}/labels\nCreates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "issues%2Fdelete-label",
+    "name": "Delete a label",
+    "description": "Delete a label Deletes a label using the given label name. DELETE /repos/{owner}/{repo}/labels/{name}",
+    "context": "DELETE /repos/{owner}/{repo}/labels/{name}\nDeletes a label using the given label name.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; name (path)"
+  },
+  {
+    "id": "issues%2Fget-label",
+    "name": "Get a label",
+    "description": "Get a label Gets a label using the given name. GET /repos/{owner}/{repo}/labels/{name}",
+    "context": "GET /repos/{owner}/{repo}/labels/{name}\nGets a label using the given name.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; name (path)"
+  },
+  {
+    "id": "issues%2Flist-labels-for-repo",
+    "name": "List labels for a repository",
+    "description": "List labels for a repository Lists all labels for a repository. GET /repos/{owner}/{repo}/labels",
+    "context": "GET /repos/{owner}/{repo}/labels\nLists all labels for a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "issues%2Fupdate-label",
+    "name": "Update a label",
+    "description": "Update a label Updates a label using the given label name. PATCH /repos/{owner}/{repo}/labels/{name}",
+    "context": "PATCH /repos/{owner}/{repo}/labels/{name}\nUpdates a label using the given label name.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; name (path)\nOptional: body (body)"
+  }
+]

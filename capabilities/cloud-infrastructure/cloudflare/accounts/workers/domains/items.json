@@ -1,0 +1,26 @@
+[
+  {
+    "id": "workers.domains.delete",
+    "name": "Detach Worker Domain",
+    "description": "Detach Worker Domain Detaches a domain from a Worker. DELETE /client/v4/accounts/{account_id}/workers/domains/{domain_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/domains/{domain_id}\nDetaches a domain from a Worker. Both the Worker and all of its previews are no longer routable using this domain.\nRequired: account_id (path); domain_id (path)"
+  },
+  {
+    "id": "workers.domains.get",
+    "name": "Get Worker Domain",
+    "description": "Get Worker Domain Gets information about a Worker domain. GET /client/v4/accounts/{account_id}/workers/domains/{domain_id}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/domains/{domain_id}\nGets information about a Worker domain.\nRequired: account_id (path); domain_id (path)"
+  },
+  {
+    "id": "workers.domains.list",
+    "name": "List Worker Domains",
+    "description": "List Worker Domains Lists all Worker domains for an account. GET /client/v4/accounts/{account_id}/workers/domains",
+    "context": "GET /client/v4/accounts/{account_id}/workers/domains\nLists all Worker domains for an account.\nRequired: account_id (path)\nOptional: zone_id (query); zone_name (query); service (query); hostname (query); environment (query)"
+  },
+  {
+    "id": "workers.domains.update",
+    "name": "Attach Worker Domain",
+    "description": "Attach Worker Domain Attaches a domain that routes traffic to a Worker. PUT /client/v4/accounts/{account_id}/workers/domains",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/domains\nAttaches a domain that routes traffic to a Worker.\nRequired: account_id (path); body (body)"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "error_tracking_external_references_create",
+    "name": "error_tracking_external_references_create",
+    "description": "error_tracking_external_references_create POST /api/projects/{project_id}/error_tracking/external_references/",
+    "context": "POST /api/projects/{project_id}/error_tracking/external_references/\nerror_tracking_external_references_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_external_references_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/error_tracking/external_references/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/external_references/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_external_references_link_issue_create",
+    "name": "Link an error to an issue that already exists in the connected provider.",
+    "description": "Link an error to an issue that already exists in the connected provider. POST /api/projects/{project_id}/error_tracking/external_references/link_issue/",
+    "context": "POST /api/projects/{project_id}/error_tracking/external_references/link_issue/\nLink an error to an issue that already exists in the connected provider.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_external_references_list",
+    "name": "error_tracking_external_references_list",
+    "description": "error_tracking_external_references_list GET /api/projects/{project_id}/error_tracking/external_references/",
+    "context": "GET /api/projects/{project_id}/error_tracking/external_references/\nerror_tracking_external_references_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "error_tracking_external_references_retrieve",
+    "name": "error_tracking_external_references_retrieve",
+    "description": "error_tracking_external_references_retrieve GET /api/projects/{project_id}/error_tracking/external_references/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/external_references/{id}/\nerror_tracking_external_references_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_external_references_search_issues_retrieve",
+    "name": "Search a connected provider for existing issues to link an error to.",
+    "description": "Search a connected provider for existing issues to link an error to. GET /api/projects/{project_id}/error_tracking/external_references/search_issues/",
+    "context": "GET /api/projects/{project_id}/error_tracking/external_references/search_issues/\nSearch a connected provider for existing issues to link an error to.\nRequired: integration_id (query) — ID of the connected integration to search issues in.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: repository (query) — Repository to search within. Required for GitHub, ignored by other providers.; search (query) — Text to match against existing issue titles / keys in the provider. GitHub matches it as an exact phrase. Leave blank for recent issues."
+  }
+]

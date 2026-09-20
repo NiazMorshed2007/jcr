@@ -1,0 +1,38 @@
+[
+  {
+    "id": "datasets_create",
+    "name": "Create a dataset",
+    "description": "Create a dataset POST /api/public/v2/datasets",
+    "context": "POST /api/public/v2/datasets\nCreate a dataset\nRequired: body (body)"
+  },
+  {
+    "id": "datasets_deleteRun",
+    "name": "**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026",
+    "description": "**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026 **Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026. DELETE /api/public/datasets/{datasetName}/runs/{runName}",
+    "context": "DELETE /api/public/datasets/{datasetName}/runs/{runName}\n**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026. In Langfuse v4, dataset runs are replaced by experiments. Self-hosted deployments are unaffected by this date; the endpoint becomes unavailable when they upgrade to Langfuse v4. See the [Langfuse v3 to v4 upgrade guide](https://langfuse.com/self-hosting/upgrade/upgrade-guides/upgrade-v3-to-v4). Delete a dataset run and all its run items. This action is irreversible.\nRequired: datasetName (path); runName (path)"
+  },
+  {
+    "id": "datasets_get",
+    "name": "Get a dataset",
+    "description": "Get a dataset GET /api/public/v2/datasets/{datasetName}",
+    "context": "GET /api/public/v2/datasets/{datasetName}\nGet a dataset\nRequired: datasetName (path)"
+  },
+  {
+    "id": "datasets_getRun",
+    "name": "**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026",
+    "description": "**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026 **Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026. GET /api/public/datasets/{datasetName}/runs/{runName}",
+    "context": "GET /api/public/datasets/{datasetName}/runs/{runName}\n**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026. In Langfuse v4, dataset runs are replaced by experiments; use GET /api/public/experiments instead. Self-hosted deployments are unaffected by this date; the endpoint becomes unavailable when they upgrade to Langfuse v4. See the [Langfuse v3 to v4 upgrade guide](https://langfuse.com/self-hosting/upgrade/upgrade-guides/upgrade-v3-to-v4). Get a dataset run and its items\nRequired: datasetName (path); runName (path)"
+  },
+  {
+    "id": "datasets_getRuns",
+    "name": "**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026",
+    "description": "**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026 **Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026. GET /api/public/datasets/{datasetName}/runs",
+    "context": "GET /api/public/datasets/{datasetName}/runs\n**Deprecated:** On Langfuse Cloud, Langfuse v3 is deprecated and this endpoint will be removed on November 16, 2026. In Langfuse v4, dataset runs are replaced by experiments; use GET /api/public/experiments instead. Self-hosted deployments are unaffected by this date; the endpoint becomes unavailable when they upgrade to Langfuse v4. See the [Langfuse v3 to v4 upgrade guide](https://langfuse.com/self-hosting/upgrade/upgrade-guides/upgrade-v3-to-v4). Get dataset runs\nRequired: datasetName (path)\nOptional: page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  },
+  {
+    "id": "datasets_list",
+    "name": "Get all datasets",
+    "description": "Get all datasets GET /api/public/v2/datasets",
+    "context": "GET /api/public/v2/datasets\nGet all datasets\nOptional: page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  }
+]

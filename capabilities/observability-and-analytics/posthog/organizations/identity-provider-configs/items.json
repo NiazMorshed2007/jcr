@@ -1,0 +1,50 @@
+[
+  {
+    "id": "identity_provider_configs_create",
+    "name": "identity_provider_configs_create",
+    "description": "identity_provider_configs_create POST /api/organizations/{organization_id}/identity_provider_configs/",
+    "context": "POST /api/organizations/{organization_id}/identity_provider_configs/\nidentity_provider_configs_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "identity_provider_configs_destroy",
+    "name": "identity_provider_configs_destroy",
+    "description": "identity_provider_configs_destroy DELETE /api/organizations/{organization_id}/identity_provider_configs/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/identity_provider_configs/{id}/\nidentity_provider_configs_destroy\nRequired: id (path) — A UUID string identifying this identity provider config.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "identity_provider_configs_list",
+    "name": "identity_provider_configs_list",
+    "description": "identity_provider_configs_list GET /api/organizations/{organization_id}/identity_provider_configs/",
+    "context": "GET /api/organizations/{organization_id}/identity_provider_configs/\nidentity_provider_configs_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "identity_provider_configs_partial_update",
+    "name": "identity_provider_configs_partial_update",
+    "description": "identity_provider_configs_partial_update PATCH /api/organizations/{organization_id}/identity_provider_configs/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/identity_provider_configs/{id}/\nidentity_provider_configs_partial_update\nRequired: id (path) — A UUID string identifying this identity provider config.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "identity_provider_configs_retrieve",
+    "name": "identity_provider_configs_retrieve",
+    "description": "identity_provider_configs_retrieve GET /api/organizations/{organization_id}/identity_provider_configs/{id}/",
+    "context": "GET /api/organizations/{organization_id}/identity_provider_configs/{id}/\nidentity_provider_configs_retrieve\nRequired: id (path) — A UUID string identifying this identity provider config.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "identity_provider_configs_scim_logs_retrieve",
+    "name": "identity_provider_configs_scim_logs_retrieve",
+    "description": "identity_provider_configs_scim_logs_retrieve GET /api/organizations/{organization_id}/identity_provider_configs/{id}/scim/logs/",
+    "context": "GET /api/organizations/{organization_id}/identity_provider_configs/{id}/scim/logs/\nidentity_provider_configs_scim_logs_retrieve\nRequired: id (path) — A UUID string identifying this identity provider config.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: after (query) — Include requests at or after this time.; before (query) — Include requests at or before this time.; page (query) — Page number to return.; page_size (query) — Number of requests to return per page.; search (query) — Search request paths and masked request bodies.; status_max (query) — Maximum HTTP response status to include, such as 499.; status_min (query) — Minimum HTTP response status to include, such as 400."
+  },
+  {
+    "id": "identity_provider_configs_scim_token_create",
+    "name": "Regenerate the SCIM bearer token for this IdP config.",
+    "description": "Regenerate the SCIM bearer token for this IdP config. POST /api/organizations/{organization_id}/identity_provider_configs/{id}/scim/token/",
+    "context": "POST /api/organizations/{organization_id}/identity_provider_configs/{id}/scim/token/\nRegenerate the SCIM bearer token for this IdP config.\nRequired: id (path) — A UUID string identifying this identity provider config.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "identity_provider_configs_update",
+    "name": "identity_provider_configs_update",
+    "description": "identity_provider_configs_update PUT /api/organizations/{organization_id}/identity_provider_configs/{id}/",
+    "context": "PUT /api/organizations/{organization_id}/identity_provider_configs/{id}/\nidentity_provider_configs_update\nRequired: id (path) — A UUID string identifying this identity provider config.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  }
+]

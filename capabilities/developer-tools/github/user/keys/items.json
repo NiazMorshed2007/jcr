@@ -1,0 +1,26 @@
+[
+  {
+    "id": "users%2Fcreate-public-ssh-key-for-authenticated-user",
+    "name": "Create a public SSH key for the authenticated user",
+    "description": "Create a public SSH key for the authenticated user Adds a public SSH key to the authenticated user's GitHub account. POST /user/keys",
+    "context": "POST /user/keys\nAdds a public SSH key to the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `write:public_key` scope to use this endpoint.\nRequired: body (body)"
+  },
+  {
+    "id": "users%2Fdelete-public-ssh-key-for-authenticated-user",
+    "name": "Delete a public SSH key for the authenticated user",
+    "description": "Delete a public SSH key for the authenticated user Removes a public SSH key from the authenticated user's GitHub account. DELETE /user/keys/{key_id}",
+    "context": "DELETE /user/keys/{key_id}\nRemoves a public SSH key from the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `admin:public_key` scope to use this endpoint.\nRequired: key_id (path) — The unique identifier of the key."
+  },
+  {
+    "id": "users%2Fget-public-ssh-key-for-authenticated-user",
+    "name": "Get a public SSH key for the authenticated user",
+    "description": "Get a public SSH key for the authenticated user View extended details for a single public SSH key. GET /user/keys/{key_id}",
+    "context": "GET /user/keys/{key_id}\nView extended details for a single public SSH key. OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.\nRequired: key_id (path) — The unique identifier of the key."
+  },
+  {
+    "id": "users%2Flist-public-ssh-keys-for-authenticated-user",
+    "name": "List public SSH keys for the authenticated user",
+    "description": "List public SSH keys for the authenticated user Lists the public SSH keys for the authenticated user's GitHub account. GET /user/keys",
+    "context": "GET /user/keys\nLists the public SSH keys for the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

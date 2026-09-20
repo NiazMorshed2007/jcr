@@ -1,0 +1,74 @@
+[
+  {
+    "id": "connectIntegrationResourceToProject",
+    "name": "Connect integration resource to project",
+    "description": "Connect integration resource to project Connects an integration resource to a Vercel project. POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections",
+    "context": "POST /v1/integrations/installations/{integrationConfigurationId}/resources/{resourceId}/connections\nConnects an integration resource to a Vercel project. This endpoint establishes a connection between a provisioned integration resource (from storage APIs like `POST /v1/storage/stores/integration/direct`) and a specific Vercel project.\nRequired: integrationConfigurationId (path); resourceId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createLogDrain",
+    "name": "Creates a new Integration Log Drain (deprecated)",
+    "description": "Creates a new Integration Log Drain (deprecated) Creates an Integration log drain. POST /v2/integrations/log-drains",
+    "context": "POST /v2/integrations/log-drains\nCreates an Integration log drain. This endpoint must be called with an OAuth2 client (integration), since log drains are tied to integrations. If it is called with a different token type it will produce a 400 error.\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteConfiguration",
+    "name": "Delete an integration configuration",
+    "description": "Delete an integration configuration Allows to remove the configuration with the `id` provided in the parameters. DELETE /v1/integrations/configuration/{id}",
+    "context": "DELETE /v1/integrations/configuration/{id}\nAllows to remove the configuration with the `id` provided in the parameters. The configuration and all of its resources will be removed. This includes Webhooks, LogDrains and Project Env variables.\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteIntegrationLogDrain",
+    "name": "Deletes the Integration log drain with the provided `id` (deprecated)",
+    "description": "Deletes the Integration log drain with the provided `id` (deprecated) Deletes the Integration log drain with the provided `id`. DELETE /v1/integrations/log-drains/{id}",
+    "context": "DELETE /v1/integrations/log-drains/{id}\nDeletes the Integration log drain with the provided `id`. When using an OAuth2 Token, the log drain can be deleted only if the integration owns it.\nRequired: id (path) — ID of the log drain to be deleted\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "exchange-sso-token",
+    "name": "SSO Token Exchange",
+    "description": "SSO Token Exchange During the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. POST /v1/integrations/sso/token",
+    "context": "POST /v1/integrations/sso/token\nDuring the autorization process, Vercel sends the user to the provider [redirectLoginUrl](https://vercel.com/docs/integrations/create-integration/submit-integration#redirect-login-url), that includes the OAuth authorization `code` parameter. The provider then calls the SSO Token Exchange endpoint with the sent code and receives the OIDC token. They log the user in based on this token and redirects the user back to the Vercel account using deep-link parameters included the redirectLoginUrl. Providers should not persist the returned `id_token` in a database since the token will expire. See [**Authentication with SSO**](https://vercel.com/docs/integrations/create-integration/marketplace-api#authentication-with-sso) for more details.\nRequired: body (body)"
+  },
+  {
+    "id": "getBillingPlans",
+    "name": "List integration billing plans",
+    "description": "List integration billing plans Get a list of billing plans for an integration and product. GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans",
+    "context": "GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans\nGet a list of billing plans for an integration and product.\nRequired: integrationIdOrSlug (path); productIdOrSlug (path)\nOptional: integrationConfigurationId (query); metadata (query); source (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getConfiguration",
+    "name": "Retrieve an integration configuration",
+    "description": "Retrieve an integration configuration Allows to retrieve a the configuration with the provided id in case it exists. GET /v1/integrations/configuration/{id}",
+    "context": "GET /v1/integrations/configuration/{id}\nAllows to retrieve a the configuration with the provided id in case it exists. The authenticated user or team must be the owner of the config in order to access it.\nRequired: id (path) — ID of the configuration to check\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getConfigurationProducts",
+    "name": "List products for integration configuration",
+    "description": "List products for integration configuration Returns products available for an integration configuration. GET /v1/integrations/configuration/{id}/products",
+    "context": "GET /v1/integrations/configuration/{id}/products\nReturns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.\nRequired: id (path) — ID of the integration configuration\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getConfigurations",
+    "name": "Get configurations for the authenticated user or team",
+    "description": "Get configurations for the authenticated user or team Allows to retrieve all configurations for an authenticated integration. GET /v1/integrations/configurations",
+    "context": "GET /v1/integrations/configurations\nAllows to retrieve all configurations for an authenticated integration. When the `project` view is used, configurations generated for the authorization flow will be filtered out of the results.\nRequired: view (query)\nOptional: installationType (query); integrationIdOrSlug (query) — ID of the integration; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getIntegrationLogDrains",
+    "name": "Retrieves a list of Integration log drains (deprecated)",
+    "description": "Retrieves a list of Integration log drains (deprecated) Retrieves a list of all Integration log drains that are defined for the authenticated user or team. GET /v2/integrations/log-drains",
+    "context": "GET /v2/integrations/log-drains\nRetrieves a list of all Integration log drains that are defined for the authenticated user or team. When using an OAuth2 token, the list is limited to log drains created by the authenticated integration.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "gitNamespaces",
+    "name": "List git namespaces by provider",
+    "description": "List git namespaces by provider Lists git namespaces for a supported provider. GET /v1/integrations/git-namespaces",
+    "context": "GET /v1/integrations/git-namespaces\nLists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.\nOptional: host (query) — The custom Git host if using a custom Git provider, like GitHub Enterprise Server; provider (query); viewerMetadata (query) — When true, includes the viewer object for each namespace."
+  },
+  {
+    "id": "searchRepo",
+    "name": "List git repositories linked to namespace by provider",
+    "description": "List git repositories linked to namespace by provider Lists git repositories linked to a namespace `id` for a supported provider. GET /v1/integrations/search-repo",
+    "context": "GET /v1/integrations/search-repo\nLists git repositories linked to a namespace `id` for a supported provider. A specific namespace `id` can be obtained via the `git-namespaces` endpoint. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider or namespace is not provided, it will try to obtain it from the user that authenticated the request.\nOptional: query (query); namespaceId (query); provider (query); installationId (query); host (query) — The custom Git host if using a custom Git provider, like GitHub Enterprise Server; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

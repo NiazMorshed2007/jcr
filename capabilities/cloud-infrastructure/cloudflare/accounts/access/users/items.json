@@ -1,0 +1,62 @@
+[
+  {
+    "id": "zero-trust-users-create-user",
+    "name": "Create a user",
+    "description": "Create a user Creates a new user. POST /client/v4/accounts/{account_id}/access/users",
+    "context": "POST /client/v4/accounts/{account_id}/access/users\nCreates a new user.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "zero-trust-users-delete-mfa-authenticator",
+    "name": "Delete a user's MFA device",
+    "description": "Delete a user's MFA device Deletes a specific MFA device, including a PIV key or FIDO2 key enrollment, for a user. DELETE /client/v4/accounts/{account_id}/access/users/{user_id}/mfa_authenticators/{authenticator_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/users/{user_id}/mfa_authenticators/{authenticator_id}\nDeletes a specific MFA device, including a PIV key or FIDO2 key enrollment, for a user. This action is only available if MFA is turned on for the organization. Successful deletion revokes the enrollment and returns a null result.\nRequired: user_id (path); account_id (path); authenticator_id (path)"
+  },
+  {
+    "id": "zero-trust-users-delete-user",
+    "name": "Delete a user",
+    "description": "Delete a user Deletes a specific user for an account. DELETE /client/v4/accounts/{account_id}/access/users/{user_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/users/{user_id}\nDeletes a specific user for an account. This will also revoke any active seats and tokens for the user.\nRequired: user_id (path); account_id (path)"
+  },
+  {
+    "id": "zero-trust-users-get-active-session",
+    "name": "Get single active session",
+    "description": "Get single active session Get an active session for a single user. GET /client/v4/accounts/{account_id}/access/users/{user_id}/active_sessions/{nonce}",
+    "context": "GET /client/v4/accounts/{account_id}/access/users/{user_id}/active_sessions/{nonce}\nGet an active session for a single user.\nRequired: user_id (path); account_id (path); nonce (path)"
+  },
+  {
+    "id": "zero-trust-users-get-active-sessions",
+    "name": "Get active sessions",
+    "description": "Get active sessions Get active sessions for a single user. GET /client/v4/accounts/{account_id}/access/users/{user_id}/active_sessions",
+    "context": "GET /client/v4/accounts/{account_id}/access/users/{user_id}/active_sessions\nGet active sessions for a single user.\nRequired: user_id (path); account_id (path)"
+  },
+  {
+    "id": "zero-trust-users-get-failed-logins",
+    "name": "Get failed logins",
+    "description": "Get failed logins Get all failed login attempts for a single user. GET /client/v4/accounts/{account_id}/access/users/{user_id}/failed_logins",
+    "context": "GET /client/v4/accounts/{account_id}/access/users/{user_id}/failed_logins\nGet all failed login attempts for a single user.\nRequired: user_id (path); account_id (path)"
+  },
+  {
+    "id": "zero-trust-users-get-last-seen-identity",
+    "name": "Get last seen identity",
+    "description": "Get last seen identity Get last seen identity for a single user. GET /client/v4/accounts/{account_id}/access/users/{user_id}/last_seen_identity",
+    "context": "GET /client/v4/accounts/{account_id}/access/users/{user_id}/last_seen_identity\nGet last seen identity for a single user.\nRequired: user_id (path); account_id (path)"
+  },
+  {
+    "id": "zero-trust-users-get-user",
+    "name": "Get a user",
+    "description": "Get a user Gets a specific user for an account. GET /client/v4/accounts/{account_id}/access/users/{user_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/users/{user_id}\nGets a specific user for an account.\nRequired: user_id (path); account_id (path)"
+  },
+  {
+    "id": "zero-trust-users-get-users",
+    "name": "Get users",
+    "description": "Get users Gets a list of users for an account. GET /client/v4/accounts/{account_id}/access/users",
+    "context": "GET /client/v4/accounts/{account_id}/access/users\nGets a list of users for an account.\nRequired: account_id (path)\nOptional: name (query); email (query); search (query); page (query); per_page (query)"
+  },
+  {
+    "id": "zero-trust-users-update-user",
+    "name": "Update a user",
+    "description": "Update a user Updates a specific user's name for an account. PUT /client/v4/accounts/{account_id}/access/users/{user_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/users/{user_id}\nUpdates a specific user's name for an account. Requires the user's current email as confirmation (email cannot be changed).\nRequired: user_id (path); account_id (path); body (body)"
+  }
+]

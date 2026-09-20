@@ -1,0 +1,44 @@
+[
+  {
+    "id": "file_download_batch_exports_cancel_create",
+    "name": "Cancel an ongoing file-download batch export.",
+    "description": "Cancel an ongoing file-download batch export. POST /api/projects/{project_id}/file_download_batch_exports/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/file_download_batch_exports/{id}/cancel/\nCancel an ongoing file-download batch export.\nRequired: id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_download_batch_exports_count_rows_create",
+    "name": "Count the rows a HogQL batch export would produce if started now.",
+    "description": "Count the rows a HogQL batch export would produce if started now. POST /api/projects/{project_id}/file_download_batch_exports/count_rows/",
+    "context": "POST /api/projects/{project_id}/file_download_batch_exports/count_rows/\nCount the rows a HogQL batch export would produce if started now.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "file_download_batch_exports_create",
+    "name": "Create and start a batch export on demand run to download a file.",
+    "description": "Create and start a batch export on demand run to download a file. POST /api/projects/{project_id}/file_download_batch_exports/",
+    "context": "POST /api/projects/{project_id}/file_download_batch_exports/\nCreate and start a batch export on demand run to download a file.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "file_download_batch_exports_download_retrieve",
+    "name": "Download a file (or a part) from this batch export run",
+    "description": "Download a file (or a part) from this batch export run Download a file (or a part) from this batch export run. GET /api/projects/{project_id}/file_download_batch_exports/{id}/download/",
+    "context": "GET /api/projects/{project_id}/file_download_batch_exports/{id}/download/\nDownload a file (or a part) from this batch export run. Users can provide a part component with an id or index, or no part component at all: * If part id is included: The file download matching the id is downloaded. * If part index is included: The file download matching the index (as ordered by key) is downloaded. * If no part component is present: If there is only one file downloaded, that is downloaded. Otherwise the first one as sorted by key is downloaded.\nRequired: id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "file_download_batch_exports_list",
+    "name": "file_download_batch_exports_list",
+    "description": "file_download_batch_exports_list GET /api/projects/{project_id}/file_download_batch_exports/",
+    "context": "GET /api/projects/{project_id}/file_download_batch_exports/\nfile_download_batch_exports_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "file_download_batch_exports_logs_retrieve",
+    "name": "file_download_batch_exports_logs_retrieve",
+    "description": "file_download_batch_exports_logs_retrieve GET /api/projects/{project_id}/file_download_batch_exports/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/file_download_batch_exports/{id}/logs/\nfile_download_batch_exports_logs_retrieve\nRequired: id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "file_download_batch_exports_retrieve",
+    "name": "Get a batch export on demand run",
+    "description": "Get a batch export on demand run Get a batch export on demand run. GET /api/projects/{project_id}/file_download_batch_exports/{id}/",
+    "context": "GET /api/projects/{project_id}/file_download_batch_exports/{id}/\nGet a batch export on demand run. If the underlying batch export run has completed, we return keys to the generated file downloads so that users may download them by making a request to /download.\nRequired: id (path) — A UUID string identifying this batch export run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

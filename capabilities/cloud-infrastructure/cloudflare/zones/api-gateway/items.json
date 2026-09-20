@@ -1,0 +1,266 @@
+[
+  {
+    "id": "api-shield-api-discovery-retrieve-discovered-operation-by-id",
+    "name": "Get a discovered web or API operation",
+    "description": "Get a discovered web or API operation Returns a discovered web or API operation by discovery ID. GET /client/v4/zones/{zone_id}/api_gateway/discovery/operations/{discovery_id}",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/discovery/operations/{discovery_id}\nReturns a discovered web or API operation by discovery ID.\nRequired: zone_id (path); discovery_id (path) — Discovery ID of a discovered operation"
+  },
+  {
+    "id": "api-shield-api-discovery-retrieve-discovered-operations-on-a-zone",
+    "name": "List discovered web and API operations",
+    "description": "List discovered web and API operations Returns the latest web and API operations discovered from zone traffic. GET /client/v4/zones/{zone_id}/api_gateway/discovery/operations",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/discovery/operations\nReturns the latest web and API operations discovered from zone traffic.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; host (query); method (query); endpoint (query); direction (query); order (query); diff (query); origin (query) — Filter results to only include discovery results sourced from a particular discovery engine * `ML` - Discovered operations that were sourced using ML API Discovery * `SessionIdentifier` - Discovered operations that were sourced using Session Identifier API Discovery; state (query) — Filter results to only include discovery results in a particular state. States are as follows * `review` - Discovered operations that are not saved into API Shield Endpoint Management * `saved` - Discovered operations that are already saved into API Shield Endpoint Management * `ignored` - Discovered operations that have been marked as ignored"
+  },
+  {
+    "id": "api-shield-api-discovery-retrieve-discovered-operations-on-a-zone-as-openapi",
+    "name": "Export discovered API operations as OpenAPI schemas",
+    "description": "Export discovered API operations as OpenAPI schemas Returns the latest API operations discovered from zone traffic, rendered as OpenAPI schemas. GET /client/v4/zones/{zone_id}/api_gateway/discovery",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/discovery\nReturns the latest API operations discovered from zone traffic, rendered as OpenAPI schemas.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "api-shield-api-patch-discovered-operation",
+    "name": "Edit a discovered web or API operation",
+    "description": "Edit a discovered web or API operation Updates the state of a discovered web or API operation. PATCH /client/v4/zones/{zone_id}/api_gateway/discovery/operations/{discovery_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/api_gateway/discovery/operations/{discovery_id}\nUpdates the state of a discovered web or API operation.\nRequired: zone_id (path); discovery_id (path) — Discovery ID of a discovered operation; body (body)"
+  },
+  {
+    "id": "api-shield-api-patch-discovered-operations",
+    "name": "Edit discovered web and API operations",
+    "description": "Edit discovered web and API operations Updates the state of one or more discovered web and API operations. PATCH /client/v4/zones/{zone_id}/api_gateway/discovery/operations",
+    "context": "PATCH /client/v4/zones/{zone_id}/api_gateway/discovery/operations\nUpdates the state of one or more discovered web and API operations.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-delete-user-label",
+    "name": "Delete a user-defined operation label",
+    "description": "Delete a user-defined operation label Deletes a user-defined label and removes its associations with web and API operations. DELETE /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}\nDeletes a user-defined label and removes its associations with web and API operations.\nRequired: zone_id (path); name (path) — The label name"
+  },
+  {
+    "id": "api-shield-endpoint-management-add-operation-to-a-zone",
+    "name": "Create a web or API operation",
+    "description": "Create a web or API operation Creates one web or API operation. POST /client/v4/zones/{zone_id}/api_gateway/operations/item",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/operations/item\nCreates one web or API operation. The host, method, and path are normalized; an existing matching operation is returned instead of duplicated.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-endpoint-management-add-operations-to-a-zone",
+    "name": "Create web or API operations",
+    "description": "Create web or API operations Creates one or more web or API operations. POST /client/v4/zones/{zone_id}/api_gateway/operations",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/operations\nCreates one or more web or API operations. Hosts, methods, and paths are normalized; an existing matching operation is returned instead of duplicated.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-endpoint-management-delete-an-operation",
+    "name": "Delete a web or API operation",
+    "description": "Delete a web or API operation Deletes a web or API operation from endpoint management so its feature configuration is no longer tracked. DELETE /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}\nDeletes a web or API operation from endpoint management so its feature configuration is no longer tracked.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation"
+  },
+  {
+    "id": "api-shield-endpoint-management-delete-multiple-operations",
+    "name": "Delete web or API operations",
+    "description": "Delete web or API operations Deletes multiple web or API operations from endpoint management in one request. DELETE /client/v4/zones/{zone_id}/api_gateway/operations",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/operations\nDeletes multiple web or API operations from endpoint management in one request.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-endpoint-management-retrieve-information-about-all-operations-on-a-zone",
+    "name": "List web and API operations",
+    "description": "List web and API operations Lists web and API operations tracked for the zone, including each operation's method, path, and feature configuration. GET /client/v4/zones/{zone_id}/api_gateway/operations",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/operations\nLists web and API operations tracked for the zone, including each operation's method, path, and feature configuration.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; order (query); direction (query); host (query); method (query); endpoint (query); feature (query) — Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning."
+  },
+  {
+    "id": "api-shield-endpoint-management-retrieve-information-about-an-operation",
+    "name": "Get a web or API operation",
+    "description": "Get a web or API operation Returns a web or API operation, including its schema validation settings and requested feature data. GET /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}\nReturns a web or API operation, including its schema validation settings and requested feature data.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation\nOptional: feature (query) — Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning.; with_schemas (query) — When true, includes OpenAPI schemas (both uploaded and learned) for the operation in the response. Due to the conversion overhead, this parameter is only supported on single-operation retrieval."
+  },
+  {
+    "id": "api-shield-endpoint-management-retrieve-operations-and-features-as-open-api-schemas",
+    "name": "Export web and API operations as OpenAPI schemas",
+    "description": "Export web and API operations as OpenAPI schemas Returns tracked web and API operations and their feature configuration rendered as OpenAPI schemas. GET /client/v4/zones/{zone_id}/api_gateway/schemas",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/schemas\nReturns tracked web and API operations and their feature configuration rendered as OpenAPI schemas.\nRequired: zone_id (path)\nOptional: host (query); feature (query) — Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning.; include_schema_kind (query) — Schema kinds to include in exported OpenAPI schemas."
+  },
+  {
+    "id": "api-shield-expression-templates-fallthrough",
+    "name": "Generate a fallthrough WAF expression template",
+    "description": "Generate a fallthrough WAF expression template Generates a WAF expression template that matches fallthrough traffic for the supplied API hosts. POST /client/v4/zones/{zone_id}/api_gateway/expression-template/fallthrough",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/expression-template/fallthrough\nGenerates a WAF expression template that matches fallthrough traffic for the supplied API hosts. This operation is deprecated and should not be used for new integrations.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-labels-create-user-labels",
+    "name": "Create user-defined operation labels",
+    "description": "Create user-defined operation labels Creates one or more user-defined labels for classifying web and API operations. POST /client/v4/zones/{zone_id}/api_gateway/labels/user",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/labels/user\nCreates one or more user-defined labels for classifying web and API operations.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-labels-delete-user-labels",
+    "name": "Delete user-defined operation labels",
+    "description": "Delete user-defined operation labels Deletes one or more user-defined labels and removes their associations with web and API operations. DELETE /client/v4/zones/{zone_id}/api_gateway/labels/user",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/labels/user\nDeletes one or more user-defined labels and removes their associations with web and API operations.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-labels-get-labels",
+    "name": "List operation labels",
+    "description": "List operation labels Returns all managed and user-defined labels available for web and API operations in the zone. GET /client/v4/zones/{zone_id}/api_gateway/labels",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/labels\nReturns all managed and user-defined labels available for web and API operations in the zone.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; order (query); direction (query); source (query) — Filter for labels with source; filter (query) — Filter for labels where the name or description matches using substring match; with_mapped_resource_counts (query) — Include `mapped_resources` for each label"
+  },
+  {
+    "id": "api-shield-labels-get-managed-label",
+    "name": "Get a managed operation label",
+    "description": "Get a managed operation label Returns a managed label and the web and API operations associated with it. GET /client/v4/zones/{zone_id}/api_gateway/labels/managed/{name}",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/labels/managed/{name}\nReturns a managed label and the web and API operations associated with it.\nRequired: zone_id (path); name (path) — The label name\nOptional: with_mapped_resource_counts (query) — Include `mapped_resources` for each label"
+  },
+  {
+    "id": "api-shield-labels-get-user-label",
+    "name": "Get a user-defined operation label",
+    "description": "Get a user-defined operation label Returns a user-defined label and the web and API operations associated with it. GET /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}\nReturns a user-defined label and the web and API operations associated with it.\nRequired: zone_id (path); name (path) — The label name\nOptional: with_mapped_resource_counts (query) — Include `mapped_resources` for each label"
+  },
+  {
+    "id": "api-shield-labels-replace-operations-attached-to-managed-label",
+    "name": "Replace operations attached to a managed label",
+    "description": "Replace operations attached to a managed label Replaces the complete set of web and API operations attached to the managed label. PUT /client/v4/zones/{zone_id}/api_gateway/labels/managed/{name}/resources/operation",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/labels/managed/{name}/resources/operation\nReplaces the complete set of web and API operations attached to the managed label.\nRequired: zone_id (path); name (path) — The label name; body (body)"
+  },
+  {
+    "id": "api-shield-labels-replace-operations-attached-to-user-label",
+    "name": "Replace operations attached to a user-defined label",
+    "description": "Replace operations attached to a user-defined label Replaces the complete set of web and API operations attached to the user-defined label. PUT /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}/resources/operation",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}/resources/operation\nReplaces the complete set of web and API operations attached to the user-defined label.\nRequired: zone_id (path); name (path) — The label name; body (body)"
+  },
+  {
+    "id": "api-shield-operations-bulk-delete-labels-to-operations",
+    "name": "Remove labels from web or API operations",
+    "description": "Remove labels from web or API operations Removes labels from multiple web or API operations in one request. DELETE /client/v4/zones/{zone_id}/api_gateway/operations/labels",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/operations/labels\nRemoves labels from multiple web or API operations in one request.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-operations-bulk-post-labels-to-operations",
+    "name": "Attach labels to web or API operations",
+    "description": "Attach labels to web or API operations Attaches labels to multiple web or API operations in one request. POST /client/v4/zones/{zone_id}/api_gateway/operations/labels",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/operations/labels\nAttaches labels to multiple web or API operations in one request.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-operations-bulk-put-labels-to-operations",
+    "name": "Replace labels on web or API operations",
+    "description": "Replace labels on web or API operations Replaces the complete label sets on multiple web or API operations in one request. PUT /client/v4/zones/{zone_id}/api_gateway/operations/labels",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/operations/labels\nReplaces the complete label sets on multiple web or API operations in one request.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-operations-delete-labels-from-operation",
+    "name": "Remove labels from a web or API operation",
+    "description": "Remove labels from a web or API operation Removes one or more labels from a web or API operation. DELETE /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/labels",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/labels\nRemoves one or more labels from a web or API operation.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation; body (body)"
+  },
+  {
+    "id": "api-shield-operations-post-labels-to-operation",
+    "name": "Attach labels to a web or API operation",
+    "description": "Attach labels to a web or API operation Attaches one or more labels to a web or API operation. POST /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/labels",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/labels\nAttaches one or more labels to a web or API operation.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation; body (body)"
+  },
+  {
+    "id": "api-shield-operations-put-labels-to-operation",
+    "name": "Replace labels on a web or API operation",
+    "description": "Replace labels on a web or API operation Replaces the complete label set on a web or API operation. PUT /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/labels",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/labels\nReplaces the complete label set on a web or API operation.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation; body (body)"
+  },
+  {
+    "id": "api-shield-patch-user-label",
+    "name": "Edit a user-defined operation label",
+    "description": "Edit a user-defined operation label Updates only the supplied fields on a user-defined label. PATCH /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}",
+    "context": "PATCH /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}\nUpdates only the supplied fields on a user-defined label.\nRequired: zone_id (path); name (path) — The label name; body (body)"
+  },
+  {
+    "id": "api-shield-put-user-label",
+    "name": "Update a user-defined operation label",
+    "description": "Update a user-defined operation label Replaces all editable fields on a user-defined label. PUT /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/labels/user/{name}\nReplaces all editable fields on a user-defined label.\nRequired: zone_id (path); name (path) — The label name; body (body)"
+  },
+  {
+    "id": "api-shield-schema-delete-a-schema",
+    "name": "Delete a schema",
+    "description": "Delete a schema Permanently removes an uploaded OpenAPI schema from API Shield schema validation. DELETE /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}\nPermanently removes an uploaded OpenAPI schema from API Shield schema validation. Operations using this schema will lose their validation rules. Deprecated; use `/zones/{zone_id}/schema_validation/schemas/{schema_id}` instead.\nRequired: zone_id (path); schema_id (path) — Identifier for the schema-ID"
+  },
+  {
+    "id": "api-shield-schema-validation-enable-validation-for-a-schema",
+    "name": "Enable validation for a schema",
+    "description": "Enable validation for a schema Activates schema validation for an uploaded OpenAPI schema. PATCH /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}\nActivates schema validation for an uploaded OpenAPI schema. Requests to matching endpoints will be validated against the schema definitions. Deprecated; use `/zones/{zone_id}/schema_validation/schemas/{schema_id}` instead.\nRequired: zone_id (path); schema_id (path) — Identifier for the schema-ID; body (body)"
+  },
+  {
+    "id": "api-shield-schema-validation-extract-operations-from-schema",
+    "name": "Retrieve all operations from a schema",
+    "description": "Retrieve all operations from a schema Retrieves all operations from the schema. GET /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}/operations",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}/operations\nRetrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations. Deprecated; use `/zones/{zone_id}/schema_validation/schemas/{schema_id}/operations` instead.\nRequired: schema_id (path) — Identifier for the schema-ID; zone_id (path)\nOptional: feature (query) — Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning.; host (query); method (query); endpoint (query); page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; operation_status (query) — Filter results by whether operations exist in API Shield Endpoint Management or not. `new` will just return operations from the schema that do not exist in API Shield Endpoint Management. `existing` will just return operations from the schema that already exist in API Shield Endpoint Management."
+  },
+  {
+    "id": "api-shield-schema-validation-patch-zone-level-settings",
+    "name": "Update zone level schema validation settings",
+    "description": "Update zone level schema validation settings Updates zone level schema validation settings on the zone. PATCH /client/v4/zones/{zone_id}/api_gateway/settings/schema_validation",
+    "context": "PATCH /client/v4/zones/{zone_id}/api_gateway/settings/schema_validation\nUpdates zone level schema validation settings on the zone. Deprecated; use `/zones/{zone_id}/schema_validation/settings` instead.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-schema-validation-post-schema",
+    "name": "Upload a legacy schema",
+    "description": "Upload a legacy schema Uploads an OpenAPI schema that defines expected request formats for API endpoints. POST /client/v4/zones/{zone_id}/api_gateway/user_schemas",
+    "context": "POST /client/v4/zones/{zone_id}/api_gateway/user_schemas\nUploads an OpenAPI schema that defines expected request formats for API endpoints. Deprecated; use `/zones/{zone_id}/schema_validation/schemas` instead.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-schema-validation-retrieve-information-about-all-schemas",
+    "name": "Retrieve information about all schemas on a zone",
+    "description": "Retrieve information about all schemas on a zone Lists all OpenAPI schemas uploaded to API Shield for the zone, including their validation status and associated operations. GET /client/v4/zones/{zone_id}/api_gateway/user_schemas",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/user_schemas\nLists all OpenAPI schemas uploaded to API Shield for the zone, including their validation status and associated operations. Deprecated; use `/zones/{zone_id}/schema_validation/schemas` instead.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page.; omit_source (query) — Omit the source-files of schemas and only retrieve their meta-data.; validation_enabled (query)"
+  },
+  {
+    "id": "api-shield-schema-validation-retrieve-information-about-specific-schema",
+    "name": "Retrieve information about a specific schema on a zone",
+    "description": "Retrieve information about a specific schema on a zone Gets detailed information about a specific uploaded OpenAPI schema, including its contents and validation configuration. GET /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/user_schemas/{schema_id}\nGets detailed information about a specific uploaded OpenAPI schema, including its contents and validation configuration. Deprecated; use `/zones/{zone_id}/schema_validation/schemas/{schema_id}` instead.\nRequired: zone_id (path); schema_id (path) — Identifier for the schema-ID\nOptional: omit_source (query) — Omit the source-files of schemas and only retrieve their meta-data."
+  },
+  {
+    "id": "api-shield-schema-validation-retrieve-operation-level-settings",
+    "name": "Retrieve operation-level schema validation settings",
+    "description": "Retrieve operation-level schema validation settings Retrieves operation-level schema validation settings on the zone. GET /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/schema_validation",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/schema_validation\nRetrieves operation-level schema validation settings on the zone. Deprecated; use `/zones/{zone_id}/schema_validation/settings/operations/{operation_id}` instead.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation"
+  },
+  {
+    "id": "api-shield-schema-validation-retrieve-user-schema-hosts",
+    "name": "Retrieve schema hosts in a zone",
+    "description": "Retrieve schema hosts in a zone Lists all unique hosts found in uploaded OpenAPI schemas for the zone. GET /client/v4/zones/{zone_id}/api_gateway/user_schemas/hosts",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/user_schemas/hosts\nLists all unique hosts found in uploaded OpenAPI schemas for the zone. Useful for understanding which domains have schema coverage. Deprecated; use `/zones/{zone_id}/schema_validation/schemas/hosts` instead.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page."
+  },
+  {
+    "id": "api-shield-schema-validation-retrieve-zone-level-settings",
+    "name": "Retrieve zone level schema validation settings",
+    "description": "Retrieve zone level schema validation settings Retrieves zone level schema validation settings currently set on the zone. GET /client/v4/zones/{zone_id}/api_gateway/settings/schema_validation",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/settings/schema_validation\nRetrieves zone level schema validation settings currently set on the zone. Deprecated; use `/zones/{zone_id}/schema_validation/settings` instead.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "api-shield-schema-validation-update-multiple-operation-level-settings",
+    "name": "Update multiple operation-level schema validation settings",
+    "description": "Update multiple operation-level schema validation settings Updates multiple operation-level schema validation settings on the zone. PATCH /client/v4/zones/{zone_id}/api_gateway/operations/schema_validation",
+    "context": "PATCH /client/v4/zones/{zone_id}/api_gateway/operations/schema_validation\nUpdates multiple operation-level schema validation settings on the zone. Deprecated; use `/zones/{zone_id}/schema_validation/settings/operations` instead.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-schema-validation-update-operation-level-settings",
+    "name": "Update operation-level schema validation settings",
+    "description": "Update operation-level schema validation settings Updates operation-level schema validation settings on the zone. PUT /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/schema_validation",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/operations/{operation_id}/schema_validation\nUpdates operation-level schema validation settings on the zone. Deprecated; use `/zones/{zone_id}/schema_validation/settings/operations/{operation_id}` instead.\nRequired: zone_id (path); operation_id (path) — Identifier for the operation; body (body)"
+  },
+  {
+    "id": "api-shield-schema-validation-update-zone-level-settings",
+    "name": "Update zone level schema validation settings",
+    "description": "Update zone level schema validation settings Updates zone level schema validation settings on the zone. PUT /client/v4/zones/{zone_id}/api_gateway/settings/schema_validation",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/settings/schema_validation\nUpdates zone level schema validation settings on the zone. Deprecated; use `/zones/{zone_id}/schema_validation/settings` instead.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "api-shield-settings-retrieve-information-about-specific-configuration-properties",
+    "name": "Get session identifier settings",
+    "description": "Get session identifier settings Returns the authentication identifier characteristics configured for the zone. GET /client/v4/zones/{zone_id}/api_gateway/configuration",
+    "context": "GET /client/v4/zones/{zone_id}/api_gateway/configuration\nReturns the authentication identifier characteristics configured for the zone. Header, cookie, or JWT claim values identify distinct API sessions.\nRequired: zone_id (path)\nOptional: normalize (query) — Ensures that the configuration is written or retrieved in normalized fashion"
+  },
+  {
+    "id": "api-shield-settings-set-configuration-properties",
+    "name": "Update session identifier settings",
+    "description": "Update session identifier settings Replaces the zone's authentication identifier characteristics used to identify distinct API sessions. PUT /client/v4/zones/{zone_id}/api_gateway/configuration",
+    "context": "PUT /client/v4/zones/{zone_id}/api_gateway/configuration\nReplaces the zone's authentication identifier characteristics used to identify distinct API sessions.\nRequired: zone_id (path); body (body)\nOptional: normalize (query) — Ensures that the configuration is written or retrieved in normalized fashion"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "alerts_create",
+    "name": "alerts_create",
+    "description": "alerts_create POST /api/projects/{project_id}/alerts/",
+    "context": "POST /api/projects/{project_id}/alerts/\nalerts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "alerts_destinations_create",
+    "name": "Send this alert to a Slack channel as well as by email",
+    "description": "Send this alert to a Slack channel as well as by email Send this alert to a Slack channel as well as by email. POST /api/projects/{project_id}/alerts/{id}/destinations/",
+    "context": "POST /api/projects/{project_id}/alerts/{id}/destinations/\nSend this alert to a Slack channel as well as by email. The workspace must already be connected to the project. The returned IDs identify the destination.\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "alerts_destinations_delete_create",
+    "name": "Stop sending this alert to a destination",
+    "description": "Stop sending this alert to a destination Stop sending this alert to a destination. POST /api/projects/{project_id}/alerts/{id}/destinations/delete/",
+    "context": "POST /api/projects/{project_id}/alerts/{id}/destinations/delete/\nStop sending this alert to a destination. The alert keeps its email recipients.\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "alerts_destroy",
+    "name": "alerts_destroy",
+    "description": "alerts_destroy DELETE /api/projects/{project_id}/alerts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/alerts/{id}/\nalerts_destroy\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "alerts_list",
+    "name": "alerts_list",
+    "description": "alerts_list GET /api/projects/{project_id}/alerts/",
+    "context": "GET /api/projects/{project_id}/alerts/\nalerts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query) — Optional. Restrict results to alerts created by the user with this UUID.; has_detector (query) — Optional. Restrict results by whether the alert uses anomaly detection.; insight_id (query) — Optional. Restrict results to alerts on this insight ID.; insight_tag (query) — Optional. Restrict results to alerts whose insight has this tag.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Optional. Fuzzy match against alert `name` using Postgres trigram word similarity (handles typos, transpositions, and prefix-as-you-type). Results are ordered by relevance, then creation time. Capped at 200 characters; longer queries return a 400 error."
+  },
+  {
+    "id": "alerts_partial_update",
+    "name": "alerts_partial_update",
+    "description": "alerts_partial_update PATCH /api/projects/{project_id}/alerts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/alerts/{id}/\nalerts_partial_update\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "alerts_retrieve",
+    "name": "alerts_retrieve",
+    "description": "alerts_retrieve GET /api/projects/{project_id}/alerts/{id}/",
+    "context": "GET /api/projects/{project_id}/alerts/{id}/\nalerts_retrieve\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: checks_date_from (query) — Relative date string for the start of the check history window (e.g. '-24h', '-7d', '-14d'). Returns checks created after this time. Max retention is 14 days.; checks_date_to (query) — Relative date string for the end of the check history window (e.g. '-1h', '-1d'). Defaults to now if not specified.; checks_limit (query) — Maximum number of check results to return (default 5, max 500). Applied after date filtering.; checks_offset (query) — Number of newest checks to skip (0-based). Use with checks_limit for pagination. Default 0."
+  },
+  {
+    "id": "alerts_simulate_create",
+    "name": "Simulate a detector on an insight's historical data",
+    "description": "Simulate a detector on an insight's historical data Simulate a detector on an insight's historical data. POST /api/projects/{project_id}/alerts/simulate/",
+    "context": "POST /api/projects/{project_id}/alerts/simulate/\nSimulate a detector on an insight's historical data. Read-only — no AlertCheck records are created.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "alerts_test_delivery_create",
+    "name": "Send a synthetic test notification to subscribed users and every active destination on this alert.",
+    "description": "Send a synthetic test notification to subscribed users and every active destination on this alert. POST /api/projects/{project_id}/alerts/{id}/test-delivery/",
+    "context": "POST /api/projects/{project_id}/alerts/{id}/test-delivery/\nSend a synthetic test notification to subscribed users and every active destination on this alert.\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "alerts_update",
+    "name": "alerts_update",
+    "description": "alerts_update PUT /api/projects/{project_id}/alerts/{id}/",
+    "context": "PUT /api/projects/{project_id}/alerts/{id}/\nalerts_update\nRequired: id (path) — A UUID string identifying this alert configuration.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

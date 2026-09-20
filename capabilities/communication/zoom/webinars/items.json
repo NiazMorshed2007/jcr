@@ -1,0 +1,98 @@
+[
+  {
+    "id": "webinar",
+    "name": "Retrieve a webinar",
+    "description": "Retrieve a webinar GET /v2/webinars/{webinarId}",
+    "context": "GET /v2/webinars/{webinarId}\nRetrieve a webinar\nRequired: webinarId (path) — The webinar ID"
+  },
+  {
+    "id": "webinarDelete",
+    "name": "Delete a webinar",
+    "description": "Delete a webinar DELETE /v2/webinars/{webinarId}",
+    "context": "DELETE /v2/webinars/{webinarId}\nDelete a webinar\nRequired: webinarId (path) — The webinar ID\nOptional: occurrence_id (query) — The meeting occurrence ID"
+  },
+  {
+    "id": "webinarPanelistCreate",
+    "name": "Add a webinar panelist",
+    "description": "Add a webinar panelist Add panelist to webinar POST /v2/webinars/{webinarId}/panelists",
+    "context": "POST /v2/webinars/{webinarId}/panelists\nAdd panelist to webinar\nRequired: webinarId (path) — The webinar ID; body (body)"
+  },
+  {
+    "id": "webinarPanelistDelete",
+    "name": "Remove a webinar panelist",
+    "description": "Remove a webinar panelist Remove a panelist from a webinar DELETE /v2/webinars/{webinarId}/panelists/{panelistId}",
+    "context": "DELETE /v2/webinars/{webinarId}/panelists/{panelistId}\nRemove a panelist from a webinar\nRequired: webinarId (path) — The webinar ID; panelistId (path) — The panelist ID"
+  },
+  {
+    "id": "webinarPanelists",
+    "name": "List a webinar's panelists",
+    "description": "List a webinar's panelists List panelists for a webinar GET /v2/webinars/{webinarId}/panelists",
+    "context": "GET /v2/webinars/{webinarId}/panelists\nList panelists for a webinar\nRequired: webinarId (path) — The webinar ID"
+  },
+  {
+    "id": "webinarPanelistsDelete",
+    "name": "Remove a webinar's panelists",
+    "description": "Remove a webinar's panelists Remove all panelists from a webinar DELETE /v2/webinars/{webinarId}/panelists",
+    "context": "DELETE /v2/webinars/{webinarId}/panelists\nRemove all panelists from a webinar\nRequired: webinarId (path) — The webinar ID"
+  },
+  {
+    "id": "webinarPollCreate",
+    "name": "Create a webinar's poll",
+    "description": "Create a webinar's poll Create a poll for a webinar POST /v2/webinars/{webinarId}/polls",
+    "context": "POST /v2/webinars/{webinarId}/polls\nCreate a poll for a webinar\nRequired: webinarId (path) — The webinar ID; body (body) — Webinar poll object"
+  },
+  {
+    "id": "webinarPollDelete",
+    "name": "Delete a webinar's Poll",
+    "description": "Delete a webinar's Poll DELETE /v2/webinars/{webinarId}/polls/{pollId}",
+    "context": "DELETE /v2/webinars/{webinarId}/polls/{pollId}\nDelete a webinar's Poll\nRequired: webinarId (path) — The webinar ID; pollId (path) — The poll ID"
+  },
+  {
+    "id": "webinarPollGet",
+    "name": "Retrieve a webinar's poll",
+    "description": "Retrieve a webinar's poll GET /v2/webinars/{webinarId}/polls/{pollId}",
+    "context": "GET /v2/webinars/{webinarId}/polls/{pollId}\nRetrieve a webinar's poll\nRequired: webinarId (path) — The webinar ID; pollId (path) — The poll ID"
+  },
+  {
+    "id": "webinarPolls",
+    "name": "List a webinar's polls",
+    "description": "List a webinar's polls List polls of a webinar GET /v2/webinars/{webinarId}/polls",
+    "context": "GET /v2/webinars/{webinarId}/polls\nList polls of a webinar\nRequired: webinarId (path) — The webinar ID"
+  },
+  {
+    "id": "webinarPollUpdate",
+    "name": "Update a webinar's poll",
+    "description": "Update a webinar's poll PUT /v2/webinars/{webinarId}/polls/{pollId}",
+    "context": "PUT /v2/webinars/{webinarId}/polls/{pollId}\nUpdate a webinar's poll\nRequired: webinarId (path) — The webinar ID; pollId (path) — The poll ID; body (body) — Webinar Poll"
+  },
+  {
+    "id": "webinarRegistrantCreate",
+    "name": "Add a webinar registrant",
+    "description": "Add a webinar registrant Add a registrant for a webinar POST /v2/webinars/{webinarId}/registrants",
+    "context": "POST /v2/webinars/{webinarId}/registrants\nAdd a registrant for a webinar\nRequired: webinarId (path) — The webinar ID; body (body)\nOptional: occurrence_ids (query) — Occurrence IDs, could get this value from Webinar Get API. Multiple value separated by comma."
+  },
+  {
+    "id": "webinarRegistrants",
+    "name": "List a webinar's registrants",
+    "description": "List a webinar's registrants List registrants for a webinar GET /v2/webinars/{webinarId}/registrants",
+    "context": "GET /v2/webinars/{webinarId}/registrants\nList registrants for a webinar\nRequired: webinarId (path) — The webinar ID\nOptional: occurrence_id (query) — The meeting occurrence ID; status (query) — The registrant status; page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "webinarRegistrantStatus",
+    "name": "Update a webinar registrant's status",
+    "description": "Update a webinar registrant's status PUT /v2/webinars/{webinarId}/registrants/status",
+    "context": "PUT /v2/webinars/{webinarId}/registrants/status\nUpdate a webinar registrant's status\nRequired: webinarId (path) — The webinar ID; body (body)\nOptional: occurrence_id (query) — The meeting occurrence ID"
+  },
+  {
+    "id": "webinarStatus",
+    "name": "Update a webinar's status",
+    "description": "Update a webinar's status PUT /v2/webinars/{webinarId}/status",
+    "context": "PUT /v2/webinars/{webinarId}/status\nUpdate a webinar's status\nRequired: webinarId (path) — The webinar ID; body (body)"
+  },
+  {
+    "id": "webinarUpdate",
+    "name": "Update a webinar",
+    "description": "Update a webinar PATCH /v2/webinars/{webinarId}",
+    "context": "PATCH /v2/webinars/{webinarId}\nUpdate a webinar\nRequired: webinarId (path) — The webinar ID; body (body) — Webinar"
+  }
+]

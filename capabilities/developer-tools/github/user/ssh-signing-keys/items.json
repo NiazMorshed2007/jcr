@@ -1,0 +1,26 @@
+[
+  {
+    "id": "users%2Fcreate-ssh-signing-key-for-authenticated-user",
+    "name": "Create a SSH signing key for the authenticated user",
+    "description": "Create a SSH signing key for the authenticated user Creates an SSH signing key for the authenticated user's GitHub account. POST /user/ssh_signing_keys",
+    "context": "POST /user/ssh_signing_keys\nCreates an SSH signing key for the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.\nRequired: body (body)"
+  },
+  {
+    "id": "users%2Fdelete-ssh-signing-key-for-authenticated-user",
+    "name": "Delete an SSH signing key for the authenticated user",
+    "description": "Delete an SSH signing key for the authenticated user Deletes an SSH signing key from the authenticated user's GitHub account. DELETE /user/ssh_signing_keys/{ssh_signing_key_id}",
+    "context": "DELETE /user/ssh_signing_keys/{ssh_signing_key_id}\nDeletes an SSH signing key from the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.\nRequired: ssh_signing_key_id (path) — The unique identifier of the SSH signing key."
+  },
+  {
+    "id": "users%2Fget-ssh-signing-key-for-authenticated-user",
+    "name": "Get an SSH signing key for the authenticated user",
+    "description": "Get an SSH signing key for the authenticated user Gets extended details for an SSH signing key. GET /user/ssh_signing_keys/{ssh_signing_key_id}",
+    "context": "GET /user/ssh_signing_keys/{ssh_signing_key_id}\nGets extended details for an SSH signing key. OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.\nRequired: ssh_signing_key_id (path) — The unique identifier of the SSH signing key."
+  },
+  {
+    "id": "users%2Flist-ssh-signing-keys-for-authenticated-user",
+    "name": "List SSH signing keys for the authenticated user",
+    "description": "List SSH signing keys for the authenticated user Lists the SSH signing keys for the authenticated user's GitHub account. GET /user/ssh_signing_keys",
+    "context": "GET /user/ssh_signing_keys\nLists the SSH signing keys for the authenticated user's GitHub account. OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

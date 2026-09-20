@@ -1,0 +1,32 @@
+[
+  {
+    "id": "get_sign_requests",
+    "name": "List Box Sign requests",
+    "description": "List Box Sign requests Gets signature requests created by a user. GET /2.0/sign_requests",
+    "context": "GET /2.0/sign_requests\nGets signature requests created by a user. If the `sign_files` and/or `parent_folder` are deleted, the signature request will not return in the list.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page.; senders (query) — A list of sender emails to filter the signature requests by sender. If provided, `shared_requests` must be set to `true`.; shared_requests (query) — If set to `true`, only includes requests that user is not an owner, but user is a collaborator. Collaborator access is determined by the user access level of the sign files of the request. Default is `false`. Must be set to `true` if `senders` are provided."
+  },
+  {
+    "id": "get_sign_requests_id",
+    "name": "Get Box Sign request by ID",
+    "description": "Get Box Sign request by ID Gets a sign request by ID. GET /2.0/sign_requests/{sign_request_id}",
+    "context": "GET /2.0/sign_requests/{sign_request_id}\nGets a sign request by ID.\nRequired: sign_request_id (path) — The ID of the signature request."
+  },
+  {
+    "id": "post_sign_requests",
+    "name": "Create Box Sign request",
+    "description": "Create Box Sign request Creates a signature request. POST /2.0/sign_requests",
+    "context": "POST /2.0/sign_requests\nCreates a signature request. This involves preparing a document for signing and sending the signature request to signers.\nOptional: body (body)"
+  },
+  {
+    "id": "post_sign_requests_id_cancel",
+    "name": "Cancel Box Sign request",
+    "description": "Cancel Box Sign request Cancels a sign request. POST /2.0/sign_requests/{sign_request_id}/cancel",
+    "context": "POST /2.0/sign_requests/{sign_request_id}/cancel\nCancels a sign request.\nRequired: sign_request_id (path) — The ID of the signature request.\nOptional: body (body)"
+  },
+  {
+    "id": "post_sign_requests_id_resend",
+    "name": "Resend Box Sign request",
+    "description": "Resend Box Sign request Resends a signature request email to all outstanding signers. POST /2.0/sign_requests/{sign_request_id}/resend",
+    "context": "POST /2.0/sign_requests/{sign_request_id}/resend\nResends a signature request email to all outstanding signers.\nRequired: sign_request_id (path) — The ID of the signature request."
+  }
+]

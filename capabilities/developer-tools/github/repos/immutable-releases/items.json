@@ -1,0 +1,20 @@
+[
+  {
+    "id": "repos%2Fcheck-immutable-releases",
+    "name": "Check if immutable releases are enabled for a repository",
+    "description": "Check if immutable releases are enabled for a repository Shows whether immutable releases are enabled or disabled. GET /repos/{owner}/{repo}/immutable-releases",
+    "context": "GET /repos/{owner}/{repo}/immutable-releases\nShows whether immutable releases are enabled or disabled. Also identifies whether immutability is being enforced by the repository owner. The authenticated user must have admin read access to the repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fdisable-immutable-releases",
+    "name": "Disable immutable releases",
+    "description": "Disable immutable releases Disables immutable releases for a repository. DELETE /repos/{owner}/{repo}/immutable-releases",
+    "context": "DELETE /repos/{owner}/{repo}/immutable-releases\nDisables immutable releases for a repository. The authenticated user must have admin access to the repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fenable-immutable-releases",
+    "name": "Enable immutable releases",
+    "description": "Enable immutable releases Enables immutable releases for a repository. PUT /repos/{owner}/{repo}/immutable-releases",
+    "context": "PUT /repos/{owner}/{repo}/immutable-releases\nEnables immutable releases for a repository. The authenticated user must have admin access to the repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "js_snippet_resolve_retrieve",
+    "name": "Preview what a given pin would resolve to, without saving it.",
+    "description": "Preview what a given pin would resolve to, without saving it. GET /api/projects/{project_id}/js-snippet/resolve/",
+    "context": "GET /api/projects/{project_id}/js-snippet/resolve/\nPreview what a given pin would resolve to, without saving it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "js_snippet_version_partial_update",
+    "name": "Update the team's version pin.",
+    "description": "Update the team's version pin. PATCH /api/projects/{project_id}/js-snippet/version/",
+    "context": "PATCH /api/projects/{project_id}/js-snippet/version/\nUpdate the team's version pin.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "js_snippet_version_retrieve",
+    "name": "Return the team's current version pin and resolved version.",
+    "description": "Return the team's current version pin and resolved version. GET /api/projects/{project_id}/js-snippet/version/",
+    "context": "GET /api/projects/{project_id}/js-snippet/version/\nReturn the team's current version pin and resolved version.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "addOrganizationMember",
+    "name": "Add a Member to an Organization",
+    "description": "Add a Member to an Organization Add or invite a member to an organization. POST /api/0/organizations/{organization_id_or_slug}/members/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/members/\nAdd or invite a member to an organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "addOrganizationMemberTeam",
+    "name": "Add an Organization Member to a Team",
+    "description": "Add an Organization Member to a Team This request can return various success codes depending on the context of the team: - **`201`**: The member has been successfully added. POST /api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/\nThis request can return various success codes depending on the context of the team: - **`201`**: The member has been successfully added. - **`202`**: The member needs permission to join the team and an access request has been generated. - **`204`**: The member is already on the team. If the team is provisioned through an identity provider, the member cannot join the team through Sentry. Note the permission scopes vary depending on the organization setting `\"Open Membership\"` and the type of authorization token. The following table outlines the accepted scopes. Open Membership On Off Internal Integration Token &bull; org:read &bull; org:write &bull; team:write User Auth Token &bull; org:read &bull; org:read* &bull; org:write &bull; org:read + team:write** *Organization members are restricted to this scope. When sending a request, it will always return a 202 and request an invite to the team. \\*\\*Team Admins must have both **`org:read`** and **`team:write`** scopes in their user authorization token to add members to their teams.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the organization member to add to the team; team_id_or_slug (path) — The ID or slug of the team the resource belongs to."
+  },
+  {
+    "id": "deleteOrganizationMember",
+    "name": "Delete an Organization Member",
+    "description": "Delete an Organization Member Remove an organization member. DELETE /api/0/organizations/{organization_id_or_slug}/members/{member_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/members/{member_id}/\nRemove an organization member.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the member to delete."
+  },
+  {
+    "id": "deleteOrganizationMemberTeam",
+    "name": "Delete an Organization Member from a Team",
+    "description": "Delete an Organization Member from a Team Delete an organization member from a team. DELETE /api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/\nDelete an organization member from a team. Note the permission scopes vary depending on the type of authorization token. The following table outlines the accepted scopes. Org Auth Token &bull; org:write &bull; org:admin &bull; team:admin User Auth Token &bull; org:read* &bull; org:write &bull; org:admin &bull; team:admin &bull; org:read + team:admin** \\***`org:read`** can only be used to remove yourself from the teams you are a member of. \\*\\*Team Admins must have both **`org:read`** and **`team:admin`** scopes in their user authorization token to delete members from their teams.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the organization member to delete from the team; team_id_or_slug (path) — The ID or slug of the team the resource belongs to."
+  },
+  {
+    "id": "getOrganizationMember",
+    "name": "Retrieve an Organization Member",
+    "description": "Retrieve an Organization Member Retrieve an organization member's details. GET /api/0/organizations/{organization_id_or_slug}/members/{member_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/members/{member_id}/\nRetrieve an organization member's details. Response will be a pending invite if it has been approved by organization owners or managers but is waiting to be accepted by the invitee.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the organization member."
+  },
+  {
+    "id": "listOrganizationMembers",
+    "name": "List an Organization's Members",
+    "description": "List an Organization's Members List all organization members. GET /api/0/organizations/{organization_id_or_slug}/members/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/members/\nList all organization members. Response includes pending invites that are approved by organization owners or managers but waiting to be accepted by the invitee.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: query (query) — Limit results to members matching the given query. `id, `user.id`, ... are supported prefixes match on: `id`, `user.id`, `email`, `role`, `scope`, `isInvited`, `ssoLinked`, `has2fa`, `hasExternalUsers`. For example, `query=user.id:1234`. An unrecognized field returns no results.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "updateOrganizationMember",
+    "name": "Update an Organization Member's Roles",
+    "description": "Update an Organization Member's Roles Update a member's [organization-level](https://docs.sentry.io/organization/membership/#organization-level-roles) and [team-level](https://docs.sentry.io/organization/membership/#team-level-roles) roles. PUT /api/0/organizations/{organization_id_or_slug}/members/{member_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/members/{member_id}/\nUpdate a member's [organization-level](https://docs.sentry.io/organization/membership/#organization-level-roles) and [team-level](https://docs.sentry.io/organization/membership/#team-level-roles) roles. Note that for changing organization-roles, this endpoint is restricted to [user auth tokens](https://docs.sentry.io/account/auth-tokens/#user-auth-tokens). Additionally, both the original and desired organization role must have the same or lower permissions than the role of the organization user making the request For example, an organization Manager may change someone's role from Member to Manager, but not to Owner.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the member to update.\nOptional: body (body)"
+  },
+  {
+    "id": "updateOrganizationMemberTeam",
+    "name": "Update an Organization Member's Team Role",
+    "description": "Update an Organization Member's Team Role The relevant organization member must already be a part of the team. PUT /api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/\nThe relevant organization member must already be a part of the team. Note that for organization admins, managers, and owners, they are automatically granted a minimum team role of `admin` on all teams they are part of. Read more about [team roles](https://docs.sentry.io/product/teams/roles/).\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the organization member to change; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.\nOptional: body (body)"
+  }
+]

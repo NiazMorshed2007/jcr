@@ -1,0 +1,140 @@
+[
+  {
+    "id": "pages-deployment-create-deployment",
+    "name": "Create deployment",
+    "description": "Create deployment Start a new deployment from production. POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments\nStart a new deployment from production. The repository and account must have already been authorized on the Cloudflare Pages dashboard.\nRequired: project_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "pages-deployment-create-tail",
+    "name": "Create deployment tail",
+    "description": "Create deployment tail Start a tail that receives logs and exception data. POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/tails",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/tails\nStart a tail that receives logs and exception data.\nRequired: deployment_id (path); project_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "pages-deployment-delete-deployment",
+    "name": "Delete deployment",
+    "description": "Delete deployment Delete a deployment. DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}\nDelete a deployment.\nRequired: deployment_id (path); project_name (path); account_id (path)\nOptional: force (query)"
+  },
+  {
+    "id": "pages-deployment-delete-tail",
+    "name": "Delete deployment tail",
+    "description": "Delete deployment tail Deletes a tail from a Pages deployment. DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/tails/{tail_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/tails/{tail_id}\nDeletes a tail from a Pages deployment.\nRequired: tail_id (path); deployment_id (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-deployment-get-deployment-info",
+    "name": "Get deployment info",
+    "description": "Get deployment info Fetch information about a deployment. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}\nFetch information about a deployment.\nRequired: deployment_id (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-deployment-get-deployment-logs",
+    "name": "Get deployment logs",
+    "description": "Get deployment logs Fetch deployment logs for a project. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/history/logs",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/history/logs\nFetch deployment logs for a project.\nRequired: deployment_id (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-deployment-get-deployments",
+    "name": "Get deployments",
+    "description": "Get deployments Fetch a list of project deployments. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments\nFetch a list of project deployments.\nRequired: project_name (path); account_id (path)\nOptional: env (query); page (query); per_page (query)"
+  },
+  {
+    "id": "pages-deployment-retry-deployment",
+    "name": "Retry deployment",
+    "description": "Retry deployment Retry a previous deployment. POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/retry",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/retry\nRetry a previous deployment.\nRequired: deployment_id (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-deployment-rollback-deployment",
+    "name": "Rollback deployment",
+    "description": "Rollback deployment Rollback the production deployment to a previous deployment. POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/rollback",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/deployments/{deployment_id}/rollback\nRollback the production deployment to a previous deployment. You can only rollback to succesful builds on production.\nRequired: deployment_id (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-domains-add-domain",
+    "name": "Add domain",
+    "description": "Add domain Add a new domain for the Pages project. POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains\nAdd a new domain for the Pages project.\nRequired: project_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "pages-domains-delete-domain",
+    "name": "Delete domain",
+    "description": "Delete domain Delete a Pages project's domain. DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}\nDelete a Pages project's domain.\nRequired: domain_name (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-domains-get-domain",
+    "name": "Get domain",
+    "description": "Get domain Fetch a single domain. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}\nFetch a single domain.\nRequired: domain_name (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-domains-get-domains",
+    "name": "Get domains",
+    "description": "Get domains Fetch a list of all domains associated with a Pages project. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains\nFetch a list of all domains associated with a Pages project.\nRequired: project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-domains-patch-domain",
+    "name": "Patch domain",
+    "description": "Patch domain Retry the validation status of a single domain. PATCH /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}",
+    "context": "PATCH /client/v4/accounts/{account_id}/pages/projects/{project_name}/domains/{domain_name}\nRetry the validation status of a single domain.\nRequired: domain_name (path); project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-project-connect-project-source",
+    "name": "Connect project source",
+    "description": "Connect project source Connect a Git repository source to an existing Pages project. POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/source",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/source\nConnect a Git repository source to an existing Pages project.\nRequired: project_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "pages-project-create-project",
+    "name": "Create project",
+    "description": "Create project Create a new project. POST /client/v4/accounts/{account_id}/pages/projects",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects\nCreate a new project.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "pages-project-delete-project",
+    "name": "Delete project",
+    "description": "Delete project Delete a project by name. DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}\nDelete a project by name.\nRequired: project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-project-disconnect-project-source",
+    "name": "Disconnect project source",
+    "description": "Disconnect project source Disconnect the Git repository source from an existing Pages project. DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/source",
+    "context": "DELETE /client/v4/accounts/{account_id}/pages/projects/{project_name}/source\nDisconnect the Git repository source from an existing Pages project.\nRequired: project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-project-get-project",
+    "name": "Get project",
+    "description": "Get project Fetch a project by name. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}\nFetch a project by name.\nRequired: project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-project-get-projects",
+    "name": "Get projects",
+    "description": "Get projects Fetch a list of all user projects. GET /client/v4/accounts/{account_id}/pages/projects",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects\nFetch a list of all user projects.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "pages-project-get-upload-token",
+    "name": "Get upload token",
+    "description": "Get upload token Get a short-lived JWT for Pages Direct Upload asset operations. GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/upload-token",
+    "context": "GET /client/v4/accounts/{account_id}/pages/projects/{project_name}/upload-token\nGet a short-lived JWT for Pages Direct Upload asset operations.\nRequired: project_name (path); account_id (path)"
+  },
+  {
+    "id": "pages-project-update-project",
+    "name": "Update project",
+    "description": "Update project Set new attributes for an existing project. PATCH /client/v4/accounts/{account_id}/pages/projects/{project_name}",
+    "context": "PATCH /client/v4/accounts/{account_id}/pages/projects/{project_name}\nSet new attributes for an existing project. Modify environment variables. To delete an environment variable, set the key to null.\nRequired: project_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "pages-purge-build-cache",
+    "name": "Purge build cache",
+    "description": "Purge build cache Purge all cached build artifacts for a Pages project POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/purge_build_cache",
+    "context": "POST /client/v4/accounts/{account_id}/pages/projects/{project_name}/purge_build_cache\nPurge all cached build artifacts for a Pages project\nRequired: project_name (path); account_id (path)"
+  }
+]

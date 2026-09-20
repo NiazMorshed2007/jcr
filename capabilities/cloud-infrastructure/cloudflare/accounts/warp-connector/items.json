@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cloudflare-tunnel-configuration-get-warp-connector-configuration",
+    "name": "Get WARP Connector HA configuration",
+    "description": "Get WARP Connector HA configuration Gets the high-availability configuration for a WARP Connector tunnel. GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/configurations",
+    "context": "GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/configurations\nGets the high-availability configuration for a WARP Connector tunnel.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-configuration-update-warp-connector-configuration",
+    "name": "Update WARP Connector HA configuration",
+    "description": "Update WARP Connector HA configuration Adds or updates the high-availability configuration for a WARP Connector tunnel. PUT /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/configurations",
+    "context": "PUT /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/configurations\nAdds or updates the high-availability configuration for a WARP Connector tunnel.\nRequired: account_id (path); tunnel_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-tunnel-create-a-warp-connector-tunnel",
+    "name": "Create a Warp Connector Tunnel",
+    "description": "Create a Warp Connector Tunnel Creates a new Warp Connector Tunnel in an account. POST /client/v4/accounts/{account_id}/warp_connector",
+    "context": "POST /client/v4/accounts/{account_id}/warp_connector\nCreates a new Warp Connector Tunnel in an account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-tunnel-delete-a-warp-connector-tunnel",
+    "name": "Delete a Warp Connector Tunnel",
+    "description": "Delete a Warp Connector Tunnel Deletes a Warp Connector Tunnel from an account. DELETE /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}\nDeletes a Warp Connector Tunnel from an account.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-a-warp-connector-tunnel",
+    "name": "Get a Warp Connector Tunnel",
+    "description": "Get a Warp Connector Tunnel Fetches a single Warp Connector Tunnel. GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}",
+    "context": "GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}\nFetches a single Warp Connector Tunnel.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-a-warp-connector-tunnel-token",
+    "name": "Get a Warp Connector Tunnel token",
+    "description": "Get a Warp Connector Tunnel token Gets the token used to associate warp device with a specific Warp Connector tunnel. GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/token",
+    "context": "GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/token\nGets the token used to associate warp device with a specific Warp Connector tunnel.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-get-warp-connector-tunnel-connector",
+    "name": "Get WARP Connector Tunnel connector",
+    "description": "Get WARP Connector Tunnel connector Fetches connector and connection details for a WARP Connector Tunnel. GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/connectors/{connector_id}",
+    "context": "GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/connectors/{connector_id}\nFetches connector and connection details for a WARP Connector Tunnel.\nRequired: account_id (path); tunnel_id (path); connector_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-list-warp-connector-tunnel-connections",
+    "name": "List WARP Connector Tunnel connections",
+    "description": "List WARP Connector Tunnel connections Fetches connection details for a WARP Connector Tunnel. GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/connections",
+    "context": "GET /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/connections\nFetches connection details for a WARP Connector Tunnel.\nRequired: account_id (path); tunnel_id (path)"
+  },
+  {
+    "id": "cloudflare-tunnel-list-warp-connector-tunnels",
+    "name": "List Warp Connector Tunnels",
+    "description": "List Warp Connector Tunnels Lists and filters Warp Connector Tunnels in an account. GET /client/v4/accounts/{account_id}/warp_connector",
+    "context": "GET /client/v4/accounts/{account_id}/warp_connector\nLists and filters Warp Connector Tunnels in an account.\nRequired: account_id (path)\nOptional: name (query); is_deleted (query); existed_at (query); uuid (query); was_active_at (query); was_inactive_at (query); include_prefix (query); exclude_prefix (query); status (query); per_page (query); page (query)"
+  },
+  {
+    "id": "cloudflare-tunnel-manual-failover-warp-connector-tunnel",
+    "name": "Trigger a manual failover for a WARP Connector Tunnel",
+    "description": "Trigger a manual failover for a WARP Connector Tunnel Triggers a manual failover for a specific WARP Connector Tunnel, setting the specified client as the active connector. PUT /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/failover",
+    "context": "PUT /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}/failover\nTriggers a manual failover for a specific WARP Connector Tunnel, setting the specified client as the active connector. The tunnel must be configured for high availability (HA) and the client must be linked to the tunnel.\nRequired: account_id (path); tunnel_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-tunnel-update-a-warp-connector-tunnel",
+    "name": "Update a Warp Connector Tunnel",
+    "description": "Update a Warp Connector Tunnel Updates an existing Warp Connector Tunnel. PATCH /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/warp_connector/{tunnel_id}\nUpdates an existing Warp Connector Tunnel.\nRequired: account_id (path); tunnel_id (path); body (body)"
+  }
+]

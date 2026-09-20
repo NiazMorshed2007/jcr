@@ -1,0 +1,104 @@
+[
+  {
+    "id": "account-permission-group-details",
+    "name": "Permission Group Details",
+    "description": "Permission Group Details Get information about a specific permission group in an account. GET /client/v4/accounts/{account_id}/iam/permission_groups/{permission_group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/iam/permission_groups/{permission_group_id}\nGet information about a specific permission group in an account.\nRequired: account_id (path); permission_group_id (path)"
+  },
+  {
+    "id": "account-permission-group-list",
+    "name": "List Account Permission Groups",
+    "description": "List Account Permission Groups List all the permissions groups for an account. GET /client/v4/accounts/{account_id}/iam/permission_groups",
+    "context": "GET /client/v4/accounts/{account_id}/iam/permission_groups\nList all the permissions groups for an account.\nRequired: account_id (path)\nOptional: id (query); name (query); label (query); page (query); per_page (query)"
+  },
+  {
+    "id": "account-resource-group-create",
+    "name": "Create Resource Group",
+    "description": "Create Resource Group Create a new Resource Group under the specified account. POST /client/v4/accounts/{account_id}/iam/resource_groups",
+    "context": "POST /client/v4/accounts/{account_id}/iam/resource_groups\nCreate a new Resource Group under the specified account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-resource-group-delete",
+    "name": "Remove Resource Group",
+    "description": "Remove Resource Group Remove a resource group from an account. DELETE /client/v4/accounts/{account_id}/iam/resource_groups/{resource_group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/iam/resource_groups/{resource_group_id}\nRemove a resource group from an account.\nRequired: account_id (path); resource_group_id (path)"
+  },
+  {
+    "id": "account-resource-group-details",
+    "name": "Resource Group Details",
+    "description": "Resource Group Details Get information about a specific resource group in an account. GET /client/v4/accounts/{account_id}/iam/resource_groups/{resource_group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/iam/resource_groups/{resource_group_id}\nGet information about a specific resource group in an account.\nRequired: account_id (path); resource_group_id (path)"
+  },
+  {
+    "id": "account-resource-group-list",
+    "name": "List Resource Groups",
+    "description": "List Resource Groups List all the resource groups for an account. GET /client/v4/accounts/{account_id}/iam/resource_groups",
+    "context": "GET /client/v4/accounts/{account_id}/iam/resource_groups\nList all the resource groups for an account.\nRequired: account_id (path)\nOptional: id (query); name (query)"
+  },
+  {
+    "id": "account-resource-group-update",
+    "name": "Update Resource Group",
+    "description": "Update Resource Group Modify an existing resource group. PUT /client/v4/accounts/{account_id}/iam/resource_groups/{resource_group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/iam/resource_groups/{resource_group_id}\nModify an existing resource group.\nRequired: account_id (path); resource_group_id (path); body (body)"
+  },
+  {
+    "id": "account-user-group-create",
+    "name": "Create User Group",
+    "description": "Create User Group Create a new user group under the specified account. POST /client/v4/accounts/{account_id}/iam/user_groups",
+    "context": "POST /client/v4/accounts/{account_id}/iam/user_groups\nCreate a new user group under the specified account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-user-group-delete",
+    "name": "Remove User Group",
+    "description": "Remove User Group Remove a user group from an account. DELETE /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}\nRemove a user group from an account.\nRequired: account_id (path); user_group_id (path)"
+  },
+  {
+    "id": "account-user-group-details",
+    "name": "User Group Details",
+    "description": "User Group Details Get information about a specific user group in an account. GET /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}\nGet information about a specific user group in an account.\nRequired: account_id (path); user_group_id (path)"
+  },
+  {
+    "id": "account-user-group-list",
+    "name": "List User Groups",
+    "description": "List User Groups List all the user groups for an account. GET /client/v4/accounts/{account_id}/iam/user_groups",
+    "context": "GET /client/v4/accounts/{account_id}/iam/user_groups\nList all the user groups for an account.\nRequired: account_id (path)\nOptional: id (query) — ID of the user group to be fetched.; name (query); fuzzyName (query); page (query); per_page (query); direction (query)"
+  },
+  {
+    "id": "account-user-group-member-create",
+    "name": "Add User Group Members",
+    "description": "Add User Group Members Add members to a User Group. POST /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members",
+    "context": "POST /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members\nAdd members to a User Group.\nRequired: account_id (path); user_group_id (path); body (body)"
+  },
+  {
+    "id": "account-user-group-member-delete",
+    "name": "Remove User Group Member",
+    "description": "Remove User Group Member Remove a member from User Group DELETE /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}\nRemove a member from User Group\nRequired: account_id (path); user_group_id (path); member_id (path)"
+  },
+  {
+    "id": "account-user-group-member-get",
+    "name": "Get User Group Member",
+    "description": "Get User Group Member Get details of a specific member in a user group. GET /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}",
+    "context": "GET /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}\nGet details of a specific member in a user group.\nRequired: account_id (path); user_group_id (path); member_id (path)"
+  },
+  {
+    "id": "account-user-group-member-list",
+    "name": "List User Group Members",
+    "description": "List User Group Members List all the members attached to a user group. GET /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members",
+    "context": "GET /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members\nList all the members attached to a user group.\nRequired: account_id (path); user_group_id (path)\nOptional: page (query); per_page (query); fuzzyEmail (query); direction (query)"
+  },
+  {
+    "id": "account-user-group-members-update",
+    "name": "Update User Group Members",
+    "description": "Update User Group Members Replace the set of members attached to a User Group. PUT /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members",
+    "context": "PUT /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}/members\nReplace the set of members attached to a User Group.\nRequired: account_id (path); user_group_id (path); body (body)"
+  },
+  {
+    "id": "account-user-group-update",
+    "name": "Update User Group",
+    "description": "Update User Group Modify an existing user group. PUT /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/iam/user_groups/{user_group_id}\nModify an existing user group.\nRequired: account_id (path); user_group_id (path); body (body)"
+  }
+]

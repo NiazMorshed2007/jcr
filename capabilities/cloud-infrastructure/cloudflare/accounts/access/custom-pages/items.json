@@ -1,0 +1,38 @@
+[
+  {
+    "id": "access-custom-pages-create-a-custom-page",
+    "name": "Create a custom page",
+    "description": "Create a custom page POST /client/v4/accounts/{account_id}/access/custom_pages",
+    "context": "POST /client/v4/accounts/{account_id}/access/custom_pages\nCreate a custom page\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "access-custom-pages-delete-a-custom-page",
+    "name": "Delete a custom page",
+    "description": "Delete a custom page DELETE /client/v4/accounts/{account_id}/access/custom_pages/{custom_page_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/custom_pages/{custom_page_id}\nDelete a custom page\nRequired: custom_page_id (path); account_id (path)"
+  },
+  {
+    "id": "access-custom-pages-get-a-custom-page",
+    "name": "Get a custom page",
+    "description": "Get a custom page Fetches a custom page and also returns its HTML. GET /client/v4/accounts/{account_id}/access/custom_pages/{custom_page_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/custom_pages/{custom_page_id}\nFetches a custom page and also returns its HTML.\nRequired: custom_page_id (path); account_id (path)"
+  },
+  {
+    "id": "access-custom-pages-list-custom-pages",
+    "name": "List custom pages",
+    "description": "List custom pages GET /client/v4/accounts/{account_id}/access/custom_pages",
+    "context": "GET /client/v4/accounts/{account_id}/access/custom_pages\nList custom pages\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "access-custom-pages-update-a-custom-page",
+    "name": "Update a custom page",
+    "description": "Update a custom page PUT /client/v4/accounts/{account_id}/access/custom_pages/{custom_page_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/custom_pages/{custom_page_id}\nUpdate a custom page\nRequired: custom_page_id (path); account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "access-custom-pages-validate-a-custom-page-template",
+    "name": "Validate a custom page template",
+    "description": "Validate a custom page template Validate a Liquid template and return its errors and warnings without persisting it. POST /client/v4/accounts/{account_id}/access/custom_pages/validate",
+    "context": "POST /client/v4/accounts/{account_id}/access/custom_pages/validate\nValidate a Liquid template and return its errors and warnings without persisting it.\nRequired: account_id (path)\nOptional: body (body)"
+  }
+]

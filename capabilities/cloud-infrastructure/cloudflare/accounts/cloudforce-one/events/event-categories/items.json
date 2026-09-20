@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_CategoryDelete",
+    "name": "Deletes a category",
+    "description": "Deletes a category Removes a threat event category from Cloudforce One. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}\nRemoves a threat event category from Cloudforce One.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID."
+  },
+  {
+    "id": "get_CategoryRead",
+    "name": "Reads a category",
+    "description": "Reads a category Retrieves details for a specific threat event category. GET /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}\nRetrieves details for a specific threat event category.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID."
+  },
+  {
+    "id": "patch_CategoryUpdate",
+    "name": "Updates a category",
+    "description": "Updates a category Partially updates a threat event category in Cloudforce One, modifying specific fields without replacing the entire category. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}\nPartially updates a threat event category in Cloudforce One, modifying specific fields without replacing the entire category.\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_CategoryUpdate",
+    "name": "Updates a category",
+    "description": "Updates a category POST /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}\nUpdates a category\nRequired: account_id (path) — Account ID.; category_id (path) — Category UUID.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createOrganizationDashboard",
+    "name": "Create a New Dashboard for an Organization",
+    "description": "Create a New Dashboard for an Organization Create a new dashboard for the given Organization POST /api/0/organizations/{organization_id_or_slug}/dashboards/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/dashboards/\nCreate a new dashboard for the given Organization\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationDashboard",
+    "name": "Delete an Organization's Custom Dashboard",
+    "description": "Delete an Organization's Custom Dashboard Delete an organization's custom dashboard. DELETE /api/0/organizations/{organization_id_or_slug}/dashboards/{dashboard_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/dashboards/{dashboard_id}/\nDelete an organization's custom dashboard.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; dashboard_id (path) — The ID of the dashboard you'd like to retrieve."
+  },
+  {
+    "id": "getOrganizationDashboard",
+    "name": "Retrieve an Organization's Custom Dashboard",
+    "description": "Retrieve an Organization's Custom Dashboard Return details about an organization's custom dashboard. GET /api/0/organizations/{organization_id_or_slug}/dashboards/{dashboard_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/dashboards/{dashboard_id}/\nReturn details about an organization's custom dashboard.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; dashboard_id (path) — The ID of the dashboard you'd like to retrieve."
+  },
+  {
+    "id": "listOrganizationDashboards",
+    "name": "List an Organization's Custom Dashboards",
+    "description": "List an Organization's Custom Dashboards Retrieve a list of custom dashboards that are associated with the given organization. GET /api/0/organizations/{organization_id_or_slug}/dashboards/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/dashboards/\nRetrieve a list of custom dashboards that are associated with the given organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: filter (query) — Filter the dashboards returned. Repeat this parameter to apply multiple filters.; query (query) — Filter dashboards by title.; sort (query) — The property to sort results by. Prefix the value with `-` to sort in descending order. Available fields are: - `title` - `dateCreated` - `mostPopular` - `recentlyViewed` - `mydashboards` - `myDashboardsAndRecentlyViewed`; pin (query) — Pin favorited dashboards to the top of the results.; per_page (query) — Limit the number of rows to return in the result. Default and maximum allowed is 100.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "updateOrganizationDashboard",
+    "name": "Edit an Organization's Custom Dashboard",
+    "description": "Edit an Organization's Custom Dashboard Edit an organization's custom dashboard as well as any bulk edits on widgets that may have been made. PUT /api/0/organizations/{organization_id_or_slug}/dashboards/{dashboard_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/dashboards/{dashboard_id}/\nEdit an organization's custom dashboard as well as any bulk edits on widgets that may have been made. (For example, widgets that have been rearranged, updated queries and fields, specific display types, and so on.)\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; dashboard_id (path) — The ID of the dashboard you'd like to retrieve.\nOptional: body (body)"
+  }
+]

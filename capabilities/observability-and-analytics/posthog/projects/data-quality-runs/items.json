@@ -1,0 +1,20 @@
+[
+  {
+    "id": "data_quality_runs_create",
+    "name": "Run the named checks now, or every enabled check in the project when none are named",
+    "description": "Run the named checks now, or every enabled check in the project when none are named Run the named checks now, or every enabled check in the project when none are named. POST /api/projects/{project_id}/data_quality_runs/",
+    "context": "POST /api/projects/{project_id}/data_quality_runs/\nRun the named checks now, or every enabled check in the project when none are named. Returns the suite run to poll for the report.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_quality_runs_list",
+    "name": "Project-wide check runs: start one over a selection, and read every run the project has had",
+    "description": "Project-wide check runs: start one over a selection, and read every run the project has had Project-wide check runs: start one over a selection, and read every run the project has had. GET /api/projects/{project_id}/data_quality_runs/",
+    "context": "GET /api/projects/{project_id}/data_quality_runs/\nProject-wide check runs: start one over a selection, and read every run the project has had. The per-subject surfaces only serve runs scoped to their own subject, so this is where a sweep across several subjects -- a manual project-wide run, a materialization, a source sync -- is readable. Scoped to `warehouse_objects` because it spans tables and views at once.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_quality_runs_retrieve",
+    "name": "Project-wide check runs: start one over a selection, and read every run the project has had",
+    "description": "Project-wide check runs: start one over a selection, and read every run the project has had Project-wide check runs: start one over a selection, and read every run the project has had. GET /api/projects/{project_id}/data_quality_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/data_quality_runs/{id}/\nProject-wide check runs: start one over a selection, and read every run the project has had. The per-subject surfaces only serve runs scoped to their own subject, so this is where a sweep across several subjects -- a manual project-wide run, a materialization, a source sync -- is readable. Scoped to `warehouse_objects` because it spans tables and views at once.\nRequired: id (path) — A UUID string identifying this data quality suite run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

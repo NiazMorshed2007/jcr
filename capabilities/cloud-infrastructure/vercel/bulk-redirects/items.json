@@ -1,0 +1,44 @@
+[
+  {
+    "id": "deleteRedirects",
+    "name": "Delete project-level redirects.",
+    "description": "Delete project-level redirects. Deletes the provided redirects from the latest version of the projects' bulk redirects. DELETE /v1/bulk-redirects",
+    "context": "DELETE /v1/bulk-redirects\nDeletes the provided redirects from the latest version of the projects' bulk redirects. Stages a new change with the new redirects and returns the alias for the new version in the response.\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "editRedirect",
+    "name": "Edit a project-level redirect.",
+    "description": "Edit a project-level redirect. Edits a single redirect identified by its source path. PATCH /v1/bulk-redirects",
+    "context": "PATCH /v1/bulk-redirects\nEdits a single redirect identified by its source path. Stages a new change with the modified redirect and returns the alias for the new version in the response.\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getRedirects",
+    "name": "Gets project-level redirects.",
+    "description": "Gets project-level redirects. Get the version history for a project's bulk redirects GET /v1/bulk-redirects",
+    "context": "GET /v1/bulk-redirects\nGet the version history for a project's bulk redirects\nRequired: projectId (query)\nOptional: versionId (query); q (query); diff (query); page (query); per_page (query); sort_by (query); sort_order (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getVersions",
+    "name": "Get the version history for a project's redirects.",
+    "description": "Get the version history for a project's redirects. Get the version history for a project's bulk redirects GET /v1/bulk-redirects/versions",
+    "context": "GET /v1/bulk-redirects/versions\nGet the version history for a project's bulk redirects\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "restoreRedirects",
+    "name": "Restore staged project-level redirects to their production version.",
+    "description": "Restore staged project-level redirects to their production version. Restores the provided redirects in the staging version to the value in the production version. POST /v1/bulk-redirects/restore",
+    "context": "POST /v1/bulk-redirects/restore\nRestores the provided redirects in the staging version to the value in the production version. If no production version exists, removes the redirects from staging.\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "stageRedirects",
+    "name": "Stages new redirects for a project.",
+    "description": "Stages new redirects for a project. Stages new redirects for a project and returns the new version. PUT /v1/bulk-redirects",
+    "context": "PUT /v1/bulk-redirects\nStages new redirects for a project and returns the new version.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateVersion",
+    "name": "Promote a staging version to production or restore a previous production version.",
+    "description": "Promote a staging version to production or restore a previous production version. Update a version by promoting staging to production or restoring a previous production version POST /v1/bulk-redirects/versions",
+    "context": "POST /v1/bulk-redirects/versions\nUpdate a version by promoting staging to production or restoring a previous production version\nRequired: projectId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

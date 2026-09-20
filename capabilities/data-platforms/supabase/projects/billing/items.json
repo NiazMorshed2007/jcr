@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v1-apply-project-addon",
+    "name": "Apply or update billing addons, including compute instance size",
+    "description": "Apply or update billing addons, including compute instance size Selects an addon variant, for example scaling the project’s compute instance up or down, and applies it to the project. PATCH /v1/projects/{ref}/billing/addons",
+    "context": "PATCH /v1/projects/{ref}/billing/addons\nSelects an addon variant, for example scaling the project’s compute instance up or down, and applies it to the project.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-list-project-addons",
+    "name": "List billing addons and compute instance selections",
+    "description": "List billing addons and compute instance selections Returns the billing addons that are currently applied, including the active compute instance size, and lists every addon option that can be provisioned with pricing metadata. GET /v1/projects/{ref}/billing/addons",
+    "context": "GET /v1/projects/{ref}/billing/addons\nReturns the billing addons that are currently applied, including the active compute instance size, and lists every addon option that can be provisioned with pricing metadata.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-remove-project-addon",
+    "name": "Remove billing addons or revert compute instance sizing",
+    "description": "Remove billing addons or revert compute instance sizing Disables the selected addon variant, including rolling the compute instance back to its previous size. DELETE /v1/projects/{ref}/billing/addons/{addon_variant}",
+    "context": "DELETE /v1/projects/{ref}/billing/addons/{addon_variant}\nDisables the selected addon variant, including rolling the compute instance back to its previous size.\nRequired: ref (path) — Project ref; addon_variant (path)"
+  }
+]

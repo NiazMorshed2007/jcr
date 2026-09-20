@@ -1,0 +1,56 @@
+[
+  {
+    "id": "actions%2Fadd-selected-repo-to-org-variable",
+    "name": "Add selected repository to an organization variable",
+    "description": "Add selected repository to an organization variable Adds a repository to an organization variable that is available to selected repositories. PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}\nAdds a repository to an organization variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read secrets. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; repository_id (path)"
+  },
+  {
+    "id": "actions%2Fcreate-org-variable",
+    "name": "Create an organization variable",
+    "description": "Create an organization variable Creates an organization variable that you can reference in a GitHub Actions workflow. POST /orgs/{org}/actions/variables",
+    "context": "POST /orgs/{org}/actions/variables\nCreates an organization variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fdelete-org-variable",
+    "name": "Delete an organization variable",
+    "description": "Delete an organization variable Deletes an organization variable using the variable name. DELETE /orgs/{org}/actions/variables/{name}",
+    "context": "DELETE /orgs/{org}/actions/variables/{name}\nDeletes an organization variable using the variable name. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable."
+  },
+  {
+    "id": "actions%2Fget-org-variable",
+    "name": "Get an organization variable",
+    "description": "Get an organization variable Gets a specific variable in an organization. GET /orgs/{org}/actions/variables/{name}",
+    "context": "GET /orgs/{org}/actions/variables/{name}\nGets a specific variable in an organization. The authenticated user must have collaborator access to a repository to create, update, or read variables. OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable."
+  },
+  {
+    "id": "actions%2Flist-org-variables",
+    "name": "List organization variables",
+    "description": "List organization variables Lists all organization variables. GET /orgs/{org}/actions/variables",
+    "context": "GET /orgs/{org}/actions/variables\nLists all organization variables. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 30). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Flist-selected-repos-for-org-variable",
+    "name": "List selected repositories for an organization variable",
+    "description": "List selected repositories for an organization variable Lists all repositories that can access an organization variable that is available to selected repositories. GET /orgs/{org}/actions/variables/{name}/repositories",
+    "context": "GET /orgs/{org}/actions/variables/{name}/repositories\nLists all repositories that can access an organization variable that is available to selected repositories. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Fremove-selected-repo-from-org-variable",
+    "name": "Remove selected repository from an organization variable",
+    "description": "Remove selected repository from an organization variable Removes a repository from an organization variable that is available to selected repositories. DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}\nRemoves a repository from an organization variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; repository_id (path)"
+  },
+  {
+    "id": "actions%2Fset-selected-repos-for-org-variable",
+    "name": "Set selected repositories for an organization variable",
+    "description": "Set selected repositories for an organization variable Replaces all repositories for an organization variable that is available to selected repositories. PUT /orgs/{org}/actions/variables/{name}/repositories",
+    "context": "PUT /orgs/{org}/actions/variables/{name}/repositories\nReplaces all repositories for an organization variable that is available to selected repositories. Organization variables that are available to selected repositories have their `visibility` field set to `selected`. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; body (body)"
+  },
+  {
+    "id": "actions%2Fupdate-org-variable",
+    "name": "Update an organization variable",
+    "description": "Update an organization variable Updates an organization variable that you can reference in a GitHub Actions workflow. PATCH /orgs/{org}/actions/variables/{name}",
+    "context": "PATCH /orgs/{org}/actions/variables/{name}\nUpdates an organization variable that you can reference in a GitHub Actions workflow. Authenticated users must have collaborator access to a repository to create, update, or read variables. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.\nRequired: org (path) — The organization name. The name is not case sensitive.; name (path) — The name of the variable.; body (body)"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "query_check_auth_for_async_create",
+    "name": "query_check_auth_for_async_create",
+    "description": "query_check_auth_for_async_create POST /api/projects/{project_id}/query/check_auth_for_async/",
+    "context": "POST /api/projects/{project_id}/query/check_auth_for_async/\nquery_check_auth_for_async_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "query_create",
+    "name": "query_create",
+    "description": "query_create POST /api/projects/{project_id}/query/",
+    "context": "POST /api/projects/{project_id}/query/\nquery_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "query_create_with_kind",
+    "name": "query_create_with_kind",
+    "description": "query_create_with_kind POST /api/projects/{project_id}/query/{query_kind}/",
+    "context": "POST /api/projects/{project_id}/query/{query_kind}/\nquery_create_with_kind\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; query_kind (path)"
+  },
+  {
+    "id": "query_destroy",
+    "name": "(Experimental)",
+    "description": "(Experimental) DELETE /api/projects/{project_id}/query/{id}/",
+    "context": "DELETE /api/projects/{project_id}/query/{id}/\n(Experimental)\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "query_draft_sql_retrieve",
+    "name": "query_draft_sql_retrieve",
+    "description": "query_draft_sql_retrieve GET /api/projects/{project_id}/query/draft_sql/",
+    "context": "GET /api/projects/{project_id}/query/draft_sql/\nquery_draft_sql_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "query_log_retrieve",
+    "name": "Get query log details from query_log_archive table for a specific query_id, the query must have been issued in last 24 hours.",
+    "description": "Get query log details from query_log_archive table for a specific query_id, the query must have been issued in last 24 hours. GET /api/projects/{project_id}/query/{id}/log/",
+    "context": "GET /api/projects/{project_id}/query/{id}/log/\nGet query log details from query_log_archive table for a specific query_id, the query must have been issued in last 24 hours.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "query_retrieve",
+    "name": "(Experimental)",
+    "description": "(Experimental) GET /api/projects/{project_id}/query/{id}/",
+    "context": "GET /api/projects/{project_id}/query/{id}/\n(Experimental)\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "query_scan_retrieve",
+    "name": "Get the query scan for a cache key: the analysis of the last slow run of that query",
+    "description": "Get the query scan for a cache key: the analysis of the last slow run of that query Get the query scan for a cache key: the analysis of the last slow run of that query. GET /api/projects/{project_id}/query/scan/{cache_key}/",
+    "context": "GET /api/projects/{project_id}/query/scan/{cache_key}/\nGet the query scan for a cache key: the analysis of the last slow run of that query. The body is empty while the analysis runs. 404 when the query has not been analyzed.\nRequired: cache_key (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "query_upgrade_create",
+    "name": "Upgrades a query without executing it",
+    "description": "Upgrades a query without executing it Upgrades a query without executing it. POST /api/projects/{project_id}/query/upgrade/",
+    "context": "POST /api/projects/{project_id}/query/upgrade/\nUpgrades a query without executing it. Returns a query with all nodes migrated to the latest version.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

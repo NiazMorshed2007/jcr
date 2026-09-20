@@ -1,0 +1,146 @@
+[
+  {
+    "id": "create-event",
+    "name": "Create Event",
+    "description": "Create Event Partner notifies Vercel of any changes made to an Installation or a Resource. POST /v1/installations/{integrationConfigurationId}/events",
+    "context": "POST /v1/installations/{integrationConfigurationId}/events\nPartner notifies Vercel of any changes made to an Installation or a Resource. Vercel is expected to use `list-resources` and other read APIs to get the new state. `resource.updated` event should be dispatched when any state of a resource linked to Vercel is modified by the partner. `installation.updated` event should be dispatched when an installation's billing plan is changed via the provider instead of Vercel. Resource update use cases: - The user renames a database in the partner’s application. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource in Vercel’s datastores. - A resource has been suspended due to a lack of use. The partner should dispatch a `resource.updated` event to notify Vercel to update the resource's status in Vercel's datastores.\nRequired: integrationConfigurationId (path); body (body)"
+  },
+  {
+    "id": "createInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItems",
+    "name": "Create one or multiple experimentation items",
+    "description": "Create one or multiple experimentation items POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items",
+    "context": "POST /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items\nCreate one or multiple experimentation items\nRequired: integrationConfigurationId (path); resourceId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "delete-integration-resource",
+    "name": "Delete Integration Resource",
+    "description": "Delete Integration Resource Delete a resource owned by the selected installation ID. DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}",
+    "context": "DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}\nDelete a resource owned by the selected installation ID.\nRequired: integrationConfigurationId (path); resourceId (path)"
+  },
+  {
+    "id": "deleteInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId",
+    "name": "Delete an existing experimentation item",
+    "description": "Delete an existing experimentation item DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}",
+    "context": "DELETE /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}\nDelete an existing experimentation item\nRequired: integrationConfigurationId (path); resourceId (path); itemId (path)"
+  },
+  {
+    "id": "finalize-installation",
+    "name": "Finalize Installation",
+    "description": "Finalize Installation This endpoint allows the partner to mark an installation as finalized. POST /v1/installations/{integrationConfigurationId}/billing/finalize",
+    "context": "POST /v1/installations/{integrationConfigurationId}/billing/finalize\nThis endpoint allows the partner to mark an installation as finalized. This means you will not send any more invoices for the installation. Use this after a customer has requested uninstall and you have sent any remaining invoices. This will allow the uninstall process to proceed immediately after all invoices have been paid. Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.\nRequired: integrationConfigurationId (path)"
+  },
+  {
+    "id": "get-account-info",
+    "name": "Get Account Information",
+    "description": "Get Account Information Fetches the best account or user’s contact info GET /v1/installations/{integrationConfigurationId}/account",
+    "context": "GET /v1/installations/{integrationConfigurationId}/account\nFetches the best account or user’s contact info\nRequired: integrationConfigurationId (path)"
+  },
+  {
+    "id": "get-integration-resource",
+    "name": "Get Integration Resource",
+    "description": "Get Integration Resource Get a resource by its partner ID. GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}",
+    "context": "GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}\nGet a resource by its partner ID.\nRequired: integrationConfigurationId (path) — The ID of the integration configuration (installation) the resource belongs to; resourceId (path) — The ID provided by the 3rd party provider for the given resource"
+  },
+  {
+    "id": "get-integration-resources",
+    "name": "Get Integration Resources",
+    "description": "Get Integration Resources Get all resources for a given installation ID. GET /v1/installations/{integrationConfigurationId}/resources",
+    "context": "GET /v1/installations/{integrationConfigurationId}/resources\nGet all resources for a given installation ID.\nRequired: integrationConfigurationId (path)"
+  },
+  {
+    "id": "get-invoice",
+    "name": "Get Invoice",
+    "description": "Get Invoice Get Invoice details and status for a given invoice ID. GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}",
+    "context": "GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}\nGet Invoice details and status for a given invoice ID. See [Billing Events with Webhooks documentation](https://vercel.com/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) on how to receive invoice events. This endpoint is used to retrieve the invoice details.\nRequired: integrationConfigurationId (path); invoiceId (path)"
+  },
+  {
+    "id": "get-member",
+    "name": "Get Member Information",
+    "description": "Get Member Information Returns the member role and other information for a given member ID (\"user_id\" claim in the SSO OIDC token). GET /v1/installations/{integrationConfigurationId}/member/{memberId}",
+    "context": "GET /v1/installations/{integrationConfigurationId}/member/{memberId}\nReturns the member role and other information for a given member ID (\"user_id\" claim in the SSO OIDC token).\nRequired: integrationConfigurationId (path); memberId (path)"
+  },
+  {
+    "id": "getInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig",
+    "name": "Get the data of a user-provided Global Config",
+    "description": "Get the data of a user-provided Global Config When the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config. GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config",
+    "context": "GET /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config\nWhen the user enabled Global Config syncing, then this endpoint can be used by the partner to fetch the contents of the Global Config.\nRequired: integrationConfigurationId (path); resourceId (path)"
+  },
+  {
+    "id": "import-resource",
+    "name": "Import Resource",
+    "description": "Import Resource This endpoint imports (upserts) a resource to Vercel's installation. PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}",
+    "context": "PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}\nThis endpoint imports (upserts) a resource to Vercel's installation. This may be needed if resources can be independently created on the partner's side and need to be synchronized to Vercel. When importing as part of the user-initiated import flow, call this endpoint before redirecting the user back to Vercel. See the [Import existing resources flow](https://vercel.com/docs/integrations/create-integration/marketplace-flows#import-existing-resources-flow) for the full contract.\nRequired: integrationConfigurationId (path); resourceId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "replaceInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationGlobalConfig",
+    "name": "Push data into a user-provided Global Config",
+    "description": "Push data into a user-provided Global Config When the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config. PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config",
+    "context": "PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config\nWhen the user enabled Global Config syncing, then this endpoint can be used by the partner to push their configuration data into the relevant Global Config.\nRequired: integrationConfigurationId (path); resourceId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "revoke-installation-credential",
+    "name": "Revoke Installation Credential",
+    "description": "Revoke Installation Credential Retires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. POST /v1/installations/{integrationConfigurationId}/credentials/revoke",
+    "context": "POST /v1/installations/{integrationConfigurationId}/credentials/revoke\nRetires a superseded installation credential, so a partner can complete a rotation it started with `POST /credentials/rotate` — the leaked credential stops working without the customer having to reinstall. Authenticated by a live installation credential plus the integration's client secret. The credential to retire is named in the body rather than being the one that authenticates, so the ordinary flow is: rotate, store the replacement, then authenticate with the replacement and revoke the old one. Refuses to retire an installation's last live credential. Rotation exists so remediation is not customer-visible; revoking the only credential would undo that and leave the install needing a reinstall.\nRequired: integrationConfigurationId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "rotate-installation-credential",
+    "name": "Rotate Installation Credential",
+    "description": "Rotate Installation Credential Issues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. POST /v1/installations/{integrationConfigurationId}/credentials/rotate",
+    "context": "POST /v1/installations/{integrationConfigurationId}/credentials/rotate\nIssues a replacement access token for an installation, so a partner can rotate a credential it believes is compromised without the customer having to reinstall. Authenticated by the credential being replaced plus the integration's client secret: a leaked access token on its own cannot rotate itself, which would otherwise let an attacker take over the installation and lock the partner out. The previous credential intentionally stays valid so in-flight requests keep working. Retiring it is a separate, explicit operation — a partner is never left mid-rotation without a working credential.\nRequired: integrationConfigurationId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "submit-billing-data",
+    "name": "Submit Billing Data",
+    "description": "Submit Billing Data Sends the billing and usage data. POST /v1/installations/{integrationConfigurationId}/billing",
+    "context": "POST /v1/installations/{integrationConfigurationId}/billing\nSends the billing and usage data. The partner should do this at least once a day and ideally once per hour. Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.\nRequired: integrationConfigurationId (path); body (body)"
+  },
+  {
+    "id": "submit-invoice",
+    "name": "Submit Invoice",
+    "description": "Submit Invoice This endpoint allows the partner to submit an invoice to Vercel. POST /v1/installations/{integrationConfigurationId}/billing/invoices",
+    "context": "POST /v1/installations/{integrationConfigurationId}/billing/invoices\nThis endpoint allows the partner to submit an invoice to Vercel. The invoice is created in Vercel's billing system and sent to the customer. Depending on the type of billing plan, the invoice can be sent at a time of signup, at the start of the billing period, or at the end of the billing period. Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request. There are several limitations to the invoice submission: 1. A resource can only be billed once per the billing period and the billing plan. 2. The billing plan used to bill the resource must have been active for this resource during the billing period. 3. The billing plan used must be a subscription plan. 4. The interim usage data must be sent hourly for all types of subscriptions. See [Send subscription billing and usage data](#send-subscription-billing-and-usage-data) API on how to send interim billing and usage data. 5. If provided, `externalId` must be unique for the installation.\nRequired: integrationConfigurationId (path); body (body)"
+  },
+  {
+    "id": "submit-prepayment-balances",
+    "name": "Submit Prepayment Balances",
+    "description": "Submit Prepayment Balances Sends the prepayment balances. POST /v1/installations/{integrationConfigurationId}/billing/balance",
+    "context": "POST /v1/installations/{integrationConfigurationId}/billing/balance\nSends the prepayment balances. The partner should do this at least once a day and ideally once per hour. Use the `credentials.access_token` we provided in the [Upsert Installation](#upsert-installation) body to authorize this request.\nRequired: integrationConfigurationId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "update-installation",
+    "name": "Update Installation",
+    "description": "Update Installation This endpoint updates an integration installation. PATCH /v1/installations/{integrationConfigurationId}",
+    "context": "PATCH /v1/installations/{integrationConfigurationId}\nThis endpoint updates an integration installation.\nRequired: integrationConfigurationId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "update-invoice",
+    "name": "Invoice Actions",
+    "description": "Invoice Actions This endpoint allows the partner to request a refund for an invoice to Vercel. POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions",
+    "context": "POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions\nThis endpoint allows the partner to request a refund for an invoice to Vercel. The invoice is created using the [Submit Invoice API](#submit-invoice-api).\nRequired: integrationConfigurationId (path); invoiceId (path); body (body)"
+  },
+  {
+    "id": "update-resource",
+    "name": "Update Resource",
+    "description": "Update Resource This endpoint updates an existing resource in the installation. PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}",
+    "context": "PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}\nThis endpoint updates an existing resource in the installation. All parameters are optional, allowing partial updates.\nRequired: integrationConfigurationId (path); resourceId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "update-resource-secrets",
+    "name": "Deprecated: true. Update Resource Secrets (Deprecated)",
+    "description": "Deprecated: true. Update Resource Secrets (Deprecated) This endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets",
+    "context": "PUT /v1/installations/{integrationConfigurationId}/products/{integrationProductIdOrSlug}/resources/{resourceId}/secrets\nThis endpoint is deprecated and replaced with the endpoint [Update Resource Secrets](#update-resource-secrets). This endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets. Use cases for this endpoint: - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.\nRequired: integrationConfigurationId (path); integrationProductIdOrSlug (path); resourceId (path); body (body)"
+  },
+  {
+    "id": "update-resource-secrets-by-id",
+    "name": "Update Resource Secrets",
+    "description": "Update Resource Secrets This endpoint updates the secrets of a resource. PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets",
+    "context": "PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets\nThis endpoint updates the secrets of a resource. If a resource has projects connected, the connected secrets are updated with the new secrets. The old secrets may still be used by existing connected projects because they are not automatically redeployed. Redeployment is a manual action and must be completed by the user. All new project connections will use the new secrets. Use cases for this endpoint: - Resetting the credentials of a database in the partner. If the user requests the credentials to be updated in the partner’s application, the partner post the new set of secrets to Vercel, the user should redeploy their application and the expire the old credentials.\nRequired: integrationConfigurationId (path); resourceId (path)\nOptional: body (body)"
+  },
+  {
+    "id": "updateInstallationsByIntegrationConfigurationIdResourcesByResourceIdExperimentationItemsByItemId",
+    "name": "Patch an existing experimentation item",
+    "description": "Patch an existing experimentation item PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}",
+    "context": "PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/items/{itemId}\nPatch an existing experimentation item\nRequired: integrationConfigurationId (path); resourceId (path); itemId (path)\nOptional: body (body)"
+  }
+]

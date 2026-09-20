@@ -1,0 +1,20 @@
+[
+  {
+    "id": "delete_EventDelete",
+    "name": "Deletes one or more events",
+    "description": "Deletes one or more events DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events\nDeletes one or more events\nRequired: account_id (path) — Account ID.; dataset_id (path) — Dataset UUID.; eventIds (query) — Array of Event IDs to delete."
+  },
+  {
+    "id": "get_EventRawReadDS",
+    "name": "Reads raw data for an event by UUID",
+    "description": "Reads raw data for an event by UUID Retrieves the raw data associated with an event. GET /client/v4/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw\nRetrieves the raw data associated with an event. Searches across all shards in the dataset.\nRequired: account_id (path) — Account ID.; event_id (path) — Event ID.; dataset_id (path) — Dataset ID."
+  },
+  {
+    "id": "post_DatasetPopulate",
+    "name": "Populate dataset-specific lookup tables from existing Events data with batch processing",
+    "description": "Populate dataset-specific lookup tables from existing Events data with batch processing POST /client/v4/accounts/{account_id}/cloudforce-one/events/datasets/populate",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/datasets/populate\nPopulate dataset-specific lookup tables from existing Events data with batch processing\nRequired: account_id (path) — Account ID."
+  }
+]

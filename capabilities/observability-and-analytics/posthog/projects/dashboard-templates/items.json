@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dashboard_templates_copy_between_projects_create",
+    "name": "Copy a team template to this project",
+    "description": "Copy a team template to this project Creates a new team-scoped template in the **target** project (URL) from a **team-scoped** source template in the same organization. POST /api/projects/{project_id}/dashboard_templates/copy_between_projects/",
+    "context": "POST /api/projects/{project_id}/dashboard_templates/copy_between_projects/\nCreates a new team-scoped template in the **target** project (URL) from a **team-scoped** source template in the same organization. Global and feature-flag templates return 400. Cross-organization or inaccessible sources return 404. Source and destination projects must differ (400 if equal). Conflicting `template_name` values on the destination are auto-suffixed with `(copy)`, `(copy 2)`, …\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "dashboard_templates_create",
+    "name": "dashboard_templates_create",
+    "description": "dashboard_templates_create POST /api/projects/{project_id}/dashboard_templates/",
+    "context": "POST /api/projects/{project_id}/dashboard_templates/\ndashboard_templates_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "dashboard_templates_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/dashboard_templates/{id}/",
+    "context": "DELETE /api/projects/{project_id}/dashboard_templates/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A UUID string identifying this dashboard template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "dashboard_templates_json_schema_retrieve",
+    "name": "dashboard_templates_json_schema_retrieve",
+    "description": "dashboard_templates_json_schema_retrieve GET /api/projects/{project_id}/dashboard_templates/json_schema/",
+    "context": "GET /api/projects/{project_id}/dashboard_templates/json_schema/\ndashboard_templates_json_schema_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "dashboard_templates_list",
+    "name": "dashboard_templates_list",
+    "description": "dashboard_templates_list GET /api/projects/{project_id}/dashboard_templates/",
+    "context": "GET /api/projects/{project_id}/dashboard_templates/\ndashboard_templates_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: is_featured (query) — Omit for all templates. When set, filter by featured flag; parsed with str_to_bool (same as other API query booleans).; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; ordering (query) — Optional. When not using `search`, results are sorted with featured templates first (`is_featured=true`), then by `template_name` (case-insensitive A–Z; `-template_name` for Z–A) or by `created_at` (`-created_at` for newest first). When `search` is set, order is featured first, then relevance rank, then case-insensitive name for ties.; scope (query) — Optional. `global`: official templates only. `team`: this project's saved templates only (`scope=team` rows for the current project). `organization`: templates shared across all projects in this organization. `feature_flag`: feature-flag dashboard templates only. Omit for official, organization, and this project's templates (default dashboard template picker behavior).; search (query) — Optional. Full-text search across template name, tags, and description, ranked by relevance. Use it to find templates for a topic (e.g. `retention`, `revenue`, `product analytics`)."
+  },
+  {
+    "id": "dashboard_templates_partial_update",
+    "name": "dashboard_templates_partial_update",
+    "description": "dashboard_templates_partial_update PATCH /api/projects/{project_id}/dashboard_templates/{id}/",
+    "context": "PATCH /api/projects/{project_id}/dashboard_templates/{id}/\ndashboard_templates_partial_update\nRequired: id (path) — A UUID string identifying this dashboard template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "dashboard_templates_retrieve",
+    "name": "dashboard_templates_retrieve",
+    "description": "dashboard_templates_retrieve GET /api/projects/{project_id}/dashboard_templates/{id}/",
+    "context": "GET /api/projects/{project_id}/dashboard_templates/{id}/\ndashboard_templates_retrieve\nRequired: id (path) — A UUID string identifying this dashboard template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "dashboard_templates_update",
+    "name": "dashboard_templates_update",
+    "description": "dashboard_templates_update PUT /api/projects/{project_id}/dashboard_templates/{id}/",
+    "context": "PUT /api/projects/{project_id}/dashboard_templates/{id}/\ndashboard_templates_update\nRequired: id (path) — A UUID string identifying this dashboard template.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

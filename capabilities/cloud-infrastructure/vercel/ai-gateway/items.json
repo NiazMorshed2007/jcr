@@ -1,0 +1,74 @@
+[
+  {
+    "id": "createAiGatewayRule",
+    "name": "Create rule",
+    "description": "Create rule Create a routing rule POST /v1/ai-gateway/rules",
+    "context": "POST /v1/ai-gateway/rules\nCreate a routing rule\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "createAiGatewayVirtualModelConfig",
+    "name": "Create virtual model config",
+    "description": "Create virtual model config Create a virtual model config (VMC) POST /v1/ai-gateway/virtual-model-configs",
+    "context": "POST /v1/ai-gateway/virtual-model-configs\nCreate a virtual model config (VMC)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAiGatewayRule",
+    "name": "Delete rule",
+    "description": "Delete rule Delete a routing rule (soft delete) DELETE /v1/ai-gateway/rules",
+    "context": "DELETE /v1/ai-gateway/rules\nDelete a routing rule (soft delete)\nRequired: ruleId (query)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAiGatewayVirtualModelConfig",
+    "name": "Delete virtual model config",
+    "description": "Delete virtual model config Delete a virtual model config (soft delete) DELETE /v1/ai-gateway/virtual-model-configs",
+    "context": "DELETE /v1/ai-gateway/virtual-model-configs\nDelete a virtual model config (soft delete)\nRequired: virtualModelSlug (query)\nOptional: ownerId (query); updatedBy (query); actingIp (query); actingUserAgent (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAiGatewayVirtualModelConfigBySlug",
+    "name": "Delete virtual model config",
+    "description": "Delete virtual model config Delete a virtual model config by path slug (soft delete) DELETE /v1/ai-gateway/virtual-model-configs/{vmcSlug}",
+    "context": "DELETE /v1/ai-gateway/virtual-model-configs/{vmcSlug}\nDelete a virtual model config by path slug (soft delete)\nRequired: vmcSlug (path)\nOptional: ownerId (query); updatedBy (query); actingIp (query); actingUserAgent (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getAiGatewayVirtualModelConfig",
+    "name": "Get virtual model config",
+    "description": "Get virtual model config Get a virtual model config GET /v1/ai-gateway/virtual-model-configs",
+    "context": "GET /v1/ai-gateway/virtual-model-configs\nGet a virtual model config\nOptional: ownerId (query); virtualModelSlug (query); limit (query); cursor (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getAiGatewayVirtualModelConfigBySlug",
+    "name": "Get virtual model config",
+    "description": "Get virtual model config Get a virtual model config by path slug GET /v1/ai-gateway/virtual-model-configs/{vmcSlug}",
+    "context": "GET /v1/ai-gateway/virtual-model-configs/{vmcSlug}\nGet a virtual model config by path slug\nRequired: vmcSlug (path)\nOptional: ownerId (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listAiGatewayRules",
+    "name": "List rules",
+    "description": "List rules List the authenticated team's routing rules GET /v1/ai-gateway/rules",
+    "context": "GET /v1/ai-gateway/rules\nList the authenticated team's routing rules\nOptional: includeDisabled (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listAiGatewayVirtualModelConfigs",
+    "name": "List virtual model configs",
+    "description": "List virtual model configs List virtual model configs. GET /v1/ai-gateway/virtual-model-configs/list",
+    "context": "GET /v1/ai-gateway/virtual-model-configs/list\nList virtual model configs. With `ownerId`, returns all of that team's VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).\nOptional: ownerId (query); limit (query); cursor (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateAiGatewayRule",
+    "name": "Update rule",
+    "description": "Update rule Update a routing rule (enabled, action, or description) PATCH /v1/ai-gateway/rules",
+    "context": "PATCH /v1/ai-gateway/rules\nUpdate a routing rule (enabled, action, or description)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateAiGatewayVirtualModelConfig",
+    "name": "Update virtual model config",
+    "description": "Update virtual model config Update a virtual model config PATCH /v1/ai-gateway/virtual-model-configs",
+    "context": "PATCH /v1/ai-gateway/virtual-model-configs\nUpdate a virtual model config\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateAiGatewayVirtualModelConfigBySlug",
+    "name": "Update virtual model config",
+    "description": "Update virtual model config Update a virtual model config by path slug PATCH /v1/ai-gateway/virtual-model-configs/{vmcSlug}",
+    "context": "PATCH /v1/ai-gateway/virtual-model-configs/{vmcSlug}\nUpdate a virtual model config by path slug\nRequired: vmcSlug (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

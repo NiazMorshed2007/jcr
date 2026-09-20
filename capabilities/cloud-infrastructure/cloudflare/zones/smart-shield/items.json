@@ -1,0 +1,62 @@
+[
+  {
+    "id": "smart-shield-create-health-check",
+    "name": "Create Health Check",
+    "description": "Create Health Check Create a new health check. POST /client/v4/zones/{zone_id}/smart_shield/healthchecks",
+    "context": "POST /client/v4/zones/{zone_id}/smart_shield/healthchecks\nCreate a new health check.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "smart-shield-delete-health-check",
+    "name": "Delete Health Check",
+    "description": "Delete Health Check Delete a health check. DELETE /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}\nDelete a health check.\nRequired: healthcheck_id (path); zone_id (path)"
+  },
+  {
+    "id": "smart-shield-get-settings",
+    "name": "Get Smart Shield Settings",
+    "description": "Get Smart Shield Settings Retrieve Smart Shield Settings. GET /client/v4/zones/{zone_id}/smart_shield",
+    "context": "GET /client/v4/zones/{zone_id}/smart_shield\nRetrieve Smart Shield Settings.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "smart-shield-health-check-details",
+    "name": "Health Check Details",
+    "description": "Health Check Details Fetch a single configured health check. GET /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}",
+    "context": "GET /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}\nFetch a single configured health check.\nRequired: healthcheck_id (path); zone_id (path)"
+  },
+  {
+    "id": "smart-shield-list-health-checks",
+    "name": "List Health Checks",
+    "description": "List Health Checks List configured health checks. GET /client/v4/zones/{zone_id}/smart_shield/healthchecks",
+    "context": "GET /client/v4/zones/{zone_id}/smart_shield/healthchecks\nList configured health checks.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page. Must be a multiple of 5."
+  },
+  {
+    "id": "smart-shield-patch-health-check",
+    "name": "Patch Health Check",
+    "description": "Patch Health Check Patch a configured health check. PATCH /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}\nPatch a configured health check.\nRequired: healthcheck_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "smart-shield-patch-settings",
+    "name": "Patch Smart Shield Settings",
+    "description": "Patch Smart Shield Settings Set Smart Shield Settings. PATCH /client/v4/zones/{zone_id}/smart_shield",
+    "context": "PATCH /client/v4/zones/{zone_id}/smart_shield\nSet Smart Shield Settings.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "smart-shield-settings-get-cache-reserve-clear",
+    "name": "Get Cache Reserve Clear",
+    "description": "Get Cache Reserve Clear You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. GET /client/v4/zones/{zone_id}/smart_shield/cache_reserve_clear",
+    "context": "GET /client/v4/zones/{zone_id}/smart_shield/cache_reserve_clear\nYou can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "smart-shield-settings-start-cache-reserve-clear",
+    "name": "Start Cache Reserve Clear",
+    "description": "Start Cache Reserve Clear You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. POST /client/v4/zones/{zone_id}/smart_shield/cache_reserve_clear",
+    "context": "POST /client/v4/zones/{zone_id}/smart_shield/cache_reserve_clear\nYou can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "smart-shield-update-health-check",
+    "name": "Update Health Check",
+    "description": "Update Health Check Update a configured health check. PUT /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/smart_shield/healthchecks/{healthcheck_id}\nUpdate a configured health check.\nRequired: healthcheck_id (path); zone_id (path); body (body)"
+  }
+]

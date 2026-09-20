@@ -1,0 +1,32 @@
+[
+  {
+    "id": "account-members-add-member",
+    "name": "Add Member",
+    "description": "Add Member Add a user to the list of members for this account. POST /client/v4/accounts/{account_id}/members",
+    "context": "POST /client/v4/accounts/{account_id}/members\nAdd a user to the list of members for this account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-members-list-members",
+    "name": "List Members",
+    "description": "List Members List all members of an account. GET /client/v4/accounts/{account_id}/members",
+    "context": "GET /client/v4/accounts/{account_id}/members\nList all members of an account.\nRequired: account_id (path)\nOptional: order (query); status (query); page (query); per_page (query); direction (query)"
+  },
+  {
+    "id": "account-members-member-details",
+    "name": "Member Details",
+    "description": "Member Details Get information about a specific member of an account. GET /client/v4/accounts/{account_id}/members/{member_id}",
+    "context": "GET /client/v4/accounts/{account_id}/members/{member_id}\nGet information about a specific member of an account.\nRequired: member_id (path); account_id (path)"
+  },
+  {
+    "id": "account-members-remove-member",
+    "name": "Remove Member",
+    "description": "Remove Member Remove a member from an account. DELETE /client/v4/accounts/{account_id}/members/{member_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/members/{member_id}\nRemove a member from an account.\nRequired: member_id (path); account_id (path)"
+  },
+  {
+    "id": "account-members-update-member",
+    "name": "Update Member",
+    "description": "Update Member Modify an account member. PUT /client/v4/accounts/{account_id}/members/{member_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/members/{member_id}\nModify an account member.\nRequired: member_id (path); account_id (path); body (body)"
+  }
+]

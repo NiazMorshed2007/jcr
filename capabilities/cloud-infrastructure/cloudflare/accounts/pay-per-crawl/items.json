@@ -1,0 +1,80 @@
+[
+  {
+    "id": "pay-per-crawl.crawlerCreateStripeConfig",
+    "name": "Creates the stripe config for a crawler",
+    "description": "Creates the stripe config for a crawler Creates the stripe config for a crawler. POST /client/v4/accounts/{account_id}/pay-per-crawl/crawler/stripe",
+    "context": "POST /client/v4/accounts/{account_id}/pay-per-crawl/crawler/stripe\nCreates the stripe config for a crawler.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.crawlerDeleteStripeConfig",
+    "name": "Deletes the stripe config for a crawler",
+    "description": "Deletes the stripe config for a crawler Deletes the stripe config for a crawler. DELETE /client/v4/accounts/{account_id}/pay-per-crawl/crawler/stripe",
+    "context": "DELETE /client/v4/accounts/{account_id}/pay-per-crawl/crawler/stripe\nDeletes the stripe config for a crawler.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.crawlerGetStripeConfig",
+    "name": "Gets the stripe config for a crawler",
+    "description": "Gets the stripe config for a crawler Gets the stripe config for a crawler. GET /client/v4/accounts/{account_id}/pay-per-crawl/crawler/stripe",
+    "context": "GET /client/v4/accounts/{account_id}/pay-per-crawl/crawler/stripe\nGets the stripe config for a crawler.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.getTerms",
+    "name": "Get pay-per-crawl terms",
+    "description": "Get pay-per-crawl terms Gets the pay-per-crawl terms and conditions contract. GET /client/v4/accounts/{account_id}/pay-per-crawl/terms",
+    "context": "GET /client/v4/accounts/{account_id}/pay-per-crawl/terms\nGets the pay-per-crawl terms and conditions contract.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.getTermsSignature",
+    "name": "Get pay-per-crawl terms signature status",
+    "description": "Get pay-per-crawl terms signature status Gets the account's pay-per-crawl terms signature status. GET /client/v4/accounts/{account_id}/pay-per-crawl/terms/signature",
+    "context": "GET /client/v4/accounts/{account_id}/pay-per-crawl/terms/signature\nGets the account's pay-per-crawl terms signature status.\nRequired: account_id (path) — account id\nOptional: remote (query) — Refresh the signature status from Ironclad."
+  },
+  {
+    "id": "pay-per-crawl.getTermsSignatureLink",
+    "name": "Get signed pay-per-crawl terms link",
+    "description": "Get signed pay-per-crawl terms link Gets a download link for the account's signed pay-per-crawl terms. GET /client/v4/accounts/{account_id}/pay-per-crawl/signature_link",
+    "context": "GET /client/v4/accounts/{account_id}/pay-per-crawl/signature_link\nGets a download link for the account's signed pay-per-crawl terms.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.listCrawlers",
+    "name": "List pay-per-crawl crawlers",
+    "description": "List pay-per-crawl crawlers Lists the crawlers known to pay-per-crawl. GET /client/v4/accounts/{account_id}/pay-per-crawl/crawlers",
+    "context": "GET /client/v4/accounts/{account_id}/pay-per-crawl/crawlers\nLists the crawlers known to pay-per-crawl.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.publisherCreateStripeConfig",
+    "name": "Creates the stripe config for a publisher",
+    "description": "Creates the stripe config for a publisher Creates the stripe config for a publisher. POST /client/v4/accounts/{account_id}/pay-per-crawl/publisher/stripe",
+    "context": "POST /client/v4/accounts/{account_id}/pay-per-crawl/publisher/stripe\nCreates the stripe config for a publisher.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.publisherDeleteStripeConfig",
+    "name": "Deletes the stripe config for a publisher",
+    "description": "Deletes the stripe config for a publisher Deletes the stripe config for a publisher. DELETE /client/v4/accounts/{account_id}/pay-per-crawl/publisher/stripe",
+    "context": "DELETE /client/v4/accounts/{account_id}/pay-per-crawl/publisher/stripe\nDeletes the stripe config for a publisher.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.publisherGetStripeConfig",
+    "name": "Gets the stripe config for a publisher",
+    "description": "Gets the stripe config for a publisher Gets the stripe config for a publisher. GET /client/v4/accounts/{account_id}/pay-per-crawl/publisher/stripe",
+    "context": "GET /client/v4/accounts/{account_id}/pay-per-crawl/publisher/stripe\nGets the stripe config for a publisher.\nRequired: account_id (path) — account id"
+  },
+  {
+    "id": "pay-per-crawl.queryZonesCanBeEnabled",
+    "name": "Gets the can_be_enabled zone setting",
+    "description": "Gets the can_be_enabled zone setting Provided a list of pay-per-crawl configured zones this method will return whether they can enable PPC or not. POST /client/v4/accounts/{account_id}/pay-per-crawl/zones_can_be_enabled/query",
+    "context": "POST /client/v4/accounts/{account_id}/pay-per-crawl/zones_can_be_enabled/query\nProvided a list of pay-per-crawl configured zones this method will return whether they can enable PPC or not.\nRequired: account_id (path) — account id; body (body) — Zone IDs to check for pay-per-crawl eligibility"
+  },
+  {
+    "id": "pay-per-crawl.sendTermsSignatureEvent",
+    "name": "Record pay-per-crawl terms activity",
+    "description": "Record pay-per-crawl terms activity Records that an account displayed or agreed to the pay-per-crawl terms. POST /client/v4/accounts/{account_id}/pay-per-crawl/terms/signature",
+    "context": "POST /client/v4/accounts/{account_id}/pay-per-crawl/terms/signature\nRecords that an account displayed or agreed to the pay-per-crawl terms.\nRequired: account_id (path) — account id; event_type (query) — The terms activity to record.; vid (query) — Ironclad contract version ID."
+  },
+  {
+    "id": "pay-per-crawl.setZonesCanBeEnabled",
+    "name": "Set can_be_enabled setting on zones",
+    "description": "Set can_be_enabled setting on zones Allows an account admin to set the can_be_enabled setting on a list of zones. PATCH /client/v4/accounts/{account_id}/pay-per-crawl/zones_can_be_enabled",
+    "context": "PATCH /client/v4/accounts/{account_id}/pay-per-crawl/zones_can_be_enabled\nAllows an account admin to set the can_be_enabled setting on a list of zones.\nRequired: account_id (path) — account id; body (body) — Data for setting flag on zones"
+  }
+]

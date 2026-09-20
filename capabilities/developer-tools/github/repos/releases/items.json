@@ -1,0 +1,98 @@
+[
+  {
+    "id": "reactions%2Fcreate-for-release",
+    "name": "Create reaction for a release",
+    "description": "Create reaction for a release Create a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release). POST /repos/{owner}/{repo}/releases/{release_id}/reactions",
+    "context": "POST /repos/{owner}/{repo}/releases/{release_id}/reactions\nCreate a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release). A response with a `Status: 200 OK` means that you already added the reaction type to this release.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release.; body (body)"
+  },
+  {
+    "id": "reactions%2Fdelete-for-release",
+    "name": "Delete a release reaction",
+    "description": "Delete a release reaction > [!NOTE] > You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`. DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}",
+    "context": "DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}\n> [!NOTE] > You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`. Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release.; reaction_id (path) — The unique identifier of the reaction."
+  },
+  {
+    "id": "reactions%2Flist-for-release",
+    "name": "List reactions for a release",
+    "description": "List reactions for a release List the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release). GET /repos/{owner}/{repo}/releases/{release_id}/reactions",
+    "context": "GET /repos/{owner}/{repo}/releases/{release_id}/reactions\nList the reactions to a [release](https://docs.github.com/rest/releases/releases#get-a-release).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release.\nOptional: content (query) — Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a release.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fcreate-release",
+    "name": "Create a release",
+    "description": "Create a release Users with push access to the repository can create a release. POST /repos/{owner}/{repo}/releases",
+    "context": "POST /repos/{owner}/{repo}/releases\nUsers with push access to the repository can create a release. > [!NOTE] > If the commit identified by `target_commitish` (or, when `target_commitish` is omitted, the latest commit on the default branch) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead. OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the \"Workflows\" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see \"[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)\". This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see \"[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)\" and \"[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fdelete-release",
+    "name": "Delete a release",
+    "description": "Delete a release Users with push access to the repository can delete a release. DELETE /repos/{owner}/{repo}/releases/{release_id}",
+    "context": "DELETE /repos/{owner}/{repo}/releases/{release_id}\nUsers with push access to the repository can delete a release.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release."
+  },
+  {
+    "id": "repos%2Fdelete-release-asset",
+    "name": "Delete a release asset",
+    "description": "Delete a release asset DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "context": "DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}\nDelete a release asset\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; asset_id (path) — The unique identifier of the asset."
+  },
+  {
+    "id": "repos%2Fgenerate-release-notes",
+    "name": "Generate release notes content for a release",
+    "description": "Generate release notes content for a release Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). POST /repos/{owner}/{repo}/releases/generate-notes",
+    "context": "POST /repos/{owner}/{repo}/releases/generate-notes\nGenerate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fget-latest-release",
+    "name": "Get the latest release",
+    "description": "Get the latest release View the latest published full release for the repository. GET /repos/{owner}/{repo}/releases/latest",
+    "context": "GET /repos/{owner}/{repo}/releases/latest\nView the latest published full release for the repository. The latest release is the most recent non-prerelease, non-draft release, sorted by the `created_at` attribute. The `created_at` attribute is the date of the commit used for the release, and not the date when the release was drafted or published.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget-release",
+    "name": "Get a release",
+    "description": "Get a release Gets a public release with the specified release ID. GET /repos/{owner}/{repo}/releases/{release_id}",
+    "context": "GET /repos/{owner}/{repo}/releases/{release_id}\nGets a public release with the specified release ID. > [!NOTE] > This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see \"[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).\"\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release."
+  },
+  {
+    "id": "repos%2Fget-release-asset",
+    "name": "Get a release asset",
+    "description": "Get a release asset To download the asset's binary content: - If within a browser, fetch the location specified in the `browser_download_url` key provided in the response. GET /repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "context": "GET /repos/{owner}/{repo}/releases/assets/{asset_id}\nTo download the asset's binary content: - If within a browser, fetch the location specified in the `browser_download_url` key provided in the response. - Alternatively, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; asset_id (path) — The unique identifier of the asset."
+  },
+  {
+    "id": "repos%2Fget-release-by-tag",
+    "name": "Get a release by tag name",
+    "description": "Get a release by tag name Get a published release with the specified tag. GET /repos/{owner}/{repo}/releases/tags/{tag}",
+    "context": "GET /repos/{owner}/{repo}/releases/tags/{tag}\nGet a published release with the specified tag.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; tag (path) — tag parameter"
+  },
+  {
+    "id": "repos%2Flist-release-assets",
+    "name": "List release assets",
+    "description": "List release assets GET /repos/{owner}/{repo}/releases/{release_id}/assets",
+    "context": "GET /repos/{owner}/{repo}/releases/{release_id}/assets\nList release assets\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Flist-releases",
+    "name": "List releases",
+    "description": "List releases This returns a list of releases, which does not include regular Git tags that have not been associated with a release. GET /repos/{owner}/{repo}/releases",
+    "context": "GET /repos/{owner}/{repo}/releases\nThis returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://docs.github.com/rest/repos/repos#list-repository-tags). Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fupdate-release",
+    "name": "Update a release",
+    "description": "Update a release Users with push access to the repository can edit a release. PATCH /repos/{owner}/{repo}/releases/{release_id}",
+    "context": "PATCH /repos/{owner}/{repo}/releases/{release_id}\nUsers with push access to the repository can edit a release. > [!NOTE] > If the resolved target commit (the new value of `target_commitish` if you are changing it, otherwise the existing target) adds or modifies any file under `.github/workflows/` relative to the repository's default branch, the authenticating token must be authorized to modify workflows. Otherwise, this endpoint returns `404 Not Found`; some authentication paths surface `403 Resource not accessible by integration` instead. OAuth app tokens and personal access tokens (classic) need the `workflow` scope when the resolved target commit modifies workflow files. Fine-grained access tokens and GitHub App installation tokens also need the \"Workflows\" repository permission (write). The `GITHUB_TOKEN` available to GitHub Actions cannot be authorized for this; for more information, see \"[Automatic token authentication](https://docs.github.com/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token)\".\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release.\nOptional: body (body)"
+  },
+  {
+    "id": "repos%2Fupdate-release-asset",
+    "name": "Update a release asset",
+    "description": "Update a release asset Users with push access to the repository can edit a release asset. PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "context": "PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}\nUsers with push access to the repository can edit a release asset.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; asset_id (path) — The unique identifier of the asset.\nOptional: body (body)"
+  },
+  {
+    "id": "repos%2Fupload-release-asset",
+    "name": "Upload a release asset",
+    "description": "Upload a release asset This endpoint makes use of a [Hypermedia relation](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia) to determine which URL to access. POST /repos/{owner}/{repo}/releases/{release_id}/assets",
+    "context": "POST /repos/{owner}/{repo}/releases/{release_id}/assets\nThis endpoint makes use of a [Hypermedia relation](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in the response of the [Create a release endpoint](https://docs.github.com/rest/releases/releases#create-a-release) to upload a release asset. You need to use an HTTP client which supports [SNI](http://en.wikipedia.org/wiki/Server_Name_Indication) to make calls to this endpoint. Most libraries will set the required `Content-Length` header automatically. Use the required `Content-Type` header to provide the media type of the asset. For a list of media types, see [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml). For example: `application/zip` GitHub expects the asset data in its raw binary form, rather than JSON. You will send the raw binary content of the asset as the request body. Everything else about the endpoint is the same as the rest of the API. For example, you'll still need to pass your authentication to be able to upload an asset. When an upstream failure occurs, you will receive a `502 Bad Gateway` status. This may leave an empty asset with a state of `starter`. It can be safely deleted. **Notes:** * GitHub renames asset filenames that have special characters, non-alphanumeric characters, and leading or trailing periods. The \"[List release assets](https://docs.github.com/rest/releases/assets#list-release-assets)\" endpoint lists the renamed filenames. For more information and help, contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api). * To find the `release_id` query the [`GET /repos/{owner}/{repo}/releases/latest` endpoint](https://docs.github.com/rest/releases/releases#get-the-latest-release). * If you upload an asset with the same filename as another uploaded asset, you'll receive an error and must delete the old file before you can re-upload the new asset.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; release_id (path) — The unique identifier of the release.; name (query)\nOptional: label (query); body (body)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_shield_information_barrier_segment_members_id",
+    "name": "Delete shield information barrier segment member by ID",
+    "description": "Delete shield information barrier segment member by ID Deletes a shield information barrier segment member based on provided ID. DELETE /2.0/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}",
+    "context": "DELETE /2.0/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}\nDeletes a shield information barrier segment member based on provided ID.\nRequired: shield_information_barrier_segment_member_id (path) — The ID of the shield information barrier segment Member."
+  },
+  {
+    "id": "get_shield_information_barrier_segment_members",
+    "name": "List shield information barrier segment members",
+    "description": "List shield information barrier segment members Lists shield information barrier segment members based on provided segment IDs. GET /2.0/shield_information_barrier_segment_members",
+    "context": "GET /2.0/shield_information_barrier_segment_members\nLists shield information barrier segment members based on provided segment IDs.\nRequired: shield_information_barrier_segment_id (query) — The ID of the shield information barrier segment.\nOptional: marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_shield_information_barrier_segment_members_id",
+    "name": "Get shield information barrier segment member by ID",
+    "description": "Get shield information barrier segment member by ID Retrieves a shield information barrier segment member by its ID. GET /2.0/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}",
+    "context": "GET /2.0/shield_information_barrier_segment_members/{shield_information_barrier_segment_member_id}\nRetrieves a shield information barrier segment member by its ID.\nRequired: shield_information_barrier_segment_member_id (path) — The ID of the shield information barrier segment Member."
+  },
+  {
+    "id": "post_shield_information_barrier_segment_members",
+    "name": "Create shield information barrier segment member",
+    "description": "Create shield information barrier segment member Creates a new shield information barrier segment member. POST /2.0/shield_information_barrier_segment_members",
+    "context": "POST /2.0/shield_information_barrier_segment_members\nCreates a new shield information barrier segment member.\nOptional: body (body)"
+  }
+]

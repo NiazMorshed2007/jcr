@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pastMeetingDetails",
+    "name": "Retrieve past meeting details",
+    "description": "Retrieve past meeting details Retrieve ended meeting details GET /v2/past_meetings/{meetingUUID}",
+    "context": "GET /v2/past_meetings/{meetingUUID}\nRetrieve ended meeting details\nRequired: meetingUUID (path) — The meeting UUID."
+  },
+  {
+    "id": "pastMeetingParticipants",
+    "name": "Retrieve past meeting participants",
+    "description": "Retrieve past meeting participants Retrieve ended meeting participants GET /v2/past_meetings/{meetingUUID}/participants",
+    "context": "GET /v2/past_meetings/{meetingUUID}/participants\nRetrieve ended meeting participants\nRequired: meetingUUID (path) — The meeting UUID.\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "pastMeetings",
+    "name": "List of ended meeting instances",
+    "description": "List of ended meeting instances GET /v2/past_meetings/{meetingId}/instances",
+    "context": "GET /v2/past_meetings/{meetingId}/instances\nList of ended meeting instances\nRequired: meetingId (path) — The meeting ID"
+  }
+]

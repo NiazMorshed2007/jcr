@@ -1,0 +1,74 @@
+[
+  {
+    "id": "reportCloudRecording",
+    "name": "Retrieve cloud recording usage report",
+    "description": "Retrieve cloud recording usage report Retrieve cloud recording usage report for a specified period. GET /v2/report/cloud_recording",
+    "context": "GET /v2/report/cloud_recording\nRetrieve cloud recording usage report for a specified period. You can only get cloud recording reports for the most recent period of 6 months. The date gap between from and to dates should be smaller or equal to 30 days.\nRequired: from (query) — Start Date; to (query) — End Date"
+  },
+  {
+    "id": "reportDaily",
+    "name": "Retrieve daily report",
+    "description": "Retrieve daily report Retrieve daily report for one month, can only get daily report for recent 6 months GET /v2/report/daily",
+    "context": "GET /v2/report/daily\nRetrieve daily report for one month, can only get daily report for recent 6 months\nOptional: year (query) — Year for this report; month (query) — Month for this report"
+  },
+  {
+    "id": "reportMeetingDetails",
+    "name": "Retrieve meeting details report",
+    "description": "Retrieve meeting details report Retrieve ended meeting details report GET /v2/report/meetings/{meetingId}",
+    "context": "GET /v2/report/meetings/{meetingId}\nRetrieve ended meeting details report\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance."
+  },
+  {
+    "id": "reportMeetingParticipants",
+    "name": "Retrieve meeting participants report",
+    "description": "Retrieve meeting participants report Retrieve ended meeting participants report GET /v2/report/meetings/{meetingId}/participants",
+    "context": "GET /v2/report/meetings/{meetingId}/participants\nRetrieve ended meeting participants report\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "reportMeetingPolls",
+    "name": "Retrieve meeting polls report",
+    "description": "Retrieve meeting polls report Retrieve ended meeting polls report GET /v2/report/meetings/{meetingId}/polls",
+    "context": "GET /v2/report/meetings/{meetingId}/polls\nRetrieve ended meeting polls report\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance."
+  },
+  {
+    "id": "reportMeetings",
+    "name": "Retrieve meetings report",
+    "description": "Retrieve meetings report Retrieve ended meetings report for a specified period GET /v2/report/users/{userId}/meetings",
+    "context": "GET /v2/report/users/{userId}/meetings\nRetrieve ended meetings report for a specified period\nRequired: userId (path) — The user ID or email address; from (query) — Start Date; to (query) — End Date\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "reportTelephone",
+    "name": "Retrieve telephone report",
+    "description": "Retrieve telephone report Retrieve telephone report for a specified period Toll Report option would be removed. GET /v2/report/telephone",
+    "context": "GET /v2/report/telephone\nRetrieve telephone report for a specified period Toll Report option would be removed. .\nRequired: from (query) — Start Date; to (query) — End Date\nOptional: type (query) — Audio type; page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "reportUsers",
+    "name": "Retrieve hosts report",
+    "description": "Retrieve hosts report Retrieve active or inactive hosts report for a specified period GET /v2/report/users",
+    "context": "GET /v2/report/users\nRetrieve active or inactive hosts report for a specified period\nRequired: from (query) — Start Date; to (query) — End Date\nOptional: type (query) — Active hosts or inactive hosts; page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "reportWebinarDetails",
+    "name": "Retrieve webinar details report",
+    "description": "Retrieve webinar details report Retrieve ended webinar details report GET /v2/report/webinars/{webinarId}",
+    "context": "GET /v2/report/webinars/{webinarId}\nRetrieve ended webinar details report\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance."
+  },
+  {
+    "id": "reportWebinarParticipants",
+    "name": "Retrieve webinar participants report",
+    "description": "Retrieve webinar participants report Retrieve ended webinar participants report GET /v2/report/webinars/{webinarId}/participants",
+    "context": "GET /v2/report/webinars/{webinarId}/participants\nRetrieve ended webinar participants report\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance.\nOptional: page_size (query) — The number of records returned within a single API call; next_page_token (query) — Next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceed the current page size. The expiration period for this token is 15 minutes."
+  },
+  {
+    "id": "reportWebinarPolls",
+    "name": "Retrieve webinar polls report",
+    "description": "Retrieve webinar polls report Retrieve ended webinar polls report GET /v2/report/webinars/{webinarId}/polls",
+    "context": "GET /v2/report/webinars/{webinarId}/polls\nRetrieve ended webinar polls report\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance."
+  },
+  {
+    "id": "reportWebinarQA",
+    "name": "Retrieve webinar Q&A report",
+    "description": "Retrieve webinar Q&A report Retrieve ended webinar Q&A report GET /v2/report/webinars/{webinarId}/qa",
+    "context": "GET /v2/report/webinars/{webinarId}/qa\nRetrieve ended webinar Q&A report\nRequired: webinarId (path) — The webinar ID or webinar UUID. If given webinar ID, will take the last webinar instance."
+  }
+]

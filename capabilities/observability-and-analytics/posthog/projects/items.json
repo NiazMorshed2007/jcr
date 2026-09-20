@@ -1,0 +1,254 @@
+[
+  {
+    "id": "account_notes_list",
+    "name": "account_notes_list",
+    "description": "account_notes_list GET /api/projects/{project_id}/account_notes/",
+    "context": "GET /api/projects/{project_id}/account_notes/\naccount_notes_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: account_id (query) — Only return notes linked to this account.; assigned_to (query) — Only return notes on accounts assigned to these user IDs (the account's CSM or account executive; repeat the param per user).; created_by (query) — Only return notes created by these user IDs (repeat the param per user).; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Full-text search across note title and content, plus substring match on account name."
+  },
+  {
+    "id": "activity_log_list",
+    "name": "activity_log_list",
+    "description": "activity_log_list GET /api/projects/{project_id}/activity_log/",
+    "context": "GET /api/projects/{project_id}/activity_log/\nactivity_log_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: item_id (query) — Filter by the ID of the affected resource.; ordering (query) — Sort by when the entry was created. Defaults to newest first. Use created_at for oldest first when polling for new entries, so a saved cursor picks up where the last request stopped. * `-created_at` - -created_at * `created_at` - created_at; page (query) — Page number for pagination. When provided, uses page-based pagination ordered by most recent first.; page_size (query) — Number of results per page (default: 100, max: 1000).; scope (query) — Filter by a single activity scope, e.g. \"FeatureFlag\", \"Insight\", \"Dashboard\", \"Experiment\". * `Cohort` - Cohort * `FeatureFlag` - FeatureFlag * `Person` - Person * `Group` - Group * `Insight` - Insight * `Plugin` - Plugin * `PluginConfig` - PluginConfig * `HogFunction` - HogFunction * `HogFlow` - HogFlow * `DataManagement` - DataManagement * `EventDefinition` - EventDefinition * `PropertyDefinition` - PropertyDefinition * `Notebook` - Notebook * `GeneratedWidget` - GeneratedWidget * `Canvas` - Canvas * `Endpoint` - Endpoint * `EndpointVersion` - EndpointVersion * `Dashboard` - Dashboard * `Replay` - Replay * `Experiment` - Experiment * `ExperimentHoldout` - ExperimentHoldout * `ExperimentSavedMetric` - ExperimentSavedMetric * `Survey` - Survey * `EarlyAccessFeature` - EarlyAccessFeature * `SessionRecordingPlaylist` - SessionRecordingPlaylist * `ReplayScanner` - ReplayScanner * `VisionAlertConfiguration` - VisionAlertConfiguration * `Comment` - Comment * `Team` - Team * `Project` - Project * `ErrorTrackingIssue` - ErrorTrackingIssue * `DataWarehouseExpression` - DataWarehouseExpression * `DataWarehouseSavedQuery` - DataWarehouseSavedQuery * `LegalDocument` - LegalDocument * `Organization` - Organization * `OrganizationDomain` - OrganizationDomain * `IdentityProviderConfig` - IdentityProviderConfig * `OrganizationMembership` - OrganizationMembership * `Role` - Role * `UserGroup` - UserGroup * `BatchExport` - BatchExport * `BatchImport` - BatchImport * `ExportedAsset` - ExportedAsset * `Integration` - Integration * `Annotation` - Annotation * `Tag` - Tag * `TaggedItem` - TaggedItem * `Subscription` - Subscription * `PersonalAPIKey` - PersonalAPIKey * `ProjectSecretAPIKey` - ProjectSecretAPIKey * `OAuthApplication` - OAuthApplication * `User` - User * `Action` - Action * `AlertConfiguration` - AlertConfiguration * `Threshold` - Threshold * `AlertSubscription` - AlertSubscription * `ExternalDataSource` - ExternalDataSource * `ExternalDataSchema` - ExternalDataSchema * `Evaluation` - Evaluation * `EvaluationDirectory` - EvaluationDirectory * `LLMPrompt` - LLMPrompt * `LLMPromptLabel` - LLMPromptLabel * `LLMTrace` - LLMTrace * `AIGatewayCredit` - AIGatewayCredit * `WebAnalyticsFilterPreset` - WebAnalyticsFilterPreset * `CustomerProfileConfig` - CustomerProfileConfig * `Log` - Log * `LogsAlertConfiguration` - LogsAlertConfiguration * `LogsExclusionRule` - LogsExclusionRule * `LogsRetentionRule` - LogsRetentionRule * `DashboardWidget` - DashboardWidget * `ProductTour` - ProductTour * `Ticket` - Ticket * `InstanceSetting` - InstanceSetting * `SignalReport` - SignalReport * `SignalScoutConfig` - SignalScoutConfig * `SignalTeamConfig` - SignalTeamConfig * `StreamlitApp` - StreamlitApp * `Metric` - Metric * `TableCertification` - TableCertification * `DataQualityCheck` - DataQualityCheck * `DataQualityCheckSchedule` - DataQualityCheckSchedule * `Billing` - Billing * `Loop` - Loop * `StamphogRepoConfig` - StamphogRepoConfig; scopes (query) — Filter by multiple activity scopes, comma-separated. Values must be valid ActivityScope enum values. E.g. \"FeatureFlag,Insight\".; user (query) — Filter by user UUID who performed the action."
+  },
+  {
+    "id": "customer_analytics_accounts_table_query_create",
+    "name": "Run a Customer Analytics accounts table query.",
+    "description": "Run a Customer Analytics accounts table query. POST /api/projects/{project_id}/accounts_table_query/",
+    "context": "POST /api/projects/{project_id}/accounts_table_query/\nRun a Customer Analytics accounts table query.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "desktop_access_retrieve",
+    "name": "Check PostHog Desktop access",
+    "description": "Check PostHog Desktop access Evaluate Desktop access for the selected project and organization. GET /api/projects/{project_id}/desktop/access/",
+    "context": "GET /api/projects/{project_id}/desktop/access/\nEvaluate Desktop access for the selected project and organization.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "desktop_beta_terms_create",
+    "name": "desktop_beta_terms_create",
+    "description": "desktop_beta_terms_create POST /api/projects/{project_id}/desktop_beta_terms/",
+    "context": "POST /api/projects/{project_id}/desktop_beta_terms/\ndesktop_beta_terms_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "desktop_beta_terms_list",
+    "name": "desktop_beta_terms_list",
+    "description": "desktop_beta_terms_list GET /api/projects/{project_id}/desktop_beta_terms/",
+    "context": "GET /api/projects/{project_id}/desktop_beta_terms/\ndesktop_beta_terms_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "desktop_feedback_attachments_retrieve",
+    "name": "Download a Desktop feedback attachment",
+    "description": "Download a Desktop feedback attachment Returns an unexpired attachment to a user with access to the internal feedback project. GET /api/projects/{project_id}/desktop_feedback/attachments/{media_id}/",
+    "context": "GET /api/projects/{project_id}/desktop_feedback/attachments/{media_id}/\nReturns an unexpired attachment to a user with access to the internal feedback project.\nRequired: media_id (path) — Feedback attachment identifier.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "desktop_feedback_create",
+    "name": "Submit Desktop feedback",
+    "description": "Submit Desktop feedback Stores selected attachments and submits one response to the PostHog Desktop feedback survey. POST /api/projects/{project_id}/desktop_feedback/",
+    "context": "POST /api/projects/{project_id}/desktop_feedback/\nStores selected attachments and submits one response to the PostHog Desktop feedback survey.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "docs_search",
+    "name": "Search PostHog documentation",
+    "description": "Search PostHog documentation Run a hybrid (semantic + full-text) RAG search over the PostHog documentation via Inkeep. POST /api/projects/{project_id}/mcp_tools/docs_search/",
+    "context": "POST /api/projects/{project_id}/mcp_tools/docs_search/\nRun a hybrid (semantic + full-text) RAG search over the PostHog documentation via Inkeep. Returns a markdown body with title, URL, and excerpt for each match for the agent to cite back to the user.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_tools_create",
+    "name": "Invoke an MCP tool by name",
+    "description": "Invoke an MCP tool by name Invoke an MCP tool by name. POST /api/projects/{project_id}/mcp_tools/{tool_name}/",
+    "context": "POST /api/projects/{project_id}/mcp_tools/{tool_name}/\nInvoke an MCP tool by name. This endpoint allows MCP callers to invoke Max AI tools directly without going through the full LangChain conversation flow. Scopes are resolved dynamically per tool via dangerously_get_required_scopes.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; tool_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "evaluation_runs_create",
+    "name": "Create a new evaluation run",
+    "description": "Create a new evaluation run Create a new evaluation run. POST /api/projects/{project_id}/evaluation_runs/",
+    "context": "POST /api/projects/{project_id}/evaluation_runs/\nCreate a new evaluation run. This endpoint validates the request and enqueues a Temporal workflow to asynchronously execute the evaluation.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_flag_request_usage_list",
+    "name": "feature_flag_request_usage_list",
+    "description": "feature_flag_request_usage_list GET /api/projects/{project_id}/feature_flag_request_usage/",
+    "context": "GET /api/projects/{project_id}/feature_flag_request_usage/\nfeature_flag_request_usage_list\nRequired: date_from (query) — Inclusive start of the usage period.; date_to (query) — Exclusive end of the usage period.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: time_interval (query) — Time bucket used to group request usage. Hourly queries are limited to 8 days. * `hour` - hour * `day` - day"
+  },
+  {
+    "id": "flag_value_values_retrieve",
+    "name": "Get possible values for a feature flag",
+    "description": "Get possible values for a feature flag Get possible values for a feature flag. GET /api/projects/{project_id}/flag_value/values/",
+    "context": "GET /api/projects/{project_id}/flag_value/values/\nGet possible values for a feature flag. Query parameters: - key: The flag ID (required) Returns: - Array of objects with 'name' field containing possible values\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: key (query) — The flag ID"
+  },
+  {
+    "id": "heatmap_screenshot_settings_retrieve",
+    "name": "heatmap_screenshot_settings_retrieve",
+    "description": "heatmap_screenshot_settings_retrieve GET /api/projects/{project_id}/heatmap_screenshot/settings/",
+    "context": "GET /api/projects/{project_id}/heatmap_screenshot/settings/\nheatmap_screenshot_settings_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "heatmap_screenshot_settings_update",
+    "name": "heatmap_screenshot_settings_update",
+    "description": "heatmap_screenshot_settings_update PATCH /api/projects/{project_id}/heatmap_screenshot/settings/",
+    "context": "PATCH /api/projects/{project_id}/heatmap_screenshot/settings/\nheatmap_screenshot_settings_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "heatmap_screenshots_content_retrieve",
+    "name": "Fetch the rendered screenshot image (JPEG bytes) for a saved heatmap at a given viewport width",
+    "description": "Fetch the rendered screenshot image (JPEG bytes) for a saved heatmap at a given viewport width Fetch the rendered screenshot image (JPEG bytes) for a saved heatmap at a given viewport width. GET /api/projects/{project_id}/heatmap_screenshots/{id}/content/",
+    "context": "GET /api/projects/{project_id}/heatmap_screenshots/{id}/content/\nFetch the rendered screenshot image (JPEG bytes) for a saved heatmap at a given viewport width. Returns 202 with the saved-heatmap metadata while the screenshot is still being generated.\nRequired: id (path) — A UUID string identifying this saved heatmap.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: width (query) — Viewport width (CSS pixels) to fetch. Defaults to 1024. If no exact render exists for this width the closest available one is returned."
+  },
+  {
+    "id": "heatmaps_events_retrieve",
+    "name": "Drill into the individual session interactions behind one or more heatmap coordinates",
+    "description": "Drill into the individual session interactions behind one or more heatmap coordinates Drill into the individual session interactions behind one or more heatmap coordinates. GET /api/projects/{project_id}/heatmaps/events/",
+    "context": "GET /api/projects/{project_id}/heatmaps/events/\nDrill into the individual session interactions behind one or more heatmap coordinates. Pass the 'points' you want to inspect (from the heatmaps list response) to get the underlying per-session events, so you can jump to the session recordings that produced a hotspot.\nRequired: points (query) — JSON array of the heatmap coordinates to drill into, e.g. '[{\"x\": 0.5, \"y\": 100}]'. Each point needs 'x' (relative x, 0..1) and 'y' (absolute client-y pixels) matching values returned by the heatmaps list endpoint; an optional 'target_fixed' boolean matches fixed-position elements. Returns the individual session interactions behind those spots.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: aggregation (query) — How to aggregate counts: 'total_count' (every interaction, default) or 'unique_visitors' (distinct people). * `unique_visitors` - unique_visitors * `total_count` - total_count; cohort_ids (query) — JSON array of cohort IDs (e.g. '[123, 456]') to restrict results to people in those cohorts. Feature-flagged; ignored when the cohort filter is not enabled for the caller.; date_from (query) — Start of the window. Relative (e.g. '-7d', '-30d', '-1mStart') or an absolute 'YYYY-MM-DD' date. Defaults to '-7d'. Heatmap data is retained for 90 days.; date_to (query) — End of the window, inclusive. Relative or absolute 'YYYY-MM-DD'. Defaults to today.; events (query) — JSON array of event filters (e.g. '[{\"id\": \"purchase\", \"properties\": []}]') to restrict results to sessions in which those events occurred. Each entry needs a string 'id' (the event name) and may carry a 'properties' array of property filters applied to that event, each of type 'event' or 'element'. Several entries are combined with AND: the session must contain a matching event for every entry. At most 10 entries, each with at most 20 property filters. Requires project-wide heatmap access, since the filter reads the project's events rather than one saved heatmap. Feature-flagged; ignored when the event filter is not enabled for the caller.; filter_test_accounts (query) — When true, exclude sessions from internal/test accounts using the project's test-account filters.; hide_zero_coordinates (query) — When true (default), drop interactions recorded at the (0, 0) origin, which are usually noise.; limit (query) — Maximum interactions to return (1-100).; offset (query) — Number of interactions to skip, for pagination.; type (query) — The interaction type to return. One of: 'click' (default), 'rageclick', 'mousemove', or 'scrolldepth'. Scrolldepth returns scroll buckets instead of x/y coordinates.; url_exact (query) — Match a single page by exact URL (trailing slash is ignored). Mutually exclusive with url_pattern.; url_pattern (query) — Match pages by regex against the full current_url (anchored automatically). Use this to aggregate across query strings or path segments. Mutually exclusive with url_exact.; viewport_width_max (query) — Only include interactions captured at a viewport at most this wide, in CSS pixels.; viewport_width_min (query) — Only include interactions captured at a viewport at least this wide, in CSS pixels. Use with viewport_width_max to isolate a device class (e.g. 360-768 for mobile)."
+  },
+  {
+    "id": "heatmaps_list",
+    "name": "Aggregated heatmap interactions for a page",
+    "description": "Aggregated heatmap interactions for a page Aggregated heatmap interactions for a page. GET /api/projects/{project_id}/heatmaps/",
+    "context": "GET /api/projects/{project_id}/heatmaps/\nAggregated heatmap interactions for a page. For type 'click'/'rageclick'/'mousemove' each result is a point with relative x, absolute client-y, and a count. For type 'scrolldepth' the response is scroll-depth buckets instead (cumulative reach down the page).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: aggregation (query) — How to aggregate counts: 'total_count' (every interaction, default) or 'unique_visitors' (distinct people). * `unique_visitors` - unique_visitors * `total_count` - total_count; cohort_ids (query) — JSON array of cohort IDs (e.g. '[123, 456]') to restrict results to people in those cohorts. Feature-flagged; ignored when the cohort filter is not enabled for the caller.; date_from (query) — Start of the window. Relative (e.g. '-7d', '-30d', '-1mStart') or an absolute 'YYYY-MM-DD' date. Defaults to '-7d'. Heatmap data is retained for 90 days.; date_to (query) — End of the window, inclusive. Relative or absolute 'YYYY-MM-DD'. Defaults to today.; events (query) — JSON array of event filters (e.g. '[{\"id\": \"purchase\", \"properties\": []}]') to restrict results to sessions in which those events occurred. Each entry needs a string 'id' (the event name) and may carry a 'properties' array of property filters applied to that event, each of type 'event' or 'element'. Several entries are combined with AND: the session must contain a matching event for every entry. At most 10 entries, each with at most 20 property filters. Requires project-wide heatmap access, since the filter reads the project's events rather than one saved heatmap. Feature-flagged; ignored when the event filter is not enabled for the caller.; filter_test_accounts (query) — When true, exclude sessions from internal/test accounts using the project's test-account filters.; hide_zero_coordinates (query) — When true (default), drop interactions recorded at the (0, 0) origin, which are usually noise.; limit (query) — Maximum number of coordinate points to return, ordered hottest-first by count. Defaults to 500. Pass 0 to fetch the full set (every coordinate) needed to render a complete heatmap overlay. Ignored for the 'scrolldepth' type, which always returns every bucket.; offset (query) — Number of hottest-first points to skip, for paging through cooler coordinates. Ignored for the 'scrolldepth' type.; type (query) — The interaction type to return. One of: 'click' (default), 'rageclick', 'mousemove', or 'scrolldepth'. Scrolldepth returns scroll buckets instead of x/y coordinates.; url_exact (query) — Match a single page by exact URL (trailing slash is ignored). Mutually exclusive with url_pattern.; url_pattern (query) — Match pages by regex against the full current_url (anchored automatically). Use this to aggregate across query strings or path segments. Mutually exclusive with url_exact.; viewport_width_max (query) — Only include interactions captured at a viewport at most this wide, in CSS pixels.; viewport_width_min (query) — Only include interactions captured at a viewport at least this wide, in CSS pixels. Use with viewport_width_max to isolate a device class (e.g. 360-768 for mobile)."
+  },
+  {
+    "id": "hog_function_templates_list",
+    "name": "hog_function_templates_list",
+    "description": "hog_function_templates_list GET /api/projects/{project_id}/hog_function_templates/",
+    "context": "GET /api/projects/{project_id}/hog_function_templates/\nhog_function_templates_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; template_id (query) — Filter to a specific template by its template_id. Deprecated templates are excluded from list results; use the retrieve endpoint to look up a template by ID regardless of status.; type (query) — Filter by template type (e.g. destination, email, sms_provider, broadcast). Defaults to destination if neither type nor types is provided.; types (query) — Comma-separated list of template types to include (e.g. destination,email,sms_provider)."
+  },
+  {
+    "id": "hog_function_templates_retrieve",
+    "name": "hog_function_templates_retrieve",
+    "description": "hog_function_templates_retrieve GET /api/projects/{project_id}/hog_function_templates/{template_id}/",
+    "context": "GET /api/projects/{project_id}/hog_function_templates/{template_id}/\nhog_function_templates_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; template_id (path)"
+  },
+  {
+    "id": "ingestion_warnings_v2_list",
+    "name": "List ingestion warnings",
+    "description": "List ingestion warnings Lists this project's ingestion warnings — events or person/group updates that were ingested with problems (oversized messages, rejected person merges, invalid data) — grouped by warning type. GET /api/projects/{project_id}/ingestion_warnings_v2/",
+    "context": "GET /api/projects/{project_id}/ingestion_warnings_v2/\nLists this project's ingestion warnings — events or person/group updates that were ingested with problems (oversized messages, rejected person merges, invalid data) — grouped by warning type. Each entry carries the warning's category and severity, the total count and a sparkline over the requested time range, and the most recent sample warnings with the affected event/person/group. Filter by category, type, severity or time range to drill into a specific problem.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: category (query) — Only return warnings in this category (e.g. 'size', 'merge', 'event'). Warnings from producers that don't yet emit a category have category 'unknown'.; limit (query) — Maximum number of warning types to return (default 100).; order_by (query) — Sort order for warning types: 'count' (most frequent first, the default) or 'last_seen' (most recent first). * `count` - count * `last_seen` - last_seen; q (query) — Only return warnings whose type or details contain this substring (case-sensitive). Useful for finding warnings about a specific distinct ID, event or property.; samples (query) — Maximum number of recent sample warnings to return per warning type (default 5).; severity (query) — Only return warnings with this severity. Warnings from producers that don't yet emit a severity have severity 'warning'. * `info` - info * `warning` - warning * `error` - error; since (query) — Start of the time range, as an ISO 8601 datetime (e.g. '2026-07-01T00:00:00Z') or a relative duration (e.g. '-24h', '-7d'). Defaults to 24 hours ago. Warnings are retained for 90 days.; type (query) — Only return warnings of this type (e.g. 'message_size_too_large', 'cannot_merge_already_identified').; until (query) — End of the time range, as an ISO 8601 datetime or a relative duration (e.g. '-1h'). Defaults to now."
+  },
+  {
+    "id": "managed_viewsets_retrieve",
+    "name": "Get all views associated with a specific managed viewset",
+    "description": "Get all views associated with a specific managed viewset Get all views associated with a specific managed viewset. GET /api/projects/{project_id}/managed_viewsets/{kind}/",
+    "context": "GET /api/projects/{project_id}/managed_viewsets/{kind}/\nGet all views associated with a specific managed viewset. GET /api/environments/{team_id}/managed_viewsets/{kind}/\nRequired: kind (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "managed_viewsets_update",
+    "name": "Enable or disable a managed viewset by kind",
+    "description": "Enable or disable a managed viewset by kind Enable or disable a managed viewset by kind. PUT /api/projects/{project_id}/managed_viewsets/{kind}/",
+    "context": "PUT /api/projects/{project_id}/managed_viewsets/{kind}/\nEnable or disable a managed viewset by kind. PUT /api/environments/{team_id}/managed_viewsets/{kind}/ with body {\"enabled\": true/false}\nRequired: kind (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "max_tools_create_and_query_insight_create",
+    "name": "max_tools_create_and_query_insight_create",
+    "description": "max_tools_create_and_query_insight_create POST /api/projects/{project_id}/max_tools/create_and_query_insight/",
+    "context": "POST /api/projects/{project_id}/max_tools/create_and_query_insight/\nmax_tools_create_and_query_insight_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_servers_list",
+    "name": "Lists curated MCP server templates that users can install with one click",
+    "description": "Lists curated MCP server templates that users can install with one click Lists curated MCP server templates that users can install with one click. GET /api/projects/{project_id}/mcp_servers/",
+    "context": "GET /api/projects/{project_id}/mcp_servers/\nLists curated MCP server templates that users can install with one click. Templates are seeded by PostHog operators and carry shared, encrypted OAuth client credentials. Inactive templates are hidden from the catalog.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "paths_v2_segment_to_funnel_create",
+    "name": "Convert a journey segment to a funnel",
+    "description": "Convert a journey segment to a funnel Converts a displayed journeys segment into the funnel query that reproduces its unique-actor count exactly. POST /api/projects/{project_id}/paths_v2/segment_to_funnel/",
+    "context": "POST /api/projects/{project_id}/paths_v2/segment_to_funnel/\nConverts a displayed journeys segment into the funnel query that reproduces its unique-actor count exactly. In open mode only a single edge converts (a two-step funnel with the inactivity gap as conversion window); in anchored mode any anchor-rooted chain converts (window W). The funnel is returned as JSON and is not executed or persisted here.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "plugin_configs_logs_list",
+    "name": "plugin_configs_logs_list",
+    "description": "plugin_configs_logs_list GET /api/projects/{project_id}/plugin_configs/{plugin_config_id}/logs/",
+    "context": "GET /api/projects/{project_id}/plugin_configs/{plugin_config_id}/logs/\nplugin_configs_logs_list\nRequired: plugin_config_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "posthog_connections_forward_create",
+    "name": "Forward a request through a PostHog connection",
+    "description": "Forward a request through a PostHog connection Replay an API request against the connected PostHog project. POST /api/projects/{project_id}/posthog_connections/{id}/forward/",
+    "context": "POST /api/projects/{project_id}/posthog_connections/{id}/forward/\nReplay an API request against the connected PostHog project. The server injects the connection's token; the response is passed through.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "posthog_connections_target_retrieve",
+    "name": "Read the connected project's identity",
+    "description": "Read the connected project's identity Resolve which project, organization and region a PostHog connection points at, so callers can build target API paths without reading `api/users/@me/` through the connection first. GET /api/projects/{project_id}/posthog_connections/{id}/target/",
+    "context": "GET /api/projects/{project_id}/posthog_connections/{id}/target/\nResolve which project, organization and region a PostHog connection points at, so callers can build target API paths without reading `api/users/@me/` through the connection first.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "product_enablement_create",
+    "name": "product_enablement_create",
+    "description": "product_enablement_create POST /api/projects/{project_id}/product_enablement/",
+    "context": "POST /api/projects/{project_id}/product_enablement/\nproduct_enablement_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "quota_limits_list",
+    "name": "Get a team's quota-limit state",
+    "description": "Get a team's quota-limit state Return the current quota-limit state for the team identified in the URL, keyed by `QuotaResource` value. GET /api/projects/{project_id}/quota_limits/",
+    "context": "GET /api/projects/{project_id}/quota_limits/\nReturn the current quota-limit state for the team identified in the URL, keyed by `QuotaResource` value. Used by the LLM gateway to gate billable products on AI credits exhaustion.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "sdk_health_report_retrieve",
+    "name": "Get SDK health report for a project",
+    "description": "Get SDK health report for a project Returns a pre-digested health assessment of the PostHog SDKs the project is using. GET /api/projects/{project_id}/sdk_health/report/",
+    "context": "GET /api/projects/{project_id}/sdk_health/report/\nReturns a pre-digested health assessment of the PostHog SDKs the project is using. Covers which SDKs are current vs outdated (smart-semver rules with grace periods and traffic-percentage thresholds), per-version breakdown, and a human-readable reason for each assessment. Use this to diagnose SDK version issues, surface upgrade recommendations, or check overall SDK health.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: force_refresh (query) — When true, bypasses the Redis cache and re-queries ClickHouse for SDK usage. A background job refreshes this data once a day, so the cached answer is usually current. Use sparingly."
+  },
+  {
+    "id": "sessions_property_definitions_retrieve",
+    "name": "sessions_property_definitions_retrieve",
+    "description": "sessions_property_definitions_retrieve GET /api/projects/{project_id}/sessions/property_definitions/",
+    "context": "GET /api/projects/{project_id}/sessions/property_definitions/\nsessions_property_definitions_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "sessions_values_retrieve",
+    "name": "sessions_values_retrieve",
+    "description": "sessions_values_retrieve GET /api/projects/{project_id}/sessions/values/",
+    "context": "GET /api/projects/{project_id}/sessions/values/\nsessions_values_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "task_activity_list",
+    "name": "List the requester's task activity",
+    "description": "List the requester's task activity Task lifecycle rows collapse per task. GET /api/projects/{project_id}/task_activity/",
+    "context": "GET /api/projects/{project_id}/task_activity/\nTask lifecycle rows collapse per task. Comment notifications remain separate. Results are most-recent first and restricted to tasks the requester can see.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: before (query) — Activity timestamp from the final row of the previous page.; before_id (query) — Activity ID from the final row of the previous page.; limit (query) — Maximum number of tasks to return (most recent activity first)."
+  },
+  {
+    "id": "task_activity_mark_read_create",
+    "name": "Mark task activity read",
+    "description": "Mark task activity read Clear collapsed task activity through task timestamps and individual comment activity through activity IDs. POST /api/projects/{project_id}/task_activity/mark_read/",
+    "context": "POST /api/projects/{project_id}/task_activity/mark_read/\nClear collapsed task activity through task timestamps and individual comment activity through activity IDs.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "task_mentions_list",
+    "name": "List mentions of the requester",
+    "description": "List mentions of the requester Thread messages that @-mention the requester, newest first, restricted to tasks they can see. GET /api/projects/{project_id}/task_mentions/",
+    "context": "GET /api/projects/{project_id}/task_mentions/\nThread messages that @-mention the requester, newest first, restricted to tasks they can see.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum number of mentions to return (newest first).; offset (query) — The initial index from which to return the results.; since (query) — Only return mentions created after this ISO 8601 timestamp."
+  },
+  {
+    "id": "user_customer_analytics_config_partial_update",
+    "name": "Update account sidebar configuration",
+    "description": "Update account sidebar configuration Replace the requesting user's ordered account sidebar properties when pinned_properties is provided, and change the task digest email preferences when task_digest is provided. PATCH /api/projects/{project_id}/user_customer_analytics_config/{id}/",
+    "context": "PATCH /api/projects/{project_id}/user_customer_analytics_config/{id}/\nReplace the requesting user's ordered account sidebar properties when pinned_properties is provided, and change the task digest email preferences when task_digest is provided. Anything omitted keeps its current value. At most 50 account custom properties and relationships can be pinned.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "user_customer_analytics_config_retrieve",
+    "name": "Get account sidebar configuration",
+    "description": "Get account sidebar configuration Get the requesting user's account sidebar and task digest configuration for this project. GET /api/projects/{project_id}/user_customer_analytics_config/{id}/",
+    "context": "GET /api/projects/{project_id}/user_customer_analytics_config/{id}/\nGet the requesting user's account sidebar and task digest configuration for this project. The first read creates an empty configuration row.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_column_statistics_list",
+    "name": "Read per-column data statistics (null fraction, min/max, row count) for warehouse tables",
+    "description": "Read per-column data statistics (null fraction, min/max, row count) for warehouse tables Read per-column data statistics (null fraction, min/max, row count) for warehouse tables. GET /api/projects/{project_id}/warehouse_column_statistics/",
+    "context": "GET /api/projects/{project_id}/warehouse_column_statistics/\nRead per-column data statistics (null fraction, min/max, row count) for warehouse tables. Statistics are computed automatically after a sync and surfaced to the AI agent so it can write better queries. They are system-owned and read-only here. List can be filtered to one table with `?table_id= `.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; table_id (query) — Only return statistics for this data warehouse table."
+  },
+  {
+    "id": "warehouse_column_statistics_retrieve",
+    "name": "Read per-column data statistics (null fraction, min/max, row count) for warehouse tables",
+    "description": "Read per-column data statistics (null fraction, min/max, row count) for warehouse tables Read per-column data statistics (null fraction, min/max, row count) for warehouse tables. GET /api/projects/{project_id}/warehouse_column_statistics/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_column_statistics/{id}/\nRead per-column data statistics (null fraction, min/max, row count) for warehouse tables. Statistics are computed automatically after a sync and surfaced to the AI agent so it can write better queries. They are system-owned and read-only here. List can be filtered to one table with `?table_id= `.\nRequired: id (path) — A UUID string identifying this warehouse column statistics.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_vitals_retrieve",
+    "name": "Get web vitals for a specific pathname",
+    "description": "Get web vitals for a specific pathname Get web vitals for a specific pathname. GET /api/projects/{project_id}/web_vitals/",
+    "context": "GET /api/projects/{project_id}/web_vitals/\nGet web vitals for a specific pathname. Toolbar accesses this via OAuth (handled by TeamAndOrgViewSetMixin.get_authenticators).\nRequired: pathname (query) — Filter web vitals by pathname; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

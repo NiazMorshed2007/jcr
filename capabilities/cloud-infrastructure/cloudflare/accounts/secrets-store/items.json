@@ -1,0 +1,74 @@
+[
+  {
+    "id": "secrets-store-create",
+    "name": "Create a store",
+    "description": "Create a store Creates a store in the account. POST /client/v4/accounts/{account_id}/secrets_store/stores",
+    "context": "POST /client/v4/accounts/{account_id}/secrets_store/stores\nCreates a store in the account.\nRequired: account_id (path) — Account identifier.; body (body)"
+  },
+  {
+    "id": "secrets-store-delete-bulk",
+    "name": "Delete secrets",
+    "description": "Delete secrets Deletes one or more secrets. DELETE /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets",
+    "context": "DELETE /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets\nDeletes one or more secrets.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.; body (body)"
+  },
+  {
+    "id": "secrets-store-delete-by-id",
+    "name": "Delete a store",
+    "description": "Delete a store Deletes a single store. DELETE /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}\nDeletes a single store. By default, a store that still contains secrets cannot be deleted and returns HTTP 409 (Conflict) with the \"store_not_empty\" error. Pass `force=true` to cascade-delete all secrets in the store. Empty stores are always deleted regardless of the force parameter.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.\nOptional: force (query) — When true, cascade-deletes all secrets in the store before deleting the store itself. Required when deleting a non-empty store. Without this parameter, attempting to delete a non-empty store returns 409."
+  },
+  {
+    "id": "secrets-store-duplicate-by-id",
+    "name": "Duplicate Secret",
+    "description": "Duplicate Secret Creates a duplicate of the secret, keeping the value. POST /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}/duplicate",
+    "context": "POST /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}/duplicate\nCreates a duplicate of the secret, keeping the value.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.; secret_id (path) — Secret identifier.; body (body)"
+  },
+  {
+    "id": "secrets-store-get-by-id",
+    "name": "Get a secret by ID",
+    "description": "Get a secret by ID Returns details of a single secret. GET /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}",
+    "context": "GET /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}\nReturns details of a single secret.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.; secret_id (path) — Secret identifier."
+  },
+  {
+    "id": "secrets-store-get-store-by-id",
+    "name": "Get a store by ID",
+    "description": "Get a store by ID Returns details of a single store. GET /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}",
+    "context": "GET /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}\nReturns details of a single store.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier."
+  },
+  {
+    "id": "secrets-store-list",
+    "name": "List account stores",
+    "description": "List account stores Lists all the stores in an account. GET /client/v4/accounts/{account_id}/secrets_store/stores",
+    "context": "GET /client/v4/accounts/{account_id}/secrets_store/stores\nLists all the stores in an account.\nRequired: account_id (path) — Account identifier.\nOptional: direction (query) — Direction to sort objects.; page (query) — Page number.; per_page (query) — Number of objects to return per page.; order (query) — Order stores by values in the given field."
+  },
+  {
+    "id": "secrets-store-patch-by-id",
+    "name": "Patch a secret",
+    "description": "Patch a secret Updates a single secret. PATCH /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}\nUpdates a single secret.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.; secret_id (path) — Secret identifier.; body (body)"
+  },
+  {
+    "id": "secrets-store-quota",
+    "name": "View secret usage",
+    "description": "View secret usage Lists the number of secrets used in the account. GET /client/v4/accounts/{account_id}/secrets_store/quota",
+    "context": "GET /client/v4/accounts/{account_id}/secrets_store/quota\nLists the number of secrets used in the account.\nRequired: account_id (path) — Account identifier."
+  },
+  {
+    "id": "secrets-store-secret-create",
+    "name": "Create a secret",
+    "description": "Create a secret Creates a secret in the account. POST /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets",
+    "context": "POST /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets\nCreates a secret in the account.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.; body (body)"
+  },
+  {
+    "id": "secrets-store-secret-delete-by-id",
+    "name": "Delete a secret",
+    "description": "Delete a secret Deletes a single secret. DELETE /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}\nDeletes a single secret.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.; secret_id (path) — Secret identifier."
+  },
+  {
+    "id": "secrets-store-secrets-list",
+    "name": "List store secrets",
+    "description": "List store secrets Lists all store secrets. GET /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets",
+    "context": "GET /client/v4/accounts/{account_id}/secrets_store/stores/{store_id}/secrets\nLists all store secrets.\nRequired: account_id (path) — Account identifier.; store_id (path) — Store identifier.\nOptional: direction (query) — Direction to sort objects.; page (query) — Page number.; per_page (query) — Number of objects to return per page.; search (query) — Search secrets using a filter string, filtering across name and comment.; order (query) — Order secrets by values in the given field.; scopes (query) — Only secrets with the given scopes will be returned."
+  }
+]

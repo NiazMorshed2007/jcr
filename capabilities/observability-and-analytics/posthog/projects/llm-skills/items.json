@@ -1,0 +1,122 @@
+[
+  {
+    "id": "llm_skills_bundle_retrieve",
+    "name": "One zip of the requesting user's store skills, for unpacking into a skills directory.",
+    "description": "One zip of the requesting user's store skills, for unpacking into a skills directory. GET /api/projects/{project_id}/llm_skills/bundle/",
+    "context": "GET /api/projects/{project_id}/llm_skills/bundle/\nOne zip of the requesting user's store skills, for unpacking into a skills directory.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: content (query) — What each skill directory in the zip contains. 'stub' (default) writes a SKILL.md with the name, description and instructions to fetch the skill over the PostHog MCP when it is invoked. 'full' writes the rendered SKILL.md, every bundled file and the Codex sidecar. * `stub` - stub * `full` - full; limit (query) — Maximum number of skills in the zip, newest first; default 50, at most 100. Every skill in the zip costs the agent prompt context on each turn, so pick what the harness can usefully carry. Skills past the limit are reported in X-Skills-Dropped."
+  },
+  {
+    "id": "llm_skills_create",
+    "name": "llm_skills_create",
+    "description": "llm_skills_create POST /api/projects/{project_id}/llm_skills/",
+    "context": "POST /api/projects/{project_id}/llm_skills/\nllm_skills_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_skills_import_create",
+    "name": "llm_skills_import_create",
+    "description": "llm_skills_import_create POST /api/projects/{project_id}/llm_skills/import/",
+    "context": "POST /api/projects/{project_id}/llm_skills/import/\nllm_skills_import_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_skills_list",
+    "name": "llm_skills_list",
+    "description": "llm_skills_list GET /api/projects/{project_id}/llm_skills/",
+    "context": "GET /api/projects/{project_id}/llm_skills/\nllm_skills_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: category (query) — Filter skills to this exact category. Pass \"scout\" for Signals scouts, or an empty string to return only uncategorized skills. Omit the parameter entirely to return skills of every category.; created_by_id (query) — Filter skills by the ID of the user who created them.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; owner_id (query) — Filter skills by the ID of a user who owns them. Ownership is keyed on the logical skill, so this is stable across versions — unlike created_by_id, which tracks whoever published the latest version.; search (query) — Optional substring filter applied to skill names and descriptions."
+  },
+  {
+    "id": "llm_skills_marketplace_install_command_create",
+    "name": "Mint the user's read-only marketplace credential (or rotate it) and return the install command",
+    "description": "Mint the user's read-only marketplace credential (or rotate it) and return the install command Mint the user's read-only marketplace credential (or rotate it) and return the install command. POST /api/projects/{project_id}/llm_skills/marketplace/install-command/",
+    "context": "POST /api/projects/{project_id}/llm_skills/marketplace/install-command/\nMint the user's read-only marketplace credential (or rotate it) and return the install command. Per-user: rotating only ever invalidates this user's own credential, never a teammate's.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "llm_skills_marketplace_install_command_retrieve",
+    "name": "Report whether the user already has a marketplace credential, without minting one",
+    "description": "Report whether the user already has a marketplace credential, without minting one Report whether the user already has a marketplace credential, without minting one. GET /api/projects/{project_id}/llm_skills/marketplace/install-command/",
+    "context": "GET /api/projects/{project_id}/llm_skills/marketplace/install-command/\nReport whether the user already has a marketplace credential, without minting one. The token is unrecoverable, so an existing credential returns its mask only — the UI shows \"already connected, existing setups keep working\" and offers an explicit rotate.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "llm_skills_name_archive_create",
+    "name": "llm_skills_name_archive_create",
+    "description": "llm_skills_name_archive_create POST /api/projects/{project_id}/llm_skills/name/{skill_name}/archive/",
+    "context": "POST /api/projects/{project_id}/llm_skills/name/{skill_name}/archive/\nllm_skills_name_archive_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)"
+  },
+  {
+    "id": "llm_skills_name_duplicate_create",
+    "name": "llm_skills_name_duplicate_create",
+    "description": "llm_skills_name_duplicate_create POST /api/projects/{project_id}/llm_skills/name/{skill_name}/duplicate/",
+    "context": "POST /api/projects/{project_id}/llm_skills/name/{skill_name}/duplicate/\nllm_skills_name_duplicate_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path); body (body)"
+  },
+  {
+    "id": "llm_skills_name_export_retrieve",
+    "name": "llm_skills_name_export_retrieve",
+    "description": "llm_skills_name_export_retrieve GET /api/projects/{project_id}/llm_skills/name/{skill_name}/export/",
+    "context": "GET /api/projects/{project_id}/llm_skills/name/{skill_name}/export/\nllm_skills_name_export_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: version (query) — Specific skill version to fetch. If omitted, the latest version is returned."
+  },
+  {
+    "id": "llm_skills_name_files_create",
+    "name": "llm_skills_name_files_create",
+    "description": "llm_skills_name_files_create POST /api/projects/{project_id}/llm_skills/name/{skill_name}/files/",
+    "context": "POST /api/projects/{project_id}/llm_skills/name/{skill_name}/files/\nllm_skills_name_files_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path); body (body)"
+  },
+  {
+    "id": "llm_skills_name_files_destroy",
+    "name": "llm_skills_name_files_destroy",
+    "description": "llm_skills_name_files_destroy DELETE /api/projects/{project_id}/llm_skills/name/{skill_name}/files/{file_path}/",
+    "context": "DELETE /api/projects/{project_id}/llm_skills/name/{skill_name}/files/{file_path}/\nllm_skills_name_files_destroy\nRequired: file_path (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: base_version (query) — Latest version you are editing from. If provided, the request fails with 409 when another write has landed in the meantime."
+  },
+  {
+    "id": "llm_skills_name_files_rename_create",
+    "name": "llm_skills_name_files_rename_create",
+    "description": "llm_skills_name_files_rename_create POST /api/projects/{project_id}/llm_skills/name/{skill_name}/files-rename/",
+    "context": "POST /api/projects/{project_id}/llm_skills/name/{skill_name}/files-rename/\nllm_skills_name_files_rename_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path); body (body)"
+  },
+  {
+    "id": "llm_skills_name_files_retrieve",
+    "name": "llm_skills_name_files_retrieve",
+    "description": "llm_skills_name_files_retrieve GET /api/projects/{project_id}/llm_skills/name/{skill_name}/files/{file_path}/",
+    "context": "GET /api/projects/{project_id}/llm_skills/name/{skill_name}/files/{file_path}/\nllm_skills_name_files_retrieve\nRequired: file_path (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: version (query) — Specific skill version to fetch. If omitted, the latest version is returned."
+  },
+  {
+    "id": "llm_skills_name_partial_update",
+    "name": "llm_skills_name_partial_update",
+    "description": "llm_skills_name_partial_update PATCH /api/projects/{project_id}/llm_skills/name/{skill_name}/",
+    "context": "PATCH /api/projects/{project_id}/llm_skills/name/{skill_name}/\nllm_skills_name_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "llm_skills_name_publish_community_create",
+    "name": "llm_skills_name_publish_community_create",
+    "description": "llm_skills_name_publish_community_create POST /api/projects/{project_id}/llm_skills/name/{skill_name}/publish-community/",
+    "context": "POST /api/projects/{project_id}/llm_skills/name/{skill_name}/publish-community/\nllm_skills_name_publish_community_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path); body (body)"
+  },
+  {
+    "id": "llm_skills_name_rename_create",
+    "name": "llm_skills_name_rename_create",
+    "description": "llm_skills_name_rename_create POST /api/projects/{project_id}/llm_skills/name/{skill_name}/rename/",
+    "context": "POST /api/projects/{project_id}/llm_skills/name/{skill_name}/rename/\nllm_skills_name_rename_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path); body (body)"
+  },
+  {
+    "id": "llm_skills_name_retrieve",
+    "name": "llm_skills_name_retrieve",
+    "description": "llm_skills_name_retrieve GET /api/projects/{project_id}/llm_skills/name/{skill_name}/",
+    "context": "GET /api/projects/{project_id}/llm_skills/name/{skill_name}/\nllm_skills_name_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: body_length (query) — Maximum number of characters of the body to return starting at body_offset. Omit to return the whole body from the offset onwards. When the slice stops before the end, body_next_offset is the offset to request next.; body_offset (query) — Zero-based character offset to start the returned body from. Use with body_length to page through a large body that a client would otherwise truncate. Compare the returned body length against body_total_length to detect truncation, then re-fetch from body_next_offset. Defaults to 0 (start of body).; version (query) — Specific skill version to fetch. If omitted, the latest version is returned."
+  },
+  {
+    "id": "llm_skills_name_skill_md_retrieve",
+    "name": "The rendered SKILL.md plus its frontmatter as JSON, for a host that serves the file",
+    "description": "The rendered SKILL.md plus its frontmatter as JSON, for a host that serves the file The rendered SKILL.md plus its frontmatter as JSON, for a host that serves the file. GET /api/projects/{project_id}/llm_skills/name/{skill_name}/skill-md/",
+    "context": "GET /api/projects/{project_id}/llm_skills/name/{skill_name}/skill-md/\nThe rendered SKILL.md plus its frontmatter as JSON, for a host that serves the file. Both halves come from one renderer, so a digest a client takes over ``content`` still describes the fields it reads from ``frontmatter``.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: version (query) — Specific skill version to fetch. If omitted, the latest version is returned."
+  },
+  {
+    "id": "llm_skills_resolve_name_retrieve",
+    "name": "llm_skills_resolve_name_retrieve",
+    "description": "llm_skills_resolve_name_retrieve GET /api/projects/{project_id}/llm_skills/resolve/name/{skill_name}/",
+    "context": "GET /api/projects/{project_id}/llm_skills/resolve/name/{skill_name}/\nllm_skills_resolve_name_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: before_version (query) — Return versions older than this version number. Mutually exclusive with offset.; limit (query) — Maximum number of versions to return per page (1-100).; offset (query) — Zero-based offset into version history for pagination. Mutually exclusive with before_version.; version (query) — Specific skill version to fetch. If omitted, the latest version is returned.; version_id (query) — Exact skill version UUID to resolve."
+  },
+  {
+    "id": "llm_skills_search_retrieve",
+    "name": "llm_skills_search_retrieve",
+    "description": "llm_skills_search_retrieve GET /api/projects/{project_id}/llm_skills/search/",
+    "context": "GET /api/projects/{project_id}/llm_skills/search/\nllm_skills_search_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; query (query) — Case-insensitive substring to search across ordinary skill names, descriptions, bodies, file paths, and Markdown file contents."
+  }
+]

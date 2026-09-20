@@ -1,0 +1,56 @@
+[
+  {
+    "id": "health-checks-create-health-check",
+    "name": "Create Health Check",
+    "description": "Create Health Check Create a new health check. POST /client/v4/zones/{zone_id}/healthchecks",
+    "context": "POST /client/v4/zones/{zone_id}/healthchecks\nCreate a new health check.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "health-checks-create-preview-health-check",
+    "name": "Create Preview Health Check",
+    "description": "Create Preview Health Check Create a new preview health check. POST /client/v4/zones/{zone_id}/healthchecks/preview",
+    "context": "POST /client/v4/zones/{zone_id}/healthchecks/preview\nCreate a new preview health check.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "health-checks-delete-health-check",
+    "name": "Delete Health Check",
+    "description": "Delete Health Check Delete a health check. DELETE /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}\nDelete a health check.\nRequired: healthcheck_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "health-checks-delete-preview-health-check",
+    "name": "Delete Preview Health Check",
+    "description": "Delete Preview Health Check Delete a health check. DELETE /client/v4/zones/{zone_id}/healthchecks/preview/{healthcheck_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/healthchecks/preview/{healthcheck_id}\nDelete a health check.\nRequired: healthcheck_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "health-checks-health-check-details",
+    "name": "Health Check Details",
+    "description": "Health Check Details Fetch a single configured health check. GET /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}",
+    "context": "GET /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}\nFetch a single configured health check.\nRequired: healthcheck_id (path); zone_id (path)"
+  },
+  {
+    "id": "health-checks-health-check-preview-details",
+    "name": "Health Check Preview Details",
+    "description": "Health Check Preview Details Fetch a single configured health check preview. GET /client/v4/zones/{zone_id}/healthchecks/preview/{healthcheck_id}",
+    "context": "GET /client/v4/zones/{zone_id}/healthchecks/preview/{healthcheck_id}\nFetch a single configured health check preview.\nRequired: healthcheck_id (path); zone_id (path)"
+  },
+  {
+    "id": "health-checks-list-health-checks",
+    "name": "List Health Checks",
+    "description": "List Health Checks List configured health checks. GET /client/v4/zones/{zone_id}/healthchecks",
+    "context": "GET /client/v4/zones/{zone_id}/healthchecks\nList configured health checks.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page. Must be a multiple of 5."
+  },
+  {
+    "id": "health-checks-patch-health-check",
+    "name": "Patch Health Check",
+    "description": "Patch Health Check Patch a configured health check. PATCH /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}\nPatch a configured health check.\nRequired: healthcheck_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "health-checks-update-health-check",
+    "name": "Update Health Check",
+    "description": "Update Health Check Update a configured health check. PUT /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/healthchecks/{healthcheck_id}\nUpdate a configured health check.\nRequired: healthcheck_id (path); zone_id (path); body (body)"
+  }
+]

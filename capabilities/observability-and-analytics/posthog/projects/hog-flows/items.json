@@ -1,0 +1,230 @@
+[
+  {
+    "id": "hog_flows_actions_email_partial_update",
+    "name": "hog_flows_actions_email_partial_update",
+    "description": "hog_flows_actions_email_partial_update PATCH /api/projects/{project_id}/hog_flows/{id}/actions/{action_id}/email/",
+    "context": "PATCH /api/projects/{project_id}/hog_flows/{id}/actions/{action_id}/email/\nhog_flows_actions_email_partial_update\nRequired: action_id (path) — Id of the function_email step to edit.; id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_asset_content_retrieve",
+    "name": "hog_flows_asset_content_retrieve",
+    "description": "hog_flows_asset_content_retrieve GET /api/projects/{project_id}/hog_flows/{id}/assets/content/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/assets/content/\nhog_flows_asset_content_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; invocation_id (query) — The workflow run the email was sent in.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: action_id (query) — The email step (action node) that sent the email. Defaults to empty for standalone email sends."
+  },
+  {
+    "id": "hog_flows_assets_retrieve",
+    "name": "hog_flows_assets_retrieve",
+    "description": "hog_flows_assets_retrieve GET /api/projects/{project_id}/hog_flows/{id}/assets/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/assets/\nhog_flows_assets_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: action_id (query) — Only return assets sent by this email step (action node id) — used to drill in from a step's metric.; after (query) — Start of the time range, matched on sent time. Relative ('-30d', '-24h') or ISO 8601. Defaults to -30d (the retention window) — bounds the ClickHouse partition scan.; before (query) — End of the time range, matched on sent time. Same format as 'after'. Defaults to now.; distinct_id (query) — Only return assets sent to this distinct_id.; invocation_id (query) — Only return the asset for this specific workflow run — used to deep-link from a single log entry to the email it sent. Returns 0 rows when the send had no captured asset (text-only, kill-switch off, or standalone email).; limit (query) — Maximum number of assets to return (1-500, default 50).; offset (query) — Number of assets to skip, for pagination.; parent_run_id (query) — Only return assets for this batch run (HogFlowBatchJob id). Pass an empty string to return only event-triggered (non-batch) assets; omit to return all.; search (query) — Case-insensitive substring match on recipient email or subject."
+  },
+  {
+    "id": "hog_flows_batch_jobs_cancel_create",
+    "name": "Stop a batch run: no more of its audience is enrolled, and every run of it still in flight is canceled",
+    "description": "Stop a batch run: no more of its audience is enrolled, and every run of it still in flight is canceled Stop a batch run: no more of its audience is enrolled, and every run of it still in flight is canceled. POST /api/projects/{project_id}/hog_flows/{id}/batch_jobs/{batch_job_id}/cancel/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/batch_jobs/{batch_job_id}/cancel/\nStop a batch run: no more of its audience is enrolled, and every run of it still in flight is canceled. Stopping is asynchronous: runs are flagged here, then terminated by the workflow workers. Steps that already executed, like sent messages, are not undone. Already-finished batch runs are left untouched.\nRequired: batch_job_id (path) — ID of the batch run to stop.; id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_batch_jobs_create",
+    "name": "hog_flows_batch_jobs_create",
+    "description": "hog_flows_batch_jobs_create POST /api/projects/{project_id}/hog_flows/{id}/batch_jobs/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/batch_jobs/\nhog_flows_batch_jobs_create\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_flows_batch_jobs_list",
+    "name": "hog_flows_batch_jobs_list",
+    "description": "hog_flows_batch_jobs_list GET /api/projects/{project_id}/hog_flows/{id}/batch_jobs/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/batch_jobs/\nhog_flows_batch_jobs_list\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_bulk_delete_create",
+    "name": "hog_flows_bulk_delete_create",
+    "description": "hog_flows_bulk_delete_create POST /api/projects/{project_id}/hog_flows/bulk_delete/",
+    "context": "POST /api/projects/{project_id}/hog_flows/bulk_delete/\nhog_flows_bulk_delete_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_flows_create",
+    "name": "hog_flows_create",
+    "description": "hog_flows_create POST /api/projects/{project_id}/hog_flows/",
+    "context": "POST /api/projects/{project_id}/hog_flows/\nhog_flows_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_flows_destroy",
+    "name": "hog_flows_destroy",
+    "description": "hog_flows_destroy DELETE /api/projects/{project_id}/hog_flows/{id}/",
+    "context": "DELETE /api/projects/{project_id}/hog_flows/{id}/\nhog_flows_destroy\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_discard_draft_create",
+    "name": "hog_flows_discard_draft_create",
+    "description": "hog_flows_discard_draft_create POST /api/projects/{project_id}/hog_flows/{id}/discard_draft/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/discard_draft/\nhog_flows_discard_draft_create\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_email_sending_suspension_retrieve",
+    "name": "Cheap read for the scene-wide suspension banner: single-row `TeamWorkflowsConfig` lookup with no reputation computation",
+    "description": "Cheap read for the scene-wide suspension banner: single-row `TeamWorkflowsConfig` lookup with no reputation computation Cheap read for the scene-wide suspension banner: single-row `TeamWorkflowsConfig` lookup with no reputation computation. GET /api/projects/{project_id}/hog_flows/email_sending_suspension/",
+    "context": "GET /api/projects/{project_id}/hog_flows/email_sending_suspension/\nCheap read for the scene-wide suspension banner: single-row `TeamWorkflowsConfig` lookup with no reputation computation. Every project member sees this — a suspension stops everyone's email, so hiding it would leave silent send failures unexplained.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_graph_partial_update",
+    "name": "hog_flows_graph_partial_update",
+    "description": "hog_flows_graph_partial_update PATCH /api/projects/{project_id}/hog_flows/{id}/graph/",
+    "context": "PATCH /api/projects/{project_id}/hog_flows/{id}/graph/\nhog_flows_graph_partial_update\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_invocation_result_retrieve",
+    "name": "hog_flows_invocation_result_retrieve",
+    "description": "hog_flows_invocation_result_retrieve GET /api/projects/{project_id}/hog_flows/{id}/invocation_results/{invocation_id}/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/invocation_results/{invocation_id}/\nhog_flows_invocation_result_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; invocation_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_invocation_results_count_retrieve",
+    "name": "Count invocations matching the same filters as the list endpoint, without its 500-row cap.",
+    "description": "Count invocations matching the same filters as the list endpoint, without its 500-row cap. GET /api/projects/{project_id}/hog_flows/{id}/invocation_results_count/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/invocation_results_count/\nCount invocations matching the same filters as the list endpoint, without its 500-row cap.\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range, matched on scheduled time. Relative ('-7d', '-24h') or ISO 8601. Defaults to -7d — bounds the ClickHouse partition scan, so widen it explicitly for older runs.; before (query) — End of the time range, matched on scheduled time. Same format as 'after'. Defaults to now.; distinct_id (query) — Only return invocations triggered for this distinct_id (the person the run executed for).; error_message_contains (query) — Only return invocations whose latest error_message contains this substring (case-insensitive). Matches the rerun endpoint's filter of the same name, so callers can check what a rerun would target.; status (query) — Comma-separated invocation statuses to include, e.g. 'failed' or 'success,failed'."
+  },
+  {
+    "id": "hog_flows_invocation_results_retrieve",
+    "name": "hog_flows_invocation_results_retrieve",
+    "description": "hog_flows_invocation_results_retrieve GET /api/projects/{project_id}/hog_flows/{id}/invocation_results/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/invocation_results/\nhog_flows_invocation_results_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range, matched on scheduled time. Relative ('-7d', '-24h') or ISO 8601. Defaults to -7d — bounds the ClickHouse partition scan, so widen it explicitly for older runs.; before (query) — End of the time range, matched on scheduled time. Same format as 'after'. Defaults to now.; distinct_id (query) — Only return invocations triggered for this distinct_id (the person the run executed for).; error_message_contains (query) — Only return invocations whose latest error_message contains this substring (case-insensitive). Matches the rerun endpoint's filter of the same name, so callers can check what a rerun would target.; limit (query) — Maximum number of invocations to return (1-500, default 50).; status (query) — Comma-separated invocation statuses to include, e.g. 'failed' or 'success,failed'."
+  },
+  {
+    "id": "hog_flows_invocations_cancel_create",
+    "name": "Cancel in-flight invocations of this workflow, by id or all at once",
+    "description": "Cancel in-flight invocations of this workflow, by id or all at once Cancel in-flight invocations of this workflow, by id or all at once. POST /api/projects/{project_id}/hog_flows/{id}/invocations/cancel/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/invocations/cancel/\nCancel in-flight invocations of this workflow, by id or all at once. Cancellation is asynchronous: runs are flagged here, then terminated by the workflow workers, promptly for parked runs (delays and waits) and at the next step boundary for runs mid-execution. Steps that already executed are not undone. Canceled runs can be re-run later via `rerun`.\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_invocations_create",
+    "name": "hog_flows_invocations_create",
+    "description": "hog_flows_invocations_create POST /api/projects/{project_id}/hog_flows/{id}/invocations/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/invocations/\nhog_flows_invocations_create\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_list",
+    "name": "hog_flows_list",
+    "description": "hog_flows_list GET /api/projects/{project_id}/hog_flows/",
+    "context": "GET /api/projects/{project_id}/hog_flows/\nhog_flows_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_at (query); created_by (query) — Filter to workflows created by the user with this uuid.; id (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; origin_product (query) — Filter to workflows owned by a product surface, e.g. `loops` for Desktop loops.; search (query) — Case-insensitive search. Matches workflow name and description first; only when nothing matches those, it matches step names and the subject line, preheader and body text of email steps, in both the live workflow and its pending draft.; status (query) — * `draft` - Draft * `active` - Active * `archived` - Archived; trigger (query) — Filter by trigger config as a JSON object. Returns workflows whose trigger contains the given object, e.g. {\"type\": \"event\"}.; type (query) — Filter by workflow type. `loop` returns workflows owned by a Desktop loop; `messaging` returns the remaining workflows with an email, SMS, or push action; `automation` returns the rest.; updated_at (query)"
+  },
+  {
+    "id": "hog_flows_logs_retrieve",
+    "name": "hog_flows_logs_retrieve",
+    "description": "hog_flows_logs_retrieve GET /api/projects/{project_id}/hog_flows/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/logs/\nhog_flows_logs_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "hog_flows_metrics_global_retrieve",
+    "name": "hog_flows_metrics_global_retrieve",
+    "description": "hog_flows_metrics_global_retrieve GET /api/projects/{project_id}/hog_flows/metrics/global/",
+    "context": "GET /api/projects/{project_id}/hog_flows/metrics/global/\nhog_flows_metrics_global_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the window, matched on metric time. Relative ('-7d', '-24h') or ISO 8601. Defaults to -7d.; before (query) — End of the window. Same format as 'after'. Defaults to now."
+  },
+  {
+    "id": "hog_flows_metrics_retrieve",
+    "name": "hog_flows_metrics_retrieve",
+    "description": "hog_flows_metrics_retrieve GET /api/projects/{project_id}/hog_flows/{id}/metrics/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/metrics/\nhog_flows_metrics_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range. Accepts relative formats like '-7d', '-24h' or ISO 8601 timestamps. Defaults to '-7d'.; before (query) — End of the time range. Same format as 'after'. Defaults to now.; breakdown_by (query) — Group the series by metric 'name' or 'kind'. Defaults to 'kind'. * `name` - name * `kind` - kind; instance_id (query) — Filter metrics to a specific execution instance.; interval (query) — Time bucket size for the series. One of: hour, day, week. Defaults to 'day'. * `hour` - hour * `day` - day * `week` - week; kind (query) — Comma-separated metric kinds to filter by, e.g. 'success,failure'.; name (query) — Comma-separated metric names to filter by."
+  },
+  {
+    "id": "hog_flows_metrics_totals_retrieve",
+    "name": "hog_flows_metrics_totals_retrieve",
+    "description": "hog_flows_metrics_totals_retrieve GET /api/projects/{project_id}/hog_flows/{id}/metrics/totals/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/metrics/totals/\nhog_flows_metrics_totals_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Start of the time range. Accepts relative formats like '-7d', '-24h' or ISO 8601 timestamps. Defaults to '-7d'.; before (query) — End of the time range. Same format as 'after'. Defaults to now.; breakdown_by (query) — Group the series by metric 'name' or 'kind'. Defaults to 'kind'. * `name` - name * `kind` - kind; instance_id (query) — Filter metrics to a specific execution instance.; interval (query) — Time bucket size for the series. One of: hour, day, week. Defaults to 'day'. * `hour` - hour * `day` - day * `week` - week; kind (query) — Comma-separated metric kinds to filter by, e.g. 'success,failure'.; name (query) — Comma-separated metric names to filter by."
+  },
+  {
+    "id": "hog_flows_partial_update",
+    "name": "hog_flows_partial_update",
+    "description": "hog_flows_partial_update PATCH /api/projects/{project_id}/hog_flows/{id}/",
+    "context": "PATCH /api/projects/{project_id}/hog_flows/{id}/\nhog_flows_partial_update\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_publish_create",
+    "name": "hog_flows_publish_create",
+    "description": "hog_flows_publish_create POST /api/projects/{project_id}/hog_flows/{id}/publish/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/publish/\nhog_flows_publish_create\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_reputation_retrieve",
+    "name": "Bounce/complaint rates for this project's workflow email over the last 30 days, computed on the fly from app metrics (a project-wide aggregate plus per-workflow rows, worst first, capped), together with the authoritative AWS SES tenant verdict — sending status and open reputation findings",
+    "description": "Bounce/complaint rates for this project's workflow email over the last 30 days, computed on the fly from app metrics (a project-wide aggregate plus per-workflow rows, worst first, capped), together with the authoritative AWS SES tenant verdict — sending status and open reputation findings Bounce/complaint rates for th…",
+    "context": "GET /api/projects/{project_id}/hog_flows/reputation/\nBounce/complaint rates for this project's workflow email over the last 30 days, computed on the fly from app metrics (a project-wide aggregate plus per-workflow rows, worst first, capped), together with the authoritative AWS SES tenant verdict — sending status and open reputation findings. Our rates are the per-workflow diagnosis; AWS judges and enforces.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: search (query) — Case-insensitive workflow name filter. Applied before the worst-50 cap, so it finds workflows the unfiltered response cuts off."
+  },
+  {
+    "id": "hog_flows_rerun_create",
+    "name": "Rerun past invocations of this hog flow from their stored payloads",
+    "description": "Rerun past invocations of this hog flow from their stored payloads Rerun past invocations of this hog flow from their stored payloads. POST /api/projects/{project_id}/hog_flows/{id}/rerun/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/rerun/\nRerun past invocations of this hog flow from their stored payloads. Same shape and semantics as the hog function rerun endpoint — proxies through to the CDP worker, which reads matching rows from ClickHouse, rehydrates from `invocation_globals`, and re-enqueues onto cyclotron with `is_retry=1`. Because rerun replays historical event/person/group data, it requires `person:read` and `group:read` on top of `hog_flow:write`.\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_flows_resume_email_sending",
+    "name": "Resume email sending for a workflow PostHog paused automatically",
+    "description": "Resume email sending for a workflow PostHog paused automatically Resume email sending for a workflow PostHog paused automatically. POST /api/projects/{project_id}/hog_flows/{id}/resume_email_sending/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/resume_email_sending/\nResume email sending for a workflow PostHog paused automatically. Self-serve on purpose. Resuming re-arms the detector rather than exempting the workflow, so a workflow that is still generating complaints or hard bounces pauses again within minutes, while a customer who has cleaned up their audience does not have to wait on support.\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_retrieve",
+    "name": "hog_flows_retrieve",
+    "description": "hog_flows_retrieve GET /api/projects/{project_id}/hog_flows/{id}/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/\nhog_flows_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_revisions_list",
+    "name": "hog_flows_revisions_list",
+    "description": "hog_flows_revisions_list GET /api/projects/{project_id}/hog_flows/{id}/revisions/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/revisions/\nhog_flows_revisions_list\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "hog_flows_revisions_restore_create",
+    "name": "hog_flows_revisions_restore_create",
+    "description": "hog_flows_revisions_restore_create POST /api/projects/{project_id}/hog_flows/{id}/revisions/{version}/restore/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/revisions/{version}/restore/\nhog_flows_revisions_restore_create\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; version (path) — Workflow version to restore.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_revisions_retrieve",
+    "name": "hog_flows_revisions_retrieve",
+    "description": "hog_flows_revisions_retrieve GET /api/projects/{project_id}/hog_flows/{id}/revisions/{version}/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/revisions/{version}/\nhog_flows_revisions_retrieve\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; version (path) — Workflow version to fetch."
+  },
+  {
+    "id": "hog_flows_run_create",
+    "name": "Fire a schedule-triggered workflow immediately, outside its regular schedule",
+    "description": "Fire a schedule-triggered workflow immediately, outside its regular schedule Fire a schedule-triggered workflow immediately, outside its regular schedule. POST /api/projects/{project_id}/hog_flows/{id}/run/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/run/\nFire a schedule-triggered workflow immediately, outside its regular schedule. Restricted to the `schedule` trigger type: `batch`/`webhook`/etc. triggers have their own dedicated entry points (`batch_jobs`, the public webhook URL) with trigger-specific guardrails this endpoint doesn't replicate. Requires the workflow to be active, same gate the scheduler itself applies in `internal_process_due_schedules`. Send an `Idempotency-Key` header to dedupe retries (a double-click, or a client retry after a timed-out request): a repeat with the same key returns the first call's result instead of firing a second AI task. Without the header, every call fires a new run.\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_schedules_create",
+    "name": "hog_flows_schedules_create",
+    "description": "hog_flows_schedules_create POST /api/projects/{project_id}/hog_flows/{id}/schedules/",
+    "context": "POST /api/projects/{project_id}/hog_flows/{id}/schedules/\nhog_flows_schedules_create\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_flows_schedules_destroy",
+    "name": "hog_flows_schedules_destroy",
+    "description": "hog_flows_schedules_destroy DELETE /api/projects/{project_id}/hog_flows/{id}/schedules/{schedule_id}/",
+    "context": "DELETE /api/projects/{project_id}/hog_flows/{id}/schedules/{schedule_id}/\nhog_flows_schedules_destroy\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; schedule_id (path)"
+  },
+  {
+    "id": "hog_flows_schedules_list",
+    "name": "hog_flows_schedules_list",
+    "description": "hog_flows_schedules_list GET /api/projects/{project_id}/hog_flows/{id}/schedules/",
+    "context": "GET /api/projects/{project_id}/hog_flows/{id}/schedules/\nhog_flows_schedules_list\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "hog_flows_schedules_partial_update",
+    "name": "hog_flows_schedules_partial_update",
+    "description": "hog_flows_schedules_partial_update PATCH /api/projects/{project_id}/hog_flows/{id}/schedules/{schedule_id}/",
+    "context": "PATCH /api/projects/{project_id}/hog_flows/{id}/schedules/{schedule_id}/\nhog_flows_schedules_partial_update\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; schedule_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "hog_flows_update",
+    "name": "hog_flows_update",
+    "description": "hog_flows_update PUT /api/projects/{project_id}/hog_flows/{id}/",
+    "context": "PUT /api/projects/{project_id}/hog_flows/{id}/\nhog_flows_update\nRequired: id (path) — A UUID string identifying this hog flow.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "hog_flows_user_blast_radius_create",
+    "name": "hog_flows_user_blast_radius_create",
+    "description": "hog_flows_user_blast_radius_create POST /api/projects/{project_id}/hog_flows/user_blast_radius/",
+    "context": "POST /api/projects/{project_id}/hog_flows/user_blast_radius/\nhog_flows_user_blast_radius_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

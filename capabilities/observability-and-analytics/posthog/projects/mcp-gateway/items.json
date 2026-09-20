@@ -1,0 +1,176 @@
+[
+  {
+    "id": "mcp_gateway_audit_counts_retrieve",
+    "name": "Totals backing the quick-filter chips.",
+    "description": "Totals backing the quick-filter chips. GET /api/projects/{project_id}/mcp_gateway/audit/counts/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/audit/counts/\nTotals backing the quick-filter chips.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: actor_service_account_id (query) — Only count calls made by this service account."
+  },
+  {
+    "id": "mcp_gateway_audit_list",
+    "name": "Read-only trail of proxied tool calls",
+    "description": "Read-only trail of proxied tool calls Read-only trail of proxied tool calls. GET /api/projects/{project_id}/mcp_gateway/audit/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/audit/\nRead-only trail of proxied tool calls. Project admins see all calls. Members see calls made through their connections, including calls made by agents using connections they shared.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: actor_service_account_id (query) — Only calls made by this service account.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; quick_filter (query) — all, agents (agent calls only), approvals (approved or pending), or blocked. * `all` - all * `agents` - agents * `approvals` - approvals * `blocked` - blocked"
+  },
+  {
+    "id": "mcp_gateway_audit_retrieve",
+    "name": "Read-only trail of proxied tool calls",
+    "description": "Read-only trail of proxied tool calls Read-only trail of proxied tool calls. GET /api/projects/{project_id}/mcp_gateway/audit/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/audit/{id}/\nRead-only trail of proxied tool calls. Project admins see all calls. Members see calls made through their connections, including calls made by agents using connections they shared.\nRequired: id (path) — A UUID string identifying this mcp audit event.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_config_apply_preset_create",
+    "name": "Set the policy baseline for members or agents (admin-only).",
+    "description": "Set the policy baseline for members or agents (admin-only). POST /api/projects/{project_id}/mcp_gateway/config/apply_preset/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/config/apply_preset/\nSet the policy baseline for members or agents (admin-only).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_config_list",
+    "name": "The team's gateway settings, plus whether the caller can administer them.",
+    "description": "The team's gateway settings, plus whether the caller can administer them. GET /api/projects/{project_id}/mcp_gateway/config/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/config/\nThe team's gateway settings, plus whether the caller can administer them.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_config_set_all_servers_enabled_create",
+    "name": "Enable or disable every MCP server for the team (admin-only): flips each registered server and the default for untouched catalog servers, so newly published templates follow the same posture.",
+    "description": "Enable or disable every MCP server for the team (admin-only): flips each registered server and the default for untouched catalog servers, so newly published templates follow the same posture. POST /api/projects/{project_id}/mcp_gateway/config/set_all_servers_enabled/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/config/set_all_servers_enabled/\nEnable or disable every MCP server for the team (admin-only): flips each registered server and the default for untouched catalog servers, so newly published templates follow the same posture.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_config_update_settings_create",
+    "name": "Update team gateway settings (admin-only).",
+    "description": "Update team gateway settings (admin-only). POST /api/projects/{project_id}/mcp_gateway/config/update_settings/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/config/update_settings/\nUpdate team gateway settings (admin-only).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_gateway_members_list",
+    "name": "Admin overview of each member's gateway posture, plus the per-member server kill switch.",
+    "description": "Admin overview of each member's gateway posture, plus the per-member server kill switch. GET /api/projects/{project_id}/mcp_gateway/members/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/members/\nAdmin overview of each member's gateway posture, plus the per-member server kill switch.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "mcp_gateway_members_retrieve",
+    "name": "Admin overview of each member's gateway posture, plus the per-member server kill switch.",
+    "description": "Admin overview of each member's gateway posture, plus the per-member server kill switch. GET /api/projects/{project_id}/mcp_gateway/members/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/members/{id}/\nAdmin overview of each member's gateway posture, plus the per-member server kill switch.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_members_set_access_create",
+    "name": "Turn one gateway server off (or back on) for one member.",
+    "description": "Turn one gateway server off (or back on) for one member. POST /api/projects/{project_id}/mcp_gateway/members/{id}/set_access/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/members/{id}/set_access/\nTurn one gateway server off (or back on) for one member.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_rules_create",
+    "name": "Team guardrails evaluated before any scope policy.",
+    "description": "Team guardrails evaluated before any scope policy. POST /api/projects/{project_id}/mcp_gateway/rules/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/rules/\nTeam guardrails evaluated before any scope policy.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_rules_destroy",
+    "name": "Team guardrails evaluated before any scope policy.",
+    "description": "Team guardrails evaluated before any scope policy. DELETE /api/projects/{project_id}/mcp_gateway/rules/{id}/",
+    "context": "DELETE /api/projects/{project_id}/mcp_gateway/rules/{id}/\nTeam guardrails evaluated before any scope policy.\nRequired: id (path) — A UUID string identifying this mcp org rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_rules_list",
+    "name": "Team guardrails evaluated before any scope policy.",
+    "description": "Team guardrails evaluated before any scope policy. GET /api/projects/{project_id}/mcp_gateway/rules/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/rules/\nTeam guardrails evaluated before any scope policy.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "mcp_gateway_rules_partial_update",
+    "name": "Team guardrails evaluated before any scope policy.",
+    "description": "Team guardrails evaluated before any scope policy. PATCH /api/projects/{project_id}/mcp_gateway/rules/{id}/",
+    "context": "PATCH /api/projects/{project_id}/mcp_gateway/rules/{id}/\nTeam guardrails evaluated before any scope policy.\nRequired: id (path) — A UUID string identifying this mcp org rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_gateway_rules_retrieve",
+    "name": "Team guardrails evaluated before any scope policy.",
+    "description": "Team guardrails evaluated before any scope policy. GET /api/projects/{project_id}/mcp_gateway/rules/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/rules/{id}/\nTeam guardrails evaluated before any scope policy.\nRequired: id (path) — A UUID string identifying this mcp org rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_rules_update",
+    "name": "Team guardrails evaluated before any scope policy.",
+    "description": "Team guardrails evaluated before any scope policy. PUT /api/projects/{project_id}/mcp_gateway/rules/{id}/",
+    "context": "PUT /api/projects/{project_id}/mcp_gateway/rules/{id}/\nTeam guardrails evaluated before any scope policy.\nRequired: id (path) — A UUID string identifying this mcp org rule.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_servers_destroy",
+    "name": "The team's gateway server registry",
+    "description": "The team's gateway server registry The team's gateway server registry. DELETE /api/projects/{project_id}/mcp_gateway/servers/{id}/",
+    "context": "DELETE /api/projects/{project_id}/mcp_gateway/servers/{id}/\nThe team's gateway server registry. The registry is sparse: rows appear through the install/share/OAuth-start flows in views.py, or when an admin toggles an untouched catalog template here (`set_template_enabled`). Servers with no row follow the team config's `default_servers_enabled`.\nRequired: id (path) — A UUID string identifying this mcp gateway server.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_servers_list",
+    "name": "The team's gateway server registry",
+    "description": "The team's gateway server registry The team's gateway server registry. GET /api/projects/{project_id}/mcp_gateway/servers/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/servers/\nThe team's gateway server registry. The registry is sparse: rows appear through the install/share/OAuth-start flows in views.py, or when an admin toggles an untouched catalog template here (`set_template_enabled`). Servers with no row follow the team config's `default_servers_enabled`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "mcp_gateway_servers_partial_update",
+    "name": "The team's gateway server registry",
+    "description": "The team's gateway server registry The team's gateway server registry. PATCH /api/projects/{project_id}/mcp_gateway/servers/{id}/",
+    "context": "PATCH /api/projects/{project_id}/mcp_gateway/servers/{id}/\nThe team's gateway server registry. The registry is sparse: rows appear through the install/share/OAuth-start flows in views.py, or when an admin toggles an untouched catalog template here (`set_template_enabled`). Servers with no row follow the team config's `default_servers_enabled`.\nRequired: id (path) — A UUID string identifying this mcp gateway server.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_gateway_servers_policies_create",
+    "name": "Upsert per-tool states for a scope, returning the re-resolved catalog.",
+    "description": "Upsert per-tool states for a scope, returning the re-resolved catalog. POST /api/projects/{project_id}/mcp_gateway/servers/{id}/policies/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/servers/{id}/policies/\nUpsert per-tool states for a scope, returning the re-resolved catalog.\nRequired: id (path) — A UUID string identifying this mcp gateway server.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_servers_retrieve",
+    "name": "The team's gateway server registry",
+    "description": "The team's gateway server registry The team's gateway server registry. GET /api/projects/{project_id}/mcp_gateway/servers/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/servers/{id}/\nThe team's gateway server registry. The registry is sparse: rows appear through the install/share/OAuth-start flows in views.py, or when an admin toggles an untouched catalog template here (`set_template_enabled`). Servers with no row follow the team config's `default_servers_enabled`.\nRequired: id (path) — A UUID string identifying this mcp gateway server.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_servers_set_template_enabled_create",
+    "name": "Enable or disable a catalog template for the team (admin-only), materializing its gateway registration on the first toggle.",
+    "description": "Enable or disable a catalog template for the team (admin-only), materializing its gateway registration on the first toggle. POST /api/projects/{project_id}/mcp_gateway/servers/set_template_enabled/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/servers/set_template_enabled/\nEnable or disable a catalog template for the team (admin-only), materializing its gateway registration on the first toggle.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_servers_tools_retrieve",
+    "name": "Tool catalog with the resolved policy for a scope.",
+    "description": "Tool catalog with the resolved policy for a scope. GET /api/projects/{project_id}/mcp_gateway/servers/{id}/tools/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/servers/{id}/tools/\nTool catalog with the resolved policy for a scope.\nRequired: id (path) — A UUID string identifying this mcp gateway server.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: scope_service_account_id (query) — Agent scope target. Required when scope_type is agent.; scope_type (query) — Which scope to resolve: the team default, one member, or one agent. * `team` - Team default * `member` - Member * `agent` - Agent; scope_user_id (query) — Member scope target. Defaults to the requesting user."
+  },
+  {
+    "id": "mcp_gateway_servers_update",
+    "name": "The team's gateway server registry",
+    "description": "The team's gateway server registry The team's gateway server registry. PUT /api/projects/{project_id}/mcp_gateway/servers/{id}/",
+    "context": "PUT /api/projects/{project_id}/mcp_gateway/servers/{id}/\nThe team's gateway server registry. The registry is sparse: rows appear through the install/share/OAuth-start flows in views.py, or when an admin toggles an untouched catalog template here (`set_template_enabled`). Servers with no row follow the team config's `default_servers_enabled`.\nRequired: id (path) — A UUID string identifying this mcp gateway server.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_gateway_service_accounts_access_create",
+    "name": "Share, or stop sharing, one gateway server with this agent",
+    "description": "Share, or stop sharing, one gateway server with this agent Share, or stop sharing, one gateway server with this agent. POST /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/access/",
+    "context": "POST /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/access/\nShare, or stop sharing, one gateway server with this agent. Sharing is personal. `enabled=true` delegates the caller's own connection, and the agent may use it only when acting for the caller, unless the caller sends `scope=team` to lend it to the project's agent runs generally. Scope only ever applies to the caller's own share: it is their credential to lend, so no admin permission is involved and no member can change someone else's share. `enabled=false` removes the caller's own share and leaves other members' shares, and the agent's tool policies, in place. Project admins can send `all=true` alongside `enabled=false` to remove every member's share of this server with this agent, along with the agent's tool policies for it.\nRequired: id (path) — A UUID string identifying this mcp service account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "mcp_gateway_service_accounts_list",
+    "name": "PostHog's built-in agents and their MCP access grants",
+    "description": "PostHog's built-in agents and their MCP access grants PostHog's built-in agents and their MCP access grants. GET /api/projects/{project_id}/mcp_gateway/service_accounts/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/service_accounts/\nPostHog's built-in agents and their MCP access grants. The catalog is fixed. Projects can pause an agent's MCP access and grant or revoke servers, but cannot create, rename, rotate, or delete agents.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "mcp_gateway_service_accounts_partial_update",
+    "name": "PostHog's built-in agents and their MCP access grants",
+    "description": "PostHog's built-in agents and their MCP access grants PostHog's built-in agents and their MCP access grants. PATCH /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/\nPostHog's built-in agents and their MCP access grants. The catalog is fixed. Projects can pause an agent's MCP access and grant or revoke servers, but cannot create, rename, rotate, or delete agents.\nRequired: id (path) — A UUID string identifying this mcp service account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "mcp_gateway_service_accounts_retrieve",
+    "name": "PostHog's built-in agents and their MCP access grants",
+    "description": "PostHog's built-in agents and their MCP access grants PostHog's built-in agents and their MCP access grants. GET /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/",
+    "context": "GET /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/\nPostHog's built-in agents and their MCP access grants. The catalog is fixed. Projects can pause an agent's MCP access and grant or revoke servers, but cannot create, rename, rotate, or delete agents.\nRequired: id (path) — A UUID string identifying this mcp service account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "mcp_gateway_service_accounts_update",
+    "name": "PostHog's built-in agents and their MCP access grants",
+    "description": "PostHog's built-in agents and their MCP access grants PostHog's built-in agents and their MCP access grants. PUT /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/",
+    "context": "PUT /api/projects/{project_id}/mcp_gateway/service_accounts/{id}/\nPostHog's built-in agents and their MCP access grants. The catalog is fixed. Projects can pause an agent's MCP access and grant or revoke servers, but cannot create, rename, rotate, or delete agents.\nRequired: id (path) — A UUID string identifying this mcp service account.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

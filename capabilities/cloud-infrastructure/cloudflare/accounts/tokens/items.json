@@ -1,0 +1,50 @@
+[
+  {
+    "id": "account-api-tokens-create-token",
+    "name": "Create Token",
+    "description": "Create Token Create a new Account Owned API token. POST /client/v4/accounts/{account_id}/tokens",
+    "context": "POST /client/v4/accounts/{account_id}/tokens\nCreate a new Account Owned API token.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-api-tokens-delete-token",
+    "name": "Delete Token",
+    "description": "Delete Token Destroy an Account Owned API token. DELETE /client/v4/accounts/{account_id}/tokens/{token_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/tokens/{token_id}\nDestroy an Account Owned API token.\nRequired: account_id (path); token_id (path)"
+  },
+  {
+    "id": "account-api-tokens-list-permission-groups",
+    "name": "List Permission Groups",
+    "description": "List Permission Groups Find all available permission groups for Account Owned API Tokens GET /client/v4/accounts/{account_id}/tokens/permission_groups",
+    "context": "GET /client/v4/accounts/{account_id}/tokens/permission_groups\nFind all available permission groups for Account Owned API Tokens\nRequired: account_id (path)\nOptional: name (query) — Filter by the name of the permission group. The value must be URL-encoded.; scope (query) — Filter by the scope of the permission group. The value must be URL-encoded."
+  },
+  {
+    "id": "account-api-tokens-list-tokens",
+    "name": "List Tokens",
+    "description": "List Tokens List all Account Owned API tokens created for this account. GET /client/v4/accounts/{account_id}/tokens",
+    "context": "GET /client/v4/accounts/{account_id}/tokens\nList all Account Owned API tokens created for this account. Results include active, disabled, and recently-expired tokens when include_expired is set to true.\nRequired: account_id (path)\nOptional: page (query); per_page (query); direction (query); include_expired (query) — When true, includes recently-expired tokens in the response."
+  },
+  {
+    "id": "account-api-tokens-roll-token",
+    "name": "Roll Token",
+    "description": "Roll Token Roll the Account Owned API token secret. PUT /client/v4/accounts/{account_id}/tokens/{token_id}/value",
+    "context": "PUT /client/v4/accounts/{account_id}/tokens/{token_id}/value\nRoll the Account Owned API token secret.\nRequired: account_id (path); token_id (path)"
+  },
+  {
+    "id": "account-api-tokens-token-details",
+    "name": "Token Details",
+    "description": "Token Details Get information about a specific Account Owned API token. GET /client/v4/accounts/{account_id}/tokens/{token_id}",
+    "context": "GET /client/v4/accounts/{account_id}/tokens/{token_id}\nGet information about a specific Account Owned API token.\nRequired: account_id (path); token_id (path)"
+  },
+  {
+    "id": "account-api-tokens-update-token",
+    "name": "Update Token",
+    "description": "Update Token Update an existing token. PUT /client/v4/accounts/{account_id}/tokens/{token_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/tokens/{token_id}\nUpdate an existing token.\nRequired: account_id (path); token_id (path); body (body)"
+  },
+  {
+    "id": "account-api-tokens-verify-token",
+    "name": "Verify Token",
+    "description": "Verify Token Test whether a token works. GET /client/v4/accounts/{account_id}/tokens/verify",
+    "context": "GET /client/v4/accounts/{account_id}/tokens/verify\nTest whether a token works.\nRequired: account_id (path)"
+  }
+]

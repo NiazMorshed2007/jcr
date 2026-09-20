@@ -1,0 +1,56 @@
+[
+  {
+    "id": "addListsMember",
+    "name": "Add Lists Member",
+    "description": "Add Lists Member POST /2/lists/{id}/members",
+    "context": "POST /2/lists/{id}/members\nAdd Lists Member\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "createLists",
+    "name": "Create Lists",
+    "description": "Create Lists POST /2/lists",
+    "context": "POST /2/lists\nCreate Lists\nRequired: body (body)"
+  },
+  {
+    "id": "deleteLists",
+    "name": "Delete List",
+    "description": "Delete List Deletes a specific List owned by the authenticated user by its ID. DELETE /2/lists/{id}",
+    "context": "DELETE /2/lists/{id}\nDeletes a specific List owned by the authenticated user by its ID.\nRequired: id (path)"
+  },
+  {
+    "id": "getListsById",
+    "name": "Get Lists by ID",
+    "description": "Get Lists by ID GET /2/lists/{id}",
+    "context": "GET /2/lists/{id}\nGet Lists by ID\nRequired: id (path)\nOptional: list.fields (query) — A comma separated list of List fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getListsFollowers",
+    "name": "Get Lists Followers",
+    "description": "Get Lists Followers GET /2/lists/{id}/followers",
+    "context": "GET /2/lists/{id}/followers\nGet Lists Followers\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A 64-bit signed integer.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getListsMembers",
+    "name": "Get Lists Members",
+    "description": "Get Lists Members GET /2/lists/{id}/members",
+    "context": "GET /2/lists/{id}/members\nGet Lists Members\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A 64-bit signed integer.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getListsPosts",
+    "name": "Get Lists Posts",
+    "description": "Get Lists Posts GET /2/lists/{id}/tweets",
+    "context": "GET /2/lists/{id}/tweets\nGet Lists Posts\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "removeListsMemberByUserId",
+    "name": "Remove a List member",
+    "description": "Remove a List member Removes a User from a List by their ID. DELETE /2/lists/{id}/members/{user_id}",
+    "context": "DELETE /2/lists/{id}/members/{user_id}\nRemoves a User from a List by their ID.\nRequired: id (path); user_id (path)"
+  },
+  {
+    "id": "updateLists",
+    "name": "Update List",
+    "description": "Update List Updates the details of a specific List owned by the authenticated user by its ID. PUT /2/lists/{id}",
+    "context": "PUT /2/lists/{id}\nUpdates the details of a specific List owned by the authenticated user by its ID.\nRequired: id (path); body (body)"
+  }
+]

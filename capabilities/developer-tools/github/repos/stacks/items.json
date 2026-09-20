@@ -1,0 +1,32 @@
+[
+  {
+    "id": "pull-request-stacks%2Fadd",
+    "name": "Add pull requests to a pull request stack",
+    "description": "Add pull requests to a pull request stack Appends an ordered list of pull request numbers onto the top of an existing stack. POST /repos/{owner}/{repo}/stacks/{stack_number}/add",
+    "context": "POST /repos/{owner}/{repo}/stacks/{stack_number}/add\nAppends an ordered list of pull request numbers onto the top of an existing stack. Provide only the pull requests you want to add, from the current top of the stack upward. The first new pull request's base ref must match the current top pull request's head ref.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; stack_number (path) — The number that identifies the pull request stack.; body (body)"
+  },
+  {
+    "id": "pull-request-stacks%2Fcreate",
+    "name": "Create a pull request stack",
+    "description": "Create a pull request stack Creates a stack from an ordered list of pull request numbers. POST /repos/{owner}/{repo}/stacks",
+    "context": "POST /repos/{owner}/{repo}/stacks\nCreates a stack from an ordered list of pull request numbers. Provide the pull request numbers from the bottom of the stack to the top. Each pull request's base ref must match the previous pull request's head ref.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "pull-request-stacks%2Fget",
+    "name": "Get a pull request stack",
+    "description": "Get a pull request stack Gets a pull request stack by providing its stack number. GET /repos/{owner}/{repo}/stacks/{stack_number}",
+    "context": "GET /repos/{owner}/{repo}/stacks/{stack_number}\nGets a pull request stack by providing its stack number.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; stack_number (path) — The number that identifies the pull request stack."
+  },
+  {
+    "id": "pull-request-stacks%2Flist",
+    "name": "List pull request stacks",
+    "description": "List pull request stacks Lists pull request stacks in a repository. GET /repos/{owner}/{repo}/stacks",
+    "context": "GET /repos/{owner}/{repo}/stacks\nLists pull request stacks in a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: pull_request (query) — Filter to the stack containing this repository pull request number.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "pull-request-stacks%2Funstack",
+    "name": "Remove pull requests from a pull request stack",
+    "description": "Remove pull requests from a pull request stack Removes the unmerged pull requests from a stack. POST /repos/{owner}/{repo}/stacks/{stack_number}/unstack",
+    "context": "POST /repos/{owner}/{repo}/stacks/{stack_number}/unstack\nRemoves the unmerged pull requests from a stack. Pull requests that cannot be unstacked (for example, those that are queued for merge) are left in place. When pull requests remain in the stack, the updated stack is returned with a `200`. When no pull requests remain, the stack is dissolved and a `204` is returned.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; stack_number (path) — The number that identifies the pull request stack."
+  }
+]

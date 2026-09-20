@@ -1,0 +1,170 @@
+[
+  {
+    "id": "v1-accept-invite-external-jit-access",
+    "name": "Accepts invitation for JIT database access",
+    "description": "Accepts invitation for JIT database access Accepts the invitation to JIT database access POST /v1/projects/{ref}/database/jit/invite/accept",
+    "context": "POST /v1/projects/{ref}/database/jit/invite/accept\nAccepts the invitation to JIT database access\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-apply-a-migration",
+    "name": "Apply a database migration",
+    "description": "Apply a database migration POST /v1/projects/{ref}/database/migrations",
+    "context": "POST /v1/projects/{ref}/database/migrations\nApply a database migration\nRequired: ref (path) — Project ref; body (body)\nOptional: Idempotency-Key (header) — A unique key to ensure the same migration is tracked only once."
+  },
+  {
+    "id": "v1-authorize-jit-access",
+    "name": "Authorize user-id to role mappings for JIT access",
+    "description": "Authorize user-id to role mappings for JIT access Authorizes the request to assume a role in the project database POST /v1/projects/{ref}/database/jit",
+    "context": "POST /v1/projects/{ref}/database/jit\nAuthorizes the request to assume a role in the project database\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-create-restore-point",
+    "name": "Initiates a creation of a restore point for a database",
+    "description": "Initiates a creation of a restore point for a database POST /v1/projects/{ref}/database/backups/restore-point",
+    "context": "POST /v1/projects/{ref}/database/backups/restore-point\nInitiates a creation of a restore point for a database\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-delete-invite-external-jit-access",
+    "name": "Deletes the invite for an external user to a database for JIT access",
+    "description": "Deletes the invite for an external user to a database for JIT access Revokes and deletes the invitation DELETE /v1/projects/{ref}/database/jit/invite/{invite_id}",
+    "context": "DELETE /v1/projects/{ref}/database/jit/invite/{invite_id}\nRevokes and deletes the invitation\nRequired: ref (path) — Project ref; invite_id (path)"
+  },
+  {
+    "id": "v1-delete-jit-access",
+    "name": "Delete JIT access by user-id",
+    "description": "Delete JIT access by user-id Remove JIT mappings of a user, revoking all JIT database access DELETE /v1/projects/{ref}/database/jit/{user_id}",
+    "context": "DELETE /v1/projects/{ref}/database/jit/{user_id}\nRemove JIT mappings of a user, revoking all JIT database access\nRequired: ref (path) — Project ref; user_id (path)"
+  },
+  {
+    "id": "v1-enable-database-webhook",
+    "name": "Enables Database Webhooks on the project",
+    "description": "Enables Database Webhooks on the project This is an **experimental** endpoint. POST /v1/projects/{ref}/database/webhooks/enable",
+    "context": "POST /v1/projects/{ref}/database/webhooks/enable\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-a-migration",
+    "name": "Fetch an existing entry from migration history",
+    "description": "Fetch an existing entry from migration history GET /v1/projects/{ref}/database/migrations/{version}",
+    "context": "GET /v1/projects/{ref}/database/migrations/{version}\nFetch an existing entry from migration history\nRequired: ref (path) — Project ref; version (path)"
+  },
+  {
+    "id": "v1-get-backup-schedule",
+    "name": "Gets the backup schedule for a project",
+    "description": "Gets the backup schedule for a project GET /v1/projects/{ref}/database/backups/schedule",
+    "context": "GET /v1/projects/{ref}/database/backups/schedule\nGets the backup schedule for a project\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-database-metadata",
+    "name": "Gets database metadata for the given project.",
+    "description": "Gets database metadata for the given project. This is an **experimental** endpoint. GET /v1/projects/{ref}/database/context",
+    "context": "GET /v1/projects/{ref}/database/context\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-database-openapi",
+    "name": "Get PostgREST OpenAPI spec",
+    "description": "Get PostgREST OpenAPI spec Returns the PostgREST OpenAPI specification for the project. GET /v1/projects/{ref}/database/openapi",
+    "context": "GET /v1/projects/{ref}/database/openapi\nReturns the PostgREST OpenAPI specification for the project. This is the replacement for querying `/rest/v1/` directly with the anon key.\nRequired: ref (path) — Project ref\nOptional: schema (query) — The database schema to generate the OpenAPI spec for"
+  },
+  {
+    "id": "v1-get-jit-access",
+    "name": "Get user-id to role mappings for JIT access",
+    "description": "Get user-id to role mappings for JIT access Mappings of roles a user can assume in the project database GET /v1/projects/{ref}/database/jit",
+    "context": "GET /v1/projects/{ref}/database/jit\nMappings of roles a user can assume in the project database\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-restore-point",
+    "name": "Get restore points for project",
+    "description": "Get restore points for project GET /v1/projects/{ref}/database/backups/restore-point",
+    "context": "GET /v1/projects/{ref}/database/backups/restore-point\nGet restore points for project\nRequired: ref (path) — Project ref\nOptional: name (query)"
+  },
+  {
+    "id": "v1-invite-external-jit-access",
+    "name": "Invites an external user to a database for JIT access",
+    "description": "Invites an external user to a database for JIT access Invites the external user and sets initial roles that can be assumed and for how long POST /v1/projects/{ref}/database/jit/invite",
+    "context": "POST /v1/projects/{ref}/database/jit/invite\nInvites the external user and sets initial roles that can be assumed and for how long\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-list-all-backups",
+    "name": "Lists all backups",
+    "description": "Lists all backups GET /v1/projects/{ref}/database/backups",
+    "context": "GET /v1/projects/{ref}/database/backups\nLists all backups\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-list-jit-access",
+    "name": "List all user-id to role mappings for JIT access",
+    "description": "List all user-id to role mappings for JIT access Mappings of roles a user can assume in the project database GET /v1/projects/{ref}/database/jit/list",
+    "context": "GET /v1/projects/{ref}/database/jit/list\nMappings of roles a user can assume in the project database\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-list-migration-history",
+    "name": "List applied migration versions",
+    "description": "List applied migration versions GET /v1/projects/{ref}/database/migrations",
+    "context": "GET /v1/projects/{ref}/database/migrations\nList applied migration versions\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-patch-a-migration",
+    "name": "Patch an existing entry in migration history",
+    "description": "Patch an existing entry in migration history PATCH /v1/projects/{ref}/database/migrations/{version}",
+    "context": "PATCH /v1/projects/{ref}/database/migrations/{version}\nPatch an existing entry in migration history\nRequired: ref (path) — Project ref; version (path); body (body)"
+  },
+  {
+    "id": "v1-read-only-query",
+    "name": "Run a sql query as supabase_read_only_user",
+    "description": "Run a sql query as supabase_read_only_user All entity references must be schema qualified. POST /v1/projects/{ref}/database/query/read-only",
+    "context": "POST /v1/projects/{ref}/database/query/read-only\nAll entity references must be schema qualified. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-restore-physical-backup",
+    "name": "Restores a physical backup for a database",
+    "description": "Restores a physical backup for a database POST /v1/projects/{ref}/database/backups/restore",
+    "context": "POST /v1/projects/{ref}/database/backups/restore\nRestores a physical backup for a database\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-restore-pitr-backup",
+    "name": "Restores a PITR backup for a database",
+    "description": "Restores a PITR backup for a database POST /v1/projects/{ref}/database/backups/restore-pitr",
+    "context": "POST /v1/projects/{ref}/database/backups/restore-pitr\nRestores a PITR backup for a database\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-rollback-migrations",
+    "name": "Rollback database migrations and remove them from history table",
+    "description": "Rollback database migrations and remove them from history table DELETE /v1/projects/{ref}/database/migrations",
+    "context": "DELETE /v1/projects/{ref}/database/migrations\nRollback database migrations and remove them from history table\nRequired: ref (path) — Project ref; gte (query) — Rollback migrations greater or equal to this version"
+  },
+  {
+    "id": "v1-run-a-query",
+    "name": "Run sql query",
+    "description": "Run sql query This is an **experimental** endpoint. POST /v1/projects/{ref}/database/query",
+    "context": "POST /v1/projects/{ref}/database/query\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-undo",
+    "name": "Initiates an undo to a given restore point",
+    "description": "Initiates an undo to a given restore point POST /v1/projects/{ref}/database/backups/undo",
+    "context": "POST /v1/projects/{ref}/database/backups/undo\nInitiates an undo to a given restore point\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-backup-schedule",
+    "name": "Updates the backup schedule time for a project",
+    "description": "Updates the backup schedule time for a project Sets the time at which the daily backup runs. PATCH /v1/projects/{ref}/database/backups/schedule",
+    "context": "PATCH /v1/projects/{ref}/database/backups/schedule\nSets the time at which the daily backup runs. The change takes effect on the next backup window that includes the new time. If the new time has already passed for today, the first backup at the new time will occur the following day. It can only be updated 3 times per 24 hours.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-database-password",
+    "name": "Updates the database password",
+    "description": "Updates the database password PATCH /v1/projects/{ref}/database/password",
+    "context": "PATCH /v1/projects/{ref}/database/password\nUpdates the database password\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-update-jit-access",
+    "name": "Updates a user mapping for JIT access",
+    "description": "Updates a user mapping for JIT access Modifies the roles that can be assumed and for how long PUT /v1/projects/{ref}/database/jit",
+    "context": "PUT /v1/projects/{ref}/database/jit\nModifies the roles that can be assumed and for how long\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-upsert-a-migration",
+    "name": "Upsert a database migration without applying",
+    "description": "Upsert a database migration without applying PUT /v1/projects/{ref}/database/migrations",
+    "context": "PUT /v1/projects/{ref}/database/migrations\nUpsert a database migration without applying\nRequired: ref (path) — Project ref; body (body)\nOptional: Idempotency-Key (header) — A unique key to ensure the same migration is tracked only once."
+  }
+]

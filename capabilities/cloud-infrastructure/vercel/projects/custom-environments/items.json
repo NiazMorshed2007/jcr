@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createCustomEnvironment",
+    "name": "Create a custom environment for the current project.",
+    "description": "Create a custom environment for the current project. Creates a custom environment for the current project. POST /v9/projects/{idOrName}/custom-environments",
+    "context": "POST /v9/projects/{idOrName}/custom-environments\nCreates a custom environment for the current project. Cannot be named 'Production' or 'Preview'.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getCustomEnvironment",
+    "name": "Retrieve a custom environment",
+    "description": "Retrieve a custom environment Retrieve a custom environment for the project. GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}",
+    "context": "GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}\nRetrieve a custom environment for the project. Must not be named 'Production' or 'Preview'.\nRequired: idOrName (path) — The unique project identifier or the project name; environmentSlugOrId (path) — The unique custom environment identifier within the project\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectsByIdOrNameCustomEnvironments",
+    "name": "Retrieve custom environments",
+    "description": "Retrieve custom environments Retrieve custom environments for the project. GET /v9/projects/{idOrName}/custom-environments",
+    "context": "GET /v9/projects/{idOrName}/custom-environments\nRetrieve custom environments for the project. Must not be named 'Production' or 'Preview'.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: gitBranch (query) — Fetch custom environments for a specific git branch; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "removeCustomEnvironment",
+    "name": "Remove a custom environment",
+    "description": "Remove a custom environment Remove a custom environment for the project. DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}",
+    "context": "DELETE /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}\nRemove a custom environment for the project. Must not be named 'Production' or 'Preview'.\nRequired: idOrName (path) — The unique project identifier or the project name; environmentSlugOrId (path) — The unique custom environment identifier within the project\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateCustomEnvironment",
+    "name": "Update a custom environment",
+    "description": "Update a custom environment Update a custom environment for the project. PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}",
+    "context": "PATCH /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}\nUpdate a custom environment for the project. Must not be named 'Production' or 'Preview'.\nRequired: idOrName (path) — The unique project identifier or the project name; environmentSlugOrId (path) — The unique custom environment identifier within the project\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

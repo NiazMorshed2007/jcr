@@ -1,0 +1,86 @@
+[
+  {
+    "id": "copilot-spaces%2Fadd-collaborator-for-org",
+    "name": "Add a collaborator to an organization Copilot Space",
+    "description": "Add a collaborator to an organization Copilot Space Adds a collaborator (user or team) to a specific Copilot Space owned by an organization. POST /orgs/{org}/copilot-spaces/{space_number}/collaborators",
+    "context": "POST /orgs/{org}/copilot-spaces/{space_number}/collaborators\nAdds a collaborator (user or team) to a specific Copilot Space owned by an organization. The authenticated user must have appropriate permissions to manage collaborators. **Note:** When adding users as collaborators, they must already be members of the organization. When adding teams as collaborators, they must be defined in the organization. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fcreate-for-org",
+    "name": "Create an organization Copilot Space",
+    "description": "Create an organization Copilot Space Creates a new Copilot Space owned by an organization. POST /orgs/{org}/copilot-spaces",
+    "context": "POST /orgs/{org}/copilot-spaces\nCreates a new Copilot Space owned by an organization. The authenticated user must have permissions to create spaces in the organization. Organization members with appropriate permissions can create Copilot Spaces to be shared within their organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by the submitted resources.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fcreate-resource-for-org",
+    "name": "Create a resource for an organization Copilot Space",
+    "description": "Create a resource for an organization Copilot Space Creates a new resource in a specific Copilot Space owned by an organization. POST /orgs/{org}/copilot-spaces/{space_number}/resources",
+    "context": "POST /orgs/{org}/copilot-spaces/{space_number}/resources\nCreates a new resource in a specific Copilot Space owned by an organization. The authenticated user must have write permissions on the space. The following resource types are supported: `repository`, `github_file`, `free_text`, `github_issue`, `github_pull_request`. The `uploaded_text_file` and `media_content` types are not supported via this endpoint. For `github_file` resources, if a resource with the same repository, file path, and SHA already exists, the existing resource is returned with a `200` status. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space, including the resource being created.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fdelete-for-org",
+    "name": "Delete an organization Copilot Space",
+    "description": "Delete an organization Copilot Space Deletes a Copilot Space owned by an organization. DELETE /orgs/{org}/copilot-spaces/{space_number}",
+    "context": "DELETE /orgs/{org}/copilot-spaces/{space_number}\nDeletes a Copilot Space owned by an organization. The authenticated user must have permissions to delete spaces in the organization. **Warning:** This action is permanent and cannot be undone. Deleting a Copilot Space will remove all associated resources and configurations. Organization members with appropriate permissions can delete Copilot Spaces owned by their organization. OAuth app tokens and personal access tokens (classic) need both the `read:org` and `repo` scopes to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Fdelete-resource-for-org",
+    "name": "Delete a resource from an organization Copilot Space",
+    "description": "Delete a resource from an organization Copilot Space Deletes a resource from a specific Copilot Space owned by an organization. DELETE /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "context": "DELETE /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}\nDeletes a resource from a specific Copilot Space owned by an organization. The authenticated user must have write permissions on the space. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; space_resource_id (path) — The unique identifier of the resource."
+  },
+  {
+    "id": "copilot-spaces%2Fget-for-org",
+    "name": "Get an organization Copilot Space",
+    "description": "Get an organization Copilot Space Gets details about a specific Copilot Space owned by an organization. GET /orgs/{org}/copilot-spaces/{space_number}",
+    "context": "GET /orgs/{org}/copilot-spaces/{space_number}\nGets details about a specific Copilot Space owned by an organization. The authenticated user must have read access to the Space. Internal Spaces require the authenticated user to be a member of the organization or have been granted read permissions. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Fget-resource-for-org",
+    "name": "Get a resource for an organization Copilot Space",
+    "description": "Get a resource for an organization Copilot Space Gets a specific resource attached to a Copilot Space owned by an organization. GET /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "context": "GET /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}\nGets a specific resource attached to a Copilot Space owned by an organization. The authenticated user must have appropriate permissions to view the space. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; space_resource_id (path) — The unique identifier of the resource."
+  },
+  {
+    "id": "copilot-spaces%2Flist-collaborators-for-org",
+    "name": "List collaborators for an organization Copilot Space",
+    "description": "List collaborators for an organization Copilot Space Lists all collaborators for a specific Copilot Space owned by an organization. GET /orgs/{org}/copilot-spaces/{space_number}/collaborators",
+    "context": "GET /orgs/{org}/copilot-spaces/{space_number}/collaborators\nLists all collaborators for a specific Copilot Space owned by an organization. The authenticated user must have appropriate permissions to view collaborators. Each collaborator entry specifies which user or team has access to the space and at what level (reader, writer, or admin). The space owner (organization) is excluded from this list. **Note:** Team collaborators listed here are teams that are defined in the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Flist-for-org",
+    "name": "List organization Copilot Spaces",
+    "description": "List organization Copilot Spaces Lists Copilot Spaces owned by an organization. GET /orgs/{org}/copilot-spaces",
+    "context": "GET /orgs/{org}/copilot-spaces\nLists Copilot Spaces owned by an organization. The authenticated user must have read access to the organization's Copilot Spaces. Only Spaces that are readable by the authenticated user are returned. This includes public Spaces and internal Spaces if the user is a member of the organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in a space; spaces with inaccessible resources are omitted from the response.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100).; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor.; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor."
+  },
+  {
+    "id": "copilot-spaces%2Flist-resources-for-org",
+    "name": "List resources for an organization Copilot Space",
+    "description": "List resources for an organization Copilot Space Lists all resources attached to a specific Copilot Space owned by an organization. GET /orgs/{org}/copilot-spaces/{space_number}/resources",
+    "context": "GET /orgs/{org}/copilot-spaces/{space_number}/resources\nLists all resources attached to a specific Copilot Space owned by an organization. The authenticated user must have appropriate permissions to view the space. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Fremove-collaborator-for-org",
+    "name": "Remove a collaborator from an organization Copilot Space",
+    "description": "Remove a collaborator from an organization Copilot Space Removes a collaborator from a specific Copilot Space owned by an organization. DELETE /orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "context": "DELETE /orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}\nRemoves a collaborator from a specific Copilot Space owned by an organization. The authenticated user must have appropriate permissions to manage collaborators. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; actor_type (path) — The type of actor (user or team).; actor_identifier (path) — The username (for users) or team slug (for teams). The numeric ID of a user or team is also accepted."
+  },
+  {
+    "id": "copilot-spaces%2Fupdate-collaborator-for-org",
+    "name": "Set a collaborator role for an organization Copilot Space",
+    "description": "Set a collaborator role for an organization Copilot Space Updates the role of a collaborator for a specific Copilot Space owned by an organization. PUT /orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "context": "PUT /orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}\nUpdates the role of a collaborator for a specific Copilot Space owned by an organization. The authenticated user must have appropriate permissions to manage collaborators. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; actor_type (path) — The type of actor (user or team).; actor_identifier (path) — The username (for users) or team slug (for teams). The numeric ID of a user or team is also accepted.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fupdate-for-org",
+    "name": "Set an organization Copilot Space",
+    "description": "Set an organization Copilot Space Updates a Copilot Space owned by an organization. PUT /orgs/{org}/copilot-spaces/{space_number}",
+    "context": "PUT /orgs/{org}/copilot-spaces/{space_number}\nUpdates a Copilot Space owned by an organization. The authenticated user must have permissions to update spaces in the organization. Organization members with appropriate permissions can update Copilot Spaces owned by their organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space, including any being added or updated.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fupdate-resource-for-org",
+    "name": "Set a resource for an organization Copilot Space",
+    "description": "Set a resource for an organization Copilot Space Updates the metadata of a resource in a specific Copilot Space owned by an organization. PUT /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "context": "PUT /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}\nUpdates the metadata of a resource in a specific Copilot Space owned by an organization. The authenticated user must have write permissions on the space. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint. Fine-grained tokens and GitHub App user access tokens must have been granted access to the organization that owns the space. They must also have been granted access to every repository referenced by resources in the space, including the resource being updated.\nRequired: org (path) — The organization name. The name is not case sensitive.; space_number (path) — The unique identifier of the Copilot Space.; space_resource_id (path) — The unique identifier of the resource.; body (body)"
+  }
+]

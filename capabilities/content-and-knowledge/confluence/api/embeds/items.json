@@ -1,0 +1,74 @@
+[
+  {
+    "id": "createSmartLink",
+    "name": "Create Smart Link in the content tree",
+    "description": "Create Smart Link in the content tree Creates a Smart Link in the content tree in the space. POST /wiki/api/v2/embeds",
+    "context": "POST /wiki/api/v2/embeds\nCreates a Smart Link in the content tree in the space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the corresponding space. Permission to create a Smart Link in the content tree in the space.\nRequired: body (body)"
+  },
+  {
+    "id": "createSmartLinkProperty",
+    "name": "Create content property for Smart Link in the content tree",
+    "description": "Create content property for Smart Link in the content tree Creates a new content property for a Smart Link in the content tree. POST /wiki/api/v2/embeds/{id}/properties",
+    "context": "POST /wiki/api/v2/embeds/{id}/properties\nCreates a new content property for a Smart Link in the content tree. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the Smart Link in the content tree.\nRequired: id (path) — The ID of the Smart Link in the content tree to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deleteSmartLink",
+    "name": "Delete Smart Link in the content tree",
+    "description": "Delete Smart Link in the content tree Delete a Smart Link in the content tree by id. DELETE /wiki/api/v2/embeds/{id}",
+    "context": "DELETE /wiki/api/v2/embeds/{id}\nDelete a Smart Link in the content tree by id. Deleting a Smart Link in the content tree moves the Smart Link to the trash, where it can be restored later **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the Smart Link in the content tree and its corresponding space. Permission to delete Smart Links in the content tree in the space.\nRequired: id (path) — The ID of the Smart Link in the content tree to be deleted."
+  },
+  {
+    "id": "deleteSmartLinkPropertyById",
+    "name": "Delete content property for Smart Link in the content tree by id",
+    "description": "Delete content property for Smart Link in the content tree by id Deletes a content property for a Smart Link in the content tree by its id. DELETE /wiki/api/v2/embeds/{embed-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/embeds/{embed-id}/properties/{property-id}\nDeletes a content property for a Smart Link in the content tree by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the Smart Link in the content tree.\nRequired: embed-id (path) — The ID of the Smart Link in the content tree the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getSmartLinkAncestors",
+    "name": "Get all ancestors of Smart Link in content tree",
+    "description": "Get all ancestors of Smart Link in content tree Returns all ancestors for a given Smart Link in the content tree by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). GET /wiki/api/v2/embeds/{id}/ancestors",
+    "context": "GET /wiki/api/v2/embeds/{id}/ancestors\nReturns all ancestors for a given Smart Link in the content tree by ID in top-to-bottom order (that is, the highest ancestor is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the ID of first ancestor in the response payload. This endpoint returns minimal information about each ancestor. To fetch more details, use a related endpoint, such as [Get Smart Link in the content tree by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the Smart Link in the content tree and its corresponding space\nRequired: id (path) — The ID of the Smart Link in the content tree.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the highest ancestor's ID to fetch the next set of results."
+  },
+  {
+    "id": "getSmartLinkById",
+    "name": "Get Smart Link in the content tree by id",
+    "description": "Get Smart Link in the content tree by id Returns a specific Smart Link in the content tree. GET /wiki/api/v2/embeds/{id}",
+    "context": "GET /wiki/api/v2/embeds/{id}\nReturns a specific Smart Link in the content tree. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the Smart Link in the content tree and its corresponding space.\nRequired: id (path) — The ID of the Smart Link in the content tree to be returned.\nOptional: include-collaborators (query) — Includes collaborators on the Smart Link.; include-direct-children (query) — Includes direct children of the Smart Link, as defined in the `ChildrenResponse` object.; include-operations (query) — Includes operations associated with this Smart Link in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes content properties associated with this Smart Link in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results."
+  },
+  {
+    "id": "getSmartLinkContentProperties",
+    "name": "Get content properties for Smart Link in the content tree",
+    "description": "Get content properties for Smart Link in the content tree Retrieves Content Properties tied to a specified Smart Link in the content tree. GET /wiki/api/v2/embeds/{id}/properties",
+    "context": "GET /wiki/api/v2/embeds/{id}/properties\nRetrieves Content Properties tied to a specified Smart Link in the content tree. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the Smart Link in the content tree.\nRequired: id (path) — The ID of the Smart Link in the content tree for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of Smart Links per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSmartLinkContentPropertiesById",
+    "name": "Get content property for Smart Link in the content tree by id",
+    "description": "Get content property for Smart Link in the content tree by id Retrieves a specific Content Property by ID that is attached to a specified Smart Link in the content tree. GET /wiki/api/v2/embeds/{embed-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/embeds/{embed-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified Smart Link in the content tree. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the Smart Link in the content tree.\nRequired: embed-id (path) — The ID of the Smart Link in the content tree for which content properties should be returned.; property-id (path) — The ID of the content property being requested."
+  },
+  {
+    "id": "getSmartLinkDescendants",
+    "name": "Get descendants of a smart link",
+    "description": "Get descendants of a smart link Returns descendants in the content tree for a given smart link by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). GET /wiki/api/v2/embeds/{id}/descendants",
+    "context": "GET /wiki/api/v2/embeds/{id}/descendants\nReturns descendants in the content tree for a given smart link by ID in top-to-bottom order (that is, the highest descendant is the first item in the response payload). The number of results is limited by the `limit` parameter and additional results (if available) will be available by calling this endpoint with the cursor in the response payload. There is also a `depth` parameter specifying depth of descendants to be fetched. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each descendant. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Permission to view the smart link and its corresponding space\nRequired: id (path) — The ID of the smart link.\nOptional: limit (query) — Maximum number of items per result to return. If more results exist, call the endpoint with the cursor to fetch the next set of results.; depth (query) — Maximum depth of descendants to return. If more results are required, use the endpoint corresponding to the content type of the deepest descendant to fetch more descendants.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results."
+  },
+  {
+    "id": "getSmartLinkDirectChildren",
+    "name": "Get direct children of a Smart Link",
+    "description": "Get direct children of a Smart Link Returns all children for given smart link id in the content tree. GET /wiki/api/v2/embeds/{id}/direct-children",
+    "context": "GET /wiki/api/v2/embeds/{id}/direct-children\nReturns all children for given smart link id in the content tree. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. The following types of content will be returned: - Database - Embed - Folder - Page - Whiteboard This endpoint returns minimal information about each child. To fetch more details, use a related endpoint based on the content type, such as: - [Get database by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-database/#api-databases-id-get) - [Get embed by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-smart-link/#api-embeds-id-get) - [Get folder by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-folder/#api-folders-id-get) - [Get page by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-pages-id-get) - [Get whiteboard by id](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-whiteboard/#api-whiteboards-id-get). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only content that the user has permission to view will be returned.\nRequired: id (path) — The ID of the parent smart link.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of items per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; sort (query) — Used to sort the result by a particular field."
+  },
+  {
+    "id": "getSmartLinkOperations",
+    "name": "Get permitted operations for a Smart Link in the content tree",
+    "description": "Get permitted operations for a Smart Link in the content tree Returns the permitted operations on specific Smart Link in the content tree. GET /wiki/api/v2/embeds/{id}/operations",
+    "context": "GET /wiki/api/v2/embeds/{id}/operations\nReturns the permitted operations on specific Smart Link in the content tree. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the Smart Link in the content tree and its corresponding space.\nRequired: id (path) — The ID of the Smart Link in the content tree for which operations should be returned."
+  },
+  {
+    "id": "updateSmartLinkPropertyById",
+    "name": "Update content property for Smart Link in the content tree by id",
+    "description": "Update content property for Smart Link in the content tree by id Update a content property for a Smart Link in the content tree by its id. PUT /wiki/api/v2/embeds/{embed-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/embeds/{embed-id}/properties/{property-id}\nUpdate a content property for a Smart Link in the content tree by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the Smart Link in the content tree.\nRequired: embed-id (path) — The ID of the Smart Link in the content tree the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  }
+]

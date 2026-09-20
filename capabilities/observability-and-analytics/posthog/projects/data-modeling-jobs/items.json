@@ -1,0 +1,26 @@
+[
+  {
+    "id": "data_modeling_jobs_list",
+    "name": "List data modeling jobs which are \"runs\" for our saved queries.",
+    "description": "List data modeling jobs which are \"runs\" for our saved queries. GET /api/projects/{project_id}/data_modeling_jobs/",
+    "context": "GET /api/projects/{project_id}/data_modeling_jobs/\nList data modeling jobs which are \"runs\" for our saved queries.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; saved_query_id (query); status (query) — * `Cancelled` - Cancelled * `Completed` - Completed * `Failed` - Failed * `Running` - Running * `Skipped` - Skipped"
+  },
+  {
+    "id": "data_modeling_jobs_recent_retrieve",
+    "name": "Get the most recent non-running job for each saved query from the v2 backend.",
+    "description": "Get the most recent non-running job for each saved query from the v2 backend. GET /api/projects/{project_id}/data_modeling_jobs/recent/",
+    "context": "GET /api/projects/{project_id}/data_modeling_jobs/recent/\nGet the most recent non-running job for each saved query from the v2 backend.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_modeling_jobs_retrieve",
+    "name": "List data modeling jobs which are \"runs\" for our saved queries.",
+    "description": "List data modeling jobs which are \"runs\" for our saved queries. GET /api/projects/{project_id}/data_modeling_jobs/{id}/",
+    "context": "GET /api/projects/{project_id}/data_modeling_jobs/{id}/\nList data modeling jobs which are \"runs\" for our saved queries.\nRequired: id (path) — A UUID string identifying this data modeling job.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_modeling_jobs_running_retrieve",
+    "name": "Get all currently running jobs from the v2 backend.",
+    "description": "Get all currently running jobs from the v2 backend. GET /api/projects/{project_id}/data_modeling_jobs/running/",
+    "context": "GET /api/projects/{project_id}/data_modeling_jobs/running/\nGet all currently running jobs from the v2 backend.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "orgs%2Fcreate-webhook",
+    "name": "Create an organization webhook",
+    "description": "Create an organization webhook Create a hook that posts payloads in JSON format. POST /orgs/{org}/hooks",
+    "context": "POST /orgs/{org}/hooks\nCreate a hook that posts payloads in JSON format. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "orgs%2Fdelete-webhook",
+    "name": "Delete an organization webhook",
+    "description": "Delete an organization webhook Delete a webhook for an organization. DELETE /orgs/{org}/hooks/{hook_id}",
+    "context": "DELETE /orgs/{org}/hooks/{hook_id}\nDelete a webhook for an organization. The authenticated user must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "orgs%2Fget-webhook",
+    "name": "Get an organization webhook",
+    "description": "Get an organization webhook Returns a webhook configured in an organization. GET /orgs/{org}/hooks/{hook_id}",
+    "context": "GET /orgs/{org}/hooks/{hook_id}\nReturns a webhook configured in an organization. To get only the webhook `config` properties, see \"[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization). You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "orgs%2Fget-webhook-config-for-org",
+    "name": "Get a webhook configuration for an organization",
+    "description": "Get a webhook configuration for an organization Returns the webhook configuration for an organization. GET /orgs/{org}/hooks/{hook_id}/config",
+    "context": "GET /orgs/{org}/hooks/{hook_id}/config\nReturns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use \"[Get an organization webhook ](/rest/orgs/webhooks#get-an-organization-webhook).\" You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "orgs%2Fget-webhook-delivery",
+    "name": "Get a webhook delivery for an organization webhook",
+    "description": "Get a webhook delivery for an organization webhook Returns a delivery for a webhook configured in an organization. GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}",
+    "context": "GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}\nReturns a delivery for a webhook configured in an organization. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.; delivery_id (path)"
+  },
+  {
+    "id": "orgs%2Flist-webhook-deliveries",
+    "name": "List deliveries for an organization webhook",
+    "description": "List deliveries for an organization webhook Returns a list of webhook deliveries for a webhook configured in an organization. GET /orgs/{org}/hooks/{hook_id}/deliveries",
+    "context": "GET /orgs/{org}/hooks/{hook_id}/deliveries\nReturns a list of webhook deliveries for a webhook configured in an organization. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; cursor (query) — Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.; status (query) — Returns webhook deliveries filtered by delivery outcome classification based on `status_code` range. A `status` of `success` returns deliveries with a `status_code` in the 200-399 range (inclusive). A `status` of `failure` returns deliveries with a `status_code` in the 400-599 range (inclusive)."
+  },
+  {
+    "id": "orgs%2Flist-webhooks",
+    "name": "List organization webhooks",
+    "description": "List organization webhooks List webhooks for an organization. GET /orgs/{org}/hooks",
+    "context": "GET /orgs/{org}/hooks\nList webhooks for an organization. The authenticated user must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fping-webhook",
+    "name": "Ping an organization webhook",
+    "description": "Ping an organization webhook This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook. POST /orgs/{org}/hooks/{hook_id}/pings",
+    "context": "POST /orgs/{org}/hooks/{hook_id}/pings\nThis will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery."
+  },
+  {
+    "id": "orgs%2Fredeliver-webhook-delivery",
+    "name": "Redeliver a delivery for an organization webhook",
+    "description": "Redeliver a delivery for an organization webhook Redeliver a delivery for a webhook configured in an organization. POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+    "context": "POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts\nRedeliver a delivery for a webhook configured in an organization. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.; delivery_id (path)"
+  },
+  {
+    "id": "orgs%2Fupdate-webhook",
+    "name": "Update an organization webhook",
+    "description": "Update an organization webhook Updates a webhook configured in an organization. PATCH /orgs/{org}/hooks/{hook_id}",
+    "context": "PATCH /orgs/{org}/hooks/{hook_id}\nUpdates a webhook configured in an organization. When you update a webhook, the `secret` will be overwritten. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use \"[Update a webhook configuration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)\". You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.\nOptional: body (body)"
+  },
+  {
+    "id": "orgs%2Fupdate-webhook-config-for-org",
+    "name": "Update a webhook configuration for an organization",
+    "description": "Update a webhook configuration for an organization Updates the webhook configuration for an organization. PATCH /orgs/{org}/hooks/{hook_id}/config",
+    "context": "PATCH /orgs/{org}/hooks/{hook_id}/config\nUpdates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use \"[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook).\" You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.\nRequired: org (path) — The organization name. The name is not case sensitive.; hook_id (path) — The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery.\nOptional: body (body)"
+  }
+]

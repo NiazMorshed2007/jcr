@@ -1,0 +1,140 @@
+[
+  {
+    "id": "waiting-room-create-a-custom-waiting-room-page-preview",
+    "name": "Create a custom waiting room page preview",
+    "description": "Create a custom waiting room page preview Creates a waiting room page preview. POST /client/v4/zones/{zone_id}/waiting_rooms/preview",
+    "context": "POST /client/v4/zones/{zone_id}/waiting_rooms/preview\nCreates a waiting room page preview. Upload a custom waiting room page for preview. You will receive a preview URL in the form `http://waitingrooms.dev/preview/ `. You can use the following query parameters to change the state of the preview: 1. `force_queue`: Boolean indicating if all users will be queued in the waiting room and no one will be let into the origin website (also known as queueAll). 2. `queue_is_full`: Boolean indicating if the waiting room's queue is currently full and not accepting new users at the moment. 3. `queueing_method`: The queueing method currently used by the waiting room. - **fifo** indicates a FIFO queue. - **random** indicates a Random queue. - **passthrough** indicates a Passthrough queue. Keep in mind that the waiting room page will only be displayed if `force_queue=true` or `event=prequeueing` — for other cases the request will pass through to the origin. For our preview, this will be a fake origin website returning \\\"Welcome\\\". - **reject** indicates a Reject queue. 4. `event`: Used to preview a waiting room event. - **none** indicates no event is occurring. - **prequeueing** indicates that an event is prequeueing (between `prequeue_start_time` and `event_start_time`). - **started** indicates that an event has started (between `event_start_time` and `event_end_time`). 5. `shuffle_at_event_start`: Boolean indicating if the event will shuffle users in the prequeue when it starts. This can only be set to **true** if an event is active (`event` is not **none**). For example, you can make a request to `http://waitingrooms.dev/preview/ ?force_queue=false&queue_is_full=false&queueing_method=random&event=started&shuffle_at_event_start=true` 6. `waitTime`: Non-zero, positive integer indicating the estimated wait time in minutes. The default value is 10 minutes. For example, you can make a request to `http://waitingrooms.dev/preview/ ?waitTime=50` to configure the estimated wait time as 50 minutes.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-create-event",
+    "name": "Create event",
+    "description": "Create event Only available for the Waiting Room Advanced subscription. POST /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events",
+    "context": "POST /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events\nOnly available for the Waiting Room Advanced subscription. Creates an event for a waiting room. An event takes place during a specified period of time, temporarily changing the behavior of a waiting room. While the event is active, some of the properties in the event's configuration may either override or inherit from the waiting room's configuration. Note that events cannot overlap with each other, so only one event can be active at a time.\nRequired: waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-create-waiting-room",
+    "name": "Create waiting room",
+    "description": "Create waiting room Creates a new waiting room. POST /client/v4/zones/{zone_id}/waiting_rooms",
+    "context": "POST /client/v4/zones/{zone_id}/waiting_rooms\nCreates a new waiting room.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-create-waiting-room-rule",
+    "name": "Create Waiting Room Rule",
+    "description": "Create Waiting Room Rule Only available for the Waiting Room Advanced subscription. POST /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules",
+    "context": "POST /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules\nOnly available for the Waiting Room Advanced subscription. Creates a rule for a waiting room.\nRequired: waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-delete-event",
+    "name": "Delete event",
+    "description": "Delete event Deletes an event for a waiting room. DELETE /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}\nDeletes an event for a waiting room.\nRequired: event_id (path); waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-delete-waiting-room",
+    "name": "Delete waiting room",
+    "description": "Delete waiting room Deletes a waiting room. DELETE /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}\nDeletes a waiting room.\nRequired: waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-delete-waiting-room-rule",
+    "name": "Delete Waiting Room Rule",
+    "description": "Delete Waiting Room Rule Deletes a rule for a waiting room. DELETE /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}\nDeletes a rule for a waiting room.\nRequired: rule_id (path); waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-event-details",
+    "name": "Event details",
+    "description": "Event details Fetches a single configured event for a waiting room. GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}\nFetches a single configured event for a waiting room.\nRequired: event_id (path); waiting_room_id (path); zone_id (path)"
+  },
+  {
+    "id": "waiting-room-get-waiting-room-status",
+    "name": "Get waiting room status",
+    "description": "Get waiting room status Fetches the status of a configured waiting room. GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/status",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/status\nFetches the status of a configured waiting room. Response fields include: 1. `status`: String indicating the status of the waiting room. The possible status are: - **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin. - **queueing** indicates that the thresholds have been met and some users are held in the waiting room. - **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts. - **suspended** indicates that the room is suspended. 2. `event_id`: String of the current event's `id` if an event is active, otherwise an empty string. 3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue. 4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin. 5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.\nRequired: waiting_room_id (path); zone_id (path)"
+  },
+  {
+    "id": "waiting-room-get-zone-settings",
+    "name": "Get zone-level Waiting Room settings",
+    "description": "Get zone-level Waiting Room settings Get zone-level Waiting Room settings. GET /client/v4/zones/{zone_id}/waiting_rooms/settings",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/settings\nGet zone-level Waiting Room settings.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "waiting-room-list-events",
+    "name": "List events",
+    "description": "List events Lists events for a waiting room. GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events\nLists events for a waiting room.\nRequired: waiting_room_id (path); zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page. Must be a multiple of 5."
+  },
+  {
+    "id": "waiting-room-list-waiting-room-rules",
+    "name": "List Waiting Room Rules",
+    "description": "List Waiting Room Rules Lists rules for a waiting room. GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules\nLists rules for a waiting room.\nRequired: waiting_room_id (path); zone_id (path)"
+  },
+  {
+    "id": "waiting-room-list-waiting-rooms",
+    "name": "List waiting rooms for zone",
+    "description": "List waiting rooms for zone Lists waiting rooms for zone. GET /client/v4/zones/{zone_id}/waiting_rooms",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms\nLists waiting rooms for zone.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page. Must be a multiple of 5."
+  },
+  {
+    "id": "waiting-room-patch-event",
+    "name": "Patch event",
+    "description": "Patch event Patches a configured event for a waiting room. PATCH /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}\nPatches a configured event for a waiting room.\nRequired: event_id (path); waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-patch-waiting-room",
+    "name": "Patch waiting room",
+    "description": "Patch waiting room Patches a configured waiting room. PATCH /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}\nPatches a configured waiting room.\nRequired: waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-patch-waiting-room-rule",
+    "name": "Patch Waiting Room Rule",
+    "description": "Patch Waiting Room Rule Patches a rule for a waiting room. PATCH /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}\nPatches a rule for a waiting room.\nRequired: rule_id (path); waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-patch-zone-settings",
+    "name": "Patch zone-level Waiting Room settings",
+    "description": "Patch zone-level Waiting Room settings Patch zone-level Waiting Room settings. PATCH /client/v4/zones/{zone_id}/waiting_rooms/settings",
+    "context": "PATCH /client/v4/zones/{zone_id}/waiting_rooms/settings\nPatch zone-level Waiting Room settings.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-preview-active-event-details",
+    "name": "Preview active event details",
+    "description": "Preview active event details Previews an event's configuration as if it was active. GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details\nPreviews an event's configuration as if it was active. Inherited fields from the waiting room will be displayed with their current values.\nRequired: event_id (path); waiting_room_id (path); zone_id (path)"
+  },
+  {
+    "id": "waiting-room-replace-waiting-room-rules",
+    "name": "Replace Waiting Room Rules",
+    "description": "Replace Waiting Room Rules Only available for the Waiting Room Advanced subscription. PUT /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules",
+    "context": "PUT /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules\nOnly available for the Waiting Room Advanced subscription. Replaces all rules for a waiting room.\nRequired: waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-update-event",
+    "name": "Update event",
+    "description": "Update event Updates a configured event for a waiting room. PUT /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}\nUpdates a configured event for a waiting room.\nRequired: event_id (path); waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-update-waiting-room",
+    "name": "Update waiting room",
+    "description": "Update waiting room Updates a configured waiting room. PUT /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}\nUpdates a configured waiting room.\nRequired: waiting_room_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-update-zone-settings",
+    "name": "Update zone-level Waiting Room settings",
+    "description": "Update zone-level Waiting Room settings Replace zone-level Waiting Room settings. PUT /client/v4/zones/{zone_id}/waiting_rooms/settings",
+    "context": "PUT /client/v4/zones/{zone_id}/waiting_rooms/settings\nReplace zone-level Waiting Room settings.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "waiting-room-waiting-room-details",
+    "name": "Waiting room details",
+    "description": "Waiting room details Fetches a single configured waiting room. GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}",
+    "context": "GET /client/v4/zones/{zone_id}/waiting_rooms/{waiting_room_id}\nFetches a single configured waiting room.\nRequired: waiting_room_id (path); zone_id (path)"
+  }
+]

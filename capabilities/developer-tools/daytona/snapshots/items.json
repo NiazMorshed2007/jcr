@@ -1,0 +1,50 @@
+[
+  {
+    "id": "activateSnapshot",
+    "name": "Activate a snapshot",
+    "description": "Activate a snapshot POST /snapshots/{id}/activate",
+    "context": "POST /snapshots/{id}/activate\nActivate a snapshot\nRequired: id (path) — Snapshot ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "createSnapshot",
+    "name": "Create a new snapshot",
+    "description": "Create a new snapshot POST /snapshots",
+    "context": "POST /snapshots\nCreate a new snapshot\nRequired: body (body)\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "deactivateSnapshot",
+    "name": "Deactivate a snapshot",
+    "description": "Deactivate a snapshot POST /snapshots/{id}/deactivate",
+    "context": "POST /snapshots/{id}/deactivate\nDeactivate a snapshot\nRequired: id (path) — Snapshot ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getAllSnapshots",
+    "name": "List all snapshots",
+    "description": "List all snapshots GET /snapshots",
+    "context": "GET /snapshots\nList all snapshots\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; page (query) — Page number of the results; limit (query) — Number of results per page; name (query) — Filter by partial name match; sourceSandboxId (query) — Filter by the ID of the sandbox the snapshot was created from; sort (query) — Field to sort by; order (query) — Direction to sort by"
+  },
+  {
+    "id": "getSnapshot",
+    "name": "Get snapshot by ID or name",
+    "description": "Get snapshot by ID or name GET /snapshots/{id}",
+    "context": "GET /snapshots/{id}\nGet snapshot by ID or name\nRequired: id (path) — Snapshot ID or name\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "getSnapshotBuildLogs",
+    "name": "Get snapshot build logs",
+    "description": "Get snapshot build logs This endpoint is deprecated. GET /snapshots/{id}/build-logs",
+    "context": "GET /snapshots/{id}/build-logs\nThis endpoint is deprecated. Use `getSnapshotBuildLogsUrl` instead.\nRequired: id (path) — Snapshot ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID; follow (query) — Whether to follow the logs stream"
+  },
+  {
+    "id": "getSnapshotBuildLogsUrl",
+    "name": "Get snapshot build logs URL",
+    "description": "Get snapshot build logs URL GET /snapshots/{id}/build-logs-url",
+    "context": "GET /snapshots/{id}/build-logs-url\nGet snapshot build logs URL\nRequired: id (path) — Snapshot ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "removeSnapshot",
+    "name": "Delete snapshot",
+    "description": "Delete snapshot DELETE /snapshots/{id}",
+    "context": "DELETE /snapshots/{id}\nDelete snapshot\nRequired: id (path) — Snapshot ID\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  }
+]

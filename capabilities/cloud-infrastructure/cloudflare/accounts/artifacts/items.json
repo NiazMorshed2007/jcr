@@ -1,0 +1,116 @@
+[
+  {
+    "id": "artifacts_namespaces_create",
+    "name": "Create a namespace",
+    "description": "Create a namespace Creates an empty Artifacts namespace for an account. POST /client/v4/accounts/{account_id}/artifacts/namespaces",
+    "context": "POST /client/v4/accounts/{account_id}/artifacts/namespaces\nCreates an empty Artifacts namespace for an account.\nRequired: account_id (path) — Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "artifacts_namespaces_delete",
+    "name": "Delete a namespace",
+    "description": "Delete a namespace Deletes an empty Artifacts namespace. DELETE /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}",
+    "context": "DELETE /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}\nDeletes an empty Artifacts namespace.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name."
+  },
+  {
+    "id": "artifacts_namespaces_get",
+    "name": "Get a namespace",
+    "description": "Get a namespace Returns an Artifacts namespace summary. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}\nReturns an Artifacts namespace summary.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name."
+  },
+  {
+    "id": "artifacts_namespaces_list",
+    "name": "List namespaces",
+    "description": "List namespaces Lists Artifacts namespaces for an account. GET /client/v4/accounts/{account_id}/artifacts/namespaces",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces\nLists Artifacts namespaces for an account.\nRequired: account_id (path) — Cloudflare account ID.\nOptional: limit (query); cursor (query)"
+  },
+  {
+    "id": "artifacts_repo_tokens_list",
+    "name": "List repository tokens",
+    "description": "List repository tokens Lists tokens for a repository. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/tokens",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/tokens\nLists tokens for a repository.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.\nOptional: state (query); page (query); per_page (query)"
+  },
+  {
+    "id": "artifacts_repos_blob_get",
+    "name": "Read a Git blob",
+    "description": "Read a Git blob Returns raw bytes for an immutable Git blob object. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/blob/{hash}",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/blob/{hash}\nReturns raw bytes for an immutable Git blob object. Blob responses are cacheable forever by hash.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; hash (path) — 40-character lowercase hexadecimal Git object hash."
+  },
+  {
+    "id": "artifacts_repos_commit_get",
+    "name": "Read a Git commit",
+    "description": "Read a Git commit Returns decoded metadata for an immutable Git commit object. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/commit/{hash}",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/commit/{hash}\nReturns decoded metadata for an immutable Git commit object. Commit responses are cacheable forever by hash.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; hash (path) — 40-character lowercase hexadecimal Git object hash."
+  },
+  {
+    "id": "artifacts_repos_create",
+    "name": "Create a repository",
+    "description": "Create a repository Creates a Git-compatible Artifacts repository in a namespace. POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos",
+    "context": "POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos\nCreates a Git-compatible Artifacts repository in a namespace.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; body (body)"
+  },
+  {
+    "id": "artifacts_repos_delete",
+    "name": "Delete a repository",
+    "description": "Delete a repository Deletes a repository and schedules cleanup of its backing data. DELETE /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}\nDeletes a repository and schedules cleanup of its backing data.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name."
+  },
+  {
+    "id": "artifacts_repos_file_get",
+    "name": "Read a file",
+    "description": "Read a file Returns raw bytes for a file resolved by ref and path. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/file",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/file\nReturns raw bytes for a file resolved by ref and path.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; ref (query) — Git ref, branch, tag, or commit hash.; path (query) — File path."
+  },
+  {
+    "id": "artifacts_repos_fork",
+    "name": "Fork a repository",
+    "description": "Fork a repository Forks a source repository into a new repository. POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/fork",
+    "context": "POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/fork\nForks a source repository into a new repository.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; body (body)"
+  },
+  {
+    "id": "artifacts_repos_get",
+    "name": "Get a repository",
+    "description": "Get a repository Returns repository metadata. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}\nReturns repository metadata.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name."
+  },
+  {
+    "id": "artifacts_repos_import",
+    "name": "Import a repository",
+    "description": "Import a repository Imports an HTTPS Git repository into an Artifacts repository. POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/import",
+    "context": "POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/import\nImports an HTTPS Git repository into an Artifacts repository.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; body (body)"
+  },
+  {
+    "id": "artifacts_repos_list",
+    "name": "List repositories",
+    "description": "List repositories Lists repositories in a namespace. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos\nLists repositories in a namespace.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.\nOptional: limit (query); cursor (query); search (query); sort (query); direction (query)"
+  },
+  {
+    "id": "artifacts_repos_log_get",
+    "name": "Read commit history",
+    "description": "Read commit history Returns commit metadata walking backwards from a ref, branch, tag, or HEAD. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/log",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/log\nReturns commit metadata walking backwards from a ref, branch, tag, or HEAD.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.\nOptional: ref (query) — Git ref, branch, tag, or commit hash. Defaults to HEAD.; limit (query); offset (query)"
+  },
+  {
+    "id": "artifacts_repos_raw_get",
+    "name": "Read a raw file with content type",
+    "description": "Read a raw file with content type Returns file bytes resolved by ref and path, with a sniffed content type and browser-safe response headers. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/raw/{ref}/{path}",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/raw/{ref}/{path}\nReturns file bytes resolved by ref and path, with a sniffed content type and browser-safe response headers.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; ref (path) — Git ref, branch, tag, or 40-character commit hash.; path (path) — File path. May contain slashes."
+  },
+  {
+    "id": "artifacts_repos_tree_get",
+    "name": "Read a Git tree",
+    "description": "Read a Git tree Returns decoded entries for an immutable Git tree object. GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/tree/{hash}",
+    "context": "GET /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/repos/{name}/tree/{hash}\nReturns decoded entries for an immutable Git tree object. Tree responses are cacheable forever by hash.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; name (path) — Repository name.; hash (path) — 40-character lowercase hexadecimal Git object hash."
+  },
+  {
+    "id": "artifacts_tokens_create",
+    "name": "Create a repository token",
+    "description": "Create a repository token Creates a scoped Git token for a repository. POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/tokens",
+    "context": "POST /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/tokens\nCreates a scoped Git token for a repository.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; body (body)"
+  },
+  {
+    "id": "artifacts_tokens_revoke",
+    "name": "Revoke a token",
+    "description": "Revoke a token Revokes an Artifacts repository token. DELETE /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/tokens/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/artifacts/namespaces/{namespace}/tokens/{id}\nRevokes an Artifacts repository token.\nRequired: account_id (path) — Cloudflare account ID.; namespace (path) — Artifacts namespace name.; id (path) — Token ID. Must match /^[0-9a-z]{16}$/."
+  }
+]

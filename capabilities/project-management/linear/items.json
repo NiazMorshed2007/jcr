@@ -1,0 +1,128 @@
+[
+  {
+    "id": "list_issues",
+    "name": "List issues matching filters.",
+    "description": "List issues matching filters. MCP list_issues",
+    "context": "MCP tool list_issues on the Linear MCP server\nList issues matching filters.\nOptional: team (body); project (body); assignee (body); state (body); query (body)"
+  },
+  {
+    "id": "get_issue",
+    "name": "Get one issue by identifier.",
+    "description": "Get one issue by identifier. MCP get_issue",
+    "context": "MCP tool get_issue on the Linear MCP server\nGet one issue by identifier.\nRequired: id (body)"
+  },
+  {
+    "id": "create_issue",
+    "name": "Create an issue in a Linear team.",
+    "description": "Create an issue in a Linear team. MCP create_issue",
+    "context": "MCP tool create_issue on the Linear MCP server\nCreate an issue in a Linear team.\nRequired: team (body); title (body)\nOptional: description (body); project (body); priority (body); assignee (body); labels (body)"
+  },
+  {
+    "id": "update_issue",
+    "name": "Update an existing issue.",
+    "description": "Update an existing issue. MCP update_issue",
+    "context": "MCP tool update_issue on the Linear MCP server\nUpdate an existing issue.\nRequired: id (body)\nOptional: title (body); description (body); state (body); priority (body); assignee (body); project (body); labels (body)"
+  },
+  {
+    "id": "list_my_issues",
+    "name": "List issues assigned to the authenticated user.",
+    "description": "List issues assigned to the authenticated user. MCP list_my_issues",
+    "context": "MCP tool list_my_issues on the Linear MCP server\nList issues assigned to the authenticated user.\nOptional: team (body); state (body)"
+  },
+  {
+    "id": "list_issue_statuses",
+    "name": "List workflow statuses for a team.",
+    "description": "List workflow statuses for a team. MCP list_issue_statuses",
+    "context": "MCP tool list_issue_statuses on the Linear MCP server\nList workflow statuses for a team.\nRequired: team (body)"
+  },
+  {
+    "id": "list_issue_labels",
+    "name": "List issue labels.",
+    "description": "List issue labels. MCP list_issue_labels",
+    "context": "MCP tool list_issue_labels on the Linear MCP server\nList issue labels.\nOptional: team (body)"
+  },
+  {
+    "id": "create_issue_label",
+    "name": "Create an issue label.",
+    "description": "Create an issue label. MCP create_issue_label",
+    "context": "MCP tool create_issue_label on the Linear MCP server\nCreate an issue label.\nRequired: name (body)\nOptional: team (body); color (body); description (body)"
+  },
+  {
+    "id": "list_projects",
+    "name": "List Linear projects.",
+    "description": "List Linear projects. MCP list_projects",
+    "context": "MCP tool list_projects on the Linear MCP server\nList Linear projects.\nOptional: team (body); state (body)"
+  },
+  {
+    "id": "get_project",
+    "name": "Get a project by identifier.",
+    "description": "Get a project by identifier. MCP get_project",
+    "context": "MCP tool get_project on the Linear MCP server\nGet a project by identifier.\nRequired: id (body)"
+  },
+  {
+    "id": "create_project",
+    "name": "Create a Linear project.",
+    "description": "Create a Linear project. MCP create_project",
+    "context": "MCP tool create_project on the Linear MCP server\nCreate a Linear project.\nRequired: team (body); name (body)\nOptional: summary (body); description (body); startDate (body); targetDate (body)"
+  },
+  {
+    "id": "update_project",
+    "name": "Update a Linear project.",
+    "description": "Update a Linear project. MCP update_project",
+    "context": "MCP tool update_project on the Linear MCP server\nUpdate a Linear project.\nRequired: id (body)\nOptional: name (body); summary (body); description (body); state (body); targetDate (body)"
+  },
+  {
+    "id": "list_teams",
+    "name": "List workspace teams.",
+    "description": "List workspace teams. MCP list_teams",
+    "context": "MCP tool list_teams on the Linear MCP server\nList workspace teams."
+  },
+  {
+    "id": "get_team",
+    "name": "Get a team by identifier.",
+    "description": "Get a team by identifier. MCP get_team",
+    "context": "MCP tool get_team on the Linear MCP server\nGet a team by identifier.\nRequired: id (body)"
+  },
+  {
+    "id": "list_users",
+    "name": "List workspace users.",
+    "description": "List workspace users. MCP list_users",
+    "context": "MCP tool list_users on the Linear MCP server\nList workspace users.\nOptional: team (body); query (body)"
+  },
+  {
+    "id": "list_documents",
+    "name": "List project or workspace documents.",
+    "description": "List project or workspace documents. MCP list_documents",
+    "context": "MCP tool list_documents on the Linear MCP server\nList project or workspace documents.\nOptional: project (body)"
+  },
+  {
+    "id": "get_document",
+    "name": "Get a document by identifier.",
+    "description": "Get a document by identifier. MCP get_document",
+    "context": "MCP tool get_document on the Linear MCP server\nGet a document by identifier.\nRequired: id (body)"
+  },
+  {
+    "id": "search_documentation",
+    "name": "Search Linear documentation.",
+    "description": "Search Linear documentation. MCP search_documentation",
+    "context": "MCP tool search_documentation on the Linear MCP server\nSearch Linear documentation.\nRequired: query (body)"
+  },
+  {
+    "id": "list_comments",
+    "name": "List comments on an issue.",
+    "description": "List comments on an issue. MCP list_comments",
+    "context": "MCP tool list_comments on the Linear MCP server\nList comments on an issue.\nRequired: issueId (body)"
+  },
+  {
+    "id": "create_comment",
+    "name": "Create a comment on an issue.",
+    "description": "Create a comment on an issue. MCP create_comment",
+    "context": "MCP tool create_comment on the Linear MCP server\nCreate a comment on an issue.\nRequired: issueId (body); body (body)"
+  },
+  {
+    "id": "list_cycles",
+    "name": "List team cycles.",
+    "description": "List team cycles. MCP list_cycles",
+    "context": "MCP tool list_cycles on the Linear MCP server\nList team cycles.\nRequired: team (body)\nOptional: state (body)"
+  }
+]

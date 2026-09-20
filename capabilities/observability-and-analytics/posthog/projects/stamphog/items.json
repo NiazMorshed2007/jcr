@@ -1,0 +1,86 @@
+[
+  {
+    "id": "stamphog_digest_runs_list",
+    "name": "Read-only history of posted (or attempted) digests, filterable by Slack channel.",
+    "description": "Read-only history of posted (or attempted) digests, filterable by Slack channel. GET /api/projects/{project_id}/stamphog/digest_runs/",
+    "context": "GET /api/projects/{project_id}/stamphog/digest_runs/\nRead-only history of posted (or attempted) digests, filterable by Slack channel.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; slack_channel_id (query) — Filter by the Slack channel the digest was posted to, e.g. 'C012AB3CD'."
+  },
+  {
+    "id": "stamphog_digest_runs_retrieve",
+    "name": "Read-only history of posted (or attempted) digests, filterable by Slack channel.",
+    "description": "Read-only history of posted (or attempted) digests, filterable by Slack channel. GET /api/projects/{project_id}/stamphog/digest_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/stamphog/digest_runs/{id}/\nRead-only history of posted (or attempted) digests, filterable by Slack channel.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "stamphog_pull_requests_list",
+    "name": "Read-only pull requests stamphog knows about, filterable by PR number and merge state.",
+    "description": "Read-only pull requests stamphog knows about, filterable by PR number and merge state. GET /api/projects/{project_id}/stamphog/pull_requests/",
+    "context": "GET /api/projects/{project_id}/stamphog/pull_requests/\nRead-only pull requests stamphog knows about, filterable by PR number and merge state.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; merged (query) — Filter by merge state: true for merged pull requests, false for unmerged.; offset (query) — The initial index from which to return the results.; pr_number (query) — Filter by pull request number."
+  },
+  {
+    "id": "stamphog_pull_requests_retrieve",
+    "name": "Read-only pull requests stamphog knows about, filterable by PR number and merge state.",
+    "description": "Read-only pull requests stamphog knows about, filterable by PR number and merge state. GET /api/projects/{project_id}/stamphog/pull_requests/{id}/",
+    "context": "GET /api/projects/{project_id}/stamphog/pull_requests/{id}/\nRead-only pull requests stamphog knows about, filterable by PR number and merge state.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "stamphog_repo_configs_create",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. POST /api/projects/{project_id}/stamphog/repo_configs/",
+    "context": "POST /api/projects/{project_id}/stamphog/repo_configs/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "stamphog_repo_configs_destroy",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. DELETE /api/projects/{project_id}/stamphog/repo_configs/{id}/",
+    "context": "DELETE /api/projects/{project_id}/stamphog/repo_configs/{id}/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "stamphog_repo_configs_install_info_retrieve",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. GET /api/projects/{project_id}/stamphog/repo_configs/install_info/",
+    "context": "GET /api/projects/{project_id}/stamphog/repo_configs/install_info/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "stamphog_repo_configs_list",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. GET /api/projects/{project_id}/stamphog/repo_configs/",
+    "context": "GET /api/projects/{project_id}/stamphog/repo_configs/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "stamphog_repo_configs_partial_update",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. PATCH /api/projects/{project_id}/stamphog/repo_configs/{id}/",
+    "context": "PATCH /api/projects/{project_id}/stamphog/repo_configs/{id}/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "stamphog_repo_configs_retrieve",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. GET /api/projects/{project_id}/stamphog/repo_configs/{id}/",
+    "context": "GET /api/projects/{project_id}/stamphog/repo_configs/{id}/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "stamphog_repo_configs_sync_installation_create",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. POST /api/projects/{project_id}/stamphog/repo_configs/sync_installation/",
+    "context": "POST /api/projects/{project_id}/stamphog/repo_configs/sync_installation/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "stamphog_repo_configs_update",
+    "name": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.",
+    "description": "Per-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides. PUT /api/projects/{project_id}/stamphog/repo_configs/{id}/",
+    "context": "PUT /api/projects/{project_id}/stamphog/repo_configs/{id}/\nPer-repo stamphog settings — enable/disable review, GitHub App installation, policy overrides.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "stamphog_review_runs_list",
+    "name": "Read-only history of stamphog review runs, filterable by repository, PR number, and status.",
+    "description": "Read-only history of stamphog review runs, filterable by repository, PR number, and status. GET /api/projects/{project_id}/stamphog/review_runs/",
+    "context": "GET /api/projects/{project_id}/stamphog/review_runs/\nRead-only history of stamphog review runs, filterable by repository, PR number, and status.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; pr_number (query) — Filter by pull request number.; repository (query) — Filter by repository full name, e.g. 'PostHog/posthog'.; status (query) — Filter by review run status.; trigger (query) — Filter by what caused the run: self_driving, label, or all."
+  },
+  {
+    "id": "stamphog_review_runs_retrieve",
+    "name": "Read-only history of stamphog review runs, filterable by repository, PR number, and status.",
+    "description": "Read-only history of stamphog review runs, filterable by repository, PR number, and status. GET /api/projects/{project_id}/stamphog/review_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/stamphog/review_runs/{id}/\nRead-only history of stamphog review runs, filterable by repository, PR number, and status.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

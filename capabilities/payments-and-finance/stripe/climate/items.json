@@ -1,0 +1,56 @@
+[
+  {
+    "id": "GetClimateOrders",
+    "name": "List orders",
+    "description": "List orders Lists all Climate order objects. GET /v1/climate/orders",
+    "context": "GET /v1/climate/orders\nLists all Climate order objects. The orders are returned sorted by creation date, with the most recently created orders appearing first.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetClimateOrdersOrder",
+    "name": "Retrieve an order",
+    "description": "Retrieve an order Retrieves the details of a Climate order object with the given ID. GET /v1/climate/orders/{order}",
+    "context": "GET /v1/climate/orders/{order}\nRetrieves the details of a Climate order object with the given ID.\nRequired: order (path) — Unique identifier of the order.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetClimateProducts",
+    "name": "List products",
+    "description": "List products Lists all available Climate product objects. GET /v1/climate/products",
+    "context": "GET /v1/climate/products\nLists all available Climate product objects.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetClimateProductsProduct",
+    "name": "Retrieve a product",
+    "description": "Retrieve a product Retrieves the details of a Climate product with the given ID. GET /v1/climate/products/{product}",
+    "context": "GET /v1/climate/products/{product}\nRetrieves the details of a Climate product with the given ID.\nRequired: product (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetClimateSuppliers",
+    "name": "List suppliers",
+    "description": "List suppliers Lists all available Climate supplier objects. GET /v1/climate/suppliers",
+    "context": "GET /v1/climate/suppliers\nLists all available Climate supplier objects.\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetClimateSuppliersSupplier",
+    "name": "Retrieve a supplier",
+    "description": "Retrieve a supplier Retrieves a Climate supplier object. GET /v1/climate/suppliers/{supplier}",
+    "context": "GET /v1/climate/suppliers/{supplier}\nRetrieves a Climate supplier object.\nRequired: supplier (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostClimateOrders",
+    "name": "Create an order",
+    "description": "Create an order Creates a Climate order object for a given Climate product. POST /v1/climate/orders",
+    "context": "POST /v1/climate/orders\nCreates a Climate order object for a given Climate product. The order will be processed immediately after creation and payment will be deducted your Stripe balance.\nRequired: body (body)"
+  },
+  {
+    "id": "PostClimateOrdersOrder",
+    "name": "Update an order",
+    "description": "Update an order Updates the specified order by setting the values of the parameters passed. POST /v1/climate/orders/{order}",
+    "context": "POST /v1/climate/orders/{order}\nUpdates the specified order by setting the values of the parameters passed.\nRequired: order (path) — Unique identifier of the order.\nOptional: body (body)"
+  },
+  {
+    "id": "PostClimateOrdersOrderCancel",
+    "name": "Cancel an order",
+    "description": "Cancel an order Cancels a Climate order. POST /v1/climate/orders/{order}/cancel",
+    "context": "POST /v1/climate/orders/{order}/cancel\nCancels a Climate order. You can cancel an order within 24 hours of creation. Stripe refunds the reservation amount_subtotal , but not the amount_fees for user-triggered cancellations. Frontier might cancel reservations if suppliers fail to deliver. If Frontier cancels the reservation, Stripe provides 90 days advance notice and refunds the amount_total .\nRequired: order (path) — Unique identifier of the order.\nOptional: body (body)"
+  }
+]

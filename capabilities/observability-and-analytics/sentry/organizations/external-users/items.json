@@ -1,0 +1,20 @@
+[
+  {
+    "id": "createOrganizationExternalUser",
+    "name": "Create an External User",
+    "description": "Create an External User Link a user from an external provider to a Sentry user. POST /api/0/organizations/{organization_id_or_slug}/external-users/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/external-users/\nLink a user from an external provider to a Sentry user.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationExternalUser",
+    "name": "Delete an External User",
+    "description": "Delete an External User Delete the link between a user from an external provider and a Sentry user. DELETE /api/0/organizations/{organization_id_or_slug}/external-users/{external_user_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/external-users/{external_user_id}/\nDelete the link between a user from an external provider and a Sentry user.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; external_user_id (path) — The ID of the external user object. This is returned when creating an external user."
+  },
+  {
+    "id": "updateOrganizationExternalUser",
+    "name": "Update an External User",
+    "description": "Update an External User Update a user in an external provider that is currently linked to a Sentry user. PUT /api/0/organizations/{organization_id_or_slug}/external-users/{external_user_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/external-users/{external_user_id}/\nUpdate a user in an external provider that is currently linked to a Sentry user.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; external_user_id (path) — The ID of the external user object. This is returned when creating an external user.; body (body)"
+  }
+]

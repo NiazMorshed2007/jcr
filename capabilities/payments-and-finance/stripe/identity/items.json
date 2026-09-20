@@ -1,0 +1,50 @@
+[
+  {
+    "id": "GetIdentityVerificationReports",
+    "name": "List VerificationReports",
+    "description": "List VerificationReports List all verification reports. GET /v1/identity/verification_reports",
+    "context": "GET /v1/identity/verification_reports\nList all verification reports.\nOptional: client_reference_id (query) — A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.; created (query) — Only return VerificationReports that were created during the given date interval.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; type (query) — Only return VerificationReports of this type; verification_session (query) — Only return VerificationReports created by this VerificationSession ID. It is allowed to provide a VerificationIntent ID.; body (body)"
+  },
+  {
+    "id": "GetIdentityVerificationReportsReport",
+    "name": "Retrieve a VerificationReport",
+    "description": "Retrieve a VerificationReport Retrieves an existing VerificationReport GET /v1/identity/verification_reports/{report}",
+    "context": "GET /v1/identity/verification_reports/{report}\nRetrieves an existing VerificationReport\nRequired: report (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetIdentityVerificationSessions",
+    "name": "List VerificationSessions",
+    "description": "List VerificationSessions Returns a list of VerificationSessions GET /v1/identity/verification_sessions",
+    "context": "GET /v1/identity/verification_sessions\nReturns a list of VerificationSessions\nOptional: client_reference_id (query) — A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.; created (query) — Only return VerificationSessions that were created during the given date interval.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; related_customer (query) — Customer ID; related_customer_account (query) — The ID of the Account representing a customer.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; status (query) — Only return VerificationSessions with this status. [Learn more about the lifecycle of sessions](https://docs.stripe.com/identity/how-sessions-work).; body (body)"
+  },
+  {
+    "id": "GetIdentityVerificationSessionsSession",
+    "name": "Retrieve a VerificationSession",
+    "description": "Retrieve a VerificationSession Retrieves the details of a VerificationSession that was previously created. GET /v1/identity/verification_sessions/{session}",
+    "context": "GET /v1/identity/verification_sessions/{session}\nRetrieves the details of a VerificationSession that was previously created. When the session status is requires_input , you can use this method to retrieve a valid client_secret or url to allow re-submission.\nRequired: session (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostIdentityVerificationSessions",
+    "name": "Create a VerificationSession",
+    "description": "Create a VerificationSession Creates a VerificationSession object. POST /v1/identity/verification_sessions",
+    "context": "POST /v1/identity/verification_sessions\nCreates a VerificationSession object. After the VerificationSession is created, display a verification modal using the session client_secret or send your users to the session’s url . If your API key is in test mode, verification checks won’t actually process, though everything else will occur as if in live mode. Related guide: Verify your users’ identity documents\nOptional: body (body)"
+  },
+  {
+    "id": "PostIdentityVerificationSessionsSession",
+    "name": "Update a VerificationSession",
+    "description": "Update a VerificationSession Updates a VerificationSession object. POST /v1/identity/verification_sessions/{session}",
+    "context": "POST /v1/identity/verification_sessions/{session}\nUpdates a VerificationSession object. When the session status is requires_input , you can use this method to update the verification check and options.\nRequired: session (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostIdentityVerificationSessionsSessionCancel",
+    "name": "Cancel a VerificationSession",
+    "description": "Cancel a VerificationSession A VerificationSession object can be canceled when it is in requires_input status . POST /v1/identity/verification_sessions/{session}/cancel",
+    "context": "POST /v1/identity/verification_sessions/{session}/cancel\nA VerificationSession object can be canceled when it is in requires_input status . Once canceled, future submission attempts are disabled. This cannot be undone. Learn more .\nRequired: session (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostIdentityVerificationSessionsSessionRedact",
+    "name": "Redact a VerificationSession",
+    "description": "Redact a VerificationSession Redact a VerificationSession to remove all collected information from Stripe. POST /v1/identity/verification_sessions/{session}/redact",
+    "context": "POST /v1/identity/verification_sessions/{session}/redact\nRedact a VerificationSession to remove all collected information from Stripe. This will redact the VerificationSession and all objects related to it, including VerificationReports, Events, request logs, etc. A VerificationSession object can be redacted when it is in requires_input or verified status . Redacting a VerificationSession in requires_action state will automatically cancel it. The redaction process may take up to four days. When the redaction process is in progress, the VerificationSession’s redaction.status field will be set to processing ; when the process is finished, it will change to redacted and an identity.verification_session.redacted event will be emitted. Redaction is irreversible. Redacted objects are still accessible in the Stripe API, but all the fields that contain personal data will be replaced by the string [redacted] or a similar placeholder. The metadata field will also be erased. Redacted objects cannot be updated or used for any purpose. Learn more .\nRequired: session (path)\nOptional: body (body)"
+  }
+]

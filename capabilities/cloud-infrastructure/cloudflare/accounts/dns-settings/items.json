@@ -1,0 +1,44 @@
+[
+  {
+    "id": "dns-settings-for-an-account-list-dns-settings",
+    "name": "Show DNS Settings",
+    "description": "Show DNS Settings Show DNS settings for an account GET /client/v4/accounts/{account_id}/dns_settings",
+    "context": "GET /client/v4/accounts/{account_id}/dns_settings\nShow DNS settings for an account\nRequired: account_id (path)"
+  },
+  {
+    "id": "dns-settings-for-an-account-update-dns-settings",
+    "name": "Update DNS Settings",
+    "description": "Update DNS Settings Update DNS settings for an account PATCH /client/v4/accounts/{account_id}/dns_settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/dns_settings\nUpdate DNS settings for an account\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "dns-views-for-an-account-create-internal-dns-views",
+    "name": "Create Internal DNS View",
+    "description": "Create Internal DNS View Create Internal DNS View for an account POST /client/v4/accounts/{account_id}/dns_settings/views",
+    "context": "POST /client/v4/accounts/{account_id}/dns_settings/views\nCreate Internal DNS View for an account\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "dns-views-for-an-account-delete-internal-dns-view",
+    "name": "Delete Internal DNS View",
+    "description": "Delete Internal DNS View Delete an existing Internal DNS View DELETE /client/v4/accounts/{account_id}/dns_settings/views/{view_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dns_settings/views/{view_id}\nDelete an existing Internal DNS View\nRequired: account_id (path); view_id (path)"
+  },
+  {
+    "id": "dns-views-for-an-account-get-internal-dns-view",
+    "name": "DNS Internal View Details",
+    "description": "DNS Internal View Details Get DNS Internal View GET /client/v4/accounts/{account_id}/dns_settings/views/{view_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dns_settings/views/{view_id}\nGet DNS Internal View\nRequired: account_id (path); view_id (path)"
+  },
+  {
+    "id": "dns-views-for-an-account-list-internal-dns-views",
+    "name": "List Internal DNS Views",
+    "description": "List Internal DNS Views List DNS Internal Views for an Account GET /client/v4/accounts/{account_id}/dns_settings/views",
+    "context": "GET /client/v4/accounts/{account_id}/dns_settings/views\nList DNS Internal Views for an Account\nRequired: account_id (path)\nOptional: name (query); name.exact (query); name.contains (query); name.startswith (query); name.endswith (query); zone_id (query); zone_name (query); match (query); page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "dns-views-for-an-account-update-internal-dns-view",
+    "name": "Update Internal DNS View",
+    "description": "Update Internal DNS View Update an existing Internal DNS View PATCH /client/v4/accounts/{account_id}/dns_settings/views/{view_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/dns_settings/views/{view_id}\nUpdate an existing Internal DNS View\nRequired: account_id (path); view_id (path); body (body)"
+  }
+]

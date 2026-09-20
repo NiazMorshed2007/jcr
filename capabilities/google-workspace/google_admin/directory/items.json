@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CustomersChromePrintersDelete",
+    "name": "Deletes a `Printer`.",
+    "description": "Deletes a `Printer`. DELETE /admin/directory/v1/{name}",
+    "context": "DELETE /admin/directory/v1/{name}\nDeletes a `Printer`.\nRequired: name (path) — Required. The name of the printer to be updated. Format: customers/{customer_id}/chrome/printers/{printer_id}\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintersGet",
+    "name": "Returns a `Printer` resource (printer's config).",
+    "description": "Returns a `Printer` resource (printer's config). GET /admin/directory/v1/{name}",
+    "context": "GET /admin/directory/v1/{name}\nReturns a `Printer` resource (printer's config).\nRequired: name (path) — Required. The name of the printer to retrieve. Format: customers/{customer_id}/chrome/printers/{printer_id}\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintersPatch",
+    "name": "Updates a `Printer` resource.",
+    "description": "Updates a `Printer` resource. PATCH /admin/directory/v1/{name}",
+    "context": "PATCH /admin/directory/v1/{name}\nUpdates a `Printer` resource.\nRequired: name (path) — Identifier. The resource name of the Printer object, in the format customers/{customer-id}/printers/{printer-id} (During printer creation leave empty); body (body)\nOptional: clearMask (query) — The list of fields to be cleared. Note, some of the fields are read only and cannot be updated. Values for not specified fields will be patched.; updateMask (query) — The list of fields to be updated. Note, some of the fields are read only and cannot be updated. Values for not specified fields will be patched.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersDelete",
+    "name": "Deletes a print server.",
+    "description": "Deletes a print server. DELETE /admin/directory/v1/{name}",
+    "context": "DELETE /admin/directory/v1/{name}\nDeletes a print server.\nRequired: name (path) — Required. The name of the print server to be deleted. Format: `customers/{customer.id}/chrome/printServers/{print_server.id}`\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersGet",
+    "name": "Returns a print server's configuration.",
+    "description": "Returns a print server's configuration. GET /admin/directory/v1/{name}",
+    "context": "GET /admin/directory/v1/{name}\nReturns a print server's configuration.\nRequired: name (path) — Required. The [unique ID](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customers) of the customer's Google Workspace account. Format: `customers/{id}`\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersPatch",
+    "name": "Updates a print server's configuration.",
+    "description": "Updates a print server's configuration. PATCH /admin/directory/v1/{name}",
+    "context": "PATCH /admin/directory/v1/{name}\nUpdates a print server's configuration.\nRequired: name (path) — Identifier. Resource name of the print server. Leave empty when creating. Format: `customers/{customer.id}/printServers/{print_server.id}`; body (body)\nOptional: updateMask (query) — The list of fields to update. Some fields are read-only and cannot be updated. Values for unspecified fields are patched.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "UsersCreateGuest",
+    "name": "Create a guest user with access to a [subset of Workspace capabilities](https://support.google.com/a/answer/16558545).",
+    "description": "Create a guest user with access to a [subset of Workspace capabilities](https://support.google.com/a/answer/16558545). Create a guest user with access to a [subset of Workspace capabilities](https://support.google.com/a/answer/16558545). POST /admin/directory/v1/users:createGuest",
+    "context": "POST /admin/directory/v1/users:createGuest\nCreate a guest user with access to a [subset of Workspace capabilities](https://support.google.com/a/answer/16558545). This feature is currently in Open Beta.\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

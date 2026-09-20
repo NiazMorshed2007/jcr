@@ -1,0 +1,134 @@
+[
+  {
+    "id": "meeting",
+    "name": "Retrieve a meeting",
+    "description": "Retrieve a meeting Retrieve a meeting's details GET /v2/meetings/{meetingId}",
+    "context": "GET /v2/meetings/{meetingId}\nRetrieve a meeting's details\nRequired: meetingId (path) — The meeting ID"
+  },
+  {
+    "id": "meetingDelete",
+    "name": "Delete a meeting",
+    "description": "Delete a meeting DELETE /v2/meetings/{meetingId}",
+    "context": "DELETE /v2/meetings/{meetingId}\nDelete a meeting\nRequired: meetingId (path) — The meeting ID\nOptional: occurrence_id (query) — The meeting occurrence ID"
+  },
+  {
+    "id": "meetingInvitation",
+    "name": "Retrieve meeting invitation",
+    "description": "Retrieve meeting invitation Retrieve a meeting invitation GET /v2/meetings/{meetingId}/invitation",
+    "context": "GET /v2/meetings/{meetingId}/invitation\nRetrieve a meeting invitation\nRequired: meetingId (path) — The meeting ID"
+  },
+  {
+    "id": "meetingLiveStreamStatusUpdate",
+    "name": "Update a meeting live stream status",
+    "description": "Update a meeting live stream status Update a meeting's live stream status PATCH /v2/meetings/{meetingId}/livestream/status",
+    "context": "PATCH /v2/meetings/{meetingId}/livestream/status\nUpdate a meeting's live stream status\nRequired: meetingId (path) — The meeting ID; body (body) — Meeting"
+  },
+  {
+    "id": "meetingLiveStreamUpdate",
+    "name": "Update a meeting live stream",
+    "description": "Update a meeting live stream Update a meeting's live stream PATCH /v2/meetings/{meetingId}/livestream",
+    "context": "PATCH /v2/meetings/{meetingId}/livestream\nUpdate a meeting's live stream\nRequired: meetingId (path) — The meeting ID; body (body) — Meeting"
+  },
+  {
+    "id": "meetingPollCreate",
+    "name": "Create a meeting's poll",
+    "description": "Create a meeting's poll Create a poll for a meeting POST /v2/meetings/{meetingId}/polls",
+    "context": "POST /v2/meetings/{meetingId}/polls\nCreate a poll for a meeting\nRequired: meetingId (path) — The meeting ID; body (body) — Meeting poll object"
+  },
+  {
+    "id": "meetingPollDelete",
+    "name": "Delete a meeting's Poll",
+    "description": "Delete a meeting's Poll DELETE /v2/meetings/{meetingId}/polls/{pollId}",
+    "context": "DELETE /v2/meetings/{meetingId}/polls/{pollId}\nDelete a meeting's Poll\nRequired: meetingId (path) — The meeting ID; pollId (path) — The poll ID"
+  },
+  {
+    "id": "meetingPollGet",
+    "name": "Retrieve a meeting's poll",
+    "description": "Retrieve a meeting's poll GET /v2/meetings/{meetingId}/polls/{pollId}",
+    "context": "GET /v2/meetings/{meetingId}/polls/{pollId}\nRetrieve a meeting's poll\nRequired: meetingId (path) — The meeting ID; pollId (path) — The poll ID"
+  },
+  {
+    "id": "meetingPolls",
+    "name": "List a meeting's polls",
+    "description": "List a meeting's polls List polls of a meeting GET /v2/meetings/{meetingId}/polls",
+    "context": "GET /v2/meetings/{meetingId}/polls\nList polls of a meeting\nRequired: meetingId (path) — The meeting ID"
+  },
+  {
+    "id": "meetingPollUpdate",
+    "name": "Update a meeting's poll",
+    "description": "Update a meeting's poll PUT /v2/meetings/{meetingId}/polls/{pollId}",
+    "context": "PUT /v2/meetings/{meetingId}/polls/{pollId}\nUpdate a meeting's poll\nRequired: meetingId (path) — The meeting ID; pollId (path) — The poll ID; body (body) — Meeting Poll"
+  },
+  {
+    "id": "meetingRegistrantCreate",
+    "name": "Add a meeting registrant",
+    "description": "Add a meeting registrant Register a participant for a meeting POST /v2/meetings/{meetingId}/registrants",
+    "context": "POST /v2/meetings/{meetingId}/registrants\nRegister a participant for a meeting\nRequired: meetingId (path) — The meeting ID; body (body)\nOptional: occurrence_ids (query) — Occurrence IDs. You can find these with the meeting get API. Multiple values separated by comma."
+  },
+  {
+    "id": "meetingRegistrants",
+    "name": "List a meeting's registrants",
+    "description": "List a meeting's registrants List registrants of a meeting GET /v2/meetings/{meetingId}/registrants",
+    "context": "GET /v2/meetings/{meetingId}/registrants\nList registrants of a meeting\nRequired: meetingId (path) — The meeting ID\nOptional: occurrence_id (query) — The meeting occurrence ID; status (query) — The registrant status; page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "meetingRegistrantStatus",
+    "name": "Update a meeting registrant's status",
+    "description": "Update a meeting registrant's status PUT /v2/meetings/{meetingId}/registrants/status",
+    "context": "PUT /v2/meetings/{meetingId}/registrants/status\nUpdate a meeting registrant's status\nRequired: meetingId (path) — The meeting ID; body (body)\nOptional: occurrence_id (query) — The meeting occurrence ID"
+  },
+  {
+    "id": "meetingStatus",
+    "name": "Update a meeting's status",
+    "description": "Update a meeting's status PUT /v2/meetings/{meetingId}/status",
+    "context": "PUT /v2/meetings/{meetingId}/status\nUpdate a meeting's status\nRequired: meetingId (path) — The meeting ID; body (body)"
+  },
+  {
+    "id": "meetingUpdate",
+    "name": "Update a meeting",
+    "description": "Update a meeting Update a meeting's details PATCH /v2/meetings/{meetingId}",
+    "context": "PATCH /v2/meetings/{meetingId}\nUpdate a meeting's details\nRequired: meetingId (path) — The meeting ID; body (body) — Meeting"
+  },
+  {
+    "id": "recordingDelete",
+    "name": "Delete a meeting's recordings",
+    "description": "Delete a meeting's recordings DELETE /v2/meetings/{meetingId}/recordings",
+    "context": "DELETE /v2/meetings/{meetingId}/recordings\nDelete a meeting's recordings\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.\nOptional: action (query) — The recording delete action"
+  },
+  {
+    "id": "recordingDeleteOne",
+    "name": "Delete one meeting recording file",
+    "description": "Delete one meeting recording file DELETE /v2/meetings/{meetingId}/recordings/{recordingId}",
+    "context": "DELETE /v2/meetings/{meetingId}/recordings/{recordingId}\nDelete one meeting recording file\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.; recordingId (path) — The recording ID\nOptional: action (query) — The recording delete action"
+  },
+  {
+    "id": "recordingGet",
+    "name": "Retrieve a meeting’s all recordings",
+    "description": "Retrieve a meeting’s all recordings GET /v2/meetings/{meetingId}/recordings",
+    "context": "GET /v2/meetings/{meetingId}/recordings\nRetrieve a meeting’s all recordings\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance."
+  },
+  {
+    "id": "recordingSettingsUpdate",
+    "name": "Update a meeting recording's settings",
+    "description": "Update a meeting recording's settings PATCH /v2/meetings/{meetingId}/recordings/settings",
+    "context": "PATCH /v2/meetings/{meetingId}/recordings/settings\nUpdate a meeting recording's settings\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.; body (body) — Meeting recording Settings"
+  },
+  {
+    "id": "recordingSettingUpdate",
+    "name": "Retrieve a meeting recording's settings",
+    "description": "Retrieve a meeting recording's settings GET /v2/meetings/{meetingId}/recordings/settings",
+    "context": "GET /v2/meetings/{meetingId}/recordings/settings\nRetrieve a meeting recording's settings\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance."
+  },
+  {
+    "id": "recordingStatusUpdate",
+    "name": "Recover a meeting's recordings",
+    "description": "Recover a meeting's recordings PUT /v2/meetings/{meetingId}/recordings/status",
+    "context": "PUT /v2/meetings/{meetingId}/recordings/status\nRecover a meeting's recordings\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.; body (body)"
+  },
+  {
+    "id": "recordingStatusUpdateOne",
+    "name": "Recover a single recording",
+    "description": "Recover a single recording PUT /v2/meetings/{meetingId}/recordings/{recordingId}/status",
+    "context": "PUT /v2/meetings/{meetingId}/recordings/{recordingId}/status\nRecover a single recording\nRequired: meetingId (path) — The meeting ID or meeting UUID. If given meeting ID, will take the last meeting instance.; recordingId (path) — The recording ID; body (body)"
+  }
+]

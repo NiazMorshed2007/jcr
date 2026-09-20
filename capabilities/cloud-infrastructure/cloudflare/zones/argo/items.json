@@ -1,0 +1,26 @@
+[
+  {
+    "id": "argo-smart-routing-get-argo-smart-routing-setting",
+    "name": "Get Argo Smart Routing setting",
+    "description": "Get Argo Smart Routing setting Retrieves the value of Argo Smart Routing enablement setting. GET /client/v4/zones/{zone_id}/argo/smart_routing",
+    "context": "GET /client/v4/zones/{zone_id}/argo/smart_routing\nRetrieves the value of Argo Smart Routing enablement setting.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "argo-smart-routing-patch-argo-smart-routing-setting",
+    "name": "Patch Argo Smart Routing setting",
+    "description": "Patch Argo Smart Routing setting Configures the value of the Argo Smart Routing enablement setting. PATCH /client/v4/zones/{zone_id}/argo/smart_routing",
+    "context": "PATCH /client/v4/zones/{zone_id}/argo/smart_routing\nConfigures the value of the Argo Smart Routing enablement setting.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "tiered-caching-get-tiered-caching-setting",
+    "name": "Get Tiered Caching setting",
+    "description": "Get Tiered Caching setting Tiered Cache works by dividing Cloudflare's data centers into a hierarchy of lower-tiers and upper-tiers. GET /client/v4/zones/{zone_id}/argo/tiered_caching",
+    "context": "GET /client/v4/zones/{zone_id}/argo/tiered_caching\nTiered Cache works by dividing Cloudflare's data centers into a hierarchy of lower-tiers and upper-tiers. If content is not cached in lower-tier data centers (generally the ones closest to a visitor), the lower-tier must ask an upper-tier to see if it has the content. If the upper-tier does not have the content, only the upper-tier can ask the origin for content. This practice improves bandwidth efficiency by limiting the number of data centers that can ask the origin for content, which reduces origin load and makes websites more cost-effective to operate. Additionally, Tiered Cache concentrates connections to origin servers so they come from a small number of data centers rather than the full set of network locations. This results in fewer open connections using server resources.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "tiered-caching-patch-tiered-caching-setting",
+    "name": "Patch Tiered Caching setting",
+    "description": "Patch Tiered Caching setting Tiered Cache works by dividing Cloudflare's data centers into a hierarchy of lower-tiers and upper-tiers. PATCH /client/v4/zones/{zone_id}/argo/tiered_caching",
+    "context": "PATCH /client/v4/zones/{zone_id}/argo/tiered_caching\nTiered Cache works by dividing Cloudflare's data centers into a hierarchy of lower-tiers and upper-tiers. If content is not cached in lower-tier data centers (generally the ones closest to a visitor), the lower-tier must ask an upper-tier to see if it has the content. If the upper-tier does not have the content, only the upper-tier can ask the origin for content. This practice improves bandwidth efficiency by limiting the number of data centers that can ask the origin for content, which reduces origin load and makes websites more cost-effective to operate. Additionally, Tiered Cache concentrates connections to origin servers so they come from a small number of data centers rather than the full set of network locations. This results in fewer open connections using server resources.\nRequired: zone_id (path); body (body)"
+  }
+]

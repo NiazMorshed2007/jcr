@@ -1,0 +1,476 @@
+[
+  {
+    "id": "DraftsCreate",
+    "name": "Creates a draft with the `DRAFT` label.",
+    "description": "Creates a draft with the `DRAFT` label. Creates a draft with the `DRAFT` label. POST /gmail/v1/users/{userId}/drafts",
+    "context": "POST /gmail/v1/users/{userId}/drafts\nCreates a draft with the `DRAFT` label. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DraftsDelete",
+    "name": "Immediately and permanently deletes the specified draft.",
+    "description": "Immediately and permanently deletes the specified draft. Immediately and permanently deletes the specified draft. DELETE /gmail/v1/users/{userId}/drafts/{id}",
+    "context": "DELETE /gmail/v1/users/{userId}/drafts/{id}\nImmediately and permanently deletes the specified draft. Does not simply trash it. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the draft to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DraftsGet",
+    "name": "Gets the specified draft.",
+    "description": "Gets the specified draft. Gets the specified draft. GET /gmail/v1/users/{userId}/drafts/{id}",
+    "context": "GET /gmail/v1/users/{userId}/drafts/{id}\nGets the specified draft. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).\nRequired: id (path) — The ID of the draft to retrieve.; userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: format (query) — The format to return the draft in.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DraftsList",
+    "name": "Lists the drafts in the user's mailbox.",
+    "description": "Lists the drafts in the user's mailbox. Lists the drafts in the user's mailbox. GET /gmail/v1/users/{userId}/drafts",
+    "context": "GET /gmail/v1/users/{userId}/drafts\nLists the drafts in the user's mailbox. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: includeSpamTrash (query) — Include drafts from `SPAM` and `TRASH` in the results.; maxResults (query) — Maximum number of drafts to return. This field defaults to 100. The maximum allowed value for this field is 500.; pageToken (query) — Page token to retrieve a specific page of results in the list.; q (query) — Only return draft messages matching the specified query. Supports the same query format as the Gmail search box. For example, `\"from:someuser@example.com rfc822msgid: is:unread\"`.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DraftsSend",
+    "name": "Sends the specified, existing draft to the recipients in the `To`, `Cc`, and `Bcc` headers.",
+    "description": "Sends the specified, existing draft to the recipients in the `To`, `Cc`, and `Bcc` headers. Sends the specified, existing draft to the recipients in the `To`, `Cc`, and `Bcc` headers. POST /gmail/v1/users/{userId}/drafts/send",
+    "context": "POST /gmail/v1/users/{userId}/drafts/send\nSends the specified, existing draft to the recipients in the `To`, `Cc`, and `Bcc` headers. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DraftsUpdate",
+    "name": "Replaces a draft's content.",
+    "description": "Replaces a draft's content. Replaces a draft's content. PUT /gmail/v1/users/{userId}/drafts/{id}",
+    "context": "PUT /gmail/v1/users/{userId}/drafts/{id}\nReplaces a draft's content. For more information, see [Create and send draft emails](https://developers.google.com/workspace/gmail/api/guides/drafts).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the draft to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GetProfile",
+    "name": "Gets the current user's Gmail profile.",
+    "description": "Gets the current user's Gmail profile. GET /gmail/v1/users/{userId}/profile",
+    "context": "GET /gmail/v1/users/{userId}/profile\nGets the current user's Gmail profile.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "HistoryList",
+    "name": "Lists the history of all changes to the given mailbox.",
+    "description": "Lists the history of all changes to the given mailbox. Lists the history of all changes to the given mailbox. GET /gmail/v1/users/{userId}/history",
+    "context": "GET /gmail/v1/users/{userId}/history\nLists the history of all changes to the given mailbox. History results are returned in chronological order (increasing `historyId`). For more information, see [Synchronize clients with Gmail](https://developers.google.com/workspace/gmail/api/guides/sync).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: maxResults (query) — Maximum number of history records to return. This field defaults to 100. The maximum allowed value for this field is 500.; pageToken (query) — Page token to retrieve a specific page of results in the list.; startHistoryId (query) — Required. Returns history records after the specified `startHistoryId`. The supplied `startHistoryId` should be obtained from the `historyId` of a message, thread, or previous `list` response. History IDs increase chronologically but are not contiguous with random gaps in between valid IDs. Supplying an invalid or out of date `startHistoryId` typically returns an `HTTP 404` error code. A `historyId` is typically valid for at least a week, but in some rare circumstances may be valid for only a few hours. If you receive an `HTTP 404` error response, your application should perform a full sync. If you receive no `nextPageToken` in the response, there are no updates to retrieve and you can store the returned `historyId` for a future request.; labelId (query) — Only return messages with a label matching the ID.; historyTypes (query) — History types to be returned by the function; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "LabelsCreate",
+    "name": "Creates a label.",
+    "description": "Creates a label. Creates a label. POST /gmail/v1/users/{userId}/labels",
+    "context": "POST /gmail/v1/users/{userId}/labels\nCreates a label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "LabelsDelete",
+    "name": "Immediately and permanently deletes the specified label and removes it from any messages and threads that it's applied to",
+    "description": "Immediately and permanently deletes the specified label and removes it from any messages and threads that it's applied to Immediately and permanently deletes the specified label and removes it from any messages and threads that it's applied to. DELETE /gmail/v1/users/{userId}/labels/{id}",
+    "context": "DELETE /gmail/v1/users/{userId}/labels/{id}\nImmediately and permanently deletes the specified label and removes it from any messages and threads that it's applied to. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the label to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "LabelsGet",
+    "name": "Gets the specified label.",
+    "description": "Gets the specified label. Gets the specified label. GET /gmail/v1/users/{userId}/labels/{id}",
+    "context": "GET /gmail/v1/users/{userId}/labels/{id}\nGets the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the label to retrieve.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "LabelsList",
+    "name": "Lists all labels in the user's mailbox.",
+    "description": "Lists all labels in the user's mailbox. Lists all labels in the user's mailbox. GET /gmail/v1/users/{userId}/labels",
+    "context": "GET /gmail/v1/users/{userId}/labels\nLists all labels in the user's mailbox. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "LabelsPatch",
+    "name": "Patch the specified label.",
+    "description": "Patch the specified label. Patch the specified label. PATCH /gmail/v1/users/{userId}/labels/{id}",
+    "context": "PATCH /gmail/v1/users/{userId}/labels/{id}\nPatch the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the label to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "LabelsUpdate",
+    "name": "Updates the specified label.",
+    "description": "Updates the specified label. Updates the specified label. PUT /gmail/v1/users/{userId}/labels/{id}",
+    "context": "PUT /gmail/v1/users/{userId}/labels/{id}\nUpdates the specified label. For more information, see [Manage labels](https://developers.google.com/workspace/gmail/api/guides/labels).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the label to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesAttachmentsGet",
+    "name": "Gets the specified message attachment.",
+    "description": "Gets the specified message attachment. GET /gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}",
+    "context": "GET /gmail/v1/users/{userId}/messages/{messageId}/attachments/{id}\nGets the specified message attachment.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; messageId (path) — The ID of the message containing the attachment.; id (path) — The ID of the attachment.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesBatchDelete",
+    "name": "Deletes many messages by message ID.",
+    "description": "Deletes many messages by message ID. Deletes many messages by message ID. POST /gmail/v1/users/{userId}/messages/batchDelete",
+    "context": "POST /gmail/v1/users/{userId}/messages/batchDelete\nDeletes many messages by message ID. Provides no guarantees that messages were not already deleted or even existed at all.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesBatchModify",
+    "name": "Modifies the labels and the Classification Label values on the specified messages.",
+    "description": "Modifies the labels and the Classification Label values on the specified messages. Modifies the labels and the Classification Label values on the specified messages. POST /gmail/v1/users/{userId}/messages/batchModify",
+    "context": "POST /gmail/v1/users/{userId}/messages/batchModify\nModifies the labels and the Classification Label values on the specified messages. For administrators modifying messages for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.modify.restricted` scope.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesDelete",
+    "name": "Immediately and permanently deletes the specified message.",
+    "description": "Immediately and permanently deletes the specified message. Immediately and permanently deletes the specified message. DELETE /gmail/v1/users/{userId}/messages/{id}",
+    "context": "DELETE /gmail/v1/users/{userId}/messages/{id}\nImmediately and permanently deletes the specified message. This operation cannot be undone. Prefer `messages.trash` instead.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the message to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesGet",
+    "name": "Gets the specified message.",
+    "description": "Gets the specified message. GET /gmail/v1/users/{userId}/messages/{id}",
+    "context": "GET /gmail/v1/users/{userId}/messages/{id}\nGets the specified message.\nRequired: id (path) — The ID of the message to retrieve. This ID is usually retrieved using `messages.list`. The ID is also contained in the result when a message is inserted (`messages.insert`) or imported (`messages.import`).; userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: format (query) — The format to return the message in.; metadataHeaders (query) — When given and format is `METADATA`, only include headers specified.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesImport",
+    "name": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP",
+    "description": "Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. POST /gmail/v1/users/{userId}/messages/import",
+    "context": "POST /gmail/v1/users/{userId}/messages/import\nImports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note that the maximum size of the message is 150 MB.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: internalDateSource (query) — Source for Gmail's internal date of the message.; deleted (query) — Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.; neverMarkSpam (query) — Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.; processForCalendar (query) — Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesInsert",
+    "name": "Directly inserts a message into only this user's mailbox similar to `IMAP APPEND`, bypassing most scanning and classification",
+    "description": "Directly inserts a message into only this user's mailbox similar to `IMAP APPEND`, bypassing most scanning and classification Directly inserts a message into only this user's mailbox similar to `IMAP APPEND`, bypassing most scanning and classification. POST /gmail/v1/users/{userId}/messages",
+    "context": "POST /gmail/v1/users/{userId}/messages\nDirectly inserts a message into only this user's mailbox similar to `IMAP APPEND`, bypassing most scanning and classification. Does not send a message. For more information, see [Create and send email messages](https://developers.google.com/workspace/gmail/api/guides/sending).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: internalDateSource (query) — Source for Gmail's internal date of the message.; deleted (query) — Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesList",
+    "name": "Lists the messages in the user's mailbox.",
+    "description": "Lists the messages in the user's mailbox. Lists the messages in the user's mailbox. GET /gmail/v1/users/{userId}/messages",
+    "context": "GET /gmail/v1/users/{userId}/messages\nLists the messages in the user's mailbox. For more information, see [List Gmail messages](https://developers.google.com/workspace/gmail/api/guides/list-messages).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: maxResults (query) — Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.; pageToken (query) — Page token to retrieve a specific page of results in the list.; q (query) — Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `\"from:someuser@example.com rfc822msgid: is:unread\"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.; includeSpamTrash (query) — Include messages from `SPAM` and `TRASH` in the results.; labelIds (query) — Only return messages with labels that match all of the specified label IDs. Messages in a thread might have labels that other messages in the same thread don't have. To learn more, see [Manage labels on messages and threads](https://developers.google.com/workspace/gmail/api/guides/labels#manage_labels_on_messages_threads).; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesModify",
+    "name": "Modifies the labels and the Classification Label values on the specified message.",
+    "description": "Modifies the labels and the Classification Label values on the specified message. Modifies the labels and the Classification Label values on the specified message. POST /gmail/v1/users/{userId}/messages/{id}/modify",
+    "context": "POST /gmail/v1/users/{userId}/messages/{id}/modify\nModifies the labels and the Classification Label values on the specified message. For administrators modifying message for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.modify.restricted` scope.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the message to modify.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesSend",
+    "name": "Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.",
+    "description": "Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. POST /gmail/v1/users/{userId}/messages/send",
+    "context": "POST /gmail/v1/users/{userId}/messages/send\nSends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For more information, see [Create and send email messages](https://developers.google.com/workspace/gmail/api/guides/sending).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesTrash",
+    "name": "Moves the specified message to the trash.",
+    "description": "Moves the specified message to the trash. POST /gmail/v1/users/{userId}/messages/{id}/trash",
+    "context": "POST /gmail/v1/users/{userId}/messages/{id}/trash\nMoves the specified message to the trash.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the message to Trash.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MessagesUntrash",
+    "name": "Removes the specified message from the trash.",
+    "description": "Removes the specified message from the trash. POST /gmail/v1/users/{userId}/messages/{id}/untrash",
+    "context": "POST /gmail/v1/users/{userId}/messages/{id}/untrash\nRemoves the specified message from the trash.\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the message to remove from Trash.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseIdentitiesCreate",
+    "name": "Creates and configures a client-side encryption identity that's authorized to send mail from the user account.",
+    "description": "Creates and configures a client-side encryption identity that's authorized to send mail from the user account. Creates and configures a client-side encryption identity that's authorized to send mail from the user account. POST /gmail/v1/users/{userId}/settings/cse/identities",
+    "context": "POST /gmail/v1/users/{userId}/settings/cse/identities\nCreates and configures a client-side encryption identity that's authorized to send mail from the user account. Google publishes the S/MIME certificate to a shared domain-wide directory so that people within a Google Workspace organization can encrypt and send mail to the identity. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseIdentitiesDelete",
+    "name": "Deletes a client-side encryption identity.",
+    "description": "Deletes a client-side encryption identity. Deletes a client-side encryption identity. DELETE /gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}",
+    "context": "DELETE /gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}\nDeletes a client-side encryption identity. The authenticated user can no longer use the identity to send encrypted messages. You cannot restore the identity after you delete it. Instead, use the CreateCseIdentity method to create another identity with the same configuration. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; cseEmailAddress (path) — The primary email address associated with the client-side encryption identity configuration that's removed.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseIdentitiesGet",
+    "name": "Retrieves a client-side encryption identity configuration.",
+    "description": "Retrieves a client-side encryption identity configuration. Retrieves a client-side encryption identity configuration. GET /gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}",
+    "context": "GET /gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}\nRetrieves a client-side encryption identity configuration. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; cseEmailAddress (path) — The primary email address associated with the client-side encryption identity configuration that's retrieved.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseIdentitiesList",
+    "name": "Lists the client-side encrypted identities for an authenticated user.",
+    "description": "Lists the client-side encrypted identities for an authenticated user. Lists the client-side encrypted identities for an authenticated user. GET /gmail/v1/users/{userId}/settings/cse/identities",
+    "context": "GET /gmail/v1/users/{userId}/settings/cse/identities\nLists the client-side encrypted identities for an authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.\nOptional: pageSize (query) — The number of identities to return. If not provided, the page size will default to 20 entries.; pageToken (query) — Pagination token indicating which page of identities to return. If the token is not supplied, then the API will return the first page of results.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseIdentitiesPatch",
+    "name": "Associates a different key pair with an existing client-side encryption identity.",
+    "description": "Associates a different key pair with an existing client-side encryption identity. Associates a different key pair with an existing client-side encryption identity. PATCH /gmail/v1/users/{userId}/settings/cse/identities/{emailAddress}",
+    "context": "PATCH /gmail/v1/users/{userId}/settings/cse/identities/{emailAddress}\nAssociates a different key pair with an existing client-side encryption identity. The updated key pair must validate against Google's [S/MIME certificate profiles](https://support.google.com/a/answer/7300887). For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; emailAddress (path) — The email address of the client-side encryption identity to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseKeypairsCreate",
+    "name": "Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user",
+    "description": "Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user. POST /gmail/v1/users/{userId}/settings/cse/keypairs",
+    "context": "POST /gmail/v1/users/{userId}/settings/cse/keypairs\nCreates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; body (body)\nOptional: chainValidation (query) — The type of certificate chain validation to perform at creation. The request will be rejected if the uploaded chain fails to satisfy the requested validation checks. When unspecified, this parameter defaults to `all`.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseKeypairsDisable",
+    "name": "Turns off a client-side encryption key pair.",
+    "description": "Turns off a client-side encryption key pair. Turns off a client-side encryption key pair. POST /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:disable",
+    "context": "POST /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:disable\nTurns off a client-side encryption key pair. The authenticated user can no longer use the key pair to decrypt incoming CSE message texts or sign outgoing CSE mail. To regain access, use the EnableCseKeyPair to turn on the key pair. After 30 days, you can permanently delete the key pair by using the ObliterateCseKeyPair method. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; keyPairId (path) — The identifier of the key pair to turn off.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "SettingsCseKeypairsEnable",
+    "name": "Turns on a client-side encryption key pair that was turned off.",
+    "description": "Turns on a client-side encryption key pair that was turned off. Turns on a client-side encryption key pair that was turned off. POST /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:enable",
+    "context": "POST /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:enable\nTurns on a client-side encryption key pair that was turned off. The key pair becomes active again for any associated client-side encryption identities. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; keyPairId (path) — The identifier of the key pair to turn on.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "SettingsCseKeypairsGet",
+    "name": "Retrieves an existing client-side encryption key pair.",
+    "description": "Retrieves an existing client-side encryption key pair. Retrieves an existing client-side encryption key pair. GET /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}",
+    "context": "GET /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}\nRetrieves an existing client-side encryption key pair. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; keyPairId (path) — The identifier of the key pair to retrieve.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseKeypairsList",
+    "name": "Lists client-side encryption key pairs for an authenticated user.",
+    "description": "Lists client-side encryption key pairs for an authenticated user. Lists client-side encryption key pairs for an authenticated user. GET /gmail/v1/users/{userId}/settings/cse/keypairs",
+    "context": "GET /gmail/v1/users/{userId}/settings/cse/keypairs\nLists client-side encryption key pairs for an authenticated user. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.\nOptional: pageToken (query) — Pagination token indicating which page of key pairs to return. If the token is not supplied, then the API will return the first page of results.; pageSize (query) — The number of key pairs to return. If not provided, the page size will default to 20 entries.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsCseKeypairsObliterate",
+    "name": "Deletes a client-side encryption key pair permanently and immediately.",
+    "description": "Deletes a client-side encryption key pair permanently and immediately. Deletes a client-side encryption key pair permanently and immediately. POST /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:obliterate",
+    "context": "POST /gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:obliterate\nDeletes a client-side encryption key pair permanently and immediately. You can only permanently delete key pairs that have been turned off for more than 30 days. To turn off a key pair, use the DisableCseKeyPair method. Gmail can't restore or decrypt any messages that were encrypted by an obliterated key. Authenticated users and Google Workspace administrators lose access to reading the encrypted messages. For administrators managing identities and keypairs for users in their organization, requests require authorization with a [service account](https://developers.google.com/identity/protocols/OAuth2ServiceAccount) that has [domain-wide delegation authority](https://developers.google.com/identity/protocols/OAuth2ServiceAccount#delegatingauthority) to impersonate users with the `https://www.googleapis.com/auth/gmail.settings.basic` scope. For users managing their own identities and keypairs, requests require [hardware key encryption](https://support.google.com/a/answer/14153163) turned on and configured.\nRequired: userId (path) — The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.; keyPairId (path) — The identifier of the key pair to obliterate.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "SettingsDelegatesCreate",
+    "name": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email.",
+    "description": "Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. POST /gmail/v1/users/{userId}/settings/delegates",
+    "context": "POST /gmail/v1/users/{userId}/settings/delegates\nAdds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same Google Workspace organization as the delegator user. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). Gmail imposes limitations on the number of delegates and delegators each user in a Google Workspace organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. A delegate user must be referred to by their primary email address, and not an email alias. When a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsDelegatesDelete",
+    "name": "Removes the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it",
+    "description": "Removes the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it Removes the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it. DELETE /gmail/v1/users/{userId…",
+    "context": "DELETE /gmail/v1/users/{userId}/settings/delegates/{delegateEmail}\nRemoves the specified delegate (which can be of any verification status), and revokes any verification that may have been required for using it. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). A delegate user must be referred to by their primary email address, and not an email alias. This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: delegateEmail (path) — The email address of the user to be removed as a delegate.; userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsDelegatesGet",
+    "name": "Gets the specified delegate.",
+    "description": "Gets the specified delegate. Gets the specified delegate. GET /gmail/v1/users/{userId}/settings/delegates/{delegateEmail}",
+    "context": "GET /gmail/v1/users/{userId}/settings/delegates/{delegateEmail}\nGets the specified delegate. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). A delegate user must be referred to by their primary email address, and not an email alias. This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: delegateEmail (path) — The email address of the user whose delegate relationship is to be retrieved.; userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsDelegatesList",
+    "name": "Lists the delegates for the specified account.",
+    "description": "Lists the delegates for the specified account. Lists the delegates for the specified account. GET /gmail/v1/users/{userId}/settings/delegates",
+    "context": "GET /gmail/v1/users/{userId}/settings/delegates\nLists the delegates for the specified account. For more information, see [Manage delegates](https://developers.google.com/workspace/gmail/api/guides/delegate_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsFiltersCreate",
+    "name": "Creates a filter.",
+    "description": "Creates a filter. Creates a filter. POST /gmail/v1/users/{userId}/settings/filters",
+    "context": "POST /gmail/v1/users/{userId}/settings/filters\nCreates a filter. Note: you can only create a maximum of 1,000 filters. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsFiltersDelete",
+    "name": "Immediately and permanently deletes the specified filter.",
+    "description": "Immediately and permanently deletes the specified filter. Immediately and permanently deletes the specified filter. DELETE /gmail/v1/users/{userId}/settings/filters/{id}",
+    "context": "DELETE /gmail/v1/users/{userId}/settings/filters/{id}\nImmediately and permanently deletes the specified filter. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; id (path) — The ID of the filter to be deleted.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsFiltersGet",
+    "name": "Gets a filter.",
+    "description": "Gets a filter. Gets a filter. GET /gmail/v1/users/{userId}/settings/filters/{id}",
+    "context": "GET /gmail/v1/users/{userId}/settings/filters/{id}\nGets a filter. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; id (path) — The ID of the filter to be fetched.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsFiltersList",
+    "name": "Lists the message filters of a Gmail user.",
+    "description": "Lists the message filters of a Gmail user. Lists the message filters of a Gmail user. GET /gmail/v1/users/{userId}/settings/filters",
+    "context": "GET /gmail/v1/users/{userId}/settings/filters\nLists the message filters of a Gmail user. For more information, see [Manage Gmail filters](https://developers.google.com/workspace/gmail/api/guides/filter_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsForwardingAddressesCreate",
+    "name": "Creates a forwarding address.",
+    "description": "Creates a forwarding address. Creates a forwarding address. POST /gmail/v1/users/{userId}/settings/forwardingAddresses",
+    "context": "POST /gmail/v1/users/{userId}/settings/forwardingAddresses\nCreates a forwarding address. If ownership verification is required, a message will be sent to the recipient and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsForwardingAddressesDelete",
+    "name": "Deletes the specified forwarding address and revokes any verification that may have been required.",
+    "description": "Deletes the specified forwarding address and revokes any verification that may have been required. Deletes the specified forwarding address and revokes any verification that may have been required. DELETE /gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}",
+    "context": "DELETE /gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}\nDeletes the specified forwarding address and revokes any verification that may have been required. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; forwardingEmail (path) — The forwarding address to be deleted.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsForwardingAddressesGet",
+    "name": "Gets the specified forwarding address.",
+    "description": "Gets the specified forwarding address. Gets the specified forwarding address. GET /gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}",
+    "context": "GET /gmail/v1/users/{userId}/settings/forwardingAddresses/{forwardingEmail}\nGets the specified forwarding address. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; forwardingEmail (path) — The forwarding address to be retrieved.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsForwardingAddressesList",
+    "name": "Lists the forwarding addresses for the specified account.",
+    "description": "Lists the forwarding addresses for the specified account. Lists the forwarding addresses for the specified account. GET /gmail/v1/users/{userId}/settings/forwardingAddresses",
+    "context": "GET /gmail/v1/users/{userId}/settings/forwardingAddresses\nLists the forwarding addresses for the specified account. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsGetAutoForwarding",
+    "name": "Gets the auto-forwarding setting for the specified account.",
+    "description": "Gets the auto-forwarding setting for the specified account. Gets the auto-forwarding setting for the specified account. GET /gmail/v1/users/{userId}/settings/autoForwarding",
+    "context": "GET /gmail/v1/users/{userId}/settings/autoForwarding\nGets the auto-forwarding setting for the specified account. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsGetImap",
+    "name": "Gets IMAP settings.",
+    "description": "Gets IMAP settings. Gets IMAP settings. GET /gmail/v1/users/{userId}/settings/imap",
+    "context": "GET /gmail/v1/users/{userId}/settings/imap\nGets IMAP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsGetLanguage",
+    "name": "Gets language settings.",
+    "description": "Gets language settings. Gets language settings. GET /gmail/v1/users/{userId}/settings/language",
+    "context": "GET /gmail/v1/users/{userId}/settings/language\nGets language settings. For more information, see [Manage language settings](https://developers.google.com/workspace/gmail/api/guides/language-settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsGetPop",
+    "name": "Gets POP settings.",
+    "description": "Gets POP settings. Gets POP settings. GET /gmail/v1/users/{userId}/settings/pop",
+    "context": "GET /gmail/v1/users/{userId}/settings/pop\nGets POP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsGetVacation",
+    "name": "Gets vacation responder settings.",
+    "description": "Gets vacation responder settings. Gets vacation responder settings. GET /gmail/v1/users/{userId}/settings/vacation",
+    "context": "GET /gmail/v1/users/{userId}/settings/vacation\nGets vacation responder settings. For more information, see [Manage vacation settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/vacation_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsCreate",
+    "name": "Creates a custom \"from\" send-as alias.",
+    "description": "Creates a custom \"from\" send-as alias. Creates a custom \"from\" send-as alias. POST /gmail/v1/users/{userId}/settings/sendAs",
+    "context": "POST /gmail/v1/users/{userId}/settings/sendAs\nCreates a custom \"from\" send-as alias. If an SMTP MSA is specified, Gmail will attempt to connect to the SMTP service to validate the configuration before creating the alias. If ownership verification is required for the alias, a message will be sent to the email address and the resource's verification status will be set to `pending`; otherwise, the resource will be created with verification status set to `accepted`. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsDelete",
+    "name": "Deletes the specified send-as alias.",
+    "description": "Deletes the specified send-as alias. Deletes the specified send-as alias. DELETE /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+    "context": "DELETE /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}\nDeletes the specified send-as alias. Revokes any verification that may have been required for using it. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: sendAsEmail (path) — The send-as alias to be deleted.; userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsGet",
+    "name": "Gets the specified send-as alias.",
+    "description": "Gets the specified send-as alias. Gets the specified send-as alias. GET /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+    "context": "GET /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}\nGets the specified send-as alias. Fails with an HTTP 404 error if the specified address is not a member of the collection. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; sendAsEmail (path) — The send-as alias to be retrieved.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsList",
+    "name": "Lists the send-as aliases for the specified account.",
+    "description": "Lists the send-as aliases for the specified account. Lists the send-as aliases for the specified account. GET /gmail/v1/users/{userId}/settings/sendAs",
+    "context": "GET /gmail/v1/users/{userId}/settings/sendAs\nLists the send-as aliases for the specified account. The result includes the primary send-as address associated with the account as well as any custom \"from\" aliases. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsPatch",
+    "name": "Patch the specified send-as alias.",
+    "description": "Patch the specified send-as alias. Patch the specified send-as alias. PATCH /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+    "context": "PATCH /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}\nPatch the specified send-as alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; sendAsEmail (path) — The send-as alias to be updated.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsSmimeInfoDelete",
+    "name": "Deletes the specified S/MIME config for the specified send-as alias.",
+    "description": "Deletes the specified S/MIME config for the specified send-as alias. Deletes the specified S/MIME config for the specified send-as alias. DELETE /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}",
+    "context": "DELETE /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}\nDeletes the specified S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The immutable ID for the SmimeInfo.; sendAsEmail (path) — The email address that appears in the \"From:\" header for mail sent using this alias.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsSmimeInfoGet",
+    "name": "Gets the specified S/MIME config for the specified send-as alias.",
+    "description": "Gets the specified S/MIME config for the specified send-as alias. Gets the specified S/MIME config for the specified send-as alias. GET /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}",
+    "context": "GET /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}\nGets the specified S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).\nRequired: id (path) — The immutable ID for the SmimeInfo.; sendAsEmail (path) — The email address that appears in the \"From:\" header for mail sent using this alias.; userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsSmimeInfoInsert",
+    "name": "Insert (upload) the given S/MIME config for the specified send-as alias.",
+    "description": "Insert (upload) the given S/MIME config for the specified send-as alias. Insert (upload) the given S/MIME config for the specified send-as alias. POST /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo",
+    "context": "POST /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo\nInsert (upload) the given S/MIME config for the specified send-as alias. Note that `pkcs12` format is required for the key. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; sendAsEmail (path) — The email address that appears in the \"From:\" header for mail sent using this alias.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsSmimeInfoList",
+    "name": "Lists S/MIME configs for the specified send-as alias.",
+    "description": "Lists S/MIME configs for the specified send-as alias. Lists S/MIME configs for the specified send-as alias. GET /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo",
+    "context": "GET /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo\nLists S/MIME configs for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; sendAsEmail (path) — The email address that appears in the \"From:\" header for mail sent using this alias.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsSmimeInfoSetDefault",
+    "name": "Sets the default S/MIME config for the specified send-as alias.",
+    "description": "Sets the default S/MIME config for the specified send-as alias. Sets the default S/MIME config for the specified send-as alias. POST /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}/setDefault",
+    "context": "POST /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/smimeInfo/{id}/setDefault\nSets the default S/MIME config for the specified send-as alias. For more information, see [Manage S/MIME certificates with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/smime_certs).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The immutable ID for the SmimeInfo.; sendAsEmail (path) — The email address that appears in the \"From:\" header for mail sent using this alias.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsUpdate",
+    "name": "Updates a send-as alias.",
+    "description": "Updates a send-as alias. Updates a send-as alias. PUT /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}",
+    "context": "PUT /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}\nUpdates a send-as alias. If a signature is provided, Gmail will sanitize the HTML before saving it with the alias. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). Addresses other than the primary address for the account can only be updated by service account clients that have been delegated domain-wide authority.\nRequired: sendAsEmail (path) — The send-as alias to be updated.; userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsSendAsVerify",
+    "name": "Sends a verification email to the specified send-as alias address.",
+    "description": "Sends a verification email to the specified send-as alias address. Sends a verification email to the specified send-as alias address. POST /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/verify",
+    "context": "POST /gmail/v1/users/{userId}/settings/sendAs/{sendAsEmail}/verify\nSends a verification email to the specified send-as alias address. The verification status must be `pending`. For more information, see [Manage aliases and signatures with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: sendAsEmail (path) — The send-as alias to be verified.; userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsUpdateAutoForwarding",
+    "name": "Updates the auto-forwarding setting for the specified account.",
+    "description": "Updates the auto-forwarding setting for the specified account. Updates the auto-forwarding setting for the specified account. PUT /gmail/v1/users/{userId}/settings/autoForwarding",
+    "context": "PUT /gmail/v1/users/{userId}/settings/autoForwarding\nUpdates the auto-forwarding setting for the specified account. A verified forwarding address must be specified when auto-forwarding is enabled. For more information, see [Manage email forwarding](https://developers.google.com/workspace/gmail/api/guides/forwarding_settings). This method is only available to service account clients that have been delegated domain-wide authority.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsUpdateImap",
+    "name": "Updates IMAP settings.",
+    "description": "Updates IMAP settings. Updates IMAP settings. PUT /gmail/v1/users/{userId}/settings/imap",
+    "context": "PUT /gmail/v1/users/{userId}/settings/imap\nUpdates IMAP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsUpdateLanguage",
+    "name": "Updates language settings.",
+    "description": "Updates language settings. Updates language settings. PUT /gmail/v1/users/{userId}/settings/language",
+    "context": "PUT /gmail/v1/users/{userId}/settings/language\nUpdates language settings. For more information, see [Manage language settings](https://developers.google.com/workspace/gmail/api/guides/language-settings). If successful, the return object contains the `displayLanguage` that was saved for the user, which may differ from the value passed into the request. This is because the requested `displayLanguage` may not be directly supported by Gmail but have a close variant that is, and so the variant may be chosen and saved instead.\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsUpdatePop",
+    "name": "Updates POP settings.",
+    "description": "Updates POP settings. Updates POP settings. PUT /gmail/v1/users/{userId}/settings/pop",
+    "context": "PUT /gmail/v1/users/{userId}/settings/pop\nUpdates POP settings. For more information, see [Configure POP and IMAP settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/pop_imap_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SettingsUpdateVacation",
+    "name": "Updates vacation responder settings.",
+    "description": "Updates vacation responder settings. Updates vacation responder settings. PUT /gmail/v1/users/{userId}/settings/vacation",
+    "context": "PUT /gmail/v1/users/{userId}/settings/vacation\nUpdates vacation responder settings. For more information, see [Manage vacation settings with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/vacation_settings).\nRequired: userId (path) — User's email address. The special value \"me\" can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Stop",
+    "name": "Turn off push notification delivery for the given user mailbox.",
+    "description": "Turn off push notification delivery for the given user mailbox. Turn off push notification delivery for the given user mailbox. POST /gmail/v1/users/{userId}/stop",
+    "context": "POST /gmail/v1/users/{userId}/stop\nTurn off push notification delivery for the given user mailbox. For more information, see [Configure push notifications in Gmail API](https://developers.google.com/workspace/gmail/api/guides/push).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ThreadsDelete",
+    "name": "Immediately and permanently deletes the specified thread.",
+    "description": "Immediately and permanently deletes the specified thread. Immediately and permanently deletes the specified thread. DELETE /gmail/v1/users/{userId}/threads/{id}",
+    "context": "DELETE /gmail/v1/users/{userId}/threads/{id}\nImmediately and permanently deletes the specified thread. Any messages that belong to the thread are also deleted. This operation cannot be undone. Prefer `threads.trash` instead. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — ID of the Thread to delete.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ThreadsGet",
+    "name": "Gets the specified thread.",
+    "description": "Gets the specified thread. Gets the specified thread. GET /gmail/v1/users/{userId}/threads/{id}",
+    "context": "GET /gmail/v1/users/{userId}/threads/{id}\nGets the specified thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).\nRequired: id (path) — The ID of the thread to retrieve.; userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: format (query) — The format to return the messages in.; metadataHeaders (query) — When given and format is METADATA, only include headers specified.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ThreadsList",
+    "name": "Lists the threads in the user's mailbox.",
+    "description": "Lists the threads in the user's mailbox. Lists the threads in the user's mailbox. GET /gmail/v1/users/{userId}/threads",
+    "context": "GET /gmail/v1/users/{userId}/threads\nLists the threads in the user's mailbox. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.\nOptional: labelIds (query) — Only return threads with labels that match all of the specified label IDs.; includeSpamTrash (query) — Include threads from `SPAM` and `TRASH` in the results.; maxResults (query) — Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500.; pageToken (query) — Page token to retrieve a specific page of results in the list.; q (query) — Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, `\"from:someuser@example.com rfc822msgid: is:unread\"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ThreadsModify",
+    "name": "Modifies the labels applied to the thread.",
+    "description": "Modifies the labels applied to the thread. Modifies the labels applied to the thread. POST /gmail/v1/users/{userId}/threads/{id}/modify",
+    "context": "POST /gmail/v1/users/{userId}/threads/{id}/modify\nModifies the labels applied to the thread. This applies to all messages in the thread. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the thread to modify.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ThreadsTrash",
+    "name": "Moves the specified thread to the trash.",
+    "description": "Moves the specified thread to the trash. Moves the specified thread to the trash. POST /gmail/v1/users/{userId}/threads/{id}/trash",
+    "context": "POST /gmail/v1/users/{userId}/threads/{id}/trash\nMoves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the thread to Trash.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ThreadsUntrash",
+    "name": "Removes the specified thread from the trash.",
+    "description": "Removes the specified thread from the trash. Removes the specified thread from the trash. POST /gmail/v1/users/{userId}/threads/{id}/untrash",
+    "context": "POST /gmail/v1/users/{userId}/threads/{id}/untrash\nRemoves the specified thread from the trash. Any messages that belong to the thread are also removed from the trash. For more information, see [Manage threads](https://developers.google.com/workspace/gmail/api/guides/threads).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; id (path) — The ID of the thread to remove from Trash.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Watch",
+    "name": "Set up or update a push notification watch on the given user mailbox.",
+    "description": "Set up or update a push notification watch on the given user mailbox. Set up or update a push notification watch on the given user mailbox. POST /gmail/v1/users/{userId}/watch",
+    "context": "POST /gmail/v1/users/{userId}/watch\nSet up or update a push notification watch on the given user mailbox. For more information, see [Configure push notifications in Gmail API](https://developers.google.com/workspace/gmail/api/guides/push).\nRequired: userId (path) — The user's email address. The special value `me` can be used to indicate the authenticated user.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

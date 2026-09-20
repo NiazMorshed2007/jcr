@@ -1,0 +1,122 @@
+[
+  {
+    "id": "createSpace",
+    "name": "Create space",
+    "description": "Create space Creates a Space as specified in the payload. POST /wiki/api/v2/spaces",
+    "context": "POST /wiki/api/v2/spaces\nCreates a Space as specified in the payload. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to create spaces.\nRequired: body (body)"
+  },
+  {
+    "id": "createSpaceProperty",
+    "name": "Create space property in space",
+    "description": "Create space property in space Creates a new space property. POST /wiki/api/v2/spaces/{space-id}/properties",
+    "context": "POST /wiki/api/v2/spaces/{space-id}/properties\nCreates a new space property. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and 'Admin' permission for the space.\nRequired: space-id (path) — The ID of the space for which space properties should be returned.; body (body) — The space property to be created"
+  },
+  {
+    "id": "deleteSpaceDefaultClassificationLevel",
+    "name": "Delete space default classification level",
+    "description": "Delete space default classification level Returns the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. DELETE /wiki/api/v2/spaces/{id}/classification-level/default",
+    "context": "DELETE /wiki/api/v2/spaces/{id}/classification-level/default\nReturns the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. **[Permissions](https://support.atlassian.com/confluence-cloud/docs/what-are-confluences-roles/) required**: Permission to access the Confluence site ('Can use' global permission) and [`manage/space`](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) permission for the space. **Note:** To find the display name for each permission ID, call the [Get available space permissions](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) API.\nRequired: id (path) — The ID of the space for which default classification level should be deleted."
+  },
+  {
+    "id": "deleteSpacePropertyById",
+    "name": "Delete space property by id",
+    "description": "Delete space property by id Deletes a space property by its id. DELETE /wiki/api/v2/spaces/{space-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/spaces/{space-id}/properties/{property-id}\nDeletes a space property by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and 'Admin' permission for the space.\nRequired: space-id (path) — The ID of the space the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getBlogPostsInSpace",
+    "name": "Get blog posts in space",
+    "description": "Get blog posts in space Returns all blog posts in a space. GET /wiki/api/v2/spaces/{id}/blogposts",
+    "context": "GET /wiki/api/v2/spaces/{id}/blogposts\nReturns all blog posts in a space. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and view the space. Only blog posts that the user has permission to view will be returned.\nRequired: id (path) — The ID of the space for which blog posts should be returned.\nOptional: sort (query) — Used to sort the result by a particular field.; status (query) — Filter the results to blog posts based on their status. By default, `current` is used.; title (query) — Filter the results to blog posts based on their title.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of blog posts per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getCustomContentByTypeInSpace",
+    "name": "Get custom content by type in space",
+    "description": "Get custom content by type in space Returns all custom content for a given type within a given space. GET /wiki/api/v2/spaces/{id}/custom-content",
+    "context": "GET /wiki/api/v2/spaces/{id}/custom-content\nReturns all custom content for a given type within a given space. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the custom content and the corresponding space.\nRequired: id (path) — The ID of the space for which custom content should be returned.; type (query) — The type of custom content being requested. See: https://developer.atlassian.com/cloud/confluence/custom-content/ for additional details on custom content.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field. Note: If the custom content body type is `storage`, the `storage` and `atlas_doc_format` body formats are able to be returned. If the custom content body type is `raw`, only the `raw` body format is able to be returned."
+  },
+  {
+    "id": "getPagesInSpace",
+    "name": "Get pages in space",
+    "description": "Get pages in space Returns all pages in a space. GET /wiki/api/v2/spaces/{id}/pages",
+    "context": "GET /wiki/api/v2/spaces/{id}/pages\nReturns all pages in a space. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and 'View' permission for the space. Only pages that the user has permission to view will be returned.\nRequired: id (path) — The ID of the space for which pages should be returned.\nOptional: depth (query) — Filter the results to pages at the root level of the space or to all pages in the space.; sort (query) — Used to sort the result by a particular field.; status (query) — Filter the results to pages based on their status. By default, `current` and `archived` are used.; title (query) — Filter the results to pages based on their title.; body-format (query) — The content format types to be returned in the `body` field of the response. If available, the representation will be available under a response field of the same name under the `body` field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaceById",
+    "name": "Get space by id",
+    "description": "Get space by id Returns a specific space. GET /wiki/api/v2/spaces/{id}",
+    "context": "GET /wiki/api/v2/spaces/{id}\nReturns a specific space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the space.\nRequired: id (path) — The ID of the space to be returned.\nOptional: description-format (query) — The content format type to be returned in the `description` field of the response. If available, the representation will be available under a response field of the same name under the `description` field.; include-icon (query) — If the icon for the space should be fetched or not.; include-operations (query) — Includes operations associated with this space in the response, as defined in the `Operation` object. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-properties (query) — Includes space properties associated with this space in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-permissions (query) — Includes space permissions associated with this space in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-role-assignments (query) — Includes role assignments associated with this space in the response. This parameter is only accepted for EAP sites. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results.; include-labels (query) — Includes labels associated with this space in the response. The number of results will be limited to 50 and sorted in the default sort order. A `meta` and `_links` property will be present to indicate if more results are available and a link to retrieve the rest of the results."
+  },
+  {
+    "id": "getSpaceContentLabels",
+    "name": "Get labels for space content",
+    "description": "Get labels for space content Returns the labels of space content (pages, blogposts etc). GET /wiki/api/v2/spaces/{id}/content/labels",
+    "context": "GET /wiki/api/v2/spaces/{id}/content/labels\nReturns the labels of space content (pages, blogposts etc). The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the space. Only labels that the user has permission to view will be returned.\nRequired: id (path) — The ID of the space for which labels should be returned.\nOptional: prefix (query) — Filter the results to labels based on their prefix.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of labels per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaceDefaultClassificationLevel",
+    "name": "Get space default classification level",
+    "description": "Get space default classification level Returns the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. GET /wiki/api/v2/spaces/{id}/classification-level/default",
+    "context": "GET /wiki/api/v2/spaces/{id}/classification-level/default\nReturns the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: 'Permission to access the Confluence site ('Can use' global permission) and permission to view the space.\nRequired: id (path) — The ID of the space for which default classification level should be returned."
+  },
+  {
+    "id": "getSpaceLabels",
+    "name": "Get labels for space",
+    "description": "Get labels for space Returns the labels of specific space. GET /wiki/api/v2/spaces/{id}/labels",
+    "context": "GET /wiki/api/v2/spaces/{id}/labels\nReturns the labels of specific space. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the space. Only labels that the user has permission to view will be returned.\nRequired: id (path) — The ID of the space for which labels should be returned.\nOptional: prefix (query) — Filter the results to labels based on their prefix.; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of labels per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaceOperations",
+    "name": "Get permitted operations for space",
+    "description": "Get permitted operations for space Returns the permitted operations on specific space. GET /wiki/api/v2/spaces/{id}/operations",
+    "context": "GET /wiki/api/v2/spaces/{id}/operations\nReturns the permitted operations on specific space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the corresponding space.\nRequired: id (path) — The ID of the space for which operations should be returned."
+  },
+  {
+    "id": "getSpacePermissionsAssignments",
+    "name": "Get space permissions assignments",
+    "description": "Get space permissions assignments Returns space permission assignments for a specific space. GET /wiki/api/v2/spaces/{id}/permissions",
+    "context": "GET /wiki/api/v2/spaces/{id}/permissions\nReturns space permission assignments for a specific space. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the space.\nRequired: id (path) — The ID of the space to be returned.\nOptional: cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of assignments to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaceProperties",
+    "name": "Get space properties in space",
+    "description": "Get space properties in space Returns all properties for the given space. GET /wiki/api/v2/spaces/{space-id}/properties",
+    "context": "GET /wiki/api/v2/spaces/{space-id}/properties\nReturns all properties for the given space. Space properties are a key-value storage associated with a space. The limit parameter specifies the maximum number of results returned in a single response. Use the `link` response header to paginate through additional results. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and 'View' permission for the space.\nRequired: space-id (path) — The ID of the space for which space properties should be returned.\nOptional: key (query) — The key of the space property to retrieve. This should be used when a user knows the key of their property, but needs to retrieve the id for use in other methods.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of pages per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpacePropertyById",
+    "name": "Get space property by id",
+    "description": "Get space property by id Retrieve a space property by its id. GET /wiki/api/v2/spaces/{space-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/spaces/{space-id}/properties/{property-id}\nRetrieve a space property by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and 'View' permission for the space.\nRequired: space-id (path) — The ID of the space the property belongs to.; property-id (path) — The ID of the property to be retrieved."
+  },
+  {
+    "id": "getSpaceRoleAssignments",
+    "name": "Get space role assignments",
+    "description": "Get space role assignments Retrieves the space role assignments. GET /wiki/api/v2/spaces/{id}/role-assignments",
+    "context": "GET /wiki/api/v2/spaces/{id}/role-assignments\nRetrieves the space role assignments. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the space.\nRequired: id (path) — The ID of the space for which to retrieve assignments.\nOptional: role-id (query) — Filters the returned role assignments to the provided role ID.; role-type (query) — Filters the returned role assignments to the provided role type.; principal-id (query) — Filters the returned role assignments to the provided principal id. If specified, a principal-type must also be specified. Paired with a `principal-type` of `ACCESS_CLASS`, valid values include [`anonymous-users`, `jsm-project-admins`, `authenticated-users`, `all-licensed-users`, `all-product-admins`]; principal-type (query) — Filters the returned role assignments to the provided principal type. If specified, a principal-id must also be specified.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of space roles to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getSpaces",
+    "name": "Get spaces",
+    "description": "Get spaces Returns all spaces. GET /wiki/api/v2/spaces",
+    "context": "GET /wiki/api/v2/spaces\nReturns all spaces. The results will be sorted by id ascending. The number of results is limited by the `limit` parameter and additional results (if available) will be available through the `next` URL present in the `Link` response header. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission). Only spaces that the user has permission to view will be returned.\nOptional: ids (query) — Filter the results to spaces based on their IDs. Multiple IDs can be specified as a comma-separated list.; keys (query) — Filter the results to spaces based on their keys. Multiple keys can be specified as a comma-separated list.; type (query) — Filter the results to spaces based on their type.; status (query) — Filter the results to spaces based on their status.; labels (query) — Filter the results to spaces based on their labels. Multiple labels can be specified as a comma-separated list.; favorited-by (query) — Filter the results to spaces favorited by the user with the specified account ID.; not-favorited-by (query) — Filter the results to spaces NOT favorited by the user with the specified account ID.; sort (query) — Used to sort the result by a particular field.; description-format (query) — The content format type to be returned in the `description` field of the response. If available, the representation will be available under a response field of the same name under the `description` field.; include-icon (query) — If the icon for the space should be fetched or not.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of spaces per result to return. If more results exist, use the `Link` response header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "putSpaceDefaultClassificationLevel",
+    "name": "Update space default classification level",
+    "description": "Update space default classification level Update the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. PUT /wiki/api/v2/spaces/{id}/classification-level/default",
+    "context": "PUT /wiki/api/v2/spaces/{id}/classification-level/default\nUpdate the [default classification level](https://support.atlassian.com/security-and-access-policies/docs/what-is-a-default-classification-level/) for a specific space. **[Permissions](https://support.atlassian.com/confluence-cloud/docs/what-are-confluences-roles/) required**: Permission to access the Confluence site ('Can use' global permission) and [`manage/space`](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) permission for the space. **Note:** To find the display name for each permission ID, call the [Get available space permissions](https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space-permissions/#api-space-permissions-get) API.\nRequired: id (path) — The ID of the space for which default classification level should be updated.; body (body)"
+  },
+  {
+    "id": "setSpaceRoleAssignments",
+    "name": "Set space role assignments",
+    "description": "Set space role assignments Sets space role assignments as specified in the payload. POST /wiki/api/v2/spaces/{id}/role-assignments",
+    "context": "POST /wiki/api/v2/spaces/{id}/role-assignments\nSets space role assignments as specified in the payload. For each entry, if `roleId` is provided the principal is assigned to that role. If `roleId` is omitted, the role assignment for that principal is removed, if it exists. Available on tenants with [Role-Based Access Control](https://support.atlassian.com/confluence-cloud/docs/manage-user-roles/). **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to manage roles in the space.\nRequired: id (path) — The ID of the space for which to retrieve assignments.; body (body)"
+  },
+  {
+    "id": "updateSpacePropertyById",
+    "name": "Update space property by id",
+    "description": "Update space property by id Update a space property by its id. PUT /wiki/api/v2/spaces/{space-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/spaces/{space-id}/properties/{property-id}\nUpdate a space property by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to access the Confluence site ('Can use' global permission) and 'Admin' permission for the space.\nRequired: space-id (path) — The ID of the space the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The space property to be updated."
+  }
+]

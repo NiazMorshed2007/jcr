@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dls-zone-regional-hostnames-create",
+    "name": "Create Regional Hostname",
+    "description": "Create Regional Hostname Create a new Regional Hostname entry. POST /client/v4/zones/{zone_id}/addressing/regional_hostnames",
+    "context": "POST /client/v4/zones/{zone_id}/addressing/regional_hostnames\nCreate a new Regional Hostname entry. Cloudflare will only use data centers that are physically located within the chosen region to decrypt and service HTTPS traffic. Learn more about [Regional Services](https://developers.cloudflare.com/data-localization/regional-services/get-started/).\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "dls-zone-regional-hostnames-delete",
+    "name": "Delete Regional Hostname",
+    "description": "Delete Regional Hostname Delete the region configuration for a specific Regional Hostname. DELETE /client/v4/zones/{zone_id}/addressing/regional_hostnames/{hostname}",
+    "context": "DELETE /client/v4/zones/{zone_id}/addressing/regional_hostnames/{hostname}\nDelete the region configuration for a specific Regional Hostname.\nRequired: zone_id (path); hostname (path)"
+  },
+  {
+    "id": "dls-zone-regional-hostnames-fetch",
+    "name": "Fetch Regional Hostname",
+    "description": "Fetch Regional Hostname Fetch the configuration for a specific Regional Hostname, within a zone. GET /client/v4/zones/{zone_id}/addressing/regional_hostnames/{hostname}",
+    "context": "GET /client/v4/zones/{zone_id}/addressing/regional_hostnames/{hostname}\nFetch the configuration for a specific Regional Hostname, within a zone.\nRequired: zone_id (path); hostname (path)"
+  },
+  {
+    "id": "dls-zone-regional-hostnames-list",
+    "name": "List Regional Hostnames",
+    "description": "List Regional Hostnames List all Regional Hostnames within a zone. GET /client/v4/zones/{zone_id}/addressing/regional_hostnames",
+    "context": "GET /client/v4/zones/{zone_id}/addressing/regional_hostnames\nList all Regional Hostnames within a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "dls-zone-regional-hostnames-patch",
+    "name": "Update Regional Hostname",
+    "description": "Update Regional Hostname Update the configuration for a specific Regional Hostname. PATCH /client/v4/zones/{zone_id}/addressing/regional_hostnames/{hostname}",
+    "context": "PATCH /client/v4/zones/{zone_id}/addressing/regional_hostnames/{hostname}\nUpdate the configuration for a specific Regional Hostname. Only the region_key of a hostname is mutable.\nRequired: zone_id (path); hostname (path)\nOptional: body (body)"
+  }
+]

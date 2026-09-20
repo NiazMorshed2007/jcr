@@ -1,0 +1,32 @@
+[
+  {
+    "id": "GetPrices",
+    "name": "List all prices",
+    "description": "List all prices Returns a list of your active prices, excluding inline prices . GET /v1/prices",
+    "context": "GET /v1/prices\nReturns a list of your active prices, excluding inline prices . For the list of inactive prices, set active to false.\nOptional: active (query) — Only return prices that are active or inactive (e.g., pass `false` to list all inactive prices).; created (query) — A filter on the list, based on the object `created` field. The value can be a string with an integer Unix timestamp, or it can be a dictionary with a number of different query options.; currency (query) — Only return prices for the given currency.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; lookup_keys (query) — Only return the price with these lookup_keys, if any exist. You can specify up to 10 lookup_keys.; product (query) — Only return prices for the given product.; recurring (query) — Only return prices with these recurring fields.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; type (query) — Only return prices of type `recurring` or `one_time`.; body (body)"
+  },
+  {
+    "id": "GetPricesPrice",
+    "name": "Retrieve a price",
+    "description": "Retrieve a price Retrieves the price with the given ID. GET /v1/prices/{price}",
+    "context": "GET /v1/prices/{price}\nRetrieves the price with the given ID.\nRequired: price (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetPricesSearch",
+    "name": "Search prices",
+    "description": "Search prices Search for prices you’ve previously created using Stripe’s Search Query Language . GET /v1/prices/search",
+    "context": "GET /v1/prices/search\nSearch for prices you’ve previously created using Stripe’s Search Query Language . Don’t use search in read-after-write flows where strict consistency is necessary. Under normal operating conditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up to an hour behind during outages. Search functionality is not available to merchants in India.\nRequired: query (query) — The search query string. See [search query language](https://docs.stripe.com/search#search-query-language) and the list of supported [query fields for prices](https://docs.stripe.com/search#query-fields-for-prices).\nOptional: expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; page (query) — A cursor for pagination across multiple pages of results. Don't include this parameter on the first call. Use the next_page value returned in a previous response to request subsequent results.; body (body)"
+  },
+  {
+    "id": "PostPrices",
+    "name": "Create a price",
+    "description": "Create a price Creates a new Price for an existing Product . POST /v1/prices",
+    "context": "POST /v1/prices\nCreates a new Price for an existing Product . The Price can be recurring or one-time.\nRequired: body (body)"
+  },
+  {
+    "id": "PostPricesPrice",
+    "name": "Update a price",
+    "description": "Update a price Updates the specified price by setting the values of the parameters passed. POST /v1/prices/{price}",
+    "context": "POST /v1/prices/{price}\nUpdates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.\nRequired: price (path)\nOptional: body (body)"
+  }
+]

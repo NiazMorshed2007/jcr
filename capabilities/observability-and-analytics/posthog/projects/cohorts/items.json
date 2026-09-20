@@ -1,0 +1,80 @@
+[
+  {
+    "id": "cohorts_activity_retrieve",
+    "name": "cohorts_activity_retrieve",
+    "description": "cohorts_activity_retrieve GET /api/projects/{project_id}/cohorts/{id}/activity/",
+    "context": "GET /api/projects/{project_id}/cohorts/{id}/activity/\ncohorts_activity_retrieve\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "cohorts_add_persons_to_static_cohort_partial_update",
+    "name": "cohorts_add_persons_to_static_cohort_partial_update",
+    "description": "cohorts_add_persons_to_static_cohort_partial_update PATCH /api/projects/{project_id}/cohorts/{id}/add_persons_to_static_cohort/",
+    "context": "PATCH /api/projects/{project_id}/cohorts/{id}/add_persons_to_static_cohort/\ncohorts_add_persons_to_static_cohort_partial_update\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "cohorts_all_activity_retrieve",
+    "name": "cohorts_all_activity_retrieve",
+    "description": "cohorts_all_activity_retrieve GET /api/projects/{project_id}/cohorts/activity/",
+    "context": "GET /api/projects/{project_id}/cohorts/activity/\ncohorts_all_activity_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "cohorts_calculation_history_retrieve",
+    "name": "cohorts_calculation_history_retrieve",
+    "description": "cohorts_calculation_history_retrieve GET /api/projects/{project_id}/cohorts/{id}/calculation_history/",
+    "context": "GET /api/projects/{project_id}/cohorts/{id}/calculation_history/\ncohorts_calculation_history_retrieve\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "cohorts_create",
+    "name": "cohorts_create",
+    "description": "cohorts_create POST /api/projects/{project_id}/cohorts/",
+    "context": "POST /api/projects/{project_id}/cohorts/\ncohorts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "cohorts_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/cohorts/{id}/",
+    "context": "DELETE /api/projects/{project_id}/cohorts/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "cohorts_list",
+    "name": "cohorts_list",
+    "description": "cohorts_list GET /api/projects/{project_id}/cohorts/",
+    "context": "GET /api/projects/{project_id}/cohorts/\ncohorts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: basic (query) — Return a basic payload that omits the `query`, `groups`, `last_error_message`, and `experiment_set` fields (`filters` is kept). Useful for pickers that only need id/name/count.; hide_behavioral_cohorts (query) — Set true to exclude behavioral (event-based) cohorts, which can't be used in feature flags or batch workflow audiences.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Optional. Match against cohort `name`. Returns exact (case-insensitive substring) matches only; if no exact match exists, returns similar (fuzzy trigram — typos, transpositions, prefix-as-you-type) matches instead. Each result's `search_match_type` is `exact` or `similar`. Results are ordered by relevance. When omitted, cohorts are ordered newest-first. Capped at 200 characters; longer queries return a 400 error."
+  },
+  {
+    "id": "cohorts_partial_update",
+    "name": "cohorts_partial_update",
+    "description": "cohorts_partial_update PATCH /api/projects/{project_id}/cohorts/{id}/",
+    "context": "PATCH /api/projects/{project_id}/cohorts/{id}/\ncohorts_partial_update\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "cohorts_persons_retrieve",
+    "name": "cohorts_persons_retrieve",
+    "description": "cohorts_persons_retrieve GET /api/projects/{project_id}/cohorts/{id}/persons/",
+    "context": "GET /api/projects/{project_id}/cohorts/{id}/persons/\ncohorts_persons_retrieve\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: format (query); limit (query) — Maximum number of persons to return per page (defaults to 100).; offset (query) — Number of persons to skip before starting to return results."
+  },
+  {
+    "id": "cohorts_remove_person_from_static_cohort_partial_update",
+    "name": "cohorts_remove_person_from_static_cohort_partial_update",
+    "description": "cohorts_remove_person_from_static_cohort_partial_update PATCH /api/projects/{project_id}/cohorts/{id}/remove_person_from_static_cohort/",
+    "context": "PATCH /api/projects/{project_id}/cohorts/{id}/remove_person_from_static_cohort/\ncohorts_remove_person_from_static_cohort_partial_update\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "cohorts_retrieve",
+    "name": "cohorts_retrieve",
+    "description": "cohorts_retrieve GET /api/projects/{project_id}/cohorts/{id}/",
+    "context": "GET /api/projects/{project_id}/cohorts/{id}/\ncohorts_retrieve\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "cohorts_update",
+    "name": "cohorts_update",
+    "description": "cohorts_update PUT /api/projects/{project_id}/cohorts/{id}/",
+    "context": "PUT /api/projects/{project_id}/cohorts/{id}/\ncohorts_update\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "cohorts_used_in_retrieve",
+    "name": "cohorts_used_in_retrieve",
+    "description": "cohorts_used_in_retrieve GET /api/projects/{project_id}/cohorts/{id}/used_in/",
+    "context": "GET /api/projects/{project_id}/cohorts/{id}/used_in/\ncohorts_used_in_retrieve\nRequired: id (path) — A unique integer value identifying this cohort.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

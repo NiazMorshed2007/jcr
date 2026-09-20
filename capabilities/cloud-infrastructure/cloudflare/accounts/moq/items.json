@@ -1,0 +1,50 @@
+[
+  {
+    "id": "moq-relays-create",
+    "name": "Create a relay",
+    "description": "Create a relay Provisions a new MoQ relay instance. POST /client/v4/accounts/{account_id}/moq/relays",
+    "context": "POST /client/v4/accounts/{account_id}/moq/relays\nProvisions a new MoQ relay instance. Auto-creates a publish+subscribe token and a subscribe-only token. Token values are included in the response (shown once). Config is always set to defaults (upstreams off) and cannot be supplied here — sending a non-empty `config` is rejected (21014); `null` or `{}` is accepted as absent. Use PUT to configure the relay after it exists.\nRequired: account_id (path) — Cloudflare account identifier.; body (body)"
+  },
+  {
+    "id": "moq-relays-delete",
+    "name": "Delete a relay",
+    "description": "Delete a relay Soft-deletes a MoQ relay. DELETE /client/v4/accounts/{account_id}/moq/relays/{relay_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/moq/relays/{relay_id}\nSoft-deletes a MoQ relay. The relay ID goes in the URL path — `DELETE /accounts/{account_id}/moq/relays/{relay_id}` — not the request body; there is no collection-level delete endpoint.\nRequired: account_id (path) — Cloudflare account identifier.; relay_id (path) — Relay unique identifier (32 hex characters)."
+  },
+  {
+    "id": "moq-relays-get",
+    "name": "Get a relay",
+    "description": "Get a relay Retrieves a single MoQ relay including config and status. GET /client/v4/accounts/{account_id}/moq/relays/{relay_id}",
+    "context": "GET /client/v4/accounts/{account_id}/moq/relays/{relay_id}\nRetrieves a single MoQ relay including config and status. Tokens are NOT included.\nRequired: account_id (path) — Cloudflare account identifier.; relay_id (path) — Relay unique identifier (32 hex characters)."
+  },
+  {
+    "id": "moq-relays-list",
+    "name": "List relays",
+    "description": "List relays Lists all MoQ relays for the account. GET /client/v4/accounts/{account_id}/moq/relays",
+    "context": "GET /client/v4/accounts/{account_id}/moq/relays\nLists all MoQ relays for the account. Returns only metadata. Config, status, and tokens are omitted. Results are cursor-paginated (keyset on the `created` timestamp). Use `created_before` / `created_after` with the `created` value of the first/last item in a page to fetch the adjacent page. `result_info` reports the page `count` and the `total` matching the cursor filters.\nRequired: account_id (path) — Cloudflare account identifier.\nOptional: created_before (query) — Cursor for pagination. Returns relays created strictly before this RFC 3339 timestamp (typically the `created` value of the first item on the current page, to fetch the previous page).; created_after (query) — Cursor for pagination. Returns relays created strictly after this RFC 3339 timestamp (typically the `created` value of the last item on the current page, to fetch the next page).; per_page (query) — Maximum number of relays to return per page. Values above the maximum are clamped to it rather than rejected.; asc (query) — Sort order by `created`. When true, results are returned oldest-first (ascending); otherwise newest-first (descending, the default)."
+  },
+  {
+    "id": "moq-relays-tokens-create",
+    "name": "Create a token",
+    "description": "Create a token Mints a new relay-scoped token and adds it to the relay's accepted-auth registry. POST /client/v4/accounts/{account_id}/moq/relays/{relay_id}/tokens",
+    "context": "POST /client/v4/accounts/{account_id}/moq/relays/{relay_id}/tokens\nMints a new relay-scoped token and adds it to the relay's accepted-auth registry. The token value (secret) is shown once in the response. A relay may hold up to 10 tokens; creating an 11th is rejected.\nRequired: account_id (path) — Cloudflare account identifier.; relay_id (path) — Relay unique identifier (32 hex characters).; body (body)"
+  },
+  {
+    "id": "moq-relays-tokens-delete",
+    "name": "Revoke a token",
+    "description": "Revoke a token Revokes a token by removing it from the set the relay accepts. DELETE /client/v4/accounts/{account_id}/moq/relays/{relay_id}/tokens/{jti}",
+    "context": "DELETE /client/v4/accounts/{account_id}/moq/relays/{relay_id}/tokens/{jti}\nRevokes a token by removing it from the set the relay accepts. Relays cache that set, so revocation takes effect within seconds rather than instantly, and connections already established with the token are not closed. Revoking an unknown token succeeds, so the call is idempotent.\nRequired: account_id (path) — Cloudflare account identifier.; relay_id (path) — Relay unique identifier (32 hex characters).; jti (path) — Token identifier (jti — 32 hex characters)."
+  },
+  {
+    "id": "moq-relays-tokens-list",
+    "name": "List tokens",
+    "description": "List tokens Returns metadata for every token the relay accepts. GET /client/v4/accounts/{account_id}/moq/relays/{relay_id}/tokens",
+    "context": "GET /client/v4/accounts/{account_id}/moq/relays/{relay_id}/tokens\nReturns metadata for every token the relay accepts. Secrets are never returned, so a token that has been lost cannot be recovered here. There is no expiry filter: compare each token's `expires` to the current time to tell which ones have lapsed.\nRequired: account_id (path) — Cloudflare account identifier.; relay_id (path) — Relay unique identifier (32 hex characters)."
+  },
+  {
+    "id": "moq-relays-update",
+    "name": "Update a relay",
+    "description": "Update a relay Updates a relay's name and/or configuration. PUT /client/v4/accounts/{account_id}/moq/relays/{relay_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/moq/relays/{relay_id}\nUpdates a relay's name and/or configuration. The relay ID goes in the URL path — `PUT /accounts/{account_id}/moq/relays/{relay_id}` — not the request body; there is no collection-level update endpoint. This is also the only way to set a relay's config (config cannot be set at create time). Partial updates: omitted fields are preserved; config sub-objects replace as whole objects when present.\nRequired: account_id (path) — Cloudflare account identifier.; relay_id (path) — Relay unique identifier (32 hex characters).; body (body)"
+  }
+]

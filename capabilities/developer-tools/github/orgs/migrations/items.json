@@ -1,0 +1,44 @@
+[
+  {
+    "id": "migrations%2Fdelete-archive-for-org",
+    "name": "Delete an organization migration archive",
+    "description": "Delete an organization migration archive Deletes a previous migration archive. DELETE /orgs/{org}/migrations/{migration_id}/archive",
+    "context": "DELETE /orgs/{org}/migrations/{migration_id}/archive\nDeletes a previous migration archive. Migration archives are automatically deleted after seven days.\nRequired: org (path) — The organization name. The name is not case sensitive.; migration_id (path) — The unique identifier of the migration."
+  },
+  {
+    "id": "migrations%2Fdownload-archive-for-org",
+    "name": "Download an organization migration archive",
+    "description": "Download an organization migration archive Fetches the URL to a migration archive. GET /orgs/{org}/migrations/{migration_id}/archive",
+    "context": "GET /orgs/{org}/migrations/{migration_id}/archive\nFetches the URL to a migration archive.\nRequired: org (path) — The organization name. The name is not case sensitive.; migration_id (path) — The unique identifier of the migration."
+  },
+  {
+    "id": "migrations%2Fget-status-for-org",
+    "name": "Get an organization migration status",
+    "description": "Get an organization migration status Fetches the status of a migration. GET /orgs/{org}/migrations/{migration_id}",
+    "context": "GET /orgs/{org}/migrations/{migration_id}\nFetches the status of a migration. The `state` of a migration can be one of the following values: * `pending`, which means the migration hasn't started yet. * `exporting`, which means the migration is in progress. * `exported`, which means the migration finished successfully. * `failed`, which means the migration failed.\nRequired: org (path) — The organization name. The name is not case sensitive.; migration_id (path) — The unique identifier of the migration.\nOptional: exclude (query) — Exclude attributes from the API response to improve performance"
+  },
+  {
+    "id": "migrations%2Flist-for-org",
+    "name": "List organization migrations",
+    "description": "List organization migrations Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API). GET /orgs/{org}/migrations",
+    "context": "GET /orgs/{org}/migrations\nLists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API). A list of `repositories` is only returned for export migrations.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; exclude (query) — Exclude attributes from the API response to improve performance"
+  },
+  {
+    "id": "migrations%2Flist-repos-for-org",
+    "name": "List repositories in an organization migration",
+    "description": "List repositories in an organization migration List all the repositories for this organization migration. GET /orgs/{org}/migrations/{migration_id}/repositories",
+    "context": "GET /orgs/{org}/migrations/{migration_id}/repositories\nList all the repositories for this organization migration.\nRequired: org (path) — The organization name. The name is not case sensitive.; migration_id (path) — The unique identifier of the migration.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "migrations%2Fstart-for-org",
+    "name": "Start an organization migration",
+    "description": "Start an organization migration Initiates the generation of a migration archive. POST /orgs/{org}/migrations",
+    "context": "POST /orgs/{org}/migrations\nInitiates the generation of a migration archive.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "migrations%2Funlock-repo-for-org",
+    "name": "Unlock an organization repository",
+    "description": "Unlock an organization repository Unlocks a repository that was locked for migration. DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
+    "context": "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock\nUnlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.\nRequired: org (path) — The organization name. The name is not case sensitive.; migration_id (path) — The unique identifier of the migration.; repo_name (path) — repo_name parameter"
+  }
+]

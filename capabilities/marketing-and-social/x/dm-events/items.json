@@ -1,0 +1,20 @@
+[
+  {
+    "id": "deleteDirectMessagesEvents",
+    "name": "Delete DM event",
+    "description": "Delete DM event Deletes a specific direct message event by its ID, if owned by the authenticated user. DELETE /2/dm_events/{event_id}",
+    "context": "DELETE /2/dm_events/{event_id}\nDeletes a specific direct message event by its ID, if owned by the authenticated user.\nRequired: event_id (path)"
+  },
+  {
+    "id": "getDirectMessagesEvents",
+    "name": "Get Direct Messages Events",
+    "description": "Get Direct Messages Events GET /2/dm_events",
+    "context": "GET /2/dm_events\nGet Direct Messages Events\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; event_types (query); dm_event.fields (query) — A comma separated list of DmEvent fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; post.fields (query) — A comma separated list of Post fields to display.; media.fields (query) — A comma separated list of Media fields to display."
+  },
+  {
+    "id": "getDirectMessagesEventsById",
+    "name": "Get Direct Messages Events by ID",
+    "description": "Get Direct Messages Events by ID GET /2/dm_events/{event_id}",
+    "context": "GET /2/dm_events/{event_id}\nGet Direct Messages Events by ID\nRequired: event_id (path)\nOptional: dm_event.fields (query) — A comma separated list of DmEvent fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; post.fields (query) — A comma separated list of Post fields to display.; media.fields (query) — A comma separated list of Media fields to display."
+  }
+]

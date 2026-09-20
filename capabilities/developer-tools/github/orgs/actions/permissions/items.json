@@ -1,0 +1,134 @@
+[
+  {
+    "id": "actions%2Fdisable-selected-repository-github-actions-organization",
+    "name": "Disable a selected repository for GitHub Actions in an organization",
+    "description": "Disable a selected repository for GitHub Actions in an organization Removes a repository from the list of selected repositories that are enabled for GitHub Actions in an organization. DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}\nRemoves a repository from the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).\" OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "actions%2Fdisable-selected-repository-self-hosted-runners-organization",
+    "name": "Remove a repository from the list of repositories allowed to use self-hosted runners in an organization",
+    "description": "Remove a repository from the list of repositories allowed to use self-hosted runners in an organization Removes a repository from the list of repositories that are allowed to use self-hosted runners in an organization. DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}\nRemoves a repository from the list of repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "actions%2Fenable-selected-repository-github-actions-organization",
+    "name": "Enable a selected repository for GitHub Actions in an organization",
+    "description": "Enable a selected repository for GitHub Actions in an organization Adds a repository to the list of selected repositories that are enabled for GitHub Actions in an organization. PUT /orgs/{org}/actions/permissions/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/actions/permissions/repositories/{repository_id}\nAdds a repository to the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).\" OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "actions%2Fenable-selected-repository-self-hosted-runners-organization",
+    "name": "Add a repository to the list of repositories allowed to use self-hosted runners in an organization",
+    "description": "Add a repository to the list of repositories allowed to use self-hosted runners in an organization Adds a repository to the list of repositories that are allowed to use self-hosted runners in an organization. PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}\nAdds a repository to the list of repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "actions%2Fget-allowed-actions-organization",
+    "name": "Get allowed actions and reusable workflows for an organization",
+    "description": "Get allowed actions and reusable workflows for an organization Gets the selected actions and reusable workflows that are allowed in an organization. GET /orgs/{org}/actions/permissions/selected-actions",
+    "context": "GET /orgs/{org}/actions/permissions/selected-actions\nGets the selected actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).\" OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-artifact-and-log-retention-settings-organization",
+    "name": "Get artifact and log retention settings for an organization",
+    "description": "Get artifact and log retention settings for an organization Gets artifact and log retention settings for an organization. GET /orgs/{org}/actions/permissions/artifact-and-log-retention",
+    "context": "GET /orgs/{org}/actions/permissions/artifact-and-log-retention\nGets artifact and log retention settings for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-fork-pr-contributor-approval-permissions-organization",
+    "name": "Get fork PR contributor approval permissions for an organization",
+    "description": "Get fork PR contributor approval permissions for an organization Gets the fork PR contributor approval policy for an organization. GET /orgs/{org}/actions/permissions/fork-pr-contributor-approval",
+    "context": "GET /orgs/{org}/actions/permissions/fork-pr-contributor-approval\nGets the fork PR contributor approval policy for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-github-actions-default-workflow-permissions-organization",
+    "name": "Get default workflow permissions for an organization",
+    "description": "Get default workflow permissions for an organization Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, as well as whether GitHub Actions can submit approving pull request reviews. GET /orgs/{org}/actions/permissions/workflow",
+    "context": "GET /orgs/{org}/actions/permissions/workflow\nGets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, as well as whether GitHub Actions can submit approving pull request reviews. For more information, see \"[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization).\" OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-github-actions-permissions-organization",
+    "name": "Get GitHub Actions permissions for an organization",
+    "description": "Get GitHub Actions permissions for an organization Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization. GET /orgs/{org}/actions/permissions",
+    "context": "GET /orgs/{org}/actions/permissions\nGets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-private-repo-fork-pr-workflows-settings-organization",
+    "name": "Get private repo fork PR workflow settings for an organization",
+    "description": "Get private repo fork PR workflow settings for an organization Gets the settings for whether workflows from fork pull requests can run on private repositories in an organization. GET /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos",
+    "context": "GET /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos\nGets the settings for whether workflows from fork pull requests can run on private repositories in an organization.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-self-hosted-runners-permissions-organization",
+    "name": "Get self-hosted runners settings for an organization",
+    "description": "Get self-hosted runners settings for an organization Gets the settings for self-hosted runners for an organization. GET /orgs/{org}/actions/permissions/self-hosted-runners",
+    "context": "GET /orgs/{org}/actions/permissions/self-hosted-runners\nGets the settings for self-hosted runners for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Flist-selected-repositories-enabled-github-actions-organization",
+    "name": "List selected repositories enabled for GitHub Actions in an organization",
+    "description": "List selected repositories enabled for GitHub Actions in an organization Lists the selected repositories that are enabled for GitHub Actions in an organization. GET /orgs/{org}/actions/permissions/repositories",
+    "context": "GET /orgs/{org}/actions/permissions/repositories\nLists the selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Flist-selected-repositories-self-hosted-runners-organization",
+    "name": "List repositories allowed to use self-hosted runners in an organization",
+    "description": "List repositories allowed to use self-hosted runners in an organization Lists repositories that are allowed to use self-hosted runners in an organization. GET /orgs/{org}/actions/permissions/self-hosted-runners/repositories",
+    "context": "GET /orgs/{org}/actions/permissions/self-hosted-runners/repositories\nLists repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "actions%2Fset-allowed-actions-organization",
+    "name": "Set allowed actions and reusable workflows for an organization",
+    "description": "Set allowed actions and reusable workflows for an organization Sets the actions and reusable workflows that are allowed in an organization. PUT /orgs/{org}/actions/permissions/selected-actions",
+    "context": "PUT /orgs/{org}/actions/permissions/selected-actions\nSets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "actions%2Fset-artifact-and-log-retention-settings-organization",
+    "name": "Set artifact and log retention settings for an organization",
+    "description": "Set artifact and log retention settings for an organization Sets artifact and log retention settings for an organization. PUT /orgs/{org}/actions/permissions/artifact-and-log-retention",
+    "context": "PUT /orgs/{org}/actions/permissions/artifact-and-log-retention\nSets artifact and log retention settings for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-fork-pr-contributor-approval-permissions-organization",
+    "name": "Set fork PR contributor approval permissions for an organization",
+    "description": "Set fork PR contributor approval permissions for an organization Sets the fork PR contributor approval policy for an organization. PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval",
+    "context": "PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval\nSets the fork PR contributor approval policy for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-github-actions-default-workflow-permissions-organization",
+    "name": "Set default workflow permissions for an organization",
+    "description": "Set default workflow permissions for an organization Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, and sets if GitHub Actions can submit approving pull request reviews. PUT /orgs/{org}/actions/permissions/workflow",
+    "context": "PUT /orgs/{org}/actions/permissions/workflow\nSets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, and sets if GitHub Actions can submit approving pull request reviews. For more information, see \"[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "actions%2Fset-github-actions-permissions-organization",
+    "name": "Set GitHub Actions permissions for an organization",
+    "description": "Set GitHub Actions permissions for an organization Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization. PUT /orgs/{org}/actions/permissions",
+    "context": "PUT /orgs/{org}/actions/permissions\nSets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-private-repo-fork-pr-workflows-settings-organization",
+    "name": "Set private repo fork PR workflow settings for an organization",
+    "description": "Set private repo fork PR workflow settings for an organization Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization. PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos",
+    "context": "PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos\nSets the settings for whether workflows from fork pull requests can run on private repositories in an organization.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-selected-repositories-enabled-github-actions-organization",
+    "name": "Set selected repositories enabled for GitHub Actions in an organization",
+    "description": "Set selected repositories enabled for GitHub Actions in an organization Replaces the list of selected repositories that are enabled for GitHub Actions in an organization. PUT /orgs/{org}/actions/permissions/repositories",
+    "context": "PUT /orgs/{org}/actions/permissions/repositories\nReplaces the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-selected-repositories-self-hosted-runners-organization",
+    "name": "Set repositories allowed to use self-hosted runners in an organization",
+    "description": "Set repositories allowed to use self-hosted runners in an organization Sets repositories that are allowed to use self-hosted runners in an organization. PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories",
+    "context": "PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories\nSets repositories that are allowed to use self-hosted runners in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-self-hosted-runners-permissions-organization",
+    "name": "Set self-hosted runners settings for an organization",
+    "description": "Set self-hosted runners settings for an organization Sets the settings for self-hosted runners for an organization. PUT /orgs/{org}/actions/permissions/self-hosted-runners",
+    "context": "PUT /orgs/{org}/actions/permissions/self-hosted-runners\nSets the settings for self-hosted runners for an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the \"Actions policies\" fine-grained permission to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  }
+]

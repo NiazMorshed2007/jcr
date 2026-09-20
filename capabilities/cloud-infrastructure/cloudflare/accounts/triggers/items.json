@@ -1,0 +1,26 @@
+[
+  {
+    "id": "wor-add-script-triggers",
+    "name": "Add script triggers",
+    "description": "Add script triggers Adds event trigger declarations without removing existing declarations owned by the script. PATCH /client/v4/accounts/{account_id}/triggers/{script_name}",
+    "context": "PATCH /client/v4/accounts/{account_id}/triggers/{script_name}\nAdds event trigger declarations without removing existing declarations owned by the script.\nRequired: script_name (path); account_id (path); body (body)"
+  },
+  {
+    "id": "wor-delete-script-triggers",
+    "name": "Delete script triggers",
+    "description": "Delete script triggers Deletes all event trigger declarations owned by a Worker script. DELETE /client/v4/accounts/{account_id}/triggers/{script_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/triggers/{script_name}\nDeletes all event trigger declarations owned by a Worker script.\nRequired: script_name (path); account_id (path)"
+  },
+  {
+    "id": "wor-get-script-triggers",
+    "name": "Get script triggers",
+    "description": "Get script triggers Returns the event trigger declarations owned by a Worker script. GET /client/v4/accounts/{account_id}/triggers/{script_name}",
+    "context": "GET /client/v4/accounts/{account_id}/triggers/{script_name}\nReturns the event trigger declarations owned by a Worker script.\nRequired: script_name (path); account_id (path)"
+  },
+  {
+    "id": "wor-replace-script-triggers",
+    "name": "Replace script triggers",
+    "description": "Replace script triggers Replaces all event trigger declarations owned by a Worker script. PUT /client/v4/accounts/{account_id}/triggers/{script_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/triggers/{script_name}\nReplaces all event trigger declarations owned by a Worker script.\nRequired: script_name (path); account_id (path); body (body)"
+  }
+]

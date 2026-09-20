@@ -1,0 +1,236 @@
+[
+  {
+    "id": "data_catalog_certifications_certify_create",
+    "name": "Mark the target as certified (prefer this source).",
+    "description": "Mark the target as certified (prefer this source). POST /api/projects/{project_id}/data_catalog/certifications/{id}/certify/",
+    "context": "POST /api/projects/{project_id}/data_catalog/certifications/{id}/certify/\nMark the target as certified (prefer this source).\nRequired: id (path) — A UUID string identifying this table certification.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_certifications_create",
+    "name": "Trust marks on warehouse tables and views",
+    "description": "Trust marks on warehouse tables and views Trust marks on warehouse tables and views. POST /api/projects/{project_id}/data_catalog/certifications/",
+    "context": "POST /api/projects/{project_id}/data_catalog/certifications/\nTrust marks on warehouse tables and views. Reads exclude soft-deleted targets.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_catalog_certifications_deprecate_create",
+    "name": "Mark the target as deprecated (avoid this source).",
+    "description": "Mark the target as deprecated (avoid this source). POST /api/projects/{project_id}/data_catalog/certifications/{id}/deprecate/",
+    "context": "POST /api/projects/{project_id}/data_catalog/certifications/{id}/deprecate/\nMark the target as deprecated (avoid this source).\nRequired: id (path) — A UUID string identifying this table certification.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_certifications_destroy",
+    "name": "Trust marks on warehouse tables and views",
+    "description": "Trust marks on warehouse tables and views Trust marks on warehouse tables and views. DELETE /api/projects/{project_id}/data_catalog/certifications/{id}/",
+    "context": "DELETE /api/projects/{project_id}/data_catalog/certifications/{id}/\nTrust marks on warehouse tables and views. Reads exclude soft-deleted targets.\nRequired: id (path) — A UUID string identifying this table certification.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_certifications_list",
+    "name": "Trust marks on warehouse tables and views",
+    "description": "Trust marks on warehouse tables and views Trust marks on warehouse tables and views. GET /api/projects/{project_id}/data_catalog/certifications/",
+    "context": "GET /api/projects/{project_id}/data_catalog/certifications/\nTrust marks on warehouse tables and views. Reads exclude soft-deleted targets.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_catalog_certifications_retrieve",
+    "name": "Trust marks on warehouse tables and views",
+    "description": "Trust marks on warehouse tables and views Trust marks on warehouse tables and views. GET /api/projects/{project_id}/data_catalog/certifications/{id}/",
+    "context": "GET /api/projects/{project_id}/data_catalog/certifications/{id}/\nTrust marks on warehouse tables and views. Reads exclude soft-deleted targets.\nRequired: id (path) — A UUID string identifying this table certification.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_approve_create",
+    "name": "Bless a metric as canonical",
+    "description": "Bless a metric as canonical Bless a metric as canonical. POST /api/projects/{project_id}/data_catalog/metrics/{name}/approve/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/{name}/approve/\nBless a metric as canonical. Returns 409 while the metric is drifted from its insight.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_bulk_approve_create",
+    "name": "Approve many metrics as canonical",
+    "description": "Approve many metrics as canonical Approve many metrics as canonical. POST /api/projects/{project_id}/data_catalog/metrics/bulk_approve/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/bulk_approve/\nApprove many metrics as canonical. Unknown, already-approved, and drifted metrics are skipped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_bulk_delete_create",
+    "name": "Delete many metrics, freeing their names for reuse",
+    "description": "Delete many metrics, freeing their names for reuse Delete many metrics, freeing their names for reuse. POST /api/projects/{project_id}/data_catalog/metrics/bulk_delete/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/bulk_delete/\nDelete many metrics, freeing their names for reuse. Unknown metrics are skipped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_check_suite_runs_check_runs_list",
+    "name": "Every check execution in this suite run.",
+    "description": "Every check execution in this suite run. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/check_suite_runs/{id}/check_runs/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/check_suite_runs/{id}/check_runs/\nEvery check execution in this suite run.\nRequired: id (path) — A UUID string identifying this data quality suite run.; metric_id (path) — Id of the metric whose suite runs these are.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_check_suite_runs_list",
+    "name": "Read-only reports for this subject's check-suite executions.",
+    "description": "Read-only reports for this subject's check-suite executions. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/check_suite_runs/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/check_suite_runs/\nRead-only reports for this subject's check-suite executions.\nRequired: metric_id (path) — Id of the metric whose suite runs these are.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_catalog_metrics_check_suite_runs_retrieve",
+    "name": "Read-only reports for this subject's check-suite executions.",
+    "description": "Read-only reports for this subject's check-suite executions. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/check_suite_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/check_suite_runs/{id}/\nRead-only reports for this subject's check-suite executions.\nRequired: id (path) — A UUID string identifying this data quality suite run.; metric_id (path) — Id of the metric whose suite runs these are.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_check_types_list",
+    "name": "The check types this project can author, with the JSON schema of each type's config.",
+    "description": "The check types this project can author, with the JSON schema of each type's config. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/check_types/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/check_types/\nThe check types this project can author, with the JSON schema of each type's config.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_create",
+    "name": "Create a check on this table or view, or refine the one already carrying the same fingerprint",
+    "description": "Create a check on this table or view, or refine the one already carrying the same fingerprint Create a check on this table or view, or refine the one already carrying the same fingerprint. POST /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/\nCreate a check on this table or view, or refine the one already carrying the same fingerprint. Re-creating a semantically identical check returns 200 and the existing row, never a duplicate.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_checks_destroy",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. DELETE /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/",
+    "context": "DELETE /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: id (path) — A UUID string identifying this data quality check.; metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_health_retrieve",
+    "name": "Health rollup for this table or view, from the denormalized status of its checks.",
+    "description": "Health rollup for this table or view, from the denormalized status of its checks. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/health/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/health/\nHealth rollup for this table or view, from the denormalized status of its checks.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_list",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_catalog_metrics_checks_output_schema_retrieve",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/output_schema/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/output_schema/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_partial_update",
+    "name": "Edit this check in place, including what it asserts (check_type, column_name, config)",
+    "description": "Edit this check in place, including what it asserts (check_type, column_name, config) Edit this check in place, including what it asserts (check_type, column_name, config). PATCH /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/",
+    "context": "PATCH /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/\nEdit this check in place, including what it asserts (check_type, column_name, config). The table or view it audits is fixed, and the check keeps its id, run history, latest status, and latest run time. A definition or name already held by another active check comes back as a field error, with nothing written.\nRequired: id (path) — A UUID string identifying this data quality check.; metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_checks_retrieve",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: id (path) — A UUID string identifying this data quality check.; metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_run_all_create",
+    "name": "Run every enabled check on this table or view",
+    "description": "Run every enabled check on this table or view Run every enabled check on this table or view. POST /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/run_all/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/run_all/\nRun every enabled check on this table or view. Returns the suite run to poll.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_run_create",
+    "name": "Run this check now",
+    "description": "Run this check now Run this check now. POST /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/run/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/run/\nRun this check now. Returns the suite run to poll for the report.\nRequired: id (path) — A UUID string identifying this data quality check.; metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_runs_list",
+    "name": "Recent run history for this check, newest first.",
+    "description": "Recent run history for this check, newest first. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/runs/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/runs/\nRecent run history for this check, newest first.\nRequired: id (path) — A UUID string identifying this data quality check.; metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_schedule_partial_update",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. PATCH /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/schedule/",
+    "context": "PATCH /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/schedule/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_checks_schedule_retrieve",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/schedule/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/schedule/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_checks_update",
+    "name": "Edit this check in place, including what it asserts (check_type, column_name, config)",
+    "description": "Edit this check in place, including what it asserts (check_type, column_name, config) Edit this check in place, including what it asserts (check_type, column_name, config). PUT /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/",
+    "context": "PUT /api/projects/{project_id}/data_catalog/metrics/{metric_id}/checks/{id}/\nEdit this check in place, including what it asserts (check_type, column_name, config). The table or view it audits is fixed, and the check keeps its id, run history, latest status, and latest run time. A definition or name already held by another active check comes back as a field error, with nothing written.\nRequired: id (path) — A UUID string identifying this data quality check.; metric_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_create",
+    "name": "Create a metric, or refine the one already holding this name for the team.",
+    "description": "Create a metric, or refine the one already holding this name for the team. POST /api/projects/{project_id}/data_catalog/metrics/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/\nCreate a metric, or refine the one already holding this name for the team.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_destroy",
+    "name": "CRUD for catalog metrics, addressed by their ``name`` (e.g",
+    "description": "CRUD for catalog metrics, addressed by their ``name`` (e.g CRUD for catalog metrics, addressed by their ``name`` (e.g. DELETE /api/projects/{project_id}/data_catalog/metrics/{name}/",
+    "context": "DELETE /api/projects/{project_id}/data_catalog/metrics/{name}/\nCRUD for catalog metrics, addressed by their ``name`` (e.g. /metrics/mrr/).\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_list",
+    "name": "CRUD for catalog metrics, addressed by their ``name`` (e.g",
+    "description": "CRUD for catalog metrics, addressed by their ``name`` (e.g CRUD for catalog metrics, addressed by their ``name`` (e.g. GET /api/projects/{project_id}/data_catalog/metrics/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/\nCRUD for catalog metrics, addressed by their ``name`` (e.g. /metrics/mrr/).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "data_catalog_metrics_partial_update",
+    "name": "CRUD for catalog metrics, addressed by their ``name`` (e.g",
+    "description": "CRUD for catalog metrics, addressed by their ``name`` (e.g CRUD for catalog metrics, addressed by their ``name`` (e.g. PATCH /api/projects/{project_id}/data_catalog/metrics/{name}/",
+    "context": "PATCH /api/projects/{project_id}/data_catalog/metrics/{name}/\nCRUD for catalog metrics, addressed by their ``name`` (e.g. /metrics/mrr/).\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_refresh_from_insight_create",
+    "name": "Re-snapshot the linked insight's current query into the definition.",
+    "description": "Re-snapshot the linked insight's current query into the definition. POST /api/projects/{project_id}/data_catalog/metrics/{name}/refresh_from_insight/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/{name}/refresh_from_insight/\nRe-snapshot the linked insight's current query into the definition.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_retrieve",
+    "name": "CRUD for catalog metrics, addressed by their ``name`` (e.g",
+    "description": "CRUD for catalog metrics, addressed by their ``name`` (e.g CRUD for catalog metrics, addressed by their ``name`` (e.g. GET /api/projects/{project_id}/data_catalog/metrics/{name}/",
+    "context": "GET /api/projects/{project_id}/data_catalog/metrics/{name}/\nCRUD for catalog metrics, addressed by their ``name`` (e.g. /metrics/mrr/).\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_metrics_run_create",
+    "name": "Execute the metric's definition and return the normalized result envelope.",
+    "description": "Execute the metric's definition and return the normalized result envelope. POST /api/projects/{project_id}/data_catalog/metrics/{name}/run/",
+    "context": "POST /api/projects/{project_id}/data_catalog/metrics/{name}/run/\nExecute the metric's definition and return the normalized result envelope.\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: refresh (query) — Cache/execution behavior, same semantics as /query/. Omit to serve a fresh cache hit and calculate blocking when stale. * `blocking` - blocking * `async` - async * `lazy_async` - lazy_async * `force_blocking` - force_blocking * `force_async` - force_async * `force_cache` - force_cache; body (body)"
+  },
+  {
+    "id": "data_catalog_metrics_update",
+    "name": "CRUD for catalog metrics, addressed by their ``name`` (e.g",
+    "description": "CRUD for catalog metrics, addressed by their ``name`` (e.g CRUD for catalog metrics, addressed by their ``name`` (e.g. PUT /api/projects/{project_id}/data_catalog/metrics/{name}/",
+    "context": "PUT /api/projects/{project_id}/data_catalog/metrics/{name}/\nCRUD for catalog metrics, addressed by their ``name`` (e.g. /metrics/mrr/).\nRequired: name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_relationship_proposals_accept_create",
+    "name": "Promote the proposal to a real warehouse join after re-validating and probing it.",
+    "description": "Promote the proposal to a real warehouse join after re-validating and probing it. POST /api/projects/{project_id}/data_catalog/relationship_proposals/{id}/accept/",
+    "context": "POST /api/projects/{project_id}/data_catalog/relationship_proposals/{id}/accept/\nPromote the proposal to a real warehouse join after re-validating and probing it.\nRequired: id (path) — A UUID string identifying this relationship proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "data_catalog_relationship_proposals_create",
+    "name": "Reviewed join facts",
+    "description": "Reviewed join facts Reviewed join facts. POST /api/projects/{project_id}/data_catalog/relationship_proposals/",
+    "context": "POST /api/projects/{project_id}/data_catalog/relationship_proposals/\nReviewed join facts. Accepting one promotes it to a real DataWarehouseJoin; rejections persist.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "data_catalog_relationship_proposals_list",
+    "name": "Reviewed join facts",
+    "description": "Reviewed join facts Reviewed join facts. GET /api/projects/{project_id}/data_catalog/relationship_proposals/",
+    "context": "GET /api/projects/{project_id}/data_catalog/relationship_proposals/\nReviewed join facts. Accepting one promotes it to a real DataWarehouseJoin; rejections persist.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; status (query) — Filter by proposed/accepted/rejected."
+  },
+  {
+    "id": "data_catalog_relationship_proposals_reject_create",
+    "name": "Reject the proposal",
+    "description": "Reject the proposal Reject the proposal. POST /api/projects/{project_id}/data_catalog/relationship_proposals/{id}/reject/",
+    "context": "POST /api/projects/{project_id}/data_catalog/relationship_proposals/{id}/reject/\nReject the proposal. Persists forever so the pair is never re-proposed.\nRequired: id (path) — A UUID string identifying this relationship proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "data_catalog_relationship_proposals_retrieve",
+    "name": "Reviewed join facts",
+    "description": "Reviewed join facts Reviewed join facts. GET /api/projects/{project_id}/data_catalog/relationship_proposals/{id}/",
+    "context": "GET /api/projects/{project_id}/data_catalog/relationship_proposals/{id}/\nReviewed join facts. Accepting one promotes it to a real DataWarehouseJoin; rejections persist.\nRequired: id (path) — A UUID string identifying this relationship proposal.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "dls-account-regional-hostnames-list-regions",
+    "name": "List Regions",
+    "description": "List Regions List all Regional Services regions available for use by this account. GET /client/v4/accounts/{account_id}/addressing/regional_hostnames/regions",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/regional_hostnames/regions\nList all Regional Services regions available for use by this account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-add-a-zone-membership-to-an-address-map",
+    "name": "Add a zone membership to an Address Map",
+    "description": "Add a zone membership to an Address Map Add a zone as a member of a particular address map. PUT /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/zones/{zone_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/zones/{zone_id}\nAdd a zone as a member of a particular address map.\nRequired: zone_id (path); address_map_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-add-an-account-membership-to-an-address-map",
+    "name": "Add an account membership to an Address Map",
+    "description": "Add an account membership to an Address Map Add an account as a member of a particular address map. PUT /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/accounts/{member_account_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/accounts/{member_account_id}\nAdd an account as a member of a particular address map.\nRequired: account_id (path); address_map_id (path); member_account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-add-an-ip-to-an-address-map",
+    "name": "Add an IP to an Address Map",
+    "description": "Add an IP to an Address Map Add an IP from a prefix owned by the account to a particular address map. PUT /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/ips/{ip_address}",
+    "context": "PUT /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/ips/{ip_address}\nAdd an IP from a prefix owned by the account to a particular address map.\nRequired: ip_address (path); address_map_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-address-map-details",
+    "name": "Address Map Details",
+    "description": "Address Map Details Show a particular address map owned by the account. GET /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}\nShow a particular address map owned by the account.\nRequired: address_map_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-create-address-map",
+    "name": "Create Address Map",
+    "description": "Create Address Map Create a new address map under the account. POST /client/v4/accounts/{account_id}/addressing/address_maps",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/address_maps\nCreate a new address map under the account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-address-maps-delete-address-map",
+    "name": "Delete Address Map",
+    "description": "Delete Address Map Delete a particular address map owned by the account. DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}\nDelete a particular address map owned by the account. An Address Map must be disabled before it can be deleted.\nRequired: address_map_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-list-address-maps",
+    "name": "List Address Maps",
+    "description": "List Address Maps List all address maps owned by the account. GET /client/v4/accounts/{account_id}/addressing/address_maps",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/address_maps\nList all address maps owned by the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-remove-a-zone-membership-from-an-address-map",
+    "name": "Remove a zone membership from an Address Map",
+    "description": "Remove a zone membership from an Address Map Remove a zone as a member of a particular address map. DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/zones/{zone_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/zones/{zone_id}\nRemove a zone as a member of a particular address map.\nRequired: zone_id (path); address_map_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-remove-an-account-membership-from-an-address-map",
+    "name": "Remove an account membership from an Address Map",
+    "description": "Remove an account membership from an Address Map Remove an account as a member of a particular address map. DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/accounts/{member_account_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/accounts/{member_account_id}\nRemove an account as a member of a particular address map.\nRequired: account_id (path); address_map_id (path); member_account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-remove-an-ip-from-an-address-map",
+    "name": "Remove an IP from an Address Map",
+    "description": "Remove an IP from an Address Map Remove an IP from a particular address map. DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/ips/{ip_address}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}/ips/{ip_address}\nRemove an IP from a particular address map.\nRequired: ip_address (path); address_map_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-address-maps-update-address-map",
+    "name": "Update Address Map",
+    "description": "Update Address Map Modify properties of an address map owned by the account. PATCH /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/addressing/address_maps/{address_map_id}\nModify properties of an address map owned by the account.\nRequired: address_map_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-dynamic-advertisement-get-advertisement-status",
+    "name": "Get Advertisement Status",
+    "description": "Get Advertisement Status View the current advertisement state for a prefix. GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/status",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/status\nView the current advertisement state for a prefix. **Deprecated:** Prefer the BGP Prefixes endpoints, which additionally allow for advertising and withdrawing subnets of an IP prefix.\nRequired: prefix_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-dynamic-advertisement-update-prefix-dynamic-advertisement-status",
+    "name": "Update Prefix Dynamic Advertisement Status",
+    "description": "Update Prefix Dynamic Advertisement Status Advertise or withdraw the BGP route for a prefix. PATCH /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/status",
+    "context": "PATCH /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/status\nAdvertise or withdraw the BGP route for a prefix. **Deprecated:** Prefer the BGP Prefixes endpoints, which additionally allow for advertising and withdrawing subnets of an IP prefix.\nRequired: prefix_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-list-leases",
+    "name": "List Leases",
+    "description": "List Leases List all leases owned by the account. GET /client/v4/accounts/{account_id}/addressing/leases",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/leases\nList all leases owned by the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefix-delegation-create-prefix-delegation",
+    "name": "Create Prefix Delegation",
+    "description": "Create Prefix Delegation Create a new account delegation for a given IP prefix. POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations\nCreate a new account delegation for a given IP prefix.\nRequired: prefix_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-prefix-delegation-delete-prefix-delegation",
+    "name": "Delete Prefix Delegation",
+    "description": "Delete Prefix Delegation Delete an account delegation for a given IP prefix. DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations/{delegation_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations/{delegation_id}\nDelete an account delegation for a given IP prefix.\nRequired: delegation_id (path); prefix_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefix-delegation-list-prefix-delegations",
+    "name": "List Prefix Delegations",
+    "description": "List Prefix Delegations List all delegations for a given account IP prefix. GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/delegations\nList all delegations for a given account IP prefix.\nRequired: prefix_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-add-prefix",
+    "name": "Add Prefix",
+    "description": "Add Prefix Add a new prefix under the account. POST /client/v4/accounts/{account_id}/addressing/prefixes",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/prefixes\nAdd a new prefix under the account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-prefixes-create-bgp-prefix",
+    "name": "Create BGP Prefix",
+    "description": "Create BGP Prefix Create a BGP prefix, controlling the BGP advertisement status of a specific subnet. POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes\nCreate a BGP prefix, controlling the BGP advertisement status of a specific subnet. When created, BGP prefixes are initially withdrawn, and can be advertised with the Update BGP Prefix API.\nRequired: account_id (path); prefix_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-prefixes-delete-bgp-prefix",
+    "name": "Delete BGP Prefix",
+    "description": "Delete BGP Prefix Delete a BGP Prefix associated with the specified IP Prefix. DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}\nDelete a BGP Prefix associated with the specified IP Prefix. A BGP Prefix must be withdrawn before it can be deleted.\nRequired: account_id (path); prefix_id (path); bgp_prefix_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-delete-prefix",
+    "name": "Delete Prefix",
+    "description": "Delete Prefix Delete an unapproved prefix owned by the account. DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}\nDelete an unapproved prefix owned by the account.\nRequired: prefix_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-download-loa-document",
+    "name": "Download LOA Document",
+    "description": "Download LOA Document Download specified LOA document under the account. GET /client/v4/accounts/{account_id}/addressing/loa_documents/{loa_document_id}/download",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/loa_documents/{loa_document_id}/download\nDownload specified LOA document under the account.\nRequired: loa_document_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-fetch-bgp-prefix",
+    "name": "Fetch BGP Prefix",
+    "description": "Fetch BGP Prefix Retrieve a single BGP Prefix according to its identifier GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}\nRetrieve a single BGP Prefix according to its identifier\nRequired: account_id (path); prefix_id (path); bgp_prefix_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-list-bgp-prefixes",
+    "name": "List BGP Prefixes",
+    "description": "List BGP Prefixes List all BGP Prefixes within the specified IP Prefix. GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes\nList all BGP Prefixes within the specified IP Prefix. BGP Prefixes are used to control which specific subnets are advertised to the Internet. It is possible to advertise subnets more specific than an IP Prefix by creating more specific BGP Prefixes.\nRequired: account_id (path); prefix_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-list-prefixes",
+    "name": "List Prefixes",
+    "description": "List Prefixes List all prefixes owned by the account. GET /client/v4/accounts/{account_id}/addressing/prefixes",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes\nList all prefixes owned by the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-prefix-details",
+    "name": "Prefix Details",
+    "description": "Prefix Details List a particular prefix owned by the account. GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}\nList a particular prefix owned by the account.\nRequired: prefix_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-prefixes-update-bgp-prefix",
+    "name": "Update BGP Prefix",
+    "description": "Update BGP Prefix Update the properties of a BGP Prefix, such as the on demand advertisement status (advertised or withdrawn). PATCH /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}\nUpdate the properties of a BGP Prefix, such as the on demand advertisement status (advertised or withdrawn).\nRequired: account_id (path); prefix_id (path); bgp_prefix_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-prefixes-update-prefix-description",
+    "name": "Update Prefix Description",
+    "description": "Update Prefix Description Modify the description for a prefix owned by the account. PATCH /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}\nModify the description for a prefix owned by the account.\nRequired: prefix_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-prefixes-upload-loa-document",
+    "name": "Upload LOA Document",
+    "description": "Upload LOA Document Submit LOA document (pdf format) under the account. POST /client/v4/accounts/{account_id}/addressing/loa_documents",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/loa_documents\nSubmit LOA document (pdf format) under the account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "ip-address-management-prefixes-validate-prefix",
+    "name": "Validate Prefix",
+    "description": "Validate Prefix Triggers a new prefix validation. POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/validate",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/validate\nTriggers a new prefix validation. The checks are run asynchronously and include IRR, RPKI, and prefix ownership.\nRequired: prefix_id (path); account_id (path)"
+  },
+  {
+    "id": "ip-address-management-service-bindings-create-service-binding",
+    "name": "Create Service Binding",
+    "description": "Create Service Binding Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare's network. POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings",
+    "context": "POST /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings\nCreates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare's network. **NOTE:** The first Service Binding created for an IP Prefix must exactly match the IP Prefix's CIDR. Subsequent Service Bindings may be created with a more-specific CIDR. Refer to the [Service Bindings Documentation](https://developers.cloudflare.com/byoip/service-bindings/) for compatibility details.\nRequired: account_id (path); prefix_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "ip-address-management-service-bindings-delete-service-binding",
+    "name": "Delete Service Binding",
+    "description": "Delete Service Binding Delete a Service Binding DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}\nDelete a Service Binding\nRequired: account_id (path); prefix_id (path); binding_id (path)"
+  },
+  {
+    "id": "ip-address-management-service-bindings-get-service-binding",
+    "name": "Get Service Binding",
+    "description": "Get Service Binding Fetch a single Service Binding GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings/{binding_id}\nFetch a single Service Binding\nRequired: account_id (path); prefix_id (path); binding_id (path)"
+  },
+  {
+    "id": "ip-address-management-service-bindings-list-service-bindings",
+    "name": "List Service Bindings",
+    "description": "List Service Bindings List the Cloudflare services this prefix is currently bound to. GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/prefixes/{prefix_id}/bindings\nList the Cloudflare services this prefix is currently bound to. Traffic sent to an address within an IP prefix will be routed to the Cloudflare service of the most-specific Service Binding matching the address. **Example:** binding `192.0.2.0/24` to Cloudflare Magic Transit and `192.0.2.1/32` to the Cloudflare CDN would route traffic for `192.0.2.1` to the CDN, and traffic for all other IPs in the prefix to Cloudflare Magic Transit.\nRequired: account_id (path); prefix_id (path)"
+  },
+  {
+    "id": "ip-address-management-service-bindings-list-services",
+    "name": "List Services",
+    "description": "List Services Bring-Your-Own IP (BYOIP) prefixes onboarded to Cloudflare must be bound to a service running on the Cloudflare network to enable a Cloudflare product on the IP addresses. GET /client/v4/accounts/{account_id}/addressing/services",
+    "context": "GET /client/v4/accounts/{account_id}/addressing/services\nBring-Your-Own IP (BYOIP) prefixes onboarded to Cloudflare must be bound to a service running on the Cloudflare network to enable a Cloudflare product on the IP addresses. This endpoint can be used as a reference of available services on the Cloudflare network, and their service IDs.\nRequired: account_id (path)"
+  }
+]

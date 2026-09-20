@@ -1,0 +1,74 @@
+[
+  {
+    "id": "review_hog_blind_spots_list",
+    "name": "List blind-spots skills and which one is active",
+    "description": "List blind-spots skills and which one is active List the `review-hog-blind-spots-*` skills visible to the requesting user — the canonical skill plus the customs they authored — flagging the one active for them. GET /api/projects/{project_id}/review_hog/blind_spots/",
+    "context": "GET /api/projects/{project_id}/review_hog/blind_spots/\nList the `review-hog-blind-spots-*` skills visible to the requesting user — the canonical skill plus the customs they authored — flagging the one active for them. The canonical skill is auto-seeded active on the first read; a custom skill the user has not selected shows as inactive.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "review_hog_blind_spots_partial_update",
+    "name": "Select the active blind-spots skill",
+    "description": "Select the active blind-spots skill Make a `review-hog-blind-spots-*` skill the single sweep that runs on the requesting user's PR reviews, switching the user's other blind-spots skills off in the same call. PATCH /api/projects/{project_id}/review_hog/blind_spots/{skill_name}/",
+    "context": "PATCH /api/projects/{project_id}/review_hog/blind_spots/{skill_name}/\nMake a `review-hog-blind-spots-*` skill the single sweep that runs on the requesting user's PR reviews, switching the user's other blind-spots skills off in the same call. Only skills visible to the user — the canonical plus the customs they authored — can be selected; anything else 404s. Upserts the per-user config row, so selecting a freshly authored custom skill works in one call.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "review_hog_perspectives_list",
+    "name": "List review perspectives and their enablement",
+    "description": "List review perspectives and their enablement List the `review-hog-perspective-*` skills visible to the requesting user — the canonical perspectives plus the customs they authored — joined with their enable state. GET /api/projects/{project_id}/review_hog/perspectives/",
+    "context": "GET /api/projects/{project_id}/review_hog/perspectives/\nList the `review-hog-perspective-*` skills visible to the requesting user — the canonical perspectives plus the customs they authored — joined with their enable state. The 3 canonical perspectives are auto-seeded enabled on the first read; a custom perspective the user has not switched on shows as disabled.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "review_hog_perspectives_partial_update",
+    "name": "Enable or disable a review perspective",
+    "description": "Enable or disable a review perspective Toggle whether a `review-hog-perspective-*` skill runs on the requesting user's PR reviews. PATCH /api/projects/{project_id}/review_hog/perspectives/{skill_name}/",
+    "context": "PATCH /api/projects/{project_id}/review_hog/perspectives/{skill_name}/\nToggle whether a `review-hog-perspective-*` skill runs on the requesting user's PR reviews. Only skills visible to the user — the canonicals plus the customs they authored — can be toggled; anything else 404s. Upserts the per-user config row, so enabling a freshly authored custom perspective works in one call. Rejected if it would leave the user with no enabled perspective.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "review_hog_resolution_list",
+    "name": "List resolution criteria and which one is active",
+    "description": "List resolution criteria and which one is active List the `review-hog-resolution-*` skills visible to the requesting user — the canonical criteria plus the customs they authored — flagging the one active for them. GET /api/projects/{project_id}/review_hog/resolution/",
+    "context": "GET /api/projects/{project_id}/review_hog/resolution/\nList the `review-hog-resolution-*` skills visible to the requesting user — the canonical criteria plus the customs they authored — flagging the one active for them. The canonical skill is auto-seeded active on the first read; a custom skill the user has not selected shows as inactive.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "review_hog_resolution_partial_update",
+    "name": "Select the active resolution criteria",
+    "description": "Select the active resolution criteria Make a `review-hog-resolution-*` skill the single criteria the resolution stage applies on the requesting user's PRs, switching the user's other resolution skills off in the same call. PATCH /api/projects/{project_id}/review_hog/resolution/{skill_name}/",
+    "context": "PATCH /api/projects/{project_id}/review_hog/resolution/{skill_name}/\nMake a `review-hog-resolution-*` skill the single criteria the resolution stage applies on the requesting user's PRs, switching the user's other resolution skills off in the same call. Only skills visible to the user — the canonical plus the customs they authored — can be selected; anything else 404s. Upserts the per-user config row, so selecting a freshly authored custom skill works in one call.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "review_hog_reviews_list",
+    "name": "List recent reviews",
+    "description": "List recent reviews Recent ReviewHog reviews on this project: actively running reviews first (with the in-flight turn's stage), then the most recent completed ones — at most `limit` rows (default 5), plus `has_more` for whether a larger `limit` would reveal more. GET /api/projects/{project_id}/review_hog/reviews/",
+    "context": "GET /api/projects/{project_id}/review_hog/reviews/\nRecent ReviewHog reviews on this project: actively running reviews first (with the in-flight turn's stage), then the most recent completed ones — at most `limit` rows (default 5), plus `has_more` for whether a larger `limit` would reveal more. By default only the requesting user's reviews; `scope=everyone` lists every review on the project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum rows to return. The list grows this instead of paging by offset — in-progress rows reorder the list between refreshes, so offset pages would shift under the reader.; scope (query) — Whose reviews to list: `mine` (the default) for reviews the requesting user ran plus reviews of pull requests they authored (matched via their linked GitHub login), `everyone` for every review on this project. * `mine` - mine * `everyone` - everyone"
+  },
+  {
+    "id": "review_hog_reviews_perspective_stats_retrieve",
+    "name": "Perspective effectiveness stats",
+    "description": "Perspective effectiveness stats How many findings each review skill (perspective or blind-spot sweep) raised across the recent completed reviews in scope — the requesting user's by default, every review on this project with `scope=everyone` — and how many of those the validator kept vs dismissed. GET /api/projects/{pr…",
+    "context": "GET /api/projects/{project_id}/review_hog/reviews/perspective_stats/\nHow many findings each review skill (perspective or blind-spot sweep) raised across the recent completed reviews in scope — the requesting user's by default, every review on this project with `scope=everyone` — and how many of those the validator kept vs dismissed.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: scope (query) — Whose reviews to aggregate: `mine` (the default) for reviews the requesting user ran plus reviews of pull requests they authored (matched via their linked GitHub login), `everyone` for every review on this project. * `mine` - mine * `everyone` - everyone"
+  },
+  {
+    "id": "review_hog_reviews_retrieve",
+    "name": "Retrieve one review's detail",
+    "description": "Retrieve one review's detail One completed ReviewHog review on this project, with the latest turn's validated findings, the findings the validator dismissed (and why), and the review body published to GitHub. GET /api/projects/{project_id}/review_hog/reviews/{id}/",
+    "context": "GET /api/projects/{project_id}/review_hog/reviews/{id}/\nOne completed ReviewHog review on this project, with the latest turn's validated findings, the findings the validator dismissed (and why), and the review body published to GitHub. Project-wide, so reviews listed under `scope=everyone` can be opened too.\nRequired: id (path) — A UUID string identifying this review report.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "review_hog_reviews_trigger_create",
+    "name": "Start a review of a pull request",
+    "description": "Start a review of a pull request Start a ReviewHog review of any pull request the project's GitHub App installation can access, and publish it back to the PR. POST /api/projects/{project_id}/review_hog/reviews/trigger/",
+    "context": "POST /api/projects/{project_id}/review_hog/reviews/trigger/\nStart a ReviewHog review of any pull request the project's GitHub App installation can access, and publish it back to the PR. The requesting user is the review's acting user: their enabled perspectives, blind-spot check, validator, urgency threshold, and resolution criteria drive the run, and it appears under their recent reviews. `run_mode` picks the variant: a review (which chains the resolution stage per the user's resolve_comments setting), a review without resolving, resolution only, or a lower-cost Flash review that never resolves comments. Nonexistent, closed, and fork PRs are rejected synchronously; a PR whose current commit already has a published review returns 'already_reviewed' without starting a run (resolve_only skips that check — settling threads on a reviewed head is its whole point), and triggering a PR whose run is currently in flight joins that run. Otherwise non-blocking: returns the Temporal workflow id immediately while the run executes in the worker.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "review_hog_validators_list",
+    "name": "List review validators and which one is active",
+    "description": "List review validators and which one is active List the `review-hog-validation-*` skills visible to the requesting user — the canonical validator plus the customs they authored — flagging the one active for them. GET /api/projects/{project_id}/review_hog/validators/",
+    "context": "GET /api/projects/{project_id}/review_hog/validators/\nList the `review-hog-validation-*` skills visible to the requesting user — the canonical validator plus the customs they authored — flagging the one active for them. The canonical validator is auto-seeded active on the first read; a custom validator the user has not selected shows as inactive.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "review_hog_validators_partial_update",
+    "name": "Select the active review validator",
+    "description": "Select the active review validator Make a `review-hog-validation-*` skill the single validator that runs on the requesting user's PR reviews, switching the user's other validators off in the same call. PATCH /api/projects/{project_id}/review_hog/validators/{skill_name}/",
+    "context": "PATCH /api/projects/{project_id}/review_hog/validators/{skill_name}/\nMake a `review-hog-validation-*` skill the single validator that runs on the requesting user's PR reviews, switching the user's other validators off in the same call. Only skills visible to the user — the canonical plus the customs they authored — can be selected; anything else 404s. Upserts the per-user config row, so selecting a freshly authored custom validator works in one call.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; skill_name (path)\nOptional: body (body)"
+  }
+]

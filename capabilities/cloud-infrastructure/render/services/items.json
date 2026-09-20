@@ -1,0 +1,296 @@
+[
+  {
+    "id": "add-headers",
+    "name": "Add header rule",
+    "description": "Add header rule Add a response header rule to the service with the provided ID. POST /v1/services/{serviceId}/headers",
+    "context": "POST /v1/services/{serviceId}/headers\nAdd a response header rule to the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "add-or-update-secret-file",
+    "name": "Add or update secret file",
+    "description": "Add or update secret file Add or update a particular secret file for a particular service. PUT /v1/services/{serviceId}/secret-files/{envVarKey}",
+    "context": "PUT /v1/services/{serviceId}/secret-files/{envVarKey}\nAdd or update a particular secret file for a particular service. This only applies to secret files set directly on the service, not to secret files in a linked environment group.\nRequired: serviceId (path) — The ID of the service; envVarKey (path) — The file name of the secret file; body (body)"
+  },
+  {
+    "id": "add-route",
+    "name": "Add redirect/rewrite rules",
+    "description": "Add redirect/rewrite rules Add redirect/rewrite rules to the service with the provided ID. POST /v1/services/{serviceId}/routes",
+    "context": "POST /v1/services/{serviceId}/routes\nAdd redirect/rewrite rules to the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "autoscale-service",
+    "name": "Update autoscaling config",
+    "description": "Update autoscaling config Update the [autoscaling](https://render.com/docs/scaling#autoscaling) config for the service with the provided ID. PUT /v1/services/{serviceId}/autoscaling",
+    "context": "PUT /v1/services/{serviceId}/autoscaling\nUpdate the [autoscaling](https://render.com/docs/scaling#autoscaling) config for the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "cancel-deploy",
+    "name": "Cancel deploy",
+    "description": "Cancel deploy Cancel an in-progress deploy for a service. POST /v1/services/{serviceId}/deploys/{deployId}/cancel",
+    "context": "POST /v1/services/{serviceId}/deploys/{deployId}/cancel\nCancel an in-progress deploy for a service. Not supported for cron jobs.\nRequired: serviceId (path) — The ID of the service; deployId (path) — The ID of the deploy"
+  },
+  {
+    "id": "cancel-job",
+    "name": "Cancel running job",
+    "description": "Cancel running job Cancel a particular one-off job for a particular service. POST /v1/services/{serviceId}/jobs/{jobId}/cancel",
+    "context": "POST /v1/services/{serviceId}/jobs/{jobId}/cancel\nCancel a particular one-off job for a particular service.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "create-custom-domain",
+    "name": "Add custom domain",
+    "description": "Add custom domain Add a custom domain to the service with the provided ID. POST /v1/services/{serviceId}/custom-domains",
+    "context": "POST /v1/services/{serviceId}/custom-domains\nAdd a custom domain to the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "create-deploy",
+    "name": "Trigger deploy",
+    "description": "Trigger deploy Trigger a deploy for the service with the provided ID. POST /v1/services/{serviceId}/deploys",
+    "context": "POST /v1/services/{serviceId}/deploys\nTrigger a deploy for the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "create-service",
+    "name": "Create service",
+    "description": "Create service Creates a new Render service in the specified workspace with the specified configuration. POST /v1/services",
+    "context": "POST /v1/services\nCreates a new Render service in the specified workspace with the specified configuration.\nRequired: body (body)"
+  },
+  {
+    "id": "delete-autoscaling-config",
+    "name": "Delete autoscaling config",
+    "description": "Delete autoscaling config Delete the autoscaling config for a service given the service id. DELETE /v1/services/{serviceId}/autoscaling",
+    "context": "DELETE /v1/services/{serviceId}/autoscaling\nDelete the autoscaling config for a service given the service id.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "delete-custom-domain",
+    "name": "Delete custom domain",
+    "description": "Delete custom domain Delete a custom domain for a service given the service id and custom domain id or name. DELETE /v1/services/{serviceId}/custom-domains/{customDomainNameOrID}",
+    "context": "DELETE /v1/services/{serviceId}/custom-domains/{customDomainNameOrID}\nDelete a custom domain for a service given the service id and custom domain id or name.\nRequired: serviceId (path) — The ID of the service; customDomainNameOrID (path) — The ID or name of the custom domain"
+  },
+  {
+    "id": "delete-env-var",
+    "name": "Delete environment variable",
+    "description": "Delete environment variable Delete a particular environment variable from a particular service. DELETE /v1/services/{serviceId}/env-vars/{envVarKey}",
+    "context": "DELETE /v1/services/{serviceId}/env-vars/{envVarKey}\nDelete a particular environment variable from a particular service. This only applies to environment variables set directly on the service, not to environment variables in a linked environment group.\nRequired: serviceId (path) — The ID of the service; envVarKey (path) — The name of the environment variable"
+  },
+  {
+    "id": "delete-header",
+    "name": "Delete header rule",
+    "description": "Delete header rule Delete a particular response header rule for a particular service. DELETE /v1/services/{serviceId}/headers/{headerId}",
+    "context": "DELETE /v1/services/{serviceId}/headers/{headerId}\nDelete a particular response header rule for a particular service.\nRequired: serviceId (path) — The ID of the service; headerId (path) — The id of the header"
+  },
+  {
+    "id": "delete-route",
+    "name": "Delete redirect/rewrite rule",
+    "description": "Delete redirect/rewrite rule Delete a particular redirect/rewrite rule for a particular service. DELETE /v1/services/{serviceId}/routes/{routeId}",
+    "context": "DELETE /v1/services/{serviceId}/routes/{routeId}\nDelete a particular redirect/rewrite rule for a particular service.\nRequired: serviceId (path) — The ID of the service; routeId (path) — The id of the route"
+  },
+  {
+    "id": "delete-secret-file",
+    "name": "Delete secret file",
+    "description": "Delete secret file Delete a particular secret file from a particular service. DELETE /v1/services/{serviceId}/secret-files/{envVarKey}",
+    "context": "DELETE /v1/services/{serviceId}/secret-files/{envVarKey}\nDelete a particular secret file from a particular service. This only applies to secret files set directly on the service, not to secret files in a linked environment group.\nRequired: serviceId (path) — The ID of the service; envVarKey (path) — The file name of the secret file"
+  },
+  {
+    "id": "delete-service",
+    "name": "Delete service",
+    "description": "Delete service Delete the service with the provided ID. DELETE /v1/services/{serviceId}",
+    "context": "DELETE /v1/services/{serviceId}\nDelete the service with the provided ID.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "get-env-vars-for-service",
+    "name": "List environment variables",
+    "description": "List environment variables List all environment variables for the service with the provided ID. GET /v1/services/{serviceId}/env-vars",
+    "context": "GET /v1/services/{serviceId}/env-vars\nList all environment variables for the service with the provided ID.\nRequired: serviceId (path) — The ID of the service\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-custom-domains",
+    "name": "List custom domains",
+    "description": "List custom domains List a particular service's custom domains that match the provided filters. GET /v1/services/{serviceId}/custom-domains",
+    "context": "GET /v1/services/{serviceId}/custom-domains\nList a particular service's custom domains that match the provided filters. If no filters are provided, all custom domains for the service are returned.\nRequired: serviceId (path) — The ID of the service\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; name (query) — Filter for the names of custom domain; domainType (query) — Filter for domain type; verificationStatus (query) — Filter for domain verification status (`verified` or `unverified`); createdBefore (query) — Filter for custom domains created before a certain time (specified as an ISO 8601 timestamp); createdAfter (query) — Filter for custom domains created after a certain time (specified as an ISO 8601 timestamp)"
+  },
+  {
+    "id": "list-deploys",
+    "name": "List deploys",
+    "description": "List deploys List deploys matching the provided filters. GET /v1/services/{serviceId}/deploys",
+    "context": "GET /v1/services/{serviceId}/deploys\nList deploys matching the provided filters. If no filters are provided, all deploys for the service are returned.\nRequired: serviceId (path) — The ID of the service\nOptional: status (query) — Filter for deploys with the specified statuses; createdBefore (query) — Filter for deploys created before a certain time (specified as an ISO 8601 timestamp); createdAfter (query) — Filter for deploys created after a certain time (specified as an ISO 8601 timestamp); updatedBefore (query) — Filter for deploys updated before a certain time (specified as an ISO 8601 timestamp); updatedAfter (query) — Filter for deploys updated after a certain time (specified as an ISO 8601 timestamp); finishedBefore (query) — Filter for deploys finished before a certain time (specified as an ISO 8601 timestamp); finishedAfter (query) — Filter for deploys finished after a certain time (specified as an ISO 8601 timestamp); cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-events",
+    "name": "List events",
+    "description": "List events List recent events that occurred for the service with the provided ID. GET /v1/services/{serviceId}/events",
+    "context": "GET /v1/services/{serviceId}/events\nList recent events that occurred for the service with the provided ID.\nRequired: serviceId (path) — The ID of the service\nOptional: type (query) — The type of event to filter to; startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-headers",
+    "name": "List header rules",
+    "description": "List header rules List a particular service's response header rules that match the provided filters. GET /v1/services/{serviceId}/headers",
+    "context": "GET /v1/services/{serviceId}/headers\nList a particular service's response header rules that match the provided filters. If no filters are provided, all rules for the service are returned.\nRequired: serviceId (path) — The ID of the service\nOptional: path (query) — Filter for specific paths that headers apply to; name (query) — Filter for header names; value (query) — Filter for header values; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-instances",
+    "name": "List instances",
+    "description": "List instances List instances for the provided service. GET /v1/services/{serviceId}/instances",
+    "context": "GET /v1/services/{serviceId}/instances\nList instances for the provided service.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "list-job",
+    "name": "List jobs",
+    "description": "List jobs List jobs for the provided service that match the provided filters. GET /v1/services/{serviceId}/jobs",
+    "context": "GET /v1/services/{serviceId}/jobs\nList jobs for the provided service that match the provided filters. If no filters are provided, all jobs for the service are returned.\nRequired: serviceId (path) — The ID of the service\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; status (query) — Filter for the status of the job (`pending`, `running`, `succeeded`, `failed`, or `canceled`); createdBefore (query) — Filter for jobs created before a certain time (specified as an ISO 8601 timestamp); createdAfter (query) — Filter for jobs created after a certain time (specified as an ISO 8601 timestamp); startedBefore (query) — Filter for jobs started before a certain time (specified as an ISO 8601 timestamp); startedAfter (query) — Filter for jobs started after a certain time (specified as an ISO 8601 timestamp); finishedBefore (query) — Filter for jobs finished before a certain time (specified as an ISO 8601 timestamp); finishedAfter (query) — Filter for jobs finished after a certain time (specified as an ISO 8601 timestamp)"
+  },
+  {
+    "id": "list-routes",
+    "name": "List redirect/rewrite rules",
+    "description": "List redirect/rewrite rules List a particular service's redirect/rewrite rules that match the provided filters. GET /v1/services/{serviceId}/routes",
+    "context": "GET /v1/services/{serviceId}/routes\nList a particular service's redirect/rewrite rules that match the provided filters. If no filters are provided, all rules for the service are returned.\nRequired: serviceId (path) — The ID of the service\nOptional: type (query) — Filter for the type of route rule; source (query) — Filter for the source path of the route; destination (query) — Filter for the destination path of the route; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-secret-files-for-service",
+    "name": "List secret files",
+    "description": "List secret files List all secret files for the service with the provided ID. GET /v1/services/{serviceId}/secret-files",
+    "context": "GET /v1/services/{serviceId}/secret-files\nList all secret files for the service with the provided ID.\nRequired: serviceId (path) — The ID of the service\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-services",
+    "name": "List services",
+    "description": "List services List services matching the provided filters. GET /v1/services",
+    "context": "GET /v1/services\nList services matching the provided filters. If no filters are provided, returns all services you have permissions to view.\nOptional: name (query) — Filter by name; type (query) — Filter for types of services; environmentId (query) — Filter for resources that belong to an environment; env (query) — Filter for environments (runtimes) of services (deprecated; use `runtime` instead); region (query) — Filter by resource region; suspended (query) — Filter resources based on whether they're suspended or not suspended; createdBefore (query) — Filter for resources created before a certain time (specified as an ISO 8601 timestamp); createdAfter (query) — Filter for resources created after a certain time (specified as an ISO 8601 timestamp); updatedBefore (query) — Filter for resources updated before a certain time (specified as an ISO 8601 timestamp); updatedAfter (query) — Filter for resources updated after a certain time (specified as an ISO 8601 timestamp); ownerId (query) — The ID of the workspaces to return resources for; includePreviews (query) — Include previews in the response; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "patch-route",
+    "name": "Update redirect/rewrite rule priority",
+    "description": "Update redirect/rewrite rule priority Update the priority for a particular redirect/rewrite rule. PATCH /v1/services/{serviceId}/routes/{routeId}",
+    "context": "PATCH /v1/services/{serviceId}/routes/{routeId}\nUpdate the priority for a particular redirect/rewrite rule. To apply redirect/rewrite rules to an incoming request, Render starts from the rule with priority `0` and applies the first encountered rule that matches the request's path (if any). Render increments the priority of other rules by `1` as necessary to make space for the updated rule.\nRequired: serviceId (path) — The ID of the service; routeId (path) — The id of the route; body (body)"
+  },
+  {
+    "id": "post-job",
+    "name": "Create job",
+    "description": "Create job Create a one-off job using the provided service. POST /v1/services/{serviceId}/jobs",
+    "context": "POST /v1/services/{serviceId}/jobs\nCreate a one-off job using the provided service. For details, see [One-Off Jobs](https://render.com/docs/one-off-jobs).\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "preview-service",
+    "name": "Create service preview (image-backed)",
+    "description": "Create service preview (image-backed) Create a preview instance for an image-backed service. POST /v1/services/{serviceId}/preview",
+    "context": "POST /v1/services/{serviceId}/preview\nCreate a preview instance for an image-backed service. The preview uses the settings of the base service (referenced by `serviceId`), except settings overridden via provided parameters. View all active previews from your service's Previews tab in the Render Dashboard. Note that you can't create previews for Git-backed services using the Render API.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "purge-cache",
+    "name": "Purge Web Service Cache",
+    "description": "Purge Web Service Cache Trigger cache purge for the web service if caching is enabled. POST /v1/services/{serviceId}/cache/purge",
+    "context": "POST /v1/services/{serviceId}/cache/purge\nTrigger cache purge for the web service if caching is enabled.\nRequired: serviceId (path) — The ID of the service\nOptional: body (body)"
+  },
+  {
+    "id": "put-routes",
+    "name": "Update redirect/rewrite rules",
+    "description": "Update redirect/rewrite rules Replace all redirect/rewrite rules for a particular service with the provided list. PUT /v1/services/{serviceId}/routes",
+    "context": "PUT /v1/services/{serviceId}/routes\nReplace all redirect/rewrite rules for a particular service with the provided list. **This deletes all existing redirect/rewrite rules for the service that aren't included in the request.** Rule priority is assigned according to list order (the first rule in the list has the highest priority).\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "refresh-custom-domain",
+    "name": "Verify DNS configuration",
+    "description": "Verify DNS configuration Verify the DNS configuration for a custom domain. POST /v1/services/{serviceId}/custom-domains/{customDomainNameOrID}/verify",
+    "context": "POST /v1/services/{serviceId}/custom-domains/{customDomainNameOrID}/verify\nVerify the DNS configuration for a custom domain.\nRequired: serviceId (path) — The ID of the service; customDomainNameOrID (path) — The ID or name of the custom domain"
+  },
+  {
+    "id": "restart-service",
+    "name": "Restart service",
+    "description": "Restart service Restart the service with the provided ID. POST /v1/services/{serviceId}/restart",
+    "context": "POST /v1/services/{serviceId}/restart\nRestart the service with the provided ID. Not supported for cron jobs.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "resume-service",
+    "name": "Resume service",
+    "description": "Resume service Resume the service with the provided ID (if it's currently suspended). POST /v1/services/{serviceId}/resume",
+    "context": "POST /v1/services/{serviceId}/resume\nResume the service with the provided ID (if it's currently suspended).\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "retrieve-custom-domain",
+    "name": "Retrieve custom domain",
+    "description": "Retrieve custom domain Retrieve a particular custom domain for a particular service. GET /v1/services/{serviceId}/custom-domains/{customDomainNameOrID}",
+    "context": "GET /v1/services/{serviceId}/custom-domains/{customDomainNameOrID}\nRetrieve a particular custom domain for a particular service.\nRequired: serviceId (path) — The ID of the service; customDomainNameOrID (path) — The ID or name of the custom domain"
+  },
+  {
+    "id": "retrieve-deploy",
+    "name": "Retrieve deploy",
+    "description": "Retrieve deploy Retrieve the details of a particular deploy for a particular service. GET /v1/services/{serviceId}/deploys/{deployId}",
+    "context": "GET /v1/services/{serviceId}/deploys/{deployId}\nRetrieve the details of a particular deploy for a particular service.\nRequired: serviceId (path) — The ID of the service; deployId (path) — The ID of the deploy"
+  },
+  {
+    "id": "retrieve-env-var",
+    "name": "Retrieve environment variable",
+    "description": "Retrieve environment variable Retrieve a particular environment variable for a particular service. GET /v1/services/{serviceId}/env-vars/{envVarKey}",
+    "context": "GET /v1/services/{serviceId}/env-vars/{envVarKey}\nRetrieve a particular environment variable for a particular service. This only applies to environment variables set directly on the service, not to environment variables in a linked environment group.\nRequired: serviceId (path) — The ID of the service; envVarKey (path) — The name of the environment variable"
+  },
+  {
+    "id": "retrieve-job",
+    "name": "Retrieve job",
+    "description": "Retrieve job Retrieve the details of a particular one-off job for a particular service. GET /v1/services/{serviceId}/jobs/{jobId}",
+    "context": "GET /v1/services/{serviceId}/jobs/{jobId}\nRetrieve the details of a particular one-off job for a particular service.\nRequired: serviceId (path) — The ID of the service; jobId (path) — The ID of the job"
+  },
+  {
+    "id": "retrieve-secret-file",
+    "name": "Retrieve secret file",
+    "description": "Retrieve secret file Retrieve a particular secret file for a particular service. GET /v1/services/{serviceId}/secret-files/{envVarKey}",
+    "context": "GET /v1/services/{serviceId}/secret-files/{envVarKey}\nRetrieve a particular secret file for a particular service. This only applies to secret files set directly on the service, not to secret files in a linked environment group.\nRequired: serviceId (path) — The ID of the service; envVarKey (path) — The file name of the secret file"
+  },
+  {
+    "id": "retrieve-service",
+    "name": "Retrieve service",
+    "description": "Retrieve service Retrieve the service with the provided ID. GET /v1/services/{serviceId}",
+    "context": "GET /v1/services/{serviceId}\nRetrieve the service with the provided ID.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "retrieve-service-outbound-ips",
+    "name": "Retrieve service outbound IPs",
+    "description": "Retrieve service outbound IPs Retrieve the IP addresses the service's outbound traffic originates from. GET /v1/services/{serviceId}/outbound-ips",
+    "context": "GET /v1/services/{serviceId}/outbound-ips\nRetrieve the IP addresses the service's outbound traffic originates from. A service uses either a dedicated IP set that applies to it, or the shared Render IPs for its region.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "rollback-deploy",
+    "name": "Roll back deploy",
+    "description": "Roll back deploy Trigger a rollback to a previous deploy of the specified service. POST /v1/services/{serviceId}/rollback",
+    "context": "POST /v1/services/{serviceId}/rollback\nTrigger a rollback to a previous deploy of the specified service. Triggering a rollback with this endpoint does not disable autodeploys for the service. This means an autodeploy might restore changes you had intentionally rolled back. You can toggle autodeploys for your service with the [Update service](https://api-docs.render.com/reference/update-service) endpoint or in the Render Dashboard.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "scale-service",
+    "name": "Scale instance count",
+    "description": "Scale instance count [Scale](https://render.com/docs/scaling#manual-scaling) the service with the provided ID to a fixed number of instances. POST /v1/services/{serviceId}/scale",
+    "context": "POST /v1/services/{serviceId}/scale\n[Scale](https://render.com/docs/scaling#manual-scaling) the service with the provided ID to a fixed number of instances. Render ignores this value as long as autoscaling is enabled for the service.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "suspend-service",
+    "name": "Suspend service",
+    "description": "Suspend service Suspend the service with the provided ID. POST /v1/services/{serviceId}/suspend",
+    "context": "POST /v1/services/{serviceId}/suspend\nSuspend the service with the provided ID.\nRequired: serviceId (path) — The ID of the service"
+  },
+  {
+    "id": "update-env-var",
+    "name": "Add or update environment variable",
+    "description": "Add or update environment variable Add or update a particular environment variable for a particular service. PUT /v1/services/{serviceId}/env-vars/{envVarKey}",
+    "context": "PUT /v1/services/{serviceId}/env-vars/{envVarKey}\nAdd or update a particular environment variable for a particular service. This only applies to environment variables set directly on the service, not to environment variables in a linked environment group.\nRequired: serviceId (path) — The ID of the service; envVarKey (path) — The name of the environment variable; body (body)"
+  },
+  {
+    "id": "update-env-vars-for-service",
+    "name": "Update environment variables",
+    "description": "Update environment variables Replace all environment variables for a service with the provided list of environment variables. PUT /v1/services/{serviceId}/env-vars",
+    "context": "PUT /v1/services/{serviceId}/env-vars\nReplace all environment variables for a service with the provided list of environment variables.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "update-headers",
+    "name": "Replace header rules",
+    "description": "Replace header rules Replace all header rules for a particular service with the provided list. PUT /v1/services/{serviceId}/headers",
+    "context": "PUT /v1/services/{serviceId}/headers\nReplace all header rules for a particular service with the provided list. **This deletes all existing header rules for the service that aren't included in the request.**\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "update-secret-files-for-service",
+    "name": "Update secret files",
+    "description": "Update secret files Replace all secret files for a service with the provided list of secret files. PUT /v1/services/{serviceId}/secret-files",
+    "context": "PUT /v1/services/{serviceId}/secret-files\nReplace all secret files for a service with the provided list of secret files. **Any of the service's existing secret files not included in this request will be deleted.** This only applies to secret files set directly on the service, not to secret files in a linked environment group.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "update-service",
+    "name": "Update service",
+    "description": "Update service Update the service with the provided ID. PATCH /v1/services/{serviceId}",
+    "context": "PATCH /v1/services/{serviceId}\nUpdate the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  }
+]

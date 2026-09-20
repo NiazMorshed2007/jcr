@@ -1,0 +1,152 @@
+[
+  {
+    "id": "warehouse_tables_check_suite_runs_check_runs_list",
+    "name": "Every check execution in this suite run.",
+    "description": "Every check execution in this suite run. GET /api/projects/{project_id}/warehouse_tables/{table_id}/check_suite_runs/{id}/check_runs/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/check_suite_runs/{id}/check_runs/\nEvery check execution in this suite run.\nRequired: id (path) — A UUID string identifying this data quality suite run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path) — Id of the warehouse table whose suite runs these are."
+  },
+  {
+    "id": "warehouse_tables_check_suite_runs_list",
+    "name": "Read-only reports for this subject's check-suite executions.",
+    "description": "Read-only reports for this subject's check-suite executions. GET /api/projects/{project_id}/warehouse_tables/{table_id}/check_suite_runs/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/check_suite_runs/\nRead-only reports for this subject's check-suite executions.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path) — Id of the warehouse table whose suite runs these are.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "warehouse_tables_check_suite_runs_retrieve",
+    "name": "Read-only reports for this subject's check-suite executions.",
+    "description": "Read-only reports for this subject's check-suite executions. GET /api/projects/{project_id}/warehouse_tables/{table_id}/check_suite_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/check_suite_runs/{id}/\nRead-only reports for this subject's check-suite executions.\nRequired: id (path) — A UUID string identifying this data quality suite run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path) — Id of the warehouse table whose suite runs these are."
+  },
+  {
+    "id": "warehouse_tables_checks_check_types_list",
+    "name": "The check types this project can author, with the JSON schema of each type's config.",
+    "description": "The check types this project can author, with the JSON schema of each type's config. GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/check_types/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/check_types/\nThe check types this project can author, with the JSON schema of each type's config.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_create",
+    "name": "Create a check on this table or view, or refine the one already carrying the same fingerprint",
+    "description": "Create a check on this table or view, or refine the one already carrying the same fingerprint Create a check on this table or view, or refine the one already carrying the same fingerprint. POST /api/projects/{project_id}/warehouse_tables/{table_id}/checks/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/{table_id}/checks/\nCreate a check on this table or view, or refine the one already carrying the same fingerprint. Re-creating a semantically identical check returns 200 and the existing row, never a duplicate.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path); body (body)"
+  },
+  {
+    "id": "warehouse_tables_checks_destroy",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. DELETE /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/",
+    "context": "DELETE /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_health_retrieve",
+    "name": "Health rollup for this table or view, from the denormalized status of its checks.",
+    "description": "Health rollup for this table or view, from the denormalized status of its checks. GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/health/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/health/\nHealth rollup for this table or view, from the denormalized status of its checks.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_list",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "warehouse_tables_checks_partial_update",
+    "name": "Edit this check in place, including what it asserts (check_type, column_name, config)",
+    "description": "Edit this check in place, including what it asserts (check_type, column_name, config) Edit this check in place, including what it asserts (check_type, column_name, config). PATCH /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/",
+    "context": "PATCH /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/\nEdit this check in place, including what it asserts (check_type, column_name, config). The table or view it audits is fixed, and the check keeps its id, run history, latest status, and latest run time. A definition or name already held by another active check comes back as a field error, with nothing written.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_tables_checks_retrieve",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_run_all_create",
+    "name": "Run every enabled check on this table or view",
+    "description": "Run every enabled check on this table or view Run every enabled check on this table or view. POST /api/projects/{project_id}/warehouse_tables/{table_id}/checks/run_all/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/{table_id}/checks/run_all/\nRun every enabled check on this table or view. Returns the suite run to poll.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_run_create",
+    "name": "Run this check now",
+    "description": "Run this check now Run this check now. POST /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/run/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/run/\nRun this check now. Returns the suite run to poll for the report.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_runs_list",
+    "name": "Recent run history for this check, newest first.",
+    "description": "Recent run history for this check, newest first. GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/runs/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/runs/\nRecent run history for this check, newest first.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path)"
+  },
+  {
+    "id": "warehouse_tables_checks_update",
+    "name": "Edit this check in place, including what it asserts (check_type, column_name, config)",
+    "description": "Edit this check in place, including what it asserts (check_type, column_name, config) Edit this check in place, including what it asserts (check_type, column_name, config). PUT /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/",
+    "context": "PUT /api/projects/{project_id}/warehouse_tables/{table_id}/checks/{id}/\nEdit this check in place, including what it asserts (check_type, column_name, config). The table or view it audits is fixed, and the check keeps its id, run history, latest status, and latest run time. A definition or name already held by another active check comes back as a field error, with nothing written.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; table_id (path); body (body)"
+  },
+  {
+    "id": "warehouse_tables_create",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. POST /api/projects/{project_id}/warehouse_tables/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_tables_create_from_upload_create",
+    "name": "Create a self-managed warehouse table from an uploaded file",
+    "description": "Create a self-managed warehouse table from an uploaded file Turn a previously uploaded file into a self-managed warehouse table. POST /api/projects/{project_id}/warehouse_tables/create_from_upload/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/create_from_upload/\nTurn a previously uploaded file into a self-managed warehouse table. The file already sits in PostHog's own bucket (see `upload_file`), so the table points straight at it and is read in place — no import pipeline and no recurring sync, the same shape as a linked S3/GCS bucket. The read location is always derived from the caller's own team, so a client-supplied `upload_id` can only resolve inside that team's folder, and the table carries no credential (reads fall back to the node role, never a user-supplied key).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_tables_destroy",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. DELETE /api/projects/{project_id}/warehouse_tables/{id}/",
+    "context": "DELETE /api/projects/{project_id}/warehouse_tables/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse table.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_tables_file_create",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. POST /api/projects/{project_id}/warehouse_tables/file/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/file/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_tables_list",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. GET /api/projects/{project_id}/warehouse_tables/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "warehouse_tables_partial_update",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. PATCH /api/projects/{project_id}/warehouse_tables/{id}/",
+    "context": "PATCH /api/projects/{project_id}/warehouse_tables/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse table.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_tables_refresh_schema_create",
+    "name": "Refresh table schema from source",
+    "description": "Refresh table schema from source Re-introspect a self-managed (manually linked) warehouse table's schema from its underlying source files and overwrite its stored column list. POST /api/projects/{project_id}/warehouse_tables/{id}/refresh_schema/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/{id}/refresh_schema/\nRe-introspect a self-managed (manually linked) warehouse table's schema from its underlying source files and overwrite its stored column list. Use when the source schema has evolved (e.g. new columns in the underlying Delta/Parquet/CSV files) but queries still can't see the new columns, because PostHog serves a cached column snapshot until the table is refreshed. Not for tables managed by an external data source sync — those refresh on their own schedule.\nRequired: id (path) — A UUID string identifying this data warehouse table.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_tables_retrieve",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. GET /api/projects/{project_id}/warehouse_tables/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_tables/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse table.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_tables_update",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. PUT /api/projects/{project_id}/warehouse_tables/{id}/",
+    "context": "PUT /api/projects/{project_id}/warehouse_tables/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse table.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_tables_update_schema_create",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. POST /api/projects/{project_id}/warehouse_tables/{id}/update_schema/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/{id}/update_schema/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse table.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_tables_upload_file_create",
+    "name": "Upload a file for a new self-managed warehouse table",
+    "description": "Upload a file for a new self-managed warehouse table Store an uploaded file in object storage so a self-managed table can be created from it. POST /api/projects/{project_id}/warehouse_tables/upload_file/",
+    "context": "POST /api/projects/{project_id}/warehouse_tables/upload_file/\nStore an uploaded file in object storage so a self-managed table can be created from it. Uploading is a separate first step from `create_from_upload` so the create call stays JSON-only: this returns an `upload_id` the caller passes back to build the table. The file is written under a team-scoped prefix, so a table can only ever read back its own team's uploads.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

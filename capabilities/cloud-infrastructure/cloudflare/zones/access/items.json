@@ -1,0 +1,266 @@
+[
+  {
+    "id": "zone-level-access-applications-add-a-bookmark-application",
+    "name": "Add an Access application",
+    "description": "Add an Access application Adds a new application to Access. POST /client/v4/zones/{zone_id}/access/apps",
+    "context": "POST /client/v4/zones/{zone_id}/access/apps\nAdds a new application to Access.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-applications-delete-an-access-application",
+    "name": "Delete an Access application",
+    "description": "Delete an Access application Deletes an application from Access. DELETE /client/v4/zones/{zone_id}/access/apps/{app_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/apps/{app_id}\nDeletes an application from Access.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-applications-get-an-access-application",
+    "name": "Get an Access application",
+    "description": "Get an Access application Fetches information about an Access application. GET /client/v4/zones/{zone_id}/access/apps/{app_id}",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps/{app_id}\nFetches information about an Access application.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-applications-list-access-applications",
+    "name": "List Access Applications",
+    "description": "List Access Applications List all Access Applications in a zone. GET /client/v4/zones/{zone_id}/access/apps",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps\nList all Access Applications in a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-applications-patch-update-access-application-settings",
+    "name": "Update application settings",
+    "description": "Update application settings Updates application settings. PATCH /client/v4/zones/{zone_id}/access/apps/{app_id}/settings",
+    "context": "PATCH /client/v4/zones/{zone_id}/access/apps/{app_id}/settings\nUpdates application settings.\nRequired: app_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-applications-put-update-access-application-settings",
+    "name": "Update application settings",
+    "description": "Update application settings Updates application settings. PUT /client/v4/zones/{zone_id}/access/apps/{app_id}/settings",
+    "context": "PUT /client/v4/zones/{zone_id}/access/apps/{app_id}/settings\nUpdates application settings.\nRequired: app_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-applications-revoke-service-tokens",
+    "name": "Revoke application tokens",
+    "description": "Revoke application tokens Revokes all tokens issued for an application. POST /client/v4/zones/{zone_id}/access/apps/{app_id}/revoke_tokens",
+    "context": "POST /client/v4/zones/{zone_id}/access/apps/{app_id}/revoke_tokens\nRevokes all tokens issued for an application.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-applications-test-access-policies",
+    "name": "Test Access policies",
+    "description": "Test Access policies Tests if a specific user has permission to access an application. GET /client/v4/zones/{zone_id}/access/apps/{app_id}/user_policy_checks",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps/{app_id}/user_policy_checks\nTests if a specific user has permission to access an application.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-applications-update-a-bookmark-application",
+    "name": "Update an Access application",
+    "description": "Update an Access application Updates an Access application. PUT /client/v4/zones/{zone_id}/access/apps/{app_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/access/apps/{app_id}\nUpdates an Access application.\nRequired: app_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-groups-create-an-access-group",
+    "name": "Create an Access group",
+    "description": "Create an Access group Creates a new Access group. POST /client/v4/zones/{zone_id}/access/groups",
+    "context": "POST /client/v4/zones/{zone_id}/access/groups\nCreates a new Access group.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-groups-delete-an-access-group",
+    "name": "Delete an Access group",
+    "description": "Delete an Access group Deletes an Access group. DELETE /client/v4/zones/{zone_id}/access/groups/{group_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/groups/{group_id}\nDeletes an Access group.\nRequired: group_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-groups-get-an-access-group",
+    "name": "Get an Access group",
+    "description": "Get an Access group Fetches a single Access group. GET /client/v4/zones/{zone_id}/access/groups/{group_id}",
+    "context": "GET /client/v4/zones/{zone_id}/access/groups/{group_id}\nFetches a single Access group.\nRequired: group_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-groups-list-access-groups",
+    "name": "List Access groups",
+    "description": "List Access groups Lists all Access groups. GET /client/v4/zones/{zone_id}/access/groups",
+    "context": "GET /client/v4/zones/{zone_id}/access/groups\nLists all Access groups.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-groups-update-an-access-group",
+    "name": "Update an Access group",
+    "description": "Update an Access group Updates a configured Access group. PUT /client/v4/zones/{zone_id}/access/groups/{group_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/access/groups/{group_id}\nUpdates a configured Access group.\nRequired: group_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-identity-providers-add-an-access-identity-provider",
+    "name": "Add an Access identity provider",
+    "description": "Add an Access identity provider Adds a new identity provider to Access. POST /client/v4/zones/{zone_id}/access/identity_providers",
+    "context": "POST /client/v4/zones/{zone_id}/access/identity_providers\nAdds a new identity provider to Access.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-identity-providers-delete-an-access-identity-provider",
+    "name": "Delete an Access identity provider",
+    "description": "Delete an Access identity provider Deletes an identity provider from Access. DELETE /client/v4/zones/{zone_id}/access/identity_providers/{identity_provider_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/identity_providers/{identity_provider_id}\nDeletes an identity provider from Access.\nRequired: identity_provider_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-identity-providers-get-an-access-identity-provider",
+    "name": "Get an Access identity provider",
+    "description": "Get an Access identity provider Fetches a configured identity provider. GET /client/v4/zones/{zone_id}/access/identity_providers/{identity_provider_id}",
+    "context": "GET /client/v4/zones/{zone_id}/access/identity_providers/{identity_provider_id}\nFetches a configured identity provider.\nRequired: identity_provider_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-identity-providers-list-access-identity-providers",
+    "name": "List Access identity providers",
+    "description": "List Access identity providers Lists all configured identity providers. GET /client/v4/zones/{zone_id}/access/identity_providers",
+    "context": "GET /client/v4/zones/{zone_id}/access/identity_providers\nLists all configured identity providers.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-identity-providers-update-an-access-identity-provider",
+    "name": "Update an Access identity provider",
+    "description": "Update an Access identity provider Updates a configured identity provider. PUT /client/v4/zones/{zone_id}/access/identity_providers/{identity_provider_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/access/identity_providers/{identity_provider_id}\nUpdates a configured identity provider.\nRequired: identity_provider_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-add-an-mtls-certificate",
+    "name": "Add an mTLS certificate",
+    "description": "Add an mTLS certificate Adds a new mTLS root certificate to Access. POST /client/v4/zones/{zone_id}/access/certificates",
+    "context": "POST /client/v4/zones/{zone_id}/access/certificates\nAdds a new mTLS root certificate to Access.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-delete-an-mtls-certificate",
+    "name": "Delete an mTLS certificate",
+    "description": "Delete an mTLS certificate Deletes an mTLS certificate. DELETE /client/v4/zones/{zone_id}/access/certificates/{certificate_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/certificates/{certificate_id}\nDeletes an mTLS certificate.\nRequired: certificate_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-get-an-mtls-certificate",
+    "name": "Get an mTLS certificate",
+    "description": "Get an mTLS certificate Fetches a single mTLS certificate. GET /client/v4/zones/{zone_id}/access/certificates/{certificate_id}",
+    "context": "GET /client/v4/zones/{zone_id}/access/certificates/{certificate_id}\nFetches a single mTLS certificate.\nRequired: certificate_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-list-mtls-certificates",
+    "name": "List mTLS certificates",
+    "description": "List mTLS certificates Lists all mTLS certificates. GET /client/v4/zones/{zone_id}/access/certificates",
+    "context": "GET /client/v4/zones/{zone_id}/access/certificates\nLists all mTLS certificates.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-list-mtls-certificates-hostname-settings",
+    "name": "List all mTLS hostname settings",
+    "description": "List all mTLS hostname settings List all mTLS hostname settings for this zone. GET /client/v4/zones/{zone_id}/access/certificates/settings",
+    "context": "GET /client/v4/zones/{zone_id}/access/certificates/settings\nList all mTLS hostname settings for this zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-update-an-mtls-certificate",
+    "name": "Update an mTLS certificate",
+    "description": "Update an mTLS certificate Updates a configured mTLS certificate. PUT /client/v4/zones/{zone_id}/access/certificates/{certificate_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/access/certificates/{certificate_id}\nUpdates a configured mTLS certificate.\nRequired: certificate_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-mtls-authentication-update-an-mtls-certificate-settings",
+    "name": "Update an mTLS certificate's hostname settings",
+    "description": "Update an mTLS certificate's hostname settings Updates an mTLS certificate's hostname settings. PUT /client/v4/zones/{zone_id}/access/certificates/settings",
+    "context": "PUT /client/v4/zones/{zone_id}/access/certificates/settings\nUpdates an mTLS certificate's hostname settings.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-policies-create-an-access-policy",
+    "name": "Create an Access policy",
+    "description": "Create an Access policy Create a new Access policy for an application. POST /client/v4/zones/{zone_id}/access/apps/{app_id}/policies",
+    "context": "POST /client/v4/zones/{zone_id}/access/apps/{app_id}/policies\nCreate a new Access policy for an application.\nRequired: app_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-policies-delete-an-access-policy",
+    "name": "Delete an Access policy",
+    "description": "Delete an Access policy Delete an Access policy. DELETE /client/v4/zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}\nDelete an Access policy.\nRequired: policy_id (path); app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-policies-get-an-access-policy",
+    "name": "Get an Access policy",
+    "description": "Get an Access policy Fetches a single Access policy. GET /client/v4/zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}\nFetches a single Access policy.\nRequired: policy_id (path); app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-policies-list-access-policies",
+    "name": "List Access policies",
+    "description": "List Access policies Lists Access policies configured for an application. GET /client/v4/zones/{zone_id}/access/apps/{app_id}/policies",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps/{app_id}/policies\nLists Access policies configured for an application.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-policies-update-an-access-policy",
+    "name": "Update an Access policy",
+    "description": "Update an Access policy Update a configured Access policy. PUT /client/v4/zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/access/apps/{app_id}/policies/{policy_id}\nUpdate a configured Access policy.\nRequired: policy_id (path); app_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-service-tokens-create-a-service-token",
+    "name": "Create a service token",
+    "description": "Create a service token Generates a new service token. POST /client/v4/zones/{zone_id}/access/service_tokens",
+    "context": "POST /client/v4/zones/{zone_id}/access/service_tokens\nGenerates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to create a new service token.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-service-tokens-delete-a-service-token",
+    "name": "Delete a service token",
+    "description": "Delete a service token Deletes a service token. DELETE /client/v4/zones/{zone_id}/access/service_tokens/{service_token_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/service_tokens/{service_token_id}\nDeletes a service token.\nRequired: service_token_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-service-tokens-get-a-service-token",
+    "name": "Get a service token",
+    "description": "Get a service token Fetches a single service token. GET /client/v4/zones/{zone_id}/access/service_tokens/{service_token_id}",
+    "context": "GET /client/v4/zones/{zone_id}/access/service_tokens/{service_token_id}\nFetches a single service token.\nRequired: service_token_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-service-tokens-list-service-tokens",
+    "name": "List service tokens",
+    "description": "List service tokens Lists all service tokens. GET /client/v4/zones/{zone_id}/access/service_tokens",
+    "context": "GET /client/v4/zones/{zone_id}/access/service_tokens\nLists all service tokens.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-service-tokens-update-a-service-token",
+    "name": "Update a service token",
+    "description": "Update a service token Updates a configured service token. PUT /client/v4/zones/{zone_id}/access/service_tokens/{service_token_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/access/service_tokens/{service_token_id}\nUpdates a configured service token.\nRequired: service_token_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-access-short-lived-certificate-c-as-create-a-short-lived-certificate-ca",
+    "name": "Create a short-lived certificate CA",
+    "description": "Create a short-lived certificate CA Generates a new short-lived certificate CA and public key. POST /client/v4/zones/{zone_id}/access/apps/{app_id}/ca",
+    "context": "POST /client/v4/zones/{zone_id}/access/apps/{app_id}/ca\nGenerates a new short-lived certificate CA and public key.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-short-lived-certificate-c-as-delete-a-short-lived-certificate-ca",
+    "name": "Delete a short-lived certificate CA",
+    "description": "Delete a short-lived certificate CA Deletes a short-lived certificate CA. DELETE /client/v4/zones/{zone_id}/access/apps/{app_id}/ca",
+    "context": "DELETE /client/v4/zones/{zone_id}/access/apps/{app_id}/ca\nDeletes a short-lived certificate CA.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-short-lived-certificate-c-as-get-a-short-lived-certificate-ca",
+    "name": "Get a short-lived certificate CA",
+    "description": "Get a short-lived certificate CA Fetches a short-lived certificate CA and its public key. GET /client/v4/zones/{zone_id}/access/apps/{app_id}/ca",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps/{app_id}/ca\nFetches a short-lived certificate CA and its public key.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "zone-level-access-short-lived-certificate-c-as-list-short-lived-certificate-c-as",
+    "name": "List short-lived certificate CAs",
+    "description": "List short-lived certificate CAs Lists short-lived certificate CAs and their public keys. GET /client/v4/zones/{zone_id}/access/apps/ca",
+    "context": "GET /client/v4/zones/{zone_id}/access/apps/ca\nLists short-lived certificate CAs and their public keys.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-zero-trust-organization-create-your-zero-trust-organization",
+    "name": "Create your Zero Trust organization",
+    "description": "Create your Zero Trust organization Sets up a Zero Trust organization for your account. POST /client/v4/zones/{zone_id}/access/organizations",
+    "context": "POST /client/v4/zones/{zone_id}/access/organizations\nSets up a Zero Trust organization for your account.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-zero-trust-organization-get-your-zero-trust-organization",
+    "name": "Get your Zero Trust organization",
+    "description": "Get your Zero Trust organization Returns the configuration for your Zero Trust organization. GET /client/v4/zones/{zone_id}/access/organizations",
+    "context": "GET /client/v4/zones/{zone_id}/access/organizations\nReturns the configuration for your Zero Trust organization.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "zone-level-zero-trust-organization-revoke-all-access-tokens-for-a-user",
+    "name": "Revoke all Access tokens for a user",
+    "description": "Revoke all Access tokens for a user Revokes a user's access across all applications. POST /client/v4/zones/{zone_id}/access/organizations/revoke_user",
+    "context": "POST /client/v4/zones/{zone_id}/access/organizations/revoke_user\nRevokes a user's access across all applications.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "zone-level-zero-trust-organization-update-your-zero-trust-organization",
+    "name": "Update your Zero Trust organization",
+    "description": "Update your Zero Trust organization Updates the configuration for your Zero Trust organization. PUT /client/v4/zones/{zone_id}/access/organizations",
+    "context": "PUT /client/v4/zones/{zone_id}/access/organizations\nUpdates the configuration for your Zero Trust organization.\nRequired: zone_id (path); body (body)"
+  }
+]

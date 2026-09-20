@@ -1,0 +1,38 @@
+[
+  {
+    "id": "saved_query_column_annotations_create",
+    "name": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent",
+    "description": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. POST /api/projects/{project_id}/saved_query_column_annotations/",
+    "context": "POST /api/projects/{project_id}/saved_query_column_annotations/\nRead and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. List can be filtered to one view with `?saved_query_id= `. Any create or update is treated as a user edit (`is_user_edited=True`), which protects the row from being overwritten by automatic enrichment. Create upserts on `(saved_query, column_name)`; the view cannot be changed after creation.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "saved_query_column_annotations_destroy",
+    "name": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent",
+    "description": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. DELETE /api/projects/{project_id}/saved_query_column_annotations/{id}/",
+    "context": "DELETE /api/projects/{project_id}/saved_query_column_annotations/{id}/\nRead and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. List can be filtered to one view with `?saved_query_id= `. Any create or update is treated as a user edit (`is_user_edited=True`), which protects the row from being overwritten by automatic enrichment. Create upserts on `(saved_query, column_name)`; the view cannot be changed after creation.\nRequired: id (path) — A UUID string identifying this data warehouse saved query column annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "saved_query_column_annotations_list",
+    "name": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent",
+    "description": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. GET /api/projects/{project_id}/saved_query_column_annotations/",
+    "context": "GET /api/projects/{project_id}/saved_query_column_annotations/\nRead and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. List can be filtered to one view with `?saved_query_id= `. Any create or update is treated as a user edit (`is_user_edited=True`), which protects the row from being overwritten by automatic enrichment. Create upserts on `(saved_query, column_name)`; the view cannot be changed after creation.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; saved_query_id (query) — Only return annotations for this data warehouse saved query (view)."
+  },
+  {
+    "id": "saved_query_column_annotations_partial_update",
+    "name": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent",
+    "description": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. PATCH /api/projects/{project_id}/saved_query_column_annotations/{id}/",
+    "context": "PATCH /api/projects/{project_id}/saved_query_column_annotations/{id}/\nRead and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. List can be filtered to one view with `?saved_query_id= `. Any create or update is treated as a user edit (`is_user_edited=True`), which protects the row from being overwritten by automatic enrichment. Create upserts on `(saved_query, column_name)`; the view cannot be changed after creation.\nRequired: id (path) — A UUID string identifying this data warehouse saved query column annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "saved_query_column_annotations_retrieve",
+    "name": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent",
+    "description": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. GET /api/projects/{project_id}/saved_query_column_annotations/{id}/",
+    "context": "GET /api/projects/{project_id}/saved_query_column_annotations/{id}/\nRead and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. List can be filtered to one view with `?saved_query_id= `. Any create or update is treated as a user edit (`is_user_edited=True`), which protects the row from being overwritten by automatic enrichment. Create upserts on `(saved_query, column_name)`; the view cannot be changed after creation.\nRequired: id (path) — A UUID string identifying this data warehouse saved query column annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "saved_query_column_annotations_update",
+    "name": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent",
+    "description": "Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent Read and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. PUT /api/projects/{project_id}/saved_query_column_annotations/{id}/",
+    "context": "PUT /api/projects/{project_id}/saved_query_column_annotations/{id}/\nRead and edit semantic descriptions of data-modelling views and columns surfaced to the AI agent. List can be filtered to one view with `?saved_query_id= `. Any create or update is treated as a user edit (`is_user_edited=True`), which protects the row from being overwritten by automatic enrichment. Create upserts on `(saved_query, column_name)`; the view cannot be changed after creation.\nRequired: id (path) — A UUID string identifying this data warehouse saved query column annotation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

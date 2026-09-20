@@ -1,0 +1,224 @@
+[
+  {
+    "id": "external_data_sources_bulk_update_schemas_partial_update",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. PATCH /api/projects/{project_id}/external_data_sources/{id}/bulk_update_schemas/",
+    "context": "PATCH /api/projects/{project_id}/external_data_sources/{id}/bulk_update_schemas/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_cdc_status_retrieve",
+    "name": "Live CDC health for an existing source: slot/publication existence and WAL lag",
+    "description": "Live CDC health for an existing source: slot/publication existence and WAL lag Live CDC health for an existing source: slot/publication existence and WAL lag. GET /api/projects/{project_id}/external_data_sources/{id}/cdc_status/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/{id}/cdc_status/\nLive CDC health for an existing source: slot/publication existence and WAL lag. Reads from the source DB via the engine adapter. Returns ``{\"enabled\": false}`` when CDC is off, or the stored config plus live ``slot_exists`` / ``publication_exists`` / ``lag_bytes`` when on. 400s if the source DB is unreachable so the UI can show a degraded/unreachable state.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_check_cdc_prerequisites_create",
+    "name": "Validate CDC prerequisites against a live Postgres connection",
+    "description": "Validate CDC prerequisites against a live Postgres connection Validate CDC prerequisites against a live Postgres connection. POST /api/projects/{project_id}/external_data_sources/check_cdc_prerequisites/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/check_cdc_prerequisites/\nValidate CDC prerequisites against a live Postgres connection. Used by the source wizard to surface ✅/❌ checks before source creation, and by the self-managed setup popup to verify user-created publications.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_check_cdc_prerequisites_for_source_create",
+    "name": "Validate CDC prerequisites for an existing source using its stored credentials",
+    "description": "Validate CDC prerequisites for an existing source using its stored credentials Validate CDC prerequisites for an existing source using its stored credentials. POST /api/projects/{project_id}/external_data_sources/{id}/check_cdc_prerequisites_for_source/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/check_cdc_prerequisites_for_source/\nValidate CDC prerequisites for an existing source using its stored credentials. The detail=False ``check_cdc_prerequisites`` action is for the creation wizard, where the client still holds the raw connection config (incl. password) in the form. On the Configuration page the source already exists and secret fields are stripped from API responses — so the client can't supply them. This reads the stored (encrypted) credentials from the DB via the adapter instead. Body params: ``cdc_management_mode`` (``\"posthog\"`` | ``\"self_managed\"``), ``cdc_slot_name`` (optional), ``cdc_publication_name`` (optional).\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_connect_link_retrieve",
+    "name": "Return a secure browser link for connecting a data warehouse source",
+    "description": "Return a secure browser link for connecting a data warehouse source Return a secure browser link for connecting a data warehouse source. GET /api/projects/{project_id}/external_data_sources/connect_link/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/connect_link/\nReturn a secure browser link for connecting a data warehouse source. The link opens a minimal connect page rendering the source's full connection form — OAuth options included — with no table selection and no source creation. The user authenticates in their browser, secrets never pass through the agent, and the agent finishes setup afterwards by passing the stored credential id to data-warehouse-source-setup.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; source_type (query) — The source type to generate a connect link for (e.g. 'Stripe', 'Postgres', 'Hubspot')."
+  },
+  {
+    "id": "external_data_sources_connections_list",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. GET /api/projects/{project_id}/external_data_sources/connections/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/connections/\nCreate, Read, Update and Delete External data Sources.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/\nCreate, Read, Update and Delete External data Sources.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_create_webhook_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/{id}/create_webhook/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/create_webhook/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_database_schema_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/database_schema/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/database_schema/\nCreate, Read, Update and Delete External data Sources.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_delete_webhook_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/{id}/delete_webhook/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/delete_webhook/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_destinations_partial_update",
+    "name": "Read or replace the destinations every table on this source syncs to",
+    "description": "Read or replace the destinations every table on this source syncs to Read or replace the destinations every table on this source syncs to. PATCH /api/projects/{project_id}/external_data_sources/{id}/destinations/",
+    "context": "PATCH /api/projects/{project_id}/external_data_sources/{id}/destinations/\nRead or replace the destinations every table on this source syncs to. A table with its own override ignores this set until the override is cleared.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_sources_destinations_retrieve",
+    "name": "Read or replace the destinations every table on this source syncs to",
+    "description": "Read or replace the destinations every table on this source syncs to Read or replace the destinations every table on this source syncs to. GET /api/projects/{project_id}/external_data_sources/{id}/destinations/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/{id}/destinations/\nRead or replace the destinations every table on this source syncs to. A table with its own override ignores this set until the override is cleared.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_destroy",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. DELETE /api/projects/{project_id}/external_data_sources/{id}/",
+    "context": "DELETE /api/projects/{project_id}/external_data_sources/{id}/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_direct_connection_options_list",
+    "name": "Source types the user can add as a direct connection, driven by the direct-SQL capability surface so the picker never drifts from the engines we actually support.",
+    "description": "Source types the user can add as a direct connection, driven by the direct-SQL capability surface so the picker never drifts from the engines we actually support. GET /api/projects/{project_id}/external_data_sources/direct_connection_options/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/direct_connection_options/\nSource types the user can add as a direct connection, driven by the direct-SQL capability surface so the picker never drifts from the engines we actually support.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_disable_cdc_create",
+    "name": "Disable CDC on an existing source",
+    "description": "Disable CDC on an existing source Disable CDC on an existing source. POST /api/projects/{project_id}/external_data_sources/{id}/disable_cdc/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/disable_cdc/\nDisable CDC on an existing source. Cancels any running CDC extraction workflow, deletes the extraction schedule, delegates engine-side teardown to the source's adapter (drops slot/publication for Postgres; equivalent for other engines), clears ``cdc_*`` keys from ``job_inputs``, soft-deletes companion CDC tables, and sets all CDC schemas to ``sync_type=None``, ``should_sync=False`` so the user must pick a new sync strategy before they resume.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_draft_custom_manifest_create",
+    "name": "Draft a Custom REST source manifest from API documentation using an LLM",
+    "description": "Draft a Custom REST source manifest from API documentation using an LLM Draft a Custom REST source manifest from API documentation using an LLM. POST /api/projects/{project_id}/external_data_sources/draft_custom_manifest/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/draft_custom_manifest/\nDraft a Custom REST source manifest from API documentation using an LLM. Reads the docs (a URL fetched server-side, or pasted text / OpenAPI spec), asks the model to author a RESTAPIConfig manifest, and validates it against the create-path checks — repairing against validation errors up to a small budget. Returns the manifest for the user to review and tweak in the builder before creating the source; it does NOT create anything. Gated by the `dwh-custom-source-ai-builder` flag, and requires the org to have approved AI data processing, since the docs are sent to the LLM gateway.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_sources_enable_cdc_create",
+    "name": "Enable CDC on an existing source",
+    "description": "Enable CDC on an existing source Enable CDC on an existing source. POST /api/projects/{project_id}/external_data_sources/{id}/enable_cdc/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/enable_cdc/\nEnable CDC on an existing source. Provisions engine-side CDC resources via the source's adapter, writes the CDC config into ``source.job_inputs``, and ensures the CDC extraction schedule exists. Re-runs prereq checks server-side so we never trust a stale client-side check. Body params: ``cdc_management_mode`` (``\"posthog\"`` | ``\"self_managed\"``), plus engine-specific identifier hints (e.g. ``cdc_slot_name``, ``cdc_publication_name`` for Postgres). Universal tuning fields: ``cdc_auto_drop_slot`` (optional bool), ``cdc_lag_warning_threshold_mb`` (optional int), ``cdc_lag_critical_threshold_mb`` (optional int).\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_jobs_list",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. GET /api/projects/{project_id}/external_data_sources/{id}/jobs/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/{id}/jobs/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — ISO timestamp — only return jobs created after this date.; before (query) — ISO timestamp — only return jobs created before this date.; schemas (query) — Filter jobs by table schema names.; search (query) — A search term."
+  },
+  {
+    "id": "external_data_sources_list",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. GET /api/projects/{project_id}/external_data_sources/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/\nCreate, Read, Update and Delete External data Sources.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "external_data_sources_oauth_accounts_retrieve",
+    "name": "List the accounts/properties a connected OAuth integration exposes, in the shared IntegrationAccount shape",
+    "description": "List the accounts/properties a connected OAuth integration exposes, in the shared IntegrationAccount shape List the accounts/properties a connected OAuth integration exposes, in the shared IntegrationAccount shape. GET /api/projects/{project_id}/external_data_sources/oauth_accounts/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/oauth_accounts/\nList the accounts/properties a connected OAuth integration exposes, in the shared IntegrationAccount shape. The logic lives in each source (via OAuthMixin.get_oauth_accounts); this endpoint just routes by source type, applies the optional search filter, and serializes.\nRequired: integration_id (query) — The OAuth integration id whose accounts should be listed.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; source_type (query) — The data warehouse source type (e.g. 'BingAds', 'GoogleSearchConsole').\nOptional: search (query) — Optional case-insensitive filter over account name/value, for sources whose resource list is large (e.g. GitHub repositories)."
+  },
+  {
+    "id": "external_data_sources_partial_update",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. PATCH /api/projects/{project_id}/external_data_sources/{id}/",
+    "context": "PATCH /api/projects/{project_id}/external_data_sources/{id}/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_sources_preview_resource_create",
+    "name": "Read a bounded sample of rows for one resource of a Custom REST source",
+    "description": "Read a bounded sample of rows for one resource of a Custom REST source Read a bounded sample of rows for one resource of a Custom REST source. POST /api/projects/{project_id}/external_data_sources/preview_resource/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/preview_resource/\nRead a bounded sample of rows for one resource of a Custom REST source. Lets a manifest author verify `data_selector`, `primary_key`, and the incremental `cursor_path` against live data before creating the source. Only `source_type: \"Custom\"` is supported — other source types return 400. The read is bounded (single page per resource, capped row count, short timeouts, no redirects). Manifest, validation, and SSRF problems return 400; a live fetch failure returns 200 with `error` set and empty `rows`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_refresh_schemas_create",
+    "name": "Fetch current schema/table list from the source and create any new ExternalDataSchema rows (no data sync).",
+    "description": "Fetch current schema/table list from the source and create any new ExternalDataSchema rows (no data sync). POST /api/projects/{project_id}/external_data_sources/{id}/refresh_schemas/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/refresh_schemas/\nFetch current schema/table list from the source and create any new ExternalDataSchema rows (no data sync).\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_reload_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/{id}/reload/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/reload/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_repair_cdc_create",
+    "name": "Repair CDC on a source whose replication resources were lost",
+    "description": "Repair CDC on a source whose replication resources were lost Repair CDC on a source whose replication resources were lost. POST /api/projects/{project_id}/external_data_sources/{id}/repair_cdc/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/repair_cdc/\nRepair CDC on a source whose replication resources were lost. Only proceeds on evidence of breakage (a persisted broken marker, or a live probe showing the slot/publication missing) — repairing a healthy source would drop its slot and force a full re-sync. Cancels running CDC jobs, recreates the engine-side slot/publication against the stored CDC config, resets every active CDC schema to snapshot mode for a full re-sync (changes since the old slot died are unrecoverable), clears the broken markers, and resumes the paused schedules. Idempotent: safe to retry after a partial failure. Concurrent repairs of the same source are rejected with a 409.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_resume_cdc_create",
+    "name": "Resume a CDC source whose extraction schedule was paused by a non-retryable failure that left the replication slot intact (bad credentials, SSL/host errors)",
+    "description": "Resume a CDC source whose extraction schedule was paused by a non-retryable failure that left the replication slot intact (bad credentials, SSL/host errors) Resume a CDC source whose extraction schedule was paused by a non-retryable failure that left the replication slot intact (bad credentials, SSL/host errors). POST…",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/resume_cdc/\nResume a CDC source whose extraction schedule was paused by a non-retryable failure that left the replication slot intact (bad credentials, SSL/host errors). Once the user has fixed the root cause, this re-probes the source DB — confirming the connection now succeeds and the slot/publication still exist — then unpauses the extraction schedule so streaming resumes from where it left off. No re-snapshot, so it's the cheap counterpart to Repair CDC. If the slot/publication are actually gone (``cdc_broken``, or a live probe showing them missing), resume is refused — only Repair CDC can recreate them, at the cost of a full re-sync.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_retrieve",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. GET /api/projects/{project_id}/external_data_sources/{id}/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/{id}/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_revenue_analytics_config_partial_update",
+    "name": "Update the revenue analytics configuration and return the full external data source.",
+    "description": "Update the revenue analytics configuration and return the full external data source. PATCH /api/projects/{project_id}/external_data_sources/{id}/revenue_analytics_config/",
+    "context": "PATCH /api/projects/{project_id}/external_data_sources/{id}/revenue_analytics_config/\nUpdate the revenue analytics configuration and return the full external data source.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_sources_setup_create",
+    "name": "One-shot data warehouse source setup",
+    "description": "One-shot data warehouse source setup One-shot data warehouse source setup. POST /api/projects/{project_id}/external_data_sources/setup/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/setup/\nOne-shot data warehouse source setup. Validate credentials, discover available tables, enable them all with sensible sync defaults (incremental where supported, else append, else full refresh), and create the source in a single call — the caller never has to assemble a `schemas` array. For sources that support webhooks (e.g. Stripe), a webhook is auto-registered after creation: on success webhook-capable tables switch to real-time webhook sync (unlocking webhook-only tables); on failure the polling defaults stay in place. For fine-grained table/sync control, use the lower-level `database_schema` + `create` flow instead.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_source_prefix_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/source_prefix/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/source_prefix/\nCreate, Read, Update and Delete External data Sources.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_store_credentials_create",
+    "name": "Validate and store credentials for a data warehouse source without creating the source",
+    "description": "Validate and store credentials for a data warehouse source without creating the source Validate and store credentials for a data warehouse source without creating the source. POST /api/projects/{project_id}/external_data_sources/store_credentials/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/store_credentials/\nValidate and store credentials for a data warehouse source without creating the source. Backs the source connect page: the user enters credentials directly in PostHog, they are checked against a live connection, then stashed encrypted in a temporary store. The returned credential id can be passed to `setup` as {'credential_id': } to create the source — so secrets never travel through an agent conversation. The stash is single-use: it is deleted as soon as `setup` consumes it, and expires after 24 hours if never consumed.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_stored_credentials_list",
+    "name": "List credentials the requesting user stored via the source connect page that haven't been consumed yet",
+    "description": "List credentials the requesting user stored via the source connect page that haven't been consumed yet List credentials the requesting user stored via the source connect page that haven't been consumed yet. GET /api/projects/{project_id}/external_data_sources/stored_credentials/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/stored_credentials/\nList credentials the requesting user stored via the source connect page that haven't been consumed yet. Returns metadata only (id, source type, timestamps) — never the secrets themselves. Stored credentials are scoped to their creator: only the user who filled the connect page can list or consume them. They are temporary too: they disappear once consumed by `setup` or when they expire. Newest first, so after a user confirms they've finished the connect page, the first entry for the source type is the one to pass to `setup`.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: search (query) — A search term.; source_type (query) — Only return stored credentials for this source type (e.g. 'Stripe', 'Postgres')."
+  },
+  {
+    "id": "external_data_sources_update",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. PUT /api/projects/{project_id}/external_data_sources/{id}/",
+    "context": "PUT /api/projects/{project_id}/external_data_sources/{id}/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_update_cdc_settings_create",
+    "name": "Update CDC tuning fields without enabling/disabling",
+    "description": "Update CDC tuning fields without enabling/disabling Update CDC tuning fields without enabling/disabling. POST /api/projects/{project_id}/external_data_sources/{id}/update_cdc_settings/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/update_cdc_settings/\nUpdate CDC tuning fields without enabling/disabling. Lets users edit ``cdc_auto_drop_slot``, ``cdc_lag_warning_threshold_mb``, and ``cdc_lag_critical_threshold_mb`` independently. These fields are universal across engines. Engine-specific identifiers (slot name, management mode, …) are immutable post-enable — switching them requires disable + enable.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_update_webhook_inputs_create",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. POST /api/projects/{project_id}/external_data_sources/{id}/update_webhook_inputs/",
+    "context": "POST /api/projects/{project_id}/external_data_sources/{id}/update_webhook_inputs/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "external_data_sources_webhook_info_retrieve",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. GET /api/projects/{project_id}/external_data_sources/{id}/webhook_info/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/{id}/webhook_info/\nCreate, Read, Update and Delete External data Sources.\nRequired: id (path) — A UUID string identifying this external data source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_sources_wizard_retrieve",
+    "name": "Create, Read, Update and Delete External data Sources.",
+    "description": "Create, Read, Update and Delete External data Sources. GET /api/projects/{project_id}/external_data_sources/wizard/",
+    "context": "GET /api/projects/{project_id}/external_data_sources/wizard/\nCreate, Read, Update and Delete External data Sources.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: source_type (query) — Comma-separated source type(s) to return config for, e.g. 'Postgres' or 'Postgres,Stripe'. Strongly recommended: the unfiltered response describes every supported source and is very large. Omit only to enumerate the available types."
+  }
+]

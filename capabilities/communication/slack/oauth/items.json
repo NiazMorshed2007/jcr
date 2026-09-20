@@ -1,0 +1,20 @@
+[
+  {
+    "id": "oauth.access",
+    "name": "Exchanges a temporary OAuth verifier code for an access token.",
+    "description": "Exchanges a temporary OAuth verifier code for an access token. **DEPRECATED:** This is a legacy method only used by classic Slack apps. POST /api/oauth.access",
+    "context": "POST /api/oauth.access\n**DEPRECATED:** This is a legacy method only used by classic Slack apps. Use `oauth.v2.access` for new Slack apps.\nRequired: body (body)"
+  },
+  {
+    "id": "oauth.v2.access",
+    "name": "Exchanges a temporary OAuth verifier code for an access token.",
+    "description": "Exchanges a temporary OAuth verifier code for an access token. POST /api/oauth.v2.access",
+    "context": "POST /api/oauth.v2.access\nExchanges a temporary OAuth verifier code for an access token.\nRequired: body (body)"
+  },
+  {
+    "id": "oauth.v2.exchange",
+    "name": "Exchanges a legacy access token for a new expiring access token and refresh token.",
+    "description": "Exchanges a legacy access token for a new expiring access token and refresh token. POST /api/oauth.v2.exchange",
+    "context": "POST /api/oauth.v2.exchange\nExchanges a legacy access token for a new expiring access token and refresh token.\nRequired: body (body)"
+  }
+]

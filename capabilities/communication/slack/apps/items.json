@@ -1,0 +1,56 @@
+[
+  {
+    "id": "apps.connections.open",
+    "name": "Generate a temporary Socket Mode WebSocket URL that your app can connect to in order to receive events and interactive payloads over.",
+    "description": "Generate a temporary Socket Mode WebSocket URL that your app can connect to in order to receive events and interactive payloads over. POST /api/apps.connections.open",
+    "context": "POST /api/apps.connections.open\nGenerate a temporary Socket Mode WebSocket URL that your app can connect to in order to receive events and interactive payloads over.\nOptional: body (body)"
+  },
+  {
+    "id": "apps.event.authorizations.list",
+    "name": "Get a list of authorizations for the given event context. Each authorization represents an app installation that the event is visible to.",
+    "description": "Get a list of authorizations for the given event context. Each authorization represents an app installation that the event is visible to. POST /api/apps.event.authorizations.list",
+    "context": "POST /api/apps.event.authorizations.list\nGet a list of authorizations for the given event context. Each authorization represents an app installation that the event is visible to.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.manifest.create",
+    "name": "Create an app from an app manifest.",
+    "description": "Create an app from an app manifest. POST /api/apps.manifest.create",
+    "context": "POST /api/apps.manifest.create\nCreate an app from an app manifest.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.manifest.delete",
+    "name": "Permanently deletes an app created through app manifests.",
+    "description": "Permanently deletes an app created through app manifests. POST /api/apps.manifest.delete",
+    "context": "POST /api/apps.manifest.delete\nPermanently deletes an app created through app manifests.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.manifest.export",
+    "name": "Export an app manifest from an existing app.",
+    "description": "Export an app manifest from an existing app. POST /api/apps.manifest.export",
+    "context": "POST /api/apps.manifest.export\nExport an app manifest from an existing app.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.manifest.update",
+    "name": "Update an app from an app manifest.",
+    "description": "Update an app from an app manifest. POST /api/apps.manifest.update",
+    "context": "POST /api/apps.manifest.update\nUpdate an app from an app manifest.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.manifest.validate",
+    "name": "Validate an app manifest.",
+    "description": "Validate an app manifest. POST /api/apps.manifest.validate",
+    "context": "POST /api/apps.manifest.validate\nValidate an app manifest.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.uninstall",
+    "name": "Uninstalls your app from a workspace.",
+    "description": "Uninstalls your app from a workspace. POST /api/apps.uninstall",
+    "context": "POST /api/apps.uninstall\nUninstalls your app from a workspace.\nRequired: body (body)"
+  },
+  {
+    "id": "apps.user.connection.update",
+    "name": "Updates the connection status between a user and an app.",
+    "description": "Updates the connection status between a user and an app. POST /api/apps.user.connection.update",
+    "context": "POST /api/apps.user.connection.update\nUpdates the connection status between a user and an app.\nRequired: body (body)"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "v1-get-postgres-upgrade-eligibility",
+    "name": "Returns the project's eligibility for upgrades",
+    "description": "Returns the project's eligibility for upgrades This is an **experimental** endpoint. GET /v1/projects/{ref}/upgrade/eligibility",
+    "context": "GET /v1/projects/{ref}/upgrade/eligibility\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-postgres-upgrade-status",
+    "name": "Gets the latest status of the project's upgrade",
+    "description": "Gets the latest status of the project's upgrade This is an **experimental** endpoint. GET /v1/projects/{ref}/upgrade/status",
+    "context": "GET /v1/projects/{ref}/upgrade/status\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref\nOptional: tracking_id (query)"
+  },
+  {
+    "id": "v1-upgrade-postgres-version",
+    "name": "Upgrades the project's Postgres version",
+    "description": "Upgrades the project's Postgres version This is an **experimental** endpoint. POST /v1/projects/{ref}/upgrade",
+    "context": "POST /v1/projects/{ref}/upgrade\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  }
+]

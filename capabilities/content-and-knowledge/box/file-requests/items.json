@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_file_requests_id",
+    "name": "Delete file request",
+    "description": "Delete file request Deletes a file request permanently. DELETE /2.0/file_requests/{file_request_id}",
+    "context": "DELETE /2.0/file_requests/{file_request_id}\nDeletes a file request permanently.\nRequired: file_request_id (path) — The unique identifier that represent a file request. The ID for any file request can be determined by visiting a file request builder in the web application and copying the ID from the URL. For example, for the URL `https://*.app.box.com/filerequest/123` the `file_request_id` is `123`."
+  },
+  {
+    "id": "get_file_requests_id",
+    "name": "Get file request",
+    "description": "Get file request Retrieves the information about a file request. GET /2.0/file_requests/{file_request_id}",
+    "context": "GET /2.0/file_requests/{file_request_id}\nRetrieves the information about a file request.\nRequired: file_request_id (path) — The unique identifier that represent a file request. The ID for any file request can be determined by visiting a file request builder in the web application and copying the ID from the URL. For example, for the URL `https://*.app.box.com/filerequest/123` the `file_request_id` is `123`."
+  },
+  {
+    "id": "post_file_requests_id_copy",
+    "name": "Copy file request",
+    "description": "Copy file request Copies an existing file request that is already present on one folder, and applies it to another folder. POST /2.0/file_requests/{file_request_id}/copy",
+    "context": "POST /2.0/file_requests/{file_request_id}/copy\nCopies an existing file request that is already present on one folder, and applies it to another folder.\nRequired: file_request_id (path) — The unique identifier that represent a file request. The ID for any file request can be determined by visiting a file request builder in the web application and copying the ID from the URL. For example, for the URL `https://*.app.box.com/filerequest/123` the `file_request_id` is `123`.\nOptional: body (body)"
+  },
+  {
+    "id": "put_file_requests_id",
+    "name": "Update file request",
+    "description": "Update file request Updates a file request. PUT /2.0/file_requests/{file_request_id}",
+    "context": "PUT /2.0/file_requests/{file_request_id}\nUpdates a file request. This can be used to activate or deactivate a file request.\nRequired: file_request_id (path) — The unique identifier that represent a file request. The ID for any file request can be determined by visiting a file request builder in the web application and copying the ID from the URL. For example, for the URL `https://*.app.box.com/filerequest/123` the `file_request_id` is `123`.\nOptional: if-match (header) — Ensures this item hasn't recently changed before making changes. Pass in the item's last observed `etag` value into this header and the endpoint will fail with a `412 Precondition Failed` if it has changed since.; body (body)"
+  }
+]

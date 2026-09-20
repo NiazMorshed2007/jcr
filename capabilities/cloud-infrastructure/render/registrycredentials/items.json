@@ -1,0 +1,32 @@
+[
+  {
+    "id": "create-registry-credential",
+    "name": "Create registry credential",
+    "description": "Create registry credential Create a new registry credential. POST /v1/registrycredentials",
+    "context": "POST /v1/registrycredentials\nCreate a new registry credential.\nRequired: body (body)"
+  },
+  {
+    "id": "delete-registry-credential",
+    "name": "Delete registry credential",
+    "description": "Delete registry credential Delete the registry credential with the provided ID. DELETE /v1/registrycredentials/{registryCredentialId}",
+    "context": "DELETE /v1/registrycredentials/{registryCredentialId}\nDelete the registry credential with the provided ID.\nRequired: registryCredentialId (path) — The ID of the registry credential"
+  },
+  {
+    "id": "list-registry-credentials",
+    "name": "List registry credentials",
+    "description": "List registry credentials List registry credentials matching the provided filters. GET /v1/registrycredentials",
+    "context": "GET /v1/registrycredentials\nList registry credentials matching the provided filters. If no filters are provided, returns all registry credentials you have permissions to view.\nOptional: name (query) — Filter for the name of a credential; username (query) — Filter for the username of a credential; type (query) — Filter for the registry type for the credential; createdBefore (query) — Filter for services created before a certain time (specified as an ISO 8601 timestamp); createdAfter (query) — Filter for services created after a certain time (specified as an ISO 8601 timestamp); updatedBefore (query) — Filter for services updated before a certain time (specified as an ISO 8601 timestamp); updatedAfter (query) — Filter for services updated after a certain time (specified as an ISO 8601 timestamp); ownerId (query) — The ID of the workspaces to return resources for; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "retrieve-registry-credential",
+    "name": "Retrieve registry credential",
+    "description": "Retrieve registry credential Retrieve the registry credential with the provided ID. GET /v1/registrycredentials/{registryCredentialId}",
+    "context": "GET /v1/registrycredentials/{registryCredentialId}\nRetrieve the registry credential with the provided ID.\nRequired: registryCredentialId (path) — The ID of the registry credential"
+  },
+  {
+    "id": "update-registry-credential",
+    "name": "Update registry credential",
+    "description": "Update registry credential Update the registry credential with the provided ID. PATCH /v1/registrycredentials/{registryCredentialId}",
+    "context": "PATCH /v1/registrycredentials/{registryCredentialId}\nUpdate the registry credential with the provided ID. Services that use this credential must be redeployed to use updated values.\nRequired: registryCredentialId (path) — The ID of the registry credential; body (body)"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "available-page-rules-settings-list-available-page-rules-settings",
+    "name": "List available Page Rules settings",
+    "description": "List available Page Rules settings Returns a list of settings (and their details) that Page Rules can apply to matching requests. GET /client/v4/zones/{zone_id}/pagerules/settings",
+    "context": "GET /client/v4/zones/{zone_id}/pagerules/settings\nReturns a list of settings (and their details) that Page Rules can apply to matching requests.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "page-rules-create-a-page-rule",
+    "name": "Create a Page Rule",
+    "description": "Create a Page Rule Creates a new Page Rule. POST /client/v4/zones/{zone_id}/pagerules",
+    "context": "POST /client/v4/zones/{zone_id}/pagerules\nCreates a new Page Rule.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "page-rules-delete-a-page-rule",
+    "name": "Delete a Page Rule",
+    "description": "Delete a Page Rule Deletes an existing Page Rule. DELETE /client/v4/zones/{zone_id}/pagerules/{pagerule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/pagerules/{pagerule_id}\nDeletes an existing Page Rule.\nRequired: pagerule_id (path); zone_id (path)"
+  },
+  {
+    "id": "page-rules-edit-a-page-rule",
+    "name": "Edit a Page Rule",
+    "description": "Edit a Page Rule Updates one or more fields of an existing Page Rule. PATCH /client/v4/zones/{zone_id}/pagerules/{pagerule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/pagerules/{pagerule_id}\nUpdates one or more fields of an existing Page Rule.\nRequired: pagerule_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "page-rules-get-a-page-rule",
+    "name": "Get a Page Rule",
+    "description": "Get a Page Rule Fetches the details of a Page Rule. GET /client/v4/zones/{zone_id}/pagerules/{pagerule_id}",
+    "context": "GET /client/v4/zones/{zone_id}/pagerules/{pagerule_id}\nFetches the details of a Page Rule.\nRequired: pagerule_id (path); zone_id (path)"
+  },
+  {
+    "id": "page-rules-list-page-rules",
+    "name": "List Page Rules",
+    "description": "List Page Rules Fetches Page Rules in a zone. GET /client/v4/zones/{zone_id}/pagerules",
+    "context": "GET /client/v4/zones/{zone_id}/pagerules\nFetches Page Rules in a zone.\nRequired: zone_id (path)\nOptional: order (query); direction (query); match (query); status (query)"
+  },
+  {
+    "id": "page-rules-update-a-page-rule",
+    "name": "Update a Page Rule",
+    "description": "Update a Page Rule Replaces the configuration of an existing Page Rule. PUT /client/v4/zones/{zone_id}/pagerules/{pagerule_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/pagerules/{pagerule_id}\nReplaces the configuration of an existing Page Rule. The configuration of the updated Page Rule will exactly match the data passed in the API request.\nRequired: pagerule_id (path); zone_id (path); body (body)"
+  }
+]

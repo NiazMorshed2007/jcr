@@ -1,0 +1,56 @@
+[
+  {
+    "id": "dns-firewall-analytics-by-time",
+    "name": "By Time",
+    "description": "By Time Retrieves a list of aggregate metrics grouped by time interval. GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report/bytime",
+    "context": "GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report/bytime\nRetrieves a list of aggregate metrics grouped by time interval. See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.\nRequired: dns_firewall_id (path); account_id (path)\nOptional: metrics (query); dimensions (query); since (query); until (query); limit (query); sort (query); filters (query); time_delta (query)"
+  },
+  {
+    "id": "dns-firewall-analytics-table",
+    "name": "Table",
+    "description": "Table Retrieves a list of summarised aggregate metrics over a given time period. GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report",
+    "context": "GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/dns_analytics/report\nRetrieves a list of summarised aggregate metrics over a given time period. See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.\nRequired: dns_firewall_id (path); account_id (path)\nOptional: metrics (query); dimensions (query); since (query); until (query); limit (query); sort (query); filters (query)"
+  },
+  {
+    "id": "dns-firewall-create-dns-firewall-cluster",
+    "name": "Create DNS Firewall Cluster",
+    "description": "Create DNS Firewall Cluster Create a DNS Firewall cluster POST /client/v4/accounts/{account_id}/dns_firewall",
+    "context": "POST /client/v4/accounts/{account_id}/dns_firewall\nCreate a DNS Firewall cluster\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "dns-firewall-delete-dns-firewall-cluster",
+    "name": "Delete DNS Firewall Cluster",
+    "description": "Delete DNS Firewall Cluster Delete a DNS Firewall cluster DELETE /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}\nDelete a DNS Firewall cluster\nRequired: dns_firewall_id (path); account_id (path)"
+  },
+  {
+    "id": "dns-firewall-dns-firewall-cluster-details",
+    "name": "DNS Firewall Cluster Details",
+    "description": "DNS Firewall Cluster Details Show a single DNS Firewall cluster for an account GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}\nShow a single DNS Firewall cluster for an account\nRequired: dns_firewall_id (path); account_id (path)"
+  },
+  {
+    "id": "dns-firewall-list-dns-firewall-clusters",
+    "name": "List DNS Firewall Clusters",
+    "description": "List DNS Firewall Clusters List DNS Firewall clusters for an account GET /client/v4/accounts/{account_id}/dns_firewall",
+    "context": "GET /client/v4/accounts/{account_id}/dns_firewall\nList DNS Firewall clusters for an account\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "dns-firewall-show-dns-firewall-cluster-reverse-dns",
+    "name": "Show DNS Firewall Cluster Reverse DNS",
+    "description": "Show DNS Firewall Cluster Reverse DNS Show reverse DNS configuration (PTR records) for a DNS Firewall cluster GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns",
+    "context": "GET /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns\nShow reverse DNS configuration (PTR records) for a DNS Firewall cluster\nRequired: dns_firewall_id (path); account_id (path)"
+  },
+  {
+    "id": "dns-firewall-update-dns-firewall-cluster",
+    "name": "Update DNS Firewall Cluster",
+    "description": "Update DNS Firewall Cluster Modify the configuration of a DNS Firewall cluster PATCH /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}\nModify the configuration of a DNS Firewall cluster\nRequired: dns_firewall_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "dns-firewall-update-dns-firewall-cluster-reverse-dns",
+    "name": "Update DNS Firewall Cluster Reverse DNS",
+    "description": "Update DNS Firewall Cluster Reverse DNS Update reverse DNS configuration (PTR records) for a DNS Firewall cluster PATCH /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns",
+    "context": "PATCH /client/v4/accounts/{account_id}/dns_firewall/{dns_firewall_id}/reverse_dns\nUpdate reverse DNS configuration (PTR records) for a DNS Firewall cluster\nRequired: dns_firewall_id (path); account_id (path); body (body)"
+  }
+]

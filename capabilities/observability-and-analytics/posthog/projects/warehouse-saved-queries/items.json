@@ -1,0 +1,194 @@
+[
+  {
+    "id": "warehouse_saved_queries_activity_retrieve",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. GET /api/projects/{project_id}/warehouse_saved_queries/{id}/activity/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{id}/activity/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_queries_ancestors_create",
+    "name": "Return the ancestors of this saved query",
+    "description": "Return the ancestors of this saved query Return the ancestors of this saved query. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/ancestors/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/ancestors/\nReturn the ancestors of this saved query. By default, we return every ancestor. The `level` parameter bounds how many hops back to walk, so 1 gives the immediate parents.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_cancel_create",
+    "name": "Cancel a running saved query workflow.",
+    "description": "Cancel a running saved query workflow. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/cancel/\nCancel a running saved query workflow.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_check_incremental_create",
+    "name": "Report whether a query can be materialized incrementally, without running it",
+    "description": "Report whether a query can be materialized incrementally, without running it Report whether a query can be materialized incrementally, without running it. POST /api/projects/{project_id}/warehouse_saved_queries/check_incremental/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/check_incremental/\nReport whether a query can be materialized incrementally, without running it. Parses the SQL only, so it is cheap enough to call from the editor as the user types. Lets the editor explain why the incremental option is unavailable before anything is saved.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_check_suite_runs_check_runs_list",
+    "name": "Every check execution in this suite run.",
+    "description": "Every check execution in this suite run. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/check_suite_runs/{id}/check_runs/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/check_suite_runs/{id}/check_runs/\nEvery check execution in this suite run.\nRequired: id (path) — A UUID string identifying this data quality suite run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path) — Id of the saved query whose suite runs these are."
+  },
+  {
+    "id": "warehouse_saved_queries_check_suite_runs_list",
+    "name": "Read-only reports for this subject's check-suite executions.",
+    "description": "Read-only reports for this subject's check-suite executions. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/check_suite_runs/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/check_suite_runs/\nRead-only reports for this subject's check-suite executions.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path) — Id of the saved query whose suite runs these are.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "warehouse_saved_queries_check_suite_runs_retrieve",
+    "name": "Read-only reports for this subject's check-suite executions.",
+    "description": "Read-only reports for this subject's check-suite executions. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/check_suite_runs/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/check_suite_runs/{id}/\nRead-only reports for this subject's check-suite executions.\nRequired: id (path) — A UUID string identifying this data quality suite run.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path) — Id of the saved query whose suite runs these are."
+  },
+  {
+    "id": "warehouse_saved_queries_checks_check_types_list",
+    "name": "The check types this project can author, with the JSON schema of each type's config.",
+    "description": "The check types this project can author, with the JSON schema of each type's config. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/check_types/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/check_types/\nThe check types this project can author, with the JSON schema of each type's config.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_create",
+    "name": "Create a check on this table or view, or refine the one already carrying the same fingerprint",
+    "description": "Create a check on this table or view, or refine the one already carrying the same fingerprint Create a check on this table or view, or refine the one already carrying the same fingerprint. POST /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/\nCreate a check on this table or view, or refine the one already carrying the same fingerprint. Re-creating a semantically identical check returns 200 and the existing row, never a duplicate.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path); body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_destroy",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. DELETE /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/",
+    "context": "DELETE /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_health_retrieve",
+    "name": "Health rollup for this table or view, from the denormalized status of its checks.",
+    "description": "Health rollup for this table or view, from the denormalized status of its checks. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/health/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/health/\nHealth rollup for this table or view, from the denormalized status of its checks.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_list",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "warehouse_saved_queries_checks_partial_update",
+    "name": "Edit this check in place, including what it asserts (check_type, column_name, config)",
+    "description": "Edit this check in place, including what it asserts (check_type, column_name, config) Edit this check in place, including what it asserts (check_type, column_name, config). PATCH /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/",
+    "context": "PATCH /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/\nEdit this check in place, including what it asserts (check_type, column_name, config). The table or view it audits is fixed, and the check keeps its id, run history, latest status, and latest run time. A definition or name already held by another active check comes back as a field error, with nothing written.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_retrieve",
+    "name": "CRUD for one subject's checks, plus the actions that run them and report on them.",
+    "description": "CRUD for one subject's checks, plus the actions that run them and report on them. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/\nCRUD for one subject's checks, plus the actions that run them and report on them.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_run_all_create",
+    "name": "Run every enabled check on this table or view",
+    "description": "Run every enabled check on this table or view Run every enabled check on this table or view. POST /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/run_all/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/run_all/\nRun every enabled check on this table or view. Returns the suite run to poll.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_run_create",
+    "name": "Run this check now",
+    "description": "Run this check now Run this check now. POST /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/run/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/run/\nRun this check now. Returns the suite run to poll for the report.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_runs_list",
+    "name": "Recent run history for this check, newest first.",
+    "description": "Recent run history for this check, newest first. GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/runs/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/runs/\nRecent run history for this check, newest first.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path)"
+  },
+  {
+    "id": "warehouse_saved_queries_checks_update",
+    "name": "Edit this check in place, including what it asserts (check_type, column_name, config)",
+    "description": "Edit this check in place, including what it asserts (check_type, column_name, config) Edit this check in place, including what it asserts (check_type, column_name, config). PUT /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/",
+    "context": "PUT /api/projects/{project_id}/warehouse_saved_queries/{saved_query_id}/checks/{id}/\nEdit this check in place, including what it asserts (check_type, column_name, config). The table or view it audits is fixed, and the check keeps its id, run history, latest status, and latest run time. A definition or name already held by another active check comes back as a field error, with nothing written.\nRequired: id (path) — A UUID string identifying this data quality check.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; saved_query_id (path); body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_create",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. POST /api/projects/{project_id}/warehouse_saved_queries/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_dependencies_retrieve",
+    "name": "Return the count of immediate upstream and downstream dependencies for this saved query.",
+    "description": "Return the count of immediate upstream and downstream dependencies for this saved query. GET /api/projects/{project_id}/warehouse_saved_queries/{id}/dependencies/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{id}/dependencies/\nReturn the count of immediate upstream and downstream dependencies for this saved query.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_queries_descendants_create",
+    "name": "Return the descendants of this saved query",
+    "description": "Return the descendants of this saved query Return the descendants of this saved query. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/descendants/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/descendants/\nReturn the descendants of this saved query. By default, we return every descendant. The `level` parameter bounds how many hops forward to walk, so 1 gives the immediate children.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_destroy",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. DELETE /api/projects/{project_id}/warehouse_saved_queries/{id}/",
+    "context": "DELETE /api/projects/{project_id}/warehouse_saved_queries/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_queries_list",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. GET /api/projects/{project_id}/warehouse_saved_queries/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: include_columns (query) — Include column definitions. Set to false for table-only lists.; page (query) — A page number within the paginated result set.; search (query) — A search term."
+  },
+  {
+    "id": "warehouse_saved_queries_materialize_create",
+    "name": "Enable materialization for this saved query, at the requested sync frequency or daily.",
+    "description": "Enable materialization for this saved query, at the requested sync frequency or daily. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/materialize/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/materialize/\nEnable materialization for this saved query, at the requested sync frequency or daily.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_partial_update",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. PATCH /api/projects/{project_id}/warehouse_saved_queries/{id}/",
+    "context": "PATCH /api/projects/{project_id}/warehouse_saved_queries/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_resume_create",
+    "name": "Resume materialization suspended after repeated failures",
+    "description": "Resume materialization suspended after repeated failures Resume materialization suspended after repeated failures. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/resume/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/resume/\nResume materialization suspended after repeated failures. Scheduled runs skip a suspended model and everything downstream of it, so it cannot succeed its way back on its own.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_queries_resume_schedules_create",
+    "name": "Resume materialization for several models that were suspended after repeated failures",
+    "description": "Resume materialization for several models that were suspended after repeated failures Resume materialization for several models that were suspended after repeated failures. POST /api/projects/{project_id}/warehouse_saved_queries/resume_schedules/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/resume_schedules/\nResume materialization for several models that were suspended after repeated failures. Accepts a list of view IDs in the request body: {\"view_ids\": [\"id1\", \"id2\", ...]} This endpoint is idempotent - calling it on models that are already running is safe.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_retrieve",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. GET /api/projects/{project_id}/warehouse_saved_queries/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_queries_revert_materialization_create",
+    "name": "Undo materialization, revert back to the original view",
+    "description": "Undo materialization, revert back to the original view Undo materialization, revert back to the original view. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/revert_materialization/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/revert_materialization/\nUndo materialization, revert back to the original view. (i.e. delete the materialized table and the schedule)\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_run_create",
+    "name": "Run this saved query.",
+    "description": "Run this saved query. POST /api/projects/{project_id}/warehouse_saved_queries/{id}/run/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_queries/{id}/run/\nRun this saved query.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_queries_run_history_retrieve",
+    "name": "Return the recent run history (up to 5 most recent) for this materialized view.",
+    "description": "Return the recent run history (up to 5 most recent) for this materialized view. GET /api/projects/{project_id}/warehouse_saved_queries/{id}/run_history/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_queries/{id}/run_history/\nReturn the recent run history (up to 5 most recent) for this materialized view.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_queries_update",
+    "name": "Create, Read, Update and Delete Warehouse Tables.",
+    "description": "Create, Read, Update and Delete Warehouse Tables. PUT /api/projects/{project_id}/warehouse_saved_queries/{id}/",
+    "context": "PUT /api/projects/{project_id}/warehouse_saved_queries/{id}/\nCreate, Read, Update and Delete Warehouse Tables.\nRequired: id (path) — A UUID string identifying this data warehouse saved query.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

@@ -1,0 +1,218 @@
+[
+  {
+    "id": "account-load-balancer-monitor-groups-create-monitor-group",
+    "name": "Create Monitor Group",
+    "description": "Create Monitor Group Create a new monitor group. POST /client/v4/accounts/{account_id}/load_balancers/monitor_groups",
+    "context": "POST /client/v4/accounts/{account_id}/load_balancers/monitor_groups\nCreate a new monitor group.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-monitor-groups-delete-monitor-group",
+    "name": "Delete Monitor Group",
+    "description": "Delete Monitor Group Delete a configured monitor group. DELETE /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}\nDelete a configured monitor group.\nRequired: monitor_group_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitor-groups-list-monitor-group-references",
+    "name": "List Monitor Group References",
+    "description": "List Monitor Group References Get the list of resources that reference the provided monitor group. GET /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}/references",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}/references\nGet the list of resources that reference the provided monitor group.\nRequired: monitor_group_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitor-groups-list-monitor-groups",
+    "name": "List Monitor Groups",
+    "description": "List Monitor Groups List configured monitor groups. GET /client/v4/accounts/{account_id}/load_balancers/monitor_groups",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/monitor_groups\nList configured monitor groups.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitor-groups-monitor-group-details",
+    "name": "Monitor Group Details",
+    "description": "Monitor Group Details Fetch a single configured monitor group. GET /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}\nFetch a single configured monitor group.\nRequired: monitor_group_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitor-groups-patch-monitor-group",
+    "name": "Patch Monitor Group",
+    "description": "Patch Monitor Group Apply changes to an existing monitor group, overwriting the supplied properties. PATCH /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}\nApply changes to an existing monitor group, overwriting the supplied properties.\nRequired: monitor_group_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-monitor-groups-update-monitor-group",
+    "name": "Update Monitor Group",
+    "description": "Update Monitor Group Modify a configured monitor group. PUT /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/load_balancers/monitor_groups/{monitor_group_id}\nModify a configured monitor group.\nRequired: monitor_group_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-monitors-create-monitor",
+    "name": "Create Monitor",
+    "description": "Create Monitor Create a configured monitor. POST /client/v4/accounts/{account_id}/load_balancers/monitors",
+    "context": "POST /client/v4/accounts/{account_id}/load_balancers/monitors\nCreate a configured monitor.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-monitors-delete-monitor",
+    "name": "Delete Monitor",
+    "description": "Delete Monitor Delete a configured monitor. DELETE /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}\nDelete a configured monitor.\nRequired: monitor_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitors-list-monitor-references",
+    "name": "List Monitor References",
+    "description": "List Monitor References Get the list of resources that reference the provided monitor. GET /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}/references",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}/references\nGet the list of resources that reference the provided monitor.\nRequired: monitor_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitors-list-monitors",
+    "name": "List Monitors",
+    "description": "List Monitors List configured monitors for an account. GET /client/v4/accounts/{account_id}/load_balancers/monitors",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/monitors\nList configured monitors for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitors-monitor-details",
+    "name": "Monitor Details",
+    "description": "Monitor Details List a single configured monitor for an account. GET /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}\nList a single configured monitor for an account.\nRequired: monitor_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitors-patch-monitor",
+    "name": "Patch Monitor",
+    "description": "Patch Monitor Apply changes to an existing monitor, overwriting the supplied properties. PATCH /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}\nApply changes to an existing monitor, overwriting the supplied properties.\nRequired: monitor_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-monitors-preview-monitor",
+    "name": "Preview Monitor",
+    "description": "Preview Monitor Preview pools using the specified monitor with provided monitor details. POST /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}/preview",
+    "context": "POST /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}/preview\nPreview pools using the specified monitor with provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.\nRequired: monitor_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-monitors-preview-result",
+    "name": "Preview Result",
+    "description": "Preview Result Get the result of a previous preview operation using the provided preview_id. GET /client/v4/accounts/{account_id}/load_balancers/preview/{preview_id}",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/preview/{preview_id}\nGet the result of a previous preview operation using the provided preview_id.\nRequired: preview_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-monitors-update-monitor",
+    "name": "Update Monitor",
+    "description": "Update Monitor Modify a configured monitor. PUT /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/load_balancers/monitors/{monitor_id}\nModify a configured monitor.\nRequired: monitor_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-pools-create-pool",
+    "name": "Create Pool",
+    "description": "Create Pool Create a new pool. POST /client/v4/accounts/{account_id}/load_balancers/pools",
+    "context": "POST /client/v4/accounts/{account_id}/load_balancers/pools\nCreate a new pool.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-pools-delete-pool",
+    "name": "Delete Pool",
+    "description": "Delete Pool Delete a configured pool. DELETE /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}\nDelete a configured pool.\nRequired: pool_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-pools-list-pool-references",
+    "name": "List Pool References",
+    "description": "List Pool References Get the list of resources that reference the provided pool. GET /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}/references",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}/references\nGet the list of resources that reference the provided pool.\nRequired: pool_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-pools-list-pools",
+    "name": "List Pools",
+    "description": "List Pools List configured pools. GET /client/v4/accounts/{account_id}/load_balancers/pools",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/pools\nList configured pools.\nRequired: account_id (path)\nOptional: monitor (query)"
+  },
+  {
+    "id": "account-load-balancer-pools-patch-pool",
+    "name": "Patch Pool",
+    "description": "Patch Pool Apply changes to an existing pool, overwriting the supplied properties. PATCH /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}\nApply changes to an existing pool, overwriting the supplied properties.\nRequired: pool_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-pools-patch-pools",
+    "name": "Patch Pools",
+    "description": "Patch Pools Apply changes to a number of existing pools, overwriting the supplied properties. PATCH /client/v4/accounts/{account_id}/load_balancers/pools",
+    "context": "PATCH /client/v4/accounts/{account_id}/load_balancers/pools\nApply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-pools-pool-details",
+    "name": "Pool Details",
+    "description": "Pool Details Fetch a single configured pool. GET /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}\nFetch a single configured pool.\nRequired: pool_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-pools-pool-health-details",
+    "name": "Pool Health Details",
+    "description": "Pool Health Details Fetch the latest pool health status for a single pool. GET /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}/health",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}/health\nFetch the latest pool health status for a single pool.\nRequired: pool_id (path); account_id (path)"
+  },
+  {
+    "id": "account-load-balancer-pools-preview-pool",
+    "name": "Preview Pool",
+    "description": "Preview Pool Preview pool health using provided monitor details. POST /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}/preview",
+    "context": "POST /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}/preview\nPreview pool health using provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.\nRequired: pool_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-pools-update-pool",
+    "name": "Update Pool",
+    "description": "Update Pool Modify a configured pool. PUT /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/load_balancers/pools/{pool_id}\nModify a configured pool.\nRequired: pool_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancer-search-search-resources",
+    "name": "Search Resources",
+    "description": "Search Resources Search for Load Balancing resources. GET /client/v4/accounts/{account_id}/load_balancers/search",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/search\nSearch for Load Balancing resources.\nRequired: account_id (path)\nOptional: query (query); references (query); page (query); per_page (query)"
+  },
+  {
+    "id": "account-load-balancers-account-load-balancer-details",
+    "name": "Account Load Balancer Details",
+    "description": "Account Load Balancer Details Fetch a single configured account-scoped load balancer. GET /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}\nFetch a single configured account-scoped load balancer.\nRequired: account_id (path); load_balancer_id (path)"
+  },
+  {
+    "id": "account-load-balancers-create-account-load-balancer",
+    "name": "Create Account Load Balancer",
+    "description": "Create Account Load Balancer Create a new account-scoped load balancer. POST /client/v4/accounts/{account_id}/load_balancers",
+    "context": "POST /client/v4/accounts/{account_id}/load_balancers\nCreate a new account-scoped load balancer.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancers-delete-account-load-balancer",
+    "name": "Delete Account Load Balancer",
+    "description": "Delete Account Load Balancer Delete a configured account-scoped load balancer. DELETE /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}\nDelete a configured account-scoped load balancer.\nRequired: account_id (path); load_balancer_id (path)"
+  },
+  {
+    "id": "account-load-balancers-list-account-load-balancers",
+    "name": "List Account Load Balancers",
+    "description": "List Account Load Balancers List configured account-scoped load balancers. GET /client/v4/accounts/{account_id}/load_balancers",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers\nList configured account-scoped load balancers.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-load-balancers-list-load-balancer-usage",
+    "name": "List Load Balancer Usage",
+    "description": "List Load Balancer Usage Get current load balancer resource usage counts for an account. GET /client/v4/accounts/{account_id}/load_balancers/usage",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/usage\nGet current load balancer resource usage counts for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-load-balancers-patch-account-load-balancer",
+    "name": "Patch Account Load Balancer",
+    "description": "Patch Account Load Balancer Apply changes to an existing account-scoped load balancer, overwriting the supplied properties. PATCH /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}\nApply changes to an existing account-scoped load balancer, overwriting the supplied properties.\nRequired: account_id (path); load_balancer_id (path); body (body)"
+  },
+  {
+    "id": "account-load-balancers-update-account-load-balancer",
+    "name": "Update Account Load Balancer",
+    "description": "Update Account Load Balancer Update a configured account-scoped load balancer. PUT /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/load_balancers/{load_balancer_id}\nUpdate a configured account-scoped load balancer.\nRequired: account_id (path); load_balancer_id (path); body (body)"
+  },
+  {
+    "id": "load-balancer-regions-get-region",
+    "name": "Get Region",
+    "description": "Get Region Get a single region mapping. GET /client/v4/accounts/{account_id}/load_balancers/regions/{region_id}",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/regions/{region_id}\nGet a single region mapping.\nRequired: region_id (path); account_id (path)"
+  },
+  {
+    "id": "load-balancer-regions-list-regions",
+    "name": "List Regions",
+    "description": "List Regions List all region mappings. GET /client/v4/accounts/{account_id}/load_balancers/regions",
+    "context": "GET /client/v4/accounts/{account_id}/load_balancers/regions\nList all region mappings.\nRequired: account_id (path)\nOptional: subdivision_code (query); subdivision_code_a2 (query); country_code_a2 (query)"
+  }
+]

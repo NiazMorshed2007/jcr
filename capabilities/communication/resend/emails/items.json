@@ -1,0 +1,74 @@
+[
+  {
+    "id": "get_emails",
+    "name": "Retrieve a list of emails",
+    "description": "Retrieve a list of emails GET /emails",
+    "context": "GET /emails\nRetrieve a list of emails\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_emails_email_id",
+    "name": "Retrieve a single email",
+    "description": "Retrieve a single email GET /emails/{email_id}",
+    "context": "GET /emails/{email_id}\nRetrieve a single email\nRequired: email_id (path) — The ID of the email."
+  },
+  {
+    "id": "get_emails_email_id_attachments",
+    "name": "Retrieve a list of attachments for a sent email",
+    "description": "Retrieve a list of attachments for a sent email GET /emails/{email_id}/attachments",
+    "context": "GET /emails/{email_id}/attachments\nRetrieve a list of attachments for a sent email\nRequired: email_id (path) — The ID of the email.\nOptional: limit (query) — Maximum number of attachments to return.; after (query) — Pagination cursor to fetch results after this attachment ID. Cannot be used with 'before'.; before (query) — Pagination cursor to fetch results before this attachment ID. Cannot be used with 'after'."
+  },
+  {
+    "id": "get_emails_email_id_attachments_attachment_id",
+    "name": "Retrieve a single attachment for a sent email",
+    "description": "Retrieve a single attachment for a sent email GET /emails/{email_id}/attachments/{attachment_id}",
+    "context": "GET /emails/{email_id}/attachments/{attachment_id}\nRetrieve a single attachment for a sent email\nRequired: email_id (path) — The ID of the email.; attachment_id (path) — The ID of the attachment."
+  },
+  {
+    "id": "get_emails_receiving",
+    "name": "Retrieve a list of received emails",
+    "description": "Retrieve a list of received emails GET /emails/receiving",
+    "context": "GET /emails/receiving\nRetrieve a list of received emails\nOptional: limit (query) — Maximum number of received emails to return.; after (query) — Pagination cursor to fetch results after this email ID. Cannot be used with 'before'.; before (query) — Pagination cursor to fetch results before this email ID. Cannot be used with 'after'."
+  },
+  {
+    "id": "get_emails_receiving_email_id",
+    "name": "Retrieve a single received email",
+    "description": "Retrieve a single received email GET /emails/receiving/{email_id}",
+    "context": "GET /emails/receiving/{email_id}\nRetrieve a single received email\nRequired: email_id (path) — The ID of the received email."
+  },
+  {
+    "id": "get_emails_receiving_email_id_attachments",
+    "name": "Retrieve a list of attachments for a received email",
+    "description": "Retrieve a list of attachments for a received email GET /emails/receiving/{email_id}/attachments",
+    "context": "GET /emails/receiving/{email_id}/attachments\nRetrieve a list of attachments for a received email\nRequired: email_id (path) — The ID of the received email.\nOptional: limit (query) — Maximum number of attachments to return.; after (query) — Pagination cursor to fetch results after this attachment ID. Cannot be used with 'before'.; before (query) — Pagination cursor to fetch results before this attachment ID. Cannot be used with 'after'."
+  },
+  {
+    "id": "get_emails_receiving_email_id_attachments_attachment_id",
+    "name": "Retrieve a single attachment for a received email",
+    "description": "Retrieve a single attachment for a received email GET /emails/receiving/{email_id}/attachments/{attachment_id}",
+    "context": "GET /emails/receiving/{email_id}/attachments/{attachment_id}\nRetrieve a single attachment for a received email\nRequired: email_id (path) — The ID of the received email.; attachment_id (path) — The ID of the attachment."
+  },
+  {
+    "id": "patch_emails_email_id",
+    "name": "Update a single email",
+    "description": "Update a single email PATCH /emails/{email_id}",
+    "context": "PATCH /emails/{email_id}\nUpdate a single email\nRequired: email_id (path) — The ID of the email."
+  },
+  {
+    "id": "post_emails",
+    "name": "Send an email",
+    "description": "Send an email POST /emails",
+    "context": "POST /emails\nSend an email\nOptional: Idempotency-Key (header) — A unique identifier for the request to ensure emails are only sent once. [Learn more](https://resend.com/docs/dashboard/emails/idempotency-keys); body (body)"
+  },
+  {
+    "id": "post_emails_batch",
+    "name": "Trigger up to 100 batch emails at once.",
+    "description": "Trigger up to 100 batch emails at once. POST /emails/batch",
+    "context": "POST /emails/batch\nTrigger up to 100 batch emails at once.\nOptional: Idempotency-Key (header) — A unique identifier for the request to ensure emails are only sent once. [Learn more](https://resend.com/docs/dashboard/emails/idempotency-keys); body (body)"
+  },
+  {
+    "id": "post_emails_email_id_cancel",
+    "name": "Cancel the schedule of the e-mail.",
+    "description": "Cancel the schedule of the e-mail. POST /emails/{email_id}/cancel",
+    "context": "POST /emails/{email_id}/cancel\nCancel the schedule of the e-mail.\nRequired: email_id (path) — The ID of the email."
+  }
+]

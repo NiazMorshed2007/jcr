@@ -1,0 +1,62 @@
+[
+  {
+    "id": "billing_alerts_check_now_create",
+    "name": "Evaluate this billing alert immediately against real billing spend data",
+    "description": "Evaluate this billing alert immediately against real billing spend data Evaluate this billing alert immediately against real billing spend data. POST /api/organizations/{organization_id}/billing/alerts/{id}/check_now/",
+    "context": "POST /api/organizations/{organization_id}/billing/alerts/{id}/check_now/\nEvaluate this billing alert immediately against real billing spend data. An enabled alert can send notifications when the evaluation records a dispatchable event. A paused alert is evaluated as a preview only: it reports the current spend and would-be outcome without sending notifications or recording an evaluation.\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "billing_alerts_create",
+    "name": "billing_alerts_create",
+    "description": "billing_alerts_create POST /api/organizations/{organization_id}/billing/alerts/",
+    "context": "POST /api/organizations/{organization_id}/billing/alerts/\nbilling_alerts_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "billing_alerts_destinations_create",
+    "name": "Create a notification destination for this alert",
+    "description": "Create a notification destination for this alert Create a notification destination for this alert. POST /api/organizations/{organization_id}/billing/alerts/{id}/destinations/",
+    "context": "POST /api/organizations/{organization_id}/billing/alerts/{id}/destinations/\nCreate a notification destination for this alert. One HogFunction is created per alert event kind.\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "billing_alerts_destinations_delete_create",
+    "name": "Delete a notification destination by deleting its HogFunction group atomically.",
+    "description": "Delete a notification destination by deleting its HogFunction group atomically. POST /api/organizations/{organization_id}/billing/alerts/{id}/destinations/delete/",
+    "context": "POST /api/organizations/{organization_id}/billing/alerts/{id}/destinations/delete/\nDelete a notification destination by deleting its HogFunction group atomically.\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "billing_alerts_destroy",
+    "name": "billing_alerts_destroy",
+    "description": "billing_alerts_destroy DELETE /api/organizations/{organization_id}/billing/alerts/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/billing/alerts/{id}/\nbilling_alerts_destroy\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "billing_alerts_events_list",
+    "name": "List evaluation and notification events for this billing alert, newest first.",
+    "description": "List evaluation and notification events for this billing alert, newest first. GET /api/organizations/{organization_id}/billing/alerts/{id}/events/",
+    "context": "GET /api/organizations/{organization_id}/billing/alerts/{id}/events/\nList evaluation and notification events for this billing alert, newest first.\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "billing_alerts_list",
+    "name": "billing_alerts_list",
+    "description": "billing_alerts_list GET /api/organizations/{organization_id}/billing/alerts/",
+    "context": "GET /api/organizations/{organization_id}/billing/alerts/\nbilling_alerts_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "billing_alerts_partial_update",
+    "name": "billing_alerts_partial_update",
+    "description": "billing_alerts_partial_update PATCH /api/organizations/{organization_id}/billing/alerts/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/billing/alerts/{id}/\nbilling_alerts_partial_update\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "billing_alerts_retrieve",
+    "name": "billing_alerts_retrieve",
+    "description": "billing_alerts_retrieve GET /api/organizations/{organization_id}/billing/alerts/{id}/",
+    "context": "GET /api/organizations/{organization_id}/billing/alerts/{id}/\nbilling_alerts_retrieve\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "billing_alerts_update",
+    "name": "billing_alerts_update",
+    "description": "billing_alerts_update PUT /api/organizations/{organization_id}/billing/alerts/{id}/",
+    "context": "PUT /api/organizations/{organization_id}/billing/alerts/{id}/\nbilling_alerts_update\nRequired: id (path) — A UUID string identifying this billing alert configuration.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  }
+]

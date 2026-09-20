@@ -1,0 +1,92 @@
+[
+  {
+    "id": "delete_users_id",
+    "name": "Delete user",
+    "description": "Delete user Deletes a user. DELETE /2.0/users/{user_id}",
+    "context": "DELETE /2.0/users/{user_id}\nDeletes a user. By default, this operation fails if the user still owns any content. To proceed, move their owned content first, or use the `force` parameter to delete the user and their files.\nRequired: user_id (path) — The ID of the user.\nOptional: notify (query) — Whether the user will receive email notification of the deletion.; force (query) — Specifies whether to delete the user even if they still own files."
+  },
+  {
+    "id": "delete_users_id_avatar",
+    "name": "Delete user avatar",
+    "description": "Delete user avatar Removes an existing user avatar. DELETE /2.0/users/{user_id}/avatar",
+    "context": "DELETE /2.0/users/{user_id}/avatar\nRemoves an existing user avatar. You cannot reverse this operation.\nRequired: user_id (path) — The ID of the user."
+  },
+  {
+    "id": "delete_users_id_email_aliases_id",
+    "name": "Remove email alias",
+    "description": "Remove email alias Removes an email alias from a user. DELETE /2.0/users/{user_id}/email_aliases/{email_alias_id}",
+    "context": "DELETE /2.0/users/{user_id}/email_aliases/{email_alias_id}\nRemoves an email alias from a user.\nRequired: user_id (path) — The ID of the user.; email_alias_id (path) — The ID of the email alias."
+  },
+  {
+    "id": "get_users",
+    "name": "List enterprise users",
+    "description": "List enterprise users Returns a list of all users for the Enterprise along with their `user_id`, `public_name`, and `login`. GET /2.0/users",
+    "context": "GET /2.0/users\nReturns a list of all users for the Enterprise along with their `user_id`, `public_name`, and `login`. The application and the authenticated user need to have the permission to look up users in the entire enterprise.\nOptional: filter_term (query) — Limits the results to only users who's `name` or `login` start with the search term. For externally managed users, the search term needs to completely match the in order to find the user, and it will only return one user at a time.; user_type (query) — Limits the results to the kind of user specified. * `all` returns every kind of user for whom the `login` or `name` partially matches the `filter_term`. It will only return an external user if the login matches the `filter_term` completely, and in that case it will only return that user. * `managed` returns all managed and app users for whom the `login` or `name` partially matches the `filter_term`. * `external` returns all external users for whom the `login` matches the `filter_term` exactly.; external_app_user_id (query) — Limits the results to app users with the given `external_app_user_id` value. When creating an app user, an `external_app_user_id` value can be set. This value can then be used in this endpoint to find any users that match that `external_app_user_id` value.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response.; limit (query) — The maximum number of items to return per page.; usemarker (query) — Specifies whether to use marker-based pagination instead of offset-based pagination. Only one pagination method can be used at a time. By setting this value to true, the API will return a `marker` field that can be passed as a parameter to this endpoint to get the next page of the response.; marker (query) — Defines the position marker at which to begin returning results. This is used when paginating using marker-based pagination. This requires `usemarker` to be set to `true`."
+  },
+  {
+    "id": "get_users_id",
+    "name": "Get user",
+    "description": "Get user Retrieves information about a user in the enterprise. GET /2.0/users/{user_id}",
+    "context": "GET /2.0/users/{user_id}\nRetrieves information about a user in the enterprise. The application and the authenticated user need to have the permission to look up users in the entire enterprise. This endpoint also returns a limited set of information for external users who are collaborated on content owned by the enterprise for authenticated users with the right scopes. In this case, disallowed fields will return null instead.\nRequired: user_id (path) — The ID of the user.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_users_id_avatar",
+    "name": "Get user avatar",
+    "description": "Get user avatar Retrieves an image of a the user's avatar. GET /2.0/users/{user_id}/avatar",
+    "context": "GET /2.0/users/{user_id}/avatar\nRetrieves an image of a the user's avatar.\nRequired: user_id (path) — The ID of the user."
+  },
+  {
+    "id": "get_users_id_email_aliases",
+    "name": "List user's email aliases",
+    "description": "List user's email aliases Retrieves all email aliases for a user. GET /2.0/users/{user_id}/email_aliases",
+    "context": "GET /2.0/users/{user_id}/email_aliases\nRetrieves all email aliases for a user. The collection does not include the primary login for the user.\nRequired: user_id (path) — The ID of the user."
+  },
+  {
+    "id": "get_users_id_memberships",
+    "name": "List user's groups",
+    "description": "List user's groups Retrieves all the groups for a user. GET /2.0/users/{user_id}/memberships",
+    "context": "GET /2.0/users/{user_id}/memberships\nRetrieves all the groups for a user. Only members of this group or users with admin-level permissions will be able to use this API.\nRequired: user_id (path) — The ID of the user.\nOptional: limit (query) — The maximum number of items to return per page.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response."
+  },
+  {
+    "id": "get_users_me",
+    "name": "Get current user",
+    "description": "Get current user Retrieves information about the user who is currently authenticated. GET /2.0/users/me",
+    "context": "GET /2.0/users/me\nRetrieves information about the user who is currently authenticated. In the case of a client-side authenticated OAuth 2.0 application this will be the user who authorized the app. In the case of a JWT, server-side authenticated application this will be the service account that belongs to the application by default. Use the `As-User` header to change who this API call is made on behalf of.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "post_users",
+    "name": "Create user",
+    "description": "Create user Creates a new managed user in an enterprise. POST /2.0/users",
+    "context": "POST /2.0/users\nCreates a new managed user in an enterprise. This endpoint is only available to users and applications with the right admin permissions.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  },
+  {
+    "id": "post_users_id_avatar",
+    "name": "Add or update user avatar",
+    "description": "Add or update user avatar Adds or updates a user avatar. POST /2.0/users/{user_id}/avatar",
+    "context": "POST /2.0/users/{user_id}/avatar\nAdds or updates a user avatar.\nRequired: user_id (path) — The ID of the user.\nOptional: body (body)"
+  },
+  {
+    "id": "post_users_id_email_aliases",
+    "name": "Create email alias",
+    "description": "Create email alias Adds a new email alias to a user account.. POST /2.0/users/{user_id}/email_aliases",
+    "context": "POST /2.0/users/{user_id}/email_aliases\nAdds a new email alias to a user account..\nRequired: user_id (path) — The ID of the user.\nOptional: body (body)"
+  },
+  {
+    "id": "post_users_terminate_sessions",
+    "name": "Create jobs to terminate users session",
+    "description": "Create jobs to terminate users session Validates the roles and permissions of the user, and creates asynchronous jobs to terminate the user's sessions. POST /2.0/users/terminate_sessions",
+    "context": "POST /2.0/users/terminate_sessions\nValidates the roles and permissions of the user, and creates asynchronous jobs to terminate the user's sessions. Returns the status for the POST request.\nOptional: body (body)"
+  },
+  {
+    "id": "put_users_id",
+    "name": "Update user",
+    "description": "Update user Updates a managed or app user in an enterprise. PUT /2.0/users/{user_id}",
+    "context": "PUT /2.0/users/{user_id}\nUpdates a managed or app user in an enterprise. This endpoint is only available to users and applications with the right admin permissions.\nRequired: user_id (path) — The ID of the user.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  },
+  {
+    "id": "put_users_id_folders_0",
+    "name": "Transfer owned folders",
+    "description": "Transfer owned folders Move all of the items (files, folders and workflows) owned by a user into another user's account. PUT /2.0/users/{user_id}/folders/0",
+    "context": "PUT /2.0/users/{user_id}/folders/0\nMove all of the items (files, folders and workflows) owned by a user into another user's account. Only the root folder (`0`) can be transferred. Folders can only be moved across users by users with administrative permissions. All existing shared links and folder-level collaborations are transferred during the operation. Please note that while collaborations at the individual file-level are transferred during the operation, the collaborations are deleted when the original user is deleted. If the user has a large number of items across all folders, the call will be run asynchronously. If the operation is not completed within 10 minutes, the user will receive a 200 OK response, and the operation will continue running. If the destination path has a metadata cascade policy attached to any of the parent folders, a metadata cascade operation will be kicked off asynchronously. There is currently no way to check for when this operation is finished. The destination folder's name will be in the format `{User}'s Files and Folders`, where `{User}` is the display name of the user. To make this API call your application will need to have the \"Read and write all files and folders stored in Box\" scope enabled. Please make sure the destination user has access to `Relay` or `Relay Lite`, and has access to the files and folders involved in the workflows being transferred. Admins will receive an email when the operation is completed.\nRequired: user_id (path) — The ID of the user.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; notify (query) — Determines if users should receive email notification for the action performed.; body (body)"
+  }
+]

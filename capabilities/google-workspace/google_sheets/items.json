@@ -1,0 +1,104 @@
+[
+  {
+    "id": "BatchUpdate",
+    "name": "Applies one or more updates to the spreadsheet.",
+    "description": "Applies one or more updates to the spreadsheet. Applies one or more updates to the spreadsheet. POST /v4/spreadsheets/{spreadsheetId}:batchUpdate",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}:batchUpdate\nApplies one or more updates to the spreadsheet. Each request is validated before being applied. If any request is not valid then the entire request will fail and nothing will be applied. Some requests have replies to give you some information about how they are applied. The replies will mirror the requests. For example, if you applied 4 updates and the 3rd one had a reply, then the response will have 2 empty replies, the actual reply, and another empty reply, in that order. Due to the collaborative nature of spreadsheets, it is not guaranteed that the spreadsheet will reflect exactly your changes after this completes, however it is guaranteed that the updates in the request will be applied together atomically. Your changes may be altered with respect to collaborator changes. If there are no collaborators, the spreadsheet should reflect your changes.\nRequired: spreadsheetId (path) — The spreadsheet to apply the updates to.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Create",
+    "name": "Creates a spreadsheet, returning the newly created spreadsheet.",
+    "description": "Creates a spreadsheet, returning the newly created spreadsheet. POST /v4/spreadsheets",
+    "context": "POST /v4/spreadsheets\nCreates a spreadsheet, returning the newly created spreadsheet.\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DeveloperMetadataGet",
+    "name": "Returns the developer metadata with the specified ID.",
+    "description": "Returns the developer metadata with the specified ID. Returns the developer metadata with the specified ID. GET /v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}",
+    "context": "GET /v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}\nReturns the developer metadata with the specified ID. The caller must specify the spreadsheet ID and the developer metadata's unique metadataId. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata).\nRequired: metadataId (path) — The ID of the developer metadata to retrieve.; spreadsheetId (path) — The ID of the spreadsheet to retrieve metadata from.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "DeveloperMetadataSearch",
+    "name": "Returns all developer metadata matching the specified DataFilter.",
+    "description": "Returns all developer metadata matching the specified DataFilter. Returns all developer metadata matching the specified DataFilter. POST /v4/spreadsheets/{spreadsheetId}/developerMetadata:search",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/developerMetadata:search\nReturns all developer metadata matching the specified DataFilter. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). If the provided DataFilter represents a DeveloperMetadataLookup object, this will return all DeveloperMetadata entries selected by it. If the DataFilter represents a location in a spreadsheet, this will return all developer metadata associated with locations intersecting that region.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to retrieve metadata from.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "Get",
+    "name": "Returns the spreadsheet at the given ID.",
+    "description": "Returns the spreadsheet at the given ID. Returns the spreadsheet at the given ID. GET /v4/spreadsheets/{spreadsheetId}",
+    "context": "GET /v4/spreadsheets/{spreadsheetId}\nReturns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. By default, data within grids is not returned. You can include grid data in one of 2 ways: * Specify a [field mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP * Set the includeGridData URL parameter to true. If a field mask is set, the `includeGridData` parameter is ignored For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want. To retrieve only subsets of spreadsheet data, use the ranges URL parameter. Ranges are specified using [A1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell). You can define a single cell (for example, `A1`) or multiple cells (for example, `A1:D5`). You can also get cells from other sheets within the same spreadsheet (for example, `Sheet2!A1:C4`) or retrieve multiple ranges at once (for example, `?ranges=A1:D5&ranges=Sheet2!A1:C4`). Limiting the range returns only the portions of the spreadsheet that intersect the requested ranges.\nRequired: spreadsheetId (path) — The spreadsheet to request.\nOptional: includeGridData (query) — True if grid data should be returned. This parameter is ignored if a field mask was set in the request.; excludeTablesInBandedRanges (query) — True if tables should be excluded in the banded ranges. False if not set.; ranges (query) — The ranges to retrieve from the spreadsheet.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GetByDataFilter",
+    "name": "Returns the spreadsheet at the given ID.",
+    "description": "Returns the spreadsheet at the given ID. Returns the spreadsheet at the given ID. POST /v4/spreadsheets/{spreadsheetId}:getByDataFilter",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}:getByDataFilter\nReturns the spreadsheet at the given ID. The caller must specify the spreadsheet ID. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). This method differs from GetSpreadsheet in that it allows selecting which subsets of spreadsheet data to return by specifying a dataFilters parameter. Multiple DataFilters can be specified. Specifying one or more data filters returns the portions of the spreadsheet that intersect ranges matched by any of the filters. By default, data within grids is not returned. You can include grid data in one of two ways: * Specify a [field mask](https://developers.google.com/workspace/sheets/api/guides/field-masks) listing your desired fields using the `fields` URL parameter in HTTP. * Set the includeGridData parameter to `true`. If a field mask is set, the `includeGridData` parameter is ignored. For large spreadsheets, as a best practice, retrieve only the specific spreadsheet fields that you want.\nRequired: spreadsheetId (path) — The spreadsheet to request.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SheetsCopyTo",
+    "name": "Copies a single sheet from a spreadsheet to another spreadsheet.",
+    "description": "Copies a single sheet from a spreadsheet to another spreadsheet. Copies a single sheet from a spreadsheet to another spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo\nCopies a single sheet from a spreadsheet to another spreadsheet. Returns the properties of the newly created sheet.\nRequired: spreadsheetId (path) — The ID of the spreadsheet containing the sheet to copy.; sheetId (path) — The ID of the sheet to copy.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesAppend",
+    "name": "Appends values to a spreadsheet.",
+    "description": "Appends values to a spreadsheet. Appends values to a spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/values/{range}:append",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values/{range}:append\nAppends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table. See the [guide](https://developers.google.com/workspace/sheets/api/guides/values#appending_values) and [sample code](https://developers.google.com/workspace/sheets/api/samples/writing#append_values) for specific details of how tables are detected and data is appended. The caller must specify the spreadsheet ID, range, and a valueInputOption. The `valueInputOption` only controls how the input data will be added to the sheet (column-wise or row-wise), it does not influence what cell the data starts being written to.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to update.; range (path) — The [A1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell) of a range to search for a logical table of data. Values are appended after the last row of the table.; body (body)\nOptional: responseDateTimeRenderOption (query) — Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.; includeValuesInResponse (query) — Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.; insertDataOption (query) — How the input data should be inserted.; responseValueRenderOption (query) — Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.; valueInputOption (query) — How the input data should be interpreted.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesBatchClear",
+    "name": "Clears one or more ranges of values from a spreadsheet.",
+    "description": "Clears one or more ranges of values from a spreadsheet. Clears one or more ranges of values from a spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/values:batchClear",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values:batchClear\nClears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesBatchClearByDataFilter",
+    "name": "Clears one or more ranges of values from a spreadsheet.",
+    "description": "Clears one or more ranges of values from a spreadsheet. Clears one or more ranges of values from a spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values:batchClearByDataFilter\nClears one or more ranges of values from a spreadsheet. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc.) are kept.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesBatchGet",
+    "name": "Returns one or more ranges of values from a spreadsheet.",
+    "description": "Returns one or more ranges of values from a spreadsheet. Returns one or more ranges of values from a spreadsheet. GET /v4/spreadsheets/{spreadsheetId}/values:batchGet",
+    "context": "GET /v4/spreadsheets/{spreadsheetId}/values:batchGet\nReturns one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more ranges.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to retrieve data from.\nOptional: valueRenderOption (query) — How values should be represented in the output. The default render option is ValueRenderOption.FORMATTED_VALUE.; ranges (query) — The [A1 notation or R1C1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell) of the range to retrieve values from.; majorDimension (query) — The major dimension that results should use. For example, if the spreadsheet data is: `A1=1,B1=2,A2=3,B2=4`, then requesting `ranges=[\"A1:B2\"],majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `ranges=[\"A1:B2\"],majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.; dateTimeRenderOption (query) — How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesBatchGetByDataFilter",
+    "name": "Returns one or more ranges of values that match the specified data filters.",
+    "description": "Returns one or more ranges of values that match the specified data filters. Returns one or more ranges of values that match the specified data filters. POST /v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values:batchGetByDataFilter\nReturns one or more ranges of values that match the specified data filters. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID and one or more DataFilters. Ranges that match any of the data filters in the request will be returned.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to retrieve data from.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesBatchUpdate",
+    "name": "Sets values in one or more ranges of a spreadsheet.",
+    "description": "Sets values in one or more ranges of a spreadsheet. Sets values in one or more ranges of a spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/values:batchUpdate",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values:batchUpdate\nSets values in one or more ranges of a spreadsheet. The caller must specify the spreadsheet ID, a valueInputOption, and one or more ValueRanges.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesBatchUpdateByDataFilter",
+    "name": "Sets values in one or more ranges of a spreadsheet.",
+    "description": "Sets values in one or more ranges of a spreadsheet. Sets values in one or more ranges of a spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values:batchUpdateByDataFilter\nSets values in one or more ranges of a spreadsheet. For more information, see [Read, write, and search metadata](https://developers.google.com/workspace/sheets/api/guides/metadata). The caller must specify the spreadsheet ID, a valueInputOption, and one or more DataFilterValueRanges.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to update.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesClear",
+    "name": "Clears values from a spreadsheet.",
+    "description": "Clears values from a spreadsheet. Clears values from a spreadsheet. POST /v4/spreadsheets/{spreadsheetId}/values/{range}:clear",
+    "context": "POST /v4/spreadsheets/{spreadsheetId}/values/{range}:clear\nClears values from a spreadsheet. The caller must specify the spreadsheet ID and range. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to update.; range (path) — The [A1 notation or R1C1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell) of the values to clear.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "ValuesGet",
+    "name": "Returns a range of values from a spreadsheet.",
+    "description": "Returns a range of values from a spreadsheet. Returns a range of values from a spreadsheet. GET /v4/spreadsheets/{spreadsheetId}/values/{range}",
+    "context": "GET /v4/spreadsheets/{spreadsheetId}/values/{range}\nReturns a range of values from a spreadsheet. The caller must specify the spreadsheet ID and a range.\nRequired: spreadsheetId (path) — The ID of the spreadsheet to retrieve data from.; range (path) — The [A1 notation or R1C1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell) of the range to retrieve values from.\nOptional: dateTimeRenderOption (query) — How dates, times, and durations should be represented in the output. This is ignored if value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.; majorDimension (query) — The major dimension that results should use. For example, if the spreadsheet data in Sheet1 is: `A1=1,B1=2,A2=3,B2=4`, then requesting `range=Sheet1!A1:B2?majorDimension=ROWS` returns `[[1,2],[3,4]]`, whereas requesting `range=Sheet1!A1:B2?majorDimension=COLUMNS` returns `[[1,3],[2,4]]`.; valueRenderOption (query) — How values should be represented in the output. The default render option is FORMATTED_VALUE.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ValuesUpdate",
+    "name": "Sets values in a range of a spreadsheet.",
+    "description": "Sets values in a range of a spreadsheet. Sets values in a range of a spreadsheet. PUT /v4/spreadsheets/{spreadsheetId}/values/{range}",
+    "context": "PUT /v4/spreadsheets/{spreadsheetId}/values/{range}\nSets values in a range of a spreadsheet. The caller must specify the spreadsheet ID, range, and a valueInputOption.\nRequired: range (path) — The [A1 notation](https://developers.google.com/workspace/sheets/api/guides/concepts#cell) of the values to update.; spreadsheetId (path) — The ID of the spreadsheet to update.; body (body)\nOptional: includeValuesInResponse (query) — Determines if the update response should include the values of the cells that were updated. By default, responses do not include the updated values. If the range to write was larger than the range actually written, the response includes all values in the requested range (excluding trailing empty rows and columns).; valueInputOption (query) — How the input data should be interpreted.; responseDateTimeRenderOption (query) — Determines how dates, times, and durations in the response should be rendered. This is ignored if response_value_render_option is FORMATTED_VALUE. The default dateTime render option is SERIAL_NUMBER.; responseValueRenderOption (query) — Determines how values in the response should be rendered. The default render option is FORMATTED_VALUE.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

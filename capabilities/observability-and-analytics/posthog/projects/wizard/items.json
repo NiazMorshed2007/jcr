@@ -1,0 +1,74 @@
+[
+  {
+    "id": "wizard_registry_list",
+    "name": "List Wizard programs available for this project.",
+    "description": "List Wizard programs available for this project. GET /api/projects/{project_id}/wizard/registry/",
+    "context": "GET /api/projects/{project_id}/wizard/registry/\nList Wizard programs available for this project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "wizard_runs_artifacts_content_retrieve",
+    "name": "Get the unified git diff stored for a Wizard run artifact.",
+    "description": "Get the unified git diff stored for a Wizard run artifact. GET /api/projects/{project_id}/wizard/runs/{run_id}/artifacts/{id}/content/",
+    "context": "GET /api/projects/{project_id}/wizard/runs/{run_id}/artifacts/{id}/content/\nGet the unified git diff stored for a Wizard run artifact.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path)"
+  },
+  {
+    "id": "wizard_runs_artifacts_list",
+    "name": "List metadata for artifacts produced by a Wizard run.",
+    "description": "List metadata for artifacts produced by a Wizard run. GET /api/projects/{project_id}/wizard/runs/{run_id}/artifacts/",
+    "context": "GET /api/projects/{project_id}/wizard/runs/{run_id}/artifacts/\nList metadata for artifacts produced by a Wizard run.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path)\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "wizard_runs_create",
+    "name": "Create a local or cloud Wizard run for a project workspace.",
+    "description": "Create a local or cloud Wizard run for a project workspace. POST /api/projects/{project_id}/wizard/runs/",
+    "context": "POST /api/projects/{project_id}/wizard/runs/\nCreate a local or cloud Wizard run for a project workspace.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "wizard_runs_list",
+    "name": "List Wizard runs for this project, ordered from newest to oldest.",
+    "description": "List Wizard runs for this project, ordered from newest to oldest. GET /api/projects/{project_id}/wizard/runs/",
+    "context": "GET /api/projects/{project_id}/wizard/runs/\nList Wizard runs for this project, ordered from newest to oldest.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "wizard_runs_partial_update",
+    "name": "Change the terminal status of a local Wizard run.",
+    "description": "Change the terminal status of a local Wizard run. PATCH /api/projects/{project_id}/wizard/runs/{run_id}/",
+    "context": "PATCH /api/projects/{project_id}/wizard/runs/{run_id}/\nChange the terminal status of a local Wizard run.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "wizard_runs_retrieve",
+    "name": "Retrieve a Wizard run in this project.",
+    "description": "Retrieve a Wizard run in this project. GET /api/projects/{project_id}/wizard/runs/{run_id}/",
+    "context": "GET /api/projects/{project_id}/wizard/runs/{run_id}/\nRetrieve a Wizard run in this project.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; run_id (path)"
+  },
+  {
+    "id": "wizard_sessions_create",
+    "name": "Upsert a wizard session",
+    "description": "Upsert a wizard session Upsert a wizard session. POST /api/projects/{project_id}/wizard/sessions/",
+    "context": "POST /api/projects/{project_id}/wizard/sessions/\nUpsert a wizard session. The `session_id` key is the idempotency anchor — reposting the same `session_id` replaces the existing row. Returns 201 on create, 200 on update.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "wizard_sessions_latest_retrieve",
+    "name": "Return the single most-recent wizard session for a workflow (and optional skill), or 204 if none exists",
+    "description": "Return the single most-recent wizard session for a workflow (and optional skill), or 204 if none exists Return the single most-recent wizard session for a workflow (and optional skill), or 204 if none exists. GET /api/projects/{project_id}/wizard/sessions/latest/",
+    "context": "GET /api/projects/{project_id}/wizard/sessions/latest/\nReturn the single most-recent wizard session for a workflow (and optional skill), or 204 if none exists. Unlike `list`, this is a point lookup the app shell uses to decide whether to open the live SSE stream — it never returns a collection, and 'no run' is a 204 rather than a 404 so clients don't conflate it with a missing endpoint.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; workflow_id (query) — Workflow to inspect.\nOptional: skill_id (query) — Optional skill within the workflow."
+  },
+  {
+    "id": "wizard_sessions_list",
+    "name": "List wizard sessions for the project, ordered by started_at desc",
+    "description": "List wizard sessions for the project, ordered by started_at desc List wizard sessions for the project, ordered by started_at desc. GET /api/projects/{project_id}/wizard/sessions/",
+    "context": "GET /api/projects/{project_id}/wizard/sessions/\nList wizard sessions for the project, ordered by started_at desc. This should only be called by the PostHog Wizard. Optional filters: ?workflow_id= and ?skill_id= .\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Maximum number of sessions to return.; offset (query) — Number of sessions to skip.; skill_id (query) — Return sessions for this skill only.; workflow_id (query) — Return sessions for this workflow only."
+  },
+  {
+    "id": "wizard_sessions_retrieve",
+    "name": "Retrieve a single wizard session by its session_id.",
+    "description": "Retrieve a single wizard session by its session_id. GET /api/projects/{project_id}/wizard/sessions/{session_id}/",
+    "context": "GET /api/projects/{project_id}/wizard/sessions/{session_id}/\nRetrieve a single wizard session by its session_id.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; session_id (path)"
+  },
+  {
+    "id": "wizard_sessions_stream_retrieve",
+    "name": "Server-Sent Events stream of wizard session updates for a (workflow_id, skill_id) pair",
+    "description": "Server-Sent Events stream of wizard session updates for a (workflow_id, skill_id) pair Server-Sent Events stream of wizard session updates for a (workflow_id, skill_id) pair. GET /api/projects/{project_id}/wizard/sessions/stream/",
+    "context": "GET /api/projects/{project_id}/wizard/sessions/stream/\nServer-Sent Events stream of wizard session updates for a (workflow_id, skill_id) pair. On connect, the current latest session (if any) is emitted as the first event; subsequent upserts are streamed in real time. The server closes the connection after 900 seconds with an `event: end` line so the client (EventSource) can reconnect. **SDK consumers**: do not call the generated fetch wrapper for this path — it will buffer the entire infinite stream. Use the URL builder (`getWizardSessionsStreamRetrieveUrl`) with the browser's `EventSource` API instead.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; workflow_id (query) — Workflow to inspect.\nOptional: skill_id (query) — Optional skill within the workflow."
+  }
+]

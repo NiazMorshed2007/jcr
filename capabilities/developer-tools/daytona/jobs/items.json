@@ -1,0 +1,26 @@
+[
+  {
+    "id": "getJob",
+    "name": "Get job details",
+    "description": "Get job details GET /jobs/{jobId}",
+    "context": "GET /jobs/{jobId}\nGet job details\nRequired: jobId (path) — ID of the job"
+  },
+  {
+    "id": "listJobs",
+    "name": "List jobs for the runner",
+    "description": "List jobs for the runner Returns a paginated list of jobs for the runner, optionally filtered by status. GET /jobs",
+    "context": "GET /jobs\nReturns a paginated list of jobs for the runner, optionally filtered by status.\nOptional: page (query) — Page number of the results; limit (query) — Maximum number of jobs to return (default: 100, max: 500); status (query) — Filter jobs by status; offset (query) — Number of jobs to skip for pagination (default: 0)"
+  },
+  {
+    "id": "pollJobs",
+    "name": "Long poll for jobs",
+    "description": "Long poll for jobs Long poll endpoint for runners to fetch pending jobs. GET /jobs/poll",
+    "context": "GET /jobs/poll\nLong poll endpoint for runners to fetch pending jobs. Returns immediately if jobs are available, otherwise waits up to timeout seconds.\nOptional: timeout (query) — Timeout in seconds for long polling (default: 30, max: 60); limit (query) — Maximum number of jobs to return (default: 10, max: 100)"
+  },
+  {
+    "id": "updateJobStatus",
+    "name": "Update job status",
+    "description": "Update job status POST /jobs/{jobId}/status",
+    "context": "POST /jobs/{jobId}/status\nUpdate job status\nRequired: jobId (path) — ID of the job; body (body)"
+  }
+]

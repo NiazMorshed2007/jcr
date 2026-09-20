@@ -1,0 +1,56 @@
+[
+  {
+    "id": "spectrum-aggregate-analytics-get-current-aggregated-analytics",
+    "name": "Get current aggregated analytics",
+    "description": "Get current aggregated analytics Retrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone. GET /client/v4/zones/{zone_id}/spectrum/analytics/aggregate/current",
+    "context": "GET /client/v4/zones/{zone_id}/spectrum/analytics/aggregate/current\nRetrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone.\nRequired: zone_id (path)\nOptional: appID (query); colo_name (query)"
+  },
+  {
+    "id": "spectrum-analytics-(-by-time)-get-analytics-by-time",
+    "name": "Get analytics by time",
+    "description": "Get analytics by time Retrieves a list of aggregate metrics grouped by time interval. GET /client/v4/zones/{zone_id}/spectrum/analytics/events/bytime",
+    "context": "GET /client/v4/zones/{zone_id}/spectrum/analytics/events/bytime\nRetrieves a list of aggregate metrics grouped by time interval.\nRequired: zone_id (path); time_delta (query)\nOptional: dimensions (query); sort (query); until (query); metrics (query); filters (query); since (query)"
+  },
+  {
+    "id": "spectrum-analytics-(-summary)-get-analytics-summary",
+    "name": "Get analytics summary",
+    "description": "Get analytics summary Retrieves a list of summarised aggregate metrics over a given time period. GET /client/v4/zones/{zone_id}/spectrum/analytics/events/summary",
+    "context": "GET /client/v4/zones/{zone_id}/spectrum/analytics/events/summary\nRetrieves a list of summarised aggregate metrics over a given time period.\nRequired: zone_id (path)\nOptional: dimensions (query); sort (query); until (query); metrics (query); filters (query); since (query)"
+  },
+  {
+    "id": "spectrum-applications-create-spectrum-application-using-a-name-for-the-origin",
+    "name": "Create Spectrum application using a name for the origin",
+    "description": "Create Spectrum application using a name for the origin Creates a new Spectrum application from a configuration using a name for the origin. POST /client/v4/zones/{zone_id}/spectrum/apps",
+    "context": "POST /client/v4/zones/{zone_id}/spectrum/apps\nCreates a new Spectrum application from a configuration using a name for the origin.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "spectrum-applications-delete-spectrum-application",
+    "name": "Delete Spectrum application",
+    "description": "Delete Spectrum application Deletes a previously existing application. DELETE /client/v4/zones/{zone_id}/spectrum/apps/{app_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/spectrum/apps/{app_id}\nDeletes a previously existing application.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "spectrum-applications-get-spectrum-application-configuration",
+    "name": "Get Spectrum application configuration",
+    "description": "Get Spectrum application configuration Gets the application configuration of a specific application inside a zone. GET /client/v4/zones/{zone_id}/spectrum/apps/{app_id}",
+    "context": "GET /client/v4/zones/{zone_id}/spectrum/apps/{app_id}\nGets the application configuration of a specific application inside a zone.\nRequired: app_id (path); zone_id (path)"
+  },
+  {
+    "id": "spectrum-applications-list-spectrum-application-protocols",
+    "name": "List Spectrum application protocols",
+    "description": "List Spectrum application protocols Retrieves a list of Spectrum application protocols available for a zone. GET /client/v4/zones/{zone_id}/spectrum/protocols",
+    "context": "GET /client/v4/zones/{zone_id}/spectrum/protocols\nRetrieves a list of Spectrum application protocols available for a zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "spectrum-applications-list-spectrum-applications",
+    "name": "List Spectrum applications",
+    "description": "List Spectrum applications Retrieves a list of currently existing Spectrum applications inside a zone. GET /client/v4/zones/{zone_id}/spectrum/apps",
+    "context": "GET /client/v4/zones/{zone_id}/spectrum/apps\nRetrieves a list of currently existing Spectrum applications inside a zone.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); direction (query); order (query)"
+  },
+  {
+    "id": "spectrum-applications-update-spectrum-application-configuration-using-a-name-for-the-origin",
+    "name": "Update Spectrum application configuration using a name for the origin",
+    "description": "Update Spectrum application configuration using a name for the origin Updates a previously existing application's configuration that uses a name for the origin. PUT /client/v4/zones/{zone_id}/spectrum/apps/{app_id}",
+    "context": "PUT /client/v4/zones/{zone_id}/spectrum/apps/{app_id}\nUpdates a previously existing application's configuration that uses a name for the origin.\nRequired: app_id (path); zone_id (path); body (body)"
+  }
+]

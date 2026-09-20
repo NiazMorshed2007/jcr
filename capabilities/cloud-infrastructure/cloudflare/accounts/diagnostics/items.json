@@ -1,0 +1,38 @@
+[
+  {
+    "id": "diagnostics-endpoint-healthcheck-create",
+    "name": "Endpoint Health Check",
+    "description": "Endpoint Health Check Create Endpoint Health Check. POST /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks",
+    "context": "POST /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks\nCreate Endpoint Health Check.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "diagnostics-endpoint-healthcheck-delete",
+    "name": "Delete Endpoint Health Check",
+    "description": "Delete Endpoint Health Check Delete Endpoint Health Check. DELETE /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}\nDelete Endpoint Health Check.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "diagnostics-endpoint-healthcheck-get",
+    "name": "Get Endpoint Health Check",
+    "description": "Get Endpoint Health Check Get a single Endpoint Health Check. GET /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}\nGet a single Endpoint Health Check.\nRequired: account_id (path); id (path)"
+  },
+  {
+    "id": "diagnostics-endpoint-healthcheck-list",
+    "name": "List Endpoint Health Checks",
+    "description": "List Endpoint Health Checks List Endpoint Health Checks. GET /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks",
+    "context": "GET /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks\nList Endpoint Health Checks.\nRequired: account_id (path)"
+  },
+  {
+    "id": "diagnostics-endpoint-healthcheck-update",
+    "name": "Update Endpoint Health Check",
+    "description": "Update Endpoint Health Check Update a Endpoint Health Check. PUT /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}",
+    "context": "PUT /client/v4/accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}\nUpdate a Endpoint Health Check.\nRequired: account_id (path); id (path); body (body)"
+  },
+  {
+    "id": "diagnostics-traceroute",
+    "name": "Traceroute",
+    "description": "Traceroute Run traceroutes from Cloudflare colos. POST /client/v4/accounts/{account_id}/diagnostics/traceroute",
+    "context": "POST /client/v4/accounts/{account_id}/diagnostics/traceroute\nRun traceroutes from Cloudflare colos.\nRequired: account_id (path); body (body)"
+  }
+]

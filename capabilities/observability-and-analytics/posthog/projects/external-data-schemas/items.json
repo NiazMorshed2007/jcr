@@ -1,0 +1,80 @@
+[
+  {
+    "id": "external_data_schemas_cancel_create",
+    "name": "external_data_schemas_cancel_create",
+    "description": "external_data_schemas_cancel_create POST /api/projects/{project_id}/external_data_schemas/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/external_data_schemas/{id}/cancel/\nexternal_data_schemas_cancel_create\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_delete_data_destroy",
+    "name": "external_data_schemas_delete_data_destroy",
+    "description": "external_data_schemas_delete_data_destroy DELETE /api/projects/{project_id}/external_data_schemas/{id}/delete_data/",
+    "context": "DELETE /api/projects/{project_id}/external_data_schemas/{id}/delete_data/\nexternal_data_schemas_delete_data_destroy\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_destinations_partial_update",
+    "name": "Read or replace this table's destination override",
+    "description": "Read or replace this table's destination override Read or replace this table's destination override. PATCH /api/projects/{project_id}/external_data_schemas/{id}/destinations/",
+    "context": "PATCH /api/projects/{project_id}/external_data_schemas/{id}/destinations/\nRead or replace this table's destination override. Send `destination_ids: null` to clear the override so the table follows its source again.\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_schemas_destinations_retrieve",
+    "name": "Read or replace this table's destination override",
+    "description": "Read or replace this table's destination override Read or replace this table's destination override. GET /api/projects/{project_id}/external_data_schemas/{id}/destinations/",
+    "context": "GET /api/projects/{project_id}/external_data_schemas/{id}/destinations/\nRead or replace this table's destination override. Send `destination_ids: null` to clear the override so the table follows its source again.\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_destroy",
+    "name": "external_data_schemas_destroy",
+    "description": "external_data_schemas_destroy DELETE /api/projects/{project_id}/external_data_schemas/{id}/",
+    "context": "DELETE /api/projects/{project_id}/external_data_schemas/{id}/\nexternal_data_schemas_destroy\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_incremental_fields_create",
+    "name": "external_data_schemas_incremental_fields_create",
+    "description": "external_data_schemas_incremental_fields_create POST /api/projects/{project_id}/external_data_schemas/{id}/incremental_fields/",
+    "context": "POST /api/projects/{project_id}/external_data_schemas/{id}/incremental_fields/\nexternal_data_schemas_incremental_fields_create\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_schemas_list",
+    "name": "external_data_schemas_list",
+    "description": "external_data_schemas_list GET /api/projects/{project_id}/external_data_schemas/",
+    "context": "GET /api/projects/{project_id}/external_data_schemas/\nexternal_data_schemas_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "external_data_schemas_logs_retrieve",
+    "name": "external_data_schemas_logs_retrieve",
+    "description": "external_data_schemas_logs_retrieve GET /api/projects/{project_id}/external_data_schemas/{id}/logs/",
+    "context": "GET /api/projects/{project_id}/external_data_schemas/{id}/logs/\nexternal_data_schemas_logs_retrieve\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: after (query) — Only return entries after this ISO 8601 timestamp. Defaults to 7 days ago; pass an explicit value to read further back.; before (query) — Only return entries before this ISO 8601 timestamp.; instance_id (query) — Filter logs to a specific execution instance.; level (query) — Comma-separated log levels to include, e.g. 'WARN,ERROR'. Valid levels: DEBUG, LOG, INFO, WARN, ERROR.; limit (query) — Maximum number of log entries to return (1-500, default 50).; search (query) — Case-insensitive substring search across log messages."
+  },
+  {
+    "id": "external_data_schemas_partial_update",
+    "name": "external_data_schemas_partial_update",
+    "description": "external_data_schemas_partial_update PATCH /api/projects/{project_id}/external_data_schemas/{id}/",
+    "context": "PATCH /api/projects/{project_id}/external_data_schemas/{id}/\nexternal_data_schemas_partial_update\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "external_data_schemas_reload_create",
+    "name": "Trigger a sync for the schema using its configured sync method",
+    "description": "Trigger a sync for the schema using its configured sync method Trigger a sync for the schema using its configured sync method. POST /api/projects/{project_id}/external_data_schemas/{id}/reload/",
+    "context": "POST /api/projects/{project_id}/external_data_schemas/{id}/reload/\nTrigger a sync for the schema using its configured sync method. Most methods keep the existing warehouse table and add or merge new rows, but a full-refresh schema rebuilds the whole table on every run. To force a rebuild from the source, use resync.\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_resync_create",
+    "name": "Request a full resync of the schema",
+    "description": "Request a full resync of the schema Request a full resync of the schema. POST /api/projects/{project_id}/external_data_schemas/{id}/resync/",
+    "context": "POST /api/projects/{project_id}/external_data_schemas/{id}/resync/\nRequest a full resync of the schema. For sources that can backfill, this drops the warehouse table and re-imports every row from the source, so existing data is deleted first. A webhook-only schema cannot backfill, so it keeps its existing table and resumes ingestion instead. To sync without requesting a rebuild, use reload.\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_retrieve",
+    "name": "external_data_schemas_retrieve",
+    "description": "external_data_schemas_retrieve GET /api/projects/{project_id}/external_data_schemas/{id}/",
+    "context": "GET /api/projects/{project_id}/external_data_schemas/{id}/\nexternal_data_schemas_retrieve\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "external_data_schemas_update",
+    "name": "external_data_schemas_update",
+    "description": "external_data_schemas_update PUT /api/projects/{project_id}/external_data_schemas/{id}/",
+    "context": "PUT /api/projects/{project_id}/external_data_schemas/{id}/\nexternal_data_schemas_update\nRequired: id (path) — A UUID string identifying this external data schema.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

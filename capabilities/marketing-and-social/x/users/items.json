@@ -1,0 +1,284 @@
+[
+  {
+    "id": "addUserPublicKey",
+    "name": "Add public key",
+    "description": "Add public key Registers a user's public key for X Chat encryption. POST /2/users/{id}/public_keys",
+    "context": "POST /2/users/{id}/public_keys\nRegisters a user's public key for X Chat encryption.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "blockUsersDms",
+    "name": "Block Users Dms",
+    "description": "Block Users Dms POST /2/users/{id}/dm/block",
+    "context": "POST /2/users/{id}/dm/block\nBlock Users Dms\nRequired: id (path)"
+  },
+  {
+    "id": "createUsersBookmark",
+    "name": "Create Bookmark",
+    "description": "Create Bookmark Adds one or more Posts to the authenticated user's Bookmarks. POST /2/users/{id}/bookmarks",
+    "context": "POST /2/users/{id}/bookmarks\nAdds one or more Posts to the authenticated user's Bookmarks. Supply `tweet_id` for a single Post, or `tweet_ids` (at most 25) to bookmark several in one request. Optional `folder_id` applies to every Post in the request. Billing and rate limits still apply per HTTP request.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "createUsersBookmarkFolder",
+    "name": "Create Bookmark Folder",
+    "description": "Create Bookmark Folder Creates a new Bookmark folder for the authenticated user. POST /2/users/{id}/bookmarks/folders",
+    "context": "POST /2/users/{id}/bookmarks/folders\nCreates a new Bookmark folder for the authenticated user.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "deleteUsersBookmark",
+    "name": "Delete Bookmark",
+    "description": "Delete Bookmark Removes a Post from the authenticated user's Bookmarks by its ID. DELETE /2/users/{id}/bookmarks/{tweet_id}",
+    "context": "DELETE /2/users/{id}/bookmarks/{tweet_id}\nRemoves a Post from the authenticated user's Bookmarks by its ID.\nRequired: id (path); tweet_id (path)"
+  },
+  {
+    "id": "followList",
+    "name": "Follow List",
+    "description": "Follow List POST /2/users/{id}/followed_lists",
+    "context": "POST /2/users/{id}/followed_lists\nFollow List\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "followUser",
+    "name": "Follow User",
+    "description": "Follow User POST /2/users/{id}/following",
+    "context": "POST /2/users/{id}/following\nFollow User\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "getTrendsPersonalizedTrends",
+    "name": "Get Trends Personalized Trends",
+    "description": "Get Trends Personalized Trends GET /2/users/personalized_trends",
+    "context": "GET /2/users/personalized_trends\nGet Trends Personalized Trends\nOptional: personalized_trend.fields (query) — A comma separated list of PersonalizedTrend fields to display."
+  },
+  {
+    "id": "getUsersAffiliates",
+    "name": "Get Users Affiliates",
+    "description": "Get Users Affiliates GET /2/users/{id}/affiliates",
+    "context": "GET /2/users/{id}/affiliates\nGet Users Affiliates\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A 64-bit signed integer.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersBlocking",
+    "name": "Get Users Blocking",
+    "description": "Get Users Blocking GET /2/users/{id}/blocking",
+    "context": "GET /2/users/{id}/blocking\nGet Users Blocking\nRequired: id (path)\nOptional: max_results (query); pagination_token (query); user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersBookmarkFolders",
+    "name": "Get Users Bookmark Folders",
+    "description": "Get Users Bookmark Folders GET /2/users/{id}/bookmarks/folders",
+    "context": "GET /2/users/{id}/bookmarks/folders\nGet Users Bookmark Folders\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token."
+  },
+  {
+    "id": "getUsersBookmarks",
+    "name": "Get Users Bookmarks",
+    "description": "Get Users Bookmarks GET /2/users/{id}/bookmarks",
+    "context": "GET /2/users/{id}/bookmarks\nGet Users Bookmarks\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getUsersBookmarksByFolderId",
+    "name": "Get Users Bookmarks by Folder ID",
+    "description": "Get Users Bookmarks by Folder ID GET /2/users/{id}/bookmarks/folders/{folder_id}",
+    "context": "GET /2/users/{id}/bookmarks/folders/{folder_id}\nGet Users Bookmarks by Folder ID\nRequired: id (path); folder_id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token."
+  },
+  {
+    "id": "getUsersById",
+    "name": "Get Users by ID",
+    "description": "Get Users by ID GET /2/users/{id}",
+    "context": "GET /2/users/{id}\nGet Users by ID\nRequired: id (path)\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersByIds",
+    "name": "Get Users by IDs",
+    "description": "Get Users by IDs GET /2/users",
+    "context": "GET /2/users\nGet Users by IDs\nRequired: ids (query)\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersByUsername",
+    "name": "Get Users by Username",
+    "description": "Get Users by Username GET /2/users/by/username/{username}",
+    "context": "GET /2/users/by/username/{username}\nGet Users by Username\nRequired: username (path)\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersByUsernames",
+    "name": "Get Users by Usernames",
+    "description": "Get Users by Usernames GET /2/users/by",
+    "context": "GET /2/users/by\nGet Users by Usernames\nRequired: usernames (query)\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersFollowedLists",
+    "name": "Get Users Followed Lists",
+    "description": "Get Users Followed Lists GET /2/users/{id}/followed_lists",
+    "context": "GET /2/users/{id}/followed_lists\nGet Users Followed Lists\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A 64-bit signed integer.; list.fields (query) — A comma separated list of List fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getUsersFollowers",
+    "name": "Get Users Followers",
+    "description": "Get Users Followers GET /2/users/{id}/followers",
+    "context": "GET /2/users/{id}/followers\nGet Users Followers\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersFollowing",
+    "name": "Get Users Following",
+    "description": "Get Users Following GET /2/users/{id}/following",
+    "context": "GET /2/users/{id}/following\nGet Users Following\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersLikedPosts",
+    "name": "Get Users Liked Posts",
+    "description": "Get Users Liked Posts GET /2/users/{id}/liked_tweets",
+    "context": "GET /2/users/{id}/liked_tweets\nGet Users Liked Posts\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getUsersListMemberships",
+    "name": "Get Users List Memberships",
+    "description": "Get Users List Memberships GET /2/users/{id}/list_memberships",
+    "context": "GET /2/users/{id}/list_memberships\nGet Users List Memberships\nRequired: id (path)\nOptional: max_results (query); pagination_token (query); list.fields (query) — A comma separated list of List fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getUsersMe",
+    "name": "Get Users Me",
+    "description": "Get Users Me GET /2/users/me",
+    "context": "GET /2/users/me\nGet Users Me\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersMentions",
+    "name": "Get Users Mentions",
+    "description": "Get Users Mentions When both are provided, `start_time` must be earlier than `end_time`. GET /2/users/{id}/mentions",
+    "context": "GET /2/users/{id}/mentions\nWhen both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; start_time (query) — Must be on or after 2010-11-06.; end_time (query) — Must be on or after 2010-11-06.; since_id (query); until_id (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getUsersMuting",
+    "name": "Get Users Muting",
+    "description": "Get Users Muting GET /2/users/{id}/muting",
+    "context": "GET /2/users/{id}/muting\nGet Users Muting\nRequired: id (path)\nOptional: max_results (query); pagination_token (query); user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getUsersOwnedLists",
+    "name": "Get Users Owned Lists",
+    "description": "Get Users Owned Lists GET /2/users/{id}/owned_lists",
+    "context": "GET /2/users/{id}/owned_lists\nGet Users Owned Lists\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A 64-bit signed integer.; list.fields (query) — A comma separated list of List fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getUsersPinnedLists",
+    "name": "Get Users Pinned Lists",
+    "description": "Get Users Pinned Lists GET /2/users/{id}/pinned_lists",
+    "context": "GET /2/users/{id}/pinned_lists\nGet Users Pinned Lists\nRequired: id (path)\nOptional: list.fields (query) — A comma separated list of List fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getUsersPosts",
+    "name": "Get Users Posts",
+    "description": "Get Users Posts When both are provided, `start_time` must be earlier than `end_time`. GET /2/users/{id}/tweets",
+    "context": "GET /2/users/{id}/tweets\nWhen both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; start_time (query) — Must be on or after 2010-11-06.; end_time (query) — Must be on or after 2010-11-06.; since_id (query); until_id (query); exclude (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getUsersPublicKey",
+    "name": "Get public keys",
+    "description": "Get public keys Returns a user's registered public keys for X Chat encryption. GET /2/users/{id}/public_keys",
+    "context": "GET /2/users/{id}/public_keys\nReturns a user's registered public keys for X Chat encryption.\nRequired: id (path)\nOptional: public_key.fields (query) — A comma separated list of PublicKey fields to display."
+  },
+  {
+    "id": "getUsersPublicKeys",
+    "name": "Get public keys",
+    "description": "Get public keys Returns registered public keys for X Chat encryption for the specified users. GET /2/users/public_keys",
+    "context": "GET /2/users/public_keys\nReturns registered public keys for X Chat encryption for the specified users.\nRequired: ids (query)\nOptional: public_key.fields (query) — A comma separated list of PublicKey fields to display."
+  },
+  {
+    "id": "getUsersRepostsOfMe",
+    "name": "Get Users Reposts of Me",
+    "description": "Get Users Reposts of Me GET /2/users/reposts_of_me",
+    "context": "GET /2/users/reposts_of_me\nGet Users Reposts of Me\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "getUsersTimeline",
+    "name": "Get Users Timeline",
+    "description": "Get Users Timeline When both are provided, `start_time` must be earlier than `end_time`. GET /2/users/{id}/timelines/reverse_chronological",
+    "context": "GET /2/users/{id}/timelines/reverse_chronological\nWhen both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A base32hex-encoded pagination token.; start_time (query) — Must be on or after 2010-11-06.; end_time (query) — Must be on or after 2010-11-06.; since_id (query); until_id (query); exclude (query); post.fields (query) — A comma separated list of Post fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display.; media.fields (query) — A comma separated list of Media fields to display.; poll.fields (query) — A comma separated list of Poll fields to display.; place.fields (query) — A comma separated list of Place fields to display."
+  },
+  {
+    "id": "likePost",
+    "name": "Like Post",
+    "description": "Like Post POST /2/users/{id}/likes",
+    "context": "POST /2/users/{id}/likes\nLike Post\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "muteUser",
+    "name": "Mute User",
+    "description": "Mute User POST /2/users/{id}/muting",
+    "context": "POST /2/users/{id}/muting\nMute User\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "pinList",
+    "name": "Pin List",
+    "description": "Pin List Causes the authenticated user to pin a specific List by its ID. POST /2/users/{id}/pinned_lists",
+    "context": "POST /2/users/{id}/pinned_lists\nCauses the authenticated user to pin a specific List by its ID.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "repostPost",
+    "name": "Repost Post",
+    "description": "Repost Post Causes the authenticated user to repost a specific Post by its ID. POST /2/users/{id}/retweets",
+    "context": "POST /2/users/{id}/retweets\nCauses the authenticated user to repost a specific Post by its ID.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "searchUsers",
+    "name": "Search Users",
+    "description": "Search Users GET /2/users/search",
+    "context": "GET /2/users/search\nSearch Users\nRequired: query (query)\nOptional: max_results (query); next_token (query); user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "streamUsersCompliance",
+    "name": "Stream Users compliance data",
+    "description": "Stream Users compliance data Streams all compliance data related to Users. GET /2/users/compliance/stream",
+    "context": "GET /2/users/compliance/stream\nStreams all compliance data related to Users.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the User Compliance events will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the User Compliance events will be provided."
+  },
+  {
+    "id": "unblockUsersDms",
+    "name": "Unblock Users Dms",
+    "description": "Unblock Users Dms POST /2/users/{id}/dm/unblock",
+    "context": "POST /2/users/{id}/dm/unblock\nUnblock Users Dms\nRequired: id (path)"
+  },
+  {
+    "id": "unfollowList",
+    "name": "Unfollow a List",
+    "description": "Unfollow a List Causes the authenticated user to unfollow a List by its ID. DELETE /2/users/{id}/followed_lists/{list_id}",
+    "context": "DELETE /2/users/{id}/followed_lists/{list_id}\nCauses the authenticated user to unfollow a List by its ID.\nRequired: id (path); list_id (path)"
+  },
+  {
+    "id": "unfollowUser",
+    "name": "Unfollow User",
+    "description": "Unfollow User Causes the authenticated user to unfollow a specific user by their ID. DELETE /2/users/{source_user_id}/following/{target_user_id}",
+    "context": "DELETE /2/users/{source_user_id}/following/{target_user_id}\nCauses the authenticated user to unfollow a specific user by their ID.\nRequired: source_user_id (path); target_user_id (path)"
+  },
+  {
+    "id": "unlikePost",
+    "name": "Unlike Post",
+    "description": "Unlike Post DELETE /2/users/{id}/likes/{tweet_id}",
+    "context": "DELETE /2/users/{id}/likes/{tweet_id}\nUnlike Post\nRequired: id (path); tweet_id (path)"
+  },
+  {
+    "id": "unmuteUser",
+    "name": "Unmute User",
+    "description": "Unmute User Causes the authenticated user to unmute the target user. DELETE /2/users/{source_user_id}/muting/{target_user_id}",
+    "context": "DELETE /2/users/{source_user_id}/muting/{target_user_id}\nCauses the authenticated user to unmute the target user.\nRequired: source_user_id (path); target_user_id (path)"
+  },
+  {
+    "id": "unpinList",
+    "name": "Unpin a List",
+    "description": "Unpin a List Causes the authenticated user to unpin a List by its ID. DELETE /2/users/{id}/pinned_lists/{list_id}",
+    "context": "DELETE /2/users/{id}/pinned_lists/{list_id}\nCauses the authenticated user to unpin a List by its ID.\nRequired: id (path); list_id (path)"
+  },
+  {
+    "id": "unrepostPost",
+    "name": "Unrepost Post",
+    "description": "Unrepost Post Causes the authenticated user to unrepost a specific Post by its ID. DELETE /2/users/{id}/retweets/{source_tweet_id}",
+    "context": "DELETE /2/users/{id}/retweets/{source_tweet_id}\nCauses the authenticated user to unrepost a specific Post by its ID.\nRequired: id (path); source_tweet_id (path)"
+  },
+  {
+    "id": "usersIdBlock",
+    "name": "Users ID Block",
+    "description": "Users ID Block POST /2/users/{id}/blocking",
+    "context": "POST /2/users/{id}/blocking\nUsers ID Block\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "usersIdUnblock",
+    "name": "Unblock User",
+    "description": "Unblock User Causes the source User to unblock the target User. DELETE /2/users/{source_user_id}/blocking/{target_user_id}",
+    "context": "DELETE /2/users/{source_user_id}/blocking/{target_user_id}\nCauses the source User to unblock the target User.\nRequired: source_user_id (path); target_user_id (path)"
+  }
+]

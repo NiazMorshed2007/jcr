@@ -1,0 +1,44 @@
+[
+  {
+    "id": "access-mtls-authentication-add-an-mtls-certificate",
+    "name": "Add an mTLS certificate",
+    "description": "Add an mTLS certificate Adds a new mTLS root certificate to Access. POST /client/v4/accounts/{account_id}/access/certificates",
+    "context": "POST /client/v4/accounts/{account_id}/access/certificates\nAdds a new mTLS root certificate to Access.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-mtls-authentication-delete-an-mtls-certificate",
+    "name": "Delete an mTLS certificate",
+    "description": "Delete an mTLS certificate Deletes an mTLS certificate. DELETE /client/v4/accounts/{account_id}/access/certificates/{certificate_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/certificates/{certificate_id}\nDeletes an mTLS certificate.\nRequired: certificate_id (path); account_id (path)"
+  },
+  {
+    "id": "access-mtls-authentication-get-an-mtls-certificate",
+    "name": "Get an mTLS certificate",
+    "description": "Get an mTLS certificate Fetches a single mTLS certificate. GET /client/v4/accounts/{account_id}/access/certificates/{certificate_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/certificates/{certificate_id}\nFetches a single mTLS certificate.\nRequired: certificate_id (path); account_id (path)"
+  },
+  {
+    "id": "access-mtls-authentication-list-mtls-certificates",
+    "name": "List mTLS certificates",
+    "description": "List mTLS certificates Lists all mTLS root certificates. GET /client/v4/accounts/{account_id}/access/certificates",
+    "context": "GET /client/v4/accounts/{account_id}/access/certificates\nLists all mTLS root certificates.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "access-mtls-authentication-list-mtls-certificates-hostname-settings",
+    "name": "List all mTLS hostname settings",
+    "description": "List all mTLS hostname settings List all mTLS hostname settings for this account. GET /client/v4/accounts/{account_id}/access/certificates/settings",
+    "context": "GET /client/v4/accounts/{account_id}/access/certificates/settings\nList all mTLS hostname settings for this account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "access-mtls-authentication-update-an-mtls-certificate",
+    "name": "Update an mTLS certificate",
+    "description": "Update an mTLS certificate Updates a configured mTLS certificate. PUT /client/v4/accounts/{account_id}/access/certificates/{certificate_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/certificates/{certificate_id}\nUpdates a configured mTLS certificate.\nRequired: certificate_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "access-mtls-authentication-update-an-mtls-certificate-settings",
+    "name": "Update an mTLS certificate's hostname settings",
+    "description": "Update an mTLS certificate's hostname settings Updates an mTLS certificate's hostname settings. PUT /client/v4/accounts/{account_id}/access/certificates/settings",
+    "context": "PUT /client/v4/accounts/{account_id}/access/certificates/settings\nUpdates an mTLS certificate's hostname settings.\nRequired: account_id (path); body (body)"
+  }
+]

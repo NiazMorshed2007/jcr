@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dlp-custom-prompt-topics-create",
+    "name": "Create custom prompt topic",
+    "description": "Create custom prompt topic Creates a DLP custom prompt topic entry. POST /client/v4/accounts/{account_id}/dlp/custom_prompt_topics",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/custom_prompt_topics\nCreates a DLP custom prompt topic entry.\nRequired: account_id (path); body (body) — A new custom prompt topic to create."
+  },
+  {
+    "id": "dlp-custom-prompt-topics-delete",
+    "name": "Delete custom prompt topic",
+    "description": "Delete custom prompt topic Deletes a DLP custom prompt topic entry. DELETE /client/v4/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}\nDeletes a DLP custom prompt topic entry.\nRequired: account_id (path); entry_id (path)"
+  },
+  {
+    "id": "dlp-custom-prompt-topics-get",
+    "name": "Get custom prompt topic",
+    "description": "Get custom prompt topic Fetches a DLP custom prompt topic entry by ID. GET /client/v4/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}\nFetches a DLP custom prompt topic entry by ID.\nRequired: account_id (path); entry_id (path)"
+  },
+  {
+    "id": "dlp-custom-prompt-topics-list",
+    "name": "List custom prompt topics",
+    "description": "List custom prompt topics Lists all DLP custom prompt topic entries in an account. GET /client/v4/accounts/{account_id}/dlp/custom_prompt_topics",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/custom_prompt_topics\nLists all DLP custom prompt topic entries in an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-custom-prompt-topics-update",
+    "name": "Update custom prompt topic",
+    "description": "Update custom prompt topic Updates a DLP custom prompt topic entry. PUT /client/v4/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}\nUpdates a DLP custom prompt topic entry.\nRequired: account_id (path); entry_id (path); body (body) — Update to be applied to the custom prompt topic."
+  }
+]

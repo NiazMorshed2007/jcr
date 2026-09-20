@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cancelSiteDeploy",
+    "name": "cancelSiteDeploy",
+    "description": "cancelSiteDeploy POST /api/v1/deploys/{deploy_id}/cancel",
+    "context": "POST /api/v1/deploys/{deploy_id}/cancel\ncancelSiteDeploy\nRequired: deploy_id (path)"
+  },
+  {
+    "id": "createPluginRun",
+    "name": "This is an internal-only endpoint.",
+    "description": "This is an internal-only endpoint. POST /api/v1/deploys/{deploy_id}/plugin_runs",
+    "context": "POST /api/v1/deploys/{deploy_id}/plugin_runs\nThis is an internal-only endpoint.\nRequired: deploy_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "deleteDeploy",
+    "name": "deleteDeploy",
+    "description": "deleteDeploy DELETE /api/v1/deploys/{deploy_id}",
+    "context": "DELETE /api/v1/deploys/{deploy_id}\ndeleteDeploy\nRequired: deploy_id (path)"
+  },
+  {
+    "id": "getDeploy",
+    "name": "getDeploy",
+    "description": "getDeploy GET /api/v1/deploys/{deploy_id}",
+    "context": "GET /api/v1/deploys/{deploy_id}\ngetDeploy\nRequired: deploy_id (path)"
+  },
+  {
+    "id": "lockDeploy",
+    "name": "lockDeploy",
+    "description": "lockDeploy POST /api/v1/deploys/{deploy_id}/lock",
+    "context": "POST /api/v1/deploys/{deploy_id}/lock\nlockDeploy\nRequired: deploy_id (path)"
+  },
+  {
+    "id": "unlockDeploy",
+    "name": "unlockDeploy",
+    "description": "unlockDeploy POST /api/v1/deploys/{deploy_id}/unlock",
+    "context": "POST /api/v1/deploys/{deploy_id}/unlock\nunlockDeploy\nRequired: deploy_id (path)"
+  },
+  {
+    "id": "updateDeployValidations",
+    "name": "Updates the deploy validations report for a deploy.",
+    "description": "Updates the deploy validations report for a deploy. PATCH /api/v1/deploys/{deploy_id}/validations_report",
+    "context": "PATCH /api/v1/deploys/{deploy_id}/validations_report\nUpdates the deploy validations report for a deploy.\nRequired: deploy_id (path) — The ID of the deploy; body (body)"
+  },
+  {
+    "id": "uploadDeployEdgeFunction",
+    "name": "uploadDeployEdgeFunction",
+    "description": "uploadDeployEdgeFunction PUT /api/v1/deploys/{deploy_id}/edge_functions/{code_sha}",
+    "context": "PUT /api/v1/deploys/{deploy_id}/edge_functions/{code_sha}\nuploadDeployEdgeFunction\nRequired: deploy_id (path); code_sha (path); body (body)\nOptional: X-Nf-Retry-Count (header)"
+  },
+  {
+    "id": "uploadDeployFile",
+    "name": "uploadDeployFile",
+    "description": "uploadDeployFile PUT /api/v1/deploys/{deploy_id}/files/{path}",
+    "context": "PUT /api/v1/deploys/{deploy_id}/files/{path}\nuploadDeployFile\nRequired: deploy_id (path); path (path); body (body)\nOptional: size (query)"
+  },
+  {
+    "id": "uploadDeployFunction",
+    "name": "uploadDeployFunction",
+    "description": "uploadDeployFunction PUT /api/v1/deploys/{deploy_id}/functions/{name}",
+    "context": "PUT /api/v1/deploys/{deploy_id}/functions/{name}\nuploadDeployFunction\nRequired: deploy_id (path); name (path); body (body)\nOptional: runtime (query); invocation_mode (query); timeout (query); size (query); X-Nf-Retry-Count (header)"
+  }
+]

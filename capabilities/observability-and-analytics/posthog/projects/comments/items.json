@@ -1,0 +1,68 @@
+[
+  {
+    "id": "comments_complete_create",
+    "name": "Mark a task-comment as complete",
+    "description": "Mark a task-comment as complete Mark a task-comment as complete. POST /api/projects/{project_id}/comments/{id}/complete/",
+    "context": "POST /api/projects/{project_id}/comments/{id}/complete/\nMark a task-comment as complete. Sets completed_at and completed_by. 400 if the comment is not a task or is already complete.\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "comments_count_retrieve",
+    "name": "comments_count_retrieve",
+    "description": "comments_count_retrieve GET /api/projects/{project_id}/comments/count/",
+    "context": "GET /api/projects/{project_id}/comments/count/\ncomments_count_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "comments_create",
+    "name": "Create a comment",
+    "description": "Create a comment Create a comment. POST /api/projects/{project_id}/comments/",
+    "context": "POST /api/projects/{project_id}/comments/\nCreate a comment. Support messages are deduplicated: an identical message from the same author on the same ticket within a short window returns the original comment with a 200 instead of creating a second one, and a 409 while a concurrent request is still creating it.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "comments_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/comments/{id}/",
+    "context": "DELETE /api/projects/{project_id}/comments/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "comments_list",
+    "name": "comments_list",
+    "description": "comments_list GET /api/projects/{project_id}/comments/",
+    "context": "GET /api/projects/{project_id}/comments/\ncomments_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: completed (query) — When kind=task, restrict to open (incomplete) or completed tasks. Ignored when kind is not 'task'. Defaults to 'any' (no filter). * `any` - any * `open` - open * `completed` - completed; created_by (query) — Filter by the numeric ID of the user who wrote the comment.; cursor (query) — The pagination cursor value.; item_id (query) — Filter by the ID of the resource being commented on.; kind (query) — Filter by comment kind. 'task' returns only items intentionally created as actionable. 'comment' excludes tasks. Defaults to 'any' (no filter). * `any` - any * `comment` - comment * `task` - task; scope (query) — Filter by resource type (e.g. Dashboard, FeatureFlag, Insight, Replay). Support-ticket scopes (Ticket, conversations_ticket) additionally require ticket API scope access.; search (query) — Full-text search within comment content.; source_comment (query) — Filter replies to a specific parent comment.; task_id (query) — Owning task for task, task_artifact, and desktop_canvas comment scopes."
+  },
+  {
+    "id": "comments_partial_update",
+    "name": "comments_partial_update",
+    "description": "comments_partial_update PATCH /api/projects/{project_id}/comments/{id}/",
+    "context": "PATCH /api/projects/{project_id}/comments/{id}/\ncomments_partial_update\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "comments_reopen_create",
+    "name": "Reopen a completed task-comment",
+    "description": "Reopen a completed task-comment Reopen a completed task-comment. POST /api/projects/{project_id}/comments/{id}/reopen/",
+    "context": "POST /api/projects/{project_id}/comments/{id}/reopen/\nReopen a completed task-comment. Clears completed_at and completed_by. 400 if the comment is not a task or is already open.\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "comments_retrieve",
+    "name": "comments_retrieve",
+    "description": "comments_retrieve GET /api/projects/{project_id}/comments/{id}/",
+    "context": "GET /api/projects/{project_id}/comments/{id}/\ncomments_retrieve\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "comments_send_to_slack_create",
+    "name": "Mirror this discussion thread to a Slack channel",
+    "description": "Mirror this discussion thread to a Slack channel Mirror this discussion thread to a Slack channel. POST /api/projects/{project_id}/comments/{id}/send_to_slack/",
+    "context": "POST /api/projects/{project_id}/comments/{id}/send_to_slack/\nMirror this discussion thread to a Slack channel. Posts the comment (and its existing replies) as a new Slack thread; later replies on either side sync across. A discussion mirrors to exactly one Slack thread: re-calling with the same channel returns the existing mirror; a different channel is a 400 naming the existing one. 409 while a concurrent send is in flight. 404 when the feature is not enabled for the team.\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "comments_thread_retrieve",
+    "name": "comments_thread_retrieve",
+    "description": "comments_thread_retrieve GET /api/projects/{project_id}/comments/{id}/thread/",
+    "context": "GET /api/projects/{project_id}/comments/{id}/thread/\ncomments_thread_retrieve\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "comments_update",
+    "name": "comments_update",
+    "description": "comments_update PUT /api/projects/{project_id}/comments/{id}/",
+    "context": "PUT /api/projects/{project_id}/comments/{id}/\ncomments_update\nRequired: id (path) — A UUID string identifying this comment.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

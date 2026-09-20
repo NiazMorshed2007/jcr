@@ -1,0 +1,62 @@
+[
+  {
+    "id": "delete_contacts_contact_id_segments_segment_id",
+    "name": "Remove a contact from a segment",
+    "description": "Remove a contact from a segment DELETE /contacts/{contact_id}/segments/{segment_id}",
+    "context": "DELETE /contacts/{contact_id}/segments/{segment_id}\nRemove a contact from a segment\nRequired: contact_id (path) — The Contact ID or email address.; segment_id (path) — The Segment ID."
+  },
+  {
+    "id": "delete_contacts_id",
+    "name": "Remove an existing contact by ID or email",
+    "description": "Remove an existing contact by ID or email DELETE /contacts/{id}",
+    "context": "DELETE /contacts/{id}\nRemove an existing contact by ID or email\nRequired: id (path) — The Contact ID or email address."
+  },
+  {
+    "id": "get_contacts",
+    "name": "Retrieve a list of contacts",
+    "description": "Retrieve a list of contacts GET /contacts",
+    "context": "GET /contacts\nRetrieve a list of contacts\nOptional: segment_id (query) — Filter contacts by segment ID.; limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_contacts_contact_id_segments",
+    "name": "Retrieve a list of segments for a contact",
+    "description": "Retrieve a list of segments for a contact GET /contacts/{contact_id}/segments",
+    "context": "GET /contacts/{contact_id}/segments\nRetrieve a list of segments for a contact\nRequired: contact_id (path) — The Contact ID or email address.\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_contacts_contact_id_topics",
+    "name": "Retrieve topics for a contact",
+    "description": "Retrieve topics for a contact GET /contacts/{contact_id}/topics",
+    "context": "GET /contacts/{contact_id}/topics\nRetrieve topics for a contact\nRequired: contact_id (path) — The Contact ID or email address.\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_contacts_id",
+    "name": "Retrieve a single contact by ID or email",
+    "description": "Retrieve a single contact by ID or email GET /contacts/{id}",
+    "context": "GET /contacts/{id}\nRetrieve a single contact by ID or email\nRequired: id (path) — The Contact ID or email address."
+  },
+  {
+    "id": "patch_contacts_contact_id_topics",
+    "name": "Update topics for a contact",
+    "description": "Update topics for a contact PATCH /contacts/{contact_id}/topics",
+    "context": "PATCH /contacts/{contact_id}/topics\nUpdate topics for a contact\nRequired: contact_id (path) — The Contact ID or email address.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_contacts_id",
+    "name": "Update a single contact by ID or email",
+    "description": "Update a single contact by ID or email PATCH /contacts/{id}",
+    "context": "PATCH /contacts/{id}\nUpdate a single contact by ID or email\nRequired: id (path) — The Contact ID or email address.\nOptional: body (body)"
+  },
+  {
+    "id": "post_contacts",
+    "name": "Create a new contact",
+    "description": "Create a new contact POST /contacts",
+    "context": "POST /contacts\nCreate a new contact\nOptional: body (body)"
+  },
+  {
+    "id": "post_contacts_contact_id_segments_segment_id",
+    "name": "Add a contact to a segment",
+    "description": "Add a contact to a segment POST /contacts/{contact_id}/segments/{segment_id}",
+    "context": "POST /contacts/{contact_id}/segments/{segment_id}\nAdd a contact to a segment\nRequired: contact_id (path) — The Contact ID or email address.; segment_id (path) — The Segment ID."
+  }
+]

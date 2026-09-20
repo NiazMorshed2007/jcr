@@ -1,0 +1,98 @@
+[
+  {
+    "id": "business_knowledge_documents_search_list",
+    "name": "Read-only access to parsed knowledge documents",
+    "description": "Read-only access to parsed knowledge documents Read-only access to parsed knowledge documents. GET /api/projects/{project_id}/business_knowledge/documents/search/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/documents/search/\nRead-only access to parsed knowledge documents. Exposes hybrid search (``search``) and a drill-down window (``window``) so an agent (PHAI or MCP) can find and explore business knowledge chunks.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; query (query) — Natural-language search query. Runs hybrid (semantic + full-text) retrieval over all SAFE, READY knowledge chunks in this project.\nOptional: limit (query) — Maximum number of ranked chunks to return. Defaults to 10, capped at 20.; rerank (query) — When true, rerank search results with a listwise LLM pass for better relevance. Defaults to false (RRF order only). Falls back to RRF order on rerank failure."
+  },
+  {
+    "id": "business_knowledge_documents_window_list",
+    "name": "Read-only access to parsed knowledge documents",
+    "description": "Read-only access to parsed knowledge documents Read-only access to parsed knowledge documents. GET /api/projects/{project_id}/business_knowledge/documents/{id}/window/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/documents/{id}/window/\nRead-only access to parsed knowledge documents. Exposes hybrid search (``search``) and a drill-down window (``window``) so an agent (PHAI or MCP) can find and explore business knowledge chunks.\nRequired: around_ordinal (query) — Zero-based chunk ordinal to center the window on (from a search result).; id (path) — A UUID string identifying this knowledge document.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: radius (query) — Number of chunks before and after the center to include. Defaults to 5, clamped to [0, 15]."
+  },
+  {
+    "id": "business_knowledge_gap_suggestions_accept_create",
+    "name": "Surfaces topics the support AI couldn't answer from the knowledge base",
+    "description": "Surfaces topics the support AI couldn't answer from the knowledge base Surfaces topics the support AI couldn't answer from the knowledge base. POST /api/projects/{project_id}/business_knowledge/gap_suggestions/{id}/accept/",
+    "context": "POST /api/projects/{project_id}/business_knowledge/gap_suggestions/{id}/accept/\nSurfaces topics the support AI couldn't answer from the knowledge base. Two list shapes controlled by the ``ticket_id`` query param: - **per-ticket** (``?ticket_id= ``): individual gap rows for that ticket. - **aggregated** (no ``ticket_id``): gaps grouped by normalized topic with counts, for the Business knowledge suggestions panel.\nRequired: id (path) — A UUID string identifying this knowledge gap suggestion.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "business_knowledge_gap_suggestions_accept_topic_create",
+    "name": "Accept all pending suggestions for a normalized topic cluster.",
+    "description": "Accept all pending suggestions for a normalized topic cluster. POST /api/projects/{project_id}/business_knowledge/gap_suggestions/accept_topic/",
+    "context": "POST /api/projects/{project_id}/business_knowledge/gap_suggestions/accept_topic/\nAccept all pending suggestions for a normalized topic cluster.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "business_knowledge_gap_suggestions_dismiss_create",
+    "name": "Surfaces topics the support AI couldn't answer from the knowledge base",
+    "description": "Surfaces topics the support AI couldn't answer from the knowledge base Surfaces topics the support AI couldn't answer from the knowledge base. POST /api/projects/{project_id}/business_knowledge/gap_suggestions/{id}/dismiss/",
+    "context": "POST /api/projects/{project_id}/business_knowledge/gap_suggestions/{id}/dismiss/\nSurfaces topics the support AI couldn't answer from the knowledge base. Two list shapes controlled by the ``ticket_id`` query param: - **per-ticket** (``?ticket_id= ``): individual gap rows for that ticket. - **aggregated** (no ``ticket_id``): gaps grouped by normalized topic with counts, for the Business knowledge suggestions panel.\nRequired: id (path) — A UUID string identifying this knowledge gap suggestion.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "business_knowledge_gap_suggestions_dismiss_topic_create",
+    "name": "Dismiss all pending suggestions for a normalized topic cluster.",
+    "description": "Dismiss all pending suggestions for a normalized topic cluster. POST /api/projects/{project_id}/business_knowledge/gap_suggestions/dismiss_topic/",
+    "context": "POST /api/projects/{project_id}/business_knowledge/gap_suggestions/dismiss_topic/\nDismiss all pending suggestions for a normalized topic cluster.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "business_knowledge_gap_suggestions_list",
+    "name": "Surfaces topics the support AI couldn't answer from the knowledge base",
+    "description": "Surfaces topics the support AI couldn't answer from the knowledge base Surfaces topics the support AI couldn't answer from the knowledge base. GET /api/projects/{project_id}/business_knowledge/gap_suggestions/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/gap_suggestions/\nSurfaces topics the support AI couldn't answer from the knowledge base. Two list shapes controlled by the ``ticket_id`` query param: - **per-ticket** (``?ticket_id= ``): individual gap rows for that ticket. - **aggregated** (no ``ticket_id``): gaps grouped by normalized topic with counts, for the Business knowledge suggestions panel.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; ticket_id (query) — When provided, returns per-ticket gap rows instead of aggregated view. Requires `ticket:read` scope in addition to `business_knowledge:read`."
+  },
+  {
+    "id": "business_knowledge_settings_partial_update",
+    "name": "Update business knowledge settings",
+    "description": "Update business knowledge settings Partially update Business knowledge learning settings. PATCH /api/projects/{project_id}/business_knowledge/settings/",
+    "context": "PATCH /api/projects/{project_id}/business_knowledge/settings/\nPartially update Business knowledge learning settings. Enabling learn-from-support requires Support to be on in this environment.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "business_knowledge_settings_retrieve",
+    "name": "Get business knowledge settings",
+    "description": "Get business knowledge settings Fetch whether this project learns from resolved support tickets, and whether Support is on in this environment. GET /api/projects/{project_id}/business_knowledge/settings/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/settings/\nFetch whether this project learns from resolved support tickets, and whether Support is on in this environment.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "business_knowledge_sources_create",
+    "name": "business_knowledge_sources_create",
+    "description": "business_knowledge_sources_create POST /api/projects/{project_id}/business_knowledge/sources/",
+    "context": "POST /api/projects/{project_id}/business_knowledge/sources/\nbusiness_knowledge_sources_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "business_knowledge_sources_destroy",
+    "name": "business_knowledge_sources_destroy",
+    "description": "business_knowledge_sources_destroy DELETE /api/projects/{project_id}/business_knowledge/sources/{id}/",
+    "context": "DELETE /api/projects/{project_id}/business_knowledge/sources/{id}/\nbusiness_knowledge_sources_destroy\nRequired: id (path) — A UUID string identifying this knowledge source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "business_knowledge_sources_list",
+    "name": "business_knowledge_sources_list",
+    "description": "business_knowledge_sources_list GET /api/projects/{project_id}/business_knowledge/sources/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/sources/\nbusiness_knowledge_sources_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Case-insensitive substring match against the source name and URL.; source_type (query) — Filter to a single source type (text, url, or file)."
+  },
+  {
+    "id": "business_knowledge_sources_partial_update",
+    "name": "business_knowledge_sources_partial_update",
+    "description": "business_knowledge_sources_partial_update PATCH /api/projects/{project_id}/business_knowledge/sources/{id}/",
+    "context": "PATCH /api/projects/{project_id}/business_knowledge/sources/{id}/\nbusiness_knowledge_sources_partial_update\nRequired: id (path) — A UUID string identifying this knowledge source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "business_knowledge_sources_refresh_create",
+    "name": "business_knowledge_sources_refresh_create",
+    "description": "business_knowledge_sources_refresh_create POST /api/projects/{project_id}/business_knowledge/sources/{id}/refresh/",
+    "context": "POST /api/projects/{project_id}/business_knowledge/sources/{id}/refresh/\nbusiness_knowledge_sources_refresh_create\nRequired: id (path) — A UUID string identifying this knowledge source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "business_knowledge_sources_retrieve",
+    "name": "business_knowledge_sources_retrieve",
+    "description": "business_knowledge_sources_retrieve GET /api/projects/{project_id}/business_knowledge/sources/{id}/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/sources/{id}/\nbusiness_knowledge_sources_retrieve\nRequired: id (path) — A UUID string identifying this knowledge source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "business_knowledge_sources_text_retrieve",
+    "name": "business_knowledge_sources_text_retrieve",
+    "description": "business_knowledge_sources_text_retrieve GET /api/projects/{project_id}/business_knowledge/sources/{id}/text/",
+    "context": "GET /api/projects/{project_id}/business_knowledge/sources/{id}/text/\nbusiness_knowledge_sources_text_retrieve\nRequired: id (path) — A UUID string identifying this knowledge source.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

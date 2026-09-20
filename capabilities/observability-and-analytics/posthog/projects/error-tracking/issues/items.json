@@ -1,0 +1,86 @@
+[
+  {
+    "id": "error_tracking_issues_activity_retrieve",
+    "name": "error_tracking_issues_activity_retrieve",
+    "description": "error_tracking_issues_activity_retrieve GET /api/projects/{project_id}/error_tracking/issues/{id}/activity/",
+    "context": "GET /api/projects/{project_id}/error_tracking/issues/{id}/activity/\nerror_tracking_issues_activity_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_issues_all_activity_retrieve",
+    "name": "error_tracking_issues_all_activity_retrieve",
+    "description": "error_tracking_issues_all_activity_retrieve GET /api/projects/{project_id}/error_tracking/issues/activity/",
+    "context": "GET /api/projects/{project_id}/error_tracking/issues/activity/\nerror_tracking_issues_all_activity_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_issues_assign_partial_update",
+    "name": "error_tracking_issues_assign_partial_update",
+    "description": "error_tracking_issues_assign_partial_update PATCH /api/projects/{project_id}/error_tracking/issues/{id}/assign/",
+    "context": "PATCH /api/projects/{project_id}/error_tracking/issues/{id}/assign/\nerror_tracking_issues_assign_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_issues_bulk_create",
+    "name": "error_tracking_issues_bulk_create",
+    "description": "error_tracking_issues_bulk_create POST /api/projects/{project_id}/error_tracking/issues/bulk/",
+    "context": "POST /api/projects/{project_id}/error_tracking/issues/bulk/\nerror_tracking_issues_bulk_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_issues_cohort_update",
+    "name": "error_tracking_issues_cohort_update",
+    "description": "error_tracking_issues_cohort_update PUT /api/projects/{project_id}/error_tracking/issues/{id}/cohort/",
+    "context": "PUT /api/projects/{project_id}/error_tracking/issues/{id}/cohort/\nerror_tracking_issues_cohort_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_issues_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/error_tracking/issues/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/issues/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_issues_exists_retrieve",
+    "name": "error_tracking_issues_exists_retrieve",
+    "description": "error_tracking_issues_exists_retrieve GET /api/projects/{project_id}/error_tracking/issues/exists/",
+    "context": "GET /api/projects/{project_id}/error_tracking/issues/exists/\nerror_tracking_issues_exists_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_issues_list",
+    "name": "error_tracking_issues_list",
+    "description": "error_tracking_issues_list GET /api/projects/{project_id}/error_tracking/issues/",
+    "context": "GET /api/projects/{project_id}/error_tracking/issues/\nerror_tracking_issues_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "error_tracking_issues_merge_create",
+    "name": "error_tracking_issues_merge_create",
+    "description": "error_tracking_issues_merge_create POST /api/projects/{project_id}/error_tracking/issues/{id}/merge/",
+    "context": "POST /api/projects/{project_id}/error_tracking/issues/{id}/merge/\nerror_tracking_issues_merge_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_issues_partial_update",
+    "name": "error_tracking_issues_partial_update",
+    "description": "error_tracking_issues_partial_update PATCH /api/projects/{project_id}/error_tracking/issues/{id}/",
+    "context": "PATCH /api/projects/{project_id}/error_tracking/issues/{id}/\nerror_tracking_issues_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_issues_retrieve",
+    "name": "error_tracking_issues_retrieve",
+    "description": "error_tracking_issues_retrieve GET /api/projects/{project_id}/error_tracking/issues/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/issues/{id}/\nerror_tracking_issues_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_issues_split_create",
+    "name": "error_tracking_issues_split_create",
+    "description": "error_tracking_issues_split_create POST /api/projects/{project_id}/error_tracking/issues/{id}/split/",
+    "context": "POST /api/projects/{project_id}/error_tracking/issues/{id}/split/\nerror_tracking_issues_split_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_issues_update",
+    "name": "error_tracking_issues_update",
+    "description": "error_tracking_issues_update PUT /api/projects/{project_id}/error_tracking/issues/{id}/",
+    "context": "PUT /api/projects/{project_id}/error_tracking/issues/{id}/\nerror_tracking_issues_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_issues_values_retrieve",
+    "name": "error_tracking_issues_values_retrieve",
+    "description": "error_tracking_issues_values_retrieve GET /api/projects/{project_id}/error_tracking/issues/values/",
+    "context": "GET /api/projects/{project_id}/error_tracking/issues/values/\nerror_tracking_issues_values_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dependency-graph%2Fcreate-repository-snapshot",
+    "name": "Create a snapshot of dependencies for a repository",
+    "description": "Create a snapshot of dependencies for a repository Create a new snapshot of a repository's dependencies. POST /repos/{owner}/{repo}/dependency-graph/snapshots",
+    "context": "POST /repos/{owner}/{repo}/dependency-graph/snapshots\nCreate a new snapshot of a repository's dependencies. The authenticated user must have access to the repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "dependency-graph%2Fdiff-range",
+    "name": "Get a diff of the dependencies between commits",
+    "description": "Get a diff of the dependencies between commits Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits. GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
+    "context": "GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}\nGets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; basehead (path) — The base and head Git revisions to compare. The Git revisions will be resolved to commit SHAs. Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge base will be determined. This parameter expects the format `{base}...{head}`.\nOptional: name (query) — The full path, relative to the repository root, of the dependency manifest file."
+  },
+  {
+    "id": "dependency-graph%2Fexport-sbom",
+    "name": "Export a software bill of materials (SBOM) for a repository.",
+    "description": "Export a software bill of materials (SBOM) for a repository. > [!WARNING] > **Closing down notice:** This operation is closing down and will not be accessible after November 13, 2026. GET /repos/{owner}/{repo}/dependency-graph/sbom",
+    "context": "GET /repos/{owner}/{repo}/dependency-graph/sbom\n> [!WARNING] > **Closing down notice:** This operation is closing down and will not be accessible after November 13, 2026. Please migrate to the asynchronous flow. Use \"[Request generation of a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#request-generation-of-a-software-bill-of-materials-sbom-for-a-repository)\" to trigger the report, then \"[Fetch a software bill of materials (SBOM) for a repository](https://docs.github.com/rest/dependency-graph/sboms#fetch-a-software-bill-of-materials-sbom-for-a-repository)\" to retrieve it. For more information, see the [changelog](https://github.blog/changelog/2026-05-12-synchronous-sbom-api-deprecated/). Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "dependency-graph%2Ffetch-sbom-report",
+    "name": "Fetch a software bill of materials (SBOM) for a repository.",
+    "description": "Fetch a software bill of materials (SBOM) for a repository. Fetches a previously generated software bill of materials (SBOM) for a repository. GET /repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}",
+    "context": "GET /repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}\nFetches a previously generated software bill of materials (SBOM) for a repository. When the SBOM is ready, the response is a 302 redirect to a temporary download URL for the SBOM in SPDX JSON format. The generated SBOM report may be retained for up to one week from the original request. The temporary download URL returned by this endpoint expires separately, and its expiry is set when the fetch request is made.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; sbom_uuid (path) — The unique identifier of the SBOM export."
+  },
+  {
+    "id": "dependency-graph%2Fgenerate-sbom-report",
+    "name": "Request generation of a software bill of materials (SBOM) for a repository.",
+    "description": "Request generation of a software bill of materials (SBOM) for a repository. Triggers a job to generate a software bill of materials (SBOM) for a repository in SPDX JSON format. GET /repos/{owner}/{repo}/dependency-graph/sbom/generate-report",
+    "context": "GET /repos/{owner}/{repo}/dependency-graph/sbom/generate-report\nTriggers a job to generate a software bill of materials (SBOM) for a repository in SPDX JSON format.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  }
+]

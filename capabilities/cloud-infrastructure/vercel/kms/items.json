@@ -1,0 +1,80 @@
+[
+  {
+    "id": "activateKmsSigningKey",
+    "name": "Activate a signing key",
+    "description": "Activate a signing key Activate a pending signing key so the issuer starts signing with it. POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate",
+    "context": "POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate\nActivate a pending signing key so the issuer starts signing with it.\nRequired: issuerId (path) — The ID of the issuer.; keyId (path) — The ID of the pending signing key to activate.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createKmsIssuer",
+    "name": "Create an issuer",
+    "description": "Create an issuer Create a new KMS issuer for the authenticated team. POST /v1/kms/issuers",
+    "context": "POST /v1/kms/issuers\nCreate a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys that are used to sign tokens and messages.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createKmsIssuerPolicy",
+    "name": "Create an issuer policy",
+    "description": "Create an issuer policy Attach a policy to a KMS issuer that grants a project's deployments permission to sign with it. POST /v1/kms/issuers/{issuerId}/policies",
+    "context": "POST /v1/kms/issuers/{issuerId}/policies\nAttach a policy to a KMS issuer that grants a project's deployments permission to sign with it.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createKmsSigningKey",
+    "name": "Create a signing key",
+    "description": "Create a signing key Create a new signing key for a KMS issuer. POST /v1/kms/issuers/{issuerId}/keys",
+    "context": "POST /v1/kms/issuers/{issuerId}/keys\nCreate a new signing key for a KMS issuer. Depending on the activation mode, the key is activated automatically once its public key has propagated, or manually via the activate endpoint.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteKmsIssuer",
+    "name": "Delete an issuer",
+    "description": "Delete an issuer Delete a KMS issuer and its signing keys. DELETE /v1/kms/issuers/{issuerId}",
+    "context": "DELETE /v1/kms/issuers/{issuerId}\nDelete a KMS issuer and its signing keys.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteKmsIssuerPolicy",
+    "name": "Delete an issuer policy",
+    "description": "Delete an issuer policy Remove a policy from a KMS issuer. DELETE /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}",
+    "context": "DELETE /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}\nRemove a policy from a KMS issuer.\nRequired: issuerId (path) — The ID of the issuer.; kind (path) — The issuer policy kind.; policyKey (path) — The policy identifier.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getKmsIssuer",
+    "name": "Get an issuer",
+    "description": "Get an issuer Retrieve a single KMS issuer by its ID. GET /v1/kms/issuers/{issuerId}",
+    "context": "GET /v1/kms/issuers/{issuerId}\nRetrieve a single KMS issuer by its ID. Accepts either a team bearer token (existing path) or an OIDC token authorized by one of the issuer's policies (e.g. a connex-grant token). The OIDC path returns the issuer without policies, since a policy token only proves signing access, not management access.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listKmsIssuers",
+    "name": "List issuers",
+    "description": "List issuers Retrieve the list of KMS issuers that belong to the authenticated team. GET /v1/kms/issuers",
+    "context": "GET /v1/kms/issuers\nRetrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.\nOptional: limit (query) — Maximum number of issuers to return.; next (query) — Continuation cursor to retrieve the next page of results.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "revokeKmsSigningKey",
+    "name": "Revoke a signing key",
+    "description": "Revoke a signing key Immediately revoke a signing key that is already scheduled for revocation. POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke",
+    "context": "POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke\nImmediately revoke a signing key that is already scheduled for revocation.\nRequired: issuerId (path) — The ID of the issuer.; keyId (path) — The ID of the signing key to revoke immediately. The key must already be scheduled for revocation.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "signKmsMessage",
+    "name": "Sign a message",
+    "description": "Sign a message Sign a raw message with a KMS issuer's active signing key. POST /v1/kms/issuers/{issuerId}/sign/message",
+    "context": "POST /v1/kms/issuers/{issuerId}/sign/message\nSign a raw message with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign. The response `signature` is standard-base64 of the raw signature over the decoded message bytes. `keyId` and `algorithm` identify the signing key in the issuer's JWKS.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: body (body)"
+  },
+  {
+    "id": "signKmsToken",
+    "name": "Sign a token",
+    "description": "Sign a token Sign a JWT with a KMS issuer's active signing key. POST /v1/kms/issuers/{issuerId}/sign/token",
+    "context": "POST /v1/kms/issuers/{issuerId}/sign/token\nSign a JWT with a KMS issuer's active signing key. Authenticate the request with a Vercel OIDC token in the `Authorization: Bearer` header; the issuer's policies decide which workloads are allowed to sign.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: body (body)"
+  },
+  {
+    "id": "updateKmsIssuer",
+    "name": "Update an issuer",
+    "description": "Update an issuer Update a KMS issuer's name or claims schema. PATCH /v1/kms/issuers/{issuerId}",
+    "context": "PATCH /v1/kms/issuers/{issuerId}\nUpdate a KMS issuer's name or claims schema.\nRequired: issuerId (path) — The ID of the issuer.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateKmsIssuerPolicy",
+    "name": "Update an issuer policy",
+    "description": "Update an issuer policy Update an existing KMS issuer policy's environments or token claims. PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}",
+    "context": "PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}\nUpdate an existing KMS issuer policy's environments or token claims.\nRequired: issuerId (path) — The ID of the issuer.; kind (path) — The issuer policy kind.; policyKey (path) — The policy identifier.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

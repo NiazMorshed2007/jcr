@@ -1,0 +1,32 @@
+[
+  {
+    "id": "create-dedicated-ip",
+    "name": "Create dedicated IP set",
+    "description": "Create dedicated IP set Create a dedicated IP set. POST /v1/dedicated-ips",
+    "context": "POST /v1/dedicated-ips\nCreate a dedicated IP set. Provisioning an IP set is asynchronous. The response returns immediately with `status: CREATING` and `ips: []`. When provisioning completes, status changes to `RUNNING` and `ips` contains your assigned addresses. If `environmentIds` is omitted or empty, this IP set applies to all services in the workspace in the selected region. Otherwise, it applies only to services in the listed environments in that region.\nRequired: body (body)"
+  },
+  {
+    "id": "delete-dedicated-ip",
+    "name": "Delete dedicated IP set",
+    "description": "Delete dedicated IP set Delete the dedicated IP set with the provided ID. DELETE /v1/dedicated-ips/{dedicatedIpId}",
+    "context": "DELETE /v1/dedicated-ips/{dedicatedIpId}\nDelete the dedicated IP set with the provided ID.\nRequired: dedicatedIpId (path) — The ID of the dedicated IP set"
+  },
+  {
+    "id": "list-dedicated-ips",
+    "name": "List dedicated IPs",
+    "description": "List dedicated IPs List dedicated IP sets for a workspace. GET /v1/dedicated-ips",
+    "context": "GET /v1/dedicated-ips\nList dedicated IP sets for a workspace.\nRequired: ownerId (query) — The ID of the workspace to list dedicated IP sets for.\nOptional: environmentId (query) — Filter dedicated IP sets limited to this environment. Excludes workspace-scoped dedicated IP sets. The environment must belong to the workspace named by `ownerId`."
+  },
+  {
+    "id": "retrieve-dedicated-ip",
+    "name": "Retrieve dedicated IP set",
+    "description": "Retrieve dedicated IP set Retrieve the dedicated IP set with the provided ID. GET /v1/dedicated-ips/{dedicatedIpId}",
+    "context": "GET /v1/dedicated-ips/{dedicatedIpId}\nRetrieve the dedicated IP set with the provided ID.\nRequired: dedicatedIpId (path) — The ID of the dedicated IP set"
+  },
+  {
+    "id": "update-dedicated-ip",
+    "name": "Update dedicated IP set",
+    "description": "Update dedicated IP set Update the dedicated IP set with the provided ID. PATCH /v1/dedicated-ips/{dedicatedIpId}",
+    "context": "PATCH /v1/dedicated-ips/{dedicatedIpId}\nUpdate the dedicated IP set with the provided ID. All fields are optional. Omitted fields are left unchanged. To switch from environment-scoped to workspace-scoped, provide `environmentIds: []`.\nRequired: dedicatedIpId (path) — The ID of the dedicated IP set; body (body)"
+  }
+]

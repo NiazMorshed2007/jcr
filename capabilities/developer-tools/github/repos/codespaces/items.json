@@ -1,0 +1,68 @@
+[
+  {
+    "id": "codespaces%2Fcheck-permissions-for-devcontainer",
+    "name": "Check if permissions defined by a devcontainer have been accepted by the authenticated user",
+    "description": "Check if permissions defined by a devcontainer have been accepted by the authenticated user Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user. GET /repos/{owner}/{repo}/codespaces/permissions_check",
+    "context": "GET /repos/{owner}/{repo}/codespaces/permissions_check\nChecks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; ref (query) — The git reference that points to the location of the devcontainer configuration to use for the permission check. The value of `ref` will typically be a branch name (`heads/BRANCH_NAME`). For more information, see \"[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)\" in the Git documentation.; devcontainer_path (query) — Path to the devcontainer.json configuration to use for the permission check."
+  },
+  {
+    "id": "codespaces%2Fcreate-or-update-repo-secret",
+    "name": "Create or update a repository secret",
+    "description": "Create or update a repository secret Creates or updates a repository development environment secret with an encrypted value. PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
+    "context": "PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}\nCreates or updates a repository development environment secret with an encrypted value. Encrypt your secret using [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see \"[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).\" OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; secret_name (path) — The name of the secret.; body (body)"
+  },
+  {
+    "id": "codespaces%2Fcreate-with-repo-for-authenticated-user",
+    "name": "Create a codespace in a repository",
+    "description": "Create a codespace in a repository Creates a codespace owned by the authenticated user in the specified repository. POST /repos/{owner}/{repo}/codespaces",
+    "context": "POST /repos/{owner}/{repo}/codespaces\nCreates a codespace owned by the authenticated user in the specified repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "codespaces%2Fdelete-repo-secret",
+    "name": "Delete a repository secret",
+    "description": "Delete a repository secret Deletes a development environment secret in a repository using the secret name. DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
+    "context": "DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}\nDeletes a development environment secret in a repository using the secret name. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "codespaces%2Fget-repo-public-key",
+    "name": "Get a repository public key",
+    "description": "Get a repository public key Gets your public key, which you need to encrypt secrets. GET /repos/{owner}/{repo}/codespaces/secrets/public-key",
+    "context": "GET /repos/{owner}/{repo}/codespaces/secrets/public-key\nGets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. If the repository is private, OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "codespaces%2Fget-repo-secret",
+    "name": "Get a repository secret",
+    "description": "Get a repository secret Gets a single repository development environment secret without revealing its encrypted value. GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
+    "context": "GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}\nGets a single repository development environment secret without revealing its encrypted value. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; secret_name (path) — The name of the secret."
+  },
+  {
+    "id": "codespaces%2Flist-devcontainers-in-repository-for-authenticated-user",
+    "name": "List devcontainer configurations in a repository for the authenticated user",
+    "description": "List devcontainer configurations in a repository for the authenticated user Lists the devcontainer.json files associated with a specified repository and the authenticated user. GET /repos/{owner}/{repo}/codespaces/devcontainers",
+    "context": "GET /repos/{owner}/{repo}/codespaces/devcontainers\nLists the devcontainer.json files associated with a specified repository and the authenticated user. These files specify launchpoint configurations for codespaces created within the repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "codespaces%2Flist-in-repository-for-authenticated-user",
+    "name": "List codespaces in a repository for the authenticated user",
+    "description": "List codespaces in a repository for the authenticated user Lists the codespaces associated to a specified repository and the authenticated user. GET /repos/{owner}/{repo}/codespaces",
+    "context": "GET /repos/{owner}/{repo}/codespaces\nLists the codespaces associated to a specified repository and the authenticated user. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "codespaces%2Flist-repo-secrets",
+    "name": "List repository secrets",
+    "description": "List repository secrets Lists all development environment secrets available in a repository without revealing their encrypted values. GET /repos/{owner}/{repo}/codespaces/secrets",
+    "context": "GET /repos/{owner}/{repo}/codespaces/secrets\nLists all development environment secrets available in a repository without revealing their encrypted values. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "codespaces%2Fpre-flight-with-repo-for-authenticated-user",
+    "name": "Get default attributes for a codespace",
+    "description": "Get default attributes for a codespace Gets the default attributes for codespaces created by the user with the repository. GET /repos/{owner}/{repo}/codespaces/new",
+    "context": "GET /repos/{owner}/{repo}/codespaces/new\nGets the default attributes for codespaces created by the user with the repository. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: ref (query) — The branch or commit to check for a default devcontainer path. If not specified, the default branch will be checked.; client_ip (query) — An alternative IP for default location auto-detection, such as when proxying a request."
+  },
+  {
+    "id": "codespaces%2Frepo-machines-for-authenticated-user",
+    "name": "List available machine types for a repository",
+    "description": "List available machine types for a repository List the machine types available for a given repository based on its configuration. GET /repos/{owner}/{repo}/codespaces/machines",
+    "context": "GET /repos/{owner}/{repo}/codespaces/machines\nList the machine types available for a given repository based on its configuration. OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: location (query) — The location to check for available machines. Assigned by IP if not provided.; client_ip (query) — IP for location auto-detection when proxying a request; ref (query) — The branch or commit to check for prebuild availability and devcontainer restrictions."
+  }
+]

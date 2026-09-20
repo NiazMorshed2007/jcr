@@ -1,0 +1,20 @@
+[
+  {
+    "id": "repos%2Fdelete-invitation",
+    "name": "Delete a repository invitation",
+    "description": "Delete a repository invitation DELETE /repos/{owner}/{repo}/invitations/{invitation_id}",
+    "context": "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}\nDelete a repository invitation\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; invitation_id (path) — The unique identifier of the invitation."
+  },
+  {
+    "id": "repos%2Flist-invitations",
+    "name": "List repository invitations",
+    "description": "List repository invitations When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations. GET /repos/{owner}/{repo}/invitations",
+    "context": "GET /repos/{owner}/{repo}/invitations\nWhen authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fupdate-invitation",
+    "name": "Update a repository invitation",
+    "description": "Update a repository invitation PATCH /repos/{owner}/{repo}/invitations/{invitation_id}",
+    "context": "PATCH /repos/{owner}/{repo}/invitations/{invitation_id}\nUpdate a repository invitation\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; invitation_id (path) — The unique identifier of the invitation.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "domains_create",
+    "name": "domains_create",
+    "description": "domains_create POST /api/organizations/{organization_id}/domains/",
+    "context": "POST /api/organizations/{organization_id}/domains/\ndomains_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "domains_destroy",
+    "name": "domains_destroy",
+    "description": "domains_destroy DELETE /api/organizations/{organization_id}/domains/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/domains/{id}/\ndomains_destroy\nRequired: id (path) — A UUID string identifying this domain.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "domains_list",
+    "name": "domains_list",
+    "description": "domains_list GET /api/organizations/{organization_id}/domains/",
+    "context": "GET /api/organizations/{organization_id}/domains/\ndomains_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "domains_partial_update",
+    "name": "domains_partial_update",
+    "description": "domains_partial_update PATCH /api/organizations/{organization_id}/domains/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/domains/{id}/\ndomains_partial_update\nRequired: id (path) — A UUID string identifying this domain.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "domains_retrieve",
+    "name": "domains_retrieve",
+    "description": "domains_retrieve GET /api/organizations/{organization_id}/domains/{id}/",
+    "context": "GET /api/organizations/{organization_id}/domains/{id}/\ndomains_retrieve\nRequired: id (path) — A UUID string identifying this domain.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "domains_scim_logs_retrieve",
+    "name": "domains_scim_logs_retrieve",
+    "description": "domains_scim_logs_retrieve GET /api/organizations/{organization_id}/domains/{id}/scim/logs/",
+    "context": "GET /api/organizations/{organization_id}/domains/{id}/scim/logs/\ndomains_scim_logs_retrieve\nRequired: id (path) — A UUID string identifying this domain.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: after (query) — Include requests at or after this time.; before (query) — Include requests at or before this time.; page (query) — Page number to return.; page_size (query) — Number of requests to return per page.; search (query) — Search request paths and masked request bodies.; status_max (query) — Maximum HTTP response status to include, such as 499.; status_min (query) — Minimum HTTP response status to include, such as 400."
+  },
+  {
+    "id": "domains_update",
+    "name": "domains_update",
+    "description": "domains_update PUT /api/organizations/{organization_id}/domains/{id}/",
+    "context": "PUT /api/organizations/{organization_id}/domains/{id}/\ndomains_update\nRequired: id (path) — A UUID string identifying this domain.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "domains_verify_create",
+    "name": "domains_verify_create",
+    "description": "domains_verify_create POST /api/organizations/{organization_id}/domains/{id}/verify/",
+    "context": "POST /api/organizations/{organization_id}/domains/{id}/verify/\ndomains_verify_create\nRequired: id (path) — A UUID string identifying this domain.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  }
+]

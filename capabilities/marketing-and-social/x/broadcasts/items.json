@@ -1,0 +1,98 @@
+[
+  {
+    "id": "addChatModerator",
+    "name": "Add a chat moderator",
+    "description": "Add a chat moderator Adds a moderator to the authenticated broadcaster's persistent list and returns the updated moderator user IDs. POST /2/broadcasts/chat/moderators",
+    "context": "POST /2/broadcasts/chat/moderators\nAdds a moderator to the authenticated broadcaster's persistent list and returns the updated moderator user IDs. The list applies to all current and future broadcast chats.\nRequired: body (body)"
+  },
+  {
+    "id": "createScheduledBroadcast",
+    "name": "Create a scheduled broadcast",
+    "description": "Create a scheduled broadcast Schedules a one-off or recurring broadcast for the authenticated user. POST /2/broadcasts/scheduled",
+    "context": "POST /2/broadcasts/scheduled\nSchedules a one-off or recurring broadcast for the authenticated user. A `source_id` (ingest) is required at create time.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteBroadcastChatMessage",
+    "name": "Remove a chat message from a live broadcast",
+    "description": "Remove a chat message from a live broadcast Removes a specific chat message from a running broadcast where the authenticated user is the host or a moderator. DELETE /2/broadcasts/{id}/chat/{message_id}",
+    "context": "DELETE /2/broadcasts/{id}/chat/{message_id}\nRemoves a specific chat message from a running broadcast where the authenticated user is the host or a moderator.\nRequired: id (path); message_id (path)"
+  },
+  {
+    "id": "deleteScheduledBroadcast",
+    "name": "Delete a scheduled broadcast",
+    "description": "Delete a scheduled broadcast Deletes a scheduled broadcast by its alphanumeric UBS broadcast id. DELETE /2/broadcasts/scheduled/{id}",
+    "context": "DELETE /2/broadcasts/scheduled/{id}\nDeletes a scheduled broadcast by its alphanumeric UBS broadcast id.\nRequired: id (path)\nOptional: roll_forward (query)"
+  },
+  {
+    "id": "getBroadcast",
+    "name": "Get a broadcast",
+    "description": "Get a broadcast Returns a broadcast owned by the authenticated user. GET /2/broadcasts/{id}",
+    "context": "GET /2/broadcasts/{id}\nReturns a broadcast owned by the authenticated user.\nRequired: id (path)\nOptional: broadcast.fields (query) — A comma separated list of Broadcast fields to display."
+  },
+  {
+    "id": "getBroadcastChat",
+    "name": "Get broadcast chat history",
+    "description": "Get broadcast chat history Returns newest-first chat messages for a broadcast owned by the authenticated user. GET /2/broadcasts/{id}/chat",
+    "context": "GET /2/broadcasts/{id}/chat\nReturns newest-first chat messages for a broadcast owned by the authenticated user.\nRequired: id (path)\nOptional: max_results (query); pagination_token (query) — A 64-bit signed integer.; broadcast_chat_message.fields (query) — A comma separated list of BroadcastChatMessage fields to display.; expansions (query) — A comma separated list of fields to expand.; user.fields (query) — A comma separated list of User fields to display."
+  },
+  {
+    "id": "getChatModerators",
+    "name": "Get chat moderators",
+    "description": "Get chat moderators Returns the authenticated broadcaster's persistent moderators as User resources. GET /2/broadcasts/chat/moderators",
+    "context": "GET /2/broadcasts/chat/moderators\nReturns the authenticated broadcaster's persistent moderators as User resources. The list applies to all of their current and future broadcast chats.\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "getScheduledBroadcast",
+    "name": "Get a scheduled broadcast",
+    "description": "Get a scheduled broadcast Returns a single scheduled broadcast by its alphanumeric UBS broadcast id. GET /2/broadcasts/scheduled/{id}",
+    "context": "GET /2/broadcasts/scheduled/{id}\nReturns a single scheduled broadcast by its alphanumeric UBS broadcast id.\nRequired: id (path)"
+  },
+  {
+    "id": "goLiveScheduledBroadcast",
+    "name": "Go live on a scheduled broadcast",
+    "description": "Go live on a scheduled broadcast Publishes a schedule that was created or updated with `manual_publish: true`. POST /2/broadcasts/scheduled/{id}/live",
+    "context": "POST /2/broadcasts/scheduled/{id}/live\nPublishes a schedule that was created or updated with `manual_publish: true`. Without that flag the coordinator auto-publishes at start and this call is rejected.\nRequired: id (path)"
+  },
+  {
+    "id": "listBroadcasts",
+    "name": "List broadcasts",
+    "description": "List broadcasts Returns the authenticated user's live-video broadcasts, or selected owned broadcasts when ids are provided. GET /2/broadcasts",
+    "context": "GET /2/broadcasts\nReturns the authenticated user's live-video broadcasts, or selected owned broadcasts when ids are provided. At most one of `ids`, `max_results` may be provided. At most one of `ids`, `pagination_token` may be provided.\nOptional: ids (query) — Comma-separated broadcast IDs to retrieve instead of listing broadcasts.; max_results (query); pagination_token (query); broadcast.fields (query) — A comma separated list of Broadcast fields to display."
+  },
+  {
+    "id": "listScheduledBroadcasts",
+    "name": "List scheduled broadcasts",
+    "description": "List scheduled broadcasts Returns scheduled broadcasts owned by the authenticated user. GET /2/broadcasts/scheduled",
+    "context": "GET /2/broadcasts/scheduled\nReturns scheduled broadcasts owned by the authenticated user.\nOptional: max_results (query); oldest_start_time (query); newest_start_time (query); pagination_token (query)"
+  },
+  {
+    "id": "muteBroadcastChatUser",
+    "name": "Mute or time out a user in a broadcast chat",
+    "description": "Mute or time out a user in a broadcast chat Prevents a user from posting further messages in a running broadcast chat. POST /2/broadcasts/{id}/chat/mutes",
+    "context": "POST /2/broadcasts/{id}/chat/mutes\nPrevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must be the broadcast host or a moderator.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "removeChatModerator",
+    "name": "Remove a chat moderator",
+    "description": "Remove a chat moderator Removes a moderator from the authenticated broadcaster's persistent list and returns the updated moderator user IDs. DELETE /2/broadcasts/chat/moderators/{user_id}",
+    "context": "DELETE /2/broadcasts/chat/moderators/{user_id}\nRemoves a moderator from the authenticated broadcaster's persistent list and returns the updated moderator user IDs.\nRequired: user_id (path) — A 64-bit signed integer."
+  },
+  {
+    "id": "sendBroadcastChat",
+    "name": "Send a chat message to a live broadcast",
+    "description": "Send a chat message to a live broadcast Posts a chat message to a running broadcast, attributed to the authenticated user. POST /2/broadcasts/{id}/chat",
+    "context": "POST /2/broadcasts/{id}/chat\nPosts a chat message to a running broadcast, attributed to the authenticated user.\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "unmuteBroadcastChatUser",
+    "name": "Unmute a user in a broadcast chat",
+    "description": "Unmute a user in a broadcast chat Allows a muted user to post messages in a running broadcast chat again. DELETE /2/broadcasts/{id}/chat/mutes/{user_id}",
+    "context": "DELETE /2/broadcasts/{id}/chat/mutes/{user_id}\nAllows a muted user to post messages in a running broadcast chat again. The authenticated user must be the broadcast host or a moderator.\nRequired: id (path); user_id (path) — A 64-bit signed integer."
+  },
+  {
+    "id": "updateScheduledBroadcast",
+    "name": "Update a scheduled broadcast",
+    "description": "Update a scheduled broadcast Fully replaces schedule fields for a broadcast. PUT /2/broadcasts/scheduled/{id}",
+    "context": "PUT /2/broadcasts/scheduled/{id}\nFully replaces schedule fields for a broadcast. Path `:id` is the UBS broadcast id; the body must include `scheduled_broadcast_id` and re-send any fields that should be kept.\nRequired: id (path); body (body)"
+  }
+]

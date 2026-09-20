@@ -1,0 +1,32 @@
+[
+  {
+    "id": "list-notification-overrides",
+    "name": "List notification overrides",
+    "description": "List notification overrides List notification overrides matching the provided filters. GET /v1/notification-settings/overrides",
+    "context": "GET /v1/notification-settings/overrides\nList notification overrides matching the provided filters. If no filters are provided, returns all notification overrides for all workspaces the user belongs to.\nOptional: ownerId (query) — The ID of the workspaces to return resources for; serviceId (query) — Filter for resources by service ID; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "patch-owner-notification-settings",
+    "name": "Update notification settings",
+    "description": "Update notification settings Update notification settings for the owner with the provided ID. PATCH /v1/notification-settings/owners/{ownerId}",
+    "context": "PATCH /v1/notification-settings/owners/{ownerId}\nUpdate notification settings for the owner with the provided ID.\nRequired: ownerId (path) — The ID of the workspace to return resources for; body (body)"
+  },
+  {
+    "id": "patch-service-notification-overrides",
+    "name": "Update notification override",
+    "description": "Update notification override Update the notification override for the service with the provided ID. PATCH /v1/notification-settings/overrides/services/{serviceId}",
+    "context": "PATCH /v1/notification-settings/overrides/services/{serviceId}\nUpdate the notification override for the service with the provided ID.\nRequired: serviceId (path) — The ID of the service; body (body)"
+  },
+  {
+    "id": "retrieve-owner-notification-settings",
+    "name": "Retrieve notification settings",
+    "description": "Retrieve notification settings Retrieve notification settings for the owner with the provided ID. GET /v1/notification-settings/owners/{ownerId}",
+    "context": "GET /v1/notification-settings/owners/{ownerId}\nRetrieve notification settings for the owner with the provided ID. Note that you provide an owner ID to this endpoint, not the ID for a particular resource.\nRequired: ownerId (path) — The ID of the workspace to return resources for"
+  },
+  {
+    "id": "retrieve-service-notification-overrides",
+    "name": "Retrieve notification override",
+    "description": "Retrieve notification override Retrieve the notification override for the service with the provided ID. GET /v1/notification-settings/overrides/services/{serviceId}",
+    "context": "GET /v1/notification-settings/overrides/services/{serviceId}\nRetrieve the notification override for the service with the provided ID. Note that you provide a service ID to this endpoint, not the ID for a particular override.\nRequired: serviceId (path) — The ID of the service"
+  }
+]

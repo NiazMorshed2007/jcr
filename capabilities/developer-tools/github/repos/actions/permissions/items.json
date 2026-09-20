@@ -1,0 +1,86 @@
+[
+  {
+    "id": "actions%2Fget-allowed-actions-repository",
+    "name": "Get allowed actions and reusable workflows for a repository",
+    "description": "Get allowed actions and reusable workflows for a repository Gets the settings for selected actions and reusable workflows that are allowed in a repository. GET /repos/{owner}/{repo}/actions/permissions/selected-actions",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions/selected-actions\nGets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).\" OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-artifact-and-log-retention-settings-repository",
+    "name": "Get artifact and log retention settings for a repository",
+    "description": "Get artifact and log retention settings for a repository Gets artifact and log retention settings for a repository. GET /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention\nGets artifact and log retention settings for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-fork-pr-contributor-approval-permissions-repository",
+    "name": "Get fork PR contributor approval permissions for a repository",
+    "description": "Get fork PR contributor approval permissions for a repository Gets the fork PR contributor approval policy for a repository. GET /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval\nGets the fork PR contributor approval policy for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-github-actions-default-workflow-permissions-repository",
+    "name": "Get default workflow permissions for a repository",
+    "description": "Get default workflow permissions for a repository Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, as well as if GitHub Actions can submit approving pull request reviews. GET /repos/{owner}/{repo}/actions/permissions/workflow",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions/workflow\nGets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, as well as if GitHub Actions can submit approving pull request reviews. For more information, see \"[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).\" OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-github-actions-permissions-repository",
+    "name": "Get GitHub Actions permissions for a repository",
+    "description": "Get GitHub Actions permissions for a repository Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions and reusable workflows allowed to run in the repository. GET /repos/{owner}/{repo}/actions/permissions",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions\nGets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions and reusable workflows allowed to run in the repository. OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-private-repo-fork-pr-workflows-settings-repository",
+    "name": "Get private repo fork PR workflow settings for a repository",
+    "description": "Get private repo fork PR workflow settings for a repository Gets the settings for whether workflows from fork pull requests can run on a private repository. GET /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos\nGets the settings for whether workflows from fork pull requests can run on a private repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fget-workflow-access-to-repository",
+    "name": "Get the level of access for workflows outside of the repository",
+    "description": "Get the level of access for workflows outside of the repository Gets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository. GET /repos/{owner}/{repo}/actions/permissions/access",
+    "context": "GET /repos/{owner}/{repo}/actions/permissions/access\nGets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository. This endpoint only applies to private repositories. For more information, see \"[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository).\" OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "actions%2Fset-allowed-actions-repository",
+    "name": "Set allowed actions and reusable workflows for a repository",
+    "description": "Set allowed actions and reusable workflows for a repository Sets the actions and reusable workflows that are allowed in a repository. PUT /repos/{owner}/{repo}/actions/permissions/selected-actions",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions/selected-actions\nSets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see \"[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).\" OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: body (body)"
+  },
+  {
+    "id": "actions%2Fset-artifact-and-log-retention-settings-repository",
+    "name": "Set artifact and log retention settings for a repository",
+    "description": "Set artifact and log retention settings for a repository Sets artifact and log retention settings for a repository. PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention\nSets artifact and log retention settings for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-fork-pr-contributor-approval-permissions-repository",
+    "name": "Set fork PR contributor approval permissions for a repository",
+    "description": "Set fork PR contributor approval permissions for a repository Sets the fork PR contributor approval policy for a repository. PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval\nSets the fork PR contributor approval policy for a repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-github-actions-default-workflow-permissions-repository",
+    "name": "Set default workflow permissions for a repository",
+    "description": "Set default workflow permissions for a repository Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, and sets if GitHub Actions can submit approving pull request reviews. PUT /repos/{owner}/{repo}/actions/permissions/workflow",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions/workflow\nSets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, and sets if GitHub Actions can submit approving pull request reviews. For more information, see \"[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).\" OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-github-actions-permissions-repository",
+    "name": "Set GitHub Actions permissions for a repository",
+    "description": "Set GitHub Actions permissions for a repository Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository. PUT /repos/{owner}/{repo}/actions/permissions",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions\nSets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-private-repo-fork-pr-workflows-settings-repository",
+    "name": "Set private repo fork PR workflow settings for a repository",
+    "description": "Set private repo fork PR workflow settings for a repository Sets the settings for whether workflows from fork pull requests can run on a private repository. PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos\nSets the settings for whether workflows from fork pull requests can run on a private repository. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-workflow-access-to-repository",
+    "name": "Set the level of access for workflows outside of the repository",
+    "description": "Set the level of access for workflows outside of the repository Sets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository. PUT /repos/{owner}/{repo}/actions/permissions/access",
+    "context": "PUT /repos/{owner}/{repo}/actions/permissions/access\nSets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository. This endpoint only applies to private repositories. For more information, see \"[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository)\". OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  }
+]

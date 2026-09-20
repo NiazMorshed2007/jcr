@@ -1,0 +1,74 @@
+[
+  {
+    "id": "AddGuestToFolder",
+    "name": "Add Guest To Folder",
+    "description": "Add Guest To Folder Share a Folder with a guest. POST /api/v2/folder/{folder_id}/guest/{guest_id}",
+    "context": "POST /api/v2/folder/{folder_id}/guest/{guest_id}\nShare a Folder with a guest. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: folder_id (path); guest_id (path); body (body)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`."
+  },
+  {
+    "id": "CreateFolderListFromTemplate",
+    "name": "Create List From Template in Folder",
+    "description": "Create List From Template in Folder Create a new list using a list template in a Folder. POST /api/v2/folder/{folder_id}/list_template/{template_id}",
+    "context": "POST /api/v2/folder/{folder_id}/list_template/{template_id}\nCreate a new list using a list template in a Folder. Publicly shared templates must be [added to your Workspace](https://help.clickup.com/hc/en-us/articles/6326023965591-Add-a-template-to-your-library) before you can use them with the public API. This request runs synchronously by default with `return_immediately=true`. The request returns the future List ID immediatly, but the List may not be created when the response is sent. Small templates can be applied synchronously, which guarantees that all sub objects are created. In case of a timeout on synchronous requests, the objects from the template will continue to be created past the timeout.\nRequired: folder_id (path) — ID of the Folder where the List will be created; template_id (path) — ID of the List template to use. Template IDs include a `t-` prefix (e.g., `t-15363293`). Retrieve available template IDs using the [Get List Templates](#tag/Templates/operation/GetListTemplates) endpoint.; body (body)"
+  },
+  {
+    "id": "CreateFolderView",
+    "name": "Create Folder View",
+    "description": "Create Folder View Add a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view to a Folder. POST /api/v2/folder/{folder_id}/view",
+    "context": "POST /api/v2/folder/{folder_id}/view\nAdd a List, Board, Calendar, Table, Timeline, Workload, Activity, Map, Chat, or Gantt view to a Folder.\nRequired: folder_id (path); body (body)"
+  },
+  {
+    "id": "CreateList",
+    "name": "Create List",
+    "description": "Create List Add a new List to a Folder. POST /api/v2/folder/{folder_id}/list",
+    "context": "POST /api/v2/folder/{folder_id}/list\nAdd a new List to a Folder.\nRequired: folder_id (path); body (body)"
+  },
+  {
+    "id": "DeleteFolder",
+    "name": "Delete Folder",
+    "description": "Delete Folder Delete a Folder from your Workspace. DELETE /api/v2/folder/{folder_id}",
+    "context": "DELETE /api/v2/folder/{folder_id}\nDelete a Folder from your Workspace.\nRequired: folder_id (path)"
+  },
+  {
+    "id": "GetFolder",
+    "name": "Get Folder",
+    "description": "Get Folder View the Lists within a Folder. GET /api/v2/folder/{folder_id}",
+    "context": "GET /api/v2/folder/{folder_id}\nView the Lists within a Folder. If the Folder is a subfolder, the response includes a `parent_folder` field with the parent Folder ID. Use the `include_subfolders` query parameter to include a `folders` array in the response. Each entry is a complete Folder object with the same fields as the Folder you requested, including its own `folders` array, so the response contains the whole subfolder tree down to the Workspace's subfolder nesting limit. Subfolders the requesting user cannot access are excluded.\nRequired: folder_id (path)\nOptional: include_subfolders (query) — Set to `true` to include the nested subfolder tree in the response as a `folders` array of complete Folder objects. Subfolder support must be enabled for the Workspace."
+  },
+  {
+    "id": "getFolderAvailableFields",
+    "name": "Get Folder Custom Fields",
+    "description": "Get Folder Custom Fields View the Custom Fields you have access to in a Folder. GET /api/v2/folder/{folder_id}/field",
+    "context": "GET /api/v2/folder/{folder_id}/field\nView the Custom Fields you have access to in a Folder. Get Folder Custom Fields only returns Custom Fields created at the Folder level. Custom Fields created at the List level are not included.\\ \\ Custom Fields scoped to specific custom task types include an `applied_objects` array on each field object. Each entry has `object_type` (`19` for custom task type) and `object_id` (the custom task type ID, matching `custom_item_id` on tasks). Use [Get Custom Task Types](ref:getcustomitems) to resolve IDs to names. Fields without task-type scoping omit `applied_objects`. Workspace-scoped Custom Fields are included when querying a Folder.\nRequired: folder_id (path); Content-Type (header)\nOptional: include_applied_objects (query) — When `true`, includes `applied_objects` on task-type-scoped Custom Fields in the response."
+  },
+  {
+    "id": "GetFolderViews",
+    "name": "Get Folder Views",
+    "description": "Get Folder Views View the task and page views available for a Folder. GET /api/v2/folder/{folder_id}/view",
+    "context": "GET /api/v2/folder/{folder_id}/view\nView the task and page views available for a Folder.\nRequired: folder_id (path)"
+  },
+  {
+    "id": "GetLists",
+    "name": "Get Lists",
+    "description": "Get Lists View the Lists within a Folder. GET /api/v2/folder/{folder_id}/list",
+    "context": "GET /api/v2/folder/{folder_id}/list\nView the Lists within a Folder.\nRequired: folder_id (path)\nOptional: archived (query)"
+  },
+  {
+    "id": "MoveFolder",
+    "name": "Move Folder",
+    "description": "Move Folder Move a Folder, either by nesting it inside another Folder as a subfolder or by moving it to another Space as a top-level Folder. PUT /api/v2/folder/{folder_id}/position",
+    "context": "PUT /api/v2/folder/{folder_id}/position\nMove a Folder, either by nesting it inside another Folder as a subfolder or by moving it to another Space as a top-level Folder. Provide `parent_folder_id` to nest the Folder inside another Folder, or `space_id` to move it to another Space as a top-level Folder. If both are provided, `parent_folder_id` takes precedence and `space_id` is ignored, so the Folder inherits the Space of its new parent Folder. Use `position` to control placement among siblings in the destination; the Folder is placed at the top when `position` is omitted. Nesting a Folder requires subfolder support to be enabled for the Workspace. Lists and tasks in the Folder move with it. To rename a Folder instead, use the [Update Folder](#tag/Folders/operation/UpdateFolder) endpoint.\nRequired: folder_id (path); body (body)"
+  },
+  {
+    "id": "RemoveGuestFromFolder",
+    "name": "Remove Guest From Folder",
+    "description": "Remove Guest From Folder Revoke a guest's access to a Folder. DELETE /api/v2/folder/{folder_id}/guest/{guest_id}",
+    "context": "DELETE /api/v2/folder/{folder_id}/guest/{guest_id}\nRevoke a guest's access to a Folder. \\ \\ ***Note:** This endpoint is only available to Workspaces on our [Enterprise Plan](https://clickup.com/pricing).*\nRequired: folder_id (path); guest_id (path)\nOptional: include_shared (query) — Exclude details of items shared with the guest by setting this parameter to `false`. By default this parameter is set to `true`."
+  },
+  {
+    "id": "UpdateFolder",
+    "name": "Update Folder",
+    "description": "Update Folder Rename a Folder. PUT /api/v2/folder/{folder_id}",
+    "context": "PUT /api/v2/folder/{folder_id}\nRename a Folder. Renaming a subfolder leaves it nested inside its parent Folder, and the response includes the `parent_folder` field. This endpoint only renames a Folder. To nest a Folder inside another Folder or move it to another Space, use the [Move Folder](#tag/Folders/operation/MoveFolder) endpoint; a `parent_folder_id` sent to this endpoint is ignored.\nRequired: folder_id (path); body (body)"
+  }
+]

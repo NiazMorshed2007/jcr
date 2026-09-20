@@ -1,0 +1,212 @@
+[
+  {
+    "id": "archive-security-center-insight-deprecated",
+    "name": "Archives Security Center Insight",
+    "description": "Archives Security Center Insight Deprecated endpoint for archiving Security Center insights. PUT /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/{issue_id}/dismiss",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/{issue_id}/dismiss\nDeprecated endpoint for archiving Security Center insights. Use the newer archive-security-center-insight endpoint instead.\nRequired: account_id (path); issue_id (path); body (body)"
+  },
+  {
+    "id": "asn-intelligence-get-asn-overview",
+    "name": "Get ASN Overview.",
+    "description": "Get ASN Overview. Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it. GET /client/v4/accounts/{account_id}/intel/asn/{asn}",
+    "context": "GET /client/v4/accounts/{account_id}/intel/asn/{asn}\nGets an overview of the Autonomous System Number (ASN) and a list of subnets for it.\nRequired: asn (path); account_id (path)"
+  },
+  {
+    "id": "asn-intelligence-get-asn-subnets",
+    "name": "Get ASN Subnets",
+    "description": "Get ASN Subnets Get ASN Subnets. GET /client/v4/accounts/{account_id}/intel/asn/{asn}/subnets",
+    "context": "GET /client/v4/accounts/{account_id}/intel/asn/{asn}/subnets\nGet ASN Subnets.\nRequired: asn (path); account_id (path)"
+  },
+  {
+    "id": "custom-indicator-feeds-add-permission",
+    "name": "Grant permission to indicator feed",
+    "description": "Grant permission to indicator feed Grants access permissions for a custom threat indicator feed to other accounts. PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/add",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/add\nGrants access permissions for a custom threat indicator feed to other accounts.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "custom-indicator-feeds-create-indicator-feeds",
+    "name": "Create new indicator feed",
+    "description": "Create new indicator feed Creates a new custom threat indicator feed for sharing threat intelligence data. POST /client/v4/accounts/{account_id}/intel/indicator-feeds",
+    "context": "POST /client/v4/accounts/{account_id}/intel/indicator-feeds\nCreates a new custom threat indicator feed for sharing threat intelligence data.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "custom-indicator-feeds-create-provider",
+    "name": "Create indicator feed provider",
+    "description": "Create indicator feed provider Creates a new indicator feed provider for an account. PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/createProvider",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/createProvider\nCreates a new indicator feed provider for an account. Only available to Intel accounts.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "custom-indicator-feeds-download-indicator-feed-data",
+    "name": "Download indicator feed data",
+    "description": "Download indicator feed data Downloads the content of a custom threat indicator feed. GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/download",
+    "context": "GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/download\nDownloads the content of a custom threat indicator feed.\nRequired: account_id (path); feed_id (path)"
+  },
+  {
+    "id": "custom-indicator-feeds-get-indicator-feed-data",
+    "name": "Get indicator feed data",
+    "description": "Get indicator feed data Retrieves the raw data entries in a custom threat indicator feed. GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/data",
+    "context": "GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/data\nRetrieves the raw data entries in a custom threat indicator feed.\nRequired: account_id (path); feed_id (path)"
+  },
+  {
+    "id": "custom-indicator-feeds-get-indicator-feed-metadata",
+    "name": "Get indicator feed metadata",
+    "description": "Get indicator feed metadata Retrieves details for a specific custom threat indicator feed. GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}",
+    "context": "GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}\nRetrieves details for a specific custom threat indicator feed.\nRequired: account_id (path); feed_id (path)"
+  },
+  {
+    "id": "custom-indicator-feeds-get-indicator-feeds",
+    "name": "Get indicator feeds owned by this account",
+    "description": "Get indicator feeds owned by this account Retrieves details for all accessible custom threat indicator feeds. GET /client/v4/accounts/{account_id}/intel/indicator-feeds",
+    "context": "GET /client/v4/accounts/{account_id}/intel/indicator-feeds\nRetrieves details for all accessible custom threat indicator feeds.\nRequired: account_id (path)"
+  },
+  {
+    "id": "custom-indicator-feeds-get-upload-status",
+    "name": "Get indicator feed upload status",
+    "description": "Get indicator feed upload status Polls an asynchronously accepted upload. GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/uploads/{upload_id}",
+    "context": "GET /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/uploads/{upload_id}\nPolls an asynchronously accepted upload. Continue polling after the recommended `poll_after_seconds` delay until status is `Unified` or `Error`. `Unified` is returned only after the durable loader finishes.\nRequired: account_id (path); feed_id (path); upload_id (path)"
+  },
+  {
+    "id": "custom-indicator-feeds-remove-permission",
+    "name": "Revoke permission to indicator feed",
+    "description": "Revoke permission to indicator feed Revokes access permissions for a custom threat indicator feed. PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/remove",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/remove\nRevokes access permissions for a custom threat indicator feed.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "custom-indicator-feeds-update-indicator-feed-data",
+    "name": "Update indicator feed data",
+    "description": "Update indicator feed data Revises the raw data entries in a custom threat indicator feed. PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/snapshot",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}/snapshot\nRevises the raw data entries in a custom threat indicator feed. Accepts both plain and gzipped STIX2/CRDF bodies. Gzip is detected by RFC 1952 magic bytes (`0x1f 0x8b`) and/or a `.gz` filename suffix (case-insensitive) — either signal alone is sufficient to trigger the gzip path; if the body is not valid gzip, the upload fails fast. Customers are encouraged to gzip larger uploads — the api-gateway 500 MB body cap applies to the on-the-wire (compressed) size, so gzip lets a single upload carry several GiB of decompressed STIX.\nRequired: account_id (path); feed_id (path); body (body)\nOptional: Cf-Async-Upload (header) — Set to the literal value `1` to enqueue the upload and receive a `202` response with a polling URL. Any other value uses the legacy synchronous response."
+  },
+  {
+    "id": "custom-indicator-feeds-update-indicator-feed-metadata",
+    "name": "Update indicator feed metadata",
+    "description": "Update indicator feed metadata Revises details for a specific custom threat indicator feed. PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/indicator-feeds/{feed_id}\nRevises details for a specific custom threat indicator feed.\nRequired: account_id (path); feed_id (path); body (body)"
+  },
+  {
+    "id": "custom-indicator-feeds-view-permissions",
+    "name": "List indicator feed permissions",
+    "description": "List indicator feed permissions Lists current access permissions for custom threat indicator feeds. GET /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/view",
+    "context": "GET /client/v4/accounts/{account_id}/intel/indicator-feeds/permissions/view\nLists current access permissions for custom threat indicator feeds.\nRequired: account_id (path)"
+  },
+  {
+    "id": "domain-history-get-domain-history",
+    "name": "Get Domain History",
+    "description": "Get Domain History Gets historical security threat and content categories currently and previously assigned to a domain. GET /client/v4/accounts/{account_id}/intel/domain-history",
+    "context": "GET /client/v4/accounts/{account_id}/intel/domain-history\nGets historical security threat and content categories currently and previously assigned to a domain.\nRequired: account_id (path)\nOptional: domain (query)"
+  },
+  {
+    "id": "domain-intelligence-get-domain-details",
+    "name": "Get Domain Details",
+    "description": "Get Domain Details Gets security details and statistics about a domain. GET /client/v4/accounts/{account_id}/intel/domain",
+    "context": "GET /client/v4/accounts/{account_id}/intel/domain\nGets security details and statistics about a domain.\nRequired: account_id (path)\nOptional: domain (query); skip_dns (query) — Skip DNS resolution lookups for faster response.; skip_ranking (query) — Skip the domain ranking lookup for faster responses. Defaults to `false` (ranking is included). Set to `true` to opt out — primarily used by callers like Cloudflare Radar that need to avoid a circular dependency when building the domain details page. Note: the bulk endpoint (`/intel/domain/bulk`) uses opposite defaults — see `include_ranking` there."
+  },
+  {
+    "id": "domain-intelligence-get-multiple-domain-details",
+    "name": "Get Multiple Domain Details",
+    "description": "Get Multiple Domain Details Returns security details and statistics about multiple domains in a single request. GET /client/v4/accounts/{account_id}/intel/domain/bulk",
+    "context": "GET /client/v4/accounts/{account_id}/intel/domain/bulk\nReturns security details and statistics about multiple domains in a single request. **Behavior change — domain ranking is becoming opt-in.** This endpoint previously included domain ranking data in every response and accepted a `skip_ranking=true` query parameter to opt out. That parameter is being deprecated and ranking will no longer be returned by default. Callers that want ranking data must pass `include_ranking=true`. The `skip_ranking` parameter will be silently ignored once the change ships.\nRequired: account_id (path)\nOptional: domain (query) — Accepts multiple values like `?domain=cloudflare.com&domain=example.com`.; include_ranking (query) — Whether to include domain ranking data in the response. Defaults to `false` — ranking lookups are expensive at bulk scale and most callers do not need them. Set to `true` to opt in. This parameter replaces the deprecated `skip_ranking` (see below).; skip_ranking (query) — **Deprecated.** Previously controlled whether the ranking lookup was skipped (defaulted to `false`, meaning ranking ran). The endpoint's default behavior is being flipped — ranking is now opt-in via `include_ranking=true` — and this parameter will be silently ignored. Remove it from your callers and use `include_ranking` instead."
+  },
+  {
+    "id": "get-security-center-issue-counts-by-class",
+    "name": "Retrieves Security Center Issue Counts by Class",
+    "description": "Retrieves Security Center Issue Counts by Class Retrieves Security Center issue counts aggregated by classification class. GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/class",
+    "context": "GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/class\nRetrieves Security Center issue counts aggregated by classification class.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-security-center-issue-counts-by-severity",
+    "name": "Retrieves Security Center Issue Counts by Severity",
+    "description": "Retrieves Security Center Issue Counts by Severity Retrieves Security Center issue counts aggregated by severity level. GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/severity",
+    "context": "GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/severity\nRetrieves Security Center issue counts aggregated by severity level.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-security-center-issue-counts-by-type",
+    "name": "Retrieves Security Center Issue Counts by Type",
+    "description": "Retrieves Security Center Issue Counts by Type Retrieves Security Center issue counts aggregated by issue type. GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/type",
+    "context": "GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues/type\nRetrieves Security Center issue counts aggregated by issue type.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-security-center-issue-types",
+    "name": "Retrieves Security Center Issues Types",
+    "description": "Retrieves Security Center Issues Types Lists all available issue types in Security Center, describing categories of security issues. GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issue-types",
+    "context": "GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issue-types\nLists all available issue types in Security Center, describing categories of security issues.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get-security-center-issues",
+    "name": "Retrieves Security Center Issues",
+    "description": "Retrieves Security Center Issues Lists all Security Center issues for the account, showing active security problems requiring attention. GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues",
+    "context": "GET /client/v4/accounts/{account_id}/intel/attack-surface-report/issues\nLists all Security Center issues for the account, showing active security problems requiring attention.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query); page (query); per_page (query)"
+  },
+  {
+    "id": "ip-intelligence-get-ip-overview",
+    "name": "Get IP Overview",
+    "description": "Get IP Overview Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. GET /client/v4/accounts/{account_id}/intel/ip",
+    "context": "GET /client/v4/accounts/{account_id}/intel/ip\nGets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`.\nRequired: account_id (path)\nOptional: ipv4 (query); ipv6 (query)"
+  },
+  {
+    "id": "ip-list-get-ip-lists",
+    "name": "Get Available IP Lists",
+    "description": "Get Available IP Lists Returns a list of available IP list categories (e.g., anonymizer, botnetcc, malware, tor, vpn, open_proxies). GET /client/v4/accounts/{account_id}/intel/ip-lists",
+    "context": "GET /client/v4/accounts/{account_id}/intel/ip-lists\nReturns a list of available IP list categories (e.g., anonymizer, botnetcc, malware, tor, vpn, open_proxies). This endpoint provides metadata about which IP lists are available in the system.\nRequired: account_id (path)"
+  },
+  {
+    "id": "miscategorization-create-miscategorization",
+    "name": "Create Miscategorization",
+    "description": "Create Miscategorization Allows you to submit requests to change a domain’s category. POST /client/v4/accounts/{account_id}/intel/miscategorization",
+    "context": "POST /client/v4/accounts/{account_id}/intel/miscategorization\nAllows you to submit requests to change a domain’s category. Requests that include category `169` (New Domains) or category `177` (Newly Seen) in any of `content_adds`, `content_removes`, `security_adds`, or `security_removes` will be rejected with a `400 Bad Request`. These categories are automatically managed and fall off 30 days after they are applied.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "passive-dns-by-ip-get-passive-dns-by-ip",
+    "name": "Get Passive DNS by IP",
+    "description": "Get Passive DNS by IP Gets a list of all the domains that have resolved to a specific IP address. GET /client/v4/accounts/{account_id}/intel/dns",
+    "context": "GET /client/v4/accounts/{account_id}/intel/dns\nGets a list of all the domains that have resolved to a specific IP address.\nRequired: account_id (path)\nOptional: start_end_params (query); ipv4 (query); page (query); per_page (query)"
+  },
+  {
+    "id": "sinkhole-config-create-sinkhole",
+    "name": "Create a new sinkhole for your account",
+    "description": "Create a new sinkhole for your account Create a new sinkhole. POST /client/v4/accounts/{account_id}/intel/sinkholes",
+    "context": "POST /client/v4/accounts/{account_id}/intel/sinkholes\nCreate a new sinkhole. Logs of large request bodies will be truncated, but the full request body can be recorded in R2. If you wish to record large request bodies in R2, include the R2 key ID, key secret, and bucket name in the request body.\nRequired: account_id (path) — The unique identifier for the Cloudflare account.; body (body)"
+  },
+  {
+    "id": "sinkhole-config-delete-sinkhole",
+    "name": "Delete a sinkhole",
+    "description": "Delete a sinkhole Delete the specified sinkhole. DELETE /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}\nDelete the specified sinkhole. The sinkhole must not have any active ingress rules defined. A 409 response code indicates that this condition is not met.\nRequired: account_id (path) — The unique identifier for the Cloudflare account.; sinkhole_id (path) — The unique identifier for the sinkhole."
+  },
+  {
+    "id": "sinkhole-config-get-sinkhole",
+    "name": "Get a sinkhole",
+    "description": "Get a sinkhole Get the specified sinkhole by its unique identifier. GET /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}",
+    "context": "GET /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}\nGet the specified sinkhole by its unique identifier.\nRequired: account_id (path) — The unique identifier for the Cloudflare account.; sinkhole_id (path) — The unique identifier for the sinkhole."
+  },
+  {
+    "id": "sinkhole-config-list-sinkhole-ingresses",
+    "name": "List ingresses for a sinkhole",
+    "description": "List ingresses for a sinkhole Returns all ingress rules associated with the specified sinkhole. GET /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}/ingresses",
+    "context": "GET /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}/ingresses\nReturns all ingress rules associated with the specified sinkhole.\nRequired: account_id (path) — The unique identifier for the Cloudflare account.; sinkhole_id (path) — The unique identifier for the sinkhole."
+  },
+  {
+    "id": "sinkhole-config-list-sinkholes",
+    "name": "List sinkholes owned by this account",
+    "description": "List sinkholes owned by this account Lists sinkholes owned by the account for redirecting malicious traffic. GET /client/v4/accounts/{account_id}/intel/sinkholes",
+    "context": "GET /client/v4/accounts/{account_id}/intel/sinkholes\nLists sinkholes owned by the account for redirecting malicious traffic.\nRequired: account_id (path) — The unique identifier for the Cloudflare account."
+  },
+  {
+    "id": "sinkhole-config-update-sinkhole",
+    "name": "Update a sinkhole",
+    "description": "Update a sinkhole Replaces the name or R2 configuration of the specified sinkhole. PUT /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/intel/sinkholes/{sinkhole_id}\nReplaces the name or R2 configuration of the specified sinkhole. This is a full replacement. All fields, including r2_secret, must be re-supplied. Omitting r2_secret overwrites the stored value with an empty string.\nRequired: account_id (path) — The unique identifier for the Cloudflare account.; sinkhole_id (path) — The unique identifier for the sinkhole.; body (body)"
+  },
+  {
+    "id": "url-intelligence-get-url-intelligence",
+    "name": "Get URL Intelligence",
+    "description": "Get URL Intelligence Gets security information about a URL, including content categories and risk types. GET /client/v4/accounts/{account_id}/intel/url",
+    "context": "GET /client/v4/accounts/{account_id}/intel/url\nGets security information about a URL, including content categories and risk types. The URL must be provided as a query parameter.\nRequired: account_id (path); url (query) — The URL to look up."
+  },
+  {
+    "id": "whois-record-get-whois-record",
+    "name": "Get WHOIS Record",
+    "description": "Get WHOIS Record Retrieves WHOIS registration data for a domain, including registrant and nameserver information. GET /client/v4/accounts/{account_id}/intel/whois",
+    "context": "GET /client/v4/accounts/{account_id}/intel/whois\nRetrieves WHOIS registration data for a domain, including registrant and nameserver information.\nRequired: account_id (path)\nOptional: domain (query)"
+  }
+]

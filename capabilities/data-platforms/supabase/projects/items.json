@@ -1,0 +1,164 @@
+[
+  {
+    "id": "v1-create-a-project",
+    "name": "Create a project",
+    "description": "Create a project POST /v1/projects",
+    "context": "POST /v1/projects\nCreate a project\nRequired: body (body)"
+  },
+  {
+    "id": "v1-delete-a-project",
+    "name": "Deletes the given project",
+    "description": "Deletes the given project DELETE /v1/projects/{ref}",
+    "context": "DELETE /v1/projects/{ref}\nDeletes the given project\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-project",
+    "name": "Gets a specific project that belongs to the authenticated user",
+    "description": "Gets a specific project that belongs to the authenticated user GET /v1/projects/{ref}",
+    "context": "GET /v1/projects/{ref}\nGets a specific project that belongs to the authenticated user\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-list-all-projects",
+    "name": "List all projects",
+    "description": "List all projects Returns a list of all projects you've previously created. GET /v1/projects",
+    "context": "GET /v1/projects\nReturns a list of all projects you've previously created."
+  },
+  {
+    "id": "v1-update-a-project",
+    "name": "Updates the given project",
+    "description": "Updates the given project PATCH /v1/projects/{ref}",
+    "context": "PATCH /v1/projects/{ref}\nUpdates the given project\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-create-login-role",
+    "name": "Create a login role for CLI with temporary password",
+    "description": "Create a login role for CLI with temporary password This is an **experimental** endpoint. POST /v1/projects/{ref}/cli/login-role",
+    "context": "POST /v1/projects/{ref}/cli/login-role\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-delete-login-roles",
+    "name": "Delete existing login roles used by CLI",
+    "description": "Delete existing login roles used by CLI This is an **experimental** endpoint. DELETE /v1/projects/{ref}/cli/login-role",
+    "context": "DELETE /v1/projects/{ref}/cli/login-role\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-disable-readonly-mode-temporarily",
+    "name": "Disables project's readonly mode for the next 15 minutes",
+    "description": "Disables project's readonly mode for the next 15 minutes POST /v1/projects/{ref}/readonly/temporary-disable",
+    "context": "POST /v1/projects/{ref}/readonly/temporary-disable\nDisables project's readonly mode for the next 15 minutes\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-readonly-mode-status",
+    "name": "Returns project's readonly mode status",
+    "description": "Returns project's readonly mode status GET /v1/projects/{ref}/readonly",
+    "context": "GET /v1/projects/{ref}/readonly\nReturns project's readonly mode status\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-generate-typescript-types",
+    "name": "Generate TypeScript types",
+    "description": "Generate TypeScript types Returns the TypeScript types of your schema for use with supabase-js. GET /v1/projects/{ref}/types/typescript",
+    "context": "GET /v1/projects/{ref}/types/typescript\nReturns the TypeScript types of your schema for use with supabase-js.\nRequired: ref (path) — Project ref\nOptional: included_schemas (query)"
+  },
+  {
+    "id": "v1-get-available-regions",
+    "name": "Gets the list of available regions that can be used for a new project",
+    "description": "Gets the list of available regions that can be used for a new project This is an **experimental** endpoint. GET /v1/projects/available-regions",
+    "context": "GET /v1/projects/available-regions\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: organization_slug (query) — Slug of your organization\nOptional: continent (query) — Continent code to determine regional recommendations: NA (North America), SA (South America), EU (Europe), AF (Africa), AS (Asia), OC (Oceania), AN (Antarctica); desired_instance_size (query) — Desired instance size. Omit this field to always default to the smallest possible size."
+  },
+  {
+    "id": "v1-get-jit-access-config",
+    "name": "Get project's temporary access configuration.",
+    "description": "Get project's temporary access configuration. This is an **experimental** endpoint. GET /v1/projects/{ref}/jit-access",
+    "context": "GET /v1/projects/{ref}/jit-access\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-jit-access-config",
+    "name": "Update project's temporary access configuration.",
+    "description": "Update project's temporary access configuration. This is an **experimental** endpoint. PUT /v1/projects/{ref}/jit-access",
+    "context": "PUT /v1/projects/{ref}/jit-access\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-get-performance-advisors",
+    "name": "Gets project performance advisors.",
+    "description": "Gets project performance advisors. This is an **experimental** endpoint. GET /v1/projects/{ref}/advisors/performance",
+    "context": "GET /v1/projects/{ref}/advisors/performance\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-get-security-advisors",
+    "name": "Gets project security advisors.",
+    "description": "Gets project security advisors. This is an **experimental** endpoint. GET /v1/projects/{ref}/advisors/security",
+    "context": "GET /v1/projects/{ref}/advisors/security\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable.\nRequired: ref (path) — Project ref\nOptional: lint_type (query)"
+  },
+  {
+    "id": "v1-get-pgsodium-config",
+    "name": "Gets project's pgsodium config",
+    "description": "Gets project's pgsodium config This is an **experimental** endpoint. GET /v1/projects/{ref}/pgsodium",
+    "context": "GET /v1/projects/{ref}/pgsodium\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-pgsodium-config",
+    "name": "Updates project's pgsodium config. Updating the root_key can cause all data encrypted with the older key to become inaccessible.",
+    "description": "Updates project's pgsodium config. Updating the root_key can cause all data encrypted with the older key to become inaccessible. This is an **experimental** endpoint. PUT /v1/projects/{ref}/pgsodium",
+    "context": "PUT /v1/projects/{ref}/pgsodium\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-get-postgrest-service-config",
+    "name": "Gets project's postgrest config",
+    "description": "Gets project's postgrest config GET /v1/projects/{ref}/postgrest",
+    "context": "GET /v1/projects/{ref}/postgrest\nGets project's postgrest config\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-postgrest-service-config",
+    "name": "Updates project's postgrest config",
+    "description": "Updates project's postgrest config PATCH /v1/projects/{ref}/postgrest",
+    "context": "PATCH /v1/projects/{ref}/postgrest\nUpdates project's postgrest config\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-get-services-health",
+    "name": "Gets project's service health status",
+    "description": "Gets project's service health status GET /v1/projects/{ref}/health",
+    "context": "GET /v1/projects/{ref}/health\nGets project's service health status\nRequired: ref (path) — Project ref; services (query) — Comma-separated list of enums or array of enums.\nOptional: timeout_ms (query)"
+  },
+  {
+    "id": "v1-get-ssl-enforcement-config",
+    "name": "Get project's SSL enforcement configuration.",
+    "description": "Get project's SSL enforcement configuration. This is an **experimental** endpoint. GET /v1/projects/{ref}/ssl-enforcement",
+    "context": "GET /v1/projects/{ref}/ssl-enforcement\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-ssl-enforcement-config",
+    "name": "Update project's SSL enforcement configuration.",
+    "description": "Update project's SSL enforcement configuration. This is an **experimental** endpoint. PUT /v1/projects/{ref}/ssl-enforcement",
+    "context": "PUT /v1/projects/{ref}/ssl-enforcement\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-list-all-buckets",
+    "name": "Lists all buckets",
+    "description": "Lists all buckets GET /v1/projects/{ref}/storage/buckets",
+    "context": "GET /v1/projects/{ref}/storage/buckets\nLists all buckets\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-pause-a-project",
+    "name": "Pauses the given project",
+    "description": "Pauses the given project POST /v1/projects/{ref}/pause",
+    "context": "POST /v1/projects/{ref}/pause\nPauses the given project\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-remove-a-read-replica",
+    "name": "Remove a read replica",
+    "description": "Remove a read replica This is an **experimental** endpoint. POST /v1/projects/{ref}/read-replicas/remove",
+    "context": "POST /v1/projects/{ref}/read-replicas/remove\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-setup-a-read-replica",
+    "name": "Set up a read replica",
+    "description": "Set up a read replica This is an **experimental** endpoint. POST /v1/projects/{ref}/read-replicas/setup",
+    "context": "POST /v1/projects/{ref}/read-replicas/setup\nThis is an **experimental** endpoint. It is subject to change or removal in future versions. Use it with caution, as it may not remain supported or stable. This endpoint is currently in its **Beta** stage.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-restart-a-project",
+    "name": "Restarts the given project",
+    "description": "Restarts the given project POST /v1/projects/{ref}/restart",
+    "context": "POST /v1/projects/{ref}/restart\nRestarts the given project\nRequired: ref (path) — Project ref"
+  }
+]

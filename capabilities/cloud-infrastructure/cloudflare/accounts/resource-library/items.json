@@ -1,0 +1,44 @@
+[
+  {
+    "id": "createResourceLibraryApplication",
+    "name": "Create application",
+    "description": "Create application Create a custom application for an account. POST /client/v4/accounts/{account_id}/resource-library/applications",
+    "context": "POST /client/v4/accounts/{account_id}/resource-library/applications\nCreate a custom application for an account.\nRequired: account_id (path) — Account ID.; body (body)"
+  },
+  {
+    "id": "deleteResourceLibraryApplication",
+    "name": "Delete application",
+    "description": "Delete application Delete a custom application and all of its versions. DELETE /client/v4/accounts/{account_id}/resource-library/applications/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/resource-library/applications/{id}\nDelete a custom application and all of its versions. Deletion is rejected when other resources reference the application.\nRequired: account_id (path) — Account ID.; id (path) — Application ID."
+  },
+  {
+    "id": "getResourceLibraryApplicationById",
+    "name": "Get application",
+    "description": "Get application Get application by ID. GET /client/v4/accounts/{account_id}/resource-library/applications/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/resource-library/applications/{id}\nGet application by ID.\nRequired: account_id (path) — Account ID.; id (path) — Application ID."
+  },
+  {
+    "id": "getResourceLibraryApplications",
+    "name": "List applications",
+    "description": "List applications List the applications available to an account, both the applications Cloudflare curates and the custom applications the account has defined. GET /client/v4/accounts/{account_id}/resource-library/applications",
+    "context": "GET /client/v4/accounts/{account_id}/resource-library/applications\nList the applications available to an account, both the applications Cloudflare curates and the custom applications the account has defined. Results are paginated. Use `filter` and `search` to narrow the list, `order_by` to sort it, and `fields` to reduce each result to only the properties you need. The authenticated principal must have access to the account identified by `account_id`.\nRequired: account_id (path) — Account ID.\nOptional: filter (query) — Filter applications using key:value format. Supported filter keys: - name: Filter by application name (e.g., name:HR) - id: Filter by application ID (e.g., id:498) - human_id: Filter by human-readable ID (e.g., human_id:HR) - hostname: Filter by hostname or support domain (e.g., hostname:portal.example.com) - source: Filter by application source name (e.g., source:cloudflare) - ip_subnet: Filter by IP subnet using CIDR containment — returns applications where any stored subnet contains the search value (e.g., ip_subnet:10.0.1.5/32 matches apps with 10.0.0.0/16) - category_id: Filter by category ID (e.g., category_id:12). - category_name: Filter by category name (e.g., category_name:HR). - supported: Filter by supported Cloudflare product (e.g., supported:ACCESS). Values: GATEWAY, ACCESS, CASB. - review_status: Filter by the account's Gateway review status. Values: approved, unapproved, in_review, unreviewed. .; limit (query) — Limit of number of results to return (max 250).; offset (query) — Offset of results to return.; order_by (query) — Order results using field:direction format. Supported fields are name, id, human_id, category_id, application_type, application_confidence_score, and gen_ai_score. Supported directions are asc and desc. Ignored when search is provided; results are ranked by relevance instead.; search (query) — Fuzzy search across application name and hostnames. Results are ranked by relevance. Must be between 2 and 200 characters. Can be combined with filter parameters.; fields (query) — Return only the listed properties on each application, as a comma-separated list. Use this to keep responses small when you only need part of each application — for example populating a picker with `fields=id,name` instead of downloading every hostname and IP subnet. Omit this parameter to receive the full application object. `id` is always returned. Selectable properties: `id`, `name`, `human_id`, `version`, `hostnames`, `support_domains`, `ip_subnets`, `port_protocols`, `supported`, `gen_ai_score`, `application_confidence_score`, `created_at`, `updated_at`, `review_status`. Unknown or empty property names return `400`."
+  },
+  {
+    "id": "getResourceLibraryCategories",
+    "name": "List application categories",
+    "description": "List application categories List application categories. GET /client/v4/accounts/{account_id}/resource-library/categories",
+    "context": "GET /client/v4/accounts/{account_id}/resource-library/categories\nList application categories.\nRequired: account_id (path) — Account ID.\nOptional: limit (query) — Limit of number of results to return.; offset (query) — Offset of results to return."
+  },
+  {
+    "id": "getResourceLibraryCategoryById",
+    "name": "Get application category",
+    "description": "Get application category Get application category by ID. GET /client/v4/accounts/{account_id}/resource-library/categories/{id}",
+    "context": "GET /client/v4/accounts/{account_id}/resource-library/categories/{id}\nGet application category by ID.\nRequired: account_id (path) — Account ID.; id (path) — Application category ID."
+  },
+  {
+    "id": "updateResourceLibraryApplication",
+    "name": "Update application",
+    "description": "Update application Replace the network matchers for a custom application and create a new version. PATCH /client/v4/accounts/{account_id}/resource-library/applications/{id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/resource-library/applications/{id}\nReplace the network matchers for a custom application and create a new version.\nRequired: account_id (path) — Account ID.; id (path) — Application ID.; body (body)"
+  }
+]

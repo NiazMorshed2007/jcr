@@ -1,0 +1,68 @@
+[
+  {
+    "id": "createRecordingDownload",
+    "name": "Request a download",
+    "description": "Request a download Starts async generation of a downloadable file and returns a `download_id` to poll. POST /external/v1/recordings/{recording_id}/download",
+    "context": "POST /external/v1/recordings/{recording_id}/download\nStarts async generation of a downloadable file and returns a `download_id` to poll. Video is generated in the background; audio-only recordings complete immediately, so the response may already return `status: completed` with the file payload. Downloads are private to the API client that created them, and URLs expire ~24 hours after generation—request a new one when it expires. Only the owner, teammates who can view the recording, and people it was shared with at standard or admin level can download it. Limited-access shares get `403 Forbidden`.\nRequired: recording_id (path) — The ID of the meeting recording to generate a download for.\nOptional: body (body)"
+  },
+  {
+    "id": "createWebhook",
+    "name": "Create a webhook",
+    "description": "Create a webhook Create a webhook to receive new meeting content. POST /external/v1/webhooks",
+    "context": "POST /external/v1/webhooks\nCreate a webhook to receive new meeting content. At least one of `include_transcript`, `include_crm_matches`, `include_summary`, or `include_action_items` must be true.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteWebhook",
+    "name": "Delete a webhook",
+    "description": "Delete a webhook Delete a webhook. DELETE /external/v1/webhooks/{id}",
+    "context": "DELETE /external/v1/webhooks/{id}\nDelete a webhook.\nRequired: id (path) — The ID of the webhook to delete."
+  },
+  {
+    "id": "getRecordingDownload",
+    "name": "Get download status",
+    "description": "Get download status Returns the status of a download created with the request-a-download endpoint. GET /external/v1/recordings/{recording_id}/downloads/{download_id}",
+    "context": "GET /external/v1/recordings/{recording_id}/downloads/{download_id}\nReturns the status of a download created with the request-a-download endpoint. When the download is completed, the payload carries a short-lived signed URL for the generated file. Only the API client that created the download can read it.\nRequired: recording_id (path) — The ID of the meeting recording the download belongs to.; download_id (path) — The download ID returned when the download was requested."
+  },
+  {
+    "id": "getRecordingSummary",
+    "name": "Get summary",
+    "description": "Get summary This endpoint has two behaviors depending on your request payload: - If you send `destination_url`, the endpoint will behave in an asynchronous manner. GET /external/v1/recordings/{recording_id}/summary",
+    "context": "GET /external/v1/recordings/{recording_id}/summary\nThis endpoint has two behaviors depending on your request payload: - If you send `destination_url`, the endpoint will behave in an asynchronous manner. - If you do not send `destination_url`, the endpoint will return the data directly.\nRequired: recording_id (path) — The ID of the meeting recording to fetch the call summary for.\nOptional: destination_url (query) — Destination URL for where we'll POST the call summary. If not sent, this endpoint will return the data directly."
+  },
+  {
+    "id": "getRecordingTranscript",
+    "name": "Get transcript",
+    "description": "Get transcript This endpoint has two behaviors depending on your request payload: - If you send `destination_url`, the endpoint will behave in an asynchronous manner. GET /external/v1/recordings/{recording_id}/transcript",
+    "context": "GET /external/v1/recordings/{recording_id}/transcript\nThis endpoint has two behaviors depending on your request payload: - If you send `destination_url`, the endpoint will behave in an asynchronous manner. - If you do not send `destination_url`, the endpoint will return the data directly.\nRequired: recording_id (path) — The ID of the meeting recording to fetch the transcript for.\nOptional: destination_url (query) — Destination URL for where we'll POST the transcript. If not sent, this endpoint will return the data directly."
+  },
+  {
+    "id": "listMeetings",
+    "name": "List meetings",
+    "description": "List meetings GET /external/v1/meetings",
+    "context": "GET /external/v1/meetings\nList meetings\nOptional: calendar_invitees_domains[] (query) — Domains of the companies to filter by. Exact match. Pass the parameter once per value, e.g. `calendar_invitees_domains[]=acme.com&calendar_invitees_domains[]=client.com`. Returns meetings whose associated company matches one of the specified domains. (Note that meetings are only associated with one company.); calendar_invitees_domains_type (query) — Filter by whether calendar invitee list includes external email domains.; created_after (query) — Filter to meetings with created_at after this timestamp, e.g. `created_after=2025-01-01T00:00:00Z`.; created_before (query) — Filter to meetings with created_at before this timestamp, e.g. `created_before=2025-01-01T00:00:00Z`.; cursor (query) — Cursor for pagination.; include_action_items (query) — Include the action items for each meeting.; include_crm_matches (query) — Include CRM matches for each meeting. Only returns data from your or your team's linked CRM.; include_highlights (query) — Include the highlights for each meeting.; include_summary (query) — Include the summary for each meeting. Unavailable for OAuth connected apps (use /recordings instead).; include_transcript (query) — Include the transcript for each meeting. Unavailable for OAuth connected apps (use /recordings instead).; meeting_type (query) — Filter by meeting type name. Returns only meetings assigned the meeting type with this name. Use /meeting_types to discover valid values. An unknown or non-matching name returns an empty list.; recorded_by[] (query) — Email addresses of users who recorded meetings. Pass the parameter once per value, e.g. `recorded_by[]=ceo@acme.com&recorded_by[]=pm@acme.com`. Returns meetings recorded by any of the specified users. If no value is passed (or with `teams[]`), calls from users external to your Org will not be returned.; teams[] (query) — Team names to filter by. Pass the parameter once per value, e.g. `teams[]=Sales&teams[]=Engineering`. Returns meetings that belong to any of the specified teams. If no value is passed (or with `recorded_by[]`), calls from users external to your Org will not be returned."
+  },
+  {
+    "id": "listMeetingTypes",
+    "name": "List meeting types",
+    "description": "List meeting types List your org's meeting types, including both `active` and `inactive`. GET /external/v1/meeting_types",
+    "context": "GET /external/v1/meeting_types\nList your org's meeting types, including both `active` and `inactive`. Use the returned `name` values as the meeting_type filter on GET /meetings.\nOptional: cursor (query) — Cursor for pagination."
+  },
+  {
+    "id": "listTeamMembers",
+    "name": "List team members",
+    "description": "List team members GET /external/v1/team_members",
+    "context": "GET /external/v1/team_members\nList team members\nOptional: cursor (query) — Cursor for pagination.; team (query) — Team name to filter by."
+  },
+  {
+    "id": "listTeams",
+    "name": "List teams",
+    "description": "List teams GET /external/v1/teams",
+    "context": "GET /external/v1/teams\nList teams\nOptional: cursor (query) — Cursor for pagination."
+  },
+  {
+    "id": "listUsers",
+    "name": "List users and their permissions",
+    "description": "List users and their permissions List all users in the account with their permissions. GET /external/v1/users",
+    "context": "GET /external/v1/users\nList all users in the account with their permissions. Admin only. Returns 403 Forbidden unless the API key belongs to a user with `settings_access` of `account_admin`. Results include active, deactivated, then pending members; page through with `next_cursor`, or filter with `status`. Invited users have no permissions object yet, and their `created_at` is the invite date.\nOptional: cursor (query) — Cursor for pagination.; team (query) — Team name to filter by.; status (query) — Filter by user status. `invited` cannot be combined with `settings_access`.; settings_access (query) — Filter by settings access level."
+  }
+]

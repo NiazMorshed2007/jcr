@@ -1,0 +1,38 @@
+[
+  {
+    "id": "artifactQuery",
+    "name": "Query information about an artifact",
+    "description": "Query information about an artifact Query information about an array of artifacts. POST /v8/artifacts",
+    "context": "POST /v8/artifacts\nQuery information about an array of artifacts.\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAllArtifacts",
+    "name": "Delete all cache artifacts",
+    "description": "Delete all cache artifacts Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. DELETE /v8/artifacts",
+    "context": "DELETE /v8/artifacts\nDeletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache. Subsequent builds will re-populate the cache.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "downloadArtifact",
+    "name": "Download a cache artifact",
+    "description": "Download a cache artifact Downloads a cache artifact indentified by its `hash` specified on the request path. GET /v8/artifacts/{hash}",
+    "context": "GET /v8/artifacts/{hash}\nDownloads a cache artifact indentified by its `hash` specified on the request path. The artifact is downloaded as an octet-stream. The client should verify the content-length header and response body.\nRequired: hash (path) — The artifact hash\nOptional: x-artifact-client-ci (header) — The continuous integration or delivery environment where this artifact is downloaded.; x-artifact-client-interactive (header) — 1 if the client is an interactive shell. Otherwise 0; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "recordEvents",
+    "name": "Record an artifacts cache usage event",
+    "description": "Record an artifacts cache usage event Records an artifacts cache usage event. POST /v8/artifacts/events",
+    "context": "POST /v8/artifacts/events\nRecords an artifacts cache usage event. The body of this request is an array of cache usage events. The supported event types are `HIT` and `MISS`. The source is either `LOCAL` the cache event was on the users filesystem cache or `REMOTE` if the cache event is for a remote cache. When the event is a `HIT` the request also accepts a number `duration` which is the time taken to generate the artifact in the cache.\nRequired: body (body)\nOptional: x-artifact-client-ci (header) — The continuous integration or delivery environment where this artifact is downloaded.; x-artifact-client-interactive (header) — 1 if the client is an interactive shell. Otherwise 0; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "status",
+    "name": "Get status of Remote Caching for this principal",
+    "description": "Get status of Remote Caching for this principal Check the status of Remote Caching for this principal. GET /v8/artifacts/status",
+    "context": "GET /v8/artifacts/status\nCheck the status of Remote Caching for this principal. Returns a JSON-encoded status indicating if Remote Caching is enabled, disabled, or disabled due to usage limits.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "uploadArtifact",
+    "name": "Upload a cache artifact",
+    "description": "Upload a cache artifact Uploads a cache artifact identified by the `hash` specified on the path. PUT /v8/artifacts/{hash}",
+    "context": "PUT /v8/artifacts/{hash}\nUploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with the provided `hash`.\nRequired: Content-Length (header) — The artifact size in bytes; hash (path) — The artifact hash; body (body)\nOptional: x-artifact-duration (header) — The time taken to generate the uploaded artifact in milliseconds.; x-artifact-client-ci (header) — The continuous integration or delivery environment where this artifact was generated.; x-artifact-client-interactive (header) — 1 if the client is an interactive shell. Otherwise 0; x-artifact-tag (header) — The base64 encoded tag for this artifact. The value is sent back to clients when the artifact is downloaded as the header `x-artifact-tag`; x-artifact-sha (header) — The SHA of the source control revision that generated this artifact.; x-artifact-dirty-hash (header) — A hash representing uncommitted changes in the working directory when this artifact was generated.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

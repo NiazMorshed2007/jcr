@@ -1,0 +1,62 @@
+[
+  {
+    "id": "delete-owner-log-stream",
+    "name": "Delete log stream",
+    "description": "Delete log stream Removes the log stream for the specified workspace. DELETE /v1/logs/streams/owner/{ownerId}",
+    "context": "DELETE /v1/logs/streams/owner/{ownerId}\nRemoves the log stream for the specified workspace.\nRequired: ownerId (path) — The ID of the workspace to delete the log stream for"
+  },
+  {
+    "id": "delete-resource-log-stream",
+    "name": "Delete log stream override",
+    "description": "Delete log stream override Removes the log stream override for the specified resource. DELETE /v1/logs/streams/resource/{resourceId}",
+    "context": "DELETE /v1/logs/streams/resource/{resourceId}\nRemoves the log stream override for the specified resource. After deletion, the resource will use the workspace's default log stream setting.\nRequired: resourceId (path) — The ID of the resource (server, cron job, postgres, or redis) whose log streams should be returned"
+  },
+  {
+    "id": "get-owner-log-stream",
+    "name": "Retrieve log stream",
+    "description": "Retrieve log stream Returns log stream information for the specified workspace. GET /v1/logs/streams/owner/{ownerId}",
+    "context": "GET /v1/logs/streams/owner/{ownerId}\nReturns log stream information for the specified workspace.\nRequired: ownerId (path) — The ID of the workspace to return log stream information for"
+  },
+  {
+    "id": "get-resource-log-stream",
+    "name": "Retrieve log stream override",
+    "description": "Retrieve log stream override Returns log stream override information for the specified resource. GET /v1/logs/streams/resource/{resourceId}",
+    "context": "GET /v1/logs/streams/resource/{resourceId}\nReturns log stream override information for the specified resource. A log stream override takes precedence over a workspace's default log stream.\nRequired: resourceId (path) — The ID of the resource (server, cron job, postgres, or redis) to return log stream override information for"
+  },
+  {
+    "id": "list-logs",
+    "name": "List logs",
+    "description": "List logs List logs matching the provided filters. GET /v1/logs",
+    "context": "GET /v1/logs\nList logs matching the provided filters. Logs are paginated by start and end timestamps. There are more logs to fetch if `hasMore` is true in the response. Provide the `nextStartTime` and `nextEndTime` timestamps as the `startTime` and `endTime` query parameters to fetch the next page of logs. You can query for logs across multiple resources, but all resources must be in the same region and belong to the same owner.\nRequired: ownerId (query) — The ID of the workspace to return logs for; resource (query) — Filter logs by their resource. A resource is the id of a server, cronjob, job, postgres, redis, workflow, or sandbox group.\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; direction (query) — The direction to query logs for. Backward will return most recent logs first. Forward will start with the oldest logs in the time range.; instance (query) — Filter logs by the instance they were emitted from. An instance is the id of a specific running server.; host (query) — Filter request logs by their host. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.; statusCode (query) — Filter request logs by their status code. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.; method (query) — Filter request logs by their requests method. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.; task (query) — Filter logs by their task(s); taskRun (query) — Filter logs by their task run id(s); sandbox (query) — Filter logs by sandbox ID.; level (query) — Filter logs by their severity level. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.; type (query) — Filter logs by their type. Types include `app` for application logs, `request` for request logs, and `build` for build logs. You can find the full set of types available for a query by using the `GET /logs/values` endpoint.; text (query) — Filter by the text of the logs. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.; path (query) — Filter request logs by their path. [Wildcards and regex](https://render.com/docs/logging#wildcards-and-regular-expressions) are supported.; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-logs-values",
+    "name": "List log label values",
+    "description": "List log label values List all values for a given log label in the logs matching the provided filters. GET /v1/logs/values",
+    "context": "GET /v1/logs/values\nList all values for a given log label in the logs matching the provided filters.\nRequired: ownerId (query) — The ID of the workspace to return log label values for; label (query) — The label to query logs for\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-resource-log-streams",
+    "name": "List log stream overrides",
+    "description": "List log stream overrides Lists log stream overrides for the provided workspace that match the provided filters. GET /v1/logs/streams/resource",
+    "context": "GET /v1/logs/streams/resource\nLists log stream overrides for the provided workspace that match the provided filters. These overrides take precedence over the workspace's default log stream.\nOptional: ownerId (query) — The ID of the workspaces to return resources for; logStreamId (query) — Filter log streams by their id.; resourceId (query) — IDs of resources (server, cron job, postgres, or redis) to filter by; setting (query) — Filter log streams by their setting.; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "subscribe-logs",
+    "name": "Subscribe to new logs",
+    "description": "Subscribe to new logs Open a websocket connection to subscribe to logs matching the provided filters. GET /v1/logs/subscribe",
+    "context": "GET /v1/logs/subscribe\nOpen a websocket connection to subscribe to logs matching the provided filters. Logs are streamed in real-time as they are generated. You can query for logs across multiple resources, but all resources must be in the same region and belong to the same owner.\nRequired: ownerId (query) — The ID of the workspace to return logs for\nOptional: startTime (query) — Epoch/Unix timestamp of start of time range to return. Defaults to `now() - 1 hour`.; endTime (query) — Epoch/Unix timestamp of end of time range to return. Defaults to `now()`.; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "update-owner-log-stream",
+    "name": "Update log stream",
+    "description": "Update log stream Updates log stream information for the specified workspace. PUT /v1/logs/streams/owner/{ownerId}",
+    "context": "PUT /v1/logs/streams/owner/{ownerId}\nUpdates log stream information for the specified workspace. All logs for resources owned by this workspace will be sent to this log stream unless overridden by individual resources.\nRequired: ownerId (path) — The ID of the workspace to update log stream information for; body (body)"
+  },
+  {
+    "id": "update-resource-log-stream",
+    "name": "Update log stream override",
+    "description": "Update log stream override Updates log stream override information for the specified resource. PUT /v1/logs/streams/resource/{resourceId}",
+    "context": "PUT /v1/logs/streams/resource/{resourceId}\nUpdates log stream override information for the specified resource. A log stream override takes precedence over a workspace's default log stream.\nRequired: resourceId (path) — The ID of the resource (server, cron job, postgres, or redis) to update log stream override information for; body (body)"
+  }
+]

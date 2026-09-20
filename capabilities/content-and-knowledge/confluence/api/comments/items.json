@@ -1,0 +1,32 @@
+[
+  {
+    "id": "createCommentProperty",
+    "name": "Create content property for comment",
+    "description": "Create content property for comment Creates a new content property for a comment. POST /wiki/api/v2/comments/{comment-id}/properties",
+    "context": "POST /wiki/api/v2/comments/{comment-id}/properties\nCreates a new content property for a comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to update the comment.\nRequired: comment-id (path) — The ID of the comment to create a property for.; body (body) — The content property to be created"
+  },
+  {
+    "id": "deleteCommentPropertyById",
+    "name": "Delete content property for comment by id",
+    "description": "Delete content property for comment by id Deletes a content property for a comment by its id. DELETE /wiki/api/v2/comments/{comment-id}/properties/{property-id}",
+    "context": "DELETE /wiki/api/v2/comments/{comment-id}/properties/{property-id}\nDeletes a content property for a comment by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the comment.\nRequired: comment-id (path) — The ID of the comment the property belongs to.; property-id (path) — The ID of the property to be deleted."
+  },
+  {
+    "id": "getCommentContentProperties",
+    "name": "Get content properties for comment",
+    "description": "Get content properties for comment Retrieves Content Properties attached to a specified comment. GET /wiki/api/v2/comments/{comment-id}/properties",
+    "context": "GET /wiki/api/v2/comments/{comment-id}/properties\nRetrieves Content Properties attached to a specified comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the comment.\nRequired: comment-id (path) — The ID of the comment for which content properties should be returned.\nOptional: key (query) — Filters the response to return a specific content property with matching key (case sensitive).; sort (query) — Used to sort the result by a particular field.; cursor (query) — Used for pagination, this opaque cursor will be returned in the `next` URL in the `Link` response header. Use the relative URL in the `Link` header to retrieve the `next` set of results.; limit (query) — Maximum number of attachments per result to return. If more results exist, use the `Link` header to retrieve a relative URL that will return the next set of results."
+  },
+  {
+    "id": "getCommentContentPropertiesById",
+    "name": "Get content property for comment by id",
+    "description": "Get content property for comment by id Retrieves a specific Content Property by ID that is attached to a specified comment. GET /wiki/api/v2/comments/{comment-id}/properties/{property-id}",
+    "context": "GET /wiki/api/v2/comments/{comment-id}/properties/{property-id}\nRetrieves a specific Content Property by ID that is attached to a specified comment. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to view the comment.\nRequired: comment-id (path) — The ID of the comment for which content properties should be returned.; property-id (path) — The ID of the content property being requested."
+  },
+  {
+    "id": "updateCommentPropertyById",
+    "name": "Update content property for comment by id",
+    "description": "Update content property for comment by id Update a content property for a comment by its id. PUT /wiki/api/v2/comments/{comment-id}/properties/{property-id}",
+    "context": "PUT /wiki/api/v2/comments/{comment-id}/properties/{property-id}\nUpdate a content property for a comment by its id. **[Permissions](https://confluence.atlassian.com/x/_AozKw) required**: Permission to edit the comment.\nRequired: comment-id (path) — The ID of the comment the property belongs to.; property-id (path) — The ID of the property to be updated.; body (body) — The content property to be updated."
+  }
+]

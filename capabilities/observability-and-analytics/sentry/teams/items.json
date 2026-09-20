@@ -1,0 +1,56 @@
+[
+  {
+    "id": "createTeamExternalTeam",
+    "name": "Create an External Team",
+    "description": "Create an External Team Link a team from an external provider to a Sentry team. POST /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/",
+    "context": "POST /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/\nLink a team from an external provider to a Sentry team.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; body (body)"
+  },
+  {
+    "id": "createTeamProject",
+    "name": "Create a New Project",
+    "description": "Create a New Project Create a new project bound to a team. POST /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/projects/",
+    "context": "POST /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/projects/\nCreate a new project bound to a team. Note: If your organization has disabled member project creation, the `org:write` scope or the Team Admin role on the team is required.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteTeam",
+    "name": "Delete a Team",
+    "description": "Delete a Team Schedules a team for deletion. DELETE /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/",
+    "context": "DELETE /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/\nSchedules a team for deletion. **Note:** Deletion happens asynchronously and therefore is not immediate. Teams will have their slug released while waiting for deletion.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to."
+  },
+  {
+    "id": "deleteTeamExternalTeam",
+    "name": "Delete an External Team",
+    "description": "Delete an External Team Delete the link between a team from an external provider and a Sentry team. DELETE /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/{external_team_id}/",
+    "context": "DELETE /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/{external_team_id}/\nDelete the link between a team from an external provider and a Sentry team.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; external_team_id (path) — The ID of the external team object. This is returned when creating an external team."
+  },
+  {
+    "id": "getTeam",
+    "name": "Retrieve a Team",
+    "description": "Retrieve a Team Return details on an individual team. GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/",
+    "context": "GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/\nReturn details on an individual team.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.\nOptional: expand (query) — List of strings to opt in to additional data. Supports `projects`, `externalTeams`.; collapse (query) — List of strings to opt out of certain pieces of data. Supports `organization`."
+  },
+  {
+    "id": "listTeamMembers",
+    "name": "List a Team's Members",
+    "description": "List a Team's Members List all members on a team. GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/members/",
+    "context": "GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/members/\nList all members on a team. The response will not include members with pending invites.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.\nOptional: cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "listTeamProjects",
+    "name": "List a Team's Projects",
+    "description": "List a Team's Projects Return a list of projects bound to a team. GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/projects/",
+    "context": "GET /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/projects/\nReturn a list of projects bound to a team.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.\nOptional: cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "updateTeam",
+    "name": "Update a Team",
+    "description": "Update a Team Update various attributes and configurable settings for the given team. PUT /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/",
+    "context": "PUT /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/\nUpdate various attributes and configurable settings for the given team.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; body (body)"
+  },
+  {
+    "id": "updateTeamExternalTeam",
+    "name": "Update an External Team",
+    "description": "Update an External Team Update a team in an external provider that is currently linked to a Sentry team. PUT /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/{external_team_id}/",
+    "context": "PUT /api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams/{external_team_id}/\nUpdate a team in an external provider that is currently linked to a Sentry team.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; external_team_id (path) — The ID of the external team object. This is returned when creating an external team.; body (body)"
+  }
+]

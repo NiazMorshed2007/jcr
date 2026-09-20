@@ -1,0 +1,38 @@
+[
+  {
+    "id": "warehouse_expressions_create",
+    "name": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables.",
+    "description": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables. POST /api/projects/{project_id}/warehouse_expressions/",
+    "context": "POST /api/projects/{project_id}/warehouse_expressions/\nCreate, read, update and delete saved HogQL expressions that appear as virtual fields on tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_expressions_destroy",
+    "name": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables.",
+    "description": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables. DELETE /api/projects/{project_id}/warehouse_expressions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/warehouse_expressions/{id}/\nCreate, read, update and delete saved HogQL expressions that appear as virtual fields on tables.\nRequired: id (path) — A UUID string identifying this data warehouse expression.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_expressions_list",
+    "name": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables.",
+    "description": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables. GET /api/projects/{project_id}/warehouse_expressions/",
+    "context": "GET /api/projects/{project_id}/warehouse_expressions/\nCreate, read, update and delete saved HogQL expressions that appear as virtual fields on tables.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "warehouse_expressions_partial_update",
+    "name": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables.",
+    "description": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables. PATCH /api/projects/{project_id}/warehouse_expressions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/warehouse_expressions/{id}/\nCreate, read, update and delete saved HogQL expressions that appear as virtual fields on tables.\nRequired: id (path) — A UUID string identifying this data warehouse expression.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_expressions_retrieve",
+    "name": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables.",
+    "description": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables. GET /api/projects/{project_id}/warehouse_expressions/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_expressions/{id}/\nCreate, read, update and delete saved HogQL expressions that appear as virtual fields on tables.\nRequired: id (path) — A UUID string identifying this data warehouse expression.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_expressions_update",
+    "name": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables.",
+    "description": "Create, read, update and delete saved HogQL expressions that appear as virtual fields on tables. PUT /api/projects/{project_id}/warehouse_expressions/{id}/",
+    "context": "PUT /api/projects/{project_id}/warehouse_expressions/{id}/\nCreate, read, update and delete saved HogQL expressions that appear as virtual fields on tables.\nRequired: id (path) — A UUID string identifying this data warehouse expression.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

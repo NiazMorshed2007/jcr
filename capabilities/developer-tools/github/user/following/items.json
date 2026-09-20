@@ -1,0 +1,26 @@
+[
+  {
+    "id": "users%2Fcheck-person-is-followed-by-authenticated",
+    "name": "Check if a person is followed by the authenticated user",
+    "description": "Check if a person is followed by the authenticated user GET /user/following/{username}",
+    "context": "GET /user/following/{username}\nCheck if a person is followed by the authenticated user\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "users%2Ffollow",
+    "name": "Follow a user",
+    "description": "Follow a user Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. PUT /user/following/{username}",
+    "context": "PUT /user/following/{username}\nNote that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).\" OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "users%2Flist-followed-by-authenticated-user",
+    "name": "List the people the authenticated user follows",
+    "description": "List the people the authenticated user follows Lists the people who the authenticated user follows. GET /user/following",
+    "context": "GET /user/following\nLists the people who the authenticated user follows.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Funfollow",
+    "name": "Unfollow a user",
+    "description": "Unfollow a user OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint. DELETE /user/following/{username}",
+    "context": "DELETE /user/following/{username}\nOAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account."
+  }
+]

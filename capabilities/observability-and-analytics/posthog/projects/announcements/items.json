@@ -1,0 +1,26 @@
+[
+  {
+    "id": "announcements_channels_list",
+    "name": "Slack channels the SupportHog bot can post to, labeled by customer account name.",
+    "description": "Slack channels the SupportHog bot can post to, labeled by customer account name. GET /api/projects/{project_id}/announcements/channels/",
+    "context": "GET /api/projects/{project_id}/announcements/channels/\nSlack channels the SupportHog bot can post to, labeled by customer account name.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "announcements_create",
+    "name": "announcements_create",
+    "description": "announcements_create POST /api/projects/{project_id}/announcements/",
+    "context": "POST /api/projects/{project_id}/announcements/\nannouncements_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "announcements_list",
+    "name": "announcements_list",
+    "description": "announcements_list GET /api/projects/{project_id}/announcements/",
+    "context": "GET /api/projects/{project_id}/announcements/\nannouncements_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "announcements_retrieve",
+    "name": "announcements_retrieve",
+    "description": "announcements_retrieve GET /api/projects/{project_id}/announcements/{short_id}/",
+    "context": "GET /api/projects/{project_id}/announcements/{short_id}/\nannouncements_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  }
+]

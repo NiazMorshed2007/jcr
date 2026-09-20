@@ -1,0 +1,38 @@
+[
+  {
+    "id": "field_notes_create",
+    "name": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.",
+    "description": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP. POST /api/projects/{project_id}/field_notes/",
+    "context": "POST /api/projects/{project_id}/field_notes/\nCreate, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "field_notes_destroy",
+    "name": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.",
+    "description": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP. DELETE /api/projects/{project_id}/field_notes/{id}/",
+    "context": "DELETE /api/projects/{project_id}/field_notes/{id}/\nCreate, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.\nRequired: id (path) — A UUID string identifying this field note.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "field_notes_list",
+    "name": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.",
+    "description": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP. GET /api/projects/{project_id}/field_notes/",
+    "context": "GET /api/projects/{project_id}/field_notes/\nCreate, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: field_note_status (query) — Filter to field notes in this lifecycle state (e.g. `pending` for unaddressed feedback).; host (query) — Filter to field notes made on this hostname (e.g. `app.example.com`).; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "field_notes_partial_update",
+    "name": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.",
+    "description": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP. PATCH /api/projects/{project_id}/field_notes/{id}/",
+    "context": "PATCH /api/projects/{project_id}/field_notes/{id}/\nCreate, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.\nRequired: id (path) — A UUID string identifying this field note.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "field_notes_retrieve",
+    "name": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.",
+    "description": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP. GET /api/projects/{project_id}/field_notes/{id}/",
+    "context": "GET /api/projects/{project_id}/field_notes/{id}/\nCreate, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.\nRequired: id (path) — A UUID string identifying this field note.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "field_notes_update",
+    "name": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.",
+    "description": "Create, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP. PUT /api/projects/{project_id}/field_notes/{id}/",
+    "context": "PUT /api/projects/{project_id}/field_notes/{id}/\nCreate, read, update, and resolve toolbar field notes — UI feedback a user points at on their own site, surfaced to coding agents over MCP.\nRequired: id (path) — A UUID string identifying this field note.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

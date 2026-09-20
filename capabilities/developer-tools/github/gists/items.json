@@ -1,0 +1,116 @@
+[
+  {
+    "id": "gists%2Fcheck-is-starred",
+    "name": "Check if a gist is starred",
+    "description": "Check if a gist is starred GET /gists/{gist_id}/star",
+    "context": "GET /gists/{gist_id}/star\nCheck if a gist is starred\nRequired: gist_id (path) — The unique identifier of the gist."
+  },
+  {
+    "id": "gists%2Fcreate",
+    "name": "Create a gist",
+    "description": "Create a gist Allows you to add a new gist with one or more files. POST /gists",
+    "context": "POST /gists\nAllows you to add a new gist with one or more files. > [!NOTE] > Don't name your files \"gistfile\" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.\nRequired: body (body)"
+  },
+  {
+    "id": "gists%2Fcreate-comment",
+    "name": "Create a gist comment",
+    "description": "Create a gist comment Creates a comment on a gist. POST /gists/{gist_id}/comments",
+    "context": "POST /gists/{gist_id}/comments\nCreates a comment on a gist. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist.; body (body)"
+  },
+  {
+    "id": "gists%2Fdelete",
+    "name": "Delete a gist",
+    "description": "Delete a gist DELETE /gists/{gist_id}",
+    "context": "DELETE /gists/{gist_id}\nDelete a gist\nRequired: gist_id (path) — The unique identifier of the gist."
+  },
+  {
+    "id": "gists%2Fdelete-comment",
+    "name": "Delete a gist comment",
+    "description": "Delete a gist comment DELETE /gists/{gist_id}/comments/{comment_id}",
+    "context": "DELETE /gists/{gist_id}/comments/{comment_id}\nDelete a gist comment\nRequired: gist_id (path) — The unique identifier of the gist.; comment_id (path) — The unique identifier of the comment."
+  },
+  {
+    "id": "gists%2Ffork",
+    "name": "Fork a gist",
+    "description": "Fork a gist POST /gists/{gist_id}/forks",
+    "context": "POST /gists/{gist_id}/forks\nFork a gist\nRequired: gist_id (path) — The unique identifier of the gist."
+  },
+  {
+    "id": "gists%2Fget",
+    "name": "Get a gist",
+    "description": "Get a gist Gets a specified gist. GET /gists/{gist_id}",
+    "context": "GET /gists/{gist_id}\nGets a specified gist. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist."
+  },
+  {
+    "id": "gists%2Fget-comment",
+    "name": "Get a gist comment",
+    "description": "Get a gist comment Gets a comment on a gist. GET /gists/{gist_id}/comments/{comment_id}",
+    "context": "GET /gists/{gist_id}/comments/{comment_id}\nGets a comment on a gist. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist.; comment_id (path) — The unique identifier of the comment."
+  },
+  {
+    "id": "gists%2Fget-revision",
+    "name": "Get a gist revision",
+    "description": "Get a gist revision Gets a specified gist revision. GET /gists/{gist_id}/{sha}",
+    "context": "GET /gists/{gist_id}/{sha}\nGets a specified gist revision. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist.; sha (path)"
+  },
+  {
+    "id": "gists%2Flist",
+    "name": "List gists for the authenticated user",
+    "description": "List gists for the authenticated user Lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists: GET /gists",
+    "context": "GET /gists\nLists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:\nOptional: since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "gists%2Flist-comments",
+    "name": "List gist comments",
+    "description": "List gist comments Lists the comments on a gist. GET /gists/{gist_id}/comments",
+    "context": "GET /gists/{gist_id}/comments\nLists the comments on a gist. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "gists%2Flist-commits",
+    "name": "List gist commits",
+    "description": "List gist commits GET /gists/{gist_id}/commits",
+    "context": "GET /gists/{gist_id}/commits\nList gist commits\nRequired: gist_id (path) — The unique identifier of the gist.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "gists%2Flist-forks",
+    "name": "List gist forks",
+    "description": "List gist forks GET /gists/{gist_id}/forks",
+    "context": "GET /gists/{gist_id}/forks\nList gist forks\nRequired: gist_id (path) — The unique identifier of the gist.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "gists%2Flist-public",
+    "name": "List public gists",
+    "description": "List public gists List public gists sorted by most recently updated to least recently updated. GET /gists/public",
+    "context": "GET /gists/public\nList public gists sorted by most recently updated to least recently updated. Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.\nOptional: since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "gists%2Flist-starred",
+    "name": "List starred gists",
+    "description": "List starred gists List the authenticated user's starred gists: GET /gists/starred",
+    "context": "GET /gists/starred\nList the authenticated user's starred gists:\nOptional: since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "gists%2Fstar",
+    "name": "Star a gist",
+    "description": "Star a gist Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. PUT /gists/{gist_id}/star",
+    "context": "PUT /gists/{gist_id}/star\nNote that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).\"\nRequired: gist_id (path) — The unique identifier of the gist."
+  },
+  {
+    "id": "gists%2Funstar",
+    "name": "Unstar a gist",
+    "description": "Unstar a gist DELETE /gists/{gist_id}/star",
+    "context": "DELETE /gists/{gist_id}/star\nUnstar a gist\nRequired: gist_id (path) — The unique identifier of the gist."
+  },
+  {
+    "id": "gists%2Fupdate",
+    "name": "Update a gist",
+    "description": "Update a gist Allows you to update a gist's description and to update, delete, or rename gist files. PATCH /gists/{gist_id}",
+    "context": "PATCH /gists/{gist_id}\nAllows you to update a gist's description and to update, delete, or rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged. At least one of `description` or `files` is required. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist.; body (body)"
+  },
+  {
+    "id": "gists%2Fupdate-comment",
+    "name": "Update a gist comment",
+    "description": "Update a gist comment Updates a comment on a gist. PATCH /gists/{gist_id}/comments/{comment_id}",
+    "context": "PATCH /gists/{gist_id}/comments/{comment_id}\nUpdates a comment on a gist. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.\nRequired: gist_id (path) — The unique identifier of the gist.; comment_id (path) — The unique identifier of the comment.; body (body)"
+  }
+]

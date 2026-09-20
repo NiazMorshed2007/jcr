@@ -1,0 +1,74 @@
+[
+  {
+    "id": "repos%2Fcancel-pages-deployment",
+    "name": "Cancel a GitHub Pages deployment",
+    "description": "Cancel a GitHub Pages deployment Cancels a GitHub Pages deployment. POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel",
+    "context": "POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel\nCancels a GitHub Pages deployment. The authenticated user must have write permissions for the GitHub Pages site.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; pages_deployment_id (path) — The ID of the Pages deployment. You can also give the commit SHA of the deployment."
+  },
+  {
+    "id": "repos%2Fcreate-pages-deployment",
+    "name": "Create a GitHub Pages deployment",
+    "description": "Create a GitHub Pages deployment Create a GitHub Pages deployment for a repository. POST /repos/{owner}/{repo}/pages/deployments",
+    "context": "POST /repos/{owner}/{repo}/pages/deployments\nCreate a GitHub Pages deployment for a repository. The authenticated user must have write permission to the repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fcreate-pages-site",
+    "name": "Create a GitHub Pages site",
+    "description": "Create a GitHub Pages site Configures a GitHub Pages site. POST /repos/{owner}/{repo}/pages",
+    "context": "POST /repos/{owner}/{repo}/pages\nConfigures a GitHub Pages site. For more information, see \"[About GitHub Pages](/github/working-with-github-pages/about-github-pages).\" The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fdelete-pages-site",
+    "name": "Delete a GitHub Pages site",
+    "description": "Delete a GitHub Pages site Deletes a GitHub Pages site. DELETE /repos/{owner}/{repo}/pages",
+    "context": "DELETE /repos/{owner}/{repo}/pages\nDeletes a GitHub Pages site. For more information, see \"[About GitHub Pages](/github/working-with-github-pages/about-github-pages). The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget-latest-pages-build",
+    "name": "Get latest Pages build",
+    "description": "Get latest Pages build Gets information about the single most recent build of a GitHub Pages site. GET /repos/{owner}/{repo}/pages/builds/latest",
+    "context": "GET /repos/{owner}/{repo}/pages/builds/latest\nGets information about the single most recent build of a GitHub Pages site. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget-pages",
+    "name": "Get a GitHub Pages site",
+    "description": "Get a GitHub Pages site Gets information about a GitHub Pages site. GET /repos/{owner}/{repo}/pages",
+    "context": "GET /repos/{owner}/{repo}/pages\nGets information about a GitHub Pages site. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fget-pages-build",
+    "name": "Get GitHub Pages build",
+    "description": "Get GitHub Pages build Gets information about a GitHub Pages build. GET /repos/{owner}/{repo}/pages/builds/{build_id}",
+    "context": "GET /repos/{owner}/{repo}/pages/builds/{build_id}\nGets information about a GitHub Pages build. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; build_id (path)"
+  },
+  {
+    "id": "repos%2Fget-pages-deployment",
+    "name": "Get the status of a GitHub Pages deployment",
+    "description": "Get the status of a GitHub Pages deployment Gets the current status of a GitHub Pages deployment. GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}",
+    "context": "GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}\nGets the current status of a GitHub Pages deployment. The authenticated user must have read permission for the GitHub Pages site.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; pages_deployment_id (path) — The ID of the Pages deployment. You can also give the commit SHA of the deployment."
+  },
+  {
+    "id": "repos%2Fget-pages-health-check",
+    "name": "Get a DNS health check for GitHub Pages",
+    "description": "Get a DNS health check for GitHub Pages Gets a health check of the DNS settings for the `CNAME` record configured for a repository's GitHub Pages. GET /repos/{owner}/{repo}/pages/health",
+    "context": "GET /repos/{owner}/{repo}/pages/health\nGets a health check of the DNS settings for the `CNAME` record configured for a repository's GitHub Pages. The first request to this endpoint returns a `202 Accepted` status and starts an asynchronous background task to get the results for the domain. After the background task completes, subsequent requests to this endpoint return a `200 OK` status with the health check results in the response. The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Flist-pages-builds",
+    "name": "List GitHub Pages builds",
+    "description": "List GitHub Pages builds Lists builts of a GitHub Pages site. GET /repos/{owner}/{repo}/pages/builds",
+    "context": "GET /repos/{owner}/{repo}/pages/builds\nLists builts of a GitHub Pages site. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Frequest-pages-build",
+    "name": "Request a GitHub Pages build",
+    "description": "Request a GitHub Pages build You can request that your site be built from the latest revision on the default branch. POST /repos/{owner}/{repo}/pages/builds",
+    "context": "POST /repos/{owner}/{repo}/pages/builds\nYou can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures. Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive."
+  },
+  {
+    "id": "repos%2Fupdate-information-about-pages-site",
+    "name": "Update information about a GitHub Pages site",
+    "description": "Update information about a GitHub Pages site Updates information for a GitHub Pages site. PUT /repos/{owner}/{repo}/pages",
+    "context": "PUT /repos/{owner}/{repo}/pages\nUpdates information for a GitHub Pages site. For more information, see \"[About GitHub Pages](/github/working-with-github-pages/about-github-pages). The authenticated user must be a repository administrator, maintainer, or have the 'manage GitHub Pages settings' permission. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  }
+]

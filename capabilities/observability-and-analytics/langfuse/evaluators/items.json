@@ -1,0 +1,38 @@
+[
+  {
+    "id": "evaluators_create",
+    "name": "Create an evaluator in the authenticated project",
+    "description": "Create an evaluator in the authenticated project Create an evaluator in the authenticated project. POST /api/public/v2/evaluators",
+    "context": "POST /api/public/v2/evaluators\nCreate an evaluator in the authenticated project. An evaluator defines **how** Langfuse should score data. LLM-as-a-judge evaluators define a prompt, expected structured output, and optional model configuration. Code evaluators define source code and a runtime language. This always creates a new evaluator with version `1`. Names are not identifiers and do not need to be unique.\nRequired: body (body)"
+  },
+  {
+    "id": "evaluators_delete",
+    "name": "Delete an evaluator and all of its stored versions",
+    "description": "Delete an evaluator and all of its stored versions Delete an evaluator and all of its stored versions. DELETE /api/public/v2/evaluators/{evaluatorId}",
+    "context": "DELETE /api/public/v2/evaluators/{evaluatorId}\nDelete an evaluator and all of its stored versions. Associated evaluation-rule assignments are also removed. Scores already produced by the evaluator are preserved.\nRequired: evaluatorId (path) — Stable evaluator identifier returned by the evaluator endpoints."
+  },
+  {
+    "id": "evaluators_get",
+    "name": "Get one evaluator by its stable identifier",
+    "description": "Get one evaluator by its stable identifier Get one evaluator by its stable identifier. GET /api/public/v2/evaluators/{evaluatorId}",
+    "context": "GET /api/public/v2/evaluators/{evaluatorId}\nGet one evaluator by its stable identifier. The response includes the evaluator's latest definition and version metadata flattened into the evaluator object, plus associated evaluation rules. Use the version-history endpoint when older definitions are needed.\nRequired: evaluatorId (path) — Stable evaluator identifier returned by the evaluator endpoints."
+  },
+  {
+    "id": "evaluators_list",
+    "name": "List evaluators in newest-first creation order",
+    "description": "List evaluators in newest-first creation order List evaluators in newest-first creation order. GET /api/public/v2/evaluators",
+    "context": "GET /api/public/v2/evaluators\nList evaluators in newest-first creation order. Every evaluator includes its latest definition and version metadata flattened into the evaluator object, plus associated evaluation rules. Treat the cursor as opaque and return it unchanged.\nOptional: limit (query) — Maximum number of items to return. Defaults to `50` and cannot exceed `100`.; cursor (query) — Opaque cursor returned by the previous page."
+  },
+  {
+    "id": "evaluators_listVersions",
+    "name": "List an evaluator's version history in newest-first order",
+    "description": "List an evaluator's version history in newest-first order List an evaluator's version history in newest-first order. GET /api/public/v2/evaluators/{evaluatorId}/versions",
+    "context": "GET /api/public/v2/evaluators/{evaluatorId}/versions\nList an evaluator's version history in newest-first order. This endpoint is intended for history and audit use cases. Ordinary clients can use the flattened `version` and definition fields on the evaluator response.\nRequired: evaluatorId (path) — Stable evaluator identifier returned by the evaluator endpoints.\nOptional: limit (query) — Maximum number of versions to return. Defaults to `50` and cannot exceed `100`.; cursor (query) — Opaque cursor returned by the previous page."
+  },
+  {
+    "id": "evaluators_update",
+    "name": "Update an evaluator by its stable identifier",
+    "description": "Update an evaluator by its stable identifier Update an evaluator by its stable identifier. PATCH /api/public/v2/evaluators/{evaluatorId}",
+    "context": "PATCH /api/public/v2/evaluators/{evaluatorId}\nUpdate an evaluator by its stable identifier. Provide only the top-level fields to change. Metadata-only changes do not create a version. Evaluator type cannot change. Definition fields are flattened into the request. To replace a definition, include `type` and every definition field for that type. Definition fields are replaced as a complete unit rather than merged. For LLM-as-a-judge evaluators, omitting or setting `modelConfig` to `null` selects the project's default evaluation model. Replacing a definition automatically returns an evaluator paused by an invalid or missing model configuration to `active`, while preserving its id and evaluation-rule assignments. Pauses caused by provider authentication, billing, connectivity, account state, or an unknown legacy reason remain paused until the explicit reactivation check succeeds.\nRequired: evaluatorId (path) — Stable evaluator identifier returned by the evaluator endpoints.; body (body)"
+  }
+]

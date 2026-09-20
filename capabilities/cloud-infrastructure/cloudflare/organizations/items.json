@@ -1,0 +1,104 @@
+[
+  {
+    "id": "audit-logs-v2-get-organization-audit-log-history",
+    "name": "Get resource change history from an organization audit log entry (Version 2)",
+    "description": "Get resource change history from an organization audit log entry (Version 2) Returns the chronological change history for the resource identified by the given organization-scoped audit log entry. GET /client/v4/organizations/{organization_id}/logs/audit/{id}/history",
+    "context": "GET /client/v4/organizations/{organization_id}/logs/audit/{id}/history\nReturns the chronological change history for the resource identified by the given organization-scoped audit log entry. The endpoint first locates the source audit log entry by `id` (using `action_time` to narrow the lookup window), derives identifying filters from that entry, and then returns matching audit logs within the `since`/`before` window. The `result_info.history_status` field indicates the quality of the resource identification used: - `exact`: Resource was identified by the resource URI. - `approximate`: Resource was identified without the resource URI. - `unavailable`: The source audit log entry did not contain enough information to identify the resource; an empty result is returned.\nRequired: organization_id (path); id (path); action_time (query) — RFC3339 timestamp of the source audit log entry's action time. Used to narrow the source-entry lookup window. Provide the `action.time` value from the audit log identified by `id`.; since (query) — Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.; before (query) — Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.\nOptional: direction (query); limit (query); cursor (query)"
+  },
+  {
+    "id": "audit-logs-v2-get-organization-audit-logs",
+    "name": "Get organization audit logs (Version 2)",
+    "description": "Get organization audit logs (Version 2) Gets a list of audit logs for an organization. GET /client/v4/organizations/{organization_id}/logs/audit",
+    "context": "GET /client/v4/organizations/{organization_id}/logs/audit\nGets a list of audit logs for an organization.\nRequired: organization_id (path); since (query) — Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.; before (query) — Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.\nOptional: action_result (query); action_type (query); actor_context (query); actor_email (query); actor_id (query); actor_ip_address (query); actor_token_id (query); actor_token_name (query); actor_type (query); id (query); raw_cf_ray_id (query); raw_method (query); raw_status_code (query); raw_uri (query); resource_id (query); resource_product (query); resource_type (query); resource_scope (query); action_result.not (query); action_type.not (query); actor_context.not (query); actor_email.not (query); actor_id.not (query); actor_ip_address.not (query); actor_token_id.not (query); actor_token_name.not (query); actor_type.not (query); id.not (query); raw_cf_ray_id.not (query); raw_method.not (query); raw_status_code.not (query); raw_uri.not (query); resource_id.not (query); resource_product.not (query); resource_type.not (query); resource_scope.not (query); direction (query); limit (query); cursor (query)"
+  },
+  {
+    "id": "billable-usage-v2-get-organization-usage",
+    "name": "Get Organization Usage (Version 2, Alpha, Restricted)",
+    "description": "Get Organization Usage (Version 2, Alpha, Restricted) Returns cost and usage data for all accounts within an organization, aligned with the [FinOps FOCUS v1.3](https://focus.finops.org/focus-specification/v1-3/) Cost and Usage dataset specification. GET /client/v4/organizations/{organization_id}/billable/usage",
+    "context": "GET /client/v4/organizations/{organization_id}/billable/usage\nReturns cost and usage data for all accounts within an organization, aligned with the [FinOps FOCUS v1.3](https://focus.finops.org/focus-specification/v1-3/) Cost and Usage dataset specification. Each record represents one billable metric for one account on one day. This includes all metered usage, including usage that falls within free-tier allowances and may result in zero cost. The response includes usage for every account belonging to the specified organization. **Note:** Cost and pricing fields are not yet populated and will be absent from responses until billing integration is complete. When `from` and `to` are omitted, defaults to the start of the current month through today. The maximum date range is 31 days. An organization with no accounts, or an organization ID that does not exist, returns a successful response with an empty result set rather than an error.\nRequired: organization_id (path) — Identifies the Cloudflare organization.\nOptional: from (query) — Start date for the usage query (ISO 8601). Required if `to` is set. When omitted along with `to`, defaults to the start of the current month. Filters by charge period (when consumption happened), not billing period. The maximum date range is 31 days.; to (query) — End date for the usage query (ISO 8601). Required if `from` is set. When omitted along with `from`, defaults to today. Filters by charge period (when consumption happened), not billing period. The maximum date range is 31 days."
+  },
+  {
+    "id": "Members_batchCreate",
+    "name": "Batch create organization members",
+    "description": "Batch create organization members Batch create multiple memberships that grant access to a specific Organization. POST /client/v4/organizations/{organization_id}/members:batchCreate",
+    "context": "POST /client/v4/organizations/{organization_id}/members:batchCreate\nBatch create multiple memberships that grant access to a specific Organization.\nRequired: organization_id (path); body (body)"
+  },
+  {
+    "id": "Members_create",
+    "name": "Create organization member",
+    "description": "Create organization member Create a membership that grants access to a specific Organization. POST /client/v4/organizations/{organization_id}/members",
+    "context": "POST /client/v4/organizations/{organization_id}/members\nCreate a membership that grants access to a specific Organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path); body (body)"
+  },
+  {
+    "id": "Members_delete",
+    "name": "Delete organization member",
+    "description": "Delete organization member Delete a membership to a particular Organization. DELETE /client/v4/organizations/{organization_id}/members/{member_id}",
+    "context": "DELETE /client/v4/organizations/{organization_id}/members/{member_id}\nDelete a membership to a particular Organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path); member_id (path)"
+  },
+  {
+    "id": "Members_list",
+    "name": "List organization members",
+    "description": "List organization members List memberships for an Organization. GET /client/v4/organizations/{organization_id}/members",
+    "context": "GET /client/v4/organizations/{organization_id}/members\nList memberships for an Organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path)\nOptional: status (query) — Filter the list of memberships by membership status.; user.email (query) — Filter the list of memberships for a specific email.; user.email.contains (query) — Filter the list of memberships for a specific email that contains a substring.; user.email.startsWith (query) — Filter the list of memberships for a specific email that starts with a substring.; user.email.endsWith (query) — Filter the list of memberships for a specific email that ends with a substring.; page_token (query) — An opaque token returned from the last list response that when provided will retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token.; page_size (query) — The amount of items to return. Defaults to 10."
+  },
+  {
+    "id": "Members_retrieve",
+    "name": "Get organization member",
+    "description": "Get organization member Retrieve a single membership from an Organization. GET /client/v4/organizations/{organization_id}/members/{member_id}",
+    "context": "GET /client/v4/organizations/{organization_id}/members/{member_id}\nRetrieve a single membership from an Organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path); member_id (path)"
+  },
+  {
+    "id": "Organization_listOrganizations",
+    "name": "List organizations the user has access to",
+    "description": "List organizations the user has access to Retrieve a list of organizations a particular user has access to. GET /client/v4/organizations",
+    "context": "GET /client/v4/organizations\nRetrieve a list of organizations a particular user has access to. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nOptional: id (query) — Only return organizations with the specified IDs (ex. id=foo&id=bar). Send multiple elements by repeating the query value.; name (query) — (case-sensitive) Filter the list of organizations to where the name is equal to a particular string.; name.startsWith (query) — (case-insensitive) Filter the list of organizations to where the name starts with a particular string.; name.endsWith (query) — (case-insensitive) Filter the list of organizations to where the name ends with a particular string.; name.contains (query) — (case-insensitive) Filter the list of organizations to where the name contains a particular string.; containing.account (query) — Filter the list of organizations to the ones that contain this particular account.; containing.user (query) — Filter the list of organizations to the ones that contain this particular user. IMPORTANT: Just because an organization \"contains\" a user is not a representation of any authorization or privilege to manage any resources therein. An organization \"containing\" a user simply means the user is managed by that organization.; containing.organization (query) — Filter the list of organizations to the ones that contain this particular organization.; parent.id (query) — Filter the list of organizations to the ones that are a sub-organization of the specified organization. \"null\" is a valid value to provide for this parameter. It means \"where an organization has no parent (i.e. it is a 'root' organization).\"; page_token (query) — An opaque token returned from the last list response that when provided will retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token.; page_size (query) — The amount of items to return. Defaults to 10."
+  },
+  {
+    "id": "organization-shares-list",
+    "name": "List organization shares",
+    "description": "List organization shares Lists all organization shares. GET /client/v4/organizations/{organization_id}/shares",
+    "context": "GET /client/v4/organizations/{organization_id}/shares\nLists all organization shares.\nRequired: organization_id (path)\nOptional: status (query) — Filter shares by status.; kind (query) — Filter shares by kind.; target_type (query) — Filter shares by target_type.; resource_types (query) — Filter share resources by resource_types.; order (query) — Order shares by values in the given field.; direction (query) — Direction to sort objects.; page (query) — Page number. Defaults to `1` when `per_page` is supplied without `page`. May be omitted entirely along with `per_page` to receive a non-paginated response.; per_page (query) — Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response."
+  },
+  {
+    "id": "Organizations_createUserOrganization",
+    "name": "Create organization",
+    "description": "Create organization Create a new organization for a user. POST /client/v4/organizations",
+    "context": "POST /client/v4/organizations\nCreate a new organization for a user. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: body (body)"
+  },
+  {
+    "id": "Organizations_delete",
+    "name": "Delete organization.",
+    "description": "Delete organization. Delete an organization. DELETE /client/v4/organizations/{organization_id}",
+    "context": "DELETE /client/v4/organizations/{organization_id}\nDelete an organization. The organization MUST be empty before deleting. It must not contain any sub-organizations, accounts, members or users. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/) **Access Control:** Restricted to enterprise organizations.\nRequired: organization_id (path) — The ID of the organization to delete."
+  },
+  {
+    "id": "Organizations_getAccounts",
+    "name": "Get organization accounts",
+    "description": "Get organization accounts Retrieve a list of accounts that belong to a specific organization. GET /client/v4/organizations/{organization_id}/accounts",
+    "context": "GET /client/v4/organizations/{organization_id}/accounts\nRetrieve a list of accounts that belong to a specific organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path) — The ID of the organization to retrieve a list of accounts for.\nOptional: account_pubname (query) — (case-insensitive) Filter the list of accounts to where the account_pubname is equal to a particular string.; account_pubname.startsWith (query) — (case-insensitive) Filter the list of accounts to where the account_pubname starts with a particular string.; account_pubname.endsWith (query) — (case-insensitive) Filter the list of accounts to where the account_pubname ends with a particular string.; account_pubname.contains (query) — (case-insensitive) Filter the list of accounts to where the account_pubname contains a particular string.; name (query) — (case-insensitive) Filter the list of accounts to where the name is equal to a particular string.; name.startsWith (query) — (case-insensitive) Filter the list of accounts to where the name starts with a particular string.; name.endsWith (query) — (case-insensitive) Filter the list of accounts to where the name ends with a particular string.; name.contains (query) — (case-insensitive) Filter the list of accounts to where the name contains a particular string.; order_by (query) — Field to order results by. Currently supported values: `account_name`. When not specified, results are ordered by internal account ID.; direction (query) — Sort direction for the order_by field. Valid values: `asc`, `desc`. Defaults to `asc` when order_by is specified.; include_tags (query) — Include Account tags from the resource tag mirror. Omit this parameter to preserve the existing Account response shape.; include_total (query) — Whether to calculate and return the exact result_info.total_size for cursor pagination. Defaults to true. When false, total_size is omitted. page_size and include_total may change between pages; next_page_token remains the authoritative continuation signal. Legacy page/per_page requests always calculate total_count.; page_token (query) — An opaque token returned from the last list response that when provided will retrieve the next page. Parameters used to filter the retrieved list must remain in subsequent requests with a page token.; page_size (query) — The amount of items to return. Defaults to 10."
+  },
+  {
+    "id": "Organizations_getProfile",
+    "name": "Get organization profile",
+    "description": "Get organization profile Get an organizations profile if it exists. GET /client/v4/organizations/{organization_id}/profile",
+    "context": "GET /client/v4/organizations/{organization_id}/profile\nGet an organizations profile if it exists. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path) — The ID of the organization to retrieve a profile for."
+  },
+  {
+    "id": "Organizations_modify",
+    "name": "Modify organization.",
+    "description": "Modify organization. Modify organization. PUT /client/v4/organizations/{organization_id}",
+    "context": "PUT /client/v4/organizations/{organization_id}\nModify organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path) — The ID of the organization to modify.; body (body) — The new details of the organization. Only accepts updates to \"name\" currently."
+  },
+  {
+    "id": "Organizations_modifyProfile",
+    "name": "Modify organization profile.",
+    "description": "Modify organization profile. Modify organization profile. PUT /client/v4/organizations/{organization_id}/profile",
+    "context": "PUT /client/v4/organizations/{organization_id}/profile\nModify organization profile. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path); body (body)"
+  },
+  {
+    "id": "Organizations_retrieve",
+    "name": "Get organization",
+    "description": "Get organization Retrieve the details of a certain organization. GET /client/v4/organizations/{organization_id}",
+    "context": "GET /client/v4/organizations/{organization_id}\nRetrieve the details of a certain organization. (Currently in Public Beta - see https://developers.cloudflare.com/fundamentals/organizations/)\nRequired: organization_id (path) — The ID of the organization to retrieve."
+  }
+]

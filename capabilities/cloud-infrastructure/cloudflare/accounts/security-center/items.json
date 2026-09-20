@@ -1,0 +1,86 @@
+[
+  {
+    "id": "archive-security-center-insight",
+    "name": "Archives Security Center Insight",
+    "description": "Archives Security Center Insight Archives a Security Center insight for an account, removing it from the active insights list while preserving historical data. PUT /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/dismiss",
+    "context": "PUT /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/dismiss\nArchives a Security Center insight for an account, removing it from the active insights list while preserving historical data.\nRequired: account_id (path); issue_id (path); body (body)"
+  },
+  {
+    "id": "get-security-center-account-audit-log",
+    "name": "Retrieves Account Audit Log",
+    "description": "Retrieves Account Audit Log Lists audit log entries for all Security Center insights in the account, showing changes to insight status and classification. GET /client/v4/accounts/{account_id}/security-center/insights/audit-log",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/audit-log\nLists audit log entries for all Security Center insights in the account, showing changes to insight status and classification.\nRequired: account_id (path)\nOptional: per_page (query) — Number of results per page.; cursor (query) — Opaque cursor for pagination. Use the cursor value from result_info of the previous response.; field_changed (query) — Filter by the field that was changed.; changed_by (query) — Filter by the actor that made the change.; since (query) — Filter entries changed at or after this timestamp (RFC 3339).; before (query) — Filter entries changed before this timestamp (RFC 3339).; order (query) — Sort order for results. Use 'asc' for oldest first or 'desc' for newest first."
+  },
+  {
+    "id": "get-security-center-account-scans",
+    "name": "Get Recent Account Scans",
+    "description": "Get Recent Account Scans Returns the most recent on-demand scans for the account, up to a maximum of 5. GET /client/v4/accounts/{account_id}/security-center/insights/scans",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/scans\nReturns the most recent on-demand scans for the account, up to a maximum of 5. Each scan includes its ID, start time, and current status. This includes both account-wide and zone-scoped scans. Also returns quota information showing how many scans have been used and how many remain in the current 24-hour window.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get-security-center-account-state",
+    "name": "Retrieves Account State",
+    "description": "Retrieves Account State Returns account-level Security Center state: whether scans are enabled for the account and whether the account was recently reactivated from a dormant state. GET /client/v4/accounts/{account_id}/security-center/state",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/state\nReturns account-level Security Center state: whether scans are enabled for the account and whether the account was recently reactivated from a dormant state.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get-security-center-insight-context",
+    "name": "Retrieves Security Center Insight Context",
+    "description": "Retrieves Security Center Insight Context Returns the full context payload for an insight. GET /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/context",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/context\nReturns the full context payload for an insight. This endpoint is used for insights with large payloads that are not included inline in the list response.\nRequired: account_id (path); issue_id (path)"
+  },
+  {
+    "id": "get-security-center-insight-counts-by-class",
+    "name": "Retrieves Security Center Insight Counts by Class",
+    "description": "Retrieves Security Center Insight Counts by Class Retrieves Security Center insight counts aggregated by classification class. GET /client/v4/accounts/{account_id}/security-center/insights/class",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/class\nRetrieves Security Center insight counts aggregated by classification class.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-security-center-insight-counts-by-severity",
+    "name": "Retrieves Security Center Insight Counts by Severity",
+    "description": "Retrieves Security Center Insight Counts by Severity Retrieves Security Center insight counts aggregated by severity level (critical, high, medium, low). GET /client/v4/accounts/{account_id}/security-center/insights/severity",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/severity\nRetrieves Security Center insight counts aggregated by severity level (critical, high, medium, low).\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-security-center-insight-counts-by-type",
+    "name": "Retrieves Security Center Insight Counts by Type",
+    "description": "Retrieves Security Center Insight Counts by Type Retrieves Security Center insight counts aggregated by insight type. GET /client/v4/accounts/{account_id}/security-center/insights/type",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/type\nRetrieves Security Center insight counts aggregated by insight type.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query)"
+  },
+  {
+    "id": "get-security-center-insights",
+    "name": "Retrieves Security Center Insights",
+    "description": "Retrieves Security Center Insights Lists all Security Center insights for the account, showing security findings and recommendations. GET /client/v4/accounts/{account_id}/security-center/insights",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights\nLists all Security Center insights for the account, showing security findings and recommendations.\nRequired: account_id (path)\nOptional: dismissed (query); issue_class (query); issue_type (query); product (query); source (query); severity (query); subject (query); issue_class~neq (query); issue_type~neq (query); product~neq (query); severity~neq (query); subject~neq (query); page (query); per_page (query)"
+  },
+  {
+    "id": "get-security-center-issue-audit-log",
+    "name": "Retrieves Issue Audit Log",
+    "description": "Retrieves Issue Audit Log Lists audit log entries for a specific Security Center insight, showing changes to its status and classification over time. GET /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/audit-log",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/audit-log\nLists audit log entries for a specific Security Center insight, showing changes to its status and classification over time.\nRequired: account_id (path); issue_id (path)\nOptional: per_page (query) — Number of results per page.; cursor (query) — Opaque cursor for pagination. Use the cursor value from result_info of the previous response.; field_changed (query) — Filter by the field that was changed.; changed_by (query) — Filter by the actor that made the change.; since (query) — Filter entries changed at or after this timestamp (RFC 3339).; before (query) — Filter entries changed before this timestamp (RFC 3339).; order (query) — Sort order for results. Use 'asc' for oldest first or 'desc' for newest first."
+  },
+  {
+    "id": "get-security-center-partner-insight-count",
+    "name": "Retrieves a Partner Security Center Insight Count",
+    "description": "Retrieves a Partner Security Center Insight Count Retrieves the uncapped count of active, non-dismissed, unclassified RiskRecon insights for the account. GET /client/v4/accounts/{account_id}/security-center/insights/count",
+    "context": "GET /client/v4/accounts/{account_id}/security-center/insights/count\nRetrieves the uncapped count of active, non-dismissed, unclassified RiskRecon insights for the account.\nRequired: account_id (path); source (query)"
+  },
+  {
+    "id": "start-security-center-account-scan",
+    "name": "Start On-Demand Account Scan",
+    "description": "Start On-Demand Account Scan Initiates an on-demand security scan for the entire account, scanning all zones associated with the account. POST /client/v4/accounts/{account_id}/security-center/insights/scans",
+    "context": "POST /client/v4/accounts/{account_id}/security-center/insights/scans\nInitiates an on-demand security scan for the entire account, scanning all zones associated with the account. Rate limited to 5 scans per account per 24-hour window.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "update-security-center-account-state",
+    "name": "Updates Account State",
+    "description": "Updates Account State Updates account-level Security Center state. PUT /client/v4/accounts/{account_id}/security-center/state",
+    "context": "PUT /client/v4/accounts/{account_id}/security-center/state\nUpdates account-level Security Center state. Currently supports enabling or disabling scans for the account. Returns the account's state after the update.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "update-security-center-insight-classification",
+    "name": "Updates Security Center Insight Classification",
+    "description": "Updates Security Center Insight Classification Updates the user classification for a Security Center insight. PATCH /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/classification",
+    "context": "PATCH /client/v4/accounts/{account_id}/security-center/insights/{issue_id}/classification\nUpdates the user classification for a Security Center insight. Valid values are 'false_positive' or 'accept_risk'. To reset, set classification to null. Cannot change directly between classification values - must reset to null first.\nRequired: account_id (path); issue_id (path); body (body)"
+  }
+]

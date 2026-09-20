@@ -1,0 +1,56 @@
+[
+  {
+    "id": "custom_property_sources_backfill",
+    "name": "Person and group sources only: start a backfill that reads the whole warehouse table and populates person or group properties for historical rows",
+    "description": "Person and group sources only: start a backfill that reads the whole warehouse table and populates person or group properties for historical rows Person and group sources only: start a backfill that reads the whole warehouse table and populates person or group properties for historical rows. POST /api/projects/{projec…",
+    "context": "POST /api/projects/{project_id}/custom_property_sources/{id}/backfill/\nPerson and group sources only: start a backfill that reads the whole warehouse table and populates person or group properties for historical rows. Coalesces if one is already running for the table.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "custom_property_sources_create",
+    "name": "custom_property_sources_create",
+    "description": "custom_property_sources_create POST /api/projects/{project_id}/custom_property_sources/",
+    "context": "POST /api/projects/{project_id}/custom_property_sources/\ncustom_property_sources_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "custom_property_sources_destroy",
+    "name": "custom_property_sources_destroy",
+    "description": "custom_property_sources_destroy DELETE /api/projects/{project_id}/custom_property_sources/{id}/",
+    "context": "DELETE /api/projects/{project_id}/custom_property_sources/{id}/\ncustom_property_sources_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "custom_property_sources_list",
+    "name": "custom_property_sources_list",
+    "description": "custom_property_sources_list GET /api/projects/{project_id}/custom_property_sources/",
+    "context": "GET /api/projects/{project_id}/custom_property_sources/\ncustom_property_sources_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "custom_property_sources_partial_update",
+    "name": "custom_property_sources_partial_update",
+    "description": "custom_property_sources_partial_update PATCH /api/projects/{project_id}/custom_property_sources/{id}/",
+    "context": "PATCH /api/projects/{project_id}/custom_property_sources/{id}/\ncustom_property_sources_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "custom_property_sources_retrieve",
+    "name": "custom_property_sources_retrieve",
+    "description": "custom_property_sources_retrieve GET /api/projects/{project_id}/custom_property_sources/{id}/",
+    "context": "GET /api/projects/{project_id}/custom_property_sources/{id}/\ncustom_property_sources_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "custom_property_sources_runs_list",
+    "name": "The source's sync history, newest first",
+    "description": "The source's sync history, newest first The source's sync history, newest first. GET /api/projects/{project_id}/custom_property_sources/{id}/runs/",
+    "context": "GET /api/projects/{project_id}/custom_property_sources/{id}/runs/\nThe source's sync history, newest first. Person and group runs require viewer access to their warehouse source because the response includes row counts and sync errors.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — Match run IDs, workflow IDs, job IDs, statuses, segments, triggers, or errors."
+  },
+  {
+    "id": "custom_property_sources_sync",
+    "name": "Person and group sources only: run what this source reads now — an import for a table binding (a real, billable warehouse sync), a materialization for a view binding",
+    "description": "Person and group sources only: run what this source reads now — an import for a table binding (a real, billable warehouse sync), a materialization for a view binding Person and group sources only: run what this source reads now — an import for a table binding (a real, billable warehouse sync), a materialization for a…",
+    "context": "POST /api/projects/{project_id}/custom_property_sources/{id}/sync/\nPerson and group sources only: run what this source reads now — an import for a table binding (a real, billable warehouse sync), a materialization for a view binding. The incremental person/group-property update runs off that run.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "custom_property_sources_update",
+    "name": "custom_property_sources_update",
+    "description": "custom_property_sources_update PUT /api/projects/{project_id}/custom_property_sources/{id}/",
+    "context": "PUT /api/projects/{project_id}/custom_property_sources/{id}/\ncustom_property_sources_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  }
+]

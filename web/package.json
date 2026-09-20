@@ -1,0 +1,27 @@
+{
+  "name": "jcr-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "serve out",
+    "lint": "eslint .",
+    "deploy": "next build && wrangler deploy"
+  },
+  "dependencies": {
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.3.5",
+    "serve": "^14.2.5",
+    "typescript": "6.0.3",
+    "wrangler": "^4.135.0"
+  }
+}

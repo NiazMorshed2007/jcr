@@ -1,0 +1,26 @@
+[
+  {
+    "id": "createConfigurableLogDrain",
+    "name": "Creates a Configurable Log Drain (deprecated)",
+    "description": "Creates a Configurable Log Drain (deprecated) Creates a configurable log drain. POST /v1/log-drains",
+    "context": "POST /v1/log-drains\nCreates a configurable log drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed)\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteConfigurableLogDrain",
+    "name": "Deletes a Configurable Log Drain (deprecated)",
+    "description": "Deletes a Configurable Log Drain (deprecated) Deletes a Configurable Log Drain. DELETE /v1/log-drains/{id}",
+    "context": "DELETE /v1/log-drains/{id}\nDeletes a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be deleted.\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getAllLogDrains",
+    "name": "Retrieves a list of all the Log Drains (deprecated)",
+    "description": "Retrieves a list of all the Log Drains (deprecated) Retrieves a list of all the Log Drains owned by the account. GET /v1/log-drains",
+    "context": "GET /v1/log-drains\nRetrieves a list of all the Log Drains owned by the account. This endpoint must be called with an account AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated account can be accessed.\nOptional: projectId (query); projectIdOrName (query); includeMetadata (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getConfigurableLogDrain",
+    "name": "Retrieves a Configurable Log Drain (deprecated)",
+    "description": "Retrieves a Configurable Log Drain (deprecated) Retrieves a Configurable Log Drain. GET /v1/log-drains/{id}",
+    "context": "GET /v1/log-drains/{id}\nRetrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken (integration OAuth2 clients are not allowed). Only log drains owned by the authenticated team can be accessed.\nRequired: id (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

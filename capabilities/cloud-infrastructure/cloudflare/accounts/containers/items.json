@@ -1,0 +1,86 @@
+[
+  {
+    "id": "createApplication",
+    "name": "Create a new application",
+    "description": "Create a new application Create a Containers application. POST /client/v4/accounts/{account_id}/containers/applications",
+    "context": "POST /client/v4/accounts/{account_id}/containers/applications\nCreate a Containers application. Use `scheduling_policy: \"default\"` for a scheduler-backed application. The Containers scheduler maintains the requested instance count and manages deployment configuration, placement, scaling, versions, and rollouts. Use `scheduling_policy: \"durable_object\"` for a Durable Object-managed application. Each Durable Object creates and manages the lifecycle of its container instance. Supply `name`, `scheduling_policy`, and `durable_objects`, with optional `configuration` and optional top-level `observability` settings. Deployment configuration, scaling, constraints, versions, and rollouts do not apply.\nRequired: account_id (path) — Account identifier.; body (body)"
+  },
+  {
+    "id": "createApplicationRollout",
+    "name": "Create a new rollout for an application",
+    "description": "Create a new rollout for an application Creates a rollout to update the application's configuration across instances with minimal downtime. POST /client/v4/accounts/{account_id}/containers/applications/{application_id}/rollouts",
+    "context": "POST /client/v4/accounts/{account_id}/containers/applications/{application_id}/rollouts\nCreates a rollout to update the application's configuration across instances with minimal downtime. Rollouts apply only to scheduler-backed applications with `scheduling_policy: \"default\"`. Versions and rollouts do not apply to applications with `scheduling_policy: \"durable_object\"`.\nRequired: account_id (path) — Account identifier.; application_id (path); body (body)"
+  },
+  {
+    "id": "createImageRegistry",
+    "name": "Configure a private external image registry",
+    "description": "Configure a private external image registry Registers credentials for a supported private external image registry so Containers can pull images from it. POST /client/v4/accounts/{account_id}/containers/registries",
+    "context": "POST /client/v4/accounts/{account_id}/containers/registries\nRegisters credentials for a supported private external image registry so Containers can pull images from it. This endpoint does not create a registry or upload an image. Public Docker Hub images and images in the Cloudflare managed registry do not require this configuration. Refer to [Image management](https://developers.cloudflare.com/containers/platform-details/image-management/) for supported registries and instructions for storing registry credentials.\nRequired: account_id (path) — Account identifier.; body (body)"
+  },
+  {
+    "id": "deleteApplication",
+    "name": "Delete a single application by id",
+    "description": "Delete a single application by id Deletes a single application by id. DELETE /client/v4/accounts/{account_id}/containers/applications/{application_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/containers/applications/{application_id}\nDeletes a single application by id.\nRequired: account_id (path) — Account identifier.; application_id (path)"
+  },
+  {
+    "id": "deleteImageRegistry",
+    "name": "Delete a registry from the account",
+    "description": "Delete a registry from the account Delete a registry from the account, this will prevent Containers from pulling images from the registry. DELETE /client/v4/accounts/{account_id}/containers/registries/{domain}",
+    "context": "DELETE /client/v4/accounts/{account_id}/containers/registries/{domain}\nDelete a registry from the account, this will prevent Containers from pulling images from the registry.\nRequired: account_id (path) — Account identifier.; domain (path)"
+  },
+  {
+    "id": "generateImageRegistryCredentials",
+    "name": "Generate a JWT to interact with the specified image registry.",
+    "description": "Generate a JWT to interact with the specified image registry. Generates credentials for accessing a configured container image registry. POST /client/v4/accounts/{account_id}/containers/registries/{domain}/credentials",
+    "context": "POST /client/v4/accounts/{account_id}/containers/registries/{domain}/credentials\nGenerates credentials for accessing a configured container image registry.\nRequired: account_id (path) — Account identifier.; domain (path); body (body)"
+  },
+  {
+    "id": "getApplication",
+    "name": "Get a single application by id",
+    "description": "Get a single application by id Returns a single application by id. GET /client/v4/accounts/{account_id}/containers/applications/{application_id}",
+    "context": "GET /client/v4/accounts/{account_id}/containers/applications/{application_id}\nReturns a single application by id.\nRequired: account_id (path) — Account identifier.; application_id (path)"
+  },
+  {
+    "id": "getContainerInstance",
+    "name": "Get a container instance",
+    "description": "Get a container instance Returns a container instance belonging to an application. GET /client/v4/accounts/{account_id}/containers/applications/{application_id}/instances/{instance_id}",
+    "context": "GET /client/v4/accounts/{account_id}/containers/applications/{application_id}/instances/{instance_id}\nReturns a container instance belonging to an application.\nRequired: account_id (path) — Account identifier.; application_id (path); instance_id (path)"
+  },
+  {
+    "id": "listApplications",
+    "name": "List Applications associated with your account",
+    "description": "List Applications associated with your account Lists all the applications that are associated with your account. GET /client/v4/accounts/{account_id}/containers/applications",
+    "context": "GET /client/v4/accounts/{account_id}/containers/applications\nLists all the applications that are associated with your account.\nRequired: account_id (path) — Account identifier.\nOptional: name (query) — Filter applications by name.; image (query) — Filter applications by image."
+  },
+  {
+    "id": "listApplicationVersions",
+    "name": "List all application versions",
+    "description": "List all application versions Returns all versions for a scheduler-backed application with `scheduling_policy: \"default\"`. GET /client/v4/accounts/{account_id}/containers/applications/{application_id}/versions",
+    "context": "GET /client/v4/accounts/{account_id}/containers/applications/{application_id}/versions\nReturns all versions for a scheduler-backed application with `scheduling_policy: \"default\"`. Versions and rollouts do not apply to applications with `scheduling_policy: \"durable_object\"`.\nRequired: account_id (path) — Account identifier.; application_id (path)"
+  },
+  {
+    "id": "listContainerInstances",
+    "name": "List container instances",
+    "description": "List container instances Lists container instances belonging to an application. GET /client/v4/accounts/{account_id}/containers/applications/{application_id}/instances",
+    "context": "GET /client/v4/accounts/{account_id}/containers/applications/{application_id}/instances\nLists container instances belonging to an application.\nRequired: account_id (path) — Account identifier.; application_id (path)\nOptional: per_page (query) — Maximum number of instances to return per page. Defaults to all.; page_token (query) — Opaque token from a previous response to retrieve the next page.; state (query) — Filters instances by lifecycle state. `active` includes provisioning, running, and stopping instances; `not-active` includes stopped and failed instances. When omitted, all instances are returned.; name_prefix (query) — Filter instances by a case-sensitive name prefix, falling back to the actor ID when no name is known. Keep the same prefix when using a page token."
+  },
+  {
+    "id": "listImageRegistries",
+    "name": "Get the list of configured registries in the account",
+    "description": "Get the list of configured registries in the account Get the list of configured registries in the account. GET /client/v4/accounts/{account_id}/containers/registries",
+    "context": "GET /client/v4/accounts/{account_id}/containers/registries\nGet the list of configured registries in the account.\nRequired: account_id (path) — Account identifier."
+  },
+  {
+    "id": "modifyApplication",
+    "name": "Modify an application",
+    "description": "Modify an application Modifies a single application by id. PATCH /client/v4/accounts/{account_id}/containers/applications/{application_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/containers/applications/{application_id}\nModifies a single application by id. Durable Object-managed application settings are published to runtime metadata without creating deployments or rollouts. Top-level `observability` for these applications supports only `logs.enabled`. The supported fields depend on the existing application's scheduling policy. For scheduler-backed applications, changes that replace instance deployment configuration, including the image, require a rollout.\nRequired: account_id (path) — Account identifier.; application_id (path); body (body)"
+  },
+  {
+    "id": "prepareContainerImage",
+    "name": "Prepare a container image",
+    "description": "Prepare a container image Idempotently starts or observes preparation of the runtime artifacts required to run one digest-pinned managed container image on Cloudflare's network. POST /client/v4/accounts/{account_id}/containers/image-preparations",
+    "context": "POST /client/v4/accounts/{account_id}/containers/image-preparations\nIdempotently starts or observes preparation of the runtime artifacts required to run one digest-pinned managed container image on Cloudflare's network. Returns 202 while durable preparation continues and 200 when the image is ready or preparation has reached a terminal error.\nRequired: account_id (path) — Account identifier.; body (body)"
+  }
+]

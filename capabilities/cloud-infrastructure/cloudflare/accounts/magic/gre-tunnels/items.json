@@ -1,0 +1,38 @@
+[
+  {
+    "id": "magic-gre-tunnels-create-gre-tunnels",
+    "name": "Create a GRE tunnel",
+    "description": "Create a GRE tunnel Creates a new GRE tunnel. POST /client/v4/accounts/{account_id}/magic/gre_tunnels",
+    "context": "POST /client/v4/accounts/{account_id}/magic/gre_tunnels\nCreates a new GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-gre-tunnels-delete-gre-tunnel",
+    "name": "Delete GRE Tunnel",
+    "description": "Delete GRE Tunnel Disables and removes a specific static GRE tunnel. DELETE /client/v4/accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}\nDisables and removes a specific static GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: gre_tunnel_id (path); account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-gre-tunnels-list-gre-tunnel-details",
+    "name": "List GRE Tunnel Details",
+    "description": "List GRE Tunnel Details Lists informtion for a specific GRE tunnel. GET /client/v4/accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}",
+    "context": "GET /client/v4/accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}\nLists informtion for a specific GRE tunnel.\nRequired: gre_tunnel_id (path); account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-gre-tunnels-list-gre-tunnels",
+    "name": "List GRE tunnels",
+    "description": "List GRE tunnels Lists GRE tunnels associated with an account. GET /client/v4/accounts/{account_id}/magic/gre_tunnels",
+    "context": "GET /client/v4/accounts/{account_id}/magic/gre_tunnels\nLists GRE tunnels associated with an account.\nRequired: account_id (path)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the response body will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-gre-tunnels-update-gre-tunnel",
+    "name": "Update GRE Tunnel",
+    "description": "Update GRE Tunnel Updates a specific GRE tunnel. PUT /client/v4/accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}\nUpdates a specific GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: gre_tunnel_id (path); account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  },
+  {
+    "id": "magic-gre-tunnels-update-multiple-gre-tunnels",
+    "name": "Update multiple GRE tunnels",
+    "description": "Update multiple GRE tunnels Updates multiple GRE tunnels. PUT /client/v4/accounts/{account_id}/magic/gre_tunnels",
+    "context": "PUT /client/v4/accounts/{account_id}/magic/gre_tunnels\nUpdates multiple GRE tunnels. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.\nRequired: account_id (path); body (body)\nOptional: x-magic-new-hc-target (header) — If true, the health check target in the request and response bodies will be presented using the new object format. Defaults to false."
+  }
+]

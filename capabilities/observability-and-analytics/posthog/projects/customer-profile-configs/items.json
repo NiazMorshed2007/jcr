@@ -1,0 +1,38 @@
+[
+  {
+    "id": "customer_profile_configs_create",
+    "name": "customer_profile_configs_create",
+    "description": "customer_profile_configs_create POST /api/projects/{project_id}/customer_profile_configs/",
+    "context": "POST /api/projects/{project_id}/customer_profile_configs/\ncustomer_profile_configs_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "customer_profile_configs_destroy",
+    "name": "customer_profile_configs_destroy",
+    "description": "customer_profile_configs_destroy DELETE /api/projects/{project_id}/customer_profile_configs/{id}/",
+    "context": "DELETE /api/projects/{project_id}/customer_profile_configs/{id}/\ncustomer_profile_configs_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_profile_configs_list",
+    "name": "customer_profile_configs_list",
+    "description": "customer_profile_configs_list GET /api/projects/{project_id}/customer_profile_configs/",
+    "context": "GET /api/projects/{project_id}/customer_profile_configs/\ncustomer_profile_configs_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "customer_profile_configs_partial_update",
+    "name": "customer_profile_configs_partial_update",
+    "description": "customer_profile_configs_partial_update PATCH /api/projects/{project_id}/customer_profile_configs/{id}/",
+    "context": "PATCH /api/projects/{project_id}/customer_profile_configs/{id}/\ncustomer_profile_configs_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "customer_profile_configs_retrieve",
+    "name": "customer_profile_configs_retrieve",
+    "description": "customer_profile_configs_retrieve GET /api/projects/{project_id}/customer_profile_configs/{id}/",
+    "context": "GET /api/projects/{project_id}/customer_profile_configs/{id}/\ncustomer_profile_configs_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_profile_configs_update",
+    "name": "customer_profile_configs_update",
+    "description": "customer_profile_configs_update PUT /api/projects/{project_id}/customer_profile_configs/{id}/",
+    "context": "PUT /api/projects/{project_id}/customer_profile_configs/{id}/\ncustomer_profile_configs_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

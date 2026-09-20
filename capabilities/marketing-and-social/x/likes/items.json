@@ -1,0 +1,20 @@
+[
+  {
+    "id": "streamLikesCompliance",
+    "name": "Stream Likes compliance data",
+    "description": "Stream Likes compliance data Streams all compliance data related to Likes for Users. GET /2/likes/compliance/stream",
+    "context": "GET /2/likes/compliance/stream\nStreams all compliance data related to Likes for Users.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Likes Compliance events will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the Likes Compliance events will be provided."
+  },
+  {
+    "id": "streamLikesFirehose",
+    "name": "Stream all Likes",
+    "description": "Stream all Likes Streams all public Likes in real-time. GET /2/likes/firehose/stream",
+    "context": "GET /2/likes/firehose/stream\nStreams all public Likes in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Likes will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided.; like_with_tweet_author.fields (query) — A comma separated list of LikeWithTweetAuthor fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; user.fields (query) — A comma separated list of User fields to display.; tweet.fields (query) — A comma separated list of Tweet fields to display."
+  },
+  {
+    "id": "streamLikesSample10",
+    "name": "Stream sampled Likes",
+    "description": "Stream sampled Likes Streams a 10% sample of public Likes in real-time. GET /2/likes/sample10/stream",
+    "context": "GET /2/likes/sample10/stream\nStreams a 10% sample of public Likes in real-time.\nRequired: partition (query) — The partition number.\nOptional: backfill_minutes (query) — The number of minutes of backfill requested.; start_time (query) — YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Likes will be provided.; end_time (query) — YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Posts will be provided.; like_with_tweet_author.fields (query) — A comma separated list of LikeWithTweetAuthor fields to display.; expansions (query) — A comma separated list of fields to expand.; media.fields (query) — A comma separated list of Media fields to display.; user.fields (query) — A comma separated list of User fields to display.; tweet.fields (query) — A comma separated list of Tweet fields to display."
+  }
+]

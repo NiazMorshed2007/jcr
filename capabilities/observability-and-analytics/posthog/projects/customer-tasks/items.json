@@ -1,0 +1,50 @@
+[
+  {
+    "id": "customer_tasks_archive_create",
+    "name": "customer_tasks_archive_create",
+    "description": "customer_tasks_archive_create POST /api/projects/{project_id}/customer_tasks/{id}/archive/",
+    "context": "POST /api/projects/{project_id}/customer_tasks/{id}/archive/\ncustomer_tasks_archive_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_tasks_create",
+    "name": "customer_tasks_create",
+    "description": "customer_tasks_create POST /api/projects/{project_id}/customer_tasks/",
+    "context": "POST /api/projects/{project_id}/customer_tasks/\ncustomer_tasks_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "customer_tasks_list",
+    "name": "customer_tasks_list",
+    "description": "customer_tasks_list GET /api/projects/{project_id}/customer_tasks/",
+    "context": "GET /api/projects/{project_id}/customer_tasks/\ncustomer_tasks_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: account_id (query) — Filter by account UUID.; archive_state (query) — Which archive state to include. * `active` - active * `archived` - archived * `all` - all; assigned_to (query) — Filter by me, unassigned, or one user ID.; due_after (query) — Inclusive lower deadline bound.; due_before (query) — Exclusive upper deadline bound.; has_due_at (query) — Filter tasks by whether a deadline exists.; limit (query) — Page size, from 1 to 100.; offset (query) — Number of rows to skip.; ordering (query) — Sort by task name, status, assignee, deadline, last update, account, or creation time. Prefix with - for descending order. * `name` - name * `-name` - -name * `status` - status * `-status` - -status * `assigned_to` - assigned_to * `-assigned_to` - -assigned_to * `due_at` - due_at * `-due_at` - -due_at * `updated_at` - updated_at * `-updated_at` - -updated_at * `account` - account * `-account` - -account * `created_at` - created_at * `-created_at` - -created_at; search (query) — Search task name and description.; statuses (query) — Comma-separated task statuses."
+  },
+  {
+    "id": "customer_tasks_partial_update",
+    "name": "customer_tasks_partial_update",
+    "description": "customer_tasks_partial_update PATCH /api/projects/{project_id}/customer_tasks/{id}/",
+    "context": "PATCH /api/projects/{project_id}/customer_tasks/{id}/\ncustomer_tasks_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "customer_tasks_restore_create",
+    "name": "customer_tasks_restore_create",
+    "description": "customer_tasks_restore_create POST /api/projects/{project_id}/customer_tasks/{id}/restore/",
+    "context": "POST /api/projects/{project_id}/customer_tasks/{id}/restore/\ncustomer_tasks_restore_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_tasks_retrieve",
+    "name": "customer_tasks_retrieve",
+    "description": "customer_tasks_retrieve GET /api/projects/{project_id}/customer_tasks/{id}/",
+    "context": "GET /api/projects/{project_id}/customer_tasks/{id}/\ncustomer_tasks_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "customer_tasks_update",
+    "name": "customer_tasks_update",
+    "description": "customer_tasks_update PUT /api/projects/{project_id}/customer_tasks/{id}/",
+    "context": "PUT /api/projects/{project_id}/customer_tasks/{id}/\ncustomer_tasks_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "customerTasksActivitiesList",
+    "name": "customerTasksActivitiesList",
+    "description": "customerTasksActivitiesList GET /api/projects/{project_id}/customer_tasks/{id}/activities/",
+    "context": "GET /api/projects/{project_id}/customer_tasks/{id}/activities/\ncustomerTasksActivitiesList\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Page size, from 1 to 100.; offset (query) — Number of rows to skip."
+  }
+]

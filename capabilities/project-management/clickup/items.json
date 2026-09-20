@@ -1,0 +1,38 @@
+[
+  {
+    "id": "DeleteKeyResult",
+    "name": "Delete Key Result",
+    "description": "Delete Key Result Delete a target from a Goal. DELETE /api/v2/key_result/{key_result_id}",
+    "context": "DELETE /api/v2/key_result/{key_result_id}\nDelete a target from a Goal.\nRequired: key_result_id (path) — 8480-49bc-8c57-e569747efe93 (uuid)"
+  },
+  {
+    "id": "EditKeyResult",
+    "name": "Edit Key Result",
+    "description": "Edit Key Result Update a Target. PUT /api/v2/key_result/{key_result_id}",
+    "context": "PUT /api/v2/key_result/{key_result_id}\nUpdate a Target.\nRequired: key_result_id (path) — 8480-49bc-8c57-e569747efe93 (uuid); body (body) — All properties available in the Create Key Result endpoint may also be used along with the additional properties below."
+  },
+  {
+    "id": "DeleteWebhook",
+    "name": "Delete Webhook",
+    "description": "Delete Webhook Delete a webhook to stop monitoring the events and locations of the webhook. DELETE /api/v2/webhook/{webhook_id}",
+    "context": "DELETE /api/v2/webhook/{webhook_id}\nDelete a webhook to stop monitoring the events and locations of the webhook.\nRequired: webhook_id (path) — e506-4a29-9d42-26e504e3435e (uuid)"
+  },
+  {
+    "id": "UpdateWebhook",
+    "name": "Update Webhook",
+    "description": "Update Webhook Update a webhook to change the events to be monitored. PUT /api/v2/webhook/{webhook_id}",
+    "context": "PUT /api/v2/webhook/{webhook_id}\nUpdate a webhook to change the events to be monitored.\nRequired: webhook_id (path) — e506-4a29-9d42-26e504e3435e (uuid); body (body) — To subscribe to specific events, pass an array of `events` that you want to subscribe to, or use the wildcard character `\"*\"` to subscribe to everything.\\ \\ If you don't specify any events, all events will be sent to the webhook."
+  },
+  {
+    "id": "GetAccessToken",
+    "name": "Get Access Token",
+    "description": "Get Access Token These are the routes for authing the API and going through the [OAuth flow](doc:authentication).\\ \\ Applications utilizing a personal API token don't use this endpoint.\\ \\ ***Note:** OAuth tokens are not supported when using the [**Try It** feature](doc:trytheapi) of our Reference docs. POST /api/v2/o…",
+    "context": "POST /api/v2/oauth/token\nThese are the routes for authing the API and going through the [OAuth flow](doc:authentication).\\ \\ Applications utilizing a personal API token don't use this endpoint.\\ \\ ***Note:** OAuth tokens are not supported when using the [**Try It** feature](doc:trytheapi) of our Reference docs. You can't try this endpoint from your web browser.*\nRequired: body (body)"
+  },
+  {
+    "id": "GetAuthorizedUser",
+    "name": "Get Authorized User",
+    "description": "Get Authorized User View the details of the authenticated user's ClickUp account. GET /api/v2/user",
+    "context": "GET /api/v2/user\nView the details of the authenticated user's ClickUp account."
+  }
+]

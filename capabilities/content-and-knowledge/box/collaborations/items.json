@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_collaborations_id",
+    "name": "Remove collaboration",
+    "description": "Remove collaboration Deletes a single collaboration. DELETE /2.0/collaborations/{collaboration_id}",
+    "context": "DELETE /2.0/collaborations/{collaboration_id}\nDeletes a single collaboration.\nRequired: collaboration_id (path) — The ID of the collaboration."
+  },
+  {
+    "id": "get_collaborations",
+    "name": "List pending collaborations",
+    "description": "List pending collaborations Retrieves all pending collaboration invites for this user. GET /2.0/collaborations",
+    "context": "GET /2.0/collaborations\nRetrieves all pending collaboration invites for this user.\nRequired: status (query) — The status of the collaborations to retrieve.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_collaborations_id",
+    "name": "Get collaboration",
+    "description": "Get collaboration Retrieves a single collaboration. GET /2.0/collaborations/{collaboration_id}",
+    "context": "GET /2.0/collaborations/{collaboration_id}\nRetrieves a single collaboration.\nRequired: collaboration_id (path) — The ID of the collaboration.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "post_collaborations",
+    "name": "Create collaboration",
+    "description": "Create collaboration Adds a collaboration for a single user or a single group to a file or folder. POST /2.0/collaborations",
+    "context": "POST /2.0/collaborations\nAdds a collaboration for a single user or a single group to a file or folder. Collaborations can be created using email address, user IDs, or a group IDs. If a collaboration is being created with a group, access to this endpoint is dependent on the group's ability to be invited. If collaboration is in `pending` status, field `name` is redacted when: - a collaboration was created using `user_id`, - a collaboration was created using `login`.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; notify (query) — Determines if users should receive email notification for the action performed.; body (body)"
+  },
+  {
+    "id": "put_collaborations_id",
+    "name": "Update collaboration",
+    "description": "Update collaboration Updates a collaboration. PUT /2.0/collaborations/{collaboration_id}",
+    "context": "PUT /2.0/collaborations/{collaboration_id}\nUpdates a collaboration. Can be used to change the owner of an item, or to accept collaboration invites. In case of accepting collaboration invite, role is not required.\nRequired: collaboration_id (path) — The ID of the collaboration.\nOptional: body (body)"
+  }
+]

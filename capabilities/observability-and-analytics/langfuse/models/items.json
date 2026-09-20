@@ -1,0 +1,32 @@
+[
+  {
+    "id": "models_create",
+    "name": "Create a model",
+    "description": "Create a model POST /api/public/models",
+    "context": "POST /api/public/models\nCreate a model\nRequired: body (body)"
+  },
+  {
+    "id": "models_delete",
+    "name": "Delete a model",
+    "description": "Delete a model Delete a model. DELETE /api/public/models/{id}",
+    "context": "DELETE /api/public/models/{id}\nDelete a model. Cannot delete models managed by Langfuse. You can create your own definition with the same modelName to override the definition though.\nRequired: id (path)"
+  },
+  {
+    "id": "models_get",
+    "name": "Get a model",
+    "description": "Get a model GET /api/public/models/{id}",
+    "context": "GET /api/public/models/{id}\nGet a model\nRequired: id (path)"
+  },
+  {
+    "id": "models_list",
+    "name": "Get all models",
+    "description": "Get all models GET /api/public/models",
+    "context": "GET /api/public/models\nGet all models\nOptional: page (query) — page number, starts at 1; limit (query) — limit of items per page"
+  },
+  {
+    "id": "models_upsert",
+    "name": "Create or replace a project-owned model using its id",
+    "description": "Create or replace a project-owned model using its id Create or replace a project-owned model using its id. PUT /api/public/models/{id}",
+    "context": "PUT /api/public/models/{id}\nCreate or replace a project-owned model using its id. Built-in models cannot be modified.\nRequired: id (path); body (body)"
+  }
+]

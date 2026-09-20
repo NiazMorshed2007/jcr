@@ -1,0 +1,32 @@
+[
+  {
+    "id": "warehouse_saved_query_folders_create",
+    "name": "warehouse_saved_query_folders_create",
+    "description": "warehouse_saved_query_folders_create POST /api/projects/{project_id}/warehouse_saved_query_folders/",
+    "context": "POST /api/projects/{project_id}/warehouse_saved_query_folders/\nwarehouse_saved_query_folders_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "warehouse_saved_query_folders_destroy",
+    "name": "warehouse_saved_query_folders_destroy",
+    "description": "warehouse_saved_query_folders_destroy DELETE /api/projects/{project_id}/warehouse_saved_query_folders/{id}/",
+    "context": "DELETE /api/projects/{project_id}/warehouse_saved_query_folders/{id}/\nwarehouse_saved_query_folders_destroy\nRequired: id (path) — A UUID string identifying this data warehouse saved query folder.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_query_folders_list",
+    "name": "warehouse_saved_query_folders_list",
+    "description": "warehouse_saved_query_folders_list GET /api/projects/{project_id}/warehouse_saved_query_folders/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_query_folders/\nwarehouse_saved_query_folders_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "warehouse_saved_query_folders_partial_update",
+    "name": "warehouse_saved_query_folders_partial_update",
+    "description": "warehouse_saved_query_folders_partial_update PATCH /api/projects/{project_id}/warehouse_saved_query_folders/{id}/",
+    "context": "PATCH /api/projects/{project_id}/warehouse_saved_query_folders/{id}/\nwarehouse_saved_query_folders_partial_update\nRequired: id (path) — A UUID string identifying this data warehouse saved query folder.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "warehouse_saved_query_folders_retrieve",
+    "name": "warehouse_saved_query_folders_retrieve",
+    "description": "warehouse_saved_query_folders_retrieve GET /api/projects/{project_id}/warehouse_saved_query_folders/{id}/",
+    "context": "GET /api/projects/{project_id}/warehouse_saved_query_folders/{id}/\nwarehouse_saved_query_folders_retrieve\nRequired: id (path) — A UUID string identifying this data warehouse saved query folder.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

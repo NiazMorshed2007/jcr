@@ -1,0 +1,68 @@
+[
+  {
+    "id": "lists-create-a-list",
+    "name": "Create a list",
+    "description": "Create a list Creates a new list of the specified kind. POST /client/v4/accounts/{account_id}/rules/lists",
+    "context": "POST /client/v4/accounts/{account_id}/rules/lists\nCreates a new list of the specified kind.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "lists-create-list-items",
+    "name": "Create list items",
+    "description": "Create list items Appends new items to the list. POST /client/v4/accounts/{account_id}/rules/lists/{list_id}/items",
+    "context": "POST /client/v4/accounts/{account_id}/rules/lists/{list_id}/items\nAppends new items to the list. This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`. There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.\nRequired: list_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "lists-delete-a-list",
+    "name": "Delete a list",
+    "description": "Delete a list Deletes a specific list and all its items. DELETE /client/v4/accounts/{account_id}/rules/lists/{list_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/rules/lists/{list_id}\nDeletes a specific list and all its items.\nRequired: list_id (path); account_id (path)"
+  },
+  {
+    "id": "lists-delete-list-items",
+    "name": "Delete list items",
+    "description": "Delete list items Removes one or more items from a list. DELETE /client/v4/accounts/{account_id}/rules/lists/{list_id}/items",
+    "context": "DELETE /client/v4/accounts/{account_id}/rules/lists/{list_id}/items\nRemoves one or more items from a list. This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`. There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.\nRequired: list_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "lists-get-a-list",
+    "name": "Get a list",
+    "description": "Get a list Fetches the details of a list. GET /client/v4/accounts/{account_id}/rules/lists/{list_id}",
+    "context": "GET /client/v4/accounts/{account_id}/rules/lists/{list_id}\nFetches the details of a list.\nRequired: list_id (path); account_id (path)"
+  },
+  {
+    "id": "lists-get-a-list-item",
+    "name": "Get a list item",
+    "description": "Get a list item Fetches a list item in the list. GET /client/v4/accounts/{account_id}/rules/lists/{list_id}/items/{item_id}",
+    "context": "GET /client/v4/accounts/{account_id}/rules/lists/{list_id}/items/{item_id}\nFetches a list item in the list.\nRequired: item_id (path); list_id (path); account_id (path)"
+  },
+  {
+    "id": "lists-get-bulk-operation-status",
+    "name": "Get bulk operation status",
+    "description": "Get bulk operation status Gets the current status of an asynchronous operation on a list. GET /client/v4/accounts/{account_id}/rules/lists/bulk_operations/{operation_id}",
+    "context": "GET /client/v4/accounts/{account_id}/rules/lists/bulk_operations/{operation_id}\nGets the current status of an asynchronous operation on a list. The `status` property can have one of the following values: `pending`, `running`, `completed`, or `failed`. If the status is `failed`, the `error` property will contain a message describing the error.\nRequired: operation_id (path); account_id (path)"
+  },
+  {
+    "id": "lists-get-list-items",
+    "name": "Get list items",
+    "description": "Get list items Fetches all the items in the list. GET /client/v4/accounts/{account_id}/rules/lists/{list_id}/items",
+    "context": "GET /client/v4/accounts/{account_id}/rules/lists/{list_id}/items\nFetches all the items in the list.\nRequired: list_id (path); account_id (path)\nOptional: cursor (query); per_page (query); search (query)"
+  },
+  {
+    "id": "lists-get-lists",
+    "name": "Get lists",
+    "description": "Get lists Fetches all lists in the account. GET /client/v4/accounts/{account_id}/rules/lists",
+    "context": "GET /client/v4/accounts/{account_id}/rules/lists\nFetches all lists in the account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "lists-update-a-list",
+    "name": "Update a list",
+    "description": "Update a list Updates the description of a list. PUT /client/v4/accounts/{account_id}/rules/lists/{list_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/rules/lists/{list_id}\nUpdates the description of a list.\nRequired: list_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "lists-update-all-list-items",
+    "name": "Update all list items",
+    "description": "Update all list items Removes all existing items from the list and adds the provided items to the list. PUT /client/v4/accounts/{account_id}/rules/lists/{list_id}/items",
+    "context": "PUT /client/v4/accounts/{account_id}/rules/lists/{list_id}/items\nRemoves all existing items from the list and adds the provided items to the list. This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`. There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.\nRequired: list_id (path); account_id (path); body (body)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "CreateThreadedComment",
+    "name": "Create Threaded Comment",
+    "description": "Create Threaded Comment Create a threaded comment. POST /api/v2/comment/{comment_id}/reply",
+    "context": "POST /api/v2/comment/{comment_id}/reply\nCreate a threaded comment.\nRequired: comment_id (path); body (body)"
+  },
+  {
+    "id": "DeleteComment",
+    "name": "Delete Comment",
+    "description": "Delete Comment Delete a task comment. DELETE /api/v2/comment/{comment_id}",
+    "context": "DELETE /api/v2/comment/{comment_id}\nDelete a task comment.\nRequired: comment_id (path)"
+  },
+  {
+    "id": "GetThreadedComments",
+    "name": "Get Threaded Comments",
+    "description": "Get Threaded Comments View threaded comments. GET /api/v2/comment/{comment_id}/reply",
+    "context": "GET /api/v2/comment/{comment_id}/reply\nView threaded comments. The parent comment is not included in the response.\nRequired: comment_id (path)"
+  },
+  {
+    "id": "UpdateComment",
+    "name": "Update Comment",
+    "description": "Update Comment Replace the content of a task commment, assign a comment, and mark a comment as resolved. PUT /api/v2/comment/{comment_id}",
+    "context": "PUT /api/v2/comment/{comment_id}\nReplace the content of a task commment, assign a comment, and mark a comment as resolved.\nRequired: comment_id (path); body (body)"
+  }
+]

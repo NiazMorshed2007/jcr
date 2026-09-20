@@ -1,0 +1,38 @@
+[
+  {
+    "id": "early_access_feature_create",
+    "name": "early_access_feature_create",
+    "description": "early_access_feature_create POST /api/projects/{project_id}/early_access_feature/",
+    "context": "POST /api/projects/{project_id}/early_access_feature/\nearly_access_feature_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "early_access_feature_destroy",
+    "name": "early_access_feature_destroy",
+    "description": "early_access_feature_destroy DELETE /api/projects/{project_id}/early_access_feature/{id}/",
+    "context": "DELETE /api/projects/{project_id}/early_access_feature/{id}/\nearly_access_feature_destroy\nRequired: id (path) — A UUID string identifying this early access feature.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "early_access_feature_list",
+    "name": "early_access_feature_list",
+    "description": "early_access_feature_list GET /api/projects/{project_id}/early_access_feature/",
+    "context": "GET /api/projects/{project_id}/early_access_feature/\nearly_access_feature_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "early_access_feature_partial_update",
+    "name": "early_access_feature_partial_update",
+    "description": "early_access_feature_partial_update PATCH /api/projects/{project_id}/early_access_feature/{id}/",
+    "context": "PATCH /api/projects/{project_id}/early_access_feature/{id}/\nearly_access_feature_partial_update\nRequired: id (path) — A UUID string identifying this early access feature.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "early_access_feature_retrieve",
+    "name": "early_access_feature_retrieve",
+    "description": "early_access_feature_retrieve GET /api/projects/{project_id}/early_access_feature/{id}/",
+    "context": "GET /api/projects/{project_id}/early_access_feature/{id}/\nearly_access_feature_retrieve\nRequired: id (path) — A UUID string identifying this early access feature.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "early_access_feature_update",
+    "name": "early_access_feature_update",
+    "description": "early_access_feature_update PUT /api/projects/{project_id}/early_access_feature/{id}/",
+    "context": "PUT /api/projects/{project_id}/early_access_feature/{id}/\nearly_access_feature_update\nRequired: id (path) — A UUID string identifying this early access feature.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

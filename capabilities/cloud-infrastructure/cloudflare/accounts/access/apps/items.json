@@ -1,0 +1,116 @@
+[
+  {
+    "id": "access-applications-add-an-application",
+    "name": "Add an Access application",
+    "description": "Add an Access application Adds a new application to Access. POST /client/v4/accounts/{account_id}/access/apps",
+    "context": "POST /client/v4/accounts/{account_id}/access/apps\nAdds a new application to Access.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-applications-delete-an-access-application",
+    "name": "Delete an Access application",
+    "description": "Delete an Access application Deletes an application from Access. DELETE /client/v4/accounts/{account_id}/access/apps/{app_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/apps/{app_id}\nDeletes an application from Access.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-applications-get-an-access-application",
+    "name": "Get an Access application",
+    "description": "Get an Access application Fetches information about an Access application. GET /client/v4/accounts/{account_id}/access/apps/{app_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps/{app_id}\nFetches information about an Access application.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-applications-list-access-applications",
+    "name": "List Access applications",
+    "description": "List Access applications Lists all Access applications in an account. GET /client/v4/accounts/{account_id}/access/apps",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps\nLists all Access applications in an account.\nRequired: account_id (path)\nOptional: name (query); domain (query); aud (query); target_attributes (query); exact (query); search (query); page (query); per_page (query)"
+  },
+  {
+    "id": "access-applications-patch-update-access-application-settings",
+    "name": "Update Access application settings",
+    "description": "Update Access application settings Updates Access application settings. PATCH /client/v4/accounts/{account_id}/access/apps/{app_id}/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/access/apps/{app_id}/settings\nUpdates Access application settings.\nRequired: app_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "access-applications-put-update-access-application-settings",
+    "name": "Update Access application settings",
+    "description": "Update Access application settings Updates Access application settings. PUT /client/v4/accounts/{account_id}/access/apps/{app_id}/settings",
+    "context": "PUT /client/v4/accounts/{account_id}/access/apps/{app_id}/settings\nUpdates Access application settings.\nRequired: app_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "access-applications-revoke-service-tokens",
+    "name": "Revoke application tokens",
+    "description": "Revoke application tokens Revokes all tokens issued for an application. POST /client/v4/accounts/{account_id}/access/apps/{app_id}/revoke_tokens",
+    "context": "POST /client/v4/accounts/{account_id}/access/apps/{app_id}/revoke_tokens\nRevokes all tokens issued for an application.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-applications-test-access-policies",
+    "name": "Test Access policies",
+    "description": "Test Access policies Tests if a specific user has permission to access an application. GET /client/v4/accounts/{account_id}/access/apps/{app_id}/user_policy_checks",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps/{app_id}/user_policy_checks\nTests if a specific user has permission to access an application.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-applications-update-an-access-application",
+    "name": "Update an Access application",
+    "description": "Update an Access application Updates an Access application. PUT /client/v4/accounts/{account_id}/access/apps/{app_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/apps/{app_id}\nUpdates an Access application.\nRequired: app_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "access-policies-convert-reusable",
+    "name": "Convert an Access application policy to a reusable policy",
+    "description": "Convert an Access application policy to a reusable policy Converts an application-scoped policy to a reusable policy. PUT /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}/make_reusable",
+    "context": "PUT /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}/make_reusable\nConverts an application-scoped policy to a reusable policy. The policy will no longer be exclusively scoped to the application. Further updates to the policy should go through the /accounts/{account_id}/policies/{uid} endpoint.\nRequired: app_id (path) — The application ID.; policy_id (path) — The policy ID.; account_id (path)"
+  },
+  {
+    "id": "access-policies-create-an-access-policy",
+    "name": "Create an Access application policy",
+    "description": "Create an Access application policy Creates a policy applying exclusive to a single application that defines the users or groups who can reach it. POST /client/v4/accounts/{account_id}/access/apps/{app_id}/policies",
+    "context": "POST /client/v4/accounts/{account_id}/access/apps/{app_id}/policies\nCreates a policy applying exclusive to a single application that defines the users or groups who can reach it. We recommend creating a reusable policy instead and subsequently referencing its ID in the application's 'policies' array.\nRequired: app_id (path) — The application ID.; account_id (path); body (body)"
+  },
+  {
+    "id": "access-policies-delete-an-access-policy",
+    "name": "Delete an Access application policy",
+    "description": "Delete an Access application policy Deletes an Access policy specific to an application. DELETE /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}\nDeletes an Access policy specific to an application. To delete a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.\nRequired: app_id (path) — The application ID.; policy_id (path) — The policy ID.; account_id (path)"
+  },
+  {
+    "id": "access-policies-get-an-access-policy",
+    "name": "Get an Access application policy",
+    "description": "Get an Access application policy Fetches a single Access policy configured for an application. GET /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}\nFetches a single Access policy configured for an application. Returns both exclusively owned and reusable policies used by the application.\nRequired: app_id (path) — The application ID.; policy_id (path) — The policy ID.; account_id (path)"
+  },
+  {
+    "id": "access-policies-list-access-app-policies",
+    "name": "List Access application policies",
+    "description": "List Access application policies Lists Access policies configured for an application. GET /client/v4/accounts/{account_id}/access/apps/{app_id}/policies",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps/{app_id}/policies\nLists Access policies configured for an application. Returns both exclusively scoped and reusable policies used by the application.\nRequired: app_id (path) — The application ID.; account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "access-policies-update-an-access-policy",
+    "name": "Update an Access application policy",
+    "description": "Update an Access application policy Updates an Access policy specific to an application. PUT /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/apps/{app_id}/policies/{policy_id}\nUpdates an Access policy specific to an application. To update a reusable policy, use the /accounts/{account_id}/policies/{uid} endpoint.\nRequired: app_id (path) — The application ID.; policy_id (path) — The policy ID.; account_id (path); body (body)"
+  },
+  {
+    "id": "access-short-lived-certificate-c-as-create-a-short-lived-certificate-ca",
+    "name": "Create a short-lived certificate CA",
+    "description": "Create a short-lived certificate CA Generates a new short-lived certificate CA and public key. POST /client/v4/accounts/{account_id}/access/apps/{app_id}/ca",
+    "context": "POST /client/v4/accounts/{account_id}/access/apps/{app_id}/ca\nGenerates a new short-lived certificate CA and public key.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-short-lived-certificate-c-as-delete-a-short-lived-certificate-ca",
+    "name": "Delete a short-lived certificate CA",
+    "description": "Delete a short-lived certificate CA Deletes a short-lived certificate CA. DELETE /client/v4/accounts/{account_id}/access/apps/{app_id}/ca",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/apps/{app_id}/ca\nDeletes a short-lived certificate CA.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-short-lived-certificate-c-as-get-a-short-lived-certificate-ca",
+    "name": "Get a short-lived certificate CA",
+    "description": "Get a short-lived certificate CA Fetches a short-lived certificate CA and its public key. GET /client/v4/accounts/{account_id}/access/apps/{app_id}/ca",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps/{app_id}/ca\nFetches a short-lived certificate CA and its public key.\nRequired: app_id (path); account_id (path)"
+  },
+  {
+    "id": "access-short-lived-certificate-c-as-list-short-lived-certificate-c-as",
+    "name": "List short-lived certificate CAs",
+    "description": "List short-lived certificate CAs Lists short-lived certificate CAs and their public keys. GET /client/v4/accounts/{account_id}/access/apps/ca",
+    "context": "GET /client/v4/accounts/{account_id}/access/apps/ca\nLists short-lived certificate CAs and their public keys.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  }
+]

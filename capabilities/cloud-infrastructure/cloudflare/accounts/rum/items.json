@@ -1,0 +1,80 @@
+[
+  {
+    "id": "web-analytics-create-rule",
+    "name": "Create a Web Analytics rule",
+    "description": "Create a Web Analytics rule Creates a new rule in a Web Analytics ruleset. POST /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rule",
+    "context": "POST /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rule\nCreates a new rule in a Web Analytics ruleset.\nRequired: account_id (path); ruleset_id (path); body (body)"
+  },
+  {
+    "id": "web-analytics-create-site",
+    "name": "Create a Web Analytics site",
+    "description": "Create a Web Analytics site Creates a new Web Analytics site. POST /client/v4/accounts/{account_id}/rum/site_info",
+    "context": "POST /client/v4/accounts/{account_id}/rum/site_info\nCreates a new Web Analytics site.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "web-analytics-delete-rule",
+    "name": "Delete a Web Analytics rule",
+    "description": "Delete a Web Analytics rule Deletes an existing rule from a Web Analytics ruleset. DELETE /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}\nDeletes an existing rule from a Web Analytics ruleset.\nRequired: account_id (path); ruleset_id (path); rule_id (path)"
+  },
+  {
+    "id": "web-analytics-delete-site",
+    "name": "Delete a Web Analytics site",
+    "description": "Delete a Web Analytics site Deletes an existing Web Analytics site. DELETE /client/v4/accounts/{account_id}/rum/site_info/{site_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/rum/site_info/{site_id}\nDeletes an existing Web Analytics site.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "web-analytics-get-site",
+    "name": "Get a Web Analytics site",
+    "description": "Get a Web Analytics site Retrieves a Web Analytics site. GET /client/v4/accounts/{account_id}/rum/site_info/{site_id}",
+    "context": "GET /client/v4/accounts/{account_id}/rum/site_info/{site_id}\nRetrieves a Web Analytics site.\nRequired: account_id (path); site_id (path)"
+  },
+  {
+    "id": "web-analytics-list-rules",
+    "name": "List rules in Web Analytics ruleset",
+    "description": "List rules in Web Analytics ruleset Lists all the rules in a Web Analytics ruleset. GET /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rules",
+    "context": "GET /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rules\nLists all the rules in a Web Analytics ruleset.\nRequired: account_id (path); ruleset_id (path)"
+  },
+  {
+    "id": "web-analytics-list-site-tags",
+    "name": "List Web Analytics site tags",
+    "description": "List Web Analytics site tags Returns all site tags for an account as an array of site tag strings. GET /client/v4/accounts/{account_id}/rum/site_info/site_tag/list",
+    "context": "GET /client/v4/accounts/{account_id}/rum/site_info/site_tag/list\nReturns all site tags for an account as an array of site tag strings. This endpoint returns all results without pagination.\nRequired: account_id (path)\nOptional: all (query) — When true, includes sites that are disabled or paused."
+  },
+  {
+    "id": "web-analytics-list-sites",
+    "name": "List Web Analytics sites",
+    "description": "List Web Analytics sites Lists all Web Analytics sites of an account. GET /client/v4/accounts/{account_id}/rum/site_info/list",
+    "context": "GET /client/v4/accounts/{account_id}/rum/site_info/list\nLists all Web Analytics sites of an account.\nRequired: account_id (path)\nOptional: per_page (query); page (query); order_by (query)"
+  },
+  {
+    "id": "web-analytics-list-zone-tags",
+    "name": "List Web Analytics zone tags",
+    "description": "List Web Analytics zone tags Returns all zone tags associated with Web Analytics sites for an account. GET /client/v4/accounts/{account_id}/rum/site_info/zone_tag/list",
+    "context": "GET /client/v4/accounts/{account_id}/rum/site_info/zone_tag/list\nReturns all zone tags associated with Web Analytics sites for an account. These can be used to filter or exclude zones in the zone selection input. This endpoint returns all results without pagination.\nRequired: account_id (path)"
+  },
+  {
+    "id": "web-analytics-modify-rules",
+    "name": "Update Web Analytics rules",
+    "description": "Update Web Analytics rules Modifies one or more rules in a Web Analytics ruleset with a single request. POST /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rules",
+    "context": "POST /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rules\nModifies one or more rules in a Web Analytics ruleset with a single request.\nRequired: account_id (path); ruleset_id (path); body (body)"
+  },
+  {
+    "id": "web-analytics-update-rule",
+    "name": "Update a Web Analytics rule",
+    "description": "Update a Web Analytics rule Updates a rule in a Web Analytics ruleset. PUT /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}\nUpdates a rule in a Web Analytics ruleset.\nRequired: account_id (path); ruleset_id (path); rule_id (path); body (body)"
+  },
+  {
+    "id": "web-analytics-update-site",
+    "name": "Update a Web Analytics site",
+    "description": "Update a Web Analytics site Updates an existing Web Analytics site. PUT /client/v4/accounts/{account_id}/rum/site_info/{site_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/rum/site_info/{site_id}\nUpdates an existing Web Analytics site.\nRequired: account_id (path); site_id (path); body (body)"
+  },
+  {
+    "id": "web-analytics-validate-site-hostname",
+    "name": "Validate a Web Analytics site hostname",
+    "description": "Validate a Web Analytics site hostname Validates that the provided hostname is well-formed, does not contain wildcards, and has a valid TLD. GET /client/v4/accounts/{account_id}/rum/site_info/validate/{hostname}",
+    "context": "GET /client/v4/accounts/{account_id}/rum/site_info/validate/{hostname}\nValidates that the provided hostname is well-formed, does not contain wildcards, and has a valid TLD. Returns an empty result on success.\nRequired: account_id (path); hostname (path) — The hostname to validate (e.g. example.com). The `pattern` below validates the hostname's structure (label syntax) only. In addition, the hostname must end in a valid public suffix (TLD). For the list of valid suffixes and how it is used, see the Public Suffix List: https://wiki.mozilla.org/Public_Suffix_List/Use_Cases"
+  }
+]

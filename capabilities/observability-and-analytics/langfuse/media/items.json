@@ -1,0 +1,20 @@
+[
+  {
+    "id": "media_get",
+    "name": "Get a media record",
+    "description": "Get a media record GET /api/public/media/{mediaId}",
+    "context": "GET /api/public/media/{mediaId}\nGet a media record\nRequired: mediaId (path) — The unique langfuse identifier of a media record"
+  },
+  {
+    "id": "media_getUploadUrl",
+    "name": "Get a presigned upload URL for a media record",
+    "description": "Get a presigned upload URL for a media record POST /api/public/media",
+    "context": "POST /api/public/media\nGet a presigned upload URL for a media record\nRequired: body (body)"
+  },
+  {
+    "id": "media_patch",
+    "name": "Patch a media record",
+    "description": "Patch a media record PATCH /api/public/media/{mediaId}",
+    "context": "PATCH /api/public/media/{mediaId}\nPatch a media record\nRequired: mediaId (path) — The unique langfuse identifier of a media record; body (body)"
+  }
+]

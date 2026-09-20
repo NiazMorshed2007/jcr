@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createBot",
+    "name": "Create a bot",
+    "description": "Create a bot Creates a bot account in the calling app's project and returns its bearer token. POST /2/bots",
+    "context": "POST /2/bots\nCreates a bot account in the calling app's project and returns its bearer token. Idempotent on handle: repeating the request for a handle that already names one of the project's bots returns that bot with a freshly minted token, revoking the previous one — safe to retry when a response was lost, since the replaced token was never seen.\nRequired: body (body)"
+  },
+  {
+    "id": "deleteBot",
+    "name": "Delete Bot",
+    "description": "Delete Bot DELETE /2/bots/{id}",
+    "context": "DELETE /2/bots/{id}\nDelete Bot\nRequired: id (path)"
+  },
+  {
+    "id": "getBots",
+    "name": "Get Bots",
+    "description": "Get Bots GET /2/bots",
+    "context": "GET /2/bots\nGet Bots\nOptional: user.fields (query) — A comma separated list of User fields to display.; expansions (query) — A comma separated list of fields to expand.; post.fields (query) — A comma separated list of Post fields to display."
+  },
+  {
+    "id": "revokeBotToken",
+    "name": "Revoke Bot Token",
+    "description": "Revoke Bot Token DELETE /2/bots/{id}/token",
+    "context": "DELETE /2/bots/{id}/token\nRevoke Bot Token\nRequired: id (path)"
+  },
+  {
+    "id": "rotateBotToken",
+    "name": "Rotate Bot Token",
+    "description": "Rotate Bot Token POST /2/bots/{id}/token",
+    "context": "POST /2/bots/{id}/token\nRotate Bot Token\nRequired: id (path); body (body)"
+  },
+  {
+    "id": "updateBot",
+    "name": "Update Bot",
+    "description": "Update Bot PUT /2/bots/{id}",
+    "context": "PUT /2/bots/{id}\nUpdate Bot\nRequired: id (path); body (body)"
+  }
+]

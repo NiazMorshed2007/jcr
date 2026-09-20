@@ -1,0 +1,50 @@
+[
+  {
+    "id": "acceptPrivacyPolicies",
+    "name": "Accept the current privacy policies",
+    "description": "Accept the current privacy policies POST /users/privacy-policies/accept",
+    "context": "POST /users/privacy-policies/accept\nAccept the current privacy policies"
+  },
+  {
+    "id": "confirmPendingSsoLink",
+    "name": "Confirm (link) a pending SSO account link",
+    "description": "Confirm (link) a pending SSO account link POST /users/me/pending-sso-links/{id}/confirm",
+    "context": "POST /users/me/pending-sso-links/{id}/confirm\nConfirm (link) a pending SSO account link\nRequired: id (path)"
+  },
+  {
+    "id": "dismissPendingSsoLink",
+    "name": "Dismiss a pending SSO account link",
+    "description": "Dismiss a pending SSO account link DELETE /users/me/pending-sso-links/{id}",
+    "context": "DELETE /users/me/pending-sso-links/{id}\nDismiss a pending SSO account link\nRequired: id (path)"
+  },
+  {
+    "id": "getAccountProviders",
+    "name": "Get account providers",
+    "description": "Get account providers Social sign-in providers (Google, GitHub, ...) enabled for this environment, each flagged with whether the authenticated user has an identity linked through it. GET /users/account-providers",
+    "context": "GET /users/account-providers\nSocial sign-in providers (Google, GitHub, ...) enabled for this environment, each flagged with whether the authenticated user has an identity linked through it."
+  },
+  {
+    "id": "getAuthenticatedUser",
+    "name": "Get authenticated user",
+    "description": "Get authenticated user GET /users/me",
+    "context": "GET /users/me\nGet authenticated user"
+  },
+  {
+    "id": "linkAccount",
+    "name": "Link account (withdrawn)",
+    "description": "Link account (withdrawn) Withdrawn. POST /users/linked-accounts",
+    "context": "POST /users/linked-accounts\nWithdrawn. This operation is no longer supported and always responds 410.\nRequired: body (body)"
+  },
+  {
+    "id": "listPendingSsoLinks",
+    "name": "List pending SSO account links for the authenticated user",
+    "description": "List pending SSO account links for the authenticated user GET /users/me/pending-sso-links",
+    "context": "GET /users/me/pending-sso-links\nList pending SSO account links for the authenticated user"
+  },
+  {
+    "id": "recordLogin",
+    "name": "Record a completed login",
+    "description": "Record a completed login Called by the dashboard once per completed sign-in. POST /users/me/logins",
+    "context": "POST /users/me/logins\nCalled by the dashboard once per completed sign-in. The email access gate evaluates the user and reports the login to analytics; a refused user receives 403 with code EMAIL_ACCESS_DENIED."
+  }
+]

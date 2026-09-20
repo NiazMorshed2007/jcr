@@ -1,0 +1,26 @@
+[
+  {
+    "id": "orgs%2Fcreate-issue-type",
+    "name": "Create issue type for an organization",
+    "description": "Create issue type for an organization Create a new issue type for an organization. POST /orgs/{org}/issue-types",
+    "context": "POST /orgs/{org}/issue-types\nCreate a new issue type for an organization. You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "orgs%2Fdelete-issue-type",
+    "name": "Delete issue type for an organization",
+    "description": "Delete issue type for an organization Deletes an issue type for an organization. DELETE /orgs/{org}/issue-types/{issue_type_id}",
+    "context": "DELETE /orgs/{org}/issue-types/{issue_type_id}\nDeletes an issue type for an organization. You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; issue_type_id (path) — The unique identifier of the issue type."
+  },
+  {
+    "id": "orgs%2Flist-issue-types",
+    "name": "List issue types for an organization",
+    "description": "List issue types for an organization Lists all issue types for an organization. GET /orgs/{org}/issue-types",
+    "context": "GET /orgs/{org}/issue-types\nLists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "orgs%2Fupdate-issue-type",
+    "name": "Update issue type for an organization",
+    "description": "Update issue type for an organization Updates an issue type for an organization. PUT /orgs/{org}/issue-types/{issue_type_id}",
+    "context": "PUT /orgs/{org}/issue-types/{issue_type_id}\nUpdates an issue type for an organization. You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization). To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; issue_type_id (path) — The unique identifier of the issue type.; body (body)"
+  }
+]

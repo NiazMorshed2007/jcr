@@ -1,0 +1,44 @@
+[
+  {
+    "id": "v1-create-project-api-key",
+    "name": "Creates a new API key for the project",
+    "description": "Creates a new API key for the project POST /v1/projects/{ref}/api-keys",
+    "context": "POST /v1/projects/{ref}/api-keys\nCreates a new API key for the project\nRequired: ref (path) — Project ref; body (body)\nOptional: reveal (query) — Boolean string. Truthy values: `true`, `1`, `yes`, `on`, `y`, `enabled` Falsy values: `false`, `0`, `no`, `off`, `n`, `disabled`"
+  },
+  {
+    "id": "v1-delete-project-api-key",
+    "name": "Deletes an API key for the project",
+    "description": "Deletes an API key for the project DELETE /v1/projects/{ref}/api-keys/{id}",
+    "context": "DELETE /v1/projects/{ref}/api-keys/{id}\nDeletes an API key for the project\nRequired: ref (path) — Project ref; id (path)\nOptional: reveal (query) — Boolean string, true or false; was_compromised (query) — Boolean string, true or false; reason (query)"
+  },
+  {
+    "id": "v1-get-project-api-key",
+    "name": "Get API key",
+    "description": "Get API key GET /v1/projects/{ref}/api-keys/{id}",
+    "context": "GET /v1/projects/{ref}/api-keys/{id}\nGet API key\nRequired: ref (path) — Project ref; id (path)\nOptional: reveal (query) — Boolean string. Truthy values: `true`, `1`, `yes`, `on`, `y`, `enabled` Falsy values: `false`, `0`, `no`, `off`, `n`, `disabled`"
+  },
+  {
+    "id": "v1-get-project-api-keys",
+    "name": "Get project api keys",
+    "description": "Get project api keys GET /v1/projects/{ref}/api-keys",
+    "context": "GET /v1/projects/{ref}/api-keys\nGet project api keys\nRequired: ref (path) — Project ref\nOptional: reveal (query) — Boolean string. Truthy values: `true`, `1`, `yes`, `on`, `y`, `enabled` Falsy values: `false`, `0`, `no`, `off`, `n`, `disabled`"
+  },
+  {
+    "id": "v1-get-project-legacy-api-keys",
+    "name": "Check whether JWT based legacy (anon, service_role) API keys are enabled. This API endpoint will be removed in the future, check for HTTP 404 Not Found.",
+    "description": "Check whether JWT based legacy (anon, service_role) API keys are enabled. This API endpoint will be removed in the future, check for HTTP 404 Not Found. GET /v1/projects/{ref}/api-keys/legacy",
+    "context": "GET /v1/projects/{ref}/api-keys/legacy\nCheck whether JWT based legacy (anon, service_role) API keys are enabled. This API endpoint will be removed in the future, check for HTTP 404 Not Found.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-project-api-key",
+    "name": "Updates an API key for the project",
+    "description": "Updates an API key for the project PATCH /v1/projects/{ref}/api-keys/{id}",
+    "context": "PATCH /v1/projects/{ref}/api-keys/{id}\nUpdates an API key for the project\nRequired: ref (path) — Project ref; id (path); body (body)\nOptional: reveal (query) — Boolean string. Truthy values: `true`, `1`, `yes`, `on`, `y`, `enabled` Falsy values: `false`, `0`, `no`, `off`, `n`, `disabled`"
+  },
+  {
+    "id": "v1-update-project-legacy-api-keys",
+    "name": "Disable or re-enable JWT based legacy (anon, service_role) API keys. This API endpoint will be removed in the future, check for HTTP 404 Not Found.",
+    "description": "Disable or re-enable JWT based legacy (anon, service_role) API keys. This API endpoint will be removed in the future, check for HTTP 404 Not Found. PUT /v1/projects/{ref}/api-keys/legacy",
+    "context": "PUT /v1/projects/{ref}/api-keys/legacy\nDisable or re-enable JWT based legacy (anon, service_role) API keys. This API endpoint will be removed in the future, check for HTTP 404 Not Found.\nRequired: ref (path) — Project ref; enabled (query) — Boolean string. Truthy values: `true`, `1`, `yes`, `on`, `y`, `enabled` Falsy values: `false`, `0`, `no`, `off`, `n`, `disabled`"
+  }
+]

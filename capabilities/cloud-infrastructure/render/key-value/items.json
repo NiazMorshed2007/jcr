@@ -1,0 +1,50 @@
+[
+  {
+    "id": "create-key-value",
+    "name": "Create Key Value instance",
+    "description": "Create Key Value instance Create a new Key Value instance. POST /v1/key-value",
+    "context": "POST /v1/key-value\nCreate a new Key Value instance.\nRequired: body (body)"
+  },
+  {
+    "id": "delete-key-value",
+    "name": "Delete Key Value instance",
+    "description": "Delete Key Value instance Delete a Key Value instance by ID. DELETE /v1/key-value/{redisId}",
+    "context": "DELETE /v1/key-value/{redisId}\nDelete a Key Value instance by ID.\nRequired: redisId (path)"
+  },
+  {
+    "id": "list-key-value",
+    "name": "List Key Value instances",
+    "description": "List Key Value instances List Key Value instances matching the provided filters. GET /v1/key-value",
+    "context": "GET /v1/key-value\nList Key Value instances matching the provided filters. If no filters are provided, all Key Value instances are returned.\nOptional: name (query) — Filter by name; region (query) — Filter by resource region; createdBefore (query) — Filter for resources created before a certain time (specified as an ISO 8601 timestamp); createdAfter (query) — Filter for resources created after a certain time (specified as an ISO 8601 timestamp); updatedBefore (query) — Filter for resources updated before a certain time (specified as an ISO 8601 timestamp); updatedAfter (query) — Filter for resources updated after a certain time (specified as an ISO 8601 timestamp); ownerId (query) — The ID of the workspaces to return resources for; environmentId (query) — Filter for resources that belong to an environment; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "resume-key-value",
+    "name": "Resume Key Value instance",
+    "description": "Resume Key Value instance Resume a Key Value instance by ID. POST /v1/key-value/{redisId}/resume",
+    "context": "POST /v1/key-value/{redisId}/resume\nResume a Key Value instance by ID.\nRequired: redisId (path)"
+  },
+  {
+    "id": "retrieve-key-value",
+    "name": "Retrieve Key Value instance",
+    "description": "Retrieve Key Value instance Retrieve a Key Value instance by ID. GET /v1/key-value/{redisId}",
+    "context": "GET /v1/key-value/{redisId}\nRetrieve a Key Value instance by ID.\nRequired: redisId (path)"
+  },
+  {
+    "id": "retrieve-key-value-connection-info",
+    "name": "Retrieve Key Value connection info",
+    "description": "Retrieve Key Value connection info Retrieve connection info for a Key Value instance by ID. GET /v1/key-value/{redisId}/connection-info",
+    "context": "GET /v1/key-value/{redisId}/connection-info\nRetrieve connection info for a Key Value instance by ID. Connection info includes sensitive information.\nRequired: redisId (path)"
+  },
+  {
+    "id": "suspend-key-value",
+    "name": "Suspend Key Value instance",
+    "description": "Suspend Key Value instance Suspend a Key Value instance by ID. POST /v1/key-value/{redisId}/suspend",
+    "context": "POST /v1/key-value/{redisId}/suspend\nSuspend a Key Value instance by ID.\nRequired: redisId (path)"
+  },
+  {
+    "id": "update-key-value",
+    "name": "Update Key Value instance",
+    "description": "Update Key Value instance Update a Key Value instance by ID. PATCH /v1/key-value/{redisId}",
+    "context": "PATCH /v1/key-value/{redisId}\nUpdate a Key Value instance by ID. Note that changing your plan, max memory policy, or persistence mode will restart your Key Value instance.\nRequired: redisId (path); body (body)"
+  }
+]

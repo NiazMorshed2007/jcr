@@ -1,0 +1,38 @@
+[
+  {
+    "id": "disconnect-blueprint",
+    "name": "Disconnect Blueprint",
+    "description": "Disconnect Blueprint Disconnect the Blueprint with the provided ID. DELETE /v1/blueprints/{blueprintId}",
+    "context": "DELETE /v1/blueprints/{blueprintId}\nDisconnect the Blueprint with the provided ID. Disconnecting a Blueprint stops automatic resource syncing via the associated `render.yaml` file. It does not _delete_ any services or other resources that were managed by the blueprint.\nRequired: blueprintId (path) — The ID of the Blueprint"
+  },
+  {
+    "id": "list-blueprint-syncs",
+    "name": "List Blueprint syncs",
+    "description": "List Blueprint syncs List syncs for the Blueprint with the provided ID. GET /v1/blueprints/{blueprintId}/syncs",
+    "context": "GET /v1/blueprints/{blueprintId}/syncs\nList syncs for the Blueprint with the provided ID.\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-blueprints",
+    "name": "List Blueprints",
+    "description": "List Blueprints List Blueprints for the specified workspaces. GET /v1/blueprints",
+    "context": "GET /v1/blueprints\nList Blueprints for the specified workspaces. If no workspaces are provided, returns all Blueprints the API key has access to.\nOptional: ownerId (query) — The ID of the workspaces to return resources for; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "retrieve-blueprint",
+    "name": "Retrieve Blueprint",
+    "description": "Retrieve Blueprint Retrieve the Blueprint with the provided ID. GET /v1/blueprints/{blueprintId}",
+    "context": "GET /v1/blueprints/{blueprintId}\nRetrieve the Blueprint with the provided ID.\nRequired: blueprintId (path) — The ID of the Blueprint"
+  },
+  {
+    "id": "update-blueprint",
+    "name": "Update Blueprint",
+    "description": "Update Blueprint Update the Blueprint with the provided ID. PATCH /v1/blueprints/{blueprintId}",
+    "context": "PATCH /v1/blueprints/{blueprintId}\nUpdate the Blueprint with the provided ID.\nRequired: blueprintId (path) — The ID of the Blueprint; body (body)"
+  },
+  {
+    "id": "validate-blueprint",
+    "name": "Validate Blueprint",
+    "description": "Validate Blueprint Validate a `render.yaml` Blueprint file without creating or modifying any resources. POST /v1/blueprints/validate",
+    "context": "POST /v1/blueprints/validate\nValidate a `render.yaml` Blueprint file without creating or modifying any resources. This endpoint checks the syntax and structure of the Blueprint, validates that all required fields are present, and returns a plan indicating the resources that would be created. Requests to this endpoint use `Content-Type: multipart/form-data`. The request body (including the Blueprint file) cannot exceed 10MB in size.\nRequired: body (body)"
+  }
+]

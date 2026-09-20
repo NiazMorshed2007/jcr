@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_topics_id",
+    "name": "Remove an existing topic",
+    "description": "Remove an existing topic DELETE /topics/{id}",
+    "context": "DELETE /topics/{id}\nRemove an existing topic\nRequired: id (path) — The Topic ID."
+  },
+  {
+    "id": "get_topics",
+    "name": "Retrieve a list of topics",
+    "description": "Retrieve a list of topics GET /topics",
+    "context": "GET /topics\nRetrieve a list of topics\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_topics_id",
+    "name": "Retrieve a single topic",
+    "description": "Retrieve a single topic GET /topics/{id}",
+    "context": "GET /topics/{id}\nRetrieve a single topic\nRequired: id (path) — The Topic ID."
+  },
+  {
+    "id": "patch_topics_id",
+    "name": "Update an existing topic",
+    "description": "Update an existing topic PATCH /topics/{id}",
+    "context": "PATCH /topics/{id}\nUpdate an existing topic\nRequired: id (path) — The Topic ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_topics",
+    "name": "Create a new topic",
+    "description": "Create a new topic POST /topics",
+    "context": "POST /topics\nCreate a new topic\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createSiteDeploy",
+    "name": "createSiteDeploy",
+    "description": "createSiteDeploy POST /api/v1/sites/{site_id}/deploys",
+    "context": "POST /api/v1/sites/{site_id}/deploys\ncreateSiteDeploy\nRequired: body (body)\nOptional: title (query)"
+  },
+  {
+    "id": "deleteSiteDeploy",
+    "name": "deleteSiteDeploy",
+    "description": "deleteSiteDeploy DELETE /api/v1/sites/{site_id}/deploys/{deploy_id}",
+    "context": "DELETE /api/v1/sites/{site_id}/deploys/{deploy_id}\ndeleteSiteDeploy\nRequired: deploy_id (path); site_id (path)"
+  },
+  {
+    "id": "getSiteDeploy",
+    "name": "getSiteDeploy",
+    "description": "getSiteDeploy GET /api/v1/sites/{site_id}/deploys/{deploy_id}",
+    "context": "GET /api/v1/sites/{site_id}/deploys/{deploy_id}\ngetSiteDeploy\nRequired: site_id (path); deploy_id (path)"
+  },
+  {
+    "id": "listSiteDeploys",
+    "name": "listSiteDeploys",
+    "description": "listSiteDeploys GET /api/v1/sites/{site_id}/deploys",
+    "context": "GET /api/v1/sites/{site_id}/deploys\nlistSiteDeploys\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "restoreSiteDeploy",
+    "name": "restoreSiteDeploy",
+    "description": "restoreSiteDeploy POST /api/v1/sites/{site_id}/deploys/{deploy_id}/restore",
+    "context": "POST /api/v1/sites/{site_id}/deploys/{deploy_id}/restore\nrestoreSiteDeploy\nRequired: site_id (path); deploy_id (path)"
+  },
+  {
+    "id": "updateSiteDeploy",
+    "name": "updateSiteDeploy",
+    "description": "updateSiteDeploy PUT /api/v1/sites/{site_id}/deploys/{deploy_id}",
+    "context": "PUT /api/v1/sites/{site_id}/deploys/{deploy_id}\nupdateSiteDeploy\nRequired: site_id (path); deploy_id (path); body (body)\nOptional: commit_ref (query)"
+  }
+]

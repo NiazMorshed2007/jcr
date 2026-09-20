@@ -1,0 +1,92 @@
+[
+  {
+    "id": "delete_PirDelete",
+    "name": "Delete a priority intelligence requirement",
+    "description": "Delete a priority intelligence requirement Soft-deletes a PIR. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}\nSoft-deletes a PIR. The PIR will no longer count against quota.\nRequired: account_id (path); priority_id (path)"
+  },
+  {
+    "id": "delete_PirInterestDelete",
+    "name": "Delete an account interest for PIR Option 2",
+    "description": "Delete an account interest for PIR Option 2 Deletes a structured account interest so later Priority Intelligence Option 2 evaluations no longer include it. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}\nDeletes a structured account interest so later Priority Intelligence Option 2 evaluations no longer include it.\nRequired: account_id (path); interest_id (path)"
+  },
+  {
+    "id": "get_PirConstants",
+    "name": "Get PIR constants (methods, dimensions, and TLP values)",
+    "description": "Get PIR constants (methods, dimensions, and TLP values) Requirements is the existing free-form PIR method. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/constants",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/constants\nRequirements is the existing free-form PIR method. Interests is the experimental structured-interest method, evaluated independently from requirements.\nRequired: account_id (path)"
+  },
+  {
+    "id": "get_PirGet",
+    "name": "Get a priority intelligence requirement by ID",
+    "description": "Get a priority intelligence requirement by ID Returns a single free-form Priority Intelligence Requirement for the authenticated account. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}\nReturns a single free-form Priority Intelligence Requirement for the authenticated account.\nRequired: account_id (path); priority_id (path)"
+  },
+  {
+    "id": "get_PirInterestBacktestGet",
+    "name": "Get a persisted account-interest backtest",
+    "description": "Get a persisted account-interest backtest Returns a previously completed account-interest backtest by ID. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests/{backtest_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests/{backtest_id}\nReturns a previously completed account-interest backtest by ID. The backtest must belong to this account.\nRequired: account_id (path); backtest_id (path)"
+  },
+  {
+    "id": "get_PirInterestEvaluationGet",
+    "name": "Get a persisted account-interest evaluation",
+    "description": "Get a persisted account-interest evaluation Returns a previously completed live account-interest evaluation by ID. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations/{evaluation_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations/{evaluation_id}\nReturns a previously completed live account-interest evaluation by ID. The evaluation must belong to this account.\nRequired: account_id (path); evaluation_id (path)"
+  },
+  {
+    "id": "get_PirInterestList",
+    "name": "List account interests for PIR Option 2",
+    "description": "List account interests for PIR Option 2 Lists structured account interests for Priority Intelligence Option 2. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests\nLists structured account interests for Priority Intelligence Option 2. Filter by enabled state and paginate results.\nRequired: account_id (path)\nOptional: page (query); per_page (query); enabled (query)"
+  },
+  {
+    "id": "get_PirList",
+    "name": "List priority intelligence requirements for an account",
+    "description": "List priority intelligence requirements for an account Lists free-form Priority Intelligence Requirements for the account. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence\nLists free-form Priority Intelligence Requirements for the account. Results are scoped to the authenticated account.\nRequired: account_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "patch_PirInterestUpdate",
+    "name": "Update an account interest for PIR Option 2",
+    "description": "Update an account interest for PIR Option 2 Updates a structured account interest used by Priority Intelligence Option 2 evaluations. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}\nUpdates a structured account interest used by Priority Intelligence Option 2 evaluations. Changing the value re-resolves the interest against the current catalog.\nRequired: account_id (path); interest_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_PirCreate",
+    "name": "Create a priority intelligence requirement",
+    "description": "Create a priority intelligence requirement Creates a new PIR for the account. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence\nCreates a new PIR for the account. Subject to the account's annual PIR quota from the cfone.priority_intelligence_requirement_limit entitlement.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_PirInterestBacktestCreate",
+    "name": "Backtest account-interest change detection",
+    "description": "Backtest account-interest change detection Uses bounded full-span top-N candidates and daily event-date buckets. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests\nUses bounded full-span top-N candidates and daily event-date buckets. Results are conservative rather than an exact historical replay.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_PirInterestCreate",
+    "name": "Create an account interest for PIR Option 2",
+    "description": "Create an account interest for PIR Option 2 Creates a structured account interest used by Priority Intelligence Option 2 evaluations. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests\nCreates a structured account interest used by Priority Intelligence Option 2 evaluations. Interests are evaluated independently from free-form PIR requirements.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_PirInterestEvaluationCreate",
+    "name": "Evaluate recent event-dated changes for account interests",
+    "description": "Evaluate recent event-dated changes for account interests Compares the trailing event-date window with the preceding window. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations\nCompares the trailing event-date window with the preceding window. Results are precision-gated to enabled account interests. Late ingestion can cause an older event to appear in a later evaluation, so results describe changes in event-dated intelligence rather than exact adversary-activity timing.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_PirQuota",
+    "name": "Get PIR quota for an account",
+    "description": "Get PIR quota for an account Returns the account's annual PIR quota including total allowed, remaining, and anniversary dates. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/quota",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/quota\nReturns the account's annual PIR quota including total allowed, remaining, and anniversary dates.\nRequired: account_id (path)"
+  },
+  {
+    "id": "put_PirUpdate",
+    "name": "Update a priority intelligence requirement",
+    "description": "Update a priority intelligence requirement Updates a free-form Priority Intelligence Requirement for the authenticated account. PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}\nUpdates a free-form Priority Intelligence Requirement for the authenticated account.\nRequired: account_id (path); priority_id (path)\nOptional: body (body)"
+  }
+]

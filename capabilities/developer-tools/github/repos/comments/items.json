@@ -1,0 +1,44 @@
+[
+  {
+    "id": "reactions%2Fcreate-for-commit-comment",
+    "name": "Create reaction for a commit comment",
+    "description": "Create reaction for a commit comment Create a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). POST /repos/{owner}/{repo}/comments/{comment_id}/reactions",
+    "context": "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions\nCreate a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; comment_id (path) — The unique identifier of the comment.; body (body)"
+  },
+  {
+    "id": "reactions%2Fdelete-for-commit-comment",
+    "name": "Delete a commit comment reaction",
+    "description": "Delete a commit comment reaction > [!NOTE] > You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`. DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
+    "context": "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}\n> [!NOTE] > You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`. Delete a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; comment_id (path) — The unique identifier of the comment.; reaction_id (path) — The unique identifier of the reaction."
+  },
+  {
+    "id": "reactions%2Flist-for-commit-comment",
+    "name": "List reactions for a commit comment",
+    "description": "List reactions for a commit comment List the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
+    "context": "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions\nList the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; comment_id (path) — The unique identifier of the comment.\nOptional: content (query) — Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a commit comment.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fdelete-commit-comment",
+    "name": "Delete a commit comment",
+    "description": "Delete a commit comment DELETE /repos/{owner}/{repo}/comments/{comment_id}",
+    "context": "DELETE /repos/{owner}/{repo}/comments/{comment_id}\nDelete a commit comment\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; comment_id (path) — The unique identifier of the comment."
+  },
+  {
+    "id": "repos%2Fget-commit-comment",
+    "name": "Get a commit comment",
+    "description": "Get a commit comment Gets a specified commit comment. GET /repos/{owner}/{repo}/comments/{comment_id}",
+    "context": "GET /repos/{owner}/{repo}/comments/{comment_id}\nGets a specified commit comment. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; comment_id (path) — The unique identifier of the comment."
+  },
+  {
+    "id": "repos%2Flist-commit-comments-for-repo",
+    "name": "List commit comments for a repository",
+    "description": "List commit comments for a repository Lists the commit comments for a specified repository. GET /repos/{owner}/{repo}/comments",
+    "context": "GET /repos/{owner}/{repo}/comments\nLists the commit comments for a specified repository. Comments are ordered by ascending ID. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "repos%2Fupdate-commit-comment",
+    "name": "Update a commit comment",
+    "description": "Update a commit comment Updates the contents of a specified commit comment. PATCH /repos/{owner}/{repo}/comments/{comment_id}",
+    "context": "PATCH /repos/{owner}/{repo}/comments/{comment_id}\nUpdates the contents of a specified commit comment. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type. - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`. - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`. - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; comment_id (path) — The unique identifier of the comment.; body (body)"
+  }
+]

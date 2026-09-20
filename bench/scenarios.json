@@ -1,0 +1,367 @@
+{
+  "version": 2,
+  "scenarios": [
+    {
+      "id": "stripe-duplicate-refund",
+      "title": "Refund a duplicate charge",
+      "prompt": "A customer (cus_R2kd9Lm0ePq3Xa) wrote in saying we charged them twice on September 12 for the $49 Pro plan. In the Dashboard I can see two successful payments a minute apart: pi_3S7Hq2Kq1xY0aB1c and pi_3S7HqZKq1xY0aB9d. Refund the second one in full, leave the first alone, and record the reason as a duplicate. I'm going to run this myself from the terminal against live mode, so give me the exact command or API request with the exact parameter names, how to confirm the refund succeeded, and roughly when the customer sees the money. Don't guess parameter names.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe"]
+    },
+    {
+      "id": "stripe-consulting-invoice",
+      "title": "Invoice a client",
+      "prompt": "Bill Acme Corp for September consulting: $4,500.00 USD, net 30, one line item 'September 2026 consulting — SOW #14', emailed to billing@acmecorp.com. I don't know whether Acme already exists as a customer in our Stripe account. Give me the exact sequence I need to run — find or create the customer, add the line item, create the invoice, finalize it, send it — as concrete API requests or CLI commands with the exact fields, and call out anything in the current API version I should be careful about.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe"]
+    },
+    {
+      "id": "stripe-metered-billing-plan",
+      "title": "Plan usage-based billing",
+      "prompt": "We run a SaaS on Stripe with card subscriptions today, and we're adding a metered 'API calls' component billed monthly in arrears. This is a brand-new integration, not a migration. Tell me which Stripe APIs we should build the usage-based part on and why, the exact objects we create and in what order, the exact webhook events we must handle, and what we should use for development and testing environments. I want the currently recommended approach, and say what you're basing the recommendation on.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe"]
+    },
+    {
+      "id": "stripe-marketplace-connect",
+      "title": "Design a marketplace payout flow",
+      "prompt": "We're building a tutoring marketplace: students pay per lesson, tutors get paid out, and we keep a 15% platform fee. Tutors are in the US, UK, and Germany. Recommend the Connect setup: how connected accounts should be created (exact endpoint and the key properties on that request), which charge type we should use and why, who carries liability for negative balances and refunds, and what onboarding information tutors in those countries will need to provide. Be specific about the API version and endpoints.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe"]
+    },
+    {
+      "id": "stripe-pay-contractor",
+      "title": "Pay a contractor's Stripe business",
+      "prompt": "Pay our contractor's Stripe business — their handle is @northwind-design — $2,300 USD for the October landing-page work, with the memo 'INV-0088'. I want to review the transfer before anything is sent. Give me the exact command to preview it, the exact command to actually send it after I confirm, what fee and delivery timing to expect, and what to do if it fails because they're not set up to receive money.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe"]
+    },
+    {
+      "id": "stripe-checkout-go-live",
+      "title": "Go-live checklist for Checkout",
+      "prompt": "Our one-time-purchase flow built on Stripe Checkout goes live next Thursday. Write the go-live checklist for this specific integration: which webhook events fulfillment must be driven by and why the success page isn't enough, the exact CLI command to forward webhooks to localhost:3000/webhooks/stripe for a final test, what kind of API key production should use and how to restrict it, and anything in our Checkout Session create call we should double-check before launch.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe"]
+    },
+    {
+      "id": "slack-release-announcement",
+      "title": "Announce a release from the CLI",
+      "prompt": "Post the v2.4 release announcement in #general from our deploy box, which has the Slack CLI installed and logged into our workspace — I don't want to hand-roll HTTP calls. Content: 'v2.4 is live' as the headline, then three bullets — faster search, dark mode, CSV export — and a link to https://acme.dev/changelog/2.4. Give me the exact CLI invocation of the Web API method, the exact payload, the scope the token needs, and how to look up the channel ID for #general by name with the same CLI.",
+      "category": "communication",
+      "integrations": ["slack"]
+    },
+    {
+      "id": "slack-incident-blocks",
+      "title": "Build an incident message layout",
+      "prompt": "Build the message our on-call bot posts to #incidents when a SEV1 opens. It needs a header 'SEV1 · Checkout unavailable', a two-column section with 'Severity: SEV1' and 'Commander: @maria', a context line 'Opened 14:02 UTC · INC-2291', and two buttons: 'Acknowledge' (primary) and 'Open runbook' linking to https://runbooks.acme.dev/checkout. Give me the exact block JSON, tell me how to validate it against Slack before we send it, and note any limits I'm close to.",
+      "category": "communication",
+      "integrations": ["slack"]
+    },
+    {
+      "id": "slack-scheduled-standup-reminder",
+      "title": "Schedule a recurring reminder",
+      "prompt": "Every Monday at 09:00 Europe/Berlin I want a reminder posted in #eng: 'Standup in 15 min — add your updates to the thread.' Show me exactly how to schedule the first one for next Monday via the API — the method, the exact parameters, how the timestamp has to be expressed, and how far ahead I'm allowed to schedule — and whether I can edit or cancel it afterwards.",
+      "category": "communication",
+      "integrations": ["slack"]
+    },
+    {
+      "id": "slack-find-decision-thread",
+      "title": "Find a past decision thread",
+      "prompt": "Sometime in August, in #platform, we decided whether to upgrade to Postgres 16 or stay on 15, and I think Priya posted the final call. Find that thread for me. Tell me exactly what searches you'd run — the search tools and the exact query strings with modifiers for channel, author, and date range — and how you'd narrow down if the first search returns too much.",
+      "category": "communication",
+      "integrations": ["slack"]
+    },
+    {
+      "id": "slack-new-bolt-app",
+      "title": "Scaffold a Slack app",
+      "prompt": "Scaffold a new Slack app called 'Deploy Bot' in TypeScript that responds to a /deploy slash command and runs locally against our dev workspace. Give me the exact commands from zero — installing and authenticating the tooling, creating the project from a template, starting it locally — and the manifest changes needed for the slash command. I'll run everything myself.",
+      "category": "communication",
+      "integrations": ["slack"]
+    },
+    {
+      "id": "notion-decision-log",
+      "title": "Capture a decision",
+      "prompt": "We just decided in a call to move our web frontend from Vercel to Cloudflare Pages starting Q1 to cut hosting costs; alternatives considered were staying put or moving to Netlify; the owner is Dana; the review date is March 1. Capture this as a decision in our Notion decision log so it's linkable from the Platform hub page. Tell me exactly which Notion operations you'd call, in what order, with which properties set, and how you'd link it from the hub.",
+      "category": "content-and-knowledge",
+      "integrations": ["notion"]
+    },
+    {
+      "id": "notion-roadmap-review-prep",
+      "title": "Prepare a meeting pre-read",
+      "prompt": "I'm running Thursday's roadmap review with the CEO and the heads of Sales and Support. Prepare a one-page pre-read from what we already have in Notion — the Q4 roadmap page, the last two roadmap-review notes, and the open customer-request tracker. Tell me exactly which Notion lookups you would do and in what order, what you'd pull from each, and how you'd tailor the agenda for those three attendees.",
+      "category": "content-and-knowledge",
+      "integrations": ["notion"]
+    },
+    {
+      "id": "supabase-feature-flags-table",
+      "title": "Add a table with RLS as a migration",
+      "prompt": "Add a feature_flags table to our Supabase project: key (text, unique), enabled (boolean, default false), rollout_percentage (integer 0–100), created_at. Only the service role should write; authenticated users may read. Do it as a versioned migration from our repo, not from the dashboard. Give me the exact CLI commands to create and apply the migration and the exact SQL, following current Postgres and Supabase guidance on column types, constraints, and RLS. I'm going to commit this.",
+      "category": "data-platforms",
+      "integrations": ["supabase"]
+    },
+    {
+      "id": "supabase-rls-tenant-leak",
+      "title": "Diagnose a tenant data leak",
+      "prompt": "A customer on our multi-tenant app reported seeing a row from another organization in their invoices list. We use Supabase with RLS on public.invoices keyed by organization_id. Walk me through diagnosing this — the exact queries and CLI commands to check the policies, the JWT claims, and which role the query ran as — and give me the corrected policy SQL and a test that proves the fix.",
+      "category": "data-platforms",
+      "integrations": ["supabase"]
+    },
+    {
+      "id": "supabase-nightly-cron-cleanup",
+      "title": "Schedule an in-database cleanup job",
+      "prompt": "Every night at 02:00 UTC, delete rows from public.sessions where expires_at < now() in our Supabase Postgres, and log how many were removed. Set this up inside the database rather than with an external scheduler. Give me the exact SQL to enable what's needed, schedule the job, and check that it ran, plus how to ship all of it as a migration.",
+      "category": "data-platforms",
+      "integrations": ["supabase"]
+    },
+    {
+      "id": "supabase-nextjs-ssr-auth",
+      "title": "Wire server-side auth in Next.js",
+      "prompt": "Our Next.js 15 App Router app needs Supabase Auth with server-side sessions: protected /dashboard routes, middleware that refreshes sessions, and server components that can read the current user. Give me the exact packages, the browser and server client helpers, the middleware, and the correct way to verify the user on the server — say which method and why. Flag the common mistakes in this setup.",
+      "category": "data-platforms",
+      "integrations": ["supabase"]
+    },
+    {
+      "id": "vercel-marketing-prod-deploy",
+      "title": "Deploy to production from CI",
+      "prompt": "Deploy apps/marketing from our monorepo to production on Vercel under the team acme-web, and set NEXT_PUBLIC_API_URL=https://api.acme.dev for production only. This runs in GitHub Actions with the token in VERCEL_TOKEN, so nothing can be interactive. Give me the exact commands in order — linking, the env var, the deploy — and how the job should confirm the deployment is ready before it exits.",
+      "category": "cloud-infrastructure",
+      "integrations": ["vercel"]
+    },
+    {
+      "id": "vercel-function-cost-spike",
+      "title": "Investigate a hosting bill spike",
+      "prompt": "Our Vercel bill roughly doubled last month and the dashboard points at Function Invocations and Fast Data Transfer on our Next.js app. Investigate and give me ranked, evidence-based recommendations: what metrics and project configuration to collect first (exact commands where there are any), which routes to look at, and which caching or compute changes are likely to matter. No generic advice — tie each recommendation to something we would verify.",
+      "category": "cloud-infrastructure",
+      "integrations": ["vercel"]
+    },
+    {
+      "id": "netlify-docs-site-deploy",
+      "title": "Link and deploy a docs site",
+      "prompt": "Our docs repo (github.com/acme/docs, Docusaurus) already has a Netlify site called acme-docs, but this clone isn't linked to it. Link it, do a preview deploy so I can check it, then deploy to production. Give me the exact commands in order, how to handle authentication in a non-interactive shell, and what the build settings need to look like.",
+      "category": "cloud-infrastructure",
+      "integrations": ["netlify"]
+    },
+    {
+      "id": "render-blueprint-api-worker",
+      "title": "Define an API, worker, and database",
+      "prompt": "Set up our Node service on Render: a web service for apps/api (npm start on port 3000, health check at /healthz), a background worker for apps/worker, and a managed Postgres that both use via DATABASE_URL, all in Frankfurt. Give me the exact Blueprint file, explain the fields that matter, and tell me exactly how to go from that file to a running deployment and how to verify it.",
+      "category": "cloud-infrastructure",
+      "integrations": ["render"]
+    },
+    {
+      "id": "cloudflare-edge-redirects",
+      "title": "Country-based redirects at the edge",
+      "prompt": "We want visitors from Germany hitting acme.com/pricing to be redirected at the edge to acme.com/de/pricing, driven by a country→path mapping we can update without redeploying. Which Cloudflare products fit this? Give me the exact commands to create the project, create and bind the storage, seed the mapping, and deploy, plus the worker code.",
+      "category": "cloud-infrastructure",
+      "integrations": ["cloudflare"]
+    },
+    {
+      "id": "railway-postgres-addon",
+      "title": "Add a database and wire it to a service",
+      "prompt": "Add a Postgres database to our Railway project 'acme-api' (production environment) and make its connection string available to the api service as DATABASE_URL, referencing the database rather than hard-coding the value. Give me the exact commands in order, including how to check which services already exist first, and how to trigger and verify a redeploy of api.",
+      "category": "cloud-infrastructure",
+      "integrations": ["railway"]
+    },
+    {
+      "id": "gmail-brand-guidelines",
+      "title": "Send an email with attachments",
+      "prompt": "Email the design team (design@acme.dev) the finalized brand guidelines — attach ./Brand-Guidelines-v3.pdf and ./Logo-Pack.zip — with the subject 'Brand guidelines v3 (final)', CC marketing@acme.dev, and a short body. Send it from my alias hello@acme.dev. Show me the exact command, and show me how to preview it or save it as a draft first so I can eyeball it before it goes out.",
+      "category": "google-workspace",
+      "integrations": ["gmail"]
+    },
+    {
+      "id": "calendar-design-review",
+      "title": "Schedule a meeting with a Meet link",
+      "prompt": "Put a 45-minute design review on my Google Calendar for Tuesday September 22 at 15:00 Europe/Berlin with sara@acme.dev and tom@acme.dev, titled 'Checkout redesign — design review', description 'Figma: https://figma.com/file/abc', and include a Google Meet link. Give me the exact command with correctly formatted times, and tell me how I'd verify the invites went out.",
+      "category": "google-workspace",
+      "integrations": ["google_calendar"]
+    },
+    {
+      "id": "sheets-weekly-metrics",
+      "title": "Append metrics to a sheet",
+      "prompt": "Append this week's numbers as a new row in the 'Metrics' tab of our KPI spreadsheet (ID 1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms): 2026-09-18, MRR 184200, churn 2.1%, new signups 312. Give me the exact command or API call, including how the range, the values payload, and the value input option have to be specified, and how to confirm it landed in the right tab.",
+      "category": "google-workspace",
+      "integrations": ["google_sheets"]
+    },
+    {
+      "id": "tasks-board-deck-review",
+      "title": "Add a task to a named list",
+      "prompt": "Add 'Review Q3 board deck' to my Google Tasks list called 'Work', due this Friday. I don't know the list's ID. Give me the exact commands to find the list and create the task, the exact shape of the due date field, and how to confirm it shows up.",
+      "category": "google-workspace",
+      "integrations": ["google_tasks"]
+    },
+    {
+      "id": "docs-oncall-runbook",
+      "title": "Create a runbook document",
+      "prompt": "Create a Google Doc titled 'On-call runbook — Payments' and write in the initial skeleton: headings for Paging, First 15 minutes, Known failure modes, and Escalation, plus a short intro paragraph. Give me the exact commands, including how to inspect the request shape first if you're not certain of the parameters.",
+      "category": "google-workspace",
+      "integrations": ["google_docs"]
+    },
+    {
+      "id": "people-conference-contacts",
+      "title": "Add labelled contacts",
+      "prompt": "I met three people at the conference and want them in my Google Contacts under a new label 'SaaStr 2026': Lena Fischer (lena@brightpath.io, BrightPath, Head of Growth), Omar Haddad (omar@quantly.co, Quantly, CTO), and Jess Park (jess@northwind.app, Northwind, PM). Give me the exact commands to create the label, create the contacts, and add them to it, and say how you confirmed the request fields.",
+      "category": "google-workspace",
+      "integrations": ["google_contacts"]
+    },
+    {
+      "id": "gmail-triage-vendor-reply",
+      "title": "Triage inbox and reply in thread",
+      "prompt": "Give me a summary of my unread Gmail inbox from the last two days, then draft a reply in the same thread to the most recent message from anyone at @vendorcloud.com saying we'll sign the renewal by Friday. Show me the exact commands for the triage, for reading the message, and for the reply so threading is preserved — and don't send anything without me confirming.",
+      "category": "google-workspace",
+      "integrations": ["gmail"]
+    },
+    {
+      "id": "linear-safari-checkout-bug",
+      "title": "File a P1 bug",
+      "prompt": "File a P1 bug in Linear for the Payments team: 'Checkout page crashes on Safari 18 when applying a coupon', with repro steps (add item, open checkout, enter SAVE10, tap Apply → white screen), label 'bug', assigned to Priya, in the current cycle. Tell me exactly which Linear operations you'd call, in what order — including any lookups needed for the team, label, user, or cycle — and what fields each needs.",
+      "category": "project-management",
+      "integrations": ["linear"]
+    },
+    {
+      "id": "linear-cycle-retro",
+      "title": "Write a cycle retro report",
+      "prompt": "Produce a retro report for the Mobile team's last completed cycle in Linear: what was completed, what got pushed, who did what, and any patterns worth discussing. List exactly which Linear operations you'd call and in what order to gather that, and how you'd handle it if there are more issues than fit in one page of results.",
+      "category": "project-management",
+      "integrations": ["linear"]
+    },
+    {
+      "id": "linear-stale-blocked-issues",
+      "title": "Nudge stale blocked issues",
+      "prompt": "Across the Backend team in Linear, find every issue in a blocked state that hasn't been updated in 14 or more days, and add a comment on each asking the assignee for a status update by Friday. Show me the exact operations and their arguments, including how you'd batch the comments to stay within rate limits.",
+      "category": "project-management",
+      "integrations": ["linear"]
+    },
+    {
+      "id": "sentry-checkout-priority-alert",
+      "title": "Create a high-priority issue alert",
+      "prompt": "Create a Sentry alert for our 'checkout' project (org acme) that fires whenever a new high-priority issue is created in production and posts to Slack channel #alerts-payments, with a 30-minute frequency limit. Give me the exact API calls in order — including how to look up any IDs the payload needs — the full request payload, and then how to verify it's active and test it.",
+      "category": "observability-and-analytics",
+      "integrations": ["sentry"]
+    },
+    {
+      "id": "sentry-top-unresolved",
+      "title": "List recent unresolved issues",
+      "prompt": "What are the 10 most recent unresolved production issues in our Sentry project acme/checkout from the last 24 hours? Give me the exact command that returns just the short ID, title, priority, level, and event count in machine-readable output, and how to drill into one issue's events afterwards.",
+      "category": "observability-and-analytics",
+      "integrations": ["sentry"]
+    },
+    {
+      "id": "sentry-debug-issue",
+      "title": "Work an issue end to end",
+      "prompt": "Work Sentry issue CHECKOUT-4F2 end to end: pull the full context (stack trace, breadcrumbs, related trace), figure out the root cause, and tell me what the fix and the commit that resolves it in Sentry should look like. Give me the exact commands you'd use at each step; if there's an AI-assisted analysis step available, include it.",
+      "category": "observability-and-analytics",
+      "integrations": ["sentry"]
+    },
+    {
+      "id": "sentry-node-fastify",
+      "title": "Instrument a Fastify service",
+      "prompt": "Add Sentry to our Fastify 5 API (Node 22, ESM, TypeScript) with error monitoring, tracing at a 20% sample rate, and profiling. Give me the exact packages, the instrumentation file and how it must be loaded so auto-instrumentation actually works under ESM, the init options, and how to verify the first error and transaction show up.",
+      "category": "observability-and-analytics",
+      "integrations": ["sentry"]
+    },
+    {
+      "id": "sentry-new-project-nextjs",
+      "title": "Set up monitoring from scratch",
+      "prompt": "We have a fresh Next.js 15 repo with no error monitoring at all. Set Sentry up end to end from scratch for it under org acme: what to provision and how, how to install and configure the SDK with the defaults it should enable, and how to confirm real telemetry is reaching Sentry before we merge. Give me the exact commands.",
+      "category": "observability-and-analytics",
+      "integrations": ["sentry"]
+    },
+    {
+      "id": "stripe-enterprise-signup-to-slack",
+      "title": "Celebrate enterprise signups",
+      "prompt": "When a customer subscribes to our Enterprise price (price_1S6EntAcme000001) in Stripe, post 'New Enterprise customer: <company> · <plan> · <MRR>' in #sales-wins on Slack. Tell me exactly which Stripe webhook event(s) to listen for and which fields carry the company and plan, the exact Slack method and scope for the post, and how to test the webhook locally end to end.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe", "slack"],
+      "compound": true
+    },
+    {
+      "id": "sentry-top-issues-to-linear",
+      "title": "Turn errors into tickets",
+      "prompt": "Take the three most frequent unresolved Sentry issues from the last 7 days in acme/checkout and create a Linear issue for each in the Backend team, labelled 'sentry', with the Sentry link and event count in the description. Give me the exact Sentry command(s) to get the data and the exact Linear operations to create the issues, including any lookups.",
+      "category": "observability-and-analytics",
+      "integrations": ["sentry", "linear"],
+      "compound": true
+    },
+    {
+      "id": "linear-cycle-summary-to-slack",
+      "title": "Share what shipped",
+      "prompt": "Summarize everything the Mobile team completed in the current Linear cycle and post it to #product-updates in Slack as a formatted message with one line per shipped item and a link to each. Tell me the exact Linear operations you'd call and the exact Slack method, scope, and message body format.",
+      "category": "project-management",
+      "integrations": ["linear", "slack"],
+      "compound": true
+    },
+    {
+      "id": "sheets-revenue-to-board-email",
+      "title": "Email a financial summary",
+      "prompt": "Read August's revenue, gross margin, and cash figures from the 'Monthly' tab of our Finance spreadsheet (ID 1qAbCdEfGhIjKlMnOpQrStUvWxYz0123456789) and email a short summary to board@acme.dev with the subject 'August financials'. Give me the exact commands for reading the range and for sending the email, and show me how to preview the email before it goes.",
+      "category": "google-workspace",
+      "integrations": ["google_sheets", "gmail"],
+      "compound": true
+    },
+    {
+      "id": "supabase-migration-then-railway-redeploy",
+      "title": "Migrate then redeploy",
+      "prompt": "Add a nullable archived_at timestamptz column to public.projects in our Supabase database as a migration, apply it to production, then redeploy the api service in our Railway project 'acme-api' so the new column is picked up, and confirm the deployment is live. Give me the exact commands in order for both steps and how to verify each.",
+      "category": "data-platforms",
+      "integrations": ["supabase", "railway"],
+      "compound": true
+    },
+    {
+      "id": "stripe-failed-payments-to-gmail",
+      "title": "Chase failed payments",
+      "prompt": "Find every customer whose subscription invoice payment failed in the last 7 days in Stripe and email each of them from billing@acme.dev with the subject 'Action needed: update your payment method' and a link to their hosted invoice page. Give me the exact Stripe query or API call to get the list and the fields I need, the exact email command, and how to run the whole thing as a dry run first.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe", "gmail"],
+      "compound": true
+    },
+    {
+      "id": "drive-photos-to-chat",
+      "title": "Share photos with the team",
+      "prompt": "Create a Google Drive folder 'Offsite 2026 photos', upload everything in ./photos into it, make it viewable by anyone at acme.dev, and post the folder link in our 'Team' space on Google Chat with a one-line note. Give me the exact commands in order, including how to find the Chat space name.",
+      "category": "google-workspace",
+      "integrations": ["google_drive", "google_chat"],
+      "compound": true
+    },
+    {
+      "id": "stripe-weekly-revenue-to-sheets-and-slack",
+      "title": "Weekly revenue report",
+      "prompt": "Every Friday at 17:00 we want to pull this week's successful payment volume from Stripe, append it as a row (date, gross, refunds, net) to the 'Weekly' tab of our Finance spreadsheet (ID 1qAbCdEfGhIjKlMnOpQrStUvWxYz0123456789), and post the net figure in #finance on Slack. Give me the exact Stripe request(s) with the date filter, the exact append call, and the exact Slack post, as a script I can schedule.",
+      "category": "payments-and-finance",
+      "integrations": ["stripe", "google_sheets", "slack"],
+      "compound": true
+    },
+    {
+      "id": "notion-prd-to-linear",
+      "title": "Turn a PRD into a plan and tickets",
+      "prompt": "Turn the 'Bulk CSV export' PRD in our Notion product space into an implementation plan: create a plan page in Notion with milestones, and create Linear issues in the Platform team for each engineering task with estimates and links back to the PRD. Tell me exactly which Notion and Linear operations you'd call, in order, and what each needs.",
+      "category": "content-and-knowledge",
+      "integrations": ["notion", "linear"],
+      "compound": true
+    },
+    {
+      "id": "railway-error-logs-to-slack",
+      "title": "Summarize deploy errors",
+      "prompt": "The api service in our Railway project 'acme-api' has been throwing errors since this morning's deploy. Pull the last 500 log lines and the recent deployment list, summarize the distinct errors, and post that summary to #platform on Slack. Give me the exact Railway commands and the exact Slack method and payload.",
+      "category": "cloud-infrastructure",
+      "integrations": ["railway", "slack"],
+      "compound": true
+    },
+    {
+      "id": "calendar-free-slots-to-gmail",
+      "title": "Offer interview slots",
+      "prompt": "Look at my Google Calendar for Thursday September 24 and find 30-minute gaps between 10:00 and 17:00 Europe/Berlin, then email candidate ana@example.com three of those slots to choose from for a screening call. Give me the exact commands to query my availability and to send the email, and show me the email as a draft first.",
+      "category": "google-workspace",
+      "integrations": ["google_calendar", "gmail"],
+      "compound": true
+    },
+    {
+      "id": "netlify-deploy-then-slack",
+      "title": "Deploy and notify",
+      "prompt": "Deploy our docs site (already linked to the Netlify site acme-docs) to production and post the production URL plus the deploy ID in #docs on Slack when it's done. Give me the exact commands for the deploy — capturing the URL and deploy ID in machine-readable form — and the exact Slack call.",
+      "category": "cloud-infrastructure",
+      "integrations": ["netlify", "slack"],
+      "compound": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_task_assignments_id",
+    "name": "Unassign task",
+    "description": "Unassign task Deletes a specific task assignment. DELETE /2.0/task_assignments/{task_assignment_id}",
+    "context": "DELETE /2.0/task_assignments/{task_assignment_id}\nDeletes a specific task assignment.\nRequired: task_assignment_id (path) — The ID of the task assignment."
+  },
+  {
+    "id": "get_task_assignments_id",
+    "name": "Get task assignment",
+    "description": "Get task assignment Retrieves information about a task assignment. GET /2.0/task_assignments/{task_assignment_id}",
+    "context": "GET /2.0/task_assignments/{task_assignment_id}\nRetrieves information about a task assignment.\nRequired: task_assignment_id (path) — The ID of the task assignment."
+  },
+  {
+    "id": "post_task_assignments",
+    "name": "Assign task",
+    "description": "Assign task Assigns a task to a user. POST /2.0/task_assignments",
+    "context": "POST /2.0/task_assignments\nAssigns a task to a user. A task can be assigned to more than one user by creating multiple assignments.\nOptional: body (body)"
+  },
+  {
+    "id": "put_task_assignments_id",
+    "name": "Update task assignment",
+    "description": "Update task assignment Updates a task assignment. PUT /2.0/task_assignments/{task_assignment_id}",
+    "context": "PUT /2.0/task_assignments/{task_assignment_id}\nUpdates a task assignment. This endpoint can be used to update the state of a task assigned to a user.\nRequired: task_assignment_id (path) — The ID of the task assignment.\nOptional: body (body)"
+  }
+]

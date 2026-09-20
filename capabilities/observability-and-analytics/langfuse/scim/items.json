@@ -1,0 +1,44 @@
+[
+  {
+    "id": "scim_createUser",
+    "name": "Create a new user in the organization (requires organization-scoped API key)",
+    "description": "Create a new user in the organization (requires organization-scoped API key) POST /api/public/scim/Users",
+    "context": "POST /api/public/scim/Users\nCreate a new user in the organization (requires organization-scoped API key)\nRequired: body (body)"
+  },
+  {
+    "id": "scim_deleteUser",
+    "name": "Remove a user from the organization (requires organization-scoped API key)",
+    "description": "Remove a user from the organization (requires organization-scoped API key) Remove a user from the organization (requires organization-scoped API key). DELETE /api/public/scim/Users/{userId}",
+    "context": "DELETE /api/public/scim/Users/{userId}\nRemove a user from the organization (requires organization-scoped API key). Note that this only removes the user from the organization but does not delete the user entity itself.\nRequired: userId (path)"
+  },
+  {
+    "id": "scim_getResourceTypes",
+    "name": "Get SCIM Resource Types (requires organization-scoped API key)",
+    "description": "Get SCIM Resource Types (requires organization-scoped API key) GET /api/public/scim/ResourceTypes",
+    "context": "GET /api/public/scim/ResourceTypes\nGet SCIM Resource Types (requires organization-scoped API key)"
+  },
+  {
+    "id": "scim_getSchemas",
+    "name": "Get SCIM Schemas (requires organization-scoped API key)",
+    "description": "Get SCIM Schemas (requires organization-scoped API key) GET /api/public/scim/Schemas",
+    "context": "GET /api/public/scim/Schemas\nGet SCIM Schemas (requires organization-scoped API key)"
+  },
+  {
+    "id": "scim_getServiceProviderConfig",
+    "name": "Get SCIM Service Provider Configuration (requires organization-scoped API key)",
+    "description": "Get SCIM Service Provider Configuration (requires organization-scoped API key) GET /api/public/scim/ServiceProviderConfig",
+    "context": "GET /api/public/scim/ServiceProviderConfig\nGet SCIM Service Provider Configuration (requires organization-scoped API key)"
+  },
+  {
+    "id": "scim_getUser",
+    "name": "Get a specific user by ID (requires organization-scoped API key)",
+    "description": "Get a specific user by ID (requires organization-scoped API key) GET /api/public/scim/Users/{userId}",
+    "context": "GET /api/public/scim/Users/{userId}\nGet a specific user by ID (requires organization-scoped API key)\nRequired: userId (path)"
+  },
+  {
+    "id": "scim_listUsers",
+    "name": "List users in the organization (requires organization-scoped API key)",
+    "description": "List users in the organization (requires organization-scoped API key) GET /api/public/scim/Users",
+    "context": "GET /api/public/scim/Users\nList users in the organization (requires organization-scoped API key)\nOptional: filter (query) — Filter expression (e.g. userName eq \"value\"); startIndex (query) — 1-based index of the first result to return (default 1); count (query) — Maximum number of results to return (default 100)"
+  }
+]

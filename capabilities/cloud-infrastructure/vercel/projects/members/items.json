@@ -1,0 +1,20 @@
+[
+  {
+    "id": "addProjectMember",
+    "name": "Adds a new member to a project.",
+    "description": "Adds a new member to a project. Adds a new member to the project. POST /v1/projects/{idOrName}/members",
+    "context": "POST /v1/projects/{idOrName}/members\nAdds a new member to the project.\nRequired: idOrName (path) — The ID or name of the Project.; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectMembers",
+    "name": "List project members",
+    "description": "List project members Lists all members of a project. GET /v1/projects/{idOrName}/members",
+    "context": "GET /v1/projects/{idOrName}/members\nLists all members of a project.\nRequired: idOrName (path) — The ID or name of the Project.\nOptional: limit (query) — Limit how many project members should be returned; since (query) — Timestamp in milliseconds to only include members added since then.; until (query) — Timestamp in milliseconds to only include members added until then.; search (query) — Search project members by their name, username, and email.; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "removeProjectMember",
+    "name": "Remove a Project Member",
+    "description": "Remove a Project Member Remove a member from a specific project DELETE /v1/projects/{idOrName}/members/{uid}",
+    "context": "DELETE /v1/projects/{idOrName}/members/{uid}\nRemove a member from a specific project\nRequired: idOrName (path) — The ID or name of the Project.; uid (path) — The user ID of the member.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

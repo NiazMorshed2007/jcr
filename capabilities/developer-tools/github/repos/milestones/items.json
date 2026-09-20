@@ -1,0 +1,38 @@
+[
+  {
+    "id": "issues%2Fcreate-milestone",
+    "name": "Create a milestone",
+    "description": "Create a milestone Creates a milestone. POST /repos/{owner}/{repo}/milestones",
+    "context": "POST /repos/{owner}/{repo}/milestones\nCreates a milestone.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "issues%2Fdelete-milestone",
+    "name": "Delete a milestone",
+    "description": "Delete a milestone Deletes a milestone using the given milestone number. DELETE /repos/{owner}/{repo}/milestones/{milestone_number}",
+    "context": "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}\nDeletes a milestone using the given milestone number.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; milestone_number (path) — The number that identifies the milestone."
+  },
+  {
+    "id": "issues%2Fget-milestone",
+    "name": "Get a milestone",
+    "description": "Get a milestone Gets a milestone using the given milestone number. GET /repos/{owner}/{repo}/milestones/{milestone_number}",
+    "context": "GET /repos/{owner}/{repo}/milestones/{milestone_number}\nGets a milestone using the given milestone number.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; milestone_number (path) — The number that identifies the milestone."
+  },
+  {
+    "id": "issues%2Flist-labels-for-milestone",
+    "name": "List labels for issues in a milestone",
+    "description": "List labels for issues in a milestone Lists labels for issues in a milestone. GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels",
+    "context": "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels\nLists labels for issues in a milestone.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; milestone_number (path) — The number that identifies the milestone.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "issues%2Flist-milestones",
+    "name": "List milestones",
+    "description": "List milestones Lists milestones for a repository. GET /repos/{owner}/{repo}/milestones",
+    "context": "GET /repos/{owner}/{repo}/milestones\nLists milestones for a repository.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: state (query) — The state of the milestone. Either `open`, `closed`, or `all`.; sort (query) — What to sort results by. Either `due_on` or `completeness`.; direction (query) — The direction of the sort. Either `asc` or `desc`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "issues%2Fupdate-milestone",
+    "name": "Update a milestone",
+    "description": "Update a milestone PATCH /repos/{owner}/{repo}/milestones/{milestone_number}",
+    "context": "PATCH /repos/{owner}/{repo}/milestones/{milestone_number}\nUpdate a milestone\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; milestone_number (path) — The number that identifies the milestone.\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "custom_property_definitions_create",
+    "name": "custom_property_definitions_create",
+    "description": "custom_property_definitions_create POST /api/projects/{project_id}/custom_property_definitions/",
+    "context": "POST /api/projects/{project_id}/custom_property_definitions/\ncustom_property_definitions_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "custom_property_definitions_destroy",
+    "name": "custom_property_definitions_destroy",
+    "description": "custom_property_definitions_destroy DELETE /api/projects/{project_id}/custom_property_definitions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/custom_property_definitions/{id}/\ncustom_property_definitions_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "custom_property_definitions_list",
+    "name": "custom_property_definitions_list",
+    "description": "custom_property_definitions_list GET /api/projects/{project_id}/custom_property_definitions/",
+    "context": "GET /api/projects/{project_id}/custom_property_definitions/\ncustom_property_definitions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "custom_property_definitions_partial_update",
+    "name": "custom_property_definitions_partial_update",
+    "description": "custom_property_definitions_partial_update PATCH /api/projects/{project_id}/custom_property_definitions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/custom_property_definitions/{id}/\ncustom_property_definitions_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "custom_property_definitions_retrieve",
+    "name": "custom_property_definitions_retrieve",
+    "description": "custom_property_definitions_retrieve GET /api/projects/{project_id}/custom_property_definitions/{id}/",
+    "context": "GET /api/projects/{project_id}/custom_property_definitions/{id}/\ncustom_property_definitions_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "custom_property_definitions_update",
+    "name": "custom_property_definitions_update",
+    "description": "custom_property_definitions_update PUT /api/projects/{project_id}/custom_property_definitions/{id}/",
+    "context": "PUT /api/projects/{project_id}/custom_property_definitions/{id}/\ncustom_property_definitions_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "custom_property_definitions_values_retrieve",
+    "name": "custom_property_definitions_values_retrieve",
+    "description": "custom_property_definitions_values_retrieve GET /api/projects/{project_id}/custom_property_definitions/values/",
+    "context": "GET /api/projects/{project_id}/custom_property_definitions/values/\ncustom_property_definitions_values_retrieve\nRequired: key (query) — Id of the custom property definition to suggest values for.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: value (query) — Case-insensitive substring to narrow the suggestions."
+  }
+]

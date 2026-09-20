@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createAuthToken",
+    "name": "Create an Auth Token",
+    "description": "Create an Auth Token Creates and returns a new authentication token for the currently authenticated User. POST /v3/user/tokens",
+    "context": "POST /v3/user/tokens\nCreates and returns a new authentication token for the currently authenticated User. The `bearerToken` property is only provided once, in the response body, so be sure to save it on the client for use with API requests.\nRequired: body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "deleteAuthToken",
+    "name": "Delete an authentication token",
+    "description": "Delete an authentication token Invalidate an authentication token, such that it will no longer be valid for future HTTP requests. DELETE /v3/user/tokens/{tokenId}",
+    "context": "DELETE /v3/user/tokens/{tokenId}\nInvalidate an authentication token, such that it will no longer be valid for future HTTP requests.\nRequired: tokenId (path) — The identifier of the token to invalidate. The special value \"current\" may be supplied, which invalidates the token that the HTTP request was authenticated with."
+  },
+  {
+    "id": "getAuthToken",
+    "name": "Get Auth Token Metadata",
+    "description": "Get Auth Token Metadata Retrieve metadata about an authentication token belonging to the currently authenticated User. GET /v5/user/tokens/{tokenId}",
+    "context": "GET /v5/user/tokens/{tokenId}\nRetrieve metadata about an authentication token belonging to the currently authenticated User.\nRequired: tokenId (path) — The identifier of the token to retrieve. The special value \"current\" may be supplied, which returns the metadata for the token that the current HTTP request is authenticated with."
+  },
+  {
+    "id": "getAuthUser",
+    "name": "Get the User",
+    "description": "Get the User Retrieves information related to the currently authenticated User. GET /v2/user",
+    "context": "GET /v2/user\nRetrieves information related to the currently authenticated User."
+  },
+  {
+    "id": "listAuthTokens",
+    "name": "List Auth Tokens",
+    "description": "List Auth Tokens Retrieve a list of the current User's authentication tokens. GET /v6/user/tokens",
+    "context": "GET /v6/user/tokens\nRetrieve a list of the current User's authentication tokens."
+  },
+  {
+    "id": "requestDelete",
+    "name": "Delete User Account",
+    "description": "Delete User Account Initiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. DELETE /v1/user",
+    "context": "DELETE /v1/user\nInitiates the deletion process for the currently authenticated User, by sending a deletion confirmation email. The email contains a link that the user needs to visit in order to proceed with the deletion process.\nRequired: body (body)"
+  }
+]

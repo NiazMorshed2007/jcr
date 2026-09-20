@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cancel-cron-job-run",
+    "name": "Cancel running cron job",
+    "description": "Cancel running cron job Cancel a currently running cron job. DELETE /v1/cron-jobs/{cronJobId}/runs",
+    "context": "DELETE /v1/cron-jobs/{cronJobId}/runs\nCancel a currently running cron job.\nRequired: cronJobId (path) — The ID of the cron job"
+  },
+  {
+    "id": "run-cron-job",
+    "name": "Trigger cron job run",
+    "description": "Trigger cron job run Trigger a run for a cron job and cancel any active runs. POST /v1/cron-jobs/{cronJobId}/runs",
+    "context": "POST /v1/cron-jobs/{cronJobId}/runs\nTrigger a run for a cron job and cancel any active runs.\nRequired: cronJobId (path) — The ID of the cron job"
+  },
+  {
+    "id": "get-user",
+    "name": "Get the authenticated user",
+    "description": "Get the authenticated user Retrieve the user associated with the provided API key. GET /v1/users",
+    "context": "GET /v1/users\nRetrieve the user associated with the provided API key."
+  },
+  {
+    "id": "getTask",
+    "name": "Retrieve task",
+    "description": "Retrieve task Retrieve the workflow task with the provided ID. GET /v1/tasks/{taskId}",
+    "context": "GET /v1/tasks/{taskId}\nRetrieve the workflow task with the provided ID.\nRequired: taskId (path) — The ID of the task"
+  },
+  {
+    "id": "listTasks",
+    "name": "List tasks",
+    "description": "List tasks List workflow tasks that match the provided filters. GET /v1/tasks",
+    "context": "GET /v1/tasks\nList workflow tasks that match the provided filters. If no filters are provided, all task definitions accessible by the authenticated user are returned.\nOptional: ownerId (query) — The ID of the workspaces to return resources for; taskSlug (query) — An array of task slugs in the format workflow-slug/task-name. An optional version can be appended (workflow-slug/task-name:version). If no version is provided, the latest version is used.; workflowVersionId (query) — An array of workflow version IDs; workflowId (query) — An array of workflow IDs; cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "list-organization-audit-logs",
+    "name": "List organization audit logs",
+    "description": "List organization audit logs Retrieve audit logs for a specific organization with optional filtering and pagination. GET /v1/organizations/{orgId}/audit-logs",
+    "context": "GET /v1/organizations/{orgId}/audit-logs\nRetrieve audit logs for a specific organization with optional filtering and pagination.\nRequired: orgId (path) — The unique identifier of the organization\nOptional: startTime (query) — Start time for filtering audit logs (ISO 8601 format); endTime (query) — End time for filtering audit logs (ISO 8601 format); cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of audit log items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination)."
+  },
+  {
+    "id": "retrieve-event",
+    "name": "Retrieve event",
+    "description": "Retrieve event Retrieve the details of a particular event GET /v1/events/{eventId}",
+    "context": "GET /v1/events/{eventId}\nRetrieve the details of a particular event\nRequired: eventId (path) — The ID of the event"
+  }
+]

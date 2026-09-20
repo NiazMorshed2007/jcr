@@ -1,0 +1,26 @@
+[
+  {
+    "id": "repos%2Fcreate-deploy-key",
+    "name": "Create a deploy key",
+    "description": "Create a deploy key You can create a read-only deploy key. POST /repos/{owner}/{repo}/keys",
+    "context": "POST /repos/{owner}/{repo}/keys\nYou can create a read-only deploy key.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "repos%2Fdelete-deploy-key",
+    "name": "Delete a deploy key",
+    "description": "Delete a deploy key Deploy keys are immutable. DELETE /repos/{owner}/{repo}/keys/{key_id}",
+    "context": "DELETE /repos/{owner}/{repo}/keys/{key_id}\nDeploy keys are immutable. If you need to update a key, remove the key and create a new one instead.\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; key_id (path) — The unique identifier of the key."
+  },
+  {
+    "id": "repos%2Fget-deploy-key",
+    "name": "Get a deploy key",
+    "description": "Get a deploy key GET /repos/{owner}/{repo}/keys/{key_id}",
+    "context": "GET /repos/{owner}/{repo}/keys/{key_id}\nGet a deploy key\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.; key_id (path) — The unique identifier of the key."
+  },
+  {
+    "id": "repos%2Flist-deploy-keys",
+    "name": "List deploy keys",
+    "description": "List deploy keys GET /repos/{owner}/{repo}/keys",
+    "context": "GET /repos/{owner}/{repo}/keys\nList deploy keys\nRequired: owner (path) — The account owner of the repository. The name is not case sensitive.; repo (path) — The name of the repository without the `.git` extension. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

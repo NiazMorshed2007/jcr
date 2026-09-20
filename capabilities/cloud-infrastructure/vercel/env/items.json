@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createSharedEnvVariable",
+    "name": "Create one or more shared environment variables",
+    "description": "Create one or more shared environment variables Creates shared environment variable(s) for a team. POST /v1/env",
+    "context": "POST /v1/env\nCreates shared environment variable(s) for a team.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteSharedEnvVariable",
+    "name": "Delete one or more Env Var",
+    "description": "Delete one or more Env Var Deletes one or many Shared Environment Variables for a given team. DELETE /v1/env",
+    "context": "DELETE /v1/env\nDeletes one or many Shared Environment Variables for a given team.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "getSharedEnvVar",
+    "name": "Retrieve the decrypted value of a Shared Environment Variable by id.",
+    "description": "Retrieve the decrypted value of a Shared Environment Variable by id. GET /v1/env/{id}",
+    "context": "GET /v1/env/{id}\nRetrieve the decrypted value of a Shared Environment Variable by id.\nRequired: id (path) — The unique ID for the Shared Environment Variable to get the decrypted value.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listSharedEnvVariable",
+    "name": "Lists all Shared Environment Variables for a team",
+    "description": "Lists all Shared Environment Variables for a team Lists all Shared Environment Variables for a team, taking into account optional filters. GET /v1/env",
+    "context": "GET /v1/env\nLists all Shared Environment Variables for a team, taking into account optional filters.\nOptional: search (query); projectId (query) — Filter SharedEnvVariables that belong to a project; ids (query) — Filter SharedEnvVariables based on comma separated ids; exclude_ids (query) — Filter SharedEnvVariables based on comma separated ids; exclude-ids (query) — Filter SharedEnvVariables based on comma separated ids; exclude_projectId (query) — Filter SharedEnvVariables that belong to a project; exclude-projectId (query) — Filter SharedEnvVariables that belong to a project; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "unlinkSharedEnvVariable",
+    "name": "Disconnects a shared environment variable for a given project",
+    "description": "Disconnects a shared environment variable for a given project PATCH /v1/env/{id}/unlink/{projectId}",
+    "context": "PATCH /v1/env/{id}/unlink/{projectId}\nDisconnects a shared environment variable for a given project\nRequired: id (path) — The unique ID for the Shared Environment Variable to unlink from the project.; projectId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateSharedEnvVariable",
+    "name": "Updates one or more shared environment variables",
+    "description": "Updates one or more shared environment variables Updates a given Shared Environment Variable for a Team. PATCH /v1/env",
+    "context": "PATCH /v1/env\nUpdates a given Shared Environment Variable for a Team.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

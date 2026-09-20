@@ -1,0 +1,38 @@
+[
+  {
+    "id": "experiment_saved_metrics_create",
+    "name": "experiment_saved_metrics_create",
+    "description": "experiment_saved_metrics_create POST /api/projects/{project_id}/experiment_saved_metrics/",
+    "context": "POST /api/projects/{project_id}/experiment_saved_metrics/\nexperiment_saved_metrics_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "experiment_saved_metrics_destroy",
+    "name": "experiment_saved_metrics_destroy",
+    "description": "experiment_saved_metrics_destroy DELETE /api/projects/{project_id}/experiment_saved_metrics/{id}/",
+    "context": "DELETE /api/projects/{project_id}/experiment_saved_metrics/{id}/\nexperiment_saved_metrics_destroy\nRequired: id (path) — A unique integer value identifying this experiment saved metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiment_saved_metrics_list",
+    "name": "experiment_saved_metrics_list",
+    "description": "experiment_saved_metrics_list GET /api/projects/{project_id}/experiment_saved_metrics/",
+    "context": "GET /api/projects/{project_id}/experiment_saved_metrics/\nexperiment_saved_metrics_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: event (query) — Filter to shared metrics whose query references this event name. Matches events used directly in metric queries as well as events behind any actions those metrics reference. Use this for reuse discovery (find a metric by what it measures); distinct from 'search', which matches the metric's own name/description/tags.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term."
+  },
+  {
+    "id": "experiment_saved_metrics_partial_update",
+    "name": "experiment_saved_metrics_partial_update",
+    "description": "experiment_saved_metrics_partial_update PATCH /api/projects/{project_id}/experiment_saved_metrics/{id}/",
+    "context": "PATCH /api/projects/{project_id}/experiment_saved_metrics/{id}/\nexperiment_saved_metrics_partial_update\nRequired: id (path) — A unique integer value identifying this experiment saved metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "experiment_saved_metrics_retrieve",
+    "name": "experiment_saved_metrics_retrieve",
+    "description": "experiment_saved_metrics_retrieve GET /api/projects/{project_id}/experiment_saved_metrics/{id}/",
+    "context": "GET /api/projects/{project_id}/experiment_saved_metrics/{id}/\nexperiment_saved_metrics_retrieve\nRequired: id (path) — A unique integer value identifying this experiment saved metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "experiment_saved_metrics_update",
+    "name": "experiment_saved_metrics_update",
+    "description": "experiment_saved_metrics_update PUT /api/projects/{project_id}/experiment_saved_metrics/{id}/",
+    "context": "PUT /api/projects/{project_id}/experiment_saved_metrics/{id}/\nexperiment_saved_metrics_update\nRequired: id (path) — A unique integer value identifying this experiment saved metric.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

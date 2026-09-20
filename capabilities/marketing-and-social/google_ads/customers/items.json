@@ -1,0 +1,824 @@
+[
+  {
+    "id": "CustomersAccountBudgetProposalsMutate",
+    "name": "Creates, updates, or removes account budget proposals.",
+    "description": "Creates, updates, or removes account budget proposals. Creates, updates, or removes account budget proposals. POST /v25/customers/{customerId}/accountBudgetProposals:mutate",
+    "context": "POST /v25/customers/{customerId}/accountBudgetProposals:mutate\nCreates, updates, or removes account budget proposals. Operation statuses are returned. List of thrown errors: [AccountBudgetProposalError]() [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [DateError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAccountLinksCreate",
+    "name": "Creates an account link.",
+    "description": "Creates an account link. Creates an account link. POST /v25/customers/{customerId}/accountLinks:create",
+    "context": "POST /v25/customers/{customerId}/accountLinks:create\nCreates an account link. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]() [ThirdPartyAppAnalyticsLinkError]()\nRequired: customerId (path) — Required. The ID of the customer for which the account link is created.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAccountLinksMutate",
+    "name": "Creates or removes an account link.",
+    "description": "Creates or removes an account link. Creates or removes an account link. POST /v25/customers/{customerId}/accountLinks:mutate",
+    "context": "POST /v25/customers/{customerId}/accountLinks:mutate\nCreates or removes an account link. From V5, create is not supported through AccountLinkService.MutateAccountLink. Use AccountLinkService.CreateAccountLink instead. List of thrown errors: [AccountLinkError]() [AuthenticationError]() [AuthorizationError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupAdLabelsMutate",
+    "name": "Creates and removes ad group ad labels.",
+    "description": "Creates and removes ad group ad labels. Creates and removes ad group ad labels. POST /v25/customers/{customerId}/adGroupAdLabels:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupAdLabels:mutate\nCreates and removes ad group ad labels. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [HeaderError]() [InternalError]() [LabelError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. ID of the customer whose ad group ad labels are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupAdsMutate",
+    "name": "Creates, updates, or removes ads.",
+    "description": "Creates, updates, or removes ads. Creates, updates, or removes ads. POST /v25/customers/{customerId}/adGroupAds:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupAds:mutate\nCreates, updates, or removes ads. Operation statuses are returned. List of thrown errors: [AdCustomizerError]() [AdError]() [AdGroupAdError]() [AdSharingError]() [AdxError]() [AssetError]() [AssetLinkError]() [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [ContextError]() [DatabaseError]() [DateError]() [DistinctError]() [FeedAttributeReferenceError]() [FieldError]() [FieldMaskError]() [FunctionError]() [FunctionParsingError]() [HeaderError]() [IdError]() [ImageError]() [InternalError]() [ListOperationError]() [MediaBundleError]() [MediaFileError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperationAccessDeniedError]() [OperatorError]() [PolicyFindingError]() [PolicyValidationParameterError]() [PolicyViolationError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the customer whose ads are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupAssetSetsMutate",
+    "name": "Creates, or removes ad group asset sets.",
+    "description": "Creates, or removes ad group asset sets. Creates, or removes ad group asset sets. POST /v25/customers/{customerId}/adGroupAssetSets:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupAssetSets:mutate\nCreates, or removes ad group asset sets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose ad group asset sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupAssetsMutate",
+    "name": "Creates, updates, or removes ad group assets.",
+    "description": "Creates, updates, or removes ad group assets. Creates, updates, or removes ad group assets. POST /v25/customers/{customerId}/adGroupAssets:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupAssets:mutate\nCreates, updates, or removes ad group assets. Operation statuses are returned. List of thrown errors: [AssetLinkError]() [AuthenticationError]() [AuthorizationError]() [ContextError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [NotAllowlistedError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose ad group assets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupBidModifiersMutate",
+    "name": "Creates, updates, or removes ad group bid modifiers.",
+    "description": "Creates, updates, or removes ad group bid modifiers. Creates, updates, or removes ad group bid modifiers. POST /v25/customers/{customerId}/adGroupBidModifiers:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupBidModifiers:mutate\nCreates, updates, or removes ad group bid modifiers. Operation statuses are returned. List of thrown errors: [AdGroupBidModifierError]() [AuthenticationError]() [AuthorizationError]() [ContextError]() [CriterionError]() [DatabaseError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. ID of the customer whose ad group bid modifiers are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupCriteriaMutate",
+    "name": "Creates, updates, or removes criteria.",
+    "description": "Creates, updates, or removes criteria. Creates, updates, or removes criteria. POST /v25/customers/{customerId}/adGroupCriteria:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupCriteria:mutate\nCreates, updates, or removes criteria. Operation statuses are returned. List of thrown errors: [AdGroupCriterionError]() [AdxError]() [AuthenticationError]() [AuthorizationError]() [BiddingError]() [BiddingStrategyError]() [CollectionSizeError]() [ContextError]() [CriterionError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [MultiplierError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperationAccessDeniedError]() [OperatorError]() [PolicyViolationError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]()\nRequired: customerId (path) — Required. ID of the customer whose criteria are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupCriterionCustomizersMutate",
+    "name": "Creates, updates or removes ad group criterion customizers.",
+    "description": "Creates, updates or removes ad group criterion customizers. Creates, updates or removes ad group criterion customizers. POST /v25/customers/{customerId}/AdGroupCriterionCustomizers:mutate",
+    "context": "POST /v25/customers/{customerId}/AdGroupCriterionCustomizers:mutate\nCreates, updates or removes ad group criterion customizers. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose ad group criterion customizers are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupCriterionLabelsMutate",
+    "name": "Creates and removes ad group criterion labels.",
+    "description": "Creates and removes ad group criterion labels. Creates and removes ad group criterion labels. POST /v25/customers/{customerId}/adGroupCriterionLabels:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupCriterionLabels:mutate\nCreates and removes ad group criterion labels. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. ID of the customer whose ad group criterion labels are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupCustomizersMutate",
+    "name": "Creates, updates or removes ad group customizers.",
+    "description": "Creates, updates or removes ad group customizers. Creates, updates or removes ad group customizers. POST /v25/customers/{customerId}/adGroupCustomizers:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupCustomizers:mutate\nCreates, updates or removes ad group customizers. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose ad group customizers are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupLabelsMutate",
+    "name": "Creates and removes ad group labels.",
+    "description": "Creates and removes ad group labels. Creates and removes ad group labels. POST /v25/customers/{customerId}/adGroupLabels:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroupLabels:mutate\nCreates and removes ad group labels. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [LabelError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. ID of the customer whose ad group labels are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdGroupsMutate",
+    "name": "Creates, updates, or removes ad groups.",
+    "description": "Creates, updates, or removes ad groups. Creates, updates, or removes ad groups. POST /v25/customers/{customerId}/adGroups:mutate",
+    "context": "POST /v25/customers/{customerId}/adGroups:mutate\nCreates, updates, or removes ad groups. Operation statuses are returned. List of thrown errors: [AdGroupError]() [AdxError]() [AuthenticationError]() [AuthorizationError]() [BiddingError]() [BiddingStrategyError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [ListOperationError]() [MultiplierError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperationAccessDeniedError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SettingError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the customer whose ad groups are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdParametersMutate",
+    "name": "Creates, updates, or removes ad parameters.",
+    "description": "Creates, updates, or removes ad parameters. Creates, updates, or removes ad parameters. POST /v25/customers/{customerId}/adParameters:mutate",
+    "context": "POST /v25/customers/{customerId}/adParameters:mutate\nCreates, updates, or removes ad parameters. Operation statuses are returned. List of thrown errors: [AdParameterError]() [AuthenticationError]() [AuthorizationError]() [ContextError]() [DatabaseError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose ad parameters are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAdsMutate",
+    "name": "Updates ads.",
+    "description": "Updates ads. Updates ads. POST /v25/customers/{customerId}/ads:mutate",
+    "context": "POST /v25/customers/{customerId}/ads:mutate\nUpdates ads. Operation statuses are returned. Updating ads is not supported for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd. List of thrown errors: [AdCustomizerError]() [AdError]() [AdSharingError]() [AdxError]() [AssetError]() [AssetLinkError]() [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [DatabaseError]() [DateError]() [DistinctError]() [FeedAttributeReferenceError]() [FieldError]() [FieldMaskError]() [FunctionError]() [FunctionParsingError]() [HeaderError]() [IdError]() [ImageError]() [InternalError]() [ListOperationError]() [MediaBundleError]() [MediaFileError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperatorError]() [PolicyFindingError]() [PolicyViolationError]() [QuotaError]() [RangeError]() [RequestError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the customer whose ads are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetGenerationsGenerateImages",
+    "name": "Uses generative AI to generate images that can be used as assets in a campaign.",
+    "description": "Uses generative AI to generate images that can be used as assets in a campaign. Uses generative AI to generate images that can be used as assets in a campaign. POST /v25/customers/{customerId}/assetGenerations:generateImages",
+    "context": "POST /v25/customers/{customerId}/assetGenerations:generateImages\nUses generative AI to generate images that can be used as assets in a campaign. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [AssetGenerationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for whom the images are being generated. Required.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetGenerationsGenerateText",
+    "name": "Uses generative AI to generate text that can be used as assets in a campaign.",
+    "description": "Uses generative AI to generate text that can be used as assets in a campaign. Uses generative AI to generate text that can be used as assets in a campaign. POST /v25/customers/{customerId}/assetGenerations:generateText",
+    "context": "POST /v25/customers/{customerId}/assetGenerations:generateText\nUses generative AI to generate text that can be used as assets in a campaign. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [AssetGenerationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer to generate assets for. Required.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetGroupAssetsMutate",
+    "name": "Creates, updates or removes asset group assets.",
+    "description": "Creates, updates or removes asset group assets. Creates, updates or removes asset group assets. POST /v25/customers/{customerId}/assetGroupAssets:mutate",
+    "context": "POST /v25/customers/{customerId}/assetGroupAssets:mutate\nCreates, updates or removes asset group assets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose asset group assets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetGroupListingGroupFiltersMutate",
+    "name": "Creates, updates or removes asset group listing group filters.",
+    "description": "Creates, updates or removes asset group listing group filters. Creates, updates or removes asset group listing group filters. POST /v25/customers/{customerId}/assetGroupListingGroupFilters:mutate",
+    "context": "POST /v25/customers/{customerId}/assetGroupListingGroupFilters:mutate\nCreates, updates or removes asset group listing group filters. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose asset group listing group filters are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetGroupSignalsMutate",
+    "name": "Creates or removes asset group signals.",
+    "description": "Creates or removes asset group signals. Creates or removes asset group signals. POST /v25/customers/{customerId}/assetGroupSignals:mutate",
+    "context": "POST /v25/customers/{customerId}/assetGroupSignals:mutate\nCreates or removes asset group signals. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose asset group signals are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetGroupsMutate",
+    "name": "Creates, updates or removes asset groups.",
+    "description": "Creates, updates or removes asset groups. Creates, updates or removes asset groups. POST /v25/customers/{customerId}/assetGroups:mutate",
+    "context": "POST /v25/customers/{customerId}/assetGroups:mutate\nCreates, updates or removes asset groups. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose asset groups are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetSetAssetsMutate",
+    "name": "Creates, updates or removes asset set assets.",
+    "description": "Creates, updates or removes asset set assets. Creates, updates or removes asset set assets. POST /v25/customers/{customerId}/assetSetAssets:mutate",
+    "context": "POST /v25/customers/{customerId}/assetSetAssets:mutate\nCreates, updates or removes asset set assets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose asset set assets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetSetsMutate",
+    "name": "Creates, updates or removes asset sets.",
+    "description": "Creates, updates or removes asset sets. Creates, updates or removes asset sets. POST /v25/customers/{customerId}/assetSets:mutate",
+    "context": "POST /v25/customers/{customerId}/assetSets:mutate\nCreates, updates or removes asset sets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose asset sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAssetsMutate",
+    "name": "Creates assets.",
+    "description": "Creates assets. Creates assets. POST /v25/customers/{customerId}/assets:mutate",
+    "context": "POST /v25/customers/{customerId}/assets:mutate\nCreates assets. Operation statuses are returned. List of thrown errors: [AssetError]() [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [CurrencyCodeError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [ListOperationError]() [MediaUploadError]() [MutateError]() [NotAllowlistedError]() [NotEmptyError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]() [YoutubeVideoRegistrationError]()\nRequired: customerId (path) — Required. The ID of the customer whose assets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersAudiencesMutate",
+    "name": "Creates audiences.",
+    "description": "Creates audiences. Creates audiences. POST /v25/customers/{customerId}/audiences:mutate",
+    "context": "POST /v25/customers/{customerId}/audiences:mutate\nCreates audiences. Operation statuses are returned. List of thrown errors: [AudienceError]()\nRequired: customerId (path) — Required. The ID of the customer whose audiences are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBatchJobsMutate",
+    "name": "Mutates a batch job.",
+    "description": "Mutates a batch job. Mutates a batch job. POST /v25/customers/{customerId}/batchJobs:mutate",
+    "context": "POST /v25/customers/{customerId}/batchJobs:mutate\nMutates a batch job. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: customerId (path) — Required. The ID of the customer for which to create a batch job.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBiddingDataExclusionsMutate",
+    "name": "Creates, updates, or removes data exclusions.",
+    "description": "Creates, updates, or removes data exclusions. Creates, updates, or removes data exclusions. POST /v25/customers/{customerId}/biddingDataExclusions:mutate",
+    "context": "POST /v25/customers/{customerId}/biddingDataExclusions:mutate\nCreates, updates, or removes data exclusions. Operation statuses are returned.\nRequired: customerId (path) — Required. ID of the customer whose data exclusions are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBiddingSeasonalityAdjustmentsMutate",
+    "name": "Creates, updates, or removes seasonality adjustments.",
+    "description": "Creates, updates, or removes seasonality adjustments. Creates, updates, or removes seasonality adjustments. POST /v25/customers/{customerId}/biddingSeasonalityAdjustments:mutate",
+    "context": "POST /v25/customers/{customerId}/biddingSeasonalityAdjustments:mutate\nCreates, updates, or removes seasonality adjustments. Operation statuses are returned.\nRequired: customerId (path) — Required. ID of the customer whose seasonality adjustments are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBiddingStrategiesMutate",
+    "name": "Creates, updates, or removes bidding strategies.",
+    "description": "Creates, updates, or removes bidding strategies. Creates, updates, or removes bidding strategies. POST /v25/customers/{customerId}/biddingStrategies:mutate",
+    "context": "POST /v25/customers/{customerId}/biddingStrategies:mutate\nCreates, updates, or removes bidding strategies. Operation statuses are returned. List of thrown errors: [AdxError]() [AuthenticationError]() [AuthorizationError]() [BiddingError]() [BiddingStrategyError]() [ContextError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperationAccessDeniedError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose bidding strategies are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersBillingSetupsMutate",
+    "name": "Creates a billing setup, or cancels an existing billing setup.",
+    "description": "Creates a billing setup, or cancels an existing billing setup. Creates a billing setup, or cancels an existing billing setup. POST /v25/customers/{customerId}/billingSetups:mutate",
+    "context": "POST /v25/customers/{customerId}/billingSetups:mutate\nCreates a billing setup, or cancels an existing billing setup. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [BillingSetupError]() [DateError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. Id of the customer to apply the billing setup mutate operation to.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignAssetSetsMutate",
+    "name": "Creates, updates or removes campaign asset sets.",
+    "description": "Creates, updates or removes campaign asset sets. Creates, updates or removes campaign asset sets. POST /v25/customers/{customerId}/campaignAssetSets:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignAssetSets:mutate\nCreates, updates or removes campaign asset sets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose campaign asset sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignAssetsMutate",
+    "name": "Creates, updates, or removes campaign assets.",
+    "description": "Creates, updates, or removes campaign assets. Creates, updates, or removes campaign assets. POST /v25/customers/{customerId}/campaignAssets:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignAssets:mutate\nCreates, updates, or removes campaign assets. Operation statuses are returned. List of thrown errors: [AssetLinkError]() [AuthenticationError]() [AuthorizationError]() [ContextError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [NotAllowlistedError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaign assets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignBidModifiersMutate",
+    "name": "Creates, updates, or removes campaign bid modifiers.",
+    "description": "Creates, updates, or removes campaign bid modifiers. Creates, updates, or removes campaign bid modifiers. POST /v25/customers/{customerId}/campaignBidModifiers:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignBidModifiers:mutate\nCreates, updates, or removes campaign bid modifiers. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ContextError]() [CriterionError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. ID of the customer whose campaign bid modifiers are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignBudgetsMutate",
+    "name": "Creates, updates, or removes campaign budgets.",
+    "description": "Creates, updates, or removes campaign budgets. Creates, updates, or removes campaign budgets. POST /v25/customers/{customerId}/campaignBudgets:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignBudgets:mutate\nCreates, updates, or removes campaign budgets. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CampaignBudgetError]() [DatabaseError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [OperationAccessDeniedError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaign budgets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignConversionGoalsMutate",
+    "name": "Creates, updates or removes campaign conversion goals.",
+    "description": "Creates, updates or removes campaign conversion goals. Creates, updates or removes campaign conversion goals. POST /v25/customers/{customerId}/campaignConversionGoals:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignConversionGoals:mutate\nCreates, updates or removes campaign conversion goals. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose campaign conversion goals are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignCriteriaMutate",
+    "name": "Creates, updates, or removes criteria.",
+    "description": "Creates, updates, or removes criteria. Creates, updates, or removes criteria. POST /v25/customers/{customerId}/campaignCriteria:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignCriteria:mutate\nCreates, updates, or removes criteria. Operation statuses are returned. List of thrown errors: [AdxError]() [AuthenticationError]() [AuthorizationError]() [CampaignCriterionError]() [CollectionSizeError]() [ContextError]() [CriterionError]() [DatabaseError]() [DistinctError]() [FieldError]() [FieldMaskError]() [FunctionError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperationAccessDeniedError]() [OperatorError]() [QuotaError]() [RangeError]() [RegionCodeError]() [RequestError]() [ResourceCountLimitExceededError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose criteria are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignCustomizersMutate",
+    "name": "Creates, updates or removes campaign customizers.",
+    "description": "Creates, updates or removes campaign customizers. Creates, updates or removes campaign customizers. POST /v25/customers/{customerId}/campaignCustomizers:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignCustomizers:mutate\nCreates, updates or removes campaign customizers. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose campaign customizers are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignDraftsMutate",
+    "name": "Creates, updates, or removes campaign drafts.",
+    "description": "Creates, updates, or removes campaign drafts. Creates, updates, or removes campaign drafts. POST /v25/customers/{customerId}/campaignDrafts:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignDrafts:mutate\nCreates, updates, or removes campaign drafts. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CampaignDraftError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaign drafts are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignGoalConfigsMutate",
+    "name": "Create or update campaign goal configs.",
+    "description": "Create or update campaign goal configs. Create or update campaign goal configs. POST /v25/customers/{customerId}/CampaignGoalConfigs:mutate",
+    "context": "POST /v25/customers/{customerId}/CampaignGoalConfigs:mutate\nCreate or update campaign goal configs. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]() [CampaignGoalConfigError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaign goal configs are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignGroupsMutate",
+    "name": "Creates, updates, or removes campaign groups.",
+    "description": "Creates, updates, or removes campaign groups. Creates, updates, or removes campaign groups. POST /v25/customers/{customerId}/campaignGroups:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignGroups:mutate\nCreates, updates, or removes campaign groups. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose campaign groups are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignLabelsMutate",
+    "name": "Creates and removes campaign-label relationships.",
+    "description": "Creates and removes campaign-label relationships. Creates and removes campaign-label relationships. POST /v25/customers/{customerId}/campaignLabels:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignLabels:mutate\nCreates and removes campaign-label relationships. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [LabelError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. ID of the customer whose campaign-label relationships are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignsEnablePMaxBrandGuidelines",
+    "name": "Enables Brand Guidelines for Performance Max campaigns.",
+    "description": "Enables Brand Guidelines for Performance Max campaigns. Enables Brand Guidelines for Performance Max campaigns. POST /v25/customers/{customerId}/campaigns:enablePMaxBrandGuidelines",
+    "context": "POST /v25/customers/{customerId}/campaigns:enablePMaxBrandGuidelines\nEnables Brand Guidelines for Performance Max campaigns. List of thrown errors: [AuthenticationError]() [AssetError]() [AssetLinkError]() [AuthorizationError]() [BrandGuidelinesMigrationError]() [CampaignError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaigns are being enabled.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignSharedSetsMutate",
+    "name": "Creates or removes campaign shared sets.",
+    "description": "Creates or removes campaign shared sets. Creates or removes campaign shared sets. POST /v25/customers/{customerId}/campaignSharedSets:mutate",
+    "context": "POST /v25/customers/{customerId}/campaignSharedSets:mutate\nCreates or removes campaign shared sets. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CampaignSharedSetError]() [ContextError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaign shared sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCampaignsMutate",
+    "name": "Creates, updates, or removes campaigns.",
+    "description": "Creates, updates, or removes campaigns. Creates, updates, or removes campaigns. POST /v25/customers/{customerId}/campaigns:mutate",
+    "context": "POST /v25/customers/{customerId}/campaigns:mutate\nCreates, updates, or removes campaigns. Operation statuses are returned. List of thrown errors: [AdxError]() [AuthenticationError]() [AuthorizationError]() [BiddingError]() [BiddingStrategyError]() [CampaignBudgetError]() [CampaignError]() [ContextError]() [DatabaseError]() [DateError]() [DateRangeError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [ListOperationError]() [MutateError]() [NewResourceCreationError]() [NotAllowlistedError]() [NotEmptyError]() [NullError]() [OperationAccessDeniedError]() [OperatorError]() [QuotaError]() [RangeError]() [RegionCodeError]() [RequestError]() [ResourceCountLimitExceededError]() [SettingError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaigns are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersConversionActionsMutate",
+    "name": "Creates, updates or removes conversion actions.",
+    "description": "Creates, updates or removes conversion actions. Creates, updates or removes conversion actions. POST /v25/customers/{customerId}/conversionActions:mutate",
+    "context": "POST /v25/customers/{customerId}/conversionActions:mutate\nCreates, updates or removes conversion actions. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ConversionActionError]() [CurrencyCodeError]() [DatabaseError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose conversion actions are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersConversionCustomVariablesMutate",
+    "name": "Creates or updates conversion custom variables.",
+    "description": "Creates or updates conversion custom variables. Creates or updates conversion custom variables. POST /v25/customers/{customerId}/conversionCustomVariables:mutate",
+    "context": "POST /v25/customers/{customerId}/conversionCustomVariables:mutate\nCreates or updates conversion custom variables. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ConversionCustomVariableError]() [DatabaseError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose conversion custom variables are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersConversionGoalCampaignConfigsMutate",
+    "name": "Creates, updates or removes conversion goal campaign config.",
+    "description": "Creates, updates or removes conversion goal campaign config. Creates, updates or removes conversion goal campaign config. POST /v25/customers/{customerId}/conversionGoalCampaignConfigs:mutate",
+    "context": "POST /v25/customers/{customerId}/conversionGoalCampaignConfigs:mutate\nCreates, updates or removes conversion goal campaign config. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose custom conversion goals are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersConversionValueRuleSetsMutate",
+    "name": "Creates, updates or removes conversion value rule sets.",
+    "description": "Creates, updates or removes conversion value rule sets. Creates, updates or removes conversion value rule sets. POST /v25/customers/{customerId}/conversionValueRuleSets:mutate",
+    "context": "POST /v25/customers/{customerId}/conversionValueRuleSets:mutate\nCreates, updates or removes conversion value rule sets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose conversion value rule sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersConversionValueRulesMutate",
+    "name": "Creates, updates, or removes conversion value rules.",
+    "description": "Creates, updates, or removes conversion value rules. Creates, updates, or removes conversion value rules. POST /v25/customers/{customerId}/conversionValueRules:mutate",
+    "context": "POST /v25/customers/{customerId}/conversionValueRules:mutate\nCreates, updates, or removes conversion value rules. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose conversion value rules are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCreateCustomerClient",
+    "name": "Creates a new client under manager.",
+    "description": "Creates a new client under manager. Creates a new client under manager. POST /v25/customers/{customerId}:createCustomerClient",
+    "context": "POST /v25/customers/{customerId}:createCustomerClient\nCreates a new client under manager. The new client customer is returned. List of thrown errors: [AccessInvitationError]() [AuthenticationError]() [AuthorizationError]() [CurrencyCodeError]() [HeaderError]() [InternalError]() [ManagerLinkError]() [QuotaError]() [RequestError]() [StringLengthError]() [TimeZoneError]()\nRequired: customerId (path) — Required. The ID of the Manager under whom client customer is being created.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomAudiencesMutate",
+    "name": "Creates or updates custom audiences.",
+    "description": "Creates or updates custom audiences. Creates or updates custom audiences. POST /v25/customers/{customerId}/customAudiences:mutate",
+    "context": "POST /v25/customers/{customerId}/customAudiences:mutate\nCreates or updates custom audiences. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CustomAudienceError]() [CustomInterestError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [OperationAccessDeniedError]() [PolicyViolationError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose custom audiences are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomConversionGoalsMutate",
+    "name": "Creates, updates or removes custom conversion goals.",
+    "description": "Creates, updates or removes custom conversion goals. Creates, updates or removes custom conversion goals. POST /v25/customers/{customerId}/customConversionGoals:mutate",
+    "context": "POST /v25/customers/{customerId}/customConversionGoals:mutate\nCreates, updates or removes custom conversion goals. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose custom conversion goals are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerAssetSetsMutate",
+    "name": "Creates, or removes customer asset sets.",
+    "description": "Creates, or removes customer asset sets. Creates, or removes customer asset sets. POST /v25/customers/{customerId}/customerAssetSets:mutate",
+    "context": "POST /v25/customers/{customerId}/customerAssetSets:mutate\nCreates, or removes customer asset sets. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose customer asset sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerAssetsMutate",
+    "name": "Creates, updates, or removes customer assets.",
+    "description": "Creates, updates, or removes customer assets. Creates, updates, or removes customer assets. POST /v25/customers/{customerId}/customerAssets:mutate",
+    "context": "POST /v25/customers/{customerId}/customerAssets:mutate\nCreates, updates, or removes customer assets. Operation statuses are returned. List of thrown errors: [AssetLinkError]() [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose customer assets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerClientLinksMutate",
+    "name": "Creates or updates a customer client link.",
+    "description": "Creates or updates a customer client link. Creates or updates a customer client link. POST /v25/customers/{customerId}/customerClientLinks:mutate",
+    "context": "POST /v25/customers/{customerId}/customerClientLinks:mutate\nCreates or updates a customer client link. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [ManagerLinkError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose customer link are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerConversionGoalsMutate",
+    "name": "Creates, updates or removes customer conversion goals.",
+    "description": "Creates, updates or removes customer conversion goals. Creates, updates or removes customer conversion goals. POST /v25/customers/{customerId}/customerConversionGoals:mutate",
+    "context": "POST /v25/customers/{customerId}/customerConversionGoals:mutate\nCreates, updates or removes customer conversion goals. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose customer conversion goals are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerCustomizersMutate",
+    "name": "Creates, updates or removes customer customizers.",
+    "description": "Creates, updates or removes customer customizers. Creates, updates or removes customer customizers. POST /v25/customers/{customerId}/CustomerCustomizers:mutate",
+    "context": "POST /v25/customers/{customerId}/CustomerCustomizers:mutate\nCreates, updates or removes customer customizers. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose customer customizers are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerLabelsMutate",
+    "name": "Creates and removes customer-label relationships.",
+    "description": "Creates and removes customer-label relationships. Creates and removes customer-label relationships. POST /v25/customers/{customerId}/customerLabels:mutate",
+    "context": "POST /v25/customers/{customerId}/customerLabels:mutate\nCreates and removes customer-label relationships. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [HeaderError]() [InternalError]() [LabelError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. ID of the customer whose customer-label relationships are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerManagerLinksMoveManagerLink",
+    "name": "Moves a client customer to a new manager customer.",
+    "description": "Moves a client customer to a new manager customer. Moves a client customer to a new manager customer. POST /v25/customers/{customerId}/customerManagerLinks:moveManagerLink",
+    "context": "POST /v25/customers/{customerId}/customerManagerLinks:moveManagerLink\nMoves a client customer to a new manager customer. This simplifies the complex request that requires two operations to move a client customer to a new manager, for example: 1. Update operation with Status INACTIVE (previous manager) and, 2. Update operation with Status ACTIVE (new manager). List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the client customer that is being moved.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerManagerLinksMutate",
+    "name": "Updates customer manager links.",
+    "description": "Updates customer manager links. Updates customer manager links. POST /v25/customers/{customerId}/customerManagerLinks:mutate",
+    "context": "POST /v25/customers/{customerId}/customerManagerLinks:mutate\nUpdates customer manager links. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [ManagerLinkError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose customer manager links are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerNegativeCriteriaMutate",
+    "name": "Creates or removes criteria.",
+    "description": "Creates or removes criteria. Creates or removes criteria. POST /v25/customers/{customerId}/customerNegativeCriteria:mutate",
+    "context": "POST /v25/customers/{customerId}/customerNegativeCriteria:mutate\nCreates or removes criteria. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CriterionError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose criteria are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerSkAdNetworkConversionValueSchemasMutate",
+    "name": "Creates or updates the CustomerSkAdNetworkConversionValueSchema.",
+    "description": "Creates or updates the CustomerSkAdNetworkConversionValueSchema. Creates or updates the CustomerSkAdNetworkConversionValueSchema. POST /v25/customers/{customerId}/customerSkAdNetworkConversionValueSchemas:mutate",
+    "context": "POST /v25/customers/{customerId}/customerSkAdNetworkConversionValueSchemas:mutate\nCreates or updates the CustomerSkAdNetworkConversionValueSchema. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [InternalError]() [MutateError]()\nRequired: customerId (path) — The ID of the customer whose shared sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerUserAccessesMutate",
+    "name": "Updates, removes permission of a user on a given customer.",
+    "description": "Updates, removes permission of a user on a given customer. Updates, removes permission of a user on a given customer. POST /v25/customers/{customerId}/customerUserAccesses:mutate",
+    "context": "POST /v25/customers/{customerId}/customerUserAccesses:mutate\nUpdates, removes permission of a user on a given customer. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CustomerUserAccessError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomerUserAccessInvitationsMutate",
+    "name": "Creates or removes an access invitation.",
+    "description": "Creates or removes an access invitation. Creates or removes an access invitation. POST /v25/customers/{customerId}/customerUserAccessInvitations:mutate",
+    "context": "POST /v25/customers/{customerId}/customerUserAccessInvitations:mutate\nCreates or removes an access invitation. List of thrown errors: [AccessInvitationError]() [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose access invitation is being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomInterestsMutate",
+    "name": "Creates or updates custom interests.",
+    "description": "Creates or updates custom interests. Creates or updates custom interests. POST /v25/customers/{customerId}/customInterests:mutate",
+    "context": "POST /v25/customers/{customerId}/customInterests:mutate\nCreates or updates custom interests. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CriterionError]() [CustomInterestError]() [HeaderError]() [InternalError]() [MutateError]() [PolicyViolationError]() [QuotaError]() [RequestError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose custom interests are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersCustomizerAttributesMutate",
+    "name": "Creates, updates or removes customizer attributes.",
+    "description": "Creates, updates or removes customizer attributes. Creates, updates or removes customizer attributes. POST /v25/customers/{customerId}/customizerAttributes:mutate",
+    "context": "POST /v25/customers/{customerId}/customizerAttributes:mutate\nCreates, updates or removes customizer attributes. Operation statuses are returned.\nRequired: customerId (path) — Required. The ID of the customer whose customizer attributes are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersDataLinksCreate",
+    "name": "Creates a data link.",
+    "description": "Creates a data link. Creates a data link. POST /v25/customers/{customerId}/dataLinks:create",
+    "context": "POST /v25/customers/{customerId}/dataLinks:create\nCreates a data link. The requesting Google Ads account name and account ID will be shared with the third party (such as YouTube creators for video links) to whom you are creating the link with. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [DataLinkError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for which the data link is created.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersDataLinksRemove",
+    "name": "Remove a data link.",
+    "description": "Remove a data link. Remove a data link. POST /v25/customers/{customerId}/dataLinks:remove",
+    "context": "POST /v25/customers/{customerId}/dataLinks:remove\nRemove a data link. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [DataLinkError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for which the data link is updated.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersDataLinksUpdate",
+    "name": "Update a data link.",
+    "description": "Update a data link. Update a data link. POST /v25/customers/{customerId}/dataLinks:update",
+    "context": "POST /v25/customers/{customerId}/dataLinks:update\nUpdate a data link. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [DataLinkError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for which the data link is created.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentArmsMutate",
+    "name": "Creates, updates, or removes experiment arms.",
+    "description": "Creates, updates, or removes experiment arms. Creates, updates, or removes experiment arms. POST /v25/customers/{customerId}/experimentArms:mutate",
+    "context": "POST /v25/customers/{customerId}/experimentArms:mutate\nCreates, updates, or removes experiment arms. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ExperimentArmError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose experiments are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersExperimentsMutate",
+    "name": "Creates, updates, or removes experiments.",
+    "description": "Creates, updates, or removes experiments. Creates, updates, or removes experiments. POST /v25/customers/{customerId}/experiments:mutate",
+    "context": "POST /v25/customers/{customerId}/experiments:mutate\nCreates, updates, or removes experiments. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ExperimentError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose experiments are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateAdGroupThemes",
+    "name": "Returns a list of suggested AdGroups and suggested modifications (text, match type) for the given keywords.",
+    "description": "Returns a list of suggested AdGroups and suggested modifications (text, match type) for the given keywords. Returns a list of suggested AdGroups and suggested modifications (text, match type) for the given keywords. POST /v25/customers/{customerId}:generateAdGroupThemes",
+    "context": "POST /v25/customers/{customerId}:generateAdGroupThemes\nReturns a list of suggested AdGroups and suggested modifications (text, match type) for the given keywords. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateAudienceCompositionInsights",
+    "name": "Returns a collection of attributes that are represented in an audience of interest, with metrics that compare each attribute's share of the audience with its share of a baseline audience",
+    "description": "Returns a collection of attributes that are represented in an audience of interest, with metrics that compare each attribute's share of the audience with its share of a baseline audience Returns a collection of attributes that are represented in an audience of interest, with metrics that compare each attribute's share…",
+    "context": "POST /v25/customers/{customerId}:generateAudienceCompositionInsights\nReturns a collection of attributes that are represented in an audience of interest, with metrics that compare each attribute's share of the audience with its share of a baseline audience. List of thrown errors: [AudienceInsightsError]() [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateAudienceDefinition",
+    "name": "Returns a collection of audience attributes using generative AI based on the provided audience description.",
+    "description": "Returns a collection of audience attributes using generative AI based on the provided audience description. Returns a collection of audience attributes using generative AI based on the provided audience description. POST /v25/customers/{customerId}:generateAudienceDefinition",
+    "context": "POST /v25/customers/{customerId}:generateAudienceDefinition\nReturns a collection of audience attributes using generative AI based on the provided audience description. List of thrown errors: [AudienceInsightsError]() [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateAudienceOverlapInsights",
+    "name": "Returns a collection of audience attributes along with estimates of the overlap between their potential YouTube reach and that of a given input attribute",
+    "description": "Returns a collection of audience attributes along with estimates of the overlap between their potential YouTube reach and that of a given input attribute Returns a collection of audience attributes along with estimates of the overlap between their potential YouTube reach and that of a given input attribute. POST /v25/…",
+    "context": "POST /v25/customers/{customerId}:generateAudienceOverlapInsights\nReturns a collection of audience attributes along with estimates of the overlap between their potential YouTube reach and that of a given input attribute. List of thrown errors: [AudienceInsightsError]() [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateBenchmarksMetrics",
+    "name": "Returns YouTube advertisement metrics for the given client against industry benchmarks.",
+    "description": "Returns YouTube advertisement metrics for the given client against industry benchmarks. Returns YouTube advertisement metrics for the given client against industry benchmarks. POST /v25/customers/{customerId}:generateBenchmarksMetrics",
+    "context": "POST /v25/customers/{customerId}:generateBenchmarksMetrics\nReturns YouTube advertisement metrics for the given client against industry benchmarks. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [BenchmarksError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer. Supply a client customer ID to generate metrics for the customer. A manager account customer ID will not return customer metrics since it does not have any associated direct ad campaigns.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateCreatorInsights",
+    "name": "Returns insights for a collection of YouTube Creators and Channels.",
+    "description": "Returns insights for a collection of YouTube Creators and Channels. Returns insights for a collection of YouTube Creators and Channels. POST /v25/customers/{customerId}:generateCreatorInsights",
+    "context": "POST /v25/customers/{customerId}:generateCreatorInsights\nReturns insights for a collection of YouTube Creators and Channels. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateInsightsFinderReport",
+    "name": "Creates a saved report that can be viewed in the Insights Finder tool.",
+    "description": "Creates a saved report that can be viewed in the Insights Finder tool. Creates a saved report that can be viewed in the Insights Finder tool. POST /v25/customers/{customerId}:generateInsightsFinderReport",
+    "context": "POST /v25/customers/{customerId}:generateInsightsFinderReport\nCreates a saved report that can be viewed in the Insights Finder tool. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateKeywordForecastMetrics",
+    "name": "Returns metrics (such as impressions, clicks, total cost) of a keyword forecast for the given campaign.",
+    "description": "Returns metrics (such as impressions, clicks, total cost) of a keyword forecast for the given campaign. Returns metrics (such as impressions, clicks, total cost) of a keyword forecast for the given campaign. POST /v25/customers/{customerId}:generateKeywordForecastMetrics",
+    "context": "POST /v25/customers/{customerId}:generateKeywordForecastMetrics\nReturns metrics (such as impressions, clicks, total cost) of a keyword forecast for the given campaign. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateKeywordHistoricalMetrics",
+    "name": "Returns a list of keyword historical metrics.",
+    "description": "Returns a list of keyword historical metrics. Returns a list of keyword historical metrics. POST /v25/customers/{customerId}:generateKeywordHistoricalMetrics",
+    "context": "POST /v25/customers/{customerId}:generateKeywordHistoricalMetrics\nReturns a list of keyword historical metrics. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — The ID of the customer with the recommendation.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateKeywordIdeas",
+    "name": "Returns a list of keyword ideas.",
+    "description": "Returns a list of keyword ideas. Returns a list of keyword ideas. POST /v25/customers/{customerId}:generateKeywordIdeas",
+    "context": "POST /v25/customers/{customerId}:generateKeywordIdeas\nReturns a list of keyword ideas. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [HeaderError]() [InternalError]() [KeywordPlanIdeaError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — The ID of the customer with the recommendation.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateReachForecast",
+    "name": "Generates a reach forecast for a given targeting / product mix.",
+    "description": "Generates a reach forecast for a given targeting / product mix. Generates a reach forecast for a given targeting / product mix. POST /v25/customers/{customerId}:generateReachForecast",
+    "context": "POST /v25/customers/{customerId}:generateReachForecast\nGenerates a reach forecast for a given targeting / product mix. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [ReachPlanError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateShareablePreviews",
+    "name": "Returns the requested Shareable Preview.",
+    "description": "Returns the requested Shareable Preview. POST /v25/customers/{customerId}:generateShareablePreviews",
+    "context": "POST /v25/customers/{customerId}:generateShareablePreviews\nReturns the requested Shareable Preview.\nRequired: customerId (path) — Required. The customer creating the shareable previews request.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateSuggestedTargetingInsights",
+    "name": "Returns a collection of targeting insights (e.g.",
+    "description": "Returns a collection of targeting insights (e.g. Returns a collection of targeting insights (e.g. POST /v25/customers/{customerId}:generateSuggestedTargetingInsights",
+    "context": "POST /v25/customers/{customerId}:generateSuggestedTargetingInsights\nReturns a collection of targeting insights (e.g. targetable audiences) that are relevant to the requested audience. List of thrown errors: [AudienceInsightsError]() [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateTargetingSuggestionMetrics",
+    "name": "Returns potential reach metrics for targetable audiences.",
+    "description": "Returns potential reach metrics for targetable audiences. Returns potential reach metrics for targetable audiences. POST /v25/customers/{customerId}:generateTargetingSuggestionMetrics",
+    "context": "POST /v25/customers/{customerId}:generateTargetingSuggestionMetrics\nReturns potential reach metrics for targetable audiences. This method helps answer questions like \"How many Men aged 18+ interested in Camping can be reached on YouTube?\" List of thrown errors: [AudienceInsightsError]() [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGenerateTrendingInsights",
+    "name": "Returns insights for trending content on YouTube.",
+    "description": "Returns insights for trending content on YouTube. Returns insights for trending content on YouTube. POST /v25/customers/{customerId}:generateTrendingInsights",
+    "context": "POST /v25/customers/{customerId}:generateTrendingInsights\nReturns insights for trending content on YouTube. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGetIdentityVerification",
+    "name": "Returns Identity Verification information.",
+    "description": "Returns Identity Verification information. Returns Identity Verification information. GET /v25/customers/{customerId}/getIdentityVerification",
+    "context": "GET /v25/customers/{customerId}/getIdentityVerification\nReturns Identity Verification information. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for whom we are requesting verification information.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGoalsMutate",
+    "name": "Create or update goals.",
+    "description": "Create or update goals. Create or update goals. POST /v25/customers/{customerId}/Goals:mutate",
+    "context": "POST /v25/customers/{customerId}/Goals:mutate\nCreate or update goals. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]() [GoalError]()\nRequired: customerId (path) — Required. The ID of the customer whose goals are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGoogleAdsMutate",
+    "name": "Executes mutate and actions operations.",
+    "description": "Executes mutate and actions operations. Executes mutate and actions operations. POST /v25/customers/{customerId}/googleAds:mutate",
+    "context": "POST /v25/customers/{customerId}/googleAds:mutate\nExecutes mutate and actions operations. Mutate operations create, update, or remove resources. Actions perform custom operations. This method supports atomic transactions with multiple types of resources and actions. For example, you can atomically create a campaign and a campaign budget, or perform up to thousands of mutates atomically. This method is essentially a wrapper around a series of mutate methods. The only features it offers over calling those methods directly are: - Atomic transactions - Temp resource names (described below) - Somewhat reduced latency over making a series of mutate calls Note: Only resources that support atomic transactions are included, so this method can't replace all calls to individual services. ## Atomic Transaction Benefits Atomicity makes error handling much easier. If you're making a series of changes and one fails, it can leave your account in an inconsistent state. With atomicity, you either reach the chosen state directly, or the request fails and you can retry. ## Temp Resource Names Temp resource names are a special type of resource name used to create a resource and reference that resource in the same request. For example, if a campaign budget is created with `resource_name` equal to `customers/123/campaignBudgets/-1`, that resource name can be reused in the `Campaign.budget` field in the same request. That way, the two resources are created and linked atomically. To create a temp resource name, put a negative number in the part of the name that the server would normally allocate. Note: - Resources must be created with a temp name before the name can be reused. For example, the previous CampaignBudget+Campaign example would fail if the mutate order was reversed. - Temp names are not remembered across requests. - There's no limit to the number of temp names in a request. - Each temp name must use a unique negative number, even if the resource types differ. ## Latency It's important to group mutates by resource type or the request may time out and fail. Latency is roughly equal to a series of calls to individual mutate methods, where each change in resource type is a new call. For example, mutating 10 campaigns then 10 ad groups is like 2 calls, while mutating 1 campaign, 1 ad group, 1 campaign, 1 ad group is like 4 calls. List of thrown errors: [AdCustomizerError]() [AdError]() [AdGroupAdError]() [AdGroupCriterionError]() [AdGroupError]() [AssetError]() [AuthenticationError]() [AuthorizationError]() [BiddingError]() [CampaignBudgetError]() [CampaignCriterionError]() [CampaignError]() [CampaignExperimentError]() [CampaignSharedSetError]() [CollectionSizeError]() [ContextError]() [ConversionActionError]() [CriterionError]() [CustomerFeedError]() [DatabaseError]() [DateError]() [DateRangeError]() [DistinctError]() [ExtensionFeedItemError]() [ExtensionSettingError]() [FeedAttributeReferenceError]() [FeedError]() [FeedItemError]() [FeedItemSetError]() [FieldError]() [FieldMaskError]() [FunctionParsingError]() [HeaderError]() [ImageError]() [InternalError]() [KeywordPlanAdGroupKeywordError]() [KeywordPlanCampaignError]() [KeywordPlanError]() [LabelError]() [ListOperationError]() [MediaUploadError]() [MutateError]() [NewResourceCreationError]() [NullError]() [OperationAccessDeniedError]() [PolicyFindingError]() [PolicyViolationError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SettingError]() [SharedSetError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]() [UrlFieldError]() [UserListError]() [YoutubeVideoRegistrationError]()\nRequired: customerId (path) — Required. The ID of the customer whose resources are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGoogleAdsSearch",
+    "name": "Returns all rows that match the search query.",
+    "description": "Returns all rows that match the search query. Returns all rows that match the search query. POST /v25/customers/{customerId}/googleAds:search",
+    "context": "POST /v25/customers/{customerId}/googleAds:search\nReturns all rows that match the search query. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ChangeEventError]() [ChangeStatusError]() [ClickViewError]() [HeaderError]() [InternalError]() [QueryError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer being queried.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersGoogleAdsSearchStream",
+    "name": "Returns all rows that match the search stream query.",
+    "description": "Returns all rows that match the search stream query. Returns all rows that match the search stream query. POST /v25/customers/{customerId}/googleAds:searchStream",
+    "context": "POST /v25/customers/{customerId}/googleAds:searchStream\nReturns all rows that match the search stream query. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ChangeEventError]() [ChangeStatusError]() [ClickViewError]() [HeaderError]() [InternalError]() [QueryError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer being queried.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersIncentivesApplyIncentive",
+    "name": "Applies the incentive for the ads customer.",
+    "description": "Applies the incentive for the ads customer. POST /v25/customers/{customerId}/incentives/{selectedIncentiveId}:applyIncentive",
+    "context": "POST /v25/customers/{customerId}/incentives/{selectedIncentiveId}:applyIncentive\nApplies the incentive for the ads customer.\nRequired: selectedIncentiveId (path) — Required. The incentive ID of this incentive. This is used to identify which incentive is selected by the user in the CYO flow.; customerId (path) — Required. The customer ID of the account that the incentive is being applied to.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersInvoicesList",
+    "name": "Returns all invoices associated with a billing setup, for a given month.",
+    "description": "Returns all invoices associated with a billing setup, for a given month. Returns all invoices associated with a billing setup, for a given month. GET /v25/customers/{customerId}/invoices",
+    "context": "GET /v25/customers/{customerId}/invoices\nReturns all invoices associated with a billing setup, for a given month. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [InvoiceError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer to fetch invoices for.\nOptional: billingSetup (query) — Required. The billing setup resource name of the requested invoices. `customers/{customer_id}/billingSetups/{billing_setup_id}`; includeGranularLevelInvoiceDetails (query) — Optional. When true, the response will include more granular level invoice details such as campaign level cost breakdown, itemized regulatory costs and adjustments. The default value is false.; issueYear (query) — Required. The issue year to retrieve invoices, in yyyy format. Only invoices issued in 2019 or later can be retrieved.; issueMonth (query) — Required. The issue month to retrieve invoices.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersKeywordPlanAdGroupKeywordsMutate",
+    "name": "Creates, updates, or removes Keyword Plan ad group keywords.",
+    "description": "Creates, updates, or removes Keyword Plan ad group keywords. Creates, updates, or removes Keyword Plan ad group keywords. POST /v25/customers/{customerId}/keywordPlanAdGroupKeywords:mutate",
+    "context": "POST /v25/customers/{customerId}/keywordPlanAdGroupKeywords:mutate\nCreates, updates, or removes Keyword Plan ad group keywords. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [KeywordPlanAdGroupKeywordError]() [KeywordPlanError]() [MutateError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: customerId (path) — Required. The ID of the customer whose Keyword Plan ad group keywords are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersKeywordPlanAdGroupsMutate",
+    "name": "Creates, updates, or removes Keyword Plan ad groups.",
+    "description": "Creates, updates, or removes Keyword Plan ad groups. Creates, updates, or removes Keyword Plan ad groups. POST /v25/customers/{customerId}/keywordPlanAdGroups:mutate",
+    "context": "POST /v25/customers/{customerId}/keywordPlanAdGroups:mutate\nCreates, updates, or removes Keyword Plan ad groups. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [KeywordPlanAdGroupError]() [KeywordPlanError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: customerId (path) — Required. The ID of the customer whose Keyword Plan ad groups are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersKeywordPlanCampaignKeywordsMutate",
+    "name": "Creates, updates, or removes Keyword Plan campaign keywords.",
+    "description": "Creates, updates, or removes Keyword Plan campaign keywords. Creates, updates, or removes Keyword Plan campaign keywords. POST /v25/customers/{customerId}/keywordPlanCampaignKeywords:mutate",
+    "context": "POST /v25/customers/{customerId}/keywordPlanCampaignKeywords:mutate\nCreates, updates, or removes Keyword Plan campaign keywords. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [KeywordPlanAdGroupKeywordError]() [KeywordPlanCampaignKeywordError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: customerId (path) — Required. The ID of the customer whose campaign keywords are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersKeywordPlanCampaignsMutate",
+    "name": "Creates, updates, or removes Keyword Plan campaigns.",
+    "description": "Creates, updates, or removes Keyword Plan campaigns. Creates, updates, or removes Keyword Plan campaigns. POST /v25/customers/{customerId}/keywordPlanCampaigns:mutate",
+    "context": "POST /v25/customers/{customerId}/keywordPlanCampaigns:mutate\nCreates, updates, or removes Keyword Plan campaigns. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [KeywordPlanCampaignError]() [KeywordPlanError]() [ListOperationError]() [MutateError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]()\nRequired: customerId (path) — Required. The ID of the customer whose Keyword Plan campaigns are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersKeywordPlansMutate",
+    "name": "Creates, updates, or removes keyword plans.",
+    "description": "Creates, updates, or removes keyword plans. Creates, updates, or removes keyword plans. POST /v25/customers/{customerId}/keywordPlans:mutate",
+    "context": "POST /v25/customers/{customerId}/keywordPlans:mutate\nCreates, updates, or removes keyword plans. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [KeywordPlanError]() [MutateError]() [NewResourceCreationError]() [QuotaError]() [RequestError]() [ResourceCountLimitExceededError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose keyword plans are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersLabelsMutate",
+    "name": "Creates, updates, or removes labels.",
+    "description": "Creates, updates, or removes labels. Creates, updates, or removes labels. POST /v25/customers/{customerId}/labels:mutate",
+    "context": "POST /v25/customers/{customerId}/labels:mutate\nCreates, updates, or removes labels. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [LabelError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. ID of the customer whose labels are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersLocalServicesAppendLeadConversation",
+    "name": "RPC to append Local Services Lead Conversation resources to Local Services Lead resources.",
+    "description": "RPC to append Local Services Lead Conversation resources to Local Services Lead resources. POST /v25/customers/{customerId}/localServices:appendLeadConversation",
+    "context": "POST /v25/customers/{customerId}/localServices:appendLeadConversation\nRPC to append Local Services Lead Conversation resources to Local Services Lead resources.\nRequired: customerId (path) — Required. The Id of the customer which owns the leads onto which the conversations will be appended.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersMultiPartyAuthReviewResolve",
+    "name": "Resolves the status of a Multi-Party Authorization review.",
+    "description": "Resolves the status of a Multi-Party Authorization review. Resolves the status of a Multi-Party Authorization review. POST /v25/customers/{customerId}/multiPartyAuthReview:resolve",
+    "context": "POST /v25/customers/{customerId}/multiPartyAuthReview:resolve\nResolves the status of a Multi-Party Authorization review. List of thrown errors: [AccessInvitationError]() [AuthenticationError]() [AuthorizationError]() [CustomerUserAccessError]() [FieldError]() [HeaderError]() [InternalError]() [MultiPartyAuthReviewError]() [MutateError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersMutate",
+    "name": "Updates a customer.",
+    "description": "Updates a customer. Updates a customer. POST /v25/customers/{customerId}:mutate",
+    "context": "POST /v25/customers/{customerId}:mutate\nUpdates a customer. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldMaskError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the customer being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersOfflineUserDataJobsCreate",
+    "name": "Creates an offline user data job.",
+    "description": "Creates an offline user data job. Creates an offline user data job. POST /v25/customers/{customerId}/offlineUserDataJobs:create",
+    "context": "POST /v25/customers/{customerId}/offlineUserDataJobs:create\nCreates an offline user data job. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [NotAllowlistedError]() [OfflineUserDataJobError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for which to create an offline user data job.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersPaymentsAccountsList",
+    "name": "Returns all payments accounts associated with all managers between the login customer ID and specified serving customer in the hierarchy, inclusive",
+    "description": "Returns all payments accounts associated with all managers between the login customer ID and specified serving customer in the hierarchy, inclusive Returns all payments accounts associated with all managers between the login customer ID and specified serving customer in the hierarchy, inclusive. GET /v25/customers/{cu…",
+    "context": "GET /v25/customers/{customerId}/paymentsAccounts\nReturns all payments accounts associated with all managers between the login customer ID and specified serving customer in the hierarchy, inclusive. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [PaymentsAccountError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer to apply the PaymentsAccount list operation to.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersProductLinkInvitationsCreate",
+    "name": "Creates a product link invitation.",
+    "description": "Creates a product link invitation. POST /v25/customers/{customerId}/productLinkInvitations:create",
+    "context": "POST /v25/customers/{customerId}/productLinkInvitations:create\nCreates a product link invitation.\nRequired: customerId (path) — Required. The ID of the customer being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersProductLinkInvitationsRemove",
+    "name": "Remove a product link invitation.",
+    "description": "Remove a product link invitation. POST /v25/customers/{customerId}/productLinkInvitations:remove",
+    "context": "POST /v25/customers/{customerId}/productLinkInvitations:remove\nRemove a product link invitation.\nRequired: customerId (path) — Required. The ID of the product link invitation being removed.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersProductLinkInvitationsUpdate",
+    "name": "Update a product link invitation.",
+    "description": "Update a product link invitation. POST /v25/customers/{customerId}/productLinkInvitations:update",
+    "context": "POST /v25/customers/{customerId}/productLinkInvitations:update\nUpdate a product link invitation.\nRequired: customerId (path) — Required. The ID of the customer being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersProductLinksCreate",
+    "name": "Creates a product link.",
+    "description": "Creates a product link. Creates a product link. POST /v25/customers/{customerId}/productLinks:create",
+    "context": "POST /v25/customers/{customerId}/productLinks:create\nCreates a product link. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer for which the product link is created.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersProductLinksRemove",
+    "name": "Removes a product link.",
+    "description": "Removes a product link. Removes a product link. POST /v25/customers/{customerId}/productLinks:remove",
+    "context": "POST /v25/customers/{customerId}/productLinks:remove\nRemoves a product link. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersRecommendationsApply",
+    "name": "Applies given recommendations with corresponding apply parameters.",
+    "description": "Applies given recommendations with corresponding apply parameters. Applies given recommendations with corresponding apply parameters. POST /v25/customers/{customerId}/recommendations:apply",
+    "context": "POST /v25/customers/{customerId}/recommendations:apply\nApplies given recommendations with corresponding apply parameters. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RecommendationError]() [RequestError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the customer with the recommendation.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersRecommendationsDismiss",
+    "name": "Dismisses given recommendations.",
+    "description": "Dismisses given recommendations. Dismisses given recommendations. POST /v25/customers/{customerId}/recommendations:dismiss",
+    "context": "POST /v25/customers/{customerId}/recommendations:dismiss\nDismisses given recommendations. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RecommendationError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer with the recommendation.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersRecommendationsGenerate",
+    "name": "Generates Recommendations based off the requested recommendation_types.",
+    "description": "Generates Recommendations based off the requested recommendation_types. Generates Recommendations based off the requested recommendation_types. POST /v25/customers/{customerId}/recommendations:generate",
+    "context": "POST /v25/customers/{customerId}/recommendations:generate\nGenerates Recommendations based off the requested recommendation_types. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RecommendationError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer generating recommendations.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersRecommendationSubscriptionsMutateRecommendationSubscription",
+    "name": "Mutates given subscription with corresponding apply parameters.",
+    "description": "Mutates given subscription with corresponding apply parameters. Mutates given subscription with corresponding apply parameters. POST /v25/customers/{customerId}/recommendationSubscriptions:mutateRecommendationSubscription",
+    "context": "POST /v25/customers/{customerId}/recommendationSubscriptions:mutateRecommendationSubscription\nMutates given subscription with corresponding apply parameters. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [QuotaError]() [RecommendationError]() [RecommendationSubscriptionError]() [RequestError]() [UrlFieldError]()\nRequired: customerId (path) — Required. The ID of the subscribing customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersRemarketingActionsMutate",
+    "name": "Creates or updates remarketing actions.",
+    "description": "Creates or updates remarketing actions. Creates or updates remarketing actions. POST /v25/customers/{customerId}/remarketingActions:mutate",
+    "context": "POST /v25/customers/{customerId}/remarketingActions:mutate\nCreates or updates remarketing actions. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ConversionActionError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose remarketing actions are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersRemoveCampaignAutomaticallyCreatedAsset",
+    "name": "Removes automatically created assets from a campaign.",
+    "description": "Removes automatically created assets from a campaign. Removes automatically created assets from a campaign. POST /v25/customers/{customerId}:removeCampaignAutomaticallyCreatedAsset",
+    "context": "POST /v25/customers/{customerId}:removeCampaignAutomaticallyCreatedAsset\nRemoves automatically created assets from a campaign. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ContextError]() [FieldError]() [InternalError]() [MutateError]() [PartialFailureError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose assets are being removed.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersReservationsBookCampaigns",
+    "name": "Books the requested campaigns.",
+    "description": "Books the requested campaigns. Books the requested campaigns. POST /v25/customers/{customerId}/reservations:bookCampaigns",
+    "context": "POST /v25/customers/{customerId}/reservations:bookCampaigns\nBooks the requested campaigns. This request can have a latency of 30 seconds.\nRequired: customerId (path) — Required. The ID of the customer making the request.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersReservationsQuoteCampaigns",
+    "name": "Proposes quotes for booking campaigns.",
+    "description": "Proposes quotes for booking campaigns. Proposes quotes for booking campaigns. POST /v25/customers/{customerId}/reservations:quoteCampaigns",
+    "context": "POST /v25/customers/{customerId}/reservations:quoteCampaigns\nProposes quotes for booking campaigns. This request can have a latency of 30 seconds.\nRequired: customerId (path) — Required. The ID of the customer making the request.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSearchAudienceInsightsAttributes",
+    "name": "Searches for audience attributes that can be used to generate insights.",
+    "description": "Searches for audience attributes that can be used to generate insights. Searches for audience attributes that can be used to generate insights. POST /v25/customers/{customerId}:searchAudienceInsightsAttributes",
+    "context": "POST /v25/customers/{customerId}:searchAudienceInsightsAttributes\nSearches for audience attributes that can be used to generate insights. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [FieldError]() [HeaderError]() [InternalError]() [QuotaError]() [RangeError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSharedCriteriaMutate",
+    "name": "Creates or removes shared criteria.",
+    "description": "Creates or removes shared criteria. Creates or removes shared criteria. POST /v25/customers/{customerId}/sharedCriteria:mutate",
+    "context": "POST /v25/customers/{customerId}/sharedCriteria:mutate\nCreates or removes shared criteria. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CriterionError]() [DatabaseError]() [DistinctError]() [FieldError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NotEmptyError]() [NullError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose shared criteria are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSharedSetsMutate",
+    "name": "Creates, updates, or removes shared sets.",
+    "description": "Creates, updates, or removes shared sets. Creates, updates, or removes shared sets. POST /v25/customers/{customerId}/sharedSets:mutate",
+    "context": "POST /v25/customers/{customerId}/sharedSets:mutate\nCreates, updates, or removes shared sets. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [DatabaseError]() [DateError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [IdError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotEmptyError]() [NullError]() [OperatorError]() [QuotaError]() [RangeError]() [RequestError]() [ResourceCountLimitExceededError]() [SharedSetError]() [SizeLimitError]() [StringFormatError]() [StringLengthError]()\nRequired: customerId (path) — Required. The ID of the customer whose shared sets are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSmartCampaignSettingsMutate",
+    "name": "Updates Smart campaign settings for campaigns.",
+    "description": "Updates Smart campaign settings for campaigns. POST /v25/customers/{customerId}/smartCampaignSettings:mutate",
+    "context": "POST /v25/customers/{customerId}/smartCampaignSettings:mutate\nUpdates Smart campaign settings for campaigns.\nRequired: customerId (path) — Required. The ID of the customer whose Smart campaign settings are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersStartIdentityVerification",
+    "name": "Starts Identity Verification for a given verification program type.",
+    "description": "Starts Identity Verification for a given verification program type. Starts Identity Verification for a given verification program type. POST /v25/customers/{customerId}:startIdentityVerification",
+    "context": "POST /v25/customers/{customerId}:startIdentityVerification\nStarts Identity Verification for a given verification program type. Statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The Id of the customer for whom we are creating this verification.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSuggestBrands",
+    "name": "Rpc to return a list of matching brands based on a prefix for this customer.",
+    "description": "Rpc to return a list of matching brands based on a prefix for this customer. POST /v25/customers/{customerId}:suggestBrands",
+    "context": "POST /v25/customers/{customerId}:suggestBrands\nRpc to return a list of matching brands based on a prefix for this customer.\nRequired: customerId (path) — Required. The ID of the customer onto which to apply the brand suggestion operation.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSuggestKeywordThemes",
+    "name": "Suggests keyword themes to advertise on.",
+    "description": "Suggests keyword themes to advertise on. POST /v25/customers/{customerId}:suggestKeywordThemes",
+    "context": "POST /v25/customers/{customerId}:suggestKeywordThemes\nSuggests keyword themes to advertise on.\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSuggestSmartCampaignAd",
+    "name": "Suggests a Smart campaign ad compatible with the Ad family of resources, based on data points such as targeting and the business to advertise.",
+    "description": "Suggests a Smart campaign ad compatible with the Ad family of resources, based on data points such as targeting and the business to advertise. POST /v25/customers/{customerId}:suggestSmartCampaignAd",
+    "context": "POST /v25/customers/{customerId}:suggestSmartCampaignAd\nSuggests a Smart campaign ad compatible with the Ad family of resources, based on data points such as targeting and the business to advertise.\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSuggestSmartCampaignBudgetOptions",
+    "name": "Returns BudgetOption suggestions.",
+    "description": "Returns BudgetOption suggestions. POST /v25/customers/{customerId}:suggestSmartCampaignBudgetOptions",
+    "context": "POST /v25/customers/{customerId}:suggestSmartCampaignBudgetOptions\nReturns BudgetOption suggestions.\nRequired: customerId (path) — Required. The ID of the customer whose budget options are to be suggested.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersSuggestTravelAssets",
+    "name": "Returns Travel Asset suggestions.",
+    "description": "Returns Travel Asset suggestions. Returns Travel Asset suggestions. POST /v25/customers/{customerId}:suggestTravelAssets",
+    "context": "POST /v25/customers/{customerId}:suggestTravelAssets\nReturns Travel Asset suggestions. Asset suggestions are returned on a best-effort basis. There are no guarantees that all possible asset types will be returned for any given hotel property.\nRequired: customerId (path) — Required. The ID of the customer.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersUploadCallConversions",
+    "name": "Processes the given call conversions.",
+    "description": "Processes the given call conversions. Processes the given call conversions. POST /v25/customers/{customerId}:uploadCallConversions",
+    "context": "POST /v25/customers/{customerId}:uploadCallConversions\nProcesses the given call conversions. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [PartialFailureError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer performing the upload.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersUploadClickConversions",
+    "name": "Processes the given click conversions.",
+    "description": "Processes the given click conversions. Processes the given click conversions. POST /v25/customers/{customerId}:uploadClickConversions",
+    "context": "POST /v25/customers/{customerId}:uploadClickConversions\nProcesses the given click conversions. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [ConversionUploadError]() [HeaderError]() [InternalError]() [PartialFailureError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer performing the upload.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersUploadConversionAdjustments",
+    "name": "Processes the given conversion adjustments.",
+    "description": "Processes the given conversion adjustments. Processes the given conversion adjustments. POST /v25/customers/{customerId}:uploadConversionAdjustments",
+    "context": "POST /v25/customers/{customerId}:uploadConversionAdjustments\nProcesses the given conversion adjustments. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [HeaderError]() [InternalError]() [PartialFailureError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer performing the upload.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersUploadUserData",
+    "name": "Uploads the given user data.",
+    "description": "Uploads the given user data. Uploads the given user data. POST /v25/customers/{customerId}:uploadUserData",
+    "context": "POST /v25/customers/{customerId}:uploadUserData\nUploads the given user data. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [FieldError]() [HeaderError]() [InternalError]() [MutateError]() [OfflineUserDataJobError]() [QuotaError]() [RequestError]() [UserDataError]()\nRequired: customerId (path) — Required. The ID of the customer for which to update the user data.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersUserListCustomerTypesMutate",
+    "name": "Attach or remove user list customer types.",
+    "description": "Attach or remove user list customer types. Attach or remove user list customer types. POST /v25/customers/{customerId}/userListCustomerTypes:mutate",
+    "context": "POST /v25/customers/{customerId}/userListCustomerTypes:mutate\nAttach or remove user list customer types. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [UserListCustomerTypeError]() [HeaderError]() [InternalError]() [QuotaError]() [RequestError]()\nRequired: customerId (path) — Required. The ID of the customer whose user list customer types are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersUserListsMutate",
+    "name": "Creates or updates user lists.",
+    "description": "Creates or updates user lists. Creates or updates user lists. POST /v25/customers/{customerId}/userLists:mutate",
+    "context": "POST /v25/customers/{customerId}/userLists:mutate\nCreates or updates user lists. Operation statuses are returned. List of thrown errors: [AuthenticationError]() [AuthorizationError]() [CollectionSizeError]() [DatabaseError]() [DistinctError]() [FieldError]() [FieldMaskError]() [HeaderError]() [InternalError]() [MutateError]() [NewResourceCreationError]() [NotAllowlistedError]() [NotEmptyError]() [OperationAccessDeniedError]() [QuotaError]() [RangeError]() [RequestError]() [StringFormatError]() [StringLengthError]() [UserListError]()\nRequired: customerId (path) — Required. The ID of the customer whose user lists are being modified.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersYouTubeVideoUploadsRemove",
+    "name": "Removes YouTube videos uploaded using this API.",
+    "description": "Removes YouTube videos uploaded using this API. POST /v25/customers/{customerId}/youTubeVideoUploads:remove",
+    "context": "POST /v25/customers/{customerId}/youTubeVideoUploads:remove\nRemoves YouTube videos uploaded using this API.\nRequired: customerId (path) — Required. The customer ID requesting the YouTube video upload deletion. Required.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersYouTubeVideoUploadsUpdate",
+    "name": "Updates YouTube video's metadata, but only for videos uploaded using this API.",
+    "description": "Updates YouTube video's metadata, but only for videos uploaded using this API. POST /v25/customers/{customerId}/youTubeVideoUploads:update",
+    "context": "POST /v25/customers/{customerId}/youTubeVideoUploads:update\nUpdates YouTube video's metadata, but only for videos uploaded using this API.\nRequired: customerId (path) — Required. The customer ID requesting the YouTube video upload update. Required.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MediaUpload",
+    "name": "Uploads a video to Google-managed or advertiser owned (brand) YouTube channel.",
+    "description": "Uploads a video to Google-managed or advertiser owned (brand) YouTube channel. POST /v25/customers/{customerId}/youTubeVideoUploads:create",
+    "context": "POST /v25/customers/{customerId}/youTubeVideoUploads:create\nUploads a video to Google-managed or advertiser owned (brand) YouTube channel.\nRequired: customerId (path) — Required. The customer ID requesting the upload. Required.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "get_BinDBGetBinary",
+    "name": "Retrieves a file from Binary Storage",
+    "description": "Retrieves a file from Binary Storage Retrieves a binary file from the Cloudforce One binary storage for analysis. GET /client/v4/accounts/{account_id}/cloudforce-one/binary/{hash}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/binary/{hash}\nRetrieves a binary file from the Cloudforce One binary storage for analysis.\nRequired: account_id (path) — Account ID.; hash (path) — hash of the binary"
+  },
+  {
+    "id": "post_BinDBPost",
+    "name": "Posts a file to Binary Storage",
+    "description": "Posts a file to Binary Storage Uploads a binary file to Cloudforce One's binary database for malware analysis and threat intelligence correlation. POST /client/v4/accounts/{account_id}/cloudforce-one/binary",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/binary\nUploads a binary file to Cloudforce One's binary database for malware analysis and threat intelligence correlation.\nRequired: account_id (path) — Account ID.; body (body) — Binary file to be uploaded to the database."
+  },
+  {
+    "id": "get_GetBanners",
+    "name": "Get the Latest Banner Grab Result",
+    "description": "Get the Latest Banner Grab Result Retrieves the latest banner grab results for a Cloudforce One scan configuration, including service banners from open ports. GET /client/v4/accounts/{account_id}/cloudforce-one/banner/{config_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/banner/{config_id}\nRetrieves the latest banner grab results for a Cloudforce One scan configuration, including service banners from open ports.\nRequired: account_id (path) — Defines the Account ID.; config_id (path) — Defines the Config ID."
+  }
+]

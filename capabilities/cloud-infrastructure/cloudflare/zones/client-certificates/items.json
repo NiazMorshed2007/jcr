@@ -1,0 +1,32 @@
+[
+  {
+    "id": "client-certificate-for-a-zone-client-certificate-details",
+    "name": "Client Certificate Details",
+    "description": "Client Certificate Details Get Details for a single mTLS API Shield Client Certificate. GET /client/v4/zones/{zone_id}/client_certificates/{client_certificate_id}",
+    "context": "GET /client/v4/zones/{zone_id}/client_certificates/{client_certificate_id}\nGet Details for a single mTLS API Shield Client Certificate.\nRequired: zone_id (path); client_certificate_id (path)"
+  },
+  {
+    "id": "client-certificate-for-a-zone-create-client-certificate",
+    "name": "Create Client Certificate",
+    "description": "Create Client Certificate Create a new API Shield mTLS Client Certificate. POST /client/v4/zones/{zone_id}/client_certificates",
+    "context": "POST /client/v4/zones/{zone_id}/client_certificates\nCreate a new API Shield mTLS Client Certificate.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "client-certificate-for-a-zone-delete-client-certificate",
+    "name": "Revoke Client Certificate",
+    "description": "Revoke Client Certificate Set a API Shield mTLS Client Certificate to pending_revocation status for processing to revoked status. DELETE /client/v4/zones/{zone_id}/client_certificates/{client_certificate_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/client_certificates/{client_certificate_id}\nSet a API Shield mTLS Client Certificate to pending_revocation status for processing to revoked status.\nRequired: zone_id (path); client_certificate_id (path)"
+  },
+  {
+    "id": "client-certificate-for-a-zone-edit-client-certificate",
+    "name": "Reactivate Client Certificate",
+    "description": "Reactivate Client Certificate If a API Shield mTLS Client Certificate is in a pending_revocation state, you may reactivate it with this endpoint. PATCH /client/v4/zones/{zone_id}/client_certificates/{client_certificate_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/client_certificates/{client_certificate_id}\nIf a API Shield mTLS Client Certificate is in a pending_revocation state, you may reactivate it with this endpoint.\nRequired: zone_id (path); client_certificate_id (path); body (body)"
+  },
+  {
+    "id": "client-certificate-for-a-zone-list-client-certificates",
+    "name": "List Client Certificates",
+    "description": "List Client Certificates List all of your Zone's API Shield mTLS Client Certificates by Status and/or using Pagination. GET /client/v4/zones/{zone_id}/client_certificates",
+    "context": "GET /client/v4/zones/{zone_id}/client_certificates\nList all of your Zone's API Shield mTLS Client Certificates by Status and/or using Pagination.\nRequired: zone_id (path)\nOptional: status (query); page (query); per_page (query); limit (query); offset (query)"
+  }
+]

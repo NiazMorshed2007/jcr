@@ -1,0 +1,98 @@
+[
+  {
+    "id": "magic-network-monitoring-configuration-create-account-configuration",
+    "name": "Create account configuration",
+    "description": "Create account configuration Create a new network monitoring configuration. POST /client/v4/accounts/{account_id}/mnm/config",
+    "context": "POST /client/v4/accounts/{account_id}/mnm/config\nCreate a new network monitoring configuration.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-configuration-delete-account-configuration",
+    "name": "Delete account configuration",
+    "description": "Delete account configuration Delete an existing network monitoring configuration. DELETE /client/v4/accounts/{account_id}/mnm/config",
+    "context": "DELETE /client/v4/accounts/{account_id}/mnm/config\nDelete an existing network monitoring configuration.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-configuration-list-account-configuration",
+    "name": "List account configuration",
+    "description": "List account configuration Lists default sampling, router IPs and warp devices for account. GET /client/v4/accounts/{account_id}/mnm/config",
+    "context": "GET /client/v4/accounts/{account_id}/mnm/config\nLists default sampling, router IPs and warp devices for account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-network-monitoring-configuration-list-rules-and-account-configuration",
+    "name": "List rules and account configuration",
+    "description": "List rules and account configuration Lists default sampling, router IPs, warp devices, and rules for account. GET /client/v4/accounts/{account_id}/mnm/config/full",
+    "context": "GET /client/v4/accounts/{account_id}/mnm/config/full\nLists default sampling, router IPs, warp devices, and rules for account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-network-monitoring-configuration-update-account-configuration-fields",
+    "name": "Update account configuration fields",
+    "description": "Update account configuration fields Update fields in an existing network monitoring configuration. PATCH /client/v4/accounts/{account_id}/mnm/config",
+    "context": "PATCH /client/v4/accounts/{account_id}/mnm/config\nUpdate fields in an existing network monitoring configuration.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-configuration-update-an-entire-account-configuration",
+    "name": "Update an entire account configuration",
+    "description": "Update an entire account configuration Update an existing network monitoring configuration, requires the entire configuration to be updated at once. PUT /client/v4/accounts/{account_id}/mnm/config",
+    "context": "PUT /client/v4/accounts/{account_id}/mnm/config\nUpdate an existing network monitoring configuration, requires the entire configuration to be updated at once.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-create-rules",
+    "name": "Create rules",
+    "description": "Create rules Create network monitoring rules for account. POST /client/v4/accounts/{account_id}/mnm/rules",
+    "context": "POST /client/v4/accounts/{account_id}/mnm/rules\nCreate network monitoring rules for account. Currently only supports creating a single rule per API request.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-create-rules-bulk",
+    "name": "Create rules in bulk",
+    "description": "Create rules in bulk Create multiple network monitoring rules for account in a single request. POST /client/v4/accounts/{account_id}/mnm/rules/bulk",
+    "context": "POST /client/v4/accounts/{account_id}/mnm/rules/bulk\nCreate multiple network monitoring rules for account in a single request. Supports up to 100 rules per request. All rules in a single request must be of the same type.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-delete-rule",
+    "name": "Delete rule",
+    "description": "Delete rule Delete a network monitoring rule for account. DELETE /client/v4/accounts/{account_id}/mnm/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/mnm/rules/{rule_id}\nDelete a network monitoring rule for account.\nRequired: rule_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-get-rule",
+    "name": "Get rule",
+    "description": "Get rule List a single network monitoring rule for account. GET /client/v4/accounts/{account_id}/mnm/rules/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/mnm/rules/{rule_id}\nList a single network monitoring rule for account.\nRequired: rule_id (path); account_id (path)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-list-rules",
+    "name": "List rules",
+    "description": "List rules Lists network monitoring rules for account. GET /client/v4/accounts/{account_id}/mnm/rules",
+    "context": "GET /client/v4/accounts/{account_id}/mnm/rules\nLists network monitoring rules for account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-update-advertisement-for-rule",
+    "name": "Update advertisement for rule",
+    "description": "Update advertisement for rule Update advertisement for rule. PATCH /client/v4/accounts/{account_id}/mnm/rules/{rule_id}/advertisement",
+    "context": "PATCH /client/v4/accounts/{account_id}/mnm/rules/{rule_id}/advertisement\nUpdate advertisement for rule.\nRequired: rule_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-update-rule",
+    "name": "Update rule",
+    "description": "Update rule Update a network monitoring rule for account. PATCH /client/v4/accounts/{account_id}/mnm/rules/{rule_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/mnm/rules/{rule_id}\nUpdate a network monitoring rule for account.\nRequired: rule_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-update-rules",
+    "name": "Update rules",
+    "description": "Update rules Update network monitoring rules for account. PUT /client/v4/accounts/{account_id}/mnm/rules",
+    "context": "PUT /client/v4/accounts/{account_id}/mnm/rules\nUpdate network monitoring rules for account.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-rules-update-rules-bulk",
+    "name": "Update rules in bulk",
+    "description": "Update rules in bulk Update multiple network monitoring rules for account in a single request. PUT /client/v4/accounts/{account_id}/mnm/rules/bulk",
+    "context": "PUT /client/v4/accounts/{account_id}/mnm/rules/bulk\nUpdate multiple network monitoring rules for account in a single request. Supports up to 100 rules per request. All rules in a single request must be of the same type.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "magic-network-monitoring-vpc-flows-generate-authentication-token",
+    "name": "Generate authentication token for VPC flow logs export.",
+    "description": "Generate authentication token for VPC flow logs export. POST /client/v4/accounts/{account_id}/mnm/vpc-flows/token",
+    "context": "POST /client/v4/accounts/{account_id}/mnm/vpc-flows/token\nGenerate authentication token for VPC flow logs export.\nRequired: account_id (path)"
+  }
+]

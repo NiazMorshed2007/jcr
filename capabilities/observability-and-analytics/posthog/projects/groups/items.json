@@ -1,0 +1,50 @@
+[
+  {
+    "id": "groups_activity_retrieve",
+    "name": "groups_activity_retrieve",
+    "description": "groups_activity_retrieve GET /api/projects/{project_id}/groups/activity/",
+    "context": "GET /api/projects/{project_id}/groups/activity/\ngroups_activity_retrieve\nRequired: group_type_index (query) — Specify the group type to find; id (query) — Specify the id of the user to find groups for; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_create",
+    "name": "groups_create",
+    "description": "groups_create POST /api/projects/{project_id}/groups/",
+    "context": "POST /api/projects/{project_id}/groups/\ngroups_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "groups_delete_property_create",
+    "name": "groups_delete_property_create",
+    "description": "groups_delete_property_create POST /api/projects/{project_id}/groups/delete_property/",
+    "context": "POST /api/projects/{project_id}/groups/delete_property/\ngroups_delete_property_create\nRequired: group_key (query) — Specify the key of the group to find; group_type_index (query) — Specify the group type to find; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "groups_find_retrieve",
+    "name": "groups_find_retrieve",
+    "description": "groups_find_retrieve GET /api/projects/{project_id}/groups/find/",
+    "context": "GET /api/projects/{project_id}/groups/find/\ngroups_find_retrieve\nRequired: group_key (query) — Specify the key of the group to find; group_type_index (query) — Specify the group type to find; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: skip_create_notebook (query) — When true, do not lazily create the group's CRM notebook. Use for read-only lookups (e.g. resolving a group's display name) that should not have side effects."
+  },
+  {
+    "id": "groups_list",
+    "name": "List all groups of a specific group type",
+    "description": "List all groups of a specific group type List all groups of a specific group type. GET /api/projects/{project_id}/groups/",
+    "context": "GET /api/projects/{project_id}/groups/\nList all groups of a specific group type. You must pass ?group_type_index= in the URL. To get a list of valid group types, call /api/:project_id/groups_types/. Uses forward-only keyset pagination via the `cursor` parameter. The `previous` field in the response envelope is always null.\nRequired: group_type_index (query) — Specify the group type to list; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: cursor (query) — Pagination cursor returned in the `next` URL of a previous response; group_key (query) — Filter groups whose key contains this string (case-insensitive); search (query) — Search the group name"
+  },
+  {
+    "id": "groups_property_values_retrieve",
+    "name": "groups_property_values_retrieve",
+    "description": "groups_property_values_retrieve GET /api/projects/{project_id}/groups/property_values/",
+    "context": "GET /api/projects/{project_id}/groups/property_values/\ngroups_property_values_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_related_retrieve",
+    "name": "groups_related_retrieve",
+    "description": "groups_related_retrieve GET /api/projects/{project_id}/groups/related/",
+    "context": "GET /api/projects/{project_id}/groups/related/\ngroups_related_retrieve\nRequired: group_type_index (query) — Specify the group type to find; id (query) — Specify the id of the user to find groups for; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "groups_update_property_create",
+    "name": "groups_update_property_create",
+    "description": "groups_update_property_create POST /api/projects/{project_id}/groups/update_property/",
+    "context": "POST /api/projects/{project_id}/groups/update_property/\ngroups_update_property_create\nRequired: group_key (query) — Specify the key of the group to find; group_type_index (query) — Specify the group type to find; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

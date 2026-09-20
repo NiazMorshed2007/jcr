@@ -1,0 +1,86 @@
+[
+  {
+    "id": "agent-memory-ingest",
+    "name": "Ingest messages",
+    "description": "Ingest messages Processes a conversation and extracts structured memories from it. POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/ingest",
+    "context": "POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/ingest\nProcesses a conversation and extracts structured memories from it. Agent Memory identifies facts, events, instructions, and tasks automatically.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); body (body)"
+  },
+  {
+    "id": "agent-memory-memory-delete",
+    "name": "Delete a memory",
+    "description": "Delete a memory Deletes a memory by ID. DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/memories/{memory_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/memories/{memory_id}\nDeletes a memory by ID. Removes the memory and any source messages linked to it. Returns the deleted memory.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); memory_id (path)"
+  },
+  {
+    "id": "agent-memory-memory-get",
+    "name": "Get a memory",
+    "description": "Get a memory Retrieves a memory by ID. GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/memories/{memory_id}",
+    "context": "GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/memories/{memory_id}\nRetrieves a memory by ID.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); memory_id (path)"
+  },
+  {
+    "id": "agent-memory-memory-list",
+    "name": "List memories",
+    "description": "List memories List memories stored in a profile. GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/memories",
+    "context": "GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/memories\nList memories stored in a profile.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path)\nOptional: per_page (query); cursor (query); session_id (query); type (query)"
+  },
+  {
+    "id": "agent-memory-namespace-create",
+    "name": "Create a namespace",
+    "description": "Create a namespace Creates a new memory namespace owned by the account. POST /client/v4/accounts/{account_id}/agent-memory/namespaces",
+    "context": "POST /client/v4/accounts/{account_id}/agent-memory/namespaces\nCreates a new memory namespace owned by the account.\nRequired: account_id (path) — Cloudflare Account ID.; body (body)"
+  },
+  {
+    "id": "agent-memory-namespace-delete",
+    "name": "Delete a namespace",
+    "description": "Delete a namespace Deletes a namespace. DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}\nDeletes a namespace.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path)"
+  },
+  {
+    "id": "agent-memory-namespace-get",
+    "name": "Get a namespace",
+    "description": "Get a namespace Gets a namespace by name. GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}",
+    "context": "GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}\nGets a namespace by name.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path)"
+  },
+  {
+    "id": "agent-memory-namespace-list",
+    "name": "List namespaces",
+    "description": "List namespaces Lists all namespaces for the given account. GET /client/v4/accounts/{account_id}/agent-memory/namespaces",
+    "context": "GET /client/v4/accounts/{account_id}/agent-memory/namespaces\nLists all namespaces for the given account. Results are paginated.\nRequired: account_id (path) — Cloudflare Account ID.\nOptional: per_page (query); order (query); direction (query); cursor (query)"
+  },
+  {
+    "id": "agent-memory-profile-delete",
+    "name": "Delete a profile",
+    "description": "Delete a profile Marks a profile for deletion. DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}\nMarks a profile for deletion.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path)"
+  },
+  {
+    "id": "agent-memory-profile-list",
+    "name": "List profiles",
+    "description": "List profiles Lists the profiles of a namespace, ordered by name. GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles",
+    "context": "GET /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles\nLists the profiles of a namespace, ordered by name. A profile appears once it has been used.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path)\nOptional: per_page (query); cursor (query)"
+  },
+  {
+    "id": "agent-memory-recall",
+    "name": "Recall memories",
+    "description": "Recall memories Retrieves memories relevant to the query and returns a synthesized answer. POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/recall",
+    "context": "POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/recall\nRetrieves memories relevant to the query and returns a synthesized answer.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); body (body)"
+  },
+  {
+    "id": "agent-memory-remember",
+    "name": "Remember a memory",
+    "description": "Remember a memory Stores a single memory explicitly. POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/remember",
+    "context": "POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/remember\nStores a single memory explicitly.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); body (body)"
+  },
+  {
+    "id": "agent-memory-session-delete",
+    "name": "Delete a session",
+    "description": "Delete a session Marks all memories and messages in a profile that are tagged with the given session ID for deletion. DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/sessions/{session_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/sessions/{session_id}\nMarks all memories and messages in a profile that are tagged with the given session ID for deletion.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); session_id (path) — Session identifier."
+  },
+  {
+    "id": "agent-memory-summary",
+    "name": "Get a profile summary",
+    "description": "Get a profile summary Generates a paste-ready prompt block summarizing everything stored in a memory profile. POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/summary",
+    "context": "POST /client/v4/accounts/{account_id}/agent-memory/namespaces/{namespace_name}/profiles/{profile_name}/summary\nGenerates a paste-ready prompt block summarizing everything stored in a memory profile.\nRequired: account_id (path) — Cloudflare Account ID.; namespace_name (path); profile_name (path); body (body)"
+  }
+]

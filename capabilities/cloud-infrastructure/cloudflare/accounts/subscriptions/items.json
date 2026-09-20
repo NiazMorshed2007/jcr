@@ -1,0 +1,56 @@
+[
+  {
+    "id": "account-subscriptions-action-append-subscription",
+    "name": "Append Subscription Action",
+    "description": "Append Subscription Action Smartly applies the incoming subscription into the lifecycle of the subscription. POST /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}/action/append",
+    "context": "POST /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}/action/append\nSmartly applies the incoming subscription into the lifecycle of the subscription.\nRequired: subscription_identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-subscriptions-cancel-delayed-downgrade",
+    "name": "Cancel Delayed Downgrade",
+    "description": "Cancel Delayed Downgrade Cancels pending delayed downgrades for the specified subscriptions. POST /client/v4/accounts/{account_id}/subscriptions/cancel-downgrade",
+    "context": "POST /client/v4/accounts/{account_id}/subscriptions/cancel-downgrade\nCancels pending delayed downgrades for the specified subscriptions.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-subscriptions-create-cancel-reason",
+    "name": "Create Cancel Reason",
+    "description": "Create Cancel Reason Records a cancellation reason for an account subscription. POST /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}/cancel-reason",
+    "context": "POST /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}/cancel-reason\nRecords a cancellation reason for an account subscription.\nRequired: subscription_identifier (path); account_id (path); body (body)"
+  },
+  {
+    "id": "account-subscriptions-create-subscription",
+    "name": "Create Subscription",
+    "description": "Create Subscription Creates an account subscription. POST /client/v4/accounts/{account_id}/subscriptions",
+    "context": "POST /client/v4/accounts/{account_id}/subscriptions\nCreates an account subscription.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "account-subscriptions-delete-subscription",
+    "name": "Delete Subscription",
+    "description": "Delete Subscription Deletes an account's subscription. DELETE /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}",
+    "context": "DELETE /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}\nDeletes an account's subscription.\nRequired: subscription_identifier (path); account_id (path)"
+  },
+  {
+    "id": "account-subscriptions-get-cancel-reason",
+    "name": "Get Cancel Reason",
+    "description": "Get Cancel Reason Gets the cancellation reason for an account subscription. GET /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}/cancel-reason",
+    "context": "GET /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}/cancel-reason\nGets the cancellation reason for an account subscription.\nRequired: subscription_identifier (path); account_id (path)"
+  },
+  {
+    "id": "account-subscriptions-get-subscription",
+    "name": "Get Subscription",
+    "description": "Get Subscription Gets an account subscription by identifier. GET /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}",
+    "context": "GET /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}\nGets an account subscription by identifier.\nRequired: subscription_identifier (path); account_id (path)"
+  },
+  {
+    "id": "account-subscriptions-list-subscriptions",
+    "name": "List Subscriptions",
+    "description": "List Subscriptions Lists all of an account's subscriptions. GET /client/v4/accounts/{account_id}/subscriptions",
+    "context": "GET /client/v4/accounts/{account_id}/subscriptions\nLists all of an account's subscriptions.\nRequired: account_id (path)"
+  },
+  {
+    "id": "account-subscriptions-update-subscription",
+    "name": "Update Subscription",
+    "description": "Update Subscription Updates an account subscription. PUT /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}",
+    "context": "PUT /client/v4/accounts/{account_id}/subscriptions/{subscription_identifier}\nUpdates an account subscription.\nRequired: subscription_identifier (path); account_id (path); body (body)"
+  }
+]

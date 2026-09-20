@@ -1,0 +1,98 @@
+[
+  {
+    "id": "delete_LegacyTagCategoryDelete",
+    "name": "Deletes a tag category (SoT)",
+    "description": "Deletes a tag category (SoT) Deprecated; use DELETE /events/tag-categories/{category_uuid}. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}\nDeprecated; use DELETE /events/tag-categories/{category_uuid}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_uuid (path) — Tag Category UUID."
+  },
+  {
+    "id": "delete_TagDelete",
+    "name": "Deletes a tag (SoT)",
+    "description": "Deletes a tag (SoT) Deletes a Source-of-Truth tag by UUID. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}\nDeletes a Source-of-Truth tag by UUID.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID."
+  },
+  {
+    "id": "delete_TagRelationshipDelete",
+    "name": "Delete a tag relationship",
+    "description": "Delete a tag relationship Deletes a relationship by UUID. DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}\nDeletes a relationship by UUID. Idempotent: returns deleted=false if not found. Requires datasetId query param.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.; rel_uuid (path) — Relationship UUID.; datasetId (query) — Dataset UUID containing the relationship."
+  },
+  {
+    "id": "get_LegacyTagCategoryDetail",
+    "name": "Gets a tag category by UUID (SoT)",
+    "description": "Gets a tag category by UUID (SoT) Deprecated; use GET /events/tag-categories/{category_uuid}. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}\nDeprecated; use GET /events/tag-categories/{category_uuid}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_uuid (path) — Tag Category UUID."
+  },
+  {
+    "id": "get_TagCategoryList",
+    "name": "Lists all tag categories (SoT)",
+    "description": "Lists all tag categories (SoT) Returns all Source-of-Truth tag categories for an account. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories\nReturns all Source-of-Truth tag categories for an account.\nRequired: account_id (path) — Account ID.\nOptional: search (query)"
+  },
+  {
+    "id": "get_TagDetail",
+    "name": "Gets a tag by UUID (SoT)",
+    "description": "Gets a tag by UUID (SoT) Returns a single Source-of-Truth tag by UUID, including custom fields (properties). GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}\nReturns a single Source-of-Truth tag by UUID, including custom fields (properties).\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID."
+  },
+  {
+    "id": "get_TaggedActorList",
+    "name": "Lists all Actors",
+    "description": "Lists all Actors Returns all known Actors from the shared CFONE catalog. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/actors",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/actors\nReturns all known Actors from the shared CFONE catalog. Non-CFONE accounts receive a redacted public projection: identity (`uuid`, `value`, `categoryUuid`, `categoryName`), metadata (`description`, `dateOfDiscovery`, `tlp`, `confidence`, `properties`), origin (`originCountryISO`, `originCountryISO_annotated`), and public aliases/references (`aliasGroupNames`, `aliases`, `externalReferences`, `externalReferences_annotated`). CFONE-internal fields (internal aliases, attribution, motive, opsec level, etc.) are stripped from the response.\nRequired: account_id (path) — Account ID.\nOptional: page (query); pageSize (query); value (query) — Free-text substring match on actor name (Tag.value).; filters (query) — Structured filters as a JSON array of {field, op, value} objects. Same shape as the events search API. Common use: filter actors by country with filters=[{\"field\":\"originCountryISO\",\"op\":\"in\",\"value\":[\"IR\",\"CN\"]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (e.g. \"iran\"). Max 10 entries per request, max 100 values per 'in'. Non-CFONE callers may only filter on fields that are also public-readable (`value`, `categoryName`, `aliasGroupNames`, `originCountryISO`); filtering on a redacted field returns 400. Performance notes: `originCountryISO` uses its B-tree index for equals/in. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on JSON-encoded text, so substrings can cross alias boundaries (\"apt28\" also matches \"apt280\" when both appear in the same tag's alias list)."
+  },
+  {
+    "id": "get_TagIndicatorsList",
+    "name": "List indicators related to a tag",
+    "description": "List indicators related to a tag Returns indicators associated with the provided tag UUID, with pagination. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators\nReturns indicators associated with the provided tag UUID, with pagination. By default fans out across every indicator dataset the account can read; pass datasetIds to scope to UUIDs, analytics datasets, or operational datasets. Analytics datasets do not expose tag associations, so the analytics scope returns an empty result.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.\nOptional: datasetIds (query) — Dataset UUIDs to scope to (repeat the param for multiple), or one standalone scope: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Analytics datasets do not expose tag associations, so 'analytics' returns an empty result. Omit to search all readable datasets.; page (query); pageSize (query); indicatorType (query); relatedEvent (query) — Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter.; search (query) — Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType. Multiple conditions are AND'd together. Max 10 conditions per request."
+  },
+  {
+    "id": "get_TagList",
+    "name": "Lists all tags (SoT)",
+    "description": "Lists all tags (SoT) Returns all Source-of-Truth tags for an account. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags\nReturns all Source-of-Truth tags for an account. Supports legacy free-text `search` on tag value and `categoryUuid` exact match, plus a structured `filters` JSON array for filtering by metadata fields (originCountryISO, actorCategory, motive, priority, etc.). Country values may be passed as alpha-2, alpha-3, name, or common alias.\nRequired: account_id (path) — Account ID.\nOptional: page (query); pageSize (query); search (query) — Free-text substring match on tag value AND custom-field properties. Searches case-insensitively inside both `Tag.value` and the serialized `Tag.properties` JSON blob (keys, values, and annotation metadata like confidence/tlp are all searchable). Same serialized-text tradeoff as `aliasGroupNames` — substrings can cross JSON boundaries.; categoryUuid (query); filters (query) — Structured filters as a JSON array of {field, op, value} objects. Searchable fields: uuid, value, categoryName, description, dateOfDiscovery, tlp, confidence, actorCategory, motive, attributionOrganization, originCountryISO, aliases, externalReferences, opsecLevel, sophisticationLevel, activeDuration, priority, lastSeen, aliasGroupNames. Operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use 'in' for bulk OR within a single field, e.g. filters=[{\"field\":\"originCountryISO\",\"op\":\"in\",\"value\":[\"IR\",\"CN\"]}]. Multiple entries are AND-joined. Max 10 entries per request, max 100 values per 'in'. Per-field notes: `uuid` accepts only 'equals' and 'in' (other operators throw ValidationError) — matched against the canonical lowercase storage but callers may pass either case (the server lowercases before comparison); index-backed by the column's UNIQUE constraint and intended for batched UUID → tag resolution. `originCountryISO` uses its B-tree index for equals/not/in. `priority` uses its B-tree index for numeric comparisons. Other string columns (`actorCategory`, `motive`, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on the JSON-encoded text, so substrings can cross alias boundaries (a search for \"apt28\" will also match \"apt280\" if both appear in the same tag's alias list).; cache (query) — Cache strategy. 'from-graph' serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit."
+  },
+  {
+    "id": "get_TagRelationshipsList",
+    "name": "List relationships for a tag",
+    "description": "List relationships for a tag Returns sparse relationship edges. GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships\nReturns sparse relationship edges. Optionally hydrate related entities via `expand`. Fans out across all accessible indicator dataset shards. Analytics datasets do not expose tag associations, so the analytics scope returns an empty result.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.\nOptional: datasets (query); search (query); expand (query); cursor (query); pageSize (query)"
+  },
+  {
+    "id": "patch_LegacyTagCategoryUpdate",
+    "name": "Updates a tag category (SoT)",
+    "description": "Updates a tag category (SoT) Deprecated; use PATCH /events/tag-categories/{category_uuid}. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}\nDeprecated; use PATCH /events/tag-categories/{category_uuid}. Available through 2026-11-28.\nRequired: account_id (path) — Account ID.; category_uuid (path) — Tag Category UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_TagRelationshipUpdate",
+    "name": "Update a tag relationship",
+    "description": "Update a tag relationship Partially updates a relationship by UUID. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}\nPartially updates a relationship by UUID. Requires datasetId query param.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.; rel_uuid (path) — Relationship UUID.; datasetId (query) — Dataset UUID containing the relationship.\nOptional: body (body)"
+  },
+  {
+    "id": "patch_TagUpdate",
+    "name": "Updates a tag (SoT)",
+    "description": "Updates a tag (SoT) Updates a Source-of-Truth tag by UUID. PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}\nUpdates a Source-of-Truth tag by UUID.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_TagCategoryCreate",
+    "name": "Creates a new tag category (SoT)",
+    "description": "Creates a new tag category (SoT) Creates a new Source-of-Truth tag category for an account. POST /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/tags/categories/create\nCreates a new Source-of-Truth tag category for an account.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_TagCreate",
+    "name": "Creates a new tag",
+    "description": "Creates a new tag Creates a new tag to be used accross threat events. POST /client/v4/accounts/{account_id}/cloudforce-one/events/tags/create",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/tags/create\nCreates a new tag to be used accross threat events.\nRequired: account_id (path) — Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_TagRelationshipCreate",
+    "name": "Create a relationship for a tag",
+    "description": "Create a relationship for a tag Creates a new relationship with the tag as the source entity. POST /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships\nCreates a new relationship with the tag as the source entity. Requires a datasetId to locate the Indicators DO.\nRequired: account_id (path) — Account ID.; tag_uuid (path) — Tag UUID.\nOptional: body (body)"
+  }
+]

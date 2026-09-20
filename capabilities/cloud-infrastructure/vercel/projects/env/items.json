@@ -1,0 +1,38 @@
+[
+  {
+    "id": "batchRemoveProjectEnv",
+    "name": "Batch remove environment variables",
+    "description": "Batch remove environment variables Delete multiple environment variables for a given project in a single batch operation. DELETE /v1/projects/{idOrName}/env",
+    "context": "DELETE /v1/projects/{idOrName}/env\nDelete multiple environment variables for a given project in a single batch operation.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "createProjectEnv",
+    "name": "Create one or more environment variables",
+    "description": "Create one or more environment variables Create one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. POST /v10/projects/{idOrName}/env",
+    "context": "POST /v10/projects/{idOrName}/env\nCreate one or more environment variables for a project by passing its `key`, `value`, `type` and `target` and by specifying the project by either passing the project `id` or `name` in the URL. If you include `upsert=true` as a query parameter, a new environment variable will not be created if it already exists but, the existing variable's value will be updated.\nRequired: idOrName (path) — The unique project identifier or the project name; body (body)\nOptional: upsert (query) — Allow override of environment variable if it already exists; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "editProjectEnv",
+    "name": "Edit an environment variable",
+    "description": "Edit an environment variable Edit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL. PATCH /v9/projects/{idOrName}/env/{id}",
+    "context": "PATCH /v9/projects/{idOrName}/env/{id}\nEdit a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name; id (path) — The unique environment variable identifier; body (body)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "filterProjectEnvs",
+    "name": "Retrieve the environment variables of a project by id or name",
+    "description": "Retrieve the environment variables of a project by id or name Retrieve the environment variables for a given project by passing either the project `id` or `name` in the URL. GET /v10/projects/{idOrName}/env",
+    "context": "GET /v10/projects/{idOrName}/env\nRetrieve the environment variables for a given project by passing either the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name\nOptional: gitBranch (query) — If defined, the git branch of the environment variable to filter the results (must have target=preview); decrypt (query) — If true, the environment variable value will be decrypted; source (query) — The source that is calling the endpoint.; customEnvironmentId (query) — The unique custom environment identifier within the project; customEnvironmentSlug (query) — The custom environment slug (name) within the project; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectEnv",
+    "name": "Retrieve the decrypted value of an environment variable of a project by id",
+    "description": "Retrieve the decrypted value of an environment variable of a project by id Retrieve the environment variable for a given project. GET /v1/projects/{idOrName}/env/{id}",
+    "context": "GET /v1/projects/{idOrName}/env/{id}\nRetrieve the environment variable for a given project.\nRequired: idOrName (path) — The unique project identifier or the project name; id (path) — The unique ID for the environment variable to get the decrypted value.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "removeProjectEnv",
+    "name": "Remove an environment variable",
+    "description": "Remove an environment variable Delete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL. DELETE /v9/projects/{idOrName}/env/{id}",
+    "context": "DELETE /v9/projects/{idOrName}/env/{id}\nDelete a specific environment variable for a given project by passing the environment variable identifier and either passing the project `id` or `name` in the URL.\nRequired: idOrName (path) — The unique project identifier or the project name; id (path) — The unique environment variable identifier\nOptional: customEnvironmentId (query) — The unique custom environment identifier within the project; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

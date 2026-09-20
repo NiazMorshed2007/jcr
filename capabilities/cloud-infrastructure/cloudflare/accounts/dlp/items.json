@@ -1,0 +1,38 @@
+[
+  {
+    "id": "dlp-data-tag-category-template-read",
+    "name": "Retrieve a specific data tag category template.",
+    "description": "Retrieve a specific data tag category template. Gets an available data tag category template. GET /client/v4/accounts/{account_id}/dlp/data_tag_category_templates/{template_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_tag_category_templates/{template_id}\nGets an available data tag category template.\nRequired: account_id (path); template_id (path)"
+  },
+  {
+    "id": "dlp-data-tag-category-templates-list",
+    "name": "Retrieve all data tag category templates in an account",
+    "description": "Retrieve all data tag category templates in an account Lists available data tag category templates. GET /client/v4/accounts/{account_id}/dlp/data_tag_category_templates",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/data_tag_category_templates\nLists available data tag category templates.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-limits-get",
+    "name": "Fetch limits associated with DLP for account",
+    "description": "Fetch limits associated with DLP for account Retrieves current DLP usage limits and quotas for the account, including maximum allowed counts and current usage for custom entries, dataset cells, and document fingerprints. GET /client/v4/accounts/{account_id}/dlp/limits",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/limits\nRetrieves current DLP usage limits and quotas for the account, including maximum allowed counts and current usage for custom entries, dataset cells, and document fingerprints.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-pattern-validate",
+    "name": "Validate a DLP regex pattern",
+    "description": "Validate a DLP regex pattern Validates whether this pattern is a valid regular expression. POST /client/v4/accounts/{account_id}/dlp/patterns/validate",
+    "context": "POST /client/v4/accounts/{account_id}/dlp/patterns/validate\nValidates whether this pattern is a valid regular expression. Rejects it if the regular expression is too complex or can match an unbounded-length string. The regex will be rejected if it uses `*` or `+`. Bound the maximum number of characters that can be matched using a range, e.g. `{1,100}`.\nRequired: account_id (path) — Account ID.; body (body) — Validation query."
+  },
+  {
+    "id": "dlp-payload-log-get",
+    "name": "Get payload log settings",
+    "description": "Get payload log settings Gets the current payload logging configuration for DLP, showing whether matched content is being logged. GET /client/v4/accounts/{account_id}/dlp/payload_log",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/payload_log\nGets the current payload logging configuration for DLP, showing whether matched content is being logged.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-payload-log-put",
+    "name": "Set payload log settings",
+    "description": "Set payload log settings Enables or disables payload logging for DLP matches. PUT /client/v4/accounts/{account_id}/dlp/payload_log",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/payload_log\nEnables or disables payload logging for DLP matches. When enabled, matched content is stored for review.\nRequired: account_id (path); body (body) — New payload log settings."
+  }
+]

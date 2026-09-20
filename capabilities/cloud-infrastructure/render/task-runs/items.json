@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cancelTaskRun",
+    "name": "Cancel task run",
+    "description": "Cancel task run Cancel a running task run with the provided ID. DELETE /v1/task-runs/{taskRunId}",
+    "context": "DELETE /v1/task-runs/{taskRunId}\nCancel a running task run with the provided ID.\nRequired: taskRunId (path) — The ID of the task run"
+  },
+  {
+    "id": "createTask",
+    "name": "Run task",
+    "description": "Run task Kicks off a run of the workflow task with the provided ID, passing the provided input data. POST /v1/task-runs",
+    "context": "POST /v1/task-runs\nKicks off a run of the workflow task with the provided ID, passing the provided input data.\nRequired: body (body)"
+  },
+  {
+    "id": "getTaskRun",
+    "name": "Retrieve task run",
+    "description": "Retrieve task run Retrieve the workflow task run with the provided ID. GET /v1/task-runs/{taskRunId}",
+    "context": "GET /v1/task-runs/{taskRunId}\nRetrieve the workflow task run with the provided ID.\nRequired: taskRunId (path) — The ID of the task run"
+  },
+  {
+    "id": "listTaskRuns",
+    "name": "List task runs",
+    "description": "List task runs List task runs that match the provided filters. GET /v1/task-runs",
+    "context": "GET /v1/task-runs\nList task runs that match the provided filters. If no filters are provided, all task runs accessible by the authenticated user are returned.\nOptional: cursor (query) — The position in the result list to start from when fetching paginated results. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; limit (query) — The maximum number of items to return. For details, see [Pagination](https://api-docs.render.com/reference/pagination).; rootTaskRunId (query) — An array of root task run IDs to filter on; ownerId (query) — The ID of the workspaces to return resources for"
+  },
+  {
+    "id": "streamTaskRunsEvents",
+    "name": "Stream realtime events (SSE)",
+    "description": "Stream realtime events (SSE) Establishes a unidirectional event stream. GET /v1/task-runs/events",
+    "context": "GET /v1/task-runs/events\nEstablishes a unidirectional event stream. The server sends events as lines formatted per the SSE spec. Clients should set `Accept: text/event-stream` and keep the connection open. The server sends a `task.completed` event whenever a requested task run reaches any terminal state (`completed`, `failed`, or `canceled`). The `status` field of the payload indicates which state was reached. The server automatically closes the stream in the following cases: - All requested task runs have reached a terminal state. - The stream has not sent any events for 30 minutes. For tasks with a timeout higher than 30 minutes, waiting clients should fall back to polling with the [Retrieve task run](https://api-docs.render.com/reference/gettaskrun) endpoint.\nRequired: taskRunIds (query) — Filter to a subset of task run IDs.\nOptional: Accept (header) — Must be `text/event-stream`."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_ai_agents_id",
+    "name": "Delete AI agent",
+    "description": "Delete AI agent Deletes an AI agent using the provided parameters. DELETE /2.0/ai_agents/{agent_id}",
+    "context": "DELETE /2.0/ai_agents/{agent_id}\nDeletes an AI agent using the provided parameters.\nRequired: agent_id (path) — The ID of the agent to delete."
+  },
+  {
+    "id": "get_ai_agents",
+    "name": "List AI agents",
+    "description": "List AI agents Lists AI agents based on the provided parameters. GET /2.0/ai_agents",
+    "context": "GET /2.0/ai_agents\nLists AI agents based on the provided parameters.\nOptional: mode (query) — The mode to filter the agent config to return. Possible values are: `ask`, `text_gen`, and `extract`.; fields (query) — The fields to return in the response.; agent_state (query) — The state of the agents to return. Possible values are: `enabled`, `disabled` and `enabled_for_selected_users`.; include_box_default (query) — Whether to include the Box default agents in the response.; marker (query) — Defines the position marker at which to begin returning results.; limit (query) — The maximum number of items to return per page."
+  },
+  {
+    "id": "get_ai_agents_id",
+    "name": "Get AI agent by agent ID",
+    "description": "Get AI agent by agent ID Gets an AI Agent using the `agent_id` parameter. GET /2.0/ai_agents/{agent_id}",
+    "context": "GET /2.0/ai_agents/{agent_id}\nGets an AI Agent using the `agent_id` parameter.\nRequired: agent_id (path) — The agent id to get.\nOptional: fields (query) — The fields to return in the response."
+  },
+  {
+    "id": "post_ai_agents",
+    "name": "Create AI agent",
+    "description": "Create AI agent Creates an AI agent. POST /2.0/ai_agents",
+    "context": "POST /2.0/ai_agents\nCreates an AI agent. At least one of the following capabilities must be provided: `ask`, `text_gen`, `extract`.\nOptional: body (body)"
+  },
+  {
+    "id": "put_ai_agents_id",
+    "name": "Update AI agent",
+    "description": "Update AI agent Updates an AI agent. PUT /2.0/ai_agents/{agent_id}",
+    "context": "PUT /2.0/ai_agents/{agent_id}\nUpdates an AI agent.\nRequired: agent_id (path) — The ID of the agent to update.\nOptional: body (body)"
+  }
+]

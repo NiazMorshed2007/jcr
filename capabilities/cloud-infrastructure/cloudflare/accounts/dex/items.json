@@ -1,0 +1,188 @@
+[
+  {
+    "id": "create-dex-rule",
+    "name": "Create a DEX Rule",
+    "description": "Create a DEX Rule Create a DEX Rule. POST /client/v4/accounts/{account_id}/dex/rules",
+    "context": "POST /client/v4/accounts/{account_id}/dex/rules\nCreate a DEX Rule.\nRequired: account_id (path) — Unique Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "delete-dex-rule",
+    "name": "Delete a DEX Rule",
+    "description": "Delete a DEX Rule Delete a DEX Rule. DELETE /client/v4/accounts/{account_id}/dex/rules/{rule_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dex/rules/{rule_id}\nDelete a DEX Rule.\nRequired: account_id (path) — Unique Cloudflare account ID.; rule_id (path) — Unique identifier of the rule."
+  },
+  {
+    "id": "device-dex-test-create-device-dex-test",
+    "name": "Create Device DEX test",
+    "description": "Create Device DEX test Create a DEX test. POST /client/v4/accounts/{account_id}/dex/devices/dex_tests",
+    "context": "POST /client/v4/accounts/{account_id}/dex/devices/dex_tests\nCreate a DEX test.\nRequired: account_id (path) — Unique Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "device-dex-test-delete-device-dex-test",
+    "name": "Delete Device DEX test",
+    "description": "Delete Device DEX test Delete a Device DEX test. DELETE /client/v4/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}\nDelete a Device DEX test. Returns the remaining device dex tests for the account.\nRequired: account_id (path) — Unique Cloudflare account ID.; dex_test_id (path) — Unique identifier for a DEX test."
+  },
+  {
+    "id": "device-dex-test-details",
+    "name": "List Device DEX tests",
+    "description": "List Device DEX tests Fetch all DEX tests. GET /client/v4/accounts/{account_id}/dex/devices/dex_tests",
+    "context": "GET /client/v4/accounts/{account_id}/dex/devices/dex_tests\nFetch all DEX tests.\nRequired: account_id (path) — Unique Cloudflare account ID.\nOptional: page (query) — Page number of paginated results.; per_page (query) — Number of results per page.; testName (query) — Filter by test name.; kind (query) — Filter by test type."
+  },
+  {
+    "id": "device-dex-test-get-device-dex-test",
+    "name": "Get Device DEX test",
+    "description": "Get Device DEX test Fetch a single DEX test. GET /client/v4/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}\nFetch a single DEX test.\nRequired: account_id (path) — Unique Cloudflare account ID.; dex_test_id (path) — Unique identifier for a DEX test."
+  },
+  {
+    "id": "device-dex-test-update-device-dex-test",
+    "name": "Update Device DEX test",
+    "description": "Update Device DEX test Update a DEX test. PUT /client/v4/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}\nUpdate a DEX test.\nRequired: account_id (path) — Unique Cloudflare account ID.; dex_test_id (path) — Unique identifier for a DEX test.; body (body)"
+  },
+  {
+    "id": "devices-live-status",
+    "name": "Get the latest status of a device.",
+    "description": "Get the latest status of a device. Get the latest status of a device given device_id from the device_state table. GET /client/v4/accounts/{account_id}/dex/devices/{device_id}/fleet-status/live",
+    "context": "GET /client/v4/accounts/{account_id}/dex/devices/{device_id}/fleet-status/live\nGet the latest status of a device given device_id from the device_state table.\nRequired: account_id (path) — Unique Cloudflare account ID.; device_id (path) — Device-specific ID, given as UUID.; since_minutes (query) — Number of minutes before current time.\nOptional: time_now (query) — Current time in ISO format.; colo (query) — List of data centers to filter results."
+  },
+  {
+    "id": "dex-device-status-over-time",
+    "name": "Get the status over time for a device",
+    "description": "Get the status over time for a device Get time-bucketed status metrics for a specific device. GET /client/v4/accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time",
+    "context": "GET /client/v4/accounts/{account_id}/dex/devices/{device_id}/fleet-status/over-time\nGet time-bucketed status metrics for a specific device.\nRequired: account_id (path) — Unique Cloudflare account ID.; device_id (path) — Device-specific ID, given as UUID.; from (query) — Start of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.; to (query) — End of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.; interval (query) — Time interval for aggregate time slots.\nOptional: colo (query) — List of data centers to filter results."
+  },
+  {
+    "id": "dex-endpoints-http-test-details",
+    "name": "Get details and aggregate metrics for an http test",
+    "description": "Get details and aggregate metrics for an http test Get test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days. GET /client/v4/accounts/{account_id}/dex/http-tests/{test_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dex/http-tests/{test_id}\nGet test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days.\nRequired: account_id (path) — Unique Cloudflare account ID.; test_id (path) — Unique identifier for a specific test.; from (query) — Start time for aggregate metrics in ISO ms.; to (query) — End time for aggregate metrics in ISO ms.; interval (query) — Time interval for aggregate time slots.\nOptional: deviceId (query) — Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.; colo (query) — Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param."
+  },
+  {
+    "id": "dex-endpoints-http-test-percentiles",
+    "name": "Get percentiles for an http test",
+    "description": "Get percentiles for an http test Get percentiles for an http test for a given time period between 1 hour and 7 days. GET /client/v4/accounts/{account_id}/dex/http-tests/{test_id}/percentiles",
+    "context": "GET /client/v4/accounts/{account_id}/dex/http-tests/{test_id}/percentiles\nGet percentiles for an http test for a given time period between 1 hour and 7 days.\nRequired: account_id (path) — Unique Cloudflare account ID.; test_id (path) — Unique identifier for a specific test.; from (query) — Start time for the query in ISO (RFC3339 - ISO 8601) format.; to (query) — End time for the query in ISO (RFC3339 - ISO 8601) format.\nOptional: deviceId (query) — Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.; colo (query) — Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param."
+  },
+  {
+    "id": "dex-endpoints-list-colos",
+    "name": "List Cloudflare colos",
+    "description": "List Cloudflare colos List Cloudflare colos that account's devices were connected to during a time period, sorted by usage starting from the most used colo. GET /client/v4/accounts/{account_id}/dex/colos",
+    "context": "GET /client/v4/accounts/{account_id}/dex/colos\nList Cloudflare colos that account's devices were connected to during a time period, sorted by usage starting from the most used colo. Colos without traffic are also returned and sorted alphabetically.\nRequired: account_id (path) — Unique Cloudflare account ID.; from (query) — Start time for connection period in ISO (RFC3339 - ISO 8601) format.; to (query) — End time for connection period in ISO (RFC3339 - ISO 8601) format.\nOptional: sortBy (query) — Type of usage that colos should be sorted by. If unspecified, returns all Cloudflare colos sorted alphabetically."
+  },
+  {
+    "id": "dex-endpoints-list-device-isps",
+    "name": "List device ISPs",
+    "description": "List device ISPs List ISP information observed for a specific device during traceroute tests. GET /client/v4/accounts/{account_id}/dex/devices/{device_id}/isps",
+    "context": "GET /client/v4/accounts/{account_id}/dex/devices/{device_id}/isps\nList ISP information observed for a specific device during traceroute tests.\nRequired: account_id (path) — Unique Cloudflare account ID.; device_id (path) — Device-specific ID, given as UUID.; per_page (query) — Number of items per page\nOptional: page (query) — Page number of paginated results. Mutually exclusive with cursor.; cursor (query) — Cursor for cursor-based pagination. Mutually exclusive with page.; sort_by (query) — The field to sort results by.; sort_order (query) — The order to sort results.; from (query) — Start time for the query in ISO 8601 format.; to (query) — End time for the query in ISO 8601 format."
+  },
+  {
+    "id": "dex-endpoints-list-tests-overview",
+    "name": "List DEX test analytics",
+    "description": "List DEX test analytics List DEX tests with overview metrics. GET /client/v4/accounts/{account_id}/dex/tests/overview",
+    "context": "GET /client/v4/accounts/{account_id}/dex/tests/overview\nList DEX tests with overview metrics.\nRequired: account_id (path) — Unique Cloudflare account ID.\nOptional: colo (query) — Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param.; testName (query) — Optionally filter results by test name.; deviceId (query) — Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.; registration_id (query) — Optionally filter results to a specific device registration. Must be used in combination with a single deviceId.; page (query) — Page number of paginated results; per_page (query) — Number of items per page; kind (query) — Filter by test type."
+  },
+  {
+    "id": "dex-endpoints-tests-unique-devices",
+    "name": "Get count of devices targeted",
+    "description": "Get count of devices targeted Returns unique count of devices that have run synthetic application monitoring tests in the past 7 days. GET /client/v4/accounts/{account_id}/dex/tests/unique-devices",
+    "context": "GET /client/v4/accounts/{account_id}/dex/tests/unique-devices\nReturns unique count of devices that have run synthetic application monitoring tests in the past 7 days.\nRequired: account_id (path) — Unique Cloudflare account ID.\nOptional: testName (query) — Optionally filter results by test name.; deviceId (query) — Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param."
+  },
+  {
+    "id": "dex-endpoints-traceroute-test-details",
+    "name": "Get details and aggregate metrics for a traceroute test",
+    "description": "Get details and aggregate metrics for a traceroute test Get test details and aggregate performance metrics for a traceroute test for a given time period between 1 hour and 7 days. GET /client/v4/accounts/{account_id}/dex/traceroute-tests/{test_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dex/traceroute-tests/{test_id}\nGet test details and aggregate performance metrics for a traceroute test for a given time period between 1 hour and 7 days.\nRequired: account_id (path) — Unique Cloudflare account ID.; test_id (path) — Unique identifier for a specific test.; from (query) — Start time for aggregate metrics in ISO ms.; to (query) — End time for aggregate metrics in ISO ms.; interval (query) — Time interval for aggregate time slots.\nOptional: deviceId (query) — Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.; colo (query) — Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param."
+  },
+  {
+    "id": "dex-endpoints-traceroute-test-network-path",
+    "name": "Get network path breakdown for a traceroute test",
+    "description": "Get network path breakdown for a traceroute test Get a breakdown of metrics by hop for individual traceroute test runs. GET /client/v4/accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path",
+    "context": "GET /client/v4/accounts/{account_id}/dex/traceroute-tests/{test_id}/network-path\nGet a breakdown of metrics by hop for individual traceroute test runs.\nRequired: account_id (path) — Unique Cloudflare account ID.; test_id (path) — Unique identifier for a specific test.; deviceId (query) — Device to filter traceroute result runs to.; from (query) — Start time for aggregate metrics in ISO ms.; to (query) — End time for aggregate metrics in ISO ms.; interval (query) — Time interval for aggregate time slots."
+  },
+  {
+    "id": "dex-endpoints-traceroute-test-percentiles",
+    "name": "Get percentiles for a traceroute test",
+    "description": "Get percentiles for a traceroute test Get percentiles for a traceroute test for a given time period between 1 hour and 7 days. GET /client/v4/accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles",
+    "context": "GET /client/v4/accounts/{account_id}/dex/traceroute-tests/{test_id}/percentiles\nGet percentiles for a traceroute test for a given time period between 1 hour and 7 days.\nRequired: account_id (path) — Unique Cloudflare account ID.; test_id (path) — Unique identifier for a specific test.; from (query) — Start time for the query in ISO (RFC3339 - ISO 8601) format.; to (query) — End time for the query in ISO (RFC3339 - ISO 8601) format.\nOptional: deviceId (query) — Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.; colo (query) — Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param."
+  },
+  {
+    "id": "dex-endpoints-traceroute-test-result-network-path",
+    "name": "Get details for a specific traceroute test run",
+    "description": "Get details for a specific traceroute test run Get a breakdown of hops and performance metrics for a specific traceroute test run GET /client/v4/accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path",
+    "context": "GET /client/v4/accounts/{account_id}/dex/traceroute-test-results/{test_result_id}/network-path\nGet a breakdown of hops and performance metrics for a specific traceroute test run\nRequired: account_id (path) — Unique Cloudflare account ID.; test_result_id (path) — Unique identifier for a specific traceroute test."
+  },
+  {
+    "id": "dex-fleet-status-devices",
+    "name": "List details of devices using WARP.",
+    "description": "List details of devices using WARP. GET /client/v4/accounts/{account_id}/dex/fleet-status/devices",
+    "context": "GET /client/v4/accounts/{account_id}/dex/fleet-status/devices\nList details of devices using WARP.\nRequired: account_id (path) — Unique Cloudflare account ID.; to (query) — End of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.; from (query) — Start of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.; page (query) — Page number of paginated results.; per_page (query) — Number of results per page.\nOptional: sort_by (query) — Dimension to sort results by.; colo (query) — Cloudflare colo airport code.; device_id (query) — Device-specific ID, given as UUID.; mode (query) — The mode under which the WARP client is run.; status (query) — Network status.; platform (query) — Operating system.; version (query) — WARP client version.; source (query) — Source: * `hourly` - device details aggregated hourly, up to 7 days prior * `last_seen` - device details, up to 60 minutes prior. Time windows exceeding 60 minutes will be rejected from June 1st, 2026. Please use 'hourly' or 'raw' instead for longer time ranges. * `raw` - device details, up to 7 days prior"
+  },
+  {
+    "id": "dex-fleet-status-live",
+    "name": "Get live aggregate device details by dimension",
+    "description": "Get live aggregate device details by dimension Get details for live (up to 60 minutes) devices using WARP. GET /client/v4/accounts/{account_id}/dex/fleet-status/live",
+    "context": "GET /client/v4/accounts/{account_id}/dex/fleet-status/live\nGet details for live (up to 60 minutes) devices using WARP.\nRequired: account_id (path) — Unique Cloudflare account ID.; since_minutes (query) — Number of minutes before current time."
+  },
+  {
+    "id": "dex-fleet-status-over-time",
+    "name": "Get over time aggregate details for devices by dimension",
+    "description": "Get over time aggregate details for devices by dimension Get aggregate details for devices using WARP, up to 7 days. GET /client/v4/accounts/{account_id}/dex/fleet-status/over-time",
+    "context": "GET /client/v4/accounts/{account_id}/dex/fleet-status/over-time\nGet aggregate details for devices using WARP, up to 7 days.\nRequired: account_id (path) — Unique Cloudflare account ID.; to (query) — End of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.; from (query) — Start of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.\nOptional: colo (query) — Cloudflare colo airport code.; device_id (query) — Device-specific ID, given as UUID."
+  },
+  {
+    "id": "get-commands",
+    "name": "List account commands",
+    "description": "List account commands Retrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters GET /client/v4/accounts/{account_id}/dex/commands",
+    "context": "GET /client/v4/accounts/{account_id}/dex/commands\nRetrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters\nRequired: account_id (path) — Unique Cloudflare account ID.; page (query) — Page number of paginated results.; per_page (query) — Number of results per page.\nOptional: from (query) — Start time for the query in ISO (RFC3339 - ISO 8601) format.; to (query) — End time for the query in ISO (RFC3339 - ISO 8601) format.; device_id (query) — Unique identifier for a device.; user_email (query) — Email tied to the device.; command_type (query) — Optionally filter executed commands by command type.; status (query) — Optionally filter executed commands by status."
+  },
+  {
+    "id": "get-commands-command-id-downloads-filename",
+    "name": "Download command output file",
+    "description": "Download command output file Downloads artifacts for an executed command. GET /client/v4/accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}",
+    "context": "GET /client/v4/accounts/{account_id}/dex/commands/{command_id}/downloads/{filename}\nDownloads artifacts for an executed command. Bulk downloads are not supported\nRequired: account_id (path) — Unique Cloudflare account ID.; command_id (path) — Unique identifier for command.; filename (path) — The name of the file to be downloaded, including the `.zip` extension."
+  },
+  {
+    "id": "get-commands-eligible-devices",
+    "name": "List devices eligible for remote captures",
+    "description": "List devices eligible for remote captures List devices with WARP client support for remote captures which have been connected in the last 1 hour. GET /client/v4/accounts/{account_id}/dex/commands/devices",
+    "context": "GET /client/v4/accounts/{account_id}/dex/commands/devices\nList devices with WARP client support for remote captures which have been connected in the last 1 hour.\nRequired: account_id (path) — Unique Cloudflare account ID.; page (query) — Page number of paginated results.; per_page (query) — Number of results per page.\nOptional: search (query) — Filter devices by name or email."
+  },
+  {
+    "id": "get-commands-quota",
+    "name": "Returns account commands usage, quota, and reset time",
+    "description": "Returns account commands usage, quota, and reset time Retrieves the current quota usage and limits for device commands within a specific account, including the time when the quota will reset GET /client/v4/accounts/{account_id}/dex/commands/quota",
+    "context": "GET /client/v4/accounts/{account_id}/dex/commands/quota\nRetrieves the current quota usage and limits for device commands within a specific account, including the time when the quota will reset\nRequired: account_id (path) — Unique Cloudflare account ID."
+  },
+  {
+    "id": "get-dex-rule",
+    "name": "Get DEX Rule",
+    "description": "Get DEX Rule Get details for a DEX Rule. GET /client/v4/accounts/{account_id}/dex/rules/{rule_id}",
+    "context": "GET /client/v4/accounts/{account_id}/dex/rules/{rule_id}\nGet details for a DEX Rule.\nRequired: account_id (path) — Unique Cloudflare account ID.; rule_id (path) — Unique identifier of the rule."
+  },
+  {
+    "id": "list-dex-rules",
+    "name": "List DEX Rules",
+    "description": "List DEX Rules List DEX Rules. GET /client/v4/accounts/{account_id}/dex/rules",
+    "context": "GET /client/v4/accounts/{account_id}/dex/rules\nList DEX Rules.\nRequired: account_id (path) — Unique Cloudflare account ID.; page (query) — Page number of paginated results.; per_page (query) — Number of results per page.\nOptional: sort_order (query) — Sort direction for sort_by property.; sort_by (query) — Which property to sort results by.; name (query) — Filter results by rule name."
+  },
+  {
+    "id": "list-warp-change-events",
+    "name": "List WARP change events.",
+    "description": "List WARP change events. List WARP configuration and enablement toggle change events by device. GET /client/v4/accounts/{account_id}/dex/warp-change-events",
+    "context": "GET /client/v4/accounts/{account_id}/dex/warp-change-events\nList WARP configuration and enablement toggle change events by device.\nRequired: account_id (path) — Unique Cloudflare account ID.; page (query) — Page number of paginated results.; per_page (query) — Number of results per page.; from (query) — Start time for the query in ISO (RFC3339 - ISO 8601) format.; to (query) — End time for the query in ISO (RFC3339 - ISO 8601) format.\nOptional: type (query) — Filter events by type 'config' or 'toggle'.; toggle (query) — Filter events by type toggle value. Applicable to type='toggle' events only.; config_name (query) — Filter events by WARP configuration name changed from or to. Applicable to type='config' events only.; account_name (query) — Filter events by account name.; sort_order (query) — Sort response by event timestamp."
+  },
+  {
+    "id": "post-commands",
+    "name": "Create account commands",
+    "description": "Create account commands Initiate commands for up to 10 devices per account. POST /client/v4/accounts/{account_id}/dex/commands",
+    "context": "POST /client/v4/accounts/{account_id}/dex/commands\nInitiate commands for up to 10 devices per account.\nRequired: account_id (path) — Unique Cloudflare account ID.; body (body)"
+  },
+  {
+    "id": "update-dex-rule",
+    "name": "Update a DEX Rule",
+    "description": "Update a DEX Rule Update a DEX Rule. PATCH /client/v4/accounts/{account_id}/dex/rules/{rule_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/dex/rules/{rule_id}\nUpdate a DEX Rule.\nRequired: account_id (path) — Unique Cloudflare account ID.; rule_id (path) — Unique identifier of the rule.; body (body)"
+  }
+]

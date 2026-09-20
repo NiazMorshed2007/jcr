@@ -1,0 +1,56 @@
+[
+  {
+    "id": "CustomersChromePrintersBatchCreatePrinters",
+    "name": "Creates printers under given Organization Unit.",
+    "description": "Creates printers under given Organization Unit. POST /admin/directory/v1/{parent}/chrome/printers:batchCreatePrinters",
+    "context": "POST /admin/directory/v1/{parent}/chrome/printers:batchCreatePrinters\nCreates printers under given Organization Unit.\nRequired: parent (path) — Required. The name of the customer. Format: customers/{customer_id}; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintersBatchDeletePrinters",
+    "name": "Deletes printers in batch.",
+    "description": "Deletes printers in batch. POST /admin/directory/v1/{parent}/chrome/printers:batchDeletePrinters",
+    "context": "POST /admin/directory/v1/{parent}/chrome/printers:batchDeletePrinters\nDeletes printers in batch.\nRequired: parent (path) — Required. The name of the customer. Format: customers/{customer_id}; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintersCreate",
+    "name": "Creates a printer under given Organization Unit.",
+    "description": "Creates a printer under given Organization Unit. POST /admin/directory/v1/{parent}/chrome/printers",
+    "context": "POST /admin/directory/v1/{parent}/chrome/printers\nCreates a printer under given Organization Unit.\nRequired: parent (path) — Required. The name of the customer. Format: customers/{customer_id}; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintersList",
+    "name": "List printers configs.",
+    "description": "List printers configs. GET /admin/directory/v1/{parent}/chrome/printers",
+    "context": "GET /admin/directory/v1/{parent}/chrome/printers\nList printers configs.\nRequired: parent (path) — Required. The name of the customer who owns this collection of printers. Format: customers/{customer_id}\nOptional: filter (query) — Search query. Search syntax is shared between this api and Admin Console printers pages.; orderBy (query) — The order to sort results by. Must be one of display_name, description, make_and_model, or create_time. Default order is ascending, but descending order can be returned by appending \"desc\" to the order_by field. For instance, \"description desc\" will return the printers sorted by description in descending order.; pageToken (query) — A page token, received from a previous call.; pageSize (query) — The maximum number of objects to return. The service may return fewer than this value.; orgUnitId (query) — Organization Unit that we want to list the printers for. When org_unit is not present in the request then all printers of the customer are returned (or filtered). When org_unit is present in the request then only printers available to this OU will be returned (owned or inherited). You may see if printer is owned or inherited for this OU by looking at Printer.org_unit_id.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintersListPrinterModels",
+    "name": "Lists the supported printer models.",
+    "description": "Lists the supported printer models. GET /admin/directory/v1/{parent}/chrome/printers:listPrinterModels",
+    "context": "GET /admin/directory/v1/{parent}/chrome/printers:listPrinterModels\nLists the supported printer models.\nRequired: parent (path) — Required. The name of the customer who owns this collection of printers. Format: customers/{customer_id}\nOptional: pageSize (query) — The maximum number of objects to return. The service may return fewer than this value.; filter (query) — Filer to list only models by a given manufacturer in format: \"manufacturer:Brother\". Search syntax is shared between this api and Admin Console printers pages.; pageToken (query) — A page token, received from a previous call.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersBatchCreatePrintServers",
+    "name": "Creates multiple print servers.",
+    "description": "Creates multiple print servers. POST /admin/directory/v1/{parent}/chrome/printServers:batchCreatePrintServers",
+    "context": "POST /admin/directory/v1/{parent}/chrome/printServers:batchCreatePrintServers\nCreates multiple print servers.\nRequired: parent (path) — Required. The [unique ID](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customers) of the customer's Google Workspace account. Format: `customers/{id}`; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersBatchDeletePrintServers",
+    "name": "Deletes multiple print servers.",
+    "description": "Deletes multiple print servers. POST /admin/directory/v1/{parent}/chrome/printServers:batchDeletePrintServers",
+    "context": "POST /admin/directory/v1/{parent}/chrome/printServers:batchDeletePrintServers\nDeletes multiple print servers.\nRequired: parent (path) — Required. The [unique ID](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customers) of the customer's Google Workspace account. Format: `customers/{customer.id}`; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersCreate",
+    "name": "Creates a print server.",
+    "description": "Creates a print server. POST /admin/directory/v1/{parent}/chrome/printServers",
+    "context": "POST /admin/directory/v1/{parent}/chrome/printServers\nCreates a print server.\nRequired: parent (path) — Required. The [unique ID](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customers) of the customer's Google Workspace account. Format: `customers/{id}`; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "CustomersChromePrintServersList",
+    "name": "Lists print server configurations.",
+    "description": "Lists print server configurations. GET /admin/directory/v1/{parent}/chrome/printServers",
+    "context": "GET /admin/directory/v1/{parent}/chrome/printServers\nLists print server configurations.\nRequired: parent (path) — Required. The [unique ID](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customers) of the customer's Google Workspace account. Format: `customers/{id}`\nOptional: orgUnitId (query) — If `org_unit_id` is present in the request, only print servers owned or inherited by the organizational unit (OU) are returned. If the `PrintServer` resource's `org_unit_id` matches the one in the request, the OU owns the server. If `org_unit_id` is not specified in the request, all print servers are returned or filtered against.; pageSize (query) — The maximum number of objects to return (default `100`, max `100`). The service might return fewer than this value.; orderBy (query) — Sort order for results. Supported values are `display_name`, `description`, or `create_time`. Default order is ascending, but descending order can be returned by appending \"desc\" to the `order_by` field. For instance, `orderBy=='description desc'` returns the print servers sorted by description in descending order.; pageToken (query) — A generated token to paginate results (the `next_page_token` from a previous call).; filter (query) — Search query in [Common Expression Language syntax](https://github.com/google/cel-spec). Supported filters are `display_name`, `description`, and `uri`. Example: `printServer.displayName=='marketing-queue'`.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

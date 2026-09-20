@@ -1,0 +1,182 @@
+[
+  {
+    "id": "DeleteAccountsAccount",
+    "name": "Delete an account",
+    "description": "Delete an account With Connect , you can delete accounts you manage. DELETE /v1/accounts/{account}",
+    "context": "DELETE /v1/accounts/{account}\nWith Connect , you can delete accounts you manage. Test-mode accounts can be deleted at any time. Live-mode accounts that have access to the standard dashboard and Stripe is responsible for negative account balances cannot be deleted, which includes Standard accounts. All other Live-mode accounts, can be deleted when all balances are zero. If you want to delete your own account, use the account information tab in your account settings instead.\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteAccountsAccountBankAccountsId",
+    "name": "Delete an external account",
+    "description": "Delete an external account Delete a specified external account for a given account. DELETE /v1/accounts/{account}/bank_accounts/{id}",
+    "context": "DELETE /v1/accounts/{account}/bank_accounts/{id}\nDelete a specified external account for a given account.\nRequired: account (path); id (path) — Unique identifier for the external account to be deleted.\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteAccountsAccountExternalAccountsId",
+    "name": "Delete an external account",
+    "description": "Delete an external account Delete a specified external account for a given account. DELETE /v1/accounts/{account}/external_accounts/{id}",
+    "context": "DELETE /v1/accounts/{account}/external_accounts/{id}\nDelete a specified external account for a given account.\nRequired: account (path); id (path) — Unique identifier for the external account to be deleted.\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteAccountsAccountPeoplePerson",
+    "name": "Delete a person",
+    "description": "Delete a person Deletes an existing person’s relationship to the account’s legal entity. DELETE /v1/accounts/{account}/people/{person}",
+    "context": "DELETE /v1/accounts/{account}/people/{person}\nDeletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the representative . If your integration is using the executive parameter, you cannot delete the only verified executive on file.\nRequired: account (path); person (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteAccountsAccountPersonsPerson",
+    "name": "Delete a person",
+    "description": "Delete a person Deletes an existing person’s relationship to the account’s legal entity. DELETE /v1/accounts/{account}/persons/{person}",
+    "context": "DELETE /v1/accounts/{account}/persons/{person}\nDeletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the representative . If your integration is using the executive parameter, you cannot delete the only verified executive on file.\nRequired: account (path); person (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetAccounts",
+    "name": "List all connected accounts",
+    "description": "List all connected accounts Returns a list of accounts connected to your platform via Connect . GET /v1/accounts",
+    "context": "GET /v1/accounts\nReturns a list of accounts connected to your platform via Connect . If you’re not a platform, the list is empty.\nOptional: created (query) — Only return connected accounts that were created during the given date interval.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccount",
+    "name": "Retrieve account",
+    "description": "Retrieve account Retrieves the details of an account. GET /v1/accounts/{account}",
+    "context": "GET /v1/accounts/{account}\nRetrieves the details of an account.\nRequired: account (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountBankAccountsId",
+    "name": "Retrieve an external account",
+    "description": "Retrieve an external account Retrieve a specified external account for a given account. GET /v1/accounts/{account}/bank_accounts/{id}",
+    "context": "GET /v1/accounts/{account}/bank_accounts/{id}\nRetrieve a specified external account for a given account.\nRequired: account (path); id (path) — Unique identifier for the external account to be retrieved.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountCapabilities",
+    "name": "List all account capabilities",
+    "description": "List all account capabilities Returns a list of capabilities associated with the account. GET /v1/accounts/{account}/capabilities",
+    "context": "GET /v1/accounts/{account}/capabilities\nReturns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.\nRequired: account (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountCapabilitiesCapability",
+    "name": "Retrieve an Account Capability",
+    "description": "Retrieve an Account Capability Retrieves information about the specified Account Capability. GET /v1/accounts/{account}/capabilities/{capability}",
+    "context": "GET /v1/accounts/{account}/capabilities/{capability}\nRetrieves information about the specified Account Capability.\nRequired: account (path); capability (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountExternalAccounts",
+    "name": "List all external accounts",
+    "description": "List all external accounts List external accounts for an account. GET /v1/accounts/{account}/external_accounts",
+    "context": "GET /v1/accounts/{account}/external_accounts\nList external accounts for an account.\nRequired: account (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; object (query) — Filter external accounts according to a particular object type.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountExternalAccountsId",
+    "name": "Retrieve an external account",
+    "description": "Retrieve an external account Retrieve a specified external account for a given account. GET /v1/accounts/{account}/external_accounts/{id}",
+    "context": "GET /v1/accounts/{account}/external_accounts/{id}\nRetrieve a specified external account for a given account.\nRequired: account (path); id (path) — Unique identifier for the external account to be retrieved.\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountPeople",
+    "name": "List all persons",
+    "description": "List all persons Returns a list of people associated with the account’s legal entity. GET /v1/accounts/{account}/people",
+    "context": "GET /v1/accounts/{account}/people\nReturns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.\nRequired: account (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; relationship (query) — Filters on the list of people returned based on the person's relationship to the account's company.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountPeoplePerson",
+    "name": "Retrieve a person",
+    "description": "Retrieve a person Retrieves an existing person. GET /v1/accounts/{account}/people/{person}",
+    "context": "GET /v1/accounts/{account}/people/{person}\nRetrieves an existing person.\nRequired: account (path); person (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountPersons",
+    "name": "List all persons",
+    "description": "List all persons Returns a list of people associated with the account’s legal entity. GET /v1/accounts/{account}/persons",
+    "context": "GET /v1/accounts/{account}/persons\nReturns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.\nRequired: account (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; relationship (query) — Filters on the list of people returned based on the person's relationship to the account's company.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetAccountsAccountPersonsPerson",
+    "name": "Retrieve a person",
+    "description": "Retrieve a person Retrieves an existing person. GET /v1/accounts/{account}/persons/{person}",
+    "context": "GET /v1/accounts/{account}/persons/{person}\nRetrieves an existing person.\nRequired: account (path); person (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostAccounts",
+    "name": "Create an account",
+    "description": "Create an account With Connect , you can create Stripe accounts for your users. POST /v1/accounts",
+    "context": "POST /v1/accounts\nWith Connect , you can create Stripe accounts for your users. To do this, you’ll first need to register your platform . If you’ve already collected information for your connected accounts, you can prefill that information when creating the account. Connect Onboarding won’t ask for the prefilled information during account onboarding. You can prefill any information on the account.\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccount",
+    "name": "Update an account",
+    "description": "Update an account Updates a connected account by setting the values of the parameters passed. POST /v1/accounts/{account}",
+    "context": "POST /v1/accounts/{account}\nUpdates a connected account by setting the values of the parameters passed. Any parameters not provided are left unchanged. For accounts where controller.requirement_collection is application , which includes Custom accounts, you can update any information on the account. For accounts where controller.requirement_collection is stripe , which includes Standard and Express accounts, you can update all information until you create an Account Link or Account Session to start Connect onboarding, after which some properties can no longer be updated. To update your own account, use the Dashboard . Refer to our Connect documentation to learn more about updating accounts.\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountBankAccounts",
+    "name": "Create an external account",
+    "description": "Create an external account Create an external account for a given account. POST /v1/accounts/{account}/bank_accounts",
+    "context": "POST /v1/accounts/{account}/bank_accounts\nCreate an external account for a given account.\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountBankAccountsId",
+    "name": "Update a bank account",
+    "description": "Update a bank account Updates the metadata, account holder name, account holder type of a bank account belonging to a connected account and optionally sets it as the default for its currency. POST /v1/accounts/{account}/bank_accounts/{id}",
+    "context": "POST /v1/accounts/{account}/bank_accounts/{id}\nUpdates the metadata, account holder name, account holder type of a bank account belonging to a connected account and optionally sets it as the default for its currency. Other bank account details are not editable by design. You can only update bank accounts when account.controller.requirement_collection is application , which includes Custom accounts . You can re-enable a disabled bank account by performing an update call without providing any arguments or changes.\nRequired: account (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountCapabilitiesCapability",
+    "name": "Update an Account Capability",
+    "description": "Update an Account Capability Updates an existing Account Capability. POST /v1/accounts/{account}/capabilities/{capability}",
+    "context": "POST /v1/accounts/{account}/capabilities/{capability}\nUpdates an existing Account Capability. Request or remove a capability by updating its requested parameter.\nRequired: account (path); capability (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountExternalAccounts",
+    "name": "Create an external account",
+    "description": "Create an external account Create an external account for a given account. POST /v1/accounts/{account}/external_accounts",
+    "context": "POST /v1/accounts/{account}/external_accounts\nCreate an external account for a given account.\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountExternalAccountsId",
+    "name": "Update a bank account",
+    "description": "Update a bank account Updates the metadata, account holder name, account holder type of a bank account belonging to a connected account and optionally sets it as the default for its currency. POST /v1/accounts/{account}/external_accounts/{id}",
+    "context": "POST /v1/accounts/{account}/external_accounts/{id}\nUpdates the metadata, account holder name, account holder type of a bank account belonging to a connected account and optionally sets it as the default for its currency. Other bank account details are not editable by design. You can only update bank accounts when account.controller.requirement_collection is application , which includes Custom accounts . You can re-enable a disabled bank account by performing an update call without providing any arguments or changes.\nRequired: account (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountLoginLinks",
+    "name": "Create a login link",
+    "description": "Create a login link Creates a login link for a connected account to access the Express Dashboard. POST /v1/accounts/{account}/login_links",
+    "context": "POST /v1/accounts/{account}/login_links\nCreates a login link for a connected account to access the Express Dashboard. You can only create login links for accounts that use the Express Dashboard and are connected to your platform .\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountPeople",
+    "name": "Create a person",
+    "description": "Create a person Creates a new person. POST /v1/accounts/{account}/people",
+    "context": "POST /v1/accounts/{account}/people\nCreates a new person.\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountPeoplePerson",
+    "name": "Update a person",
+    "description": "Update a person Updates an existing person. POST /v1/accounts/{account}/people/{person}",
+    "context": "POST /v1/accounts/{account}/people/{person}\nUpdates an existing person.\nRequired: account (path); person (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountPersons",
+    "name": "Create a person",
+    "description": "Create a person Creates a new person. POST /v1/accounts/{account}/persons",
+    "context": "POST /v1/accounts/{account}/persons\nCreates a new person.\nRequired: account (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountPersonsPerson",
+    "name": "Update a person",
+    "description": "Update a person Updates an existing person. POST /v1/accounts/{account}/persons/{person}",
+    "context": "POST /v1/accounts/{account}/persons/{person}\nUpdates an existing person.\nRequired: account (path); person (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostAccountsAccountReject",
+    "name": "Reject an account",
+    "description": "Reject an account With Connect , you can reject accounts that you have flagged as suspicious. POST /v1/accounts/{account}/reject",
+    "context": "POST /v1/accounts/{account}/reject\nWith Connect , you can reject accounts that you have flagged as suspicious. Only accounts where your platform is liable for negative account balances, which includes Custom and Express accounts, can be rejected.\nRequired: account (path); body (body)"
+  },
+  {
+    "id": "PostAccountsAccountUnreject",
+    "name": "Unreject an account",
+    "description": "Unreject an account With Connect, you can unreject accounts that you have previously rejected. POST /v1/accounts/{account}/unreject",
+    "context": "POST /v1/accounts/{account}/unreject\nWith Connect, you can unreject accounts that you have previously rejected. Only accounts that were rejected by your platform can be unrejected. This API cannot be used to unreject accounts that were rejected by Stripe. Unreject will only enable charges and/or payouts if there are no other restrictions other than those placed by a previous rejection. If you have separately paused charges and/or payouts outside of rejection, those pauses will remain in place after unrejection.\nRequired: account (path)\nOptional: body (body)"
+  }
+]

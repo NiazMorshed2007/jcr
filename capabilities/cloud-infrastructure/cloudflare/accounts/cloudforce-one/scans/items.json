@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_DeleteScans",
+    "name": "Delete a Scan Config",
+    "description": "Delete a Scan Config Deletes a scan configuration from Cloudforce One's network scanning service. DELETE /client/v4/accounts/{account_id}/cloudforce-one/scans/config/{config_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/scans/config/{config_id}\nDeletes a scan configuration from Cloudforce One's network scanning service.\nRequired: account_id (path) — Defines the Account ID.; config_id (path) — Defines the Config ID."
+  },
+  {
+    "id": "get_ConfigFetch",
+    "name": "List Scan Configs",
+    "description": "List Scan Configs Lists scan configurations for Cloudforce One's network scanning service. GET /client/v4/accounts/{account_id}/cloudforce-one/scans/config",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/scans/config\nLists scan configurations for Cloudforce One's network scanning service.\nRequired: account_id (path) — Defines the Account ID."
+  },
+  {
+    "id": "get_GetOpenPorts",
+    "name": "Get the Latest Scan Result",
+    "description": "Get the Latest Scan Result Retrieves the latest scan results for a Cloudforce One scan configuration, including discovered open ports. GET /client/v4/accounts/{account_id}/cloudforce-one/scans/results/{config_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/scans/results/{config_id}\nRetrieves the latest scan results for a Cloudforce One scan configuration, including discovered open ports.\nRequired: account_id (path) — Defines the Account ID.; config_id (path) — Defines the Config ID."
+  },
+  {
+    "id": "post_ConfigCreate",
+    "name": "Create a new Scan Config",
+    "description": "Create a new Scan Config Creates a new scan configuration for Cloudforce One's network scanning service. POST /client/v4/accounts/{account_id}/cloudforce-one/scans/config",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/scans/config\nCreates a new scan configuration for Cloudforce One's network scanning service.\nRequired: account_id (path) — Defines the Account ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_ConfigUpdate",
+    "name": "Update an existing Scan Config",
+    "description": "Update an existing Scan Config Updates an existing scan configuration in Cloudforce One's network scanning service. PATCH /client/v4/accounts/{account_id}/cloudforce-one/scans/config/{config_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/scans/config/{config_id}\nUpdates an existing scan configuration in Cloudforce One's network scanning service.\nRequired: account_id (path) — Defines the Account ID.; config_id (path) — Defines the Config ID.\nOptional: body (body)"
+  }
+]

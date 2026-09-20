@@ -1,0 +1,44 @@
+[
+  {
+    "id": "createOrganizationWorkflow",
+    "name": "Create an Alert for an Organization",
+    "description": "Create an Alert for an Organization Creates an alert for an organization POST /api/0/organizations/{organization_id_or_slug}/workflows/",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/workflows/\nCreates an alert for an organization\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "deleteOrganizationWorkflow",
+    "name": "Delete an Alert",
+    "description": "Delete an Alert Deletes an alert. DELETE /api/0/organizations/{organization_id_or_slug}/workflows/{workflow_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/workflows/{workflow_id}/\nDeletes an alert.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; workflow_id (path) — The ID of the alert you'd like to query."
+  },
+  {
+    "id": "deleteOrganizationWorkflows",
+    "name": "Bulk Delete Alerts",
+    "description": "Bulk Delete Alerts Bulk delete alerts for a given organization DELETE /api/0/organizations/{organization_id_or_slug}/workflows/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/workflows/\nBulk delete alerts for a given organization\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: query (query) — An optional search query for filtering alerts.; id (query) — The ID of the alert you'd like to query.; project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`"
+  },
+  {
+    "id": "getOrganizationWorkflow",
+    "name": "Fetch an Alert",
+    "description": "Fetch an Alert Returns an alert. GET /api/0/organizations/{organization_id_or_slug}/workflows/{workflow_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/workflows/{workflow_id}/\nReturns an alert.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; workflow_id (path) — The ID of the alert you'd like to query."
+  },
+  {
+    "id": "listOrganizationWorkflows",
+    "name": "Fetch Alerts",
+    "description": "Fetch Alerts Returns a list of alerts for a given organization GET /api/0/organizations/{organization_id_or_slug}/workflows/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/workflows/\nReturns a list of alerts for a given organization\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: sortBy (query) — The field to sort results by. If not specified, the results are sorted by id. Available fields are: - `name` - `id` - `dateCreated` - `dateUpdated` - `connectedDetectors` - `actions` - `priorityDetector` Prefix with `-` to sort in descending order.; query (query) — An optional search query for filtering alerts.; id (query) — The ID of the alert you'd like to query.; detector (query) — The IDs of monitors connected to the alerts you'd like to query.; project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`; per_page (query) — Limit the number of rows to return in the result. Default and maximum allowed is 100.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  },
+  {
+    "id": "updateOrganizationWorkflow",
+    "name": "Update an Alert by ID",
+    "description": "Update an Alert by ID Updates an alert. PUT /api/0/organizations/{organization_id_or_slug}/workflows/{workflow_id}/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/workflows/{workflow_id}/\nUpdates an alert.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; workflow_id (path) — The ID of the alert you'd like to query.; body (body)"
+  },
+  {
+    "id": "updateOrganizationWorkflows",
+    "name": "Mutate an Organization's Alerts",
+    "description": "Mutate an Organization's Alerts Bulk enable or disable alerts for a given Organization PUT /api/0/organizations/{organization_id_or_slug}/workflows/",
+    "context": "PUT /api/0/organizations/{organization_id_or_slug}/workflows/\nBulk enable or disable alerts for a given Organization\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)\nOptional: query (query) — An optional search query for filtering alerts.; id (query) — The ID of the alert you'd like to query.; project (query) — The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects. For example, the following are valid parameters: - `/?project=1234&project=56789` - `/?project=android&project=javascript-react` - `/?project=-1`"
+  }
+]

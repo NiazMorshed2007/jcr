@@ -1,0 +1,32 @@
+[
+  {
+    "id": "GetBillingPortalConfigurations",
+    "name": "List portal configurations",
+    "description": "List portal configurations Returns a list of configurations that describe the functionality of the customer portal. GET /v1/billing_portal/configurations",
+    "context": "GET /v1/billing_portal/configurations\nReturns a list of configurations that describe the functionality of the customer portal.\nOptional: active (query) — Only return configurations that are active or inactive (e.g., pass `true` to only list active configurations).; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; is_default (query) — Only return the default or non-default configurations (e.g., pass `true` to only list the default configuration).; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetBillingPortalConfigurationsConfiguration",
+    "name": "Retrieve a portal configuration",
+    "description": "Retrieve a portal configuration Retrieves a configuration that describes the functionality of the customer portal. GET /v1/billing_portal/configurations/{configuration}",
+    "context": "GET /v1/billing_portal/configurations/{configuration}\nRetrieves a configuration that describes the functionality of the customer portal.\nRequired: configuration (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "PostBillingPortalConfigurations",
+    "name": "Create a portal configuration",
+    "description": "Create a portal configuration Creates a configuration that describes the functionality and behavior of a PortalSession POST /v1/billing_portal/configurations",
+    "context": "POST /v1/billing_portal/configurations\nCreates a configuration that describes the functionality and behavior of a PortalSession\nRequired: body (body)"
+  },
+  {
+    "id": "PostBillingPortalConfigurationsConfiguration",
+    "name": "Update a portal configuration",
+    "description": "Update a portal configuration Updates a configuration that describes the functionality of the customer portal. POST /v1/billing_portal/configurations/{configuration}",
+    "context": "POST /v1/billing_portal/configurations/{configuration}\nUpdates a configuration that describes the functionality of the customer portal.\nRequired: configuration (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostBillingPortalSessions",
+    "name": "Create a portal session",
+    "description": "Create a portal session Creates a session of the customer portal. POST /v1/billing_portal/sessions",
+    "context": "POST /v1/billing_portal/sessions\nCreates a session of the customer portal.\nOptional: body (body)"
+  }
+]

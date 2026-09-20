@@ -1,0 +1,92 @@
+[
+  {
+    "id": "token-validation-config-create",
+    "name": "Create a token validation configuration",
+    "description": "Create a token validation configuration Creates a JWT validation configuration for the zone. POST /client/v4/zones/{zone_id}/token_validation/config",
+    "context": "POST /client/v4/zones/{zone_id}/token_validation/config\nCreates a JWT validation configuration for the zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "token-validation-config-credentials-edit",
+    "name": "Edit token validation credentials",
+    "description": "Edit token validation credentials Updates the configuration's complete key set while allowing omitted fields on existing keys to retain stored values. PATCH /client/v4/zones/{zone_id}/token_validation/config/{config_id}/credentials",
+    "context": "PATCH /client/v4/zones/{zone_id}/token_validation/config/{config_id}/credentials\nUpdates the configuration's complete key set while allowing omitted fields on existing keys to retain stored values. Omitted key identities are removed.\nRequired: zone_id (path); config_id (path) — Token Configuration ID; body (body)"
+  },
+  {
+    "id": "token-validation-config-credentials-update",
+    "name": "Replace token validation credentials",
+    "description": "Replace token validation credentials Replaces the configuration's complete key set. PUT /client/v4/zones/{zone_id}/token_validation/config/{config_id}/credentials",
+    "context": "PUT /client/v4/zones/{zone_id}/token_validation/config/{config_id}/credentials\nReplaces the configuration's complete key set. Symmetric keys must include their key material.\nRequired: zone_id (path); config_id (path) — Token Configuration ID; body (body)"
+  },
+  {
+    "id": "token-validation-config-delete",
+    "name": "Delete a token validation configuration",
+    "description": "Delete a token validation configuration Deletes a JWT validation configuration from the zone. DELETE /client/v4/zones/{zone_id}/token_validation/config/{config_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/token_validation/config/{config_id}\nDeletes a JWT validation configuration from the zone.\nRequired: zone_id (path); config_id (path) — Token Configuration ID"
+  },
+  {
+    "id": "token-validation-config-edit",
+    "name": "Edit a token validation configuration",
+    "description": "Edit a token validation configuration Updates only the supplied fields on a JWT validation configuration. PATCH /client/v4/zones/{zone_id}/token_validation/config/{config_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/token_validation/config/{config_id}\nUpdates only the supplied fields on a JWT validation configuration.\nRequired: zone_id (path); config_id (path) — Token Configuration ID; body (body)"
+  },
+  {
+    "id": "token-validation-config-get",
+    "name": "Get a token validation configuration",
+    "description": "Get a token validation configuration Returns a JWT validation configuration by ID. GET /client/v4/zones/{zone_id}/token_validation/config/{config_id}",
+    "context": "GET /client/v4/zones/{zone_id}/token_validation/config/{config_id}\nReturns a JWT validation configuration by ID.\nRequired: zone_id (path); config_id (path) — Token Configuration ID"
+  },
+  {
+    "id": "token-validation-config-list",
+    "name": "List token validation configurations",
+    "description": "List token validation configurations Lists the JWT validation configurations defined for the zone. GET /client/v4/zones/{zone_id}/token_validation/config",
+    "context": "GET /client/v4/zones/{zone_id}/token_validation/config\nLists the JWT validation configurations defined for the zone.\nRequired: zone_id (path)\nOptional: page (query) — Page number of paginated results.; per_page (query) — Maximum number of results per page."
+  },
+  {
+    "id": "token-validation-rules-bulk-create",
+    "name": "Create token validation rules",
+    "description": "Create token validation rules Creates multiple token validation rules for the zone in one request. POST /client/v4/zones/{zone_id}/token_validation/rules/bulk",
+    "context": "POST /client/v4/zones/{zone_id}/token_validation/rules/bulk\nCreates multiple token validation rules for the zone in one request.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "token-validation-rules-bulk-edit",
+    "name": "Edit token validation rules",
+    "description": "Edit token validation rules Updates and reorders multiple token validation rules in one request, then returns the updated rules. PATCH /client/v4/zones/{zone_id}/token_validation/rules/bulk",
+    "context": "PATCH /client/v4/zones/{zone_id}/token_validation/rules/bulk\nUpdates and reorders multiple token validation rules in one request, then returns the updated rules.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "token-validation-rules-create",
+    "name": "Create a token validation rule",
+    "description": "Create a token validation rule Creates a token validation rule for the zone. POST /client/v4/zones/{zone_id}/token_validation/rules",
+    "context": "POST /client/v4/zones/{zone_id}/token_validation/rules\nCreates a token validation rule for the zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "token-validation-rules-delete",
+    "name": "Delete a token validation rule",
+    "description": "Delete a token validation rule Deletes a token validation rule from the zone. DELETE /client/v4/zones/{zone_id}/token_validation/rules/{rule_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/token_validation/rules/{rule_id}\nDeletes a token validation rule from the zone.\nRequired: zone_id (path); rule_id (path) — Token Validation Rule ID"
+  },
+  {
+    "id": "token-validation-rules-edit",
+    "name": "Edit a token validation rule",
+    "description": "Edit a token validation rule Updates only the supplied fields on a token validation rule. PATCH /client/v4/zones/{zone_id}/token_validation/rules/{rule_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/token_validation/rules/{rule_id}\nUpdates only the supplied fields on a token validation rule.\nRequired: zone_id (path); rule_id (path) — Token Validation Rule ID; body (body)"
+  },
+  {
+    "id": "token-validation-rules-get",
+    "name": "Get a token validation rule",
+    "description": "Get a token validation rule Returns a token validation rule by ID. GET /client/v4/zones/{zone_id}/token_validation/rules/{rule_id}",
+    "context": "GET /client/v4/zones/{zone_id}/token_validation/rules/{rule_id}\nReturns a token validation rule by ID.\nRequired: zone_id (path); rule_id (path) — Token Validation Rule ID"
+  },
+  {
+    "id": "token-validation-rules-list",
+    "name": "List token validation rules",
+    "description": "List token validation rules Lists token validation rules for the zone, with filters for configuration, action, state, ID, and host. GET /client/v4/zones/{zone_id}/token_validation/rules",
+    "context": "GET /client/v4/zones/{zone_id}/token_validation/rules\nLists token validation rules for the zone, with filters for configuration, action, state, ID, and host.\nRequired: zone_id (path)\nOptional: per_page (query) — Maximum number of results per page.; page (query) — Page number of paginated results.; token_configuration (query) — Select rules using any of these token configurations.; action (query); enabled (query); id (query) — Select rules with these IDs.; rule_id (query) — Select rules with these IDs.; host (query) — Select rules with this host in `include`.; hostname (query) — Select rules with this host in `include`."
+  },
+  {
+    "id": "token-validation-rules-preview",
+    "name": "Preview a token validation rule",
+    "description": "Preview a token validation rule Returns zone operations annotated as included or excluded to preview the rule's coverage before creation. POST /client/v4/zones/{zone_id}/token_validation/rules/preview",
+    "context": "POST /client/v4/zones/{zone_id}/token_validation/rules/preview\nReturns zone operations annotated as included or excluded to preview the rule's coverage before creation.\nRequired: zone_id (path); body (body)\nOptional: per_page (query) — Maximum number of results per page.; page (query) — Page number of paginated results.; state (query); host (query) — Filter operations by host.; hostname (query) — Filter operations by host.; method (query) — Filter operations by method.; endpoint (query) — Filter operations by endpoint. Allows substring matching."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "session_recording_playlists_create",
+    "name": "session_recording_playlists_create",
+    "description": "session_recording_playlists_create POST /api/projects/{project_id}/session_recording_playlists/",
+    "context": "POST /api/projects/{project_id}/session_recording_playlists/\nsession_recording_playlists_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "session_recording_playlists_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/session_recording_playlists/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/session_recording_playlists/{short_id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "session_recording_playlists_list",
+    "name": "Override list to include synthetic playlists",
+    "description": "Override list to include synthetic playlists Override list to include synthetic playlists. GET /api/projects/{project_id}/session_recording_playlists/",
+    "context": "GET /api/projects/{project_id}/session_recording_playlists/\nOverride list to include synthetic playlists. Synthetics have no DB row, so we compute each one's position in the merged sort and split the requested page between synthetics and a DB queryset slice. The merge/rank/sort is all in-memory, so each phase is wrapped in a span and the input sizes are recorded as span attributes — a slow response on a team with many playlists then shows up as a wide span against a large db_count.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; short_id (query)"
+  },
+  {
+    "id": "session_recording_playlists_partial_update",
+    "name": "session_recording_playlists_partial_update",
+    "description": "session_recording_playlists_partial_update PATCH /api/projects/{project_id}/session_recording_playlists/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/session_recording_playlists/{short_id}/\nsession_recording_playlists_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "session_recording_playlists_recordings_create",
+    "name": "session_recording_playlists_recordings_create",
+    "description": "session_recording_playlists_recordings_create POST /api/projects/{project_id}/session_recording_playlists/{short_id}/recordings/{session_recording_id}/",
+    "context": "POST /api/projects/{project_id}/session_recording_playlists/{short_id}/recordings/{session_recording_id}/\nsession_recording_playlists_recordings_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; session_recording_id (path); short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "session_recording_playlists_recordings_destroy",
+    "name": "session_recording_playlists_recordings_destroy",
+    "description": "session_recording_playlists_recordings_destroy DELETE /api/projects/{project_id}/session_recording_playlists/{short_id}/recordings/{session_recording_id}/",
+    "context": "DELETE /api/projects/{project_id}/session_recording_playlists/{short_id}/recordings/{session_recording_id}/\nsession_recording_playlists_recordings_destroy\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; session_recording_id (path); short_id (path)"
+  },
+  {
+    "id": "session_recording_playlists_recordings_retrieve",
+    "name": "session_recording_playlists_recordings_retrieve",
+    "description": "session_recording_playlists_recordings_retrieve GET /api/projects/{project_id}/session_recording_playlists/{short_id}/recordings/",
+    "context": "GET /api/projects/{project_id}/session_recording_playlists/{short_id}/recordings/\nsession_recording_playlists_recordings_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "session_recording_playlists_retrieve",
+    "name": "session_recording_playlists_retrieve",
+    "description": "session_recording_playlists_retrieve GET /api/projects/{project_id}/session_recording_playlists/{short_id}/",
+    "context": "GET /api/projects/{project_id}/session_recording_playlists/{short_id}/\nsession_recording_playlists_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "session_recording_playlists_update",
+    "name": "session_recording_playlists_update",
+    "description": "session_recording_playlists_update PUT /api/projects/{project_id}/session_recording_playlists/{short_id}/",
+    "context": "PUT /api/projects/{project_id}/session_recording_playlists/{short_id}/\nsession_recording_playlists_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "delete_DomainDelete",
+    "name": "Delete monitored domain",
+    "description": "Delete monitored domain Remove a domain from credential monitoring. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains/{id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains/{id}\nRemove a domain from credential monitoring.\nRequired: account_id (path) — Account ID; id (path) — Domain ID"
+  },
+  {
+    "id": "get_DomainList",
+    "name": "List monitored domains",
+    "description": "List monitored domains List all domains registered for credential monitoring. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains\nList all domains registered for credential monitoring.\nRequired: account_id (path) — Account ID\nOptional: page (query) — Page number; per_page (query) — Items per page"
+  },
+  {
+    "id": "get_MatchList",
+    "name": "List credential matches",
+    "description": "List credential matches Get credential matches for the account's monitored domains. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/matches",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/matches\nGet credential matches for the account's monitored domains.\nRequired: account_id (path) — Account ID\nOptional: domain (query) — Filter by domain (exact match); username (query) — Filter by username (partial match); page (query) — Page number; per_page (query) — Items per page"
+  },
+  {
+    "id": "post_DomainCreate",
+    "name": "Create monitored domain",
+    "description": "Create monitored domain Register a domain for credential monitoring. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains\nRegister a domain for credential monitoring.\nRequired: account_id (path) — Account ID\nOptional: body (body)"
+  }
+]

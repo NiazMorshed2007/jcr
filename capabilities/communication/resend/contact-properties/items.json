@@ -1,0 +1,32 @@
+[
+  {
+    "id": "delete_contact_properties_id",
+    "name": "Remove an existing contact property",
+    "description": "Remove an existing contact property DELETE /contact-properties/{id}",
+    "context": "DELETE /contact-properties/{id}\nRemove an existing contact property\nRequired: id (path) — The Contact Property ID."
+  },
+  {
+    "id": "get_contact_properties",
+    "name": "Retrieve a list of contact properties",
+    "description": "Retrieve a list of contact properties GET /contact-properties",
+    "context": "GET /contact-properties\nRetrieve a list of contact properties\nOptional: limit (query) — Number of items to return.; after (query) — Return items after this cursor.; before (query) — Return items before this cursor."
+  },
+  {
+    "id": "get_contact_properties_id",
+    "name": "Retrieve a single contact property",
+    "description": "Retrieve a single contact property GET /contact-properties/{id}",
+    "context": "GET /contact-properties/{id}\nRetrieve a single contact property\nRequired: id (path) — The Contact Property ID."
+  },
+  {
+    "id": "patch_contact_properties_id",
+    "name": "Update an existing contact property",
+    "description": "Update an existing contact property PATCH /contact-properties/{id}",
+    "context": "PATCH /contact-properties/{id}\nUpdate an existing contact property\nRequired: id (path) — The Contact Property ID.\nOptional: body (body)"
+  },
+  {
+    "id": "post_contact_properties",
+    "name": "Create a new contact property",
+    "description": "Create a new contact property POST /contact-properties",
+    "context": "POST /contact-properties\nCreate a new contact property\nOptional: body (body)"
+  }
+]

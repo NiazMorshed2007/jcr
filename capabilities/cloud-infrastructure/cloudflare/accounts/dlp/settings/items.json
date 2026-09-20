@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dlp-settings-delete",
+    "name": "Delete (reset) DLP account-level settings to initial values.",
+    "description": "Delete (reset) DLP account-level settings to initial values. Deletes account-level DLP settings and returns the initial values. DELETE /client/v4/accounts/{account_id}/dlp/settings",
+    "context": "DELETE /client/v4/accounts/{account_id}/dlp/settings\nDeletes account-level DLP settings and returns the initial values.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-settings-edit",
+    "name": "Partially update DLP account-level settings.",
+    "description": "Partially update DLP account-level settings. Missing fields keep their existing values. PATCH /client/v4/accounts/{account_id}/dlp/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/dlp/settings\nMissing fields keep their existing values.\nRequired: account_id (path); body (body) — DLP settings fields to update."
+  },
+  {
+    "id": "dlp-settings-get",
+    "name": "Get DLP account-level settings.",
+    "description": "Get DLP account-level settings. Gets the account-level DLP settings. GET /client/v4/accounts/{account_id}/dlp/settings",
+    "context": "GET /client/v4/accounts/{account_id}/dlp/settings\nGets the account-level DLP settings.\nRequired: account_id (path)"
+  },
+  {
+    "id": "dlp-settings-update",
+    "name": "Update DLP account-level settings (full replacement).",
+    "description": "Update DLP account-level settings (full replacement). Missing fields are reset to initial (unconfigured) values. PUT /client/v4/accounts/{account_id}/dlp/settings",
+    "context": "PUT /client/v4/accounts/{account_id}/dlp/settings\nMissing fields are reset to initial (unconfigured) values.\nRequired: account_id (path); body (body) — New DLP settings."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "change_requests_approve_create",
+    "name": "Approve a change request",
+    "description": "Approve a change request Approve a change request. POST /api/projects/{project_id}/change_requests/{id}/approve/",
+    "context": "POST /api/projects/{project_id}/change_requests/{id}/approve/\nApprove a change request. If quorum is reached, automatically applies the change immediately.\nRequired: id (path) — A UUID string identifying this change request.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "change_requests_cancel_create",
+    "name": "Cancel a change request",
+    "description": "Cancel a change request Cancel a change request. POST /api/projects/{project_id}/change_requests/{id}/cancel/",
+    "context": "POST /api/projects/{project_id}/change_requests/{id}/cancel/\nCancel a change request. Only the requester can cancel their own pending change request.\nRequired: id (path) — A UUID string identifying this change request.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "change_requests_list",
+    "name": "change_requests_list",
+    "description": "change_requests_list GET /api/projects/{project_id}/change_requests/",
+    "context": "GET /api/projects/{project_id}/change_requests/\nchange_requests_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: action_key (query); limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; requester (query); resource_id (query); resource_type (query); state (query) — Multiple values may be separated by commas."
+  },
+  {
+    "id": "change_requests_reject_create",
+    "name": "Reject a change request.",
+    "description": "Reject a change request. POST /api/projects/{project_id}/change_requests/{id}/reject/",
+    "context": "POST /api/projects/{project_id}/change_requests/{id}/reject/\nReject a change request.\nRequired: id (path) — A UUID string identifying this change request.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "change_requests_retrieve",
+    "name": "change_requests_retrieve",
+    "description": "change_requests_retrieve GET /api/projects/{project_id}/change_requests/{id}/",
+    "context": "GET /api/projects/{project_id}/change_requests/{id}/\nchange_requests_retrieve\nRequired: id (path) — A UUID string identifying this change request.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

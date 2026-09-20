@@ -1,0 +1,50 @@
+[
+  {
+    "id": "v1-bulk-update-functions",
+    "name": "Bulk update functions",
+    "description": "Bulk update functions Bulk update functions. PUT /v1/projects/{ref}/functions",
+    "context": "PUT /v1/projects/{ref}/functions\nBulk update functions. It will create a new function or replace existing. The operation is idempotent. NOTE: You will need to manually bump the version.\nRequired: ref (path) — Project ref; body (body)"
+  },
+  {
+    "id": "v1-create-a-function",
+    "name": "Create a function",
+    "description": "Create a function This endpoint is deprecated - use the deploy endpoint. POST /v1/projects/{ref}/functions",
+    "context": "POST /v1/projects/{ref}/functions\nThis endpoint is deprecated - use the deploy endpoint. Creates a function and adds it to the specified project.\nRequired: ref (path) — Project ref; body (body)\nOptional: slug (query); name (query); verify_jwt (query); import_map (query); entrypoint_path (query); import_map_path (query); ezbr_sha256 (query)"
+  },
+  {
+    "id": "v1-delete-a-function",
+    "name": "Delete a function",
+    "description": "Delete a function Deletes a function with the specified slug from the specified project. DELETE /v1/projects/{ref}/functions/{function_slug}",
+    "context": "DELETE /v1/projects/{ref}/functions/{function_slug}\nDeletes a function with the specified slug from the specified project.\nRequired: ref (path) — Project ref; function_slug (path) — Function slug"
+  },
+  {
+    "id": "v1-deploy-a-function",
+    "name": "Deploy a function",
+    "description": "Deploy a function A new endpoint to deploy functions. POST /v1/projects/{ref}/functions/deploy",
+    "context": "POST /v1/projects/{ref}/functions/deploy\nA new endpoint to deploy functions. It will create if function does not exist.\nRequired: ref (path) — Project ref; body (body)\nOptional: slug (query); bundleOnly (query)"
+  },
+  {
+    "id": "v1-get-a-function",
+    "name": "Retrieve a function",
+    "description": "Retrieve a function Retrieves a function with the specified slug and project. GET /v1/projects/{ref}/functions/{function_slug}",
+    "context": "GET /v1/projects/{ref}/functions/{function_slug}\nRetrieves a function with the specified slug and project.\nRequired: ref (path) — Project ref; function_slug (path) — Function slug"
+  },
+  {
+    "id": "v1-get-a-function-body",
+    "name": "Retrieve a function body",
+    "description": "Retrieve a function body Retrieves a function body for the specified slug and project. GET /v1/projects/{ref}/functions/{function_slug}/body",
+    "context": "GET /v1/projects/{ref}/functions/{function_slug}/body\nRetrieves a function body for the specified slug and project.\nRequired: ref (path) — Project ref; function_slug (path) — Function slug"
+  },
+  {
+    "id": "v1-list-all-functions",
+    "name": "List all functions",
+    "description": "List all functions Returns all functions you've previously added to the specified project. GET /v1/projects/{ref}/functions",
+    "context": "GET /v1/projects/{ref}/functions\nReturns all functions you've previously added to the specified project.\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-update-a-function",
+    "name": "Update a function",
+    "description": "Update a function Updates a function with the specified slug and project. PATCH /v1/projects/{ref}/functions/{function_slug}",
+    "context": "PATCH /v1/projects/{ref}/functions/{function_slug}\nUpdates a function with the specified slug and project.\nRequired: ref (path) — Project ref; function_slug (path) — Function slug; body (body)\nOptional: slug (query); name (query); verify_jwt (query); import_map (query); entrypoint_path (query); import_map_path (query); ezbr_sha256 (query)"
+  }
+]

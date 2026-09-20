@@ -1,0 +1,158 @@
+[
+  {
+    "id": "namespace-worker-create",
+    "name": "Create Workers for Platforms Dispatch Namespace",
+    "description": "Create Workers for Platforms Dispatch Namespace Create a new Workers for Platforms dispatch namespace. POST /client/v4/accounts/{account_id}/workers/dispatch/namespaces",
+    "context": "POST /client/v4/accounts/{account_id}/workers/dispatch/namespaces\nCreate a new Workers for Platforms dispatch namespace.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-delete-namespace",
+    "name": "Delete Workers for Platforms Dispatch Namespace",
+    "description": "Delete Workers for Platforms Dispatch Namespace Delete a Workers for Platforms dispatch namespace. DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}\nDelete a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path)"
+  },
+  {
+    "id": "namespace-worker-delete-script-secret",
+    "name": "Delete Workers for Platforms script secret",
+    "description": "Delete Workers for Platforms script secret Remove a secret from a Workers for Platforms script by creating a new version without that secret. DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}\nRemove a secret from a Workers for Platforms script by creating a new version without that secret. When changing more than one secret at a time, prefer the \"Patch multiple script secrets\" API instead of changing many secrets individually.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); secret_name (path)\nOptional: url_encoded (query)"
+  },
+  {
+    "id": "namespace-worker-delete-script-tag",
+    "name": "Delete Workers for Platforms Script Tag",
+    "description": "Delete Workers for Platforms Script Tag Delete a tag from a script uploaded to a Workers for Platforms dispatch namespace. DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags/{tag}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags/{tag}\nDelete a tag from a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); tag (path)"
+  },
+  {
+    "id": "namespace-worker-delete-scripts",
+    "name": "Delete Workers for Platforms Scripts",
+    "description": "Delete Workers for Platforms Scripts Delete multiple scripts from a Workers for Platforms dispatch namespace based on optional tag filters. DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts\nDelete multiple scripts from a Workers for Platforms dispatch namespace based on optional tag filters.\nRequired: account_id (path); dispatch_namespace (path)\nOptional: tags (query) — Filter scripts by tags before deletion. Format: comma-separated list of tag:allowed pairs where allowed is 'yes' or 'no'.; limit (query) — Limit the number of scripts to delete."
+  },
+  {
+    "id": "namespace-worker-get-namespace",
+    "name": "Get Workers for Platforms Dispatch Namespace",
+    "description": "Get Workers for Platforms Dispatch Namespace Get a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}\nGet a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path)"
+  },
+  {
+    "id": "namespace-worker-get-script-bindings",
+    "name": "Get Workers for Platforms Script Bindings",
+    "description": "Get Workers for Platforms Script Bindings Fetch bindings from a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/bindings",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/bindings\nFetch bindings from a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)"
+  },
+  {
+    "id": "namespace-worker-get-script-content",
+    "name": "Get Workers for Platforms Script Content",
+    "description": "Get Workers for Platforms Script Content Fetch content from a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content\nFetch content from a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)"
+  },
+  {
+    "id": "namespace-worker-get-script-secrets",
+    "name": "Get Workers for Platforms Script Secret",
+    "description": "Get Workers for Platforms Script Secret Get a given secret binding (value omitted) on a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets/{secret_name}\nGet a given secret binding (value omitted) on a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); secret_name (path)\nOptional: url_encoded (query)"
+  },
+  {
+    "id": "namespace-worker-get-script-settings",
+    "name": "Get Workers for Platforms Script Settings",
+    "description": "Get Workers for Platforms Script Settings Get settings for a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings\nGet settings for a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)"
+  },
+  {
+    "id": "namespace-worker-get-script-tags",
+    "name": "List Workers for Platforms Script Tags",
+    "description": "List Workers for Platforms Script Tags Fetch tags from a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags\nFetch tags from a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)"
+  },
+  {
+    "id": "namespace-worker-list",
+    "name": "List Workers for Platforms Dispatch Namespaces",
+    "description": "List Workers for Platforms Dispatch Namespaces Fetch a list of Workers for Platforms dispatch namespaces. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces\nFetch a list of Workers for Platforms dispatch namespaces.\nRequired: account_id (path)"
+  },
+  {
+    "id": "namespace-worker-list-script-secrets",
+    "name": "List Workers for Platforms Script Secrets",
+    "description": "List Workers for Platforms Script Secrets List secrets bound to a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets\nList secrets bound to a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)"
+  },
+  {
+    "id": "namespace-worker-list-scripts",
+    "name": "List Workers for Platforms Scripts",
+    "description": "List Workers for Platforms Scripts Fetch a list of scripts uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts\nFetch a list of scripts uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path)\nOptional: tags (query) — Filter scripts by tags. Format: comma-separated list of tag:allowed pairs where allowed is 'yes' or 'no'."
+  },
+  {
+    "id": "namespace-worker-patch-namespace",
+    "name": "Patch Workers for Platforms Dispatch Namespace",
+    "description": "Patch Workers for Platforms Dispatch Namespace Patch a Workers for Platforms dispatch namespace. PATCH /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}\nPatch a Workers for Platforms dispatch namespace. Omitted fields are left unchanged.\nRequired: account_id (path); dispatch_namespace (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-patch-script-secrets-bulk",
+    "name": "Patch multiple Workers for Platforms script secrets",
+    "description": "Patch multiple Workers for Platforms script secrets Create, update, or delete multiple secrets on a Workers for Platforms script in a single operation using JSON Merge Patch (RFC 7396). PATCH /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets-bulk",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets-bulk\nCreate, update, or delete multiple secrets on a Workers for Platforms script in a single operation using JSON Merge Patch (RFC 7396). This operation creates a single version with all changes included. Prefer this API instead of changing many secrets individually. Usage: - To create or update a secret, set its value to a secret object. - To delete a secret, set its value to `null`. - Secrets not included in the request are left unchanged.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-patch-script-settings",
+    "name": "Patch Workers for Platforms Script Settings",
+    "description": "Patch Workers for Platforms Script Settings Patch metadata for a script uploaded to a Workers for Platforms dispatch namespace, such as bindings. PATCH /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/settings\nPatch metadata for a script uploaded to a Workers for Platforms dispatch namespace, such as bindings.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-put-namespace",
+    "name": "Update Workers for Platforms Dispatch Namespace",
+    "description": "Update Workers for Platforms Dispatch Namespace Update a Workers for Platforms dispatch namespace. PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}\nUpdate a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-put-script-content",
+    "name": "Replace Workers for Platforms Script Content",
+    "description": "Replace Workers for Platforms Script Content Replace content for a script uploaded to a Workers for Platforms dispatch namespace. PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/content\nReplace content for a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)\nOptional: CF-WORKER-BODY-PART (header) — The multipart name of a script upload part containing script content in service worker format. Alternative to including in a metadata part.; CF-WORKER-MAIN-MODULE-PART (header) — The multipart name of a script upload part containing script content in es module format. Alternative to including in a metadata part."
+  },
+  {
+    "id": "namespace-worker-put-script-secrets",
+    "name": "Add a secret to a Workers for Platforms script",
+    "description": "Add a secret to a Workers for Platforms script Add a secret to a Workers for Platforms script by creating a new version with that secret. PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/secrets\nAdd a secret to a Workers for Platforms script by creating a new version with that secret. When changing more than one secret at a time, prefer the \"Patch multiple script secrets\" API instead of changing many secrets individually.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-put-script-tag",
+    "name": "Create Workers for Platforms Script Tag",
+    "description": "Create Workers for Platforms Script Tag Add a single tag to a script uploaded to a Workers for Platforms dispatch namespace. PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags/{tag}",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags/{tag}\nAdd a single tag to a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); tag (path)"
+  },
+  {
+    "id": "namespace-worker-put-script-tags",
+    "name": "Replace Workers for Platforms Script Tags",
+    "description": "Replace Workers for Platforms Script Tags Replace tags for a script uploaded to a Workers for Platforms dispatch namespace. PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/tags\nReplace tags for a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-script-delete-worker",
+    "name": "Delete Workers for Platforms Script",
+    "description": "Delete Workers for Platforms Script Delete a script from a Workers for Platforms dispatch namespace. DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}\nDelete a script from a Workers for Platforms dispatch namespace. This call has no response body on a successful delete.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)\nOptional: force (query) — If set to true, delete will not be stopped by associated service binding, durable object, or other binding. Any of these associated bindings/durable objects will be deleted along with the script."
+  },
+  {
+    "id": "namespace-worker-script-update-create-assets-upload-session",
+    "name": "Create Workers for Platforms Assets Upload Session",
+    "description": "Create Workers for Platforms Assets Upload Session Start uploading a collection of assets for use in a Workers for Platforms script version. POST /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session",
+    "context": "POST /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session\nStart uploading a collection of assets for use in a Workers for Platforms script version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)"
+  },
+  {
+    "id": "namespace-worker-script-upload-worker-module",
+    "name": "Upload Workers for Platforms Script Module",
+    "description": "Upload Workers for Platforms Script Module Upload a Workers for Platforms script module to a dispatch namespace. PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}\nUpload a Workers for Platforms script module to a dispatch namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.\nRequired: account_id (path); dispatch_namespace (path); script_name (path); body (body)\nOptional: bindings_inherit (query) — When set to \"strict\", the upload will fail if any `inherit` type bindings cannot be resolved against the previous version of the script. Without this, unresolvable inherit bindings are silently dropped."
+  },
+  {
+    "id": "namespace-worker-script-worker-details",
+    "name": "Get Workers for Platforms Script details",
+    "description": "Get Workers for Platforms Script details Fetch information about a script uploaded to a Workers for Platforms dispatch namespace. GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}",
+    "context": "GET /client/v4/accounts/{account_id}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}\nFetch information about a script uploaded to a Workers for Platforms dispatch namespace.\nRequired: account_id (path); dispatch_namespace (path); script_name (path)"
+  }
+]

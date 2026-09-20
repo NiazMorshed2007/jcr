@@ -1,0 +1,392 @@
+[
+  {
+    "id": "activity%2Flist-events-for-authenticated-user",
+    "name": "List events for the authenticated user",
+    "description": "List events for the authenticated user If you are authenticated as the given user, you will see your private events. GET /users/{username}/events",
+    "context": "GET /users/{username}/events\nIf you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: \"Events\" user permissions (read). > [!NOTE] > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-org-events-for-authenticated-user",
+    "name": "List organization events for the authenticated user",
+    "description": "List organization events for the authenticated user This is the user's organization dashboard. GET /users/{username}/events/orgs/{org}",
+    "context": "GET /users/{username}/events/orgs/{org}\nThis is the user's organization dashboard. You must be authenticated as the user to view this. > [!NOTE] > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.\nRequired: username (path) — The handle for the GitHub user account.; org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-public-events-for-user",
+    "name": "List public events for a user",
+    "description": "List public events for a user > [!NOTE] > This API is not built to serve real-time use cases. GET /users/{username}/events/public",
+    "context": "GET /users/{username}/events/public\n> [!NOTE] > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-received-events-for-user",
+    "name": "List events received by the authenticated user",
+    "description": "List events received by the authenticated user These are events that you've received by watching repositories and following users. GET /users/{username}/received_events",
+    "context": "GET /users/{username}/received_events\nThese are events that you've received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events. > [!NOTE] > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-received-public-events-for-user",
+    "name": "List public events received by a user",
+    "description": "List public events received by a user > [!NOTE] > This API is not built to serve real-time use cases. GET /users/{username}/received_events/public",
+    "context": "GET /users/{username}/received_events/public\n> [!NOTE] > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-repos-starred-by-user",
+    "name": "List repositories starred by a user",
+    "description": "List repositories starred by a user Lists repositories a user has starred. GET /users/{username}/starred",
+    "context": "GET /users/{username}/starred\nLists repositories a user has starred. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns starred repositories visible to the token even if the token has no OAuth scopes. This endpoint supports the following custom media types. For more information, see \"[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).\" - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: sort (query) — The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.; direction (query) — The direction to sort the results by.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "activity%2Flist-repos-watched-by-user",
+    "name": "List repositories watched by a user",
+    "description": "List repositories watched by a user Lists repositories a user is watching. GET /users/{username}/subscriptions",
+    "context": "GET /users/{username}/subscriptions\nLists repositories a user is watching.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "apps%2Fget-user-installation",
+    "name": "Get a user installation for the authenticated app",
+    "description": "Get a user installation for the authenticated app Enables an authenticated GitHub App to find the user’s installation information. GET /users/{username}/installation",
+    "context": "GET /users/{username}/installation\nEnables an authenticated GitHub App to find the user’s installation information. You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "billing%2Fget-github-billing-ai-credit-usage-report-user",
+    "name": "Get billing AI credit usage report for a user",
+    "description": "Get billing AI credit usage report for a user Gets a report of AI credit usage for a user. GET /users/{username}/settings/billing/ai_credit/usage",
+    "context": "GET /users/{username}/settings/billing/ai_credit/usage\nGets a report of AI credit usage for a user. **Note:** Only data from the past 24 months is accessible via this endpoint.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. Default value is the current month. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.; model (query) — The model name to query usage for. The name is not case sensitive.; product (query) — The product name to query usage for. The name is not case sensitive."
+  },
+  {
+    "id": "billing%2Fget-github-billing-premium-request-usage-report-user",
+    "name": "Get billing premium request usage report for a user",
+    "description": "Get billing premium request usage report for a user Gets a report of premium request usage for a user. GET /users/{username}/settings/billing/premium_request/usage",
+    "context": "GET /users/{username}/settings/billing/premium_request/usage\nGets a report of premium request usage for a user. **Note:** Only data from the past 24 months is accessible via this endpoint.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. Default value is the current month. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.; model (query) — The model name to query usage for. The name is not case sensitive.; product (query) — The product name to query usage for. The name is not case sensitive."
+  },
+  {
+    "id": "billing%2Fget-github-billing-usage-report-user",
+    "name": "Get billing usage report for a user",
+    "description": "Get billing usage report for a user Gets a report of the total usage for a user. GET /users/{username}/settings/billing/usage",
+    "context": "GET /users/{username}/settings/billing/usage\nGets a report of the total usage for a user. **Note:** This endpoint is only available to users with access to the enhanced billing platform.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used."
+  },
+  {
+    "id": "billing%2Fget-github-billing-usage-summary-report-user",
+    "name": "Get billing usage summary for a user",
+    "description": "Get billing usage summary for a user > [!NOTE] > This endpoint is in public preview and is subject to change. GET /users/{username}/settings/billing/usage/summary",
+    "context": "GET /users/{username}/settings/billing/usage/summary\n> [!NOTE] > This endpoint is in public preview and is subject to change. Gets a summary report of usage for a user. **Note:** Only data from the past 24 months is accessible via this endpoint.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: year (query) — If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.; month (query) — If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. Default value is the current month. If no year is specified the default `year` is used.; day (query) — If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.; repository (query) — The repository name to query for usage in the format owner/repository.; product (query) — The product name to query usage for. The name is not case sensitive.; sku (query) — The SKU to query for usage."
+  },
+  {
+    "id": "copilot-spaces%2Fadd-collaborator-for-user",
+    "name": "Add a collaborator to a Copilot Space for a user",
+    "description": "Add a collaborator to a Copilot Space for a user Adds a collaborator to a specific Copilot Space owned by a user. POST /users/{username}/copilot-spaces/{space_number}/collaborators",
+    "context": "POST /users/{username}/copilot-spaces/{space_number}/collaborators\nAdds a collaborator to a specific Copilot Space owned by a user. The authenticated user must be the owner of the space or have admin access to the space. Team collaborators are not supported for user-owned Copilot Spaces. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fcreate-for-user",
+    "name": "Create a Copilot Space for a user",
+    "description": "Create a Copilot Space for a user Creates a new Copilot Space owned by a user. POST /users/{username}/copilot-spaces",
+    "context": "POST /users/{username}/copilot-spaces\nCreates a new Copilot Space owned by a user. Only the authenticated user can create spaces for their own account. Users can create personal Copilot Spaces for their individual use. OAuth app tokens and personal access tokens (classic) need the `read:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fcreate-resource-for-user",
+    "name": "Create a resource for a Copilot Space for a user",
+    "description": "Create a resource for a Copilot Space for a user Creates a new resource in a specific Copilot Space owned by a user. POST /users/{username}/copilot-spaces/{space_number}/resources",
+    "context": "POST /users/{username}/copilot-spaces/{space_number}/resources\nCreates a new resource in a specific Copilot Space owned by a user. The authenticated user must have write permissions on the space. The following resource types are supported: `repository`, `github_file`, `free_text`, `github_issue`, `github_pull_request`. The `uploaded_text_file` and `media_content` types are not supported via this endpoint. For `github_file` resources, if a resource with the same repository, file path, and SHA already exists, the existing resource is returned with a `200` status. OAuth app tokens and personal access tokens (classic) need the `write:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fdelete-for-user",
+    "name": "Delete a Copilot Space for a user",
+    "description": "Delete a Copilot Space for a user Deletes a Copilot Space owned by a user. DELETE /users/{username}/copilot-spaces/{space_number}",
+    "context": "DELETE /users/{username}/copilot-spaces/{space_number}\nDeletes a Copilot Space owned by a user. The authenticated user must be the owner of the space. **Warning:** This action is permanent and cannot be undone. Deleting a space will remove all associated resources and configurations. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Fdelete-resource-for-user",
+    "name": "Delete a resource from a Copilot Space for a user",
+    "description": "Delete a resource from a Copilot Space for a user Deletes a resource from a specific Copilot Space owned by a user. DELETE /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "context": "DELETE /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}\nDeletes a resource from a specific Copilot Space owned by a user. The authenticated user must have write permissions on the space. OAuth app tokens and personal access tokens (classic) need the `write:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; space_resource_id (path) — The unique identifier of the resource."
+  },
+  {
+    "id": "copilot-spaces%2Fget-for-user",
+    "name": "Get a Copilot Space for a user",
+    "description": "Get a Copilot Space for a user Gets details about a specific Copilot Space owned by a user. GET /users/{username}/copilot-spaces/{space_number}",
+    "context": "GET /users/{username}/copilot-spaces/{space_number}\nGets details about a specific Copilot Space owned by a user. The authenticated user must have read access to the Space. Private user spaces require the authenticated user to be the owner of the space. Public user spaces are accessible to any authenticated user. OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Fget-resource-for-user",
+    "name": "Get a resource for a Copilot Space for a user",
+    "description": "Get a resource for a Copilot Space for a user Gets a specific resource attached to a Copilot Space owned by a user. GET /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "context": "GET /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}\nGets a specific resource attached to a Copilot Space owned by a user. The authenticated user must have appropriate permissions to view the space. OAuth app tokens and personal access tokens (classic) need the `read:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; space_resource_id (path) — The unique identifier of the resource."
+  },
+  {
+    "id": "copilot-spaces%2Flist-collaborators-for-user",
+    "name": "List collaborators for a Copilot Space for a user",
+    "description": "List collaborators for a Copilot Space for a user Lists all collaborators for a specific Copilot Space owned by a user. GET /users/{username}/copilot-spaces/{space_number}/collaborators",
+    "context": "GET /users/{username}/copilot-spaces/{space_number}/collaborators\nLists all collaborators for a specific Copilot Space owned by a user. The authenticated user must be the owner of the space or have admin access to the space. Each collaborator entry specifies which user has access to the space and at what level (reader, writer, or admin). The space owner is excluded from this list. Team collaborators are not supported for user-owned Copilot Spaces. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Flist-for-user",
+    "name": "List Copilot Spaces for a user",
+    "description": "List Copilot Spaces for a user Lists Copilot Spaces owned by a user. GET /users/{username}/copilot-spaces",
+    "context": "GET /users/{username}/copilot-spaces\nLists Copilot Spaces owned by a user. The authenticated user must have read access to the user's Copilot Spaces. Only Spaces that are readable by the authenticated user are returned. This includes the user's own spaces, and public user spaces when accessing another user's spaces. OAuth app tokens and personal access tokens (classic) need the `read:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100).; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor.; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor."
+  },
+  {
+    "id": "copilot-spaces%2Flist-resources-for-user",
+    "name": "List resources for a Copilot Space for a user",
+    "description": "List resources for a Copilot Space for a user Lists all resources attached to a specific Copilot Space owned by a user. GET /users/{username}/copilot-spaces/{space_number}/resources",
+    "context": "GET /users/{username}/copilot-spaces/{space_number}/resources\nLists all resources attached to a specific Copilot Space owned by a user. The authenticated user must have appropriate permissions to view the space. OAuth app tokens and personal access tokens (classic) need the `read:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space."
+  },
+  {
+    "id": "copilot-spaces%2Fremove-collaborator-for-user",
+    "name": "Remove a collaborator from a Copilot Space for a user",
+    "description": "Remove a collaborator from a Copilot Space for a user Removes a collaborator from a specific Copilot Space owned by a user. DELETE /users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "context": "DELETE /users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}\nRemoves a collaborator from a specific Copilot Space owned by a user. The authenticated user must be the owner of the space or have admin access to the space. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; actor_type (path) — The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).; actor_identifier (path) — The username of the collaborator. The numeric user ID is also accepted."
+  },
+  {
+    "id": "copilot-spaces%2Fupdate-collaborator-for-user",
+    "name": "Set a collaborator role for a Copilot Space for a user",
+    "description": "Set a collaborator role for a Copilot Space for a user Updates the role of a collaborator for a specific Copilot Space owned by a user. PUT /users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "context": "PUT /users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}\nUpdates the role of a collaborator for a specific Copilot Space owned by a user. The authenticated user must be the owner of the space or have admin access to the space. OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; actor_type (path) — The type of actor (must be `User` for user-owned spaces; `Team` will be rejected).; actor_identifier (path) — The username of the collaborator. The numeric user ID is also accepted.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fupdate-for-user",
+    "name": "Set a Copilot Space for a user",
+    "description": "Set a Copilot Space for a user Updates a Copilot Space owned by a user. PUT /users/{username}/copilot-spaces/{space_number}",
+    "context": "PUT /users/{username}/copilot-spaces/{space_number}\nUpdates a Copilot Space owned by a user. Only the authenticated user can update spaces for their own account. Users can update their personal Copilot Spaces. OAuth app tokens and personal access tokens (classic) need the `read:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; body (body)"
+  },
+  {
+    "id": "copilot-spaces%2Fupdate-resource-for-user",
+    "name": "Set a resource for a Copilot Space for a user",
+    "description": "Set a resource for a Copilot Space for a user Updates the metadata of a resource in a specific Copilot Space owned by a user. PUT /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "context": "PUT /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}\nUpdates the metadata of a resource in a specific Copilot Space owned by a user. The authenticated user must have write permissions on the space. OAuth app tokens and personal access tokens (classic) need the `write:user` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.; space_number (path) — The unique identifier of the Copilot Space.; space_resource_id (path) — The unique identifier of the resource.; body (body)"
+  },
+  {
+    "id": "gists%2Flist-for-user",
+    "name": "List gists for a user",
+    "description": "List gists for a user Lists public gists for the specified user: GET /users/{username}/gists",
+    "context": "GET /users/{username}/gists\nLists public gists for the specified user:\nRequired: username (path) — The handle for the GitHub user account.\nOptional: since (query) — Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Flist-for-user",
+    "name": "List organizations for a user",
+    "description": "List organizations for a user List [public organization memberships](https://docs.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user. GET /users/{username}/orgs",
+    "context": "GET /users/{username}/orgs\nList [public organization memberships](https://docs.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user. This method only lists _public_ memberships, regardless of authentication. If you need to fetch all of the organization memberships (public and private) for the authenticated user, use the [List organizations for the authenticated user](https://docs.github.com/rest/orgs/orgs#list-organizations-for-the-authenticated-user) API instead.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "packages%2Fdelete-package-for-user",
+    "name": "Delete a package for a user",
+    "description": "Delete a package for a user Deletes an entire package for a user. DELETE /users/{username}/packages/{package_type}/{package_name}",
+    "context": "DELETE /users/{username}/packages/{package_type}/{package_name}\nDeletes an entire package for a user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages).\" OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "packages%2Fdelete-package-version-for-user",
+    "name": "Delete package version for a user",
+    "description": "Delete package version for a user Deletes a specific package version for a user. DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "context": "DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}\nDeletes a specific package version for a user. If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages).\" OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; username (path) — The handle for the GitHub user account.; package_version_id (path) — Unique identifier of the package version."
+  },
+  {
+    "id": "packages%2Fget-all-package-versions-for-package-owned-by-user",
+    "name": "List package versions for a package owned by a user",
+    "description": "List package versions for a package owned by a user Lists package versions for a public package owned by a specified user. GET /users/{username}/packages/{package_type}/{package_name}/versions",
+    "context": "GET /users/{username}/packages/{package_type}/{package_name}/versions\nLists package versions for a public package owned by a specified user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "packages%2Fget-package-for-user",
+    "name": "Get a package for a user",
+    "description": "Get a package for a user Gets a specific package metadata for a public package owned by a user. GET /users/{username}/packages/{package_type}/{package_name}",
+    "context": "GET /users/{username}/packages/{package_type}/{package_name}\nGets a specific package metadata for a public package owned by a user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "packages%2Fget-package-version-for-user",
+    "name": "Get a package version for a user",
+    "description": "Get a package version for a user Gets a specific package version for a public package owned by a specified user. GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "context": "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}\nGets a specific package version for a public package owned by a specified user. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; package_version_id (path) — Unique identifier of the package version.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "packages%2Flist-docker-migration-conflicting-packages-for-user",
+    "name": "Get list of conflicting packages during Docker migration for user",
+    "description": "Get list of conflicting packages during Docker migration for user Lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration. GET /users/{username}/docker/conflicts",
+    "context": "GET /users/{username}/docker/conflicts\nLists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "packages%2Flist-packages-for-user",
+    "name": "List packages for a user",
+    "description": "List packages for a user Lists all packages in a user's namespace for which the requesting user has access. GET /users/{username}/packages",
+    "context": "GET /users/{username}/packages\nLists all packages in a user's namespace for which the requesting user has access. OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (query) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; username (path) — The handle for the GitHub user account.\nOptional: visibility (query) — The selected visibility of the packages. This parameter is optional and only filters an existing result set. The `internal` visibility is only supported for GitHub Packages registries that allow for granular permissions. For other ecosystems `internal` is synonymous with `private`. For the list of GitHub Packages registries that support granular permissions, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "packages%2Frestore-package-for-user",
+    "name": "Restore a package for a user",
+    "description": "Restore a package for a user Restores an entire package for a user. POST /users/{username}/packages/{package_type}/{package_name}/restore",
+    "context": "POST /users/{username}/packages/{package_type}/{package_name}/restore\nRestores an entire package for a user. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages).\" OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; username (path) — The handle for the GitHub user account.\nOptional: token (query) — package token"
+  },
+  {
+    "id": "packages%2Frestore-package-version-for-user",
+    "name": "Restore package version for a user",
+    "description": "Restore package version for a user Restores a specific package version for a user. POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "context": "POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore\nRestores a specific package version for a user. You can restore a deleted package under the following conditions: - The package was deleted within the last 30 days. - The same package namespace and version is still available and not reused for a new package. If the same package namespace is not available, you will not be able to restore your package. In this scenario, to restore the deleted package, you must delete the new package that uses the deleted package's namespace first. If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages).\" OAuth app tokens and personal access tokens (classic) need the `read:packages` and `write:packages` scopes to use this endpoint. For more information, see \"[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).\"\nRequired: package_type (path) — The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.; package_name (path) — The name of the package.; username (path) — The handle for the GitHub user account.; package_version_id (path) — Unique identifier of the package version."
+  },
+  {
+    "id": "projects%2Fadd-field-for-user",
+    "name": "Add field to user owned project",
+    "description": "Add field to user owned project Add a field to a specified user owned project. POST /users/{username}/projectsV2/{project_number}/fields",
+    "context": "POST /users/{username}/projectsV2/{project_number}/fields\nAdd a field to a specified user owned project.\nRequired: username (path) — The handle for the GitHub user account.; project_number (path) — The project's number.; body (body)"
+  },
+  {
+    "id": "projects%2Fadd-item-for-user",
+    "name": "Add item to user owned project",
+    "description": "Add item to user owned project Add an issue or pull request item to the specified user owned project. POST /users/{username}/projectsV2/{project_number}/items",
+    "context": "POST /users/{username}/projectsV2/{project_number}/items\nAdd an issue or pull request item to the specified user owned project.\nRequired: username (path) — The handle for the GitHub user account.; project_number (path) — The project's number.; body (body) — Details of the item to add to the project. You can specify either the unique ID or the repository owner, name, and issue/PR number."
+  },
+  {
+    "id": "projects%2Fcreate-view-for-user",
+    "name": "Create a view for a user-owned project",
+    "description": "Create a view for a user-owned project Create a new view in a user-owned project. POST /users/{user_id}/projectsV2/{project_number}/views",
+    "context": "POST /users/{user_id}/projectsV2/{project_number}/views\nCreate a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.\nRequired: user_id (path) — The unique identifier of the user.; project_number (path) — The project's number.; body (body)"
+  },
+  {
+    "id": "projects%2Fdelete-item-for-user",
+    "name": "Delete project item for user",
+    "description": "Delete project item for user Delete a specific item from a user-owned project. DELETE /users/{username}/projectsV2/{project_number}/items/{item_id}",
+    "context": "DELETE /users/{username}/projectsV2/{project_number}/items/{item_id}\nDelete a specific item from a user-owned project.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account.; item_id (path) — The unique identifier of the project item."
+  },
+  {
+    "id": "projects%2Fget-field-for-user",
+    "name": "Get project field for user",
+    "description": "Get project field for user Get a specific field for a user-owned project. GET /users/{username}/projectsV2/{project_number}/fields/{field_id}",
+    "context": "GET /users/{username}/projectsV2/{project_number}/fields/{field_id}\nGet a specific field for a user-owned project.\nRequired: project_number (path) — The project's number.; field_id (path) — The unique identifier of the field.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "projects%2Fget-for-user",
+    "name": "Get project for user",
+    "description": "Get project for user Get a specific user-owned project. GET /users/{username}/projectsV2/{project_number}",
+    "context": "GET /users/{username}/projectsV2/{project_number}\nGet a specific user-owned project.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "projects%2Fget-user-item",
+    "name": "Get an item for a user owned project",
+    "description": "Get an item for a user owned project Get a specific item from a user-owned project. GET /users/{username}/projectsV2/{project_number}/items/{item_id}",
+    "context": "GET /users/{username}/projectsV2/{project_number}/items/{item_id}\nGet a specific item from a user-owned project.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account.; item_id (path) — The unique identifier of the project item.\nOptional: fields (query) — Limit results to specific fields, by their IDs. If not specified, the title field will be returned. Example: fields[]=123&fields[]=456&fields[]=789 or fields=123,456,789"
+  },
+  {
+    "id": "projects%2Flist-fields-for-user",
+    "name": "List project fields for user",
+    "description": "List project fields for user List all fields for a specific user-owned project. GET /users/{username}/projectsV2/{project_number}/fields",
+    "context": "GET /users/{username}/projectsV2/{project_number}/fields\nList all fields for a specific user-owned project.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Flist-for-user",
+    "name": "List projects for user",
+    "description": "List projects for user List all projects owned by a specific user accessible by the authenticated user. GET /users/{username}/projectsV2",
+    "context": "GET /users/{username}/projectsV2\nList all projects owned by a specific user accessible by the authenticated user.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: q (query) — Limit results to projects of the specified type.; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Flist-items-for-user",
+    "name": "List items for a user owned project",
+    "description": "List items for a user owned project List all items for a specific user-owned project accessible by the authenticated user. GET /users/{username}/projectsV2/{project_number}/items",
+    "context": "GET /users/{username}/projectsV2/{project_number}/items\nList all items for a specific user-owned project accessible by the authenticated user.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account.\nOptional: before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; q (query) — Search query to filter items, see [Filtering projects](https://docs.github.com/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/filtering-projects) for more information.; fields (query) — Limit results to specific fields, by their IDs. If not specified, the title field will be returned. Example: `fields[]=123&fields[]=456&fields[]=789` or `fields=123,456,789`"
+  },
+  {
+    "id": "projects%2Flist-view-items-for-user",
+    "name": "List items for a user project view",
+    "description": "List items for a user project view List items in a user project with the saved view's filter applied. GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items",
+    "context": "GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items\nList items in a user project with the saved view's filter applied.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account.; view_number (path) — The number that identifies the project view.\nOptional: fields (query) — Limit results to specific fields, by their IDs. If not specified, the title field will be returned. Example: `fields[]=123&fields[]=456&fields[]=789` or `fields=123,456,789`; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "projects%2Fupdate-item-for-user",
+    "name": "Update project item for user",
+    "description": "Update project item for user Update a specific item in a user-owned project. PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}",
+    "context": "PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}\nUpdate a specific item in a user-owned project.\nRequired: project_number (path) — The project's number.; username (path) — The handle for the GitHub user account.; item_id (path) — The unique identifier of the project item.; body (body) — Field updates to apply to the project item. Only text, number, date, single select, and iteration fields are supported."
+  },
+  {
+    "id": "repos%2Flist-for-user",
+    "name": "List repositories for a user",
+    "description": "List repositories for a user Lists public repositories for the specified user. GET /users/{username}/repos",
+    "context": "GET /users/{username}/repos\nLists public repositories for the specified user.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: type (query) — Limit results to repositories of the specified type.; sort (query) — The property to sort the results by.; direction (query) — The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Fcheck-following-for-user",
+    "name": "Check if a user follows another user",
+    "description": "Check if a user follows another user GET /users/{username}/following/{target_user}",
+    "context": "GET /users/{username}/following/{target_user}\nCheck if a user follows another user\nRequired: username (path) — The handle for the GitHub user account.; target_user (path)"
+  },
+  {
+    "id": "users%2Fdelete-attestations-bulk",
+    "name": "Delete attestations in bulk",
+    "description": "Delete attestations in bulk Delete artifact attestations in bulk by either subject digests or unique ID. POST /users/{username}/attestations/delete-request",
+    "context": "POST /users/{username}/attestations/delete-request\nDelete artifact attestations in bulk by either subject digests or unique ID.\nRequired: username (path) — The handle for the GitHub user account.; body (body)"
+  },
+  {
+    "id": "users%2Fdelete-attestations-by-id",
+    "name": "Delete attestations by ID",
+    "description": "Delete attestations by ID Delete an artifact attestation by unique ID that is associated with a repository owned by a user. DELETE /users/{username}/attestations/{attestation_id}",
+    "context": "DELETE /users/{username}/attestations/{attestation_id}\nDelete an artifact attestation by unique ID that is associated with a repository owned by a user.\nRequired: username (path) — The handle for the GitHub user account.; attestation_id (path) — Attestation ID"
+  },
+  {
+    "id": "users%2Fdelete-attestations-by-subject-digest",
+    "name": "Delete attestations by subject digest",
+    "description": "Delete attestations by subject digest Delete an artifact attestation by subject digest. DELETE /users/{username}/attestations/digest/{subject_digest}",
+    "context": "DELETE /users/{username}/attestations/digest/{subject_digest}\nDelete an artifact attestation by subject digest.\nRequired: username (path) — The handle for the GitHub user account.; subject_digest (path) — Subject Digest"
+  },
+  {
+    "id": "users%2Fget-by-username",
+    "name": "Get a user",
+    "description": "Get a user Provides publicly available information about someone with a GitHub account. GET /users/{username}",
+    "context": "GET /users/{username}\nProvides publicly available information about someone with a GitHub account. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), the `followers` and `following` values are `0` unless the request is authenticated as that user. A request authenticated as the specified user returns the actual values even if the token has no OAuth scopes. The `events_url` value is a URI template. Replace `{/privacy}` with `/public` to retrieve only public events. Omit it to retrieve public events and, when authenticated as the user, private events. For more information, see \"[List events for the authenticated user](https://docs.github.com/rest/activity/events#list-events-for-the-authenticated-user).\" If you are requesting information about an [Enterprise Managed User](https://docs.github.com/enterprise-cloud@latest/admin/managing-iam/understanding-iam-for-enterprises/about-enterprise-managed-users), or a GitHub App bot that is installed in an organization that uses Enterprise Managed Users, your requests must be authenticated as a user or GitHub App that has access to the organization to view that account's information. If you are not authorized, the request will return a `404 Not Found` status. The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be public which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication). The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see [Emails API](https://docs.github.com/rest/users/emails).\nRequired: username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "users%2Fget-context-for-user",
+    "name": "Get contextual information for a user",
+    "description": "Get contextual information for a user Provides hovercard information. GET /users/{username}/hovercard",
+    "context": "GET /users/{username}/hovercard\nProvides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations. The `subject_type` and `subject_id` parameters provide context for the person's hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository, you would use a `subject_type` value of `repository` and a `subject_id` value of `1300192` (the ID of the `Spoon-Knife` repository). OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: subject_type (query) — Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`.; subject_id (query) — Uses the ID for the `subject_type` you specified. **Required** when using `subject_type`."
+  },
+  {
+    "id": "users%2Flist",
+    "name": "List users",
+    "description": "List users Lists all users, in the order that they signed up on GitHub. GET /users",
+    "context": "GET /users\nLists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts. Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.\nOptional: since (query) — A user ID. Only return users with an ID greater than this ID.; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-attestations",
+    "name": "List attestations",
+    "description": "List attestations List a collection of artifact attestations with a given subject digest that are associated with repositories owned by a user. GET /users/{username}/attestations/{subject_digest}",
+    "context": "GET /users/{username}/attestations/{subject_digest}\nList a collection of artifact attestations with a given subject digest that are associated with repositories owned by a user. The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).\nRequired: username (path) — The handle for the GitHub user account.; subject_digest (path) — Subject Digest\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; predicate_type (query) — Optional filter for fetching attestations with a given predicate type. This option accepts `provenance`, `sbom`, `release`, or freeform text for custom predicate types."
+  },
+  {
+    "id": "users%2Flist-attestations-bulk",
+    "name": "List attestations by bulk subject digests",
+    "description": "List attestations by bulk subject digests List a collection of artifact attestations associated with any entry in a list of subject digests owned by a user. POST /users/{username}/attestations/bulk-list",
+    "context": "POST /users/{username}/attestations/bulk-list\nList a collection of artifact attestations associated with any entry in a list of subject digests owned by a user. The collection of attestations returned by this endpoint is filtered according to the authenticated user's permissions; if the authenticated user cannot read a repository, the attestations associated with that repository will not be included in the response. In addition, when using a fine-grained access token the `attestations:read` permission is required. **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).\nRequired: username (path) — The handle for the GitHub user account.; body (body)\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-followers-for-user",
+    "name": "List followers of a user",
+    "description": "List followers of a user Lists the people following the specified user. GET /users/{username}/followers",
+    "context": "GET /users/{username}/followers\nLists the people following the specified user. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-following-for-user",
+    "name": "List the people a user follows",
+    "description": "List the people a user follows Lists the people who the specified user follows. GET /users/{username}/following",
+    "context": "GET /users/{username}/following\nLists the people who the specified user follows. If the specified user has a [private profile](https://docs.github.com/account-and-profile/concepts/personal-profile#private-profiles), this endpoint returns an empty list unless the request is authenticated as that user. A request authenticated as the specified user returns the list even if the token has no OAuth scopes.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-gpg-keys-for-user",
+    "name": "List GPG keys for a user",
+    "description": "List GPG keys for a user Lists the GPG keys for a user. GET /users/{username}/gpg_keys",
+    "context": "GET /users/{username}/gpg_keys\nLists the GPG keys for a user. This information is accessible by anyone.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-public-keys-for-user",
+    "name": "List public keys for a user",
+    "description": "List public keys for a user Lists the _verified_ public SSH keys for a user. GET /users/{username}/keys",
+    "context": "GET /users/{username}/keys\nLists the _verified_ public SSH keys for a user. This is accessible by anyone.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-social-accounts-for-user",
+    "name": "List social accounts for a user",
+    "description": "List social accounts for a user Lists social media accounts for a user. GET /users/{username}/social_accounts",
+    "context": "GET /users/{username}/social_accounts\nLists social media accounts for a user. This endpoint is accessible by anyone.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "users%2Flist-ssh-signing-keys-for-user",
+    "name": "List SSH signing keys for a user",
+    "description": "List SSH signing keys for a user Lists the SSH signing keys for a user. GET /users/{username}/ssh_signing_keys",
+    "context": "GET /users/{username}/ssh_signing_keys\nLists the SSH signing keys for a user. This operation is accessible by anyone.\nRequired: username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  }
+]

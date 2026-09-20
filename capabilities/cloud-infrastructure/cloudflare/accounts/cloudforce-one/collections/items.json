@@ -1,0 +1,92 @@
+[
+  {
+    "id": "delete_CollectionDelete",
+    "name": "Delete collection",
+    "description": "Delete collection Deletes a collection and all its items. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}\nDeletes a collection and all its items. This action cannot be undone. The Durable Object storage is deleted asynchronously.\nRequired: account_id (path) — Account ID; collection_id (path) — Collection UUID"
+  },
+  {
+    "id": "delete_ColumnDelete",
+    "name": "Delete column",
+    "description": "Delete column Delete a column from the collection schema. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}\nDelete a column from the collection schema. Data is preserved as orphaned UUID keys (forensic safety) and filtered from API responses.\nRequired: account_id (path); collection_id (path); column_id (path) — Column UUID"
+  },
+  {
+    "id": "delete_ItemDelete",
+    "name": "Delete collection item",
+    "description": "Delete collection item Delete an item from a collection by its identifier. DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}\nDelete an item from a collection by its identifier.\nRequired: account_id (path); collection_id (path); item_id (path)"
+  },
+  {
+    "id": "get_CollectionExportEndpoint",
+    "name": "Export collection to CSV, JSONL, or Markdown",
+    "description": "Export collection to CSV, JSONL, or Markdown Streams collection data in the requested format. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export\nStreams collection data in the requested format. Supports CSV (default), JSONL, or Markdown via Accept header. Queries items in batches of 1000 to avoid memory/timeout limits.\nRequired: account_id (path) — Account ID (hex format); collection_id (path) — Collection UUID\nOptional: include_ids (query) — Include item IDs in export (default: false); accept (header) — Requested format: text/csv (default), application/x-ndjson, text/markdown"
+  },
+  {
+    "id": "get_CollectionGet",
+    "name": "Get collection",
+    "description": "Get collection Retrieves a single collection by ID with its schema and metadata GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}\nRetrieves a single collection by ID with its schema and metadata\nRequired: account_id (path) — Account ID; collection_id (path) — Collection UUID"
+  },
+  {
+    "id": "get_CollectionList",
+    "name": "List collections",
+    "description": "List collections Retrieves all collections for an account with pagination GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections\nRetrieves all collections for an account with pagination\nRequired: account_id (path) — Account ID\nOptional: page (query) — Page number; limit (query) — Items per page"
+  },
+  {
+    "id": "get_ItemGet",
+    "name": "Get collection item",
+    "description": "Get collection item Retrieve a single item from a collection by its identifier. GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}\nRetrieve a single item from a collection by its identifier.\nRequired: account_id (path); collection_id (path); item_id (path)"
+  },
+  {
+    "id": "get_ItemQuery",
+    "name": "Query collection items",
+    "description": "Query collection items Retrieves items from a collection with keyset pagination and optional column-based filters GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items",
+    "context": "GET /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items\nRetrieves items from a collection with keyset pagination and optional column-based filters\nRequired: account_id (path) — Account ID; collection_id (path) — Collection UUID\nOptional: cursor (query) — Opaque pagination cursor from a previous response. Omit for the first page.; limit (query) — Items per page; q (query) — Case-insensitive substring search across all columns. Matches any column containing the term. No relevance ranking."
+  },
+  {
+    "id": "patch_CollectionUpdate",
+    "name": "Update collection",
+    "description": "Update collection Updates collection name and/or metadata. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}\nUpdates collection name and/or metadata. Schema (columns) cannot be modified.\nRequired: account_id (path) — Account ID; collection_id (path) — Collection UUID\nOptional: body (body)"
+  },
+  {
+    "id": "patch_ColumnUpdate",
+    "name": "Update column",
+    "description": "Update column Update name, type, required, or position of a column. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}\nUpdate name, type, required, or position of a column.\nRequired: account_id (path); collection_id (path); column_id (path) — Column UUID\nOptional: body (body)"
+  },
+  {
+    "id": "patch_ItemUpdate",
+    "name": "Update collection item",
+    "description": "Update collection item Update an item in a collection with partial data. PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}\nUpdate an item in a collection with partial data.\nRequired: account_id (path); collection_id (path); item_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_CollectionCreate",
+    "name": "Create a new collection",
+    "description": "Create a new collection Creates a collection with four patterns: schema-only (empty collection), rows-only (inferred schema), schema+rows (validated data), or file upload (CSV/JSON/JSONL) POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections\nCreates a collection with four patterns: schema-only (empty collection), rows-only (inferred schema), schema+rows (validated data), or file upload (CSV/JSON/JSONL)\nRequired: account_id (path) — Account ID\nOptional: body (body)"
+  },
+  {
+    "id": "post_ColumnAdd",
+    "name": "Add column to collection",
+    "description": "Add column to collection Adds a new column to an existing collection schema. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns\nAdds a new column to an existing collection schema. Existing items will have NULL for the new column unless a default value is provided.\nRequired: account_id (path) — Account ID; collection_id (path) — Collection UUID\nOptional: body (body)"
+  },
+  {
+    "id": "post_ItemCreate",
+    "name": "Create item(s)",
+    "description": "Create item(s) Create one or more items in a collection. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items\nCreate one or more items in a collection. Supports single item (data field) or bulk creation (data array). Item data is validated against the collection schema.\nRequired: account_id (path); collection_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_ItemSearch",
+    "name": "Search items (advanced filtering)",
+    "description": "Search items (advanced filtering) Search collection items with advanced filtering. POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search",
+    "context": "POST /client/v4/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search\nSearch collection items with advanced filtering. Supports operators (eq, neq, gt, lt, gte, lte, contains, is_empty, is_not_empty) and AND/OR logic for complex queries.\nRequired: account_id (path) — Account ID; collection_id (path) — Collection UUID\nOptional: body (body)"
+  }
+]

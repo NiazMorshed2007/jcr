@@ -1,0 +1,50 @@
+[
+  {
+    "id": "delete_groups_id",
+    "name": "Remove group",
+    "description": "Remove group Permanently deletes a group. DELETE /2.0/groups/{group_id}",
+    "context": "DELETE /2.0/groups/{group_id}\nPermanently deletes a group. Only users with admin-level permissions will be able to use this API.\nRequired: group_id (path) — The ID of the group."
+  },
+  {
+    "id": "get_groups",
+    "name": "List groups for enterprise",
+    "description": "List groups for enterprise Retrieves all of the groups for a given enterprise. GET /2.0/groups",
+    "context": "GET /2.0/groups\nRetrieves all of the groups for a given enterprise. The user must have admin permissions to inspect enterprise's groups.\nOptional: filter_term (query) — Limits the results to only groups whose `name` starts with the search term.; fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; limit (query) — The maximum number of items to return per page.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response."
+  },
+  {
+    "id": "get_groups_id",
+    "name": "Get group",
+    "description": "Get group Retrieves information about a group. GET /2.0/groups/{group_id}",
+    "context": "GET /2.0/groups/{group_id}\nRetrieves information about a group. Only members of this group or users with admin-level permissions will be able to use this API.\nRequired: group_id (path) — The ID of the group.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested."
+  },
+  {
+    "id": "get_groups_id_collaborations",
+    "name": "List group collaborations",
+    "description": "List group collaborations Retrieves all the collaborations for a group. GET /2.0/groups/{group_id}/collaborations",
+    "context": "GET /2.0/groups/{group_id}/collaborations\nRetrieves all the collaborations for a group. The user must have admin permissions to inspect enterprise's groups. Each collaboration object has details on which files or folders the group has access to and with what role.\nRequired: group_id (path) — The ID of the group.\nOptional: limit (query) — The maximum number of items to return per page.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response."
+  },
+  {
+    "id": "get_groups_id_memberships",
+    "name": "List members of group",
+    "description": "List members of group Retrieves all the members for a group. GET /2.0/groups/{group_id}/memberships",
+    "context": "GET /2.0/groups/{group_id}/memberships\nRetrieves all the members for a group. Only members of this group or users with admin-level permissions will be able to use this API.\nRequired: group_id (path) — The ID of the group.\nOptional: limit (query) — The maximum number of items to return per page.; offset (query) — The offset of the item at which to begin the response. Queries with offset parameter value exceeding 10000 will be rejected with a 400 response."
+  },
+  {
+    "id": "post_groups",
+    "name": "Create group",
+    "description": "Create group Creates a new group of users in an enterprise. POST /2.0/groups",
+    "context": "POST /2.0/groups\nCreates a new group of users in an enterprise. Only users with admin permissions can create new groups.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  },
+  {
+    "id": "post_groups_terminate_sessions",
+    "name": "Create jobs to terminate user group session",
+    "description": "Create jobs to terminate user group session Validates the roles and permissions of the group, and creates asynchronous jobs to terminate the group's sessions. POST /2.0/groups/terminate_sessions",
+    "context": "POST /2.0/groups/terminate_sessions\nValidates the roles and permissions of the group, and creates asynchronous jobs to terminate the group's sessions. Returns the status for the POST request.\nOptional: body (body)"
+  },
+  {
+    "id": "put_groups_id",
+    "name": "Update group",
+    "description": "Update group Updates a specific group. PUT /2.0/groups/{group_id}",
+    "context": "PUT /2.0/groups/{group_id}\nUpdates a specific group. Only admins of this group or users with admin-level permissions will be able to use this API.\nRequired: group_id (path) — The ID of the group.\nOptional: fields (query) — A comma-separated list of attributes to include in the response. This can be used to request fields that are not normally returned in a standard response. Be aware that specifying this parameter will have the effect that none of the standard fields are returned in the response unless explicitly specified, instead only fields for the mini representation are returned, additional to the fields requested.; body (body)"
+  }
+]

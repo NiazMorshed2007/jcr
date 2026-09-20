@@ -1,0 +1,26 @@
+[
+  {
+    "id": "deleteOrganizationIntegration",
+    "name": "Delete an Integration for an Organization",
+    "description": "Delete an Integration for an Organization OrganizationIntegrationBaseEndpoints expect both Integration and OrganizationIntegration DB entries to exist for a given organization and integration_id. DELETE /api/0/organizations/{organization_id_or_slug}/integrations/{integration_id}/",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/integrations/{integration_id}/\nOrganizationIntegrationBaseEndpoints expect both Integration and OrganizationIntegration DB entries to exist for a given organization and integration_id.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; integration_id (path) — The ID of the integration installed on the organization."
+  },
+  {
+    "id": "getOrganizationIntegration",
+    "name": "Retrieve an Integration for an Organization",
+    "description": "Retrieve an Integration for an Organization OrganizationIntegrationBaseEndpoints expect both Integration and OrganizationIntegration DB entries to exist for a given organization and integration_id. GET /api/0/organizations/{organization_id_or_slug}/integrations/{integration_id}/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/integrations/{integration_id}/\nOrganizationIntegrationBaseEndpoints expect both Integration and OrganizationIntegration DB entries to exist for a given organization and integration_id.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; integration_id (path) — The ID of the integration installed on the organization."
+  },
+  {
+    "id": "listOrganizationIntegrationRepositories",
+    "name": "List Repositories Available to an Integration",
+    "description": "List Repositories Available to an Integration **Experimental:** This API is under active development and may change. GET /api/0/organizations/{organization_id_or_slug}/integrations/{integration_id}/repos/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/integrations/{integration_id}/repos/\n**Experimental:** This API is under active development and may change. Get the list of repositories available in an integration ```````````````````````````````````````````````````````` Gets all repositories that an integration makes available, and indicates whether or not you can search repositories by name. :qparam string search: Name fragment to search repositories by. :qparam bool installableOnly: If true, return only repositories that can be installed. If false or not provided, return all repositories. :qparam bool accessibleOnly: If true, only return repositories that the integration installation has access to, filtering locally instead of using the provider's search API which may return results beyond the installation's scope.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; integration_id (path) — The ID of the integration installed on the organization.\nOptional: search (query) — Repository name to search for.; installableOnly (query) — Only return repositories that are not already installed in Sentry.; accessibleOnly (query) — Only search repositories accessible to the integration installation."
+  },
+  {
+    "id": "listOrganizationIntegrations",
+    "name": "List an Organization's Available Integrations",
+    "description": "List an Organization's Available Integrations Lists all the available Integrations for an Organization. GET /api/0/organizations/{organization_id_or_slug}/integrations/",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/integrations/\nLists all the available Integrations for an Organization.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: providerKey (query) — Specific integration provider to filter by such as `slack`. See our [Integrations Documentation](/product/integrations/) for an updated list of providers.; features (query) — Integration features to filter by. See our [Integrations Documentation](/product/integrations/) for an updated list of features. Current available ones are: - `alert-rule` - `chat-unfurl` - `codeowners` - `commits` - `data-forwarding` - `deployment` - `enterprise-alert-rule` - `enterprise-incident-management` - `incident-management` - `issue-basic` - `issue-sync` - `mobile` - `serverless` - `session-replay` - `stacktrace-link` - `ticket-rules`; includeConfig (query) — Specify `True` to fetch third-party integration configurations. Note that this can add several seconds to the response time.; cursor (query) — A pointer to the last object fetched and its sort order; used to retrieve the next or previous results."
+  }
+]

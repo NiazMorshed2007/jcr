@@ -1,0 +1,38 @@
+[
+  {
+    "id": "createProjectCheck",
+    "name": "Create a check",
+    "description": "Create a check Creates a new check for a project. POST /v2/projects/{projectIdOrName}/checks",
+    "context": "POST /v2/projects/{projectIdOrName}/checks\nCreates a new check for a project.\nRequired: projectIdOrName (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteProjectCheck",
+    "name": "Delete a check",
+    "description": "Delete a check Delete an existing check and all of its runs. DELETE /v2/projects/{projectIdOrName}/checks/{checkId}",
+    "context": "DELETE /v2/projects/{projectIdOrName}/checks/{checkId}\nDelete an existing check and all of its runs.\nRequired: projectIdOrName (path); checkId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getProjectCheck",
+    "name": "Get a check",
+    "description": "Get a check Return a detailed response for a single check. GET /v2/projects/{projectIdOrName}/checks/{checkId}",
+    "context": "GET /v2/projects/{projectIdOrName}/checks/{checkId}\nReturn a detailed response for a single check.\nRequired: projectIdOrName (path); checkId (path) — The ID of the resource that will be updated.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listCheckRuns",
+    "name": "List runs for a check",
+    "description": "List runs for a check List all runs associated with a given check. GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs",
+    "context": "GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs\nList all runs associated with a given check.\nRequired: projectIdOrName (path); checkId (path) — The ID of the resource that will be updated.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listProjectChecks",
+    "name": "List all checks for a project",
+    "description": "List all checks for a project List all checks for a project, optionally filtered by target. GET /v2/projects/{projectIdOrName}/checks",
+    "context": "GET /v2/projects/{projectIdOrName}/checks\nList all checks for a project, optionally filtered by target.\nRequired: projectIdOrName (path)\nOptional: blocks (query); teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "updateProjectCheck",
+    "name": "Update a check",
+    "description": "Update a check Update an existing check. PATCH /v2/projects/{projectIdOrName}/checks/{checkId}",
+    "context": "PATCH /v2/projects/{projectIdOrName}/checks/{checkId}\nUpdate an existing check.\nRequired: projectIdOrName (path); checkId (path)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  }
+]

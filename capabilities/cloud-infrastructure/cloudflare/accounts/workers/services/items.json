@@ -1,0 +1,26 @@
+[
+  {
+    "id": "worker-environment-get-script-content",
+    "name": "Get Worker Environment Script Content",
+    "description": "Get Worker Environment Script Content Get Worker script content for an environment. GET /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content",
+    "context": "GET /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content\nGet Worker script content for an environment.\nRequired: account_id (path); service_name (path); environment_name (path)"
+  },
+  {
+    "id": "worker-environment-put-script-content",
+    "name": "Replace Worker Environment Script Content",
+    "description": "Replace Worker Environment Script Content Replace Worker script content for an environment. PUT /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content",
+    "context": "PUT /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content\nReplace Worker script content for an environment.\nRequired: account_id (path); service_name (path); environment_name (path); body (body)\nOptional: CF-WORKER-BODY-PART (header) — The multipart name of a script upload part containing script content in service worker format. Alternative to including in a metadata part.; CF-WORKER-MAIN-MODULE-PART (header) — The multipart name of a script upload part containing script content in es module format. Alternative to including in a metadata part."
+  },
+  {
+    "id": "worker-script-environment-get-settings",
+    "name": "Get Worker Environment Settings",
+    "description": "Get Worker Environment Settings Get Worker script settings for an environment. GET /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings",
+    "context": "GET /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings\nGet Worker script settings for an environment.\nRequired: account_id (path); service_name (path); environment_name (path)"
+  },
+  {
+    "id": "worker-script-environment-patch-settings",
+    "name": "Patch Worker Environment Settings",
+    "description": "Patch Worker Environment Settings Patch Worker script metadata for an environment, such as bindings. PATCH /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings",
+    "context": "PATCH /client/v4/accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings\nPatch Worker script metadata for an environment, such as bindings.\nRequired: account_id (path); service_name (path); environment_name (path); body (body)"
+  }
+]

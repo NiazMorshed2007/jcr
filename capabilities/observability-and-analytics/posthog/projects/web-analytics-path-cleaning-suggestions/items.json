@@ -1,0 +1,20 @@
+[
+  {
+    "id": "web_analytics_path_cleaning_suggestions_apply",
+    "name": "Apply a path-cleaning suggestion",
+    "description": "Apply a path-cleaning suggestion Merges the suggestion's rules into the team's path_cleaning_filters (never overwrites existing rules) and resolves the underlying health issue. POST /api/projects/{project_id}/web_analytics_path_cleaning_suggestions/{id}/apply/",
+    "context": "POST /api/projects/{project_id}/web_analytics_path_cleaning_suggestions/{id}/apply/\nMerges the suggestion's rules into the team's path_cleaning_filters (never overwrites existing rules) and resolves the underlying health issue. Requires project admin, matching the team API's gate on path_cleaning_filters.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_path_cleaning_suggestions_generate",
+    "name": "Generate path-cleaning suggestions on demand",
+    "description": "Generate path-cleaning suggestions on demand Samples the team's recent paths, asks the LLM for cleaning rules, validates them against the real paths, and stores the result as a `path_cleaning_suggestions` health issue (replacing any previous active one). POST /api/projects/{project_id}/web_analytics_path_cleaning_sugg…",
+    "context": "POST /api/projects/{project_id}/web_analytics_path_cleaning_suggestions/generate/\nSamples the team's recent paths, asks the LLM for cleaning rules, validates them against the real paths, and stores the result as a `path_cleaning_suggestions` health issue (replacing any previous active one). Runs even if the team already has rules. Returns the suggestion (or a skip status when there aren't enough paths to suggest from).\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "web_analytics_path_cleaning_suggestions_preview",
+    "name": "Preview a path-cleaning suggestion on real paths",
+    "description": "Preview a path-cleaning suggestion on real paths Applies the suggestion's rules (in order) to a fresh sample of the team's top paths and returns before/after pairs for the paths that would change. GET /api/projects/{project_id}/web_analytics_path_cleaning_suggestions/{id}/preview/",
+    "context": "GET /api/projects/{project_id}/web_analytics_path_cleaning_suggestions/{id}/preview/\nApplies the suggestion's rules (in order) to a fresh sample of the team's top paths and returns before/after pairs for the paths that would change. Computed on demand; path samples are never stored. Nothing is modified.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

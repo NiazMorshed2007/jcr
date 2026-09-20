@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ConfigController_getConfig",
+    "name": "Get config",
+    "description": "Get config GET /config",
+    "context": "GET /config\nGet config"
+  },
+  {
+    "id": "getAuditScenarios",
+    "name": "Get supported audit log scenarios",
+    "description": "Get supported audit log scenarios Returns the supported audit log actions grouped by target type. GET /audit/scenarios",
+    "context": "GET /audit/scenarios\nReturns the supported audit log actions grouped by target type. The list is derived at runtime from the audited routes and system events, so it always reflects what can actually appear in the audit log."
+  },
+  {
+    "id": "getOrganizationAuditLogs",
+    "name": "Get audit logs for organization",
+    "description": "Get audit logs for organization GET /audit/organizations/{organizationId}",
+    "context": "GET /audit/organizations/{organizationId}\nGet audit logs for organization\nRequired: organizationId (path) — Organization ID\nOptional: page (query) — Page number of the results; limit (query) — Number of results per page; from (query) — Deprecated alias for `createdAt[gte]`. From date (ISO 8601 format).; to (query) — Deprecated alias for `createdAt[lte]`. To date (ISO 8601 format).; nextToken (query) — Token for cursor-based pagination. When provided, takes precedence over page parameter.; id (query) — Filter by audit log ID.; actorId (query) — Filter by actor user ID.; actorEmail (query) — Filter by actor email.; actorApiKeyPrefix (query) — Filter by actor API key prefix.; actorApiKeySuffix (query) — Filter by actor API key suffix.; action (query) — Filter by action.; targetType (query) — Filter by target type.; targetId (query) — Filter by target ID.; statusCode (query) — Filter by HTTP status code.; createdAt (query) — Filter by creation timestamp."
+  },
+  {
+    "id": "getPushAccess",
+    "name": "Get temporary storage access for pushing objects",
+    "description": "Get temporary storage access for pushing objects GET /object-storage/push-access",
+    "context": "GET /object-storage/push-access\nGet temporary storage access for pushing objects\nOptional: X-Daytona-Organization-ID (header) — Use with JWT to specify the organization ID"
+  },
+  {
+    "id": "HealthController_check",
+    "name": "HealthController_check",
+    "description": "HealthController_check GET /health/ready",
+    "context": "GET /health/ready\nHealthController_check"
+  },
+  {
+    "id": "HealthController_live",
+    "name": "HealthController_live",
+    "description": "HealthController_live GET /health",
+    "context": "GET /health\nHealthController_live"
+  },
+  {
+    "id": "listSharedRegions",
+    "name": "List all shared regions",
+    "description": "List all shared regions GET /shared-regions",
+    "context": "GET /shared-regions\nList all shared regions"
+  }
+]

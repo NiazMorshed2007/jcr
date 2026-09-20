@@ -1,0 +1,38 @@
+[
+  {
+    "id": "getSandboxIdFromSignedPreviewUrlToken",
+    "name": "Get sandbox ID from signed preview URL token",
+    "description": "Get sandbox ID from signed preview URL token GET /preview/{signedPreviewToken}/{port}/sandbox-id",
+    "context": "GET /preview/{signedPreviewToken}/{port}/sandbox-id\nGet sandbox ID from signed preview URL token\nRequired: signedPreviewToken (path) — Signed preview URL token; port (path) — Port number to get sandbox ID from signed preview URL token"
+  },
+  {
+    "id": "getSigningKey",
+    "name": "Get the signing key for a sandbox",
+    "description": "Get the signing key for a sandbox GET /preview/{sandboxId}/signing-key",
+    "context": "GET /preview/{sandboxId}/signing-key\nGet the signing key for a sandbox\nRequired: sandboxId (path) — ID of the sandbox"
+  },
+  {
+    "id": "hasSandboxAccess",
+    "name": "Check if user has access to the sandbox",
+    "description": "Check if user has access to the sandbox GET /preview/{sandboxId}/access",
+    "context": "GET /preview/{sandboxId}/access\nCheck if user has access to the sandbox\nRequired: sandboxId (path)"
+  },
+  {
+    "id": "isPreviewWarningEnabled",
+    "name": "Check if the preview warning page is enabled for the sandbox",
+    "description": "Check if the preview warning page is enabled for the sandbox GET /preview/{sandboxId}/preview-warning",
+    "context": "GET /preview/{sandboxId}/preview-warning\nCheck if the preview warning page is enabled for the sandbox\nRequired: sandboxId (path) — ID of the sandbox, or a signed preview URL token (requires the port query param)\nOptional: port (query) — Port the signed preview URL token was issued for. Required when sandboxId is a signed token."
+  },
+  {
+    "id": "isSandboxPublic",
+    "name": "Check if sandbox is public",
+    "description": "Check if sandbox is public GET /preview/{sandboxId}/public",
+    "context": "GET /preview/{sandboxId}/public\nCheck if sandbox is public\nRequired: sandboxId (path) — ID of the sandbox"
+  },
+  {
+    "id": "isValidAuthToken",
+    "name": "Check if sandbox auth token is valid",
+    "description": "Check if sandbox auth token is valid GET /preview/{sandboxId}/validate/{authToken}",
+    "context": "GET /preview/{sandboxId}/validate/{authToken}\nCheck if sandbox auth token is valid\nRequired: sandboxId (path) — ID of the sandbox; authToken (path) — Auth token of the sandbox"
+  }
+]

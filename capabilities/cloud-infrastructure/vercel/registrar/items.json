@@ -1,0 +1,116 @@
+[
+  {
+    "id": "buyDomains",
+    "name": "Buy multiple domains",
+    "description": "Buy multiple domains Buy multiple domains at once POST /v1/registrar/domains/buy",
+    "context": "POST /v1/registrar/domains/buy\nBuy multiple domains at once\nRequired: body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "buySingleDomain",
+    "name": "Buy a domain",
+    "description": "Buy a domain POST /v1/registrar/domains/{domain}/buy",
+    "context": "POST /v1/registrar/domains/{domain}/buy\nBuy a domain\nRequired: domain (path); body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getBulkAvailability",
+    "name": "Get availability for multiple domains",
+    "description": "Get availability for multiple domains Get availability for multiple domains. POST /v1/registrar/domains/availability",
+    "context": "POST /v1/registrar/domains/availability\nGet availability for multiple domains. If the domains are available, they can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.\nRequired: body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getBulkPrice",
+    "name": "Get price data for multiple domains",
+    "description": "Get price data for multiple domains Get price data for multiple domains in a single request. POST /v1/registrar/domains/price",
+    "context": "POST /v1/registrar/domains/price\nGet price data for multiple domains in a single request.\nRequired: body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getContactInfoSchema",
+    "name": "Get contact info schema",
+    "description": "Get contact info schema Some TLDs require additional contact information. GET /v1/registrar/domains/{domain}/contact-info/schema",
+    "context": "GET /v1/registrar/domains/{domain}/contact-info/schema\nSome TLDs require additional contact information. Use this endpoint to get the schema for the tld-specific contact information for a domain.\nRequired: domain (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getDomainAuthCode",
+    "name": "Get the auth code for a domain",
+    "description": "Get the auth code for a domain Get the auth code for a domain. GET /v1/registrar/domains/{domain}/auth-code",
+    "context": "GET /v1/registrar/domains/{domain}/auth-code\nGet the auth code for a domain. This is required to transfer a domain from Vercel to another registrar.\nRequired: domain (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getDomainAvailability",
+    "name": "Get availability for a domain",
+    "description": "Get availability for a domain Get availability for a specific domain. GET /v1/registrar/domains/{domain}/availability",
+    "context": "GET /v1/registrar/domains/{domain}/availability\nGet availability for a specific domain. If the domain is available, it can be purchased using the [Buy a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-a-domain) endpoint or the [Buy multiple domains](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/buy-multiple-domains) endpoint.\nRequired: domain (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getDomainContactVerification",
+    "name": "Get contact verification status for a domain",
+    "description": "Get contact verification status for a domain Get the registrant contact verification status for a domain. GET /v1/registrar/domains/{domain}/contact-verification",
+    "context": "GET /v1/registrar/domains/{domain}/contact-verification\nGet the registrant contact verification status for a domain. Use this after purchasing a domain to determine whether the contact has been verified. Note that a bought_too_recently error will be returned if the domain was bought less than 30 minutes before the request.\nRequired: domain (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getDomainPrice",
+    "name": "Get price data for a domain",
+    "description": "Get price data for a domain Get price data for a specific domain GET /v1/registrar/domains/{domain}/price",
+    "context": "GET /v1/registrar/domains/{domain}/price\nGet price data for a specific domain\nRequired: domain (path)\nOptional: years (query) — The number of years to get the price for. If not provided, the minimum number of years for the TLD will be used.; teamId (query)"
+  },
+  {
+    "id": "getDomainTransferIn",
+    "name": "Get a domain's transfer status",
+    "description": "Get a domain's transfer status Get the transfer status for a domain GET /v1/registrar/domains/{domain}/transfer",
+    "context": "GET /v1/registrar/domains/{domain}/transfer\nGet the transfer status for a domain\nRequired: domain (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getOrder",
+    "name": "Get a domain order",
+    "description": "Get a domain order Get information about a domain order by its ID GET /v1/registrar/orders/{orderId}",
+    "context": "GET /v1/registrar/orders/{orderId}\nGet information about a domain order by its ID\nRequired: orderId (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getSupportedTlds",
+    "name": "Get supported TLDs",
+    "description": "Get supported TLDs Get a list of TLDs supported by Vercel GET /v1/registrar/tlds/supported",
+    "context": "GET /v1/registrar/tlds/supported\nGet a list of TLDs supported by Vercel\nOptional: teamId (query)"
+  },
+  {
+    "id": "getTld",
+    "name": "Get TLD",
+    "description": "Get TLD Get the metadata for a specific TLD. GET /v1/registrar/tlds/{tld}",
+    "context": "GET /v1/registrar/tlds/{tld}\nGet the metadata for a specific TLD.\nRequired: tld (path)\nOptional: teamId (query)"
+  },
+  {
+    "id": "getTldPrice",
+    "name": "Get TLD price data",
+    "description": "Get TLD price data Get price data for a specific TLD. GET /v1/registrar/tlds/{tld}/price",
+    "context": "GET /v1/registrar/tlds/{tld}/price\nGet price data for a specific TLD. This only reflects base prices for the given TLD. Premium domains may have different prices. Use the [Get price data for a domain](https://vercel.com/docs/rest-api/reference/endpoints/domains-registrar/get-price-data-for-a-domain) endpoint to get the price data for a specific domain.\nRequired: tld (path)\nOptional: years (query) — The number of years to get the price for. If not provided, the minimum number of years for the TLD will be used.; teamId (query)"
+  },
+  {
+    "id": "renewDomain",
+    "name": "Renew a domain",
+    "description": "Renew a domain POST /v1/registrar/domains/{domain}/renew",
+    "context": "POST /v1/registrar/domains/{domain}/renew\nRenew a domain\nRequired: domain (path); body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "searchDomains",
+    "name": "Check domain availability and pricing",
+    "description": "Check domain availability and pricing Check registration availability for 1–200 exact domain names, such as `example.com`. POST /v1/registrar/domains/search",
+    "context": "POST /v1/registrar/domains/search\nCheck registration availability for 1–200 exact domain names, such as `example.com`. Returns results in input order, with registration and renewal prices in USD for available domains. No authentication required.\nRequired: body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "transferInDomain",
+    "name": "Transfer-in a domain",
+    "description": "Transfer-in a domain Transfer a domain in from another registrar POST /v1/registrar/domains/{domain}/transfer",
+    "context": "POST /v1/registrar/domains/{domain}/transfer\nTransfer a domain in from another registrar\nRequired: domain (path); body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "updateDomainAutoRenew",
+    "name": "Update auto-renew for a domain",
+    "description": "Update auto-renew for a domain Update the auto-renew setting for a domain PATCH /v1/registrar/domains/{domain}/auto-renew",
+    "context": "PATCH /v1/registrar/domains/{domain}/auto-renew\nUpdate the auto-renew setting for a domain\nRequired: domain (path); body (body)\nOptional: teamId (query)"
+  },
+  {
+    "id": "updateDomainNameservers",
+    "name": "Update nameservers for a domain",
+    "description": "Update nameservers for a domain Update the nameservers for a domain. PATCH /v1/registrar/domains/{domain}/nameservers",
+    "context": "PATCH /v1/registrar/domains/{domain}/nameservers\nUpdate the nameservers for a domain. Pass an empty array to use Vercel's default nameservers.\nRequired: domain (path); body (body)\nOptional: teamId (query)"
+  }
+]

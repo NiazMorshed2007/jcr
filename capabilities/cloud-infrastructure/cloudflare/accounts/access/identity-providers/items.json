@@ -1,0 +1,50 @@
+[
+  {
+    "id": "access-identity-providers-add-an-access-identity-provider",
+    "name": "Add an Access identity provider",
+    "description": "Add an Access identity provider Adds a new identity provider to Access. POST /client/v4/accounts/{account_id}/access/identity_providers",
+    "context": "POST /client/v4/accounts/{account_id}/access/identity_providers\nAdds a new identity provider to Access.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "access-identity-providers-create-saml-certificate-for-identity-provider",
+    "name": "Create SAML encryption certificate for Identity Provider",
+    "description": "Create SAML encryption certificate for Identity Provider Creates a new SAML encryption certificate set and assigns it to the specified SAML Identity Provider. POST /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}/saml_certificate",
+    "context": "POST /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}/saml_certificate\nCreates a new SAML encryption certificate set and assigns it to the specified SAML Identity Provider. This endpoint is idempotent - if the IdP already has a certificate set assigned, the existing certificate set is returned with a 200 status. **Workflow for enabling SAML encryption:** 1. Call this endpoint to create and assign a certificate set to the IdP 2. Update the IdP configuration (PUT `/identity_providers/{id}`) with: - `config.enable_encryption: true` - `saml_certificate_set_id: ` 3. Configure the certificate's public key in your external SAML Identity Provider\nRequired: account_id (path); identity_provider_id (path)"
+  },
+  {
+    "id": "access-identity-providers-delete-an-access-identity-provider",
+    "name": "Delete an Access identity provider",
+    "description": "Delete an Access identity provider Deletes an identity provider from Access. DELETE /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}\nDeletes an identity provider from Access.\nRequired: identity_provider_id (path); account_id (path)"
+  },
+  {
+    "id": "access-identity-providers-get-an-access-identity-provider",
+    "name": "Get an Access identity provider",
+    "description": "Get an Access identity provider Fetches a configured identity provider. GET /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}",
+    "context": "GET /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}\nFetches a configured identity provider.\nRequired: identity_provider_id (path); account_id (path)"
+  },
+  {
+    "id": "access-identity-providers-list-access-identity-providers",
+    "name": "List Access identity providers",
+    "description": "List Access identity providers Lists all configured identity providers. GET /client/v4/accounts/{account_id}/access/identity_providers",
+    "context": "GET /client/v4/accounts/{account_id}/access/identity_providers\nLists all configured identity providers.\nRequired: account_id (path)\nOptional: scim_enabled (query); page (query); per_page (query)"
+  },
+  {
+    "id": "access-identity-providers-list-scim-group-resources",
+    "name": "List SCIM Group resources",
+    "description": "List SCIM Group resources Lists SCIM Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM). GET /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups",
+    "context": "GET /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups\nLists SCIM Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).\nRequired: identity_provider_id (path); account_id (path)\nOptional: cf_resource_id (query); idp_resource_id (query); name (query); page (query); per_page (query)"
+  },
+  {
+    "id": "access-identity-providers-list-scim-user-resources",
+    "name": "List SCIM User resources",
+    "description": "List SCIM User resources Lists SCIM User resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM). GET /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users",
+    "context": "GET /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users\nLists SCIM User resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).\nRequired: identity_provider_id (path); account_id (path)\nOptional: cf_resource_id (query); idp_resource_id (query); username (query); email (query); name (query); page (query); per_page (query)"
+  },
+  {
+    "id": "access-identity-providers-update-an-access-identity-provider",
+    "name": "Update an Access identity provider",
+    "description": "Update an Access identity provider Updates a configured identity provider. PUT /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}",
+    "context": "PUT /client/v4/accounts/{account_id}/access/identity_providers/{identity_provider_id}\nUpdates a configured identity provider.\nRequired: identity_provider_id (path); account_id (path); body (body)"
+  }
+]

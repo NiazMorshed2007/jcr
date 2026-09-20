@@ -1,0 +1,56 @@
+[
+  {
+    "id": "llm_prompts_create",
+    "name": "llm_prompts_create",
+    "description": "llm_prompts_create POST /api/projects/{project_id}/llm_prompts/",
+    "context": "POST /api/projects/{project_id}/llm_prompts/\nllm_prompts_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "llm_prompts_list",
+    "name": "llm_prompts_list",
+    "description": "llm_prompts_list GET /api/projects/{project_id}/llm_prompts/",
+    "context": "GET /api/projects/{project_id}/llm_prompts/\nllm_prompts_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: content (query) — Controls how much prompt content is included in the response. 'full' includes the full prompt, 'preview' includes a short prompt_preview, and 'none' omits prompt content entirely. The config field is only included with 'full'. The outline field is always included. * `full` - full * `preview` - preview * `none` - none; created_by_id (query) — Filter prompts by the ID of the user who created them.; label (query) — Return each prompt at the version this label points to, e.g. 'production'. Prompts that do not carry the label are omitted. If omitted, the latest version of every prompt is returned.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Field to sort the prompt list by. Prefix with '-' for descending order. * `name` - name * `-name` - -name * `created_at` - created_at * `-created_at` - -created_at * `updated_at` - updated_at * `-updated_at` - -updated_at * `version` - version * `-version` - -version * `latest_version` - latest_version * `-latest_version` - -latest_version * `version_count` - version_count * `-version_count` - -version_count * `first_version_created_at` - first_version_created_at * `-first_version_created_at` - -first_version_created_at * `prompt_size_bytes` - prompt_size_bytes * `-prompt_size_bytes` - -prompt_size_bytes; search (query) — Optional substring filter applied to prompt names and prompt content."
+  },
+  {
+    "id": "llm_prompts_name_archive_create",
+    "name": "llm_prompts_name_archive_create",
+    "description": "llm_prompts_name_archive_create POST /api/projects/{project_id}/llm_prompts/name/{prompt_name}/archive/",
+    "context": "POST /api/projects/{project_id}/llm_prompts/name/{prompt_name}/archive/\nllm_prompts_name_archive_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path)"
+  },
+  {
+    "id": "llm_prompts_name_duplicate_create",
+    "name": "llm_prompts_name_duplicate_create",
+    "description": "llm_prompts_name_duplicate_create POST /api/projects/{project_id}/llm_prompts/name/{prompt_name}/duplicate/",
+    "context": "POST /api/projects/{project_id}/llm_prompts/name/{prompt_name}/duplicate/\nllm_prompts_name_duplicate_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path); body (body)"
+  },
+  {
+    "id": "llm_prompts_name_labels_destroy",
+    "name": "llm_prompts_name_labels_destroy",
+    "description": "llm_prompts_name_labels_destroy DELETE /api/projects/{project_id}/llm_prompts/name/{prompt_name}/labels/{label_name}/",
+    "context": "DELETE /api/projects/{project_id}/llm_prompts/name/{prompt_name}/labels/{label_name}/\nllm_prompts_name_labels_destroy\nRequired: label_name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path)"
+  },
+  {
+    "id": "llm_prompts_name_labels_update",
+    "name": "llm_prompts_name_labels_update",
+    "description": "llm_prompts_name_labels_update PUT /api/projects/{project_id}/llm_prompts/name/{prompt_name}/labels/{label_name}/",
+    "context": "PUT /api/projects/{project_id}/llm_prompts/name/{prompt_name}/labels/{label_name}/\nllm_prompts_name_labels_update\nRequired: label_name (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path); body (body)"
+  },
+  {
+    "id": "llm_prompts_name_partial_update",
+    "name": "llm_prompts_name_partial_update",
+    "description": "llm_prompts_name_partial_update PATCH /api/projects/{project_id}/llm_prompts/name/{prompt_name}/",
+    "context": "PATCH /api/projects/{project_id}/llm_prompts/name/{prompt_name}/\nllm_prompts_name_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path)\nOptional: body (body)"
+  },
+  {
+    "id": "llm_prompts_name_retrieve",
+    "name": "llm_prompts_name_retrieve",
+    "description": "llm_prompts_name_retrieve GET /api/projects/{project_id}/llm_prompts/name/{prompt_name}/",
+    "context": "GET /api/projects/{project_id}/llm_prompts/name/{prompt_name}/\nllm_prompts_name_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path)\nOptional: content (query) — Controls how much prompt content is included in the response. 'full' includes the full prompt, 'preview' includes a short prompt_preview, and 'none' omits prompt content entirely. The config field is only included with 'full'. The outline field is always included. * `full` - full * `preview` - preview * `none` - none; label (query) — Fetch the version this label currently points to, e.g. 'production'. Lowercase letters, numbers, dots, hyphens and underscores. Mutually exclusive with version.; resolve (query) — Replace @@@prompt:...@@@ references with the referenced prompts' content before returning. Set to false to get the raw text with the reference tags, e.g. for editing or export. Only applies when content is 'full'.; version (query) — Specific prompt version to fetch. If omitted, the latest version is returned."
+  },
+  {
+    "id": "llm_prompts_resolve_name_retrieve",
+    "name": "llm_prompts_resolve_name_retrieve",
+    "description": "llm_prompts_resolve_name_retrieve GET /api/projects/{project_id}/llm_prompts/resolve/name/{prompt_name}/",
+    "context": "GET /api/projects/{project_id}/llm_prompts/resolve/name/{prompt_name}/\nllm_prompts_resolve_name_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; prompt_name (path)\nOptional: before_version (query) — Return versions older than this version number. Mutually exclusive with offset.; limit (query) — Maximum number of versions to return per page (1-100).; offset (query) — Zero-based offset into version history for pagination. Mutually exclusive with before_version.; version (query) — Specific prompt version to fetch. If omitted, the latest version is returned.; version_id (query) — Exact prompt version UUID to resolve. Can be used together with version for extra safety."
+  }
+]

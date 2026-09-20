@@ -1,0 +1,32 @@
+[
+  {
+    "id": "oidc%2Fcreate-oidc-custom-property-inclusion-for-org",
+    "name": "Create an OIDC custom property inclusion for an organization",
+    "description": "Create an OIDC custom property inclusion for an organization Adds a repository custom property to be included in the OIDC token for repository actions in an organization. POST /orgs/{org}/actions/oidc/customization/properties/repo",
+    "context": "POST /orgs/{org}/actions/oidc/customization/properties/repo\nAdds a repository custom property to be included in the OIDC token for repository actions in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "oidc%2Fdelete-oidc-custom-property-inclusion-for-org",
+    "name": "Delete an OIDC custom property inclusion for an organization",
+    "description": "Delete an OIDC custom property inclusion for an organization Removes a repository custom property from being included in the OIDC token for repository actions in an organization. DELETE /orgs/{org}/actions/oidc/customization/properties/repo/{custom_property_name}",
+    "context": "DELETE /orgs/{org}/actions/oidc/customization/properties/repo/{custom_property_name}\nRemoves a repository custom property from being included in the OIDC token for repository actions in an organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; custom_property_name (path) — The name of the custom property to remove from OIDC token inclusion"
+  },
+  {
+    "id": "oidc%2Fget-oidc-custom-sub-template-for-org",
+    "name": "Get the customization template for an OIDC subject claim for an organization",
+    "description": "Get the customization template for an OIDC subject claim for an organization Gets the customization template for an OpenID Connect (OIDC) subject claim. GET /orgs/{org}/actions/oidc/customization/sub",
+    "context": "GET /orgs/{org}/actions/oidc/customization/sub\nGets the customization template for an OpenID Connect (OIDC) subject claim. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "oidc%2Flist-oidc-custom-property-inclusions-for-org",
+    "name": "List OIDC custom property inclusions for an organization",
+    "description": "List OIDC custom property inclusions for an organization Lists the repository custom properties that are included in the OIDC token for repository actions in an organization. GET /orgs/{org}/actions/oidc/customization/properties/repo",
+    "context": "GET /orgs/{org}/actions/oidc/customization/properties/repo\nLists the repository custom properties that are included in the OIDC token for repository actions in an organization. OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "oidc%2Fupdate-oidc-custom-sub-template-for-org",
+    "name": "Set the customization template for an OIDC subject claim for an organization",
+    "description": "Set the customization template for an OIDC subject claim for an organization Creates or updates the customization template for an OpenID Connect (OIDC) subject claim. PUT /orgs/{org}/actions/oidc/customization/sub",
+    "context": "PUT /orgs/{org}/actions/oidc/customization/sub\nCreates or updates the customization template for an OpenID Connect (OIDC) subject claim. OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  }
+]

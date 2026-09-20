@@ -1,0 +1,50 @@
+[
+  {
+    "id": "deleteZoneSnippet",
+    "name": "Delete a zone snippet",
+    "description": "Delete a zone snippet Deletes a snippet belonging to the zone. DELETE /client/v4/zones/{zone_id}/snippets/{snippet_name}",
+    "context": "DELETE /client/v4/zones/{zone_id}/snippets/{snippet_name}\nDeletes a snippet belonging to the zone. Returns a 4XX response if the zone or snippet no longer exists.\nRequired: zone_id (path); snippet_name (path)"
+  },
+  {
+    "id": "deleteZoneSnippetRules",
+    "name": "Delete zone snippet rules",
+    "description": "Delete zone snippet rules Deletes all snippet rules belonging to the zone. DELETE /client/v4/zones/{zone_id}/snippets/snippet_rules",
+    "context": "DELETE /client/v4/zones/{zone_id}/snippets/snippet_rules\nDeletes all snippet rules belonging to the zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "getZoneSnippet",
+    "name": "Get a zone snippet",
+    "description": "Get a zone snippet Fetches a snippet belonging to the zone. GET /client/v4/zones/{zone_id}/snippets/{snippet_name}",
+    "context": "GET /client/v4/zones/{zone_id}/snippets/{snippet_name}\nFetches a snippet belonging to the zone.\nRequired: zone_id (path); snippet_name (path)"
+  },
+  {
+    "id": "getZoneSnippetContent",
+    "name": "Get a zone snippet content",
+    "description": "Get a zone snippet content Fetches the content of a snippet belonging to the zone. GET /client/v4/zones/{zone_id}/snippets/{snippet_name}/content",
+    "context": "GET /client/v4/zones/{zone_id}/snippets/{snippet_name}/content\nFetches the content of a snippet belonging to the zone.\nRequired: zone_id (path); snippet_name (path)"
+  },
+  {
+    "id": "listZoneSnippetRules",
+    "name": "List zone snippet rules",
+    "description": "List zone snippet rules Fetches all snippet rules belonging to the zone. GET /client/v4/zones/{zone_id}/snippets/snippet_rules",
+    "context": "GET /client/v4/zones/{zone_id}/snippets/snippet_rules\nFetches all snippet rules belonging to the zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "listZoneSnippets",
+    "name": "List zone snippets",
+    "description": "List zone snippets Fetches all snippets belonging to the zone. GET /client/v4/zones/{zone_id}/snippets",
+    "context": "GET /client/v4/zones/{zone_id}/snippets\nFetches all snippets belonging to the zone.\nRequired: zone_id (path)\nOptional: page (query); per_page (query)"
+  },
+  {
+    "id": "updateZoneSnippet",
+    "name": "Update a zone snippet",
+    "description": "Update a zone snippet Creates or updates a snippet belonging to the zone. PUT /client/v4/zones/{zone_id}/snippets/{snippet_name}",
+    "context": "PUT /client/v4/zones/{zone_id}/snippets/{snippet_name}\nCreates or updates a snippet belonging to the zone.\nRequired: zone_id (path); snippet_name (path); body (body)"
+  },
+  {
+    "id": "updateZoneSnippetRules",
+    "name": "Update zone snippet rules",
+    "description": "Update zone snippet rules Updates all snippet rules belonging to the zone. PUT /client/v4/zones/{zone_id}/snippets/snippet_rules",
+    "context": "PUT /client/v4/zones/{zone_id}/snippets/snippet_rules\nUpdates all snippet rules belonging to the zone.\nRequired: zone_id (path); body (body)"
+  }
+]

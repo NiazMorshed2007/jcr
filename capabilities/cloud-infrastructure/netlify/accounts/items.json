@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cancelAccount",
+    "name": "cancelAccount",
+    "description": "cancelAccount DELETE /api/v1/accounts/{account_id}",
+    "context": "DELETE /api/v1/accounts/{account_id}\ncancelAccount"
+  },
+  {
+    "id": "createAccount",
+    "name": "createAccount",
+    "description": "createAccount POST /api/v1/accounts",
+    "context": "POST /api/v1/accounts\ncreateAccount\nRequired: body (body)"
+  },
+  {
+    "id": "createEnvVars",
+    "name": "Creates new environment variables",
+    "description": "Creates new environment variables Creates new environment variables. POST /api/v1/accounts/{account_id}/env",
+    "context": "POST /api/v1/accounts/{account_id}/env\nCreates new environment variables. Granular scopes are available on Pro plans and above.\nRequired: account_id (path) — Scope response to account_id\nOptional: site_id (query) — If provided, create an environment variable on the site level, not the account level; body (body)"
+  },
+  {
+    "id": "deleteEnvVar",
+    "name": "Deletes an environment variable",
+    "description": "Deletes an environment variable DELETE /api/v1/accounts/{account_id}/env/{key}",
+    "context": "DELETE /api/v1/accounts/{account_id}/env/{key}\nDeletes an environment variable\nRequired: account_id (path) — Scope response to account_id; key (path) — The environment variable key (case-sensitive)\nOptional: site_id (query) — If provided, delete the environment variable from this site"
+  },
+  {
+    "id": "deleteEnvVarValue",
+    "name": "Deletes a specific environment variable value.",
+    "description": "Deletes a specific environment variable value. DELETE /api/v1/accounts/{account_id}/env/{key}/value/{id}",
+    "context": "DELETE /api/v1/accounts/{account_id}/env/{key}/value/{id}\nDeletes a specific environment variable value.\nRequired: account_id (path) — Scope response to account_id; id (path) — The environment variable value's ID; key (path) — The environment variable key name (case-sensitive)\nOptional: site_id (query) — If provided, delete the value from an environment variable on this site"
+  },
+  {
+    "id": "getAccount",
+    "name": "getAccount",
+    "description": "getAccount GET /api/v1/accounts/{account_id}",
+    "context": "GET /api/v1/accounts/{account_id}\ngetAccount"
+  },
+  {
+    "id": "getAccountAIGatewayToken",
+    "name": "Returns an AI Gateway token scoped to an account",
+    "description": "Returns an AI Gateway token scoped to an account GET /api/v1/accounts/{account_id}/ai-gateway/token",
+    "context": "GET /api/v1/accounts/{account_id}/ai-gateway/token\nReturns an AI Gateway token scoped to an account"
+  },
+  {
+    "id": "getEnvVar",
+    "name": "Returns an individual environment variable.",
+    "description": "Returns an individual environment variable. GET /api/v1/accounts/{account_id}/env/{key}",
+    "context": "GET /api/v1/accounts/{account_id}/env/{key}\nReturns an individual environment variable.\nRequired: account_id (path) — Scope response to account_id; key (path) — The environment variable key (case-sensitive)\nOptional: site_id (query) — If provided, return the environment variable for a specific site (no merging is performed)"
+  },
+  {
+    "id": "getEnvVars",
+    "name": "Returns all environment variables for an account or site",
+    "description": "Returns all environment variables for an account or site Returns all environment variables for an account or site. GET /api/v1/accounts/{account_id}/env",
+    "context": "GET /api/v1/accounts/{account_id}/env\nReturns all environment variables for an account or site. An account corresponds to a team in the Netlify UI.\nRequired: account_id (path) — Scope response to account_id\nOptional: context_name (query) — Filter by deploy context; scope (query) — Filter by scope; site_id (query) — If specified, only return environment variables set on this site"
+  },
+  {
+    "id": "listAccountAuditEvents",
+    "name": "listAccountAuditEvents",
+    "description": "listAccountAuditEvents GET /api/v1/accounts/{account_id}/audit",
+    "context": "GET /api/v1/accounts/{account_id}/audit\nlistAccountAuditEvents\nOptional: query (query); log_type (query); page (query); per_page (query)"
+  },
+  {
+    "id": "listAccountsForUser",
+    "name": "listAccountsForUser",
+    "description": "listAccountsForUser GET /api/v1/accounts",
+    "context": "GET /api/v1/accounts\nlistAccountsForUser\nOptional: minimal (query)"
+  },
+  {
+    "id": "listAccountTypesForUser",
+    "name": "listAccountTypesForUser",
+    "description": "listAccountTypesForUser GET /api/v1/accounts/types",
+    "context": "GET /api/v1/accounts/types\nlistAccountTypesForUser"
+  },
+  {
+    "id": "setEnvVarValue",
+    "name": "Updates or creates a new value for an existing environment variable.",
+    "description": "Updates or creates a new value for an existing environment variable. PATCH /api/v1/accounts/{account_id}/env/{key}",
+    "context": "PATCH /api/v1/accounts/{account_id}/env/{key}\nUpdates or creates a new value for an existing environment variable.\nRequired: account_id (path) — Scope response to account_id; key (path) — The existing environment variable key name (case-sensitive)\nOptional: site_id (query) — If provided, update an environment variable set on this site; body (body)"
+  },
+  {
+    "id": "updateAccount",
+    "name": "updateAccount",
+    "description": "updateAccount PUT /api/v1/accounts/{account_id}",
+    "context": "PUT /api/v1/accounts/{account_id}\nupdateAccount\nOptional: body (body)"
+  },
+  {
+    "id": "updateEnvVar",
+    "name": "Updates an existing environment variable and all of its values",
+    "description": "Updates an existing environment variable and all of its values Updates an existing environment variable and all of its values. PUT /api/v1/accounts/{account_id}/env/{key}",
+    "context": "PUT /api/v1/accounts/{account_id}/env/{key}\nUpdates an existing environment variable and all of its values. Existing values will be replaced by values provided.\nRequired: account_id (path) — Scope response to account_id; key (path) — The existing environment variable key name (case-sensitive)\nOptional: site_id (query) — If provided, update an environment variable set on this site; body (body)"
+  }
+]

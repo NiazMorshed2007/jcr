@@ -1,0 +1,80 @@
+[
+  {
+    "id": "create",
+    "name": "create",
+    "description": "create POST /api/organizations/",
+    "context": "POST /api/organizations/\ncreate\nRequired: body (body)"
+  },
+  {
+    "id": "destroy",
+    "name": "destroy",
+    "description": "destroy DELETE /api/organizations/{id}/",
+    "context": "DELETE /api/organizations/{id}/\ndestroy\nRequired: id (path) — A UUID string identifying this organization."
+  },
+  {
+    "id": "list",
+    "name": "list",
+    "description": "list GET /api/organizations/",
+    "context": "GET /api/organizations/\nlist\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "partial_update",
+    "name": "partial_update",
+    "description": "partial_update PATCH /api/organizations/{id}/",
+    "context": "PATCH /api/organizations/{id}/\npartial_update\nRequired: id (path) — A UUID string identifying this organization.\nOptional: body (body)"
+  },
+  {
+    "id": "retrieve",
+    "name": "retrieve",
+    "description": "retrieve GET /api/organizations/{id}/",
+    "context": "GET /api/organizations/{id}/\nretrieve\nRequired: id (path) — A UUID string identifying this organization."
+  },
+  {
+    "id": "update",
+    "name": "update",
+    "description": "update PUT /api/organizations/{id}/",
+    "context": "PUT /api/organizations/{id}/\nupdate\nRequired: id (path) — A UUID string identifying this organization.; body (body)"
+  },
+  {
+    "id": "oauth_applications_list",
+    "name": "ViewSet for listing OAuth applications at the organization level (read-only).",
+    "description": "ViewSet for listing OAuth applications at the organization level (read-only). GET /api/organizations/{organization_id}/oauth_applications/",
+    "context": "GET /api/organizations/{organization_id}/oauth_applications/\nViewSet for listing OAuth applications at the organization level (read-only).\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "org_organizations_desktop_beta_terms_create",
+    "name": "org_organizations_desktop_beta_terms_create",
+    "description": "org_organizations_desktop_beta_terms_create POST /api/organizations/{organization_id}/desktop_beta_terms/",
+    "context": "POST /api/organizations/{organization_id}/desktop_beta_terms/\norg_organizations_desktop_beta_terms_create\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "org_organizations_desktop_beta_terms_list",
+    "name": "org_organizations_desktop_beta_terms_list",
+    "description": "org_organizations_desktop_beta_terms_list GET /api/organizations/{organization_id}/desktop_beta_terms/",
+    "context": "GET /api/organizations/{organization_id}/desktop_beta_terms/\norg_organizations_desktop_beta_terms_list\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "remove_blocked_members_and_enforce_verified_domains_create",
+    "name": "Remove the members whose email domain is outside the organization's verified domains and turn `enforce_verified_domains` on, in one transaction",
+    "description": "Remove the members whose email domain is outside the organization's verified domains and turn `enforce_verified_domains` on, in one transaction Remove the members whose email domain is outside the organization's verified domains and turn `enforce_verified_domains` on, in one transaction. POST /api/organizations/{id}/r…",
+    "context": "POST /api/organizations/{id}/remove_blocked_members_and_enforce_verified_domains/\nRemove the members whose email domain is outside the organization's verified domains and turn `enforce_verified_domains` on, in one transaction. Owners are never removed; they keep gated access and can disable the setting themselves. Admin only. Use this only when the caller has confirmed the removals. To turn the setting on without touching memberships, PATCH `enforce_verified_domains` on the organization instead.\nRequired: id (path) — A UUID string identifying this organization."
+  },
+  {
+    "id": "request_ai_access_create",
+    "name": "Notify organization admins that a member is requesting PostHog AI be enabled.",
+    "description": "Notify organization admins that a member is requesting PostHog AI be enabled. POST /api/organizations/{id}/request_ai_access/",
+    "context": "POST /api/organizations/{id}/request_ai_access/\nNotify organization admins that a member is requesting PostHog AI be enabled.\nRequired: id (path) — A UUID string identifying this organization."
+  },
+  {
+    "id": "teams_data_freshness_retrieve",
+    "name": "When each project in the organization last received data, broken down by kind of data.",
+    "description": "When each project in the organization last received data, broken down by kind of data. GET /api/organizations/{id}/teams/data_freshness/",
+    "context": "GET /api/organizations/{id}/teams/data_freshness/\nWhen each project in the organization last received data, broken down by kind of data.\nRequired: id (path) — A UUID string identifying this organization."
+  },
+  {
+    "id": "welcome_current_retrieve",
+    "name": "Aggregated payload for the invited-user welcome screen.",
+    "description": "Aggregated payload for the invited-user welcome screen. GET /api/organizations/{organization_id}/welcome/current/",
+    "context": "GET /api/organizations/{organization_id}/welcome/current/\nAggregated payload for the invited-user welcome screen.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  }
+]

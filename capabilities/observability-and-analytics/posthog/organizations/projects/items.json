@@ -1,0 +1,248 @@
+[
+  {
+    "id": "organizations_projects_access_control_default_objects_retrieve",
+    "name": "Object rules that apply to everyone in the project without a rule of their own on that object.",
+    "description": "Object rules that apply to everyone in the project without a rule of their own on that object. GET /api/organizations/{organization_id}/projects/{id}/access_control_default_objects/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_default_objects/\nObject rules that apply to everyone in the project without a rule of their own on that object.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_access_control_default_properties_retrieve",
+    "name": "Property rules that apply to everyone in the project without a rule of their own on that property.",
+    "description": "Property rules that apply to everyone in the project without a rule of their own on that property. GET /api/organizations/{organization_id}/projects/{id}/access_control_default_properties/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_default_properties/\nProperty rules that apply to everyone in the project without a rule of their own on that property.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_access_control_defaults_retrieve",
+    "name": "The project's default access",
+    "description": "The project's default access The project's default access. GET /api/organizations/{organization_id}/projects/{id}/access_control_defaults/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_defaults/\nThe project's default access. Returns the level that applies to the project and to each resource type when a member or a role has no rule of their own. Also lists the resource types that accept rules on single objects, with the levels such a rule can set.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_access_control_member_objects_retrieve",
+    "name": "Object rules configured for a member: the single objects, for example a dashboard or a notebook, the member is granted or denied, regardless of the resource-level rules.",
+    "description": "Object rules configured for a member: the single objects, for example a dashboard or a notebook, the member is granted or denied, regardless of the resource-level rules. GET /api/organizations/{organization_id}/projects/{id}/access_control_member_objects/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_member_objects/\nObject rules configured for a member: the single objects, for example a dashboard or a notebook, the member is granted or denied, regardless of the resource-level rules.\nRequired: id (path) — A unique value identifying this project.; member_id (query) — The organization membership id, as `organization_membership_id` in the members endpoint.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_access_control_member_properties_retrieve",
+    "name": "Property rules configured for a member: the person and event properties the member can read, read and write, or not see.",
+    "description": "Property rules configured for a member: the person and event properties the member can read, read and write, or not see. GET /api/organizations/{organization_id}/projects/{id}/access_control_member_properties/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_member_properties/\nProperty rules configured for a member: the person and event properties the member can read, read and write, or not see.\nRequired: id (path) — A unique value identifying this project.; member_id (query) — The organization membership id, as `organization_membership_id` in the members endpoint.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_access_control_members_retrieve",
+    "name": "Every organization member's access in this project",
+    "description": "Every organization member's access in this project Every organization member's access in this project. GET /api/organizations/{organization_id}/projects/{id}/access_control_members/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_members/\nEvery organization member's access in this project. For the project and for each resource type, the response gives the member's own rule and the level that is enforced. It also says where the enforced level comes from: the member's rule, a role's rule, the project default, or full access as an organization admin. Pass `member_id` for one member.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: member_id (query) — Narrow the list to one organization membership id."
+  },
+  {
+    "id": "organizations_projects_access_control_role_objects_retrieve",
+    "name": "Object rules configured for a role: the single objects the role's members are granted or denied, regardless of the resource-level rules.",
+    "description": "Object rules configured for a role: the single objects the role's members are granted or denied, regardless of the resource-level rules. GET /api/organizations/{organization_id}/projects/{id}/access_control_role_objects/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_role_objects/\nObject rules configured for a role: the single objects the role's members are granted or denied, regardless of the resource-level rules.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; role_id (query) — The role id, as `role_id` in the roles endpoint."
+  },
+  {
+    "id": "organizations_projects_access_control_role_properties_retrieve",
+    "name": "Property rules configured for a role: the person and event properties the role's members can read, read and write, or not see.",
+    "description": "Property rules configured for a role: the person and event properties the role's members can read, read and write, or not see. GET /api/organizations/{organization_id}/projects/{id}/access_control_role_properties/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_role_properties/\nProperty rules configured for a role: the person and event properties the role's members can read, read and write, or not see.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; role_id (query) — The role id, as `role_id` in the roles endpoint."
+  },
+  {
+    "id": "organizations_projects_access_control_roles_retrieve",
+    "name": "Every role's resolved access to this project and to each resource type in it: the role's own rule, the level that is enforced, and the rule the enforced level comes from",
+    "description": "Every role's resolved access to this project and to each resource type in it: the role's own rule, the level that is enforced, and the rule the enforced level comes from Every role's resolved access to this project and to each resource type in it: the role's own rule, the level that is enforced, and the rule the enfor…",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/access_control_roles/\nEvery role's resolved access to this project and to each resource type in it: the role's own rule, the level that is enforced, and the rule the enforced level comes from. Pass `role_id` for one role.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: role_id (query) — Narrow the list to one role."
+  },
+  {
+    "id": "organizations_projects_activity_retrieve",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. GET /api/organizations/{organization_id}/projects/{id}/activity/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/activity/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_add_product_intent_partial_update",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. PATCH /api/organizations/{organization_id}/projects/{id}/add_product_intent/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/add_product_intent/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_cancel_deletion_create",
+    "name": "Cancel a scheduled project deletion and restore access to the project.",
+    "description": "Cancel a scheduled project deletion and restore access to the project. POST /api/organizations/{organization_id}/projects/{id}/cancel-deletion/",
+    "context": "POST /api/organizations/{organization_id}/projects/{id}/cancel-deletion/\nCancel a scheduled project deletion and restore access to the project.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_change_organization_create",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. POST /api/organizations/{organization_id}/projects/{id}/change_organization/",
+    "context": "POST /api/organizations/{organization_id}/projects/{id}/change_organization/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_complete_product_onboarding_partial_update",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. PATCH /api/organizations/{organization_id}/projects/{id}/complete_product_onboarding/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/complete_product_onboarding/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_create",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. POST /api/organizations/{organization_id}/projects/",
+    "context": "POST /api/organizations/{organization_id}/projects/\nProjects for the current organization.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_default_evaluation_contexts_create",
+    "name": "Manage default evaluation contexts for a project",
+    "description": "Manage default evaluation contexts for a project Manage default evaluation contexts for a project. POST /api/organizations/{organization_id}/projects/{id}/default_evaluation_contexts/",
+    "context": "POST /api/organizations/{organization_id}/projects/{id}/default_evaluation_contexts/\nManage default evaluation contexts for a project. Members can read; writing requires project admin, matching the admin-only settings UI.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_default_evaluation_contexts_destroy",
+    "name": "Manage default evaluation contexts for a project",
+    "description": "Manage default evaluation contexts for a project Manage default evaluation contexts for a project. DELETE /api/organizations/{organization_id}/projects/{id}/default_evaluation_contexts/",
+    "context": "DELETE /api/organizations/{organization_id}/projects/{id}/default_evaluation_contexts/\nManage default evaluation contexts for a project. Members can read; writing requires project admin, matching the admin-only settings UI.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_default_evaluation_contexts_retrieve",
+    "name": "Manage default evaluation contexts for a project",
+    "description": "Manage default evaluation contexts for a project Manage default evaluation contexts for a project. GET /api/organizations/{organization_id}/projects/{id}/default_evaluation_contexts/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/default_evaluation_contexts/\nManage default evaluation contexts for a project. Members can read; writing requires project admin, matching the admin-only settings UI.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_default_release_conditions_retrieve",
+    "name": "Manage default release conditions for new feature flags in this project",
+    "description": "Manage default release conditions for new feature flags in this project Manage default release conditions for new feature flags in this project. GET /api/organizations/{organization_id}/projects/{id}/default_release_conditions/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/default_release_conditions/\nManage default release conditions for new feature flags in this project. Members can read; writing requires project admin, matching the admin-only settings UI.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_default_release_conditions_update",
+    "name": "Manage default release conditions for new feature flags in this project",
+    "description": "Manage default release conditions for new feature flags in this project Manage default release conditions for new feature flags in this project. PUT /api/organizations/{organization_id}/projects/{id}/default_release_conditions/",
+    "context": "PUT /api/organizations/{organization_id}/projects/{id}/default_release_conditions/\nManage default release conditions for new feature flags in this project. Members can read; writing requires project admin, matching the admin-only settings UI.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_delete_secret_token_backup_partial_update",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. PATCH /api/organizations/{organization_id}/projects/{id}/delete_secret_token_backup/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/delete_secret_token_backup/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_destroy",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. DELETE /api/organizations/{organization_id}/projects/{id}/",
+    "context": "DELETE /api/organizations/{organization_id}/projects/{id}/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_evaluation_context_suggestions_create",
+    "name": "Hide an evaluation context name from the flag editor's suggestion list, or restore it",
+    "description": "Hide an evaluation context name from the flag editor's suggestion list, or restore it Hide an evaluation context name from the flag editor's suggestion list, or restore it. POST /api/organizations/{organization_id}/projects/{id}/evaluation_context_suggestions/",
+    "context": "POST /api/organizations/{organization_id}/projects/{id}/evaluation_context_suggestions/\nHide an evaluation context name from the flag editor's suggestion list, or restore it. POST hides the name; DELETE restores it. The underlying context row and any flags already using it are never modified — this only controls what gets suggested.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.; body (body)"
+  },
+  {
+    "id": "organizations_projects_evaluation_context_suggestions_destroy",
+    "name": "Hide an evaluation context name from the flag editor's suggestion list, or restore it",
+    "description": "Hide an evaluation context name from the flag editor's suggestion list, or restore it Hide an evaluation context name from the flag editor's suggestion list, or restore it. DELETE /api/organizations/{organization_id}/projects/{id}/evaluation_context_suggestions/",
+    "context": "DELETE /api/organizations/{organization_id}/projects/{id}/evaluation_context_suggestions/\nHide an evaluation context name from the flag editor's suggestion list, or restore it. POST hides the name; DELETE restores it. The underlying context row and any flags already using it are never modified — this only controls what gets suggested.\nRequired: context_name (query) — Name of the evaluation context to restore to suggestions.; id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_event_ingestion_restrictions_list",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. GET /api/organizations/{organization_id}/projects/{id}/event_ingestion_restrictions/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/event_ingestion_restrictions/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: search (query) — A search term."
+  },
+  {
+    "id": "organizations_projects_experiments_config_partial_update",
+    "name": "Manage experiment configuration for this project.",
+    "description": "Manage experiment configuration for this project. PATCH /api/organizations/{organization_id}/projects/{id}/experiments_config/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/experiments_config/\nManage experiment configuration for this project.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_experiments_config_retrieve",
+    "name": "Manage experiment configuration for this project.",
+    "description": "Manage experiment configuration for this project. GET /api/organizations/{organization_id}/projects/{id}/experiments_config/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/experiments_config/\nManage experiment configuration for this project.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_generate_conversations_public_token_create",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. POST /api/organizations/{organization_id}/projects/{id}/generate_conversations_public_token/",
+    "context": "POST /api/organizations/{organization_id}/projects/{id}/generate_conversations_public_token/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_is_generating_demo_data_retrieve",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. GET /api/organizations/{organization_id}/projects/{id}/is_generating_demo_data/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/is_generating_demo_data/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_list",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. GET /api/organizations/{organization_id}/projects/",
+    "context": "GET /api/organizations/{organization_id}/projects/\nProjects for the current organization.\nRequired: organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; search (query) — A search term.; tags (query) — Comma-separated tag names to filter by, for example `production,eu-region`. Names are trimmed and lowercased before matching. At most 20 distinct tags per request.; tags_match (query) — How to combine the `tags` filter. `all` (the default) returns projects carrying every listed tag; `any` returns projects carrying at least one."
+  },
+  {
+    "id": "organizations_projects_logs_config_partial_update",
+    "name": "Manage logs product configuration for this project's canonical environment",
+    "description": "Manage logs product configuration for this project's canonical environment Manage logs product configuration for this project's canonical environment. PATCH /api/organizations/{organization_id}/projects/{id}/logs_config/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/logs_config/\nManage logs product configuration for this project's canonical environment. Members can read; writing requires project admin, matching the admin-only settings UI. Mirrors the env-router action so /api/projects/:id/logs_config/ resolves alongside the legacy /api/environments/:id/logs_config/ alias.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_logs_config_retrieve",
+    "name": "Manage logs product configuration for this project's canonical environment",
+    "description": "Manage logs product configuration for this project's canonical environment Manage logs product configuration for this project's canonical environment. GET /api/organizations/{organization_id}/projects/{id}/logs_config/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/logs_config/\nManage logs product configuration for this project's canonical environment. Members can read; writing requires project admin, matching the admin-only settings UI. Mirrors the env-router action so /api/projects/:id/logs_config/ resolves alongside the legacy /api/environments/:id/logs_config/ alias.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_partial_update",
+    "name": "Update one or more of a project's settings",
+    "description": "Update one or more of a project's settings Update one or more of a project's settings. PATCH /api/organizations/{organization_id}/projects/{id}/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/\nUpdate one or more of a project's settings. Only the fields included in the request body are changed.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_reset_token_partial_update",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. PATCH /api/organizations/{organization_id}/projects/{id}/reset_token/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/reset_token/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_retrieve",
+    "name": "Retrieve a project and its settings.",
+    "description": "Retrieve a project and its settings. GET /api/organizations/{organization_id}/projects/{id}/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/\nRetrieve a project and its settings.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_rotate_heatmaps_screenshot_secret_partial_update",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. PATCH /api/organizations/{organization_id}/projects/{id}/rotate_heatmaps_screenshot_secret/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/rotate_heatmaps_screenshot_secret/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_rotate_secret_token_partial_update",
+    "name": "Projects for the current organization.",
+    "description": "Projects for the current organization. PATCH /api/organizations/{organization_id}/projects/{id}/rotate_secret_token/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/rotate_secret_token/\nProjects for the current organization.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_settings_as_of_retrieve",
+    "name": "Return the project settings as of the provided timestamp",
+    "description": "Return the project settings as of the provided timestamp Return the project settings as of the provided timestamp. GET /api/organizations/{organization_id}/projects/{id}/settings_as_of/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/settings_as_of/\nReturn the project settings as of the provided timestamp. Query params: - at: ISO8601 datetime (required) - scope: optional, one or multiple keys to filter the returned settings\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_tracing_config_partial_update",
+    "name": "Manage tracing product configuration for this project's canonical environment",
+    "description": "Manage tracing product configuration for this project's canonical environment Manage tracing product configuration for this project's canonical environment. PATCH /api/organizations/{organization_id}/projects/{id}/tracing_config/",
+    "context": "PATCH /api/organizations/{organization_id}/projects/{id}/tracing_config/\nManage tracing product configuration for this project's canonical environment. Members can read; writing requires project admin, matching the admin-only settings UI. Mirrors the env-router action so /api/projects/:id/tracing_config/ resolves alongside the legacy /api/environments/:id/tracing_config/ alias.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  },
+  {
+    "id": "organizations_projects_tracing_config_retrieve",
+    "name": "Manage tracing product configuration for this project's canonical environment",
+    "description": "Manage tracing product configuration for this project's canonical environment Manage tracing product configuration for this project's canonical environment. GET /api/organizations/{organization_id}/projects/{id}/tracing_config/",
+    "context": "GET /api/organizations/{organization_id}/projects/{id}/tracing_config/\nManage tracing product configuration for this project's canonical environment. Members can read; writing requires project admin, matching the admin-only settings UI. Mirrors the env-router action so /api/projects/:id/tracing_config/ resolves alongside the legacy /api/environments/:id/tracing_config/ alias.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/."
+  },
+  {
+    "id": "organizations_projects_update",
+    "name": "Replace a project and its settings",
+    "description": "Replace a project and its settings Replace a project and its settings. PUT /api/organizations/{organization_id}/projects/{id}/",
+    "context": "PUT /api/organizations/{organization_id}/projects/{id}/\nReplace a project and its settings. Prefer the PATCH endpoint for partial updates — PUT requires every writable field to be provided.\nRequired: id (path) — A unique value identifying this project.; organization_id (path) — ID of the organization you're trying to access. To find the ID of the organization, make a call to /api/organizations/.\nOptional: body (body)"
+  }
+]

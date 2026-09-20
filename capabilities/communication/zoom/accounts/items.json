@@ -1,0 +1,92 @@
+[
+  {
+    "id": "account",
+    "name": "Retrieve a sub account",
+    "description": "Retrieve a sub account Retrieve a sub account under the master account. GET /v2/accounts/{accountId}",
+    "context": "GET /v2/accounts/{accountId}\nRetrieve a sub account under the master account. Your account must be a master account and have this privilege to read sub accounts. Zoom only assigns this privilege to trusted partners .\nRequired: accountId (path) — The account ID"
+  },
+  {
+    "id": "accountBilling",
+    "name": "Retrieve billing information for a sub account",
+    "description": "Retrieve billing information for a sub account Retrieve billing information for a sub account under the master account GET /v2/accounts/{accountId}/billing",
+    "context": "GET /v2/accounts/{accountId}/billing\nRetrieve billing information for a sub account under the master account\nRequired: accountId (path) — The account ID"
+  },
+  {
+    "id": "accountBillingUpdate",
+    "name": "Update billing information for a sub account",
+    "description": "Update billing information for a sub account Update billing information for a sub account under the master account Only for the sub account which is a paid account and paid by master account PATCH /v2/accounts/{accountId}/billing",
+    "context": "PATCH /v2/accounts/{accountId}/billing\nUpdate billing information for a sub account under the master account Only for the sub account which is a paid account and paid by master account\nRequired: accountId (path) — The account ID; body (body)"
+  },
+  {
+    "id": "accountCreate",
+    "name": "Create a sub account",
+    "description": "Create a sub account Create a sub account under the master account. POST /v2/accounts",
+    "context": "POST /v2/accounts\nCreate a sub account under the master account. Your account must be a master account and have this privilege to create sub account. Zoom only assigns this privilege to trusted partners. The created user will not receive a confirmation email. .\nRequired: body (body) — Account"
+  },
+  {
+    "id": "accountDisassociate",
+    "name": "Disassociate an account",
+    "description": "Disassociate an account Disassociate a sub account from the master account. DELETE /v2/accounts/{accountId}",
+    "context": "DELETE /v2/accounts/{accountId}\nDisassociate a sub account from the master account. This will leave the account intact but the sub account will not longer be associated with the master account.\nRequired: accountId (path) — The account ID"
+  },
+  {
+    "id": "accountManagedDomain",
+    "name": "Retrieve a sub account's managed domains",
+    "description": "Retrieve a sub account's managed domains Retrieve a sub account's managed domains under the master account GET /v2/accounts/{accountId}/managed_domains",
+    "context": "GET /v2/accounts/{accountId}/managed_domains\nRetrieve a sub account's managed domains under the master account\nRequired: accountId (path) — The account ID"
+  },
+  {
+    "id": "accountOptionsUpdate",
+    "name": "Update a sub account's options",
+    "description": "Update a sub account's options Update a sub account's options under the master account PATCH /v2/accounts/{accountId}/options",
+    "context": "PATCH /v2/accounts/{accountId}/options\nUpdate a sub account's options under the master account\nRequired: accountId (path) — The account ID; body (body)"
+  },
+  {
+    "id": "accountPlanAddonCreate",
+    "name": "Add an additional plan for sub account",
+    "description": "Add an additional plan for sub account Add an additional plan for sub account Can only add an Additional plan for the sub account which is a paid account and paid by master account POST /v2/accounts/{accountId}/plans/addons",
+    "context": "POST /v2/accounts/{accountId}/plans/addons\nAdd an additional plan for sub account Can only add an Additional plan for the sub account which is a paid account and paid by master account\nRequired: accountId (path) — The account ID; body (body)"
+  },
+  {
+    "id": "accountPlanAddonUpdate",
+    "name": "Update an additional plan for sub account",
+    "description": "Update an additional plan for sub account Update an additional plan for sub account Can only update an Additional plan for the sub account which is a paid account and paid by master account PUT /v2/accounts/{accountId}/plans/addons",
+    "context": "PUT /v2/accounts/{accountId}/plans/addons\nUpdate an additional plan for sub account Can only update an Additional plan for the sub account which is a paid account and paid by master account\nRequired: accountId (path) — The account ID; body (body)"
+  },
+  {
+    "id": "accountPlanBaseUpdate",
+    "name": "Update a base plan for a sub account",
+    "description": "Update a base plan for a sub account Update a base plan for a sub account Can only update a base plan for the sub account which is a paid account and paid by master account PUT /v2/accounts/{accountId}/plans/base",
+    "context": "PUT /v2/accounts/{accountId}/plans/base\nUpdate a base plan for a sub account Can only update a base plan for the sub account which is a paid account and paid by master account\nRequired: accountId (path) — The account ID; body (body)"
+  },
+  {
+    "id": "accountPlanCreate",
+    "name": "Subscribe plans for a sub account",
+    "description": "Subscribe plans for a sub account Subscribe plans for a sub account of the master account Can only subscribe plans for the sub account which is a free account and paid by master account POST /v2/accounts/{accountId}/plans",
+    "context": "POST /v2/accounts/{accountId}/plans\nSubscribe plans for a sub account of the master account Can only subscribe plans for the sub account which is a free account and paid by master account\nRequired: accountId (path) — The account ID; body (body)"
+  },
+  {
+    "id": "accountPlans",
+    "name": "Retrieve plan information for a sub account",
+    "description": "Retrieve plan information for a sub account Retrieve plan information for a sub account under the master account Only for the sub account which is paid by master account GET /v2/accounts/{accountId}/plans",
+    "context": "GET /v2/accounts/{accountId}/plans\nRetrieve plan information for a sub account under the master account Only for the sub account which is paid by master account\nRequired: accountId (path) — The account ID"
+  },
+  {
+    "id": "accounts",
+    "name": "List sub accounts",
+    "description": "List sub accounts List all the sub accounts under the master account GET /v2/accounts",
+    "context": "GET /v2/accounts\nList all the sub accounts under the master account\nOptional: page_size (query) — The number of records returned within a single API call; page_number (query) — Current page number of returned records"
+  },
+  {
+    "id": "accountSettings",
+    "name": "Retrieve a sub account's settings",
+    "description": "Retrieve a sub account's settings Retrieve a sub account's settings under the master account GET /v2/accounts/{accountId}/settings",
+    "context": "GET /v2/accounts/{accountId}/settings\nRetrieve a sub account's settings under the master account\nRequired: accountId (path) — The account ID"
+  },
+  {
+    "id": "accountSettingsUpdate",
+    "name": "Update a sub account's settings",
+    "description": "Update a sub account's settings Update a sub account's settings under the master account PATCH /v2/accounts/{accountId}/settings",
+    "context": "PATCH /v2/accounts/{accountId}/settings\nUpdate a sub account's settings under the master account\nRequired: accountId (path) — The account ID; body (body)"
+  }
+]

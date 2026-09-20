@@ -1,0 +1,62 @@
+[
+  {
+    "id": "deleteOrganizationScimV2Group",
+    "name": "Delete an Individual Team",
+    "description": "Delete an Individual Team Delete a team with a SCIM Group DELETE Request. DELETE /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups/{team_id_or_slug}",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups/{team_id_or_slug}\nDelete a team with a SCIM Group DELETE Request.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to."
+  },
+  {
+    "id": "deleteOrganizationScimV2User",
+    "name": "Delete an Organization Member via SCIM",
+    "description": "Delete an Organization Member via SCIM Delete an organization member with a SCIM User DELETE Request. DELETE /api/0/organizations/{organization_id_or_slug}/scim/v2/Users/{member_id}",
+    "context": "DELETE /api/0/organizations/{organization_id_or_slug}/scim/v2/Users/{member_id}\nDelete an organization member with a SCIM User DELETE Request.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the member to delete."
+  },
+  {
+    "id": "getOrganizationScimV2Group",
+    "name": "Query an Individual Team",
+    "description": "Query an Individual Team Query an individual team with a SCIM Group GET Request. GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups/{team_id_or_slug}",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups/{team_id_or_slug}\nQuery an individual team with a SCIM Group GET Request. - Note that the members field will only contain up to 10000 members.\nRequired: team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to."
+  },
+  {
+    "id": "getOrganizationScimV2User",
+    "name": "Query an Individual Organization Member",
+    "description": "Query an Individual Organization Member Query an individual organization member with a SCIM User GET Request. GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Users/{member_id}",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Users/{member_id}\nQuery an individual organization member with a SCIM User GET Request. - The `name` object will contain fields `firstName` and `lastName` with the values of `N/A`. Sentry's SCIM API does not currently support these fields but returns them for compatibility purposes.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the member to query."
+  },
+  {
+    "id": "listOrganizationScimV2Groups",
+    "name": "List an Organization's Paginated Teams",
+    "description": "List an Organization's Paginated Teams Returns a paginated list of teams bound to a organization with a SCIM Groups GET Request. GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups\nReturns a paginated list of teams bound to a organization with a SCIM Groups GET Request. Note that the members field will only contain up to 10,000 members.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: startIndex (query) — SCIM 1-offset based index for pagination.; count (query) — The maximum number of results the query should return, maximum of 100.; filter (query) — A SCIM filter expression. The only operator currently supported is `eq`.; excludedAttributes (query) — Fields that should be left off of return values. Right now the only supported field for this query is members."
+  },
+  {
+    "id": "listOrganizationScimV2Users",
+    "name": "List an Organization's SCIM Members",
+    "description": "List an Organization's SCIM Members Returns a paginated list of members bound to a organization with a SCIM Users GET Request. GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Users",
+    "context": "GET /api/0/organizations/{organization_id_or_slug}/scim/v2/Users\nReturns a paginated list of members bound to a organization with a SCIM Users GET Request.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.\nOptional: startIndex (query) — SCIM 1-offset based index for pagination.; count (query) — The maximum number of results the query should return, maximum of 100.; filter (query) — A SCIM filter expression. The only operator currently supported is `eq`.; excludedAttributes (query) — Fields that should be left off of return values. Right now the only supported field for this query is members."
+  },
+  {
+    "id": "provisionOrganizationScimV2Group",
+    "name": "Provision a New Team",
+    "description": "Provision a New Team Create a new team bound to an organization via a SCIM Groups POST Request. POST /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups\nCreate a new team bound to an organization via a SCIM Groups POST Request. The slug will have a normalization of uppercases/spaces to lowercases and dashes. Note that teams are always created with an empty member set.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "provisionOrganizationScimV2User",
+    "name": "Provision a New Organization Member",
+    "description": "Provision a New Organization Member Create a new Organization Member via a SCIM Users POST Request. POST /api/0/organizations/{organization_id_or_slug}/scim/v2/Users",
+    "context": "POST /api/0/organizations/{organization_id_or_slug}/scim/v2/Users\nCreate a new Organization Member via a SCIM Users POST Request. Note that this API does not support setting secondary emails.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; body (body)"
+  },
+  {
+    "id": "updateOrganizationScimV2Group",
+    "name": "Update a Team's Attributes",
+    "description": "Update a Team's Attributes Update a team's attributes with a SCIM Group PATCH Request. PATCH /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups/{team_id_or_slug}",
+    "context": "PATCH /api/0/organizations/{organization_id_or_slug}/scim/v2/Groups/{team_id_or_slug}\nUpdate a team's attributes with a SCIM Group PATCH Request.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; team_id_or_slug (path) — The ID or slug of the team the resource belongs to.; body (body)"
+  },
+  {
+    "id": "updateOrganizationScimV2User",
+    "name": "Update an Organization Member's Attributes",
+    "description": "Update an Organization Member's Attributes Update an organization member's attributes with a SCIM PATCH Request. PATCH /api/0/organizations/{organization_id_or_slug}/scim/v2/Users/{member_id}",
+    "context": "PATCH /api/0/organizations/{organization_id_or_slug}/scim/v2/Users/{member_id}\nUpdate an organization member's attributes with a SCIM PATCH Request.\nRequired: organization_id_or_slug (path) — The ID or slug of the organization the resource belongs to.; member_id (path) — The ID of the member to update.; body (body)"
+  }
+]

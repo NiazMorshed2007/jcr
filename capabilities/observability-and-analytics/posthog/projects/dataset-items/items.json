@@ -1,0 +1,44 @@
+[
+  {
+    "id": "dataset_items_archive",
+    "name": "Archive an active item by creating a new immutable version.",
+    "description": "Archive an active item by creating a new immutable version. POST /api/projects/{project_id}/dataset_items/{dataset_item_id}/archive/",
+    "context": "POST /api/projects/{project_id}/dataset_items/{dataset_item_id}/archive/\nArchive an active item by creating a new immutable version.\nRequired: dataset_item_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "dataset_items_create",
+    "name": "Create an item and its first immutable version",
+    "description": "Create an item and its first immutable version Create an item and its first immutable version. POST /api/projects/{project_id}/dataset_items/",
+    "context": "POST /api/projects/{project_id}/dataset_items/\nCreate an item and its first immutable version. An identical client item ID retry returns the existing item. A different payload or an archived match returns a conflict.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "dataset_items_list",
+    "name": "List a dataset's current items or its exact contents at a prior revision.",
+    "description": "List a dataset's current items or its exact contents at a prior revision. GET /api/projects/{project_id}/dataset_items/",
+    "context": "GET /api/projects/{project_id}/dataset_items/\nList a dataset's current items or its exact contents at a prior revision.\nRequired: dataset (query) — Dataset whose items should be returned.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: archived (query) — Return archived items instead of active items.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; revision (query) — Return the exact dataset snapshot at this revision."
+  },
+  {
+    "id": "dataset_items_partial_update",
+    "name": "Create a new immutable item version from editable fields.",
+    "description": "Create a new immutable item version from editable fields. PATCH /api/projects/{project_id}/dataset_items/{dataset_item_id}/",
+    "context": "PATCH /api/projects/{project_id}/dataset_items/{dataset_item_id}/\nCreate a new immutable item version from editable fields.\nRequired: dataset_item_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "dataset_items_restore",
+    "name": "Restore an archived item by copying content into a new immutable version.",
+    "description": "Restore an archived item by copying content into a new immutable version. POST /api/projects/{project_id}/dataset_items/{dataset_item_id}/restore/",
+    "context": "POST /api/projects/{project_id}/dataset_items/{dataset_item_id}/restore/\nRestore an archived item by copying content into a new immutable version.\nRequired: dataset_item_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "dataset_items_retrieve",
+    "name": "Retrieve the current item version or the version visible at an exact dataset revision.",
+    "description": "Retrieve the current item version or the version visible at an exact dataset revision. GET /api/projects/{project_id}/dataset_items/{dataset_item_id}/",
+    "context": "GET /api/projects/{project_id}/dataset_items/{dataset_item_id}/\nRetrieve the current item version or the version visible at an exact dataset revision.\nRequired: dataset_item_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: revision (query) — Return the item as it appeared at this exact dataset revision."
+  },
+  {
+    "id": "dataset_items_versions_list",
+    "name": "List every immutable version of an item, newest first.",
+    "description": "List every immutable version of an item, newest first. GET /api/projects/{project_id}/dataset_items/{dataset_item_id}/versions/",
+    "context": "GET /api/projects/{project_id}/dataset_items/{dataset_item_id}/versions/\nList every immutable version of an item, newest first.\nRequired: dataset_item_id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  }
+]

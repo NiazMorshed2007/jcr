@@ -1,0 +1,44 @@
+[
+  {
+    "id": "project_secret_api_keys_create",
+    "name": "project_secret_api_keys_create",
+    "description": "project_secret_api_keys_create POST /api/projects/{project_id}/project_secret_api_keys/",
+    "context": "POST /api/projects/{project_id}/project_secret_api_keys/\nproject_secret_api_keys_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "project_secret_api_keys_destroy",
+    "name": "project_secret_api_keys_destroy",
+    "description": "project_secret_api_keys_destroy DELETE /api/projects/{project_id}/project_secret_api_keys/{id}/",
+    "context": "DELETE /api/projects/{project_id}/project_secret_api_keys/{id}/\nproject_secret_api_keys_destroy\nRequired: id (path) — A unique value identifying this project secret api key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "project_secret_api_keys_list",
+    "name": "project_secret_api_keys_list",
+    "description": "project_secret_api_keys_list GET /api/projects/{project_id}/project_secret_api_keys/",
+    "context": "GET /api/projects/{project_id}/project_secret_api_keys/\nproject_secret_api_keys_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "project_secret_api_keys_partial_update",
+    "name": "project_secret_api_keys_partial_update",
+    "description": "project_secret_api_keys_partial_update PATCH /api/projects/{project_id}/project_secret_api_keys/{id}/",
+    "context": "PATCH /api/projects/{project_id}/project_secret_api_keys/{id}/\nproject_secret_api_keys_partial_update\nRequired: id (path) — A unique value identifying this project secret api key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "project_secret_api_keys_retrieve",
+    "name": "project_secret_api_keys_retrieve",
+    "description": "project_secret_api_keys_retrieve GET /api/projects/{project_id}/project_secret_api_keys/{id}/",
+    "context": "GET /api/projects/{project_id}/project_secret_api_keys/{id}/\nproject_secret_api_keys_retrieve\nRequired: id (path) — A unique value identifying this project secret api key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "project_secret_api_keys_roll_create",
+    "name": "Roll a project secret API key",
+    "description": "Roll a project secret API key POST /api/projects/{project_id}/project_secret_api_keys/{id}/roll/",
+    "context": "POST /api/projects/{project_id}/project_secret_api_keys/{id}/roll/\nRoll a project secret API key\nRequired: id (path) — A unique value identifying this project secret api key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "project_secret_api_keys_update",
+    "name": "project_secret_api_keys_update",
+    "description": "project_secret_api_keys_update PUT /api/projects/{project_id}/project_secret_api_keys/{id}/",
+    "context": "PUT /api/projects/{project_id}/project_secret_api_keys/{id}/\nproject_secret_api_keys_update\nRequired: id (path) — A unique value identifying this project secret api key.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

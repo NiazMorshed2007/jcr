@@ -1,0 +1,20 @@
+[
+  {
+    "id": "getAllCertificates",
+    "name": "getAllCertificates",
+    "description": "getAllCertificates GET /api/v1/sites/{site_id}/ssl/certificates",
+    "context": "GET /api/v1/sites/{site_id}/ssl/certificates\ngetAllCertificates\nRequired: site_id (path); domain (query)"
+  },
+  {
+    "id": "provisionSiteTLSCertificate",
+    "name": "Provisions or updates a TLS certificate for the site",
+    "description": "Provisions or updates a TLS certificate for the site Provisions or updates a TLS certificate for the site. POST /api/v1/sites/{site_id}/ssl",
+    "context": "POST /api/v1/sites/{site_id}/ssl\nProvisions or updates a TLS certificate for the site. **Creating a certificate (site has no certificate):** - Omit certificate params to initiate Let's Encrypt provisioning - Provide certificate, key, and ca_certificates to upload a custom certificate **Updating a certificate (site already has a certificate):** - REQUIRES certificate, key, and ca_certificates to replace with a new custom certificate - Use POST /api/v1/sites/{site_id}/ssl/renew to renew an existing Let's Encrypt certificate\nRequired: site_id (path)\nOptional: certificate (query) — PEM-encoded certificate. Required when updating an existing certificate.; key (query) — PEM-encoded private key. Required when updating an existing certificate.; ca_certificates (query) — PEM-encoded CA certificate chain. Required when updating an existing certificate."
+  },
+  {
+    "id": "showSiteTLSCertificate",
+    "name": "showSiteTLSCertificate",
+    "description": "showSiteTLSCertificate GET /api/v1/sites/{site_id}/ssl",
+    "context": "GET /api/v1/sites/{site_id}/ssl\nshowSiteTLSCertificate\nRequired: site_id (path)"
+  }
+]

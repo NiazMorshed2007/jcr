@@ -1,0 +1,74 @@
+[
+  {
+    "id": "hosted-compute%2Fcreate-network-configuration-for-org",
+    "name": "Create a hosted compute network configuration for an organization",
+    "description": "Create a hosted compute network configuration for an organization Creates a hosted compute network configuration for an organization. POST /orgs/{org}/settings/network-configurations",
+    "context": "POST /orgs/{org}/settings/network-configurations\nCreates a hosted compute network configuration for an organization. OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "hosted-compute%2Fdelete-network-configuration-from-org",
+    "name": "Delete a hosted compute network configuration from an organization",
+    "description": "Delete a hosted compute network configuration from an organization Deletes a hosted compute network configuration from an organization. DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}",
+    "context": "DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}\nDeletes a hosted compute network configuration from an organization. OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; network_configuration_id (path) — Unique identifier of the hosted compute network configuration."
+  },
+  {
+    "id": "hosted-compute%2Fget-network-configuration-for-org",
+    "name": "Get a hosted compute network configuration for an organization",
+    "description": "Get a hosted compute network configuration for an organization Gets a hosted compute network configuration configured in an organization. GET /orgs/{org}/settings/network-configurations/{network_configuration_id}",
+    "context": "GET /orgs/{org}/settings/network-configurations/{network_configuration_id}\nGets a hosted compute network configuration configured in an organization. OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; network_configuration_id (path) — Unique identifier of the hosted compute network configuration."
+  },
+  {
+    "id": "hosted-compute%2Fget-network-settings-for-org",
+    "name": "Get a hosted compute network settings resource for an organization",
+    "description": "Get a hosted compute network settings resource for an organization Gets a hosted compute network settings resource configured for an organization. GET /orgs/{org}/settings/network-settings/{network_settings_id}",
+    "context": "GET /orgs/{org}/settings/network-settings/{network_settings_id}\nGets a hosted compute network settings resource configured for an organization. OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; network_settings_id (path) — Unique identifier of the hosted compute network settings."
+  },
+  {
+    "id": "hosted-compute%2Flist-network-configurations-for-org",
+    "name": "List hosted compute network configurations for an organization",
+    "description": "List hosted compute network configurations for an organization Lists all hosted compute network configurations configured in an organization. GET /orgs/{org}/settings/network-configurations",
+    "context": "GET /orgs/{org}/settings/network-configurations\nLists all hosted compute network configurations configured in an organization. OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "hosted-compute%2Fupdate-network-configuration-for-org",
+    "name": "Update a hosted compute network configuration for an organization",
+    "description": "Update a hosted compute network configuration for an organization Updates a hosted compute network configuration for an organization. PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}",
+    "context": "PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}\nUpdates a hosted compute network configuration for an organization. OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; network_configuration_id (path) — Unique identifier of the hosted compute network configuration.; body (body)"
+  },
+  {
+    "id": "orgs%2Fdisable-selected-repository-immutable-releases-organization",
+    "name": "Disable a selected repository for immutable releases in an organization",
+    "description": "Disable a selected repository for immutable releases in an organization Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. DELETE /orgs/{org}/settings/immutable-releases/repositories/{repository_id}",
+    "context": "DELETE /orgs/{org}/settings/immutable-releases/repositories/{repository_id}\nRemoves a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "orgs%2Fenable-selected-repository-immutable-releases-organization",
+    "name": "Enable a selected repository for immutable releases in an organization",
+    "description": "Enable a selected repository for immutable releases in an organization Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}",
+    "context": "PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}\nAdds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; repository_id (path) — The unique identifier of the repository."
+  },
+  {
+    "id": "orgs%2Fget-immutable-releases-settings",
+    "name": "Get immutable releases settings for an organization",
+    "description": "Get immutable releases settings for an organization Gets the immutable releases policy for repositories in an organization. GET /orgs/{org}/settings/immutable-releases",
+    "context": "GET /orgs/{org}/settings/immutable-releases\nGets the immutable releases policy for repositories in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "orgs%2Fget-immutable-releases-settings-repositories",
+    "name": "List selected repositories for immutable releases enforcement",
+    "description": "List selected repositories for immutable releases enforcement List all of the repositories that have been selected for immutable releases enforcement in an organization. GET /orgs/{org}/settings/immutable-releases/repositories",
+    "context": "GET /orgs/{org}/settings/immutable-releases/repositories\nList all of the repositories that have been selected for immutable releases enforcement in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.\nOptional: page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Fset-immutable-releases-settings",
+    "name": "Set immutable releases settings for an organization",
+    "description": "Set immutable releases settings for an organization Sets the immutable releases policy for repositories in an organization. PUT /orgs/{org}/settings/immutable-releases",
+    "context": "PUT /orgs/{org}/settings/immutable-releases\nSets the immutable releases policy for repositories in an organization. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  },
+  {
+    "id": "orgs%2Fset-immutable-releases-settings-repositories",
+    "name": "Set selected repositories for immutable releases enforcement",
+    "description": "Set selected repositories for immutable releases enforcement Replaces all repositories that have been selected for immutable releases enforcement in an organization. PUT /orgs/{org}/settings/immutable-releases/repositories",
+    "context": "PUT /orgs/{org}/settings/immutable-releases/repositories\nReplaces all repositories that have been selected for immutable releases enforcement in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`. OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; body (body)"
+  }
+]

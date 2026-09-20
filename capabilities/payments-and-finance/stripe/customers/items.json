@@ -1,0 +1,284 @@
+[
+  {
+    "id": "DeleteCustomersCustomer",
+    "name": "Delete a customer",
+    "description": "Delete a customer Permanently deletes a customer. DELETE /v1/customers/{customer}",
+    "context": "DELETE /v1/customers/{customer}\nPermanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerBankAccountsId",
+    "name": "Delete a customer source",
+    "description": "Delete a customer source Delete a specified source for a given customer. DELETE /v1/customers/{customer}/bank_accounts/{id}",
+    "context": "DELETE /v1/customers/{customer}/bank_accounts/{id}\nDelete a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerCardsId",
+    "name": "Delete a customer source",
+    "description": "Delete a customer source Delete a specified source for a given customer. DELETE /v1/customers/{customer}/cards/{id}",
+    "context": "DELETE /v1/customers/{customer}/cards/{id}\nDelete a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerDiscount",
+    "name": "Delete a customer discount",
+    "description": "Delete a customer discount Removes the currently applied discount on a customer. DELETE /v1/customers/{customer}/discount",
+    "context": "DELETE /v1/customers/{customer}/discount\nRemoves the currently applied discount on a customer.\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerSourcesId",
+    "name": "Delete a customer source",
+    "description": "Delete a customer source Delete a specified source for a given customer. DELETE /v1/customers/{customer}/sources/{id}",
+    "context": "DELETE /v1/customers/{customer}/sources/{id}\nDelete a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerSubscriptionsSubscriptionExposedId",
+    "name": "Cancel a subscription",
+    "description": "Cancel a subscription Cancels a customer’s subscription. DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}",
+    "context": "DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}\nCancels a customer’s subscription. If you set the at_period_end parameter to true , the subscription will remain active until the end of the period, at which point it will be canceled and not renewed. Otherwise, with the default false value, the subscription is terminated immediately. In either case, the customer will not be charged again for the subscription. Note, however, that any pending invoice items that you’ve created will still be charged for at the end of the period, unless manually deleted . If you’ve set the subscription to cancel at the end of the period, any pending prorations will also be left in place and collected at the end of the period. But if the subscription is set to cancel immediately, pending prorations will be removed. By default, upon subscription cancellation, Stripe will stop automatic collection of all finalized invoices for the customer. This is intended to prevent unexpected payment attempts after the customer has canceled a subscription. However, you can resume automatic collection of the invoices manually after subscription cancellation to have us proceed. Or, you could check for unpaid invoices before allowing the customer to cancel the subscription at all.\nRequired: customer (path); subscription_exposed_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+    "name": "Delete a customer discount",
+    "description": "Delete a customer discount Removes the currently applied discount on a customer. DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount",
+    "context": "DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount\nRemoves the currently applied discount on a customer.\nRequired: customer (path); subscription_exposed_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "DeleteCustomersCustomerTaxIdsId",
+    "name": "Delete a Customer tax ID",
+    "description": "Delete a Customer tax ID Deletes an existing tax_id object. DELETE /v1/customers/{customer}/tax_ids/{id}",
+    "context": "DELETE /v1/customers/{customer}/tax_ids/{id}\nDeletes an existing tax_id object.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "GetCustomers",
+    "name": "List all customers",
+    "description": "List all customers Returns a list of your customers. GET /v1/customers",
+    "context": "GET /v1/customers\nReturns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.\nOptional: created (query) — Only return customers that were created during the given date interval.; email (query) — A case-sensitive filter on the list based on the customer's `email` field. The value must be a string.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; test_clock (query) — Provides a list of customers that are associated with the specified test clock. The response will not include customers with test clocks if this parameter is not set.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomer",
+    "name": "Retrieve a customer",
+    "description": "Retrieve a customer Retrieves a Customer object. GET /v1/customers/{customer}",
+    "context": "GET /v1/customers/{customer}\nRetrieves a Customer object.\nRequired: customer (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerBalanceTransactions",
+    "name": "List customer balance transactions",
+    "description": "List customer balance transactions Returns a list of transactions that updated the customer’s balances . GET /v1/customers/{customer}/balance_transactions",
+    "context": "GET /v1/customers/{customer}/balance_transactions\nReturns a list of transactions that updated the customer’s balances .\nRequired: customer (path)\nOptional: created (query) — Only return customer balance transactions that were created during the given date interval.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; invoice (query) — Only return transactions that are related to the specified invoice.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerBalanceTransactionsTransaction",
+    "name": "Retrieve a customer balance transaction",
+    "description": "Retrieve a customer balance transaction Retrieves a specific customer balance transaction that updated the customer’s balances . GET /v1/customers/{customer}/balance_transactions/{transaction}",
+    "context": "GET /v1/customers/{customer}/balance_transactions/{transaction}\nRetrieves a specific customer balance transaction that updated the customer’s balances .\nRequired: customer (path); transaction (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerBankAccounts",
+    "name": "List all bank accounts",
+    "description": "List all bank accounts You can see a list of the bank accounts belonging to a Customer. GET /v1/customers/{customer}/bank_accounts",
+    "context": "GET /v1/customers/{customer}/bank_accounts\nYou can see a list of the bank accounts belonging to a Customer. Note that the 10 most recent sources are always available by default on the Customer. If you need more than those 10, you can use this API method and the limit and starting_after parameters to page through additional bank accounts.\nRequired: customer (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerBankAccountsId",
+    "name": "Retrieve a bank account",
+    "description": "Retrieve a bank account By default, you can see the 10 most recent sources stored on a Customer directly on the object, but you can also retrieve details about a specific bank account stored on the Stripe account. GET /v1/customers/{customer}/bank_accounts/{id}",
+    "context": "GET /v1/customers/{customer}/bank_accounts/{id}\nBy default, you can see the 10 most recent sources stored on a Customer directly on the object, but you can also retrieve details about a specific bank account stored on the Stripe account.\nRequired: customer (path); id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerCards",
+    "name": "List all cards",
+    "description": "List all cards You can see a list of the cards belonging to a customer. GET /v1/customers/{customer}/cards",
+    "context": "GET /v1/customers/{customer}/cards\nYou can see a list of the cards belonging to a customer. Note that the 10 most recent sources are always available on the Customer object. If you need more than those 10, you can use this API method and the limit and starting_after parameters to page through additional cards.\nRequired: customer (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerCardsId",
+    "name": "Retrieve a card",
+    "description": "Retrieve a card You can always see the 10 most recent cards directly on a customer; this method lets you retrieve details about a specific card stored on the customer. GET /v1/customers/{customer}/cards/{id}",
+    "context": "GET /v1/customers/{customer}/cards/{id}\nYou can always see the 10 most recent cards directly on a customer; this method lets you retrieve details about a specific card stored on the customer.\nRequired: customer (path); id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerCashBalance",
+    "name": "Retrieve a cash balance",
+    "description": "Retrieve a cash balance Retrieves a customer’s cash balance. GET /v1/customers/{customer}/cash_balance",
+    "context": "GET /v1/customers/{customer}/cash_balance\nRetrieves a customer’s cash balance.\nRequired: customer (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerCashBalanceTransactions",
+    "name": "List cash balance transactions",
+    "description": "List cash balance transactions Returns a list of transactions that modified the customer’s cash balance . GET /v1/customers/{customer}/cash_balance_transactions",
+    "context": "GET /v1/customers/{customer}/cash_balance_transactions\nReturns a list of transactions that modified the customer’s cash balance .\nRequired: customer (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerCashBalanceTransactionsTransaction",
+    "name": "Retrieve a cash balance transaction",
+    "description": "Retrieve a cash balance transaction Retrieves a specific cash balance transaction, which updated the customer’s cash balance . GET /v1/customers/{customer}/cash_balance_transactions/{transaction}",
+    "context": "GET /v1/customers/{customer}/cash_balance_transactions/{transaction}\nRetrieves a specific cash balance transaction, which updated the customer’s cash balance .\nRequired: customer (path); transaction (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerDiscount",
+    "name": "GetCustomersCustomerDiscount",
+    "description": "GetCustomersCustomerDiscount GET /v1/customers/{customer}/discount",
+    "context": "GET /v1/customers/{customer}/discount\nGetCustomersCustomerDiscount\nRequired: customer (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerPaymentMethods",
+    "name": "List a Customer's PaymentMethods",
+    "description": "List a Customer's PaymentMethods Returns a list of PaymentMethods for a given Customer GET /v1/customers/{customer}/payment_methods",
+    "context": "GET /v1/customers/{customer}/payment_methods\nReturns a list of PaymentMethods for a given Customer\nRequired: customer (path)\nOptional: allow_redisplay (query) — This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow.; ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; type (query) — An optional filter on the list, based on the object `type` field. Without the filter, the list includes all current and future payment method types. If your integration expects only one type of payment method in the response, make sure to provide a type value in the request.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerPaymentMethodsPaymentMethod",
+    "name": "Retrieve a Customer's PaymentMethod",
+    "description": "Retrieve a Customer's PaymentMethod Retrieves a PaymentMethod object for a given Customer. GET /v1/customers/{customer}/payment_methods/{payment_method}",
+    "context": "GET /v1/customers/{customer}/payment_methods/{payment_method}\nRetrieves a PaymentMethod object for a given Customer.\nRequired: customer (path); payment_method (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerSources",
+    "name": "List sources for a specified customer.",
+    "description": "List sources for a specified customer. GET /v1/customers/{customer}/sources",
+    "context": "GET /v1/customers/{customer}/sources\nList sources for a specified customer.\nRequired: customer (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; object (query) — Filter sources according to a particular object type.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerSourcesId",
+    "name": "Retrieve a specified source for a given customer.",
+    "description": "Retrieve a specified source for a given customer. GET /v1/customers/{customer}/sources/{id}",
+    "context": "GET /v1/customers/{customer}/sources/{id}\nRetrieve a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerSubscriptions",
+    "name": "List active subscriptions",
+    "description": "List active subscriptions You can see a list of the customer’s active subscriptions. GET /v1/customers/{customer}/subscriptions",
+    "context": "GET /v1/customers/{customer}/subscriptions\nYou can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.\nRequired: customer (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerSubscriptionsSubscriptionExposedId",
+    "name": "Retrieve a subscription",
+    "description": "Retrieve a subscription Retrieves the subscription with the given ID. GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}",
+    "context": "GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}\nRetrieves the subscription with the given ID.\nRequired: customer (path); subscription_exposed_id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+    "name": "GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount",
+    "description": "GetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount",
+    "context": "GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount\nGetCustomersCustomerSubscriptionsSubscriptionExposedIdDiscount\nRequired: customer (path); subscription_exposed_id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerTaxIds",
+    "name": "List all Customer tax IDs",
+    "description": "List all Customer tax IDs Returns a list of tax IDs for a customer. GET /v1/customers/{customer}/tax_ids",
+    "context": "GET /v1/customers/{customer}/tax_ids\nReturns a list of tax IDs for a customer.\nRequired: customer (path)\nOptional: ending_before (query) — A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.; expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; starting_after (query) — A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.; body (body)"
+  },
+  {
+    "id": "GetCustomersCustomerTaxIdsId",
+    "name": "Retrieve a Customer tax ID",
+    "description": "Retrieve a Customer tax ID Retrieves the tax_id object with the given identifier. GET /v1/customers/{customer}/tax_ids/{id}",
+    "context": "GET /v1/customers/{customer}/tax_ids/{id}\nRetrieves the tax_id object with the given identifier.\nRequired: customer (path); id (path)\nOptional: expand (query) — Specifies which fields in the response should be expanded.; body (body)"
+  },
+  {
+    "id": "GetCustomersSearch",
+    "name": "Search customers",
+    "description": "Search customers Search for customers you’ve previously created using Stripe’s Search Query Language . GET /v1/customers/search",
+    "context": "GET /v1/customers/search\nSearch for customers you’ve previously created using Stripe’s Search Query Language . Don’t use search in read-after-write flows where strict consistency is necessary. Under normal operating conditions, data is searchable in less than a minute. Occasionally, propagation of new or updated data can be up to an hour behind during outages. Search functionality is not available to merchants in India.\nRequired: query (query) — The search query string. See [search query language](https://docs.stripe.com/search#search-query-language) and the list of supported [query fields for customers](https://docs.stripe.com/search#query-fields-for-customers).\nOptional: expand (query) — Specifies which fields in the response should be expanded.; limit (query) — A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.; page (query) — A cursor for pagination across multiple pages of results. Don't include this parameter on the first call. Use the next_page value returned in a previous response to request subsequent results.; body (body)"
+  },
+  {
+    "id": "PostCustomers",
+    "name": "Create a customer",
+    "description": "Create a customer Creates a new customer object. POST /v1/customers",
+    "context": "POST /v1/customers\nCreates a new customer object.\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomer",
+    "name": "Update a customer",
+    "description": "Update a customer Updates the specified customer by setting the values of the parameters passed. POST /v1/customers/{customer}",
+    "context": "POST /v1/customers/{customer}\nUpdates the specified customer by setting the values of the parameters passed. Any parameters not provided are left unchanged. For example, if you pass the source parameter, that becomes the customer’s active source (such as a card) to be used for all charges in the future. When you update a customer to a new valid card source by passing the source parameter: for each of the customer’s current subscriptions, if the subscription bills automatically and is in the past_due state, then the latest open invoice for the subscription with automatic collection enabled is retried. This retry doesn’t count as an automatic retry, and doesn’t affect the next regularly scheduled payment for the invoice. Changing the default_source for a customer doesn’t trigger this behavior. This request accepts mostly the same arguments as the customer creation call.\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerBalanceTransactions",
+    "name": "Create a customer balance transaction",
+    "description": "Create a customer balance transaction Creates an immutable transaction that updates the customer’s credit balance . POST /v1/customers/{customer}/balance_transactions",
+    "context": "POST /v1/customers/{customer}/balance_transactions\nCreates an immutable transaction that updates the customer’s credit balance .\nRequired: customer (path); body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerBalanceTransactionsTransaction",
+    "name": "Update a customer credit balance transaction",
+    "description": "Update a customer credit balance transaction Most credit balance transaction fields are immutable, but you may update its description and metadata . POST /v1/customers/{customer}/balance_transactions/{transaction}",
+    "context": "POST /v1/customers/{customer}/balance_transactions/{transaction}\nMost credit balance transaction fields are immutable, but you may update its description and metadata .\nRequired: customer (path); transaction (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerBankAccounts",
+    "name": "Create a card",
+    "description": "Create a card When you create a new credit card, you must specify a customer or recipient on which to create it. POST /v1/customers/{customer}/bank_accounts",
+    "context": "POST /v1/customers/{customer}/bank_accounts\nWhen you create a new credit card, you must specify a customer or recipient on which to create it. If the card’s owner has no default card, then the new card will become the default. However, if the owner already has a default, then it will not change. To change the default, you should update the customer to have a new default_source .\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerBankAccountsId",
+    "name": "Update a card",
+    "description": "Update a card Update a specified source for a given customer. POST /v1/customers/{customer}/bank_accounts/{id}",
+    "context": "POST /v1/customers/{customer}/bank_accounts/{id}\nUpdate a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerBankAccountsIdVerify",
+    "name": "Verify a bank account",
+    "description": "Verify a bank account Verify a specified bank account for a given customer. POST /v1/customers/{customer}/bank_accounts/{id}/verify",
+    "context": "POST /v1/customers/{customer}/bank_accounts/{id}/verify\nVerify a specified bank account for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerCards",
+    "name": "Create a card",
+    "description": "Create a card When you create a new credit card, you must specify a customer or recipient on which to create it. POST /v1/customers/{customer}/cards",
+    "context": "POST /v1/customers/{customer}/cards\nWhen you create a new credit card, you must specify a customer or recipient on which to create it. If the card’s owner has no default card, then the new card will become the default. However, if the owner already has a default, then it will not change. To change the default, you should update the customer to have a new default_source .\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerCardsId",
+    "name": "Update a card",
+    "description": "Update a card Update a specified source for a given customer. POST /v1/customers/{customer}/cards/{id}",
+    "context": "POST /v1/customers/{customer}/cards/{id}\nUpdate a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerCashBalance",
+    "name": "Update a cash balance's settings",
+    "description": "Update a cash balance's settings Changes the settings on a customer’s cash balance. POST /v1/customers/{customer}/cash_balance",
+    "context": "POST /v1/customers/{customer}/cash_balance\nChanges the settings on a customer’s cash balance.\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerFundingInstructions",
+    "name": "Create or retrieve funding instructions for a customer cash balance",
+    "description": "Create or retrieve funding instructions for a customer cash balance Retrieve funding instructions for a customer cash balance. POST /v1/customers/{customer}/funding_instructions",
+    "context": "POST /v1/customers/{customer}/funding_instructions\nRetrieve funding instructions for a customer cash balance. If funding instructions do not yet exist for the customer, new funding instructions will be created. If funding instructions have already been created for a given customer, the same funding instructions will be retrieved. In other words, we will return the same funding instructions each time.\nRequired: customer (path); body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerSources",
+    "name": "Create a card",
+    "description": "Create a card When you create a new credit card, you must specify a customer or recipient on which to create it. POST /v1/customers/{customer}/sources",
+    "context": "POST /v1/customers/{customer}/sources\nWhen you create a new credit card, you must specify a customer or recipient on which to create it. If the card’s owner has no default card, then the new card will become the default. However, if the owner already has a default, then it will not change. To change the default, you should update the customer to have a new default_source .\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerSourcesId",
+    "name": "Update a card",
+    "description": "Update a card Update a specified source for a given customer. POST /v1/customers/{customer}/sources/{id}",
+    "context": "POST /v1/customers/{customer}/sources/{id}\nUpdate a specified source for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerSourcesIdVerify",
+    "name": "Verify a bank account",
+    "description": "Verify a bank account Verify a specified bank account for a given customer. POST /v1/customers/{customer}/sources/{id}/verify",
+    "context": "POST /v1/customers/{customer}/sources/{id}/verify\nVerify a specified bank account for a given customer.\nRequired: customer (path); id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerSubscriptions",
+    "name": "Create a subscription",
+    "description": "Create a subscription Creates a new subscription on an existing customer. POST /v1/customers/{customer}/subscriptions",
+    "context": "POST /v1/customers/{customer}/subscriptions\nCreates a new subscription on an existing customer.\nRequired: customer (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerSubscriptionsSubscriptionExposedId",
+    "name": "Update a subscription on a customer",
+    "description": "Update a subscription on a customer Updates an existing subscription on a customer to match the specified parameters. POST /v1/customers/{customer}/subscriptions/{subscription_exposed_id}",
+    "context": "POST /v1/customers/{customer}/subscriptions/{subscription_exposed_id}\nUpdates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the upcoming invoice endpoint.\nRequired: customer (path); subscription_exposed_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "PostCustomersCustomerTaxIds",
+    "name": "Create a Customer tax ID",
+    "description": "Create a Customer tax ID Creates a new tax_id object for a customer. POST /v1/customers/{customer}/tax_ids",
+    "context": "POST /v1/customers/{customer}/tax_ids\nCreates a new tax_id object for a customer.\nRequired: customer (path); body (body)"
+  }
+]

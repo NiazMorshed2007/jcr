@@ -1,0 +1,146 @@
+[
+  {
+    "id": "ConferenceRecordsGet",
+    "name": "Gets a conference record by conference ID.",
+    "description": "Gets a conference record by conference ID. Gets a conference record by conference ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a conference record by conference ID. For more information, see [Work with conferences](https://developers.google.com/workspace/meet/api/guides/conferences).\nRequired: name (path) — Required. Resource name of the conference.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsList",
+    "name": "Lists the conference records.",
+    "description": "Lists the conference records. Lists the conference records. GET /v2/conferenceRecords",
+    "context": "GET /v2/conferenceRecords\nLists the conference records. By default, ordered by start time and in descending order. For more information, see [Work with conferences](https://developers.google.com/workspace/meet/api/guides/conferences).\nOptional: pageSize (query) — Optional. Maximum number of conference records to return. The service might return fewer than this value. If unspecified, at most 25 conference records are returned. The maximum value is 100; values above 100 are coerced to 100. Maximum might change in the future.; filter (query) — Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form). The following are the filterable fields: * `space.meeting_code` * `space.name` * `start_time` * `end_time` For example, consider the following filters: * `space.name = \"spaces/NAME\"` * `space.meeting_code = \"abc-mnop-xyz\"` * `start_time>=\"2024-01-01T00:00:00.000Z\" AND start_time<=\"2024-01-02T00:00:00.000Z\"` * `end_time IS NULL`; pageToken (query) — Optional. Page token returned from previous List Call.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsParticipantsGet",
+    "name": "Gets a participant by participant ID.",
+    "description": "Gets a participant by participant ID. Gets a participant by participant ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a participant by participant ID. For more information, see [Work with participants](https://developers.google.com/workspace/meet/api/guides/participants).\nRequired: name (path) — Required. Resource name of the participant.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsParticipantsList",
+    "name": "Lists the participants in a conference record.",
+    "description": "Lists the participants in a conference record. Lists the participants in a conference record. GET /v2/{parent}/participants",
+    "context": "GET /v2/{parent}/participants\nLists the participants in a conference record. By default, ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted, this API defaults to `'participants/*, next_page_token'`. For more information, see [Work with participants](https://developers.google.com/workspace/meet/api/guides/participants).\nRequired: parent (path) — Required. Format: `conferenceRecords/{conference_record}`\nOptional: pageSize (query) — Maximum number of participants to return. The service might return fewer than this value. If unspecified, at most 100 participants are returned. The maximum value is 250; values above 250 are coerced to 250. Maximum might change in the future.; pageToken (query) — Page token returned from previous List Call.; filter (query) — Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form). The following are the filterable fields: * `earliest_start_time` * `latest_end_time` For example, `latest_end_time IS NULL` returns active participants in the conference.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsParticipantsParticipantSessionsGet",
+    "name": "Gets a participant session by participant session ID.",
+    "description": "Gets a participant session by participant session ID. Gets a participant session by participant session ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a participant session by participant session ID. For more information, see [Work with participants](https://developers.google.com/workspace/meet/api/guides/participants).\nRequired: name (path) — Required. Resource name of the participant.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsParticipantsParticipantSessionsList",
+    "name": "Lists the participant sessions of a participant in a conference record.",
+    "description": "Lists the participant sessions of a participant in a conference record. Lists the participant sessions of a participant in a conference record. GET /v2/{parent}/participantSessions",
+    "context": "GET /v2/{parent}/participantSessions\nLists the participant sessions of a participant in a conference record. By default, ordered by join time and in descending order. This API supports `fields` as standard parameters like every other API. However, when the `fields` request parameter is omitted this API defaults to `'participantsessions/*, next_page_token'`. For more information, see [Work with participants](https://developers.google.com/workspace/meet/api/guides/participants).\nRequired: parent (path) — Required. Format: `conferenceRecords/{conference_record}/participants/{participant}`\nOptional: pageToken (query) — Optional. Page token returned from previous List Call.; pageSize (query) — Optional. Maximum number of participant sessions to return. The service might return fewer than this value. If unspecified, at most 100 participants are returned. The maximum value is 250; values above 250 are coerced to 250. Maximum might change in the future.; filter (query) — Optional. User specified filtering condition in [EBNF format](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form). The following are the filterable fields: * `start_time` * `end_time` For example, `end_time IS NULL` returns active participant sessions in the conference record.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsRecordingsGet",
+    "name": "Gets a recording by recording ID.",
+    "description": "Gets a recording by recording ID. Gets a recording by recording ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a recording by recording ID. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts).\nRequired: name (path) — Required. Resource name of the recording.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsRecordingsList",
+    "name": "Lists the recording resources from the conference record.",
+    "description": "Lists the recording resources from the conference record. Lists the recording resources from the conference record. GET /v2/{parent}/recordings",
+    "context": "GET /v2/{parent}/recordings\nLists the recording resources from the conference record. By default, ordered by start time and in ascending order. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts).\nRequired: parent (path) — Required. Format: `conferenceRecords/{conference_record}`\nOptional: pageSize (query) — Maximum number of recordings to return. The service might return fewer than this value. If unspecified, at most 10 recordings are returned. The maximum value is 100; values above 100 are coerced to 100. Maximum might change in the future.; pageToken (query) — Page token returned from previous List Call.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsSmartNotesGet",
+    "name": "Gets smart notes by smart note ID.",
+    "description": "Gets smart notes by smart note ID. Gets smart notes by smart note ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets smart notes by smart note ID. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts).\nRequired: name (path) — Required. Resource name of the smart note. Format: conferenceRecords/{conference_record}/smartNotes/{smart_note}\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsSmartNotesList",
+    "name": "Lists the set of smart notes from the conference record.",
+    "description": "Lists the set of smart notes from the conference record. Lists the set of smart notes from the conference record. GET /v2/{parent}/smartNotes",
+    "context": "GET /v2/{parent}/smartNotes\nLists the set of smart notes from the conference record. By default, ordered by start time and in ascending order. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts).\nRequired: parent (path) — Required. Format: `conferenceRecords/{conference_record}`\nOptional: pageToken (query) — Optional. Page token returned from previous List Call.; pageSize (query) — Optional. Maximum number of smart notes to return. The service might return fewer than this value. If unspecified, at most 10 smart notes are returned. The maximum value is 100; values above 100 are coerced to 100. Maximum might change in the future.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsTranscriptsEntriesGet",
+    "name": "Gets a `TranscriptEntry` resource by entry ID.",
+    "description": "Gets a `TranscriptEntry` resource by entry ID. Gets a `TranscriptEntry` resource by entry ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a `TranscriptEntry` resource by entry ID. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts). Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when 1) we have interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified after generation.\nRequired: name (path) — Required. Resource name of the `TranscriptEntry`.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsTranscriptsEntriesList",
+    "name": "Lists the structured transcript entries per transcript.",
+    "description": "Lists the structured transcript entries per transcript. Lists the structured transcript entries per transcript. GET /v2/{parent}/entries",
+    "context": "GET /v2/{parent}/entries\nLists the structured transcript entries per transcript. By default, ordered by start time and in ascending order. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts). Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when 1) we have interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified after generation.\nRequired: parent (path) — Required. Format: `conferenceRecords/{conference_record}/transcripts/{transcript}`\nOptional: pageToken (query) — Page token returned from previous List Call.; pageSize (query) — Maximum number of entries to return. The service might return fewer than this value. If unspecified, at most 10 entries are returned. The maximum value is 100; values above 100 are coerced to 100. Maximum might change in the future.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsTranscriptsGet",
+    "name": "Gets a transcript by transcript ID.",
+    "description": "Gets a transcript by transcript ID. Gets a transcript by transcript ID. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a transcript by transcript ID. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts).\nRequired: name (path) — Required. Resource name of the transcript.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "ConferenceRecordsTranscriptsList",
+    "name": "Lists the set of transcripts from the conference record.",
+    "description": "Lists the set of transcripts from the conference record. Lists the set of transcripts from the conference record. GET /v2/{parent}/transcripts",
+    "context": "GET /v2/{parent}/transcripts\nLists the set of transcripts from the conference record. By default, ordered by start time and in ascending order. For more information, see [Work with artifacts](https://developers.google.com/workspace/meet/api/guides/artifacts).\nRequired: parent (path) — Required. Format: `conferenceRecords/{conference_record}`\nOptional: pageToken (query) — Page token returned from previous List Call.; pageSize (query) — Maximum number of transcripts to return. The service might return fewer than this value. If unspecified, at most 10 transcripts are returned. The maximum value is 100; values above 100 are coerced to 100. Maximum might change in the future.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesCreate",
+    "name": "Creates a space.",
+    "description": "Creates a space. Creates a space. POST /v2/spaces",
+    "context": "POST /v2/spaces\nCreates a space. For more information, see [Manage meeting spaces](https://developers.google.com/workspace/meet/api/guides/manage-meeting-spaces).\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesEndActiveConference",
+    "name": "Ends an active conference (if there's one).",
+    "description": "Ends an active conference (if there's one). Ends an active conference (if there's one). POST /v2/{name}:endActiveConference",
+    "context": "POST /v2/{name}:endActiveConference\nEnds an active conference (if there's one). For more information, see [Manage meeting spaces](https://developers.google.com/workspace/meet/api/guides/manage-meeting-spaces).\nRequired: name (path) — Required. Resource name of the space. Format: `spaces/{space}`. `{space}` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`. For more information, see [How Meet identifies a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties.; body (body)"
+  },
+  {
+    "id": "SpacesGet",
+    "name": "Gets details about a meeting space.",
+    "description": "Gets details about a meeting space. Gets details about a meeting space. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets details about a meeting space. For more information, see [Manage meeting spaces](https://developers.google.com/workspace/meet/api/guides/manage-meeting-spaces). For an example, see [Get a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).\nRequired: name (path) — Required. Resource name of the space. Format: `spaces/{space}` or `spaces/{meetingCode}`. `{space}` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`. `{meetingCode}` is an alias for the space. It's a typeable, unique character string and is non-case sensitive. For example, `abc-mnop-xyz`. The maximum length is 128 characters. A `meetingCode` shouldn't be stored long term as it can become dissociated from a meeting space and can be reused for different meeting spaces in the future. Generally, a `meetingCode` expires 365 days after last use. For more information, see [Learn about meeting codes in Google Meet](https://support.google.com/meet/answer/10710509). For more information, see [How Meet identifies a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesMembersBatchUpdate",
+    "name": "Updates members of one space within a batch.",
+    "description": "Updates members of one space within a batch. Updates members of one space within a batch. POST /v2/{parent}/members:batchUpdate",
+    "context": "POST /v2/{parent}/members:batchUpdate\nUpdates members of one space within a batch. For more information, see [Manage meeting space members](https://developers.google.com/workspace/meet/api/guides/meeting-space-members).\nRequired: parent (path) — Required. The parent resource shared by all Members being updated. Format: spaces/{space}; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesMembersCreate",
+    "name": "Creates a member.",
+    "description": "Creates a member. Creates a member. POST /v2/{parent}/members",
+    "context": "POST /v2/{parent}/members\nCreates a member. For more information, see [Manage meeting space members](https://developers.google.com/workspace/meet/api/guides/meeting-space-members). This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted, this API response will default to \"name,email,role,user\".\nRequired: parent (path) — Required. Format: spaces/{space}; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesMembersDelete",
+    "name": "Deletes the member who was previously assigned roles in the space.",
+    "description": "Deletes the member who was previously assigned roles in the space. Deletes the member who was previously assigned roles in the space. DELETE /v2/{name}",
+    "context": "DELETE /v2/{name}\nDeletes the member who was previously assigned roles in the space. For more information, see [Manage meeting space members](https://developers.google.com/workspace/meet/api/guides/meeting-space-members).\nRequired: name (path) — Required. Format: “spaces/{space}/members/{member}”\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesMembersGet",
+    "name": "Gets a member.",
+    "description": "Gets a member. Gets a member. GET /v2/{name}",
+    "context": "GET /v2/{name}\nGets a member. For more information, see [Manage meeting space members](https://developers.google.com/workspace/meet/api/guides/meeting-space-members). This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted, this API response will default to \"name,email,role,user\".\nRequired: name (path) — Required. Format: “spaces/{space}/members/{member}”\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesMembersList",
+    "name": "Lists members.",
+    "description": "Lists members. Lists members. GET /v2/{parent}/members",
+    "context": "GET /v2/{parent}/members\nLists members. For more information, see [Manage meeting space members](https://developers.google.com/workspace/meet/api/guides/meeting-space-members). This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted this API response will default to \"name,email,role,user\".\nRequired: parent (path) — Required. Format: spaces/{space}\nOptional: pageSize (query) — Optional. Maximum number of members to return. The service might return fewer than this value. If unspecified or set to 0, at most 250 members are returned. The maximum value is 500; values above 500 are coerced to 500. Maximum might change in the future.; pageToken (query) — Optional. Page token returned from previous List Call.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesMembersPatch",
+    "name": "Updates a member.",
+    "description": "Updates a member. Updates a member. PATCH /v2/{name}",
+    "context": "PATCH /v2/{name}\nUpdates a member. For more information, see [Manage meeting space members](https://developers.google.com/workspace/meet/api/guides/meeting-space-members).\nRequired: name (path) — Identifier. Resource name of the member. Format: spaces/{space}/members/{member}; body (body)\nOptional: updateMask (query) — Optional. Field mask used to specify the fields to be updated in the member. If update_mask isn't provided(not set, set with empty paths, or only has \"\" as paths), it defaults to update all fields provided with values in the request. Using \"*\" as update_mask will update all fields, including deleting fields not set in the request. In case of BatchUpdate, it must be absent or the same as the update_mask in BatchUpdateMembersRequest when UpdateMemberRequest is built as a child request of BatchUpdateMembersRequest.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "SpacesPatch",
+    "name": "Updates details about a meeting space.",
+    "description": "Updates details about a meeting space. Updates details about a meeting space. PATCH /v2/{name}",
+    "context": "PATCH /v2/{name}\nUpdates details about a meeting space. For more information, see [Manage meeting spaces](https://developers.google.com/workspace/meet/api/guides/manage-meeting-spaces).\nRequired: name (path) — Immutable. Resource name of the space. Format: `spaces/{space}`. `{space}` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`. For more information, see [How Meet identifies a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).; body (body)\nOptional: updateMask (query) — Optional. Field mask used to specify the fields to be updated in the space. If update_mask isn't provided(not set, set with empty paths, or only has \"\" as paths), it defaults to update all fields provided with values in the request. Using \"*\" as update_mask will update all fields, including deleting fields not set in the request.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "radar-get-reports-dataset-download",
+    "name": "Get dataset CSV stream",
+    "description": "Get dataset CSV stream Retrieves the CSV content of a given dataset by alias or ID. GET /client/v4/radar/datasets/{alias}",
+    "context": "GET /client/v4/radar/datasets/{alias}\nRetrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.\nRequired: alias (path) — Dataset alias or ID."
+  },
+  {
+    "id": "radar-get-reports-datasets",
+    "name": "List datasets",
+    "description": "List datasets Retrieves a list of datasets. GET /client/v4/radar/datasets",
+    "context": "GET /client/v4/radar/datasets\nRetrieves a list of datasets.\nOptional: limit (query) — Limits the number of objects returned in the response.; offset (query) — Skips the specified number of objects before fetching the results.; datasetType (query) — Filters results by dataset type.; date (query) — Filters results by the specified date.; format (query) — Format in which results will be returned."
+  },
+  {
+    "id": "radar-post-reports-dataset-download-url",
+    "name": "Get dataset download URL",
+    "description": "Get dataset download URL Retrieves an URL to download a single dataset. POST /client/v4/radar/datasets/download",
+    "context": "POST /client/v4/radar/datasets/download\nRetrieves an URL to download a single dataset.\nOptional: format (query) — Format in which results will be returned.; body (body)"
+  }
+]

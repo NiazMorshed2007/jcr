@@ -1,0 +1,32 @@
+[
+  {
+    "id": "prompts_create",
+    "name": "Create a new version for the prompt with the given `name`",
+    "description": "Create a new version for the prompt with the given `name` POST /api/public/v2/prompts",
+    "context": "POST /api/public/v2/prompts\nCreate a new version for the prompt with the given `name`\nRequired: body (body)"
+  },
+  {
+    "id": "prompts_delete",
+    "name": "Delete prompt versions",
+    "description": "Delete prompt versions Delete prompt versions. DELETE /api/public/v2/prompts/{promptName}",
+    "context": "DELETE /api/public/v2/prompts/{promptName}\nDelete prompt versions. If neither version nor label is specified, all versions of the prompt are deleted.\nRequired: promptName (path) — The name of the prompt\nOptional: label (query) — Optional label to filter deletion. If specified, deletes all prompt versions that have this label.; version (query) — Optional version to filter deletion. If specified, deletes only this specific version of the prompt."
+  },
+  {
+    "id": "prompts_get",
+    "name": "Get a prompt",
+    "description": "Get a prompt GET /api/public/v2/prompts/{promptName}",
+    "context": "GET /api/public/v2/prompts/{promptName}\nGet a prompt\nRequired: promptName (path) — The name of the prompt. If the prompt is in a folder (e.g., \"folder/subfolder/prompt-name\"), the folder path must be URL encoded.\nOptional: version (query) — Version of the prompt to be retrieved.; label (query) — Label of the prompt to be retrieved. Defaults to \"production\" if no label or version is set.; resolve (query) — Resolve prompt dependencies before returning the prompt. Defaults to `true`. Set to `false` to return the raw stored prompt with dependency tags intact. This bypasses prompt caching and is intended for debugging or one-off jobs, not production runtime fetches."
+  },
+  {
+    "id": "prompts_list",
+    "name": "Get a list of prompt names with versions and labels",
+    "description": "Get a list of prompt names with versions and labels GET /api/public/v2/prompts",
+    "context": "GET /api/public/v2/prompts\nGet a list of prompt names with versions and labels\nOptional: name (query); label (query); tag (query); page (query) — page number, starts at 1; limit (query) — limit of items per page; fromUpdatedAt (query) — Optional filter to only include prompt versions created/updated on or after a certain datetime (ISO 8601); toUpdatedAt (query) — Optional filter to only include prompt versions created/updated before a certain datetime (ISO 8601)"
+  },
+  {
+    "id": "promptVersion_update",
+    "name": "Update labels for a specific prompt version",
+    "description": "Update labels for a specific prompt version PATCH /api/public/v2/prompts/{name}/versions/{version}",
+    "context": "PATCH /api/public/v2/prompts/{name}/versions/{version}\nUpdate labels for a specific prompt version\nRequired: name (path) — The name of the prompt. If the prompt is in a folder (e.g., \"folder/subfolder/prompt-name\"), the folder path must be URL encoded.; version (path) — Version of the prompt to update; body (body)"
+  }
+]

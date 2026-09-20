@@ -1,0 +1,98 @@
+[
+  {
+    "id": "GroupsAliasesDelete",
+    "name": "Removes an alias.",
+    "description": "Removes an alias. DELETE /admin/directory/v1/groups/{groupKey}/aliases/{alias}",
+    "context": "DELETE /admin/directory/v1/groups/{groupKey}/aliases/{alias}\nRemoves an alias.\nRequired: alias (path) — The alias to be removed; groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsAliasesInsert",
+    "name": "Adds an alias for the group.",
+    "description": "Adds an alias for the group. POST /admin/directory/v1/groups/{groupKey}/aliases",
+    "context": "POST /admin/directory/v1/groups/{groupKey}/aliases\nAdds an alias for the group.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsAliasesList",
+    "name": "Lists all aliases for a group.",
+    "description": "Lists all aliases for a group. GET /admin/directory/v1/groups/{groupKey}/aliases",
+    "context": "GET /admin/directory/v1/groups/{groupKey}/aliases\nLists all aliases for a group.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsDelete",
+    "name": "Deletes a group.",
+    "description": "Deletes a group. DELETE /admin/directory/v1/groups/{groupKey}",
+    "context": "DELETE /admin/directory/v1/groups/{groupKey}\nDeletes a group.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsGet",
+    "name": "Retrieves a group's properties.",
+    "description": "Retrieves a group's properties. GET /admin/directory/v1/groups/{groupKey}",
+    "context": "GET /admin/directory/v1/groups/{groupKey}\nRetrieves a group's properties.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsInsert",
+    "name": "Creates a group.",
+    "description": "Creates a group. POST /admin/directory/v1/groups",
+    "context": "POST /admin/directory/v1/groups\nCreates a group.\nRequired: body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsList",
+    "name": "Retrieves all groups of a domain or of a user given a userKey (paginated).",
+    "description": "Retrieves all groups of a domain or of a user given a userKey (paginated). GET /admin/directory/v1/groups",
+    "context": "GET /admin/directory/v1/groups\nRetrieves all groups of a domain or of a user given a userKey (paginated).\nOptional: domain (query) — The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.; pageToken (query) — Token to specify next page in the list; maxResults (query) — Maximum number of results to return. Max allowed value is 200.; userKey (query) — Email or immutable ID of the user if only those groups are to be listed, the given user is a member of. If it's an ID, it should match with the ID of the user object. Cannot be used with the `customer` parameter.; sortOrder (query) — Whether to return results in ascending or descending order. Only of use when orderBy is also used; orderBy (query) — Column to use for sorting results; customer (query) — The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](https://developers.google.com/workspace/admin/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.; query (query) — Query string search. Contains one or more search clauses, each with a field, operator, and value. For complete documentation, go to [Search for groups](https://developers.google.com/workspace/admin/directory/v1/guides/search-groups).; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsPatch",
+    "name": "Updates a group's properties.",
+    "description": "Updates a group's properties. Updates a group's properties. PATCH /admin/directory/v1/groups/{groupKey}",
+    "context": "PATCH /admin/directory/v1/groups/{groupKey}\nUpdates a group's properties. This method supports [patch semantics](https://developers.google.com/workspace/admin/directory/v1/guides/performance#patch).\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "GroupsUpdate",
+    "name": "Updates a group's properties.",
+    "description": "Updates a group's properties. PUT /admin/directory/v1/groups/{groupKey}",
+    "context": "PUT /admin/directory/v1/groups/{groupKey}\nUpdates a group's properties.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersDelete",
+    "name": "Removes a member from a group.",
+    "description": "Removes a member from a group. DELETE /admin/directory/v1/groups/{groupKey}/members/{memberKey}",
+    "context": "DELETE /admin/directory/v1/groups/{groupKey}/members/{memberKey}\nRemoves a member from a group.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; memberKey (path) — Identifies the group member in the API request. A group member can be a user or another group. The value can be the member's (group or user) primary email address, alias, or unique ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersGet",
+    "name": "Retrieves a group member's properties.",
+    "description": "Retrieves a group member's properties. GET /admin/directory/v1/groups/{groupKey}/members/{memberKey}",
+    "context": "GET /admin/directory/v1/groups/{groupKey}/members/{memberKey}\nRetrieves a group member's properties.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; memberKey (path) — Identifies the group member in the API request. A group member can be a user or another group. The value can be the member's (group or user) primary email address, alias, or unique ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersHasMember",
+    "name": "Checks whether the given user is a member of the group.",
+    "description": "Checks whether the given user is a member of the group. Checks whether the given user is a member of the group. GET /admin/directory/v1/groups/{groupKey}/hasMember/{memberKey}",
+    "context": "GET /admin/directory/v1/groups/{groupKey}/hasMember/{memberKey}\nChecks whether the given user is a member of the group. Membership can be direct or nested, but if nested, the `memberKey` and `groupKey` must be entities in the same domain or an `Invalid input` error is returned. To check for nested memberships that include entities outside of the group's domain, use the [`checkTransitiveMembership()`](https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/checkTransitiveMembership) method in the Cloud Identity Groups API.\nRequired: memberKey (path) — Identifies the user member in the API request. The value can be the user's primary email address, alias, or unique ID.; groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersInsert",
+    "name": "Adds a user to the specified group.",
+    "description": "Adds a user to the specified group. POST /admin/directory/v1/groups/{groupKey}/members",
+    "context": "POST /admin/directory/v1/groups/{groupKey}/members\nAdds a user to the specified group.\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersList",
+    "name": "Retrieves a paginated list of all members in a group.",
+    "description": "Retrieves a paginated list of all members in a group. Retrieves a paginated list of all members in a group. GET /admin/directory/v1/groups/{groupKey}/members",
+    "context": "GET /admin/directory/v1/groups/{groupKey}/members\nRetrieves a paginated list of all members in a group. This method times out after 60 minutes. For more information, see [Troubleshoot error codes](https://developers.google.com/workspace/admin/directory/v1/guides/troubleshoot-error-codes).\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.\nOptional: roles (query) — The `roles` query parameter allows you to retrieve group members by role. Allowed values are `OWNER`, `MANAGER`, and `MEMBER`.; maxResults (query) — Maximum number of results to return. Max allowed value is 200.; pageToken (query) — Token to specify next page in the list.; includeDerivedMembership (query) — Whether to list indirect memberships. Default: false.; fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersPatch",
+    "name": "Updates the membership properties of a user in the specified group.",
+    "description": "Updates the membership properties of a user in the specified group. Updates the membership properties of a user in the specified group. PATCH /admin/directory/v1/groups/{groupKey}/members/{memberKey}",
+    "context": "PATCH /admin/directory/v1/groups/{groupKey}/members/{memberKey}\nUpdates the membership properties of a user in the specified group. This method supports [patch semantics](https://developers.google.com/workspace/admin/directory/v1/guides/performance#patch).\nRequired: groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; memberKey (path) — Identifies the group member in the API request. A group member can be a user or another group. The value can be the member's (group or user) primary email address, alias, or unique ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  },
+  {
+    "id": "MembersUpdate",
+    "name": "Updates the membership of a user in the specified group.",
+    "description": "Updates the membership of a user in the specified group. PUT /admin/directory/v1/groups/{groupKey}/members/{memberKey}",
+    "context": "PUT /admin/directory/v1/groups/{groupKey}/members/{memberKey}\nUpdates the membership of a user in the specified group.\nRequired: memberKey (path) — Identifies the group member in the API request. A group member can be a user or another group. The value can be the member's (group or user) primary email address, alias, or unique ID.; groupKey (path) — Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.; body (body)\nOptional: fields (query) — Field mask limiting which response fields are returned, e.g. sheets.properties."
+  }
+]

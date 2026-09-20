@@ -1,0 +1,62 @@
+[
+  {
+    "id": "orgs%2Fassign-team-to-org-role",
+    "name": "Assign an organization role to a team",
+    "description": "Assign an organization role to a team Assigns an organization role to a team in an organization. PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+    "context": "PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}\nAssigns an organization role to a team in an organization. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; team_slug (path) — The slug of the team name.; role_id (path) — The unique identifier of the role."
+  },
+  {
+    "id": "orgs%2Fassign-user-to-org-role",
+    "name": "Assign an organization role to a user",
+    "description": "Assign an organization role to a user Assigns an organization role to a member of an organization. PUT /orgs/{org}/organization-roles/users/{username}/{role_id}",
+    "context": "PUT /orgs/{org}/organization-roles/users/{username}/{role_id}\nAssigns an organization role to a member of an organization. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.; role_id (path) — The unique identifier of the role."
+  },
+  {
+    "id": "orgs%2Fget-org-role",
+    "name": "Get an organization role",
+    "description": "Get an organization role Gets an organization role that is available to this organization. GET /orgs/{org}/organization-roles/{role_id}",
+    "context": "GET /orgs/{org}/organization-roles/{role_id}\nGets an organization role that is available to this organization. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - An organization member (or a member of a team) assigned a custom organization role that includes the **View organization roles** (`read_organization_custom_org_role`) permission. For more information, see \"[Permissions for organization access](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles#permissions-for-organization-access).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; role_id (path) — The unique identifier of the role."
+  },
+  {
+    "id": "orgs%2Flist-org-role-teams",
+    "name": "List teams that are assigned to an organization role",
+    "description": "List teams that are assigned to an organization role Lists the teams that are assigned to an organization role. GET /orgs/{org}/organization-roles/{role_id}/teams",
+    "context": "GET /orgs/{org}/organization-roles/{role_id}/teams\nLists the teams that are assigned to an organization role. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" To use this endpoint, you must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; role_id (path) — The unique identifier of the role.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Flist-org-role-users",
+    "name": "List users that are assigned to an organization role",
+    "description": "List users that are assigned to an organization role Lists organization members that are assigned to an organization role. GET /orgs/{org}/organization-roles/{role_id}/users",
+    "context": "GET /orgs/{org}/organization-roles/{role_id}/users\nLists organization members that are assigned to an organization role. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" To use this endpoint, you must be an administrator for the organization. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; role_id (path) — The unique identifier of the role.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "orgs%2Flist-org-roles",
+    "name": "Get all organization roles for an organization",
+    "description": "Get all organization roles for an organization Lists the organization roles available in this organization. GET /orgs/{org}/organization-roles",
+    "context": "GET /orgs/{org}/organization-roles\nLists the organization roles available in this organization. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" To use this endpoint, the authenticated user must be one of: - An administrator for the organization. - An organization member (or a member of a team) assigned a custom organization role that includes the **View organization roles** (`read_organization_custom_org_role`) permission. For more information, see \"[Permissions for organization access](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles#permissions-for-organization-access).\" OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "orgs%2Frevoke-all-org-roles-team",
+    "name": "Remove all organization roles for a team",
+    "description": "Remove all organization roles for a team Removes all assigned organization roles from a team. DELETE /orgs/{org}/organization-roles/teams/{team_slug}",
+    "context": "DELETE /orgs/{org}/organization-roles/teams/{team_slug}\nRemoves all assigned organization roles from a team. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; team_slug (path) — The slug of the team name."
+  },
+  {
+    "id": "orgs%2Frevoke-all-org-roles-user",
+    "name": "Remove all organization roles for a user",
+    "description": "Remove all organization roles for a user Revokes all assigned organization roles from a user. DELETE /orgs/{org}/organization-roles/users/{username}",
+    "context": "DELETE /orgs/{org}/organization-roles/users/{username}\nRevokes all assigned organization roles from a user. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "orgs%2Frevoke-org-role-team",
+    "name": "Remove an organization role from a team",
+    "description": "Remove an organization role from a team Removes an organization role from a team. DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+    "context": "DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}\nRemoves an organization role from a team. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; team_slug (path) — The slug of the team name.; role_id (path) — The unique identifier of the role."
+  },
+  {
+    "id": "orgs%2Frevoke-org-role-user",
+    "name": "Remove an organization role from a user",
+    "description": "Remove an organization role from a user Remove an organization role from a user. DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}",
+    "context": "DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}\nRemove an organization role from a user. For more information on organization roles, see \"[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).\" The authenticated user must be an administrator for the organization to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.\nRequired: org (path) — The organization name. The name is not case sensitive.; username (path) — The handle for the GitHub user account.; role_id (path) — The unique identifier of the role."
+  }
+]

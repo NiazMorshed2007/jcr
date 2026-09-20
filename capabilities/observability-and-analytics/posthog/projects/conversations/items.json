@@ -1,0 +1,200 @@
+[
+  {
+    "id": "conversations_ai_reply_playbook_retrieve",
+    "name": "Inherited support-reply playbook for this project, plus the team's custom addendum if any.",
+    "description": "Inherited support-reply playbook for this project, plus the team's custom addendum if any. GET /api/projects/{project_id}/conversations/ai_reply_playbook/",
+    "context": "GET /api/projects/{project_id}/conversations/ai_reply_playbook/\nInherited support-reply playbook for this project, plus the team's custom addendum if any.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_append_message_create",
+    "name": "Appends a message to an existing conversation without triggering AI processing",
+    "description": "Appends a message to an existing conversation without triggering AI processing Appends a message to an existing conversation without triggering AI processing. POST /api/projects/{project_id}/conversations/{conversation}/append_message/",
+    "context": "POST /api/projects/{project_id}/conversations/{conversation}/append_message/\nAppends a message to an existing conversation without triggering AI processing. This is used for client-side generated messages that need to be persisted (e.g., support ticket confirmation messages).\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_cancel_partial_update",
+    "name": "Cancel the conversation's in-progress LangGraph run.",
+    "description": "Cancel the conversation's in-progress LangGraph run. PATCH /api/projects/{project_id}/conversations/{conversation}/cancel/",
+    "context": "PATCH /api/projects/{project_id}/conversations/{conversation}/cancel/\nCancel the conversation's in-progress LangGraph run.\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_create",
+    "name": "Unified endpoint that handles both conversation creation and streaming",
+    "description": "Unified endpoint that handles both conversation creation and streaming Unified endpoint that handles both conversation creation and streaming. POST /api/projects/{project_id}/conversations/",
+    "context": "POST /api/projects/{project_id}/conversations/\nUnified endpoint that handles both conversation creation and streaming. - If message is provided: Start new conversation processing - If no message: Stream from existing conversation\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_destroy",
+    "name": "Delete a conversation.",
+    "description": "Delete a conversation. DELETE /api/projects/{project_id}/conversations/{conversation}/",
+    "context": "DELETE /api/projects/{project_id}/conversations/{conversation}/\nDelete a conversation.\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_list",
+    "name": "conversations_list",
+    "description": "conversations_list GET /api/projects/{project_id}/conversations/",
+    "context": "GET /api/projects/{project_id}/conversations/\nconversations_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "conversations_open_create",
+    "name": "Create-or-resume a sandbox conversation — the single sandbox session opener",
+    "description": "Create-or-resume a sandbox conversation — the single sandbox session opener Create-or-resume a sandbox conversation — the single sandbox session opener. POST /api/projects/{project_id}/conversations/{conversation}/open/",
+    "context": "POST /api/projects/{project_id}/conversations/{conversation}/open/\nCreate-or-resume a sandbox conversation — the single sandbox session opener. With `content`, processes the turn (first message, in-progress follow-up, or terminal resume); without `content`, warms a sandbox that idles awaiting the first message. Returns the `(task, run)` handle the frontend opens SSE against. The conversation row is created on first use from the URL id.\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_queue_clear_create",
+    "name": "conversations_queue_clear_create",
+    "description": "conversations_queue_clear_create POST /api/projects/{project_id}/conversations/{conversation}/queue/clear/",
+    "context": "POST /api/projects/{project_id}/conversations/{conversation}/queue/clear/\nconversations_queue_clear_create\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_queue_create",
+    "name": "conversations_queue_create",
+    "description": "conversations_queue_create POST /api/projects/{project_id}/conversations/{conversation}/queue/",
+    "context": "POST /api/projects/{project_id}/conversations/{conversation}/queue/\nconversations_queue_create\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_queue_destroy",
+    "name": "conversations_queue_destroy",
+    "description": "conversations_queue_destroy DELETE /api/projects/{project_id}/conversations/{conversation}/queue/{queue_id}/",
+    "context": "DELETE /api/projects/{project_id}/conversations/{conversation}/queue/{queue_id}/\nconversations_queue_destroy\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; queue_id (path)"
+  },
+  {
+    "id": "conversations_queue_partial_update",
+    "name": "conversations_queue_partial_update",
+    "description": "conversations_queue_partial_update PATCH /api/projects/{project_id}/conversations/{conversation}/queue/{queue_id}/",
+    "context": "PATCH /api/projects/{project_id}/conversations/{conversation}/queue/{queue_id}/\nconversations_queue_partial_update\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; queue_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_queue_retrieve",
+    "name": "conversations_queue_retrieve",
+    "description": "conversations_queue_retrieve GET /api/projects/{project_id}/conversations/{conversation}/queue/",
+    "context": "GET /api/projects/{project_id}/conversations/{conversation}/queue/\nconversations_queue_retrieve\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_retrieve",
+    "name": "conversations_retrieve",
+    "description": "conversations_retrieve GET /api/projects/{project_id}/conversations/{conversation}/",
+    "context": "GET /api/projects/{project_id}/conversations/{conversation}/\nconversations_retrieve\nRequired: conversation (path) — A UUID string identifying this conversation.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_tickets_ai_feedback_create",
+    "name": "Record reviewer feedback on an AI reply, captured to the internal analytics project.",
+    "description": "Record reviewer feedback on an AI reply, captured to the internal analytics project. POST /api/projects/{project_id}/conversations/tickets/{id}/ai_feedback/",
+    "context": "POST /api/projects/{project_id}/conversations/tickets/{id}/ai_feedback/\nRecord reviewer feedback on an AI reply, captured to the internal analytics project.\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_tickets_bulk_update_status_create",
+    "name": "Update the status of multiple tickets in a single request",
+    "description": "Update the status of multiple tickets in a single request Update the status of multiple tickets in a single request. POST /api/projects/{project_id}/conversations/tickets/bulk_update_status/",
+    "context": "POST /api/projects/{project_id}/conversations/tickets/bulk_update_status/\nUpdate the status of multiple tickets in a single request. Only tickets belonging to the current team are affected; other-team UUIDs are silently ignored. Tickets the caller lacks editor-level access to (denied or view-only via object-level access control) are silently skipped too, the same way single-ticket updates enforce object-level access via get_object(). Tickets already in the requested status are skipped.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_tickets_bulk_update_tags_create",
+    "name": "Bulk update tags on multiple objects",
+    "description": "Bulk update tags on multiple objects Bulk update tags on multiple objects. POST /api/projects/{project_id}/conversations/tickets/bulk_update_tags/",
+    "context": "POST /api/projects/{project_id}/conversations/tickets/bulk_update_tags/\nBulk update tags on multiple objects. PAT access: this action has no ``required_scopes=`` on the decorator — inheriting viewsets must add ``\"bulk_update_tags\"`` to their ``scope_object_write_actions`` list to accept personal API keys. Without that opt-in, ``APIScopePermission`` rejects PAT requests with \"This action does not support personal API key access\". Done per-viewset so granting `` :write`` for one resource doesn't leak access to sibling resources that share this mixin. Accepts: - {\"ids\": [...], \"action\": \"add\"|\"remove\"|\"set\", \"tags\": [\"tag1\", \"tag2\"]} Actions: - \"add\": Add tags to existing tags on each object - \"remove\": Remove specific tags from each object - \"set\": Replace all tags on each object with the provided list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_tickets_compose_create",
+    "name": "Create a new outbound ticket and send the first message to the customer",
+    "description": "Create a new outbound ticket and send the first message to the customer Create a new outbound ticket and send the first message to the customer. POST /api/projects/{project_id}/conversations/tickets/compose/",
+    "context": "POST /api/projects/{project_id}/conversations/tickets/compose/\nCreate a new outbound ticket and send the first message to the customer. Idempotent within a short window: an identical compose retried while the first is still in flight returns 409, and one retried after it committed returns the same ticket with a 200. Only a genuinely new request creates a ticket and emails the customer.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_tickets_destroy",
+    "name": "conversations_tickets_destroy",
+    "description": "conversations_tickets_destroy DELETE /api/projects/{project_id}/conversations/tickets/{id}/",
+    "context": "DELETE /api/projects/{project_id}/conversations/tickets/{id}/\nconversations_tickets_destroy\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_tickets_list",
+    "name": "List tickets with person data attached.",
+    "description": "List tickets with person data attached. GET /api/projects/{project_id}/conversations/tickets/",
+    "context": "GET /api/projects/{project_id}/conversations/tickets/\nList tickets with person data attached.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: ai_triage_result (query) — Filter by AI triage outcome. Accepts a single value or a comma-separated list. Valid values: `persisted`, `suggested`, `escalated_with_findings`, `escalated_with_best`, `escalated_no_reply`, `skipped_unactionable`, `blocked_unsafe`, `blocked_unsafe_reply`, `clarified`, `suggested_clarification`, `in_progress`.; assignee (query) — Filter by assignee. Accepts a single value or a comma-separated list (matches any, max 100 entries). Each entry is `unassigned` (no assignee), `me` (the requesting user), `user:<user_id>`, or `role:<role_uuid>`, e.g. `assignee=unassigned,user:123`.; channel_detail (query) — Filter by the channel sub-type (e.g. `widget_embedded`, `slack_bot_mention`).; channel_source (query) — Filter by the channel the ticket originated from.; date_from (query) — Only include tickets updated on or after this date. Accepts absolute dates (`2026-01-01`) or relative ones (`-7d`, `-1mStart`). Pass `all` to disable the filter.; date_to (query) — Only include tickets updated on or before this date. Same format as `date_from`.; distinct_ids (query) — Comma-separated list of person `distinct_id`s to filter by (max 100).; emails (query) — Comma-separated list of email addresses to filter by, matched case-insensitively against `email_from` (max 100). When combined with `distinct_ids`, tickets matching either the distinct_ids or the emails are returned (OR).; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Sort order. Prefix with `-` for descending. Defaults to `-updated_at`.; priority (query) — Filter by priority. Accepts a single value or a comma-separated list (e.g. `medium,high`). Valid values: `low`, `medium`, `high`, `critical`.; search (query) — Free-text search. A numeric value (optionally prefixed with `#`) matches a ticket number exactly; otherwise matches against the customer's name or email, the email subject, or message content (case-insensitive, partial match).; sla (query) — Filter by SLA state. `breached` = past `sla_due_at`, `at-risk` = due within the next hour, `on-track` = more than an hour remaining.; snoozed (query) — Filter by snooze state: `true` returns only snoozed tickets, `false` only non-snoozed.; status (query) — Filter by status. Accepts a single value or a comma-separated list (e.g. `new,open,pending`). Valid values: `new`, `open`, `pending`, `on_hold`, `resolved`.; tags (query) — JSON-encoded array of tag names; returns tickets with ANY of them (OR), e.g. `[\"billing\",\"urgent\"]`.; tags_all (query) — JSON-encoded array of tag names; returns tickets that have ALL of them (AND), e.g. `[\"billing\",\"urgent\"]`.; tags_exclude (query) — JSON-encoded array of tag names; returns tickets that have NONE of them (NOT), e.g. `[\"escalated\"]`.; view (query) — Apply a saved ticket view's filters by its `short_id` (list views via the `conversations/views` endpoint). Any filter param passed explicitly overrides the view's saved value for that dimension. Returns 400 if no view matches."
+  },
+  {
+    "id": "conversations_tickets_messages_full_email_retrieve",
+    "name": "Return the full inbound email body in Markdown.",
+    "description": "Return the full inbound email body in Markdown. GET /api/projects/{project_id}/conversations/tickets/{id}/messages/{message_id}/full_email/",
+    "context": "GET /api/projects/{project_id}/conversations/tickets/{id}/messages/{message_id}/full_email/\nReturn the full inbound email body in Markdown.\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; message_id (path) — The UUID of the ticket message.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_tickets_messages_list",
+    "name": "Return the message thread for a ticket, ordered chronologically (paginated).",
+    "description": "Return the message thread for a ticket, ordered chronologically (paginated). GET /api/projects/{project_id}/conversations/tickets/{id}/messages/",
+    "context": "GET /api/projects/{project_id}/conversations/tickets/{id}/messages/\nReturn the message thread for a ticket, ordered chronologically (paginated).\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "conversations_tickets_notes_destroy",
+    "name": "Soft-delete a private note on a ticket",
+    "description": "Soft-delete a private note on a ticket Soft-delete a private note on a ticket. DELETE /api/projects/{project_id}/conversations/tickets/{id}/notes/{message_id}/",
+    "context": "DELETE /api/projects/{project_id}/conversations/tickets/{id}/notes/{message_id}/\nSoft-delete a private note on a ticket. Only the note's author can delete it. Customer-facing replies cannot be deleted via this endpoint.\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; message_id (path) — The UUID of the private note (comment) to edit or delete.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_tickets_notes_partial_update",
+    "name": "Update a private note on a ticket",
+    "description": "Update a private note on a ticket Update a private note on a ticket. PATCH /api/projects/{project_id}/conversations/tickets/{id}/notes/{message_id}/",
+    "context": "PATCH /api/projects/{project_id}/conversations/tickets/{id}/notes/{message_id}/\nUpdate a private note on a ticket. Only the note's author can edit it. Customer-facing replies cannot be edited (outbound delivery only runs on create).\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; message_id (path) — The UUID of the private note (comment) to edit or delete.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_tickets_partial_update",
+    "name": "conversations_tickets_partial_update",
+    "description": "conversations_tickets_partial_update PATCH /api/projects/{project_id}/conversations/tickets/{id}/",
+    "context": "PATCH /api/projects/{project_id}/conversations/tickets/{id}/\nconversations_tickets_partial_update\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_tickets_reply_create",
+    "name": "Post a reply or internal note to a ticket",
+    "description": "Post a reply or internal note to a ticket Post a reply or internal note to a ticket. POST /api/projects/{project_id}/conversations/tickets/{id}/reply/",
+    "context": "POST /api/projects/{project_id}/conversations/tickets/{id}/reply/\nPost a reply or internal note to a ticket. With is_private=false, the reply is delivered to the customer via the ticket's channel (email, Slack, Teams, GitHub). With is_private=true, the message is stored as an internal note only visible to team members. Retrying an identical message from the same author within a short window returns the original message with a 200 rather than posting it twice, and a 409 while a concurrent request is still creating it.\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_tickets_retrieve",
+    "name": "Get single ticket and mark as read by team.",
+    "description": "Get single ticket and mark as read by team. GET /api/projects/{project_id}/conversations/tickets/{id}/",
+    "context": "GET /api/projects/{project_id}/conversations/tickets/{id}/\nGet single ticket and mark as read by team.\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_tickets_unread_count_retrieve",
+    "name": "Get total unread ticket count for the team",
+    "description": "Get total unread ticket count for the team Get total unread ticket count for the team. GET /api/projects/{project_id}/conversations/tickets/unread_count/",
+    "context": "GET /api/projects/{project_id}/conversations/tickets/unread_count/\nGet total unread ticket count for the team. Returns the sum of unread_team_count for all non-resolved tickets visible to the caller. The team-wide Redis cache (30s TTL, invalidated on changes) is only used for callers without object-level ticket restrictions, since it holds one unscoped total per team - serving it to a restricted member would leak counts for tickets they can't see.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "conversations_tickets_update",
+    "name": "Handle ticket updates including assignee changes.",
+    "description": "Handle ticket updates including assignee changes. PUT /api/projects/{project_id}/conversations/tickets/{id}/",
+    "context": "PUT /api/projects/{project_id}/conversations/tickets/{id}/\nHandle ticket updates including assignee changes.\nRequired: id (path) — The ticket's UUID or its numeric ticket number.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_views_create",
+    "name": "conversations_views_create",
+    "description": "conversations_views_create POST /api/projects/{project_id}/conversations/views/",
+    "context": "POST /api/projects/{project_id}/conversations/views/\nconversations_views_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "conversations_views_destroy",
+    "name": "conversations_views_destroy",
+    "description": "conversations_views_destroy DELETE /api/projects/{project_id}/conversations/views/{short_id}/",
+    "context": "DELETE /api/projects/{project_id}/conversations/views/{short_id}/\nconversations_views_destroy\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  },
+  {
+    "id": "conversations_views_list",
+    "name": "conversations_views_list",
+    "description": "conversations_views_list GET /api/projects/{project_id}/conversations/views/",
+    "context": "GET /api/projects/{project_id}/conversations/views/\nconversations_views_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results."
+  },
+  {
+    "id": "conversations_views_partial_update",
+    "name": "conversations_views_partial_update",
+    "description": "conversations_views_partial_update PATCH /api/projects/{project_id}/conversations/views/{short_id}/",
+    "context": "PATCH /api/projects/{project_id}/conversations/views/{short_id}/\nconversations_views_partial_update\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "conversations_views_retrieve",
+    "name": "conversations_views_retrieve",
+    "description": "conversations_views_retrieve GET /api/projects/{project_id}/conversations/views/{short_id}/",
+    "context": "GET /api/projects/{project_id}/conversations/views/{short_id}/\nconversations_views_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; short_id (path)"
+  }
+]

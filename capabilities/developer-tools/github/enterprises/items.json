@@ -1,0 +1,284 @@
+[
+  {
+    "id": "actions%2Fget-actions-cache-retention-limit-for-enterprise",
+    "name": "Get GitHub Actions cache retention limit for an enterprise",
+    "description": "Get GitHub Actions cache retention limit for an enterprise Gets GitHub Actions cache retention limit for an enterprise. GET /enterprises/{enterprise}/actions/cache/retention-limit",
+    "context": "GET /enterprises/{enterprise}/actions/cache/retention-limit\nGets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name."
+  },
+  {
+    "id": "actions%2Fget-actions-cache-storage-limit-for-enterprise",
+    "name": "Get GitHub Actions cache storage limit for an enterprise",
+    "description": "Get GitHub Actions cache storage limit for an enterprise Gets GitHub Actions cache storage limit for an enterprise. GET /enterprises/{enterprise}/actions/cache/storage-limit",
+    "context": "GET /enterprises/{enterprise}/actions/cache/storage-limit\nGets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name."
+  },
+  {
+    "id": "actions%2Fset-actions-cache-retention-limit-for-enterprise",
+    "name": "Set GitHub Actions cache retention limit for an enterprise",
+    "description": "Set GitHub Actions cache retention limit for an enterprise Sets GitHub Actions cache retention limit for an enterprise. PUT /enterprises/{enterprise}/actions/cache/retention-limit",
+    "context": "PUT /enterprises/{enterprise}/actions/cache/retention-limit\nSets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache retention limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "actions%2Fset-actions-cache-storage-limit-for-enterprise",
+    "name": "Set GitHub Actions cache storage limit for an enterprise",
+    "description": "Set GitHub Actions cache storage limit for an enterprise Sets GitHub Actions cache storage limit for an enterprise. PUT /enterprises/{enterprise}/actions/cache/storage-limit",
+    "context": "PUT /enterprises/{enterprise}/actions/cache/storage-limit\nSets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this enterprise may not set a higher cache storage limit. OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "code-security%2Fattach-enterprise-configuration",
+    "name": "Attach an enterprise configuration to repositories",
+    "description": "Attach an enterprise configuration to repositories Attaches an enterprise code security configuration to repositories. POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach",
+    "context": "POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach\nAttaches an enterprise code security configuration to repositories. If the repositories specified are already attached to a configuration, they will be re-attached to the provided configuration. If insufficient GHAS licenses are available to attach the configuration to a repository, only free features will be enabled. The authenticated user must be an administrator for the enterprise to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; configuration_id (path) — The unique identifier of the code security configuration.; body (body)"
+  },
+  {
+    "id": "code-security%2Fcreate-configuration-for-enterprise",
+    "name": "Create a code security configuration for an enterprise",
+    "description": "Create a code security configuration for an enterprise Creates a code security configuration in an enterprise. POST /enterprises/{enterprise}/code-security/configurations",
+    "context": "POST /enterprises/{enterprise}/code-security/configurations\nCreates a code security configuration in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "code-security%2Fdelete-configuration-for-enterprise",
+    "name": "Delete a code security configuration for an enterprise",
+    "description": "Delete a code security configuration for an enterprise Deletes a code security configuration from an enterprise. DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}",
+    "context": "DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}\nDeletes a code security configuration from an enterprise. Repositories attached to the configuration will retain their settings but will no longer be associated with the configuration. The authenticated user must be an administrator for the enterprise to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; configuration_id (path) — The unique identifier of the code security configuration."
+  },
+  {
+    "id": "code-security%2Fget-configurations-for-enterprise",
+    "name": "Get code security configurations for an enterprise",
+    "description": "Get code security configurations for an enterprise Lists all code security configurations available in an enterprise. GET /enterprises/{enterprise}/code-security/configurations",
+    "context": "GET /enterprises/{enterprise}/code-security/configurations\nLists all code security configurations available in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "code-security%2Fget-default-configurations-for-enterprise",
+    "name": "Get default code security configurations for an enterprise",
+    "description": "Get default code security configurations for an enterprise Lists the default code security configurations for an enterprise. GET /enterprises/{enterprise}/code-security/configurations/defaults",
+    "context": "GET /enterprises/{enterprise}/code-security/configurations/defaults\nLists the default code security configurations for an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name."
+  },
+  {
+    "id": "code-security%2Fget-repositories-for-enterprise-configuration",
+    "name": "Get repositories associated with an enterprise code security configuration",
+    "description": "Get repositories associated with an enterprise code security configuration Lists the repositories associated with an enterprise code security configuration in an organization. GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories",
+    "context": "GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories\nLists the repositories associated with an enterprise code security configuration in an organization. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; configuration_id (path) — The unique identifier of the code security configuration.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; status (query) — A comma-separated list of statuses. If specified, only repositories with these attachment statuses will be returned. Can be: `all`, `attached`, `attaching`, `removed`, `enforced`, `failed`, `updating`, `removed_by_enterprise`, `enterprise_enforced`"
+  },
+  {
+    "id": "code-security%2Fget-single-configuration-for-enterprise",
+    "name": "Retrieve a code security configuration of an enterprise",
+    "description": "Retrieve a code security configuration of an enterprise Gets a code security configuration available in an enterprise. GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}",
+    "context": "GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}\nGets a code security configuration available in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `read:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; configuration_id (path) — The unique identifier of the code security configuration."
+  },
+  {
+    "id": "code-security%2Fset-configuration-as-default-for-enterprise",
+    "name": "Set a code security configuration as a default for an enterprise",
+    "description": "Set a code security configuration as a default for an enterprise Sets a code security configuration as a default to be applied to new repositories in your enterprise. PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults",
+    "context": "PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults\nSets a code security configuration as a default to be applied to new repositories in your enterprise. This configuration will be applied by default to the matching repository type when created, but only for organizations within the enterprise that do not already have a default code security configuration set. The authenticated user must be an administrator for the enterprise to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; configuration_id (path) — The unique identifier of the code security configuration.; body (body)"
+  },
+  {
+    "id": "code-security%2Fupdate-enterprise-configuration",
+    "name": "Update a custom code security configuration for an enterprise",
+    "description": "Update a custom code security configuration for an enterprise Updates a code security configuration in an enterprise. PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}",
+    "context": "PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}\nUpdates a code security configuration in an enterprise. The authenticated user must be an administrator of the enterprise in order to use this endpoint. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; configuration_id (path) — The unique identifier of the code security configuration.; body (body)"
+  },
+  {
+    "id": "copilot%2Fadd-organizations-to-enterprise-coding-agent-policy",
+    "name": "Add organizations to the enterprise coding agent policy",
+    "description": "Add organizations to the enterprise coding agent policy Enables Copilot cloud agent for the specified organizations within the enterprise. POST /enterprises/{enterprise}/copilot/policies/coding_agent/organizations",
+    "context": "POST /enterprises/{enterprise}/copilot/policies/coding_agent/organizations\nEnables Copilot cloud agent for the specified organizations within the enterprise. The enterprise's coding agent policy must be set to `enabled_for_selected_orgs` before using this endpoint. Organizations can be specified by login or matched via custom properties. Only organizations that have Copilot enabled and belong to the enterprise will be affected. Only enterprise owners can add organizations to the coding agent policy. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body) — The organizations to enable Copilot cloud agent for"
+  },
+  {
+    "id": "copilot%2Fcopilot-enterprise-one-day-usage-metrics",
+    "name": "Get Copilot enterprise usage metrics for a specific day",
+    "description": "Get Copilot enterprise usage metrics for a specific day Use this endpoint to retrieve download links for the Copilot enterprise usage metrics report for a specific day. GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day",
+    "context": "GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day\nUse this endpoint to retrieve download links for the Copilot enterprise usage metrics report for a specific day. The report provides comprehensive usage data for Copilot features across the enterprise. The report contains aggregated metrics for the specified day, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Reports are available starting from October 10, 2025, and historical data can be accessed for up to 1 year from the current date. Enterprise owners, billing managers, and authorized users with fine-grained \"View Enterprise Copilot Metrics\" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; day (query) — The day to request data for, in `YYYY-MM-DD` format."
+  },
+  {
+    "id": "copilot%2Fcopilot-enterprise-repos-one-day-report",
+    "name": "Get Copilot enterprise repository report for a specific day",
+    "description": "Get Copilot enterprise repository report for a specific day Use this endpoint to retrieve download links for the Copilot enterprise repository report for a specific day. GET /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day",
+    "context": "GET /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day\nUse this endpoint to retrieve download links for the Copilot enterprise repository report for a specific day. The report provides per-repository pull request metrics for Copilot across the enterprise, with one entry per repository. The report contains repository-level pull request activity for the specified day, including the Copilot Coding Agent (CCA) and Copilot Code Review (CCR) breakdowns. Only repositories that had activity on the specified day are included. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained \"View Enterprise Copilot Metrics\" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; day (query) — The day to request data for, in `YYYY-MM-DD` format."
+  },
+  {
+    "id": "copilot%2Fcopilot-enterprise-usage-metrics",
+    "name": "Get Copilot enterprise usage metrics",
+    "description": "Get Copilot enterprise usage metrics Use this endpoint to retrieve download links for the latest 28-day enterprise Copilot usage metrics report. GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest",
+    "context": "GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest\nUse this endpoint to retrieve download links for the latest 28-day enterprise Copilot usage metrics report. The report provides comprehensive usage data for Copilot features across the enterprise. The report contains aggregated metrics for the previous 28 days, including usage statistics for various Copilot features, user engagement data, and feature adoption metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained \"View Enterprise Copilot Metrics\" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name."
+  },
+  {
+    "id": "copilot%2Fcopilot-enterprise-user-teams-one-day-report",
+    "name": "Get Copilot enterprise user-teams report for a specific day",
+    "description": "Get Copilot enterprise user-teams report for a specific day Use this endpoint to retrieve download links for the Copilot enterprise user-teams report for a specific day. GET /enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day",
+    "context": "GET /enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day\nUse this endpoint to retrieve download links for the Copilot enterprise user-teams report for a specific day. The report provides user-team join data for Copilot across the enterprise, with one entry per user-team pair. The report contains user-team membership data for the specified day, enabling consumers to join with the existing enterprise user reports to compute team-level usage metrics. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained \"View Enterprise Copilot Metrics\" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; day (query) — The day to request data for, in `YYYY-MM-DD` format."
+  },
+  {
+    "id": "copilot%2Fcopilot-users-one-day-usage-metrics",
+    "name": "Get Copilot users usage metrics for a specific day",
+    "description": "Get Copilot users usage metrics for a specific day Use this endpoint to retrieve download links for the Copilot user usage metrics report for a specific day. GET /enterprises/{enterprise}/copilot/metrics/reports/users-1-day",
+    "context": "GET /enterprises/{enterprise}/copilot/metrics/reports/users-1-day\nUse this endpoint to retrieve download links for the Copilot user usage metrics report for a specific day. The report provides detailed user-level usage data and engagement metrics for Copilot features across the enterprise. The report contains user-specific metrics for the specified day, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date of the report. The report covers a complete day for which data has been processed. Reports are available starting from October 10, 2025, and historical data can be accessed for up to 1 year from the current date. Enterprise owners, billing managers, and authorized users with fine-grained \"View Enterprise Copilot Metrics\" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; day (query) — The day to request data for, in `YYYY-MM-DD` format."
+  },
+  {
+    "id": "copilot%2Fcopilot-users-usage-metrics",
+    "name": "Get Copilot users usage metrics",
+    "description": "Get Copilot users usage metrics Use this endpoint to retrieve download links for the latest 28-day enterprise users Copilot usage metrics report. GET /enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest",
+    "context": "GET /enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest\nUse this endpoint to retrieve download links for the latest 28-day enterprise users Copilot usage metrics report. The report provides detailed user-level usage data and engagement metrics for Copilot features across the enterprise. The report contains user-specific metrics for the previous 28 days, including individual user engagement statistics, feature usage patterns, and adoption metrics broken down by user. This report allows authorized users to analyze Copilot usage at the user level to understand adoption patterns and identify opportunities for increased engagement. Reports are generated daily and made available for download through signed URLs with a limited expiration time. The response includes download links to the report files, along with the specific date range covered by the report. The report covers a complete 28-day period ending on the most recent day for which data has been processed. Enterprise owners, billing managers, and authorized users with fine-grained \"View Enterprise Copilot Metrics\" permission can retrieve Copilot metrics reports for the enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name."
+  },
+  {
+    "id": "copilot%2Fremove-organizations-from-enterprise-coding-agent-policy",
+    "name": "Remove organizations from the enterprise coding agent policy",
+    "description": "Remove organizations from the enterprise coding agent policy Disables Copilot cloud agent for the specified organizations within the enterprise. DELETE /enterprises/{enterprise}/copilot/policies/coding_agent/organizations",
+    "context": "DELETE /enterprises/{enterprise}/copilot/policies/coding_agent/organizations\nDisables Copilot cloud agent for the specified organizations within the enterprise. The enterprise's coding agent policy must be set to `enabled_for_selected_orgs` before using this endpoint. Organizations can be specified by login or matched via custom properties. Only organizations that have Copilot enabled and belong to the enterprise will be affected. Only enterprise owners can remove organizations from the coding agent policy. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body) — The organizations to disable Copilot cloud agent for"
+  },
+  {
+    "id": "copilot%2Fset-enterprise-coding-agent-policy",
+    "name": "Set the coding agent policy for an enterprise",
+    "description": "Set the coding agent policy for an enterprise Sets the policy for Copilot cloud agent usage across an enterprise. PUT /enterprises/{enterprise}/copilot/policies/coding_agent",
+    "context": "PUT /enterprises/{enterprise}/copilot/policies/coding_agent\nSets the policy for Copilot cloud agent usage across an enterprise. Enterprise owners can configure whether Copilot cloud agent is enabled for all organizations, disabled for all organizations, configured by individual organization admins, or enabled for selected organizations only. Only enterprise owners can set the coding agent policy for their enterprise. OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `admin:enterprise` scopes to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body) — The coding agent policy configuration"
+  },
+  {
+    "id": "dependabot%2Flist-alerts-for-enterprise",
+    "name": "List Dependabot alerts for an enterprise",
+    "description": "List Dependabot alerts for an enterprise Lists Dependabot alerts for repositories that are owned by the specified enterprise. GET /enterprises/{enterprise}/dependabot/alerts",
+    "context": "GET /enterprises/{enterprise}/dependabot/alerts\nLists Dependabot alerts for repositories that are owned by the specified enterprise. The authenticated user must be a member of the enterprise to use this endpoint. Alerts are only returned for organizations in the enterprise for which you are an organization owner or a security manager. For more information about security managers, see \"[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).\" OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.\nOptional: classification (query) — A comma-separated list of vulnerability classifications. If specified, only alerts for vulnerabilities with these classifications will be returned. Can be: `malware`, `general`; state (query) — A comma-separated list of states. If specified, only alerts with these states will be returned. Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`; severity (query) — A comma-separated list of severities. If specified, only alerts with these severities will be returned. Can be: `low`, `medium`, `high`, `critical`; ecosystem (query) — A comma-separated list of ecosystems. If specified, only alerts for these ecosystems will be returned. Can be: `composer`, `go`, `maven`, `npm`, `nuget`, `pip`, `pub`, `rubygems`, `rust`; package (query) — A comma-separated list of package names. If specified, only alerts for these packages will be returned.; epss_percentage (query) — CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as: - An exact number (`n`) - Comparators such as `>n`, `<n`, `>=n`, `<=n` - A range like `n..n`, where `n` is a number from 0.0 to 1.0 Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.; has (query) — Filters the list of alerts based on whether the alert has the given value. If specified, only alerts meeting this criterion will be returned. Multiple `has` filters can be passed to filter for alerts that have all of the values. Currently, only `patch` is supported.; assignee (query) — Filter alerts by assignees. Provide a comma-separated list of user handles (e.g., `octocat` or `octocat,hubot`) to return alerts assigned to any of the specified users. Use `*` to list alerts with at least one assignee or `none` to list alerts with no assignees.; scope (query) — The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.; relationship (query) — A comma-separated list of relationships of the vulnerable dependency to your project. If specified, only alerts with these relationships will be returned. > [!NOTE] > We are rolling out support for dependency relationship across ecosystems. This value will be \"unknown\" for all dependencies in unsupported ecosystems.; sort (query) — The property by which to sort the results. `created` means when the alert was created. `updated` means when the alert's state last changed. `epss_percentage` sorts alerts by the Exploit Prediction Scoring System (EPSS) percentage.; direction (query) — The direction to sort the results by.; before (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; after (query) — A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "dependabot%2Frepository-access-for-enterprise",
+    "name": "Lists the repositories Dependabot can access in an enterprise",
+    "description": "Lists the repositories Dependabot can access in an enterprise Lists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise. GET /enterprises/{enterprise}/dependabot/repository-access",
+    "context": "GET /enterprises/{enterprise}/dependabot/repository-access\nLists repositories that enterprise admins have allowed Dependabot to access when updating dependencies across organizations in the enterprise. The authenticated user must be an enterprise owner to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.\nOptional: page (query) — The page number of results to fetch.; per_page (query) — Number of results per page."
+  },
+  {
+    "id": "dependabot%2Fset-repository-access-default-level-for-enterprise",
+    "name": "Set the default repository access level for Dependabot in an enterprise",
+    "description": "Set the default repository access level for Dependabot in an enterprise Sets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. PUT /enterprises/{enterprise}/dependabot/repository-access/default-level",
+    "context": "PUT /enterprises/{enterprise}/dependabot/repository-access/default-level\nSets the default level of repository access Dependabot will have while performing an update across organizations in the enterprise. Available values are: - 'public' - Dependabot will only have access to public repositories, unless access is explicitly granted to non-public repositories. - 'internal' - Dependabot will only have access to public and internal repositories, unless access is explicitly granted to private repositories. The authenticated user must be an enterprise owner to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "dependabot%2Fupdate-repository-access-for-enterprise",
+    "name": "Updates Dependabot's repository access list for an enterprise",
+    "description": "Updates Dependabot's repository access list for an enterprise Updates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they've updated dependencies across organizations in the enterprise. PATCH /enterprises/{enterprise}/dependabot/repository-access",
+    "context": "PATCH /enterprises/{enterprise}/dependabot/repository-access\nUpdates repositories according to the list of repositories that enterprise admins have given Dependabot access to when they've updated dependencies across organizations in the enterprise. The authenticated user must be an enterprise owner to use this endpoint. **Example request body:** ```json { \"repository_ids_to_add\": [123, 456], \"repository_ids_to_remove\": [789] } ```\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "enterprise-team-memberships%2Fadd",
+    "name": "Add team member",
+    "description": "Add team member Add a team member to an enterprise team. PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}",
+    "context": "PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}\nAdd a team member to an enterprise team.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "enterprise-team-memberships%2Fbulk-add",
+    "name": "Bulk add team members",
+    "description": "Bulk add team members Add multiple team members to an enterprise team. POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/add",
+    "context": "POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/add\nAdd multiple team members to an enterprise team.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; body (body)"
+  },
+  {
+    "id": "enterprise-team-memberships%2Fbulk-remove",
+    "name": "Bulk remove team members",
+    "description": "Bulk remove team members Remove multiple team members from an enterprise team. POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove",
+    "context": "POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove\nRemove multiple team members from an enterprise team.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; body (body)"
+  },
+  {
+    "id": "enterprise-team-memberships%2Fget",
+    "name": "Get enterprise team membership",
+    "description": "Get enterprise team membership Returns whether the user is a member of the enterprise team. GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}",
+    "context": "GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}\nReturns whether the user is a member of the enterprise team.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "enterprise-team-memberships%2Flist",
+    "name": "List members in an enterprise team",
+    "description": "List members in an enterprise team Lists all team members in an enterprise team. GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships",
+    "context": "GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships\nLists all team members in an enterprise team.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "enterprise-team-memberships%2Flist-teams-for-user",
+    "name": "List enterprise teams for a user",
+    "description": "List enterprise teams for a user Lists all enterprise teams that a user is a member of. GET /enterprises/{enterprise}/members/{username}/teams",
+    "context": "GET /enterprises/{enterprise}/members/{username}/teams\nLists all enterprise teams that a user is a member of. This endpoint is available only for enterprises using the new enterprise teams experience. The authenticated user must be an enterprise owner or have the `enterprise_teams:read` permission.\nRequired: enterprise (path) — The slug version of the enterprise name.; username (path) — The handle for the GitHub user account.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "enterprise-team-memberships%2Fremove",
+    "name": "Remove team membership",
+    "description": "Remove team membership Remove membership of a specific user from a particular team in an enterprise. DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}",
+    "context": "DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}\nRemove membership of a specific user from a particular team in an enterprise.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; username (path) — The handle for the GitHub user account."
+  },
+  {
+    "id": "enterprise-team-organizations%2Fadd",
+    "name": "Add an organization assignment",
+    "description": "Add an organization assignment Assign an enterprise team to an organization. PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}",
+    "context": "PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}\nAssign an enterprise team to an organization.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "enterprise-team-organizations%2Fbulk-add",
+    "name": "Add organization assignments",
+    "description": "Add organization assignments Assign an enterprise team to multiple organizations. POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add",
+    "context": "POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add\nAssign an enterprise team to multiple organizations.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; body (body)"
+  },
+  {
+    "id": "enterprise-team-organizations%2Fbulk-remove",
+    "name": "Remove organization assignments",
+    "description": "Remove organization assignments Unassign an enterprise team from multiple organizations. POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove",
+    "context": "POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove\nUnassign an enterprise team from multiple organizations.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; body (body)"
+  },
+  {
+    "id": "enterprise-team-organizations%2Fdelete",
+    "name": "Delete an organization assignment",
+    "description": "Delete an organization assignment Unassign an enterprise team from an organization. DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}",
+    "context": "DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}\nUnassign an enterprise team from an organization.\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "enterprise-team-organizations%2Fget-assignment",
+    "name": "Get organization assignment",
+    "description": "Get organization assignment Check if an enterprise team is assigned to an organization GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}",
+    "context": "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}\nCheck if an enterprise team is assigned to an organization\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.; org (path) — The organization name. The name is not case sensitive."
+  },
+  {
+    "id": "enterprise-team-organizations%2Fget-assignments",
+    "name": "Get organization assignments",
+    "description": "Get organization assignments Get all organizations assigned to an enterprise team GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations",
+    "context": "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations\nGet all organizations assigned to an enterprise team\nRequired: enterprise (path) — The slug version of the enterprise name.; enterprise-team (path) — The slug version of the enterprise team name. You can also substitute this value with the enterprise team id.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "enterprise-teams%2Fcreate",
+    "name": "Create an enterprise team",
+    "description": "Create an enterprise team To create an enterprise team, the authenticated user must be an owner of the enterprise. POST /enterprises/{enterprise}/teams",
+    "context": "POST /enterprises/{enterprise}/teams\nTo create an enterprise team, the authenticated user must be an owner of the enterprise.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "enterprise-teams%2Fdelete",
+    "name": "Delete an enterprise team",
+    "description": "Delete an enterprise team To delete an enterprise team, the authenticated user must be an enterprise owner. DELETE /enterprises/{enterprise}/teams/{team_slug}",
+    "context": "DELETE /enterprises/{enterprise}/teams/{team_slug}\nTo delete an enterprise team, the authenticated user must be an enterprise owner. If you are an enterprise owner, deleting an enterprise team will delete all of its IdP mappings as well.\nRequired: enterprise (path) — The slug version of the enterprise name.; team_slug (path) — The slug of the team name."
+  },
+  {
+    "id": "enterprise-teams%2Fget",
+    "name": "Get an enterprise team",
+    "description": "Get an enterprise team Gets a team using the team's slug. GET /enterprises/{enterprise}/teams/{team_slug}",
+    "context": "GET /enterprises/{enterprise}/teams/{team_slug}\nGets a team using the team's slug. To create the slug, GitHub replaces special characters in the name string, changes all words to lowercase, and replaces spaces with a `-` separator and adds the \"ent:\" prefix. For example, \"My TEam Näme\" would become `ent:my-team-name`.\nRequired: enterprise (path) — The slug version of the enterprise name.; team_slug (path) — The slug of the team name."
+  },
+  {
+    "id": "enterprise-teams%2Flist",
+    "name": "List enterprise teams",
+    "description": "List enterprise teams List all teams in the enterprise for the authenticated user GET /enterprises/{enterprise}/teams",
+    "context": "GET /enterprises/{enterprise}/teams\nList all teams in the enterprise for the authenticated user\nRequired: enterprise (path) — The slug version of the enterprise name.\nOptional: per_page (query) — The number of results per page (max 100). For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\"; page (query) — The page number of the results to fetch. For more information, see \"[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).\""
+  },
+  {
+    "id": "enterprise-teams%2Fupdate",
+    "name": "Update an enterprise team",
+    "description": "Update an enterprise team To edit a team, the authenticated user must be an enterprise owner. PATCH /enterprises/{enterprise}/teams/{team_slug}",
+    "context": "PATCH /enterprises/{enterprise}/teams/{team_slug}\nTo edit a team, the authenticated user must be an enterprise owner.\nRequired: enterprise (path) — The slug version of the enterprise name.; team_slug (path) — The slug of the team name.; body (body)"
+  },
+  {
+    "id": "oidc%2Fcreate-oidc-custom-property-inclusion-for-enterprise",
+    "name": "Create an OIDC custom property inclusion for an enterprise",
+    "description": "Create an OIDC custom property inclusion for an enterprise Adds a repository custom property to be included in the OIDC token for repository actions in an enterprise. POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo",
+    "context": "POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo\nAdds a repository custom property to be included in the OIDC token for repository actions in an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; body (body)"
+  },
+  {
+    "id": "oidc%2Fdelete-oidc-custom-property-inclusion-for-enterprise",
+    "name": "Delete an OIDC custom property inclusion for an enterprise",
+    "description": "Delete an OIDC custom property inclusion for an enterprise Removes a repository custom property from being included in the OIDC token for repository actions in an enterprise. DELETE /enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}",
+    "context": "DELETE /enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}\nRemoves a repository custom property from being included in the OIDC token for repository actions in an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name.; custom_property_name (path) — The name of the custom property to remove from OIDC token inclusion"
+  },
+  {
+    "id": "oidc%2Flist-oidc-custom-property-inclusions-for-enterprise",
+    "name": "List OIDC custom property inclusions for an enterprise",
+    "description": "List OIDC custom property inclusions for an enterprise Lists the repository custom properties that are included in the OIDC token for repository actions in an enterprise. GET /enterprises/{enterprise}/actions/oidc/customization/properties/repo",
+    "context": "GET /enterprises/{enterprise}/actions/oidc/customization/properties/repo\nLists the repository custom properties that are included in the OIDC token for repository actions in an enterprise. OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.\nRequired: enterprise (path) — The slug version of the enterprise name."
+  }
+]

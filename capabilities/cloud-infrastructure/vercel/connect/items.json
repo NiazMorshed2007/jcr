@@ -1,0 +1,110 @@
+[
+  {
+    "id": "createConnector",
+    "name": "Create a connector",
+    "description": "Create a connector Create a connector and optionally link it to a project. POST /v1/connect/connectors",
+    "context": "POST /v1/connect/connectors\nCreate a connector and optionally link it to a project. Use `type` with complete provider data, or use `service` with `connectionMethod` so Connect can supply the type, endpoints, templates, and defaults.\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; body (body)"
+  },
+  {
+    "id": "createConnectorAuthorizationRequest",
+    "name": "Create a Connect authorization request",
+    "description": "Create a Connect authorization request Create an authorization request for a connector and return the URL and verifier details needed to complete the flow. POST /v1/connect/authorize/{connector}",
+    "context": "POST /v1/connect/authorize/{connector}\nCreate an authorization request for a connector and return the URL and verifier details needed to complete the flow.\nRequired: connector (path)\nOptional: body (body)"
+  },
+  {
+    "id": "createNetwork",
+    "name": "Create a Secure Compute network",
+    "description": "Create a Secure Compute network Allows to create a Secure Compute network. POST /v1/connect/networks",
+    "context": "POST /v1/connect/networks\nAllows to create a Secure Compute network.\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteConnector",
+    "name": "Delete a connector",
+    "description": "Delete a connector Delete a connector, its project connections, and its installation records. DELETE /v1/connect/connectors/{connector}",
+    "context": "DELETE /v1/connect/connectors/{connector}\nDelete a connector, its project connections, and its installation records.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "deleteConnectorProjectConnection",
+    "name": "Disconnect a connector from a project",
+    "description": "Disconnect a connector from a project Disconnect a connector from a project. DELETE /v1/connect/connectors/{connector}/projects/{projectId}",
+    "context": "DELETE /v1/connect/connectors/{connector}/projects/{projectId}\nDisconnect a connector from a project.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.; projectId (path) — Vercel project ID.\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "deleteNetwork",
+    "name": "Delete a Secure Compute network",
+    "description": "Delete a Secure Compute network Allows to delete a Secure Compute network. DELETE /v1/connect/networks/{networkId}",
+    "context": "DELETE /v1/connect/networks/{networkId}\nAllows to delete a Secure Compute network.\nRequired: networkId (path) — The ID of the network to delete\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getConnector",
+    "name": "Get a connector",
+    "description": "Get a connector Get the connector by ID. GET /v1/connect/connectors/{connector}",
+    "context": "GET /v1/connect/connectors/{connector}\nGet the connector by ID. Accepts a dashboard/team requester or a deployment's project OIDC token; project requesters may only read connectors linked to their project and environment.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "getConnectorProjectConnection",
+    "name": "Get a connector project connection",
+    "description": "Get a connector project connection Get the configuration that connects a connector to a project. GET /v1/connect/connectors/{connector}/projects/{projectId}",
+    "context": "GET /v1/connect/connectors/{connector}/projects/{projectId}\nGet the configuration that connects a connector to a project.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.; projectId (path) — Vercel project ID.\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "getConnectorToken",
+    "name": "Get a Connect token",
+    "description": "Get a Connect token Get an access token for a connector identified by the path parameter and scoped to the requester. POST /v1/connect/token/{connector}",
+    "context": "POST /v1/connect/token/{connector}\nGet an access token for a connector identified by the path parameter and scoped to the requester.\nRequired: connector (path)\nOptional: body (body)"
+  },
+  {
+    "id": "listConnectorProjectConnections",
+    "name": "List projects for a connector",
+    "description": "List projects for a connector List the projects connected to a connector and the environments where each connection is available. GET /v2/connect/connectors/{connector}/projects",
+    "context": "GET /v2/connect/connectors/{connector}/projects\nList the projects connected to a connector and the environments where each connection is available.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.\nOptional: limit (query) — Maximum number of project connections to return. Defaults to 50.; cursor (query) — Cursor from `pagination.next` on the previous response.; teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "listConnectors",
+    "name": "List connectors",
+    "description": "List connectors List connectors that belong to a team. GET /v2/connect/connectors",
+    "context": "GET /v2/connect/connectors\nList connectors that belong to a team.\nOptional: limit (query) — Maximum number of connectors to return. Defaults to 20.; cursor (query) — Cursor from `pagination.next` on the previous response.; projectId (query) — Return only connectors connected to this project.; search (query) — Search connector names, UIDs, and services.; type (query) — Comma-separated connector types: `slack`, `discord`, `github`, `linear`, `linq`, `salesforce`, `sendblue`, `snowflake`, `snowflake-wif`, `microsoft-entra`, `api-key`, `photon`, `oauth`, or `custom`.; service (query) — Comma-separated provider or service identifiers.; sort (query) — Sort by name in ascending order, or by creation or update time in descending order.; teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "listNetworks",
+    "name": "List Secure Compute networks",
+    "description": "List Secure Compute networks Allows to list Secure Compute networks. GET /v1/connect/networks",
+    "context": "GET /v1/connect/networks\nAllows to list Secure Compute networks.\nOptional: includeHostedZones (query) — Whether to include Hosted Zones in the response; includePeeringConnections (query) — Whether to include VPC Peering connections in the response; includeProjects (query) — Whether to include projects in the response; search (query) — The query to use as a filter for returned networks; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "listProjectConnectorConnections",
+    "name": "List connectors for a project",
+    "description": "List connectors for a project List the connectors connected to a project and the environments where each connection is available. GET /v2/connect/projects/{projectId}/connectors",
+    "context": "GET /v2/connect/projects/{projectId}/connectors\nList the connectors connected to a project and the environments where each connection is available.\nRequired: projectId (path) — Vercel project ID.\nOptional: limit (query) — Maximum number of connector connections to return. Defaults to 50.; cursor (query) — Cursor from `pagination.next` on the previous response.; teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "readNetwork",
+    "name": "Read a Secure Compute network",
+    "description": "Read a Secure Compute network Allows to read a Secure Compute network. GET /v1/connect/networks/{networkId}",
+    "context": "GET /v1/connect/networks/{networkId}\nAllows to read a Secure Compute network.\nRequired: networkId (path) — The unique identifier of the Secure Compute network\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "replaceConnectorTriggerDestinations",
+    "name": "Update connector trigger destinations",
+    "description": "Update connector trigger destinations Replace the full set of destinations that receive trigger requests for a connector. PATCH /v1/connect/connectors/{connector}/trigger-destinations",
+    "context": "PATCH /v1/connect/connectors/{connector}/trigger-destinations\nReplace the full set of destinations that receive trigger requests for a connector.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.; body (body)\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "updateConnector",
+    "name": "Update a connector",
+    "description": "Update a connector Update a connector and return the connector with any service-side update signals that the caller must handle. PATCH /v2/connect/connectors/{connector}",
+    "context": "PATCH /v2/connect/connectors/{connector}\nUpdate a connector and return the connector with any service-side update signals that the caller must handle.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.; body (body)\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  },
+  {
+    "id": "updateNetwork",
+    "name": "Update a Secure Compute network",
+    "description": "Update a Secure Compute network Allows to update a Secure Compute network. PATCH /v1/connect/networks/{networkId}",
+    "context": "PATCH /v1/connect/networks/{networkId}\nAllows to update a Secure Compute network.\nRequired: networkId (path) — The unique identifier of the Secure Compute network\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "upsertConnectorProjectConnection",
+    "name": "Create or update a connector project connection",
+    "description": "Create or update a connector project connection Connect a connector to a project, or replace the environments on an existing project connection. POST /v1/connect/connectors/{connector}/projects/{projectId}",
+    "context": "POST /v1/connect/connectors/{connector}/projects/{projectId}\nConnect a connector to a project, or replace the environments on an existing project connection.\nRequired: connector (path) — Stable connector ID or URL-encoded team-scoped UID. Examples: `scl_abc123` or `slack%2Fmy-bot`.; projectId (path) — Vercel project ID.; body (body)\nOptional: teamId (query) — The team ID that scopes the request. Do not send it with slug. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected.; slug (query) — The team slug that scopes the request. Do not send it with teamId. If both are omitted, Vercel uses the team associated with the token or the authenticated user's default team. The request returns 401 if no team can be selected."
+  }
+]

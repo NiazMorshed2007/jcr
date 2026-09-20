@@ -1,0 +1,50 @@
+[
+  {
+    "id": "approveRollingReleaseStage",
+    "name": "Update the active rolling release to the next stage for a project",
+    "description": "Update the active rolling release to the next stage for a project Advance a rollout to the next stage. POST /v1/projects/{idOrName}/rolling-release/approve-stage",
+    "context": "POST /v1/projects/{idOrName}/rolling-release/approve-stage\nAdvance a rollout to the next stage. This is only needed when rolling releases is configured to require manual approval.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "completeRollingRelease",
+    "name": "Complete the rolling release for the project",
+    "description": "Complete the rolling release for the project Force-complete a Rolling Release. POST /v1/projects/{idOrName}/rolling-release/complete",
+    "context": "POST /v1/projects/{idOrName}/rolling-release/complete\nForce-complete a Rolling Release. The canary deployment will begin serving 100% of the traffic.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "deleteRollingReleaseConfig",
+    "name": "Delete rolling release configuration",
+    "description": "Delete rolling release configuration Disable Rolling Releases for a project means that future deployments will not undergo a rolling release. DELETE /v1/projects/{idOrName}/rolling-release/config",
+    "context": "DELETE /v1/projects/{idOrName}/rolling-release/config\nDisable Rolling Releases for a project means that future deployments will not undergo a rolling release. Changing the config never alters a rollout that's already in-flight—it only affects the next production deployment. If you want to also stop the current rollout, call this endpoint to disable the feature, and then call either the /complete or /abort endpoint.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRollingRelease",
+    "name": "Get the active rolling release information for a project",
+    "description": "Get the active rolling release information for a project Return the Rolling Release for a project, regardless of whether the rollout is active, aborted, or completed. GET /v1/projects/{idOrName}/rolling-release",
+    "context": "GET /v1/projects/{idOrName}/rolling-release\nReturn the Rolling Release for a project, regardless of whether the rollout is active, aborted, or completed. If the feature is enabled but no deployment has occurred yet, null will be returned.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: state (query) — Filter by rolling release state; teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRollingReleaseBillingStatus",
+    "name": "Get rolling release billing status",
+    "description": "Get rolling release billing status Get the Rolling Releases billing status for a project. GET /v1/projects/{idOrName}/rolling-release/billing",
+    "context": "GET /v1/projects/{idOrName}/rolling-release/billing\nGet the Rolling Releases billing status for a project. The team level billing status is used to determine if the project can be configured for rolling releases.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "getRollingReleaseConfig",
+    "name": "Get rolling release configuration",
+    "description": "Get rolling release configuration Get the Rolling Releases configuration for a project. GET /v1/projects/{idOrName}/rolling-release/config",
+    "context": "GET /v1/projects/{idOrName}/rolling-release/config\nGet the Rolling Releases configuration for a project. The project-level config is simply a template that will be used for any future rolling release, and not the configuration for any active rolling release.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  },
+  {
+    "id": "startRollingRelease",
+    "name": "Start a rolling release for the project",
+    "description": "Start a rolling release for the project Start a rolling release for a deployment. POST /v1/projects/{idOrName}/rolling-release/start",
+    "context": "POST /v1/projects/{idOrName}/rolling-release/start\nStart a rolling release for a deployment. If a rolling release is already active for the same canary deployment, returns the current state without side effects.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of.; body (body)"
+  },
+  {
+    "id": "updateRollingReleaseConfig",
+    "name": "Update the rolling release settings for the project",
+    "description": "Update the rolling release settings for the project Update (or disable) Rolling Releases for a project. PATCH /v1/projects/{idOrName}/rolling-release/config",
+    "context": "PATCH /v1/projects/{idOrName}/rolling-release/config\nUpdate (or disable) Rolling Releases for a project. When disabling with the resolve-on-disable feature flag enabled, any active rolling release document is resolved using the disableRolloutAction parameter: \"abort\" to roll back (default), or \"complete\" to promote the canary to production. When enabling or updating config, changes only affect the next production deployment and do not alter a rollout that's already in-flight. Note: Enabling Rolling Releases automatically enables skew protection on the project with the default value if it wasn't configured already.\nRequired: idOrName (path) — Project ID or project name (URL-encoded)\nOptional: teamId (query) — The Team identifier to perform the request on behalf of.; slug (query) — The Team slug to perform the request on behalf of."
+  }
+]

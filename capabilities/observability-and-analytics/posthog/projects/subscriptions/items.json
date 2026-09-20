@@ -1,0 +1,62 @@
+[
+  {
+    "id": "subscriptions_create",
+    "name": "subscriptions_create",
+    "description": "subscriptions_create POST /api/projects/{project_id}/subscriptions/",
+    "context": "POST /api/projects/{project_id}/subscriptions/\nsubscriptions_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "subscriptions_deliveries_list",
+    "name": "List subscription deliveries",
+    "description": "List subscription deliveries Paginated delivery history for a subscription. GET /api/projects/{project_id}/subscriptions/{subscription_id}/deliveries/",
+    "context": "GET /api/projects/{project_id}/subscriptions/{subscription_id}/deliveries/\nPaginated delivery history for a subscription. Requires premium subscriptions.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; subscription_id (path)\nOptional: cursor (query) — The pagination cursor value.; status (query) — Return only deliveries in this run status (starting, completed, failed, or skipped)."
+  },
+  {
+    "id": "subscriptions_deliveries_retrieve",
+    "name": "Retrieve subscription delivery",
+    "description": "Retrieve subscription delivery Fetch one delivery row by id. GET /api/projects/{project_id}/subscriptions/{subscription_id}/deliveries/{id}/",
+    "context": "GET /api/projects/{project_id}/subscriptions/{subscription_id}/deliveries/{id}/\nFetch one delivery row by id.\nRequired: id (path) — A UUID string identifying this subscription delivery.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; subscription_id (path)"
+  },
+  {
+    "id": "subscriptions_destroy",
+    "name": "Hard delete of this model is not allowed",
+    "description": "Hard delete of this model is not allowed Hard delete of this model is not allowed. DELETE /api/projects/{project_id}/subscriptions/{id}/",
+    "context": "DELETE /api/projects/{project_id}/subscriptions/{id}/\nHard delete of this model is not allowed. Use a patch API call to set \"deleted\" to true\nRequired: id (path) — A unique integer value identifying this subscription.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "subscriptions_list",
+    "name": "subscriptions_list",
+    "description": "subscriptions_list GET /api/projects/{project_id}/subscriptions/",
+    "context": "GET /api/projects/{project_id}/subscriptions/\nsubscriptions_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: created_by (query) — Filter by creator user UUID.; dashboard (query) — Filter by dashboard ID.; dashboard_tiles (query) — Filter to subscriptions on insights that are tiles of the given dashboard ID.; insight (query) — Filter by insight ID.; insights (query) — Filter by a comma-separated list of insight IDs.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; ordering (query) — Which field to use when ordering the results.; resource_type (query) — Filter by subscription resource: insight, dashboard export, or AI report.; search (query) — A search term.; target_type (query) — Filter by delivery channel: email, Slack, or Microsoft Teams."
+  },
+  {
+    "id": "subscriptions_partial_update",
+    "name": "subscriptions_partial_update",
+    "description": "subscriptions_partial_update PATCH /api/projects/{project_id}/subscriptions/{id}/",
+    "context": "PATCH /api/projects/{project_id}/subscriptions/{id}/\nsubscriptions_partial_update\nRequired: id (path) — A unique integer value identifying this subscription.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "subscriptions_retrieve",
+    "name": "subscriptions_retrieve",
+    "description": "subscriptions_retrieve GET /api/projects/{project_id}/subscriptions/{id}/",
+    "context": "GET /api/projects/{project_id}/subscriptions/{id}/\nsubscriptions_retrieve\nRequired: id (path) — A unique integer value identifying this subscription.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "subscriptions_summary_quota_retrieve",
+    "name": "subscriptions_summary_quota_retrieve",
+    "description": "subscriptions_summary_quota_retrieve GET /api/projects/{project_id}/subscriptions/summary_quota/",
+    "context": "GET /api/projects/{project_id}/subscriptions/summary_quota/\nsubscriptions_summary_quota_retrieve\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "subscriptions_test_delivery_create",
+    "name": "subscriptions_test_delivery_create",
+    "description": "subscriptions_test_delivery_create POST /api/projects/{project_id}/subscriptions/{id}/test-delivery/",
+    "context": "POST /api/projects/{project_id}/subscriptions/{id}/test-delivery/\nsubscriptions_test_delivery_create\nRequired: id (path) — A unique integer value identifying this subscription.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "subscriptions_update",
+    "name": "subscriptions_update",
+    "description": "subscriptions_update PUT /api/projects/{project_id}/subscriptions/{id}/",
+    "context": "PUT /api/projects/{project_id}/subscriptions/{id}/\nsubscriptions_update\nRequired: id (path) — A unique integer value identifying this subscription.; project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "v1-claim-project-for-organization",
+    "name": "Claims project for the specified organization",
+    "description": "Claims project for the specified organization POST /v1/organizations/{slug}/project-claim/{token}",
+    "context": "POST /v1/organizations/{slug}/project-claim/{token}\nClaims project for the specified organization\nRequired: slug (path) — Organization slug; token (path)"
+  },
+  {
+    "id": "v1-create-an-organization",
+    "name": "Create an organization",
+    "description": "Create an organization POST /v1/organizations",
+    "context": "POST /v1/organizations\nCreate an organization\nRequired: body (body)"
+  },
+  {
+    "id": "v1-get-all-projects-for-organization",
+    "name": "Gets all projects for the given organization",
+    "description": "Gets all projects for the given organization Returns a paginated list of projects for the specified organization. GET /v1/organizations/{slug}/projects",
+    "context": "GET /v1/organizations/{slug}/projects\nReturns a paginated list of projects for the specified organization. This endpoint uses offset-based pagination. Use the `offset` parameter to skip a number of projects and the `limit` parameter to control the number of projects returned per page.\nRequired: slug (path) — Organization slug\nOptional: offset (query) — Number of projects to skip; limit (query) — Number of projects to return per page; search (query) — Search projects by name; sort (query) — Sort order for projects; statuses (query) — A comma-separated list of project statuses to filter by. The following values are supported: `ACTIVE_HEALTHY`, `INACTIVE`."
+  },
+  {
+    "id": "v1-get-an-organization",
+    "name": "Gets information about the organization",
+    "description": "Gets information about the organization GET /v1/organizations/{slug}",
+    "context": "GET /v1/organizations/{slug}\nGets information about the organization\nRequired: slug (path) — Organization slug"
+  },
+  {
+    "id": "v1-get-organization-entitlements",
+    "name": "Get entitlements for an organization",
+    "description": "Get entitlements for an organization Returns the entitlements available to the organization based on their plan and any overrides. GET /v1/organizations/{slug}/entitlements",
+    "context": "GET /v1/organizations/{slug}/entitlements\nReturns the entitlements available to the organization based on their plan and any overrides.\nRequired: slug (path) — Organization slug"
+  },
+  {
+    "id": "v1-get-organization-project-claim",
+    "name": "Gets project details for the specified organization and claim token",
+    "description": "Gets project details for the specified organization and claim token GET /v1/organizations/{slug}/project-claim/{token}",
+    "context": "GET /v1/organizations/{slug}/project-claim/{token}\nGets project details for the specified organization and claim token\nRequired: slug (path) — Organization slug; token (path)"
+  },
+  {
+    "id": "v1-list-all-organizations",
+    "name": "List all organizations",
+    "description": "List all organizations Returns a list of organizations that you currently belong to. GET /v1/organizations",
+    "context": "GET /v1/organizations\nReturns a list of organizations that you currently belong to."
+  },
+  {
+    "id": "v1-list-organization-members",
+    "name": "List members of an organization",
+    "description": "List members of an organization GET /v1/organizations/{slug}/members",
+    "context": "GET /v1/organizations/{slug}/members\nList members of an organization\nRequired: slug (path) — Organization slug"
+  }
+]

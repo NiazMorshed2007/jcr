@@ -1,0 +1,230 @@
+[
+  {
+    "id": "configure_dmarc_reports",
+    "name": "Configure DMARC Reports",
+    "description": "Configure DMARC Reports Updates the DMARC report configuration for a zone. PATCH /client/v4/zones/{zone_id}/email/auth/dmarc-reports",
+    "context": "PATCH /client/v4/zones/{zone_id}/email/auth/dmarc-reports\nUpdates the DMARC report configuration for a zone. At least one of `enabled` or `skip_wizard` must be provided. When enabling, the handler will ensure the DMARC RUA record exists in DNS.\nRequired: zone_id (path) — Zone identifier.; body (body)"
+  },
+  {
+    "id": "delete_publicDeleteSuppressionZoneRouting",
+    "name": "Delete zone email suppression",
+    "description": "Delete zone email suppression Deletes an email suppression for the specified zone. DELETE /client/v4/zones/{zone_id}/email/routing/suppression/{suppression_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/email/routing/suppression/{suppression_id}\nDeletes an email suppression for the specified zone.\nRequired: zone_id (path); suppression_id (path)"
+  },
+  {
+    "id": "delete_publicDeleteSuppressionZoneSending",
+    "name": "Delete zone email suppression",
+    "description": "Delete zone email suppression Deletes an email suppression for the specified zone. DELETE /client/v4/zones/{zone_id}/email/sending/suppression/{suppression_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/email/sending/suppression/{suppression_id}\nDeletes an email suppression for the specified zone.\nRequired: zone_id (path); suppression_id (path)"
+  },
+  {
+    "id": "email-routing-routing-rules-create-routing-rule",
+    "name": "Create routing rule",
+    "description": "Create routing rule Rules consist of a set of criteria for matching emails (such as an email being sent to a specific custom email address) plus a set of actions to take on the email (like forwarding it to a specific destination address). POST /client/v4/zones/{zone_id}/email/routing/rules",
+    "context": "POST /client/v4/zones/{zone_id}/email/routing/rules\nRules consist of a set of criteria for matching emails (such as an email being sent to a specific custom email address) plus a set of actions to take on the email (like forwarding it to a specific destination address). Forward actions require exactly one verified destination address.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-routing-rules-delete-routing-rule",
+    "name": "Delete routing rule",
+    "description": "Delete routing rule Delete a specific routing rule. DELETE /client/v4/zones/{zone_id}/email/routing/rules/{rule_identifier}",
+    "context": "DELETE /client/v4/zones/{zone_id}/email/routing/rules/{rule_identifier}\nDelete a specific routing rule.\nRequired: rule_identifier (path); zone_id (path)"
+  },
+  {
+    "id": "email-routing-routing-rules-get-catch-all-rule",
+    "name": "Get catch-all rule",
+    "description": "Get catch-all rule Get information on the default catch-all routing rule. GET /client/v4/zones/{zone_id}/email/routing/rules/catch_all",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing/rules/catch_all\nGet information on the default catch-all routing rule.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "email-routing-routing-rules-get-routing-rule",
+    "name": "Get routing rule",
+    "description": "Get routing rule Get information for a specific routing rule already created. GET /client/v4/zones/{zone_id}/email/routing/rules/{rule_identifier}",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing/rules/{rule_identifier}\nGet information for a specific routing rule already created.\nRequired: rule_identifier (path); zone_id (path)"
+  },
+  {
+    "id": "email-routing-routing-rules-list-routing-rules",
+    "name": "List routing rules",
+    "description": "List routing rules Lists existing routing rules. GET /client/v4/zones/{zone_id}/email/routing/rules",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing/rules\nLists existing routing rules.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); enabled (query)"
+  },
+  {
+    "id": "email-routing-routing-rules-update-catch-all-rule",
+    "name": "Update catch-all rule",
+    "description": "Update catch-all rule Enable or disable catch-all routing rule, or change action to forward to a specific destination address. PUT /client/v4/zones/{zone_id}/email/routing/rules/catch_all",
+    "context": "PUT /client/v4/zones/{zone_id}/email/routing/rules/catch_all\nEnable or disable catch-all routing rule, or change action to forward to a specific destination address. Forward actions require exactly one verified destination address.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-routing-rules-update-routing-rule",
+    "name": "Update routing rule",
+    "description": "Update routing rule Update actions and matches, or enable/disable specific routing rules. PUT /client/v4/zones/{zone_id}/email/routing/rules/{rule_identifier}",
+    "context": "PUT /client/v4/zones/{zone_id}/email/routing/rules/{rule_identifier}\nUpdate actions and matches, or enable/disable specific routing rules. Forward actions require exactly one verified destination address.\nRequired: rule_identifier (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-settings-disable-email-routing",
+    "name": "Disable Email Routing",
+    "description": "Disable Email Routing Disable your Email Routing zone. POST /client/v4/zones/{zone_id}/email/routing/disable",
+    "context": "POST /client/v4/zones/{zone_id}/email/routing/disable\nDisable your Email Routing zone. Also removes additional MX records previously required for Email Routing to work.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-settings-disable-email-routing-dns",
+    "name": "Disable Email Routing",
+    "description": "Disable Email Routing Disable your Email Routing zone. DELETE /client/v4/zones/{zone_id}/email/routing/dns",
+    "context": "DELETE /client/v4/zones/{zone_id}/email/routing/dns\nDisable your Email Routing zone. Also removes additional MX records previously required for Email Routing to work.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "email-routing-settings-email-routing-dns-settings",
+    "name": "Email Routing - DNS settings",
+    "description": "Email Routing - DNS settings Show the DNS records needed to configure your Email Routing zone. GET /client/v4/zones/{zone_id}/email/routing/dns",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing/dns\nShow the DNS records needed to configure your Email Routing zone.\nRequired: zone_id (path)\nOptional: subdomain (query) — Deprecated. When supplied, the response shape differs from the documented default and is not modeled in generated SDKs. Do not rely on this parameter."
+  },
+  {
+    "id": "email-routing-settings-enable-email-routing",
+    "name": "Enable Email Routing",
+    "description": "Enable Email Routing Enable you Email Routing zone. POST /client/v4/zones/{zone_id}/email/routing/enable",
+    "context": "POST /client/v4/zones/{zone_id}/email/routing/enable\nEnable you Email Routing zone. Add and lock the necessary MX and SPF records.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-settings-enable-email-routing-dns",
+    "name": "Enable Email Routing",
+    "description": "Enable Email Routing Enable you Email Routing zone. POST /client/v4/zones/{zone_id}/email/routing/dns",
+    "context": "POST /client/v4/zones/{zone_id}/email/routing/dns\nEnable you Email Routing zone. Add and lock the necessary MX and SPF records.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "email-routing-settings-get-email-routing-settings",
+    "name": "Get Email Routing settings",
+    "description": "Get Email Routing settings Get information about the settings for your Email Routing zone. GET /client/v4/zones/{zone_id}/email/routing",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing\nGet information about the settings for your Email Routing zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "email-routing-settings-replace-email-routing-settings",
+    "name": "Update Email Routing settings",
+    "description": "Update Email Routing settings Update the settings for your Email Routing zone. PUT /client/v4/zones/{zone_id}/email/routing",
+    "context": "PUT /client/v4/zones/{zone_id}/email/routing\nUpdate the settings for your Email Routing zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-routing-settings-unlock-email-routing",
+    "name": "Unlock Email Routing",
+    "description": "Unlock Email Routing Unlock MX records previously locked by Email Routing. POST /client/v4/zones/{zone_id}/email/routing/unlock",
+    "context": "POST /client/v4/zones/{zone_id}/email/routing/unlock\nUnlock MX records previously locked by Email Routing. Deprecated - use PATCH /zones/{zone_id}/email/routing/dns instead.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "email-routing-settings-unlock-email-routing-dns",
+    "name": "Unlock Email Routing",
+    "description": "Unlock Email Routing Unlock MX Records previously locked by Email Routing. PATCH /client/v4/zones/{zone_id}/email/routing/dns",
+    "context": "PATCH /client/v4/zones/{zone_id}/email/routing/dns\nUnlock MX Records previously locked by Email Routing.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "email-routing-settings-update-email-routing-settings",
+    "name": "Update Email Routing settings",
+    "description": "Update Email Routing settings Update the settings for your Email Routing zone. PATCH /client/v4/zones/{zone_id}/email/routing",
+    "context": "PATCH /client/v4/zones/{zone_id}/email/routing\nUpdate the settings for your Email Routing zone.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-sending-subdomains-create-sending-subdomain",
+    "name": "Create a sending subdomain",
+    "description": "Create a sending subdomain Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled. POST /client/v4/zones/{zone_id}/email/sending/subdomains",
+    "context": "POST /client/v4/zones/{zone_id}/email/sending/subdomains\nCreates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled. If zone-level Email Sending has not been enabled yet, the zone flag is automatically set when the entitlement is present. A leftmost wildcard such as `*.example.com` is accepted only for accounts with wildcard Email Sending enabled. Wildcard senders share the base domain's DKIM signing identity and `cf-bounce. ` return path.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-sending-subdomains-delete-sending-subdomain",
+    "name": "Delete a sending subdomain",
+    "description": "Delete a sending subdomain Disables sending on a subdomain and removes its DNS records. DELETE /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}",
+    "context": "DELETE /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}\nDisables sending on a subdomain and removes its DNS records. If routing is still active on the subdomain, only sending is disabled.\nRequired: subdomain_id (path); zone_id (path)"
+  },
+  {
+    "id": "email-sending-subdomains-fix-sending-subdomain-dns",
+    "name": "Fix sending subdomain DNS records",
+    "description": "Fix sending subdomain DNS records Idempotently re-applies the sending DNS records (creates missing records, re-applies the email_routing lock on records whose lock has been cleared). POST /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns",
+    "context": "POST /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns\nIdempotently re-applies the sending DNS records (creates missing records, re-applies the email_routing lock on records whose lock has been cleared). Refuses with a 409 if foreign MX, multiple SPF, multiple DMARC, or multiple DKIM records exist at the relevant DNS names — those require manual cleanup.\nRequired: subdomain_id (path); zone_id (path)"
+  },
+  {
+    "id": "email-sending-subdomains-get-sending-subdomain",
+    "name": "Get a sending subdomain",
+    "description": "Get a sending subdomain Gets information for a specific sending subdomain. GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}\nGets information for a specific sending subdomain.\nRequired: subdomain_id (path); zone_id (path)"
+  },
+  {
+    "id": "email-sending-subdomains-get-sending-subdomain-dns",
+    "name": "Get sending subdomain DNS records",
+    "description": "Get sending subdomain DNS records Returns the expected DNS records for a sending subdomain. GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns\nReturns the expected DNS records for a sending subdomain.\nRequired: subdomain_id (path); zone_id (path)"
+  },
+  {
+    "id": "email-sending-subdomains-get-sending-subdomain-dns-status",
+    "name": "Get sending subdomain DNS status",
+    "description": "Get sending subdomain DNS status Returns the desired DNS records for a sending subdomain along with a live diff against actual DNS state. GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns/status",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/dns/status\nReturns the desired DNS records for a sending subdomain along with a live diff against actual DNS state. Use this to detect missing, unlocked, foreign, or multi-record conflicts before deciding whether to call the fix endpoint. For wildcard sending rows, each call also rechecks the governing organizational-domain DMARC policy and reports policy drift that DNS Fix cannot repair.\nRequired: subdomain_id (path); zone_id (path)"
+  },
+  {
+    "id": "email-sending-subdomains-get-sending-subdomain-reputation-complaints",
+    "name": "Get sending subdomain complaint count",
+    "description": "Get sending subdomain complaint count Returns the matched complaint count for a sending subdomain in a half-open time window of up to seven days. GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/reputation/complaints",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}/reputation/complaints\nReturns the matched complaint count for a sending subdomain in a half-open time window of up to seven days.\nRequired: subdomain_id (path); zone_id (path); start_at (query); end_at (query)"
+  },
+  {
+    "id": "email-sending-subdomains-list-sending-subdomains",
+    "name": "List sending subdomains",
+    "description": "List sending subdomains Lists all sending-enabled subdomains for the zone. GET /client/v4/zones/{zone_id}/email/sending/subdomains",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/subdomains\nLists all sending-enabled subdomains for the zone.\nRequired: zone_id (path)"
+  },
+  {
+    "id": "email-sending-subdomains-preview-sending-subdomain",
+    "name": "Preview sending subdomain DNS",
+    "description": "Preview sending subdomain DNS Returns the DNS records that would be created for a sending subdomain, flags which records are missing, and reports any conflicts with existing DNS records. POST /client/v4/zones/{zone_id}/email/sending/subdomains/preview",
+    "context": "POST /client/v4/zones/{zone_id}/email/sending/subdomains/preview\nReturns the DNS records that would be created for a sending subdomain, flags which records are missing, and reports any conflicts with existing DNS records. This is a read-only dry-run — no records are created or modified. Use before or after creating a subdomain to check DNS status. A leftmost wildcard requires wildcard Email Sending to be enabled for the account and previews base-scoped DKIM and return-path records.\nRequired: zone_id (path); body (body)"
+  },
+  {
+    "id": "email-sending-subdomains-update-sending-subdomain",
+    "name": "Update a sending subdomain",
+    "description": "Update a sending subdomain Updates the activity-log preview preference for a sending subdomain. PATCH /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}",
+    "context": "PATCH /client/v4/zones/{zone_id}/email/sending/subdomains/{subdomain_id}\nUpdates the activity-log preview preference for a sending subdomain.\nRequired: subdomain_id (path); zone_id (path); body (body)"
+  },
+  {
+    "id": "get_dmarc_reports_status",
+    "name": "Get DMARC Report Status",
+    "description": "Get DMARC Report Status Retrieves the current DMARC report configuration and status for a zone. GET /client/v4/zones/{zone_id}/email/auth/dmarc-reports",
+    "context": "GET /client/v4/zones/{zone_id}/email/auth/dmarc-reports\nRetrieves the current DMARC report configuration and status for a zone. Returns the RUA prefix, enabled status, approved sources, and DNS records.\nRequired: zone_id (path) — Zone identifier."
+  },
+  {
+    "id": "get_publicGetSuppressionZoneRouting",
+    "name": "Get zone email suppression",
+    "description": "Get zone email suppression Retrieves a single email suppression for the specified zone. GET /client/v4/zones/{zone_id}/email/routing/suppression/{suppression_id}",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing/suppression/{suppression_id}\nRetrieves a single email suppression for the specified zone.\nRequired: zone_id (path); suppression_id (path)"
+  },
+  {
+    "id": "get_publicGetSuppressionZoneSending",
+    "name": "Get zone email suppression",
+    "description": "Get zone email suppression Retrieves a single email suppression for the specified zone. GET /client/v4/zones/{zone_id}/email/sending/suppression/{suppression_id}",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/suppression/{suppression_id}\nRetrieves a single email suppression for the specified zone.\nRequired: zone_id (path); suppression_id (path)"
+  },
+  {
+    "id": "get_publicListSuppressionZoneRouting",
+    "name": "List zone email suppressions",
+    "description": "List zone email suppressions Lists email suppressions for the specified zone. GET /client/v4/zones/{zone_id}/email/routing/suppression",
+    "context": "GET /client/v4/zones/{zone_id}/email/routing/suppression\nLists email suppressions for the specified zone.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "get_publicListSuppressionZoneSending",
+    "name": "List zone email suppressions",
+    "description": "List zone email suppressions Lists email suppressions for the specified zone. GET /client/v4/zones/{zone_id}/email/sending/suppression",
+    "context": "GET /client/v4/zones/{zone_id}/email/sending/suppression\nLists email suppressions for the specified zone.\nRequired: zone_id (path)\nOptional: page (query); per_page (query); order (query); direction (query)"
+  },
+  {
+    "id": "inspect_spf",
+    "name": "Inspect SPF Record",
+    "description": "Inspect SPF Record Inspects a specific SPF TXT record and returns a parsed tree structure in the spflimit-worker format. GET /client/v4/zones/{zone_id}/email/auth/spf/inspect",
+    "context": "GET /client/v4/zones/{zone_id}/email/auth/spf/inspect\nInspects a specific SPF TXT record and returns a parsed tree structure in the spflimit-worker format. The record ID must be provided via the `id` query parameter. Returns a recursive tree showing: - Parsed components with their qualifiers and types - Nested includes recursively resolved within components - Per-component and total lookup counts - Detailed error information with context\nRequired: zone_id (path) — Zone identifier.; id (query) — DNS record ID (rec_tag) to inspect"
+  },
+  {
+    "id": "post_publicNewSuppressionZoneRouting",
+    "name": "Create zone email suppression",
+    "description": "Create zone email suppression Creates a new email suppression for the specified zone. POST /client/v4/zones/{zone_id}/email/routing/suppression",
+    "context": "POST /client/v4/zones/{zone_id}/email/routing/suppression\nCreates a new email suppression for the specified zone.\nRequired: zone_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "post_publicNewSuppressionZoneSending",
+    "name": "Create zone email suppression",
+    "description": "Create zone email suppression Creates a new email suppression for the specified zone. POST /client/v4/zones/{zone_id}/email/sending/suppression",
+    "context": "POST /client/v4/zones/{zone_id}/email/sending/suppression\nCreates a new email suppression for the specified zone.\nRequired: zone_id (path)\nOptional: body (body)"
+  }
+]

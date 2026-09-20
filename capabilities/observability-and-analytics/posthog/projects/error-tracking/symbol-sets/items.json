@@ -1,0 +1,56 @@
+[
+  {
+    "id": "error_tracking_symbol_sets_bulk_check_upload_create",
+    "name": "Report which of the given symbol sets still need `bulk_start_upload`",
+    "description": "Report which of the given symbol sets still need `bulk_start_upload` Report which of the given symbol sets still need `bulk_start_upload`. POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_check_upload/",
+    "context": "POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_check_upload/\nReport which of the given symbol sets still need `bulk_start_upload`. Symbol sets already uploaded with identical content are omitted and marked as still in use.\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_symbol_sets_bulk_delete_create",
+    "name": "error_tracking_symbol_sets_bulk_delete_create",
+    "description": "error_tracking_symbol_sets_bulk_delete_create POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_delete/",
+    "context": "POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_delete/\nerror_tracking_symbol_sets_bulk_delete_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_symbol_sets_bulk_finish_upload_create",
+    "name": "error_tracking_symbol_sets_bulk_finish_upload_create",
+    "description": "error_tracking_symbol_sets_bulk_finish_upload_create POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_finish_upload/",
+    "context": "POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_finish_upload/\nerror_tracking_symbol_sets_bulk_finish_upload_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_symbol_sets_bulk_start_upload_create",
+    "name": "error_tracking_symbol_sets_bulk_start_upload_create",
+    "description": "error_tracking_symbol_sets_bulk_start_upload_create POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_start_upload/",
+    "context": "POST /api/projects/{project_id}/error_tracking/symbol_sets/bulk_start_upload/\nerror_tracking_symbol_sets_bulk_start_upload_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "error_tracking_symbol_sets_destroy",
+    "name": "error_tracking_symbol_sets_destroy",
+    "description": "error_tracking_symbol_sets_destroy DELETE /api/projects/{project_id}/error_tracking/symbol_sets/{id}/",
+    "context": "DELETE /api/projects/{project_id}/error_tracking/symbol_sets/{id}/\nerror_tracking_symbol_sets_destroy\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_symbol_sets_download_retrieve",
+    "name": "Return a presigned URL for downloading the symbol set's source map.",
+    "description": "Return a presigned URL for downloading the symbol set's source map. GET /api/projects/{project_id}/error_tracking/symbol_sets/{id}/download/",
+    "context": "GET /api/projects/{project_id}/error_tracking/symbol_sets/{id}/download/\nReturn a presigned URL for downloading the symbol set's source map.\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "error_tracking_symbol_sets_finish_upload_update",
+    "name": "error_tracking_symbol_sets_finish_upload_update",
+    "description": "error_tracking_symbol_sets_finish_upload_update PUT /api/projects/{project_id}/error_tracking/symbol_sets/{id}/finish_upload/",
+    "context": "PUT /api/projects/{project_id}/error_tracking/symbol_sets/{id}/finish_upload/\nerror_tracking_symbol_sets_finish_upload_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "error_tracking_symbol_sets_list",
+    "name": "error_tracking_symbol_sets_list",
+    "description": "error_tracking_symbol_sets_list GET /api/projects/{project_id}/error_tracking/symbol_sets/",
+    "context": "GET /api/projects/{project_id}/error_tracking/symbol_sets/\nerror_tracking_symbol_sets_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; order_by (query) — Sort order for symbol sets. Prefix with `-` for descending order. * `created_at` - created_at * `-created_at` - -created_at * `ref` - ref * `-ref` - -ref * `last_used` - last_used * `-last_used` - -last_used; ref (query) — Exact symbol set reference to filter by.; search (query) — Case-insensitive substring search across reference, release version, release project, and release commit SHA.; status (query) — Upload status filter: `valid` has an uploaded file, `invalid` is missing a file, `all` returns both. * `all` - all * `valid` - valid * `invalid` - invalid"
+  },
+  {
+    "id": "error_tracking_symbol_sets_retrieve",
+    "name": "error_tracking_symbol_sets_retrieve",
+    "description": "error_tracking_symbol_sets_retrieve GET /api/projects/{project_id}/error_tracking/symbol_sets/{id}/",
+    "context": "GET /api/projects/{project_id}/error_tracking/symbol_sets/{id}/\nerror_tracking_symbol_sets_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  }
+]

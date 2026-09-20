@@ -1,0 +1,38 @@
+[
+  {
+    "id": "v1-get-project-function-combined-stats",
+    "name": "Gets a project's function combined statistics",
+    "description": "Gets a project's function combined statistics GET /v1/projects/{ref}/analytics/endpoints/functions.combined-stats",
+    "context": "GET /v1/projects/{ref}/analytics/endpoints/functions.combined-stats\nGets a project's function combined statistics\nRequired: ref (path) — Project ref; interval (query); function_id (query)"
+  },
+  {
+    "id": "v1-get-project-logs",
+    "name": "Gets all project's logs in a single log stream",
+    "description": "Gets all project's logs in a single log stream Executes an SQL or LQL query on the project's unified logs stream. GET /v1/projects/{ref}/analytics/endpoints/logs",
+    "context": "GET /v1/projects/{ref}/analytics/endpoints/logs\nExecutes an SQL or LQL query on the project's unified logs stream. Either the `iso_timestamp_start` and `iso_timestamp_end` parameters must be provided. If both are not provided, only the last 1 minute of logs will be queried. The timestamp range must be no more than 24 hours and is rounded to the nearest minute. If the range is more than 24 hours, a validation error will be thrown. Filter by the `source` column to specify specific log sources, such as edge_logs, postgres_logs, etc. Note: SQL must be written in **ClickHouse SQL dialect**.\nRequired: ref (path) — Project ref\nOptional: sql (query) — Custom SQL query to execute on the logs. See [querying logs](https://supabase.com/docs/guides/monitoring-and-debugging/logs#querying-with-the-logs-explorer) for more details.; iso_timestamp_start (query); iso_timestamp_end (query)"
+  },
+  {
+    "id": "v1-get-project-logs-all",
+    "name": "Gets project's logs",
+    "description": "Gets project's logs Executes a SQL query on the project's logs. GET /v1/projects/{ref}/analytics/endpoints/logs.all",
+    "context": "GET /v1/projects/{ref}/analytics/endpoints/logs.all\nExecutes a SQL query on the project's logs. Either the `iso_timestamp_start` and `iso_timestamp_end` parameters must be provided. If both are not provided, only the last 1 minute of logs will be queried. The timestamp range must be no more than 24 hours and is rounded to the nearest minute. If the range is more than 24 hours, a validation error will be thrown. Note: Unless the `sql` parameter is provided, only edge_logs will be queried. See the [log query docs](https://supabase.com/docs/guides/monitoring-and-debugging/logs#logs-explorer) for all available sources.\nRequired: ref (path) — Project ref\nOptional: sql (query) — Custom SQL query to execute on the logs. See [querying logs](https://supabase.com/docs/guides/monitoring-and-debugging/logs#querying-with-the-logs-explorer) for more details.; iso_timestamp_start (query); iso_timestamp_end (query)"
+  },
+  {
+    "id": "v1-get-project-usage-api-count",
+    "name": "Gets project's usage api counts",
+    "description": "Gets project's usage api counts GET /v1/projects/{ref}/analytics/endpoints/usage.api-counts",
+    "context": "GET /v1/projects/{ref}/analytics/endpoints/usage.api-counts\nGets project's usage api counts\nRequired: ref (path) — Project ref\nOptional: interval (query)"
+  },
+  {
+    "id": "v1-get-project-usage-request-count",
+    "name": "Gets project's usage api requests count",
+    "description": "Gets project's usage api requests count GET /v1/projects/{ref}/analytics/endpoints/usage.api-requests-count",
+    "context": "GET /v1/projects/{ref}/analytics/endpoints/usage.api-requests-count\nGets project's usage api requests count\nRequired: ref (path) — Project ref"
+  },
+  {
+    "id": "v1-scrape-project-metrics",
+    "name": "Scrape a project's metrics",
+    "description": "Scrape a project's metrics Prometheus scrape endpoint. GET /v1/projects/{ref}/analytics/endpoints/metrics",
+    "context": "GET /v1/projects/{ref}/analytics/endpoints/metrics\nPrometheus scrape endpoint. Returns metrics of a customer project in the Prometheus open exposition format.\nRequired: ref (path) — Project ref"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "feature_requests_add_account_create",
+    "name": "feature_requests_add_account_create",
+    "description": "feature_requests_add_account_create POST /api/projects/{project_id}/feature_requests/{id}/add_account/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/add_account/\nfeature_requests_add_account_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_add_evidence_create",
+    "name": "feature_requests_add_evidence_create",
+    "description": "feature_requests_add_evidence_create POST /api/projects/{project_id}/feature_requests/{id}/add_evidence/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/add_evidence/\nfeature_requests_add_evidence_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_archive_create",
+    "name": "feature_requests_archive_create",
+    "description": "feature_requests_archive_create POST /api/projects/{project_id}/feature_requests/{id}/archive/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/archive/\nfeature_requests_archive_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_create",
+    "name": "feature_requests_create",
+    "description": "feature_requests_create POST /api/projects/{project_id}/feature_requests/",
+    "context": "POST /api/projects/{project_id}/feature_requests/\nfeature_requests_create\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_history_list",
+    "name": "feature_requests_history_list",
+    "description": "feature_requests_history_list GET /api/projects/{project_id}/feature_requests/{id}/history/",
+    "context": "GET /api/projects/{project_id}/feature_requests/{id}/history/\nfeature_requests_history_list\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "feature_requests_link_github_create",
+    "name": "feature_requests_link_github_create",
+    "description": "feature_requests_link_github_create POST /api/projects/{project_id}/feature_requests/{id}/link_github/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/link_github/\nfeature_requests_link_github_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_list",
+    "name": "feature_requests_list",
+    "description": "feature_requests_list GET /api/projects/{project_id}/feature_requests/",
+    "context": "GET /api/projects/{project_id}/feature_requests/\nfeature_requests_list\nRequired: project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: account_ids (query) — Accessible account IDs to include. Multiple values use OR semantics.; archive_state (query) — Whether to return active requests, archived requests, or all requests. * `active` - Active * `archived` - Archived * `all` - All; created_by_ids (query) — Creator user IDs to include. Multiple values use OR semantics.; limit (query) — Number of results to return per page.; offset (query) — The initial index from which to return the results.; priorities (query) — Priorities to include. Use none for requests without a priority.; product_area_ids (query) — Product area IDs to include. Multiple values use OR semantics.; request_ordering (query) — Stable ordering for the result list. * `-updated_at` - Last updated: newest * `updated_at` - Last updated: oldest * `-created_at` - Date created: newest * `created_at` - Date created: oldest * `-priority` - Priority: high to low * `priority` - Priority: low to high * `title` - Title: A to Z * `-title` - Title: Z to A * `account` - Accounts: A to Z * `-account` - Accounts: Z to A * `product_area` - Product areas: A to Z * `-product_area` - Product areas: Z to A * `status` - Status: A to Z * `-status` - Status: Z to A * `created_by` - Created by: A to Z * `-created_by` - Created by: Z to A * `evidence_count` - Evidence: low to high * `-evidence_count` - Evidence: high to low; search (query) — Case-insensitive text to find in request titles and descriptions.; statuses (query) — Lifecycle statuses to include. Multiple values use OR semantics."
+  },
+  {
+    "id": "feature_requests_partial_update",
+    "name": "feature_requests_partial_update",
+    "description": "feature_requests_partial_update PATCH /api/projects/{project_id}/feature_requests/{id}/",
+    "context": "PATCH /api/projects/{project_id}/feature_requests/{id}/\nfeature_requests_partial_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.\nOptional: body (body)"
+  },
+  {
+    "id": "feature_requests_pause_github_create",
+    "name": "feature_requests_pause_github_create",
+    "description": "feature_requests_pause_github_create POST /api/projects/{project_id}/feature_requests/{id}/pause_github/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/pause_github/\nfeature_requests_pause_github_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_remove_evidence_create",
+    "name": "feature_requests_remove_evidence_create",
+    "description": "feature_requests_remove_evidence_create POST /api/projects/{project_id}/feature_requests/{id}/remove_evidence/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/remove_evidence/\nfeature_requests_remove_evidence_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_restore_create",
+    "name": "feature_requests_restore_create",
+    "description": "feature_requests_restore_create POST /api/projects/{project_id}/feature_requests/{id}/restore/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/restore/\nfeature_requests_restore_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_resume_github_create",
+    "name": "feature_requests_resume_github_create",
+    "description": "feature_requests_resume_github_create POST /api/projects/{project_id}/feature_requests/{id}/resume_github/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/resume_github/\nfeature_requests_resume_github_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_retrieve",
+    "name": "feature_requests_retrieve",
+    "description": "feature_requests_retrieve GET /api/projects/{project_id}/feature_requests/{id}/",
+    "context": "GET /api/projects/{project_id}/feature_requests/{id}/\nfeature_requests_retrieve\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "feature_requests_status_history_list",
+    "name": "feature_requests_status_history_list",
+    "description": "feature_requests_status_history_list GET /api/projects/{project_id}/feature_requests/{id}/status_history/",
+    "context": "GET /api/projects/{project_id}/feature_requests/{id}/status_history/\nfeature_requests_status_history_list\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/."
+  },
+  {
+    "id": "feature_requests_unlink_github_create",
+    "name": "feature_requests_unlink_github_create",
+    "description": "feature_requests_unlink_github_create POST /api/projects/{project_id}/feature_requests/{id}/unlink_github/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/unlink_github/\nfeature_requests_unlink_github_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_update",
+    "name": "feature_requests_update",
+    "description": "feature_requests_update PUT /api/projects/{project_id}/feature_requests/{id}/",
+    "context": "PUT /api/projects/{project_id}/feature_requests/{id}/\nfeature_requests_update\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  },
+  {
+    "id": "feature_requests_update_evidence_create",
+    "name": "feature_requests_update_evidence_create",
+    "description": "feature_requests_update_evidence_create POST /api/projects/{project_id}/feature_requests/{id}/update_evidence/",
+    "context": "POST /api/projects/{project_id}/feature_requests/{id}/update_evidence/\nfeature_requests_update_evidence_create\nRequired: id (path); project_id (path) — Project ID of the project you're trying to access. To find the ID of the project, make a call to /api/projects/.; body (body)"
+  }
+]

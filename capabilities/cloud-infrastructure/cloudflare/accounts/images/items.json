@@ -1,0 +1,266 @@
+[
+  {
+    "id": "cloudflare-images-base-image",
+    "name": "Download image",
+    "description": "Download image Download an image from CF Images. GET /client/v4/accounts/{account_id}/images/v1/{image_id}/blob",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/{image_id}/blob\nDownload an image from CF Images. For most images this will be the originally uploaded file. For larger images it can be a near-lossless version of the original.\nRequired: image_id (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-create-authenticated-direct-upload-url-v-1",
+    "name": "Create authenticated direct upload URL V1",
+    "description": "Create authenticated direct upload URL V1 Direct uploads allow users to upload images without API keys. POST /client/v4/accounts/{account_id}/images/v1/direct_upload",
+    "context": "POST /client/v4/accounts/{account_id}/images/v1/direct_upload\nDirect uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a one-time upload URL. Use the V2 endpoint for additional features such as custom IDs and metadata.\nRequired: account_id (path)\nOptional: body (body)"
+  },
+  {
+    "id": "cloudflare-images-create-authenticated-direct-upload-url-v-2",
+    "name": "Create authenticated direct upload URL V2",
+    "description": "Create authenticated direct upload URL V2 Direct uploads allow users to upload images without API keys. POST /client/v4/accounts/{account_id}/images/v2/direct_upload",
+    "context": "POST /client/v4/accounts/{account_id}/images/v2/direct_upload\nDirect uploads allow users to upload images without API keys. A common use case are web apps, client-side applications, or mobile devices where users upload content directly to Cloudflare Images. This method creates a draft record for a future image. It returns an upload URL and an image identifier. To verify if the image itself has been uploaded, send an image details request (accounts/:account_identifier/images/v1/:identifier), and check that the `draft: true` property is not present.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-delete-image",
+    "name": "Delete image",
+    "description": "Delete image Delete an image on Cloudflare Images. DELETE /client/v4/accounts/{account_id}/images/v1/{image_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/images/v1/{image_id}\nDelete an image on Cloudflare Images. On success, all copies of the image are deleted and purged from cache.\nRequired: image_id (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-image-details",
+    "name": "Image details",
+    "description": "Image details Fetch details for a CF Images image. GET /client/v4/accounts/{account_id}/images/v1/{image_id}",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/{image_id}\nFetch details for a CF Images image.\nRequired: image_id (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-images-usage-statistics",
+    "name": "Images usage statistics",
+    "description": "Images usage statistics Fetch image statistics details for Cloudflare Images. GET /client/v4/accounts/{account_id}/images/v1/stats",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/stats\nFetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account's allowance.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-keys-add-signing-key",
+    "name": "Create a new Signing Key",
+    "description": "Create a new Signing Key Create a new CF Images signing key with specified name. PUT /client/v4/accounts/{account_id}/images/v1/keys/{signing_key_name}",
+    "context": "PUT /client/v4/accounts/{account_id}/images/v1/keys/{signing_key_name}\nCreate a new CF Images signing key with specified name. Returns all keys available.\nRequired: signing_key_name (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-keys-delete-signing-key",
+    "name": "Delete Signing Key",
+    "description": "Delete Signing Key Delete a CF Images signing key with specified name. DELETE /client/v4/accounts/{account_id}/images/v1/keys/{signing_key_name}",
+    "context": "DELETE /client/v4/accounts/{account_id}/images/v1/keys/{signing_key_name}\nDelete a CF Images signing key with specified name. Returns all keys available. When the last key is removed, a new default signing key will be generated.\nRequired: signing_key_name (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-keys-list-signing-keys",
+    "name": "List Signing Keys",
+    "description": "List Signing Keys List your CF Images signing keys. GET /client/v4/accounts/{account_id}/images/v1/keys",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/keys\nList your CF Images signing keys.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-list-images",
+    "name": "List images",
+    "description": "List images List up to 100 images with one request. GET /client/v4/accounts/{account_id}/images/v1",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1\nList up to 100 images with one request. Use the optional parameters below to get a specific range of images.\nRequired: account_id (path)\nOptional: page (query); per_page (query); creator (query)"
+  },
+  {
+    "id": "cloudflare-images-list-images-v2",
+    "name": "List images V2",
+    "description": "List images V2 List up to 10000 images from CF Images, with up to 1000 results per page. GET /client/v4/accounts/{account_id}/images/v2",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2\nList up to 10000 images from CF Images, with up to 1000 results per page. Use the optional parameters below to get a specific range of images. Pagination is supported via continuation_token. **Metadata Filtering (Optional):** You can optionally filter images by custom metadata fields using the `meta. [ ]= ` syntax. **Supported Operators:** - `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match - `gt` / `gt:number` - Greater than (number only) - `gte` / `gte:number` - Greater than or equal (number only) - `lt` / `lt:number` - Less than (number only) - `lte` / `lte:number` - Less than or equal (number only) - `in` / `in:string` / `in:number` - Match any value in list (pipe-separated) **Metadata Filter Constraints:** - Maximum 5 metadata filters per request - Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`) - Maximum 10 elements for list operators (`in`) - Supports string, number, and boolean value types - Range operators (`gt`, `gte`, `lt`, `lte`) only accept numeric values **Filter Consistency:** Filters are combined with AND logic. The system does not validate whether filter combinations are logically consistent. For example, `meta.priority[eq:number]=5&meta.priority[lte:number]=3` will return zero results because no value can satisfy both conditions simultaneously. It is the caller's responsibility to ensure filter combinations make sense. **Examples:** ``` # List all images /images/v2 # Filter by metadata [eq] /images/v2?meta.status[eq:string]=active # Filter by metadata [in] /images/v2?meta.status[in]=pending|deleted|flagged # Filter by metadata [in:number] /images/v2?meta.ratings[in:number]=4|5 # Filter by metadata range [gte:number] /images/v2?meta.priority[gte:number]=1 # Filter by bounded range /images/v2?meta.priority[gte:number]=1&meta.priority[lte:number]=5 # Filter by nested metadata /images/v2?meta.region.name[eq]=eu-west # Combine metadata filters with creator /images/v2?meta.status[eq]=active&creator=user123 # Multiple metadata filters (AND logic) /images/v2?meta.status[eq]=active&meta.priority[eq:number]=5 ```\nRequired: account_id (path)\nOptional: continuation_token (query); per_page (query); sort_order (query); creator (query); meta.<field>[<operator>] (query) — Optional metadata filter(s). Multiple filters can be combined with AND logic. **Operators:** - `eq`, `eq:string`, `eq:number`, `eq:boolean` - Exact match - `gt`, `gt:number` - Greater than (number only) - `gte`, `gte:number` - Greater than or equal (number only) - `lt`, `lt:number` - Less than (number only) - `lte`, `lte:number` - Less than or equal (number only) - `in`, `in:string`, `in:number` - Match any value in pipe-separated list **Examples:** - `meta.status[eq]=active` - `meta.priority[eq:number]=5` - `meta.enabled[eq:boolean]=true` - `meta.priority[gte:number]=1` - `meta.score[lt:number]=100` - `meta.region[in]=us-east|us-west|eu-west` **Note:** Filter consistency is not validated. Contradictory filters (e.g., `meta.priority[eq:number]=5&meta.priority[lte:number]=3`) will return zero results."
+  },
+  {
+    "id": "cloudflare-images-list-metadata-keys",
+    "name": "List image metadata keys",
+    "description": "List image metadata keys Lists filterable metadata keys used by images for an account. GET /client/v4/accounts/{account_id}/images/v2/metadata/keys",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/metadata/keys\nLists filterable metadata keys used by images for an account.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-abort-migration",
+    "name": "Abort a migration",
+    "description": "Abort a migration Abort a running migration. PATCH /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort",
+    "context": "PATCH /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/abort\nAbort a running migration. Objects already imported will not be removed.\nRequired: account_id (path); migration_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-create-migration",
+    "name": "Create a sourcing kit migration",
+    "description": "Create a sourcing kit migration Create a new migration from an existing source. POST /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations",
+    "context": "POST /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations\nCreate a new migration from an existing source. The migration will import objects from the source bucket into Cloudflare Images.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-create-source",
+    "name": "Create a sourcing kit source",
+    "description": "Create a sourcing kit source Create a new migration source by providing storage credentials. POST /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources",
+    "context": "POST /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources\nCreate a new migration source by providing storage credentials. The service will verify connectivity to the bucket before accepting the source.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-delete-migration",
+    "name": "Delete a sourcing kit migration",
+    "description": "Delete a sourcing kit migration Delete an existing migration. DELETE /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}\nDelete an existing migration. Only completed, errored, or aborted migrations can be deleted.\nRequired: account_id (path); migration_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-delete-source",
+    "name": "Delete a sourcing kit source",
+    "description": "Delete a sourcing kit source Delete an existing migration source. DELETE /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}\nDelete an existing migration source. Sources with active migrations cannot be deleted.\nRequired: account_id (path); source_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-get-migration",
+    "name": "Get sourcing kit migration",
+    "description": "Get sourcing kit migration Fetch details for a single migration. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}\nFetch details for a single migration.\nRequired: account_id (path); migration_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-get-migration-progress",
+    "name": "Get migration progress",
+    "description": "Get migration progress Get the current progress of a migration including counts of scanned, imported, skipped, and errored objects. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle\nGet the current progress of a migration including counts of scanned, imported, skipped, and errored objects.\nRequired: account_id (path); migration_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-get-source",
+    "name": "Get sourcing kit source",
+    "description": "Get sourcing kit source Fetch details for a single migration source. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}\nFetch details for a single migration source.\nRequired: account_id (path); source_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-get-source-connectivity",
+    "name": "Get source connectivity status",
+    "description": "Get source connectivity status Check the current connectivity status of an existing migration source. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}/connectivity\nCheck the current connectivity status of an existing migration source.\nRequired: account_id (path); source_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-list-migration-logs",
+    "name": "List migration logs",
+    "description": "List migration logs List log entries for a specific migration. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/logs",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/logs\nList log entries for a specific migration.\nRequired: account_id (path); migration_id (path)\nOptional: offset (query); limit (query)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-list-migrations",
+    "name": "List sourcing kit migrations",
+    "description": "List sourcing kit migrations List all migrations for the account. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations\nList all migrations for the account.\nRequired: account_id (path)\nOptional: offset (query); limit (query)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-list-sources",
+    "name": "List sourcing kit sources",
+    "description": "List sourcing kit sources List all configured migration sources for the account. GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources",
+    "context": "GET /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources\nList all configured migration sources for the account.\nRequired: account_id (path)\nOptional: offset (query); limit (query); name (query)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-precheck-source-connectivity",
+    "name": "Precheck source connectivity",
+    "description": "Precheck source connectivity Verify connectivity to a storage bucket before creating a source. POST /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck",
+    "context": "POST /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/connectivity-precheck\nVerify connectivity to a storage bucket before creating a source. Returns connectivity status without persisting any state.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-start-migration",
+    "name": "Start a migration",
+    "description": "Start a migration Start a pending migration. PATCH /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start",
+    "context": "PATCH /client/v4/accounts/{account_id}/images/v2/sourcingkit/migrations/{migration_id}/lifecycle/start\nStart a pending migration. The migration will begin importing objects from the configured source.\nRequired: account_id (path); migration_id (path)"
+  },
+  {
+    "id": "cloudflare-images-sourcingkit-update-source",
+    "name": "Update a sourcing kit source",
+    "description": "Update a sourcing kit source Update the name of an existing migration source. PATCH /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/images/v2/sourcingkit/sources/{source_id}\nUpdate the name of an existing migration source.\nRequired: account_id (path); source_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-update-image",
+    "name": "Update image",
+    "description": "Update image Update a CF Images image's metadata, creator, or access control. PATCH /client/v4/accounts/{account_id}/images/v1/{image_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/images/v1/{image_id}\nUpdate a CF Images image's metadata, creator, or access control. On access control change, all copies of the image are purged from cache.\nRequired: image_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-upload-an-image-via-url",
+    "name": "Upload an image",
+    "description": "Upload an image Upload an image to CF Images. POST /client/v4/accounts/{account_id}/images/v1",
+    "context": "POST /client/v4/accounts/{account_id}/images/v1\nUpload an image to CF Images. Images up to 10 Megabytes can be uploaded using a single HTTP POST (multipart/form-data) request by sending an image file or passing a URL accessible to the API.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-variants-create-a-variant",
+    "name": "Create a variant",
+    "description": "Create a variant Create a CF Images variant that allows you to resize images for different use cases. POST /client/v4/accounts/{account_id}/images/v1/variants",
+    "context": "POST /client/v4/accounts/{account_id}/images/v1/variants\nCreate a CF Images variant that allows you to resize images for different use cases.\nRequired: account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-variants-delete-a-variant",
+    "name": "Delete a variant",
+    "description": "Delete a variant Delete a CF Images variant. DELETE /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}",
+    "context": "DELETE /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}\nDelete a CF Images variant. This will purge the cache for all images associated with the variant.\nRequired: variant_id (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-variants-list-variants",
+    "name": "List variants",
+    "description": "List variants List existing CF Images variants. GET /client/v4/accounts/{account_id}/images/v1/variants",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/variants\nList existing CF Images variants.\nRequired: account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-variants-update-a-variant",
+    "name": "Update a variant",
+    "description": "Update a variant Update a CF Images variant. PATCH /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}",
+    "context": "PATCH /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}\nUpdate a CF Images variant. This will purge the cache for all images associated with the variant.\nRequired: variant_id (path); account_id (path); body (body)"
+  },
+  {
+    "id": "cloudflare-images-variants-variant-details",
+    "name": "Variant details",
+    "description": "Variant details Fetch details for a CF Images variant. GET /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}\nFetch details for a CF Images variant.\nRequired: variant_id (path); account_id (path)"
+  },
+  {
+    "id": "cloudflare-images-variants-variant-details-flat",
+    "name": "Variant details (flat)",
+    "description": "Variant details (flat) Fetch details for a single variant with properties at the top level of the result. GET /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}/flat",
+    "context": "GET /client/v4/accounts/{account_id}/images/v1/variants/{variant_id}/flat\nFetch details for a single variant with properties at the top level of the result.\nRequired: variant_id (path); account_id (path)"
+  },
+  {
+    "id": "delete_ImageDelete",
+    "name": "Delete an image",
+    "description": "Delete an image Delete an image. DELETE /client/v4/accounts/{accountId}/v1/images/{imageId}",
+    "context": "DELETE /client/v4/accounts/{accountId}/v1/images/{imageId}\nDelete an image.\nRequired: accountId (path) — Account identifier.; imageId (path) — Image identifier."
+  },
+  {
+    "id": "get__accounts_accountId_v2_images",
+    "name": "Get a list of images",
+    "description": "Get a list of images List images for an account. GET /client/v4/accounts/{accountId}/v2/images",
+    "context": "GET /client/v4/accounts/{accountId}/v2/images\nList images for an account.\nRequired: accountId (path) — Account identifier.\nOptional: per_page (query) — Number of items per page; continuation_token (query) — Continuation token for a next page. List images V2 returns continuation_token; creator (query) — Internal user ID set within the creator field. Setting to empty string will return images where creator field is not set; sort_order (query) — Sorting order by upload time"
+  },
+  {
+    "id": "get_ImageGet",
+    "name": "Get an image data",
+    "description": "Get an image data Get image metadata. GET /client/v4/accounts/{accountId}/v1/images/{imageId}",
+    "context": "GET /client/v4/accounts/{accountId}/v1/images/{imageId}\nGet image metadata.\nRequired: accountId (path) — Account identifier.; imageId (path) — Image identifier."
+  },
+  {
+    "id": "get_ImageGetBlob",
+    "name": "Get an image",
+    "description": "Get an image Get image as a blob. GET /client/v4/accounts/{accountId}/v1/images/{imageId}/blob",
+    "context": "GET /client/v4/accounts/{accountId}/v1/images/{imageId}/blob\nGet image as a blob.\nRequired: accountId (path) — Account identifier.; imageId (path) — Image identifier."
+  },
+  {
+    "id": "get_ImageList",
+    "name": "Get a list of images",
+    "description": "Get a list of images List images for an account. GET /client/v4/accounts/{accountId}/v1/images",
+    "context": "GET /client/v4/accounts/{accountId}/v1/images\nList images for an account.\nRequired: accountId (path) — Account identifier.\nOptional: per_page (query) — Number of items per page; continuation_token (query) — Continuation token for a next page. List images V2 returns continuation_token; creator (query) — Internal user ID set within the creator field. Setting to empty string will return images where creator field is not set; sort_order (query) — Sorting order by upload time"
+  },
+  {
+    "id": "patch_ImageEdit",
+    "name": "Update an image",
+    "description": "Update an image Update an image's metadata. PATCH /client/v4/accounts/{accountId}/v1/images/{imageId}",
+    "context": "PATCH /client/v4/accounts/{accountId}/v1/images/{imageId}\nUpdate an image's metadata.\nRequired: accountId (path) — Account identifier.; imageId (path) — Image identifier.\nOptional: body (body)"
+  },
+  {
+    "id": "post_DirectUploadLink",
+    "name": "Create authenticated direct upload URL",
+    "description": "Create authenticated direct upload URL Create an authenticated direct upload URL for an image. POST /client/v4/accounts/{accountId}/v2/images/direct_upload",
+    "context": "POST /client/v4/accounts/{accountId}/v2/images/direct_upload\nCreate an authenticated direct upload URL for an image.\nRequired: accountId (path) — Account identifier.\nOptional: body (body)"
+  },
+  {
+    "id": "post_ImageUpload",
+    "name": "Upload a new Image",
+    "description": "Upload a new Image Upload a new image. POST /client/v4/accounts/{accountId}/v1/images",
+    "context": "POST /client/v4/accounts/{accountId}/v1/images\nUpload a new image.\nRequired: accountId (path) — Account identifier.\nOptional: body (body)"
+  },
+  {
+    "id": "put_ImageDirectUpload",
+    "name": "Direct upload a new Image",
+    "description": "Direct upload a new Image Upload an image to a specific image ID. PUT /client/v4/accounts/{accountId}/v1/images/{imageId}",
+    "context": "PUT /client/v4/accounts/{accountId}/v1/images/{imageId}\nUpload an image to a specific image ID.\nRequired: accountId (path) — Account identifier.; imageId (path) — Image identifier.\nOptional: body (body)"
+  }
+]
