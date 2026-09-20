@@ -84,7 +84,10 @@ export default function Home() {
         </p>
         <div className="byline">
           <strong>Niaz Morshed</strong>
-          <span>@niazmorshed_ · September 2026</span>
+          <span>
+            <a href="https://x.com/niazmorshed_">@niazmorshed_</a> · September
+            20, 2026
+          </span>
         </div>
       </header>
 
@@ -460,7 +463,10 @@ export default function Home() {
           <Mark size={16} />
           <span>JCR</span>
         </div>
-        <span>Niaz Morshed · @niazmorshed_</span>
+        <span>
+          Niaz Morshed ·{" "}
+          <a href="https://x.com/niazmorshed_">@niazmorshed_</a>
+        </span>
       </footer>
     </main>
   );
